@@ -11,11 +11,17 @@ local MIN_WIDTH = 920
 local MIN_HEIGHT = 560
 local DEFAULT_WIDTH = 1040
 local DEFAULT_HEIGHT = 660
-local LEFT_RAIL_WIDTH = 190
+local LEFT_RAIL_WIDTH = 220
 local LEFT_RAIL_INSET = 18
-local LEFT_CONTROL_WIDTH = 154
+local LEFT_CONTROL_WIDTH = 184
+local LEFT_DROPDOWN_WIDTH = 160
+local LEFT_DROPDOWN_X = LEFT_RAIL_INSET - 16
+local LEFT_SLOT_BUTTON_WIDTH = 88
+local LEFT_SLOT_GAP = 8
+local LEFT_SLOT_ROW_HEIGHT = 24
 local DETAILS_WIDTH = 270
 local ROW_HEIGHT = 42
+local RESIZE_SCREEN_MARGIN = 0
 
 local CLASS_COLORS = {
     Druid = { 1.00, 0.49, 0.04 },
@@ -247,10 +253,51 @@ function UI:SaveWindow()
     window.scale = self.frame:GetScale()
 end
 
+function UI:GetResizeBounds()
+    local parent = self.frame and self.frame.GetParent and self.frame:GetParent() or UIParent
+    local parentWidth = parent and parent.GetWidth and parent:GetWidth()
+    local parentHeight = parent and parent.GetHeight and parent:GetHeight()
+
+    if (not parentWidth or parentWidth <= 0) and GetScreenWidth then
+        parentWidth = GetScreenWidth()
+    end
+    if (not parentHeight or parentHeight <= 0) and GetScreenHeight then
+        parentHeight = GetScreenHeight()
+    end
+
+    local maxWidth = math.floor((parentWidth or DEFAULT_WIDTH) - RESIZE_SCREEN_MARGIN)
+    local maxHeight = math.floor((parentHeight or DEFAULT_HEIGHT) - RESIZE_SCREEN_MARGIN)
+    maxWidth = math.max(1, maxWidth)
+    maxHeight = math.max(1, maxHeight)
+
+    local minWidth = math.min(MIN_WIDTH, maxWidth)
+    local minHeight = math.min(MIN_HEIGHT, maxHeight)
+    return minWidth, minHeight, maxWidth, maxHeight
+end
+
+function UI:ApplyResizeBounds()
+    if not self.frame then
+        return
+    end
+
+    local minWidth, minHeight, maxWidth, maxHeight = self:GetResizeBounds()
+    if self.frame.SetResizeBounds then
+        self.frame:SetResizeBounds(minWidth, minHeight, maxWidth, maxHeight)
+    else
+        if self.frame.SetMinResize then
+            self.frame:SetMinResize(minWidth, minHeight)
+        end
+        if self.frame.SetMaxResize then
+            self.frame:SetMaxResize(maxWidth, maxHeight)
+        end
+    end
+end
+
 function UI:RestoreWindow()
     local window = BigBiSListDB.profile.window
-    local width = clamp(window.width or DEFAULT_WIDTH, MIN_WIDTH, 1400)
-    local height = clamp(window.height or DEFAULT_HEIGHT, MIN_HEIGHT, 900)
+    local minWidth, minHeight, maxWidth, maxHeight = self:GetResizeBounds()
+    local width = clamp(window.width or DEFAULT_WIDTH, minWidth, maxWidth)
+    local height = clamp(window.height or DEFAULT_HEIGHT, minHeight, maxHeight)
 
     self.frame:SetSize(width, height)
     self.frame:SetScale(window.scale or 1)
@@ -1097,31 +1144,37 @@ function UI:CreateLeftRail(body)
     rail:SetPoint("BOTTOMLEFT", body, "BOTTOMLEFT", 0, 0)
 
     local header = rail:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    header:SetPoint("TOPLEFT", rail, "TOPLEFT", 10, -10)
+    header:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET, -10)
     header:SetText("Filters")
 
-    self.classDropdown = widgets:CreateDropdown("BigBiSListClassDropdown", rail, 130,
+    self.classDropdown = widgets:CreateDropdown("BigBiSListClassDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function() return self:GetSelection().class or "Class" end,
         function() return self:GetClassDropdownItems() end,
         function(value) self:SetClass(value) end)
-    self.classDropdown:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET - 28, -34)
+    self.classDropdown:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_DROPDOWN_X, -42)
 
-    self.specDropdown = widgets:CreateDropdown("BigBiSListSpecDropdown", rail, 130,
+    self.specDropdown = widgets:CreateDropdown("BigBiSListSpecDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function() return self:GetSelection().spec or "Spec" end,
         function() return self:GetSpecDropdownItems() end,
         function(value) self:SetSpec(value) end)
-    self.specDropdown:SetPoint("TOPLEFT", self.classDropdown, "BOTTOMLEFT", 0, -2)
+    self.specDropdown:SetPoint("TOPLEFT", self.classDropdown, "BOTTOMLEFT", 0, -4)
 
     local searchLabel = rail:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    searchLabel:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET, -102)
+    searchLabel:SetPoint("TOPLEFT", self.specDropdown, "BOTTOMLEFT", LEFT_RAIL_INSET - LEFT_DROPDOWN_X, -12)
     searchLabel:SetTextColor(0.68, 0.68, 0.72, 1)
     searchLabel:SetText("Search")
 
-    self.searchBox = CreateFrame("EditBox", "BigBiSListSearchBox", rail, "InputBoxTemplate")
-    self.searchBox:SetSize(LEFT_CONTROL_WIDTH, 22)
-    self.searchBox:SetPoint("TOPLEFT", searchLabel, "BOTTOMLEFT", 0, -3)
+    local searchFrame = widgets:CreatePanel(nil, rail, { 0.030, 0.040, 0.040, 0.95 }, { 0.42, 0.42, 0.48, 1 })
+    searchFrame:SetSize(LEFT_CONTROL_WIDTH, 24)
+    searchFrame:SetPoint("TOPLEFT", searchLabel, "BOTTOMLEFT", 0, -5)
+
+    self.searchBox = CreateFrame("EditBox", "BigBiSListSearchBox", searchFrame)
+    self.searchBox:SetPoint("LEFT", searchFrame, "LEFT", 8, 0)
+    self.searchBox:SetPoint("RIGHT", searchFrame, "RIGHT", -8, 0)
+    self.searchBox:SetHeight(20)
     self.searchBox:SetAutoFocus(false)
     self.searchBox:SetMaxLetters(48)
+    self.searchBox:SetFontObject("GameFontHighlightSmall")
     self.searchBox:SetScript("OnTextChanged", function(editBox, isUserInput)
         if isUserInput then
             self:GetFilters().search = trim(editBox:GetText())
@@ -1140,23 +1193,23 @@ function UI:CreateLeftRail(body)
         editBox:ClearFocus()
     end)
 
-    self.sourceDropdown = widgets:CreateDropdown("BigBiSListSourceDropdown", rail, 130,
+    self.sourceDropdown = widgets:CreateDropdown("BigBiSListSourceDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()
             local value = self:GetFilters().sourceType or "all"
             return (BigBiSList:GetSourceTypeLabels()[value] or value)
         end,
         function() return self:GetSourceDropdownItems() end,
         function(value) self:SetFilter("sourceType", value) end)
-    self.sourceDropdown:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET - 28, -135)
+    self.sourceDropdown:SetPoint("TOPLEFT", searchFrame, "BOTTOMLEFT", LEFT_DROPDOWN_X - LEFT_RAIL_INSET, -10)
 
-    self.zoneDropdown = widgets:CreateDropdown("BigBiSListZoneDropdown", rail, 130,
+    self.zoneDropdown = widgets:CreateDropdown("BigBiSListZoneDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()
             local value = self:GetFilters().zone or "all"
             return value == "all" and "All zones" or value
         end,
         function() return self:GetZoneDropdownItems() end,
         function(value) self:SetFilter("zone", value) end)
-    self.zoneDropdown:SetPoint("TOPLEFT", self.sourceDropdown, "BOTTOMLEFT", 0, -2)
+    self.zoneDropdown:SetPoint("TOPLEFT", self.sourceDropdown, "BOTTOMLEFT", 0, -4)
 
     local rankButton = widgets:CreateTextButton(rail, "Rank: All", LEFT_CONTROL_WIDTH, 22, function()
         local filters = self:GetFilters()
@@ -1169,7 +1222,7 @@ function UI:CreateLeftRail(body)
         end
         self:Refresh()
     end)
-    rankButton:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET, -195)
+    rankButton:SetPoint("TOPLEFT", self.zoneDropdown, "BOTTOMLEFT", LEFT_RAIL_INSET - LEFT_DROPDOWN_X, -12)
     self.rankButton = rankButton
 
     local ownedButton = widgets:CreateTextButton(rail, "Owned: All", LEFT_CONTROL_WIDTH, 22, function()
@@ -1215,7 +1268,7 @@ function UI:CreateLeftRail(body)
     self.longevityButton = longevityButton
 
     local slotHeader = rail:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    slotHeader:SetPoint("TOPLEFT", longevityButton, "BOTTOMLEFT", 0, -12)
+    slotHeader:SetPoint("TOPLEFT", longevityButton, "BOTTOMLEFT", 0, -16)
     slotHeader:SetTextColor(0.68, 0.68, 0.72, 1)
     slotHeader:SetText("Slots")
 
@@ -1224,23 +1277,36 @@ function UI:CreateLeftRail(body)
     end)
     clearButton:SetPoint("BOTTOMLEFT", rail, "BOTTOMLEFT", LEFT_RAIL_INSET, 10)
 
-    local slotScroll, slotChild = widgets:CreateScrollFrame("BigBiSListSlotScroll", rail)
-    slotScroll:SetPoint("TOPLEFT", slotHeader, "BOTTOMLEFT", 0, -4)
-    slotScroll:SetPoint("BOTTOMRIGHT", clearButton, "TOPRIGHT", -24, 8)
-    slotChild:SetWidth(132)
+    local slotsScroll = CreateFrame("ScrollFrame", "BigBiSListSlotScroll", rail)
+    slotsScroll:SetPoint("TOPLEFT", slotHeader, "BOTTOMLEFT", 0, -8)
+    slotsScroll:SetPoint("BOTTOMRIGHT", clearButton, "TOPRIGHT", 0, 8)
+    slotsScroll:EnableMouseWheel(true)
+    slotsScroll:SetScript("OnMouseWheel", function(scroll, delta)
+        local maxScroll = scroll:GetVerticalScrollRange() or 0
+        local nextScroll = (scroll:GetVerticalScroll() or 0) - (delta * LEFT_SLOT_ROW_HEIGHT)
+        scroll:SetVerticalScroll(clamp(nextScroll, 0, maxScroll))
+    end)
+
+    local slotsContent = CreateFrame("Frame", nil, slotsScroll)
+    slotsContent:SetWidth(LEFT_CONTROL_WIDTH)
+    slotsContent:SetHeight(1)
+    slotsScroll:SetScrollChild(slotsContent)
 
     self.slotButtons = {}
     local slotNames = BigBiSList:GetSlotOrder()
     for index, slotName in ipairs(slotNames) do
-        local button = widgets:CreateTextButton(slotChild, slotName, 128, 20, function()
+        local button = widgets:CreateTextButton(slotsContent, slotName, LEFT_SLOT_BUTTON_WIDTH, 20, function()
             self:ToggleSlot(slotName)
         end)
-        button:SetPoint("TOPLEFT", slotChild, "TOPLEFT", 0, -(index - 1) * 23)
+        local col = (index - 1) % 2
+        local row = math.floor((index - 1) / 2)
+        button:SetPoint("TOPLEFT", slotsContent, "TOPLEFT", col * (LEFT_SLOT_BUTTON_WIDTH + LEFT_SLOT_GAP), -row * LEFT_SLOT_ROW_HEIGHT)
         self.slotButtons[slotName] = button
     end
-    slotChild:SetHeight(#slotNames * 23 + 4)
+    slotsContent:SetHeight(math.max(1, math.ceil(#slotNames / 2) * LEFT_SLOT_ROW_HEIGHT))
 
     self.leftRail = rail
+    self.slotsScroll = slotsScroll
 end
 
 function UI:RefreshFilterButtonLabels()
@@ -1320,6 +1386,7 @@ function UI:CreateStatusBar(frame)
     resize:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Down")
     resize:SetScript("OnMouseDown", function(_, buttonName)
         if buttonName == "LeftButton" and not BigBiSListDB.profile.window.locked then
+            self:ApplyResizeBounds()
             frame:StartSizing("BOTTOMRIGHT")
         end
     end)
@@ -1343,16 +1410,10 @@ function UI:CreateMainFrame()
     frame:EnableMouse(true)
     frame:SetClampedToScreen(true)
 
-    if frame.SetResizeBounds then
-        frame:SetResizeBounds(MIN_WIDTH, MIN_HEIGHT, 1400, 900)
-    elseif frame.SetMinResize and frame.SetMaxResize then
-        frame:SetMinResize(MIN_WIDTH, MIN_HEIGHT)
-        frame:SetMaxResize(1400, 900)
-    end
-
     ensureSpecialFrame("BigBiSListMainFrame")
 
     self.frame = frame
+    self:ApplyResizeBounds()
     self:RestoreWindow()
     self:CreateHeader(frame)
     self:CreatePhaseBar(frame)
@@ -1362,6 +1423,9 @@ function UI:CreateMainFrame()
 
     frame:SetScript("OnHide", function()
         self:SaveWindow()
+    end)
+    frame:SetScript("OnShow", function()
+        self:ApplyResizeBounds()
     end)
 
     self:Refresh()
@@ -1373,6 +1437,7 @@ function UI:Open()
         self:CreateMainFrame()
     end
 
+    self:ApplyResizeBounds()
     self.frame:Show()
     self:Refresh()
 end

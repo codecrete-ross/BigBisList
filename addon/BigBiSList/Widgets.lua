@@ -190,22 +190,22 @@ end
 
 function Widgets:CreateSectionHeader(parent, text, yOffset)
     local header = CreateFrame("Frame", nil, parent)
-    header:SetHeight(26)
+    header:SetHeight(34)
     header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
 
     local line = header:CreateTexture(nil, "ARTWORK")
     line:SetColorTexture(0.55, 0.55, 0.58, 0.45)
     line:SetHeight(1)
-    line:SetPoint("LEFT", header, "LEFT", 0, 0)
-    line:SetPoint("RIGHT", header, "RIGHT", 0, 0)
+    line:SetPoint("BOTTOMLEFT", header, "BOTTOMLEFT", 0, 6)
+    line:SetPoint("BOTTOMRIGHT", header, "BOTTOMRIGHT", 0, 6)
 
     local label = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    label:SetPoint("LEFT", header, "LEFT", 8, 2)
+    label:SetPoint("TOPLEFT", header, "TOPLEFT", 8, -2)
     label:SetTextColor(1, 0.82, 0.28, 1)
     label:SetText(text)
 
-    return header, 26
+    return header, 34
 end
 
 function Widgets:CreateItemRow(parent, height)
