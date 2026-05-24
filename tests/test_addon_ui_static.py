@@ -34,12 +34,16 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
+            "local DEFAULTS_VERSION = 2",
             "window = {",
             "tooltips = {",
             "selection = {",
+            'selectedPhase = "PR"',
+            'phase = "PR"',
             "filters = {",
             "wishlist = {}",
             "ignoredItems = {}",
+            "migrateLegacyDefaults",
         ]:
             self.assertIn(token, config)
 
@@ -71,4 +75,3 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn('"BigBiSListMainFrame"', ui)
         self.assertIn("UISpecialFrames", ui)
         self.assertIn("OnEscapePressed", ui)
-

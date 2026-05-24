@@ -5,6 +5,8 @@ BigBiSList.addonName = addonName or "BigBiSList"
 BigBiSList.displayName = "Big BiS List"
 BigBiSList.version = "0.1.0"
 
+local DEFAULTS_VERSION = 2
+
 BigBiSList.defaults = {
     profile = {
         showMinimap = true,
@@ -28,12 +30,12 @@ BigBiSList.defaults = {
     char = {
         selectedClass = "Druid",
         selectedSpec = "Feral dps",
-        selectedPhase = "SWP",
+        selectedPhase = "PR",
         selectedTab = "Phase",
         selection = {
             class = "Druid",
             spec = "Feral dps",
-            phase = "SWP",
+            phase = "PR",
             tab = "Phase",
         },
         filters = {
@@ -83,6 +85,18 @@ local function migrateSelection(char)
     end
 end
 
+local function migrateLegacyDefaults(db, previousVersion)
+    if previousVersion ~= nil then
+        return
+    end
+
+    local char = db.char
+    if char.selection and char.selection.phase == "SWP" and char.selectedPhase == "SWP" then
+        char.selection.phase = "PR"
+        char.selectedPhase = "PR"
+    end
+end
+
 function BigBiSList:GetSelection()
     self:EnsureDatabase()
     return BigBiSListDB.char.selection
@@ -115,14 +129,18 @@ function BigBiSList:EnsureDatabase()
     BigBiSListDB.profile = BigBiSListDB.profile or {}
     BigBiSListDB.char = BigBiSListDB.char or {}
 
+    local previousVersion = BigBiSListDB.profile.defaultsVersion
+
     migrateSelection(BigBiSListDB.char)
     applyDefaults(BigBiSListDB, self.defaults)
     migrateSelection(BigBiSListDB.char)
+    migrateLegacyDefaults(BigBiSListDB, previousVersion)
 
     BigBiSListDB.char.selectedClass = BigBiSListDB.char.selection.class
     BigBiSListDB.char.selectedSpec = BigBiSListDB.char.selection.spec
     BigBiSListDB.char.selectedPhase = BigBiSListDB.char.selection.phase
     BigBiSListDB.char.selectedTab = BigBiSListDB.char.selection.tab
+    BigBiSListDB.profile.defaultsVersion = DEFAULTS_VERSION
 
     return BigBiSListDB
 end

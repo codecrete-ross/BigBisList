@@ -12,6 +12,8 @@ local MIN_HEIGHT = 560
 local DEFAULT_WIDTH = 1040
 local DEFAULT_HEIGHT = 660
 local LEFT_RAIL_WIDTH = 190
+local LEFT_RAIL_INSET = 18
+local LEFT_CONTROL_WIDTH = 154
 local DETAILS_WIDTH = 270
 local ROW_HEIGHT = 42
 
@@ -394,9 +396,11 @@ function UI:UnignoreItem(itemId)
     self:Refresh()
 end
 
-function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQuality)
+function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQuality, detailData, detailMode)
     button.itemId = itemId
     button.itemLink = nil
+    button.detailData = detailData
+    button.detailMode = detailMode
     button.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
 
     safeSetText(nameText, fallbackName or ("Item " .. tostring(itemId)))
@@ -455,7 +459,7 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
     end)
     button:SetScript("OnClick", function(self, buttonName)
         if buttonName == "RightButton" then
-            UI:RefreshDetails(itemId)
+            UI:RefreshDetails(itemId, self.detailData, self.detailMode)
             return
         end
 
@@ -477,10 +481,12 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     row:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
     row.itemId = data.item_id
+    row.detailData = data
+    row.detailMode = mode
 
     local iconButton = widgets:CreateIconButton(row, 30, function(_, buttonName)
         if buttonName == "RightButton" then
-            self:RefreshDetails(data.item_id)
+            self:RefreshDetails(data.item_id, data, mode)
         end
     end)
     iconButton:SetPoint("LEFT", row, "LEFT", 8, 0)
@@ -513,7 +519,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     sourceText:SetTextColor(0.54, 0.54, 0.58, 1)
 
     local item = data.item or BigBiSList:GetItemData(data.item_id)
-    self:SetItemButton(iconButton, data.item_id, nameText, data.name, item and item.quality)
+    self:SetItemButton(iconButton, data.item_id, nameText, data.name, item and item.quality, data, mode)
 
     if mode == "planner" then
         safeSetText(detailText, data.slot .. " - " .. data.priorityTier .. " - " .. table.concat(data.reasons or {}, ", "))
@@ -537,7 +543,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
 
     row:SetScript("OnMouseUp", function(_, buttonName)
         if buttonName == "LeftButton" then
-            self:RefreshDetails(data.item_id)
+            self:RefreshDetails(data.item_id, data, mode)
         elseif buttonName == "RightButton" then
             if BigBiSListDB.char.wishlist[tostring(data.item_id)] then
                 self:RemoveWishlist(data.item_id)
@@ -756,7 +762,76 @@ function UI:RenderSettingsTab()
     self:SetContentHeight(yOffset)
 end
 
-function UI:RefreshDetails(itemId)
+function UI:FindPlannerContext(itemId, detailData)
+    local selection = self:GetSelection()
+    local wantedSlot = detailData and detailData.slot
+    local plannerRows = BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, {})
+
+    for _, row in ipairs(plannerRows) do
+        if row.item_id == itemId and (not wantedSlot or row.slot == wantedSlot) then
+            return row
+        end
+    end
+
+    for _, row in ipairs(plannerRows) do
+        if row.item_id == itemId then
+            return row
+        end
+    end
+
+    return nil
+end
+
+function UI:CreateDetailsText(parent, yOffset, titleText, bodyText, bodyR, bodyG, bodyB)
+    local title = parent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    title:SetPoint("TOPLEFT", parent, "TOPLEFT", 8, yOffset)
+    title:SetPoint("RIGHT", parent, "RIGHT", -8, 0)
+    title:SetJustifyH("LEFT")
+    title:SetWordWrap(false)
+    title:SetTextColor(1, 0.82, 0.28, 1)
+    title:SetText(titleText)
+
+    local body = parent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    body:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -3)
+    body:SetPoint("RIGHT", parent, "RIGHT", -8, 0)
+    body:SetJustifyH("LEFT")
+    body:SetWordWrap(true)
+    body:SetTextColor(bodyR or 0.76, bodyG or 0.76, bodyB or 0.80, 1)
+    body:SetText(bodyText or "")
+
+    local textLength = string.len(tostring(bodyText or ""))
+    local estimatedLines = math.max(1, math.ceil(textLength / 32))
+    return yOffset - 20 - (estimatedLines * 13)
+end
+
+function UI:BuildPhaseUseText(itemId)
+    local selection = self:GetSelection()
+    local uses = BigBiSList:GetDataIndex().usesByItemId[itemId] or {}
+    local parts = {}
+
+    for _, phaseKey in ipairs(BigBiSList:GetPhaseOrder()) do
+        local bestUse
+        for _, use in ipairs(uses) do
+            if use.class == selection.class and use.spec == selection.spec and use.phase == phaseKey then
+                if not bestUse or (use.rank_group == "bis" and bestUse.rank_group ~= "bis") then
+                    bestUse = use
+                end
+            end
+        end
+
+        if bestUse then
+            table.insert(parts, BigBiSList:GetPhaseDisplayName(phaseKey) .. " " .. (bestUse.rank_label or "Option") .. " " .. bestUse.slot)
+        end
+    end
+
+    if #parts == 0 then
+        return "No known use for the current class/spec."
+    end
+
+    return table.concat(parts, "\n")
+end
+
+function UI:RefreshDetails(itemId, detailData, detailMode)
     local widgets = BigBiSList.Widgets
     local content = self.detailsContent
     widgets:ClearChildren(content)
@@ -773,9 +848,12 @@ function UI:RefreshDetails(itemId)
     end
 
     self.selectedItemId = itemId
+    self.selectedItemData = detailData
+    self.selectedItemMode = detailMode
     local index = BigBiSList:GetDataIndex()
     local item = index.itemsById[itemId]
     local yOffset = -8
+    local plannerContext = detailData and detailData.priority and detailData or self:FindPlannerContext(itemId, detailData)
 
     local title = content:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     title:SetPoint("TOPLEFT", content, "TOPLEFT", 8, yOffset)
@@ -787,29 +865,30 @@ function UI:RefreshDetails(itemId)
     title:SetTextColor(r, g, b, 1)
     yOffset = yOffset - 38
 
-    local source = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    source:SetPoint("TOPLEFT", content, "TOPLEFT", 8, yOffset)
-    source:SetPoint("RIGHT", content, "RIGHT", -8, 0)
-    source:SetJustifyH("LEFT")
-    source:SetWordWrap(true)
-    source:SetTextColor(0.76, 0.76, 0.80, 1)
-    source:SetText(item and item.source_summary or "No source data")
-    yOffset = yOffset - 46
-
-    local uses = index.usesByItemId[itemId] or {}
-    local phaseText = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    phaseText:SetPoint("TOPLEFT", content, "TOPLEFT", 8, yOffset)
-    phaseText:SetPoint("RIGHT", content, "RIGHT", -8, 0)
-    phaseText:SetJustifyH("LEFT")
-    phaseText:SetWordWrap(true)
-
-    local phases = {}
-    for _, use in ipairs(uses) do
-        phases[use.phase] = true
+    if detailData and detailData.slot then
+        local selectedPhase = detailData.phase and BigBiSList:GetPhaseDisplayName(detailData.phase) or BigBiSList:GetPhaseDisplayName(self:GetSelection().phase)
+        local summary = selectedPhase .. " - " .. detailData.slot
+        if detailData.rank_label then
+            summary = summary .. " - " .. detailData.rank_label
+        end
+        yOffset = self:CreateDetailsText(content, yOffset, "Selected Row", summary, 0.82, 0.86, 0.92)
     end
-    phaseText:SetText("Useful in: " .. (phaseLabelList(phases) ~= "" and phaseLabelList(phases) or "No known BiS list"))
-    phaseText:SetTextColor(0.64, 0.78, 0.94, 1)
-    yOffset = yOffset - 46
+
+    if plannerContext then
+        local score = tostring(plannerContext.priority or 0) .. "/100"
+        local tier = plannerContext.priorityTier or "Priority"
+        yOffset = self:CreateDetailsText(content, yOffset, "Priority", tier .. " - " .. score, 0.64, 0.78, 0.94)
+
+        local reasons = plannerContext.reasons and table.concat(plannerContext.reasons, "\n") or "No planner explanation available."
+        yOffset = self:CreateDetailsText(content, yOffset, "Why It Matters", reasons, 0.76, 0.76, 0.80)
+
+        if plannerContext.lastUsefulLabel then
+            yOffset = self:CreateDetailsText(content, yOffset, "Longevity", "Useful through " .. plannerContext.lastUsefulLabel, 0.76, 0.76, 0.80)
+        end
+    end
+
+    yOffset = self:CreateDetailsText(content, yOffset, "Current Spec Timeline", self:BuildPhaseUseText(itemId), 0.64, 0.78, 0.94)
+    yOffset = self:CreateDetailsText(content, yOffset, "Source", item and item.source_summary or "No source data", 0.76, 0.76, 0.80)
 
     local wishlistKey = tostring(itemId)
     local isWishlisted = BigBiSListDB.char.wishlist[wishlistKey]
@@ -832,6 +911,8 @@ function UI:RefreshDetails(itemId)
         end
     end)
     ignoreButton:SetPoint("LEFT", wishlistButton, "RIGHT", 8, 0)
+
+    content:SetHeight(math.abs(yOffset) + 72)
 end
 
 function UI:RefreshControls()
@@ -901,7 +982,7 @@ function UI:Refresh()
         self:RenderPhaseTab()
     end
 
-    self:RefreshDetails(self.selectedItemId)
+    self:RefreshDetails(self.selectedItemId, self.selectedItemData, self.selectedItemMode)
 end
 
 function UI:CreateHeader(frame)
@@ -1013,7 +1094,7 @@ function UI:CreateLeftRail(body)
         function() return self:GetSelection().class or "Class" end,
         function() return self:GetClassDropdownItems() end,
         function(value) self:SetClass(value) end)
-    self.classDropdown:SetPoint("TOPLEFT", rail, "TOPLEFT", -10, -34)
+    self.classDropdown:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET - 28, -34)
 
     self.specDropdown = widgets:CreateDropdown("BigBiSListSpecDropdown", rail, 130,
         function() return self:GetSelection().spec or "Spec" end,
@@ -1022,13 +1103,13 @@ function UI:CreateLeftRail(body)
     self.specDropdown:SetPoint("TOPLEFT", self.classDropdown, "BOTTOMLEFT", 0, -2)
 
     local searchLabel = rail:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    searchLabel:SetPoint("TOPLEFT", self.specDropdown, "BOTTOMLEFT", 18, -8)
+    searchLabel:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET, -102)
     searchLabel:SetTextColor(0.68, 0.68, 0.72, 1)
     searchLabel:SetText("Search")
 
     self.searchBox = CreateFrame("EditBox", "BigBiSListSearchBox", rail, "InputBoxTemplate")
-    self.searchBox:SetSize(154, 22)
-    self.searchBox:SetPoint("TOPLEFT", searchLabel, "BOTTOMLEFT", -4, -3)
+    self.searchBox:SetSize(LEFT_CONTROL_WIDTH, 22)
+    self.searchBox:SetPoint("TOPLEFT", searchLabel, "BOTTOMLEFT", 0, -3)
     self.searchBox:SetAutoFocus(false)
     self.searchBox:SetMaxLetters(48)
     self.searchBox:SetScript("OnTextChanged", function(editBox, isUserInput)
@@ -1056,7 +1137,7 @@ function UI:CreateLeftRail(body)
         end,
         function() return self:GetSourceDropdownItems() end,
         function(value) self:SetFilter("sourceType", value) end)
-    self.sourceDropdown:SetPoint("TOPLEFT", self.searchBox, "BOTTOMLEFT", -14, -8)
+    self.sourceDropdown:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET - 28, -135)
 
     self.zoneDropdown = widgets:CreateDropdown("BigBiSListZoneDropdown", rail, 130,
         function()
@@ -1067,7 +1148,7 @@ function UI:CreateLeftRail(body)
         function(value) self:SetFilter("zone", value) end)
     self.zoneDropdown:SetPoint("TOPLEFT", self.sourceDropdown, "BOTTOMLEFT", 0, -2)
 
-    local rankButton = widgets:CreateTextButton(rail, "Rank: All", 154, 22, function()
+    local rankButton = widgets:CreateTextButton(rail, "Rank: All", LEFT_CONTROL_WIDTH, 22, function()
         local filters = self:GetFilters()
         if filters.rankGroup == "all" then
             filters.rankGroup = "bis"
@@ -1078,10 +1159,10 @@ function UI:CreateLeftRail(body)
         end
         self:Refresh()
     end)
-    rankButton:SetPoint("TOPLEFT", self.zoneDropdown, "BOTTOMLEFT", 18, -8)
+    rankButton:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET, -195)
     self.rankButton = rankButton
 
-    local ownedButton = widgets:CreateTextButton(rail, "Owned: All", 154, 22, function()
+    local ownedButton = widgets:CreateTextButton(rail, "Owned: All", LEFT_CONTROL_WIDTH, 22, function()
         local filters = self:GetFilters()
         if filters.ownedState == "all" then
             filters.ownedState = "missing"
@@ -1095,7 +1176,7 @@ function UI:CreateLeftRail(body)
     ownedButton:SetPoint("TOPLEFT", rankButton, "BOTTOMLEFT", 0, -5)
     self.ownedButton = ownedButton
 
-    local boeButton = widgets:CreateTextButton(rail, "BoE: All", 154, 22, function()
+    local boeButton = widgets:CreateTextButton(rail, "BoE: All", LEFT_CONTROL_WIDTH, 22, function()
         local filters = self:GetFilters()
         if filters.boe == "all" then
             filters.boe = "boe"
@@ -1109,7 +1190,7 @@ function UI:CreateLeftRail(body)
     boeButton:SetPoint("TOPLEFT", ownedButton, "BOTTOMLEFT", 0, -5)
     self.boeButton = boeButton
 
-    local longevityButton = widgets:CreateTextButton(rail, "Longevity: All", 154, 22, function()
+    local longevityButton = widgets:CreateTextButton(rail, "Longevity: All", LEFT_CONTROL_WIDTH, 22, function()
         local filters = self:GetFilters()
         if filters.longevity == "all" then
             filters.longevity = "future"
@@ -1128,28 +1209,26 @@ function UI:CreateLeftRail(body)
     slotHeader:SetTextColor(0.68, 0.68, 0.72, 1)
     slotHeader:SetText("Slots")
 
-    local clearButton = widgets:CreateTextButton(rail, "Clear filters", 154, 24, function()
+    local clearButton = widgets:CreateTextButton(rail, "Clear filters", LEFT_CONTROL_WIDTH, 24, function()
         self:ClearFilters()
     end)
-    clearButton:SetPoint("BOTTOMLEFT", rail, "BOTTOMLEFT", 18, 10)
+    clearButton:SetPoint("BOTTOMLEFT", rail, "BOTTOMLEFT", LEFT_RAIL_INSET, 10)
 
     local slotScroll, slotChild = widgets:CreateScrollFrame("BigBiSListSlotScroll", rail)
-    slotScroll:SetPoint("TOPLEFT", slotHeader, "BOTTOMLEFT", -2, -4)
-    slotScroll:SetPoint("BOTTOMRIGHT", clearButton, "TOPRIGHT", 20, 8)
-    slotChild:SetWidth(160)
+    slotScroll:SetPoint("TOPLEFT", slotHeader, "BOTTOMLEFT", 0, -4)
+    slotScroll:SetPoint("BOTTOMRIGHT", clearButton, "TOPRIGHT", -24, 8)
+    slotChild:SetWidth(132)
 
     self.slotButtons = {}
     local slotNames = BigBiSList:GetSlotOrder()
     for index, slotName in ipairs(slotNames) do
-        local button = widgets:CreateTextButton(slotChild, slotName, 74, 20, function()
+        local button = widgets:CreateTextButton(slotChild, slotName, 128, 20, function()
             self:ToggleSlot(slotName)
         end)
-        local col = (index - 1) % 2
-        local row = math.floor((index - 1) / 2)
-        button:SetPoint("TOPLEFT", slotChild, "TOPLEFT", col * 80, -row * 23)
+        button:SetPoint("TOPLEFT", slotChild, "TOPLEFT", 0, -(index - 1) * 23)
         self.slotButtons[slotName] = button
     end
-    slotChild:SetHeight(math.ceil(#slotNames / 2) * 23 + 4)
+    slotChild:SetHeight(#slotNames * 23 + 4)
 
     self.leftRail = rail
 end
@@ -1192,10 +1271,11 @@ function UI:CreateBody(frame)
     detailsTitle:SetPoint("TOPLEFT", details, "TOPLEFT", 10, -10)
     detailsTitle:SetText("Details")
 
-    local detailsContent = CreateFrame("Frame", nil, details)
-    detailsContent:SetPoint("TOPLEFT", detailsTitle, "BOTTOMLEFT", -2, -8)
-    detailsContent:SetPoint("BOTTOMRIGHT", details, "BOTTOMRIGHT", -8, 8)
+    local detailsScroll, detailsContent = widgets:CreateScrollFrame("BigBiSListDetailsScroll", details)
+    detailsScroll:SetPoint("TOPLEFT", detailsTitle, "BOTTOMLEFT", -2, -8)
+    detailsScroll:SetPoint("BOTTOMRIGHT", details, "BOTTOMRIGHT", -28, 8)
     self.details = details
+    self.detailsScroll = detailsScroll
     self.detailsContent = detailsContent
 
     local contentPanel = widgets:CreatePanel(nil, body, { 0.035, 0.035, 0.042, 0.94 }, { 0.15, 0.15, 0.17, 1 })
