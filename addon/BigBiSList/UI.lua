@@ -6,7 +6,7 @@ BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
 local UI = {}
 BigBiSList.UI = UI
 
-local TAB_NAMES = { "Phase", "Planner", "Enhance", "Wishlist", "Settings" }
+local TAB_NAMES = { "Phase", "Gear", "Planner", "Enhance", "Wishlist", "Settings" }
 local MIN_WIDTH = 920
 local MIN_HEIGHT = 560
 local DEFAULT_WIDTH = 1040
@@ -21,7 +21,22 @@ local LEFT_SLOT_GAP = 8
 local LEFT_SLOT_ROW_HEIGHT = 24
 local DETAILS_WIDTH = 270
 local ROW_HEIGHT = 42
+local GEAR_ROW_HEIGHT = 50
 local RESIZE_SCREEN_MARGIN = 0
+
+local OWNERSHIP_LABELS = {
+    equipped = "Equipped",
+    bag = "Bags",
+    bank = "Bank",
+    missing = "Missing",
+}
+
+local OWNERSHIP_COLORS = {
+    equipped = { 0.16, 0.38, 0.18, 0.96, 0.46, 0.95, 0.48, 1 },
+    bag = { 0.11, 0.23, 0.38, 0.96, 0.45, 0.68, 0.98, 1 },
+    bank = { 0.28, 0.21, 0.10, 0.96, 0.96, 0.72, 0.34, 1 },
+    missing = { 0.22, 0.12, 0.12, 0.96, 0.92, 0.48, 0.48, 1 },
+}
 
 local CLASS_COLORS = {
     Druid = { 1.00, 0.49, 0.04 },
@@ -90,6 +105,60 @@ local function itemQualityColor(item)
         return color[1], color[2], color[3]
     end
     return 0.9, 0.9, 0.9
+end
+
+local function getContainerNumSlotsSafe(bag)
+    local ok, result
+    if C_Container and C_Container.GetContainerNumSlots then
+        ok, result = pcall(C_Container.GetContainerNumSlots, bag)
+        if ok then
+            return result or 0
+        end
+    elseif GetContainerNumSlots then
+        ok, result = pcall(GetContainerNumSlots, bag)
+        if ok then
+            return result or 0
+        end
+    end
+    return 0
+end
+
+local function getContainerItemIDSafe(bag, slot)
+    local ok, result
+    if C_Container and C_Container.GetContainerItemID then
+        ok, result = pcall(C_Container.GetContainerItemID, bag, slot)
+        if ok then
+            return result
+        end
+    elseif GetContainerItemID then
+        ok, result = pcall(GetContainerItemID, bag, slot)
+        if ok then
+            return result
+        end
+    end
+    return nil
+end
+
+local function getInventorySlotId(slotDefinition)
+    if GetInventorySlotInfo and slotDefinition.inventorySlotName then
+        local slotId = GetInventorySlotInfo(slotDefinition.inventorySlotName)
+        if slotId then
+            return slotId
+        end
+    end
+    return slotDefinition.inventorySlotId
+end
+
+local function getItemEquipLocation(itemId)
+    if GetItemInfoInstant and itemId then
+        local _, _, _, equipLocation = GetItemInfoInstant(itemId)
+        return equipLocation
+    end
+    return nil
+end
+
+local function ownershipStateLabel(state)
+    return OWNERSHIP_LABELS[state or "missing"] or OWNERSHIP_LABELS.missing
 end
 
 local function ensureSpecialFrame(frameName)
@@ -183,39 +252,83 @@ function UI:ValidateSelection()
 end
 
 function UI:BuildOwnedItems()
-    local owned = {}
+    BigBiSList:EnsureDatabase()
+
+    local owned = {
+        equippedSlots = {},
+        bankScanned = BigBiSListDB.char.bankCache and BigBiSListDB.char.bankCache.scanned or false,
+        bankUpdatedAt = BigBiSListDB.char.bankCache and BigBiSListDB.char.bankCache.updatedAt or "",
+    }
 
     if GetInventoryItemID then
-        for slot = 1, 19 do
-            local itemId = GetInventoryItemID("player", slot)
+        for _, slotDefinition in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
+            local slotId = getInventorySlotId(slotDefinition)
+            local itemId = slotId and GetInventoryItemID("player", slotId)
             if itemId then
                 owned[itemId] = "equipped"
+                owned.equippedSlots[slotDefinition.key] = {
+                    item_id = itemId,
+                    slotId = slotId,
+                    slot = slotDefinition.label,
+                }
+
+                if slotDefinition.key == "MainHand" and getItemEquipLocation(itemId) == "INVTYPE_2HWEAPON" then
+                    owned.equippedTwoHand = true
+                end
             end
         end
     end
 
     for bag = 0, 4 do
-        local numSlots = 0
-        if C_Container and C_Container.GetContainerNumSlots then
-            numSlots = C_Container.GetContainerNumSlots(bag) or 0
-        elseif GetContainerNumSlots then
-            numSlots = GetContainerNumSlots(bag) or 0
-        end
+        local numSlots = getContainerNumSlotsSafe(bag)
 
         for slot = 1, numSlots do
-            local itemId
-            if C_Container and C_Container.GetContainerItemID then
-                itemId = C_Container.GetContainerItemID(bag, slot)
-            elseif GetContainerItemID then
-                itemId = GetContainerItemID(bag, slot)
-            end
+            local itemId = getContainerItemIDSafe(bag, slot)
             if itemId and not owned[itemId] then
                 owned[itemId] = "bag"
             end
         end
     end
 
+    local bankCache = BigBiSListDB.char.bankCache
+    if bankCache and bankCache.items then
+        for itemIdText in pairs(bankCache.items) do
+            local itemId = tonumber(itemIdText)
+            if itemId and not owned[itemId] then
+                owned[itemId] = "bank"
+            end
+        end
+    end
+
     return owned
+end
+
+function UI:ScanBankItems()
+    BigBiSList:EnsureDatabase()
+
+    local cache = BigBiSListDB.char.bankCache
+    cache.items = {}
+
+    local function addContainerItems(bag)
+        local numSlots = getContainerNumSlotsSafe(bag)
+        for slot = 1, numSlots do
+            local itemId = getContainerItemIDSafe(bag, slot)
+            if itemId then
+                cache.items[tostring(itemId)] = true
+            end
+        end
+    end
+
+    addContainerItems(BANK_CONTAINER or -1)
+
+    local firstBankBag = (NUM_BAG_SLOTS or 4) + 1
+    local lastBankBag = firstBankBag + (NUM_BANKBAGSLOTS or 7) - 1
+    for bag = firstBankBag, lastBankBag do
+        addContainerItems(bag)
+    end
+
+    cache.scanned = true
+    cache.updatedAt = date and date("%Y-%m-%d %H:%M") or "this session"
 end
 
 function UI:BuildFilterPayload()
@@ -522,6 +635,44 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
     end)
 end
 
+function UI:GetOwnershipState(itemId)
+    if not itemId then
+        return "missing"
+    end
+    return (self.currentOwned and self.currentOwned[itemId]) or "missing"
+end
+
+function UI:CreateOwnershipBadge(parent, state)
+    local widgets = BigBiSList.Widgets
+    local color = OWNERSHIP_COLORS[state] or OWNERSHIP_COLORS.missing
+    local badge = widgets:CreatePanel(nil, parent, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
+    badge:SetSize(70, 18)
+    badge:EnableMouse(true)
+
+    local label = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    label:SetPoint("LEFT", badge, "LEFT", 4, 0)
+    label:SetPoint("RIGHT", badge, "RIGHT", -4, 0)
+    label:SetJustifyH("CENTER")
+    label:SetWordWrap(false)
+    label:SetText(ownershipStateLabel(state))
+    badge.label = label
+
+    badge:SetScript("OnEnter", function(selfBadge)
+        GameTooltip:SetOwner(selfBadge, "ANCHOR_RIGHT")
+        GameTooltip:AddLine("Ownership", 1, 0.82, 0.28)
+        GameTooltip:AddLine(ownershipStateLabel(state), 0.86, 0.86, 0.86)
+        if state == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
+            GameTooltip:AddLine("Bank cache: " .. self.currentOwned.bankUpdatedAt, 0.62, 0.62, 0.66)
+        end
+        GameTooltip:Show()
+    end)
+    badge:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+
+    return badge
+end
+
 function UI:CreateDataRow(parent, yOffset, data, mode)
     local widgets = BigBiSList.Widgets
     local row = widgets:CreateItemRow(parent, ROW_HEIGHT)
@@ -540,16 +691,20 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
 
     local nameText = row:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     nameText:SetPoint("TOPLEFT", iconButton, "TOPRIGHT", 8, -2)
-    nameText:SetPoint("RIGHT", row, "RIGHT", -178, 0)
+    nameText:SetPoint("RIGHT", row, "RIGHT", -252, 0)
     nameText:SetJustifyH("LEFT")
     nameText:SetWordWrap(false)
 
     local detailText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     detailText:SetPoint("TOPLEFT", nameText, "BOTTOMLEFT", 0, -3)
-    detailText:SetPoint("RIGHT", row, "RIGHT", -178, 0)
+    detailText:SetPoint("RIGHT", row, "RIGHT", -252, 0)
     detailText:SetJustifyH("LEFT")
     detailText:SetWordWrap(false)
     detailText:SetTextColor(0.68, 0.68, 0.72, 1)
+
+    local ownershipState = self:GetOwnershipState(data.item_id)
+    local ownershipBadge = self:CreateOwnershipBadge(row, ownershipState)
+    ownershipBadge:SetPoint("RIGHT", row, "RIGHT", -170, 0)
 
     local rightText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     rightText:SetPoint("RIGHT", row, "RIGHT", -8, 7)
@@ -581,9 +736,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
         safeSetText(rightText, "Wishlisted")
         safeSetText(sourceText, data.source_summary or "")
     else
-        local owned = self.currentOwned and self.currentOwned[data.item_id]
-        local ownedText = owned == "equipped" and "Equipped - " or (owned == "bag" and "In bags - " or "")
-        safeSetText(detailText, ownedText .. (data.rank_label or "Option") .. " - " .. (data.source_type_label or "Source"))
+        safeSetText(detailText, (data.rank_label or "Option") .. " - " .. (data.source_type_label or "Source"))
         safeSetText(rightText, data.slot or "")
         safeSetText(sourceText, data.source_summary or "")
     end
@@ -672,10 +825,139 @@ function UI:RenderPlannerTab()
     self:SetContentHeight(yOffset)
 end
 
+function UI:CreateGearOverlay(parent, text, kind)
+    local widgets = BigBiSList.Widgets
+    local color = OWNERSHIP_COLORS.missing
+    if kind == "bis" then
+        color = { 0.16, 0.14, 0.07, 0.96, 0.88, 0.72, 0.24, 1 }
+    elseif kind == "situational" or kind == "option" then
+        color = { 0.11, 0.23, 0.38, 0.96, 0.45, 0.68, 0.98, 1 }
+    elseif kind == "empty" or kind == "disabled" then
+        color = { 0.12, 0.12, 0.14, 0.92, 0.34, 0.34, 0.38, 1 }
+    end
+
+    local badge = widgets:CreatePanel(nil, parent, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
+    badge:SetSize(78, 18)
+
+    local label = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    label:SetPoint("LEFT", badge, "LEFT", 4, 0)
+    label:SetPoint("RIGHT", badge, "RIGHT", -4, 0)
+    label:SetJustifyH("CENTER")
+    label:SetWordWrap(false)
+    label:SetText(text or "")
+    badge.label = label
+
+    return badge
+end
+
+function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
+    local widgets = BigBiSList.Widgets
+    local row = widgets:CreateItemRow(parent, GEAR_ROW_HEIGHT)
+    row:SetSize(width, GEAR_ROW_HEIGHT)
+    row:SetPoint("TOPLEFT", parent, "TOPLEFT", xOffset, yOffset)
+    row.itemId = rowData.item_id
+    row.detailData = rowData
+    row.detailMode = "gear"
+
+    local slotLabel = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    slotLabel:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -5)
+    slotLabel:SetPoint("RIGHT", row, "RIGHT", -92, 0)
+    slotLabel:SetJustifyH("LEFT")
+    slotLabel:SetWordWrap(false)
+    slotLabel:SetTextColor(1, 0.82, 0.28, 1)
+    slotLabel:SetText(rowData.slot)
+
+    local overlay = self:CreateGearOverlay(row, rowData.overlay, rowData.overlayKind)
+    overlay:SetPoint("TOPRIGHT", row, "TOPRIGHT", -8, -6)
+
+    local iconButton = widgets:CreateIconButton(row, 30, function()
+        if rowData.item_id then
+            self:RefreshDetails(rowData.item_id, rowData, "gear")
+        end
+    end)
+    iconButton:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 8, 7)
+
+    local nameText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    nameText:SetPoint("TOPLEFT", iconButton, "TOPRIGHT", 8, 1)
+    nameText:SetPoint("RIGHT", row, "RIGHT", -92, 0)
+    nameText:SetJustifyH("LEFT")
+    nameText:SetWordWrap(false)
+
+    local detailText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    detailText:SetPoint("TOPLEFT", nameText, "BOTTOMLEFT", 0, -2)
+    detailText:SetPoint("RIGHT", row, "RIGHT", -92, 0)
+    detailText:SetJustifyH("LEFT")
+    detailText:SetWordWrap(false)
+    detailText:SetTextColor(0.68, 0.68, 0.72, 1)
+
+    if rowData.item_id then
+        local item = rowData.item or BigBiSList:GetItemData(rowData.item_id)
+        self:SetItemButton(iconButton, rowData.item_id, nameText, rowData.name, item and item.quality, rowData, "gear")
+        local detail = rowData.bestUse
+            and (BigBiSList:GetPhaseDisplayName(rowData.bestUse.phase) .. " - " .. (rowData.bestUse.rank_label or "Option") .. " - " .. rowData.bestUse.slot)
+            or "No BiS match for selected spec"
+        detailText:SetText(detail)
+    else
+        iconButton.icon:SetDesaturated(true)
+        nameText:SetText(rowData.disabledReason or "Empty")
+        nameText:SetTextColor(0.62, 0.62, 0.66, 1)
+        detailText:SetText(rowData.disabledReason or "No item equipped")
+    end
+
+    row:SetScript("OnMouseUp", function(_, buttonName)
+        if buttonName == "LeftButton" and rowData.item_id then
+            self:RefreshDetails(rowData.item_id, rowData, "gear")
+        end
+    end)
+
+    return row, GEAR_ROW_HEIGHT
+end
+
+function UI:RenderGearTab()
+    local widgets = BigBiSList.Widgets
+    local selection = self:GetSelection()
+    local filters = self:BuildFilterPayload()
+    self.currentOwned = filters.ownedItems
+
+    local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, "Current Gear", -2)
+    local startY = -2 - headerHeight
+    local availableWidth = self.contentScroll and self.contentScroll:GetWidth() or 560
+    availableWidth = math.max(260, availableWidth - 8)
+    local columnGap = 10
+    local twoColumns = availableWidth >= 500
+    local columnWidth = twoColumns and math.floor((availableWidth - columnGap) / 2) or availableWidth
+    local leftY = startY
+    local rightY = startY
+
+    local rows = BigBiSList:GetEquippedGearRows(selection.class, selection.spec, selection.phase, self.currentOwned)
+    for _, rowData in ipairs(rows) do
+        if twoColumns and rowData.column == "right" then
+            self:CreateGearSlotRow(self.contentChild, rowData, columnWidth + columnGap, rightY, columnWidth)
+            rightY = rightY - GEAR_ROW_HEIGHT - 6
+        else
+            self:CreateGearSlotRow(self.contentChild, rowData, 0, leftY, columnWidth)
+            leftY = leftY - GEAR_ROW_HEIGHT - 6
+        end
+    end
+
+    local bankText = self.currentOwned.bankScanned
+        and ("Bank cache: " .. (self.currentOwned.bankUpdatedAt ~= "" and self.currentOwned.bankUpdatedAt or "scanned"))
+        or "Bank cache: open your bank once to include banked items."
+    local note = self.contentChild:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    note:SetPoint("TOPLEFT", self.contentChild, "TOPLEFT", 0, math.min(leftY, rightY) - 4)
+    note:SetPoint("RIGHT", self.contentChild, "RIGHT", -8, 0)
+    note:SetJustifyH("LEFT")
+    note:SetTextColor(0.62, 0.62, 0.66, 1)
+    note:SetText(bankText)
+
+    self:SetContentHeight(math.min(leftY, rightY) - 28)
+end
+
 function UI:RenderEnhanceTab()
     local widgets = BigBiSList.Widgets
     local selection = self:GetSelection()
     local sections = BigBiSList:GetEnhancementRows(selection.class, selection.spec, selection.phase)
+    self.currentOwned = self:BuildOwnedItems()
     local yOffset = -2
     local rendered = false
 
@@ -704,6 +986,7 @@ function UI:RenderWishlistTab()
     local widgets = BigBiSList.Widgets
     local index = BigBiSList:GetDataIndex()
     local wishlist = BigBiSListDB.char.wishlist or {}
+    self.currentOwned = self:BuildOwnedItems()
     local yOffset = -2
 
     if tableCount(wishlist) == 0 then
@@ -839,26 +1122,51 @@ function UI:FindPlannerContext(itemId, detailData)
     return nil
 end
 
-function UI:CreateDetailsText(parent, yOffset, titleText, bodyText, bodyR, bodyG, bodyB)
-    local title = parent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    title:SetPoint("TOPLEFT", parent, "TOPLEFT", 8, yOffset)
-    title:SetPoint("RIGHT", parent, "RIGHT", -8, 0)
+function UI:CreateDetailsTitle(parent, text, r, g, b)
+    local frame = CreateFrame("Frame", nil, parent)
+    frame:SetPoint("TOPLEFT", parent, "TOPLEFT", 8, -8)
+    frame:SetPoint("RIGHT", parent, "RIGHT", -8, 0)
+
+    local label = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    label:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+    label:SetWidth(math.max(120, (parent:GetWidth() or DETAILS_WIDTH) - 16))
+    label:SetJustifyH("LEFT")
+    label:SetWordWrap(true)
+    label:SetText(text or "")
+    label:SetTextColor(r or 0.9, g or 0.9, b or 0.9, 1)
+
+    frame:SetHeight(math.max(24, label:GetStringHeight() or 16))
+    frame.contentHeight = frame:GetHeight() + 8
+    return frame
+end
+
+function UI:CreateDetailsText(parent, anchor, titleText, bodyText, bodyR, bodyG, bodyB)
+    local block = CreateFrame("Frame", nil, parent)
+    block:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -12)
+    block:SetPoint("RIGHT", parent, "RIGHT", -8, 0)
+
+    local width = math.max(120, (parent:GetWidth() or DETAILS_WIDTH) - 16)
+    local title = block:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    title:SetPoint("TOPLEFT", block, "TOPLEFT", 0, 0)
+    title:SetWidth(width)
     title:SetJustifyH("LEFT")
     title:SetWordWrap(false)
     title:SetTextColor(1, 0.82, 0.28, 1)
     title:SetText(titleText)
 
-    local body = parent:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    local body = block:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     body:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -3)
-    body:SetPoint("RIGHT", parent, "RIGHT", -8, 0)
+    body:SetWidth(width)
     body:SetJustifyH("LEFT")
     body:SetWordWrap(true)
     body:SetTextColor(bodyR or 0.76, bodyG or 0.76, bodyB or 0.80, 1)
     body:SetText(bodyText or "")
 
-    local textLength = string.len(tostring(bodyText or ""))
-    local estimatedLines = math.max(1, math.ceil(textLength / 32))
-    return yOffset - 20 - (estimatedLines * 13)
+    local titleHeight = math.max(13, title:GetStringHeight() or 13)
+    local bodyHeight = math.max(13, body:GetStringHeight() or 13)
+    block:SetHeight(titleHeight + 5 + bodyHeight)
+    block.contentHeight = block:GetHeight() + 12
+    return block
 end
 
 function UI:BuildPhaseUseText(itemId)
@@ -901,6 +1209,8 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         label:SetWordWrap(true)
         label:SetTextColor(0.72, 0.72, 0.76, 1)
         label:SetText("Select an item to see sources, phase usefulness, and wishlist actions.")
+        local minimum = self.detailsScroll and self.detailsScroll:GetHeight() or 1
+        content:SetHeight(math.max(80, minimum + 1))
         return
     end
 
@@ -909,47 +1219,63 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     self.selectedItemMode = detailMode
     local index = BigBiSList:GetDataIndex()
     local item = index.itemsById[itemId]
-    local yOffset = -8
     local plannerContext = detailData and detailData.priority and detailData or self:FindPlannerContext(itemId, detailData)
 
-    local title = content:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    title:SetPoint("TOPLEFT", content, "TOPLEFT", 8, yOffset)
-    title:SetPoint("RIGHT", content, "RIGHT", -8, 0)
-    title:SetJustifyH("LEFT")
-    title:SetWordWrap(true)
-    title:SetText(item and item.name or ("Item " .. tostring(itemId)))
     local r, g, b = itemQualityColor(item)
-    title:SetTextColor(r, g, b, 1)
-    yOffset = yOffset - 38
+    local anchor = self:CreateDetailsTitle(content, item and item.name or ("Item " .. tostring(itemId)), r, g, b)
+    local contentHeight = anchor.contentHeight or 32
 
     if detailData and detailData.slot then
-        local selectedPhase = detailData.phase and BigBiSList:GetPhaseDisplayName(detailData.phase) or BigBiSList:GetPhaseDisplayName(self:GetSelection().phase)
+        local detailPhase = detailData.phase or (detailData.bestUse and detailData.bestUse.phase)
+        local detailRank = detailData.rank_label or (detailData.bestUse and detailData.bestUse.rank_label)
+        local selectedPhase = detailPhase and BigBiSList:GetPhaseDisplayName(detailPhase) or BigBiSList:GetPhaseDisplayName(self:GetSelection().phase)
         local summary = selectedPhase .. " - " .. detailData.slot
-        if detailData.rank_label then
-            summary = summary .. " - " .. detailData.rank_label
+        if detailRank then
+            summary = summary .. " - " .. detailRank
         end
-        yOffset = self:CreateDetailsText(content, yOffset, "Selected Row", summary, 0.82, 0.86, 0.92)
+        anchor = self:CreateDetailsText(content, anchor, "Selected Row", summary, 0.82, 0.86, 0.92)
+        contentHeight = contentHeight + anchor.contentHeight
     end
+
+    local ownershipState = self:GetOwnershipState(itemId)
+    local ownershipText = ownershipStateLabel(ownershipState)
+    if ownershipState == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
+        ownershipText = ownershipText .. " - bank cache " .. self.currentOwned.bankUpdatedAt
+    elseif ownershipState == "missing" and self.currentOwned and not self.currentOwned.bankScanned then
+        ownershipText = ownershipText .. " - open your bank once to include banked items"
+    end
+    anchor = self:CreateDetailsText(content, anchor, "Ownership", ownershipText, 0.82, 0.86, 0.92)
+    contentHeight = contentHeight + anchor.contentHeight
 
     if plannerContext then
         local score = tostring(plannerContext.priority or 0) .. "/100"
         local tier = plannerContext.priorityTier or "Priority"
-        yOffset = self:CreateDetailsText(content, yOffset, "Priority", tier .. " - " .. score, 0.64, 0.78, 0.94)
+        anchor = self:CreateDetailsText(content, anchor, "Priority", tier .. " - " .. score, 0.64, 0.78, 0.94)
+        contentHeight = contentHeight + anchor.contentHeight
 
         local reasons = plannerContext.reasons and table.concat(plannerContext.reasons, "\n") or "No planner explanation available."
-        yOffset = self:CreateDetailsText(content, yOffset, "Why It Matters", reasons, 0.76, 0.76, 0.80)
+        anchor = self:CreateDetailsText(content, anchor, "Why It Matters", reasons, 0.76, 0.76, 0.80)
+        contentHeight = contentHeight + anchor.contentHeight
 
         if plannerContext.lastUsefulLabel then
-            yOffset = self:CreateDetailsText(content, yOffset, "Longevity", "Useful through " .. plannerContext.lastUsefulLabel, 0.76, 0.76, 0.80)
+            anchor = self:CreateDetailsText(content, anchor, "Longevity", "Useful through " .. plannerContext.lastUsefulLabel, 0.76, 0.76, 0.80)
+            contentHeight = contentHeight + anchor.contentHeight
         end
     end
 
-    yOffset = self:CreateDetailsText(content, yOffset, "Current Spec Timeline", self:BuildPhaseUseText(itemId), 0.64, 0.78, 0.94)
-    yOffset = self:CreateDetailsText(content, yOffset, "Source", item and item.source_summary or "No source data", 0.76, 0.76, 0.80)
+    anchor = self:CreateDetailsText(content, anchor, "Current Spec Timeline", self:BuildPhaseUseText(itemId), 0.64, 0.78, 0.94)
+    contentHeight = contentHeight + anchor.contentHeight
+    anchor = self:CreateDetailsText(content, anchor, "Source", item and item.source_summary or "No source data", 0.76, 0.76, 0.80)
+    contentHeight = contentHeight + anchor.contentHeight
 
     local wishlistKey = tostring(itemId)
     local isWishlisted = BigBiSListDB.char.wishlist[wishlistKey]
-    local wishlistButton = widgets:CreateTextButton(content, isWishlisted and "Remove wishlist" or "Add wishlist", 150, 24, function()
+    local actionRow = CreateFrame("Frame", nil, content)
+    actionRow:SetHeight(24)
+    actionRow:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -14)
+    actionRow:SetPoint("RIGHT", content, "RIGHT", -8, 0)
+
+    local wishlistButton = widgets:CreateTextButton(actionRow, isWishlisted and "Remove wishlist" or "Add wishlist", 132, 24, function()
         if BigBiSListDB.char.wishlist[wishlistKey] then
             self:RemoveWishlist(itemId)
         else
@@ -957,10 +1283,10 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         end
         self:Refresh()
     end)
-    wishlistButton:SetPoint("TOPLEFT", content, "TOPLEFT", 8, yOffset)
+    wishlistButton:SetPoint("LEFT", actionRow, "LEFT", 0, 0)
 
     local ignored = BigBiSListDB.char.ignoredItems[wishlistKey]
-    local ignoreButton = widgets:CreateTextButton(content, ignored and "Unignore" or "Ignore", 86, 24, function()
+    local ignoreButton = widgets:CreateTextButton(actionRow, ignored and "Unignore" or "Ignore", 78, 24, function()
         if BigBiSListDB.char.ignoredItems[wishlistKey] then
             self:UnignoreItem(itemId)
         else
@@ -969,7 +1295,9 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end)
     ignoreButton:SetPoint("LEFT", wishlistButton, "RIGHT", 8, 0)
 
-    content:SetHeight(math.abs(yOffset) + 72)
+    contentHeight = contentHeight + 14 + 24 + 16
+    local minimum = self.detailsScroll and self.detailsScroll:GetHeight() or 1
+    content:SetHeight(math.max(contentHeight, minimum + 1))
 end
 
 function UI:RefreshControls()
@@ -1022,12 +1350,15 @@ function UI:Refresh()
 
     self:ValidateSelection()
     self:RefreshControls()
+    self.currentOwned = self:BuildOwnedItems()
 
     BigBiSList.Widgets:ClearChildren(self.contentChild)
     self.contentChild:SetHeight(1)
 
     local tabName = self:GetSelection().tab
-    if tabName == "Planner" then
+    if tabName == "Gear" then
+        self:RenderGearTab()
+    elseif tabName == "Planner" then
         self:RenderPlannerTab()
     elseif tabName == "Enhance" then
         self:RenderEnhanceTab()
@@ -1231,6 +1562,12 @@ function UI:CreateLeftRail(body)
             filters.ownedState = "missing"
         elseif filters.ownedState == "missing" then
             filters.ownedState = "owned"
+        elseif filters.ownedState == "owned" then
+            filters.ownedState = "equipped"
+        elseif filters.ownedState == "equipped" then
+            filters.ownedState = "bag"
+        elseif filters.ownedState == "bag" then
+            filters.ownedState = "bank"
         else
             filters.ownedState = "all"
         end
@@ -1293,17 +1630,17 @@ function UI:CreateLeftRail(body)
     slotsScroll:SetScrollChild(slotsContent)
 
     self.slotButtons = {}
-    local slotNames = BigBiSList:GetSlotOrder()
-    for index, slotName in ipairs(slotNames) do
-        local button = widgets:CreateTextButton(slotsContent, slotName, LEFT_SLOT_BUTTON_WIDTH, 20, function()
-            self:ToggleSlot(slotName)
+    local slotFilters = BigBiSList:GetDisplaySlotFilters()
+    for index, slotFilter in ipairs(slotFilters) do
+        local button = widgets:CreateTextButton(slotsContent, slotFilter.label, LEFT_SLOT_BUTTON_WIDTH, 20, function()
+            self:ToggleSlot(slotFilter.key)
         end)
         local col = (index - 1) % 2
         local row = math.floor((index - 1) / 2)
         button:SetPoint("TOPLEFT", slotsContent, "TOPLEFT", col * (LEFT_SLOT_BUTTON_WIDTH + LEFT_SLOT_GAP), -row * LEFT_SLOT_ROW_HEIGHT)
-        self.slotButtons[slotName] = button
+        self.slotButtons[slotFilter.key] = button
     end
-    slotsContent:SetHeight(math.max(1, math.ceil(#slotNames / 2) * LEFT_SLOT_ROW_HEIGHT))
+    slotsContent:SetHeight(math.max(1, math.ceil(#slotFilters / 2) * LEFT_SLOT_ROW_HEIGHT))
 
     self.leftRail = rail
     self.slotsScroll = slotsScroll
@@ -1317,7 +1654,9 @@ function UI:RefreshFilterButtonLabels()
         self.rankButton.label:SetText("Rank: " .. label)
     end
     if self.ownedButton then
-        local label = filters.ownedState == "all" and "All" or filters.ownedState
+        local label = filters.ownedState == "all" and "All"
+            or filters.ownedState == "owned" and "Owned"
+            or ownershipStateLabel(filters.ownedState)
         self.ownedButton.label:SetText("Owned: " .. label)
     end
     if self.boeButton then
@@ -1480,7 +1819,14 @@ function BigBiSList:InitUIEvents()
     frame:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
     frame:RegisterEvent("BAG_UPDATE_DELAYED")
     frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-    frame:SetScript("OnEvent", function()
+    frame:RegisterEvent("BANKFRAME_OPENED")
+    frame:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
+    frame:SetScript("OnEvent", function(_, event)
+        if event == "BANKFRAME_OPENED"
+            or event == "PLAYERBANKSLOTS_CHANGED"
+            or (event == "BAG_UPDATE_DELAYED" and BankFrame and BankFrame:IsShown()) then
+            self.UI:ScanBankItems()
+        end
         self:RefreshUI()
     end)
     self.uiEventFrame = frame

@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 2",
+            "local DEFAULTS_VERSION = 3",
             "window = {",
             "showMinimap = true",
             "minimap = {",
@@ -44,6 +44,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'selectedPhase = "PR"',
             'phase = "PR"',
             "filters = {",
+            "bankCache = {",
             "wishlist = {}",
             "ignoredItems = {}",
             "migrateLegacyDefaults",
@@ -55,9 +56,68 @@ class AddonUIStaticTests(unittest.TestCase):
         data_index = self.read_lua("DataIndex.lua")
         for method in ["OpenMainFrame", "CloseMainFrame", "ToggleMainFrame", "RefreshUI"]:
             self.assertIn(f"function BigBiSList:{method}()", ui)
-        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows"]:
+        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
             self.assertIn(f"function BigBiSList:{method}", data_index)
         self.assertIn("function BigBiSList:SetSelection", self.read_lua("Config.lua"))
+
+    def test_slot_filters_are_equipment_facing(self):
+        data_index = self.read_lua("DataIndex.lua")
+        display_block = data_index.split("local DISPLAY_SLOT_FILTERS = {", 1)[1].split("local DISPLAY_SLOT_FILTER_MAP", 1)[0]
+
+        for label in [
+            'label = "Rings"',
+            'label = "Trinkets"',
+            'label = "Main Hand"',
+            'label = "Off Hand"',
+            'label = "Ranged/Relic"',
+        ]:
+            self.assertIn(label, display_block)
+
+        self.assertNotIn('key = "Two Hand"', display_block)
+        self.assertNotIn('key = "Dual Wield"', display_block)
+        self.assertNotIn('key = "Idol"', display_block)
+        self.assertIn('slots = { "Main Hand", "Two Hand", "Dual Wield" }', display_block)
+        self.assertIn('slots = { "Off Hand", "Dual Wield" }', display_block)
+        self.assertIn('slots = { "Ranged", "Idol", "Totem", "Libram", "Relic" }', display_block)
+
+    def test_gear_tab_uses_real_equipment_slots(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        self.assertIn('{ "Phase", "Gear", "Planner", "Enhance", "Wishlist", "Settings" }', ui)
+        self.assertIn("function UI:RenderGearTab()", ui)
+        self.assertIn("function UI:CreateGearSlotRow", ui)
+        self.assertIn('label = "Finger 1"', data_index)
+        self.assertIn('label = "Finger 2"', data_index)
+        self.assertIn('label = "Trinket 1"', data_index)
+        self.assertIn('label = "Trinket 2"', data_index)
+        self.assertIn('label = "Ranged/Relic"', data_index)
+        self.assertNotIn('label = "Two Hand"', data_index)
+        self.assertNotIn('label = "Dual Wield"', data_index)
+
+    def test_ownership_badges_and_bank_cache_are_supported(self):
+        ui = self.read_lua("UI.lua")
+        config = self.read_lua("Config.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            "CreateOwnershipBadge",
+            "OWNERSHIP_LABELS",
+            "BANKFRAME_OPENED",
+            "PLAYERBANKSLOTS_CHANGED",
+            "ScanBankItems",
+            'filters.ownedState = "bank"',
+        ]:
+            self.assertIn(token, ui)
+        self.assertIn("bankCache = {", config)
+        self.assertIn('elseif filters.ownedState == "bank"', data_index)
+
+    def test_details_drawer_uses_measured_blocks(self):
+        ui = self.read_lua("UI.lua")
+        self.assertIn("CreateDetailsTitle", ui)
+        self.assertIn("GetStringHeight", ui)
+        self.assertNotIn("estimatedLines", ui)
+        self.assertNotIn("string.len(tostring(bodyText", ui)
 
     def test_planner_scoring_matches_v1_weights(self):
         data_index = self.read_lua("DataIndex.lua")

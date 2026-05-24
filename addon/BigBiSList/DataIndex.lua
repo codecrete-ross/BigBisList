@@ -20,6 +20,58 @@ local SLOT_ORDER = {
     "Ranged", "Idol", "Totem", "Libram", "Relic",
 }
 
+local DISPLAY_SLOT_FILTERS = {
+    { key = "Head", label = "Head", slots = { "Head" } },
+    { key = "Neck", label = "Neck", slots = { "Neck" } },
+    { key = "Shoulder", label = "Shoulder", slots = { "Shoulder" } },
+    { key = "Back", label = "Back", slots = { "Back" } },
+    { key = "Chest", label = "Chest", slots = { "Chest" } },
+    { key = "Wrist", label = "Wrist", slots = { "Wrist" } },
+    { key = "Hands", label = "Hands", slots = { "Hands" } },
+    { key = "Waist", label = "Waist", slots = { "Waist" } },
+    { key = "Legs", label = "Legs", slots = { "Legs" } },
+    { key = "Feet", label = "Feet", slots = { "Feet" } },
+    { key = "Rings", label = "Rings", slots = { "Ring" } },
+    { key = "Trinkets", label = "Trinkets", slots = { "Trinket" } },
+    { key = "Main Hand", label = "Main Hand", slots = { "Main Hand", "Two Hand", "Dual Wield" } },
+    { key = "Off Hand", label = "Off Hand", slots = { "Off Hand", "Dual Wield" } },
+    { key = "Ranged/Relic", label = "Ranged/Relic", slots = { "Ranged", "Idol", "Totem", "Libram", "Relic" } },
+}
+
+local DISPLAY_SLOT_FILTER_MAP = {}
+for _, filter in ipairs(DISPLAY_SLOT_FILTERS) do
+    DISPLAY_SLOT_FILTER_MAP[filter.key] = filter.slots
+end
+
+local EQUIPMENT_SLOTS = {
+    { key = "Head", label = "Head", inventorySlotId = 1, inventorySlotName = "HeadSlot", slots = { "Head" }, column = "left" },
+    { key = "Neck", label = "Neck", inventorySlotId = 2, inventorySlotName = "NeckSlot", slots = { "Neck" }, column = "left" },
+    { key = "Shoulder", label = "Shoulder", inventorySlotId = 3, inventorySlotName = "ShoulderSlot", slots = { "Shoulder" }, column = "left" },
+    { key = "Back", label = "Back", inventorySlotId = 15, inventorySlotName = "BackSlot", slots = { "Back" }, column = "left" },
+    { key = "Chest", label = "Chest", inventorySlotId = 5, inventorySlotName = "ChestSlot", slots = { "Chest" }, column = "left" },
+    { key = "Wrist", label = "Wrist", inventorySlotId = 9, inventorySlotName = "WristSlot", slots = { "Wrist" }, column = "left" },
+    { key = "Hands", label = "Hands", inventorySlotId = 10, inventorySlotName = "HandsSlot", slots = { "Hands" }, column = "left" },
+    { key = "Waist", label = "Waist", inventorySlotId = 6, inventorySlotName = "WaistSlot", slots = { "Waist" }, column = "left" },
+    { key = "Legs", label = "Legs", inventorySlotId = 7, inventorySlotName = "LegsSlot", slots = { "Legs" }, column = "left" },
+    { key = "Feet", label = "Feet", inventorySlotId = 8, inventorySlotName = "FeetSlot", slots = { "Feet" }, column = "left" },
+    { key = "Finger0", label = "Finger 1", inventorySlotId = 11, inventorySlotName = "Finger0Slot", slots = { "Ring" }, column = "right" },
+    { key = "Finger1", label = "Finger 2", inventorySlotId = 12, inventorySlotName = "Finger1Slot", slots = { "Ring" }, column = "right" },
+    { key = "Trinket0", label = "Trinket 1", inventorySlotId = 13, inventorySlotName = "Trinket0Slot", slots = { "Trinket" }, column = "right" },
+    { key = "Trinket1", label = "Trinket 2", inventorySlotId = 14, inventorySlotName = "Trinket1Slot", slots = { "Trinket" }, column = "right" },
+    { key = "MainHand", label = "Main Hand", inventorySlotId = 16, inventorySlotName = "MainHandSlot", slots = { "Main Hand", "Two Hand", "Dual Wield" }, column = "right" },
+    { key = "OffHand", label = "Off Hand", inventorySlotId = 17, inventorySlotName = "SecondaryHandSlot", slots = { "Off Hand", "Dual Wield" }, column = "right" },
+    { key = "Ranged", label = "Ranged/Relic", inventorySlotId = 18, inventorySlotName = "RangedSlot", slots = { "Ranged", "Idol", "Totem", "Libram", "Relic" }, column = "right" },
+}
+
+local PHASE_SHORT_DISPLAY = {
+    PR = "Pre",
+    T4 = "P1",
+    T5 = "P2",
+    T6 = "P3",
+    ZA = "P4",
+    SWP = "P5",
+}
+
 local SOURCE_TYPE_LABELS = {
     all = "All sources",
     drop = "Drops",
@@ -41,6 +93,8 @@ local RANK_GROUP_ORDER = {
 BigBiSList.phaseOrder = PHASE_ORDER
 BigBiSList.phaseDisplay = PHASE_DISPLAY
 BigBiSList.slotOrder = SLOT_ORDER
+BigBiSList.displaySlotFilters = DISPLAY_SLOT_FILTERS
+BigBiSList.equipmentSlots = EQUIPMENT_SLOTS
 
 local function lower(value)
     return string.lower(tostring(value or ""))
@@ -99,6 +153,85 @@ local function slotIndex(slotName)
         end
     end
     return 999
+end
+
+local sortUses
+
+local function slotListContains(slots, slotName)
+    for _, value in ipairs(slots or {}) do
+        if value == slotName then
+            return true
+        end
+    end
+    return false
+end
+
+local function slotMatchesDisplayFilter(filterKey, rowSlot)
+    local slots = DISPLAY_SLOT_FILTER_MAP[filterKey]
+    if slots then
+        return slotListContains(slots, rowSlot)
+    end
+
+    return filterKey == rowSlot
+end
+
+local function rowMatchesSelectedSlots(rowSlot, selectedSlots)
+    if not tableHasAnyEnabled(selectedSlots) then
+        return true
+    end
+
+    for filterKey, selected in pairs(selectedSlots or {}) do
+        if selected and slotMatchesDisplayFilter(filterKey, rowSlot) then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function rankShortLabel(use)
+    if not use then
+        return "No match"
+    elseif use.rank_group == "bis" then
+        return "BiS"
+    elseif use.rank_group == "situational" then
+        return "Sit"
+    end
+    return "Opt"
+end
+
+local function isBetterGearUse(candidate, current, preferredPhaseKey)
+    if not current then
+        return true
+    end
+
+    local candidatePreferred = candidate.phase == preferredPhaseKey
+    local currentPreferred = current.phase == preferredPhaseKey
+    if candidatePreferred ~= currentPreferred then
+        return candidatePreferred
+    end
+
+    local candidateRank = RANK_GROUP_ORDER[candidate.rank_group] or 50
+    local currentRank = RANK_GROUP_ORDER[current.rank_group] or 50
+    if candidateRank ~= currentRank then
+        return candidateRank < currentRank
+    end
+
+    local preferredIndex = phaseIndex(preferredPhaseKey)
+    local candidateFuture = candidate.phaseIndex >= preferredIndex
+    local currentFuture = current.phaseIndex >= preferredIndex
+    if candidateFuture ~= currentFuture then
+        return candidateFuture
+    end
+
+    if candidate.phaseIndex ~= current.phaseIndex then
+        if candidateFuture then
+            return candidate.phaseIndex < current.phaseIndex
+        end
+        return candidate.phaseIndex > current.phaseIndex
+    end
+
+    return sortUses(candidate, current)
 end
 
 local function ensurePath(root, key)
@@ -199,7 +332,7 @@ local function includeByFilter(row, filters)
         end
     end
 
-    if filters.slots and tableHasAnyEnabled(filters.slots) and not filters.slots[row.slot] then
+    if not rowMatchesSelectedSlots(row.slot, filters.slots) then
         return false
     end
 
@@ -233,6 +366,8 @@ local function includeByFilter(row, filters)
         return false
     elseif filters.ownedState == "bag" and owned ~= "bag" then
         return false
+    elseif filters.ownedState == "bank" and owned ~= "bank" then
+        return false
     end
 
     if filters.binding and filters.binding ~= "all" and row.binding ~= filters.binding then
@@ -252,7 +387,7 @@ local function includeByFilter(row, filters)
     return true
 end
 
-local function sortUses(a, b)
+function sortUses(a, b)
     local aRank = RANK_GROUP_ORDER[a.rank_group] or 50
     local bRank = RANK_GROUP_ORDER[b.rank_group] or 50
     if aRank ~= bRank then
@@ -371,6 +506,18 @@ function BigBiSList:GetSlotOrder()
     return SLOT_ORDER
 end
 
+function BigBiSList:GetDisplaySlotFilters()
+    return DISPLAY_SLOT_FILTERS
+end
+
+function BigBiSList:GetEquipmentSlotDefinitions()
+    return EQUIPMENT_SLOTS
+end
+
+function BigBiSList:GetPhaseShortName(phaseKey)
+    return PHASE_SHORT_DISPLAY[phaseKey] or self:GetPhaseDisplayName(phaseKey)
+end
+
 function BigBiSList:GetSourceTypeLabels()
     return SOURCE_TYPE_LABELS
 end
@@ -464,6 +611,70 @@ end
 
 function BigBiSList:GetItemData(itemId)
     return self:GetDataIndex().itemsById[itemId]
+end
+
+function BigBiSList:GetItemBestUseForSpec(itemId, className, specName, preferredPhaseKey, allowedSlots)
+    local uses = self:GetDataIndex().usesByItemId[itemId] or {}
+    local bestUse
+
+    for _, use in ipairs(uses) do
+        if use.class == className
+            and use.spec == specName
+            and (not allowedSlots or slotListContains(allowedSlots, use.slot))
+            and isBetterGearUse(use, bestUse, preferredPhaseKey) then
+            bestUse = use
+        end
+    end
+
+    return bestUse
+end
+
+function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems)
+    local rows = {}
+    local equippedSlots = ownedItems and ownedItems.equippedSlots or {}
+
+    for _, slot in ipairs(EQUIPMENT_SLOTS) do
+        local equipped = equippedSlots[slot.key]
+        local itemId = equipped and equipped.item_id
+        local item = itemId and self:GetItemData(itemId) or nil
+        local bestUse = itemId and self:GetItemBestUseForSpec(itemId, className, specName, phaseKey, slot.slots) or nil
+        local overlay = "Empty"
+        local overlayKind = "empty"
+        local disabledReason
+
+        if itemId and bestUse then
+            overlay = self:GetPhaseShortName(bestUse.phase) .. " " .. rankShortLabel(bestUse)
+            overlayKind = bestUse.rank_group or "option"
+        elseif itemId then
+            overlay = "No match"
+            overlayKind = "missing"
+        elseif slot.key == "OffHand" and ownedItems and ownedItems.equippedTwoHand then
+            overlay = "2H equipped"
+            overlayKind = "disabled"
+            disabledReason = "Two-handed weapon equipped"
+        end
+
+        table.insert(rows, {
+            slotKey = slot.key,
+            slot = slot.label,
+            inventorySlotId = slot.inventorySlotId,
+            item_id = itemId,
+            item = item,
+            name = item and item.name or (itemId and ("Item " .. tostring(itemId)) or "Empty"),
+            source_summary = item and item.source_summary or "",
+            bestUse = bestUse,
+            phase = bestUse and bestUse.phase or nil,
+            rank_label = bestUse and bestUse.rank_label or nil,
+            rank_group = bestUse and bestUse.rank_group or nil,
+            overlay = overlay,
+            overlayKind = overlayKind,
+            disabledReason = disabledReason,
+            column = slot.column,
+            dataSlots = slot.slots,
+        })
+    end
+
+    return rows
 end
 
 function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)

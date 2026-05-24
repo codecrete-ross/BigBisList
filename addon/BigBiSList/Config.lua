@@ -5,7 +5,7 @@ BigBiSList.addonName = addonName or "BigBiSList"
 BigBiSList.displayName = "Big BiS List"
 BigBiSList.version = "0.1.0"
 
-local DEFAULTS_VERSION = 2
+local DEFAULTS_VERSION = 3
 
 BigBiSList.defaults = {
     profile = {
@@ -52,6 +52,11 @@ BigBiSList.defaults = {
             faction = "all",
             longevity = "all",
             slots = {},
+        },
+        bankCache = {
+            scanned = false,
+            updatedAt = "",
+            items = {},
         },
         wishlist = {},
         ignoredItems = {},
