@@ -1,3 +1,1405 @@
 {
-  "enchant_sources": []
+  "enchant_sources": [
+    {
+      "id": 19782,
+      "name": "Presence of Might",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 8184,
+        "entity_name": "Presence of Might",
+        "quest_id": 8184,
+        "source_url": "https://www.wowhead.com/tbc/item=19782/presence-of-might",
+        "type": "quest"
+      },
+      "source_summary": "Quest: Presence of Might",
+      "source_url": "https://www.wowhead.com/tbc/item=19782/presence-of-might",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 8184,
+          "entity_name": "Presence of Might",
+          "quest_id": 8184,
+          "source_url": "https://www.wowhead.com/tbc/item=19782/presence-of-might",
+          "type": "quest"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 20735,
+      "name": "Formula: Enchant Cloak - Subtlety",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "count": 2,
+        "drop_percent": 12.5,
+        "entity_id": 15276,
+        "entity_name": "Emperor Vek'lor",
+        "out_of": 16,
+        "source_url": "https://www.wowhead.com/tbc/item=20735",
+        "type": "drop"
+      },
+      "source_summary": "Drop: Emperor Vek'lor 12.5%",
+      "source_url": "https://www.wowhead.com/tbc/item=20735",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 12.5,
+          "entity_id": 15276,
+          "entity_name": "Emperor Vek'lor",
+          "out_of": 16,
+          "source_url": "https://www.wowhead.com/tbc/item=20735",
+          "type": "drop"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 20736,
+      "name": "Formula: Enchant Cloak - Dodge",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "count": 238,
+        "drop_percent": 1.39,
+        "entity_id": 15510,
+        "entity_name": "Fankriss the Unyielding",
+        "out_of": 17158,
+        "source_url": "https://www.wowhead.com/tbc/item=20736",
+        "type": "drop"
+      },
+      "source_summary": "Drop: Fankriss the Unyielding 1.4% +14",
+      "source_url": "https://www.wowhead.com/tbc/item=20736",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "count": 197,
+          "drop_percent": 1.36,
+          "entity_id": 15263,
+          "entity_name": "The Prophet Skeram",
+          "out_of": 14443,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 126,
+          "drop_percent": 1.3,
+          "entity_id": 15299,
+          "entity_name": "Viscidus",
+          "out_of": 9689,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 65,
+          "drop_percent": 0.63,
+          "entity_id": 15339,
+          "entity_name": "Ossirian the Unscarred",
+          "out_of": 10369,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 68,
+          "drop_percent": 0.77,
+          "entity_id": 15340,
+          "entity_name": "Moam",
+          "out_of": 8872,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 80,
+          "drop_percent": 0.74,
+          "entity_id": 15341,
+          "entity_name": "General Rajaxx",
+          "out_of": 10850,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 78,
+          "drop_percent": 0.67,
+          "entity_id": 15348,
+          "entity_name": "Kurinnaxx",
+          "out_of": 11687,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 65,
+          "drop_percent": 0.64,
+          "entity_id": 15369,
+          "entity_name": "Ayamiss the Hunter",
+          "out_of": 10124,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 98,
+          "drop_percent": 1.07,
+          "entity_id": 15370,
+          "entity_name": "Buru the Gorger",
+          "out_of": 9117,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 215,
+          "drop_percent": 1.29,
+          "entity_id": 15509,
+          "entity_name": "Princess Huhuran",
+          "out_of": 16653,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 238,
+          "drop_percent": 1.39,
+          "entity_id": 15510,
+          "entity_name": "Fankriss the Unyielding",
+          "out_of": 17158,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 36,
+          "drop_percent": 1.25,
+          "entity_id": 15511,
+          "entity_name": "Lord Kri",
+          "out_of": 2881,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 197,
+          "drop_percent": 1.18,
+          "entity_id": 15516,
+          "entity_name": "Battleguard Sartura",
+          "out_of": 16713,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 47,
+          "drop_percent": 0.95,
+          "entity_id": 15517,
+          "entity_name": "Ouro",
+          "out_of": 4948,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 12,
+          "drop_percent": 0.9,
+          "entity_id": 15543,
+          "entity_name": "Princess Yauj",
+          "out_of": 1326,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 118,
+          "drop_percent": 1.13,
+          "entity_id": 15544,
+          "entity_name": "Vem",
+          "out_of": 10456,
+          "source_url": "https://www.wowhead.com/tbc/item=20736",
+          "type": "drop"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22536,
+      "name": "Formula: Enchant Ring - Spellpower",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 21643,
+        "entity_name": "Alurmi",
+        "source_url": "https://www.wowhead.com/tbc/item=22536/formula-enchant-ring-spellpower",
+        "type": "vendor",
+        "vendor_id": 21643,
+        "zone": "Tanaris"
+      },
+      "source_summary": "Vendor: Alurmi (Tanaris)",
+      "source_url": "https://www.wowhead.com/tbc/item=22536/formula-enchant-ring-spellpower",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21643,
+          "entity_name": "Alurmi",
+          "source_url": "https://www.wowhead.com/tbc/item=22536/formula-enchant-ring-spellpower",
+          "type": "vendor",
+          "vendor_id": 21643,
+          "zone": "Tanaris"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22537,
+      "name": "Formula: Enchant Ring - Healing Power",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 21432,
+        "entity_name": "Almaador",
+        "source_url": "https://www.wowhead.com/tbc/item=22537",
+        "type": "vendor",
+        "vendor_id": 21432,
+        "zone": "Shattrath City"
+      },
+      "source_summary": "Vendor: Almaador (Shattrath City)",
+      "source_url": "https://www.wowhead.com/tbc/item=22537",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21432,
+          "entity_name": "Almaador",
+          "source_url": "https://www.wowhead.com/tbc/item=22537",
+          "type": "vendor",
+          "vendor_id": 21432,
+          "zone": "Shattrath City"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22538,
+      "name": "Formula: Enchant Ring - Stats",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 21655,
+        "entity_name": "Nakodu",
+        "source_url": "https://www.wowhead.com/tbc/item=22538",
+        "type": "vendor",
+        "vendor_id": 21655,
+        "zone": "Shattrath City"
+      },
+      "source_summary": "Vendor: Nakodu (Shattrath City)",
+      "source_url": "https://www.wowhead.com/tbc/item=22538",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21655,
+          "entity_name": "Nakodu",
+          "source_url": "https://www.wowhead.com/tbc/item=22538",
+          "type": "vendor",
+          "vendor_id": 21655,
+          "zone": "Shattrath City"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22547,
+      "name": "Formula: Enchant Chest - Exceptional Stats",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 17657,
+        "entity_name": "Logistics Officer Ulrike",
+        "source_url": "https://www.wowhead.com/tbc/item=22547",
+        "type": "vendor",
+        "vendor_id": 17657
+      },
+      "source_summary": "Vendor: Logistics Officer Ulrike",
+      "source_url": "https://www.wowhead.com/tbc/item=22547",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 17657,
+          "entity_name": "Logistics Officer Ulrike",
+          "source_url": "https://www.wowhead.com/tbc/item=22547",
+          "type": "vendor",
+          "vendor_id": 17657
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22548,
+      "name": "Formula: Enchant Cloak - Major Resistance",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "count": 2,
+        "drop_percent": 1.25,
+        "entity_id": 18707,
+        "entity_name": "Torgos",
+        "out_of": 160,
+        "source_url": "https://www.wowhead.com/tbc/item=22548",
+        "type": "drop"
+      },
+      "source_summary": "Drop: Torgos 1.2% +31",
+      "source_url": "https://www.wowhead.com/tbc/item=22548",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.01,
+          "entity_id": 15551,
+          "entity_name": "Spectral Stable Hand",
+          "out_of": 14039,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Karazhan"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.01,
+          "entity_id": 16407,
+          "entity_name": "Spectral Servant",
+          "out_of": 13532,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Karazhan"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 10,
+          "drop_percent": 0.01,
+          "entity_id": 16409,
+          "entity_name": "Phantom Guest",
+          "out_of": 117401,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Karazhan"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 3,
+          "drop_percent": 0.01,
+          "entity_id": 16468,
+          "entity_name": "Spectral Patron",
+          "out_of": 22966,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Karazhan"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.02,
+          "entity_id": 16470,
+          "entity_name": "Ghostly Philanthropist",
+          "out_of": 11595,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Karazhan"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.03,
+          "entity_id": 16471,
+          "entity_name": "Skeletal Usher",
+          "out_of": 6395,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Karazhan"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.0,
+          "entity_id": 16492,
+          "entity_name": "Syphoner",
+          "out_of": 64852,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Karazhan"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 1,
+          "drop_percent": 0.0,
+          "entity_id": 17280,
+          "entity_name": "Shattered Hand Warhound",
+          "out_of": 80704,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.43,
+          "entity_id": 17356,
+          "entity_name": "Creeping Ooze",
+          "out_of": 462,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.03,
+          "entity_id": 17670,
+          "entity_name": "Shattered Hand Houndmaster",
+          "out_of": 7835,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.01,
+          "entity_id": 17695,
+          "entity_name": "Shattered Hand Assassin",
+          "out_of": 13425,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 1,
+          "drop_percent": 0.0,
+          "entity_id": 17801,
+          "entity_name": "Coilfang Siren",
+          "out_of": 43590,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.01,
+          "entity_id": 17895,
+          "entity_name": "Ghoul",
+          "out_of": 24555,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.01,
+          "entity_id": 18314,
+          "entity_name": "Nexus Stalker",
+          "out_of": 17465,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 3,
+          "drop_percent": 0.01,
+          "entity_id": 18317,
+          "entity_name": "Ethereal Priest",
+          "out_of": 28712,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.02,
+          "entity_id": 18322,
+          "entity_name": "Sethekk Ravenguard",
+          "out_of": 11160,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.01,
+          "entity_id": 18325,
+          "entity_name": "Sethekk Prophet",
+          "out_of": 19237,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 3,
+          "drop_percent": 0.02,
+          "entity_id": 18327,
+          "entity_name": "Time-Lost Controller",
+          "out_of": 14581,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.15,
+          "entity_id": 18472,
+          "entity_name": "Darkweaver Syth",
+          "out_of": 1322,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.02,
+          "entity_id": 18498,
+          "entity_name": "Unliving Soldier",
+          "out_of": 9893,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 1.25,
+          "entity_id": 18707,
+          "entity_name": "Torgos",
+          "out_of": 160,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.0,
+          "entity_id": 18794,
+          "entity_name": "Cabal Ritualist",
+          "out_of": 72640,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 1,
+          "drop_percent": 0.0,
+          "entity_id": 18866,
+          "entity_name": "Mageslayer",
+          "out_of": 77248,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Netherstorm"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.0,
+          "entity_id": 18870,
+          "entity_name": "Voidshrieker",
+          "out_of": 42390,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Netherstorm"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 1,
+          "drop_percent": 0.02,
+          "entity_id": 19985,
+          "entity_name": "Ruuan'ok Cloudgazer",
+          "out_of": 6342,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Blade's Edge Mountains"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.02,
+          "entity_id": 20036,
+          "entity_name": "Bloodwarder Squire",
+          "out_of": 8263,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Tempest Keep"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.0,
+          "entity_id": 21302,
+          "entity_name": "Shadow Council Warlock",
+          "out_of": 109208,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Shadowmoon Valley"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.0,
+          "entity_id": 22323,
+          "entity_name": "Incandescent Fel Spark",
+          "out_of": 40136,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.05,
+          "entity_id": 22869,
+          "entity_name": "Illidari Boneslicer",
+          "out_of": 4247,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Black Temple"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.03,
+          "entity_id": 23223,
+          "entity_name": "Bonechewer Spectator",
+          "out_of": 7124,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop",
+          "zone": "Black Temple"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 2,
+          "drop_percent": 0.05,
+          "entity_id": 24064,
+          "entity_name": "Amani Lynx Cub",
+          "out_of": 4033,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 5,
+          "drop_percent": 1.05,
+          "entity_id": 33926,
+          "entity_name": "Contained in: Sealed Scroll Case",
+          "item_id": 33926,
+          "out_of": 476,
+          "source_url": "https://www.wowhead.com/tbc/item=22548",
+          "type": "drop"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22559,
+      "name": "Formula: Enchant Weapon - Mongoose",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "count": 78,
+        "drop_percent": 4.13,
+        "entity_id": 15687,
+        "entity_name": "Moroes",
+        "out_of": 1888,
+        "source_url": "https://www.wowhead.com/tbc/item=22559",
+        "type": "drop",
+        "zone": "Karazhan"
+      },
+      "source_summary": "Drop: Moroes (Karazhan) 4.1%",
+      "source_url": "https://www.wowhead.com/tbc/item=22559",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "count": 78,
+          "drop_percent": 4.13,
+          "entity_id": 15687,
+          "entity_name": "Moroes",
+          "out_of": 1888,
+          "source_url": "https://www.wowhead.com/tbc/item=22559",
+          "type": "drop",
+          "zone": "Karazhan"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 23765,
+      "name": "Khorium Scope",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 30332,
+        "entity_name": "Khorium Scope",
+        "profession": "Engineering",
+        "source_url": "https://www.wowhead.com/tbc/item=23765/khorium-scope",
+        "spell_id": 30332,
+        "type": "crafted"
+      },
+      "source_summary": "Crafted: Khorium Scope",
+      "source_url": "https://www.wowhead.com/tbc/item=23765/khorium-scope",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 30332,
+          "entity_name": "Khorium Scope",
+          "profession": "Engineering",
+          "source_url": "https://www.wowhead.com/tbc/item=23765/khorium-scope",
+          "spell_id": 30332,
+          "type": "crafted"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 23766,
+      "name": "Stabilized Eternium Scope",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 30334,
+        "entity_name": "Stabilized Eternium Scope",
+        "profession": "Engineering",
+        "source_url": "https://www.wowhead.com/tbc/item=23766/stabilized-eternium-scope",
+        "spell_id": 30334,
+        "type": "crafted"
+      },
+      "source_summary": "Crafted: Stabilized Eternium Scope",
+      "source_url": "https://www.wowhead.com/tbc/item=23766/stabilized-eternium-scope",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 30334,
+          "entity_name": "Stabilized Eternium Scope",
+          "profession": "Engineering",
+          "source_url": "https://www.wowhead.com/tbc/item=23766/stabilized-eternium-scope",
+          "spell_id": 30334,
+          "type": "crafted"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 24003,
+      "name": "Formula: Enchant Chest - Exceptional Stats",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 17585,
+        "entity_name": "Quartermaster Urgronn",
+        "source_url": "https://www.wowhead.com/tbc/item=24003",
+        "type": "vendor",
+        "vendor_id": 17585
+      },
+      "source_summary": "Vendor: Quartermaster Urgronn",
+      "source_url": "https://www.wowhead.com/tbc/item=24003",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 17585,
+          "entity_name": "Quartermaster Urgronn",
+          "source_url": "https://www.wowhead.com/tbc/item=24003",
+          "type": "vendor",
+          "vendor_id": 17585
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 24274,
+      "name": "Runic Spellthread",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 31432,
+        "entity_name": "Runic Spellthread",
+        "profession": "Tailoring",
+        "source_url": "https://www.wowhead.com/tbc/item=24274/runic-spellthread",
+        "spell_id": 31432,
+        "type": "crafted"
+      },
+      "source_summary": "Crafted: Runic Spellthread",
+      "source_url": "https://www.wowhead.com/tbc/item=24274/runic-spellthread",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 31432,
+          "entity_name": "Runic Spellthread",
+          "profession": "Tailoring",
+          "source_url": "https://www.wowhead.com/tbc/item=24274/runic-spellthread",
+          "spell_id": 31432,
+          "type": "crafted"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 24276,
+      "name": "Golden Spellthread",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 31433,
+        "entity_name": "Golden Spellthread",
+        "profession": "Tailoring",
+        "source_url": "https://www.wowhead.com/tbc/item=24276/golden-spellthread",
+        "spell_id": 31433,
+        "type": "crafted"
+      },
+      "source_summary": "Crafted: Golden Spellthread",
+      "source_url": "https://www.wowhead.com/tbc/item=24276/golden-spellthread",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 31433,
+          "entity_name": "Golden Spellthread",
+          "profession": "Tailoring",
+          "source_url": "https://www.wowhead.com/tbc/item=24276/golden-spellthread",
+          "spell_id": 31433,
+          "type": "crafted"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 28274,
+      "name": "Formula: Enchant Cloak - Spell Penetration",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 20242,
+        "entity_name": "Karaaz",
+        "source_url": "https://www.wowhead.com/tbc/item=28274",
+        "type": "vendor",
+        "vendor_id": 20242,
+        "zone": "Netherstorm"
+      },
+      "source_summary": "Vendor: Karaaz (Netherstorm) +1",
+      "source_url": "https://www.wowhead.com/tbc/item=28274",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 20242,
+          "entity_name": "Karaaz",
+          "source_url": "https://www.wowhead.com/tbc/item=28274",
+          "type": "vendor",
+          "vendor_id": 20242,
+          "zone": "Netherstorm"
+        },
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 23007,
+          "entity_name": "Paulsta'ats",
+          "source_url": "https://www.wowhead.com/tbc/item=28274",
+          "type": "vendor",
+          "vendor_id": 23007,
+          "zone": "Nagrand"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 29186,
+      "name": "Glyph of the Defender",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 21643,
+        "entity_name": "Alurmi",
+        "source_url": "https://www.wowhead.com/tbc/item=29186/arcanum-of-the-defender",
+        "type": "vendor",
+        "vendor_id": 21643,
+        "zone": "Tanaris"
+      },
+      "source_summary": "Vendor: Alurmi (Tanaris)",
+      "source_url": "https://www.wowhead.com/tbc/item=29186/arcanum-of-the-defender",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21643,
+          "entity_name": "Alurmi",
+          "source_url": "https://www.wowhead.com/tbc/item=29186/arcanum-of-the-defender",
+          "type": "vendor",
+          "vendor_id": 21643,
+          "zone": "Tanaris"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 29190,
+      "name": "Glyph of Renewal",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 17585,
+        "entity_name": "Quartermaster Urgronn",
+        "source_url": "https://www.wowhead.com/tbc/item=29190/glyph-of-renewal",
+        "type": "vendor",
+        "vendor_id": 17585
+      },
+      "source_summary": "Vendor: Quartermaster Urgronn",
+      "source_url": "https://www.wowhead.com/tbc/item=29190/glyph-of-renewal",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 17585,
+          "entity_name": "Quartermaster Urgronn",
+          "source_url": "https://www.wowhead.com/tbc/item=29190/glyph-of-renewal",
+          "type": "vendor",
+          "vendor_id": 17585
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 29191,
+      "name": "Glyph of Power",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 21432,
+        "entity_name": "Almaador",
+        "source_url": "https://www.wowhead.com/tbc/item=29191/glyph-of-power",
+        "type": "vendor",
+        "vendor_id": 21432,
+        "zone": "Shattrath City"
+      },
+      "source_summary": "Vendor: Almaador (Shattrath City)",
+      "source_url": "https://www.wowhead.com/tbc/item=29191/glyph-of-power",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21432,
+          "entity_name": "Almaador",
+          "source_url": "https://www.wowhead.com/tbc/item=29191/glyph-of-power",
+          "type": "vendor",
+          "vendor_id": 21432,
+          "zone": "Shattrath City"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 29192,
+      "name": "Glyph of Ferocity",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 17904,
+        "entity_name": "Fedryen Swiftspear",
+        "source_url": "https://www.wowhead.com/tbc/item=29192/glyph-of-ferocity",
+        "type": "vendor",
+        "vendor_id": 17904
+      },
+      "source_summary": "Vendor: Fedryen Swiftspear",
+      "source_url": "https://www.wowhead.com/tbc/item=29192/glyph-of-ferocity",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 17904,
+          "entity_name": "Fedryen Swiftspear",
+          "source_url": "https://www.wowhead.com/tbc/item=29192/glyph-of-ferocity",
+          "type": "vendor",
+          "vendor_id": 17904
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 29535,
+      "name": "Nethercobra Leg Armor",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 35554,
+        "entity_name": "Nethercobra Leg Armor",
+        "profession": "Leatherworking",
+        "source_url": "https://www.wowhead.com/tbc/item=29535/nethercobra-leg-armor",
+        "spell_id": 35554,
+        "type": "crafted"
+      },
+      "source_summary": "Crafted: Nethercobra Leg Armor",
+      "source_url": "https://www.wowhead.com/tbc/item=29535/nethercobra-leg-armor",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 35554,
+          "entity_name": "Nethercobra Leg Armor",
+          "profession": "Leatherworking",
+          "source_url": "https://www.wowhead.com/tbc/item=29535/nethercobra-leg-armor",
+          "spell_id": 35554,
+          "type": "crafted"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 29536,
+      "name": "Nethercleft Leg Armor",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 35557,
+        "entity_name": "Nethercleft Leg Armor",
+        "profession": "Leatherworking",
+        "source_url": "https://www.wowhead.com/tbc/item=29536/nethercleft-leg-armor",
+        "spell_id": 35557,
+        "type": "crafted"
+      },
+      "source_summary": "Crafted: Nethercleft Leg Armor",
+      "source_url": "https://www.wowhead.com/tbc/item=29536/nethercleft-leg-armor",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 35557,
+          "entity_name": "Nethercleft Leg Armor",
+          "profession": "Leatherworking",
+          "source_url": "https://www.wowhead.com/tbc/item=29536/nethercleft-leg-armor",
+          "spell_id": 35557,
+          "type": "crafted"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 33148,
+      "name": "Formula: Enchant Cloak - Dodge",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 21655,
+        "entity_name": "Nakodu",
+        "source_url": "https://www.wowhead.com/tbc/item=33148",
+        "type": "vendor",
+        "vendor_id": 21655,
+        "zone": "Shattrath City"
+      },
+      "source_summary": "Vendor: Nakodu (Shattrath City)",
+      "source_url": "https://www.wowhead.com/tbc/item=33148",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21655,
+          "entity_name": "Nakodu",
+          "source_url": "https://www.wowhead.com/tbc/item=33148",
+          "type": "vendor",
+          "vendor_id": 21655,
+          "zone": "Shattrath City"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 33150,
+      "name": "Formula: Enchant Cloak - Subtlety",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 17657,
+        "entity_name": "Logistics Officer Ulrike",
+        "source_url": "https://www.wowhead.com/tbc/item=33150",
+        "type": "vendor",
+        "vendor_id": 17657
+      },
+      "source_summary": "Vendor: Logistics Officer Ulrike",
+      "source_url": "https://www.wowhead.com/tbc/item=33150",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 17657,
+          "entity_name": "Logistics Officer Ulrike",
+          "source_url": "https://www.wowhead.com/tbc/item=33150",
+          "type": "vendor",
+          "vendor_id": 17657
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 33151,
+      "name": "Formula: Enchant Cloak - Subtlety",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 17585,
+        "entity_name": "Quartermaster Urgronn",
+        "source_url": "https://www.wowhead.com/tbc/item=33151",
+        "type": "vendor",
+        "vendor_id": 17585
+      },
+      "source_summary": "Vendor: Quartermaster Urgronn",
+      "source_url": "https://www.wowhead.com/tbc/item=33151",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 17585,
+          "entity_name": "Quartermaster Urgronn",
+          "source_url": "https://www.wowhead.com/tbc/item=33151",
+          "type": "vendor",
+          "vendor_id": 17585
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 186683,
+      "name": "Formula: Enchant Ring - Stats",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 19932,
+        "entity_name": "Andormu",
+        "source_url": "https://www.wowhead.com/tbc/item=186683",
+        "type": "vendor",
+        "vendor_id": 19932,
+        "zone": "Tanaris"
+      },
+      "source_summary": "Vendor: Andormu (Tanaris)",
+      "source_url": "https://www.wowhead.com/tbc/item=186683",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 19932,
+          "entity_name": "Andormu",
+          "source_url": "https://www.wowhead.com/tbc/item=186683",
+          "type": "vendor",
+          "vendor_id": 19932,
+          "zone": "Tanaris"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 25084,
+      "name": "Enchant Cloak - Subtlety",
+      "source_url": "https://www.wowhead.com/tbc/spell=25084/subtlety",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 20735,
+          "entity_name": "Formula: Enchant Cloak - Subtlety",
+          "item_id": 20735,
+          "source_url": "https://www.wowhead.com/tbc/spell=25084/subtlety",
+          "type": "taught_by_item"
+        },
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 33150,
+          "entity_name": "Formula: Enchant Cloak - Subtlety",
+          "item_id": 33150,
+          "source_url": "https://www.wowhead.com/tbc/spell=25084/subtlety",
+          "type": "taught_by_item"
+        },
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 33151,
+          "entity_name": "Formula: Enchant Cloak - Subtlety",
+          "item_id": 33151,
+          "source_url": "https://www.wowhead.com/tbc/spell=25084/subtlety",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 25086,
+      "name": "Enchant Cloak - Dodge",
+      "source_url": "https://www.wowhead.com/tbc/spell=25086/dodge",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 20736,
+          "entity_name": "Formula: Enchant Cloak - Dodge",
+          "item_id": 20736,
+          "source_url": "https://www.wowhead.com/tbc/spell=25086/dodge",
+          "type": "taught_by_item"
+        },
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 33148,
+          "entity_name": "Formula: Enchant Cloak - Dodge",
+          "item_id": 33148,
+          "source_url": "https://www.wowhead.com/tbc/spell=25086/dodge",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27924,
+      "name": "Enchant Ring - Spellpower",
+      "source_url": "https://www.wowhead.com/tbc/spell=27924/enchant-ring-spellpower",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22536,
+          "entity_name": "Formula: Enchant Ring - Spellpower",
+          "item_id": 22536,
+          "source_url": "https://www.wowhead.com/tbc/spell=27924/enchant-ring-spellpower",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27926,
+      "name": "Enchant Ring - Healing Power",
+      "source_url": "https://www.wowhead.com/tbc/spell=27926/enchant-ring-healing-power",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22537,
+          "entity_name": "Formula: Enchant Ring - Healing Power",
+          "item_id": 22537,
+          "source_url": "https://www.wowhead.com/tbc/spell=27926/enchant-ring-healing-power",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27927,
+      "name": "Enchant Ring - Stats",
+      "source_url": "https://www.wowhead.com/tbc/spell=27927/enchant-ring-stats",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22538,
+          "entity_name": "Formula: Enchant Ring - Stats",
+          "item_id": 22538,
+          "source_url": "https://www.wowhead.com/tbc/spell=27927/enchant-ring-stats",
+          "type": "taught_by_item"
+        },
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 186683,
+          "entity_name": "Formula: Enchant Ring - Stats",
+          "item_id": 186683,
+          "source_url": "https://www.wowhead.com/tbc/spell=27927/enchant-ring-stats",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27957,
+      "name": "Enchant Chest - Exceptional Health",
+      "source_url": "https://www.wowhead.com/tbc/spell=27957/exceptional-health",
+      "sources": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "entity_id": "profession_trainer",
+          "entity_name": "Enchanting Trainer",
+          "profession": "Enchanting",
+          "required_skill": 315,
+          "source_url": "https://www.wowhead.com/tbc/spell=27957/exceptional-health",
+          "type": "trainer"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27960,
+      "name": "Enchant Chest - Exceptional Stats",
+      "source_url": "https://www.wowhead.com/tbc/spell=27960/exceptional-stats",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22547,
+          "entity_name": "Formula: Enchant Chest - Exceptional Stats",
+          "item_id": 22547,
+          "source_url": "https://www.wowhead.com/tbc/spell=27960/exceptional-stats",
+          "type": "taught_by_item"
+        },
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 24003,
+          "entity_name": "Formula: Enchant Chest - Exceptional Stats",
+          "item_id": 24003,
+          "source_url": "https://www.wowhead.com/tbc/spell=27960/exceptional-stats",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27962,
+      "name": "Enchant Cloak - Major Resistance",
+      "source_url": "https://www.wowhead.com/tbc/spell=27962/enchant-cloak-major-resistance",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22548,
+          "entity_name": "Formula: Enchant Cloak - Major Resistance",
+          "item_id": 22548,
+          "source_url": "https://www.wowhead.com/tbc/spell=27962/enchant-cloak-major-resistance",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27984,
+      "name": "Enchant Weapon - Mongoose",
+      "source_url": "https://www.wowhead.com/tbc/spell=27984/mongoose",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22559,
+          "entity_name": "Formula: Enchant Weapon - Mongoose",
+          "item_id": 22559,
+          "source_url": "https://www.wowhead.com/tbc/spell=27984/mongoose",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 33991,
+      "name": "Enchant Chest - Restore Mana Prime",
+      "source_url": "https://www.wowhead.com/tbc/spell=33991/versatility-prime",
+      "sources": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "entity_id": "profession_trainer",
+          "entity_name": "Enchanting Trainer",
+          "profession": "Enchanting",
+          "required_skill": 300,
+          "source_url": "https://www.wowhead.com/tbc/spell=33991/versatility-prime",
+          "type": "trainer"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 34003,
+      "name": "Enchant Cloak - Spell Penetration",
+      "source_url": "https://www.wowhead.com/tbc/spell=34003/enchant-cloak-spell-penetration",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 28274,
+          "entity_name": "Formula: Enchant Cloak - Spell Penetration",
+          "item_id": 28274,
+          "source_url": "https://www.wowhead.com/tbc/spell=34003/enchant-cloak-spell-penetration",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 34004,
+      "name": "Enchant Cloak - Greater Agility",
+      "source_url": "https://www.wowhead.com/tbc/spell=34004/greater-agility",
+      "sources": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "entity_id": "profession_trainer",
+          "entity_name": "Enchanting Trainer",
+          "profession": "Enchanting",
+          "required_skill": 310,
+          "source_url": "https://www.wowhead.com/tbc/spell=34004/greater-agility",
+          "type": "trainer"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 46502,
+      "name": "Enchant Chest - Exceptional Stats",
+      "source_url": "https://www.wowhead.com/tbc/spell=46502/enchant-chest-exceptional-stats",
+      "sources": [],
+      "type": "spell"
+    },
+    {
+      "id": 46504,
+      "name": "Enchant Chest - Major Spirit",
+      "source_url": "https://www.wowhead.com/tbc/spell=46504",
+      "sources": [],
+      "type": "spell"
+    },
+    {
+      "id": 46518,
+      "name": "Enchant Ring - Spellpower",
+      "source_url": "https://www.wowhead.com/tbc/spell=46518/enchant-ring-spellpower",
+      "sources": [],
+      "type": "spell"
+    }
+  ]
 }

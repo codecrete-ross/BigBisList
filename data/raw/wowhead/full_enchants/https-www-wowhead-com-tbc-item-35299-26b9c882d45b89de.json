@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is looted from Kael'thas Sunstrider. In the Enchanting Formulae category. An item.",
+  "fetched_at": "2026-05-24T09:43:37+00:00",
+  "item_id": 35299,
+  "name": "Formula: Enchant Boots - Cat's Swiftness",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.92,
+      "entity_id": 24664,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 217,
+      "source_url": "https://www.wowhead.com/tbc/item=35299",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 2,
+        "id": 24664,
+        "itemSeasonPhaseData": {
+          "0": {
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 217
+              }
+            },
+            "5": {
+              "0": {
+                "count": 102,
+                "outof": 11459
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": 102,
+            "outof": 11459
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 217,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    34007
+  ],
+  "url": "https://www.wowhead.com/tbc/item=35299"
+}

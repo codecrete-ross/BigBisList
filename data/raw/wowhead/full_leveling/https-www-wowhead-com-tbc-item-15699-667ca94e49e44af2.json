@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward from Dadanga is Hungry!. In the Other Items category. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T09:21:50+00:00",
+  "item_id": 15699,
+  "name": "Small Brown-wrapped Package",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 5150,
+      "entity_name": "Dadanga is Hungry!",
+      "quest_id": 5150,
+      "source_url": "https://www.wowhead.com/tbc/item=15699",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 490,
+        "category2": 1,
+        "id": 5150,
+        "itemrewards": [
+          [
+            15699,
+            1
+          ]
+        ],
+        "level": 55,
+        "name": "Dadanga is Hungry!",
+        "popularity": 11,
+        "reqlevel": 47,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=15699"
+}

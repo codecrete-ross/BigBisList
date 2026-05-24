@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 59 goes in the \"Trinket\" slot. It is a quest reward from Words of the High Chief. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T09:21:23+00:00",
+  "item_id": 34423,
+  "name": "Strength of the High Chief",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 5128,
+      "entity_name": "Words of the High Chief",
+      "quest_id": 5128,
+      "source_url": "https://www.wowhead.com/tbc/item=34423/strength-of-the-high-chief",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 618,
+        "category2": 1,
+        "id": 5128,
+        "itemchoices": [
+          [
+            34423,
+            1
+          ],
+          [
+            34424,
+            1
+          ]
+        ],
+        "level": 59,
+        "name": "Words of the High Chief",
+        "popularity": 19,
+        "reprewards": [
+          [
+            577,
+            250
+          ]
+        ],
+        "reqlevel": 52,
+        "side": 3,
+        "xp": 9310
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34423/strength-of-the-high-chief"
+}

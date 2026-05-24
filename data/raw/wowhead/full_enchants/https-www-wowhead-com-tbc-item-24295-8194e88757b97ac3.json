@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This tailoring pattern is used for the Tailoring profession. It is sold by Quartermaster Endarin. In the Tailoring Patterns category. An item.",
+  "fetched_at": "2026-05-24T09:44:03+00:00",
+  "item_id": 24295,
+  "name": "Pattern: Golden Spellthread",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19321,
+      "entity_name": "Quartermaster Endarin",
+      "source_url": "https://www.wowhead.com/tbc/item=24295",
+      "type": "vendor",
+      "vendor_id": 19321,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            288000
+          ]
+        ],
+        "id": 19321,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Quartermaster Endarin",
+        "popularity": 15,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Aldor: Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    31433,
+    31370
+  ],
+  "url": "https://www.wowhead.com/tbc/item=24295"
+}

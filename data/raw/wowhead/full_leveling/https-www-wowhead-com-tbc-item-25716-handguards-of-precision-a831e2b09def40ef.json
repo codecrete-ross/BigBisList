@@ -1,0 +1,120 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue mail armor of item level 85 goes in the \"Hands\" slot. It is a quest reward. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:16:27+00:00",
+  "item_id": 25716,
+  "name": "Handguards of Precision",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9572,
+      "entity_name": "Weaken the Ramparts",
+      "quest_id": 9572,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25716/handguards-of-precision",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9575,
+      "entity_name": "Weaken the Ramparts",
+      "quest_id": 9575,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25716/handguards-of-precision",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3535,
+        "category2": 2,
+        "id": 9572,
+        "itemchoices": [
+          [
+            25716,
+            1
+          ],
+          [
+            25715,
+            1
+          ],
+          [
+            25718,
+            1
+          ],
+          [
+            25717,
+            1
+          ]
+        ],
+        "level": 62,
+        "money": 54000,
+        "name": "Weaken the Ramparts",
+        "popularity": 13,
+        "reprewards": [
+          [
+            947,
+            350
+          ]
+        ],
+        "reqlevel": 59,
+        "side": 2,
+        "type": 81,
+        "xp": 20100
+      },
+      {
+        "category": 3535,
+        "category2": 2,
+        "id": 9575,
+        "itemchoices": [
+          [
+            25716,
+            1
+          ],
+          [
+            25715,
+            1
+          ],
+          [
+            25718,
+            1
+          ],
+          [
+            25717,
+            1
+          ]
+        ],
+        "level": 62,
+        "money": 54000,
+        "name": "Weaken the Ramparts",
+        "popularity": 8,
+        "reprewards": [
+          [
+            946,
+            350
+          ]
+        ],
+        "reqlevel": 59,
+        "side": 1,
+        "type": 81,
+        "xp": 20100
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25716/handguards-of-precision"
+}

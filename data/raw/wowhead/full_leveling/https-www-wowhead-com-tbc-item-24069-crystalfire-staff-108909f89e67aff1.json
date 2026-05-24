@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 85. It is looted from Omor the Unscarred. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:09:59+00:00",
+  "item_id": 24069,
+  "name": "Crystalfire Staff",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 108,
+      "drop_percent": 10.19,
+      "entity_id": 17308,
+      "entity_name": "Omor the Unscarred",
+      "out_of": 1060,
+      "source_url": "https://www.wowhead.com/tbc/item=24069/crystalfire-staff",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 108,
+        "id": 17308,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2630,
+                "outof": 23219
+              }
+            },
+            "4": {
+              "0": {
+                "count": 125,
+                "outof": 1404
+              }
+            },
+            "5": {
+              "0": {
+                "count": 108,
+                "outof": 1060
+              }
+            }
+          }
+        },
+        "location": [
+          3562
+        ],
+        "maxlevel": 72,
+        "minlevel": 62,
+        "modes": {
+          "0": {
+            "count": 2630,
+            "outof": 23219
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Omor the Unscarred",
+        "outof": 1060,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24069/crystalfire-staff"
+}

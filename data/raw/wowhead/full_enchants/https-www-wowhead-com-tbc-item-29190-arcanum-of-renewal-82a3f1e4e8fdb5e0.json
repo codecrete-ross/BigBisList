@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is sold by Quartermaster Urgronn. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:40:12+00:00",
+  "item_id": 29190,
+  "name": "Glyph of Renewal",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17585,
+      "entity_name": "Quartermaster Urgronn",
+      "source_url": "https://www.wowhead.com/tbc/item=29190/arcanum-of-renewal",
+      "type": "vendor",
+      "vendor_id": 17585
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            850000
+          ]
+        ],
+        "id": 17585,
+        "location": [
+          3483
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Quartermaster Urgronn",
+        "popularity": 15,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Thrallmar Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29190/arcanum-of-renewal"
+}

@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is looted from Kael'thas Sunstrider. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:30+00:00",
+  "item_id": 35295,
+  "name": "Recipe: Haste Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 61,
+      "drop_percent": 0.53,
+      "entity_id": 24664,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 11459,
+      "source_url": "https://www.wowhead.com/tbc/item=35295",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 61,
+        "id": 24664,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 61,
+                "outof": 11459
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": 61,
+            "outof": 11459
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 11459,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    28564,
+    28507
+  ],
+  "url": "https://www.wowhead.com/tbc/item=35295"
+}

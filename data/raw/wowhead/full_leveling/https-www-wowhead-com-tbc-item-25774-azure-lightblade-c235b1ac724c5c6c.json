@@ -1,0 +1,114 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue dagger has an item level of 100. It is a quest reward. In the Daggers category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:10:14+00:00",
+  "item_id": 25774,
+  "name": "Azure Lightblade",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9937,
+      "entity_name": "Wanted: Durn the Hungerer",
+      "quest_id": 9937,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25774/azure-lightblade",
+      "type": "quest",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9938,
+      "entity_name": "Wanted: Durn the Hungerer",
+      "quest_id": 9938,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25774/azure-lightblade",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9937,
+        "itemchoices": [
+          [
+            25774,
+            1
+          ],
+          [
+            25773,
+            1
+          ],
+          [
+            25772,
+            1
+          ]
+        ],
+        "level": 67,
+        "money": 111000,
+        "name": "Wanted: Durn the Hungerer",
+        "popularity": 23,
+        "reprewards": [
+          [
+            941,
+            350
+          ]
+        ],
+        "reqlevel": 66,
+        "side": 2,
+        "type": 1,
+        "xp": 17450
+      },
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9938,
+        "itemchoices": [
+          [
+            25774,
+            1
+          ],
+          [
+            25773,
+            1
+          ],
+          [
+            25772,
+            1
+          ]
+        ],
+        "level": 67,
+        "money": 111000,
+        "name": "Wanted: Durn the Hungerer",
+        "popularity": 22,
+        "reprewards": [
+          [
+            978,
+            350
+          ]
+        ],
+        "reqlevel": 66,
+        "side": 1,
+        "type": 1,
+        "xp": 17450
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25774/azure-lightblade"
+}

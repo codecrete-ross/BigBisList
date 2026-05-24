@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green dagger has an item level of 105. It is a quest reward from Talbuk Mastery. In the Daggers category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:10:11+00:00",
+  "item_id": 25543,
+  "name": "Talbuk Sticker",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9859,
+      "entity_name": "Talbuk Mastery",
+      "quest_id": 9859,
+      "source_url": "https://www.wowhead.com/tbc/item=25543/talbuk-sticker",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9859,
+        "itemchoices": [
+          [
+            25543,
+            1
+          ],
+          [
+            25636,
+            1
+          ],
+          [
+            25545,
+            1
+          ]
+        ],
+        "level": 66,
+        "money": 70000,
+        "name": "Talbuk Mastery",
+        "popularity": 15,
+        "reqlevel": 64,
+        "side": 3,
+        "type": 1,
+        "xp": 14150
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25543/talbuk-sticker"
+}

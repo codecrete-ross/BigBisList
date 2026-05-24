@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "An item in the Holiday Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:52:34+00:00",
+  "item_id": 22164,
+  "name": "Gift of Adoration: Orgrimmar",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 27505,
+      "entity_name": "Receive Reward AND Quest Object, Common, Orgrimmar",
+      "source_url": "https://www.wowhead.com/tbc/item=22164",
+      "spell_id": 27505,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          22164,
+          0,
+          0
+        ],
+        "id": 27505,
+        "level": 0,
+        "name": "Receive Reward AND Quest Object, Common, Orgrimmar",
+        "popularity": 5,
+        "quality": 1,
+        "schools": 1
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22164"
+}

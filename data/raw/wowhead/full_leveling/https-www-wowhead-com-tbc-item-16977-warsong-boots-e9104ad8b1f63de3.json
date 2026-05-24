@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 27 goes in the \"Feet\" slot. It is a quest reward from Warsong Supplies. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:21:10+00:00",
+  "item_id": 16977,
+  "name": "Warsong Boots",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 6571,
+      "entity_name": "Warsong Supplies",
+      "quest_id": 6571,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=16977/warsong-boots",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 331,
+        "category2": 1,
+        "id": 6571,
+        "itemchoices": [
+          [
+            16975,
+            1
+          ],
+          [
+            16977,
+            1
+          ],
+          [
+            16978,
+            1
+          ]
+        ],
+        "level": 27,
+        "name": "Warsong Supplies",
+        "popularity": 20,
+        "reprewards": [
+          [
+            76,
+            350
+          ]
+        ],
+        "reqlevel": 22,
+        "side": 2,
+        "xp": 2750
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=16977/warsong-boots"
+}

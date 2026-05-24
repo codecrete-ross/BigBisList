@@ -1,0 +1,985 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Formula: Enchant Boots - Boar's Speed can be used by Enchanters to learn Boar's Speed at 360 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+  "fetched_at": "2026-05-24T09:36:52+00:00",
+  "item_id": 28280,
+  "name": "Formula: Enchant Boots - Boar's Speed",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_name": "World Drop",
+      "source_url": "https://www.wowhead.com/tbc/item=28280",
+      "type": "world_drop",
+      "world_drop": true
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 1,
+        "flags2": 24580,
+        "id": 33926,
+        "itemSeasonPhaseData": {
+          "0": {
+            "4": {
+              "0": {
+                "count": 1,
+                "outof": 476
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Sealed Scroll Case",
+        "outof": 476,
+        "pctstack": "",
+        "quality": 3,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Forest Frog",
+            "t": 1,
+            "ti": 24396,
+            "z": 3805
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 4,
+        "id": 16409,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 117401
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 117401
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Phantom Guest",
+        "outof": 117401,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 4,
+        "id": 16470,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 11595
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 11595
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ghostly Philanthropist",
+        "outof": 11595,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 154,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "id": 16492,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 64852
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 64852
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Syphoner",
+        "outof": 64852,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 20,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "id": 16530,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 11748
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 11748
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Mana Warp",
+        "outof": 11748,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      },
+      {
+        "classification": 0,
+        "count": 3,
+        "id": 17083,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 16420
+              }
+            }
+          }
+        },
+        "location": [
+          3714
+        ],
+        "maxlevel": 70,
+        "minlevel": 69,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 16420
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Fel Orc Convert",
+        "outof": 16420,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 27,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 1,
+        "id": 17141,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 4116
+              }
+            }
+          }
+        },
+        "location": [
+          3518
+        ],
+        "maxlevel": 65,
+        "minlevel": 64,
+        "modes": {
+          "0": {
+            "count": 1,
+            "outof": 4116
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Windyreed Wretch",
+        "outof": 4116,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 17669,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 29394
+              }
+            }
+          }
+        },
+        "location": [
+          3714
+        ],
+        "maxlevel": 70,
+        "minlevel": 67,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 29394
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Rabid Warhound",
+        "outof": 29394,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 17839,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 7022
+              }
+            }
+          }
+        },
+        "location": [
+          2366
+        ],
+        "maxlevel": 71,
+        "minlevel": 71,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 7022
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Rift Lord",
+        "outof": 7022,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 17940,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 93686
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "maxlevel": 71,
+        "minlevel": 63,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 93686
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Coilfang Technician",
+        "outof": 93686,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 18314,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 17465
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 72,
+        "minlevel": 65,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 17465
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nexus Stalker",
+        "outof": 17465,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 18327,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 14581
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "maxlevel": 70,
+        "minlevel": 67,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 14581
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Time-Lost Controller",
+        "outof": 14581,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 18328,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 12333
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "maxlevel": 71,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 12333
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sethekk Oracle",
+        "outof": 12333,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 18493,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 13639
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 71,
+        "minlevel": 65,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 13639
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Auchenai Soulpriest",
+        "outof": 13639,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 18633,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 66017
+              }
+            }
+          }
+        },
+        "location": [
+          3789
+        ],
+        "maxlevel": 70,
+        "minlevel": 69,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 66017
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Cabal Acolyte",
+        "outof": 66017,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 18702,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 4345
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 72,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 4345
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Auchenai Necromancer",
+        "outof": 4345,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 20043,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 15691
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 15691
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Apprentice Star Scryer",
+        "outof": 15691,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 20902,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 3166
+              }
+            }
+          }
+        },
+        "location": [
+          3848
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 3166
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sargeron Hellcaller",
+        "outof": 3166,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 21220,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 634
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 634
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Coilfang Priestess",
+        "outof": 634,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "family": 26,
+        "id": 21904,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 14969
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "maxlevel": 71,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 14969
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Avian Warhawk",
+        "outof": 14969,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 22955,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 23625
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 13064
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 23625
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Charming Patron",
+        "outof": 23625,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 23196,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 5405
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 5405
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bonechewer Behemoth",
+        "outof": 5405,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 23337,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 2725
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 2725
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Illidari Centurion",
+        "outof": 2725,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 23580,
+        "itemSeasonPhaseData": {
+          "0": {
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 2418
+              }
+            }
+          }
+        },
+        "location": [
+          3805
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 2418
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Amani'shi Warbringer",
+        "outof": 2418,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 24685,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 8908
+              }
+            }
+          }
+        },
+        "location": [
+          2597,
+          3358,
+          3820
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 8908
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Magister",
+        "outof": 8908,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    34008
+  ],
+  "url": "https://www.wowhead.com/tbc/item=28280"
+}

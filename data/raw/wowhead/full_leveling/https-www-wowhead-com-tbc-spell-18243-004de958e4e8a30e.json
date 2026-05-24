@@ -1,0 +1,50 @@
+{
+  "fetched_at": "2026-05-24T09:23:43+00:00",
+  "name": "Nightfin Soup",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 13945,
+      "entity_name": "Recipe: Nightfin Soup",
+      "item_id": 13945,
+      "source_url": "https://www.wowhead.com/tbc/spell=18243",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13945,
+        "level": 50,
+        "name": "Recipe: Nightfin Soup",
+        "quality": 1,
+        "skill": 250,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Gikkix",
+            "t": 1,
+            "ti": 8137,
+            "z": 440
+          }
+        ],
+        "subclass": 5
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 18243,
+  "url": "https://www.wowhead.com/tbc/spell=18243"
+}

@@ -1,0 +1,232 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted and looted. In the Flasks category. An item from Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:07:41+00:00",
+  "item_id": 13512,
+  "name": "Flask of Supreme Power",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17637,
+      "entity_name": "Flask of Supreme Power",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=13512/flask-of-supreme-power",
+      "spell_id": 17637,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 3.42,
+      "entity_id": 33928,
+      "entity_name": "Contained in: Hollowed Bone Decanter",
+      "item_id": 33928,
+      "out_of": 292,
+      "source_url": "https://www.wowhead.com/tbc/item=13512/flask-of-supreme-power",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 10,
+        "flags2": 24580,
+        "id": 33928,
+        "itemSeasonPhaseData": {
+          "0": {
+            "4": {
+              "0": {
+                "count": 10,
+                "outof": 292
+              }
+            },
+            "5": {
+              "0": {
+                "count": 10,
+                "outof": 136
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Hollowed Bone Decanter",
+        "outof": 292,
+        "pctstack": "",
+        "quality": 3,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Forest Frog",
+            "t": 1,
+            "ti": 24396,
+            "z": 3805
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          315,
+          322,
+          330
+        ],
+        "creates": [
+          13512,
+          1,
+          1
+        ],
+        "id": 17637,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Flask of Supreme Power",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 1,
+        "reagents": [
+          [
+            13463,
+            7
+          ],
+          [
+            13465,
+            3
+          ],
+          [
+            13468,
+            1
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          2,
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13521,
+        "level": 60,
+        "name": "Recipe: Flask of Supreme Power",
+        "popularity": 9,
+        "quality": 2,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "dd": -1,
+            "n": "Ras Frostwhisper",
+            "t": 1,
+            "ti": 10508,
+            "z": 2057
+          }
+        ],
+        "subclass": 6
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 31355,
+        "level": 60,
+        "name": "Recipe: Flask of Supreme Power",
+        "popularity": 13,
+        "quality": 2,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Alurmi",
+            "t": 1,
+            "ti": 21643,
+            "z": 440
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 13521,
+      "level": 60,
+      "name": "Recipe: Flask of Supreme Power",
+      "popularity": 9,
+      "quality": 2,
+      "skill": 300,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Ras Frostwhisper",
+          "t": 1,
+          "ti": 10508,
+          "z": 2057
+        }
+      ],
+      "subclass": 6
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 31355,
+      "level": 60,
+      "name": "Recipe: Flask of Supreme Power",
+      "popularity": 13,
+      "quality": 2,
+      "skill": 300,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Alurmi",
+          "t": 1,
+          "ti": 21643,
+          "z": 440
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13512/flask-of-supreme-power"
+}

@@ -1,0 +1,48 @@
+{
+  "fetched_at": "2026-05-24T08:35:13+00:00",
+  "name": "Enchant Weapon - Major Spellpower",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22555,
+      "entity_name": "Formula: Enchant Weapon - Major Spellpower",
+      "item_id": 22555,
+      "source_url": "https://www.wowhead.com/tbc/spell=27975",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 22555,
+        "level": 70,
+        "name": "Formula: Enchant Weapon - Major Spellpower",
+        "quality": 2,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 3522
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27975,
+  "url": "https://www.wowhead.com/tbc/spell=27975"
+}

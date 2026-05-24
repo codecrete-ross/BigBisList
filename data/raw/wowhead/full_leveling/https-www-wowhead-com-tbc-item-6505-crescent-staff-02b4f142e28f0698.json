@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 24. It is a quest reward from Leaders of the Fang. In the Staves category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T08:59:40+00:00",
+  "item_id": 6505,
+  "name": "Crescent Staff",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 914,
+      "entity_name": "Leaders of the Fang",
+      "quest_id": 914,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=6505/crescent-staff",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 718,
+        "category2": 2,
+        "id": 914,
+        "itemchoices": [
+          [
+            6505,
+            1
+          ],
+          [
+            6504,
+            1
+          ]
+        ],
+        "level": 22,
+        "name": "Leaders of the Fang",
+        "popularity": 15,
+        "reqlevel": 10,
+        "side": 2,
+        "type": 81,
+        "xp": 2600
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6505/crescent-staff"
+}

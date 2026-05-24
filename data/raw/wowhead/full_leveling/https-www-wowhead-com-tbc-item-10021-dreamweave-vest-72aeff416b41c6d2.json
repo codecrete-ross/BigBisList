@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloth armor of item level 45 goes in the \"Chest\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T09:04:06+00:00",
+  "item_id": 10021,
+  "name": "Dreamweave Vest",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12070,
+      "entity_name": "Dreamweave Vest",
+      "profession": "Tailoring",
+      "source_url": "https://www.wowhead.com/tbc/item=10021/dreamweave-vest",
+      "spell_id": 12070,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          225,
+          240,
+          255,
+          270
+        ],
+        "creates": [
+          10021,
+          1,
+          1
+        ],
+        "id": 12070,
+        "learnedat": 225,
+        "level": 0,
+        "name": "Dreamweave Vest",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 3,
+        "reagents": [
+          [
+            4339,
+            6
+          ],
+          [
+            8153,
+            6
+          ],
+          [
+            10286,
+            2
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "trainingcost": 5000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10021/dreamweave-vest"
+}

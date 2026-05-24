@@ -1,0 +1,77 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Healing Power is a level 61 battle elixir. It is crafted. In the Elixirs category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 22825,
+  "name": "Elixir of Healing Power",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 28545,
+      "entity_name": "Elixir of Healing Power",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=22825/elixir-of-healing-power",
+      "spell_id": 28545,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          310,
+          325,
+          332,
+          340
+        ],
+        "creates": [
+          22825,
+          1,
+          1
+        ],
+        "id": 28545,
+        "learnedat": 310,
+        "level": 0,
+        "name": "Elixir of Healing Power",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "reagents": [
+          [
+            13464,
+            1
+          ],
+          [
+            22786,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "trainingcost": 25000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22825/elixir-of-healing-power"
+}

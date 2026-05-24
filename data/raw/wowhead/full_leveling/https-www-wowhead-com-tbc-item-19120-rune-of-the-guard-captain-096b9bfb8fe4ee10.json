@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 51 goes in the \"Trinket\" slot. It is a quest reward from Job Opening: Guard Captain of Revantusk Village. Always up to date.",
+  "fetched_at": "2026-05-24T09:21:12+00:00",
+  "item_id": 19120,
+  "name": "Rune of the Guard Captain",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7862,
+      "entity_name": "Job Opening: Guard Captain of Revantusk Village",
+      "quest_id": 7862,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=19120/rune-of-the-guard-captain",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 47,
+        "category2": 0,
+        "id": 7862,
+        "itemrewards": [
+          [
+            19120,
+            1
+          ]
+        ],
+        "level": 51,
+        "money": 7500,
+        "name": "Job Opening: Guard Captain of Revantusk Village",
+        "popularity": 19,
+        "reqlevel": 44,
+        "side": 2,
+        "xp": 7070
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19120/rune-of-the-guard-captain"
+}

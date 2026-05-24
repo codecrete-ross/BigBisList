@@ -1,0 +1,100 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Timeless Nightseye is a Purple gem that can be crafted by Jewelcrafters with a skill of 350. The pattern for this item, Design: Timeless Nightseye, is a rare world drop.",
+  "fetched_at": "2026-05-24T08:24:07+00:00",
+  "item_id": 24056,
+  "name": "Glowing Nightseye",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31104,
+      "entity_name": "Glowing Nightseye",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=24056/glowing-nightseye",
+      "spell_id": 31104,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          365,
+          380
+        ],
+        "creates": [
+          24056,
+          1,
+          1
+        ],
+        "id": 31104,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Glowing Nightseye",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            23441,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24211,
+        "level": 70,
+        "name": "Design: Glowing Nightseye",
+        "popularity": 11,
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24211,
+      "level": 70,
+      "name": "Design: Glowing Nightseye",
+      "popularity": 11,
+      "quality": 3,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24056/glowing-nightseye"
+}

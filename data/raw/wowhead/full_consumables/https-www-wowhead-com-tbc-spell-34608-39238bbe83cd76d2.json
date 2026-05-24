@@ -1,0 +1,50 @@
+{
+  "fetched_at": "2026-05-24T08:51:30+00:00",
+  "name": "Adamantite Weightstone",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 28632,
+      "entity_name": "Plans: Adamantite Weightstone",
+      "item_id": 28632,
+      "source_url": "https://www.wowhead.com/tbc/spell=34608",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 28632,
+        "level": 70,
+        "name": "Plans: Adamantite Weightstone",
+        "quality": 1,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Fedryen Swiftspear",
+            "t": 1,
+            "ti": 17904,
+            "z": 3521
+          }
+        ],
+        "subclass": 4
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 34608,
+  "url": "https://www.wowhead.com/tbc/spell=34608"
+}

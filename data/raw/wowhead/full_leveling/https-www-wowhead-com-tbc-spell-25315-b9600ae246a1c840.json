@@ -1,0 +1,49 @@
+{
+  "fetched_at": "2026-05-24T09:12:31+00:00",
+  "name": "Renew",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 21285,
+      "entity_name": "Codex of Renew X",
+      "item_id": 21285,
+      "source_url": "https://www.wowhead.com/tbc/spell=25315",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21285,
+        "level": 60,
+        "name": "Codex of Renew X",
+        "quality": 3,
+        "reqclass": 16,
+        "reqlevel": 60,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "z": 3429
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 25315,
+  "url": "https://www.wowhead.com/tbc/spell=25315"
+}

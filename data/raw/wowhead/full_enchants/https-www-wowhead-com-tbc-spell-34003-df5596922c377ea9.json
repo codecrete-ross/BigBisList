@@ -1,0 +1,81 @@
+{
+  "description": "Permanently enchant a cloak to increase Spell Penetration by 20. Requires a level 35 or higher item. In the Profession Spells category. Always up to date.",
+  "fetched_at": "2026-05-24T09:48:02+00:00",
+  "name": "Enchant Cloak - Spell Penetration",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 28274,
+      "entity_name": "Formula: Enchant Cloak - Spell Penetration",
+      "item_id": 28274,
+      "source_url": "https://www.wowhead.com/tbc/spell=34003",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          325,
+          335,
+          350,
+          365
+        ],
+        "id": 34003,
+        "learnedat": 325,
+        "level": 35,
+        "name": "Enchant Cloak - Spell Penetration",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22446,
+            2
+          ],
+          [
+            22445,
+            6
+          ],
+          [
+            22457,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 28274,
+        "level": 65,
+        "name": "Formula: Enchant Cloak - Spell Penetration",
+        "quality": 2,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 34003,
+  "url": "https://www.wowhead.com/tbc/spell=34003"
+}

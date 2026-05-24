@@ -1,0 +1,205 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Requires Rogue. It is crafted and a quest reward. In the Food & Drinks category. An item from Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 7676,
+  "name": "Thistle Tea",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 2358,
+      "entity_name": "Horns of Nez'ra",
+      "quest_id": 2358,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=7676/thistle-tea",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 2381,
+      "entity_name": "Plundering the Plunderers",
+      "quest_id": 2381,
+      "source_url": "https://www.wowhead.com/tbc/item=7676/thistle-tea",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9513,
+      "entity_name": "Thistle Tea",
+      "source_url": "https://www.wowhead.com/tbc/item=7676/thistle-tea",
+      "spell_id": 9513,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          60,
+          100,
+          120,
+          140
+        ],
+        "creates": [
+          7676,
+          1,
+          1
+        ],
+        "id": 9513,
+        "learnedat": 60,
+        "level": 0,
+        "name": "Thistle Tea",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 1,
+        "reagents": [
+          [
+            2452,
+            1
+          ],
+          [
+            159,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          4,
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": -162,
+        "category2": 4,
+        "classs": 8,
+        "id": 2358,
+        "itemrewards": [
+          [
+            7676,
+            10
+          ]
+        ],
+        "level": 22,
+        "name": "Horns of Nez'ra",
+        "popularity": 7,
+        "reqclass": 8,
+        "reqlevel": 16,
+        "side": 1,
+        "xp": 1750
+      },
+      {
+        "category": -162,
+        "category2": 4,
+        "classs": 8,
+        "id": 2381,
+        "itemrewards": [
+          [
+            7676,
+            10
+          ]
+        ],
+        "level": 18,
+        "name": "Plundering the Plunderers",
+        "popularity": 13,
+        "reqclass": 8,
+        "reqlevel": 16,
+        "side": 3,
+        "xp": 1350
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 7678,
+        "level": 15,
+        "name": "Recipe: Thistle Tea",
+        "popularity": 6,
+        "quality": 1,
+        "skill": 60,
+        "slot": 0,
+        "subclass": 5
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 18160,
+        "level": 15,
+        "name": "Recipe: Thistle Tea",
+        "popularity": 13,
+        "quality": 2,
+        "skill": 60,
+        "slot": 0,
+        "source": [
+          4,
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Smudge Thunderwood",
+            "t": 1,
+            "ti": 6779,
+            "z": 36
+          }
+        ],
+        "subclass": 5
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 7678,
+      "level": 15,
+      "name": "Recipe: Thistle Tea",
+      "popularity": 6,
+      "quality": 1,
+      "skill": 60,
+      "slot": 0,
+      "subclass": 5
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 18160,
+      "level": 15,
+      "name": "Recipe: Thistle Tea",
+      "popularity": 13,
+      "quality": 2,
+      "skill": 60,
+      "slot": 0,
+      "source": [
+        4,
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Smudge Thunderwood",
+          "t": 1,
+          "ti": 6779,
+          "z": 36
+        }
+      ],
+      "subclass": 5
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=7676/thistle-tea"
+}

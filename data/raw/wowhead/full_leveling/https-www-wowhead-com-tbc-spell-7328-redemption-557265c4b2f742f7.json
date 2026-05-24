@@ -1,0 +1,125 @@
+{
+  "fetched_at": "2026-05-24T09:07:36+00:00",
+  "name": "Redemption",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 1146,
+      "entity_name": "Libram: Resurrection",
+      "item_id": 1146,
+      "source_url": "https://www.wowhead.com/tbc/spell=7328/redemption",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 1785,
+      "entity_name": "The Tome of Divinity",
+      "quest_id": 1785,
+      "source_url": "https://www.wowhead.com/tbc/spell=7328/redemption",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 1788,
+      "entity_name": "The Tome of Divinity",
+      "quest_id": 1788,
+      "source_url": "https://www.wowhead.com/tbc/spell=7328/redemption",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 9600,
+      "entity_name": "Redemption",
+      "quest_id": 9600,
+      "source_url": "https://www.wowhead.com/tbc/spell=7328/redemption",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 9685,
+      "entity_name": "Redeeming the Dead",
+      "quest_id": 9685,
+      "source_url": "https://www.wowhead.com/tbc/spell=7328/redemption",
+      "type": "quest"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [
+      {
+        "category": -141,
+        "category2": 4,
+        "classs": 2,
+        "id": 1785,
+        "name": "The Tome of Divinity",
+        "race": 5,
+        "reqclass": 2,
+        "reqlevel": 12,
+        "reqrace": 5,
+        "side": 1,
+        "xp": 1150
+      },
+      {
+        "category": -141,
+        "category2": 4,
+        "classs": 2,
+        "id": 1788,
+        "name": "The Tome of Divinity",
+        "race": 1,
+        "reqclass": 2,
+        "reqlevel": 12,
+        "reqrace": 1,
+        "side": 1,
+        "xp": 1150
+      },
+      {
+        "category": -141,
+        "category2": 4,
+        "classs": 2,
+        "id": 9600,
+        "name": "Redemption",
+        "race": 1024,
+        "reqclass": 2,
+        "reqlevel": 12,
+        "reqrace": 1024,
+        "side": 1,
+        "xp": 910
+      },
+      {
+        "category": -141,
+        "category2": 4,
+        "classs": 2,
+        "id": 9685,
+        "name": "Redeeming the Dead",
+        "race": 512,
+        "reqclass": 2,
+        "reqlevel": 12,
+        "reqrace": 512,
+        "side": 2,
+        "xp": 1150
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 1146,
+        "level": 12,
+        "name": "Libram: Resurrection",
+        "quality": 1,
+        "reqclass": 2,
+        "reqlevel": 12,
+        "slot": 0,
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 7328,
+  "url": "https://www.wowhead.com/tbc/spell=7328/redemption"
+}

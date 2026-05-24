@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is sold by Quartermaster Enuril. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:53+00:00",
+  "item_id": 22908,
+  "name": "Recipe: Elixir of Major Firepower",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19331,
+      "entity_name": "Quartermaster Enuril",
+      "source_url": "https://www.wowhead.com/tbc/item=22908",
+      "type": "vendor",
+      "vendor_id": 19331,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            51000
+          ]
+        ],
+        "id": 19331,
+        "location": [
+          3703
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Quartermaster Enuril",
+        "popularity": 5,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Scryers: Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    28556,
+    28501
+  ],
+  "url": "https://www.wowhead.com/tbc/item=22908"
+}

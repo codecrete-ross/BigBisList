@@ -1,0 +1,332 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Requires Priest. It is looted from Ossirian the Unscarred. In the Spell Books category. An item from Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:24:26+00:00",
+  "item_id": 21285,
+  "name": "Codex of Renew X",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1225,
+      "drop_percent": 11.81,
+      "entity_id": 15339,
+      "entity_name": "Ossirian the Unscarred",
+      "out_of": 10369,
+      "source_url": "https://www.wowhead.com/tbc/item=21285",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 701,
+      "drop_percent": 7.9,
+      "entity_id": 15340,
+      "entity_name": "Moam",
+      "out_of": 8872,
+      "source_url": "https://www.wowhead.com/tbc/item=21285",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 819,
+      "drop_percent": 7.55,
+      "entity_id": 15341,
+      "entity_name": "General Rajaxx",
+      "out_of": 10850,
+      "source_url": "https://www.wowhead.com/tbc/item=21285",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 466,
+      "drop_percent": 3.99,
+      "entity_id": 15348,
+      "entity_name": "Kurinnaxx",
+      "out_of": 11687,
+      "source_url": "https://www.wowhead.com/tbc/item=21285",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 751,
+      "drop_percent": 7.42,
+      "entity_id": 15369,
+      "entity_name": "Ayamiss the Hunter",
+      "out_of": 10124,
+      "source_url": "https://www.wowhead.com/tbc/item=21285",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 725,
+      "drop_percent": 7.95,
+      "entity_id": 15370,
+      "entity_name": "Buru the Gorger",
+      "out_of": 9117,
+      "source_url": "https://www.wowhead.com/tbc/item=21285",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1225,
+        "id": 15339,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1225,
+                "outof": 10369
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 5
+              }
+            }
+          }
+        },
+        "location": [
+          3429
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1225,
+            "outof": 10369
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ossirian the Unscarred",
+        "outof": 10369,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 701,
+        "id": 15340,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 701,
+                "outof": 8872
+              }
+            }
+          }
+        },
+        "location": [
+          3429
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 701,
+            "outof": 8872
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Moam",
+        "outof": 8872,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 27,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 819,
+        "id": 15341,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 819,
+                "outof": 10850
+              }
+            }
+          }
+        },
+        "location": [
+          3429
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 819,
+            "outof": 10850
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "General Rajaxx",
+        "outof": 10850,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 20,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 466,
+        "id": 15348,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 466,
+                "outof": 11687
+              }
+            }
+          }
+        },
+        "location": [
+          3429
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 466,
+            "outof": 11687
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kurinnaxx",
+        "outof": 11687,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 33,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 751,
+        "id": 15369,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 751,
+                "outof": 10124
+              }
+            }
+          }
+        },
+        "location": [
+          3429
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 751,
+            "outof": 10124
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ayamiss the Hunter",
+        "outof": 10124,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 725,
+        "id": 15370,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 725,
+                "outof": 9117
+              }
+            }
+          }
+        },
+        "location": [
+          3429
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 725,
+            "outof": 9117
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Buru the Gorger",
+        "outof": 9117,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 12,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21285"
+}

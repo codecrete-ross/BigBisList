@@ -1,0 +1,73 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This is a level 60 blue purple gem. It is crafted. In the Purple Gems category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:40:14+00:00",
+  "item_id": 32836,
+  "name": "Purified Shadow Pearl",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41429,
+      "entity_name": "Purified Shadow Pearl",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=32836/purified-shadow-pearl",
+      "spell_id": 41429,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          365,
+          380
+        ],
+        "creates": [
+          32836,
+          1,
+          1
+        ],
+        "id": 41429,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Purified Shadow Pearl",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            24479,
+            1
+          ],
+          [
+            27860,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "trainingcost": 10000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32836/purified-shadow-pearl"
+}

@@ -1,0 +1,80 @@
+{
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "name": "Nethercobra Leg Armor",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 29722,
+      "entity_name": "Pattern: Nethercobra Leg Armor",
+      "item_id": 29722,
+      "source_url": "https://www.wowhead.com/tbc/spell=35554",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 31362,
+      "entity_name": "Pattern: Nethercobra Leg Armor",
+      "item_id": 31362,
+      "source_url": "https://www.wowhead.com/tbc/spell=35554",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 29722,
+        "level": 73,
+        "name": "Pattern: Nethercobra Leg Armor",
+        "quality": 1,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Logistics Officer Ulrike",
+            "t": 1,
+            "ti": 17657,
+            "z": 3483
+          }
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 31362,
+        "level": 73,
+        "name": "Pattern: Nethercobra Leg Armor",
+        "quality": 1,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Urgronn",
+            "t": 1,
+            "ti": 17585,
+            "z": 3483
+          }
+        ],
+        "subclass": 1
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 35554,
+  "url": "https://www.wowhead.com/tbc/spell=35554"
+}

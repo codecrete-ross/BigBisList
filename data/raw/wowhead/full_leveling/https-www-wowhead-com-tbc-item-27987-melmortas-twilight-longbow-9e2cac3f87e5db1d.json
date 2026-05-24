@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue bow has an item level of 112. It is looted from Chrono Lord Deja. In the Bows category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:03:02+00:00",
+  "item_id": 27987,
+  "name": "Melmorta's Twilight Longbow",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 98,
+      "drop_percent": 16.75,
+      "entity_id": 17879,
+      "entity_name": "Chrono Lord Deja",
+      "out_of": 585,
+      "source_url": "https://www.wowhead.com/tbc/item=27987/melmortas-twilight-longbow",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 98,
+        "id": 17879,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2790,
+                "outof": 17004
+              }
+            },
+            "4": {
+              "0": {
+                "count": 132,
+                "outof": 852
+              }
+            },
+            "5": {
+              "0": {
+                "count": 98,
+                "outof": 585
+              }
+            }
+          }
+        },
+        "location": [
+          2366
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2790,
+            "outof": 17004
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Chrono Lord Deja",
+        "outof": 585,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27987/melmortas-twilight-longbow"
+}

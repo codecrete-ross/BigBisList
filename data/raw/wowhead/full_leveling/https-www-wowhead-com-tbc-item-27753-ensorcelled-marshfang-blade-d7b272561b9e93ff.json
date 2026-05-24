@@ -1,0 +1,110 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green dagger has an item level of 93. It is a quest reward. In the Daggers category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:10:28+00:00",
+  "item_id": 27753,
+  "name": "Ensorcelled Marshfang Blade",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9833,
+      "entity_name": "Lines of Communication",
+      "quest_id": 9833,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=27753/ensorcelled-marshfang-blade",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9842,
+      "entity_name": "The Sharpest Blades",
+      "quest_id": 9842,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=27753/ensorcelled-marshfang-blade",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9833,
+        "itemchoices": [
+          [
+            27753,
+            1
+          ],
+          [
+            27754,
+            1
+          ],
+          [
+            27756,
+            1
+          ]
+        ],
+        "level": 64,
+        "money": 31000,
+        "name": "Lines of Communication",
+        "popularity": 10,
+        "reprewards": [
+          [
+            978,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 1,
+        "xp": 10750
+      },
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9842,
+        "itemchoices": [
+          [
+            27756,
+            1
+          ],
+          [
+            27753,
+            1
+          ],
+          [
+            27754,
+            1
+          ]
+        ],
+        "level": 64,
+        "money": 31000,
+        "name": "The Sharpest Blades",
+        "popularity": 13,
+        "reprewards": [
+          [
+            530,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 2,
+        "xp": 10750
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27753/ensorcelled-marshfang-blade"
+}

@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 94 goes in the \"Hands\" slot. It is looted from Hungarfen. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:59:08+00:00",
+  "item_id": 24450,
+  "name": "Manaspark Gloves",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 42,
+      "drop_percent": 6.98,
+      "entity_id": 17770,
+      "entity_name": "Hungarfen",
+      "out_of": 602,
+      "source_url": "https://www.wowhead.com/tbc/item=24450/manaspark-gloves",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 42,
+        "id": 17770,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1076,
+                "outof": 9261
+              }
+            },
+            "4": {
+              "0": {
+                "count": 42,
+                "outof": 602
+              }
+            },
+            "5": {
+              "0": {
+                "count": 49,
+                "outof": 452
+              }
+            }
+          }
+        },
+        "location": [
+          3716
+        ],
+        "maxlevel": 72,
+        "minlevel": 65,
+        "modes": {
+          "0": {
+            "count": 1076,
+            "outof": 9261
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hungarfen",
+        "outof": 602,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24450/manaspark-gloves"
+}

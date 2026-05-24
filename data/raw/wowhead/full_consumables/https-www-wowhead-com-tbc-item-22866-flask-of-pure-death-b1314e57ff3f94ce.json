@@ -1,0 +1,80 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Flasks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 22866,
+  "name": "Flask of Pure Death",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 28591,
+      "entity_name": "Flask of Pure Death",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=22866/flask-of-pure-death",
+      "spell_id": 28591,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          0,
+          390,
+          397,
+          405
+        ],
+        "creates": [
+          22866,
+          1,
+          1
+        ],
+        "id": 28591,
+        "learnedat": 390,
+        "level": 0,
+        "name": "Flask of Pure Death",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 1,
+        "reagents": [
+          [
+            22794,
+            1
+          ],
+          [
+            22793,
+            3
+          ],
+          [
+            22792,
+            7
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22866/flask-of-pure-death"
+}

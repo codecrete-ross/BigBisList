@@ -1,0 +1,76 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Nightmare Seed is an herb gatherable by herbalists. Alchemists can use it to craft various potions. In the Herbs category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 22797,
+  "name": "Nightmare Seed",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1961,
+      "drop_percent": 9.69,
+      "entity_id": 181280,
+      "entity_name": "Nightmare Vine",
+      "out_of": 20245,
+      "source_url": "https://www.wowhead.com/tbc/item=22797/nightmare-seed",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [
+      {
+        "count": 1961,
+        "id": 181280,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1961,
+                "outof": 20245
+              }
+            },
+            "4": {
+              "0": {
+                "count": 160,
+                "outof": 1550
+              }
+            },
+            "5": {
+              "0": {
+                "count": 210,
+                "outof": 1979
+              }
+            }
+          }
+        },
+        "location": [
+          3520,
+          3522,
+          3483,
+          -1
+        ],
+        "name": "Nightmare Vine",
+        "outof": 20245,
+        "pctstack": "",
+        "skill": 365,
+        "type": -3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22797/nightmare-seed"
+}

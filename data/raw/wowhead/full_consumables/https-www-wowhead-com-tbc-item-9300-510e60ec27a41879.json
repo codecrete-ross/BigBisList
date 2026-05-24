@@ -1,0 +1,93 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is sold by NPCs. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T08:51:33+00:00",
+  "item_id": 9300,
+  "name": "Recipe: Elixir of Demonslaying",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8177,
+      "entity_name": "Rartar",
+      "source_url": "https://www.wowhead.com/tbc/item=9300",
+      "type": "vendor",
+      "vendor_id": 8177
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8178,
+      "entity_name": "Nina Lightbrew",
+      "source_url": "https://www.wowhead.com/tbc/item=9300",
+      "type": "vendor",
+      "vendor_id": 8178
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            9000
+          ]
+        ],
+        "id": 8177,
+        "location": [
+          8
+        ],
+        "maxlevel": 45,
+        "minlevel": 45,
+        "name": "Rartar",
+        "popularity": 3,
+        "react": [
+          null,
+          1
+        ],
+        "stock": 1,
+        "tag": "Alchemy Supplies",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            9000
+          ]
+        ],
+        "id": 8178,
+        "location": [
+          4
+        ],
+        "maxlevel": 49,
+        "minlevel": 49,
+        "name": "Nina Lightbrew",
+        "popularity": 6,
+        "react": [
+          1,
+          null
+        ],
+        "stock": 1,
+        "tag": "Alchemy Supplies",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    11477,
+    11406
+  ],
+  "url": "https://www.wowhead.com/tbc/item=9300"
+}

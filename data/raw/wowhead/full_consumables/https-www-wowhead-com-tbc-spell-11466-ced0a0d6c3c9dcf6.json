@@ -1,0 +1,47 @@
+{
+  "fetched_at": "2026-05-24T08:51:30+00:00",
+  "name": "Gift of Arthas",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 9296,
+      "entity_name": "Recipe: Gift of Arthas",
+      "item_id": 9296,
+      "source_url": "https://www.wowhead.com/tbc/spell=11466",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 9296,
+        "level": 48,
+        "name": "Recipe: Gift of Arthas",
+        "quality": 2,
+        "skill": 240,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 28
+          }
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 11466,
+  "url": "https://www.wowhead.com/tbc/spell=11466"
+}

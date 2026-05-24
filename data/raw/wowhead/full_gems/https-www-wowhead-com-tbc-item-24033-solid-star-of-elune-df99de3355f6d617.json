@@ -1,0 +1,148 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This is a level 70 blue blue gem. It is crafted. In the Blue Gems category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T08:32:55+00:00",
+  "item_id": 24033,
+  "name": "Solid Star of Elune",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31092,
+      "entity_name": "Solid Star of Elune",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=24033/solid-star-of-elune",
+      "spell_id": 31092,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          365,
+          380
+        ],
+        "creates": [
+          24033,
+          1,
+          1
+        ],
+        "id": 31092,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Solid Star of Elune",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 3,
+        "reagents": [
+          [
+            23438,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24199,
+        "level": 70,
+        "name": "Design: Solid Star of Elune",
+        "popularity": 3,
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35304,
+        "level": 70,
+        "name": "Design: Solid Star of Elune",
+        "popularity": 8,
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Kael'thas Sunstrider",
+            "t": 1,
+            "ti": 24664,
+            "z": 4131
+          }
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24199,
+      "level": 70,
+      "name": "Design: Solid Star of Elune",
+      "popularity": 3,
+      "quality": 3,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35304,
+      "level": 70,
+      "name": "Design: Solid Star of Elune",
+      "popularity": 8,
+      "quality": 3,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Kael'thas Sunstrider",
+          "t": 1,
+          "ti": 24664,
+          "z": 4131
+        }
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24033/solid-star-of-elune"
+}

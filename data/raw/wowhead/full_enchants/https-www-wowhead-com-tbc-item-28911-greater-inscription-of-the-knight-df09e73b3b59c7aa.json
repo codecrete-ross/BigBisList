@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is sold by Inscriber Veredis. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:41:38+00:00",
+  "item_id": 28911,
+  "name": "Greater Inscription of the Knight",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 8,
+          "item_id": 29736,
+          "name": "Item 29736"
+        }
+      ],
+      "entity_id": 20808,
+      "entity_name": "Inscriber Veredis",
+      "source_url": "https://www.wowhead.com/tbc/item=28911/greater-inscription-of-the-knight",
+      "type": "vendor",
+      "vendor_id": 20808,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29736,
+                8
+              ]
+            ]
+          ]
+        ],
+        "id": 20808,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Inscriber Veredis",
+        "popularity": 4,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Scryer Inscriptions",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28911/greater-inscription-of-the-knight"
+}

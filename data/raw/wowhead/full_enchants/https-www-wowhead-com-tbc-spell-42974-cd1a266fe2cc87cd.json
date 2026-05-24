@@ -1,0 +1,94 @@
+{
+  "description": "Permanently enchant a Melee Weapon to occasionally ignore 840 of your enemy's armor. Requires a level 60 or higher item. In the Profession Spells category.",
+  "fetched_at": "2026-05-24T09:48:07+00:00",
+  "name": "Enchant Weapon - Executioner",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 33307,
+      "entity_name": "Formula: Enchant Weapon - Executioner",
+      "item_id": 33307,
+      "source_url": "https://www.wowhead.com/tbc/spell=42974",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          400,
+          415
+        ],
+        "id": 42974,
+        "learnedat": 375,
+        "level": 60,
+        "name": "Enchant Weapon - Executioner",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22450,
+            6
+          ],
+          [
+            22449,
+            10
+          ],
+          [
+            22446,
+            6
+          ],
+          [
+            22445,
+            30
+          ],
+          [
+            22824,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 33307,
+        "level": 75,
+        "name": "Formula: Enchant Weapon - Executioner",
+        "quality": 3,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 3805
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 42974,
+  "url": "https://www.wowhead.com/tbc/spell=42974"
+}

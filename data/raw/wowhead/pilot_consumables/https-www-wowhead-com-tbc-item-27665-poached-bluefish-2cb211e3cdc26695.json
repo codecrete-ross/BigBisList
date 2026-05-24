@@ -1,0 +1,109 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Food & Drinks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:38:30+00:00",
+  "item_id": 27665,
+  "name": "Poached Bluefish",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 33294,
+      "entity_name": "Poached Bluefish",
+      "source_url": "https://www.wowhead.com/tbc/item=27665/poached-bluefish",
+      "spell_id": 33294,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          320,
+          340,
+          350,
+          360
+        ],
+        "creates": [
+          27665,
+          1,
+          1
+        ],
+        "id": 33294,
+        "learnedat": 320,
+        "level": 0,
+        "name": "Poached Bluefish",
+        "nskillup": 1,
+        "popularity": 10,
+        "quality": 1,
+        "reagents": [
+          [
+            27437,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 27698,
+        "level": 64,
+        "name": "Recipe: Poached Bluefish",
+        "popularity": 14,
+        "quality": 1,
+        "skill": 320,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "z": 3518
+          }
+        ],
+        "subclass": 5
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 27698,
+      "level": 64,
+      "name": "Recipe: Poached Bluefish",
+      "popularity": 14,
+      "quality": 1,
+      "skill": 320,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "z": 3518
+        }
+      ],
+      "subclass": 5
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27665/poached-bluefish"
+}

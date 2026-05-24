@@ -1,0 +1,91 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Other Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:21:58+00:00",
+  "item_id": 20603,
+  "name": "Bag of Spoils",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8361,
+      "entity_name": "Abyssal Contacts",
+      "quest_id": 8361,
+      "source_url": "https://www.wowhead.com/tbc/item=20603",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8362,
+      "entity_name": "Abyssal Crests",
+      "quest_id": 8362,
+      "source_url": "https://www.wowhead.com/tbc/item=20603",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8361,
+        "itemrewards": [
+          [
+            20603,
+            1
+          ]
+        ],
+        "level": 60,
+        "money": 9000,
+        "name": "Abyssal Contacts",
+        "popularity": 11,
+        "reprewards": [
+          [
+            609,
+            250
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "xp": 9550
+      },
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8362,
+        "itemrewards": [
+          [
+            20603,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Abyssal Crests",
+        "popularity": 12,
+        "reprewards": [
+          [
+            609,
+            75
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20603"
+}

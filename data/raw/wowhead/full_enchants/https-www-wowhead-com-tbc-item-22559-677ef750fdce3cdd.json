@@ -1,0 +1,93 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant Weapon - Mongoose can be used by Enchanters to learn Mongoose at 375 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+  "fetched_at": "2026-05-24T09:45:52+00:00",
+  "item_id": 22559,
+  "name": "Formula: Enchant Weapon - Mongoose",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 78,
+      "drop_percent": 4.13,
+      "entity_id": 15687,
+      "entity_name": "Moroes",
+      "out_of": 1888,
+      "source_url": "https://www.wowhead.com/tbc/item=22559",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 78,
+        "id": 15687,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 933,
+                "outof": 21907
+              }
+            },
+            "4": {
+              "0": {
+                "count": 89,
+                "outof": 2503
+              }
+            },
+            "5": {
+              "0": {
+                "count": 78,
+                "outof": 1888
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 933,
+            "outof": 21907
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Moroes",
+        "outof": 1888,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Tower Steward",
+        "type": 6
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    27984
+  ],
+  "url": "https://www.wowhead.com/tbc/item=22559"
+}

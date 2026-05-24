@@ -1,0 +1,50 @@
+{
+  "fetched_at": "2026-05-24T09:22:36+00:00",
+  "name": "Mageblood Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 20011,
+      "entity_name": "Recipe: Mageblood Potion",
+      "item_id": 20011,
+      "source_url": "https://www.wowhead.com/tbc/spell=24365",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 20011,
+        "level": 55,
+        "name": "Recipe: Mageblood Potion",
+        "quality": 1,
+        "skill": 275,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Rin'wosho the Trader",
+            "t": 1,
+            "ti": 14921,
+            "z": 33
+          }
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 24365,
+  "url": "https://www.wowhead.com/tbc/spell=24365"
+}

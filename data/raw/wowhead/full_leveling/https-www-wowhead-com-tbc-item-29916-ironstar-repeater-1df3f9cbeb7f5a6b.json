@@ -1,0 +1,126 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green crossbow has an item level of 81. It is a quest reward. In the Crossbows category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:03:08+00:00",
+  "item_id": 29916,
+  "name": "Ironstar Repeater",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10450,
+      "entity_name": "Bonechewer Blood",
+      "quest_id": 10450,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=29916/ironstar-repeater",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10482,
+      "entity_name": "Fel Orc Scavengers",
+      "quest_id": 10482,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=29916/ironstar-repeater",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 10450,
+        "itemchoices": [
+          [
+            29915,
+            1
+          ],
+          [
+            29919,
+            1
+          ],
+          [
+            29917,
+            1
+          ],
+          [
+            29914,
+            1
+          ],
+          [
+            29916,
+            1
+          ]
+        ],
+        "level": 60,
+        "money": 9000,
+        "name": "Bonechewer Blood",
+        "popularity": 10,
+        "reprewards": [
+          [
+            947,
+            250
+          ]
+        ],
+        "reqlevel": 58,
+        "side": 2,
+        "xp": 9550
+      },
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 10482,
+        "itemchoices": [
+          [
+            29915,
+            1
+          ],
+          [
+            29919,
+            1
+          ],
+          [
+            29917,
+            1
+          ],
+          [
+            29914,
+            1
+          ],
+          [
+            29916,
+            1
+          ]
+        ],
+        "level": 58,
+        "money": 9000,
+        "name": "Fel Orc Scavengers",
+        "popularity": 18,
+        "reprewards": [
+          [
+            946,
+            250
+          ]
+        ],
+        "reqlevel": 58,
+        "side": 1,
+        "xp": 9020
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29916/ironstar-repeater"
+}

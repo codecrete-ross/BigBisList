@@ -1,0 +1,132 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted and looted. In the Flasks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 22851,
+  "name": "Flask of Fortification",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 28587,
+      "entity_name": "Flask of Fortification",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=22851/flask-of-fortification",
+      "spell_id": 28587,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 12,
+      "drop_percent": 4.11,
+      "entity_id": 33928,
+      "entity_name": "Contained in: Hollowed Bone Decanter",
+      "item_id": 33928,
+      "out_of": 292,
+      "source_url": "https://www.wowhead.com/tbc/item=22851/flask-of-fortification",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 12,
+        "flags2": 24580,
+        "id": 33928,
+        "itemSeasonPhaseData": {
+          "0": {
+            "4": {
+              "0": {
+                "count": 12,
+                "outof": 292
+              }
+            },
+            "5": {
+              "0": {
+                "count": 6,
+                "outof": 136
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Hollowed Bone Decanter",
+        "outof": 292,
+        "pctstack": "",
+        "quality": 3,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Forest Frog",
+            "t": 1,
+            "ti": 24396,
+            "z": 3805
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          0,
+          390,
+          397,
+          405
+        ],
+        "creates": [
+          22851,
+          1,
+          1
+        ],
+        "id": 28587,
+        "learnedat": 390,
+        "level": 0,
+        "name": "Flask of Fortification",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "reagents": [
+          [
+            22794,
+            1
+          ],
+          [
+            22793,
+            3
+          ],
+          [
+            22790,
+            7
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22851/flask-of-fortification"
+}

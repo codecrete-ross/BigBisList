@@ -1,0 +1,163 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This epic leather armor of item level 105 goes in the \"Hands\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:06:18+00:00",
+  "item_id": 29506,
+  "name": "Gloves of the Living Touch",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35562,
+      "entity_name": "Gloves of the Living Touch",
+      "profession": "Leatherworking",
+      "source_url": "https://www.wowhead.com/tbc/item=29506/gloves-of-the-living-touch",
+      "spell_id": 35562,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          29506,
+          1,
+          1
+        ],
+        "id": 35562,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Gloves of the Living Touch",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            21886,
+            16
+          ],
+          [
+            22452,
+            12
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 29727,
+        "level": 73,
+        "name": "Pattern: Gloves of the Living Touch",
+        "popularity": 8,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35303,
+        "level": 73,
+        "name": "Pattern: Gloves of the Living Touch",
+        "popularity": 10,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Kael'thas Sunstrider",
+            "t": 1,
+            "ti": 24664,
+            "z": 4131
+          }
+        ],
+        "subclass": 1
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 29727,
+      "level": 73,
+      "name": "Pattern: Gloves of the Living Touch",
+      "popularity": 8,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 1
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35303,
+      "level": 73,
+      "name": "Pattern: Gloves of the Living Touch",
+      "popularity": 10,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Kael'thas Sunstrider",
+          "t": 1,
+          "ti": 24664,
+          "z": 4131
+        }
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29506/gloves-of-the-living-touch"
+}

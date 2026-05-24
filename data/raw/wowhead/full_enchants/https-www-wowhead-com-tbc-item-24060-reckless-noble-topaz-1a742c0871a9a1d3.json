@@ -1,0 +1,103 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This is a level 70 blue orange gem. It is crafted. In the Orange Gems category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:40:03+00:00",
+  "item_id": 24060,
+  "name": "Luminous Noble Topaz",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31108,
+      "entity_name": "Luminous Noble Topaz",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=24060/reckless-noble-topaz",
+      "spell_id": 31108,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          365,
+          380
+        ],
+        "creates": [
+          24060,
+          1,
+          1
+        ],
+        "id": 31108,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Luminous Noble Topaz",
+        "nskillup": 1,
+        "popularity": 11,
+        "quality": 3,
+        "reagents": [
+          [
+            23439,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24215,
+        "level": 70,
+        "name": "Design: Luminous Noble Topaz",
+        "popularity": 5,
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24215,
+      "level": 70,
+      "name": "Design: Luminous Noble Topaz",
+      "popularity": 5,
+      "quality": 3,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24060/reckless-noble-topaz"
+}

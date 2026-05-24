@@ -1,0 +1,55 @@
+{
+  "fetched_at": "2026-05-24T08:51:19+00:00",
+  "name": "Crunchy Serpent",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 31674,
+      "entity_name": "Recipe: Crunchy Serpent",
+      "item_id": 31674,
+      "source_url": "https://www.wowhead.com/tbc/spell=38868",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 31674,
+        "level": 67,
+        "name": "Recipe: Crunchy Serpent",
+        "quality": 1,
+        "skill": 335,
+        "slot": 0,
+        "source": [
+          4,
+          5
+        ],
+        "sourcemore": [
+          {
+            "c": 3522,
+            "c2": 8,
+            "n": "Mok'Nathal Treats",
+            "t": 5,
+            "ti": 10860
+          },
+          {
+            "z": 3522
+          }
+        ],
+        "subclass": 5
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 38868,
+  "url": "https://www.wowhead.com/tbc/spell=38868"
+}

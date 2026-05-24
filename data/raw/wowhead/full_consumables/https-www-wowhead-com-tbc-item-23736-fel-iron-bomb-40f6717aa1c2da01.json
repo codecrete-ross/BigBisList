@@ -1,0 +1,178 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted and sold by NPCs. In the Explosives category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 23736,
+  "name": "Fel Iron Bomb",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19575,
+      "entity_name": "Qiff ",
+      "source_url": "https://www.wowhead.com/tbc/item=23736/fel-iron-bomb",
+      "type": "vendor",
+      "vendor_id": 19575,
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19661,
+      "entity_name": "Viggz Shinesparked",
+      "source_url": "https://www.wowhead.com/tbc/item=23736/fel-iron-bomb",
+      "type": "vendor",
+      "vendor_id": 19661,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21112,
+      "entity_name": "Bossi Pentapiston",
+      "source_url": "https://www.wowhead.com/tbc/item=23736/fel-iron-bomb",
+      "type": "vendor",
+      "vendor_id": 21112,
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30310,
+      "entity_name": "Fel Iron Bomb",
+      "profession": "Engineering",
+      "source_url": "https://www.wowhead.com/tbc/item=23736/fel-iron-bomb",
+      "spell_id": 30310,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          320,
+          330,
+          340
+        ],
+        "creates": [
+          23736,
+          4,
+          4
+        ],
+        "id": 30310,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Fel Iron Bomb",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "reagents": [
+          [
+            23782,
+            1
+          ],
+          [
+            23783,
+            2
+          ],
+          [
+            23781,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "trainingcost": 15000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10000
+          ]
+        ],
+        "id": 19575,
+        "location": [
+          3523
+        ],
+        "maxlevel": 67,
+        "minlevel": 65,
+        "name": "Qiff ",
+        "popularity": 8,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 1,
+        "stock": 3,
+        "tag": "Engineering Supplies",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            8000
+          ]
+        ],
+        "id": 19661,
+        "location": [
+          3703
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Viggz Shinesparked",
+        "popularity": 3,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 1,
+        "stock": 3,
+        "tag": "Engineering Supplies",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10000
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 21112,
+        "location": [
+          3522
+        ],
+        "maxlevel": 68,
+        "minlevel": 67,
+        "name": "Bossi Pentapiston",
+        "popularity": 4,
+        "react": [
+          1,
+          null
+        ],
+        "stack": 1,
+        "stock": 3,
+        "tag": "Engineering Supplies",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23736/fel-iron-bomb"
+}

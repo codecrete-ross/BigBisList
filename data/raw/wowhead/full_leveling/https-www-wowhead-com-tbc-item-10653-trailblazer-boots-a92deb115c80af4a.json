@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green leather armor of item level 30 goes in the \"Feet\" slot. It is a quest reward from Horde Presence. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:21:04+00:00",
+  "item_id": 10653,
+  "name": "Trailblazer Boots",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 3514,
+      "entity_name": "Horde Presence",
+      "quest_id": 3514,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=10653/trailblazer-boots",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 17,
+        "category2": 1,
+        "id": 3514,
+        "itemchoices": [
+          [
+            10653,
+            1
+          ],
+          [
+            10654,
+            1
+          ]
+        ],
+        "level": 29,
+        "name": "Horde Presence",
+        "popularity": 10,
+        "reprewards": [
+          [
+            76,
+            350
+          ]
+        ],
+        "reqlevel": 15,
+        "side": 2,
+        "xp": 2950
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10653/trailblazer-boots"
+}

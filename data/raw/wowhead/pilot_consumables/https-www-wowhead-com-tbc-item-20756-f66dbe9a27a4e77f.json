@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Rin'wosho the Trader. In the Enchanting Formulae category. An item.",
+  "fetched_at": "2026-05-24T08:38:34+00:00",
+  "item_id": 20756,
+  "name": "Formula: Brilliant Wizard Oil",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 14921,
+      "entity_name": "Rin'wosho the Trader",
+      "source_url": "https://www.wowhead.com/tbc/item=20756",
+      "type": "vendor",
+      "vendor_id": 14921
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            32000
+          ]
+        ],
+        "id": 14921,
+        "location": [
+          33
+        ],
+        "maxlevel": 56,
+        "minlevel": 56,
+        "name": "Rin'wosho the Trader",
+        "popularity": 8,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Zandalar Supplies & Repair",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    25129,
+    25122
+  ],
+  "url": "https://www.wowhead.com/tbc/item=20756"
+}

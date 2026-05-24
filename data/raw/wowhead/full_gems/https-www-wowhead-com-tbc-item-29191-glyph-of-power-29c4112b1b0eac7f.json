@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is sold by Almaador. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:32:54+00:00",
+  "item_id": 29191,
+  "name": "Glyph of Power",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21432,
+      "entity_name": "Almaador",
+      "source_url": "https://www.wowhead.com/tbc/item=29191/glyph-of-power",
+      "type": "vendor",
+      "vendor_id": 21432,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            850000
+          ]
+        ],
+        "id": 21432,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Almaador",
+        "popularity": 35,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Sha'tari Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29191/glyph-of-power"
+}

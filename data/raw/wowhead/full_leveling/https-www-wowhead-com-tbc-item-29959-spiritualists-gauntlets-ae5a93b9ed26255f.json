@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 108 goes in the \"Hands\" slot. It is a quest reward from A Fate Worse Than Death. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:08:04+00:00",
+  "item_id": 29959,
+  "name": "Spiritualist's Gauntlets",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10185,
+      "entity_name": "A Fate Worse Than Death",
+      "quest_id": 10185,
+      "source_url": "https://www.wowhead.com/tbc/item=29959/spiritualists-gauntlets",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10185,
+        "itemchoices": [
+          [
+            29955,
+            1
+          ],
+          [
+            29954,
+            1
+          ],
+          [
+            30401,
+            1
+          ],
+          [
+            29959,
+            1
+          ]
+        ],
+        "level": 68,
+        "money": 39000,
+        "name": "A Fate Worse Than Death",
+        "popularity": 11,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 12000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29959/spiritualists-gauntlets"
+}

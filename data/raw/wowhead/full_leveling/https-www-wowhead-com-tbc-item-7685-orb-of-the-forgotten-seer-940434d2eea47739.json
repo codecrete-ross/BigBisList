@@ -1,0 +1,88 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue off-hand frill of item level 38 goes in the \"Held In Off-hand\" slot. It is looted from Bloodmage Thalnos. In the Off-hand Frills category.",
+  "fetched_at": "2026-05-24T08:59:41+00:00",
+  "item_id": 7685,
+  "name": "Orb of the Forgotten Seer",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 90,
+      "drop_percent": 50.0,
+      "entity_id": 4543,
+      "entity_name": "Bloodmage Thalnos",
+      "out_of": 180,
+      "source_url": "https://www.wowhead.com/tbc/item=7685/orb-of-the-forgotten-seer",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 90,
+        "id": 4543,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8469,
+                "outof": 16978
+              }
+            },
+            "4": {
+              "0": {
+                "count": 101,
+                "outof": 234
+              }
+            },
+            "5": {
+              "0": {
+                "count": 90,
+                "outof": 180
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 32,
+        "minlevel": 32,
+        "modes": {
+          "0": {
+            "count": 8469,
+            "outof": 16978
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bloodmage Thalnos",
+        "outof": 180,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=7685/orb-of-the-forgotten-seer"
+}

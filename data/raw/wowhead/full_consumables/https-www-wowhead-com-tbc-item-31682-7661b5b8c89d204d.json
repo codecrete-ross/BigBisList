@@ -1,0 +1,582 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is looted from Eclipsion Centurion. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:30+00:00",
+  "item_id": 31682,
+  "name": "Recipe: Fel Mana Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 124,
+      "drop_percent": 0.45,
+      "entity_id": 19792,
+      "entity_name": "Eclipsion Centurion",
+      "out_of": 27680,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 20,
+      "drop_percent": 1.07,
+      "entity_id": 19795,
+      "entity_name": "Eclipsion Blood Knight",
+      "out_of": 1877,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 70,
+      "drop_percent": 0.34,
+      "entity_id": 19796,
+      "entity_name": "Eclipsion Archmage",
+      "out_of": 20689,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 19797,
+      "entity_name": "Illidari Highlord",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 16,
+      "drop_percent": 0.33,
+      "entity_id": 19806,
+      "entity_name": "Eclipsion Bloodwarder",
+      "out_of": 4871,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 182,
+      "drop_percent": 0.58,
+      "entity_id": 22016,
+      "entity_name": "Eclipsion Soldier",
+      "out_of": 31470,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 41,
+      "drop_percent": 0.45,
+      "entity_id": 22017,
+      "entity_name": "Eclipsion Spellbinder",
+      "out_of": 9169,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 49,
+      "drop_percent": 0.66,
+      "entity_id": 22018,
+      "entity_name": "Eclipsion Cavalier",
+      "out_of": 7480,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.69,
+      "entity_id": 22076,
+      "entity_name": "Torloth the Magnificent",
+      "out_of": 291,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.68,
+      "entity_id": 22093,
+      "entity_name": "Illidari Watcher",
+      "out_of": 293,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 124,
+        "id": 19792,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 124,
+                "outof": 27680
+              }
+            },
+            "4": {
+              "0": {
+                "count": 5,
+                "outof": 1844
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 1427
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 69,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 124,
+            "outof": 27680
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Eclipsion Centurion",
+        "outof": 27680,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 20,
+        "id": 19795,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 20,
+                "outof": 1877
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 69,
+        "minlevel": 69,
+        "modes": {
+          "0": {
+            "count": 20,
+            "outof": 1877
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Eclipsion Blood Knight",
+        "outof": 1877,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 70,
+        "id": 19796,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 70,
+                "outof": 20689
+              }
+            },
+            "4": {
+              "0": {
+                "count": 4,
+                "outof": 1850
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 1940
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 69,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 70,
+            "outof": 20689
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Eclipsion Archmage",
+        "outof": 20689,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 27,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 19797,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 2
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 71,
+        "minlevel": 71,
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Illidari Highlord",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 2,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Crimson Sigil",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 16,
+        "id": 19806,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 16,
+                "outof": 4871
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 282
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "modes": {
+          "0": {
+            "count": 16,
+            "outof": 4871
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Eclipsion Bloodwarder",
+        "outof": 4871,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 182,
+        "id": 22016,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 182,
+                "outof": 31470
+              }
+            },
+            "4": {
+              "0": {
+                "count": 10,
+                "outof": 1538
+              }
+            },
+            "5": {
+              "0": {
+                "count": 14,
+                "outof": 1335
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 69,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 182,
+            "outof": 31470
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Eclipsion Soldier",
+        "outof": 31470,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 41,
+        "id": 22017,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 41,
+                "outof": 9169
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 445
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 69,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 41,
+            "outof": 9169
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Eclipsion Spellbinder",
+        "outof": 9169,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 49,
+        "id": 22018,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 49,
+                "outof": 7480
+              }
+            },
+            "4": {
+              "0": {
+                "count": 4,
+                "outof": 405
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 69,
+        "minlevel": 69,
+        "modes": {
+          "0": {
+            "count": 49,
+            "outof": 7480
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Eclipsion Cavalier",
+        "outof": 7480,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 22076,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 291
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 291
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Torloth the Magnificent",
+        "outof": 291,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Crimson Sigil",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 22093,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 293
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 293
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Illidari Watcher",
+        "outof": 293,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Crimson Sigil",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    38961,
+    38929
+  ],
+  "url": "https://www.wowhead.com/tbc/item=31682"
+}

@@ -1,0 +1,79 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is looted from Blackrock Slayer. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T08:51:56+00:00",
+  "item_id": 13476,
+  "name": "Recipe: Mighty Rage Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1167,
+      "drop_percent": 3.78,
+      "entity_id": 7027,
+      "entity_name": "Blackrock Slayer",
+      "out_of": 30874,
+      "source_url": "https://www.wowhead.com/tbc/item=13476",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 1167,
+        "id": 7027,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1167,
+                "outof": 30874
+              }
+            }
+          }
+        },
+        "location": [
+          46
+        ],
+        "maxlevel": 57,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 1167,
+            "outof": 30874
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Blackrock Slayer",
+        "outof": 30874,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    17552,
+    17528
+  ],
+  "url": "https://www.wowhead.com/tbc/item=13476"
+}

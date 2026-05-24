@@ -1,0 +1,73 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Item Enhancements (Temporary) category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:21:06+00:00",
+  "item_id": 12643,
+  "name": "Dense Weightstone",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 16640,
+      "entity_name": "Dense Weightstone",
+      "profession": "Blacksmithing",
+      "source_url": "https://www.wowhead.com/tbc/item=12643/dense-weightstone",
+      "spell_id": 16640,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          250,
+          255,
+          257,
+          260
+        ],
+        "creates": [
+          12643,
+          1,
+          1
+        ],
+        "id": 16640,
+        "learnedat": 250,
+        "level": 0,
+        "name": "Dense Weightstone",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 1,
+        "reagents": [
+          [
+            12365,
+            1
+          ],
+          [
+            14047,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "trainingcost": 10000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=12643/dense-weightstone"
+}

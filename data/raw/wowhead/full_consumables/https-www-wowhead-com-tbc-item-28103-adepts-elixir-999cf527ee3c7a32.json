@@ -1,0 +1,188 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Adept's Elixir is a level 60 battle elixir. It is crafted and a quest reward. In the Elixirs category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 28103,
+  "name": "Adept's Elixir",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9903,
+      "entity_name": "The Biggest of Them All",
+      "quest_id": 9903,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=28103/adepts-elixir",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9905,
+      "entity_name": "Maktu's Revenge",
+      "quest_id": 9905,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=28103/adepts-elixir",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11093,
+      "entity_name": "Hungry Nether Rays",
+      "quest_id": 11093,
+      "source_url": "https://www.wowhead.com/tbc/item=28103/adepts-elixir",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 33740,
+      "entity_name": "Adept's Elixir",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=28103/adepts-elixir",
+      "spell_id": 33740,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          315,
+          322,
+          330
+        ],
+        "creates": [
+          28103,
+          1,
+          1
+        ],
+        "id": 33740,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Adept's Elixir",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 1,
+        "reagents": [
+          [
+            13463,
+            1
+          ],
+          [
+            22785,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "trainingcost": 20000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9903,
+        "itemchoices": [
+          [
+            28103,
+            5
+          ],
+          [
+            28102,
+            5
+          ]
+        ],
+        "level": 64,
+        "money": 31000,
+        "name": "The Biggest of Them All",
+        "popularity": 16,
+        "reprewards": [
+          [
+            530,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 2,
+        "xp": 10750
+      },
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9905,
+        "itemchoices": [
+          [
+            28103,
+            5
+          ],
+          [
+            28102,
+            5
+          ]
+        ],
+        "level": 64,
+        "money": 31000,
+        "name": "Maktu's Revenge",
+        "popularity": 13,
+        "reprewards": [
+          [
+            978,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 1,
+        "xp": 10750
+      },
+      {
+        "category": 3679,
+        "category2": 8,
+        "id": 11093,
+        "itemchoices": [
+          [
+            22831,
+            2
+          ],
+          [
+            28103,
+            2
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Hungry Nether Rays",
+        "popularity": 13,
+        "reprewards": [
+          [
+            1031,
+            250
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28103/adepts-elixir"
+}

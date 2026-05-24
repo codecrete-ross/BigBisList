@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue two-handed axe has an item level of 42. It is looted from Herod. In the Two-Handed Axes category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:09:36+00:00",
+  "item_id": 7717,
+  "name": "Ravager",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 99,
+      "drop_percent": 11.77,
+      "entity_id": 3975,
+      "entity_name": "Herod",
+      "out_of": 841,
+      "source_url": "https://www.wowhead.com/tbc/item=7717/ravager",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 99,
+        "id": 3975,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2230,
+                "outof": 16222
+              }
+            },
+            "4": {
+              "0": {
+                "count": 101,
+                "outof": 747
+              }
+            },
+            "5": {
+              "0": {
+                "count": 99,
+                "outof": 841
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 37,
+        "minlevel": 37,
+        "modes": {
+          "0": {
+            "count": 2230,
+            "outof": 16222
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Herod",
+        "outof": 841,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Scarlet Champion",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=7717/ravager"
+}

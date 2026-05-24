@@ -1,0 +1,103 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This is a level 70 blue yellow gem. It is crafted. In the Yellow Gems category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:40:44+00:00",
+  "item_id": 24047,
+  "name": "Brilliant Dawnstone",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31096,
+      "entity_name": "Brilliant Dawnstone",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=24047/brilliant-living-ruby",
+      "spell_id": 31096,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          365,
+          380
+        ],
+        "creates": [
+          24047,
+          1,
+          1
+        ],
+        "id": 31096,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Brilliant Dawnstone",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            23440,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24203,
+        "level": 70,
+        "name": "Design: Brilliant Dawnstone",
+        "popularity": 9,
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24203,
+      "level": 70,
+      "name": "Design: Brilliant Dawnstone",
+      "popularity": 9,
+      "quality": 3,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24047/brilliant-living-ruby"
+}

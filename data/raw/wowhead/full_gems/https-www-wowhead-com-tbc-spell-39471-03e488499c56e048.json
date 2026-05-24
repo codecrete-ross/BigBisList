@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-05-24T08:32:57+00:00",
+  "name": "Wicked Noble Topaz",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 31879,
+      "entity_name": "Design: Wicked Noble Topaz",
+      "item_id": 31879,
+      "source_url": "https://www.wowhead.com/tbc/spell=39471",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 31879,
+        "level": 70,
+        "name": "Design: Wicked Noble Topaz",
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 39471,
+  "url": "https://www.wowhead.com/tbc/spell=39471"
+}

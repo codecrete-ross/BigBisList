@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Other Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:24:05+00:00",
+  "item_id": 10752,
+  "name": "Emerald Encrusted Chest",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 2521,
+      "entity_name": "To Serve Kum'isha",
+      "quest_id": 2521,
+      "source_url": "https://www.wowhead.com/tbc/item=10752",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 2522,
+      "entity_name": "Kum'isha's Endeavors",
+      "quest_id": 2522,
+      "source_url": "https://www.wowhead.com/tbc/item=10752",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 4,
+        "category2": 0,
+        "id": 2521,
+        "itemrewards": [
+          [
+            10752,
+            1
+          ]
+        ],
+        "level": 55,
+        "name": "To Serve Kum'isha",
+        "popularity": 11,
+        "reqlevel": 45,
+        "side": 3,
+        "xp": 12250
+      },
+      {
+        "category": 4,
+        "category2": 0,
+        "id": 2522,
+        "itemrewards": [
+          [
+            10752,
+            1
+          ]
+        ],
+        "level": 55,
+        "name": "Kum'isha's Endeavors",
+        "popularity": 7,
+        "reqlevel": 45,
+        "side": 3,
+        "wflags": 1
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10752"
+}

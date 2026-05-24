@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward from Festival Dumplings. In the Consumables category. An item from Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 21537,
+  "name": "Festival Dumplings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8863,
+      "entity_name": "Festival Dumplings",
+      "quest_id": 8863,
+      "source_url": "https://www.wowhead.com/tbc/item=21537/festival-dumplings",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": -366,
+        "category2": 9,
+        "id": 8863,
+        "itemrewards": [
+          [
+            21537,
+            8
+          ]
+        ],
+        "name": "Festival Dumplings",
+        "popularity": 9,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 24
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21537/festival-dumplings"
+}

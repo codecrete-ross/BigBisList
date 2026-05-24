@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "An item in the Consumables category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 22044,
+  "name": "Mana Emerald",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 27101,
+      "entity_name": "Conjure Mana Emerald",
+      "source_url": "https://www.wowhead.com/tbc/item=22044/mana-emerald",
+      "spell_id": 27101,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 7,
+        "chrclass": 128,
+        "creates": [
+          22044,
+          1,
+          1
+        ],
+        "id": 27101,
+        "level": 68,
+        "name": "Conjure Mana Emerald",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 1,
+        "reqclass": 128,
+        "schools": 64,
+        "skill": [
+          237
+        ],
+        "trainingcost": 96000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22044/mana-emerald"
+}

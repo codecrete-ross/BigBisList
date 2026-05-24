@@ -1,0 +1,116 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This is a level 70 blue meta gem. It is crafted. In the Meta Gems category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T08:32:55+00:00",
+  "item_id": 25901,
+  "name": "Insightful Earthstorm Diamond",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32870,
+      "entity_name": "Insightful Earthstorm Diamond",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=25901/insightful-earthstorm-diamond",
+      "spell_id": 32870,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          25901,
+          1,
+          1
+        ],
+        "id": 32870,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Insightful Earthstorm Diamond",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            25867,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 25904,
+        "level": 73,
+        "name": "Design: Insightful Earthstorm Diamond",
+        "popularity": 9,
+        "quality": 1,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Almaador",
+            "t": 1,
+            "ti": 21432,
+            "z": 3703
+          }
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 25904,
+      "level": 73,
+      "name": "Design: Insightful Earthstorm Diamond",
+      "popularity": 9,
+      "quality": 1,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Almaador",
+          "t": 1,
+          "ti": 21432,
+          "z": 3703
+        }
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25901/insightful-earthstorm-diamond"
+}

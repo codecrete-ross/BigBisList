@@ -1,0 +1,48 @@
+{
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "name": "Enchant Weapon - Executioner",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 33307,
+      "entity_name": "Formula: Enchant Weapon - Executioner",
+      "item_id": 33307,
+      "source_url": "https://www.wowhead.com/tbc/spell=42974/executioner",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 33307,
+        "level": 75,
+        "name": "Formula: Enchant Weapon - Executioner",
+        "quality": 3,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 3805
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 42974,
+  "url": "https://www.wowhead.com/tbc/spell=42974/executioner"
+}

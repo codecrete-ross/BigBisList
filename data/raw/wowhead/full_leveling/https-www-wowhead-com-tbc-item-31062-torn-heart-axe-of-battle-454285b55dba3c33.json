@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue two-handed axe has an item level of 109. It is a quest reward from The Cipher of Damnation. In the Two-Handed Axes category. Always up to date.",
+  "fetched_at": "2026-05-24T09:09:29+00:00",
+  "item_id": 31062,
+  "name": "Torn-heart Axe of Battle",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10588,
+      "entity_name": "The Cipher of Damnation",
+      "quest_id": 10588,
+      "source_url": "https://www.wowhead.com/tbc/item=31062/torn-heart-axe-of-battle",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10588,
+        "itemchoices": [
+          [
+            31036,
+            1
+          ],
+          [
+            31038,
+            1
+          ],
+          [
+            31062,
+            1
+          ],
+          [
+            31071,
+            1
+          ],
+          [
+            31072,
+            1
+          ],
+          [
+            31073,
+            1
+          ]
+        ],
+        "itemrewards": [
+          [
+            31074,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "The Cipher of Damnation",
+        "popularity": 50,
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31062/torn-heart-axe-of-battle"
+}

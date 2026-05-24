@@ -1,0 +1,118 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is sold by NPCs. In the Potions category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 32948,
+  "name": "Auchenai Mana Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 2,
+          "item_id": 28558,
+          "name": "Item 28558"
+        }
+      ],
+      "entity_id": 19772,
+      "entity_name": "Spirit Sage Gartok",
+      "source_url": "https://www.wowhead.com/tbc/item=32948/auchenai-mana-potion",
+      "type": "vendor",
+      "vendor_id": 19772
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 2,
+          "item_id": 28558,
+          "name": "Item 28558"
+        }
+      ],
+      "entity_id": 19773,
+      "entity_name": "Spirit Sage Zran",
+      "source_url": "https://www.wowhead.com/tbc/item=32948/auchenai-mana-potion",
+      "type": "vendor",
+      "vendor_id": 19773
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                28558,
+                2
+              ]
+            ]
+          ]
+        ],
+        "id": 19772,
+        "location": [
+          3519
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Spirit Sage Gartok",
+        "popularity": 6,
+        "react": [
+          -1,
+          1
+        ],
+        "stack": 1,
+        "stock": -1,
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                28558,
+                2
+              ]
+            ]
+          ]
+        ],
+        "id": 19773,
+        "location": [
+          3519
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Spirit Sage Zran",
+        "popularity": 10,
+        "react": [
+          1,
+          null
+        ],
+        "stack": 1,
+        "stock": -1,
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32948/auchenai-mana-potion"
+}

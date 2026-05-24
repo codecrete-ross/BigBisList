@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 112 goes in the \"Trinket\" slot. It is looted from Temporus. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:20:38+00:00",
+  "item_id": 28034,
+  "name": "Hourglass of the Unraveller",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 81,
+      "drop_percent": 15.46,
+      "entity_id": 17880,
+      "entity_name": "Temporus",
+      "out_of": 524,
+      "source_url": "https://www.wowhead.com/tbc/item=28034/hourglass-of-the-unraveller",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 81,
+        "id": 17880,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2372,
+                "outof": 15163
+              }
+            },
+            "4": {
+              "0": {
+                "count": 130,
+                "outof": 775
+              }
+            },
+            "5": {
+              "0": {
+                "count": 81,
+                "outof": 524
+              }
+            }
+          }
+        },
+        "location": [
+          2366
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2372,
+            "outof": 15163
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Temporus",
+        "outof": 524,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28034/hourglass-of-the-unraveller"
+}

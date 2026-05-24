@@ -1,0 +1,127 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Mageblood Potion is a level 50 guardian elixir. It is crafted. In the Elixirs category. An item from Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:02:48+00:00",
+  "item_id": 20007,
+  "name": "Mageblood Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 24365,
+      "entity_name": "Mageblood Potion",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=20007/mageblood-elixir",
+      "spell_id": 24365,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          275,
+          290,
+          310,
+          330
+        ],
+        "creates": [
+          20007,
+          1,
+          1
+        ],
+        "id": 24365,
+        "learnedat": 275,
+        "level": 0,
+        "name": "Mageblood Potion",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 1,
+        "reagents": [
+          [
+            13463,
+            1
+          ],
+          [
+            13466,
+            2
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 20011,
+        "level": 55,
+        "name": "Recipe: Mageblood Potion",
+        "popularity": 5,
+        "quality": 1,
+        "skill": 275,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Rin'wosho the Trader",
+            "t": 1,
+            "ti": 14921,
+            "z": 33
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 20011,
+      "level": 55,
+      "name": "Recipe: Mageblood Potion",
+      "popularity": 5,
+      "quality": 1,
+      "skill": 275,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Rin'wosho the Trader",
+          "t": 1,
+          "ti": 14921,
+          "z": 33
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20007/mageblood-elixir"
+}

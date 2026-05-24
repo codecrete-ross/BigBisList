@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This leatherworking pattern is used for the Leatherworking profession. It is sold by Quartermaster Urgronn. In the Leatherworking Patterns category.",
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "item_id": 31362,
+  "name": "Pattern: Nethercobra Leg Armor",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17585,
+      "entity_name": "Quartermaster Urgronn",
+      "source_url": "https://www.wowhead.com/tbc/item=31362",
+      "type": "vendor",
+      "vendor_id": 17585
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            102000
+          ]
+        ],
+        "id": 17585,
+        "location": [
+          3483
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Quartermaster Urgronn",
+        "popularity": 15,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Thrallmar Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    35554,
+    35490
+  ],
+  "url": "https://www.wowhead.com/tbc/item=31362"
+}

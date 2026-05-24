@@ -1,0 +1,124 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green staff has an item level of 81. It is a quest reward. In the Staves category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T08:59:34+00:00",
+  "item_id": 29910,
+  "name": "The Staff of Twin Worlds",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10123,
+      "entity_name": "Felspark Ravine",
+      "quest_id": 10123,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=29910/the-staff-of-twin-worlds",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10142,
+      "entity_name": "The Path of Anguish",
+      "quest_id": 10142,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=29910/the-staff-of-twin-worlds",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 10123,
+        "itemchoices": [
+          [
+            29908,
+            1
+          ],
+          [
+            29909,
+            1
+          ],
+          [
+            29910,
+            1
+          ],
+          [
+            29911,
+            1
+          ],
+          [
+            29913,
+            1
+          ]
+        ],
+        "level": 61,
+        "name": "Felspark Ravine",
+        "popularity": 10,
+        "reprewards": [
+          [
+            947,
+            250
+          ]
+        ],
+        "reqlevel": 58,
+        "side": 2,
+        "xp": 9800
+      },
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 10142,
+        "itemchoices": [
+          [
+            29908,
+            1
+          ],
+          [
+            29909,
+            1
+          ],
+          [
+            29910,
+            1
+          ],
+          [
+            29911,
+            1
+          ],
+          [
+            29913,
+            1
+          ]
+        ],
+        "level": 61,
+        "name": "The Path of Anguish",
+        "popularity": 17,
+        "reprewards": [
+          [
+            946,
+            250
+          ]
+        ],
+        "reqlevel": 58,
+        "side": 1,
+        "xp": 9800
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29910/the-staff-of-twin-worlds"
+}

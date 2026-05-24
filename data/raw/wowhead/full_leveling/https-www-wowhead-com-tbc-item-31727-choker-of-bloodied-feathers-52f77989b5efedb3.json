@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue amulet of item level 94 goes in the \"Neck\" slot. It is a quest reward from The Skettis Offensive. In the Amulets category. Always up to date.",
+  "fetched_at": "2026-05-24T09:01:23+00:00",
+  "item_id": 31727,
+  "name": "Choker of Bloodied Feathers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10879,
+      "entity_name": "The Skettis Offensive",
+      "quest_id": 10879,
+      "source_url": "https://www.wowhead.com/tbc/item=31727/choker-of-bloodied-feathers",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10879,
+        "itemchoices": [
+          [
+            31727,
+            1
+          ],
+          [
+            31726,
+            1
+          ]
+        ],
+        "level": 65,
+        "money": 99000,
+        "name": "The Skettis Offensive",
+        "popularity": 15,
+        "reprewards": [
+          [
+            1011,
+            500
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 3,
+        "type": 1,
+        "xp": 16500
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31727/choker-of-bloodied-feathers"
+}

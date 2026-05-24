@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-05-24T09:22:07+00:00",
+  "name": "Elixir of the Mongoose",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 13491,
+      "entity_name": "Recipe: Elixir of the Mongoose",
+      "item_id": 13491,
+      "source_url": "https://www.wowhead.com/tbc/spell=17571",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13491,
+        "level": 56,
+        "name": "Recipe: Elixir of the Mongoose",
+        "quality": 2,
+        "skill": 280,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 17571,
+  "url": "https://www.wowhead.com/tbc/spell=17571"
+}

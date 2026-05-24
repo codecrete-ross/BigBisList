@@ -1,0 +1,90 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue bow has an item level of 24. It is looted from Lord Serpentis. In the Bows category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:03:13+00:00",
+  "item_id": 6469,
+  "name": "Venomstrike",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 8.74,
+      "entity_id": 3673,
+      "entity_name": "Lord Serpentis",
+      "out_of": 103,
+      "source_url": "https://www.wowhead.com/tbc/item=6469/venomstrike",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 9,
+        "id": 3673,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1505,
+                "outof": 8777
+              }
+            },
+            "4": {
+              "0": {
+                "count": 9,
+                "outof": 103
+              }
+            },
+            "5": {
+              "0": {
+                "count": 22,
+                "outof": 143
+              }
+            }
+          }
+        },
+        "location": [
+          718
+        ],
+        "maxlevel": 20,
+        "minlevel": 20,
+        "modes": {
+          "0": {
+            "count": 1505,
+            "outof": 8777
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lord Serpentis",
+        "outof": 103,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Fanglord",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6469/venomstrike"
+}

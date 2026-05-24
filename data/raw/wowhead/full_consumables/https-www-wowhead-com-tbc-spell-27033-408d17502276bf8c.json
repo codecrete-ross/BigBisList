@@ -1,0 +1,47 @@
+{
+  "fetched_at": "2026-05-24T08:51:33+00:00",
+  "name": "Heavy Netherweave Bandage",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 21993,
+      "entity_name": "Manual: Heavy Netherweave Bandage",
+      "item_id": 21993,
+      "source_url": "https://www.wowhead.com/tbc/spell=27033",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21993,
+        "level": 70,
+        "name": "Manual: Heavy Netherweave Bandage",
+        "quality": 1,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "z": 3483
+          }
+        ],
+        "subclass": 7
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27033,
+  "url": "https://www.wowhead.com/tbc/spell=27033"
+}

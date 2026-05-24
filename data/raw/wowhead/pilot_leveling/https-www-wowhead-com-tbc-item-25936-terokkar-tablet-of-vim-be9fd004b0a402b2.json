@@ -1,0 +1,92 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 99 goes in the \"Trinket\" slot. It is a quest reward. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:55:34+00:00",
+  "item_id": 25936,
+  "name": "Terokkar Tablet of Vim",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10035,
+      "entity_name": "Torgos!",
+      "quest_id": 10035,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25936/terokkar-tablet-of-vim",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10036,
+      "entity_name": "Torgos!",
+      "quest_id": 10036,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25936/terokkar-tablet-of-vim",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10035,
+        "itemchoices": [
+          [
+            25937,
+            1
+          ],
+          [
+            25936,
+            1
+          ]
+        ],
+        "level": 65,
+        "money": 66000,
+        "name": "Torgos!",
+        "popularity": 17,
+        "reqlevel": 63,
+        "side": 1,
+        "type": 1,
+        "xp": 13750
+      },
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10036,
+        "itemchoices": [
+          [
+            25937,
+            1
+          ],
+          [
+            25936,
+            1
+          ]
+        ],
+        "level": 65,
+        "money": 66000,
+        "name": "Torgos!",
+        "popularity": 18,
+        "reqlevel": 63,
+        "side": 2,
+        "type": 1,
+        "xp": 13750
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25936/terokkar-tablet-of-vim"
+}

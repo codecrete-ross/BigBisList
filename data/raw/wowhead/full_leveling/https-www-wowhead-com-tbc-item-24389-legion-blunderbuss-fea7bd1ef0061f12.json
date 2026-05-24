@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue gun has an item level of 88. It is looted from Broggok. In the Guns category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:02:52+00:00",
+  "item_id": 24389,
+  "name": "Legion Blunderbuss",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 70,
+      "drop_percent": 15.56,
+      "entity_id": 17380,
+      "entity_name": "Broggok",
+      "out_of": 450,
+      "source_url": "https://www.wowhead.com/tbc/item=24389/legion-blunderbuss",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 70,
+        "id": 17380,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2673,
+                "outof": 15219
+              }
+            },
+            "4": {
+              "0": {
+                "count": 72,
+                "outof": 627
+              }
+            },
+            "5": {
+              "0": {
+                "count": 70,
+                "outof": 450
+              }
+            }
+          }
+        },
+        "location": [
+          3713
+        ],
+        "maxlevel": 72,
+        "minlevel": 63,
+        "modes": {
+          "0": {
+            "count": 2673,
+            "outof": 15219
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Broggok",
+        "outof": 450,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24389/legion-blunderbuss"
+}

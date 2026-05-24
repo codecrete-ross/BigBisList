@@ -1,0 +1,153 @@
+{
+  "description": "Enchanters can learn Subtlety from Formula: Enchant Cloak - Subtlety at 300 Enchanting skill. This enchanting formula can be obtained by reaching Exalted standing with Thrallmar/Honor Hold.",
+  "fetched_at": "2026-05-24T09:39:18+00:00",
+  "name": "Enchant Cloak - Subtlety",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 20735,
+      "entity_name": "Formula: Enchant Cloak - Subtlety",
+      "item_id": 20735,
+      "source_url": "https://www.wowhead.com/tbc/spell=25084/enchant-cloak-subtlety",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 33150,
+      "entity_name": "Formula: Enchant Cloak - Subtlety",
+      "item_id": 33150,
+      "source_url": "https://www.wowhead.com/tbc/spell=25084/enchant-cloak-subtlety",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 33151,
+      "entity_name": "Formula: Enchant Cloak - Subtlety",
+      "item_id": 33151,
+      "source_url": "https://www.wowhead.com/tbc/spell=25084/enchant-cloak-subtlety",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          310,
+          325,
+          340
+        ],
+        "id": 25084,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Enchant Cloak - Subtlety",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22448,
+            4
+          ],
+          [
+            22446,
+            2
+          ],
+          [
+            22456,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2,
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 20735,
+        "level": 70,
+        "name": "Formula: Enchant Cloak - Subtlety",
+        "quality": 3,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Emperor Vek'lor",
+            "t": 1,
+            "ti": 15276,
+            "z": 3428
+          }
+        ],
+        "subclass": 8
+      },
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 33150,
+        "level": 70,
+        "name": "Formula: Enchant Cloak - Subtlety",
+        "quality": 3,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Logistics Officer Ulrike",
+            "t": 1,
+            "ti": 17657,
+            "z": 3483
+          }
+        ],
+        "subclass": 8
+      },
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 33151,
+        "level": 70,
+        "name": "Formula: Enchant Cloak - Subtlety",
+        "quality": 3,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Urgronn",
+            "t": 1,
+            "ti": 17585,
+            "z": 3483
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 25084,
+  "url": "https://www.wowhead.com/tbc/spell=25084/enchant-cloak-subtlety"
+}

@@ -1,0 +1,51 @@
+{
+  "fetched_at": "2026-05-24T08:32:55+00:00",
+  "name": "Enchant Weapon - Major Intellect",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22551,
+      "entity_name": "Formula: Enchant Weapon - Major Intellect",
+      "item_id": 22551,
+      "source_url": "https://www.wowhead.com/tbc/spell=27968/enchant-weapon-major-intellect",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 22551,
+        "level": 68,
+        "name": "Formula: Enchant Weapon - Major Intellect",
+        "quality": 2,
+        "skill": 340,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Sunfury Researcher",
+            "t": 1,
+            "ti": 20136,
+            "z": 3523
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27968,
+  "url": "https://www.wowhead.com/tbc/spell=27968/enchant-weapon-major-intellect"
+}

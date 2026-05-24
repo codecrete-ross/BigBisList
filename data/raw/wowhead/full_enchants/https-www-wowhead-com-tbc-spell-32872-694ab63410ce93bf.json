@@ -1,0 +1,78 @@
+{
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:46:38+00:00",
+  "name": "Mystical Skyfire Diamond",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 25909,
+      "entity_name": "Design: Mystical Skyfire Diamond",
+      "item_id": 25909,
+      "source_url": "https://www.wowhead.com/tbc/spell=32872",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          25893,
+          1,
+          1
+        ],
+        "id": 32872,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Mystical Skyfire Diamond",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            25868,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 25909,
+        "level": 73,
+        "name": "Design: Mystical Skyfire Diamond",
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 32872,
+  "url": "https://www.wowhead.com/tbc/spell=32872"
+}

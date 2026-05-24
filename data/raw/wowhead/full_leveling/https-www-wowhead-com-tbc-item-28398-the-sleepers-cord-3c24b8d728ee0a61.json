@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 115 goes in the \"Waist\" slot. It is looted from Wrath-Scryer Soccothrates. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:02:10+00:00",
+  "item_id": 28398,
+  "name": "The Sleeper's Cord",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 58,
+      "drop_percent": 18.12,
+      "entity_id": 20886,
+      "entity_name": "Wrath-Scryer Soccothrates",
+      "out_of": 320,
+      "source_url": "https://www.wowhead.com/tbc/item=28398/the-sleepers-cord",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 58,
+        "id": 20886,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1793,
+                "outof": 9968
+              }
+            },
+            "4": {
+              "0": {
+                "count": 81,
+                "outof": 456
+              }
+            },
+            "5": {
+              "0": {
+                "count": 58,
+                "outof": 320
+              }
+            }
+          }
+        },
+        "location": [
+          3848
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1793,
+            "outof": 9968
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wrath-Scryer Soccothrates",
+        "outof": 320,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28398/the-sleepers-cord"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "An item in the Other Items category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:23:00+00:00",
+  "item_id": 27446,
+  "name": "Mr. Pinchy's Gift",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 33064,
+      "entity_name": "Mr. Pinchy's Gift",
+      "source_url": "https://www.wowhead.com/tbc/item=27446",
+      "spell_id": 33064,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          27446,
+          1,
+          1
+        ],
+        "id": 33064,
+        "level": 0,
+        "name": "Mr. Pinchy's Gift",
+        "popularity": 4,
+        "quality": 3,
+        "schools": 1
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27446"
+}

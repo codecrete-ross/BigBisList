@@ -1,0 +1,120 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Food & Drinks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 33825,
+  "name": "Skullfish Soup",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 43707,
+      "entity_name": "Skullfish Soup",
+      "source_url": "https://www.wowhead.com/tbc/item=33825/skullfish-soup",
+      "spell_id": 43707,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          325,
+          335,
+          345,
+          355
+        ],
+        "creates": [
+          33825,
+          1,
+          1
+        ],
+        "id": 43707,
+        "learnedat": 325,
+        "level": 0,
+        "name": "Skullfish Soup",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 1,
+        "reagents": [
+          [
+            33824,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 33870,
+        "level": 60,
+        "name": "Recipe: Skullfish Soup",
+        "popularity": 24,
+        "quality": 2,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "icon": "inv_cask_01",
+            "n": "Barrel of Fish",
+            "q": 1,
+            "t": 3,
+            "ti": 33844
+          }
+        ],
+        "subclass": 5
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 33870,
+      "level": 60,
+      "name": "Recipe: Skullfish Soup",
+      "popularity": 24,
+      "quality": 2,
+      "skill": 325,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "icon": "inv_cask_01",
+          "n": "Barrel of Fish",
+          "q": 1,
+          "t": 3,
+          "ti": 33844
+        }
+      ],
+      "subclass": 5
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33825/skullfish-soup"
+}

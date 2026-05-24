@@ -1,0 +1,50 @@
+{
+  "fetched_at": "2026-05-24T08:35:28+00:00",
+  "name": "Enchant Shield - Major Stamina",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 28282,
+      "entity_name": "Formula: Enchant Shield - Major Stamina",
+      "item_id": 28282,
+      "source_url": "https://www.wowhead.com/tbc/spell=34009",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 28282,
+        "level": 65,
+        "name": "Formula: Enchant Shield - Major Stamina",
+        "quality": 1,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Madame Ruby",
+            "t": 1,
+            "ti": 19663,
+            "z": 3703
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 34009,
+  "url": "https://www.wowhead.com/tbc/spell=34009"
+}

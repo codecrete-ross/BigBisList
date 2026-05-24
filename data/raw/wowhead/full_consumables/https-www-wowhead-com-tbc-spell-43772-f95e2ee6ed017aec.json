@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-05-24T08:51:30+00:00",
+  "name": "Kibler's Bits",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 33875,
+      "entity_name": "Recipe: Kibler's Bits",
+      "item_id": 33875,
+      "source_url": "https://www.wowhead.com/tbc/spell=43772",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 33875,
+        "level": 60,
+        "name": "Recipe: Kibler's Bits",
+        "quality": 2,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 5
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 43772,
+  "url": "https://www.wowhead.com/tbc/spell=43772"
+}

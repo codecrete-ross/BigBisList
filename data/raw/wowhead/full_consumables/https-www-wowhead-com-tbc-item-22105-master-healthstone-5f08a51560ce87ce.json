@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "An item in the Other Consumables category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 22105,
+  "name": "Master Healthstone",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 34150,
+      "entity_name": "Create Master Healthstone",
+      "source_url": "https://www.wowhead.com/tbc/item=22105/master-healthstone",
+      "spell_id": 34150,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "chrclass": 256,
+        "creates": [
+          22105,
+          1,
+          1
+        ],
+        "id": 34150,
+        "level": 1,
+        "name": "Create Master Healthstone",
+        "popularity": 4,
+        "quality": 1,
+        "reqclass": 256,
+        "schools": 32
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22105/master-healthstone"
+}

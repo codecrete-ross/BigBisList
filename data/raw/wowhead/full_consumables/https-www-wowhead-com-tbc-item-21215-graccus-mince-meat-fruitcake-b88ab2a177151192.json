@@ -1,0 +1,114 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is looted. In the Food & Drinks category. An item from Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 21215,
+  "name": "Graccu's Mince Meat Fruitcake",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 3698,
+      "drop_percent": 97.86,
+      "entity_id": 17685,
+      "entity_name": "Contained in: Smokywood Pastures Sampler",
+      "item_id": 17685,
+      "out_of": 3779,
+      "source_url": "https://www.wowhead.com/tbc/item=21215/graccus-mince-meat-fruitcake",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1680,
+      "drop_percent": 100.0,
+      "entity_id": 21216,
+      "entity_name": "Contained in: Smokywood Pastures Extra-Special Gift",
+      "item_id": 21216,
+      "out_of": 1680,
+      "source_url": "https://www.wowhead.com/tbc/item=21215/graccus-mince-meat-fruitcake",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "count": 3698,
+        "flags2": 24580,
+        "id": 17685,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3698,
+                "outof": 3779
+              }
+            },
+            "4": {
+              "0": {
+                "count": 6,
+                "outof": 6
+              }
+            },
+            "5": {
+              "0": {
+                "count": 18,
+                "outof": 18
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Smokywood Pastures Sampler",
+        "outof": 3779,
+        "pctstack": "",
+        "quality": 1,
+        "slot": 0,
+        "subclass": 3
+      },
+      {
+        "classs": 15,
+        "count": 1680,
+        "flags2": 24580,
+        "id": 21216,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1680,
+                "outof": 1680
+              }
+            },
+            "5": {
+              "0": {
+                "count": 6,
+                "outof": 6
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Smokywood Pastures Extra-Special Gift",
+        "outof": 1680,
+        "pctstack": "",
+        "quality": 1,
+        "slot": 0,
+        "subclass": 3
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21215/graccus-mince-meat-fruitcake"
+}

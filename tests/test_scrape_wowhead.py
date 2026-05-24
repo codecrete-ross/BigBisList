@@ -1,3 +1,4 @@
+import tempfile
 import unittest
 
 import tools.scrape_wowhead as scraper
@@ -115,6 +116,36 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(snapshot["tables"][1]["rows"][0]["entities"][0]["type"], "spell")
         self.assertEqual(snapshot["tables"][1]["rows"][0]["spell_id"], 46540)
 
+    def test_guide_parser_uses_gatherer_names_for_empty_links(self):
+        html = """
+        <html><head><title>Guide</title></head><body>
+        <script>
+        WH.Gatherer.addData(6, 5, {"27924":{"name_enus":"Enchant Ring - Spellpower"}});
+        </script>
+        <h3>Best Enchants</h3>
+        <table>
+          <tr><td>Ring</td><td><a href="/tbc/spell=27924"></a></td></tr>
+        </table>
+        </body></html>
+        """
+        snapshot = parse_guide_html("https://www.wowhead.com/tbc/guide/example", html)
+        row = snapshot["tables"][0]["rows"][0]
+        self.assertEqual(row["entity_name"], "Enchant Ring - Spellpower")
+        self.assertEqual(row["spell_name"], "Enchant Ring - Spellpower")
+
+    def test_guide_parser_extracts_leveling_narrative_sections(self):
+        html = """
+        <html><head><title>Guide</title></head><body>
+        <h3>Leveling Rotation Levels 10-20</h3>
+        <p>At level 10, use <a href="/tbc/spell=16814/hurricane">Hurricane</a> when multiple enemies are stacked.</p>
+        </body></html>
+        """
+        snapshot = parse_guide_html("https://www.wowhead.com/tbc/guide/leveling-example", html)
+        section = snapshot["sections"][0]
+        self.assertEqual(section["data_family"], "leveling")
+        self.assertEqual(section["entries"][0]["level_range"], "10-20")
+        self.assertEqual(section["entries"][0]["entities"][0]["id"], 16814)
+
     def test_spell_parser_extracts_spell_relationship_sources(self):
         html = """
         <html><head><title>Enchant Weapon - Sunfire - Spell - TBC Classic</title></head><body>
@@ -127,6 +158,134 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(snapshot["spell_id"], 46540)
         self.assertEqual(snapshot["normalized_sources"][0]["type"], "taught_by_item")
         self.assertEqual(snapshot["normalized_sources"][0]["item_id"], 22562)
+        self.assertEqual(scraper.discover_related_source_urls([snapshot]), ["https://www.wowhead.com/tbc/item=22562"])
+
+    def test_spell_parser_extracts_trainer_source_from_recipe_listview(self):
+        html = """
+        <html><head>
+        <title>Enchant Bracer - Brawn - Spell - TBC Classic</title>
+        <meta name="description" content="Permanently enchants bracers to increase Strength by 12.">
+        </head><body>
+        <script>
+        new Listview({ id: 'recipes', data: [{"id":27899,"name":"Enchant Bracer - Brawn","skill":[333],"learnedat":305,"trainingcost":12500}], });
+        </script>
+        </body></html>
+        """
+        snapshot = parse_spell_html("https://www.wowhead.com/tbc/spell=27899/enchant-bracer-brawn", html)
+        source = snapshot["normalized_sources"][0]
+        self.assertEqual(source["type"], "trainer")
+        self.assertEqual(source["entity_name"], "Enchanting Trainer")
+        self.assertEqual(source["required_skill"], 305)
+
+    def test_enchant_import_uses_sourced_spell_alias_by_name(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-enchants"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Enchants</h3>
+            <table><tr><td>Chest</td><td><a href="/tbc/spell=46502/enchant-chest-exceptional-stats">Enchant Chest - Exceptional Stats</a></td></tr></table>
+            </body></html>
+            """,
+        )
+        anniversary_spell = parse_spell_html(
+            "https://www.wowhead.com/tbc/spell=46502/enchant-chest-exceptional-stats",
+            "<html><head><title>Enchant Chest - Exceptional Stats - Spell - TBC Classic</title></head><body></body></html>",
+        )
+        sourced_spell = parse_spell_html(
+            "https://www.wowhead.com/tbc/spell=27960/enchant-chest-exceptional-stats",
+            """
+            <html><head><title>Enchant Chest - Exceptional Stats - Spell - TBC Classic</title></head><body>
+            <script>
+            new Listview({ id: 'taught-by-item', data: [{"id":22547,"name":"Formula: Enchant Chest - Exceptional Stats"}], });
+            </script>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-enchants",
+            "url": guide_url,
+            "data_family": "enchants",
+            "class": "Druid",
+            "spec": "Balance",
+            "phase": "PR",
+        }
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            row = scraper.import_enchants_from_snapshots(
+                [guide_snapshot, anniversary_spell, sourced_spell],
+                fallback_to_canonical=False,
+            )["enchants"][0]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        self.assertEqual(row["id"], 46502)
+        self.assertEqual(row["source_spell_id"], 27960)
+        self.assertEqual(row["formula_item_ids"], [22547])
+        self.assertEqual(row["taught_by"][0]["item_id"], 22547)
+
+    def test_enchant_audit_accepts_sourced_spell_alias_by_name(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-enchants"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Enchants</h3>
+            <table><tr><td>Chest</td><td><a href="/tbc/spell=46502/enchant-chest-exceptional-stats">Enchant Chest - Exceptional Stats</a></td></tr></table>
+            </body></html>
+            """,
+        )
+        anniversary_spell = parse_spell_html(
+            "https://www.wowhead.com/tbc/spell=46502/enchant-chest-exceptional-stats",
+            "<html><head><title>Enchant Chest - Exceptional Stats - Spell - TBC Classic</title></head><body></body></html>",
+        )
+        sourced_spell = parse_spell_html(
+            "https://www.wowhead.com/tbc/spell=27960/enchant-chest-exceptional-stats",
+            """
+            <html><head><title>Enchant Chest - Exceptional Stats - Spell - TBC Classic</title></head><body>
+            <script>
+            new Listview({ id: 'taught-by-item', data: [{"id":22547,"name":"Formula: Enchant Chest - Exceptional Stats"}], });
+            </script>
+            </body></html>
+            """,
+        )
+        formula_item = parse_item_html(
+            "https://www.wowhead.com/tbc/item=22547/formula-enchant-chest-exceptional-stats",
+            """
+            <html><head>
+            <title>Formula: Enchant Chest - Exceptional Stats - Item - TBC Classic</title>
+            <meta name="description" content="This enchanting formula is sold by a vendor.">
+            </head><body>
+            <script>
+            new Listview({ id: 'sold-by', data: [{"id":17657,"name":"Logistics Officer Ulrike","location":[3483]}], });
+            </script>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-enchants",
+            "url": guide_url,
+            "data_family": "enchants",
+            "class": "Druid",
+            "spec": "Balance",
+            "phase": "PR",
+        }
+        original_manifest_urls = scraper.manifest_urls_for_family
+        original_sources_by_url = scraper.manifest_sources_by_url
+        scraper.manifest_urls_for_family = lambda family: {guide_url} if family == "enchants" else set()
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                tmp_path = scraper.Path(tmp)
+                for snapshot in [guide_snapshot, anniversary_spell, sourced_spell, formula_item]:
+                    scraper.write_snapshot(snapshot, tmp_path)
+                audit = scraper.build_snapshot_audit(tmp_path, "enchants")
+        finally:
+            scraper.manifest_urls_for_family = original_manifest_urls
+            scraper.manifest_sources_by_url = original_sources_by_url
+
+        self.assertTrue(audit["ok"], audit["errors"])
 
     def test_import_scaffolding_handles_all_non_gear_families_offline(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-druid-balance"
@@ -163,10 +322,131 @@ class WowheadScraperParserTests(unittest.TestCase):
 
         self.assertEqual(gems[0]["id"], 34220)
         self.assertTrue(gems[0]["meta"])
+        self.assertEqual(gems[0]["socket_category"], "meta")
+        self.assertEqual(gems[0]["context"], "standard")
         self.assertEqual(enchants[0]["id"], 46540)
         self.assertEqual(enchants[0]["type"], "spell")
+        self.assertEqual(enchants[0]["context"], "standard")
+        self.assertEqual(consumables[0]["category"], "flask")
         self.assertEqual(consumables[0]["items"], [22861, 22866])
         self.assertEqual(leveling[0]["entities"][0]["id"], 16814)
+
+    def test_leveling_import_uses_narrative_sections_without_tables(self):
+        url = "https://www.wowhead.com/tbc/guide/synthetic-leveling"
+        snapshot = parse_guide_html(
+            url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Leveling Talents Levels 20-30</h3>
+            <p>Pick up <a href="/tbc/spell=16814/hurricane">Hurricane</a> for larger pulls.</p>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-leveling",
+            "url": url,
+            "data_family": "leveling",
+            "class": "Druid",
+            "spec": "Balance",
+            "phase": "PR",
+        }
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {url: [source]}
+        try:
+            rows = scraper.import_leveling_from_snapshots([snapshot], fallback_to_canonical=False)["leveling"]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        self.assertEqual(rows[0]["section"], "Leveling Talents Levels 20-30")
+        self.assertEqual(rows[0]["level_range"], "20-30")
+        self.assertEqual(rows[0]["entities"][0]["type"], "spell")
+
+    def test_consumables_import_uses_section_lists_without_tables(self):
+        url = "https://www.wowhead.com/tbc/guide/synthetic-consumables"
+        snapshot = parse_guide_html(
+            url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Flask for Balance Druid DPS</h3>
+            <ul><li><a href="/tbc/item=22861/flask-of-blinding-light">Flask of Blinding Light</a></li></ul>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-consumables",
+            "url": url,
+            "data_family": "consumables",
+            "class": "Druid",
+            "spec": "Balance",
+            "phase": "PR",
+        }
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {url: [source]}
+        try:
+            rows = scraper.import_consumables_from_snapshots([snapshot], fallback_to_canonical=False)["consumables"]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        self.assertEqual(rows[0]["category"], "flask")
+        self.assertEqual(rows[0]["items"], [22861])
+
+    def test_non_gear_import_fans_out_shared_manifest_url_by_spec(self):
+        url = "https://www.wowhead.com/tbc/guide/synthetic-shared-gems"
+        snapshot = parse_guide_html(
+            url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Red Gems</h3>
+            <table><tr><td>Red Gem</td><td><a href="/tbc/item=24030/runed-living-ruby">Runed Living Ruby</a></td><td>Red</td></tr></table>
+            </body></html>
+            """,
+        )
+        sources = [
+            {"id": "mage-arcane", "url": url, "data_family": "gems", "class": "Mage", "spec": "Arcane", "phase": "PR"},
+            {"id": "mage-fire", "url": url, "data_family": "gems", "class": "Mage", "spec": "Fire", "phase": "PR"},
+        ]
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {url: sources}
+        try:
+            rows = scraper.import_gems_from_snapshots([snapshot], fallback_to_canonical=False)["gems"]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        self.assertEqual({row["spec"] for row in rows}, {"Arcane", "Fire"})
+
+    def test_snapshot_audit_non_gear_requires_linked_item_snapshots(self):
+        url = "https://www.wowhead.com/tbc/guide/synthetic-gems"
+        snapshot = parse_guide_html(
+            url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Meta Gems</h3>
+            <table><tr><td>BiS</td><td><a href="/tbc/item=34220/chaotic-skyfire-diamond">Chaotic Skyfire Diamond</a></td><td>Meta</td></tr></table>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-gems",
+            "url": url,
+            "data_family": "gems",
+            "class": "Druid",
+            "spec": "Balance",
+            "phase": "PR",
+        }
+        original_manifest_urls = scraper.manifest_urls_for_family
+        original_sources_by_url = scraper.manifest_sources_by_url
+        scraper.manifest_urls_for_family = lambda family: {url} if family == "gems" else set()
+        scraper.manifest_sources_by_url = lambda: {url: [source]}
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                scraper.write_snapshot(snapshot, scraper.Path(tmp))
+                audit = scraper.build_snapshot_audit(scraper.Path(tmp), "gems")
+        finally:
+            scraper.manifest_urls_for_family = original_manifest_urls
+            scraper.manifest_sources_by_url = original_sources_by_url
+
+        self.assertFalse(audit["ok"])
+        self.assertIn("Missing item snapshot for linked gems item 34220", "\n".join(audit["errors"]))
 
     def test_token_item_cost_urls_are_discovered_from_item_snapshots(self):
         html = """

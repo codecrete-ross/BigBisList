@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This leatherworking pattern is used for the Leatherworking profession. It is looted from Kael'thas Sunstrider. In the Leatherworking Patterns category.",
+  "fetched_at": "2026-05-24T09:23:19+00:00",
+  "item_id": 35303,
+  "name": "Pattern: Gloves of the Living Touch",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 70,
+      "drop_percent": 0.61,
+      "entity_id": 24664,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 11459,
+      "source_url": "https://www.wowhead.com/tbc/item=35303",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 70,
+        "id": 24664,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 70,
+                "outof": 11459
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": 70,
+            "outof": 11459
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 11459,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    35562,
+    18046
+  ],
+  "url": "https://www.wowhead.com/tbc/item=35303"
+}

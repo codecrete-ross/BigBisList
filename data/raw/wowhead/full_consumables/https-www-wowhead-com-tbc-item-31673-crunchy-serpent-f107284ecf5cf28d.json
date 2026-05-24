@@ -1,0 +1,170 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted and a quest reward. In the Food & Drinks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:50:59+00:00",
+  "item_id": 31673,
+  "name": "Crunchy Serpent",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10860,
+      "entity_name": "Mok'Nathal Treats",
+      "quest_id": 10860,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31673/crunchy-serpent",
+      "type": "quest",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 38868,
+      "entity_name": "Crunchy Serpent",
+      "source_url": "https://www.wowhead.com/tbc/item=31673/crunchy-serpent",
+      "spell_id": 38868,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          335,
+          355,
+          365,
+          375
+        ],
+        "creates": [
+          31673,
+          1,
+          1
+        ],
+        "id": 38868,
+        "learnedat": 335,
+        "level": 0,
+        "name": "Crunchy Serpent",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "reagents": [
+          [
+            31671,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          4,
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3522,
+        "category2": 8,
+        "id": 10860,
+        "itemrewards": [
+          [
+            31672,
+            3
+          ],
+          [
+            31673,
+            3
+          ],
+          [
+            31675,
+            1
+          ],
+          [
+            31674,
+            1
+          ]
+        ],
+        "level": 67,
+        "money": 37000,
+        "name": "Mok'Nathal Treats",
+        "popularity": 20,
+        "reqlevel": 65,
+        "side": 2,
+        "xp": 11650
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 31674,
+        "level": 67,
+        "name": "Recipe: Crunchy Serpent",
+        "popularity": 23,
+        "quality": 1,
+        "skill": 335,
+        "slot": 0,
+        "source": [
+          4,
+          5
+        ],
+        "sourcemore": [
+          {
+            "c": 3522,
+            "c2": 8,
+            "n": "Mok'Nathal Treats",
+            "t": 5,
+            "ti": 10860
+          },
+          {
+            "z": 3522
+          }
+        ],
+        "subclass": 5
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 31674,
+      "level": 67,
+      "name": "Recipe: Crunchy Serpent",
+      "popularity": 23,
+      "quality": 1,
+      "skill": 335,
+      "slot": 0,
+      "source": [
+        4,
+        5
+      ],
+      "sourcemore": [
+        {
+          "c": 3522,
+          "c2": 8,
+          "n": "Mok'Nathal Treats",
+          "t": 5,
+          "ti": 10860
+        },
+        {
+          "z": 3522
+        }
+      ],
+      "subclass": 5
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31673/crunchy-serpent"
+}

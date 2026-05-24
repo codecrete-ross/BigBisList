@@ -1,0 +1,71 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Food & Drinks category. An item from Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 20452,
+  "name": "Smoked Desert Dumplings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 24801,
+      "entity_name": "Smoked Desert Dumplings",
+      "source_url": "https://www.wowhead.com/tbc/item=20452/smoked-desert-dumplings",
+      "spell_id": 24801,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          285,
+          310,
+          322,
+          335
+        ],
+        "creates": [
+          20452,
+          1,
+          1
+        ],
+        "id": 24801,
+        "learnedat": 285,
+        "level": 0,
+        "name": "Smoked Desert Dumplings",
+        "nskillup": 1,
+        "popularity": 13,
+        "quality": 1,
+        "reagents": [
+          [
+            20424,
+            1
+          ],
+          [
+            3713,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20452/smoked-desert-dumplings"
+}

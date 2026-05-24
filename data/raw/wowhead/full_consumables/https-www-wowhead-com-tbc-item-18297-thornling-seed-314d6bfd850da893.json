@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is looted from Warpwood Pod. In the Consumables category. An item from Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 18297,
+  "name": "Thornling Seed",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 223,
+      "drop_percent": 96.96,
+      "entity_id": 179528,
+      "entity_name": "Warpwood Pod",
+      "out_of": 230,
+      "source_url": "https://www.wowhead.com/tbc/item=18297/thornling-seed",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 223,
+        "id": 179528,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 14561,
+                "outof": 14634
+              }
+            },
+            "4": {
+              "0": {
+                "count": 371,
+                "outof": 379
+              }
+            },
+            "5": {
+              "0": {
+                "count": 223,
+                "outof": 230
+              }
+            }
+          }
+        },
+        "location": [
+          2597,
+          2557
+        ],
+        "name": "Warpwood Pod",
+        "outof": 230,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18297/thornling-seed"
+}

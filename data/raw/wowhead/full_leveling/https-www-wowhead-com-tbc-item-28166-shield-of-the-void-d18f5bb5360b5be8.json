@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue shield of item level 97 goes in the \"Off Hand\" slot. It is looted from Pandemonius. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:07:59+00:00",
+  "item_id": 28166,
+  "name": "Shield of the Void",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 65,
+      "drop_percent": 9.18,
+      "entity_id": 18341,
+      "entity_name": "Pandemonius",
+      "out_of": 708,
+      "source_url": "https://www.wowhead.com/tbc/item=28166/shield-of-the-void",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 65,
+        "id": 18341,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2420,
+                "outof": 21217
+              }
+            },
+            "4": {
+              "0": {
+                "count": 87,
+                "outof": 906
+              }
+            },
+            "5": {
+              "0": {
+                "count": 65,
+                "outof": 708
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 72,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 2420,
+            "outof": 21217
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Pandemonius",
+        "outof": 708,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28166/shield-of-the-void"
+}

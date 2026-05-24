@@ -1,0 +1,154 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is sold by NPCs. In the Food & Drinks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 32453,
+  "name": "Star's Tears",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 2,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12781,
+      "entity_name": "Master Sergeant Biggins",
+      "source_url": "https://www.wowhead.com/tbc/item=32453/stars-tears",
+      "type": "pvp",
+      "vendor_id": 12781
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 2,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12793,
+      "entity_name": "Brave Stonehide",
+      "source_url": "https://www.wowhead.com/tbc/item=32453/stars-tears",
+      "type": "pvp",
+      "vendor_id": 12793
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 18897,
+      "entity_name": "\"King\" Dond",
+      "source_url": "https://www.wowhead.com/tbc/item=32453/stars-tears",
+      "type": "vendor",
+      "vendor_id": 18897,
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            2250,
+            [
+              [
+                1901,
+                2
+              ]
+            ],
+            []
+          ]
+        ],
+        "id": 12781,
+        "location": [
+          1519
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Master Sergeant Biggins",
+        "popularity": 6,
+        "react": [
+          1,
+          null
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Officer Accessories Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            2500,
+            [
+              [
+                1901,
+                2
+              ]
+            ],
+            []
+          ]
+        ],
+        "id": 12793,
+        "location": [
+          1637
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Brave Stonehide",
+        "popularity": 4,
+        "react": [
+          null,
+          1
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Officer Accessories Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            2500
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 18897,
+        "location": [
+          3518
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "\"King\" Dond",
+        "popularity": 7,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Arena Organizer",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32453/stars-tears"
+}

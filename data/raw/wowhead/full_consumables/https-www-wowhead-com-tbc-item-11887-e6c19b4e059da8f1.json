@@ -1,0 +1,156 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Other Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:33+00:00",
+  "item_id": 11887,
+  "name": "Cenarion Circle Cache",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 3785,
+      "entity_name": "Morrowgrain Research",
+      "quest_id": 3785,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=11887",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 3786,
+      "entity_name": "Morrowgrain Research",
+      "quest_id": 3786,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=11887",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 3803,
+      "entity_name": "Morrowgrain to Darnassus",
+      "quest_id": 3803,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=11887",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 3804,
+      "entity_name": "Morrowgrain to Thunder Bluff",
+      "quest_id": 3804,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=11887",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1657,
+        "category2": 1,
+        "id": 3785,
+        "itemrewards": [
+          [
+            11887,
+            1
+          ]
+        ],
+        "level": 50,
+        "name": "Morrowgrain Research",
+        "popularity": 11,
+        "reprewards": [
+          [
+            69,
+            250
+          ]
+        ],
+        "reqlevel": 47,
+        "side": 1,
+        "xp": 6810
+      },
+      {
+        "category": 1638,
+        "category2": 1,
+        "id": 3786,
+        "itemrewards": [
+          [
+            11887,
+            1
+          ]
+        ],
+        "level": 50,
+        "name": "Morrowgrain Research",
+        "popularity": 9,
+        "reprewards": [
+          [
+            81,
+            250
+          ]
+        ],
+        "reqlevel": 47,
+        "side": 2,
+        "xp": 6810
+      },
+      {
+        "category": 1657,
+        "category2": 1,
+        "id": 3803,
+        "itemrewards": [
+          [
+            11887,
+            1
+          ]
+        ],
+        "level": 55,
+        "name": "Morrowgrain to Darnassus",
+        "popularity": 10,
+        "reprewards": [
+          [
+            69,
+            75
+          ]
+        ],
+        "reqlevel": 47,
+        "side": 1,
+        "wflags": 17
+      },
+      {
+        "category": 1638,
+        "category2": 1,
+        "id": 3804,
+        "itemrewards": [
+          [
+            11887,
+            1
+          ]
+        ],
+        "level": 55,
+        "name": "Morrowgrain to Thunder Bluff",
+        "popularity": 10,
+        "reprewards": [
+          [
+            81,
+            75
+          ]
+        ],
+        "reqlevel": 47,
+        "side": 2,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=11887"
+}

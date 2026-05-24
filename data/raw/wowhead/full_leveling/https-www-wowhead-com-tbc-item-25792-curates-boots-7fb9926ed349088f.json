@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 114 goes in the \"Feet\" slot. It is a quest reward from Fel Embers. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:01:38+00:00",
+  "item_id": 25792,
+  "name": "Curate's Boots",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9494,
+      "entity_name": "Fel Embers",
+      "quest_id": 9494,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25792/curates-boots",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3535,
+        "category2": 2,
+        "id": 9494,
+        "itemchoices": [
+          [
+            25792,
+            1
+          ],
+          [
+            25789,
+            1
+          ],
+          [
+            25791,
+            1
+          ],
+          [
+            25790,
+            1
+          ],
+          [
+            25788,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Fel Embers",
+        "popularity": 12,
+        "reprewards": [
+          [
+            946,
+            250
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 1,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25792/curates-boots"
+}

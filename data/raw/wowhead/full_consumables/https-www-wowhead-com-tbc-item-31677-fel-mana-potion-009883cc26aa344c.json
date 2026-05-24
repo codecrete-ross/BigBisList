@@ -1,0 +1,123 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Potions category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 31677,
+  "name": "Fel Mana Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 38961,
+      "entity_name": "Fel Mana Potion",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=31677/fel-mana-potion",
+      "spell_id": 38961,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          375,
+          382,
+          390
+        ],
+        "creates": [
+          31677,
+          1,
+          1
+        ],
+        "id": 38961,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Fel Mana Potion",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 1,
+        "reagents": [
+          [
+            22793,
+            1
+          ],
+          [
+            22792,
+            2
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 31682,
+        "level": 72,
+        "name": "Recipe: Fel Mana Potion",
+        "popularity": 8,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "dd": -1,
+            "z": 3520
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 31682,
+      "level": 72,
+      "name": "Recipe: Fel Mana Potion",
+      "popularity": 8,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "z": 3520
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31677/fel-mana-potion"
+}

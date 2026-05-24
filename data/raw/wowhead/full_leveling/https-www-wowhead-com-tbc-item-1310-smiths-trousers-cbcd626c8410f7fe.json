@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green leather armor of item level 20 goes in the \"Legs\" slot. It is a quest reward from The Everstill Bridge. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:21:08+00:00",
+  "item_id": 1310,
+  "name": "Smith's Trousers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 89,
+      "entity_name": "The Everstill Bridge",
+      "quest_id": 89,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=1310/smiths-trousers",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 44,
+        "category2": 0,
+        "id": 89,
+        "itemchoices": [
+          [
+            1310,
+            1
+          ],
+          [
+            1303,
+            1
+          ],
+          [
+            1304,
+            1
+          ]
+        ],
+        "level": 20,
+        "name": "The Everstill Bridge",
+        "popularity": 6,
+        "reprewards": [
+          [
+            72,
+            250
+          ]
+        ],
+        "reqlevel": 15,
+        "side": 1,
+        "xp": 1550
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=1310/smiths-trousers"
+}

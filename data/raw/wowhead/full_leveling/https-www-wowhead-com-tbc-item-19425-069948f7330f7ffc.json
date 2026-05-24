@@ -1,0 +1,148 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Consumables category. An item from Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:25:12+00:00",
+  "item_id": 19425,
+  "name": "Mysterious Lockbox",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7937,
+      "entity_name": "Your Fortune Awaits You...",
+      "quest_id": 7937,
+      "source_url": "https://www.wowhead.com/tbc/item=19425",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7938,
+      "entity_name": "Your Fortune Awaits You...",
+      "quest_id": 7938,
+      "source_url": "https://www.wowhead.com/tbc/item=19425",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7944,
+      "entity_name": "Your Fortune Awaits You...",
+      "quest_id": 7944,
+      "source_url": "https://www.wowhead.com/tbc/item=19425",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7945,
+      "entity_name": "Your Fortune Awaits You...",
+      "quest_id": 7945,
+      "source_url": "https://www.wowhead.com/tbc/item=19425",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": -364,
+        "category2": 9,
+        "id": 7937,
+        "itemrewards": [
+          [
+            19425,
+            1
+          ]
+        ],
+        "name": "Your Fortune Awaits You...",
+        "popularity": 15,
+        "reprewards": [
+          [
+            909,
+            75
+          ]
+        ],
+        "reqlevel": 10,
+        "side": 3,
+        "wflags": 8
+      },
+      {
+        "category": -364,
+        "category2": 9,
+        "id": 7938,
+        "itemrewards": [
+          [
+            19425,
+            1
+          ]
+        ],
+        "name": "Your Fortune Awaits You...",
+        "popularity": 7,
+        "reprewards": [
+          [
+            909,
+            75
+          ]
+        ],
+        "reqlevel": 10,
+        "side": 3,
+        "wflags": 8
+      },
+      {
+        "category": -364,
+        "category2": 9,
+        "id": 7944,
+        "itemrewards": [
+          [
+            19425,
+            1
+          ]
+        ],
+        "name": "Your Fortune Awaits You...",
+        "popularity": 10,
+        "reprewards": [
+          [
+            909,
+            75
+          ]
+        ],
+        "reqlevel": 10,
+        "side": 3,
+        "wflags": 8
+      },
+      {
+        "category": -364,
+        "category2": 9,
+        "id": 7945,
+        "itemrewards": [
+          [
+            19425,
+            1
+          ]
+        ],
+        "name": "Your Fortune Awaits You...",
+        "popularity": 7,
+        "reprewards": [
+          [
+            909,
+            75
+          ]
+        ],
+        "reqlevel": 10,
+        "side": 3,
+        "wflags": 8
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19425"
+}

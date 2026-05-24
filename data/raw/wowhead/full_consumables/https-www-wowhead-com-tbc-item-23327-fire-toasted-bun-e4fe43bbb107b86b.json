@@ -1,0 +1,621 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward and sold by NPCs. In the Consumables category. An item from Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 23327,
+  "name": "Fire-toasted Bun",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9324,
+      "entity_name": "Stealing Orgrimmar's Flame",
+      "quest_id": 9324,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9325,
+      "entity_name": "Stealing Thunder Bluff's Flame",
+      "quest_id": 9325,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9326,
+      "entity_name": "Stealing the Undercity's Flame",
+      "quest_id": 9326,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9330,
+      "entity_name": "Stealing Stormwind's Flame",
+      "quest_id": 9330,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9331,
+      "entity_name": "Stealing Ironforge's Flame",
+      "quest_id": 9331,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9332,
+      "entity_name": "Stealing Darnassus's Flame",
+      "quest_id": 9332,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9388,
+      "entity_name": "Flickering Flames in Kalimdor",
+      "quest_id": 9388,
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9389,
+      "entity_name": "Flickering Flames in the Eastern Kingdoms",
+      "quest_id": 9389,
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11933,
+      "entity_name": "Stealing the Exodar's Flame",
+      "quest_id": 11933,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11935,
+      "entity_name": "Stealing Silvermoon's Flame",
+      "quest_id": 11935,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 5,
+          "item_id": 23247,
+          "name": "Item 23247"
+        }
+      ],
+      "entity_id": 26123,
+      "entity_name": "Midsummer Supplier",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "vendor",
+      "vendor_id": 26123
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 5,
+          "item_id": 23247,
+          "name": "Item 23247"
+        }
+      ],
+      "entity_id": 26124,
+      "entity_name": "Midsummer Merchant",
+      "source_url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun",
+      "type": "vendor",
+      "vendor_id": 26124
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 9324,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            5
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ],
+          [
+            23246,
+            10
+          ],
+          [
+            34684,
+            10
+          ]
+        ],
+        "itemrewards": [
+          [
+            23247,
+            25
+          ]
+        ],
+        "money": 34000,
+        "name": "Stealing Orgrimmar's Flame",
+        "popularity": 11,
+        "reqlevel": 50,
+        "side": 1,
+        "wflags": 8,
+        "xp": 5100
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 9325,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            5
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ],
+          [
+            23246,
+            10
+          ],
+          [
+            34684,
+            10
+          ]
+        ],
+        "itemrewards": [
+          [
+            23247,
+            25
+          ]
+        ],
+        "money": 12,
+        "name": "Stealing Thunder Bluff's Flame",
+        "popularity": 11,
+        "reqlevel": 50,
+        "side": 1,
+        "wflags": 8,
+        "xp": 5100
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 9326,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            5
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ],
+          [
+            23246,
+            10
+          ],
+          [
+            34684,
+            10
+          ]
+        ],
+        "itemrewards": [
+          [
+            23247,
+            25
+          ]
+        ],
+        "money": 12,
+        "name": "Stealing the Undercity's Flame",
+        "popularity": 11,
+        "reqlevel": 50,
+        "side": 1,
+        "wflags": 8,
+        "xp": 5100
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 9330,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            5
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ],
+          [
+            23246,
+            10
+          ],
+          [
+            34684,
+            10
+          ]
+        ],
+        "itemrewards": [
+          [
+            23247,
+            25
+          ]
+        ],
+        "money": 100,
+        "name": "Stealing Stormwind's Flame",
+        "popularity": 8,
+        "reqlevel": 50,
+        "side": 2,
+        "wflags": 8,
+        "xp": 5100
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 9331,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            5
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ],
+          [
+            23246,
+            10
+          ],
+          [
+            34684,
+            10
+          ]
+        ],
+        "itemrewards": [
+          [
+            23247,
+            25
+          ]
+        ],
+        "money": 12,
+        "name": "Stealing Ironforge's Flame",
+        "popularity": 11,
+        "reqlevel": 50,
+        "side": 2,
+        "wflags": 8,
+        "xp": 5100
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 9332,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            5
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ],
+          [
+            23246,
+            10
+          ],
+          [
+            34684,
+            10
+          ]
+        ],
+        "itemrewards": [
+          [
+            23247,
+            25
+          ]
+        ],
+        "money": 12,
+        "name": "Stealing Darnassus's Flame",
+        "popularity": 13,
+        "reqlevel": 50,
+        "side": 2,
+        "wflags": 8,
+        "xp": 5100
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 9388,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            4
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ]
+        ],
+        "level": 25,
+        "name": "Flickering Flames in Kalimdor",
+        "popularity": 10,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 8,
+        "xp": 1500
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 9389,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            4
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ]
+        ],
+        "level": 25,
+        "name": "Flickering Flames in the Eastern Kingdoms",
+        "popularity": 10,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 8,
+        "xp": 1500
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 11933,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            5
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ],
+          [
+            23246,
+            10
+          ],
+          [
+            34684,
+            10
+          ]
+        ],
+        "itemrewards": [
+          [
+            23247,
+            25
+          ]
+        ],
+        "money": 2500,
+        "name": "Stealing the Exodar's Flame",
+        "popularity": 8,
+        "reqlevel": 50,
+        "side": 2,
+        "wflags": 8,
+        "xp": 5100
+      },
+      {
+        "category": -369,
+        "category2": 9,
+        "id": 11935,
+        "itemchoices": [
+          [
+            23435,
+            5
+          ],
+          [
+            23327,
+            5
+          ],
+          [
+            23326,
+            5
+          ],
+          [
+            23211,
+            5
+          ],
+          [
+            23246,
+            10
+          ],
+          [
+            34684,
+            10
+          ]
+        ],
+        "itemrewards": [
+          [
+            23247,
+            25
+          ]
+        ],
+        "money": 34000,
+        "name": "Stealing Silvermoon's Flame",
+        "popularity": 13,
+        "reqlevel": 50,
+        "side": 1,
+        "wflags": 8,
+        "xp": 5100
+      }
+    ],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                23247,
+                5
+              ]
+            ]
+          ]
+        ],
+        "id": 26123,
+        "location": [
+          1537,
+          1519,
+          3557,
+          -1
+        ],
+        "name": "Midsummer Supplier",
+        "popularity": 12,
+        "react": [
+          1,
+          -1
+        ],
+        "stack": 5,
+        "stock": -1,
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                23247,
+                5
+              ]
+            ]
+          ]
+        ],
+        "id": 26124,
+        "location": [
+          3487,
+          1497,
+          1638,
+          -1
+        ],
+        "name": "Midsummer Merchant",
+        "popularity": 9,
+        "react": [
+          -1,
+          1
+        ],
+        "stack": 5,
+        "stock": -1,
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23327/fire-toasted-bun"
+}

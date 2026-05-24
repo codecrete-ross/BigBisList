@@ -1,0 +1,56 @@
+{
+  "description": "Permanently enchants bracers to increase Intellect by 12. Requires a level 35 or higher item. In the Profession Spells category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:36:04+00:00",
+  "name": "Enchant Bracer - Major Intellect",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Enchanting Trainer",
+      "profession": "Enchanting",
+      "required_skill": 305,
+      "source_url": "https://www.wowhead.com/tbc/spell=34001/major-intellect",
+      "type": "trainer"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          305,
+          315,
+          330,
+          345
+        ],
+        "id": 34001,
+        "learnedat": 305,
+        "level": 35,
+        "name": "Enchant Bracer - Major Intellect",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22447,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "trainingcost": 12500
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 34001,
+  "url": "https://www.wowhead.com/tbc/spell=34001/major-intellect"
+}

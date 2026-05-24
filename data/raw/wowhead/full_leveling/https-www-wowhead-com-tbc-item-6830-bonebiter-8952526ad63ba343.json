@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue two-handed axe has an item level of 44. It is a quest reward from In the Name of the Light. In the Two-Handed Axes category. Always up to date.",
+  "fetched_at": "2026-05-24T09:09:34+00:00",
+  "item_id": 6830,
+  "name": "Bonebiter",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 1053,
+      "entity_name": "In the Name of the Light",
+      "quest_id": 1053,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=6830/bonebiter",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 796,
+        "category2": 2,
+        "id": 1053,
+        "itemchoices": [
+          [
+            6829,
+            1
+          ],
+          [
+            6830,
+            1
+          ],
+          [
+            6831,
+            1
+          ],
+          [
+            11262,
+            1
+          ]
+        ],
+        "level": 40,
+        "name": "In the Name of the Light",
+        "popularity": 16,
+        "reprewards": [
+          [
+            72,
+            500
+          ]
+        ],
+        "reqlevel": 34,
+        "side": 1,
+        "type": 81,
+        "xp": 6550
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6830/bonebiter"
+}

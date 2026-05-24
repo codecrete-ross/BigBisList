@@ -1,0 +1,109 @@
+{
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:42:46+00:00",
+  "name": "Runed Living Ruby",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 24196,
+      "entity_name": "Design: Runed Living Ruby",
+      "item_id": 24196,
+      "source_url": "https://www.wowhead.com/tbc/spell=31088",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 35305,
+      "entity_name": "Design: Runed Living Ruby",
+      "item_id": 35305,
+      "source_url": "https://www.wowhead.com/tbc/spell=31088",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          365,
+          380
+        ],
+        "creates": [
+          24030,
+          1,
+          1
+        ],
+        "id": 31088,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Runed Living Ruby",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            23436,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24196,
+        "level": 70,
+        "name": "Design: Runed Living Ruby",
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35305,
+        "level": 70,
+        "name": "Design: Runed Living Ruby",
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Kael'thas Sunstrider",
+            "t": 1,
+            "ti": 24664,
+            "z": 4131
+          }
+        ],
+        "subclass": 10
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 31088,
+  "url": "https://www.wowhead.com/tbc/spell=31088"
+}

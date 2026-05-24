@@ -1,0 +1,44 @@
+{
+  "fetched_at": "2026-05-24T09:12:09+00:00",
+  "name": "Prayer of Shadow Protection",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 31837,
+      "entity_name": "Codex: Prayer of Shadow Protection II",
+      "item_id": 31837,
+      "source_url": "https://www.wowhead.com/tbc/spell=39374",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 31837,
+        "level": 70,
+        "name": "Codex: Prayer of Shadow Protection II",
+        "quality": 3,
+        "reqclass": 16,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 39374,
+  "url": "https://www.wowhead.com/tbc/spell=39374"
+}

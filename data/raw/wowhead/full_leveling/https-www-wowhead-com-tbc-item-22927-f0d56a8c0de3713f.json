@@ -1,0 +1,92 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is looted from Captain Skarloc. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:23:44+00:00",
+  "item_id": 22927,
+  "name": "Recipe: Ironshield Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 32,
+      "drop_percent": 6.17,
+      "entity_id": 17862,
+      "entity_name": "Captain Skarloc",
+      "out_of": 519,
+      "source_url": "https://www.wowhead.com/tbc/item=22927",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 32,
+        "id": 17862,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 543,
+                "outof": 8536
+              }
+            },
+            "4": {
+              "0": {
+                "count": 32,
+                "outof": 519
+              }
+            },
+            "5": {
+              "0": {
+                "count": 32,
+                "outof": 436
+              }
+            }
+          }
+        },
+        "location": [
+          2367
+        ],
+        "maxlevel": 72,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 543,
+            "outof": 8536
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Captain Skarloc",
+        "outof": 519,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    28579,
+    28515
+  ],
+  "url": "https://www.wowhead.com/tbc/item=22927"
+}

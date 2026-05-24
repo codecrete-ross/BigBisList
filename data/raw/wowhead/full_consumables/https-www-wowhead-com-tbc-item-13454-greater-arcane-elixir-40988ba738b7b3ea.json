@@ -1,0 +1,168 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Greater Arcane Elixir is a level 57 battle elixir. It is crafted and looted. In the Elixirs category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 13454,
+  "name": "Greater Arcane Elixir",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17573,
+      "entity_name": "Greater Arcane Elixir",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=13454/greater-arcane-elixir",
+      "spell_id": 17573,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 133,
+      "drop_percent": 66.83,
+      "entity_id": 20602,
+      "entity_name": "Contained in: Chest of Spoils",
+      "item_id": 20602,
+      "out_of": 199,
+      "source_url": "https://www.wowhead.com/tbc/item=13454/greater-arcane-elixir",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "count": 133,
+        "flags2": 24580,
+        "id": 20602,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 133,
+                "outof": 199
+              }
+            },
+            "4": {
+              "0": {
+                "count": 6,
+                "outof": 8
+              }
+            },
+            "5": {
+              "0": {
+                "count": 11,
+                "outof": 15
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Chest of Spoils",
+        "outof": 199,
+        "pctstack": "{5: 87.9699,8: 3.00752,9: 6.76692,10: 2.25564}",
+        "quality": 1,
+        "reqlevel": 60,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "z": 1377
+          }
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          285,
+          300,
+          320,
+          340
+        ],
+        "creates": [
+          13454,
+          1,
+          1
+        ],
+        "id": 17573,
+        "learnedat": 285,
+        "level": 0,
+        "name": "Greater Arcane Elixir",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 1,
+        "reagents": [
+          [
+            13463,
+            3
+          ],
+          [
+            13465,
+            1
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          2
+        ],
+        "trainingcost": 20000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13493,
+        "level": 57,
+        "name": "Recipe: Greater Arcane Elixir",
+        "popularity": 8,
+        "quality": 2,
+        "skill": 285,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 13493,
+      "level": 57,
+      "name": "Recipe: Greater Arcane Elixir",
+      "popularity": 8,
+      "quality": 2,
+      "skill": 285,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13454/greater-arcane-elixir"
+}

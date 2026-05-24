@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-05-24T08:51:38+00:00",
+  "name": "Greater Arcane Elixir",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 13493,
+      "entity_name": "Recipe: Greater Arcane Elixir",
+      "item_id": 13493,
+      "source_url": "https://www.wowhead.com/tbc/spell=17573",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13493,
+        "level": 57,
+        "name": "Recipe: Greater Arcane Elixir",
+        "quality": 2,
+        "skill": 285,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 17573,
+  "url": "https://www.wowhead.com/tbc/spell=17573"
+}

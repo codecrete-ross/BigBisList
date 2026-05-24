@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Helm of the Claw is a Leather Head item that is rewarded from the The Steamvault dungeon quest The Warlord's Hideout. This blue leather armor of item level 115 goes in the \"Head\" slot.",
+  "fetched_at": "2026-05-24T09:12:53+00:00",
+  "item_id": 28182,
+  "name": "Helm of the Claw",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9763,
+      "entity_name": "The Warlord's Hideout",
+      "quest_id": 9763,
+      "source_url": "https://www.wowhead.com/tbc/item=28182/helm-of-the-claw",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3715,
+        "category2": 2,
+        "id": 9763,
+        "itemchoices": [
+          [
+            28183,
+            1
+          ],
+          [
+            28182,
+            1
+          ],
+          [
+            28181,
+            1
+          ],
+          [
+            28180,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "The Warlord's Hideout",
+        "popularity": 9,
+        "reprewards": [
+          [
+            942,
+            500
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28182/helm-of-the-claw"
+}

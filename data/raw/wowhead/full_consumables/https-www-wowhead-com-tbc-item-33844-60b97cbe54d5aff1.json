@@ -1,0 +1,152 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Other Items category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:52:02+00:00",
+  "item_id": 33844,
+  "name": "Barrel of Fish",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11377,
+      "entity_name": "Revenge is Tasty",
+      "quest_id": 11377,
+      "source_url": "https://www.wowhead.com/tbc/item=33844",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11379,
+      "entity_name": "Super Hot Stew",
+      "quest_id": 11379,
+      "source_url": "https://www.wowhead.com/tbc/item=33844",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11380,
+      "entity_name": "Manalicious",
+      "quest_id": 11380,
+      "source_url": "https://www.wowhead.com/tbc/item=33844",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11381,
+      "entity_name": "Soup for the Soul",
+      "quest_id": 11381,
+      "source_url": "https://www.wowhead.com/tbc/item=33844",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": -304,
+        "category2": 5,
+        "daily": 1,
+        "id": 11377,
+        "itemchoices": [
+          [
+            33844,
+            1
+          ],
+          [
+            33857,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Revenge is Tasty",
+        "popularity": 17,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 2,
+        "xp": 12650
+      },
+      {
+        "category": -304,
+        "category2": 5,
+        "daily": 1,
+        "id": 11379,
+        "itemchoices": [
+          [
+            33844,
+            1
+          ],
+          [
+            33857,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Super Hot Stew",
+        "popularity": 31,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 2,
+        "xp": 12650
+      },
+      {
+        "category": -304,
+        "category2": 5,
+        "daily": 1,
+        "id": 11380,
+        "itemchoices": [
+          [
+            33844,
+            1
+          ],
+          [
+            33857,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Manalicious",
+        "popularity": 10,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 2,
+        "xp": 12650
+      },
+      {
+        "category": -304,
+        "category2": 5,
+        "daily": 1,
+        "id": 11381,
+        "itemchoices": [
+          [
+            33844,
+            1
+          ],
+          [
+            33857,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Soup for the Soul",
+        "popularity": 22,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 2,
+        "xp": 12650
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33844"
+}

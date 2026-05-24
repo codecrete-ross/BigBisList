@@ -1,0 +1,113 @@
+{
+  "description": "Permanently enchant a cloak to give 12 dodge rating. In the Profession Spells category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:47:53+00:00",
+  "name": "Enchant Cloak - Dodge",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 20736,
+      "entity_name": "Formula: Enchant Cloak - Dodge",
+      "item_id": 20736,
+      "source_url": "https://www.wowhead.com/tbc/spell=25086",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 33148,
+      "entity_name": "Formula: Enchant Cloak - Dodge",
+      "item_id": 33148,
+      "source_url": "https://www.wowhead.com/tbc/spell=25086",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          310,
+          325,
+          340
+        ],
+        "id": 25086,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Enchant Cloak - Dodge",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22448,
+            3
+          ],
+          [
+            22446,
+            3
+          ],
+          [
+            22452,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2,
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 20736,
+        "level": 70,
+        "name": "Formula: Enchant Cloak - Dodge",
+        "quality": 3,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 8
+      },
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 33148,
+        "level": 70,
+        "name": "Formula: Enchant Cloak - Dodge",
+        "quality": 3,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Nakodu",
+            "t": 1,
+            "ti": 21655,
+            "z": 3703
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 25086,
+  "url": "https://www.wowhead.com/tbc/spell=25086"
+}

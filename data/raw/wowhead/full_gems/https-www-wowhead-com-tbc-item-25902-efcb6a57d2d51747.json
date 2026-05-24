@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This jewelcrafting design is used for the Jewelcrafting profession. It is sold by Ythyar. In the Jewelcrafting Designs category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:33:33+00:00",
+  "item_id": 25902,
+  "name": "Design: Powerful Earthstorm Diamond",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17518,
+      "entity_name": "Ythyar",
+      "source_url": "https://www.wowhead.com/tbc/item=25902",
+      "type": "vendor",
+      "vendor_id": 17518,
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            120000
+          ]
+        ],
+        "id": 17518,
+        "location": [
+          3457
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Ythyar",
+        "popularity": 4,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    32866
+  ],
+  "url": "https://www.wowhead.com/tbc/item=25902"
+}

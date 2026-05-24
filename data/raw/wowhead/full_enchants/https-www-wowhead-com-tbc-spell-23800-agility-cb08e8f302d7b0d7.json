@@ -1,0 +1,92 @@
+{
+  "description": "Agility is a Weapon Enchant made available starting in Phase 3. When used, this enchant permanently enchants a melee weapon to grant +15 Agility.",
+  "fetched_at": "2026-05-24T09:40:32+00:00",
+  "name": "Enchant Weapon - Agility",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 19445,
+      "entity_name": "Formula: Enchant Weapon - Agility",
+      "item_id": 19445,
+      "source_url": "https://www.wowhead.com/tbc/spell=23800/agility",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          290,
+          305,
+          322,
+          340
+        ],
+        "id": 23800,
+        "learnedat": 290,
+        "level": 0,
+        "name": "Enchant Weapon - Agility",
+        "nskillup": 1,
+        "reagents": [
+          [
+            14344,
+            6
+          ],
+          [
+            16203,
+            6
+          ],
+          [
+            16204,
+            4
+          ],
+          [
+            7082,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 19445,
+        "level": 58,
+        "name": "Formula: Enchant Weapon - Agility",
+        "quality": 1,
+        "skill": 290,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Meilosh",
+            "t": 1,
+            "ti": 11557,
+            "z": 361
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 23800,
+  "url": "https://www.wowhead.com/tbc/spell=23800/agility"
+}

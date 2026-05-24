@@ -1,0 +1,44 @@
+{
+  "fetched_at": "2026-05-24T09:05:13+00:00",
+  "name": "Arcane Brilliance",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22153,
+      "entity_name": "Tome of Arcane Brilliance 2",
+      "item_id": 22153,
+      "source_url": "https://www.wowhead.com/tbc/spell=27127",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 22153,
+        "level": 70,
+        "name": "Tome of Arcane Brilliance 2",
+        "quality": 3,
+        "reqclass": 128,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27127,
+  "url": "https://www.wowhead.com/tbc/spell=27127"
+}

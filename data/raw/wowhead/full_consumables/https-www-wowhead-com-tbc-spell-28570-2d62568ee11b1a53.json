@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-05-24T08:51:30+00:00",
+  "name": "Elixir of Major Mageblood",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22919,
+      "entity_name": "Recipe: Elixir of Major Mageblood",
+      "item_id": 22919,
+      "source_url": "https://www.wowhead.com/tbc/spell=28570",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22919,
+        "level": 71,
+        "name": "Recipe: Elixir of Major Mageblood",
+        "quality": 2,
+        "skill": 355,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 28570,
+  "url": "https://www.wowhead.com/tbc/spell=28570"
+}

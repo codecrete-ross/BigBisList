@@ -1,0 +1,91 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Other Items category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:23+00:00",
+  "item_id": 31800,
+  "name": "Outcast's Cache",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10917,
+      "entity_name": "The Outcast's Plight",
+      "quest_id": 10917,
+      "source_url": "https://www.wowhead.com/tbc/item=31800",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10918,
+      "entity_name": "More Feathers",
+      "quest_id": 10918,
+      "source_url": "https://www.wowhead.com/tbc/item=31800",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10917,
+        "itemrewards": [
+          [
+            31800,
+            1
+          ]
+        ],
+        "level": 65,
+        "money": 33000,
+        "name": "The Outcast's Plight",
+        "popularity": 22,
+        "reprewards": [
+          [
+            1011,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 3,
+        "xp": 11000
+      },
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10918,
+        "itemrewards": [
+          [
+            31800,
+            1
+          ]
+        ],
+        "level": 65,
+        "name": "More Feathers",
+        "popularity": 11,
+        "reprewards": [
+          [
+            1011,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31800"
+}

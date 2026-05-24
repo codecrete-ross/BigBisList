@@ -1,0 +1,200 @@
+{
+  "fetched_at": "2026-05-24T09:02:37+00:00",
+  "name": "Regrowth",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 5141,
+      "entity_name": "Book of Regrowth",
+      "item_id": 5141,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 8756,
+      "entity_name": "Book of Regrowth II",
+      "item_id": 8756,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 8759,
+      "entity_name": "Book of Regrowth III",
+      "item_id": 8759,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 8765,
+      "entity_name": "Book of Regrowth IV",
+      "item_id": 8765,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 8800,
+      "entity_name": "Book of Regrowth IX",
+      "item_id": 8800,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 8772,
+      "entity_name": "Book of Regrowth V",
+      "item_id": 8772,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 8905,
+      "entity_name": "Book of Regrowth VI",
+      "item_id": 8905,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 8781,
+      "entity_name": "Book of Regrowth VII",
+      "item_id": 8781,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 8791,
+      "entity_name": "Book of Regrowth VIII",
+      "item_id": 8791,
+      "source_url": "https://www.wowhead.com/tbc/spell=8936/regrowth",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 5141,
+        "level": 12,
+        "name": "Book of Regrowth",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 12,
+        "slot": 0,
+        "subclass": 0
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 8756,
+        "level": 18,
+        "name": "Book of Regrowth II",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 18,
+        "slot": 0,
+        "subclass": 0
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 8759,
+        "level": 24,
+        "name": "Book of Regrowth III",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 24,
+        "slot": 0,
+        "subclass": 0
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 8765,
+        "level": 30,
+        "name": "Book of Regrowth IV",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 30,
+        "slot": 0,
+        "subclass": 0
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 8800,
+        "level": 60,
+        "name": "Book of Regrowth IX",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 60,
+        "slot": 0,
+        "subclass": 0
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 8772,
+        "level": 36,
+        "name": "Book of Regrowth V",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 36,
+        "slot": 0,
+        "subclass": 0
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 8905,
+        "level": 42,
+        "name": "Book of Regrowth VI",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 42,
+        "slot": 0,
+        "subclass": 0
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 8781,
+        "level": 48,
+        "name": "Book of Regrowth VII",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 48,
+        "slot": 0,
+        "subclass": 0
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 8791,
+        "level": 54,
+        "name": "Book of Regrowth VIII",
+        "quality": 1,
+        "reqclass": 1024,
+        "reqlevel": 54,
+        "slot": 0,
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 8936,
+  "url": "https://www.wowhead.com/tbc/spell=8936/regrowth"
+}

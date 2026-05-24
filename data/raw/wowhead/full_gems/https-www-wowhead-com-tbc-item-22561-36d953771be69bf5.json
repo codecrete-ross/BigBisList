@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is looted from Terestian Illhoof. In the Enchanting Formulae category. An item.",
+  "fetched_at": "2026-05-24T08:33:56+00:00",
+  "item_id": 22561,
+  "name": "Formula: Enchant Weapon - Soulfrost",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 72,
+      "drop_percent": 3.93,
+      "entity_id": 15688,
+      "entity_name": "Terestian Illhoof",
+      "out_of": 1830,
+      "source_url": "https://www.wowhead.com/tbc/item=22561",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 72,
+        "id": 15688,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1008,
+                "outof": 21329
+              }
+            },
+            "4": {
+              "0": {
+                "count": 110,
+                "outof": 2454
+              }
+            },
+            "5": {
+              "0": {
+                "count": 72,
+                "outof": 1830
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1008,
+            "outof": 21329
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Terestian Illhoof",
+        "outof": 1830,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    27982
+  ],
+  "url": "https://www.wowhead.com/tbc/item=22561"
+}

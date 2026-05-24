@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 53 goes in the \"Legs\" slot. It is a quest reward from Saving Sharpbeak. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:21:30+00:00",
+  "item_id": 9652,
+  "name": "Gryphon Rider's Leggings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 2994,
+      "entity_name": "Saving Sharpbeak",
+      "quest_id": 2994,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=9652/gryphon-riders-leggings",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 47,
+        "category2": 0,
+        "id": 2994,
+        "itemchoices": [
+          [
+            9651,
+            1
+          ],
+          [
+            9652,
+            1
+          ]
+        ],
+        "level": 51,
+        "money": 22500,
+        "name": "Saving Sharpbeak",
+        "popularity": 48,
+        "reqlevel": 40,
+        "side": 1,
+        "xp": 10600
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=9652/gryphon-riders-leggings"
+}

@@ -1,0 +1,88 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is looted from Sunfury Researcher. In the Enchanting Formulae category. An item.",
+  "fetched_at": "2026-05-24T08:33:03+00:00",
+  "item_id": 22551,
+  "name": "Formula: Enchant Weapon - Major Intellect",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.63,
+      "entity_id": 20136,
+      "entity_name": "Sunfury Researcher",
+      "out_of": 1271,
+      "source_url": "https://www.wowhead.com/tbc/item=22551",
+      "type": "drop",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 8,
+        "id": 20136,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 216,
+                "outof": 24928
+              }
+            },
+            "4": {
+              "0": {
+                "count": 8,
+                "outof": 1271
+              }
+            },
+            "5": {
+              "0": {
+                "count": 26,
+                "outof": 3705
+              }
+            }
+          }
+        },
+        "location": [
+          3523
+        ],
+        "maxlevel": 68,
+        "minlevel": 67,
+        "modes": {
+          "0": {
+            "count": 216,
+            "outof": 24928
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunfury Researcher",
+        "outof": 1271,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    27968
+  ],
+  "url": "https://www.wowhead.com/tbc/item=22551"
+}

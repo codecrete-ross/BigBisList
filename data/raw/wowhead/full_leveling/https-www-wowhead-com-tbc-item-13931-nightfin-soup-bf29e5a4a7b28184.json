@@ -1,0 +1,122 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Food & Drinks category. An item from Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:07:43+00:00",
+  "item_id": 13931,
+  "name": "Nightfin Soup",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 18243,
+      "entity_name": "Nightfin Soup",
+      "source_url": "https://www.wowhead.com/tbc/item=13931/nightfin-soup",
+      "spell_id": 18243,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          250,
+          275,
+          285,
+          295
+        ],
+        "creates": [
+          13931,
+          1,
+          1
+        ],
+        "id": 18243,
+        "learnedat": 250,
+        "level": 0,
+        "name": "Nightfin Soup",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 1,
+        "reagents": [
+          [
+            13759,
+            1
+          ],
+          [
+            159,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13945,
+        "level": 50,
+        "name": "Recipe: Nightfin Soup",
+        "popularity": 11,
+        "quality": 1,
+        "skill": 250,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Gikkix",
+            "t": 1,
+            "ti": 8137,
+            "z": 440
+          }
+        ],
+        "subclass": 5
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 13945,
+      "level": 50,
+      "name": "Recipe: Nightfin Soup",
+      "popularity": 11,
+      "quality": 1,
+      "skill": 250,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Gikkix",
+          "t": 1,
+          "ti": 8137,
+          "z": 440
+        }
+      ],
+      "subclass": 5
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13931/nightfin-soup"
+}

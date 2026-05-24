@@ -1,0 +1,370 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Major Firepower is a level 64 battle elixir. It is crafted and looted. In the Elixirs category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 22833,
+  "name": "Elixir of Major Firepower",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 28556,
+      "entity_name": "Elixir of Major Firepower",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower",
+      "spell_id": 28556,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 116,
+      "drop_percent": 16.91,
+      "entity_id": 34592,
+      "entity_name": "Contained in: Aldor Supplies Package",
+      "item_id": 34592,
+      "out_of": 686,
+      "source_url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 84,
+      "drop_percent": 23.33,
+      "entity_id": 34595,
+      "entity_name": "Contained in: Aldor Supplies Package",
+      "item_id": 34595,
+      "out_of": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 80,
+      "drop_percent": 17.43,
+      "entity_id": 34593,
+      "entity_name": "Contained in: Scryer Supplies Package",
+      "item_id": 34593,
+      "out_of": 459,
+      "source_url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 47,
+      "drop_percent": 20.8,
+      "entity_id": 34594,
+      "entity_name": "Contained in: Scryer Supplies Package",
+      "item_id": 34594,
+      "out_of": 226,
+      "source_url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 12,
+      "drop_percent": 0.09,
+      "entity_id": 187714,
+      "entity_name": "Contained in: Enlistment Bonus",
+      "item_id": 187714,
+      "out_of": 13384,
+      "source_url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 116,
+        "flags2": 24580,
+        "id": 34592,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 116,
+                "outof": 686
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Aldor Supplies Package",
+        "outof": 686,
+        "pctstack": "{1: 96.5517,2: 2.58621,3: 0.862069}",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 4080,
+            "c2": 0,
+            "n": "Revered in the Field of Battle",
+            "t": 5,
+            "ti": 11556
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 0,
+        "count": 84,
+        "flags2": 24580,
+        "id": 34595,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 84,
+                "outof": 360
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Aldor Supplies Package",
+        "outof": 360,
+        "pctstack": "{1: 83.3333,2: 16.6667}",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 4080,
+            "c2": 0,
+            "n": "Exalted Among All Combatants",
+            "t": 5,
+            "ti": 11557
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 0,
+        "count": 80,
+        "flags2": 24580,
+        "id": 34593,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 80,
+                "outof": 459
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Scryer Supplies Package",
+        "outof": 459,
+        "pctstack": "{1: 95,2: 5}",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 4080,
+            "c2": 0,
+            "n": "Revered in the Field of Battle",
+            "t": 5,
+            "ti": 11556
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 0,
+        "count": 47,
+        "flags2": 24580,
+        "id": 34594,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 47,
+                "outof": 226
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Scryer Supplies Package",
+        "outof": 226,
+        "pctstack": "{1: 87.234,2: 12.766}",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 4080,
+            "c2": 0,
+            "n": "Exalted Among All Combatants",
+            "t": 5,
+            "ti": 11557
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 15,
+        "count": 12,
+        "flags2": 8192,
+        "id": 187714,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 12,
+                "outof": 13384
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1,
+                "outof": 1788
+              }
+            }
+          }
+        },
+        "level": 70,
+        "name": "Enlistment Bonus",
+        "outof": 13384,
+        "pctstack": "",
+        "quality": 3,
+        "reqlevel": 70,
+        "side": 1,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": -25,
+            "c2": 6,
+            "n": "Alliance War Effort",
+            "t": 5,
+            "ti": 64845
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          345,
+          360,
+          367,
+          375
+        ],
+        "creates": [
+          22833,
+          1,
+          1
+        ],
+        "id": 28556,
+        "learnedat": 345,
+        "level": 0,
+        "name": "Elixir of Major Firepower",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 1,
+        "reagents": [
+          [
+            22574,
+            2
+          ],
+          [
+            22790,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22908,
+        "level": 69,
+        "name": "Recipe: Elixir of Major Firepower",
+        "popularity": 3,
+        "quality": 2,
+        "skill": 345,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Enuril",
+            "t": 1,
+            "ti": 19331,
+            "z": 3703
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 22908,
+      "level": 69,
+      "name": "Recipe: Elixir of Major Firepower",
+      "popularity": 3,
+      "quality": 2,
+      "skill": 345,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Quartermaster Enuril",
+          "t": 1,
+          "ti": 19331,
+          "z": 3703
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower"
+}

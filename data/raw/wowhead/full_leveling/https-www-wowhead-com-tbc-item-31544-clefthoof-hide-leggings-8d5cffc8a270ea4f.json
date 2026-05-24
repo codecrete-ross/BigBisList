@@ -1,0 +1,126 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Clefthoof Hide Leggings is one of the rewards from the quest Showdown/Showdown in Blade's Edge Mountains. This blue leather armor of item level 109 goes in the \"Legs\" slot.",
+  "fetched_at": "2026-05-24T09:01:21+00:00",
+  "item_id": 31544,
+  "name": "Clefthoof Hide Leggings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10742,
+      "entity_name": "Showdown",
+      "quest_id": 10742,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings",
+      "type": "quest",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10806,
+      "entity_name": "Showdown",
+      "quest_id": 10806,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings",
+      "type": "quest",
+      "zone": "Blade's Edge Mountains"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3522,
+        "category2": 8,
+        "id": 10742,
+        "itemchoices": [
+          [
+            31546,
+            1
+          ],
+          [
+            31544,
+            1
+          ],
+          [
+            31545,
+            1
+          ],
+          [
+            31547,
+            1
+          ],
+          [
+            31549,
+            1
+          ],
+          [
+            31548,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Showdown",
+        "popularity": 27,
+        "reqlevel": 65,
+        "side": 2,
+        "type": 1,
+        "xp": 19000
+      },
+      {
+        "category": 3522,
+        "category2": 8,
+        "id": 10806,
+        "itemchoices": [
+          [
+            31546,
+            1
+          ],
+          [
+            31544,
+            1
+          ],
+          [
+            31545,
+            1
+          ],
+          [
+            31547,
+            1
+          ],
+          [
+            31549,
+            1
+          ],
+          [
+            31548,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Showdown",
+        "popularity": 16,
+        "reqlevel": 65,
+        "side": 1,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings"
+}

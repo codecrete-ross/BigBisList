@@ -1,0 +1,139 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 109. It is a quest reward. In the Staves category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:10:44+00:00",
+  "item_id": 31417,
+  "name": "Staff of the Ashtongue Deathsworn",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10708,
+      "entity_name": "Akama's Promise",
+      "quest_id": 10708,
+      "source_url": "https://www.wowhead.com/tbc/item=31417/staff-of-the-ashtongue-deathsworn",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11052,
+      "entity_name": "Akama's Promise",
+      "quest_id": 11052,
+      "source_url": "https://www.wowhead.com/tbc/item=31417/staff-of-the-ashtongue-deathsworn",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10708,
+        "itemchoices": [
+          [
+            30932,
+            1
+          ],
+          [
+            30999,
+            1
+          ],
+          [
+            31000,
+            1
+          ],
+          [
+            30943,
+            1
+          ],
+          [
+            30984,
+            1
+          ],
+          [
+            31417,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Akama's Promise",
+        "popularity": 28,
+        "reprewards": [
+          [
+            935,
+            1000
+          ],
+          [
+            1012,
+            1000
+          ]
+        ],
+        "reqlevel": 68,
+        "xp": 19000
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 11052,
+        "itemchoices": [
+          [
+            30932,
+            1
+          ],
+          [
+            30999,
+            1
+          ],
+          [
+            31000,
+            1
+          ],
+          [
+            30943,
+            1
+          ],
+          [
+            30984,
+            1
+          ],
+          [
+            31417,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Akama's Promise",
+        "popularity": 15,
+        "reprewards": [
+          [
+            935,
+            1000
+          ],
+          [
+            1012,
+            1000
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31417/staff-of-the-ashtongue-deathsworn"
+}

@@ -1,0 +1,43 @@
+{
+  "fetched_at": "2026-05-24T09:23:32+00:00",
+  "name": "Greater Stoneshield Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 13490,
+      "entity_name": "Recipe: Greater Stoneshield Potion",
+      "item_id": 13490,
+      "source_url": "https://www.wowhead.com/tbc/spell=17570",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 13490,
+        "level": 56,
+        "name": "Recipe: Greater Stoneshield Potion",
+        "quality": 2,
+        "skill": 280,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 17570,
+  "url": "https://www.wowhead.com/tbc/spell=17570"
+}

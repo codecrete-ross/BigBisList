@@ -1,0 +1,114 @@
+{
+  "description": "Permanently enchants bracers to increase the effect of your healing spells by up to 30 and your damage spells by up to 10. Requires a level 35 or higher item.",
+  "fetched_at": "2026-05-24T09:32:01+00:00",
+  "name": "Enchant Bracer - Superior Healing",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22531,
+      "entity_name": "Formula: Enchant Bracer - Superior Healing",
+      "item_id": 22531,
+      "source_url": "https://www.wowhead.com/tbc/spell=27911/enchant-bracer-superior-healing",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 24000,
+      "entity_name": "Formula: Enchant Bracer - Superior Healing",
+      "item_id": 24000,
+      "source_url": "https://www.wowhead.com/tbc/spell=27911/enchant-bracer-superior-healing",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          325,
+          335,
+          350,
+          365
+        ],
+        "id": 27911,
+        "learnedat": 325,
+        "level": 35,
+        "name": "Enchant Bracer - Superior Healing",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22446,
+            4
+          ],
+          [
+            21886,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22531,
+        "level": 65,
+        "name": "Formula: Enchant Bracer - Superior Healing",
+        "quality": 1,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Logistics Officer Ulrike",
+            "t": 1,
+            "ti": 17657,
+            "z": 3483
+          }
+        ],
+        "subclass": 8
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24000,
+        "level": 65,
+        "name": "Formula: Enchant Bracer - Superior Healing",
+        "quality": 1,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Urgronn",
+            "t": 1,
+            "ti": 17585,
+            "z": 3483
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27911,
+  "url": "https://www.wowhead.com/tbc/spell=27911/enchant-bracer-superior-healing"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Andormu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:43:29+00:00",
+  "item_id": 186683,
+  "name": "Formula: Enchant Ring - Stats",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19932,
+      "entity_name": "Andormu",
+      "source_url": "https://www.wowhead.com/tbc/item=186683",
+      "type": "vendor",
+      "vendor_id": 19932,
+      "zone": "Tanaris"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            170000
+          ]
+        ],
+        "id": 19932,
+        "location": [
+          440
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Andormu",
+        "popularity": 9,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keepers of Time",
+        "type": 2
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    27927
+  ],
+  "url": "https://www.wowhead.com/tbc/item=186683"
+}

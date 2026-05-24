@@ -1,0 +1,93 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Other Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:21:56+00:00",
+  "item_id": 20602,
+  "name": "Chest of Spoils",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8352,
+      "entity_name": "Scepter of the Council",
+      "quest_id": 8352,
+      "source_url": "https://www.wowhead.com/tbc/item=20602",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8364,
+      "entity_name": "Abyssal Scepters",
+      "quest_id": 8364,
+      "source_url": "https://www.wowhead.com/tbc/item=20602",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8352,
+        "itemrewards": [
+          [
+            20602,
+            1
+          ]
+        ],
+        "level": 60,
+        "money": 27000,
+        "name": "Scepter of the Council",
+        "popularity": 11,
+        "reprewards": [
+          [
+            609,
+            500
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62,
+        "xp": 14300
+      },
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8364,
+        "itemrewards": [
+          [
+            20602,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Abyssal Scepters",
+        "popularity": 18,
+        "reprewards": [
+          [
+            609,
+            350
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20602"
+}

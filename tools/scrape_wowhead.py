@@ -23,13 +23,23 @@ from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES
 from tools.sources import derive_primary_source, summarize_sources
 from tools.validate_data import validate
 
-PARSER_VERSION = "wowhead-scraper-0.4.0"
+PARSER_VERSION = "wowhead-scraper-0.5.1"
 USER_AGENT = "BigBiSListScraper/0.4 (+https://github.com/codecrete-dev/BigBisList)"
 
 CURRENCY_NAMES = {
     1900: "Arena Points",
     1901: "Honor Points",
     29434: "Badge of Justice",
+}
+
+PROFESSION_SKILL_NAMES = {
+    164: "Blacksmithing",
+    165: "Leatherworking",
+    171: "Alchemy",
+    197: "Tailoring",
+    202: "Engineering",
+    333: "Enchanting",
+    755: "Jewelcrafting",
 }
 
 ZONE_ID_NAMES = {
@@ -49,6 +59,8 @@ ZONE_ID_NAMES = {
     3959: "Black Temple",
     4075: "Sunwell Plateau",
 }
+
+RECIPE_ITEM_PREFIXES = ("design:", "formula:", "pattern:", "plans:", "recipe:", "schematic:", "manual:")
 
 SLOT_PATTERNS = [
     ("Head", r"\bheads?\b|\bhelm"),
@@ -72,6 +84,28 @@ SLOT_PATTERNS = [
     ("Totem", r"\btotems?\b"),
     ("Libram", r"\blibrams?\b"),
     ("Relic", r"\brelics?\b"),
+]
+
+QUALITY_RANKS = {
+    "common": 1,
+    "uncommon": 2,
+    "rare": 3,
+    "blue": 3,
+    "epic": 4,
+    "legendary": 5,
+}
+
+CONSUMABLE_CATEGORY_PATTERNS = [
+    ("flask", r"\bflasks?\b"),
+    ("battle_elixir", r"\bbattle elixirs?\b"),
+    ("guardian_elixir", r"\bguardian elixirs?\b"),
+    ("elixir", r"\belixirs?\b"),
+    ("potion", r"\bpotions?\b"),
+    ("food", r"\bfoods?\b|\bwell fed\b"),
+    ("weapon_oil", r"\bweapon oils?\b|\bwizard oils?\b|\bmana oils?\b|\bsharpening stones?\b|\bweightstones?\b"),
+    ("scroll", r"\bscrolls?\b"),
+    ("drum", r"\bdrums?\b"),
+    ("utility", r"\butility\b|\bmisc(?:ellaneous)?\b"),
 ]
 
 
@@ -130,17 +164,40 @@ def element_text(element: Any) -> str:
     return clean_text(element.get_text(" ", strip=True))
 
 
-def item_tooltip_text(item_id: int | None, html: str) -> str:
+def item_tooltip_html(item_id: int | None, html: str) -> str:
     if not item_id:
         return ""
     match = re.search(rf"g_items\[{item_id}\]\.tooltip_enus\s*=\s*\"((?:\\.|[^\"])*)\";", html)
     if not match:
         return ""
     try:
-        tooltip_html = json.loads(f"\"{match.group(1)}\"")
+        return json.loads(f"\"{match.group(1)}\"")
     except json.JSONDecodeError:
         return ""
+
+
+def item_tooltip_text(item_id: int | None, html: str) -> str:
+    tooltip_html = item_tooltip_html(item_id, html)
+    if not tooltip_html:
+        return ""
     return element_text(BeautifulSoup(tooltip_html, "html.parser"))
+
+
+def item_teaches_spell_ids(item_id: int | None, name: str, html: str) -> list[int]:
+    if not name.lower().startswith(RECIPE_ITEM_PREFIXES):
+        return []
+    tooltip_html = item_tooltip_html(item_id, html)
+    if not tooltip_html:
+        return []
+    spell_ids: list[int] = []
+    seen: set[int] = set()
+    for link in BeautifulSoup(tooltip_html, "html.parser").find_all("a", href=True):
+        spell_id = spell_id_from_href(link["href"])
+        if not spell_id or spell_id in seen:
+            continue
+        seen.add(spell_id)
+        spell_ids.append(spell_id)
+    return spell_ids
 
 
 def parse_binding_from_text(text: str) -> tuple[str, bool | None]:
@@ -172,7 +229,7 @@ def data_family_from_heading(heading: str) -> str:
         return "gems"
     if "enchant" in normalized or "enchantment" in normalized:
         return "enchants"
-    if any(token in normalized for token in ["consumable", "flask", "elixir", "potion", "food", "weapon buff"]):
+    if any(token in normalized for token in ["consumable", "flask", "elixir", "potion", "food", "weapon buff", "weapon enhancement", "scroll", "drum"]):
         return "consumables"
     if any(token in normalized for token in ["leveling", "rotation", "talent", "stat priority"]):
         return "leveling"
@@ -187,14 +244,15 @@ def nearest_heading(table: Any) -> str:
     return ""
 
 
-def entity_from_link(link: Any) -> dict[str, Any] | None:
+def entity_from_link(link: Any, entity_names: dict[str, dict[int, str]] | None = None) -> dict[str, Any] | None:
+    entity_names = entity_names or {}
     href = link.get("href", "")
     item_id = item_id_from_href(href)
     if item_id:
         return {
             "type": "item",
             "id": item_id,
-            "name": element_text(link),
+            "name": element_text(link) or entity_names.get("item", {}).get(item_id, ""),
             "url": absolute_tbc_url(href),
         }
     spell_id = spell_id_from_href(href)
@@ -202,17 +260,17 @@ def entity_from_link(link: Any) -> dict[str, Any] | None:
         return {
             "type": "spell",
             "id": spell_id,
-            "name": element_text(link),
+            "name": element_text(link) or entity_names.get("spell", {}).get(spell_id, ""),
             "url": absolute_tbc_url(href),
         }
     return None
 
 
-def unique_entities(links: list[Any]) -> list[dict[str, Any]]:
+def unique_entities(links: list[Any], entity_names: dict[str, dict[int, str]] | None = None) -> list[dict[str, Any]]:
     entities: list[dict[str, Any]] = []
     seen: set[tuple[str, int]] = set()
     for link in links:
-        entity = entity_from_link(link)
+        entity = entity_from_link(link, entity_names)
         if not entity:
             continue
         key = (entity["type"], entity["id"])
@@ -223,10 +281,77 @@ def unique_entities(links: list[Any]) -> list[dict[str, Any]]:
     return entities
 
 
+def source_links_from_element(element: Any) -> list[dict[str, str]]:
+    return [
+        {
+            "href": absolute_tbc_url(link["href"]),
+            "text": element_text(link),
+        }
+        for link in element.find_all("a", href=True)
+    ]
+
+
+def level_range_from_text(text: str) -> str | None:
+    match = re.search(r"\b(?:levels?\s*)?(\d{1,2})\s*[-–]\s*(\d{1,2})\b", text, flags=re.IGNORECASE)
+    if match:
+        return f"{int(match.group(1))}-{int(match.group(2))}"
+    match = re.search(r"\blevel\s+(\d{1,2})\b", text, flags=re.IGNORECASE)
+    if match:
+        return str(int(match.group(1)))
+    return None
+
+
+def parse_guide_sections(soup: BeautifulSoup, entity_names: dict[str, dict[int, str]] | None = None) -> list[dict[str, Any]]:
+    sections: list[dict[str, Any]] = []
+
+    for heading_node in soup.find_all(["h2", "h3", "h4"]):
+        heading = element_text(heading_node)
+        if not heading:
+            continue
+        data_family = data_family_from_heading(heading)
+        if data_family not in {"consumables", "leveling"}:
+            continue
+
+        entries: list[dict[str, Any]] = []
+        seen_text: set[str] = set()
+        for sibling in heading_node.find_next_siblings():
+            if getattr(sibling, "name", None) in {"h2", "h3", "h4"}:
+                break
+            if getattr(sibling, "name", None) == "table":
+                continue
+            if not hasattr(sibling, "find_all"):
+                continue
+
+            blocks = [sibling] if sibling.name in {"p", "li"} else sibling.find_all(["p", "li"])
+            for block in blocks:
+                if block.find_parent("table"):
+                    continue
+                text = element_text(block)
+                if len(text) < 8 or text in seen_text:
+                    continue
+                seen_text.add(text)
+                entries.append(
+                    {
+                        "section": heading,
+                        "text": text,
+                        "level_range": level_range_from_text(f"{heading} {text}"),
+                        "entities": unique_entities(block.find_all("a", href=True), entity_names),
+                        "source_links": source_links_from_element(block),
+                    }
+                )
+
+        if entries:
+            sections.append({"heading": heading, "data_family": data_family, "entries": entries})
+
+    return sections
+
+
 def parse_guide_html(url: str, html: str) -> dict[str, Any]:
     soup = BeautifulSoup(html, "html.parser")
     title = element_text(soup.title) if soup.title else ""
+    entity_names = extract_gatherer_names(html)
     tables: list[dict[str, Any]] = []
+    sections = parse_guide_sections(soup, entity_names)
 
     for table in soup.find_all("table"):
         heading = nearest_heading(table)
@@ -241,7 +366,7 @@ def parse_guide_html(url: str, html: str) -> dict[str, Any]:
             if any(cell.name == "th" for cell in cells):
                 continue
 
-            entities = unique_entities(tr.find_all("a", href=True))
+            entities = unique_entities(tr.find_all("a", href=True), entity_names)
             if not entities:
                 continue
 
@@ -249,13 +374,6 @@ def parse_guide_html(url: str, html: str) -> dict[str, Any]:
             primary_item = next((entity for entity in entities if entity["type"] == "item"), None)
             primary_spell = next((entity for entity in entities if entity["type"] == "spell"), None)
             source_cell = cells[2] if len(cells) > 2 else cells[-1]
-            source_links = [
-                {
-                    "href": absolute_tbc_url(link["href"]),
-                    "text": element_text(link),
-                }
-                for link in source_cell.find_all("a", href=True)
-            ]
             row = {
                 "rank_label": element_text(cells[0]),
                 "entity_type": primary_entity["type"],
@@ -265,8 +383,11 @@ def parse_guide_html(url: str, html: str) -> dict[str, Any]:
                 "entities": entities,
                 "cells": [element_text(cell) for cell in cells],
                 "source_text": element_text(source_cell),
-                "source_links": source_links,
+                "source_links": source_links_from_element(source_cell),
             }
+            level_range = level_range_from_text(" ".join(row["cells"]))
+            if level_range:
+                row["level_range"] = level_range
             if primary_item:
                 row["item_id"] = primary_item["id"]
                 row["item_name"] = primary_item["name"]
@@ -287,6 +408,7 @@ def parse_guide_html(url: str, html: str) -> dict[str, Any]:
         "page_type": "guide",
         "title": title,
         "tables": tables,
+        "sections": sections,
     }
 
 
@@ -319,6 +441,35 @@ def extract_balanced_json_array(text: str, start: int) -> str | None:
     return None
 
 
+def extract_balanced_json_object(text: str, start: int) -> str | None:
+    object_start = text.find("{", start)
+    if object_start < 0:
+        return None
+
+    depth = 0
+    in_string = False
+    escape = False
+    for index in range(object_start, len(text)):
+        char = text[index]
+        if in_string:
+            if escape:
+                escape = False
+            elif char == "\\":
+                escape = True
+            elif char == '"':
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[object_start : index + 1]
+    return None
+
+
 def extract_listview_data(html: str, listview_id: str) -> list[dict[str, Any]]:
     id_match = re.search(rf"id:\s*['\"]{re.escape(listview_id)}['\"]", html)
     if not id_match:
@@ -334,6 +485,33 @@ def extract_listview_data(html: str, listview_id: str) -> list[dict[str, Any]]:
     except json.JSONDecodeError:
         return []
     return data if isinstance(data, list) else []
+
+
+def extract_gatherer_names(html: str) -> dict[str, dict[int, str]]:
+    names: dict[str, dict[int, str]] = {"item": {}, "spell": {}}
+    entity_types = {3: "item", 6: "spell"}
+    for match in re.finditer(r"WH\.Gatherer\.addData\(\s*([36])\s*,\s*\d+\s*,\s*", html):
+        object_text = extract_balanced_json_object(html, match.end())
+        if not object_text:
+            continue
+        try:
+            payload = json.loads(object_text)
+        except json.JSONDecodeError:
+            continue
+        entity_type = entity_types.get(int(match.group(1)))
+        if not entity_type or not isinstance(payload, dict):
+            continue
+        for raw_id, row in payload.items():
+            if not isinstance(row, dict):
+                continue
+            try:
+                entity_id = int(raw_id)
+            except ValueError:
+                continue
+            name = row.get("name_enus") or row.get("name")
+            if isinstance(name, str) and name:
+                names[entity_type][entity_id] = name
+    return names
 
 
 def first_zone_name(row: dict[str, Any]) -> str | None:
@@ -383,6 +561,19 @@ def pct_from_row(row: dict[str, Any]) -> float | None:
     return None
 
 
+def profession_from_skill(value: Any) -> str | None:
+    if isinstance(value, str) and value:
+        return value
+    if isinstance(value, int):
+        return PROFESSION_SKILL_NAMES.get(value)
+    if isinstance(value, list):
+        for entry in value:
+            profession = profession_from_skill(entry)
+            if profession:
+                return profession
+    return None
+
+
 def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
     sources: list[dict[str, Any]] = []
 
@@ -429,12 +620,42 @@ def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) ->
         }
         sources.append({key: value for key, value in source.items() if value not in (None, [])})
 
-    for row in tables.get("created-by", []):
+    for row in tables.get("created-by", []) + tables.get("created-by-spell", []):
         source = {
             "type": "crafted",
             "entity_id": row.get("id"),
             "entity_name": row.get("name"),
-            "profession": row.get("skill"),
+            "spell_id": row.get("id"),
+            "profession": profession_from_skill(row.get("skill")),
+            "source_url": url,
+            "confidence": "wowhead_item",
+        }
+        sources.append({key: value for key, value in source.items() if value is not None})
+
+    for table_name in ["contained-in-object", "gathered-from-object"]:
+        for row in tables.get(table_name, []):
+            source = {
+                "type": "drop",
+                "entity_id": row.get("id"),
+                "entity_name": row.get("name"),
+                "zone": first_zone_name(row),
+                "count": row.get("count"),
+                "out_of": row.get("outof"),
+                "drop_percent": pct_from_row(row),
+                "source_url": url,
+                "confidence": "wowhead_item",
+            }
+            sources.append({key: value for key, value in source.items() if value is not None})
+
+    for row in tables.get("contained-in-item", []):
+        source = {
+            "type": "drop",
+            "entity_id": row.get("id"),
+            "item_id": row.get("id"),
+            "entity_name": f"Contained in: {row.get('name')}" if row.get("name") else None,
+            "count": row.get("count"),
+            "out_of": row.get("outof"),
+            "drop_percent": pct_from_row(row),
             "source_url": url,
             "confidence": "wowhead_item",
         }
@@ -479,7 +700,17 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
     description = meta.get("content", "") if meta else ""
     item_id = item_id_from_href(url)
     binding, boe = parse_binding_from_text(item_tooltip_text(item_id, html) or description)
-    listview_ids = ["dropped-by", "sold-by", "reward-from-q", "created-by"]
+    listview_ids = [
+        "dropped-by",
+        "sold-by",
+        "reward-from-q",
+        "created-by",
+        "created-by-spell",
+        "taught-by-item",
+        "contained-in-object",
+        "contained-in-item",
+        "gathered-from-object",
+    ]
     related_tables = {listview_id: extract_listview_data(html, listview_id) for listview_id in listview_ids}
     sources = normalize_item_sources(url, related_tables)
 
@@ -496,6 +727,8 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
         "description": clean_text(description),
         "related_tables": related_tables,
         "normalized_sources": sources,
+        "taught_by_items": related_tables.get("taught-by-item", []),
+        "teaches_spell_ids": item_teaches_spell_ids(item_id, name, html),
     }
 
 
@@ -506,6 +739,28 @@ def normalize_spell_sources(url: str, tables: dict[str, list[dict[str, Any]]]) -
         source = {
             "type": "taught_by_item",
             "item_id": row.get("id"),
+            "entity_id": row.get("id"),
+            "entity_name": row.get("name"),
+            "source_url": url,
+            "confidence": "wowhead_spell",
+        }
+        sources.append({key: value for key, value in source.items() if value is not None})
+
+    for row in tables.get("taught-by-npc", []) + tables.get("trained-by", []):
+        source = {
+            "type": "trainer",
+            "entity_id": row.get("id"),
+            "entity_name": row.get("name"),
+            "zone": first_zone_name(row),
+            "source_url": url,
+            "confidence": "wowhead_spell",
+        }
+        sources.append({key: value for key, value in source.items() if value is not None})
+
+    for row in tables.get("taught-by-spell", []):
+        source = {
+            "type": "taught_by_spell",
+            "spell_id": row.get("id"),
             "entity_id": row.get("id"),
             "entity_name": row.get("name"),
             "source_url": url,
@@ -538,6 +793,20 @@ def normalize_spell_sources(url: str, tables: dict[str, list[dict[str, Any]]]) -
         }
         sources.append({key: value for key, value in source.items() if value is not None})
 
+    for row in tables.get("recipes", []):
+        if row.get("trainingcost") is None:
+            continue
+        source = {
+            "type": "trainer",
+            "entity_id": "profession_trainer",
+            "entity_name": f"{profession_from_skill(row.get('skill')) or 'Profession'} Trainer",
+            "profession": profession_from_skill(row.get("skill")),
+            "required_skill": row.get("learnedat"),
+            "source_url": url,
+            "confidence": "wowhead_spell_recipe",
+        }
+        sources.append({key: value for key, value in source.items() if value is not None})
+
     return sources
 
 
@@ -545,7 +814,9 @@ def parse_spell_html(url: str, html: str) -> dict[str, Any]:
     soup = BeautifulSoup(html, "html.parser")
     title = element_text(soup.title) if soup.title else ""
     name = re.sub(r"\s+-\s+Spell\s+-\s+TBC Classic.*$", "", title).strip()
-    listview_ids = ["taught-by-item", "sold-by", "reward-from-q", "created-by"]
+    meta = soup.find("meta", attrs={"name": "description"})
+    description = meta.get("content", "") if meta else ""
+    listview_ids = ["taught-by-item", "taught-by-npc", "taught-by-spell", "trained-by", "sold-by", "reward-from-q", "created-by", "recipes"]
     related_tables = {listview_id: extract_listview_data(html, listview_id) for listview_id in listview_ids}
     return {
         "parser_version": PARSER_VERSION,
@@ -554,6 +825,7 @@ def parse_spell_html(url: str, html: str) -> dict[str, Any]:
         "page_type": "spell",
         "spell_id": spell_id_from_href(url),
         "name": name,
+        "description": clean_text(description),
         "related_tables": related_tables,
         "normalized_sources": normalize_spell_sources(url, related_tables),
     }
@@ -604,9 +876,16 @@ def write_snapshot(snapshot: dict[str, Any], output_dir: Path) -> Path:
     return output_path
 
 
-def manifest_urls() -> list[str]:
+def manifest_urls(data_family: str | None = None) -> list[str]:
     manifest = canonical_json("scrape_manifest")
-    return sorted({source["url"] for source in manifest.get("sources", []) if source.get("url")})
+    urls: set[str] = set()
+    for source in manifest.get("sources", []):
+        if not source.get("url"):
+            continue
+        if data_family and data_family not in source_families(source):
+            continue
+        urls.add(source["url"])
+    return sorted(urls)
 
 
 def manifest_sources_by_url() -> dict[str, list[dict[str, Any]]]:
@@ -616,6 +895,14 @@ def manifest_sources_by_url() -> dict[str, list[dict[str, Any]]]:
         if source.get("url"):
             sources_by_url.setdefault(source["url"], []).append(source)
     return sources_by_url
+
+
+def source_families(source: dict[str, Any]) -> set[str]:
+    families = source.get("data_families")
+    if isinstance(families, list):
+        return {str(family) for family in families if family}
+    family = source.get("data_family")
+    return {str(family)} if family else set()
 
 
 def manifest_sources_for_snapshot(snapshot: dict[str, Any], data_family: str) -> list[dict[str, Any]]:
@@ -643,6 +930,10 @@ def item_url_for_id(item_id: int) -> str:
     return f"https://www.wowhead.com/tbc/item={item_id}"
 
 
+def spell_url_for_id(spell_id: int) -> str:
+    return f"https://www.wowhead.com/tbc/spell={spell_id}"
+
+
 def discover_entity_urls(snapshots: list[dict[str, Any]], entity_type: str | None = None) -> list[str]:
     urls: set[str] = set()
     for snapshot in snapshots:
@@ -651,6 +942,13 @@ def discover_entity_urls(snapshots: list[dict[str, Any]], entity_type: str | Non
         for table in snapshot.get("tables", []):
             for row in table.get("rows", []):
                 for entity in row.get("entities", []):
+                    if entity_type and entity.get("type") != entity_type:
+                        continue
+                    if entity.get("url"):
+                        urls.add(entity["url"])
+        for section in snapshot.get("sections", []):
+            for entry in section.get("entries", []):
+                for entity in entry.get("entities", []):
                     if entity_type and entity.get("type") != entity_type:
                         continue
                     if entity.get("url"):
@@ -681,27 +979,77 @@ def discover_token_item_urls(snapshots: list[dict[str, Any]]) -> list[str]:
     return [item_url_for_id(item_id) for item_id in sorted(item_ids)]
 
 
+def discover_related_source_urls(snapshots: list[dict[str, Any]]) -> list[str]:
+    item_ids: set[int] = set()
+    spell_ids: set[int] = set()
+    urls: set[str] = set()
+    spell_alias_urls = reviewed_spell_alias_urls()
+    for snapshot in snapshots:
+        if snapshot.get("page_type") not in {"item", "spell"}:
+            continue
+        if snapshot.get("page_type") == "item":
+            for taught_by_item in snapshot.get("taught_by_items", []):
+                item_id = taught_by_item.get("id")
+                if isinstance(item_id, int) and item_id > 0:
+                    item_ids.add(item_id)
+            for spell_id in snapshot.get("teaches_spell_ids", []):
+                if isinstance(spell_id, int) and spell_id > 0:
+                    spell_ids.add(spell_id)
+        if snapshot.get("page_type") == "spell":
+            spell_id = snapshot.get("spell_id")
+            if isinstance(spell_id, int):
+                urls.update(spell_alias_urls.get(spell_id, []))
+        for source in snapshot.get("normalized_sources", []):
+            item_id = source.get("item_id")
+            if isinstance(item_id, int) and item_id > 0:
+                item_ids.add(item_id)
+            spell_id = source.get("spell_id")
+            if isinstance(spell_id, int) and spell_id > 0:
+                spell_ids.add(spell_id)
+            item_ids.update(item_cost_ids_from_sources([source]))
+    urls.update(item_url_for_id(item_id) for item_id in sorted(item_ids))
+    urls.update(spell_url_for_id(spell_id) for spell_id in sorted(spell_ids))
+    return sorted(urls)
+
+
 def command_fetch(args: argparse.Namespace) -> int:
     output_dir = args.output_dir
     cache_dir = output_dir / "html_cache"
-    urls = sorted(set(args.url or manifest_urls()))
+    urls = sorted(set(args.url or manifest_urls(args.family)))
     seen_urls: set[str] = set()
     snapshots: list[dict[str, Any]] = []
     queue = list(urls)
+    seed_urls = set(urls)
+    include_canonical_items = args.family in {None, "bis_lists"} and not args.url
 
     while queue:
         url = queue.pop(0)
         if url in seen_urls:
             continue
         seen_urls.add(url)
-        html = fetch_url(url, cache_dir, retries=args.retries, delay=args.delay)
+        try:
+            html = fetch_url(url, cache_dir, retries=args.retries, delay=args.delay)
+        except RuntimeError as exc:
+            if url in seed_urls:
+                raise
+            print(f"warning: skipped optional discovered URL {url}: {exc}", file=sys.stderr)
+            continue
         snapshot = normalize_html(url, html)
         write_snapshot(snapshot, output_dir)
         snapshots.append(snapshot)
         print(f"snapshot {snapshot['page_type']}: {url}")
 
         if not args.no_discover:
-            discovered = sorted(set(discover_entity_urls(snapshots) + canonical_item_urls() + discover_token_item_urls(snapshots)) - seen_urls - set(queue))
+            discovered = sorted(
+                set(
+                    discover_entity_urls(snapshots)
+                    + (canonical_item_urls() if include_canonical_items else [])
+                    + discover_token_item_urls(snapshots)
+                    + discover_related_source_urls(snapshots)
+                )
+                - seen_urls
+                - set(queue)
+            )
             queue.extend(discovered)
 
     return 0
@@ -852,6 +1200,18 @@ def phase_from_row(source_meta: dict[str, Any], table: dict[str, Any], row: dict
     return None
 
 
+def phases_from_row(source_meta: dict[str, Any], table: dict[str, Any], row: dict[str, Any]) -> list[str]:
+    detected = phase_from_row(source_meta, table, row)
+    if detected:
+        return [detected]
+    phases = source_meta.get("phases")
+    if phases == "*" or source_meta.get("phase") == "*" or source_meta.get("scope") == "all_phases":
+        return list(PHASE_KEYS)
+    if isinstance(phases, list):
+        return [str(phase) for phase in phases if phase in PHASE_KEYS]
+    return []
+
+
 def row_item_ids(row: dict[str, Any]) -> list[int]:
     return [int(entity["id"]) for entity in row.get("entities", []) if entity.get("type") == "item" and entity.get("id")]
 
@@ -880,6 +1240,141 @@ def compact_cells(row: dict[str, Any]) -> str:
     return " | ".join(cell for cell in row.get("cells", []) if cell)
 
 
+def row_context(table: dict[str, Any], row: dict[str, Any]) -> str:
+    values = [str(row.get("rank_label") or ""), str(table.get("heading") or "")]
+    text = " ".join(values).lower()
+    if "jewel" in text:
+        return "jewelcrafting"
+    if "threat" in text:
+        return "threat"
+    if "aoe" in text:
+        return "aoe"
+    if "single target" in text or "single-target" in text:
+        return "single_target"
+    if "pvp" in text:
+        return "pvp"
+    if "option" in text or "alternative" in text:
+        return "option"
+    return "standard"
+
+
+def quality_rank(value: Any) -> int | None:
+    if isinstance(value, int) and 1 <= value <= 5:
+        return value
+    if not isinstance(value, str):
+        return None
+    return QUALITY_RANKS.get(value.lower())
+
+
+def item_snapshots_by_id(snapshots: list[dict[str, Any]]) -> dict[int, dict[str, Any]]:
+    return {
+        int(snapshot["item_id"]): snapshot
+        for snapshot in snapshots
+        if snapshot.get("page_type") == "item" and isinstance(snapshot.get("item_id"), int)
+    }
+
+
+def spell_snapshots_by_id(snapshots: list[dict[str, Any]]) -> dict[int, dict[str, Any]]:
+    return {
+        int(snapshot["spell_id"]): snapshot
+        for snapshot in snapshots
+        if snapshot.get("page_type") == "spell" and isinstance(snapshot.get("spell_id"), int)
+    }
+
+
+def normalized_spell_name(value: str | None) -> str:
+    if not value:
+        return ""
+    return clean_text(value).lower()
+
+
+def spell_snapshots_by_normalized_name(snapshots: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    by_name: dict[str, list[dict[str, Any]]] = {}
+    for snapshot in snapshots:
+        if snapshot.get("page_type") != "spell" or not isinstance(snapshot.get("spell_id"), int):
+            continue
+        name = normalized_spell_name(snapshot.get("name"))
+        if not name:
+            continue
+        by_name.setdefault(name, []).append(snapshot)
+    for name in by_name:
+        by_name[name].sort(key=lambda snapshot: int(snapshot["spell_id"]))
+    return by_name
+
+
+def socket_category_from_text(text: str) -> str:
+    normalized = text.lower()
+    if "meta" in normalized or "diamond" in normalized:
+        return "meta"
+    for category in ["red", "yellow", "blue", "orange", "purple", "green", "prismatic"]:
+        if re.search(rf"\b{category}\b", normalized):
+            return category
+    return "unknown"
+
+
+def normalize_consumable_category(value: str) -> str:
+    normalized = value.lower()
+    for category, pattern in CONSUMABLE_CATEGORY_PATTERNS:
+        if re.search(pattern, normalized):
+            return category
+    return "utility"
+
+
+def enchant_formula_item_ids(spell_snapshot: dict[str, Any] | None) -> list[int]:
+    if not spell_snapshot:
+        return []
+    item_ids: list[int] = []
+    seen: set[int] = set()
+    for source in spell_snapshot.get("normalized_sources", []):
+        item_id = source.get("item_id")
+        if isinstance(item_id, int) and item_id > 0 and item_id not in seen:
+            seen.add(item_id)
+            item_ids.append(item_id)
+    return item_ids
+
+
+def formula_item_ids_for_spell(spell_id: int, item_snapshots: dict[int, dict[str, Any]]) -> list[int]:
+    item_ids: list[int] = []
+    for item_id, snapshot in sorted(item_snapshots.items()):
+        if spell_id not in snapshot.get("teaches_spell_ids", []):
+            continue
+        name = str(snapshot.get("name") or "").lower()
+        if not name.startswith(RECIPE_ITEM_PREFIXES):
+            continue
+        item_ids.append(item_id)
+    return item_ids
+
+
+def enchant_spell_has_source_data(spell_snapshot: dict[str, Any] | None, item_snapshots: dict[int, dict[str, Any]]) -> bool:
+    if not spell_snapshot:
+        return False
+    if spell_snapshot.get("normalized_sources"):
+        return True
+    spell_id = spell_snapshot.get("spell_id")
+    if isinstance(spell_id, int) and formula_item_ids_for_spell(spell_id, item_snapshots):
+        return True
+    return bool(enchant_formula_item_ids(spell_snapshot))
+
+
+def resolve_enchant_source_spell_snapshot(
+    spell_id: int,
+    spell_snapshot: dict[str, Any] | None,
+    spell_snapshots_by_name: dict[str, list[dict[str, Any]]],
+    item_snapshots: dict[int, dict[str, Any]],
+) -> dict[str, Any] | None:
+    if enchant_spell_has_source_data(spell_snapshot, item_snapshots):
+        return spell_snapshot
+    name = normalized_spell_name((spell_snapshot or {}).get("name"))
+    if not name:
+        return spell_snapshot
+    for candidate in spell_snapshots_by_name.get(name, []):
+        if candidate.get("spell_id") == spell_id:
+            continue
+        if enchant_spell_has_source_data(candidate, item_snapshots):
+            return candidate
+    return spell_snapshot
+
+
 def slot_from_row(table: dict[str, Any], row: dict[str, Any]) -> str | None:
     if table.get("slot") in SLOT_NAMES:
         return str(table["slot"])
@@ -897,90 +1392,161 @@ def table_matches_family(source_meta: dict[str, Any], table: dict[str, Any], dat
     return table_family in (data_family, "unknown", None)
 
 
-def import_gems_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
+def import_gems_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
-    seen: set[tuple[str, str, str, int]] = set()
+    seen: set[tuple[str, str, str, int, str, str]] = set()
+    item_snapshots = item_snapshots_by_id(snapshots)
 
     for snapshot in snapshots:
         if snapshot.get("page_type") != "guide":
             continue
-        source_meta = manifest_source_for_snapshot(snapshot, "gems")
-        class_name = source_meta.get("class")
-        spec_name = source_meta.get("spec")
-        if not class_name or not spec_name:
-            continue
-
-        for table in snapshot.get("tables", []):
-            if not table_matches_family(source_meta, table, "gems"):
+        for source_meta in manifest_sources_for_snapshot(snapshot, "gems"):
+            class_name = source_meta.get("class")
+            spec_name = source_meta.get("spec")
+            if not class_name or not spec_name:
                 continue
-            for row in table.get("rows", []):
-                item_ids = row_item_ids(row)
-                phase = phase_from_row(source_meta, table, row)
-                if not item_ids or not phase:
-                    continue
-                key = (str(class_name), str(spec_name), phase, item_ids[0])
-                if key in seen:
-                    continue
-                seen.add(key)
-                gem_row: dict[str, Any] = {
-                    "class": class_name,
-                    "spec": spec_name,
-                    "phase": phase,
-                    "id": item_ids[0],
-                    "name": row.get("item_name"),
-                    "meta": "meta" in compact_cells(row).lower() or str(row.get("item_name", "")).lower().endswith("diamond"),
-                    "source_url": snapshot["url"],
-                }
-                quality = quality_from_row(row)
-                if quality is not None:
-                    gem_row["quality"] = quality
-                rows.append(gem_row)
 
-    if not rows:
+            for table in snapshot.get("tables", []):
+                if not table_matches_family(source_meta, table, "gems"):
+                    continue
+                for row in table.get("rows", []):
+                    item_ids = row_item_ids(row)
+                    phases = phases_from_row(source_meta, table, row)
+                    if not item_ids or not phases:
+                        continue
+                    item_id = item_ids[0]
+                    cell_text = compact_cells(row)
+                    socket_category = socket_category_from_text(f"{table.get('heading') or ''} {cell_text} {row.get('item_name') or ''}")
+                    context = row_context(table, row)
+                    item_snapshot = item_snapshots.get(item_id)
+                    for phase in phases:
+                        key = (str(class_name), str(spec_name), phase, item_id, socket_category, context)
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        gem_row: dict[str, Any] = {
+                            "class": class_name,
+                            "spec": spec_name,
+                            "phase": phase,
+                            "id": item_id,
+                            "name": row.get("item_name"),
+                            "socket_category": socket_category,
+                            "socket_color": socket_category,
+                            "context": context,
+                            "meta": socket_category == "meta" or "meta" in cell_text.lower() or str(row.get("item_name", "")).lower().endswith("diamond"),
+                            "source_url": snapshot["url"],
+                        }
+                        quality = quality_from_row(row) or quality_rank((item_snapshot or {}).get("quality"))
+                        if quality is not None:
+                            gem_row["quality"] = quality
+                        sources = (item_snapshot or {}).get("normalized_sources", [])
+                        if sources:
+                            gem_row["source_summary"] = summarize_sources(sources)
+                        rows.append(gem_row)
+
+    if not rows and fallback_to_canonical:
         return canonical_json("gems")
     return {"gems": rows}
 
 
-def import_enchants_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
+def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
-    seen: set[tuple[str, str, str, str, int, str]] = set()
+    seen: set[tuple[str, str, str, str, int, str, str]] = set()
+    item_snapshots = item_snapshots_by_id(snapshots)
+    spell_snapshots = spell_snapshots_by_id(snapshots)
+    spell_snapshots_by_name = spell_snapshots_by_normalized_name(snapshots)
 
     for snapshot in snapshots:
         if snapshot.get("page_type") != "guide":
             continue
-        source_meta = manifest_source_for_snapshot(snapshot, "enchants")
-        class_name = source_meta.get("class")
-        spec_name = source_meta.get("spec")
-        if not class_name or not spec_name:
-            continue
-
-        for table in snapshot.get("tables", []):
-            if not table_matches_family(source_meta, table, "enchants"):
+        for source_meta in manifest_sources_for_snapshot(snapshot, "enchants"):
+            class_name = source_meta.get("class")
+            spec_name = source_meta.get("spec")
+            if not class_name or not spec_name:
                 continue
-            for row in table.get("rows", []):
-                entity = first_row_entity(row)
-                phase = phase_from_row(source_meta, table, row)
-                slot = slot_from_row(table, row)
-                if not entity or not phase or not slot:
-                    continue
-                key = (str(class_name), str(spec_name), phase, slot, int(entity["id"]), str(entity["type"]))
-                if key in seen:
-                    continue
-                seen.add(key)
-                rows.append(
-                    {
-                        "class": class_name,
-                        "spec": spec_name,
-                        "phase": phase,
-                        "slot": slot,
-                        "id": entity["id"],
-                        "name": entity["name"],
-                        "type": entity["type"],
-                        "source_url": snapshot["url"],
-                    }
-                )
 
-    if not rows:
+            for table in snapshot.get("tables", []):
+                if not table_matches_family(source_meta, table, "enchants"):
+                    continue
+                for row in table.get("rows", []):
+                    entity = first_row_entity(row)
+                    phases = phases_from_row(source_meta, table, row)
+                    slot = slot_from_row(table, row)
+                    if not entity or not phases or not slot:
+                        continue
+                    context = row_context(table, row)
+                    entity_id = int(entity["id"])
+                    entity_name = entity.get("name")
+                    if not entity_name:
+                        if entity["type"] == "spell":
+                            entity_name = (spell_snapshots.get(entity_id) or {}).get("name")
+                        else:
+                            entity_name = (item_snapshots.get(entity_id) or {}).get("name")
+                    for phase in phases:
+                        key = (str(class_name), str(spec_name), phase, slot, entity_id, str(entity["type"]), context)
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        enchant_row: dict[str, Any] = {
+                            "class": class_name,
+                            "spec": spec_name,
+                            "phase": phase,
+                            "slot": slot,
+                            "id": entity_id,
+                            "name": entity_name,
+                            "type": entity["type"],
+                            "context": context,
+                            "source_url": snapshot["url"],
+                        }
+                        if entity["type"] == "spell":
+                            spell_snapshot = spell_snapshots.get(int(entity["id"]))
+                            source_spell_snapshot = resolve_enchant_source_spell_snapshot(
+                                int(entity["id"]),
+                                spell_snapshot,
+                                spell_snapshots_by_name,
+                                item_snapshots,
+                            )
+                            source_spell_id = (source_spell_snapshot or {}).get("spell_id")
+                            formula_spell_ids = [int(entity["id"])]
+                            if isinstance(source_spell_id, int) and source_spell_id not in formula_spell_ids:
+                                formula_spell_ids.append(source_spell_id)
+                                enchant_row["source_spell_id"] = source_spell_id
+                            formula_item_ids = sorted(
+                                set(enchant_formula_item_ids(source_spell_snapshot))
+                                | {
+                                    item_id
+                                    for formula_spell_id in formula_spell_ids
+                                    for item_id in formula_item_ids_for_spell(formula_spell_id, item_snapshots)
+                                }
+                            )
+                            if formula_item_ids:
+                                enchant_row["formula_item_ids"] = formula_item_ids
+                            taught_by = [
+                                {
+                                    key: source[key]
+                                    for key in ["type", "item_id", "spell_id", "entity_id", "entity_name", "zone"]
+                                    if key in source
+                                }
+                                for source in (source_spell_snapshot or {}).get("normalized_sources", [])
+                            ]
+                            taught_by.extend(
+                                {
+                                    "type": "taught_by_item",
+                                    "item_id": item_id,
+                                    "entity_name": item_snapshots[item_id].get("name"),
+                                }
+                                for item_id in formula_item_ids
+                                if item_id in item_snapshots
+                            )
+                            if taught_by:
+                                enchant_row["taught_by"] = taught_by
+                        else:
+                            sources = item_snapshots.get(int(entity["id"]), {}).get("normalized_sources", [])
+                            if sources:
+                                enchant_row["source_summary"] = summarize_sources(sources)
+                        rows.append(enchant_row)
+
+    if not rows and fallback_to_canonical:
         return canonical_json("enchants")
     return {"enchants": rows}
 
@@ -988,93 +1554,172 @@ def import_enchants_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str,
 def consumable_category(table: dict[str, Any], row: dict[str, Any]) -> str:
     first_cell = str(row.get("cells", [""])[0]).strip() if row.get("cells") else ""
     if first_cell and not re.fullmatch(r"\d+|bis|option", first_cell, flags=re.IGNORECASE):
-        return first_cell
+        return normalize_consumable_category(first_cell)
     heading = str(table.get("heading") or "").strip()
-    return heading or "Consumables"
+    return normalize_consumable_category(heading or "Consumables")
 
 
-def import_consumables_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
+def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
-    seen: set[tuple[str, str, str, tuple[int, ...]]] = set()
+    seen: set[tuple[str, str, str, str, tuple[int, ...]]] = set()
+    item_snapshots = item_snapshots_by_id(snapshots)
 
     for snapshot in snapshots:
         if snapshot.get("page_type") != "guide":
             continue
-        source_meta = manifest_source_for_snapshot(snapshot, "consumables")
-        class_name = source_meta.get("class")
-        spec_name = source_meta.get("spec")
-        if not class_name or not spec_name:
-            continue
-
-        for table in snapshot.get("tables", []):
-            if not table_matches_family(source_meta, table, "consumables"):
+        for source_meta in manifest_sources_for_snapshot(snapshot, "consumables"):
+            class_name = source_meta.get("class")
+            spec_name = source_meta.get("spec")
+            if not class_name or not spec_name:
                 continue
-            for row in table.get("rows", []):
-                item_ids = row_item_ids(row)
-                if not item_ids:
-                    continue
-                category = consumable_category(table, row)
-                key = (str(class_name), str(spec_name), category, tuple(item_ids))
-                if key in seen:
-                    continue
-                seen.add(key)
-                consumable_row: dict[str, Any] = {
-                    "class": class_name,
-                    "spec": spec_name,
-                    "category": category,
-                    "items": item_ids,
-                    "source_url": snapshot["url"],
-                }
-                phase = phase_from_row(source_meta, table, row)
-                if phase:
-                    consumable_row["phase"] = phase
-                rows.append(consumable_row)
 
-    if not rows:
+            for table in snapshot.get("tables", []):
+                if not table_matches_family(source_meta, table, "consumables"):
+                    continue
+                for row in table.get("rows", []):
+                    item_ids = row_item_ids(row)
+                    if not item_ids:
+                        continue
+                    category = consumable_category(table, row)
+                    phases = phases_from_row(source_meta, table, row) or [str(source_meta.get("phase") or "")]
+                    for phase in phases:
+                        key = (str(class_name), str(spec_name), phase, category, tuple(item_ids))
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        consumable_row: dict[str, Any] = {
+                            "class": class_name,
+                            "spec": spec_name,
+                            "category": category,
+                            "category_label": str(row.get("cells", [""])[0]).strip() if row.get("cells") else str(table.get("heading") or ""),
+                            "items": item_ids,
+                            "item_names": [entity["name"] for entity in row.get("entities", []) if entity.get("type") == "item" and entity.get("id") in item_ids],
+                            "source_url": snapshot["url"],
+                        }
+                        if phase:
+                            consumable_row["phase"] = phase
+                        source_summaries = {
+                            str(item_id): summarize_sources(item_snapshots[item_id].get("normalized_sources", []))
+                            for item_id in item_ids
+                            if item_id in item_snapshots and item_snapshots[item_id].get("normalized_sources")
+                        }
+                        if source_summaries:
+                            consumable_row["source_summaries"] = source_summaries
+                        rows.append(consumable_row)
+
+            for section in snapshot.get("sections", []):
+                if section.get("data_family") != "consumables":
+                    continue
+                section_title = str(section.get("heading") or "Consumables")
+                category = normalize_consumable_category(section_title)
+                for entry in section.get("entries", []):
+                    item_ids = row_item_ids(entry)
+                    if not item_ids:
+                        continue
+                    phase_row = {"cells": [entry.get("text")], "source_text": entry.get("text")}
+                    phases = phases_from_row(source_meta, {"heading": section_title}, phase_row) or [str(source_meta.get("phase") or "")]
+                    for phase in phases:
+                        key = (str(class_name), str(spec_name), phase, category, tuple(item_ids))
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        consumable_row = {
+                            "class": class_name,
+                            "spec": spec_name,
+                            "category": category,
+                            "category_label": section_title,
+                            "items": item_ids,
+                            "item_names": [entity["name"] for entity in entry.get("entities", []) if entity.get("type") == "item" and entity.get("id") in item_ids],
+                            "source_url": snapshot["url"],
+                        }
+                        if phase:
+                            consumable_row["phase"] = phase
+                        source_summaries = {
+                            str(item_id): summarize_sources(item_snapshots[item_id].get("normalized_sources", []))
+                            for item_id in item_ids
+                            if item_id in item_snapshots and item_snapshots[item_id].get("normalized_sources")
+                        }
+                        if source_summaries:
+                            consumable_row["source_summaries"] = source_summaries
+                        rows.append(consumable_row)
+
+    if not rows and fallback_to_canonical:
         return canonical_json("consumables")
     return {"consumables": rows}
 
 
-def import_leveling_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
+def import_leveling_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
-    seen: set[tuple[str, str, str, str, str]] = set()
+    seen: set[tuple[str, str, str, str, str, str]] = set()
 
     for snapshot in snapshots:
         if snapshot.get("page_type") != "guide":
             continue
-        source_meta = manifest_source_for_snapshot(snapshot, "leveling")
-        class_name = source_meta.get("class")
-        spec_name = source_meta.get("spec")
-        if not class_name or not spec_name:
-            continue
-
-        for table in snapshot.get("tables", []):
-            if not table_matches_family(source_meta, table, "leveling"):
+        for source_meta in manifest_sources_for_snapshot(snapshot, "leveling"):
+            class_name = source_meta.get("class")
+            spec_name = source_meta.get("spec")
+            if not class_name or not spec_name:
                 continue
-            for row in table.get("rows", []):
-                text = compact_cells(row)
-                if not text:
-                    continue
-                section = str(table.get("heading") or "Leveling")
-                phase = phase_from_row(source_meta, table, row) or str(source_meta.get("phase") or "PR")
-                key = (str(class_name), str(spec_name), phase, section, text)
-                if key in seen:
-                    continue
-                seen.add(key)
-                rows.append(
-                    {
-                        "class": class_name,
-                        "spec": spec_name,
-                        "phase": phase,
-                        "section": section,
-                        "label": row.get("rank_label") or "",
-                        "text": text,
-                        "entities": row.get("entities", []),
-                        "source_url": snapshot["url"],
-                    }
-                )
 
-    if not rows:
+            for table in snapshot.get("tables", []):
+                if not table_matches_family(source_meta, table, "leveling"):
+                    continue
+                for row in table.get("rows", []):
+                    text = compact_cells(row)
+                    if not text:
+                        continue
+                    section = str(table.get("heading") or "Leveling")
+                    phases = phases_from_row(source_meta, table, row) or [str(source_meta.get("phase") or "PR")]
+                    level_range = row.get("level_range") or level_range_from_text(f"{section} {text}")
+                    for phase in phases:
+                        key = (str(class_name), str(spec_name), phase, section, str(level_range or ""), text)
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        leveling_row = {
+                            "class": class_name,
+                            "spec": spec_name,
+                            "phase": phase,
+                            "section": section,
+                            "label": row.get("rank_label") or "",
+                            "text": text,
+                            "entities": row.get("entities", []),
+                            "source_url": snapshot["url"],
+                        }
+                        if level_range:
+                            leveling_row["level_range"] = level_range
+                        rows.append(leveling_row)
+
+            for section in snapshot.get("sections", []):
+                if section.get("data_family") != "leveling":
+                    continue
+                section_title = str(section.get("heading") or "Leveling")
+                for entry in section.get("entries", []):
+                    text = clean_text(str(entry.get("text") or ""))
+                    if not text:
+                        continue
+                    phase_row = {"cells": [text], "source_text": text}
+                    phases = phases_from_row(source_meta, {"heading": section_title}, phase_row) or [str(source_meta.get("phase") or "PR")]
+                    level_range = entry.get("level_range") or level_range_from_text(f"{section_title} {text}")
+                    for phase in phases:
+                        key = (str(class_name), str(spec_name), phase, section_title, str(level_range or ""), text)
+                        if key in seen:
+                            continue
+                        seen.add(key)
+                        leveling_row = {
+                            "class": class_name,
+                            "spec": spec_name,
+                            "phase": phase,
+                            "section": section_title,
+                            "text": text,
+                            "entities": entry.get("entities", []),
+                            "source_url": snapshot["url"],
+                        }
+                        if level_range:
+                            leveling_row["level_range"] = level_range
+                        rows.append(leveling_row)
+
+    if not rows and fallback_to_canonical:
         return canonical_json("leveling")
     return {"leveling": rows}
 
@@ -1086,6 +1731,7 @@ def import_entity_sources_from_snapshots(
 ) -> dict[str, Any]:
     wanted_item_ids = {row.get("id") for row in rows if row.get("id") and row.get("type", "item") != "spell"}
     wanted_item_ids.update(item_id for row in rows for item_id in row.get("items", []))
+    wanted_item_ids.update(item_id for row in rows for item_id in row.get("formula_item_ids", []))
     wanted_spell_ids = {row.get("id") for row in rows if row.get("type") == "spell" and row.get("id")}
     item_snapshots = {snapshot.get("item_id"): snapshot for snapshot in snapshots if snapshot.get("page_type") == "item"}
     spell_snapshots = {snapshot.get("spell_id"): snapshot for snapshot in snapshots if snapshot.get("page_type") == "spell"}
@@ -1352,6 +1998,22 @@ def reviewed_overrides() -> list[dict[str, Any]]:
     return canonical_json("overrides").get("overrides", [])
 
 
+def reviewed_spell_alias_urls() -> dict[int, list[str]]:
+    aliases: dict[int, list[str]] = {}
+    for override in reviewed_overrides():
+        if override.get("type") != "spell_alias":
+            continue
+        target = override.get("target", {})
+        spell_id = target.get("spell_id")
+        source_url = override.get("source_url")
+        if not isinstance(spell_id, int) or not isinstance(source_url, str):
+            continue
+        if "/spell=" not in source_url:
+            continue
+        aliases.setdefault(spell_id, []).append(source_url)
+    return aliases
+
+
 def target_matches(row: dict[str, Any], target: dict[str, Any]) -> bool:
     return all(row.get(key) == value for key, value in target.items())
 
@@ -1464,43 +2126,42 @@ def command_import(args: argparse.Namespace) -> int:
     imported_leveling = import_leveling_from_snapshots(snapshots)
 
     if args.dry_run:
-        print(
-            json.dumps(
-                {
-                    "bis_lists": len(imported_bis_lists["lists"]),
-                    "coverage": imported_bis_lists["coverage"],
-                    "consumables": len(imported_consumables["consumables"]),
-                    "enchant_sources": len(imported_enchant_sources["enchant_sources"]),
-                    "enchants": len(imported_enchants["enchants"]),
-                    "gem_sources": len(imported_gem_sources["gem_sources"]),
-                    "gems": len(imported_gems["gems"]),
-                    "items": len(imported_items["items"]),
-                    "leveling": len(imported_leveling["leveling"]),
-                },
-                indent=2,
-                sort_keys=True,
-            )
-        )
+        counts = {
+            "bis_lists": len(imported_bis_lists["lists"]),
+            "coverage": imported_bis_lists["coverage"],
+            "consumables": len(imported_consumables["consumables"]),
+            "enchant_sources": len(imported_enchant_sources["enchant_sources"]),
+            "enchants": len(imported_enchants["enchants"]),
+            "gem_sources": len(imported_gem_sources["gem_sources"]),
+            "gems": len(imported_gems["gems"]),
+            "items": len(imported_items["items"]),
+            "leveling": len(imported_leveling["leveling"]),
+        }
+        if args.family:
+            counts["family"] = args.family
+        print(json.dumps(counts, indent=2, sort_keys=True))
         return 0
 
-    write_text(CANONICAL_DIR / "items.json", json.dumps(imported_items, indent=2, sort_keys=True) + "\n")
-    write_text(CANONICAL_DIR / "bis_lists.json", json.dumps(imported_bis_lists, indent=2, sort_keys=True) + "\n")
-    write_text(CANONICAL_DIR / "gems.json", json.dumps(imported_gems, indent=2, sort_keys=True) + "\n")
-    write_text(CANONICAL_DIR / "gem_sources.json", json.dumps(imported_gem_sources, indent=2, sort_keys=True) + "\n")
-    write_text(CANONICAL_DIR / "enchants.json", json.dumps(imported_enchants, indent=2, sort_keys=True) + "\n")
-    write_text(CANONICAL_DIR / "enchant_sources.json", json.dumps(imported_enchant_sources, indent=2, sort_keys=True) + "\n")
-    write_text(CANONICAL_DIR / "consumables.json", json.dumps(imported_consumables, indent=2, sort_keys=True) + "\n")
-    write_text(CANONICAL_DIR / "leveling.json", json.dumps(imported_leveling, indent=2, sort_keys=True) + "\n")
-    for file_name in [
-        "items.json",
-        "bis_lists.json",
-        "gems.json",
-        "gem_sources.json",
-        "enchants.json",
-        "enchant_sources.json",
-        "consumables.json",
-        "leveling.json",
-    ]:
+    output_docs = {
+        "items.json": imported_items,
+        "bis_lists.json": imported_bis_lists,
+        "gems.json": imported_gems,
+        "gem_sources.json": imported_gem_sources,
+        "enchants.json": imported_enchants,
+        "enchant_sources.json": imported_enchant_sources,
+        "consumables.json": imported_consumables,
+        "leveling.json": imported_leveling,
+    }
+    files_by_family = {
+        "bis_lists": ["items.json", "bis_lists.json"],
+        "gems": ["items.json", "gems.json", "gem_sources.json"],
+        "enchants": ["items.json", "enchants.json", "enchant_sources.json"],
+        "consumables": ["items.json", "consumables.json"],
+        "leveling": ["leveling.json"],
+    }
+    file_names = files_by_family.get(args.family, list(output_docs))
+    for file_name in file_names:
+        write_text(CANONICAL_DIR / file_name, json.dumps(output_docs[file_name], indent=2, sort_keys=True) + "\n")
         print(f"Wrote {CANONICAL_DIR / file_name}")
     return 0
 
@@ -1589,27 +2250,333 @@ def source_audit_errors(item_id: int, sources: list[dict[str, Any]], reviewed_un
     return errors
 
 
-def build_snapshot_audit(input_dir: Path, data_family: str, guide_only: bool = False) -> dict[str, Any]:
-    snapshots = load_snapshots(input_dir)
+def import_rows_for_family(snapshots: list[dict[str, Any]], data_family: str) -> list[dict[str, Any]]:
+    if data_family == "gems":
+        return import_gems_from_snapshots(snapshots, fallback_to_canonical=False)["gems"]
+    if data_family == "enchants":
+        return import_enchants_from_snapshots(snapshots, fallback_to_canonical=False)["enchants"]
+    if data_family == "consumables":
+        return import_consumables_from_snapshots(snapshots, fallback_to_canonical=False)["consumables"]
+    if data_family == "leveling":
+        return import_leveling_from_snapshots(snapshots, fallback_to_canonical=False)["leveling"]
+    return []
+
+
+def guide_entries_for_family(snapshots: list[dict[str, Any]], data_family: str) -> list[dict[str, Any]]:
+    entries: list[dict[str, Any]] = []
+    for snapshot in snapshots:
+        if snapshot.get("page_type") != "guide":
+            continue
+        for source_meta in manifest_sources_for_snapshot(snapshot, data_family):
+            for table in snapshot.get("tables", []):
+                if not table_matches_family(source_meta, table, data_family):
+                    continue
+                for row in table.get("rows", []):
+                    entries.append(
+                        {
+                            "source_meta": source_meta,
+                            "snapshot": snapshot,
+                            "table": table,
+                            "row": row,
+                            "entities": row.get("entities", []),
+                            "source_url": snapshot.get("url"),
+                        }
+                    )
+            if data_family in {"consumables", "leveling"}:
+                for section in snapshot.get("sections", []):
+                    if section.get("data_family") != data_family:
+                        continue
+                    for entry in section.get("entries", []):
+                        entries.append(
+                            {
+                                "source_meta": source_meta,
+                                "snapshot": snapshot,
+                                "section": section,
+                                "row": entry,
+                                "entities": entry.get("entities", []),
+                                "source_url": snapshot.get("url"),
+                            }
+                        )
+    return entries
+
+
+def referenced_entity_ids(entries: list[dict[str, Any]]) -> tuple[set[int], set[int]]:
+    item_ids: set[int] = set()
+    spell_ids: set[int] = set()
+    for entry in entries:
+        for entity in entry.get("entities", []):
+            entity_id = entity.get("id")
+            if not isinstance(entity_id, int) or entity_id <= 0:
+                continue
+            if entity.get("type") == "item":
+                item_ids.add(entity_id)
+            elif entity.get("type") == "spell":
+                spell_ids.add(entity_id)
+    return item_ids, spell_ids
+
+
+def imported_entity_ids(rows: list[dict[str, Any]]) -> tuple[set[int], set[int], set[int]]:
+    item_ids: set[int] = set()
+    spell_ids: set[int] = set()
+    formula_item_ids: set[int] = set()
+    for row in rows:
+        row_id = row.get("id")
+        if row.get("type", "item") == "spell" and isinstance(row_id, int):
+            spell_ids.add(row_id)
+        elif isinstance(row_id, int):
+            item_ids.add(row_id)
+        item_ids.update(item_id for item_id in row.get("items", []) if isinstance(item_id, int))
+        formula_item_ids.update(item_id for item_id in row.get("formula_item_ids", []) if isinstance(item_id, int))
+        for entity in row.get("entities", []):
+            entity_id = entity.get("id")
+            if not isinstance(entity_id, int):
+                continue
+            if entity.get("type") == "item":
+                item_ids.add(entity_id)
+            elif entity.get("type") == "spell":
+                spell_ids.add(entity_id)
+    return item_ids, spell_ids, formula_item_ids
+
+
+def non_gear_row_errors(row: dict[str, Any], data_family: str) -> list[str]:
+    errors: list[str] = []
+    row_label = f"{data_family} row from {row.get('source_url') or '<unknown source>'}"
+    if not row.get("class") or not row.get("spec"):
+        errors.append(f"{row_label} is missing class/spec context")
+    if not str(row.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"):
+        errors.append(f"{row_label} is missing a Wowhead source URL")
+
+    if data_family == "gems":
+        if not isinstance(row.get("id"), int) or row.get("id") <= 0:
+            errors.append(f"{row_label} has invalid item id")
+        if not row.get("name"):
+            errors.append(f"Gem {row.get('id')} is missing a name")
+        if row.get("phase") not in PHASE_KEYS:
+            errors.append(f"Gem {row.get('id')} has invalid phase: {row.get('phase')}")
+        if row.get("socket_category") in {None, "", "unknown"}:
+            errors.append(f"Gem {row.get('id')} is missing socket color/category")
+        if not isinstance(row.get("meta"), bool):
+            errors.append(f"Gem {row.get('id')} meta flag must be boolean")
+
+    if data_family == "enchants":
+        if row.get("slot") not in SLOT_NAMES:
+            errors.append(f"Enchant {row.get('id')} has invalid target slot: {row.get('slot')}")
+        if not isinstance(row.get("id"), int) or row.get("id") <= 0:
+            errors.append(f"{row_label} has invalid enchant id")
+        if not row.get("name"):
+            errors.append(f"Enchant {row.get('id')} is missing a name")
+        if row.get("type") not in {"item", "spell"}:
+            errors.append(f"Enchant {row.get('id')} has invalid type: {row.get('type')}")
+        if row.get("phase") not in PHASE_KEYS:
+            errors.append(f"Enchant {row.get('id')} has invalid phase: {row.get('phase')}")
+
+    if data_family == "consumables":
+        if not row.get("category"):
+            errors.append(f"{row_label} is missing a normalized category")
+        if not isinstance(row.get("items"), list) or not row.get("items"):
+            errors.append(f"{row_label} has no item ids")
+        for item_id in row.get("items", []):
+            if not isinstance(item_id, int) or item_id <= 0:
+                errors.append(f"{row_label} has invalid item id: {item_id}")
+
+    if data_family == "leveling":
+        if not row.get("section"):
+            errors.append(f"{row_label} is missing section title")
+        if not row.get("text"):
+            errors.append(f"{row_label} has empty narrative/table text")
+
+    return errors
+
+
+def duplicate_key_for_family(row: dict[str, Any], data_family: str) -> tuple[Any, ...]:
+    if data_family == "gems":
+        return (row.get("class"), row.get("spec"), row.get("phase"), row.get("id"), row.get("socket_category"), row.get("context"))
+    if data_family == "enchants":
+        return (row.get("class"), row.get("spec"), row.get("phase"), row.get("slot"), row.get("type"), row.get("id"), row.get("context"))
+    if data_family == "consumables":
+        return (row.get("class"), row.get("spec"), row.get("phase"), row.get("category"), tuple(row.get("items", [])))
+    if data_family == "leveling":
+        return (row.get("class"), row.get("spec"), row.get("phase"), row.get("section"), row.get("level_range"), row.get("text"))
+    return tuple(sorted(row.items()))
+
+
+def duplicate_row_errors(rows: list[dict[str, Any]], data_family: str) -> list[str]:
+    errors: list[str] = []
+    seen: dict[tuple[Any, ...], str] = {}
+    for row in rows:
+        key = duplicate_key_for_family(row, data_family)
+        source_url = str(row.get("source_url") or "")
+        if key in seen:
+            errors.append(f"Duplicate {data_family} row without distinct context: {key}")
+        else:
+            seen[key] = source_url
+    return errors
+
+
+def item_acquisition_errors(
+    label: str,
+    item_id: int,
+    snapshot: dict[str, Any] | None,
+    reviewed_unknown_item_ids: set[int],
+    item_snapshots: dict[int, dict[str, Any]] | None = None,
+) -> list[str]:
+    if not snapshot:
+        return []
+    sources = snapshot.get("normalized_sources", [])
+    if not sources:
+        return [f"{label} item {item_id} has no structured acquisition source"]
+    errors: list[str] = []
+    for source in sources:
+        source_type = source.get("type")
+        if source_type == "unknown" and item_id not in reviewed_unknown_item_ids:
+            errors.append(f"{label} item {item_id} has unreviewed unknown acquisition source")
+        if source_type == "vendor" and source_has_item_cost(source):
+            missing_cost_ids = [
+                cost["item_id"]
+                for cost in source.get("costs", [])
+                if isinstance(cost.get("item_id"), int) and (not item_snapshots or cost["item_id"] not in item_snapshots)
+            ]
+            if missing_cost_ids:
+                errors.append(f"{label} item {item_id} has unresolved item-cost vendor source")
+    return errors
+
+
+def enchant_spell_source_errors(
+    spell_id: int,
+    spell_snapshot: dict[str, Any] | None,
+    spell_snapshots_by_name: dict[str, list[dict[str, Any]]],
+    item_snapshots: dict[int, dict[str, Any]],
+    reviewed_unknown_item_ids: set[int],
+) -> list[str]:
+    if not spell_snapshot:
+        return []
+    source_spell_snapshot = resolve_enchant_source_spell_snapshot(
+        spell_id,
+        spell_snapshot,
+        spell_snapshots_by_name,
+        item_snapshots,
+    )
+    source_spell_id = (source_spell_snapshot or {}).get("spell_id")
+    formula_spell_ids = [spell_id]
+    if isinstance(source_spell_id, int) and source_spell_id not in formula_spell_ids:
+        formula_spell_ids.append(source_spell_id)
+    sources = (source_spell_snapshot or {}).get("normalized_sources", [])
+    formula_item_ids = {
+        item_id
+        for formula_spell_id in formula_spell_ids
+        for item_id in formula_item_ids_for_spell(formula_spell_id, item_snapshots)
+    }
+    formula_item_ids.update(enchant_formula_item_ids(source_spell_snapshot))
+    if not sources and not formula_item_ids:
+        return [f"Enchant spell {spell_id} has no formula, trainer, vendor, or quest source"]
+    errors: list[str] = []
+    for formula_item_id in sorted(formula_item_ids):
+        formula_snapshot = item_snapshots.get(formula_item_id)
+        if not formula_snapshot:
+            errors.append(f"Enchant spell {spell_id} is missing formula item snapshot {formula_item_id}: {item_url_for_id(formula_item_id)}")
+            continue
+        errors.extend(item_acquisition_errors(f"Enchant formula for spell {spell_id}", formula_item_id, formula_snapshot, reviewed_unknown_item_ids, item_snapshots))
+    for source in sources:
+        source_type = source.get("type")
+        if source_type == "unknown":
+            errors.append(f"Enchant spell {spell_id} has unreviewed unknown acquisition source")
+        if source_type == "taught_by_item":
+            formula_item_id = source.get("item_id")
+            if not isinstance(formula_item_id, int) or formula_item_id <= 0:
+                errors.append(f"Enchant spell {spell_id} has unresolved taught-by item relationship")
+                continue
+            formula_snapshot = item_snapshots.get(formula_item_id)
+            if not formula_snapshot:
+                errors.append(f"Enchant spell {spell_id} is missing formula item snapshot {formula_item_id}: {item_url_for_id(formula_item_id)}")
+                continue
+            errors.extend(item_acquisition_errors(f"Enchant formula for spell {spell_id}", formula_item_id, formula_snapshot, reviewed_unknown_item_ids, item_snapshots))
+    return errors
+
+
+def build_snapshot_audit(input_dir: Path, data_family: str, guide_only: bool = False, source_urls: set[str] | None = None) -> dict[str, Any]:
+    snapshots = [
+        snapshot
+        for snapshot in load_snapshots(input_dir)
+        if not source_urls or snapshot.get("page_type") != "guide" or snapshot.get("url") in source_urls
+    ]
     errors: list[str] = []
     warnings: list[str] = []
     guide_snapshots = [snapshot for snapshot in snapshots if snapshot.get("page_type") == "guide"]
-    item_snapshots = {snapshot.get("item_id"): snapshot for snapshot in snapshots if snapshot.get("page_type") == "item"}
+    item_snapshots = item_snapshots_by_id(snapshots)
+    spell_snapshots = spell_snapshots_by_id(snapshots)
+    spell_snapshots_by_name = spell_snapshots_by_normalized_name(snapshots)
 
     manifest_guide_urls = manifest_urls_for_family(data_family)
+    if source_urls:
+        manifest_guide_urls = manifest_guide_urls & source_urls
     fetched_guide_urls = {snapshot.get("url") for snapshot in guide_snapshots}
     for url in sorted(manifest_guide_urls - fetched_guide_urls):
         errors.append(f"Missing guide snapshot: {url}")
 
     if data_family != "bis_lists":
+        guide_entries = guide_entries_for_family(snapshots, data_family)
+        imported_rows = import_rows_for_family(snapshots, data_family)
+        if guide_snapshots and not guide_entries:
+            errors.append(f"No {data_family} rows found in guide snapshots")
+        if guide_entries and not imported_rows:
+            errors.append(f"No importable {data_family} rows found in guide snapshots")
+        for row in imported_rows:
+            errors.extend(non_gear_row_errors(row, data_family))
+        errors.extend(duplicate_row_errors(imported_rows, data_family))
+
+        referenced_item_ids, referenced_spell_ids = referenced_entity_ids(guide_entries)
+        imported_item_ids, imported_spell_ids, formula_item_ids = imported_entity_ids(imported_rows)
+        referenced_item_ids.update(imported_item_ids)
+        referenced_spell_ids.update(imported_spell_ids)
+
+        if guide_only:
+            return {
+                "ok": not errors,
+                "errors": errors,
+                "warnings": warnings,
+                "summary": {
+                    "family": data_family,
+                    "guide_only": True,
+                    "guides": len(guide_snapshots),
+                    "raw_rows": len(guide_entries),
+                    "imported_rows": len(imported_rows),
+                    "snapshots": len(snapshots),
+                },
+            }
+
+        for item_id in sorted(referenced_item_ids - set(item_snapshots)):
+            errors.append(f"Missing item snapshot for linked {data_family} item {item_id}: {item_url_for_id(item_id)}")
+        for spell_id in sorted(referenced_spell_ids - set(spell_snapshots)):
+            errors.append(f"Missing spell snapshot for linked {data_family} spell {spell_id}: {spell_url_for_id(spell_id)}")
+
+        reviewed_unknown_item_ids = reviewed_unknown_source_item_ids()
+        if data_family in {"gems", "consumables"}:
+            for item_id in sorted(referenced_item_ids):
+                errors.extend(item_acquisition_errors(data_family.rstrip("s").title(), item_id, item_snapshots.get(item_id), reviewed_unknown_item_ids, item_snapshots))
+        if data_family == "enchants":
+            enchant_item_ids = {row["id"] for row in imported_rows if row.get("type") == "item" and isinstance(row.get("id"), int)}
+            for item_id in sorted(enchant_item_ids):
+                errors.extend(item_acquisition_errors("Enchant", item_id, item_snapshots.get(item_id), reviewed_unknown_item_ids, item_snapshots))
+            for spell_id in sorted(referenced_spell_ids):
+                errors.extend(enchant_spell_source_errors(spell_id, spell_snapshots.get(spell_id), spell_snapshots_by_name, item_snapshots, reviewed_unknown_item_ids))
+            for item_id in sorted(formula_item_ids - set(item_snapshots)):
+                errors.append(f"Missing item snapshot for enchant formula {item_id}: {item_url_for_id(item_id)}")
+
         return {
             "ok": not errors,
             "errors": errors,
             "warnings": warnings,
             "summary": {
                 "family": data_family,
+                "guide_only": False,
                 "guides": len(guide_snapshots),
                 "items": len(item_snapshots),
+                "spells": len(spell_snapshots),
+                "raw_rows": len(guide_entries),
+                "imported_rows": len(imported_rows),
+                "referenced_items": len(referenced_item_ids),
+                "referenced_spells": len(referenced_spell_ids),
+                "formula_items": len(formula_item_ids),
                 "snapshots": len(snapshots),
             },
         }
@@ -1688,7 +2655,7 @@ def build_snapshot_audit(input_dir: Path, data_family: str, guide_only: bool = F
 
 
 def command_snapshot_audit(args: argparse.Namespace) -> int:
-    audit = build_snapshot_audit(args.input_dir, args.family, guide_only=args.guide_only)
+    audit = build_snapshot_audit(args.input_dir, args.family, guide_only=args.guide_only, source_urls=set(args.url or []))
     print(json.dumps(audit, indent=2, sort_keys=True))
     return 0 if audit["ok"] else 1
 
@@ -1744,6 +2711,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     fetch_parser = subparsers.add_parser("fetch", help="Fetch URLs from the manifest and write normalized snapshots.")
     fetch_parser.add_argument("--url", action="append", help="Specific Wowhead TBC URL to fetch instead of the manifest.")
+    fetch_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases"])
     fetch_parser.add_argument("--output-dir", type=Path, default=RAW_WOWHEAD_DIR)
     fetch_parser.add_argument("--no-discover", action="store_true", help="Do not fetch item pages discovered from guide snapshots.")
     fetch_parser.add_argument("--retries", type=int, default=3)
@@ -1752,6 +2720,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     import_parser = subparsers.add_parser("import", help="Import canonical data from normalized snapshots.")
     import_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
+    import_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling"])
     import_parser.add_argument("--dry-run", action="store_true")
     import_parser.set_defaults(func=command_import)
 
@@ -1761,6 +2730,7 @@ def build_parser() -> argparse.ArgumentParser:
     snapshot_audit_parser = subparsers.add_parser("snapshot-audit", help="Audit normalized raw snapshots before import.")
     snapshot_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
     snapshot_audit_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling"], default="bis_lists")
+    snapshot_audit_parser.add_argument("--url", action="append", help="Restrict guide snapshot checks to a specific manifest URL, useful for pilots.")
     snapshot_audit_parser.add_argument("--guide-only", action="store_true", help="Only require guide snapshots and parsable guide rows.")
     snapshot_audit_parser.set_defaults(func=command_snapshot_audit)
 

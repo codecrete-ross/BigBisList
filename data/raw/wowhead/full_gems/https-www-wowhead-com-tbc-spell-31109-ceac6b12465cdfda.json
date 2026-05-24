@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "name": "Glinting Noble Topaz",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 24216,
+      "entity_name": "Design: Glinting Noble Topaz",
+      "item_id": 24216,
+      "source_url": "https://www.wowhead.com/tbc/spell=31109",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24216,
+        "level": 70,
+        "name": "Design: Glinting Noble Topaz",
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 31109,
+  "url": "https://www.wowhead.com/tbc/spell=31109"
+}

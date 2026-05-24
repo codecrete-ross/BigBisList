@@ -1,0 +1,63 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This cooking recipe is used for the Cooking profession. It is sold by Gikkix. In the Cooking Recipes category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:23:40+00:00",
+  "item_id": 13945,
+  "name": "Recipe: Nightfin Soup",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8137,
+      "entity_name": "Gikkix",
+      "source_url": "https://www.wowhead.com/tbc/item=13945",
+      "type": "vendor",
+      "vendor_id": 8137,
+      "zone": "Tanaris"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            20000
+          ]
+        ],
+        "id": 8137,
+        "location": [
+          440
+        ],
+        "maxlevel": 40,
+        "minlevel": 40,
+        "name": "Gikkix",
+        "popularity": 26,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Fisherman",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    18243,
+    18233
+  ],
+  "url": "https://www.wowhead.com/tbc/item=13945"
+}

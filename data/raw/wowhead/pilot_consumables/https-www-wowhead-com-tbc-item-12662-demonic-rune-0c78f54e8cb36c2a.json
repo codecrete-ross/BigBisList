@@ -1,0 +1,3032 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is looted from Felguard Sentry. In the Other Trade Goods category. An item from Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:38:17+00:00",
+  "item_id": 12662,
+  "name": "Demonic Rune",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 567,
+      "drop_percent": 14.54,
+      "entity_id": 6011,
+      "entity_name": "Felguard Sentry",
+      "out_of": 3899,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10516,
+      "drop_percent": 11.02,
+      "entity_id": 6200,
+      "entity_name": "Legashi Satyr",
+      "out_of": 95454,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10660,
+      "drop_percent": 10.42,
+      "entity_id": 6201,
+      "entity_name": "Legashi Rogue",
+      "out_of": 102314,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13194,
+      "drop_percent": 13.71,
+      "entity_id": 6202,
+      "entity_name": "Legashi Hellcaller",
+      "out_of": 96252,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 4.64,
+      "entity_id": 6652,
+      "entity_name": "Master Feardred",
+      "out_of": 151,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6188,
+      "drop_percent": 7.25,
+      "entity_id": 7105,
+      "entity_name": "Jadefire Satyr",
+      "out_of": 85321,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5078,
+      "drop_percent": 9.02,
+      "entity_id": 7106,
+      "entity_name": "Jadefire Rogue",
+      "out_of": 56321,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 14081,
+      "drop_percent": 11.74,
+      "entity_id": 7107,
+      "entity_name": "Jadefire Trickster",
+      "out_of": 119977,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13764,
+      "drop_percent": 11.76,
+      "entity_id": 7108,
+      "entity_name": "Jadefire Betrayer",
+      "out_of": 117014,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13098,
+      "drop_percent": 9.17,
+      "entity_id": 7109,
+      "entity_name": "Jadefire Felsworn",
+      "out_of": 142912,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5038,
+      "drop_percent": 10.53,
+      "entity_id": 7110,
+      "entity_name": "Jadefire Shadowstalker",
+      "out_of": 47827,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 15345,
+      "drop_percent": 13.81,
+      "entity_id": 7111,
+      "entity_name": "Jadefire Hellcaller",
+      "out_of": 111087,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 65,
+      "drop_percent": 6.17,
+      "entity_id": 7135,
+      "entity_name": "Infernal Bodyguard",
+      "out_of": 1053,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 164,
+      "drop_percent": 6.25,
+      "entity_id": 7136,
+      "entity_name": "Infernal Sentry",
+      "out_of": 2623,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 25,
+      "drop_percent": 6.48,
+      "entity_id": 7137,
+      "entity_name": "Immolatus",
+      "out_of": 386,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3162,
+      "drop_percent": 24.83,
+      "entity_id": 7461,
+      "entity_name": "Hederine Initiate",
+      "out_of": 12736,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4913,
+      "drop_percent": 25.74,
+      "entity_id": 7463,
+      "entity_name": "Hederine Slayer",
+      "out_of": 19088,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 52,
+      "drop_percent": 7.94,
+      "entity_id": 7664,
+      "entity_name": "Razelikh the Defiler",
+      "out_of": 655,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 46,
+      "drop_percent": 29.11,
+      "entity_id": 7735,
+      "entity_name": "Felcular",
+      "out_of": 158,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 286,
+      "drop_percent": 41.51,
+      "entity_id": 8716,
+      "entity_name": "Dreadlord",
+      "out_of": 689,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1456,
+      "drop_percent": 32.3,
+      "entity_id": 8717,
+      "entity_name": "Felguard Elite",
+      "out_of": 4508,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 562,
+      "drop_percent": 14.46,
+      "entity_id": 9454,
+      "entity_name": "Xavathras",
+      "out_of": 3886,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13,
+      "drop_percent": 8.97,
+      "entity_id": 9516,
+      "entity_name": "Lord Banehollow",
+      "out_of": 145,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 276,
+      "drop_percent": 12.67,
+      "entity_id": 9518,
+      "entity_name": "Rakaiah",
+      "out_of": 2179,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 234,
+      "drop_percent": 14.94,
+      "entity_id": 9860,
+      "entity_name": "Salia",
+      "out_of": 1566,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 138,
+      "drop_percent": 9.41,
+      "entity_id": 9861,
+      "entity_name": "Moora",
+      "out_of": 1466,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3204,
+      "drop_percent": 15.71,
+      "entity_id": 9862,
+      "entity_name": "Jaedenar Legionnaire",
+      "out_of": 20397,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 129,
+      "drop_percent": 15.69,
+      "entity_id": 9877,
+      "entity_name": "Prince Xavalis",
+      "out_of": 822,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 52,
+      "drop_percent": 8.48,
+      "entity_id": 10078,
+      "entity_name": "Terrorspark",
+      "out_of": 613,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 20,
+      "drop_percent": 12.9,
+      "entity_id": 10201,
+      "entity_name": "Lady Hederine",
+      "out_of": 155,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 69,
+      "drop_percent": 7.15,
+      "entity_id": 10263,
+      "entity_name": "Burning Felguard",
+      "out_of": 965,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1213,
+      "drop_percent": 12.84,
+      "entity_id": 10648,
+      "entity_name": "Xavaric",
+      "out_of": 9446,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 358,
+      "drop_percent": 9.36,
+      "entity_id": 10812,
+      "entity_name": "Grand Crusader Dathrohan",
+      "out_of": 3826,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop",
+      "zone": "Stratholme"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 10813,
+      "entity_name": "Balnazzar",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop",
+      "zone": "Stratholme"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2119,
+      "drop_percent": 18.17,
+      "entity_id": 11451,
+      "entity_name": "Wildspawn Satyr",
+      "out_of": 11662,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2338,
+      "drop_percent": 12.0,
+      "entity_id": 11452,
+      "entity_name": "Wildspawn Rogue",
+      "out_of": 19479,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2238,
+      "drop_percent": 12.08,
+      "entity_id": 11453,
+      "entity_name": "Wildspawn Trickster",
+      "out_of": 18519,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1089,
+      "drop_percent": 18.55,
+      "entity_id": 11454,
+      "entity_name": "Wildspawn Betrayer",
+      "out_of": 5872,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2364,
+      "drop_percent": 16.41,
+      "entity_id": 11455,
+      "entity_name": "Wildspawn Felsworn",
+      "out_of": 14403,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13533,
+      "drop_percent": 16.09,
+      "entity_id": 11456,
+      "entity_name": "Wildspawn Shadowstalker",
+      "out_of": 84100,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2013,
+      "drop_percent": 15.06,
+      "entity_id": 11457,
+      "entity_name": "Wildspawn Hellcaller",
+      "out_of": 13368,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3204,
+      "drop_percent": 5.81,
+      "entity_id": 11490,
+      "entity_name": "Zevrim Thornhoof",
+      "out_of": 55118,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1819,
+      "drop_percent": 5.44,
+      "entity_id": 11492,
+      "entity_name": "Alzzin the Wildshaper",
+      "out_of": 33425,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 138,
+      "drop_percent": 38.87,
+      "entity_id": 12396,
+      "entity_name": "Doomguard Commander",
+      "out_of": 355,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1456,
+      "drop_percent": 91.06,
+      "entity_id": 12397,
+      "entity_name": "Lord Kazzak",
+      "out_of": 1599,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8661,
+      "drop_percent": 12.38,
+      "entity_id": 13276,
+      "entity_name": "Wildspawn Imp",
+      "out_of": 69933,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 32,
+      "drop_percent": 5.18,
+      "entity_id": 14340,
+      "entity_name": "Alshirr Banebreath",
+      "out_of": 618,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 640,
+      "drop_percent": 14.24,
+      "entity_id": 14349,
+      "entity_name": "Pimgib",
+      "out_of": 4495,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 364,
+      "drop_percent": 4.71,
+      "entity_id": 14354,
+      "entity_name": "Pusillin",
+      "out_of": 7736,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 709,
+      "drop_percent": 81.03,
+      "entity_id": 14502,
+      "entity_name": "Xorothian Dreadsteed",
+      "out_of": 875,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 86,
+      "drop_percent": 8.56,
+      "entity_id": 14506,
+      "entity_name": "Lord Hel'nurath",
+      "out_of": 1005,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3342,
+      "drop_percent": 18.42,
+      "entity_id": 15111,
+      "entity_name": "Mad Servant",
+      "out_of": 18144,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 102,
+      "drop_percent": 93.58,
+      "entity_id": 18338,
+      "entity_name": "Highlord Kruul",
+      "out_of": 109,
+      "source_url": "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 567,
+        "id": 6011,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 567,
+                "outof": 3899
+              }
+            },
+            "4": {
+              "0": {
+                "count": 6,
+                "outof": 43
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 65
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 55,
+        "minlevel": 54,
+        "modes": {
+          "0": {
+            "count": 567,
+            "outof": 3899
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Felguard Sentry",
+        "outof": 3899,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 10516,
+        "id": 6200,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 10516,
+                "outof": 95454
+              }
+            },
+            "4": {
+              "0": {
+                "count": 72,
+                "outof": 324
+              }
+            },
+            "5": {
+              "0": {
+                "count": 71,
+                "outof": 256
+              }
+            }
+          }
+        },
+        "location": [
+          16
+        ],
+        "maxlevel": 52,
+        "minlevel": 51,
+        "modes": {
+          "0": {
+            "count": 10516,
+            "outof": 95454
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Legashi Satyr",
+        "outof": 95454,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 10660,
+        "id": 6201,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 10660,
+                "outof": 102314
+              }
+            },
+            "4": {
+              "0": {
+                "count": 58,
+                "outof": 358
+              }
+            },
+            "5": {
+              "0": {
+                "count": 77,
+                "outof": 273
+              }
+            }
+          }
+        },
+        "location": [
+          16
+        ],
+        "maxlevel": 53,
+        "minlevel": 51,
+        "modes": {
+          "0": {
+            "count": 10660,
+            "outof": 102314
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Legashi Rogue",
+        "outof": 102314,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 13194,
+        "id": 6202,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13194,
+                "outof": 96252
+              }
+            },
+            "4": {
+              "0": {
+                "count": 79,
+                "outof": 344
+              }
+            },
+            "5": {
+              "0": {
+                "count": 78,
+                "outof": 244
+              }
+            }
+          }
+        },
+        "location": [
+          16
+        ],
+        "maxlevel": 53,
+        "minlevel": 52,
+        "modes": {
+          "0": {
+            "count": 13194,
+            "outof": 96252
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Legashi Hellcaller",
+        "outof": 96252,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 4,
+        "count": 7,
+        "id": 6652,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7,
+                "outof": 151
+              }
+            }
+          }
+        },
+        "location": [
+          16
+        ],
+        "maxlevel": 52,
+        "minlevel": 51,
+        "modes": {
+          "0": {
+            "count": 7,
+            "outof": 151
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Master Feardred",
+        "outof": 151,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 6188,
+        "id": 7105,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6188,
+                "outof": 85321
+              }
+            },
+            "4": {
+              "0": {
+                "count": 139,
+                "outof": 718
+              }
+            },
+            "5": {
+              "0": {
+                "count": 108,
+                "outof": 337
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 6188,
+            "outof": 85321
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Satyr",
+        "outof": 85321,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 5078,
+        "id": 7106,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5078,
+                "outof": 56321
+              }
+            },
+            "4": {
+              "0": {
+                "count": 86,
+                "outof": 533
+              }
+            },
+            "5": {
+              "0": {
+                "count": 62,
+                "outof": 560
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 5078,
+            "outof": 56321
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Rogue",
+        "outof": 56321,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 14081,
+        "id": 7107,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 14081,
+                "outof": 119977
+              }
+            },
+            "4": {
+              "0": {
+                "count": 386,
+                "outof": 2108
+              }
+            },
+            "5": {
+              "0": {
+                "count": 288,
+                "outof": 1603
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 53,
+        "minlevel": 52,
+        "modes": {
+          "0": {
+            "count": 14081,
+            "outof": 119977
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Trickster",
+        "outof": 119977,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 13764,
+        "id": 7108,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13764,
+                "outof": 117014
+              }
+            },
+            "4": {
+              "0": {
+                "count": 400,
+                "outof": 2108
+              }
+            },
+            "5": {
+              "0": {
+                "count": 237,
+                "outof": 1645
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 53,
+        "minlevel": 52,
+        "modes": {
+          "0": {
+            "count": 13764,
+            "outof": 117014
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Betrayer",
+        "outof": 117014,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 13098,
+        "id": 7109,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13098,
+                "outof": 142912
+              }
+            },
+            "4": {
+              "0": {
+                "count": 291,
+                "outof": 1470
+              }
+            },
+            "5": {
+              "0": {
+                "count": 214,
+                "outof": 913
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 13098,
+            "outof": 142912
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Felsworn",
+        "outof": 142912,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 5038,
+        "id": 7110,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5038,
+                "outof": 47827
+              }
+            },
+            "4": {
+              "0": {
+                "count": 75,
+                "outof": 438
+              }
+            },
+            "5": {
+              "0": {
+                "count": 58,
+                "outof": 463
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 52,
+        "minlevel": 51,
+        "modes": {
+          "0": {
+            "count": 5038,
+            "outof": 47827
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Shadowstalker",
+        "outof": 47827,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 15345,
+        "id": 7111,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 15345,
+                "outof": 111087
+              }
+            },
+            "4": {
+              "0": {
+                "count": 489,
+                "outof": 1984
+              }
+            },
+            "5": {
+              "0": {
+                "count": 278,
+                "outof": 1601
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 54,
+        "minlevel": 53,
+        "modes": {
+          "0": {
+            "count": 15345,
+            "outof": 111087
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Hellcaller",
+        "outof": 111087,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 65,
+        "id": 7135,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 65,
+                "outof": 1053
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 18
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 54,
+        "minlevel": 53,
+        "modes": {
+          "0": {
+            "count": 65,
+            "outof": 1053
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Infernal Bodyguard",
+        "outof": 1053,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 164,
+        "id": 7136,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 164,
+                "outof": 2623
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 31
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 41
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 53,
+        "minlevel": 52,
+        "modes": {
+          "0": {
+            "count": 164,
+            "outof": 2623
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Infernal Sentry",
+        "outof": 2623,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 13,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 2,
+        "count": 25,
+        "id": 7137,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 25,
+                "outof": 386
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "modes": {
+          "0": {
+            "count": 25,
+            "outof": 386
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Immolatus",
+        "outof": 386,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 3162,
+        "id": 7461,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3162,
+                "outof": 12736
+              }
+            },
+            "4": {
+              "0": {
+                "count": 14,
+                "outof": 32
+              }
+            },
+            "5": {
+              "0": {
+                "count": 16,
+                "outof": 46
+              }
+            }
+          }
+        },
+        "location": [
+          618
+        ],
+        "maxlevel": 60,
+        "minlevel": 59,
+        "modes": {
+          "0": {
+            "count": 3162,
+            "outof": 12736
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hederine Initiate",
+        "outof": 12736,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 10,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 4913,
+        "id": 7463,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4913,
+                "outof": 19088
+              }
+            },
+            "4": {
+              "0": {
+                "count": 8,
+                "outof": 31
+              }
+            },
+            "5": {
+              "0": {
+                "count": 8,
+                "outof": 33
+              }
+            }
+          }
+        },
+        "location": [
+          618
+        ],
+        "maxlevel": 60,
+        "minlevel": 59,
+        "modes": {
+          "0": {
+            "count": 4913,
+            "outof": 19088
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hederine Slayer",
+        "outof": 19088,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 10,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 52,
+        "id": 7664,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 52,
+                "outof": 655
+              }
+            }
+          }
+        },
+        "location": [
+          8,
+          4
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "modes": {
+          "0": {
+            "count": 52,
+            "outof": 655
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Razelikh the Defiler",
+        "outof": 655,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 46,
+        "id": 7735,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 46,
+                "outof": 158
+              }
+            },
+            "4": {
+              "0": {
+                "count": 3,
+                "outof": 3
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 7
+              }
+            }
+          }
+        },
+        "location": [
+          8,
+          4
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "modes": {
+          "0": {
+            "count": 46,
+            "outof": 158
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Felcular",
+        "outof": 158,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Champion of Razelikh",
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 286,
+        "id": 8716,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 286,
+                "outof": 689
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "modes": {
+          "0": {
+            "count": 286,
+            "outof": 689
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Dreadlord",
+        "outof": 689,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 1456,
+        "id": 8717,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1456,
+                "outof": 4508
+              }
+            },
+            "4": {
+              "0": {
+                "count": 4,
+                "outof": 8
+              }
+            },
+            "5": {
+              "0": {
+                "count": 19,
+                "outof": 60
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 61,
+        "minlevel": 61,
+        "modes": {
+          "0": {
+            "count": 1456,
+            "outof": 4508
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Felguard Elite",
+        "outof": 4508,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 562,
+        "id": 9454,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 562,
+                "outof": 3886
+              }
+            },
+            "4": {
+              "0": {
+                "count": 8,
+                "outof": 41
+              }
+            },
+            "5": {
+              "0": {
+                "count": 6,
+                "outof": 39
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 54,
+        "minlevel": 54,
+        "modes": {
+          "0": {
+            "count": 562,
+            "outof": 3886
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Xavathras",
+        "outof": 3886,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 13,
+        "id": 9516,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13,
+                "outof": 145
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 59,
+        "minlevel": 59,
+        "modes": {
+          "0": {
+            "count": 13,
+            "outof": 145
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lord Banehollow",
+        "outof": 145,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 276,
+        "id": 9518,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 276,
+                "outof": 2179
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 20
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 56,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 276,
+            "outof": 2179
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Rakaiah",
+        "outof": 2179,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 234,
+        "id": 9860,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 234,
+                "outof": 1566
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 13
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 19
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 54,
+        "minlevel": 54,
+        "modes": {
+          "0": {
+            "count": 234,
+            "outof": 1566
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Salia",
+        "outof": 1566,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 138,
+        "id": 9861,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 138,
+                "outof": 1466
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 52,
+        "minlevel": 52,
+        "modes": {
+          "0": {
+            "count": 138,
+            "outof": 1466
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Moora",
+        "outof": 1466,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 3204,
+        "id": 9862,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3204,
+                "outof": 20397
+              }
+            },
+            "4": {
+              "0": {
+                "count": 36,
+                "outof": 172
+              }
+            },
+            "5": {
+              "0": {
+                "count": 36,
+                "outof": 228
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "modes": {
+          "0": {
+            "count": 3204,
+            "outof": 20397
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jaedenar Legionnaire",
+        "outof": 20397,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 129,
+        "id": 9877,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 129,
+                "outof": 822
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 12
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "modes": {
+          "0": {
+            "count": 129,
+            "outof": 822
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Prince Xavalis",
+        "outof": 822,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 4,
+        "count": 52,
+        "id": 10078,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 52,
+                "outof": 613
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 18
+              }
+            }
+          }
+        },
+        "location": [
+          46
+        ],
+        "modes": {
+          "0": {
+            "count": 52,
+            "outof": 613
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Terrorspark",
+        "outof": 613,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 9,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 2,
+        "count": 20,
+        "id": 10201,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 20,
+                "outof": 155
+              }
+            }
+          }
+        },
+        "location": [
+          618
+        ],
+        "modes": {
+          "0": {
+            "count": 20,
+            "outof": 155
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lady Hederine",
+        "outof": 155,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 2,
+        "count": 69,
+        "id": 10263,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 69,
+                "outof": 965
+              }
+            }
+          }
+        },
+        "location": [
+          1583
+        ],
+        "maxlevel": 57,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 69,
+            "outof": 965
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Burning Felguard",
+        "outof": 965,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 1213,
+        "id": 10648,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1213,
+                "outof": 9446
+              }
+            },
+            "4": {
+              "0": {
+                "count": 36,
+                "outof": 159
+              }
+            },
+            "5": {
+              "0": {
+                "count": 19,
+                "outof": 132
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "modes": {
+          "0": {
+            "count": 1213,
+            "outof": 9446
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Xavaric",
+        "outof": 9446,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 358,
+        "id": 10812,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 358,
+                "outof": 3826
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 37
+              }
+            }
+          }
+        },
+        "location": [
+          2017
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "modes": {
+          "0": {
+            "count": 358,
+            "outof": 3826
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Grand Crusader Dathrohan",
+        "outof": 3826,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": -1,
+        "id": 10813,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 5.1
+              }
+            }
+          }
+        },
+        "location": [
+          2017
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 5.1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Balnazzar",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 5.1,
+        "personal_loot": 0,
+        "popularity": 3,
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 2119,
+        "id": 11451,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2119,
+                "outof": 11662
+              }
+            },
+            "4": {
+              "0": {
+                "count": 122,
+                "outof": 387
+              }
+            },
+            "5": {
+              "0": {
+                "count": 204,
+                "outof": 603
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 56,
+        "minlevel": 55,
+        "modes": {
+          "0": {
+            "count": 2119,
+            "outof": 11662
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wildspawn Satyr",
+        "outof": 11662,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 8,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 2338,
+        "id": 11452,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2338,
+                "outof": 19479
+              }
+            },
+            "4": {
+              "0": {
+                "count": 59,
+                "outof": 209
+              }
+            },
+            "5": {
+              "0": {
+                "count": 123,
+                "outof": 336
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 57,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 2338,
+            "outof": 19479
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wildspawn Rogue",
+        "outof": 19479,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 2238,
+        "id": 11453,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2238,
+                "outof": 18519
+              }
+            },
+            "4": {
+              "0": {
+                "count": 68,
+                "outof": 199
+              }
+            },
+            "5": {
+              "0": {
+                "count": 114,
+                "outof": 330
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 57,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 2238,
+            "outof": 18519
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wildspawn Trickster",
+        "outof": 18519,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 1089,
+        "id": 11454,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1089,
+                "outof": 5872
+              }
+            },
+            "4": {
+              "0": {
+                "count": 78,
+                "outof": 218
+              }
+            },
+            "5": {
+              "0": {
+                "count": 108,
+                "outof": 319
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 56,
+        "minlevel": 55,
+        "modes": {
+          "0": {
+            "count": 1089,
+            "outof": 5872
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wildspawn Betrayer",
+        "outof": 5872,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 2364,
+        "id": 11455,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2364,
+                "outof": 14403
+              }
+            },
+            "4": {
+              "0": {
+                "count": 76,
+                "outof": 190
+              }
+            },
+            "5": {
+              "0": {
+                "count": 127,
+                "outof": 306
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 56,
+        "minlevel": 55,
+        "modes": {
+          "0": {
+            "count": 2364,
+            "outof": 14403
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wildspawn Felsworn",
+        "outof": 14403,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 13533,
+        "id": 11456,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13533,
+                "outof": 84100
+              }
+            },
+            "4": {
+              "0": {
+                "count": 79,
+                "outof": 369
+              }
+            },
+            "5": {
+              "0": {
+                "count": 122,
+                "outof": 453
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 56,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 13533,
+            "outof": 84100
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wildspawn Shadowstalker",
+        "outof": 84100,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 7,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 2013,
+        "id": 11457,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2013,
+                "outof": 13368
+              }
+            },
+            "4": {
+              "0": {
+                "count": 51,
+                "outof": 155
+              }
+            },
+            "5": {
+              "0": {
+                "count": 60,
+                "outof": 153
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 57,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 2013,
+            "outof": 13368
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wildspawn Hellcaller",
+        "outof": 13368,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 11,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 3204,
+        "id": 11490,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3204,
+                "outof": 55118
+              }
+            },
+            "4": {
+              "0": {
+                "count": 26,
+                "outof": 338
+              }
+            },
+            "5": {
+              "0": {
+                "count": 17,
+                "outof": 312
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 57,
+        "minlevel": 57,
+        "modes": {
+          "0": {
+            "count": 3204,
+            "outof": 55118
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zevrim Thornhoof",
+        "outof": 55118,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 12,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 1819,
+        "id": 11492,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1819,
+                "outof": 33425
+              }
+            },
+            "4": {
+              "0": {
+                "count": 10,
+                "outof": 247
+              }
+            },
+            "5": {
+              "0": {
+                "count": 21,
+                "outof": 227
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 58,
+        "minlevel": 58,
+        "modes": {
+          "0": {
+            "count": 1819,
+            "outof": 33425
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Alzzin the Wildshaper",
+        "outof": 33425,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 9,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 138,
+        "id": 12396,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 138,
+                "outof": 355
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 61,
+        "minlevel": 61,
+        "modes": {
+          "0": {
+            "count": 138,
+            "outof": 355
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Doomguard Commander",
+        "outof": 355,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 8,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": 1456,
+        "id": 12397,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1456,
+                "outof": 1599
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1456,
+            "outof": 1599
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lord Kazzak",
+        "outof": 1599,
+        "pctstack": "{5: 25.8242,6: 25.4808,7: 25.4808,8: 23.2143}",
+        "personal_loot": 0,
+        "popularity": 8,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 8661,
+        "id": 13276,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8661,
+                "outof": 69933
+              }
+            },
+            "4": {
+              "0": {
+                "count": 172,
+                "outof": 607
+              }
+            },
+            "5": {
+              "0": {
+                "count": 199,
+                "outof": 692
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 56,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 8661,
+            "outof": 69933
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wildspawn Imp",
+        "outof": 69933,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 4,
+        "count": 32,
+        "id": 14340,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 32,
+                "outof": 618
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 54,
+        "minlevel": 54,
+        "modes": {
+          "0": {
+            "count": 32,
+            "outof": 618
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Alshirr Banebreath",
+        "outof": 618,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 4,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 640,
+        "id": 14349,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 640,
+                "outof": 4495
+              }
+            },
+            "4": {
+              "0": {
+                "count": 7,
+                "outof": 49
+              }
+            },
+            "5": {
+              "0": {
+                "count": 15,
+                "outof": 68
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 56,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 640,
+            "outof": 4495
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Pimgib",
+        "outof": 4495,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 7,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 364,
+        "id": 14354,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 364,
+                "outof": 7736
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 57
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 57,
+        "minlevel": 57,
+        "modes": {
+          "0": {
+            "count": 364,
+            "outof": 7736
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Pusillin",
+        "outof": 7736,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 19,
+        "react": [
+          1,
+          1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 709,
+        "id": 14502,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 709,
+                "outof": 875
+              }
+            },
+            "4": {
+              "0": {
+                "count": 17,
+                "outof": 20
+              }
+            },
+            "5": {
+              "0": {
+                "count": 22,
+                "outof": 27
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "modes": {
+          "0": {
+            "count": 709,
+            "outof": 875
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Xorothian Dreadsteed",
+        "outof": 875,
+        "pctstack": "{1: 30.7475,2: 35.2609,3: 33.9915}",
+        "personal_loot": 0,
+        "popularity": 7,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 2,
+        "count": 86,
+        "id": 14506,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 86,
+                "outof": 1005
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 29
+              }
+            }
+          }
+        },
+        "location": [
+          2557
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "modes": {
+          "0": {
+            "count": 86,
+            "outof": 1005
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lord Hel'nurath",
+        "outof": 1005,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 4,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 3342,
+        "id": 15111,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3342,
+                "outof": 18144
+              }
+            }
+          }
+        },
+        "location": [
+          1977
+        ],
+        "maxlevel": 61,
+        "minlevel": 61,
+        "modes": {
+          "0": {
+            "count": 3342,
+            "outof": 18144
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Mad Servant",
+        "outof": 18144,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 4,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": 102,
+        "id": 18338,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 102,
+                "outof": 109
+              }
+            }
+          }
+        },
+        "location": [
+          51,
+          139,
+          1537,
+          -1
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 102,
+            "outof": 109
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Highlord Kruul",
+        "outof": 109,
+        "pctstack": "{5: 28.4314,6: 17.6471,7: 15.6863,8: 38.2353}",
+        "personal_loot": 0,
+        "popularity": 13,
+        "react": [
+          0,
+          0
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=12662/demonic-rune"
+}

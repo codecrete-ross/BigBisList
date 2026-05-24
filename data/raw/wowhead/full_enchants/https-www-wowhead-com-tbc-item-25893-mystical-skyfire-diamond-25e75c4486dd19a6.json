@@ -1,0 +1,103 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This is a level 70 blue meta gem. It is crafted. In the Meta Gems category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:42:03+00:00",
+  "item_id": 25893,
+  "name": "Mystical Skyfire Diamond",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32872,
+      "entity_name": "Mystical Skyfire Diamond",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=25893/mystical-skyfire-diamond",
+      "spell_id": 32872,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          25893,
+          1,
+          1
+        ],
+        "id": 32872,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Mystical Skyfire Diamond",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 3,
+        "reagents": [
+          [
+            25868,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 25909,
+        "level": 73,
+        "name": "Design: Mystical Skyfire Diamond",
+        "popularity": 9,
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 25909,
+      "level": 73,
+      "name": "Design: Mystical Skyfire Diamond",
+      "popularity": 9,
+      "quality": 3,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25893/mystical-skyfire-diamond"
+}

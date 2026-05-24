@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 114 goes in the \"Shoulder\" slot. It is a quest reward from Aldor No More. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:08:11+00:00",
+  "item_id": 30381,
+  "name": "Kaylaan's Spaulders",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10381,
+      "entity_name": "Aldor No More",
+      "quest_id": 10381,
+      "source_url": "https://www.wowhead.com/tbc/item=30381/kaylaans-spaulders",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10381,
+        "itemchoices": [
+          [
+            30382,
+            1
+          ],
+          [
+            30379,
+            1
+          ],
+          [
+            30381,
+            1
+          ],
+          [
+            30380,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Aldor No More",
+        "popularity": 9,
+        "reprewards": [
+          [
+            932,
+            150
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 9500
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30381/kaylaans-spaulders"
+}

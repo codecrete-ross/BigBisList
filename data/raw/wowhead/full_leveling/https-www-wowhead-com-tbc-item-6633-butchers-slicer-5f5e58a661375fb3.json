@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed sword has an item level of 23. It is looted from Razorclaw the Butcher. In the One-Handed Swords category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:14:23+00:00",
+  "item_id": 6633,
+  "name": "Butcher's Slicer",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 94,
+      "drop_percent": 42.92,
+      "entity_id": 3886,
+      "entity_name": "Razorclaw the Butcher",
+      "out_of": 219,
+      "source_url": "https://www.wowhead.com/tbc/item=6633/butchers-slicer",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 94,
+        "id": 3886,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7161,
+                "outof": 17900
+              }
+            },
+            "4": {
+              "0": {
+                "count": 94,
+                "outof": 219
+              }
+            },
+            "5": {
+              "0": {
+                "count": 156,
+                "outof": 407
+              }
+            }
+          }
+        },
+        "location": [
+          209
+        ],
+        "maxlevel": 20,
+        "minlevel": 20,
+        "modes": {
+          "0": {
+            "count": 7161,
+            "outof": 17900
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Razorclaw the Butcher",
+        "outof": 219,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6633/butchers-slicer"
+}

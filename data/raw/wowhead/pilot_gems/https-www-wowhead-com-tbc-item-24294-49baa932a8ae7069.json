@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This tailoring pattern is used for the Tailoring profession. It is sold by Quartermaster Enuril. In the Tailoring Patterns category. An item.",
+  "fetched_at": "2026-05-24T08:24:19+00:00",
+  "item_id": 24294,
+  "name": "Pattern: Runic Spellthread",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19331,
+      "entity_name": "Quartermaster Enuril",
+      "source_url": "https://www.wowhead.com/tbc/item=24294",
+      "type": "vendor",
+      "vendor_id": 19331,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            306000
+          ]
+        ],
+        "id": 19331,
+        "location": [
+          3703
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Quartermaster Enuril",
+        "popularity": 5,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Scryers: Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    31432,
+    31372
+  ],
+  "url": "https://www.wowhead.com/tbc/item=24294"
+}

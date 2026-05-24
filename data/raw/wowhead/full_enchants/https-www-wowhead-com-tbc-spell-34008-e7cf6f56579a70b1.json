@@ -1,0 +1,109 @@
+{
+  "description": "Enchanters can learn Boar's Speed from Formula: Enchant Boots - Boar's Speed at 360 Enchanting skill. This enchanting formula is a rare world drop.",
+  "fetched_at": "2026-05-24T09:47:18+00:00",
+  "name": "Enchant Boots - Boar's Speed",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 28280,
+      "entity_name": "Formula: Enchant Boots - Boar's Speed",
+      "item_id": 28280,
+      "source_url": "https://www.wowhead.com/tbc/spell=34008",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 35297,
+      "entity_name": "Formula: Enchant Boots - Boar's Speed",
+      "item_id": 35297,
+      "source_url": "https://www.wowhead.com/tbc/spell=34008",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          385,
+          400
+        ],
+        "id": 34008,
+        "learnedat": 360,
+        "level": 35,
+        "name": "Enchant Boots - Boar's Speed",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22449,
+            8
+          ],
+          [
+            22452,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 28280,
+        "level": 72,
+        "name": "Formula: Enchant Boots - Boar's Speed",
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 8
+      },
+      {
+        "classs": 9,
+        "displayid": 56750,
+        "flags2": 24580,
+        "id": 35297,
+        "level": 72,
+        "name": "Formula: Enchant Boots - Boar's Speed",
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Kael'thas Sunstrider",
+            "t": 1,
+            "ti": 24664,
+            "z": 4131
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 34008,
+  "url": "https://www.wowhead.com/tbc/spell=34008"
+}

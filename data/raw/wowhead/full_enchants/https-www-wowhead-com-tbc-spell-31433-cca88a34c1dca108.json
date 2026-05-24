@@ -1,0 +1,94 @@
+{
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:44:05+00:00",
+  "name": "Golden Spellthread",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 24295,
+      "entity_name": "Pattern: Golden Spellthread",
+      "item_id": 24295,
+      "source_url": "https://www.wowhead.com/tbc/spell=31433",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          24276,
+          1,
+          1
+        ],
+        "id": 31433,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Golden Spellthread",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            14341,
+            1
+          ],
+          [
+            21886,
+            10
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24295,
+        "level": 75,
+        "name": "Pattern: Golden Spellthread",
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Endarin",
+            "t": 1,
+            "ti": 19321,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 31433,
+  "url": "https://www.wowhead.com/tbc/spell=31433"
+}

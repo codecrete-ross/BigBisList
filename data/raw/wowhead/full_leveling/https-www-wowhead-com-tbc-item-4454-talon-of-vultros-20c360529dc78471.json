@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue dagger has an item level of 26. It is looted from Vultros. In the Daggers category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:13:05+00:00",
+  "item_id": 4454,
+  "name": "Talon of Vultros",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 38,
+      "drop_percent": 23.03,
+      "entity_id": 462,
+      "entity_name": "Vultros",
+      "out_of": 165,
+      "source_url": "https://www.wowhead.com/tbc/item=4454/talon-of-vultros",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 4,
+        "count": 38,
+        "family": 7,
+        "id": 462,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 38,
+                "outof": 165
+              }
+            }
+          }
+        },
+        "location": [
+          40
+        ],
+        "modes": {
+          "0": {
+            "count": 38,
+            "outof": 165
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vultros",
+        "outof": 165,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          null
+        ],
+        "type": 1
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=4454/talon-of-vultros"
+}

@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue dagger has an item level of 115. It is looted from Murmur. In the Daggers category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:12:48+00:00",
+  "item_id": 27913,
+  "name": "Whispering Blade of Slaying",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 45,
+      "drop_percent": 11.84,
+      "entity_id": 18708,
+      "entity_name": "Murmur",
+      "out_of": 380,
+      "source_url": "https://www.wowhead.com/tbc/item=27913/whispering-blade-of-slaying",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 45,
+        "id": 18708,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1806,
+                "outof": 14108
+              }
+            },
+            "4": {
+              "0": {
+                "count": 92,
+                "outof": 677
+              }
+            },
+            "5": {
+              "0": {
+                "count": 45,
+                "outof": 380
+              }
+            }
+          }
+        },
+        "location": [
+          3789
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1806,
+            "outof": 14108
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Murmur",
+        "outof": 380,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27913/whispering-blade-of-slaying"
+}

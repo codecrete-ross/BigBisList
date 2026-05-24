@@ -1,0 +1,86 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is looted from Sapphiron. In the Item Enhancements (Permanent) category. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "item_id": 23548,
+  "name": "Might of the Scourge",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 33,
+      "drop_percent": 48.53,
+      "entity_id": 15989,
+      "entity_name": "Sapphiron",
+      "out_of": 68,
+      "source_url": "https://www.wowhead.com/tbc/item=23548/might-of-the-scourge",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 33,
+        "id": 15989,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 165,
+                "outof": 332
+              }
+            },
+            "4": {
+              "0": {
+                "count": 34,
+                "outof": 78
+              }
+            },
+            "5": {
+              "0": {
+                "count": 33,
+                "outof": 68
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 165,
+            "outof": 332
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sapphiron",
+        "outof": 68,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23548/might-of-the-scourge"
+}

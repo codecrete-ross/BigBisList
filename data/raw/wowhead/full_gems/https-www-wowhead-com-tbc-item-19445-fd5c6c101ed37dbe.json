@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Meilosh. In the Enchanting Formulae category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T08:32:57+00:00",
+  "item_id": 19445,
+  "name": "Formula: Enchant Weapon - Agility",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11557,
+      "entity_name": "Meilosh",
+      "source_url": "https://www.wowhead.com/tbc/item=19445",
+      "type": "vendor",
+      "vendor_id": 11557
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            27000
+          ]
+        ],
+        "id": 11557,
+        "location": [
+          361
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Meilosh",
+        "popularity": 12,
+        "react": [
+          -1,
+          -1
+        ],
+        "stock": -1,
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    23800
+  ],
+  "url": "https://www.wowhead.com/tbc/item=19445"
+}

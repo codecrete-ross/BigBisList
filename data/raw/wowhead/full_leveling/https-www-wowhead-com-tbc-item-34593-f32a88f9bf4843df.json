@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward from Revered in the Field of Battle. In the Consumables category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:23:09+00:00",
+  "item_id": 34593,
+  "name": "Scryer Supplies Package",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11556,
+      "entity_name": "Revered in the Field of Battle",
+      "quest_id": 11556,
+      "source_url": "https://www.wowhead.com/tbc/item=34593",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 4080,
+        "category2": 0,
+        "id": 11556,
+        "itemchoices": [
+          [
+            34592,
+            1
+          ],
+          [
+            34593,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Revered in the Field of Battle",
+        "popularity": 14,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 16
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34593"
+}

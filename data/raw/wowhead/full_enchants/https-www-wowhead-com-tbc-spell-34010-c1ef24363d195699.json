@@ -1,0 +1,89 @@
+{
+  "description": "Permanently enchant a Melee Weapon to add +81 Healing and +27 Spell Damage. Requires a level 35 or higher item. In the Profession Spells category.",
+  "fetched_at": "2026-05-24T09:47:57+00:00",
+  "name": "Enchant Weapon - Major Healing",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 28281,
+      "entity_name": "Formula: Enchant Weapon - Major Healing",
+      "item_id": 28281,
+      "source_url": "https://www.wowhead.com/tbc/spell=34010",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          375,
+          390
+        ],
+        "id": 34010,
+        "learnedat": 350,
+        "level": 35,
+        "name": "Enchant Weapon - Major Healing",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22449,
+            8
+          ],
+          [
+            21885,
+            8
+          ],
+          [
+            21886,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 28281,
+        "level": 70,
+        "name": "Formula: Enchant Weapon - Major Healing",
+        "quality": 2,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Almaador",
+            "t": 1,
+            "ti": 21432,
+            "z": 3703
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 34010,
+  "url": "https://www.wowhead.com/tbc/spell=34010"
+}

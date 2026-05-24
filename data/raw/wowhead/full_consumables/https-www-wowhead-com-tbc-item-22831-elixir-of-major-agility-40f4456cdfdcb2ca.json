@@ -1,0 +1,516 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Major Agility is a level 66 battle elixir. It is crafted, looted and a quest reward. In the Elixirs category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 22831,
+  "name": "Elixir of Major Agility",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11093,
+      "entity_name": "Hungry Nether Rays",
+      "quest_id": 11093,
+      "source_url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 28553,
+      "entity_name": "Elixir of Major Agility",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+      "spell_id": 28553,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 97,
+      "drop_percent": 14.14,
+      "entity_id": 34592,
+      "entity_name": "Contained in: Aldor Supplies Package",
+      "item_id": 34592,
+      "out_of": 686,
+      "source_url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 75,
+      "drop_percent": 16.34,
+      "entity_id": 34593,
+      "entity_name": "Contained in: Scryer Supplies Package",
+      "item_id": 34593,
+      "out_of": 459,
+      "source_url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 68,
+      "drop_percent": 18.89,
+      "entity_id": 34595,
+      "entity_name": "Contained in: Aldor Supplies Package",
+      "item_id": 34595,
+      "out_of": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 34,
+      "drop_percent": 15.04,
+      "entity_id": 34594,
+      "entity_name": "Contained in: Scryer Supplies Package",
+      "item_id": 34594,
+      "out_of": 226,
+      "source_url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 22,
+      "drop_percent": 7.53,
+      "entity_id": 33928,
+      "entity_name": "Contained in: Hollowed Bone Decanter",
+      "item_id": 33928,
+      "out_of": 292,
+      "source_url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.07,
+      "entity_id": 187714,
+      "entity_name": "Contained in: Enlistment Bonus",
+      "item_id": 187714,
+      "out_of": 13384,
+      "source_url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 97,
+        "flags2": 24580,
+        "id": 34592,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 97,
+                "outof": 686
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Aldor Supplies Package",
+        "outof": 686,
+        "pctstack": "{1: 98.9691,2: 1.03093}",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 4080,
+            "c2": 0,
+            "n": "Revered in the Field of Battle",
+            "t": 5,
+            "ti": 11556
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 0,
+        "count": 75,
+        "flags2": 24580,
+        "id": 34593,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 75,
+                "outof": 459
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Scryer Supplies Package",
+        "outof": 459,
+        "pctstack": "{1: 94.6667,2: 5.33333}",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 4080,
+            "c2": 0,
+            "n": "Revered in the Field of Battle",
+            "t": 5,
+            "ti": 11556
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 0,
+        "count": 68,
+        "flags2": 24580,
+        "id": 34595,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 68,
+                "outof": 360
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Aldor Supplies Package",
+        "outof": 360,
+        "pctstack": "{1: 95.5882,2: 4.41176}",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 4080,
+            "c2": 0,
+            "n": "Exalted Among All Combatants",
+            "t": 5,
+            "ti": 11557
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 0,
+        "count": 34,
+        "flags2": 24580,
+        "id": 34594,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 34,
+                "outof": 226
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Scryer Supplies Package",
+        "outof": 226,
+        "pctstack": "{1: 94.1176,2: 5.88235}",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 4080,
+            "c2": 0,
+            "n": "Exalted Among All Combatants",
+            "t": 5,
+            "ti": 11557
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 0,
+        "count": 22,
+        "flags2": 24580,
+        "id": 33928,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 8
+              }
+            },
+            "4": {
+              "0": {
+                "count": 22,
+                "outof": 292
+              }
+            },
+            "5": {
+              "0": {
+                "count": 16,
+                "outof": 136
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Hollowed Bone Decanter",
+        "outof": 292,
+        "pctstack": "",
+        "quality": 3,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Forest Frog",
+            "t": 1,
+            "ti": 24396,
+            "z": 3805
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 15,
+        "count": 10,
+        "flags2": 8192,
+        "id": 187714,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 10,
+                "outof": 13384
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 1788
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 1913
+              }
+            }
+          }
+        },
+        "level": 70,
+        "name": "Enlistment Bonus",
+        "outof": 13384,
+        "pctstack": "",
+        "quality": 3,
+        "reqlevel": 70,
+        "side": 1,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": -25,
+            "c2": 6,
+            "n": "Alliance War Effort",
+            "t": 5,
+            "ti": 64845
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          330,
+          345,
+          352,
+          360
+        ],
+        "creates": [
+          22831,
+          1,
+          1
+        ],
+        "id": 28553,
+        "learnedat": 330,
+        "level": 0,
+        "name": "Elixir of Major Agility",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 1,
+        "reagents": [
+          [
+            22789,
+            1
+          ],
+          [
+            22785,
+            2
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3679,
+        "category2": 8,
+        "id": 11093,
+        "itemchoices": [
+          [
+            22831,
+            2
+          ],
+          [
+            28103,
+            2
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Hungry Nether Rays",
+        "popularity": 13,
+        "reprewards": [
+          [
+            1031,
+            250
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22905,
+        "level": 66,
+        "name": "Recipe: Elixir of Major Agility",
+        "popularity": 3,
+        "quality": 1,
+        "skill": 330,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Logistics Officer Ulrike",
+            "t": 1,
+            "ti": 17657,
+            "z": 3483
+          }
+        ],
+        "subclass": 6
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24001,
+        "level": 66,
+        "name": "Recipe: Elixir of Major Agility",
+        "popularity": 6,
+        "quality": 1,
+        "skill": 330,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Urgronn",
+            "t": 1,
+            "ti": 17585,
+            "z": 3483
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 22905,
+      "level": 66,
+      "name": "Recipe: Elixir of Major Agility",
+      "popularity": 3,
+      "quality": 1,
+      "skill": 330,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Logistics Officer Ulrike",
+          "t": 1,
+          "ti": 17657,
+          "z": 3483
+        }
+      ],
+      "subclass": 6
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24001,
+      "level": 66,
+      "name": "Recipe: Elixir of Major Agility",
+      "popularity": 6,
+      "quality": 1,
+      "skill": 330,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Quartermaster Urgronn",
+          "t": 1,
+          "ti": 17585,
+          "z": 3483
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility"
+}

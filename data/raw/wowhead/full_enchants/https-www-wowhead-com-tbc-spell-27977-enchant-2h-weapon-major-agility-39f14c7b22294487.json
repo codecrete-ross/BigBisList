@@ -1,0 +1,89 @@
+{
+  "description": "Permanently enchant a Two Handed Melee Weapon to add 35 Agility. Requires a level 35 or higher item. In the Profession Spells category. Always up to date.",
+  "fetched_at": "2026-05-24T09:39:45+00:00",
+  "name": "Enchant 2H Weapon - Major Agility",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22556,
+      "entity_name": "Formula: Enchant 2H Weapon - Major Agility",
+      "item_id": 22556,
+      "source_url": "https://www.wowhead.com/tbc/spell=27977/enchant-2h-weapon-major-agility",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          385,
+          400
+        ],
+        "id": 27977,
+        "learnedat": 360,
+        "level": 35,
+        "name": "Enchant 2H Weapon - Major Agility",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22449,
+            8
+          ],
+          [
+            22446,
+            6
+          ],
+          [
+            22445,
+            20
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 22556,
+        "level": 72,
+        "name": "Formula: Enchant 2H Weapon - Major Agility",
+        "quality": 2,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Eredar Deathbringer",
+            "t": 1,
+            "ti": 20880,
+            "z": 3848
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27977,
+  "url": "https://www.wowhead.com/tbc/spell=27977/enchant-2h-weapon-major-agility"
+}

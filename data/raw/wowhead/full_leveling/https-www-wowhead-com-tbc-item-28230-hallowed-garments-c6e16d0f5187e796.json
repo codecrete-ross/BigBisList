@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 115 goes in the \"Chest\" slot. It is looted from Murmur. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:02:00+00:00",
+  "item_id": 28230,
+  "name": "Hallowed Garments",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 51,
+      "drop_percent": 13.42,
+      "entity_id": 18708,
+      "entity_name": "Murmur",
+      "out_of": 380,
+      "source_url": "https://www.wowhead.com/tbc/item=28230/hallowed-garments",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 51,
+        "id": 18708,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1733,
+                "outof": 14108
+              }
+            },
+            "4": {
+              "0": {
+                "count": 88,
+                "outof": 677
+              }
+            },
+            "5": {
+              "0": {
+                "count": 51,
+                "outof": 380
+              }
+            }
+          }
+        },
+        "location": [
+          3789
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1733,
+            "outof": 14108
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Murmur",
+        "outof": 380,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28230/hallowed-garments"
+}

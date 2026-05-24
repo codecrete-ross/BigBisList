@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Warrior. It is a quest reward from Presence of Might. In the Item Enhancements (Permanent) category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:42:37+00:00",
+  "item_id": 19782,
+  "name": "Presence of Might",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8184,
+      "entity_name": "Presence of Might",
+      "quest_id": 8184,
+      "source_url": "https://www.wowhead.com/tbc/item=19782/presence-of-might",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1977,
+        "category2": 3,
+        "id": 8184,
+        "itemrewards": [
+          [
+            19782,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Presence of Might",
+        "popularity": 11,
+        "reprewards": [
+          [
+            270,
+            250
+          ]
+        ],
+        "reqlevel": 58,
+        "side": 3,
+        "type": 62,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19782/presence-of-might"
+}

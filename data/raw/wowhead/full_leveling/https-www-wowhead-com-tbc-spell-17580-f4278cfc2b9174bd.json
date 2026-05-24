@@ -1,0 +1,58 @@
+{
+  "fetched_at": "2026-05-24T09:22:32+00:00",
+  "name": "Major Mana Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 13501,
+      "entity_name": "Recipe: Major Mana Potion",
+      "item_id": 13501,
+      "source_url": "https://www.wowhead.com/tbc/spell=17580",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13501,
+        "level": 59,
+        "name": "Recipe: Major Mana Potion",
+        "quality": 2,
+        "skill": 295,
+        "slot": 0,
+        "source": [
+          2,
+          5
+        ],
+        "sourcemore": [
+          {
+            "dd": -1,
+            "n": "Darkmaster Gandling",
+            "t": 1,
+            "ti": 1853,
+            "z": 2057
+          },
+          {
+            "n": "Magnus Frostwake",
+            "t": 1,
+            "ti": 11278,
+            "z": 28
+          }
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 17580,
+  "url": "https://www.wowhead.com/tbc/spell=17580"
+}

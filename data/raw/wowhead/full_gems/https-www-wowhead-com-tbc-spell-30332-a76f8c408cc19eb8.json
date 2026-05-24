@@ -1,0 +1,50 @@
+{
+  "fetched_at": "2026-05-24T08:34:08+00:00",
+  "name": "Khorium Scope",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 23808,
+      "entity_name": "Schematic: Khorium Scope",
+      "item_id": 23808,
+      "source_url": "https://www.wowhead.com/tbc/spell=30332",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23808,
+        "level": 72,
+        "name": "Schematic: Khorium Scope",
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Sunfury Bowman",
+            "t": 1,
+            "ti": 20207,
+            "z": 3523
+          }
+        ],
+        "subclass": 3
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 30332,
+  "url": "https://www.wowhead.com/tbc/spell=30332"
+}

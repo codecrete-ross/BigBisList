@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Kael'thas Sunstrider. In the Jewelcrafting Designs category.",
+  "fetched_at": "2026-05-24T08:24:12+00:00",
+  "item_id": 35305,
+  "name": "Design: Runed Living Ruby",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 31,
+      "drop_percent": 0.27,
+      "entity_id": 24664,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 11459,
+      "source_url": "https://www.wowhead.com/tbc/item=35305",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 31,
+        "id": 24664,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 31,
+                "outof": 11459
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": 31,
+            "outof": 11459
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 11459,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    31088,
+    9415
+  ],
+  "url": "https://www.wowhead.com/tbc/item=35305"
+}

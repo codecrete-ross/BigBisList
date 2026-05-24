@@ -1,0 +1,80 @@
+{
+  "fetched_at": "2026-05-24T08:51:19+00:00",
+  "name": "Elixir of Major Agility",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22905,
+      "entity_name": "Recipe: Elixir of Major Agility",
+      "item_id": 22905,
+      "source_url": "https://www.wowhead.com/tbc/spell=28553",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 24001,
+      "entity_name": "Recipe: Elixir of Major Agility",
+      "item_id": 24001,
+      "source_url": "https://www.wowhead.com/tbc/spell=28553",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22905,
+        "level": 66,
+        "name": "Recipe: Elixir of Major Agility",
+        "quality": 1,
+        "skill": 330,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Logistics Officer Ulrike",
+            "t": 1,
+            "ti": 17657,
+            "z": 3483
+          }
+        ],
+        "subclass": 6
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24001,
+        "level": 66,
+        "name": "Recipe: Elixir of Major Agility",
+        "quality": 1,
+        "skill": 330,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Urgronn",
+            "t": 1,
+            "ti": 17585,
+            "z": 3483
+          }
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 28553,
+  "url": "https://www.wowhead.com/tbc/spell=28553"
+}

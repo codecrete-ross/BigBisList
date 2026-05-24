@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant Cloak - Subtlety can be used by Enchanters to learn Subtlety at 300 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "item_id": 33151,
+  "name": "Formula: Enchant Cloak - Subtlety",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17585,
+      "entity_name": "Quartermaster Urgronn",
+      "source_url": "https://www.wowhead.com/tbc/item=33151",
+      "type": "vendor",
+      "vendor_id": 17585
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            85000
+          ]
+        ],
+        "id": 17585,
+        "location": [
+          3483
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Quartermaster Urgronn",
+        "popularity": 15,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Thrallmar Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    25084
+  ],
+  "url": "https://www.wowhead.com/tbc/item=33151"
+}

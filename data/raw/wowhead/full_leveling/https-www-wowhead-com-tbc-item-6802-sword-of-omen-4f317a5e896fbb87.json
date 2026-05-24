@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed sword has an item level of 44. It is a quest reward from Into The Scarlet Monastery. In the One-Handed Swords category.",
+  "fetched_at": "2026-05-24T09:14:25+00:00",
+  "item_id": 6802,
+  "name": "Sword of Omen",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 1048,
+      "entity_name": "Into The Scarlet Monastery",
+      "quest_id": 1048,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=6802/sword-of-omen",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 796,
+        "category2": 2,
+        "id": 1048,
+        "itemchoices": [
+          [
+            6802,
+            1
+          ],
+          [
+            6803,
+            1
+          ],
+          [
+            10711,
+            1
+          ]
+        ],
+        "level": 42,
+        "name": "Into The Scarlet Monastery",
+        "popularity": 12,
+        "reprewards": [
+          [
+            68,
+            500
+          ]
+        ],
+        "reqlevel": 30,
+        "side": 2,
+        "type": 81,
+        "xp": 7200
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6802/sword-of-omen"
+}

@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:45:37+00:00",
+  "item_id": 28273,
+  "name": "Formula: Enchant Gloves - Major Healing",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21432,
+      "entity_name": "Almaador",
+      "source_url": "https://www.wowhead.com/tbc/item=28273",
+      "type": "vendor",
+      "vendor_id": 21432,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            51000
+          ]
+        ],
+        "id": 21432,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Almaador",
+        "popularity": 35,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Sha'tari Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    33999
+  ],
+  "url": "https://www.wowhead.com/tbc/item=28273"
+}

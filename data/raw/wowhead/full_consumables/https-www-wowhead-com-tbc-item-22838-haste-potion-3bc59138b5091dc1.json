@@ -1,0 +1,159 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Potions category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 22838,
+  "name": "Haste Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 28564,
+      "entity_name": "Haste Potion",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=22838/haste-potion",
+      "spell_id": 28564,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          365,
+          372,
+          380
+        ],
+        "creates": [
+          22838,
+          1,
+          1
+        ],
+        "id": 28564,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Haste Potion",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 1,
+        "reagents": [
+          [
+            22789,
+            2
+          ],
+          [
+            22791,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22913,
+        "level": 70,
+        "name": "Recipe: Haste Potion",
+        "popularity": 8,
+        "quality": 2,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 6
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35295,
+        "level": 70,
+        "name": "Recipe: Haste Potion",
+        "popularity": 5,
+        "quality": 2,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Kael'thas Sunstrider",
+            "t": 1,
+            "ti": 24664,
+            "z": 4131
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 22913,
+      "level": 70,
+      "name": "Recipe: Haste Potion",
+      "popularity": 8,
+      "quality": 2,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 6
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35295,
+      "level": 70,
+      "name": "Recipe: Haste Potion",
+      "popularity": 5,
+      "quality": 2,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Kael'thas Sunstrider",
+          "t": 1,
+          "ti": 24664,
+          "z": 4131
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22838/haste-potion"
+}

@@ -12,15 +12,18 @@ class ManifestCoverageTests(unittest.TestCase):
         self.assertEqual(sum(1 for unit in units if unit["data_family"] == "classes"), 1)
         self.assertEqual(sum(1 for unit in units if unit["data_family"] == "phases"), 1)
 
-    def test_current_manifest_reports_known_seed_level_gap_without_fetching(self):
+    def test_current_manifest_covers_remaining_scrape_scope_without_fetching(self):
         coverage = build_manifest_coverage(include_missing=False)
-        self.assertFalse(coverage["ok"])
+        self.assertTrue(coverage["ok"])
         self.assertEqual(coverage["expected_units"], 842)
-        self.assertEqual(coverage["present_units"], 168)
-        self.assertEqual(coverage["missing_units"], 674)
+        self.assertEqual(coverage["present_units"], 842)
+        self.assertEqual(coverage["missing_units"], 0)
         self.assertEqual(coverage["by_family"]["bis_lists"]["present"], 168)
         self.assertEqual(coverage["by_family"]["bis_lists"]["missing"], 0)
-        self.assertEqual(coverage["by_family"]["gems"]["missing"], 168)
+        self.assertEqual(coverage["by_family"]["gems"]["present"], 168)
+        self.assertEqual(coverage["by_family"]["enchants"]["present"], 168)
+        self.assertEqual(coverage["by_family"]["consumables"]["present"], 168)
+        self.assertEqual(coverage["by_family"]["leveling"]["present"], 168)
 
     def test_manifest_coverage_can_be_filtered_to_bis_lists(self):
         coverage = build_manifest_coverage(include_missing=False, family_filter="bis_lists")

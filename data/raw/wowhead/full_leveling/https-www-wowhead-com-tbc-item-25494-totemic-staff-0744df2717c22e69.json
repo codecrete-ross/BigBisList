@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green staff has an item level of 93. It is a quest reward from Administering the Salve. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:10:09+00:00",
+  "item_id": 25494,
+  "name": "Totemic Staff",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9447,
+      "entity_name": "Administering the Salve",
+      "quest_id": 9447,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25494/totemic-staff",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 9447,
+        "itemchoices": [
+          [
+            25496,
+            1
+          ],
+          [
+            25492,
+            1
+          ],
+          [
+            25495,
+            1
+          ],
+          [
+            25494,
+            1
+          ],
+          [
+            29212,
+            1
+          ]
+        ],
+        "level": 63,
+        "money": 29000,
+        "name": "Administering the Salve",
+        "popularity": 9,
+        "reprewards": [
+          [
+            941,
+            250
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 2,
+        "xp": 10400
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25494/totemic-staff"
+}

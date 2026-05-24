@@ -1,0 +1,917 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spirit Shards are currency tokens dropped by bosses in the Auchindoun instances. For shards to drop, the player's faction must control the five Spirit Towers in the Bone Wastes. Bosses in the Mana-Tombs and Auchenai Crypts dungeons drop one shard each; bosses in the Sethekk Halls and Shadow Labyrinth dungeons drop two each.",
+  "fetched_at": "2026-05-24T08:51:53+00:00",
+  "item_id": 28558,
+  "name": "Spirit Shard",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 8487,
+      "drop_percent": 40.0,
+      "entity_id": 18341,
+      "entity_name": "Pandemonius",
+      "out_of": 21217,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7945,
+      "drop_percent": 38.86,
+      "entity_id": 18343,
+      "entity_name": "Tavarok",
+      "out_of": 20445,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7472,
+      "drop_percent": 37.43,
+      "entity_id": 18344,
+      "entity_name": "Nexus-Prince Shaffar",
+      "out_of": 19961,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5174,
+      "drop_percent": 41.43,
+      "entity_id": 18371,
+      "entity_name": "Shirrak the Dead Watcher",
+      "out_of": 12489,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5047,
+      "drop_percent": 41.66,
+      "entity_id": 18373,
+      "entity_name": "Exarch Maladaar",
+      "out_of": 12115,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8500,
+      "drop_percent": 41.04,
+      "entity_id": 18472,
+      "entity_name": "Darkweaver Syth",
+      "out_of": 20709,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7970,
+      "drop_percent": 37.89,
+      "entity_id": 18473,
+      "entity_name": "Talon King Ikiss",
+      "out_of": 21036,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11283,
+      "drop_percent": 40.84,
+      "entity_id": 18667,
+      "entity_name": "Blackheart the Inciter",
+      "out_of": 27624,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6318,
+      "drop_percent": 44.78,
+      "entity_id": 18708,
+      "entity_name": "Murmur",
+      "out_of": 14108,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11835,
+      "drop_percent": 40.88,
+      "entity_id": 18731,
+      "entity_name": "Ambassador Hellmaw",
+      "out_of": 28948,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9959,
+      "drop_percent": 40.95,
+      "entity_id": 18732,
+      "entity_name": "Grandmaster Vorpil",
+      "out_of": 24322,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 301,
+      "drop_percent": 28.03,
+      "entity_id": 22927,
+      "entity_name": "Ethereum Prisoner (Dungeon Energy Ball)",
+      "out_of": 1074,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 22930,
+      "entity_name": "Yor",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 913,
+      "drop_percent": 36.81,
+      "entity_id": 23035,
+      "entity_name": "Anzu",
+      "out_of": 2480,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 19,
+      "drop_percent": 0.14,
+      "entity_id": 187714,
+      "entity_name": "Contained in: Enlistment Bonus",
+      "item_id": 187714,
+      "out_of": 13384,
+      "source_url": "https://www.wowhead.com/tbc/item=28558",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "count": 19,
+        "flags2": 8192,
+        "id": 187714,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 19,
+                "outof": 13384
+              }
+            }
+          }
+        },
+        "level": 70,
+        "name": "Enlistment Bonus",
+        "outof": 13384,
+        "pctstack": "{1: 63.1579,2: 36.8421}",
+        "quality": 3,
+        "reqlevel": 70,
+        "side": 1,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": -25,
+            "c2": 6,
+            "n": "Alliance War Effort",
+            "t": 5,
+            "ti": 64845
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 8487,
+        "id": 18341,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8487,
+                "outof": 21217
+              }
+            },
+            "4": {
+              "0": {
+                "count": 392,
+                "outof": 906
+              }
+            },
+            "5": {
+              "0": {
+                "count": 385,
+                "outof": 708
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 72,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 8487,
+            "outof": 21217
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Pandemonius",
+        "outof": 21217,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 7945,
+        "id": 18343,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7945,
+                "outof": 20445
+              }
+            },
+            "4": {
+              "0": {
+                "count": 368,
+                "outof": 861
+              }
+            },
+            "5": {
+              "0": {
+                "count": 373,
+                "outof": 691
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 72,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 7945,
+            "outof": 20445
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Tavarok",
+        "outof": 20445,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 7472,
+        "id": 18344,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7472,
+                "outof": 19961
+              }
+            },
+            "4": {
+              "0": {
+                "count": 353,
+                "outof": 840
+              }
+            },
+            "5": {
+              "0": {
+                "count": 353,
+                "outof": 669
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 72,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 7472,
+            "outof": 19961
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nexus-Prince Shaffar",
+        "outof": 19961,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 5174,
+        "id": 18371,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5174,
+                "outof": 12489
+              }
+            },
+            "4": {
+              "0": {
+                "count": 284,
+                "outof": 681
+              }
+            },
+            "5": {
+              "0": {
+                "count": 237,
+                "outof": 443
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 71,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 5174,
+            "outof": 12489
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shirrak the Dead Watcher",
+        "outof": 12489,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 5047,
+        "id": 18373,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5047,
+                "outof": 12115
+              }
+            },
+            "4": {
+              "0": {
+                "count": 279,
+                "outof": 610
+              }
+            },
+            "5": {
+              "0": {
+                "count": 232,
+                "outof": 417
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 72,
+        "minlevel": 67,
+        "modes": {
+          "0": {
+            "count": 5047,
+            "outof": 12115
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Exarch Maladaar",
+        "outof": 12115,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 8500,
+        "id": 18472,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8500,
+                "outof": 20709
+              }
+            },
+            "4": {
+              "0": {
+                "count": 599,
+                "outof": 1538
+              }
+            },
+            "5": {
+              "0": {
+                "count": 565,
+                "outof": 1322
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "maxlevel": 72,
+        "minlevel": 69,
+        "modes": {
+          "0": {
+            "count": 8500,
+            "outof": 20709
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Darkweaver Syth",
+        "outof": 20709,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 7970,
+        "id": 18473,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7970,
+                "outof": 21036
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1212,
+                "outof": 3696
+              }
+            },
+            "5": {
+              "0": {
+                "count": 504,
+                "outof": 1261
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "maxlevel": 72,
+        "minlevel": 69,
+        "modes": {
+          "0": {
+            "count": 7970,
+            "outof": 21036
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Talon King Ikiss",
+        "outof": 21036,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 11283,
+        "id": 18667,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 11283,
+                "outof": 27624
+              }
+            },
+            "4": {
+              "0": {
+                "count": 444,
+                "outof": 1202
+              }
+            },
+            "5": {
+              "0": {
+                "count": 360,
+                "outof": 728
+              }
+            }
+          }
+        },
+        "location": [
+          3789
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 11283,
+            "outof": 27624
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Blackheart the Inciter",
+        "outof": 27624,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 6318,
+        "id": 18708,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6318,
+                "outof": 14108
+              }
+            },
+            "4": {
+              "0": {
+                "count": 249,
+                "outof": 677
+              }
+            },
+            "5": {
+              "0": {
+                "count": 206,
+                "outof": 380
+              }
+            }
+          }
+        },
+        "location": [
+          3789
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 6318,
+            "outof": 14108
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Murmur",
+        "outof": 14108,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 11835,
+        "id": 18731,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 11835,
+                "outof": 28948
+              }
+            },
+            "4": {
+              "0": {
+                "count": 471,
+                "outof": 1250
+              }
+            },
+            "5": {
+              "0": {
+                "count": 421,
+                "outof": 827
+              }
+            }
+          }
+        },
+        "location": [
+          3789
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 11835,
+            "outof": 28948
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ambassador Hellmaw",
+        "outof": 28948,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 9959,
+        "id": 18732,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 9959,
+                "outof": 24322
+              }
+            },
+            "4": {
+              "0": {
+                "count": 394,
+                "outof": 1053
+              }
+            },
+            "5": {
+              "0": {
+                "count": 331,
+                "outof": 651
+              }
+            }
+          }
+        },
+        "location": [
+          3789
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 9959,
+            "outof": 24322
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Grandmaster Vorpil",
+        "outof": 24322,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 301,
+        "id": 22927,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 301,
+                "outof": 1074
+              }
+            },
+            "4": {
+              "0": {
+                "count": 19,
+                "outof": 69
+              }
+            },
+            "5": {
+              "0": {
+                "count": 20,
+                "outof": 38
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "modes": {
+          "0": {
+            "count": 301,
+            "outof": 1074
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ethereum Prisoner (Dungeon Energy Ball)",
+        "outof": 1074,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          1,
+          1
+        ],
+        "type": 10
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": -1,
+        "id": 22930,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 50
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 50
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Yor",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 50,
+        "personal_loot": 0,
+        "popularity": 13,
+        "tag": "Void Hound of Shaffar",
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 913,
+        "id": 23035,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 913,
+                "outof": 2480
+              }
+            },
+            "4": {
+              "0": {
+                "count": 221,
+                "outof": 720
+              }
+            },
+            "5": {
+              "0": {
+                "count": 212,
+                "outof": 730
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "modes": {
+          "0": {
+            "count": 913,
+            "outof": 2480
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anzu",
+        "outof": 2480,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28558"
+}

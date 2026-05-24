@@ -1,0 +1,40 @@
+{
+  "fetched_at": "2026-05-24T09:12:13+00:00",
+  "name": "Inner Fire",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 1086,
+      "entity_name": "Codex of Inner Fire",
+      "item_id": 1086,
+      "source_url": "https://www.wowhead.com/tbc/spell=588",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 1086,
+        "level": 12,
+        "name": "Codex of Inner Fire",
+        "quality": 1,
+        "reqclass": 16,
+        "reqlevel": 12,
+        "slot": 0,
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 588,
+  "url": "https://www.wowhead.com/tbc/spell=588"
+}

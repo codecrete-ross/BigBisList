@@ -1,0 +1,1298 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This epic two-handed axe has an item level of 49. It is looted from Skeletal Sorcerer. In the Two-Handed Axes category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:09:14+00:00",
+  "item_id": 2291,
+  "name": "Kang the Decapitator",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_name": "World Drop",
+      "source_url": "https://www.wowhead.com/tbc/item=2291/kang-the-decapitator",
+      "type": "world_drop",
+      "world_drop": true
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "count": 1,
+        "flags2": 24580,
+        "id": 10752,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 328
+              }
+            }
+          }
+        },
+        "level": 55,
+        "name": "Emerald Encrusted Chest",
+        "outof": 328,
+        "pctstack": "",
+        "quality": 2,
+        "reqlevel": 45,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "z": 4
+          }
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 1784,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 85559
+              }
+            }
+          }
+        },
+        "location": [
+          28
+        ],
+        "maxlevel": 52,
+        "minlevel": 51,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 85559
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Skeletal Sorcerer",
+        "outof": 85559,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 2693,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 16350
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 46,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 16350
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Highvale Marksman",
+        "outof": 16350,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 154,
+        "react": [
+          1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 4466,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 68872
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 68872
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Scalper",
+        "outof": 68872,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 20,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 5270,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 16008
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 16008
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Atal'ai Corpse Eater",
+        "outof": 16008,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 5712,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 4258
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 4258
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zolo",
+        "outof": 4258,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 27,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 5716,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 4757
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 4757
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zul'Lor",
+        "outof": 4757,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "family": 3,
+        "id": 5858,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 105275
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 49,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 105275
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Greater Lava Spider",
+        "outof": 105275,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "family": 20,
+        "id": 5988,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 124352
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 124352
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Scorpok Stinger",
+        "outof": 124352,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 6198,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 32807
+              }
+            }
+          }
+        },
+        "location": [
+          16
+        ],
+        "maxlevel": 52,
+        "minlevel": 51,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 32807
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Blood Elf Surveyor",
+        "outof": 32807,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 6511,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 64504
+              }
+            }
+          }
+        },
+        "location": [
+          490
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 64504
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bloodpetal Thresher",
+        "outof": 64504,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          0,
+          0
+        ],
+        "type": 4
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 7086,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 41805
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 41805
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Cursed Ooze",
+        "outof": 41805,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 7154,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 63326
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 63326
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Deadwood Gardener",
+        "outof": 63326,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 7155,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 41783
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 41783
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Deadwood Pathfinder",
+        "outof": 41783,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 8566,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 37680
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 37680
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Dark Iron Lookout",
+        "outof": 37680,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "family": 3,
+        "id": 8933,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 29193
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 29193
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Cave Creeper",
+        "outof": 29193,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "family": 1,
+        "id": 8961,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 37693
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 52,
+        "minlevel": 51,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 37693
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Felpaw Ravager",
+        "outof": 37693,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 3,
+        "family": 21,
+        "id": 2505,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 113859
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 113859
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Saltwater Snapjaw",
+        "outof": 113859,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          0,
+          0
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 3,
+        "id": 7033,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 31053
+              }
+            }
+          }
+        },
+        "location": [
+          46
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 31053
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Firegut Ogre",
+        "outof": 31053,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 3,
+        "id": 7109,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 142912
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 142912
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Felsworn",
+        "outof": 142912,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "id": 8889,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 53946
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 53946
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anvilrage Overseer",
+        "outof": 53946,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 3,
+        "id": 8932,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 65522
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 65522
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Borer Beetle",
+        "outof": 65522,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "id": 12224,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 22348
+              }
+            }
+          }
+        },
+        "location": [
+          2100
+        ],
+        "maxlevel": 45,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 22348
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Cavern Shambler",
+        "outof": 22348,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      },
+      {
+        "classification": 1,
+        "count": 4,
+        "id": 5271,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 24718
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 24718
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Atal'ai Deathwalker",
+        "outof": 24718,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 4,
+        "id": 5283,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 6473
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 6473
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nightmare Wanderer",
+        "outof": 6473,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 0,
+        "count": 4,
+        "id": 9545,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 17706
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 52,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 17706
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Grim Patron",
+        "outof": 17706,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          0,
+          0
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 5,
+        "id": 7105,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5,
+                "outof": 85321
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 5,
+            "outof": 85321
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Satyr",
+        "outof": 85321,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 8,
+        "id": 8892,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8,
+                "outof": 188634
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 8,
+            "outof": 188634
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anvilrage Footman",
+        "outof": 188634,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 10,
+        "id": 5259,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 10,
+                "outof": 44434
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 10,
+            "outof": 44434
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Atal'ai Witch Doctor",
+        "outof": 44434,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 11,
+        "id": 8319,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 11,
+                "outof": 15881
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 11,
+            "outof": 15881
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nightmare Whelp",
+        "outof": 15881,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 1,
+        "count": 16,
+        "id": 8891,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 16,
+                "outof": 282460
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 16,
+            "outof": 282460
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anvilrage Guardsman",
+        "outof": 282460,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 8,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 17,
+        "id": 8921,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 17,
+                "outof": 378845
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 17,
+            "outof": 378845
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bloodhound",
+        "outof": 378845,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 18,
+        "id": 8890,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 18,
+                "outof": 117531
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 18,
+            "outof": 117531
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anvilrage Warden",
+        "outof": 117531,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=2291/kang-the-decapitator"
+}

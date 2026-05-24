@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is looted from Emperor Vek'nilash. In the Enchanting Formulae category. An item.",
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "item_id": 20726,
+  "name": "Formula: Enchant Gloves - Threat",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 8.33,
+      "entity_id": 15275,
+      "entity_name": "Emperor Vek'nilash",
+      "out_of": 24,
+      "source_url": "https://www.wowhead.com/tbc/item=20726",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "id": 15275,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1273,
+                "outof": 14960
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 24
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1273,
+            "outof": 14960
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Emperor Vek'nilash",
+        "outof": 24,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    25072
+  ],
+  "url": "https://www.wowhead.com/tbc/item=20726"
+}

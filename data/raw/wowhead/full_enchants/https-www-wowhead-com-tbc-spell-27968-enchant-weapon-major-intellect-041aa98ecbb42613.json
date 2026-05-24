@@ -1,0 +1,85 @@
+{
+  "description": "Permanently enchant a melee weapon to grant +30 Intellect. Requires a level 35 or higher item. In the Profession Spells category. Always up to date.",
+  "fetched_at": "2026-05-24T09:41:17+00:00",
+  "name": "Enchant Weapon - Major Intellect",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22551,
+      "entity_name": "Formula: Enchant Weapon - Major Intellect",
+      "item_id": 22551,
+      "source_url": "https://www.wowhead.com/tbc/spell=27968/enchant-weapon-major-intellect",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          350,
+          365,
+          380
+        ],
+        "id": 27968,
+        "learnedat": 340,
+        "level": 35,
+        "name": "Enchant Weapon - Major Intellect",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22449,
+            2
+          ],
+          [
+            22446,
+            10
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 22551,
+        "level": 68,
+        "name": "Formula: Enchant Weapon - Major Intellect",
+        "quality": 2,
+        "skill": 340,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Sunfury Researcher",
+            "t": 1,
+            "ti": 20136,
+            "z": 3523
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27968,
+  "url": "https://www.wowhead.com/tbc/spell=27968/enchant-weapon-major-intellect"
+}

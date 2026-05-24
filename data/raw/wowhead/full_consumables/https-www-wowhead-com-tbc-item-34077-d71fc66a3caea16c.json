@@ -1,0 +1,105 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Consumables category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:46+00:00",
+  "item_id": 34077,
+  "name": "Crudely Wrapped Gift",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12133,
+      "entity_name": "Smash the Pumpkin",
+      "quest_id": 12133,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=34077",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12155,
+      "entity_name": "Smash the Pumpkin",
+      "quest_id": 12155,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=34077",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 44242,
+      "entity_name": "Loot Large Jack-o'-Lantern",
+      "source_url": "https://www.wowhead.com/tbc/item=34077",
+      "spell_id": 44242,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          34077,
+          0,
+          0
+        ],
+        "id": 44242,
+        "level": 0,
+        "name": "Loot Large Jack-o'-Lantern",
+        "popularity": 8,
+        "quality": 1,
+        "schools": 1
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": -1003,
+        "category2": 9,
+        "daily": 1,
+        "id": 12133,
+        "itemrewards": [
+          [
+            34077,
+            1
+          ]
+        ],
+        "name": "Smash the Pumpkin",
+        "popularity": 10,
+        "reqlevel": 1,
+        "side": 1,
+        "wflags": 10,
+        "xp": 80
+      },
+      {
+        "category": -1003,
+        "category2": 9,
+        "daily": 1,
+        "id": 12155,
+        "itemrewards": [
+          [
+            34077,
+            1
+          ]
+        ],
+        "name": "Smash the Pumpkin",
+        "popularity": 8,
+        "reqlevel": 1,
+        "side": 2,
+        "wflags": 10,
+        "xp": 80
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34077"
+}

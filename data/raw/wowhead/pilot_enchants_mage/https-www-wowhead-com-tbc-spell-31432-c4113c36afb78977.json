@@ -1,0 +1,94 @@
+{
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:36:22+00:00",
+  "name": "Runic Spellthread",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 24294,
+      "entity_name": "Pattern: Runic Spellthread",
+      "item_id": 24294,
+      "source_url": "https://www.wowhead.com/tbc/spell=31432",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          24274,
+          1,
+          1
+        ],
+        "id": 31432,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Runic Spellthread",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            14341,
+            1
+          ],
+          [
+            22457,
+            10
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24294,
+        "level": 75,
+        "name": "Pattern: Runic Spellthread",
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Enuril",
+            "t": 1,
+            "ti": 19331,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 31432,
+  "url": "https://www.wowhead.com/tbc/spell=31432"
+}

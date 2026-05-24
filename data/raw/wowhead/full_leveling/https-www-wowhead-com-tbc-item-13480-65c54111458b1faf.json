@@ -1,0 +1,62 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is sold by Evie Whirlbrew. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:21:48+00:00",
+  "item_id": 13480,
+  "name": "Recipe: Major Healing Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11188,
+      "entity_name": "Evie Whirlbrew",
+      "source_url": "https://www.wowhead.com/tbc/item=13480",
+      "type": "vendor",
+      "vendor_id": 11188
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            15789
+          ]
+        ],
+        "id": 11188,
+        "location": [
+          618
+        ],
+        "maxlevel": 58,
+        "minlevel": 58,
+        "name": "Evie Whirlbrew",
+        "popularity": 11,
+        "react": [
+          1,
+          1
+        ],
+        "stock": 1,
+        "tag": "Alchemy Supplies",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    17556,
+    17534
+  ],
+  "url": "https://www.wowhead.com/tbc/item=13480"
+}

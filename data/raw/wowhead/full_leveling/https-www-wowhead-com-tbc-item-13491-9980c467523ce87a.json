@@ -1,0 +1,152 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is looted from Legashi Rogue. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:22:06+00:00",
+  "item_id": 13491,
+  "name": "Recipe: Elixir of the Mongoose",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 4752,
+      "drop_percent": 4.64,
+      "entity_id": 6201,
+      "entity_name": "Legashi Rogue",
+      "out_of": 102314,
+      "source_url": "https://www.wowhead.com/tbc/item=13491",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2193,
+      "drop_percent": 3.89,
+      "entity_id": 7106,
+      "entity_name": "Jadefire Rogue",
+      "out_of": 56321,
+      "source_url": "https://www.wowhead.com/tbc/item=13491",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 4752,
+        "id": 6201,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4752,
+                "outof": 102314
+              }
+            },
+            "4": {
+              "0": {
+                "count": 17,
+                "outof": 358
+              }
+            },
+            "5": {
+              "0": {
+                "count": 12,
+                "outof": 273
+              }
+            }
+          }
+        },
+        "location": [
+          16
+        ],
+        "maxlevel": 53,
+        "minlevel": 51,
+        "modes": {
+          "0": {
+            "count": 4752,
+            "outof": 102314
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Legashi Rogue",
+        "outof": 102314,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 2193,
+        "id": 7106,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2193,
+                "outof": 56321
+              }
+            },
+            "4": {
+              "0": {
+                "count": 20,
+                "outof": 533
+              }
+            },
+            "5": {
+              "0": {
+                "count": 29,
+                "outof": 560
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "maxlevel": 51,
+        "minlevel": 50,
+        "modes": {
+          "0": {
+            "count": 2193,
+            "outof": 56321
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jadefire Rogue",
+        "outof": 56321,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    17571,
+    17538
+  ],
+  "url": "https://www.wowhead.com/tbc/item=13491"
+}

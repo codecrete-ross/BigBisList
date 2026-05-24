@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 109. It is a quest reward from Nexus-King Salhadaar. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:10:32+00:00",
+  "item_id": 30012,
+  "name": "Ameer's Judgement",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10408,
+      "entity_name": "Nexus-King Salhadaar",
+      "quest_id": 10408,
+      "source_url": "https://www.wowhead.com/tbc/item=30012/ameers-judgment",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10408,
+        "itemchoices": [
+          [
+            30011,
+            1
+          ],
+          [
+            30012,
+            1
+          ],
+          [
+            30010,
+            1
+          ],
+          [
+            30013,
+            1
+          ],
+          [
+            30009,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Nexus-King Salhadaar",
+        "popularity": 17,
+        "reprewards": [
+          [
+            933,
+            500
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30012/ameers-judgment"
+}

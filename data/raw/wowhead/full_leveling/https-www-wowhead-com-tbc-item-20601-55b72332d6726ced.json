@@ -1,0 +1,93 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Other Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:21:54+00:00",
+  "item_id": 20601,
+  "name": "Sack of Spoils",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8348,
+      "entity_name": "Signet of the Dukes",
+      "quest_id": 8348,
+      "source_url": "https://www.wowhead.com/tbc/item=20601",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8363,
+      "entity_name": "Abyssal Signets",
+      "quest_id": 8363,
+      "source_url": "https://www.wowhead.com/tbc/item=20601",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8348,
+        "itemrewards": [
+          [
+            20601,
+            1
+          ]
+        ],
+        "level": 60,
+        "money": 18000,
+        "name": "Signet of the Dukes",
+        "popularity": 12,
+        "reprewards": [
+          [
+            609,
+            350
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "type": 1,
+        "xp": 11900
+      },
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8363,
+        "itemrewards": [
+          [
+            20601,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Abyssal Signets",
+        "popularity": 14,
+        "reprewards": [
+          [
+            609,
+            250
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "type": 1,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20601"
+}

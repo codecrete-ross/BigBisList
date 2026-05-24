@@ -1,0 +1,111 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Explosives category. An item from Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 16040,
+  "name": "Arcane Bomb",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19831,
+      "entity_name": "Arcane Bomb",
+      "profession": "Engineering",
+      "source_url": "https://www.wowhead.com/tbc/item=16040/arcane-bomb",
+      "spell_id": 19831,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          320,
+          330,
+          340
+        ],
+        "creates": [
+          16040,
+          3,
+          3
+        ],
+        "id": 19831,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Arcane Bomb",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 1,
+        "reagents": [
+          [
+            16006,
+            1
+          ],
+          [
+            12359,
+            3
+          ],
+          [
+            14047,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 16055,
+        "level": 60,
+        "name": "Schematic: Arcane Bomb",
+        "popularity": 5,
+        "quality": 2,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 3
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 16055,
+      "level": 60,
+      "name": "Schematic: Arcane Bomb",
+      "popularity": 5,
+      "quality": 2,
+      "skill": 300,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 3
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=16040/arcane-bomb"
+}

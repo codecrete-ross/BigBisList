@@ -1,0 +1,79 @@
+{
+  "description": "Permanently enchant a shield to give 12 intellect. Requires a level 35 or higher item. In the Profession Spells category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:41:12+00:00",
+  "name": "Enchant Shield - Intellect",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22539,
+      "entity_name": "Formula: Enchant Shield - Intellect",
+      "item_id": 22539,
+      "source_url": "https://www.wowhead.com/tbc/spell=27945/enchant-shield-intellect",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          325,
+          335,
+          350,
+          365
+        ],
+        "id": 27945,
+        "learnedat": 325,
+        "level": 35,
+        "name": "Enchant Shield - Intellect",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22446,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22539,
+        "level": 65,
+        "name": "Formula: Enchant Shield - Intellect",
+        "quality": 1,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Aged Dalaran Wizard",
+            "t": 1,
+            "ti": 18664
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27945,
+  "url": "https://www.wowhead.com/tbc/spell=27945/enchant-shield-intellect"
+}

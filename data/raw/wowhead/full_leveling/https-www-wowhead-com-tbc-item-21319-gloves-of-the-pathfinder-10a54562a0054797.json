@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green leather armor of item level 58 goes in the \"Hands\" slot. It is a quest reward from Winterfall Activity. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:21:14+00:00",
+  "item_id": 21319,
+  "name": "Gloves of the Pathfinder",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8464,
+      "entity_name": "Winterfall Activity",
+      "quest_id": 8464,
+      "source_url": "https://www.wowhead.com/tbc/item=21319/gloves-of-the-pathfinder",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1216,
+        "category2": 1,
+        "id": 8464,
+        "itemchoices": [
+          [
+            21318,
+            1
+          ],
+          [
+            21319,
+            1
+          ],
+          [
+            21320,
+            1
+          ],
+          [
+            21322,
+            1
+          ]
+        ],
+        "level": 58,
+        "name": "Winterfall Activity",
+        "popularity": 14,
+        "reprewards": [
+          [
+            576,
+            350
+          ]
+        ],
+        "reqlevel": 45,
+        "side": 3,
+        "xp": 9020
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21319/gloves-of-the-pathfinder"
+}

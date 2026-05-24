@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-05-24T08:51:19+00:00",
+  "name": "Destruction Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22914,
+      "entity_name": "Recipe: Destruction Potion",
+      "item_id": 22914,
+      "source_url": "https://www.wowhead.com/tbc/spell=28565",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22914,
+        "level": 70,
+        "name": "Recipe: Destruction Potion",
+        "quality": 2,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 28565,
+  "url": "https://www.wowhead.com/tbc/spell=28565"
+}

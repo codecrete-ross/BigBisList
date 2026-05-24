@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 102 goes in the \"Trinket\" slot. It is a quest reward from The Vengeful Harbinger. In the Trinkets category.",
+  "fetched_at": "2026-05-24T09:04:25+00:00",
+  "item_id": 31615,
+  "name": "Ancient Draenei Arcane Relic",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10842,
+      "entity_name": "The Vengeful Harbinger",
+      "quest_id": 10842,
+      "source_url": "https://www.wowhead.com/tbc/item=31615/ancient-draenei-arcane-relic",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10842,
+        "itemchoices": [
+          [
+            31617,
+            1
+          ],
+          [
+            31615,
+            1
+          ]
+        ],
+        "level": 65,
+        "name": "The Vengeful Harbinger",
+        "popularity": 13,
+        "reprewards": [
+          [
+            1011,
+            250
+          ]
+        ],
+        "reqlevel": 63,
+        "side": 3,
+        "type": 1,
+        "xp": 13750
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31615/ancient-draenei-arcane-relic"
+}

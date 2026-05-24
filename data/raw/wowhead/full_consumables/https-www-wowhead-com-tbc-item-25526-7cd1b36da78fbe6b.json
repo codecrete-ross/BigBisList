@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blacksmithing plans is used for the Blacksmithing profession. It is sold by Fedryen Swiftspear. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:51:38+00:00",
+  "item_id": 25526,
+  "name": "Plans: Greater Rune of Warding",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17904,
+      "entity_name": "Fedryen Swiftspear",
+      "source_url": "https://www.wowhead.com/tbc/item=25526",
+      "type": "vendor",
+      "vendor_id": 17904
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            51000
+          ]
+        ],
+        "id": 17904,
+        "location": [
+          3521
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Fedryen Swiftspear",
+        "popularity": 21,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Cenarion Expedition Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    32285,
+    32282
+  ],
+  "url": "https://www.wowhead.com/tbc/item=25526"
+}

@@ -1,0 +1,129 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Potions category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:07:45+00:00",
+  "item_id": 22849,
+  "name": "Ironshield Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 28579,
+      "entity_name": "Ironshield Potion",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=22849/ironshield-potion",
+      "spell_id": 28579,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          380,
+          387,
+          395
+        ],
+        "creates": [
+          22849,
+          1,
+          1
+        ],
+        "id": 28579,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Ironshield Potion",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 1,
+        "reagents": [
+          [
+            22790,
+            2
+          ],
+          [
+            22573,
+            3
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22927,
+        "level": 73,
+        "name": "Recipe: Ironshield Potion",
+        "popularity": 6,
+        "quality": 2,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Captain Skarloc",
+            "t": 1,
+            "ti": 17862,
+            "z": 2367
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 22927,
+      "level": 73,
+      "name": "Recipe: Ironshield Potion",
+      "popularity": 6,
+      "quality": 2,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Captain Skarloc",
+          "t": 1,
+          "ti": 17862,
+          "z": 2367
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22849/ironshield-potion"
+}

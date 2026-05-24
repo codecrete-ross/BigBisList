@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue fist weapon has an item level of 103. It is a quest reward from The Ring of Blood: The Final Challenge. In the Fist Weapons category.",
+  "fetched_at": "2026-05-24T09:16:31+00:00",
+  "item_id": 25764,
+  "name": "Mag'hari Fury Brand",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9977,
+      "entity_name": "The Ring of Blood: The Final Challenge",
+      "quest_id": 9977,
+      "source_url": "https://www.wowhead.com/tbc/item=25764/maghari-fury-brand",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9977,
+        "itemchoices": [
+          [
+            25762,
+            1
+          ],
+          [
+            25760,
+            1
+          ],
+          [
+            25763,
+            1
+          ],
+          [
+            25761,
+            1
+          ],
+          [
+            25764,
+            1
+          ],
+          [
+            25759,
+            1
+          ]
+        ],
+        "level": 68,
+        "money": 117000,
+        "name": "The Ring of Blood: The Final Challenge",
+        "popularity": 41,
+        "reqlevel": 65,
+        "side": 3,
+        "type": 1,
+        "xp": 17950
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25764/maghari-fury-brand"
+}

@@ -1,0 +1,51 @@
+{
+  "fetched_at": "2026-05-24T08:34:35+00:00",
+  "name": "Enchant Bracer - Fortitude",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22533,
+      "entity_name": "Formula: Enchant Bracer - Fortitude",
+      "item_id": 22533,
+      "source_url": "https://www.wowhead.com/tbc/spell=27914",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 22533,
+        "level": 70,
+        "name": "Formula: Enchant Bracer - Fortitude",
+        "quality": 2,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Coilfang Oracle",
+            "t": 1,
+            "ti": 17803,
+            "z": 3715
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27914,
+  "url": "https://www.wowhead.com/tbc/spell=27914"
+}

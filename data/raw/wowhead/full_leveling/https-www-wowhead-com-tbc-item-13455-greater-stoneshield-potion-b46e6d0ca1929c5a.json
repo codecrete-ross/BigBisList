@@ -1,0 +1,113 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Potions category. An item from Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:07:40+00:00",
+  "item_id": 13455,
+  "name": "Greater Stoneshield Potion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17570,
+      "entity_name": "Greater Stoneshield Potion",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=13455/greater-stoneshield-potion",
+      "spell_id": 17570,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          280,
+          295,
+          315,
+          335
+        ],
+        "creates": [
+          13455,
+          1,
+          1
+        ],
+        "id": 17570,
+        "learnedat": 280,
+        "level": 0,
+        "name": "Greater Stoneshield Potion",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 1,
+        "reagents": [
+          [
+            13423,
+            2
+          ],
+          [
+            10620,
+            1
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 13490,
+        "level": 56,
+        "name": "Recipe: Greater Stoneshield Potion",
+        "popularity": 3,
+        "quality": 2,
+        "skill": 280,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 13490,
+      "level": 56,
+      "name": "Recipe: Greater Stoneshield Potion",
+      "popularity": 3,
+      "quality": 2,
+      "skill": 280,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13455/greater-stoneshield-potion"
+}

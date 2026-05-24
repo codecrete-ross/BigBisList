@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue dagger has an item level of 32. It is looted from Aggem Thorncurse. In the Daggers category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:13:11+00:00",
+  "item_id": 6681,
+  "name": "Thornspike",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 48,
+      "drop_percent": 67.61,
+      "entity_id": 4424,
+      "entity_name": "Aggem Thorncurse",
+      "out_of": 71,
+      "source_url": "https://www.wowhead.com/tbc/item=6681/thornspike",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 48,
+        "id": 4424,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1675,
+                "outof": 3100
+              }
+            },
+            "4": {
+              "0": {
+                "count": 48,
+                "outof": 71
+              }
+            },
+            "5": {
+              "0": {
+                "count": 78,
+                "outof": 111
+              }
+            }
+          }
+        },
+        "location": [
+          491
+        ],
+        "maxlevel": 27,
+        "minlevel": 27,
+        "modes": {
+          "0": {
+            "count": 1675,
+            "outof": 3100
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Aggem Thorncurse",
+        "outof": 71,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Death's Head Prophet",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6681/thornspike"
+}

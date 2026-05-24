@@ -1,0 +1,149 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted and a quest reward. In the Bandages category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 21991,
+  "name": "Heavy Netherweave Bandage",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9972,
+      "entity_name": "The Ring of Blood: Skra'gath",
+      "quest_id": 9972,
+      "source_url": "https://www.wowhead.com/tbc/item=21991/heavy-netherweave-bandage",
+      "type": "quest",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 27033,
+      "entity_name": "Heavy Netherweave Bandage",
+      "source_url": "https://www.wowhead.com/tbc/item=21991/heavy-netherweave-bandage",
+      "spell_id": 27033,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          360,
+          360,
+          385,
+          410
+        ],
+        "creates": [
+          21991,
+          1,
+          1
+        ],
+        "id": 27033,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Heavy Netherweave Bandage",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 1,
+        "reagents": [
+          [
+            21877,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          129
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9972,
+        "itemrewards": [
+          [
+            22829,
+            5
+          ],
+          [
+            22832,
+            5
+          ],
+          [
+            21991,
+            20
+          ]
+        ],
+        "level": 67,
+        "money": 111000,
+        "name": "The Ring of Blood: Skra'gath",
+        "popularity": 12,
+        "reqlevel": 65,
+        "side": 3,
+        "type": 1,
+        "xp": 17450
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21993,
+        "level": 70,
+        "name": "Manual: Heavy Netherweave Bandage",
+        "popularity": 11,
+        "quality": 1,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "z": 3483
+          }
+        ],
+        "subclass": 7
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21993,
+      "level": 70,
+      "name": "Manual: Heavy Netherweave Bandage",
+      "popularity": 11,
+      "quality": 1,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "z": 3483
+        }
+      ],
+      "subclass": 7
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21991/heavy-netherweave-bandage"
+}

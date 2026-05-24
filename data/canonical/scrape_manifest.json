@@ -1,5 +1,5 @@
 {
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.5.1",
   "source_policy": "Wowhead TBC guide pages are canonical for rankings and context; Wowhead TBC item/spell pages are canonical for acquisition data; reviewed overrides are applied last.",
   "snapshot_policy": "Commit normalized JSON snapshots from data/raw/wowhead; do not commit full HTML cache files.",
   "conflict_policy": "Item and spell pages win for acquisition details. Guide source cells are retained as evidence and used only when item-page data is missing.",
@@ -1851,10 +1851,1035 @@
       "phase": "SWP",
       "status": "ready_full_bis",
       "fetched_at": null
+    },
+    {
+      "id": "gems-enchants-druid-balance",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Druid",
+      "spec": "Balance",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-druid-balance",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Druid",
+      "spec": "Balance",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-druid-balance",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Druid",
+      "spec": "Balance",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-druid-feral-tank",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Druid",
+      "spec": "Feral tank",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-druid-feral-tank",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Druid",
+      "spec": "Feral tank",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-druid-feral-tank",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Druid",
+      "spec": "Feral tank",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-druid-feral-dps",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Druid",
+      "spec": "Feral dps",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-druid-feral-dps",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Druid",
+      "spec": "Feral dps",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-druid-feral-dps",
+      "url": "https://www.wowhead.com/tbc/guide/feral-druid-dps-leveling-guide-burning-crusade-classic",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Druid",
+      "spec": "Feral dps",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-druid-restoration",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Druid",
+      "spec": "Restoration",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-druid-restoration",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Druid",
+      "spec": "Restoration",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-druid-restoration",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/restoration/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Druid",
+      "spec": "Restoration",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-hunter-beast-mastery",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Hunter",
+      "spec": "Beast mastery",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-hunter-beast-mastery",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Hunter",
+      "spec": "Beast mastery",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-hunter-beast-mastery",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/beast-mastery/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Hunter",
+      "spec": "Beast mastery",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-hunter-marksmanship",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Hunter",
+      "spec": "Marksmanship",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-hunter-marksmanship",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Hunter",
+      "spec": "Marksmanship",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-hunter-marksmanship",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/marksmanship/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Hunter",
+      "spec": "Marksmanship",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-hunter-survival",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Hunter",
+      "spec": "Survival",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-hunter-survival",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Hunter",
+      "spec": "Survival",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-hunter-survival",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Hunter",
+      "spec": "Survival",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-mage-arcane",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Mage",
+      "spec": "Arcane",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-mage-arcane",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Mage",
+      "spec": "Arcane",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-mage-arcane",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Mage",
+      "spec": "Arcane",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-mage-fire",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Mage",
+      "spec": "Fire",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-mage-fire",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Mage",
+      "spec": "Fire",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-mage-fire",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/fire/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Mage",
+      "spec": "Fire",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-mage-frost",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Mage",
+      "spec": "Frost",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-mage-frost",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Mage",
+      "spec": "Frost",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-mage-frost",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/frost/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Mage",
+      "spec": "Frost",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-paladin-holy",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/healer-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Paladin",
+      "spec": "Holy",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-paladin-holy",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/healer-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Paladin",
+      "spec": "Holy",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-paladin-holy",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Paladin",
+      "spec": "Holy",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-paladin-protection",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Paladin",
+      "spec": "Protection",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-paladin-protection",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Paladin",
+      "spec": "Protection",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-paladin-protection",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/protection/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Paladin",
+      "spec": "Protection",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-paladin-retribution",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Paladin",
+      "spec": "Retribution",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-paladin-retribution",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Paladin",
+      "spec": "Retribution",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-paladin-retribution",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Paladin",
+      "spec": "Retribution",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-priest-holy",
+      "url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Priest",
+      "spec": "Holy",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-priest-holy",
+      "url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Priest",
+      "spec": "Holy",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-priest-holy",
+      "url": "https://www.wowhead.com/tbc/guide/classes/priest/holy/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Priest",
+      "spec": "Holy",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-priest-shadow",
+      "url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Priest",
+      "spec": "Shadow",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-priest-shadow",
+      "url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Priest",
+      "spec": "Shadow",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-priest-shadow",
+      "url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Priest",
+      "spec": "Shadow",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-rogue-assassination",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Rogue",
+      "spec": "Assassination",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-rogue-assassination",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Rogue",
+      "spec": "Assassination",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-rogue-assassination",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/assassination/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Rogue",
+      "spec": "Assassination",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-rogue-combat",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Rogue",
+      "spec": "Combat",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-rogue-combat",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Rogue",
+      "spec": "Combat",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-rogue-combat",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/combat/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Rogue",
+      "spec": "Combat",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-rogue-subtlety",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-rogue-subtlety",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-rogue-subtlety",
+      "url": "https://www.wowhead.com/tbc/guide/classes/rogue/subtlety/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-shaman-elemental",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/elemental/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Shaman",
+      "spec": "Elemental",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-shaman-elemental",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/elemental/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Shaman",
+      "spec": "Elemental",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-shaman-elemental",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/elemental/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Shaman",
+      "spec": "Elemental",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-shaman-enhancement",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Shaman",
+      "spec": "Enhancement",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-shaman-enhancement",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Shaman",
+      "spec": "Enhancement",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-shaman-enhancement",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Shaman",
+      "spec": "Enhancement",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-shaman-restoration",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Shaman",
+      "spec": "Restoration",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-shaman-restoration",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Shaman",
+      "spec": "Restoration",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-shaman-restoration",
+      "url": "https://www.wowhead.com/tbc/guide/classes/shaman/restoration/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Shaman",
+      "spec": "Restoration",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-warlock-affliction",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Warlock",
+      "spec": "Affliction",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-warlock-affliction",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Warlock",
+      "spec": "Affliction",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-warlock-affliction",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Warlock",
+      "spec": "Affliction",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-warlock-demonology",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Warlock",
+      "spec": "Demonology",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-warlock-demonology",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Warlock",
+      "spec": "Demonology",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-warlock-demonology",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/demonology/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Warlock",
+      "spec": "Demonology",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-warlock-destruction",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Warlock",
+      "spec": "Destruction",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-warlock-destruction",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Warlock",
+      "spec": "Destruction",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-warlock-destruction",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/destruction/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Warlock",
+      "spec": "Destruction",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-warlock-destruction-fire",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Warlock",
+      "spec": "Destruction fire",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-warlock-destruction-fire",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Warlock",
+      "spec": "Destruction fire",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-warlock-destruction-fire",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/destruction/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Warlock",
+      "spec": "Destruction fire",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-warrior-arms",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Warrior",
+      "spec": "Arms",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-warrior-arms",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Warrior",
+      "spec": "Arms",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-warrior-arms",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/arms/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Warrior",
+      "spec": "Arms",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-warrior-fury",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/dps-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Warrior",
+      "spec": "Fury",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-warrior-fury",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/dps-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Warrior",
+      "spec": "Fury",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-warrior-fury",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/fury/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Warrior",
+      "spec": "Fury",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "gems-enchants-warrior-protection",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-enchants-gems-pve",
+      "type": "wowhead_guide",
+      "data_families": [
+        "gems",
+        "enchants"
+      ],
+      "class": "Warrior",
+      "spec": "Protection",
+      "phases": "*",
+      "status": "scraped_full_gems_enchants",
+      "fetched_at": "2026-05-24T02:51:33-07:00"
+    },
+    {
+      "id": "consumables-warrior-protection",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-consumables-raid-buffs-pve",
+      "type": "wowhead_guide",
+      "data_family": "consumables",
+      "class": "Warrior",
+      "spec": "Protection",
+      "phases": "*",
+      "status": "scraped_full_consumables",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "leveling-warrior-protection",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/leveling-tips",
+      "type": "wowhead_guide",
+      "data_family": "leveling",
+      "class": "Warrior",
+      "spec": "Protection",
+      "phases": "*",
+      "status": "scraped_full_leveling",
+      "fetched_at": "2026-05-24T02:51:07-07:00"
+    },
+    {
+      "id": "classes",
+      "url": "https://www.wowhead.com/tbc/guides/classes",
+      "type": "wowhead_guide_index",
+      "data_family": "classes",
+      "status": "canonical_static",
+      "fetched_at": null
+    },
+    {
+      "id": "phases",
+      "url": "https://www.wowhead.com/tbc/guide/burning-crusade-classic-anniversary-phases-roadmap",
+      "type": "wowhead_guide_index",
+      "data_family": "phases",
+      "status": "canonical_static",
+      "fetched_at": null
     }
   ],
   "registry_notes": [
     "Gear BiS coverage is registered explicitly for every class/spec/phase unit. Shared Wowhead guide URLs are repeated when one guide backs multiple addon specs.",
-    "Item, spell, gem, enchant, consumable, and leveling acquisition pages are discovered from registered guide snapshots and audited after snapshots exist."
+    "Item, spell, gem, enchant, consumable, and leveling acquisition pages are discovered from registered guide snapshots and audited after snapshots exist.",
+    "Non-gear guide URLs are explicitly registered per class/spec; class-wide guides intentionally repeat URLs across spec units."
   ]
 }

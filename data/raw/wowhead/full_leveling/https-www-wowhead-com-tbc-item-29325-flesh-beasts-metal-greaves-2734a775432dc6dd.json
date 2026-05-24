@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 97 goes in the \"Feet\" slot. It is a quest reward from Someone Else's Hard Work Pays Off. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:08:00+00:00",
+  "item_id": 29325,
+  "name": "Flesh Beast's Metal Greaves",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10218,
+      "entity_name": "Someone Else's Hard Work Pays Off",
+      "quest_id": 10218,
+      "source_url": "https://www.wowhead.com/tbc/item=29325/flesh-beasts-metal-greaves",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3792,
+        "category2": 2,
+        "id": 10218,
+        "itemchoices": [
+          [
+            29328,
+            1
+          ],
+          [
+            29327,
+            1
+          ],
+          [
+            29326,
+            1
+          ],
+          [
+            29325,
+            1
+          ]
+        ],
+        "level": 66,
+        "money": 105000,
+        "name": "Someone Else's Hard Work Pays Off",
+        "popularity": 17,
+        "reprewards": [
+          [
+            933,
+            500
+          ]
+        ],
+        "reqlevel": 64,
+        "side": 3,
+        "type": 81,
+        "xp": 22600
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29325/flesh-beasts-metal-greaves"
+}

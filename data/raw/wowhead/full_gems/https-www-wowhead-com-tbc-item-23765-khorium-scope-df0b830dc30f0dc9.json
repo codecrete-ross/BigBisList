@@ -1,0 +1,124 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "item_id": 23765,
+  "name": "Khorium Scope",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30332,
+      "entity_name": "Khorium Scope",
+      "profession": "Engineering",
+      "source_url": "https://www.wowhead.com/tbc/item=23765/khorium-scope",
+      "spell_id": 30332,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          23765,
+          1,
+          1
+        ],
+        "id": 30332,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Khorium Scope",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 3,
+        "reagents": [
+          [
+            23785,
+            1
+          ],
+          [
+            23449,
+            4
+          ],
+          [
+            23440,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23808,
+        "level": 72,
+        "name": "Schematic: Khorium Scope",
+        "popularity": 17,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Sunfury Bowman",
+            "t": 1,
+            "ti": 20207,
+            "z": 3523
+          }
+        ],
+        "subclass": 3
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23808,
+      "level": 72,
+      "name": "Schematic: Khorium Scope",
+      "popularity": 17,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Sunfury Bowman",
+          "t": 1,
+          "ti": 20207,
+          "z": 3523
+        }
+      ],
+      "subclass": 3
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23765/khorium-scope"
+}

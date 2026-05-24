@@ -1,0 +1,84 @@
+{
+  "description": "Permanently enchant a ring to increase spell damage and healing by up to 12. Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound.",
+  "fetched_at": "2026-05-24T09:49:06+00:00",
+  "name": "Enchant Ring - Spellpower",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22536,
+      "entity_name": "Formula: Enchant Ring - Spellpower",
+      "item_id": 22536,
+      "source_url": "https://www.wowhead.com/tbc/spell=27924",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          385,
+          400
+        ],
+        "id": 27924,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Enchant Ring - Spellpower",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22449,
+            2
+          ],
+          [
+            22446,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22536,
+        "level": 72,
+        "name": "Formula: Enchant Ring - Spellpower",
+        "quality": 1,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Alurmi",
+            "t": 1,
+            "ti": 21643,
+            "z": 440
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27924,
+  "url": "https://www.wowhead.com/tbc/spell=27924"
+}

@@ -1,0 +1,155 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted and a quest reward. In the Item Enhancements (Temporary) category. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:38:21+00:00",
+  "item_id": 20749,
+  "name": "Brilliant Wizard Oil",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10201,
+      "entity_name": "And Now, the Moment of Truth",
+      "quest_id": 10201,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=20749/expired-wizard-oil",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 25129,
+      "entity_name": "Brilliant Wizard Oil",
+      "profession": "Enchanting",
+      "source_url": "https://www.wowhead.com/tbc/item=20749/expired-wizard-oil",
+      "spell_id": 25129,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          310,
+          320,
+          330
+        ],
+        "creates": [
+          20749,
+          0,
+          0
+        ],
+        "id": 25129,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Brilliant Wizard Oil",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 1,
+        "reagents": [
+          [
+            14344,
+            2
+          ],
+          [
+            4625,
+            3
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10201,
+        "itemchoices": [
+          [
+            20748,
+            1
+          ],
+          [
+            20749,
+            1
+          ]
+        ],
+        "level": 65,
+        "name": "And Now, the Moment of Truth",
+        "popularity": 14,
+        "reqlevel": 62,
+        "side": 2,
+        "xp": 8250
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 20756,
+        "level": 60,
+        "name": "Formula: Brilliant Wizard Oil",
+        "popularity": 5,
+        "quality": 1,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Rin'wosho the Trader",
+            "t": 1,
+            "ti": 14921,
+            "z": 33
+          }
+        ],
+        "subclass": 8
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 20756,
+      "level": 60,
+      "name": "Formula: Brilliant Wizard Oil",
+      "popularity": 5,
+      "quality": 1,
+      "skill": 300,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Rin'wosho the Trader",
+          "t": 1,
+          "ti": 14921,
+          "z": 33
+        }
+      ],
+      "subclass": 8
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20749/expired-wizard-oil"
+}

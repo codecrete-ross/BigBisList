@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Kael'thas Sunstrider. In the Jewelcrafting Designs category.",
+  "fetched_at": "2026-05-24T08:33:29+00:00",
+  "item_id": 35304,
+  "name": "Design: Solid Star of Elune",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 48,
+      "drop_percent": 0.42,
+      "entity_id": 24664,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 11459,
+      "source_url": "https://www.wowhead.com/tbc/item=35304",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 48,
+        "id": 24664,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 48,
+                "outof": 11459
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": 48,
+            "outof": 11459
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 11459,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    31092
+  ],
+  "url": "https://www.wowhead.com/tbc/item=35304"
+}

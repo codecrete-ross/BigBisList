@@ -1,0 +1,51 @@
+{
+  "fetched_at": "2026-05-24T08:51:53+00:00",
+  "name": "Spicy Hot Talbuk",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 33873,
+      "entity_name": "Recipe: Spicy Hot Talbuk",
+      "item_id": 33873,
+      "source_url": "https://www.wowhead.com/tbc/spell=43765",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 33873,
+        "level": 60,
+        "name": "Recipe: Spicy Hot Talbuk",
+        "quality": 2,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "icon": "inv_crate_05",
+            "n": "Crate of Meat",
+            "q": 1,
+            "t": 3,
+            "ti": 33857
+          }
+        ],
+        "subclass": 5
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 43765,
+  "url": "https://www.wowhead.com/tbc/spell=43765"
+}

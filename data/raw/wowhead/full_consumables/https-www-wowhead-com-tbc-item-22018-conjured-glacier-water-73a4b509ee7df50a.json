@@ -1,0 +1,96 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "An item in the Food & Drinks category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 22018,
+  "name": "Conjured Glacier Water",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 27090,
+      "entity_name": "Conjure Water",
+      "source_url": "https://www.wowhead.com/tbc/item=22018/conjured-glacier-water",
+      "spell_id": 27090,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 7,
+        "chrclass": 128,
+        "creates": [
+          22018,
+          10,
+          10
+        ],
+        "id": 27090,
+        "level": 70,
+        "name": "Conjure Water",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "rank": "Rank 9",
+        "reqclass": 128,
+        "schools": 64,
+        "skill": [
+          237
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 29550,
+        "level": 70,
+        "name": "Tome of Conjure Water IX",
+        "popularity": 10,
+        "quality": 3,
+        "reqclass": 128,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 0
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 29550,
+      "level": 70,
+      "name": "Tome of Conjure Water IX",
+      "popularity": 10,
+      "quality": 3,
+      "reqclass": 128,
+      "reqlevel": 70,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 0
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22018/conjured-glacier-water"
+}

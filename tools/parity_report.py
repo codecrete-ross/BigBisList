@@ -34,16 +34,74 @@ def canonical_counts() -> dict[str, int | str]:
     }
 
 
+def family_status(row_count: int, expected_units_missing: int | None = None) -> str:
+    if expected_units_missing is not None and expected_units_missing > 0:
+        return "manifest_pending"
+    if row_count == 0:
+        return "scrape_pending"
+    return "scraped_snapshot"
+
+
+def family_report(reference: dict, canonical: dict) -> dict[str, dict[str, int | str | None]]:
+    return {
+        "bis_lists": {
+            "status": str(canonical["coverage"]),
+            "canonical_rows": int(canonical["bis_slot_lists"]),
+            "canonical_refs": int(canonical["bis_item_refs"]),
+            "reference_rows": None,
+            "reference_delta": None,
+        },
+        "gems": {
+            "status": family_status(int(canonical["gem_rows"])),
+            "canonical_rows": int(canonical["gem_rows"]),
+            "reference_rows": int(reference.get("gem_rows", 0) or 0),
+            "reference_delta": int(canonical["gem_rows"]) - int(reference.get("gem_rows", 0) or 0),
+        },
+        "enchants": {
+            "status": family_status(int(canonical["enchant_rows"])),
+            "canonical_rows": int(canonical["enchant_rows"]),
+            "reference_rows": int(reference.get("enchant_rows", 0) or 0),
+            "reference_delta": int(canonical["enchant_rows"]) - int(reference.get("enchant_rows", 0) or 0),
+        },
+        "consumables": {
+            "status": family_status(int(canonical["consumable_rows"])),
+            "canonical_rows": int(canonical["consumable_rows"]),
+            "reference_rows": int(reference.get("consumable_rows", 0) or 0),
+            "reference_delta": int(canonical["consumable_rows"]) - int(reference.get("consumable_rows", 0) or 0),
+        },
+        "leveling": {
+            "status": family_status(int(canonical["leveling_rows"])),
+            "canonical_rows": int(canonical["leveling_rows"]),
+            "reference_rows": None,
+            "reference_delta": None,
+        },
+        "classes": {
+            "status": "canonical_static",
+            "canonical_rows": int(canonical["classes"]),
+            "reference_rows": int(reference.get("classes", 0) or 0),
+            "reference_delta": int(canonical["classes"]) - int(reference.get("classes", 0) or 0),
+        },
+        "phases": {
+            "status": "canonical_static",
+            "canonical_rows": 6,
+            "reference_rows": int(reference.get("phases", 0) or 0),
+            "reference_delta": 6 - int(reference.get("phases", 0) or 0),
+        },
+    }
+
+
 def build_report(reference_dir: Path = REFERENCE_DIR) -> dict:
     reference = collect_counts(reference_dir)
     canonical = canonical_counts()
     return {
-        "status": "gear_bis_scraped_non_gear_pending",
+        "status": "per_family",
+        "families": family_report(reference, canonical),
         "reference": reference,
         "canonical": canonical,
         "notes": [
             "Reference counts are the full BIS-TBC 1.15 addon baseline.",
-            "Canonical gear BiS is scraped from Wowhead; gems, enchants, consumables, and leveling are still pending.",
+            "Reference parity is an audit signal only; Wowhead guide rankings and reviewed overrides remain canonical.",
+            "Each data family reports its own completion state so non-gear progress is not hidden behind gear BiS status.",
         ],
     }
 

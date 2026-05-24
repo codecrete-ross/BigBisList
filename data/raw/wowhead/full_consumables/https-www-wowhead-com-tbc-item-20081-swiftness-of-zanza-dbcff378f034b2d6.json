@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Swiftness of Zanza is a level 65 guardian elixir. It is a quest reward from Zanza's Potent Potables. In the Elixirs category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 20081,
+  "name": "Swiftness of Zanza",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8243,
+      "entity_name": "Zanza's Potent Potables",
+      "quest_id": 8243,
+      "source_url": "https://www.wowhead.com/tbc/item=20081/swiftness-of-zanza",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1977,
+        "category2": 3,
+        "id": 8243,
+        "itemchoices": [
+          [
+            20080,
+            1
+          ],
+          [
+            20079,
+            1
+          ],
+          [
+            20081,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Zanza's Potent Potables",
+        "popularity": 12,
+        "reqlevel": 58,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20081/swiftness-of-zanza"
+}

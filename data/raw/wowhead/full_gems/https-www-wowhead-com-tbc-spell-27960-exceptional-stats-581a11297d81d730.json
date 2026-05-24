@@ -1,0 +1,80 @@
+{
+  "fetched_at": "2026-05-24T08:32:55+00:00",
+  "name": "Enchant Chest - Exceptional Stats",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22547,
+      "entity_name": "Formula: Enchant Chest - Exceptional Stats",
+      "item_id": 22547,
+      "source_url": "https://www.wowhead.com/tbc/spell=27960/exceptional-stats",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 24003,
+      "entity_name": "Formula: Enchant Chest - Exceptional Stats",
+      "item_id": 24003,
+      "source_url": "https://www.wowhead.com/tbc/spell=27960/exceptional-stats",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22547,
+        "level": 69,
+        "name": "Formula: Enchant Chest - Exceptional Stats",
+        "quality": 1,
+        "skill": 345,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Logistics Officer Ulrike",
+            "t": 1,
+            "ti": 17657,
+            "z": 3483
+          }
+        ],
+        "subclass": 8
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24003,
+        "level": 69,
+        "name": "Formula: Enchant Chest - Exceptional Stats",
+        "quality": 1,
+        "skill": 345,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Urgronn",
+            "t": 1,
+            "ti": 17585,
+            "z": 3483
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27960,
+  "url": "https://www.wowhead.com/tbc/spell=27960/exceptional-stats"
+}

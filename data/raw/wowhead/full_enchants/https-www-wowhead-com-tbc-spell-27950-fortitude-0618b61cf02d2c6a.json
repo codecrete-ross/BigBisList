@@ -1,0 +1,81 @@
+{
+  "description": "Permanently enchant boots to increase Stamina by 12. Requires a level 35 or higher item. In the Profession Spells category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:41:46+00:00",
+  "name": "Enchant Boots - Fortitude",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22543,
+      "entity_name": "Formula: Enchant Boots - Fortitude",
+      "item_id": 22543,
+      "source_url": "https://www.wowhead.com/tbc/spell=27950/fortitude",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          320,
+          330,
+          345,
+          360
+        ],
+        "id": 27950,
+        "learnedat": 320,
+        "level": 35,
+        "name": "Enchant Boots - Fortitude",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22445,
+            12
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 22543,
+        "level": 64,
+        "name": "Formula: Enchant Boots - Fortitude",
+        "quality": 2,
+        "skill": 320,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Ethereal Priest",
+            "t": 1,
+            "ti": 18317,
+            "z": 3792
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27950,
+  "url": "https://www.wowhead.com/tbc/spell=27950/fortitude"
+}

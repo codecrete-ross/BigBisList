@@ -1,0 +1,90 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Consumables category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:24:21+00:00",
+  "item_id": 29736,
+  "name": "Arcane Rune",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10416,
+      "entity_name": "Synthesis of Power",
+      "quest_id": 10416,
+      "source_url": "https://www.wowhead.com/tbc/item=29736",
+      "type": "quest",
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10419,
+      "entity_name": "Arcane Tomes",
+      "quest_id": 10419,
+      "source_url": "https://www.wowhead.com/tbc/item=29736",
+      "type": "quest",
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3703,
+        "category2": 8,
+        "id": 10416,
+        "itemrewards": [
+          [
+            29736,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Synthesis of Power",
+        "popularity": 16,
+        "reprewards": [
+          [
+            934,
+            350
+          ]
+        ],
+        "reqlevel": 64,
+        "side": 3,
+        "wflags": 1,
+        "xp": 15800
+      },
+      {
+        "category": 3703,
+        "category2": 8,
+        "id": 10419,
+        "itemrewards": [
+          [
+            29736,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Arcane Tomes",
+        "popularity": 19,
+        "reprewards": [
+          [
+            934,
+            350
+          ]
+        ],
+        "reqlevel": 64,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29736"
+}

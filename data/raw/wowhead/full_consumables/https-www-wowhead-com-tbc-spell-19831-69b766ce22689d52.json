@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-05-24T08:51:41+00:00",
+  "name": "Arcane Bomb",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 16055,
+      "entity_name": "Schematic: Arcane Bomb",
+      "item_id": 16055,
+      "source_url": "https://www.wowhead.com/tbc/spell=19831",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 16055,
+        "level": 60,
+        "name": "Schematic: Arcane Bomb",
+        "quality": 2,
+        "skill": 300,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 3
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 19831,
+  "url": "https://www.wowhead.com/tbc/spell=19831"
+}

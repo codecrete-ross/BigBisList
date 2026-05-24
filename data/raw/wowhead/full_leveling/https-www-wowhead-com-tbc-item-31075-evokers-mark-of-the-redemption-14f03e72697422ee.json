@@ -1,0 +1,110 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue ring of item level 109 goes in the \"Finger\" slot. It is a quest reward. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:59:36+00:00",
+  "item_id": 31075,
+  "name": "Evoker's Mark of the Redemption",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10769,
+      "entity_name": "Dissension Amongst the Ranks...",
+      "quest_id": 10769,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31075/evokers-mark-of-the-redemption",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10776,
+      "entity_name": "Dissension Amongst the Ranks...",
+      "quest_id": 10776,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=31075/evokers-mark-of-the-redemption",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10769,
+        "itemchoices": [
+          [
+            31075,
+            1
+          ],
+          [
+            31077,
+            1
+          ],
+          [
+            31076,
+            1
+          ],
+          [
+            31078,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Dissension Amongst the Ranks...",
+        "popularity": 19,
+        "reqlevel": 68,
+        "side": 2,
+        "type": 1,
+        "xp": 19000
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10776,
+        "itemchoices": [
+          [
+            31075,
+            1
+          ],
+          [
+            31077,
+            1
+          ],
+          [
+            31076,
+            1
+          ],
+          [
+            31078,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Dissension Amongst the Ranks...",
+        "popularity": 11,
+        "reqlevel": 68,
+        "side": 1,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31075/evokers-mark-of-the-redemption"
+}

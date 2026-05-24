@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 96 goes in the \"Trinket\" slot. It is a quest reward from A Spirit Ally?. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T08:55:30+00:00",
+  "item_id": 25620,
+  "name": "Ancient Crystal Talisman",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9847,
+      "entity_name": "A Spirit Ally?",
+      "quest_id": 9847,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25620/ancient-crystal-talisman",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9847,
+        "itemchoices": [
+          [
+            25620,
+            1
+          ],
+          [
+            25621,
+            1
+          ],
+          [
+            31770,
+            1
+          ]
+        ],
+        "level": 64,
+        "money": 31000,
+        "name": "A Spirit Ally?",
+        "popularity": 22,
+        "reprewards": [
+          [
+            530,
+            250
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 2,
+        "xp": 10750
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25620/ancient-crystal-talisman"
+}

@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue dagger has an item level of 103. It is looted from Epoch Hunter. In the Daggers category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:10:26+00:00",
+  "item_id": 27431,
+  "name": "Time-Shifted Dagger",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 57,
+      "drop_percent": 14.58,
+      "entity_id": 18096,
+      "entity_name": "Epoch Hunter",
+      "out_of": 391,
+      "source_url": "https://www.wowhead.com/tbc/item=27431/time-shifted-dagger",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 57,
+        "id": 18096,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 976,
+                "outof": 7974
+              }
+            },
+            "4": {
+              "0": {
+                "count": 68,
+                "outof": 457
+              }
+            },
+            "5": {
+              "0": {
+                "count": 57,
+                "outof": 391
+              }
+            }
+          }
+        },
+        "location": [
+          2367
+        ],
+        "maxlevel": 72,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 976,
+            "outof": 7974
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Epoch Hunter",
+        "outof": 391,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27431/time-shifted-dagger"
+}

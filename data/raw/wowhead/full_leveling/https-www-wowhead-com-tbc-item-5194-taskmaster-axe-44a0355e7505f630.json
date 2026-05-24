@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue two-handed axe has an item level of 23. It is looted from Sneed. In the Two-Handed Axes category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:09:32+00:00",
+  "item_id": 5194,
+  "name": "Taskmaster Axe",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 38,
+      "drop_percent": 18.01,
+      "entity_id": 643,
+      "entity_name": "Sneed",
+      "out_of": 211,
+      "source_url": "https://www.wowhead.com/tbc/item=5194/taskmaster-axe",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 38,
+        "id": 643,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3965,
+                "outof": 14361
+              }
+            },
+            "4": {
+              "0": {
+                "count": 46,
+                "outof": 206
+              }
+            },
+            "5": {
+              "0": {
+                "count": 38,
+                "outof": 211
+              }
+            }
+          }
+        },
+        "location": [
+          1581
+        ],
+        "maxlevel": 20,
+        "minlevel": 20,
+        "modes": {
+          "0": {
+            "count": 3965,
+            "outof": 14361
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sneed",
+        "outof": 211,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lumbermaster",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=5194/taskmaster-axe"
+}

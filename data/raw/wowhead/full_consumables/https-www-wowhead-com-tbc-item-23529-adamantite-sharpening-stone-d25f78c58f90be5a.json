@@ -1,0 +1,123 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Item Enhancements (Temporary) category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 23529,
+  "name": "Adamantite Sharpening Stone",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 29656,
+      "entity_name": "Adamantite Sharpening Stone",
+      "profession": "Blacksmithing",
+      "source_url": "https://www.wowhead.com/tbc/item=23529/adamantite-sharpening-stone",
+      "spell_id": 29656,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          355,
+          360
+        ],
+        "creates": [
+          23529,
+          1,
+          1
+        ],
+        "id": 29656,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Adamantite Sharpening Stone",
+        "nskillup": 1,
+        "popularity": 14,
+        "quality": 2,
+        "reagents": [
+          [
+            23446,
+            1
+          ],
+          [
+            22573,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23618,
+        "level": 70,
+        "name": "Plans: Adamantite Sharpening Stone",
+        "popularity": 6,
+        "quality": 1,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Fedryen Swiftspear",
+            "t": 1,
+            "ti": 17904,
+            "z": 3521
+          }
+        ],
+        "subclass": 4
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23618,
+      "level": 70,
+      "name": "Plans: Adamantite Sharpening Stone",
+      "popularity": 6,
+      "quality": 1,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Fedryen Swiftspear",
+          "t": 1,
+          "ti": 17904,
+          "z": 3521
+        }
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23529/adamantite-sharpening-stone"
+}

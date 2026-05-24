@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Nakodu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T08:33:39+00:00",
+  "item_id": 33148,
+  "name": "Formula: Enchant Cloak - Dodge",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21655,
+      "entity_name": "Nakodu",
+      "source_url": "https://www.wowhead.com/tbc/item=33148",
+      "type": "vendor",
+      "vendor_id": 21655,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            95000
+          ]
+        ],
+        "id": 21655,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Nakodu",
+        "popularity": 9,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Lower City Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    25086
+  ],
+  "url": "https://www.wowhead.com/tbc/item=33148"
+}

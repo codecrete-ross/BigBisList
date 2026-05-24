@@ -1,0 +1,49 @@
+{
+  "fetched_at": "2026-05-24T09:03:19+00:00",
+  "name": "Multi-Shot",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 21304,
+      "entity_name": "Guide: Multi-Shot V",
+      "item_id": 21304,
+      "source_url": "https://www.wowhead.com/tbc/spell=25294",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21304,
+        "level": 60,
+        "name": "Guide: Multi-Shot V",
+        "quality": 3,
+        "reqclass": 4,
+        "reqlevel": 60,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "z": 3429
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 25294,
+  "url": "https://www.wowhead.com/tbc/spell=25294"
+}

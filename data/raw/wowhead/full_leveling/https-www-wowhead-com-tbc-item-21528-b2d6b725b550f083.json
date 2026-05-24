@@ -1,0 +1,124 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Other Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:22:00+00:00",
+  "item_id": 21528,
+  "name": "Colossal Bag of Loot",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8857,
+      "entity_name": "Secrets of the Colossus - Ashi",
+      "quest_id": 8857,
+      "source_url": "https://www.wowhead.com/tbc/item=21528",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8858,
+      "entity_name": "Secrets of the Colossus - Regal",
+      "quest_id": 8858,
+      "source_url": "https://www.wowhead.com/tbc/item=21528",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8859,
+      "entity_name": "Secrets of the Colossus - Zora",
+      "quest_id": 8859,
+      "source_url": "https://www.wowhead.com/tbc/item=21528",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8857,
+        "itemrewards": [
+          [
+            21528,
+            1
+          ]
+        ],
+        "level": 60,
+        "money": 27000,
+        "name": "Secrets of the Colossus - Ashi",
+        "popularity": 8,
+        "reprewards": [
+          [
+            21,
+            1000
+          ]
+        ],
+        "reqlevel": 51,
+        "side": 3,
+        "xp": 14300
+      },
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8858,
+        "itemrewards": [
+          [
+            21528,
+            1
+          ]
+        ],
+        "level": 60,
+        "money": 27000,
+        "name": "Secrets of the Colossus - Regal",
+        "popularity": 6,
+        "reprewards": [
+          [
+            59,
+            1000
+          ]
+        ],
+        "reqlevel": 51,
+        "side": 3,
+        "xp": 14300
+      },
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8859,
+        "itemrewards": [
+          [
+            21528,
+            1
+          ]
+        ],
+        "level": 60,
+        "money": 27000,
+        "name": "Secrets of the Colossus - Zora",
+        "popularity": 6,
+        "reprewards": [
+          [
+            529,
+            1000
+          ]
+        ],
+        "reqlevel": 51,
+        "side": 3,
+        "xp": 14300
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21528"
+}

@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 109 goes in the \"Legs\" slot. It is a quest reward from Special Delivery to Shattrath City. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:16:35+00:00",
+  "item_id": 30257,
+  "name": "Shattrath Leggings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10280,
+      "entity_name": "Special Delivery to Shattrath City",
+      "quest_id": 10280,
+      "source_url": "https://www.wowhead.com/tbc/item=30257/shattrath-leggings",
+      "type": "quest",
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3703,
+        "category2": 8,
+        "id": 10280,
+        "itemchoices": [
+          [
+            30258,
+            1
+          ],
+          [
+            30256,
+            1
+          ],
+          [
+            30257,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Special Delivery to Shattrath City",
+        "popularity": 35,
+        "reprewards": [
+          [
+            935,
+            1000
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30257/shattrath-leggings"
+}

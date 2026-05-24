@@ -1,0 +1,98 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green staff has an item level of 99. It is a quest reward. In the Staves category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:04:19+00:00",
+  "item_id": 25935,
+  "name": "Invincible Stave",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10042,
+      "entity_name": "Kill the Shadow Council!",
+      "quest_id": 10042,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25935/invincible-stave",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10043,
+      "entity_name": "Kill the Shadow Council!",
+      "quest_id": 10043,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25935/invincible-stave",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10042,
+        "itemchoices": [
+          [
+            25933,
+            1
+          ],
+          [
+            25935,
+            1
+          ],
+          [
+            25934,
+            1
+          ]
+        ],
+        "level": 65,
+        "money": 66000,
+        "name": "Kill the Shadow Council!",
+        "popularity": 15,
+        "reqlevel": 62,
+        "side": 1,
+        "xp": 13750
+      },
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10043,
+        "itemchoices": [
+          [
+            25933,
+            1
+          ],
+          [
+            25935,
+            1
+          ],
+          [
+            25934,
+            1
+          ]
+        ],
+        "level": 65,
+        "money": 66000,
+        "name": "Kill the Shadow Council!",
+        "popularity": 10,
+        "reqlevel": 62,
+        "side": 2,
+        "xp": 13750
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25935/invincible-stave"
+}

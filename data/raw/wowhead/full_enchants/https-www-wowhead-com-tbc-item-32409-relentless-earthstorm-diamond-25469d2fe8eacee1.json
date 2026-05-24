@@ -1,0 +1,127 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This is a level 70 blue meta gem. It is crafted. In the Meta Gems category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T09:39:53+00:00",
+  "item_id": 32409,
+  "name": "Relentless Earthstorm Diamond",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 39961,
+      "entity_name": "Relentless Earthstorm Diamond",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=32409/relentless-earthstorm-diamond",
+      "spell_id": 39961,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          32409,
+          1,
+          1
+        ],
+        "id": 39961,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Relentless Earthstorm Diamond",
+        "nskillup": 1,
+        "popularity": 10,
+        "quality": 3,
+        "reagents": [
+          [
+            25867,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 32412,
+        "level": 73,
+        "name": "Design: Relentless Earthstorm Diamond",
+        "popularity": 18,
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "subclass": 10
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 33622,
+        "level": 73,
+        "name": "Design: Relentless Earthstorm Diamond",
+        "popularity": 7,
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 32412,
+      "level": 73,
+      "name": "Design: Relentless Earthstorm Diamond",
+      "popularity": 18,
+      "quality": 3,
+      "skill": 365,
+      "slot": 0,
+      "subclass": 10
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 33622,
+      "level": 73,
+      "name": "Design: Relentless Earthstorm Diamond",
+      "popularity": 7,
+      "quality": 3,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32409/relentless-earthstorm-diamond"
+}

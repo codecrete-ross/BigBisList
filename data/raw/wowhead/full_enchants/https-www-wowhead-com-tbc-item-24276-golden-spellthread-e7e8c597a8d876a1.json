@@ -1,0 +1,127 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T09:40:05+00:00",
+  "item_id": 24276,
+  "name": "Golden Spellthread",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31433,
+      "entity_name": "Golden Spellthread",
+      "profession": "Tailoring",
+      "source_url": "https://www.wowhead.com/tbc/item=24276/golden-spellthread",
+      "spell_id": 31433,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          24276,
+          1,
+          1
+        ],
+        "id": 31433,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Golden Spellthread",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 4,
+        "reagents": [
+          [
+            14341,
+            1
+          ],
+          [
+            21886,
+            10
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24295,
+        "level": 75,
+        "name": "Pattern: Golden Spellthread",
+        "popularity": 8,
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Endarin",
+            "t": 1,
+            "ti": 19321,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24295,
+      "level": 75,
+      "name": "Pattern: Golden Spellthread",
+      "popularity": 8,
+      "quality": 1,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Quartermaster Endarin",
+          "t": 1,
+          "ti": 19321,
+          "z": 3703
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24276/golden-spellthread"
+}

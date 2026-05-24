@@ -1,0 +1,93 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Consumables category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T09:36:24+00:00",
+  "item_id": 29735,
+  "name": "Holy Dust",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10420,
+      "entity_name": "A Cleansing Light",
+      "quest_id": 10420,
+      "source_url": "https://www.wowhead.com/tbc/item=29735",
+      "type": "quest",
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10421,
+      "entity_name": "Fel Armaments",
+      "quest_id": 10421,
+      "source_url": "https://www.wowhead.com/tbc/item=29735",
+      "type": "quest",
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3703,
+        "category2": 8,
+        "id": 10420,
+        "itemrewards": [
+          [
+            29735,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "A Cleansing Light",
+        "popularity": 14,
+        "reprewards": [
+          [
+            932,
+            350
+          ]
+        ],
+        "reqlevel": 64,
+        "side": 3,
+        "wflags": 1,
+        "xp": 15800
+      },
+      {
+        "category": 3703,
+        "category2": 8,
+        "id": 10421,
+        "itemrewards": [
+          [
+            29735,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Fel Armaments",
+        "popularity": 15,
+        "reprewards": [
+          [
+            932,
+            350
+          ]
+        ],
+        "reqlevel": 64,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29735"
+}

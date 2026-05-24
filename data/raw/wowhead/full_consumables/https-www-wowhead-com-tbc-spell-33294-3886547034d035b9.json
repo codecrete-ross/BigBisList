@@ -1,0 +1,47 @@
+{
+  "fetched_at": "2026-05-24T08:51:19+00:00",
+  "name": "Poached Bluefish",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 27698,
+      "entity_name": "Recipe: Poached Bluefish",
+      "item_id": 27698,
+      "source_url": "https://www.wowhead.com/tbc/spell=33294",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 27698,
+        "level": 64,
+        "name": "Recipe: Poached Bluefish",
+        "quality": 1,
+        "skill": 320,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "z": 3518
+          }
+        ],
+        "subclass": 5
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 33294,
+  "url": "https://www.wowhead.com/tbc/spell=33294"
+}

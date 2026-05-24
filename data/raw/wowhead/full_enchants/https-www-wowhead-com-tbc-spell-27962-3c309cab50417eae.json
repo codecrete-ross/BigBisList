@@ -1,0 +1,89 @@
+{
+  "description": "Permanently enchant a cloak to increase all Resistances by 7. Requires a level 35 or higher item. In the Profession Spells category. Always up to date.",
+  "fetched_at": "2026-05-24T09:41:55+00:00",
+  "name": "Enchant Cloak - Major Resistance",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22548,
+      "entity_name": "Formula: Enchant Cloak - Major Resistance",
+      "item_id": 22548,
+      "source_url": "https://www.wowhead.com/tbc/spell=27962",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          330,
+          340,
+          355,
+          370
+        ],
+        "id": 27962,
+        "learnedat": 330,
+        "level": 35,
+        "name": "Enchant Cloak - Major Resistance",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22446,
+            4
+          ],
+          [
+            21884,
+            4
+          ],
+          [
+            22451,
+            4
+          ],
+          [
+            22452,
+            4
+          ],
+          [
+            21885,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 22548,
+        "level": 66,
+        "name": "Formula: Enchant Cloak - Major Resistance",
+        "quality": 2,
+        "skill": 330,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27962,
+  "url": "https://www.wowhead.com/tbc/spell=27962"
+}

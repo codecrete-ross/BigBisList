@@ -1,0 +1,44 @@
+{
+  "fetched_at": "2026-05-24T09:11:27+00:00",
+  "name": "Prayer of Fortitude",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 29549,
+      "entity_name": "Codex: Prayer of Fortitude III",
+      "item_id": 29549,
+      "source_url": "https://www.wowhead.com/tbc/spell=25392",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 29549,
+        "level": 70,
+        "name": "Codex: Prayer of Fortitude III",
+        "quality": 3,
+        "reqclass": 16,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 25392,
+  "url": "https://www.wowhead.com/tbc/spell=25392"
+}

@@ -1,0 +1,51 @@
+{
+  "fetched_at": "2026-05-24T08:32:55+00:00",
+  "name": "Enchant Bracer - Spellpower",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22534,
+      "entity_name": "Formula: Enchant Bracer - Spellpower",
+      "item_id": 22534,
+      "source_url": "https://www.wowhead.com/tbc/spell=27917/enchant-bracer-spellpower",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 22534,
+        "level": 72,
+        "name": "Formula: Enchant Bracer - Spellpower",
+        "quality": 2,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Bloodmaul Geomancer",
+            "t": 1,
+            "ti": 19952,
+            "z": 3522
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27917,
+  "url": "https://www.wowhead.com/tbc/spell=27917/enchant-bracer-spellpower"
+}

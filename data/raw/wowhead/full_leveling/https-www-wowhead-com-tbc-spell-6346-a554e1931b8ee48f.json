@@ -1,0 +1,126 @@
+{
+  "fetched_at": "2026-05-24T09:12:15+00:00",
+  "name": "Fear Ward",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 5713,
+      "entity_name": "Tablet of Thunderbolt",
+      "item_id": 5713,
+      "source_url": "https://www.wowhead.com/tbc/spell=6346",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 5641,
+      "entity_name": "A Lack of Fear",
+      "quest_id": 5641,
+      "source_url": "https://www.wowhead.com/tbc/spell=6346",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 5645,
+      "entity_name": "A Lack of Fear",
+      "quest_id": 5645,
+      "source_url": "https://www.wowhead.com/tbc/spell=6346",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 5647,
+      "entity_name": "A Lack of Fear",
+      "quest_id": 5647,
+      "source_url": "https://www.wowhead.com/tbc/spell=6346",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 10377,
+      "entity_name": "Nothing to Fear",
+      "quest_id": 10377,
+      "source_url": "https://www.wowhead.com/tbc/spell=6346",
+      "type": "quest"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [
+      {
+        "category": -262,
+        "category2": 4,
+        "classs": 16,
+        "id": 5641,
+        "name": "A Lack of Fear",
+        "race": 4,
+        "reqclass": 16,
+        "reqlevel": 20,
+        "reqrace": 4,
+        "side": 1,
+        "wflags": 16
+      },
+      {
+        "category": -262,
+        "category2": 4,
+        "classs": 16,
+        "id": 5645,
+        "name": "A Lack of Fear",
+        "race": 4,
+        "reqclass": 16,
+        "reqlevel": 20,
+        "reqrace": 4,
+        "side": 1,
+        "xp": 390
+      },
+      {
+        "category": -262,
+        "category2": 4,
+        "classs": 16,
+        "id": 5647,
+        "name": "A Lack of Fear",
+        "race": 4,
+        "reqclass": 16,
+        "reqlevel": 20,
+        "reqrace": 4,
+        "side": 1,
+        "xp": 390
+      },
+      {
+        "category": -262,
+        "category2": 4,
+        "classs": 16,
+        "id": 10377,
+        "level": 20,
+        "name": "Nothing to Fear",
+        "race": 1024,
+        "reqclass": 16,
+        "reqlevel": 20,
+        "reqrace": 1024,
+        "side": 1,
+        "wflags": 16
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 5713,
+        "level": 32,
+        "name": "Tablet of Thunderbolt",
+        "quality": 1,
+        "reqclass": 64,
+        "reqlevel": 32,
+        "slot": 0,
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 6346,
+  "url": "https://www.wowhead.com/tbc/spell=6346"
+}

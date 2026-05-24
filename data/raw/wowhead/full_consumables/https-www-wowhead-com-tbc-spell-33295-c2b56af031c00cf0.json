@@ -1,0 +1,47 @@
+{
+  "fetched_at": "2026-05-24T08:51:30+00:00",
+  "name": "Golden Fish Sticks",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 27699,
+      "entity_name": "Recipe: Golden Fish Sticks",
+      "item_id": 27699,
+      "source_url": "https://www.wowhead.com/tbc/spell=33295",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 27699,
+        "level": 65,
+        "name": "Recipe: Golden Fish Sticks",
+        "quality": 1,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "z": 3519
+          }
+        ],
+        "subclass": 5
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 33295,
+  "url": "https://www.wowhead.com/tbc/spell=33295"
+}

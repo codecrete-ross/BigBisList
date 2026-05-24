@@ -1,0 +1,92 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward and sold by NPCs. In the Consumables category. An item from Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 18284,
+  "name": "Kreeg's Stout Beatdown",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 5528,
+      "entity_name": "The Gordok Taste Test",
+      "quest_id": 5528,
+      "source_url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 14322,
+      "entity_name": "Stomper Kreeg",
+      "source_url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown",
+      "type": "vendor",
+      "vendor_id": 14322
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 2557,
+        "category2": 2,
+        "id": 5528,
+        "itemrewards": [
+          [
+            18269,
+            5
+          ],
+          [
+            18284,
+            5
+          ]
+        ],
+        "level": 60,
+        "name": "The Gordok Taste Test",
+        "popularity": 9,
+        "reqlevel": 56,
+        "side": 3,
+        "type": 81,
+        "wflags": 16
+      }
+    ],
+    "sold-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "cost": [
+          [
+            1500
+          ]
+        ],
+        "id": 14322,
+        "location": [
+          2557
+        ],
+        "maxlevel": 59,
+        "minlevel": 59,
+        "name": "Stomper Kreeg",
+        "popularity": 7,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 1,
+        "stock": -1,
+        "tag": "The Drunk",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown"
+}

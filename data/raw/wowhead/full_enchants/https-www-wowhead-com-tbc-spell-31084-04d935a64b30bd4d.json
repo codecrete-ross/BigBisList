@@ -1,0 +1,78 @@
+{
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T09:45:40+00:00",
+  "name": "Bold Living Ruby",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 24193,
+      "entity_name": "Design: Bold Living Ruby",
+      "item_id": 24193,
+      "source_url": "https://www.wowhead.com/tbc/spell=31084",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          365,
+          380
+        ],
+        "creates": [
+          24027,
+          1,
+          1
+        ],
+        "id": 31084,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Bold Living Ruby",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            23436,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24193,
+        "level": 70,
+        "name": "Design: Bold Living Ruby",
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 31084,
+  "url": "https://www.wowhead.com/tbc/spell=31084"
+}

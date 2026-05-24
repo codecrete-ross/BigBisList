@@ -1,0 +1,280 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Warlock. It is sold by NPCs. In the Spell Books category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T09:24:41+00:00",
+  "item_id": 23745,
+  "name": "Grimoire of Cleave (Rank 2)",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 5520,
+      "entity_name": "Spackle Thornberry",
+      "source_url": "https://www.wowhead.com/tbc/item=23745",
+      "type": "vendor",
+      "vendor_id": 5520
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 5753,
+      "entity_name": "Martha Strain",
+      "source_url": "https://www.wowhead.com/tbc/item=23745",
+      "type": "vendor",
+      "vendor_id": 5753
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 5815,
+      "entity_name": "Kurgul",
+      "source_url": "https://www.wowhead.com/tbc/item=23745",
+      "type": "vendor",
+      "vendor_id": 5815
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 6382,
+      "entity_name": "Jubahl Corpseseeker",
+      "source_url": "https://www.wowhead.com/tbc/item=23745",
+      "type": "vendor",
+      "vendor_id": 6382
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12807,
+      "entity_name": "Greshka",
+      "source_url": "https://www.wowhead.com/tbc/item=23745",
+      "type": "vendor",
+      "vendor_id": 12807
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 16267,
+      "entity_name": "Daestra",
+      "source_url": "https://www.wowhead.com/tbc/item=23745",
+      "type": "vendor",
+      "vendor_id": 16267
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 16649,
+      "entity_name": "Torian",
+      "source_url": "https://www.wowhead.com/tbc/item=23745",
+      "type": "vendor",
+      "vendor_id": 16649
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 23535,
+      "entity_name": "Matero Zeshuwal",
+      "source_url": "https://www.wowhead.com/tbc/item=23745",
+      "type": "vendor",
+      "vendor_id": 23535
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            12000
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 5520,
+        "location": [
+          1519
+        ],
+        "maxlevel": 40,
+        "minlevel": 40,
+        "name": "Spackle Thornberry",
+        "popularity": 3,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Demon Trainer",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            12000
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 5753,
+        "location": [
+          1497
+        ],
+        "maxlevel": 20,
+        "minlevel": 20,
+        "name": "Martha Strain",
+        "popularity": 4,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Demon Trainer",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            12750
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 5815,
+        "location": [
+          1637
+        ],
+        "maxlevel": 45,
+        "minlevel": 45,
+        "name": "Kurgul",
+        "popularity": 8,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Demon Trainer",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            12000
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 6382,
+        "location": [
+          1537
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Jubahl Corpseseeker",
+        "popularity": 4,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Demon Trainer",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            12750
+          ]
+        ],
+        "id": 12807,
+        "location": [
+          8
+        ],
+        "maxlevel": 50,
+        "minlevel": 50,
+        "name": "Greshka",
+        "popularity": 5,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Demon Trainer",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            14250
+          ]
+        ],
+        "id": 16267,
+        "location": [
+          3430
+        ],
+        "maxlevel": 12,
+        "minlevel": 12,
+        "name": "Daestra",
+        "popularity": 4,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Demon Trainer",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            12750
+          ]
+        ],
+        "id": 16649,
+        "location": [
+          3487
+        ],
+        "maxlevel": 53,
+        "minlevel": 53,
+        "name": "Torian",
+        "popularity": 3,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Demon Trainer",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            15000
+          ]
+        ],
+        "id": 23535,
+        "location": [
+          17
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Matero Zeshuwal",
+        "popularity": 7,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Demon Trainer",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23745"
+}

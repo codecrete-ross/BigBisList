@@ -1,0 +1,49 @@
+{
+  "fetched_at": "2026-05-24T09:16:59+00:00",
+  "name": "Healing Wave",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 21291,
+      "entity_name": "Tablet of Healing Wave X",
+      "item_id": 21291,
+      "source_url": "https://www.wowhead.com/tbc/spell=25357",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21291,
+        "level": 60,
+        "name": "Tablet of Healing Wave X",
+        "quality": 3,
+        "reqclass": 64,
+        "reqlevel": 60,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "z": 3429
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 25357,
+  "url": "https://www.wowhead.com/tbc/spell=25357"
+}

@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue dagger has an item level of 22. It is looted from Skum. In the Daggers category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:13:09+00:00",
+  "item_id": 6448,
+  "name": "Tail Spike",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 38,
+      "drop_percent": 44.71,
+      "entity_id": 3674,
+      "entity_name": "Skum",
+      "out_of": 85,
+      "source_url": "https://www.wowhead.com/tbc/item=6448/tail-spike",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 38,
+        "id": 3674,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3717,
+                "outof": 7944
+              }
+            },
+            "4": {
+              "0": {
+                "count": 38,
+                "outof": 85
+              }
+            },
+            "5": {
+              "0": {
+                "count": 53,
+                "outof": 111
+              }
+            }
+          }
+        },
+        "location": [
+          718
+        ],
+        "maxlevel": 20,
+        "minlevel": 20,
+        "modes": {
+          "0": {
+            "count": 3717,
+            "outof": 7944
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Skum",
+        "outof": 85,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6448/tail-spike"
+}

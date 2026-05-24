@@ -1,0 +1,142 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted and sold by NPCs. In the Food & Drinks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 27666,
+  "name": "Golden Fish Sticks",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 24396,
+      "entity_name": "Forest Frog",
+      "source_url": "https://www.wowhead.com/tbc/item=27666/golden-fish-sticks",
+      "type": "vendor",
+      "vendor_id": 24396
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 33295,
+      "entity_name": "Golden Fish Sticks",
+      "source_url": "https://www.wowhead.com/tbc/item=27666/golden-fish-sticks",
+      "spell_id": 33295,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          325,
+          345,
+          355,
+          365
+        ],
+        "creates": [
+          27666,
+          1,
+          1
+        ],
+        "id": 33295,
+        "learnedat": 325,
+        "level": 0,
+        "name": "Golden Fish Sticks",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "reagents": [
+          [
+            27438,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            600
+          ]
+        ],
+        "id": 24396,
+        "location": [
+          3805
+        ],
+        "name": "Forest Frog",
+        "popularity": 6,
+        "react": [
+          0,
+          0
+        ],
+        "stack": 1,
+        "stock": 12,
+        "type": 7
+      }
+    ],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 27699,
+        "level": 65,
+        "name": "Recipe: Golden Fish Sticks",
+        "popularity": 21,
+        "quality": 1,
+        "skill": 325,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "z": 3519
+          }
+        ],
+        "subclass": 5
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 27699,
+      "level": 65,
+      "name": "Recipe: Golden Fish Sticks",
+      "popularity": 21,
+      "quality": 1,
+      "skill": 325,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "z": 3519
+        }
+      ],
+      "subclass": 5
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27666/golden-fish-sticks"
+}

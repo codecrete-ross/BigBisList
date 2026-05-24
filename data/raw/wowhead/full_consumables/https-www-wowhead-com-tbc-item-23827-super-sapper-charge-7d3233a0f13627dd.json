@@ -1,0 +1,78 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Explosives category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 23827,
+  "name": "Super Sapper Charge",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30560,
+      "entity_name": "Super Sapper Charge",
+      "profession": "Engineering",
+      "source_url": "https://www.wowhead.com/tbc/item=23827/super-sapper-charge",
+      "spell_id": 30560,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          340,
+          350,
+          360
+        ],
+        "creates": [
+          23827,
+          2,
+          2
+        ],
+        "id": 30560,
+        "learnedat": 340,
+        "level": 0,
+        "name": "Super Sapper Charge",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 1,
+        "reagents": [
+          [
+            21877,
+            4
+          ],
+          [
+            23781,
+            4
+          ],
+          [
+            22457,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20222,
+        "trainingcost": 35000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23827/super-sapper-charge"
+}

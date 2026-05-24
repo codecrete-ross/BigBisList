@@ -38,6 +38,28 @@
       "reviewer": "codecrete",
       "reviewed_at": "2026-05-23",
       "source_url": "https://www.wowhead.com/tbc/item=28568/idol-of-the-avian-heart"
+    },
+    {
+      "id": "spell-46500-source-alias",
+      "type": "spell_alias",
+      "target": {
+        "spell_id": 46500
+      },
+      "reason": "Wowhead class guides link the Anniversary item-effect spell; the original TBC spell page with the same enchant name contains the formula and vendor relationships.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-24",
+      "source_url": "https://www.wowhead.com/tbc/spell=27911/enchant-bracer-superior-healing"
+    },
+    {
+      "id": "spell-46504-source-alias",
+      "type": "spell_alias",
+      "target": {
+        "spell_id": 46504
+      },
+      "reason": "Wowhead class guides link the Anniversary item-effect spell; the original TBC spell page with the same enchant name contains the trainer relationship.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-24",
+      "source_url": "https://www.wowhead.com/tbc/spell=33990/enchant-chest-major-spirit"
     }
   ]
 }

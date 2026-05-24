@@ -1,0 +1,73 @@
+{
+  "fetched_at": "2026-05-24T09:23:21+00:00",
+  "name": "Gloves of the Living Touch",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 29727,
+      "entity_name": "Pattern: Gloves of the Living Touch",
+      "item_id": 29727,
+      "source_url": "https://www.wowhead.com/tbc/spell=35562",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 35303,
+      "entity_name": "Pattern: Gloves of the Living Touch",
+      "item_id": 35303,
+      "source_url": "https://www.wowhead.com/tbc/spell=35562",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 29727,
+        "level": 73,
+        "name": "Pattern: Gloves of the Living Touch",
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35303,
+        "level": 73,
+        "name": "Pattern: Gloves of the Living Touch",
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Kael'thas Sunstrider",
+            "t": 1,
+            "ti": 24664,
+            "z": 4131
+          }
+        ],
+        "subclass": 1
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 35562,
+  "url": "https://www.wowhead.com/tbc/spell=35562"
+}

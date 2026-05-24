@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed sword has an item level of 24. It is looted from Edwin VanCleef. In the One-Handed Swords category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:14:18+00:00",
+  "item_id": 5191,
+  "name": "Cruel Barb",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 39,
+      "drop_percent": 13.78,
+      "entity_id": 639,
+      "entity_name": "Edwin VanCleef",
+      "out_of": 283,
+      "source_url": "https://www.wowhead.com/tbc/item=5191/cruel-barb",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 39,
+        "id": 639,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2898,
+                "outof": 18192
+              }
+            },
+            "4": {
+              "0": {
+                "count": 50,
+                "outof": 304
+              }
+            },
+            "5": {
+              "0": {
+                "count": 39,
+                "outof": 283
+              }
+            }
+          }
+        },
+        "location": [
+          1581
+        ],
+        "maxlevel": 20,
+        "minlevel": 20,
+        "modes": {
+          "0": {
+            "count": 2898,
+            "outof": 18192
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Edwin VanCleef",
+        "outof": 283,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Defias Kingpin",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=5191/cruel-barb"
+}

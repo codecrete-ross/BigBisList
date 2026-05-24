@@ -1,0 +1,90 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant Boots - Dexterity is the Enchanting formula for . It has a low chance to drop from Raging Skeleton mobs in Auchenai Crypts.",
+  "fetched_at": "2026-05-24T09:45:49+00:00",
+  "item_id": 22544,
+  "name": "Formula: Enchant Boots - Dexterity",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 15,
+      "drop_percent": 3.73,
+      "entity_id": 18521,
+      "entity_name": "Raging Skeleton",
+      "out_of": 402,
+      "source_url": "https://www.wowhead.com/tbc/item=22544",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 15,
+        "id": 18521,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 319,
+                "outof": 8235
+              }
+            },
+            "4": {
+              "0": {
+                "count": 15,
+                "outof": 402
+              }
+            },
+            "5": {
+              "0": {
+                "count": 15,
+                "outof": 332
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 72,
+        "minlevel": 67,
+        "modes": {
+          "0": {
+            "count": 319,
+            "outof": 8235
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Raging Skeleton",
+        "outof": 402,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    27951
+  ],
+  "url": "https://www.wowhead.com/tbc/item=22544"
+}

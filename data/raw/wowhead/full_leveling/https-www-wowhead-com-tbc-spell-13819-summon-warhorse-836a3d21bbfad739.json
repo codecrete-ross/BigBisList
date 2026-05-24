@@ -1,0 +1,60 @@
+{
+  "fetched_at": "2026-05-24T09:06:25+00:00",
+  "name": "Summon Warhorse",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 1661,
+      "entity_name": "The Tome of Nobility",
+      "quest_id": 1661,
+      "source_url": "https://www.wowhead.com/tbc/spell=13819/summon-warhorse",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 9712,
+      "entity_name": "The Thalassian Warhorse",
+      "quest_id": 9712,
+      "source_url": "https://www.wowhead.com/tbc/spell=13819/summon-warhorse",
+      "type": "quest"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [
+      {
+        "category": -141,
+        "category2": 4,
+        "classs": 2,
+        "id": 1661,
+        "name": "The Tome of Nobility",
+        "race": 1029,
+        "reqclass": 2,
+        "reqlevel": 40,
+        "reqrace": 1029,
+        "side": 3
+      },
+      {
+        "category": -141,
+        "category2": 4,
+        "classs": 2,
+        "id": 9712,
+        "name": "The Thalassian Warhorse",
+        "race": 512,
+        "reqclass": 2,
+        "reqlevel": 40,
+        "reqrace": 512,
+        "side": 2
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 13819,
+  "url": "https://www.wowhead.com/tbc/spell=13819/summon-warhorse"
+}

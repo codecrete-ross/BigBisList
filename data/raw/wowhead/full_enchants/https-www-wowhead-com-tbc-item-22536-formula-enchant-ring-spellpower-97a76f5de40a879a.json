@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Alurmi. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:49:05+00:00",
+  "item_id": 22536,
+  "name": "Formula: Enchant Ring - Spellpower",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21643,
+      "entity_name": "Alurmi",
+      "source_url": "https://www.wowhead.com/tbc/item=22536/formula-enchant-ring-spellpower",
+      "type": "vendor",
+      "vendor_id": 21643,
+      "zone": "Tanaris"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            85000
+          ]
+        ],
+        "id": 21643,
+        "location": [
+          440
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Alurmi",
+        "popularity": 6,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keepers of Time Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    27924
+  ],
+  "url": "https://www.wowhead.com/tbc/item=22536/formula-enchant-ring-spellpower"
+}

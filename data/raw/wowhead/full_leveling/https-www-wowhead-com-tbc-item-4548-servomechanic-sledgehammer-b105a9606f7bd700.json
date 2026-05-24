@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green two-handed mace has an item level of 41. It is a quest reward from Sunken Treasure. In the Two-Handed Maces category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:21:25+00:00",
+  "item_id": 4548,
+  "name": "Servomechanic Sledgehammer",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 666,
+      "entity_name": "Sunken Treasure",
+      "quest_id": 666,
+      "source_url": "https://www.wowhead.com/tbc/item=4548/servomechanic-sledgehammer",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 45,
+        "category2": 0,
+        "id": 666,
+        "itemchoices": [
+          [
+            4547,
+            1
+          ],
+          [
+            4548,
+            1
+          ]
+        ],
+        "level": 40,
+        "name": "Sunken Treasure",
+        "popularity": 12,
+        "reprewards": [
+          [
+            21,
+            350
+          ],
+          [
+            87,
+            -350
+          ]
+        ],
+        "reqlevel": 35,
+        "side": 3,
+        "xp": 5450
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=4548/servomechanic-sledgehammer"
+}

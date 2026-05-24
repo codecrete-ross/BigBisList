@@ -1,0 +1,76 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Food & Drinks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 33052,
+  "name": "Fisherman's Feast",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 42302,
+      "entity_name": "Fisherman's Feast",
+      "source_url": "https://www.wowhead.com/tbc/item=33052/fishermans-feast",
+      "spell_id": 42302,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 9,
+        "colors": [
+          0,
+          375,
+          380,
+          385
+        ],
+        "creates": [
+          33052,
+          6,
+          6
+        ],
+        "id": 42302,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Fisherman's Feast",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "reagents": [
+          [
+            27515,
+            1
+          ],
+          [
+            4539,
+            5
+          ],
+          [
+            3713,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "trainingcost": 60000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33052/fishermans-feast"
+}

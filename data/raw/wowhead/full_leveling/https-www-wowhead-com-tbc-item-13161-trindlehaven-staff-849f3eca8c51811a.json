@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 61. It is looted from Overlord Wyrmthalak. In the Staves category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:04:08+00:00",
+  "item_id": 13161,
+  "name": "Trindlehaven Staff",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 12.5,
+      "entity_id": 9568,
+      "entity_name": "Overlord Wyrmthalak",
+      "out_of": 64,
+      "source_url": "https://www.wowhead.com/tbc/item=13161/trindlehaven-staff",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 8,
+        "id": 9568,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 283,
+                "outof": 1950
+              }
+            },
+            "4": {
+              "0": {
+                "count": 8,
+                "outof": 64
+              }
+            },
+            "5": {
+              "0": {
+                "count": 12,
+                "outof": 41
+              }
+            }
+          }
+        },
+        "location": [
+          1583
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "modes": {
+          "0": {
+            "count": 283,
+            "outof": 1950
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Overlord Wyrmthalak",
+        "outof": 64,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13161/trindlehaven-staff"
+}

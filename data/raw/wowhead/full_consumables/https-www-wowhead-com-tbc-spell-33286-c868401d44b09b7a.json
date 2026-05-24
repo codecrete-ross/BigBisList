@@ -1,0 +1,47 @@
+{
+  "fetched_at": "2026-05-24T08:51:19+00:00",
+  "name": "Blackened Basilisk",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 27690,
+      "entity_name": "Recipe: Blackened Basilisk",
+      "item_id": 27690,
+      "source_url": "https://www.wowhead.com/tbc/spell=33286",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 27690,
+        "level": 62,
+        "name": "Recipe: Blackened Basilisk",
+        "quality": 1,
+        "skill": 315,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "z": 3519
+          }
+        ],
+        "subclass": 5
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 33286,
+  "url": "https://www.wowhead.com/tbc/spell=33286"
+}

@@ -1,0 +1,80 @@
+{
+  "fetched_at": "2026-05-24T08:32:55+00:00",
+  "name": "Enchant Ring - Stats",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22538,
+      "entity_name": "Formula: Enchant Ring - Stats",
+      "item_id": 22538,
+      "source_url": "https://www.wowhead.com/tbc/spell=27927",
+      "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 186683,
+      "entity_name": "Formula: Enchant Ring - Stats",
+      "item_id": 186683,
+      "source_url": "https://www.wowhead.com/tbc/spell=27927",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22538,
+        "level": 75,
+        "name": "Formula: Enchant Ring - Stats",
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Nakodu",
+            "t": 1,
+            "ti": 21655,
+            "z": 3703
+          }
+        ],
+        "subclass": 8
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 186683,
+        "level": 75,
+        "name": "Formula: Enchant Ring - Stats",
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Andormu",
+            "t": 1,
+            "ti": 19932,
+            "z": 440
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27927,
+  "url": "https://www.wowhead.com/tbc/spell=27927"
+}

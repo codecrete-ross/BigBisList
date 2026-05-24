@@ -1,0 +1,62 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Madame Ruby. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:46:59+00:00",
+  "item_id": 28282,
+  "name": "Formula: Enchant Shield - Major Stamina",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19663,
+      "entity_name": "Madame Ruby",
+      "source_url": "https://www.wowhead.com/tbc/item=28282",
+      "type": "vendor",
+      "vendor_id": 19663,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            34000
+          ]
+        ],
+        "id": 19663,
+        "location": [
+          3703
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Madame Ruby",
+        "popularity": 51,
+        "react": [
+          1,
+          1
+        ],
+        "stock": 1,
+        "tag": "Enchanting Supplies",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    34009
+  ],
+  "url": "https://www.wowhead.com/tbc/item=28282"
+}

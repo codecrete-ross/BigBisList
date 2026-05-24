@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward from Dead Man's Plea. In the Other Items category. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T09:22:02+00:00",
+  "item_id": 22137,
+  "name": "Ysida's Satchel",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8945,
+      "entity_name": "Dead Man's Plea",
+      "quest_id": 8945,
+      "source_url": "https://www.wowhead.com/tbc/item=22137",
+      "type": "quest",
+      "zone": "Stratholme"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 2017,
+        "category2": 2,
+        "id": 8945,
+        "itemrewards": [
+          [
+            22137,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Dead Man's Plea",
+        "popularity": 11,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqlevel": 58,
+        "side": 3,
+        "type": 81,
+        "xp": 11900
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22137"
+}

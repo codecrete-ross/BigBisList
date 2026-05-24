@@ -1,0 +1,111 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Item Enhancements (Temporary) category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 22522,
+  "name": "Superior Wizard Oil",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 28019,
+      "entity_name": "Superior Wizard Oil",
+      "profession": "Enchanting",
+      "source_url": "https://www.wowhead.com/tbc/item=22522/superior-wizard-oil",
+      "spell_id": 28019,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          340,
+          350,
+          360
+        ],
+        "creates": [
+          22522,
+          0,
+          0
+        ],
+        "id": 28019,
+        "learnedat": 340,
+        "level": 0,
+        "name": "Superior Wizard Oil",
+        "nskillup": 1,
+        "popularity": 13,
+        "quality": 1,
+        "reagents": [
+          [
+            22445,
+            3
+          ],
+          [
+            22792,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 22563,
+        "level": 68,
+        "name": "Formula: Superior Wizard Oil",
+        "popularity": 50,
+        "quality": 1,
+        "skill": 340,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 8
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 22563,
+      "level": 68,
+      "name": "Formula: Superior Wizard Oil",
+      "popularity": 50,
+      "quality": 1,
+      "skill": 340,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "subclass": 8
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22522/superior-wizard-oil"
+}

@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue dagger has an item level of 47. It is looted from Gahz'rilla. In the Daggers category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T09:13:13+00:00",
+  "item_id": 9467,
+  "name": "Gahz'rilla Fang",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 44,
+      "drop_percent": 36.97,
+      "entity_id": 7273,
+      "entity_name": "Gahz'rilla",
+      "out_of": 119,
+      "source_url": "https://www.wowhead.com/tbc/item=9467/gahzrilla-fang",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 44,
+        "id": 7273,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4126,
+                "outof": 8998
+              }
+            },
+            "4": {
+              "0": {
+                "count": 51,
+                "outof": 136
+              }
+            },
+            "5": {
+              "0": {
+                "count": 44,
+                "outof": 119
+              }
+            }
+          }
+        },
+        "location": [
+          1176
+        ],
+        "maxlevel": 46,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 4126,
+            "outof": 8998
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Gahz'rilla",
+        "outof": 119,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=9467/gahzrilla-fang"
+}

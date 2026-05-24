@@ -1,0 +1,51 @@
+{
+  "fetched_at": "2026-05-24T08:32:56+00:00",
+  "name": "Enchant Gloves - Major Spellpower",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 28272,
+      "entity_name": "Formula: Enchant Gloves - Major Spellpower",
+      "item_id": 28272,
+      "source_url": "https://www.wowhead.com/tbc/spell=33997/enchant-gloves-major-spellpower",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "displayid": 56741,
+        "flags2": 24580,
+        "id": 28272,
+        "level": 72,
+        "name": "Formula: Enchant Gloves - Major Spellpower",
+        "quality": 2,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Alurmi",
+            "t": 1,
+            "ti": 21643,
+            "z": 440
+          }
+        ],
+        "subclass": 8
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 33997,
+  "url": "https://www.wowhead.com/tbc/spell=33997/enchant-gloves-major-spellpower"
+}

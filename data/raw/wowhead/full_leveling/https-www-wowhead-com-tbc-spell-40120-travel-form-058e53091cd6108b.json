@@ -1,0 +1,52 @@
+{
+  "fetched_at": "2026-05-24T09:00:48+00:00",
+  "name": "Swift Flight Form",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 11001,
+      "entity_name": "Vanquish the Raven God",
+      "quest_id": 11001,
+      "source_url": "https://www.wowhead.com/tbc/spell=40120/travel-form",
+      "type": "quest"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [
+      {
+        "category": -263,
+        "category2": 4,
+        "classs": 1024,
+        "id": 11001,
+        "itemrewards": [
+          [
+            32387,
+            1
+          ]
+        ],
+        "name": "Vanquish the Raven God",
+        "reprewards": [
+          [
+            942,
+            500
+          ]
+        ],
+        "reqclass": 1024,
+        "reqlevel": 70,
+        "side": 3,
+        "type": 85,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 40120,
+  "url": "https://www.wowhead.com/tbc/spell=40120/travel-form"
+}

@@ -1,0 +1,90 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue trinket of item level 70 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:07:49+00:00",
+  "item_id": 23836,
+  "name": "Goblin Rocket Launcher",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30563,
+      "entity_name": "Goblin Rocket Launcher",
+      "profession": "Engineering",
+      "source_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+      "spell_id": 30563,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          370,
+          380
+        ],
+        "creates": [
+          23836,
+          1,
+          1
+        ],
+        "id": 30563,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Goblin Rocket Launcher",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 3,
+        "reagents": [
+          [
+            23785,
+            2
+          ],
+          [
+            23786,
+            1
+          ],
+          [
+            23787,
+            2
+          ],
+          [
+            21884,
+            6
+          ],
+          [
+            22452,
+            6
+          ],
+          [
+            16006,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20222,
+        "trainingcost": 50000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher"
+}

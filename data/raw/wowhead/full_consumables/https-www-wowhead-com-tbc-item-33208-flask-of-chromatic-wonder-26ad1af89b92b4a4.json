@@ -1,0 +1,131 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Flasks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T08:51:00+00:00",
+  "item_id": 33208,
+  "name": "Flask of Chromatic Wonder",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 42736,
+      "entity_name": "Flask of Chromatic Wonder",
+      "profession": "Alchemy",
+      "source_url": "https://www.wowhead.com/tbc/item=33208/flask-of-chromatic-wonder",
+      "spell_id": 42736,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          390,
+          397,
+          405
+        ],
+        "creates": [
+          33208,
+          1,
+          1
+        ],
+        "id": 42736,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Flask of Chromatic Wonder",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "reagents": [
+          [
+            22786,
+            7
+          ],
+          [
+            22791,
+            3
+          ],
+          [
+            22794,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 33209,
+        "level": 70,
+        "name": "Recipe: Flask of Chromatic Wonder",
+        "popularity": 6,
+        "quality": 2,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Apprentice Darius",
+            "t": 1,
+            "ti": 18255,
+            "z": 41
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 33209,
+      "level": 70,
+      "name": "Recipe: Flask of Chromatic Wonder",
+      "popularity": 6,
+      "quality": 2,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Apprentice Darius",
+          "t": 1,
+          "ti": 18255,
+          "z": 41
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33208/flask-of-chromatic-wonder"
+}

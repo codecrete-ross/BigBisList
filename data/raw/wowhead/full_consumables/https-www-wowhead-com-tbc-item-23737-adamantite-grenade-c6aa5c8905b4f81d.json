@@ -1,0 +1,111 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted and sold by NPCs. In the Explosives category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T08:51:01+00:00",
+  "item_id": 23737,
+  "name": "Adamantite Grenade",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19575,
+      "entity_name": "Qiff ",
+      "source_url": "https://www.wowhead.com/tbc/item=23737/adamantite-grenade",
+      "type": "vendor",
+      "vendor_id": 19575,
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30311,
+      "entity_name": "Adamantite Grenade",
+      "profession": "Engineering",
+      "source_url": "https://www.wowhead.com/tbc/item=23737/adamantite-grenade",
+      "spell_id": 30311,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          325,
+          335,
+          345,
+          355
+        ],
+        "creates": [
+          23737,
+          3,
+          3
+        ],
+        "id": 30311,
+        "learnedat": 325,
+        "level": 0,
+        "name": "Adamantite Grenade",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 1,
+        "reagents": [
+          [
+            23446,
+            4
+          ],
+          [
+            23783,
+            2
+          ],
+          [
+            23781,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "trainingcost": 25000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10000
+          ]
+        ],
+        "id": 19575,
+        "location": [
+          3523
+        ],
+        "maxlevel": 67,
+        "minlevel": 65,
+        "name": "Qiff ",
+        "popularity": 8,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 1,
+        "stock": 3,
+        "tag": "Engineering Supplies",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23737/adamantite-grenade"
+}

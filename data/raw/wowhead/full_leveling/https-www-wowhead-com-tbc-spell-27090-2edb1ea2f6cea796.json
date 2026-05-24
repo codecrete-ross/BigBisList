@@ -1,0 +1,44 @@
+{
+  "fetched_at": "2026-05-24T09:05:04+00:00",
+  "name": "Conjure Water",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 29550,
+      "entity_name": "Tome of Conjure Water IX",
+      "item_id": 29550,
+      "source_url": "https://www.wowhead.com/tbc/spell=27090",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 29550,
+        "level": 70,
+        "name": "Tome of Conjure Water IX",
+        "quality": 3,
+        "reqclass": 128,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27090,
+  "url": "https://www.wowhead.com/tbc/spell=27090"
+}

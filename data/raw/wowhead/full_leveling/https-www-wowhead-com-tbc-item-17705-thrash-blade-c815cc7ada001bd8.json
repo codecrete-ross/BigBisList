@@ -1,0 +1,108 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed sword has an item level of 53. It is a quest reward. In the One-Handed Swords category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T09:14:07+00:00",
+  "item_id": 17705,
+  "name": "Thrash Blade",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7064,
+      "entity_name": "Corruption of Earth and Seed",
+      "quest_id": 7064,
+      "source_url": "https://www.wowhead.com/tbc/item=17705/thrash-blade",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7065,
+      "entity_name": "Corruption of Earth and Seed",
+      "quest_id": 7065,
+      "source_url": "https://www.wowhead.com/tbc/item=17705/thrash-blade",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 2100,
+        "category2": 2,
+        "id": 7064,
+        "itemchoices": [
+          [
+            17705,
+            1
+          ],
+          [
+            17743,
+            1
+          ],
+          [
+            17753,
+            1
+          ]
+        ],
+        "level": 51,
+        "name": "Corruption of Earth and Seed",
+        "popularity": 11,
+        "reprewards": [
+          [
+            609,
+            500
+          ]
+        ],
+        "reqlevel": 45,
+        "side": 3,
+        "type": 81,
+        "xp": 10600
+      },
+      {
+        "category": 2100,
+        "category2": 2,
+        "id": 7065,
+        "itemchoices": [
+          [
+            17705,
+            1
+          ],
+          [
+            17743,
+            1
+          ],
+          [
+            17753,
+            1
+          ]
+        ],
+        "level": 51,
+        "name": "Corruption of Earth and Seed",
+        "popularity": 12,
+        "reprewards": [
+          [
+            609,
+            500
+          ]
+        ],
+        "reqlevel": 45,
+        "side": 3,
+        "type": 81,
+        "xp": 10600
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=17705/thrash-blade"
+}

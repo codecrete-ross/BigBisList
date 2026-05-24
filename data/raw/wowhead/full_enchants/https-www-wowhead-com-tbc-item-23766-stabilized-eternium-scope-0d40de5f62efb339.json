@@ -1,0 +1,123 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is crafted. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T09:40:27+00:00",
+  "item_id": 23766,
+  "name": "Stabilized Eternium Scope",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30334,
+      "entity_name": "Stabilized Eternium Scope",
+      "profession": "Engineering",
+      "source_url": "https://www.wowhead.com/tbc/item=23766/stabilized-eternium-scope",
+      "spell_id": 30334,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.1",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          23766,
+          1,
+          1
+        ],
+        "id": 30334,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Stabilized Eternium Scope",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            23785,
+            2
+          ],
+          [
+            23787,
+            6
+          ],
+          [
+            23438,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23809,
+        "level": 75,
+        "name": "Schematic: Stabilized Eternium Scope",
+        "popularity": 9,
+        "quality": 3,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "dd": 1,
+            "z": 3457
+          }
+        ],
+        "subclass": 3
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23809,
+      "level": 75,
+      "name": "Schematic: Stabilized Eternium Scope",
+      "popularity": 9,
+      "quality": 3,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": 1,
+          "z": 3457
+        }
+      ],
+      "subclass": 3
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23766/stabilized-eternium-scope"
+}

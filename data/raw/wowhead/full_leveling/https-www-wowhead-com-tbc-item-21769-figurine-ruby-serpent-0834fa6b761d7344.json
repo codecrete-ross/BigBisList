@@ -1,0 +1,115 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 52 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T09:04:15+00:00",
+  "item_id": 21769,
+  "name": "Figurine - Ruby Serpent",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26900,
+      "entity_name": "Figurine - Ruby Serpent",
+      "profession": "Jewelcrafting",
+      "source_url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent",
+      "spell_id": 26900,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.5.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          260,
+          280,
+          290,
+          300
+        ],
+        "creates": [
+          21769,
+          1,
+          1
+        ],
+        "id": 26900,
+        "learnedat": 260,
+        "level": 0,
+        "name": "Figurine - Ruby Serpent",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 2,
+        "reagents": [
+          [
+            7910,
+            2
+          ],
+          [
+            7078,
+            2
+          ],
+          [
+            8152,
+            4
+          ],
+          [
+            6037,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21949,
+        "level": 52,
+        "name": "Design: Ruby Serpent",
+        "popularity": 9,
+        "quality": 2,
+        "skill": 260,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21949,
+      "level": 52,
+      "name": "Design: Ruby Serpent",
+      "popularity": 9,
+      "quality": 2,
+      "skill": 260,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent"
+}
