@@ -12,7 +12,10 @@ class AddonShellTests(unittest.TestCase):
             for line in toc_lines
             if line.strip() and not line.startswith("#") and not line.startswith("##")
         ]
-        self.assertEqual(referenced_files, ["Data.lua", "Config.lua", "Core.lua"])
+        self.assertEqual(
+            referenced_files,
+            ["Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "Tooltip.lua", "Core.lua"],
+        )
         for file_name in referenced_files:
             self.assertTrue((ADDON_DIR / file_name).is_file(), file_name)
 
@@ -25,4 +28,3 @@ class AddonShellTests(unittest.TestCase):
         for path in ADDON_DIR.glob("*.lua"):
             text = path.read_text(encoding="utf-8")
             self.assertNotIn("BISTBC", text, str(path))
-

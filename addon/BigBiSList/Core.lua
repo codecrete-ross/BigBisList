@@ -37,19 +37,30 @@ end
 function BigBiSList:RunSmokeTest()
     self:EnsureDatabase()
     printLine("Smoke test passed. Saved variable BigBiSListDB is initialized.")
-    printLine("Current selection: " .. BigBiSListDB.char.selectedClass .. " / " .. BigBiSListDB.char.selectedSpec .. " / " .. BigBiSListDB.char.selectedPhase .. ".")
+    local selection = BigBiSListDB.char.selection
+    printLine("Current selection: " .. selection.class .. " / " .. selection.spec .. " / " .. self:GetPhaseDisplayName(selection.phase) .. ".")
 end
 
 local function handleSlashCommand(input)
-    input = string.lower(input or "")
+    input = string.lower((input or ""):gsub("^%s+", ""):gsub("%s+$", ""))
 
     if input == "test" then
         BigBiSList:RunSmokeTest()
         return
     end
 
-    BigBiSList:ShowStatus()
-    printLine("Commands: /bbl, /bigbis, /bbltest.")
+    if input == "status" then
+        BigBiSList:ShowStatus()
+        return
+    end
+
+    if input == "settings" or input == "config" then
+        BigBiSList:SetSelection(nil, nil, nil, "Settings")
+        BigBiSList:OpenMainFrame()
+        return
+    end
+
+    BigBiSList:ToggleMainFrame()
 end
 
 local frame = CreateFrame("Frame")
@@ -60,6 +71,8 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
     end
 
     BigBiSList:EnsureDatabase()
+    BigBiSList:InitUIEvents()
+    BigBiSList:InitTooltip()
     printLine("loaded. Use /bbl or /bigbis.")
 end)
 
@@ -71,4 +84,3 @@ SLASH_BIGBISLISTTEST1 = "/bbltest"
 SlashCmdList.BIGBISLISTTEST = function()
     BigBiSList:RunSmokeTest()
 end
-
