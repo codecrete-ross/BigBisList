@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic two-handed axe has an item level of 141. It is looted from Teron Gorefiend. In the Two-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:37:55+00:00",
+  "item_id": 32348,
+  "name": "Soul Cleaver",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 21867,
+      "entity_name": "Teron Gorefiend",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 710,
+      "drop_percent": 18.39,
+      "entity_id": 22871,
+      "entity_name": "Teron Gorefiend",
+      "out_of": 3861,
+      "source_url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 21867,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 39.2
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 39.2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Teron Gorefiend",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 39.2,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 710,
+        "id": 22871,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 710,
+                "outof": 3861
+              }
+            },
+            "4": {
+              "0": {
+                "count": 500,
+                "outof": 2727
+              }
+            },
+            "5": {
+              "0": {
+                "count": 367,
+                "outof": 2338
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 710,
+            "outof": 3861
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Teron Gorefiend",
+        "outof": 3861,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 141,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver"
+}

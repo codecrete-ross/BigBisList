@@ -1,0 +1,63 @@
+{
+  "description": "This epic amulet of item level 138 goes in the \"Neck\" slot. It is a quest reward from Kael'thas and the Verdant Sphere. In the Amulets category.",
+  "fetched_at": "2026-05-24T03:15:56+00:00",
+  "item_id": 30017,
+  "name": "Telonicus's Pendant of Mayhem",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11007,
+      "entity_name": "Kael'thas and the Verdant Sphere",
+      "quest_id": 11007,
+      "source_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+      "type": "quest",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3845,
+        "category2": 3,
+        "id": 11007,
+        "itemchoices": [
+          [
+            30007,
+            1
+          ],
+          [
+            30015,
+            1
+          ],
+          [
+            30017,
+            1
+          ],
+          [
+            30018,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Kael'thas and the Verdant Sphere",
+        "popularity": 34,
+        "reprewards": [
+          [
+            935,
+            1000
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+}

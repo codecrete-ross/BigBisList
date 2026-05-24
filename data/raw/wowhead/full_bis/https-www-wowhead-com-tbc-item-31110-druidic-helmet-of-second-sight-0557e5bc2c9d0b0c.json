@@ -1,0 +1,115 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 109 goes in the \"Head\" slot. It is a quest reward. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T04:45:06+00:00",
+  "item_id": 31110,
+  "name": "Druidic Helmet of Second Sight",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10639,
+      "entity_name": "Teron Gorefiend, I am...",
+      "quest_id": 10639,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31110/druidic-helmet-of-second-sight",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10645,
+      "entity_name": "Teron Gorefiend, I am...",
+      "quest_id": 10645,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=31110/druidic-helmet-of-second-sight",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10639,
+        "itemchoices": [
+          [
+            31104,
+            1
+          ],
+          [
+            31105,
+            1
+          ],
+          [
+            31106,
+            1
+          ],
+          [
+            31107,
+            1
+          ],
+          [
+            31109,
+            1
+          ],
+          [
+            31110,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Teron Gorefiend, I am...",
+        "popularity": 14,
+        "reqlevel": 67,
+        "side": 2,
+        "xp": 19000
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10645,
+        "itemchoices": [
+          [
+            31104,
+            1
+          ],
+          [
+            31105,
+            1
+          ],
+          [
+            31106,
+            1
+          ],
+          [
+            31107,
+            1
+          ],
+          [
+            31109,
+            1
+          ],
+          [
+            31110,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Teron Gorefiend, I am...",
+        "popularity": 12,
+        "reqlevel": 67,
+        "side": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31110/druidic-helmet-of-second-sight"
+}

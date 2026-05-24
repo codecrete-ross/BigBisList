@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 86 goes in the \"Shoulder\" slot. It is a quest reward from Plagueheart Shoulderpads. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:24:59+00:00",
+  "item_id": 22507,
+  "name": "Plagueheart Shoulderpads",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9106,
+      "entity_name": "Plagueheart Shoulderpads",
+      "quest_id": 9106,
+      "source_url": "https://www.wowhead.com/tbc/item=22507/plagueheart-shoulderpads",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "classs": 256,
+        "id": 9106,
+        "itemrewards": [
+          [
+            22507,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Plagueheart Shoulderpads",
+        "popularity": 7,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqclass": 256,
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22507/plagueheart-shoulderpads"
+}

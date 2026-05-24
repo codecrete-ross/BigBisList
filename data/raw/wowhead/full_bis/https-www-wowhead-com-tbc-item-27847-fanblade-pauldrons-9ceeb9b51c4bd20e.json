@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Shoulder\" slot. It is looted from Shirrak the Dead Watcher. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:12:35+00:00",
+  "item_id": 27847,
+  "name": "Fanblade Pauldrons",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 19,
+      "drop_percent": 4.29,
+      "entity_id": 18371,
+      "entity_name": "Shirrak the Dead Watcher",
+      "out_of": 443,
+      "source_url": "https://www.wowhead.com/tbc/item=27847/fanblade-pauldrons",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 19,
+        "id": 18371,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 735,
+                "outof": 12489
+              }
+            },
+            "4": {
+              "0": {
+                "count": 49,
+                "outof": 681
+              }
+            },
+            "5": {
+              "0": {
+                "count": 19,
+                "outof": 443
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 71,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 735,
+            "outof": 12489
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shirrak the Dead Watcher",
+        "outof": 443,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27847/fanblade-pauldrons"
+}

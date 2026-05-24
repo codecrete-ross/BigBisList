@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green one-handed axe has an item level of 108. It is a quest reward from Measuring Warp Energies. In the One-Handed Axes category. Always up to date.",
+  "fetched_at": "2026-05-24T05:23:32+00:00",
+  "item_id": 30364,
+  "name": "Resonating Axe",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10313,
+      "entity_name": "Measuring Warp Energies",
+      "quest_id": 10313,
+      "source_url": "https://www.wowhead.com/tbc/item=30364/resonating-axe",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10313,
+        "itemchoices": [
+          [
+            30362,
+            1
+          ],
+          [
+            30363,
+            1
+          ],
+          [
+            30364,
+            1
+          ],
+          [
+            30521,
+            1
+          ]
+        ],
+        "level": 68,
+        "name": "Measuring Warp Energies",
+        "popularity": 10,
+        "reprewards": [
+          [
+            932,
+            250
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 12000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30364/resonating-axe"
+}

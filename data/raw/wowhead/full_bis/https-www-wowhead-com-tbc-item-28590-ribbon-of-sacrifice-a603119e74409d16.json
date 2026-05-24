@@ -1,0 +1,209 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 115 goes in the \"Trinket\" slot. It is looted from The Big Bad Wolf. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:58:33+00:00",
+  "item_id": 28590,
+  "name": "Ribbon of Sacrifice",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1224,
+      "drop_percent": 16.89,
+      "entity_id": 17521,
+      "entity_name": "The Big Bad Wolf",
+      "out_of": 7249,
+      "source_url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 917,
+      "drop_percent": 16.42,
+      "entity_id": 17533,
+      "entity_name": "Romulo",
+      "out_of": 5585,
+      "source_url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1143,
+      "drop_percent": 15.67,
+      "entity_id": 18168,
+      "entity_name": "The Crone",
+      "out_of": 7295,
+      "source_url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1224,
+        "id": 17521,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1224,
+                "outof": 7249
+              }
+            },
+            "4": {
+              "0": {
+                "count": 106,
+                "outof": 766
+              }
+            },
+            "5": {
+              "0": {
+                "count": 93,
+                "outof": 640
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1224,
+            "outof": 7249
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Big Bad Wolf",
+        "outof": 7249,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 917,
+        "id": 17533,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 917,
+                "outof": 5585
+              }
+            },
+            "4": {
+              "0": {
+                "count": 133,
+                "outof": 790
+              }
+            },
+            "5": {
+              "0": {
+                "count": 92,
+                "outof": 540
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 917,
+            "outof": 5585
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Romulo",
+        "outof": 5585,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1143,
+        "id": 18168,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1143,
+                "outof": 7295
+              }
+            },
+            "4": {
+              "0": {
+                "count": 118,
+                "outof": 861
+              }
+            },
+            "5": {
+              "0": {
+                "count": 106,
+                "outof": 652
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1143,
+            "outof": 7295
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Crone",
+        "outof": 7295,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice"
+}

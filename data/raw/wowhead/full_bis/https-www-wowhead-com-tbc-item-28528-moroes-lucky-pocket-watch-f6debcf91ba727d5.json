@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 115 goes in the \"Trinket\" slot. It is looted from Moroes. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:13:22+00:00",
+  "item_id": 28528,
+  "name": "Moroes' Lucky Pocket Watch",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 315,
+      "drop_percent": 16.68,
+      "entity_id": 15687,
+      "entity_name": "Moroes",
+      "out_of": 1888,
+      "source_url": "https://www.wowhead.com/tbc/item=28528/moroes-lucky-pocket-watch",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 315,
+        "id": 15687,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3692,
+                "outof": 21907
+              }
+            },
+            "4": {
+              "0": {
+                "count": 384,
+                "outof": 2503
+              }
+            },
+            "5": {
+              "0": {
+                "count": 315,
+                "outof": 1888
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3692,
+            "outof": 21907
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Moroes",
+        "outof": 1888,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Tower Steward",
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28528/moroes-lucky-pocket-watch"
+}

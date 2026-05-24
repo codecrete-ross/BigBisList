@@ -1,0 +1,120 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This arrow can deal 53.0 damage per second. It is sold by NPCs. In the Arrows category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:50:06+00:00",
+  "item_id": 31737,
+  "name": "Timeless Arrow",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19932,
+      "entity_name": "Andormu",
+      "source_url": "https://www.wowhead.com/tbc/item=31737/timeless-arrow",
+      "type": "vendor",
+      "vendor_id": 19932,
+      "zone": "Tanaris"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 25195,
+      "entity_name": "Marksman Bova",
+      "source_url": "https://www.wowhead.com/tbc/item=31737/timeless-arrow",
+      "type": "vendor",
+      "vendor_id": 25195,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 25196,
+      "entity_name": "Archer Delvinar",
+      "source_url": "https://www.wowhead.com/tbc/item=31737/timeless-arrow",
+      "type": "vendor",
+      "vendor_id": 25196,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            17000
+          ]
+        ],
+        "id": 19932,
+        "location": [
+          440
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Andormu",
+        "popularity": 9,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 200,
+        "stock": -1,
+        "tag": "Keepers of Time",
+        "type": 2
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            17000
+          ]
+        ],
+        "id": 25195,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Marksman Bova",
+        "popularity": 6,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 200,
+        "stock": -1,
+        "tag": "Specialty Ammunition Vendor",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            18000
+          ]
+        ],
+        "id": 25196,
+        "location": [
+          3703
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Archer Delvinar",
+        "popularity": 8,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 200,
+        "stock": -1,
+        "tag": "Specialty Ammunition Vendor",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=31737/timeless-arrow"
+}

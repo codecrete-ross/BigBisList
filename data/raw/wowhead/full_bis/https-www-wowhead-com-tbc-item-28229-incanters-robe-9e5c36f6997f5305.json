@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 115 goes in the \"Chest\" slot. It is looted from Warp Splinter. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:44:08+00:00",
+  "item_id": 28229,
+  "name": "Incanter's Robe",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 87,
+      "drop_percent": 14.31,
+      "entity_id": 17977,
+      "entity_name": "Warp Splinter",
+      "out_of": 608,
+      "source_url": "https://www.wowhead.com/tbc/item=28229/incanters-robe",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 87,
+        "id": 17977,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1509,
+                "outof": 11954
+              }
+            },
+            "4": {
+              "0": {
+                "count": 126,
+                "outof": 960
+              }
+            },
+            "5": {
+              "0": {
+                "count": 87,
+                "outof": 608
+              }
+            }
+          }
+        },
+        "location": [
+          3847
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1509,
+            "outof": 11954
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Warp Splinter",
+        "outof": 608,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28229/incanters-robe"
+}

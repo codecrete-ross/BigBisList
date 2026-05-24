@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 114 goes in the \"Waist\" slot. It is a quest reward from Arconus the Insatiable. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:15:03+00:00",
+  "item_id": 30330,
+  "name": "Starcaller's Plated Belt",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10353,
+      "entity_name": "Arconus the Insatiable",
+      "quest_id": 10353,
+      "source_url": "https://www.wowhead.com/tbc/item=30330/starcallers-plated-belt",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10353,
+        "itemchoices": [
+          [
+            30329,
+            1
+          ],
+          [
+            30328,
+            1
+          ],
+          [
+            30330,
+            1
+          ],
+          [
+            30517,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Arconus the Insatiable",
+        "popularity": 12,
+        "reprewards": [
+          [
+            933,
+            250
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30330/starcallers-plated-belt"
+}

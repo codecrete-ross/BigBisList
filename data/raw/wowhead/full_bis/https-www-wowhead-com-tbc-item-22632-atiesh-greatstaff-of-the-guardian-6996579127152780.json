@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This legendary staff has an item level of 90. Requires Druid. It is a quest reward from Atiesh, Greatstaff of the Guardian. In the Staves category.",
+  "fetched_at": "2026-05-24T04:57:50+00:00",
+  "item_id": 22632,
+  "name": "Atiesh, Greatstaff of the Guardian",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9269,
+      "entity_name": "Atiesh, Greatstaff of the Guardian",
+      "quest_id": 9269,
+      "source_url": "https://www.wowhead.com/tbc/item=22632/atiesh-greatstaff-of-the-guardian",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "legendary",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": -344,
+        "category2": 7,
+        "id": 9269,
+        "itemrewards": [
+          [
+            22632,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Atiesh, Greatstaff of the Guardian",
+        "popularity": 11,
+        "reprewards": [
+          [
+            910,
+            500
+          ],
+          [
+            529,
+            500
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "type": 81,
+        "xp": 14300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22632/atiesh-greatstaff-of-the-guardian"
+}

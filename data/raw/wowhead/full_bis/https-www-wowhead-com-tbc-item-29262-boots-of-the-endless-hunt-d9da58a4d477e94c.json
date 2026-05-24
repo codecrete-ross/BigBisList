@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 110 goes in the \"Feet\" slot. It is looted from Warp Splinter. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:05:01+00:00",
+  "item_id": 29262,
+  "name": "Boots of the Endless Hunt",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 74,
+      "drop_percent": 12.17,
+      "entity_id": 17977,
+      "entity_name": "Warp Splinter",
+      "out_of": 608,
+      "source_url": "https://www.wowhead.com/tbc/item=29262/boots-of-the-endless-hunt",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 74,
+        "id": 17977,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 350,
+                "outof": 11954
+              }
+            },
+            "4": {
+              "0": {
+                "count": 115,
+                "outof": 960
+              }
+            },
+            "5": {
+              "0": {
+                "count": 74,
+                "outof": 608
+              }
+            }
+          }
+        },
+        "location": [
+          3847
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 350,
+            "outof": 11954
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Warp Splinter",
+        "outof": 608,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29262/boots-of-the-endless-hunt"
+}

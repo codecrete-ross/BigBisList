@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 115 goes in the \"Waist\" slot. It is a quest reward from How to Break Into the Arcatraz. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:35:29+00:00",
+  "item_id": 31461,
+  "name": "A'dal's Gift",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10704,
+      "entity_name": "How to Break Into the Arcatraz",
+      "quest_id": 10704,
+      "source_url": "https://www.wowhead.com/tbc/item=31461/adals-gift",
+      "type": "quest",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3845,
+        "category2": 3,
+        "id": 10704,
+        "itemchoices": [
+          [
+            31465,
+            1
+          ],
+          [
+            31461,
+            1
+          ],
+          [
+            31464,
+            1
+          ],
+          [
+            31462,
+            1
+          ],
+          [
+            31460,
+            1
+          ]
+        ],
+        "itemrewards": [
+          [
+            31084,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "How to Break Into the Arcatraz",
+        "popularity": 28,
+        "reprewards": [
+          [
+            935,
+            1000
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31461/adals-gift"
+}

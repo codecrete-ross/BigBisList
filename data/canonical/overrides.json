@@ -1,0 +1,43 @@
+{
+  "overrides": [
+    {
+      "id": "druid-balance-swp-idols-context",
+      "type": "bis_context",
+      "target": {
+        "class": "Druid",
+        "spec": "Balance",
+        "phase": "SWP",
+        "slot": "Idol"
+      },
+      "reason": "The guide describes multiple situational BiS idol use cases rather than a single linear rank.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-23",
+      "source_url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-swp-phase-5-best-in-slot-gear-burning-crusade"
+    },
+    {
+      "id": "druid-feral-dps-swp-idols-context",
+      "type": "bis_context",
+      "target": {
+        "class": "Druid",
+        "spec": "Feral dps",
+        "phase": "SWP",
+        "slot": "Idol"
+      },
+      "reason": "The guide distinguishes personal DPS and raid DPS idol recommendations.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-23",
+      "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-dps-swp-phase-5-best-in-slot-gear-burning-crusade"
+    },
+    {
+      "id": "item-28568-source-gap",
+      "type": "source_gap",
+      "target": {
+        "item_id": 28568
+      },
+      "reason": "The reference addon ranks this Restoration idol but omitted a source row; Wowhead item data identifies Moroes in Karazhan.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-23",
+      "source_url": "https://www.wowhead.com/tbc/item=28568/idol-of-the-avian-heart"
+    }
+  ]
+}

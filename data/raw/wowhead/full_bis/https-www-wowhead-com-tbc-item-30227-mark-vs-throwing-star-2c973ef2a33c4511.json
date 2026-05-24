@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green thrown weapon has an item level of 108. It is a quest reward from Mark V is Alive!. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:21:27+00:00",
+  "item_id": 30227,
+  "name": "Mark V's Throwing Star",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10191,
+      "entity_name": "Mark V is Alive!",
+      "quest_id": 10191,
+      "source_url": "https://www.wowhead.com/tbc/item=30227/mark-vs-throwing-star",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10191,
+        "itemchoices": [
+          [
+            30226,
+            1
+          ],
+          [
+            30227,
+            1
+          ],
+          [
+            30252,
+            1
+          ]
+        ],
+        "level": 68,
+        "money": 78000,
+        "name": "Mark V is Alive!",
+        "popularity": 10,
+        "reqlevel": 67,
+        "side": 3,
+        "type": 1,
+        "xp": 14950
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30227/mark-vs-throwing-star"
+}

@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue amulet of item level 109 goes in the \"Neck\" slot. It is a quest reward from Shutting Down Manaforge Ara. In the Amulets category. Always up to date.",
+  "fetched_at": "2026-05-24T05:04:07+00:00",
+  "item_id": 30377,
+  "name": "Karja's Medallion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10323,
+      "entity_name": "Shutting Down Manaforge Ara",
+      "quest_id": 10323,
+      "source_url": "https://www.wowhead.com/tbc/item=30377/karjas-medallion",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10323,
+        "itemchoices": [
+          [
+            30377,
+            1
+          ],
+          [
+            30365,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Shutting Down Manaforge Ara",
+        "popularity": 30,
+        "reprewards": [
+          [
+            932,
+            250
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 1,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30377/karjas-medallion"
+}

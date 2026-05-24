@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue fist weapon has an item level of 115. It is looted from Shirrak the Dead Watcher. In the Fist Weapons category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:47:02+00:00",
+  "item_id": 27846,
+  "name": "Claw of the Watcher",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 28,
+      "drop_percent": 6.32,
+      "entity_id": 18371,
+      "entity_name": "Shirrak the Dead Watcher",
+      "out_of": 443,
+      "source_url": "https://www.wowhead.com/tbc/item=27846/claw-of-the-watcher",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 28,
+        "id": 18371,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 762,
+                "outof": 12489
+              }
+            },
+            "4": {
+              "0": {
+                "count": 62,
+                "outof": 681
+              }
+            },
+            "5": {
+              "0": {
+                "count": 28,
+                "outof": 443
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 71,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 762,
+            "outof": 12489
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shirrak the Dead Watcher",
+        "outof": 443,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27846/claw-of-the-watcher"
+}

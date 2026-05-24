@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic gun has an item level of 120. It is looted from Doomwalker. In the Guns category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:37:06+00:00",
+  "item_id": 30724,
+  "name": "Barrel-Blade Longrifle",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 15.38,
+      "entity_id": 17711,
+      "entity_name": "Doomwalker",
+      "out_of": 26,
+      "source_url": "https://www.wowhead.com/tbc/item=30724/barrel-blade-longrifle",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 4,
+        "id": 17711,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 63,
+                "outof": 346
+              }
+            },
+            "4": {
+              "0": {
+                "count": 5,
+                "outof": 30
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 26
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 63,
+            "outof": 346
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Doomwalker",
+        "outof": 26,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30724/barrel-blade-longrifle"
+}

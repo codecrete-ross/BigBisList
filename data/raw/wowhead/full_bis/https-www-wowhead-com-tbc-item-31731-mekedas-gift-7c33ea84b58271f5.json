@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green off-hand frill of item level 99 goes in the \"Held In Off-hand\" slot. It is a quest reward from Escaping the Tomb. In the Off-hand Frills category.",
+  "fetched_at": "2026-05-24T05:06:22+00:00",
+  "item_id": 31731,
+  "name": "Mekeda's Gift",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10887,
+      "entity_name": "Escaping the Tomb",
+      "quest_id": 10887,
+      "source_url": "https://www.wowhead.com/tbc/item=31731/mekedas-gift",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10887,
+        "itemchoices": [
+          [
+            31733,
+            1
+          ],
+          [
+            31734,
+            1
+          ],
+          [
+            31731,
+            1
+          ],
+          [
+            31732,
+            1
+          ]
+        ],
+        "level": 64,
+        "name": "Escaping the Tomb",
+        "popularity": 24,
+        "reprewards": [
+          [
+            1011,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 3,
+        "xp": 10750
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31731/mekedas-gift"
+}

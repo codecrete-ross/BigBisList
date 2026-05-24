@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crystal Webbed Robe was considered a best-in-slot item for Balance Druids, Mages, Shadow Priests and Elemental Shamans that became available starting Phase 6 of WoW Classic. While equipped, this item increases damage and healing done by magical spells and effects by up to 53. This item is obtainable by defeating Maexxna within Naxxramas.",
+  "fetched_at": "2026-05-24T05:18:45+00:00",
+  "item_id": 23220,
+  "name": "Crystal Webbed Robe",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 13,
+      "drop_percent": 12.62,
+      "entity_id": 15952,
+      "entity_name": "Maexxna",
+      "out_of": 103,
+      "source_url": "https://www.wowhead.com/tbc/item=23220/crystal-webbed-robe",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 13,
+        "id": 15952,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 365,
+                "outof": 1999
+              }
+            },
+            "4": {
+              "0": {
+                "count": 17,
+                "outof": 96
+              }
+            },
+            "5": {
+              "0": {
+                "count": 13,
+                "outof": 103
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 365,
+            "outof": 1999
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Maexxna",
+        "outof": 103,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23220/crystal-webbed-robe"
+}

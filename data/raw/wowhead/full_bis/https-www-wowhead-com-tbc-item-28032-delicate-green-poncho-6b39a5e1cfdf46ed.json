@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloak of item level 97 goes in the \"Back\" slot. It is a quest reward from Bring Me The Egg!. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:54:25+00:00",
+  "item_id": 28032,
+  "name": "Delicate Green Poncho",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10111,
+      "entity_name": "Bring Me The Egg!",
+      "quest_id": 10111,
+      "source_url": "https://www.wowhead.com/tbc/item=28032/delicate-green-poncho",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 10111,
+        "itemchoices": [
+          [
+            28030,
+            1
+          ],
+          [
+            28032,
+            1
+          ],
+          [
+            28031,
+            1
+          ]
+        ],
+        "level": 66,
+        "money": 70000,
+        "name": "Bring Me The Egg!",
+        "popularity": 16,
+        "reqlevel": 64,
+        "side": 3,
+        "type": 1,
+        "xp": 14150
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28032/delicate-green-poncho"
+}

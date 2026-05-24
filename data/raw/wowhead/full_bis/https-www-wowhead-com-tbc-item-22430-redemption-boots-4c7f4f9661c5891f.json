@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 86 goes in the \"Feet\" slot. It is a quest reward from Redemption Boots. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:08:10+00:00",
+  "item_id": 22430,
+  "name": "Redemption Boots",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9047,
+      "entity_name": "Redemption Boots",
+      "quest_id": 9047,
+      "source_url": "https://www.wowhead.com/tbc/item=22430/redemption-boots",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "id": 9047,
+        "itemrewards": [
+          [
+            22430,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Redemption Boots",
+        "popularity": 10,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22430/redemption-boots"
+}

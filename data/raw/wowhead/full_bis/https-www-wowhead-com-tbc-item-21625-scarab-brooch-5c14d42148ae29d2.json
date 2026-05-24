@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 78 goes in the \"Trinket\" slot. It is looted from Viscidus. In the Trinkets category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:17:25+00:00",
+  "item_id": 21625,
+  "name": "Scarab Brooch",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 6.06,
+      "entity_id": 15299,
+      "entity_name": "Viscidus",
+      "out_of": 33,
+      "source_url": "https://www.wowhead.com/tbc/item=21625/scarab-brooch",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "id": 15299,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1458,
+                "outof": 9689
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 33
+              }
+            },
+            "5": {
+              "0": {
+                "count": 8,
+                "outof": 31
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1458,
+            "outof": 9689
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Viscidus",
+        "outof": 33,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21625/scarab-brooch"
+}

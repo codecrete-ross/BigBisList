@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 112 goes in the \"Legs\" slot. It is looted from Temporus. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:33:52+00:00",
+  "item_id": 28185,
+  "name": "Khadgar's Kilt of Abjuration",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 77,
+      "drop_percent": 14.69,
+      "entity_id": 17880,
+      "entity_name": "Temporus",
+      "out_of": 524,
+      "source_url": "https://www.wowhead.com/tbc/item=28185/khadgars-kilt-of-abjuration",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 77,
+        "id": 17880,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2425,
+                "outof": 15163
+              }
+            },
+            "4": {
+              "0": {
+                "count": 106,
+                "outof": 775
+              }
+            },
+            "5": {
+              "0": {
+                "count": 77,
+                "outof": 524
+              }
+            }
+          }
+        },
+        "location": [
+          2366
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2425,
+            "outof": 15163
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Temporus",
+        "outof": 524,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28185/khadgars-kilt-of-abjuration"
+}

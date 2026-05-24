@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue amulet of item level 103 goes in the \"Neck\" slot. It is a quest reward from The Hound-Master. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:35:31+00:00",
+  "item_id": 31692,
+  "name": "Natasha's Ember Necklace",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10912,
+      "entity_name": "The Hound-Master",
+      "quest_id": 10912,
+      "source_url": "https://www.wowhead.com/tbc/item=31692/natashas-ember-necklace",
+      "type": "quest",
+      "zone": "Blade's Edge Mountains"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3522,
+        "category2": 8,
+        "id": 10912,
+        "itemchoices": [
+          [
+            31693,
+            1
+          ],
+          [
+            31696,
+            1
+          ],
+          [
+            31695,
+            1
+          ],
+          [
+            31692,
+            1
+          ],
+          [
+            31691,
+            1
+          ],
+          [
+            31694,
+            1
+          ]
+        ],
+        "level": 68,
+        "money": 117000,
+        "name": "The Hound-Master",
+        "popularity": 20,
+        "reprewards": [
+          [
+            942,
+            500
+          ]
+        ],
+        "reqlevel": 65,
+        "side": 3,
+        "xp": 17950
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31692/natashas-ember-necklace"
+}

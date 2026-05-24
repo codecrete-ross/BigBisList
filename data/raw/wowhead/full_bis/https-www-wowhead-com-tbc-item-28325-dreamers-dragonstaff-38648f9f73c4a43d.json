@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 115. It is looted from Thorngrin the Tender. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:54:29+00:00",
+  "item_id": 28325,
+  "name": "Dreamer's Dragonstaff",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 96,
+      "drop_percent": 16.3,
+      "entity_id": 17978,
+      "entity_name": "Thorngrin the Tender",
+      "out_of": 589,
+      "source_url": "https://www.wowhead.com/tbc/item=28325/dreamers-dragonstaff",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 96,
+        "id": 17978,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2010,
+                "outof": 10975
+              }
+            },
+            "4": {
+              "0": {
+                "count": 159,
+                "outof": 932
+              }
+            },
+            "5": {
+              "0": {
+                "count": 96,
+                "outof": 589
+              }
+            }
+          }
+        },
+        "location": [
+          3847
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2010,
+            "outof": 10975
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Thorngrin the Tender",
+        "outof": 589,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28325/dreamers-dragonstaff"
+}

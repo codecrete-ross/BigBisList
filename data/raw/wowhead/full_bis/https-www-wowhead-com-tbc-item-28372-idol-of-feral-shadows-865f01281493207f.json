@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue idol of item level 115 goes in the \"Relic\" slot. It is looted from Zereketh the Unbound. In the Idols category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:53:01+00:00",
+  "item_id": 28372,
+  "name": "Idol of Feral Shadows",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 69,
+      "drop_percent": 25.09,
+      "entity_id": 20870,
+      "entity_name": "Zereketh the Unbound",
+      "out_of": 275,
+      "source_url": "https://www.wowhead.com/tbc/item=28372/idol-of-feral-shadows",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 69,
+        "id": 20870,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1498,
+                "outof": 8280
+              }
+            },
+            "4": {
+              "0": {
+                "count": 75,
+                "outof": 381
+              }
+            },
+            "5": {
+              "0": {
+                "count": 69,
+                "outof": 275
+              }
+            }
+          }
+        },
+        "location": [
+          3848
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1498,
+            "outof": 8280
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zereketh the Unbound",
+        "outof": 275,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28372/idol-of-feral-shadows"
+}

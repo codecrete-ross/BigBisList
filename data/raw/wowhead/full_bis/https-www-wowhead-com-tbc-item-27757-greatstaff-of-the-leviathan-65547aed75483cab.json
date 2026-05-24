@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 115. It is looted from Ghaz'an. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:56:39+00:00",
+  "item_id": 27757,
+  "name": "Greatstaff of the Leviathan",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 30,
+      "drop_percent": 5.79,
+      "entity_id": 18105,
+      "entity_name": "Ghaz'an",
+      "out_of": 518,
+      "source_url": "https://www.wowhead.com/tbc/item=27757/greatstaff-of-the-leviathan",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 30,
+        "id": 18105,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 766,
+                "outof": 12396
+              }
+            },
+            "4": {
+              "0": {
+                "count": 56,
+                "outof": 754
+              }
+            },
+            "5": {
+              "0": {
+                "count": 30,
+                "outof": 518
+              }
+            }
+          }
+        },
+        "location": [
+          3716
+        ],
+        "maxlevel": 72,
+        "minlevel": 65,
+        "modes": {
+          "0": {
+            "count": 766,
+            "outof": 12396
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ghaz'an",
+        "outof": 518,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27757/greatstaff-of-the-leviathan"
+}

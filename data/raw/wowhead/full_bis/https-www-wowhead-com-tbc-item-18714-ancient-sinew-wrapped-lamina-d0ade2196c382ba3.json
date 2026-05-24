@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Hunter. It is a quest reward from Ancient Sinew Wrapped Lamina. In the Items category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T04:46:27+00:00",
+  "item_id": 18714,
+  "name": "Ancient Sinew Wrapped Lamina",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7634,
+      "entity_name": "Ancient Sinew Wrapped Lamina",
+      "quest_id": 7634,
+      "source_url": "https://www.wowhead.com/tbc/item=18714/ancient-sinew-wrapped-lamina",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": -261,
+        "category2": 4,
+        "classs": 4,
+        "id": 7634,
+        "itemrewards": [
+          [
+            18714,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Ancient Sinew Wrapped Lamina",
+        "popularity": 9,
+        "reqclass": 4,
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62,
+        "xp": 14300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=18714/ancient-sinew-wrapped-lamina"
+}

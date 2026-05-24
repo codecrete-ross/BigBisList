@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic shield of item level 128 goes in the \"Off Hand\" slot. It is looted from Jan'alai. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:36:45+00:00",
+  "item_id": 33332,
+  "name": "Enamelled Disc of Mojo",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 21,
+      "drop_percent": 8.86,
+      "entity_id": 23578,
+      "entity_name": "Jan'alai",
+      "out_of": 237,
+      "source_url": "https://www.wowhead.com/tbc/item=33332/enamelled-disc-of-mojo",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 21,
+        "id": 23578,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 21,
+                "outof": 237
+              }
+            },
+            "4": {
+              "0": {
+                "count": 991,
+                "outof": 8147
+              }
+            },
+            "5": {
+              "0": {
+                "count": 511,
+                "outof": 4029
+              }
+            }
+          }
+        },
+        "location": [
+          3805
+        ],
+        "modes": {
+          "0": {
+            "count": 21,
+            "outof": 237
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jan'alai",
+        "outof": 237,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Dragonhawk Avatar",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=33332/enamelled-disc-of-mojo"
+}

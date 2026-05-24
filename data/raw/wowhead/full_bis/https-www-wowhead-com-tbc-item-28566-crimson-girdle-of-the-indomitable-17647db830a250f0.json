@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 115 goes in the \"Waist\" slot. It is looted from Moroes. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:13:24+00:00",
+  "item_id": 28566,
+  "name": "Crimson Girdle of the Indomitable",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 293,
+      "drop_percent": 15.52,
+      "entity_id": 15687,
+      "entity_name": "Moroes",
+      "out_of": 1888,
+      "source_url": "https://www.wowhead.com/tbc/item=28566/crimson-girdle-of-the-indomitable",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 293,
+        "id": 15687,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3547,
+                "outof": 21907
+              }
+            },
+            "4": {
+              "0": {
+                "count": 385,
+                "outof": 2503
+              }
+            },
+            "5": {
+              "0": {
+                "count": 293,
+                "outof": 1888
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3547,
+            "outof": 21907
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Moroes",
+        "outof": 1888,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Tower Steward",
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28566/crimson-girdle-of-the-indomitable"
+}

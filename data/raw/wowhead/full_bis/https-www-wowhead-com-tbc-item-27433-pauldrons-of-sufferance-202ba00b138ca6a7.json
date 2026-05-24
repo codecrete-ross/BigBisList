@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 103 goes in the \"Shoulder\" slot. It is looted from Epoch Hunter. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:02:29+00:00",
+  "item_id": 27433,
+  "name": "Pauldrons of Sufferance",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 49,
+      "drop_percent": 10.72,
+      "entity_id": 18096,
+      "entity_name": "Epoch Hunter",
+      "out_of": 457,
+      "source_url": "https://www.wowhead.com/tbc/item=27433/pauldrons-of-sufferance",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 49,
+        "id": 18096,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 986,
+                "outof": 7974
+              }
+            },
+            "4": {
+              "0": {
+                "count": 49,
+                "outof": 457
+              }
+            },
+            "5": {
+              "0": {
+                "count": 58,
+                "outof": 391
+              }
+            }
+          }
+        },
+        "location": [
+          2367
+        ],
+        "maxlevel": 72,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 986,
+            "outof": 7974
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Epoch Hunter",
+        "outof": 457,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27433/pauldrons-of-sufferance"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 144 goes in the \"Finger\" slot. It is a quest reward from Defender's Oath. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:40:34+00:00",
+  "item_id": 29296,
+  "name": "Band of Eternity",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10471,
+      "entity_name": "Defender's Oath",
+      "quest_id": 10471,
+      "source_url": "https://www.wowhead.com/tbc/item=29296/band-of-eternity",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 1941,
+        "category2": 2,
+        "id": 10471,
+        "itemrewards": [
+          [
+            29296,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Defender's Oath",
+        "popularity": 7,
+        "reprewards": [
+          [
+            990,
+            350
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 15800
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29296/band-of-eternity"
+}

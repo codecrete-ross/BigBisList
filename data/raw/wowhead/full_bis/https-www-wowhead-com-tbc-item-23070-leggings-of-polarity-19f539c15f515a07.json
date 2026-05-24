@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 85 goes in the \"Legs\" slot. It is looted from Thaddius. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T05:06:34+00:00",
+  "item_id": 23070,
+  "name": "Leggings of Polarity",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 21,
+      "drop_percent": 18.58,
+      "entity_id": 15928,
+      "entity_name": "Thaddius",
+      "out_of": 113,
+      "source_url": "https://www.wowhead.com/tbc/item=23070/leggings-of-polarity",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 21,
+        "id": 15928,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 375,
+                "outof": 1924
+              }
+            },
+            "4": {
+              "0": {
+                "count": 21,
+                "outof": 113
+              }
+            },
+            "5": {
+              "0": {
+                "count": 30,
+                "outof": 140
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 375,
+            "outof": 1924
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Thaddius",
+        "outof": 113,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23070/leggings-of-polarity"
+}

@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 88 goes in the \"Hands\" slot. It is a quest reward from Gloves of Faith. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:17:34+00:00",
+  "item_id": 22517,
+  "name": "Gloves of Faith",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9116,
+      "entity_name": "Gloves of Faith",
+      "quest_id": 9116,
+      "source_url": "https://www.wowhead.com/tbc/item=22517/gloves-of-faith",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "classs": 16,
+        "id": 9116,
+        "itemrewards": [
+          [
+            22517,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Gloves of Faith",
+        "popularity": 10,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqclass": 16,
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22517/gloves-of-faith"
+}

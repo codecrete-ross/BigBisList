@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed mace has an item level of 115. It is looted from Quagmirran. In the One-Handed Maces category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:43:42+00:00",
+  "item_id": 27741,
+  "name": "Bleeding Hollow Warhammer",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 58,
+      "drop_percent": 8.15,
+      "entity_id": 17942,
+      "entity_name": "Quagmirran",
+      "out_of": 712,
+      "source_url": "https://www.wowhead.com/tbc/item=27741/bleeding-hollow-warhammer",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 58,
+        "id": 17942,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1769,
+                "outof": 23080
+              }
+            },
+            "4": {
+              "0": {
+                "count": 114,
+                "outof": 1207
+              }
+            },
+            "5": {
+              "0": {
+                "count": 58,
+                "outof": 712
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "maxlevel": 72,
+        "minlevel": 64,
+        "modes": {
+          "0": {
+            "count": 1769,
+            "outof": 23080
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Quagmirran",
+        "outof": 712,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27741/bleeding-hollow-warhammer"
+}

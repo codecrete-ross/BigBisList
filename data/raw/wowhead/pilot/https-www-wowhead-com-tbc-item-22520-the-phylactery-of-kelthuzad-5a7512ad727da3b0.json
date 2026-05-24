@@ -1,0 +1,80 @@
+{
+  "description": "The Phylactery of Kel'Thuzad is a quest item needed for The Fall of Kel'Thuzad. In the Items category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T03:15:55+00:00",
+  "item_id": 22520,
+  "name": "The Phylactery of Kel'Thuzad",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 183,
+      "drop_percent": 96.83,
+      "entity_id": 15990,
+      "entity_name": "Kel'Thuzad",
+      "out_of": 189,
+      "source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 183,
+        "id": 15990,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1899,
+                "outof": 2058
+              }
+            },
+            "4": {
+              "0": {
+                "count": 183,
+                "outof": 189
+              }
+            },
+            "5": {
+              "0": {
+                "count": 183,
+                "outof": 190
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1899,
+            "outof": 2058
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kel'Thuzad",
+        "outof": 189,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad"
+}

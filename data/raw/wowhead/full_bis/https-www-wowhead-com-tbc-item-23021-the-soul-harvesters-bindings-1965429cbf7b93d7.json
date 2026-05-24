@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Soul Harvester's Bindings was considered a best-in-slot item for Balance Druids, Mages, Elemental Shamans and Warlocks that became available starting Phase 6 of WoW Classic. While equipped, this item increases your spell critical strike rating by 14 and increases damage and healing done by magical spells and effects by up to 21. This item is obtainable by defeating Gothik the Harvester within Naxxramas.",
+  "fetched_at": "2026-05-24T05:06:28+00:00",
+  "item_id": 23021,
+  "name": "The Soul Harvester's Bindings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 37,
+      "drop_percent": 19.89,
+      "entity_id": 16060,
+      "entity_name": "Gothik the Harvester",
+      "out_of": 186,
+      "source_url": "https://www.wowhead.com/tbc/item=23021/the-soul-harvesters-bindings",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 37,
+        "id": 16060,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 503,
+                "outof": 2722
+              }
+            },
+            "4": {
+              "0": {
+                "count": 37,
+                "outof": 186
+              }
+            },
+            "5": {
+              "0": {
+                "count": 50,
+                "outof": 198
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 503,
+            "outof": 2722
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Gothik the Harvester",
+        "outof": 186,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23021/the-soul-harvesters-bindings"
+}

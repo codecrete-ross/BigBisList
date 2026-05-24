@@ -1,0 +1,87 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This bullet can deal 34.0 damage per second. It is sold by NPCs. In the Bullets category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:49:25+00:00",
+  "item_id": 30612,
+  "name": "Halaani Grimshot",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21483,
+      "entity_name": "Tasaldan",
+      "source_url": "https://www.wowhead.com/tbc/item=30612/halaani-grimshot",
+      "type": "vendor",
+      "vendor_id": 21483,
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21488,
+      "entity_name": "Banro",
+      "source_url": "https://www.wowhead.com/tbc/item=30612/halaani-grimshot",
+      "type": "vendor",
+      "vendor_id": 21488,
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            5000
+          ]
+        ],
+        "id": 21483,
+        "location": [
+          3518
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Tasaldan",
+        "popularity": 5,
+        "react": [
+          -1,
+          1
+        ],
+        "stack": 200,
+        "stock": -1,
+        "tag": "Ammunition",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "cost": [
+          [
+            5000
+          ]
+        ],
+        "id": 21488,
+        "location": [
+          3518
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Banro",
+        "popularity": 3,
+        "react": [
+          1,
+          -1
+        ],
+        "stack": 200,
+        "stock": -1,
+        "tag": "Ammunition",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=30612/halaani-grimshot"
+}

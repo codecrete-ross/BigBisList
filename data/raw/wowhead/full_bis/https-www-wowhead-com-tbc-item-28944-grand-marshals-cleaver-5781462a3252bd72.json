@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed axe has an item level of 115. It is obtained through PvP. In the One-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:22:50+00:00",
+  "item_id": 28944,
+  "name": "Grand Marshal's Cleaver",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 15870,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 10,
+          "item_id": 29024,
+          "name": "Item 29024"
+        }
+      ],
+      "entity_id": 12782,
+      "entity_name": "Captain O'Neal",
+      "source_url": "https://www.wowhead.com/tbc/item=28944/grand-marshals-cleaver",
+      "type": "pvp",
+      "vendor_id": 12782
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                15870
+              ]
+            ],
+            [
+              [
+                29024,
+                10
+              ]
+            ]
+          ]
+        ],
+        "id": 12782,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Captain O'Neal",
+        "popularity": 4,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Weapons Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=28944/grand-marshals-cleaver"
+}

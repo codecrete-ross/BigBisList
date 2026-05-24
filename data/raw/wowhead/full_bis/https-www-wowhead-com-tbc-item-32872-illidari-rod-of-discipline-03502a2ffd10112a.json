@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green wand has an item level of 114. It is a quest reward from Subdue the Subduer. In the Wands category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:18:33+00:00",
+  "item_id": 32872,
+  "name": "Illidari Rod of Discipline",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11090,
+      "entity_name": "Subdue the Subduer",
+      "quest_id": 11090,
+      "source_url": "https://www.wowhead.com/tbc/item=32872/illidari-rod-of-discipline",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 11090,
+        "itemchoices": [
+          [
+            32871,
+            1
+          ],
+          [
+            32869,
+            1
+          ],
+          [
+            32872,
+            1
+          ],
+          [
+            32870,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Subdue the Subduer",
+        "popularity": 14,
+        "reprewards": [
+          [
+            1015,
+            500
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32872/illidari-rod-of-discipline"
+}

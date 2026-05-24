@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic bow has an item level of 141. It is looted from Lady Vashj. In the Bows category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:36:50+00:00",
+  "item_id": 30105,
+  "name": "Serpent Spine Longbow",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 120,
+      "drop_percent": 15.46,
+      "entity_id": 21212,
+      "entity_name": "Lady Vashj",
+      "out_of": 776,
+      "source_url": "https://www.wowhead.com/tbc/item=30105/serpent-spine-longbow",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 120,
+        "id": 21212,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 878,
+                "outof": 6257
+              }
+            },
+            "4": {
+              "0": {
+                "count": 273,
+                "outof": 1950
+              }
+            },
+            "5": {
+              "0": {
+                "count": 120,
+                "outof": 776
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 878,
+            "outof": 6257
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lady Vashj",
+        "outof": 776,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Coilfang Matron",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30105/serpent-spine-longbow"
+}

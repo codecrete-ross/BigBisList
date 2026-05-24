@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic shield of item level 154 goes in the \"Off Hand\" slot. It is looted from Felmyst. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:38:35+00:00",
+  "item_id": 34185,
+  "name": "Sword Breaker's Bulwark",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.1,
+      "entity_id": 25038,
+      "entity_name": "Felmyst",
+      "out_of": 1045,
+      "source_url": "https://www.wowhead.com/tbc/item=34185/sword-breakers-bulwark",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 25038,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 1045,
+                "percentOverride": 28.9
+              }
+            },
+            "5": {
+              "0": {
+                "count": 154,
+                "outof": 1045
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 1045,
+            "percentOverride": 28.9
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Felmyst",
+        "outof": 1045,
+        "pctstack": null,
+        "percentOverride": 28.9,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34185/sword-breakers-bulwark"
+}

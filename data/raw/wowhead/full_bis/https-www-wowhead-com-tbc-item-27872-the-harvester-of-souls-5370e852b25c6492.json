@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed axe has an item level of 115. It is looted from Exarch Maladaar. In the One-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:22:31+00:00",
+  "item_id": 27872,
+  "name": "The Harvester of Souls",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 27,
+      "drop_percent": 6.47,
+      "entity_id": 18373,
+      "entity_name": "Exarch Maladaar",
+      "out_of": 417,
+      "source_url": "https://www.wowhead.com/tbc/item=27872/the-harvester-of-souls",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 27,
+        "id": 18373,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 663,
+                "outof": 12115
+              }
+            },
+            "4": {
+              "0": {
+                "count": 42,
+                "outof": 610
+              }
+            },
+            "5": {
+              "0": {
+                "count": 27,
+                "outof": 417
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 72,
+        "minlevel": 67,
+        "modes": {
+          "0": {
+            "count": 663,
+            "outof": 12115
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Exarch Maladaar",
+        "outof": 417,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27872/the-harvester-of-souls"
+}

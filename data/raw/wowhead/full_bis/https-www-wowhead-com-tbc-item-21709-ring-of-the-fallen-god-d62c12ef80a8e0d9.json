@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 88 goes in the \"Finger\" slot. It is a quest reward from The Savior of Kalimdor. In the Rings category. Always up to date.",
+  "fetched_at": "2026-05-24T04:28:33+00:00",
+  "item_id": 21709,
+  "name": "Ring of the Fallen God",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8802,
+      "entity_name": "The Savior of Kalimdor",
+      "quest_id": 8802,
+      "source_url": "https://www.wowhead.com/tbc/item=21709/ring-of-the-fallen-god",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3428,
+        "category2": 3,
+        "id": 8802,
+        "itemchoices": [
+          [
+            21712,
+            1
+          ],
+          [
+            21710,
+            1
+          ],
+          [
+            21709,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "The Savior of Kalimdor",
+        "popularity": 9,
+        "reprewards": [
+          [
+            609,
+            500
+          ],
+          [
+            910,
+            1000
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "xp": 14300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21709/ring-of-the-fallen-god"
+}

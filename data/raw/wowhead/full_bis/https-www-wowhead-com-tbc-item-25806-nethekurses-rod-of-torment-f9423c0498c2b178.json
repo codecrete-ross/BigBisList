@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue wand has an item level of 109. It is a quest reward from Turning the Tide. In the Wands category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:33:10+00:00",
+  "item_id": 25806,
+  "name": "Nethekurse's Rod of Torment",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9492,
+      "entity_name": "Turning the Tide",
+      "quest_id": 9492,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25806/nethekurses-rod-of-torment",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3535,
+        "category2": 2,
+        "id": 9492,
+        "itemchoices": [
+          [
+            25806,
+            1
+          ],
+          [
+            25805,
+            1
+          ],
+          [
+            25804,
+            1
+          ],
+          [
+            25803,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Turning the Tide",
+        "popularity": 11,
+        "reprewards": [
+          [
+            946,
+            500
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 1,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25806/nethekurses-rod-of-torment"
+}

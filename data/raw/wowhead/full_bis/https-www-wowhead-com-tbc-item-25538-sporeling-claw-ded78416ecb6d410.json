@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue fist weapon has an item level of 94. It is a quest reward from Fhwoor Smash!. In the Fist Weapons category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:23:14+00:00",
+  "item_id": 25538,
+  "name": "Sporeling Claw",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9729,
+      "entity_name": "Fhwoor Smash!",
+      "quest_id": 9729,
+      "source_url": "https://www.wowhead.com/tbc/item=25538/sporeling-claw",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9729,
+        "itemchoices": [
+          [
+            25537,
+            1
+          ],
+          [
+            25538,
+            1
+          ],
+          [
+            25536,
+            1
+          ]
+        ],
+        "level": 65,
+        "name": "Fhwoor Smash!",
+        "popularity": 20,
+        "reprewards": [
+          [
+            970,
+            350
+          ]
+        ],
+        "reqlevel": 63,
+        "side": 3,
+        "type": 1,
+        "xp": 13750
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25538/sporeling-claw"
+}

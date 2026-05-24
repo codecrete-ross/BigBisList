@@ -1,0 +1,47 @@
+{
+  "fetched_at": "2026-05-24T05:11:03+00:00",
+  "name": "Ragesteel Gloves",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 23611,
+      "entity_name": "Plans: Ragesteel Gloves",
+      "item_id": 23611,
+      "source_url": "https://www.wowhead.com/tbc/spell=29642/ragesteel-gloves",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23611,
+        "level": 73,
+        "name": "Plans: Ragesteel Gloves",
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Boulderfist Warrior",
+            "t": 1,
+            "ti": 17136,
+            "z": 3518
+          }
+        ],
+        "subclass": 4
+      }
+    ]
+  },
+  "spell_id": 29642,
+  "url": "https://www.wowhead.com/tbc/spell=29642/ragesteel-gloves"
+}

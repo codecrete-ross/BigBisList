@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic off-hand frill of item level 90 goes in the \"Held In Off-hand\" slot. It is looted from Sapphiron. In the Off-hand Frills category.",
+  "fetched_at": "2026-05-24T04:57:56+00:00",
+  "item_id": 23048,
+  "name": "Sapphiron's Right Eye",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 14,
+      "drop_percent": 17.95,
+      "entity_id": 15989,
+      "entity_name": "Sapphiron",
+      "out_of": 78,
+      "source_url": "https://www.wowhead.com/tbc/item=23048/sapphirons-right-eye",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 14,
+        "id": 15989,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 62,
+                "outof": 332
+              }
+            },
+            "4": {
+              "0": {
+                "count": 14,
+                "outof": 78
+              }
+            },
+            "5": {
+              "0": {
+                "count": 15,
+                "outof": 68
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 62,
+            "outof": 332
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sapphiron",
+        "outof": 78,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23048/sapphirons-right-eye"
+}

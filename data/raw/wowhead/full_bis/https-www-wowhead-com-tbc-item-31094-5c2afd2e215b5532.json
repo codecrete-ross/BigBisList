@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Warrior, Hunter, or Shaman. It is looted from Azgalor. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:47:05+00:00",
+  "item_id": 31094,
+  "name": "Gloves of the Forgotten Protector",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 952,
+      "drop_percent": 57.07,
+      "entity_id": 17842,
+      "entity_name": "Azgalor",
+      "out_of": 1668,
+      "source_url": "https://www.wowhead.com/tbc/item=31094",
+      "type": "drop",
+      "zone": "Hyjal Summit"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 952,
+        "id": 17842,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1651,
+                "outof": 3123
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1044,
+                "outof": 2047
+              }
+            },
+            "5": {
+              "0": {
+                "count": 952,
+                "outof": 1668
+              }
+            }
+          }
+        },
+        "location": [
+          3606
+        ],
+        "modes": {
+          "0": {
+            "count": 1651,
+            "outof": 3123
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Azgalor",
+        "outof": 1668,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31094"
+}

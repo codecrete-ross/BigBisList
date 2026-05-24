@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 123 goes in the \"Feet\" slot. Requires Rogue or Druid. It is obtained through PvP. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:57:07+00:00",
+  "item_id": 28987,
+  "name": "Marshal's Leather Boots",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 14815,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 20,
+          "item_id": 29024,
+          "name": "Item 29024"
+        }
+      ],
+      "entity_id": 12777,
+      "entity_name": "Captain Dirgehammer",
+      "source_url": "https://www.wowhead.com/tbc/item=28987/marshals-leather-boots",
+      "type": "pvp",
+      "vendor_id": 12777
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                14815
+              ]
+            ],
+            [
+              [
+                29024,
+                20
+              ]
+            ]
+          ]
+        ],
+        "id": 12777,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Captain Dirgehammer",
+        "popularity": 3,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=28987/marshals-leather-boots"
+}

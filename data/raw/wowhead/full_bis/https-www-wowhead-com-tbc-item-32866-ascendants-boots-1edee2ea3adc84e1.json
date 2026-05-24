@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 114 goes in the \"Feet\" slot. It is a quest reward from A Job Unfinished.... Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:16:02+00:00",
+  "item_id": 32866,
+  "name": "Ascendant's Boots",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11041,
+      "entity_name": "A Job Unfinished...",
+      "quest_id": 11041,
+      "source_url": "https://www.wowhead.com/tbc/item=32866/ascendants-boots",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 11041,
+        "itemchoices": [
+          [
+            32866,
+            1
+          ],
+          [
+            32867,
+            1
+          ],
+          [
+            32865,
+            1
+          ],
+          [
+            32868,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "A Job Unfinished...",
+        "popularity": 22,
+        "reprewards": [
+          [
+            1015,
+            250
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "type": 1,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32866/ascendants-boots"
+}

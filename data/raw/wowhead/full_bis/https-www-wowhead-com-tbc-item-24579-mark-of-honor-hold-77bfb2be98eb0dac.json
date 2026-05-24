@@ -1,0 +1,132 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward. In the Consumables category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T05:18:49+00:00",
+  "item_id": 24579,
+  "name": "Mark of Honor Hold",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10106,
+      "entity_name": "Hellfire Fortifications",
+      "quest_id": 10106,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=24579/mark-of-honor-hold",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13408,
+      "entity_name": "Hellfire Fortifications",
+      "quest_id": 13408,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=24579/mark-of-honor-hold",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13410,
+      "entity_name": "Hellfire Fortifications",
+      "quest_id": 13410,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=24579/mark-of-honor-hold",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3483,
+        "category2": 8,
+        "daily": 1,
+        "id": 10106,
+        "itemrewards": [
+          [
+            24579,
+            3
+          ]
+        ],
+        "money": 32000,
+        "name": "Hellfire Fortifications",
+        "popularity": 17,
+        "reprewards": [
+          [
+            946,
+            150
+          ]
+        ],
+        "reqlevel": 55,
+        "side": 1,
+        "type": 41,
+        "wflags": 2,
+        "xp": 6100
+      },
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 13408,
+        "itemchoices": [
+          [
+            40476,
+            1
+          ]
+        ],
+        "itemrewards": [
+          [
+            24579,
+            3
+          ]
+        ],
+        "level": 70,
+        "money": 78750,
+        "name": "Hellfire Fortifications",
+        "popularity": 13,
+        "reprewards": [
+          [
+            946,
+            150
+          ]
+        ],
+        "side": 1,
+        "type": 41,
+        "wflags": 128,
+        "xp": 1060
+      },
+      {
+        "category": 3483,
+        "category2": 8,
+        "classs": 32,
+        "id": 13410,
+        "itemrewards": [
+          [
+            24579,
+            3
+          ]
+        ],
+        "level": 70,
+        "money": 78750,
+        "name": "Hellfire Fortifications",
+        "popularity": 12,
+        "reprewards": [
+          [
+            946,
+            150
+          ]
+        ],
+        "reqclass": 32,
+        "side": 1,
+        "type": 41,
+        "wflags": 128,
+        "xp": 1060
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=24579/mark-of-honor-hold"
+}

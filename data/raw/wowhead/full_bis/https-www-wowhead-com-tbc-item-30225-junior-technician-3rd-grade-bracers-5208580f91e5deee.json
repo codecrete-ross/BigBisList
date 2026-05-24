@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 108 goes in the \"Wrist\" slot. It is a quest reward from You're Hired!. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:27:43+00:00",
+  "item_id": 30225,
+  "name": "Junior Technician 3rd Grade Bracers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10186,
+      "entity_name": "You're Hired!",
+      "quest_id": 10186,
+      "source_url": "https://www.wowhead.com/tbc/item=30225/junior-technician-3rd-grade-bracers",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10186,
+        "itemchoices": [
+          [
+            30225,
+            1
+          ],
+          [
+            30224,
+            1
+          ],
+          [
+            30218,
+            1
+          ],
+          [
+            30515,
+            1
+          ]
+        ],
+        "level": 68,
+        "money": 39000,
+        "name": "You're Hired!",
+        "popularity": 13,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 12000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30225/junior-technician-3rd-grade-bracers"
+}

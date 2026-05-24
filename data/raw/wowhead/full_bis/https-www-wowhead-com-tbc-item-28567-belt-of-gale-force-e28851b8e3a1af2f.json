@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 115 goes in the \"Waist\" slot. It is looted from Moroes. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T05:23:49+00:00",
+  "item_id": 28567,
+  "name": "Belt of Gale Force",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 287,
+      "drop_percent": 15.2,
+      "entity_id": 15687,
+      "entity_name": "Moroes",
+      "out_of": 1888,
+      "source_url": "https://www.wowhead.com/tbc/item=28567/belt-of-gale-force",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 287,
+        "id": 15687,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3413,
+                "outof": 21907
+              }
+            },
+            "4": {
+              "0": {
+                "count": 414,
+                "outof": 2503
+              }
+            },
+            "5": {
+              "0": {
+                "count": 287,
+                "outof": 1888
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3413,
+            "outof": 21907
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Moroes",
+        "outof": 1888,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Tower Steward",
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28567/belt-of-gale-force"
+}

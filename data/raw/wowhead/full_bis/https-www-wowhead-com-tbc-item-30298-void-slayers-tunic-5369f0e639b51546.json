@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue mail armor of item level 109 goes in the \"Chest\" slot. It is a quest reward from Dimensius the All-Devouring. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:09:07+00:00",
+  "item_id": 30298,
+  "name": "Void Slayer's Tunic",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10439,
+      "entity_name": "Dimensius the All-Devouring",
+      "quest_id": 10439,
+      "source_url": "https://www.wowhead.com/tbc/item=30298/void-slayers-tunic",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10439,
+        "itemchoices": [
+          [
+            30297,
+            1
+          ],
+          [
+            30300,
+            1
+          ],
+          [
+            30299,
+            1
+          ],
+          [
+            30298,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Dimensius the All-Devouring",
+        "popularity": 23,
+        "reprewards": [
+          [
+            933,
+            500
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30298/void-slayers-tunic"
+}

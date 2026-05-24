@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue two-handed mace has an item level of 115. It is obtained through PvP. In the Two-Handed Maces category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:54:34+00:00",
+  "item_id": 28919,
+  "name": "High Warlord's Maul",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 31745,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 20,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 14581,
+      "entity_name": "Sergeant Thunderhorn",
+      "source_url": "https://www.wowhead.com/tbc/item=28919/high-warlords-maul",
+      "type": "pvp",
+      "vendor_id": 14581
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                31745
+              ]
+            ],
+            [
+              [
+                20560,
+                20
+              ]
+            ]
+          ]
+        ],
+        "id": 14581,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Sergeant Thunderhorn",
+        "popularity": 7,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Weapons Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=28919/high-warlords-maul"
+}

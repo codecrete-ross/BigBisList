@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 125 goes in the \"Waist\" slot. It is looted from Magtheridon. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:35:58+00:00",
+  "item_id": 28779,
+  "name": "Girdle of the Endless Pit",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1530,
+      "drop_percent": 14.17,
+      "entity_id": 17257,
+      "entity_name": "Magtheridon",
+      "out_of": 10798,
+      "source_url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit",
+      "type": "drop",
+      "zone": "Magtheridon's Lair"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 21174,
+      "entity_name": "Magtheridon",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1530,
+        "id": 17257,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1530,
+                "outof": 10798
+              }
+            },
+            "4": {
+              "0": {
+                "count": 91,
+                "outof": 650
+              }
+            },
+            "5": {
+              "0": {
+                "count": 51,
+                "outof": 408
+              }
+            }
+          }
+        },
+        "location": [
+          3836
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1530,
+            "outof": 10798
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 10798,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21174,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 13.5
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 13.5
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 13.5,
+        "personal_loot": 0,
+        "popularity": 22,
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit"
+}

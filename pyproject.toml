@@ -1,0 +1,11 @@
+[project]
+name = "big-bis-list-tools"
+version = "0.1.0"
+description = "Tooling for Big BiS List canonical data and addon generation."
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4>=4.12",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

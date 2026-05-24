@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 115 goes in the \"Chest\" slot. It is looted from Julianne. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:39:57+00:00",
+  "item_id": 28578,
+  "name": "Masquerade Gown",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 148,
+      "drop_percent": 26.67,
+      "entity_id": 17534,
+      "entity_name": "Julianne",
+      "out_of": 555,
+      "source_url": "https://www.wowhead.com/tbc/item=28578/masquerade-gown",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 148,
+        "id": 17534,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1589,
+                "outof": 5642
+              }
+            },
+            "4": {
+              "0": {
+                "count": 193,
+                "outof": 780
+              }
+            },
+            "5": {
+              "0": {
+                "count": 148,
+                "outof": 555
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1589,
+            "outof": 5642
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Julianne",
+        "outof": 555,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28578/masquerade-gown"
+}

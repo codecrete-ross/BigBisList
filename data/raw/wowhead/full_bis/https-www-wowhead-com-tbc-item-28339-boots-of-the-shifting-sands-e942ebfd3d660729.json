@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 115 goes in the \"Feet\" slot. It is looted from Laj. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T04:56:55+00:00",
+  "item_id": 28339,
+  "name": "Boots of the Shifting Sands",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 94,
+      "drop_percent": 17.6,
+      "entity_id": 17980,
+      "entity_name": "Laj",
+      "out_of": 534,
+      "source_url": "https://www.wowhead.com/tbc/item=28339/boots-of-the-shifting-sands",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 94,
+        "id": 17980,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1734,
+                "outof": 9288
+              }
+            },
+            "4": {
+              "0": {
+                "count": 165,
+                "outof": 801
+              }
+            },
+            "5": {
+              "0": {
+                "count": 94,
+                "outof": 534
+              }
+            }
+          }
+        },
+        "location": [
+          3847
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1734,
+            "outof": 9288
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Laj",
+        "outof": 534,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28339/boots-of-the-shifting-sands"
+}

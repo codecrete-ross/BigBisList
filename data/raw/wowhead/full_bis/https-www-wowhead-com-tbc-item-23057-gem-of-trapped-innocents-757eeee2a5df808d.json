@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 92 goes in the \"Neck\" slot. It is looted from Kel'Thuzad. In the Amulets category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:25:03+00:00",
+  "item_id": 23057,
+  "name": "Gem of Trapped Innocents",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 22,
+      "drop_percent": 11.64,
+      "entity_id": 15990,
+      "entity_name": "Kel'Thuzad",
+      "out_of": 189,
+      "source_url": "https://www.wowhead.com/tbc/item=23057/gem-of-trapped-innocents",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 22,
+        "id": 15990,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 289,
+                "outof": 2058
+              }
+            },
+            "4": {
+              "0": {
+                "count": 22,
+                "outof": 189
+              }
+            },
+            "5": {
+              "0": {
+                "count": 36,
+                "outof": 190
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 289,
+            "outof": 2058
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kel'Thuzad",
+        "outof": 189,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23057/gem-of-trapped-innocents"
+}

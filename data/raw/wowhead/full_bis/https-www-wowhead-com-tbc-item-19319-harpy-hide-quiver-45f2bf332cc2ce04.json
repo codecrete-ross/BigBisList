@@ -1,0 +1,241 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is obtained through PvP. In the Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+  "fetched_at": "2026-05-24T04:46:29+00:00",
+  "item_id": 19319,
+  "name": "Harpy Hide Quiver",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1530,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 1,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 13216,
+      "entity_name": "Gaelden Hammersmith",
+      "source_url": "https://www.wowhead.com/tbc/item=19319/harpy-hide-quiver",
+      "type": "pvp",
+      "vendor_id": 13216
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1530,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 1,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 13217,
+      "entity_name": "Thanthaldis Snowgleam",
+      "source_url": "https://www.wowhead.com/tbc/item=19319/harpy-hide-quiver",
+      "type": "pvp",
+      "vendor_id": 13217
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1530,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 1,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 13218,
+      "entity_name": "Grunnda Wolfheart",
+      "source_url": "https://www.wowhead.com/tbc/item=19319/harpy-hide-quiver",
+      "type": "pvp",
+      "vendor_id": 13218
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1530,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 1,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 13219,
+      "entity_name": "Jekyll Flandring",
+      "source_url": "https://www.wowhead.com/tbc/item=19319/harpy-hide-quiver",
+      "type": "pvp",
+      "vendor_id": 13219
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                1530
+              ]
+            ],
+            [
+              [
+                20560,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 13216,
+        "location": [
+          2597
+        ],
+        "maxlevel": 68,
+        "minlevel": 58,
+        "name": "Gaelden Hammersmith",
+        "popularity": 3,
+        "react": [
+          1,
+          -1
+        ],
+        "stock": -1,
+        "tag": "Stormpike Supply Officer",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                1530
+              ]
+            ],
+            [
+              [
+                20560,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 13217,
+        "location": [
+          36
+        ],
+        "maxlevel": 58,
+        "minlevel": 58,
+        "name": "Thanthaldis Snowgleam",
+        "popularity": 7,
+        "react": [
+          1,
+          -1
+        ],
+        "stock": -1,
+        "tag": "Stormpike Supply Officer",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                1530
+              ]
+            ],
+            [
+              [
+                20560,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 13218,
+        "location": [
+          2597
+        ],
+        "maxlevel": 68,
+        "minlevel": 58,
+        "name": "Grunnda Wolfheart",
+        "popularity": 4,
+        "react": [
+          -1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Frostwolf Supply Officer",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                1530
+              ]
+            ],
+            [
+              [
+                20560,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 13219,
+        "location": [
+          36
+        ],
+        "maxlevel": 58,
+        "minlevel": 58,
+        "name": "Jekyll Flandring",
+        "popularity": 11,
+        "react": [
+          -1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Frostwolf Supply Officer",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=19319/harpy-hide-quiver"
+}

@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 78 goes in the \"Finger\" slot. It is looted from Princess Huhuran. In the Rings category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:01:47+00:00",
+  "item_id": 21620,
+  "name": "Ring of the Martyr",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2644,
+      "drop_percent": 15.88,
+      "entity_id": 15509,
+      "entity_name": "Princess Huhuran",
+      "out_of": 16653,
+      "source_url": "https://www.wowhead.com/tbc/item=21620/ring-of-the-martyr",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2644,
+        "id": 15509,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2644,
+                "outof": 16653
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2644,
+            "outof": 16653
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Princess Huhuran",
+        "outof": 16653,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21620/ring-of-the-martyr"
+}

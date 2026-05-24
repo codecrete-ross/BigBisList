@@ -1,0 +1,54 @@
+{
+  "description": "This epic trinket of item level 90 goes in the \"Trinket\" slot. It is a quest reward from The Fall of Kel'Thuzad. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T03:15:55+00:00",
+  "item_id": 23206,
+  "name": "Mark of the Champion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9120,
+      "entity_name": "The Fall of Kel'Thuzad",
+      "quest_id": 9120,
+      "source_url": "https://www.wowhead.com/tbc/item=23206/mark-of-the-champion",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "id": 9120,
+        "itemchoices": [
+          [
+            23206,
+            1
+          ],
+          [
+            23207,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "The Fall of Kel'Thuzad",
+        "popularity": 9,
+        "reprewards": [
+          [
+            529,
+            1000
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "xp": 14300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23206/mark-of-the-champion"
+}

@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 115. It is looted from Nexus-Prince Shaffar. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:43:45+00:00",
+  "item_id": 27842,
+  "name": "Grand Scepter of the Nexus-Kings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 38,
+      "drop_percent": 5.68,
+      "entity_id": 18344,
+      "entity_name": "Nexus-Prince Shaffar",
+      "out_of": 669,
+      "source_url": "https://www.wowhead.com/tbc/item=27842/grand-scepter-of-the-nexus-kings",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 38,
+        "id": 18344,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 597,
+                "outof": 19961
+              }
+            },
+            "4": {
+              "0": {
+                "count": 41,
+                "outof": 840
+              }
+            },
+            "5": {
+              "0": {
+                "count": 38,
+                "outof": 669
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 72,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 597,
+            "outof": 19961
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nexus-Prince Shaffar",
+        "outof": 669,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27842/grand-scepter-of-the-nexus-kings"
+}

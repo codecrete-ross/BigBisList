@@ -1,0 +1,111 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Crimson Fury is one of the rewards from the quest The Fall of Magtheridon/The Fall of Magtheridon, started from Magtheridon's Head. It is a quest reward.",
+  "fetched_at": "2026-05-24T04:25:38+00:00",
+  "item_id": 28793,
+  "name": "Band of Crimson Fury",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11002,
+      "entity_name": "The Fall of Magtheridon",
+      "quest_id": 11002,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=28793/band-of-crimson-fury",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11003,
+      "entity_name": "The Fall of Magtheridon",
+      "quest_id": 11003,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=28793/band-of-crimson-fury",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 11002,
+        "itemchoices": [
+          [
+            28792,
+            1
+          ],
+          [
+            28793,
+            1
+          ],
+          [
+            28790,
+            1
+          ],
+          [
+            28791,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "The Fall of Magtheridon",
+        "popularity": 14,
+        "reprewards": [
+          [
+            946,
+            1000
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 1,
+        "xp": 19000
+      },
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 11003,
+        "itemchoices": [
+          [
+            28792,
+            1
+          ],
+          [
+            28793,
+            1
+          ],
+          [
+            28790,
+            1
+          ],
+          [
+            28791,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "The Fall of Magtheridon",
+        "popularity": 16,
+        "reprewards": [
+          [
+            947,
+            1000
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 2,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28793/band-of-crimson-fury"
+}

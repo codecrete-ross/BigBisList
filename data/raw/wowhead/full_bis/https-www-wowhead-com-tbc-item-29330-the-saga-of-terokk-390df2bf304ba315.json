@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue off-hand frill of item level 115 goes in the \"Held In Off-hand\" slot. It is a quest reward from Terokk's Legacy. In the Off-hand Frills category.",
+  "fetched_at": "2026-05-24T04:44:47+00:00",
+  "item_id": 29330,
+  "name": "The Saga of Terokk",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10098,
+      "entity_name": "Terokk's Legacy",
+      "quest_id": 10098,
+      "source_url": "https://www.wowhead.com/tbc/item=29330/the-saga-of-terokk",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3688,
+        "category2": 8,
+        "id": 10098,
+        "itemchoices": [
+          [
+            29330,
+            1
+          ],
+          [
+            29332,
+            1
+          ],
+          [
+            29329,
+            1
+          ]
+        ],
+        "level": 69,
+        "money": 82000,
+        "name": "Terokk's Legacy",
+        "popularity": 19,
+        "reqlevel": 65,
+        "side": 3,
+        "type": 81,
+        "xp": 24600
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29330/the-saga-of-terokk"
+}

@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 92 goes in the \"Chest\" slot. It is a quest reward from Cryptstalker Tunic. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:04:41+00:00",
+  "item_id": 22436,
+  "name": "Cryptstalker Tunic",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9054,
+      "entity_name": "Cryptstalker Tunic",
+      "quest_id": 9054,
+      "source_url": "https://www.wowhead.com/tbc/item=22436/cryptstalker-tunic",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "classs": 4,
+        "id": 9054,
+        "itemrewards": [
+          [
+            22436,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Cryptstalker Tunic",
+        "popularity": 12,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqclass": 4,
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22436/cryptstalker-tunic"
+}

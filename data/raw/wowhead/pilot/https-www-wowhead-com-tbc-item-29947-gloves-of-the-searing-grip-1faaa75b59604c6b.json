@@ -1,0 +1,80 @@
+{
+  "description": "This epic leather armor of item level 128 goes in the \"Hands\" slot. It is looted from Al'ar. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:56+00:00",
+  "item_id": 29947,
+  "name": "Gloves of the Searing Grip",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 106,
+      "drop_percent": 22.94,
+      "entity_id": 19514,
+      "entity_name": "Al'ar",
+      "out_of": 462,
+      "source_url": "https://www.wowhead.com/tbc/item=29947/gloves-of-the-searing-grip",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 106,
+        "id": 19514,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1055,
+                "outof": 5563
+              }
+            },
+            "4": {
+              "0": {
+                "count": 209,
+                "outof": 932
+              }
+            },
+            "5": {
+              "0": {
+                "count": 106,
+                "outof": 462
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 1055,
+            "outof": 5563
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Al'ar",
+        "outof": 462,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Phoenix God",
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29947/gloves-of-the-searing-grip"
+}

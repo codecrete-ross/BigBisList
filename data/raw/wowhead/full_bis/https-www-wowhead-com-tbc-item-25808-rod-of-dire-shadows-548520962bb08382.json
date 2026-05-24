@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue wand has an item level of 109. It is a quest reward from The Will of the Warchief. In the Wands category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:32:07+00:00",
+  "item_id": 25808,
+  "name": "Rod of Dire Shadows",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9495,
+      "entity_name": "The Will of the Warchief",
+      "quest_id": 9495,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25808/rod-of-dire-shadows",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3535,
+        "category2": 2,
+        "id": 9495,
+        "itemchoices": [
+          [
+            25808,
+            1
+          ],
+          [
+            25810,
+            1
+          ],
+          [
+            25811,
+            1
+          ],
+          [
+            25809,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "The Will of the Warchief",
+        "popularity": 12,
+        "reprewards": [
+          [
+            947,
+            500
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 2,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25808/rod-of-dire-shadows"
+}

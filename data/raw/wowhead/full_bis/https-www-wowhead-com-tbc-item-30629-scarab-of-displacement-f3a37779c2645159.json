@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 128 goes in the \"Trinket\" slot. It is looted from Hydross the Unstable. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:15:16+00:00",
+  "item_id": 30629,
+  "name": "Scarab of Displacement",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1503,
+      "drop_percent": 16.11,
+      "entity_id": 21216,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 9328,
+      "source_url": "https://www.wowhead.com/tbc/item=30629/scarab-of-displacement",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 21932,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=30629/scarab-of-displacement",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1503,
+        "id": 21216,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1503,
+                "outof": 9328
+              }
+            },
+            "4": {
+              "0": {
+                "count": 253,
+                "outof": 1208
+              }
+            },
+            "5": {
+              "0": {
+                "count": 132,
+                "outof": 603
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 1503,
+            "outof": 9328
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 9328,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Duke of Currents",
+        "type": 4
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21932,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 30
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 30
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 30,
+        "personal_loot": 0,
+        "popularity": 20,
+        "tag": "Duke of Currents",
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30629/scarab-of-displacement"
+}

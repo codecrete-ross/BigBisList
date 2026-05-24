@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 92 goes in the \"Chest\" slot. It is a quest reward from Plagueheart Robe. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:24:56+00:00",
+  "item_id": 22504,
+  "name": "Plagueheart Robe",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9103,
+      "entity_name": "Plagueheart Robe",
+      "quest_id": 9103,
+      "source_url": "https://www.wowhead.com/tbc/item=22504/plagueheart-robe",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "classs": 256,
+        "id": 9103,
+        "itemrewards": [
+          [
+            22504,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Plagueheart Robe",
+        "popularity": 10,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqclass": 256,
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22504/plagueheart-robe"
+}

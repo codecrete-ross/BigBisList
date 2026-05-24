@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 102 goes in the \"Trinket\" slot. It is a quest reward from Bleeding Hollow Supply Crates. In the Trinkets category.",
+  "fetched_at": "2026-05-24T05:23:16+00:00",
+  "item_id": 25628,
+  "name": "Ogre Mauler's Badge",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9916,
+      "entity_name": "Bleeding Hollow Supply Crates",
+      "quest_id": 9916,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25628/ogre-maulers-badge",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9916,
+        "itemchoices": [
+          [
+            25630,
+            1
+          ],
+          [
+            25629,
+            1
+          ],
+          [
+            25628,
+            1
+          ]
+        ],
+        "level": 66,
+        "name": "Bleeding Hollow Supply Crates",
+        "popularity": 17,
+        "reprewards": [
+          [
+            941,
+            250
+          ]
+        ],
+        "reqlevel": 64,
+        "side": 2,
+        "xp": 11300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25628/ogre-maulers-badge"
+}

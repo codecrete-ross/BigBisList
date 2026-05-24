@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Black Stalk is considered a best-in-slot item for Frost Mages and Fire Mages that becomes available starting Phase 1. This epic wand has an item level of 110.",
+  "fetched_at": "2026-05-24T04:25:54+00:00",
+  "item_id": 29350,
+  "name": "The Black Stalk",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 50,
+      "drop_percent": 9.4,
+      "entity_id": 17882,
+      "entity_name": "The Black Stalker",
+      "out_of": 532,
+      "source_url": "https://www.wowhead.com/tbc/item=29350/the-black-stalk",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 50,
+        "id": 17882,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 684,
+                "outof": 12213
+              }
+            },
+            "4": {
+              "0": {
+                "count": 90,
+                "outof": 846
+              }
+            },
+            "5": {
+              "0": {
+                "count": 50,
+                "outof": 532
+              }
+            }
+          }
+        },
+        "location": [
+          3716
+        ],
+        "maxlevel": 72,
+        "minlevel": 65,
+        "modes": {
+          "0": {
+            "count": 684,
+            "outof": 12213
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Black Stalker",
+        "outof": 532,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29350/the-black-stalk"
+}

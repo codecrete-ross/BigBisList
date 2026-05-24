@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 76 goes in the \"Trinket\" slot. Requires Paladin. It is looted from Firemaw. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T05:10:14+00:00",
+  "item_id": 19343,
+  "name": "Scrolls of Blinding Light",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 16.67,
+      "entity_id": 11983,
+      "entity_name": "Firemaw",
+      "out_of": 12,
+      "source_url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "id": 11983,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2491,
+                "outof": 28012
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 12
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 15
+              }
+            }
+          }
+        },
+        "location": [
+          2677
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2491,
+            "outof": 28012
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Firemaw",
+        "outof": 12,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light"
+}

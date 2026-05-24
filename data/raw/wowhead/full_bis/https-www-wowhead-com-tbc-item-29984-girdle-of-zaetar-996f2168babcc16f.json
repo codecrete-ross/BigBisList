@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 128 goes in the \"Waist\" slot. It is looted from Void Reaver. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:00:01+00:00",
+  "item_id": 29984,
+  "name": "Girdle of Zaetar",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 86,
+      "drop_percent": 16.41,
+      "entity_id": 19516,
+      "entity_name": "Void Reaver",
+      "out_of": 524,
+      "source_url": "https://www.wowhead.com/tbc/item=29984/girdle-of-zaetar",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 86,
+        "id": 19516,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 996,
+                "outof": 7529
+              }
+            },
+            "4": {
+              "0": {
+                "count": 133,
+                "outof": 1067
+              }
+            },
+            "5": {
+              "0": {
+                "count": 86,
+                "outof": 524
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 996,
+            "outof": 7529
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Void Reaver",
+        "outof": 524,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29984/girdle-of-zaetar"
+}

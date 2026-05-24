@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 76 goes in the \"Trinket\" slot. Requires Warlock. It is looted from Razorgore the Untamed. In the Trinkets category.",
+  "fetched_at": "2026-05-24T05:24:52+00:00",
+  "item_id": 19337,
+  "name": "The Black Book",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 15.79,
+      "entity_id": 12435,
+      "entity_name": "Razorgore the Untamed",
+      "out_of": 19,
+      "source_url": "https://www.wowhead.com/tbc/item=19337/the-black-book",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 3,
+        "id": 12435,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5548,
+                "outof": 27472
+              }
+            },
+            "4": {
+              "0": {
+                "count": 3,
+                "outof": 19
+              }
+            }
+          }
+        },
+        "location": [
+          2677
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 5548,
+            "outof": 27472
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Razorgore the Untamed",
+        "outof": 19,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=19337/the-black-book"
+}

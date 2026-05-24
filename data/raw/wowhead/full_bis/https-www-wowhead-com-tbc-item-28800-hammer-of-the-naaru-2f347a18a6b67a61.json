@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic two-handed mace has an item level of 125. It is looted from High King Maulgar. In the Two-Handed Maces category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:42:41+00:00",
+  "item_id": 28800,
+  "name": "Hammer of the Naaru",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 262,
+      "drop_percent": 13.56,
+      "entity_id": 18831,
+      "entity_name": "High King Maulgar",
+      "out_of": 1932,
+      "source_url": "https://www.wowhead.com/tbc/item=28800/hammer-of-the-naaru",
+      "type": "drop",
+      "zone": "Gruul's Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 262,
+        "id": 18831,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2964,
+                "outof": 18894
+              }
+            },
+            "4": {
+              "0": {
+                "count": 458,
+                "outof": 3225
+              }
+            },
+            "5": {
+              "0": {
+                "count": 262,
+                "outof": 1932
+              }
+            }
+          }
+        },
+        "location": [
+          3923
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2964,
+            "outof": 18894
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "High King Maulgar",
+        "outof": 1932,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Ogres",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28800/hammer-of-the-naaru"
+}

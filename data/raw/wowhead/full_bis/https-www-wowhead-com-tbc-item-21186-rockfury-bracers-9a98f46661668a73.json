@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rockfury Bracers was considered a best-in-slot item for Balance Druids, Mages, Shadow Priests, Elemental Shamans and Warlocks that became available starting Phase 4 of WoW Classic. While equipped, this item increases damage and healing done by magical spells and effects by up to 27 and increases your spell hit rating by 8. This item is obtainable as a reward upon completion of the quest: Stalwart's Battlegear.",
+  "fetched_at": "2026-05-24T04:52:36+00:00",
+  "item_id": 21186,
+  "name": "Rockfury Bracers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8574,
+      "entity_name": "Stalwart's Battlegear",
+      "quest_id": 8574,
+      "source_url": "https://www.wowhead.com/tbc/item=21186/rockfury-bracers",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8574,
+        "itemchoices": [
+          [
+            21184,
+            1
+          ],
+          [
+            21185,
+            1
+          ],
+          [
+            21186,
+            1
+          ],
+          [
+            21189,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Stalwart's Battlegear",
+        "popularity": 10,
+        "reprewards": [
+          [
+            609,
+            75
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "wflags": 1
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21186/rockfury-bracers"
+}

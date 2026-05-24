@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloak of item level 138 goes in the \"Back\" slot. It is looted from Kael'thas Sunstrider. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:00:03+00:00",
+  "item_id": 29989,
+  "name": "Sunshower Light Cloak",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1002,
+      "drop_percent": 14.79,
+      "entity_id": 19622,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 6777,
+      "source_url": "https://www.wowhead.com/tbc/item=29989/sunshower-light-cloak",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 23054,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=29989/sunshower-light-cloak",
+      "type": "drop",
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1002,
+        "id": 19622,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1002,
+                "outof": 6777
+              }
+            },
+            "4": {
+              "0": {
+                "count": 217,
+                "outof": 1563
+              }
+            },
+            "5": {
+              "0": {
+                "count": 107,
+                "outof": 724
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 1002,
+            "outof": 6777
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 6777,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 23054,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 22.2
+              }
+            }
+          }
+        },
+        "location": [
+          3703
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 22.2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 22.2,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29989/sunshower-light-cloak"
+}

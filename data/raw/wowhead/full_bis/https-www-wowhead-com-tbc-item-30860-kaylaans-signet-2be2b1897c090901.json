@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue ring of item level 109 goes in the \"Finger\" slot. It is a quest reward from Deathblow to the Legion. In the Rings category. Always up to date.",
+  "fetched_at": "2026-05-24T04:49:27+00:00",
+  "item_id": 30860,
+  "name": "Kaylaan's Signet",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10409,
+      "entity_name": "Deathblow to the Legion",
+      "quest_id": 10409,
+      "source_url": "https://www.wowhead.com/tbc/item=30860/kaylaans-signet",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10409,
+        "itemchoices": [
+          [
+            30368,
+            1
+          ],
+          [
+            30369,
+            1
+          ],
+          [
+            30370,
+            1
+          ],
+          [
+            30371,
+            1
+          ],
+          [
+            30860,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Deathblow to the Legion",
+        "popularity": 17,
+        "reprewards": [
+          [
+            932,
+            1000
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30860/kaylaans-signet"
+}

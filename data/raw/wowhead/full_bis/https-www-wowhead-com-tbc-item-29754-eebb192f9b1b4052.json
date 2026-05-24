@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Paladin, Rogue, or Shaman. It is looted from Magtheridon. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:47:59+00:00",
+  "item_id": 29754,
+  "name": "Chestguard of the Fallen Champion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 4258,
+      "drop_percent": 39.43,
+      "entity_id": 17257,
+      "entity_name": "Magtheridon",
+      "out_of": 10798,
+      "source_url": "https://www.wowhead.com/tbc/item=29754",
+      "type": "drop",
+      "zone": "Magtheridon's Lair"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 21174,
+      "entity_name": "Magtheridon",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=29754",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 4258,
+        "id": 17257,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4258,
+                "outof": 10798
+              }
+            },
+            "4": {
+              "0": {
+                "count": 365,
+                "outof": 650
+              }
+            },
+            "5": {
+              "0": {
+                "count": 227,
+                "outof": 408
+              }
+            }
+          }
+        },
+        "location": [
+          3836
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 4258,
+            "outof": 10798
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 10798,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21174,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 71.7
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 71.7
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 71.7,
+        "personal_loot": 0,
+        "popularity": 22,
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29754"
+}

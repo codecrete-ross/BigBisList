@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 115 goes in the \"Wrist\" slot. It is looted from Rokad the Ravager. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:05:13+00:00",
+  "item_id": 30686,
+  "name": "Ravager's Bands",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 26.09,
+      "entity_id": 16181,
+      "entity_name": "Rokad the Ravager",
+      "out_of": 23,
+      "source_url": "https://www.wowhead.com/tbc/item=30686/ravagers-bands",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 2,
+        "count": 6,
+        "id": 16181,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 202,
+                "outof": 859
+              }
+            },
+            "4": {
+              "0": {
+                "count": 6,
+                "outof": 23
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 73,
+        "minlevel": 73,
+        "modes": {
+          "0": {
+            "count": 202,
+            "outof": 859
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Rokad the Ravager",
+        "outof": 23,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30686/ravagers-bands"
+}

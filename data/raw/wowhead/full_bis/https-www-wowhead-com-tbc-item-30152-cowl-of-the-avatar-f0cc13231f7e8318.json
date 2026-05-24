@@ -1,0 +1,109 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 133 goes in the \"Head\" slot. Requires Priest. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:17:08+00:00",
+  "item_id": 30152,
+  "name": "Cowl of the Avatar",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 30243,
+          "name": "Item 30243"
+        }
+      ],
+      "entity_id": 21905,
+      "entity_name": "Veynna Dawnstar",
+      "source_url": "https://www.wowhead.com/tbc/item=30152/cowl-of-the-avatar",
+      "type": "vendor",
+      "vendor_id": 21905,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 30243,
+          "name": "Item 30243"
+        }
+      ],
+      "entity_id": 21906,
+      "entity_name": "Kelara",
+      "source_url": "https://www.wowhead.com/tbc/item=30152/cowl-of-the-avatar",
+      "type": "vendor",
+      "vendor_id": 21906,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                30243,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 21905,
+        "location": [
+          3703
+        ],
+        "name": "Veynna Dawnstar",
+        "popularity": 7,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Heirlooms",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                30243,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 21906,
+        "location": [
+          3703
+        ],
+        "name": "Kelara",
+        "popularity": 10,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Heirlooms",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=30152/cowl-of-the-avatar"
+}

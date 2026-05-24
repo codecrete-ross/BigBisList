@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 111 goes in the \"Shoulder\" slot. It is a quest reward from Success!. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:16:38+00:00",
+  "item_id": 30291,
+  "name": "Nexus-Guard's Pauldrons",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10440,
+      "entity_name": "Success!",
+      "quest_id": 10440,
+      "source_url": "https://www.wowhead.com/tbc/item=30291/nexus-guards-pauldrons",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10440,
+        "itemchoices": [
+          [
+            30293,
+            1
+          ],
+          [
+            30290,
+            1
+          ],
+          [
+            30291,
+            1
+          ],
+          [
+            30520,
+            1
+          ]
+        ],
+        "level": 69,
+        "name": "Success!",
+        "popularity": 9,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 3100
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30291/nexus-guards-pauldrons"
+}

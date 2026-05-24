@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue fist weapon has an item level of 115. It is looted from High Botanist Freywinn. In the Fist Weapons category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:47:24+00:00",
+  "item_id": 28315,
+  "name": "Stormreaver Warblades",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 113,
+      "drop_percent": 18.83,
+      "entity_id": 17975,
+      "entity_name": "High Botanist Freywinn",
+      "out_of": 600,
+      "source_url": "https://www.wowhead.com/tbc/item=28315/stormreaver-warblades",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 113,
+        "id": 17975,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2224,
+                "outof": 11410
+              }
+            },
+            "4": {
+              "0": {
+                "count": 173,
+                "outof": 958
+              }
+            },
+            "5": {
+              "0": {
+                "count": 113,
+                "outof": 600
+              }
+            }
+          }
+        },
+        "location": [
+          3847
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2224,
+            "outof": 11410
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "High Botanist Freywinn",
+        "outof": 600,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28315/stormreaver-warblades"
+}

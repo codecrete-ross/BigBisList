@@ -1,0 +1,75 @@
+{
+  "description": "Alterac Valley Mark of Honor is a currency in World of Warcraft. It is a quest reward. In the Items category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T03:15:58+00:00",
+  "item_id": 20560,
+  "name": "Alterac Valley Mark of Honor",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11336,
+      "entity_name": "Call to Arms: Alterac Valley",
+      "quest_id": 11336,
+      "source_url": "https://www.wowhead.com/tbc/item=20560",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11340,
+      "entity_name": "Call to Arms: Alterac Valley",
+      "quest_id": 11340,
+      "source_url": "https://www.wowhead.com/tbc/item=20560",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 2597,
+        "category2": 6,
+        "daily": 1,
+        "id": 11336,
+        "itemrewards": [
+          [
+            20560,
+            3
+          ]
+        ],
+        "money": 20000,
+        "name": "Call to Arms: Alterac Valley",
+        "popularity": 12,
+        "reqlevel": 51,
+        "side": 3,
+        "type": 41,
+        "wflags": 2,
+        "xp": 7070
+      },
+      {
+        "category": 2597,
+        "category2": 6,
+        "daily": 1,
+        "id": 11340,
+        "itemrewards": [
+          [
+            20560,
+            3
+          ]
+        ],
+        "money": 100,
+        "name": "Call to Arms: Alterac Valley",
+        "popularity": 16,
+        "reqlevel": 51,
+        "side": 3,
+        "type": 41,
+        "wflags": 2,
+        "xp": 7070
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=20560"
+}

@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 112 goes in the \"Shoulder\" slot. It is looted from Chrono Lord Deja. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:32:11+00:00",
+  "item_id": 27994,
+  "name": "Mantle of Three Terrors",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 79,
+      "drop_percent": 13.5,
+      "entity_id": 17879,
+      "entity_name": "Chrono Lord Deja",
+      "out_of": 585,
+      "source_url": "https://www.wowhead.com/tbc/item=27994/mantle-of-three-terrors",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 79,
+        "id": 17879,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2701,
+                "outof": 17004
+              }
+            },
+            "4": {
+              "0": {
+                "count": 153,
+                "outof": 852
+              }
+            },
+            "5": {
+              "0": {
+                "count": 79,
+                "outof": 585
+              }
+            }
+          }
+        },
+        "location": [
+          2366
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2701,
+            "outof": 17004
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Chrono Lord Deja",
+        "outof": 585,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27994/mantle-of-three-terrors"
+}

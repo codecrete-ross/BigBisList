@@ -1,0 +1,75 @@
+{
+  "description": "It is a quest reward. In the Consumables category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T03:15:58+00:00",
+  "item_id": 29024,
+  "name": "Eye of the Storm Mark of Honor",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11337,
+      "entity_name": "Call to Arms: Eye of the Storm",
+      "quest_id": 11337,
+      "source_url": "https://www.wowhead.com/tbc/item=29024",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11341,
+      "entity_name": "Call to Arms: Eye of the Storm",
+      "quest_id": 11341,
+      "source_url": "https://www.wowhead.com/tbc/item=29024",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3820,
+        "category2": 6,
+        "daily": 1,
+        "id": 11337,
+        "itemrewards": [
+          [
+            29024,
+            3
+          ]
+        ],
+        "money": 20000,
+        "name": "Call to Arms: Eye of the Storm",
+        "popularity": 9,
+        "reqlevel": 61,
+        "side": 3,
+        "type": 41,
+        "wflags": 2,
+        "xp": 9800
+      },
+      {
+        "category": 3820,
+        "category2": 6,
+        "daily": 1,
+        "id": 11341,
+        "itemrewards": [
+          [
+            29024,
+            3
+          ]
+        ],
+        "money": 15,
+        "name": "Call to Arms: Eye of the Storm",
+        "popularity": 7,
+        "reqlevel": 61,
+        "side": 3,
+        "type": 41,
+        "wflags": 2,
+        "xp": 9800
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29024"
+}

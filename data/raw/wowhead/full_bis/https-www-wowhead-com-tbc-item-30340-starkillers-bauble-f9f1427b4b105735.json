@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 114 goes in the \"Trinket\" slot. It is a quest reward from The Horrors of Pollution. In the Trinkets category.",
+  "fetched_at": "2026-05-24T04:44:57+00:00",
+  "item_id": 30340,
+  "name": "Starkiller's Bauble",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10413,
+      "entity_name": "The Horrors of Pollution",
+      "quest_id": 10413,
+      "source_url": "https://www.wowhead.com/tbc/item=30340/starkillers-bauble",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10413,
+        "itemchoices": [
+          [
+            30338,
+            1
+          ],
+          [
+            30339,
+            1
+          ],
+          [
+            30340,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 88000,
+        "name": "The Horrors of Pollution",
+        "popularity": 13,
+        "reprewards": [
+          [
+            933,
+            250
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 15800
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30340/starkillers-bauble"
+}

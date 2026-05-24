@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 115 goes in the \"Hands\" slot. It is looted from Avatar of the Martyred. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:03:19+00:00",
+  "item_id": 28268,
+  "name": "Natural Mender's Wraps",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 7.35,
+      "entity_id": 18478,
+      "entity_name": "Avatar of the Martyred",
+      "out_of": 136,
+      "source_url": "https://www.wowhead.com/tbc/item=28268/natural-menders-wraps",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 10,
+        "id": 18478,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 502,
+                "outof": 4157
+              }
+            },
+            "4": {
+              "0": {
+                "count": 23,
+                "outof": 215
+              }
+            },
+            "5": {
+              "0": {
+                "count": 10,
+                "outof": 136
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 72,
+        "minlevel": 67,
+        "modes": {
+          "0": {
+            "count": 502,
+            "outof": 4157
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Avatar of the Martyred",
+        "outof": 136,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28268/natural-menders-wraps"
+}

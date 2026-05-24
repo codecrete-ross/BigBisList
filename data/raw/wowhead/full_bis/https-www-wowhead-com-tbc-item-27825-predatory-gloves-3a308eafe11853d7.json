@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 115 goes in the \"Hands\" slot. It is looted from Tavarok. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:23:22+00:00",
+  "item_id": 27825,
+  "name": "Predatory Gloves",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 20,
+      "drop_percent": 2.89,
+      "entity_id": 18343,
+      "entity_name": "Tavarok",
+      "out_of": 691,
+      "source_url": "https://www.wowhead.com/tbc/item=27825/predatory-gloves",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 20,
+        "id": 18343,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 643,
+                "outof": 20445
+              }
+            },
+            "4": {
+              "0": {
+                "count": 40,
+                "outof": 861
+              }
+            },
+            "5": {
+              "0": {
+                "count": 20,
+                "outof": 691
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 72,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 643,
+            "outof": 20445
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Tavarok",
+        "outof": 691,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27825/predatory-gloves"
+}

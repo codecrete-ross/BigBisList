@@ -1,0 +1,153 @@
+{
+  "description": "This epic ring of item level 130 goes in the \"Finger\" slot. It is a quest reward. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:56+00:00",
+  "item_id": 29279,
+  "name": "Violet Signet of the Great Protector",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10728,
+      "entity_name": "Eminence Among the Violet Eye",
+      "quest_id": 10728,
+      "source_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+      "type": "quest",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11031,
+      "entity_name": "Archmage No More",
+      "quest_id": 11031,
+      "source_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+      "type": "quest",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11033,
+      "entity_name": "Assassin No More",
+      "quest_id": 11033,
+      "source_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+      "type": "quest",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11034,
+      "entity_name": "Restorer No More",
+      "quest_id": 11034,
+      "source_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+      "type": "quest",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3457,
+        "category2": 3,
+        "id": 10728,
+        "itemrewards": [
+          [
+            29279,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Eminence Among the Violet Eye",
+        "popularity": 11,
+        "reprewards": [
+          [
+            967,
+            350
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 15800
+      },
+      {
+        "category": 3457,
+        "category2": 3,
+        "id": 11031,
+        "itemchoices": [
+          [
+            29290,
+            1
+          ],
+          [
+            29279,
+            1
+          ],
+          [
+            29283,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Archmage No More",
+        "popularity": 16,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      },
+      {
+        "category": 3457,
+        "category2": 3,
+        "id": 11033,
+        "itemchoices": [
+          [
+            29290,
+            1
+          ],
+          [
+            29279,
+            1
+          ],
+          [
+            29287,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Assassin No More",
+        "popularity": 9,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      },
+      {
+        "category": 3457,
+        "category2": 3,
+        "id": 11034,
+        "itemchoices": [
+          [
+            29283,
+            1
+          ],
+          [
+            29279,
+            1
+          ],
+          [
+            29287,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Restorer No More",
+        "popularity": 8,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector"
+}

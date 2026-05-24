@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 110 goes in the \"Legs\" slot. It is looted from Quagmirran. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:49:21+00:00",
+  "item_id": 30538,
+  "name": "Midnight Legguards",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 107,
+      "drop_percent": 15.03,
+      "entity_id": 17942,
+      "entity_name": "Quagmirran",
+      "out_of": 712,
+      "source_url": "https://www.wowhead.com/tbc/item=30538/midnight-legguards",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 107,
+        "id": 17942,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1820,
+                "outof": 23080
+              }
+            },
+            "4": {
+              "0": {
+                "count": 208,
+                "outof": 1207
+              }
+            },
+            "5": {
+              "0": {
+                "count": 107,
+                "outof": 712
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "maxlevel": 72,
+        "minlevel": 64,
+        "modes": {
+          "0": {
+            "count": 1820,
+            "outof": 23080
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Quagmirran",
+        "outof": 712,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30538/midnight-legguards"
+}

@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Uni-Mind Headdress is considered a best-in-slot item for Balance Druids that becomes available starting Phase 1. This epic cloth armor of item level 115 goes in the \"Head\" slot.",
+  "fetched_at": "2026-05-24T04:29:06+00:00",
+  "item_id": 28744,
+  "name": "Uni-Mind Headdress",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 195,
+      "drop_percent": 16.29,
+      "entity_id": 15689,
+      "entity_name": "Netherspite",
+      "out_of": 1197,
+      "source_url": "https://www.wowhead.com/tbc/item=28744/uni-mind-headdress",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 195,
+        "id": 15689,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2094,
+                "outof": 12460
+              }
+            },
+            "4": {
+              "0": {
+                "count": 233,
+                "outof": 1612
+              }
+            },
+            "5": {
+              "0": {
+                "count": 195,
+                "outof": 1197
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2094,
+            "outof": 12460
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Netherspite",
+        "outof": 1197,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28744/uni-mind-headdress"
+}

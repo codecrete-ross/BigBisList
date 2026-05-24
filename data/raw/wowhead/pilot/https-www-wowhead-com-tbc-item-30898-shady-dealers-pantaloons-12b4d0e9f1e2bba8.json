@@ -1,0 +1,79 @@
+{
+  "description": "This epic leather armor of item level 141 goes in the \"Legs\" slot. It is looted from Azgalor. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:57+00:00",
+  "item_id": 30898,
+  "name": "Shady Dealer's Pantaloons",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 245,
+      "drop_percent": 14.69,
+      "entity_id": 17842,
+      "entity_name": "Azgalor",
+      "out_of": 1668,
+      "source_url": "https://www.wowhead.com/tbc/item=30898/shady-dealers-pantaloons",
+      "type": "drop",
+      "zone": "Hyjal Summit"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 245,
+        "id": 17842,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 497,
+                "outof": 3123
+              }
+            },
+            "4": {
+              "0": {
+                "count": 318,
+                "outof": 2047
+              }
+            },
+            "5": {
+              "0": {
+                "count": 245,
+                "outof": 1668
+              }
+            }
+          }
+        },
+        "location": [
+          3606
+        ],
+        "modes": {
+          "0": {
+            "count": 497,
+            "outof": 3123
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Azgalor",
+        "outof": 1668,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30898/shady-dealers-pantaloons"
+}

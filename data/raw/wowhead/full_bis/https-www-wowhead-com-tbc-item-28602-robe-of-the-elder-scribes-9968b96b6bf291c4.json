@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 115 goes in the \"Chest\" slot. It is looted from Nightbane. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:29:04+00:00",
+  "item_id": 28602,
+  "name": "Robe of the Elder Scribes",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 241,
+      "drop_percent": 17.23,
+      "entity_id": 17225,
+      "entity_name": "Nightbane",
+      "out_of": 1399,
+      "source_url": "https://www.wowhead.com/tbc/item=28602/robe-of-the-elder-scribes",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 241,
+        "id": 17225,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2030,
+                "outof": 12670
+              }
+            },
+            "4": {
+              "0": {
+                "count": 285,
+                "outof": 1884
+              }
+            },
+            "5": {
+              "0": {
+                "count": 241,
+                "outof": 1399
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2030,
+            "outof": 12670
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nightbane",
+        "outof": 1399,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28602/robe-of-the-elder-scribes"
+}

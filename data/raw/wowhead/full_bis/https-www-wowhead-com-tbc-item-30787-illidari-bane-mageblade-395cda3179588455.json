@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue dagger has an item level of 115. It is a quest reward from Quenching the Blade. In the Daggers category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:29:26+00:00",
+  "item_id": 30787,
+  "name": "Illidari-Bane Mageblade",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10679,
+      "entity_name": "Quenching the Blade",
+      "quest_id": 10679,
+      "source_url": "https://www.wowhead.com/tbc/item=30787/illidari-bane-mageblade",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10679,
+        "itemchoices": [
+          [
+            30788,
+            1
+          ],
+          [
+            30789,
+            1
+          ],
+          [
+            30787,
+            1
+          ],
+          [
+            31745,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Quenching the Blade",
+        "popularity": 25,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 15800
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30787/illidari-bane-mageblade"
+}

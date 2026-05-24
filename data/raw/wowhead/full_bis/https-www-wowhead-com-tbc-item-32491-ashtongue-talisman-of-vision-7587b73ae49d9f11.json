@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 141 goes in the \"Trinket\" slot. Requires Shaman. It is sold by Okuno. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:32:31+00:00",
+  "item_id": 32491,
+  "name": "Ashtongue Talisman of Vision",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 23159,
+      "entity_name": "Okuno",
+      "source_url": "https://www.wowhead.com/tbc/item=32491/ashtongue-talisman-of-vision",
+      "type": "vendor",
+      "vendor_id": 23159,
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            230525
+          ]
+        ],
+        "id": 23159,
+        "location": [
+          3959
+        ],
+        "name": "Okuno",
+        "popularity": 4,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Ashtongue Deathsworn Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=32491/ashtongue-talisman-of-vision"
+}

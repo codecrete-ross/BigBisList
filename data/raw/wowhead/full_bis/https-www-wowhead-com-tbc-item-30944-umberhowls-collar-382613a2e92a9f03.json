@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 109 goes in the \"Wrist\" slot. It is a quest reward from The Cipher of Damnation - The Third Fragment Recovered.",
+  "fetched_at": "2026-05-24T04:57:27+00:00",
+  "item_id": 30944,
+  "name": "Umberhowl's Collar",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10579,
+      "entity_name": "The Cipher of Damnation - The Third Fragment Recovered",
+      "quest_id": 10579,
+      "source_url": "https://www.wowhead.com/tbc/item=30944/umberhowls-collar",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10579,
+        "itemchoices": [
+          [
+            30951,
+            1
+          ],
+          [
+            30962,
+            1
+          ],
+          [
+            30939,
+            1
+          ],
+          [
+            30925,
+            1
+          ],
+          [
+            30967,
+            1
+          ],
+          [
+            30944,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "The Cipher of Damnation - The Third Fragment Recovered",
+        "popularity": 17,
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 6250
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30944/umberhowls-collar"
+}

@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Hunter. It is sold by Provisioner Nasela. In the Items category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T04:48:07+00:00",
+  "item_id": 29143,
+  "name": "Clefthoof Hide Quiver",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 20241,
+      "entity_name": "Provisioner Nasela",
+      "source_url": "https://www.wowhead.com/tbc/item=29143/clefthoof-hide-quiver",
+      "type": "vendor",
+      "vendor_id": 20241,
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            100000
+          ]
+        ],
+        "id": 20241,
+        "location": [
+          3518
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Provisioner Nasela",
+        "popularity": 10,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Mag'har Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29143/clefthoof-hide-quiver"
+}

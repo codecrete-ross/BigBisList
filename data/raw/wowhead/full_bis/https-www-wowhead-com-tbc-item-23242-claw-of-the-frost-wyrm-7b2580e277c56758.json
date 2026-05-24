@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic fist weapon has an item level of 88. It is looted from Sapphiron. In the Fist Weapons category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T04:46:43+00:00",
+  "item_id": 23242,
+  "name": "Claw of the Frost Wyrm",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 10.29,
+      "entity_id": 15989,
+      "entity_name": "Sapphiron",
+      "out_of": 68,
+      "source_url": "https://www.wowhead.com/tbc/item=23242/claw-of-the-frost-wyrm",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 7,
+        "id": 15989,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 62,
+                "outof": 332
+              }
+            },
+            "4": {
+              "0": {
+                "count": 12,
+                "outof": 78
+              }
+            },
+            "5": {
+              "0": {
+                "count": 7,
+                "outof": 68
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 62,
+            "outof": 332
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sapphiron",
+        "outof": 68,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23242/claw-of-the-frost-wyrm"
+}

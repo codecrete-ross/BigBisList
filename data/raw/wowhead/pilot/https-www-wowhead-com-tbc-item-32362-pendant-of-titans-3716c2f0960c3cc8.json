@@ -1,0 +1,79 @@
+{
+  "description": "This epic amulet of item level 141 goes in the \"Neck\" slot. It is looted from Essence of Anger. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:57+00:00",
+  "item_id": 32362,
+  "name": "Pendant of Titans",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 273,
+      "drop_percent": 13.89,
+      "entity_id": 23420,
+      "entity_name": "Essence of Anger",
+      "out_of": 1966,
+      "source_url": "https://www.wowhead.com/tbc/item=32362/pendant-of-titans",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 273,
+        "id": 23420,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 555,
+                "outof": 3349
+              }
+            },
+            "4": {
+              "0": {
+                "count": 433,
+                "outof": 2554
+              }
+            },
+            "5": {
+              "0": {
+                "count": 273,
+                "outof": 1966
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 555,
+            "outof": 3349
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Essence of Anger",
+        "outof": 1966,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32362/pendant-of-titans"
+}

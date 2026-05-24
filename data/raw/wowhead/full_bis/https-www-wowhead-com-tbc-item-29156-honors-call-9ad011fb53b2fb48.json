@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic one-handed sword has an item level of 100. It is sold by Logistics Officer Ulrike. In the One-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:27:33+00:00",
+  "item_id": 29156,
+  "name": "Honor's Call",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17657,
+      "entity_name": "Logistics Officer Ulrike",
+      "source_url": "https://www.wowhead.com/tbc/item=29156/honors-call",
+      "type": "vendor",
+      "vendor_id": 17657
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            1709782
+          ]
+        ],
+        "id": 17657,
+        "location": [
+          3483
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Logistics Officer Ulrike",
+        "popularity": 33,
+        "react": [
+          1,
+          -1
+        ],
+        "stock": -1,
+        "tag": "Honor Hold Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29156/honors-call"
+}

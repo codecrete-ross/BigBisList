@@ -1,0 +1,500 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is looted from Apexis Guardian. In the Other Items category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+  "fetched_at": "2026-05-24T05:47:53+00:00",
+  "item_id": 32572,
+  "name": "Apexis Crystal",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 785,
+      "drop_percent": 93.23,
+      "entity_id": 22275,
+      "entity_name": "Apexis Guardian",
+      "out_of": 842,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 467,
+      "drop_percent": 94.92,
+      "entity_id": 22281,
+      "entity_name": "Galvanoth",
+      "out_of": 492,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 23332,
+      "entity_name": "Bash'ir Reckoner",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 50.0,
+      "entity_id": 23333,
+      "entity_name": "The Grand Collector",
+      "out_of": 2,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 238,
+      "drop_percent": 90.15,
+      "entity_id": 23353,
+      "entity_name": "Braxxus",
+      "out_of": 264,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 473,
+      "drop_percent": 94.22,
+      "entity_id": 23354,
+      "entity_name": "Mo'arg Incinerator",
+      "out_of": 502,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 477,
+      "drop_percent": 94.08,
+      "entity_id": 23355,
+      "entity_name": "Zarcsin",
+      "out_of": 507,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 15,
+      "drop_percent": 88.24,
+      "entity_id": 23390,
+      "entity_name": "Bash'ir's Harbinger",
+      "out_of": 17,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 100.0,
+      "entity_id": 23391,
+      "entity_name": "Bash'ir",
+      "out_of": 2,
+      "source_url": "https://www.wowhead.com/tbc/item=32572",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 785,
+        "id": 22275,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 785,
+                "outof": 842
+              }
+            },
+            "4": {
+              "0": {
+                "count": 79,
+                "outof": 87
+              }
+            },
+            "5": {
+              "0": {
+                "count": 35,
+                "outof": 40
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": 785,
+            "outof": 842
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Apexis Guardian",
+        "outof": 842,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      },
+      {
+        "classification": 1,
+        "count": 467,
+        "id": 22281,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 467,
+                "outof": 492
+              }
+            },
+            "4": {
+              "0": {
+                "count": 29,
+                "outof": 30
+              }
+            },
+            "5": {
+              "0": {
+                "count": 17,
+                "outof": 18
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": 467,
+            "outof": 492
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Galvanoth",
+        "outof": 492,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 20,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 23332,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 100
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 100
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bash'ir Reckoner",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 100,
+        "personal_loot": 0,
+        "popularity": 12,
+        "react": [
+          null,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 1,
+        "id": 23333,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 2
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": 1,
+            "outof": 2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Grand Collector",
+        "outof": 2,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          null,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 238,
+        "id": 23353,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 238,
+                "outof": 264
+              }
+            },
+            "4": {
+              "0": {
+                "count": 9,
+                "outof": 10
+              }
+            },
+            "5": {
+              "0": {
+                "count": 14,
+                "outof": 14
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": 238,
+            "outof": 264
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Braxxus",
+        "outof": 264,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 473,
+        "id": 23354,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 473,
+                "outof": 502
+              }
+            },
+            "4": {
+              "0": {
+                "count": 26,
+                "outof": 29
+              }
+            },
+            "5": {
+              "0": {
+                "count": 22,
+                "outof": 22
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": 473,
+            "outof": 502
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Mo'arg Incinerator",
+        "outof": 502,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 477,
+        "id": 23355,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 477,
+                "outof": 507
+              }
+            },
+            "4": {
+              "0": {
+                "count": 37,
+                "outof": 38
+              }
+            },
+            "5": {
+              "0": {
+                "count": 22,
+                "outof": 23
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": 477,
+            "outof": 507
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zarcsin",
+        "outof": 507,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 15,
+        "id": 23390,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 15,
+                "outof": 17
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": 15,
+            "outof": 17
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bash'ir's Harbinger",
+        "outof": 17,
+        "pctstack": null,
+        "personal_loot": 0,
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 23391,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 2
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bash'ir",
+        "outof": 2,
+        "pctstack": null,
+        "personal_loot": 0,
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32572"
+}

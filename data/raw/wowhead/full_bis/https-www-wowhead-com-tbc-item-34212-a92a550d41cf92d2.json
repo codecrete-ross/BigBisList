@@ -1,0 +1,129 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 159 goes in the \"Chest\" slot. It is looted from M'uru. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:47:44+00:00",
+  "item_id": 34212,
+  "name": "Sunglow Vest",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 25741,
+      "entity_name": "M'uru",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=34212",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.13,
+      "entity_id": 25840,
+      "entity_name": "Entropius",
+      "out_of": 789,
+      "source_url": "https://www.wowhead.com/tbc/item=34212",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 25741,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 40
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 40
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "M'uru",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 40,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 25840,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 789,
+                "percentOverride": 39.4
+              }
+            },
+            "5": {
+              "0": {
+                "count": 104,
+                "outof": 789
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 789,
+            "percentOverride": 39.4
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Entropius",
+        "outof": 789,
+        "pctstack": null,
+        "percentOverride": 39.4,
+        "personal_loot": 0,
+        "popularity": 141,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34212"
+}

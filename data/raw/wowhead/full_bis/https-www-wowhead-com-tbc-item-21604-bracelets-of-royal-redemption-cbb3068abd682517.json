@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 81 goes in the \"Wrist\" slot. It is looted from Emperor Vek'nilash. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T04:57:41+00:00",
+  "item_id": 21604,
+  "name": "Bracelets of Royal Redemption",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 11.76,
+      "entity_id": 15275,
+      "entity_name": "Emperor Vek'nilash",
+      "out_of": 17,
+      "source_url": "https://www.wowhead.com/tbc/item=21604/bracelets-of-royal-redemption",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "id": 15275,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2207,
+                "outof": 14960
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 17
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 24
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2207,
+            "outof": 14960
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Emperor Vek'nilash",
+        "outof": 17,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21604/bracelets-of-royal-redemption"
+}

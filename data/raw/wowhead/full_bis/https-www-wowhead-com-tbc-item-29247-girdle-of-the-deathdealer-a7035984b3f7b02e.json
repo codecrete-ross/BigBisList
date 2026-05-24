@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 110 goes in the \"Waist\" slot. It is looted from Aeonus. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:48:17+00:00",
+  "item_id": 29247,
+  "name": "Girdle of the Deathdealer",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 63,
+      "drop_percent": 11.09,
+      "entity_id": 17881,
+      "entity_name": "Aeonus",
+      "out_of": 568,
+      "source_url": "https://www.wowhead.com/tbc/item=29247/girdle-of-the-deathdealer",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 63,
+        "id": 17881,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 704,
+                "outof": 17300
+              }
+            },
+            "4": {
+              "0": {
+                "count": 87,
+                "outof": 849
+              }
+            },
+            "5": {
+              "0": {
+                "count": 63,
+                "outof": 568
+              }
+            }
+          }
+        },
+        "location": [
+          2366
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 704,
+            "outof": 17300
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Aeonus",
+        "outof": 568,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29247/girdle-of-the-deathdealer"
+}

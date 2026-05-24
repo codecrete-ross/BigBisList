@@ -1,0 +1,86 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Shoulder\" slot. Requires Warrior. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:27:55+00:00",
+  "item_id": 35411,
+  "name": "Savage Plate Shoulders",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 18897,
+      "entity_name": "\"King\" Dond",
+      "source_url": "https://www.wowhead.com/tbc/item=35411/savage-plate-shoulders",
+      "type": "vendor",
+      "vendor_id": 18897,
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21655,
+      "entity_name": "Nakodu",
+      "source_url": "https://www.wowhead.com/tbc/item=35411/savage-plate-shoulders",
+      "type": "vendor",
+      "vendor_id": 21655,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            236352
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 18897,
+        "location": [
+          3518
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "\"King\" Dond",
+        "popularity": 5,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Arena Organizer",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            224534
+          ]
+        ],
+        "id": 21655,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Nakodu",
+        "popularity": 10,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Lower City Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=35411/savage-plate-shoulders"
+}

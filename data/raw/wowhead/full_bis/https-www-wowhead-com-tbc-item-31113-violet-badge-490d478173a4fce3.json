@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 115 goes in the \"Trinket\" slot. It is a quest reward from The New Directive. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T05:26:33+00:00",
+  "item_id": 31113,
+  "name": "Violet Badge",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9860,
+      "entity_name": "The New Directive",
+      "quest_id": 9860,
+      "source_url": "https://www.wowhead.com/tbc/item=31113/violet-badge",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 36,
+        "category2": 0,
+        "id": 9860,
+        "itemrewards": [
+          [
+            31113,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "The New Directive",
+        "popularity": 19,
+        "reprewards": [
+          [
+            967,
+            3000
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31113/violet-badge"
+}

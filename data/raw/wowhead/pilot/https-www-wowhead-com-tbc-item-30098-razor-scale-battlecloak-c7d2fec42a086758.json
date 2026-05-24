@@ -1,0 +1,79 @@
+{
+  "description": "This epic cloak of item level 128 goes in the \"Back\" slot. It is looted from Morogrim Tidewalker. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:56+00:00",
+  "item_id": 30098,
+  "name": "Razor-Scale Battlecloak",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 111,
+      "drop_percent": 18.94,
+      "entity_id": 21213,
+      "entity_name": "Morogrim Tidewalker",
+      "out_of": 586,
+      "source_url": "https://www.wowhead.com/tbc/item=30098/razor-scale-battlecloak",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 111,
+        "id": 21213,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1356,
+                "outof": 7025
+              }
+            },
+            "4": {
+              "0": {
+                "count": 271,
+                "outof": 1249
+              }
+            },
+            "5": {
+              "0": {
+                "count": 111,
+                "outof": 586
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 1356,
+            "outof": 7025
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Morogrim Tidewalker",
+        "outof": 586,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30098/razor-scale-battlecloak"
+}

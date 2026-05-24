@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue mail armor of item level 112 goes in the \"Hands\" slot. It is looted from Mekgineer Steamrigger. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:22:19+00:00",
+  "item_id": 27793,
+  "name": "Earth Mantle Handwraps",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 110,
+      "drop_percent": 17.86,
+      "entity_id": 17796,
+      "entity_name": "Mekgineer Steamrigger",
+      "out_of": 616,
+      "source_url": "https://www.wowhead.com/tbc/item=27793/earth-mantle-handwraps",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 110,
+        "id": 17796,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2970,
+                "outof": 16485
+              }
+            },
+            "4": {
+              "0": {
+                "count": 187,
+                "outof": 969
+              }
+            },
+            "5": {
+              "0": {
+                "count": 110,
+                "outof": 616
+              }
+            }
+          }
+        },
+        "location": [
+          3715
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2970,
+            "outof": 16485
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Mekgineer Steamrigger",
+        "outof": 616,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27793/earth-mantle-handwraps"
+}

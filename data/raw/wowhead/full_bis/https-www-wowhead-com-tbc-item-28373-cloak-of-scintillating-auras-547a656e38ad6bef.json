@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloak of item level 115 goes in the \"Back\" slot. It is looted from Zereketh the Unbound. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:17:58+00:00",
+  "item_id": 28373,
+  "name": "Cloak of Scintillating Auras",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 54,
+      "drop_percent": 19.64,
+      "entity_id": 20870,
+      "entity_name": "Zereketh the Unbound",
+      "out_of": 275,
+      "source_url": "https://www.wowhead.com/tbc/item=28373/cloak-of-scintillating-auras",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 54,
+        "id": 20870,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1527,
+                "outof": 8280
+              }
+            },
+            "4": {
+              "0": {
+                "count": 58,
+                "outof": 381
+              }
+            },
+            "5": {
+              "0": {
+                "count": 54,
+                "outof": 275
+              }
+            }
+          }
+        },
+        "location": [
+          3848
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1527,
+            "outof": 8280
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zereketh the Unbound",
+        "outof": 275,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28373/cloak-of-scintillating-auras"
+}

@@ -1,0 +1,175 @@
+{
+  "description": "Warsong Gulch Mark of Honor is a currency in World of Warcraft. It is a quest reward. In the Items category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T03:15:55+00:00",
+  "item_id": 20558,
+  "name": "Warsong Gulch Mark of Honor",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8567,
+      "entity_name": "Past Victories in Warsong Gulch",
+      "quest_id": 8567,
+      "source_url": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8568,
+      "entity_name": "Past Victories in Warsong Gulch",
+      "quest_id": 8568,
+      "source_url": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8569,
+      "entity_name": "Past Efforts in Warsong Gulch",
+      "quest_id": 8569,
+      "source_url": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8570,
+      "entity_name": "Past Efforts in Warsong Gulch",
+      "quest_id": 8570,
+      "source_url": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11338,
+      "entity_name": "Call to Arms: Warsong Gulch",
+      "quest_id": 11338,
+      "source_url": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11342,
+      "entity_name": "Call to Arms: Warsong Gulch",
+      "quest_id": 11342,
+      "source_url": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 0,
+        "category2": -2,
+        "id": 8567,
+        "itemrewards": [
+          [
+            20558,
+            3
+          ]
+        ],
+        "level": 1,
+        "name": "Past Victories in Warsong Gulch",
+        "popularity": 11,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 16
+      },
+      {
+        "category": 0,
+        "category2": -2,
+        "id": 8568,
+        "itemrewards": [
+          [
+            20558,
+            3
+          ]
+        ],
+        "level": 1,
+        "name": "Past Victories in Warsong Gulch",
+        "popularity": 6,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 16
+      },
+      {
+        "category": 0,
+        "category2": -2,
+        "id": 8569,
+        "itemrewards": [
+          [
+            20558,
+            1
+          ]
+        ],
+        "level": 1,
+        "name": "Past Efforts in Warsong Gulch",
+        "popularity": 10,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 16
+      },
+      {
+        "category": 0,
+        "category2": -2,
+        "id": 8570,
+        "itemrewards": [
+          [
+            20558,
+            1
+          ]
+        ],
+        "level": 1,
+        "name": "Past Efforts in Warsong Gulch",
+        "popularity": 10,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 16
+      },
+      {
+        "category": 3277,
+        "category2": 6,
+        "daily": 1,
+        "id": 11338,
+        "itemrewards": [
+          [
+            20558,
+            3
+          ]
+        ],
+        "money": 20000,
+        "name": "Call to Arms: Warsong Gulch",
+        "popularity": 11,
+        "reqlevel": 11,
+        "side": 3,
+        "type": 41,
+        "wflags": 2,
+        "xp": 880
+      },
+      {
+        "category": 3277,
+        "category2": 6,
+        "daily": 1,
+        "id": 11342,
+        "itemrewards": [
+          [
+            20558,
+            3
+          ]
+        ],
+        "money": 100,
+        "name": "Call to Arms: Warsong Gulch",
+        "popularity": 11,
+        "reqlevel": 11,
+        "side": 3,
+        "type": 41,
+        "wflags": 2,
+        "xp": 880
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor"
+}

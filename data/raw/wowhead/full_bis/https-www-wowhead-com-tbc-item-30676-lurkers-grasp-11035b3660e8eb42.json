@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 115 goes in the \"Waist\" slot. It is looted from Hyakiss the Lurker. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:53:41+00:00",
+  "item_id": 30676,
+  "name": "Lurker's Grasp",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 9.09,
+      "entity_id": 16179,
+      "entity_name": "Hyakiss the Lurker",
+      "out_of": 22,
+      "source_url": "https://www.wowhead.com/tbc/item=30676/lurkers-grasp",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 2,
+        "count": 2,
+        "id": 16179,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 208,
+                "outof": 804
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 22
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 73,
+        "minlevel": 73,
+        "modes": {
+          "0": {
+            "count": 208,
+            "outof": 804
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hyakiss the Lurker",
+        "outof": 22,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30676/lurkers-grasp"
+}

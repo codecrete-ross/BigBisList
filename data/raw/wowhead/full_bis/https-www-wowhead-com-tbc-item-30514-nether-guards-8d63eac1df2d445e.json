@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green cloth armor of item level 108 goes in the \"Shoulder\" slot. It is a quest reward from Dr. Boom!. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:06:45+00:00",
+  "item_id": 30514,
+  "name": "Nether Guards",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10221,
+      "entity_name": "Dr. Boom!",
+      "quest_id": 10221,
+      "source_url": "https://www.wowhead.com/tbc/item=30514/nether-guards",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10221,
+        "itemchoices": [
+          [
+            29969,
+            1
+          ],
+          [
+            29968,
+            1
+          ],
+          [
+            29967,
+            1
+          ],
+          [
+            30514,
+            1
+          ]
+        ],
+        "level": 68,
+        "money": 39000,
+        "name": "Dr. Boom!",
+        "popularity": 21,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 12000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30514/nether-guards"
+}

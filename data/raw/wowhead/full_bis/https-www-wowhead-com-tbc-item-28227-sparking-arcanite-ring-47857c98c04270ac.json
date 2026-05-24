@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue ring of item level 115 goes in the \"Finger\" slot. It is looted from Epoch Hunter. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:28:52+00:00",
+  "item_id": 28227,
+  "name": "Sparking Arcanite Ring",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 2.56,
+      "entity_id": 18096,
+      "entity_name": "Epoch Hunter",
+      "out_of": 391,
+      "source_url": "https://www.wowhead.com/tbc/item=28227/sparking-arcanite-ring",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 10,
+        "id": 18096,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 395,
+                "outof": 7974
+              }
+            },
+            "4": {
+              "0": {
+                "count": 24,
+                "outof": 457
+              }
+            },
+            "5": {
+              "0": {
+                "count": 10,
+                "outof": 391
+              }
+            }
+          }
+        },
+        "location": [
+          2367
+        ],
+        "maxlevel": 72,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 395,
+            "outof": 7974
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Epoch Hunter",
+        "outof": 391,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28227/sparking-arcanite-ring"
+}

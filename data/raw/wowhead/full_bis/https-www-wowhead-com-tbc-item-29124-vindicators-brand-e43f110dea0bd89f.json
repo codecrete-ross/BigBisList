@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vindicator's Brand is a One-Handed Sword that can be purchased from Quartermaster Endarin after becoming Exalted with the Aldor. This epic one-handed sword has an item level of 100.",
+  "fetched_at": "2026-05-24T04:39:44+00:00",
+  "item_id": 29124,
+  "name": "Vindicator's Brand",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19321,
+      "entity_name": "Quartermaster Endarin",
+      "source_url": "https://www.wowhead.com/tbc/item=29124/vindicators-brand",
+      "type": "vendor",
+      "vendor_id": 19321,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            1761812
+          ]
+        ],
+        "id": 19321,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Quartermaster Endarin",
+        "popularity": 15,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Aldor: Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29124/vindicators-brand"
+}

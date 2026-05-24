@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 115 goes in the \"Head\" slot. It is looted from Netherspite. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:22:44+00:00",
+  "item_id": 28732,
+  "name": "Cowl of Defiance",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 214,
+      "drop_percent": 17.88,
+      "entity_id": 15689,
+      "entity_name": "Netherspite",
+      "out_of": 1197,
+      "source_url": "https://www.wowhead.com/tbc/item=28732/cowl-of-defiance",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 214,
+        "id": 15689,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2217,
+                "outof": 12460
+              }
+            },
+            "4": {
+              "0": {
+                "count": 260,
+                "outof": 1612
+              }
+            },
+            "5": {
+              "0": {
+                "count": 214,
+                "outof": 1197
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2217,
+            "outof": 12460
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Netherspite",
+        "outof": 1197,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28732/cowl-of-defiance"
+}

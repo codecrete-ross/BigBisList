@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 125 goes in the \"Chest\" slot. It is looted from Kael'thas Sunstrider. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:31:19+00:00",
+  "item_id": 34610,
+  "name": "Scarlet Sin'dorei Robes",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.46,
+      "entity_id": 24664,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 217,
+      "source_url": "https://www.wowhead.com/tbc/item=34610/scarlet-sindorei-robes",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": -1,
+        "id": 24664,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 217,
+                "percentOverride": 5.7
+              }
+            },
+            "4": {
+              "0": {
+                "count": 11,
+                "outof": 217
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1502,
+                "outof": 11459
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 217,
+            "percentOverride": 5.7
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 217,
+        "pctstack": null,
+        "percentOverride": 5.7,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34610/scarlet-sindorei-robes"
+}

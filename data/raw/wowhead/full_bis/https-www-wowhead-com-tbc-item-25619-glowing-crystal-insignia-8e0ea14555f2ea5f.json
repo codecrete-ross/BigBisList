@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 96 goes in the \"Trinket\" slot. It is a quest reward from Overlord Gorefist. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T04:43:28+00:00",
+  "item_id": 25619,
+  "name": "Glowing Crystal Insignia",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9839,
+      "entity_name": "Overlord Gorefist",
+      "quest_id": 9839,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25619/glowing-crystal-insignia",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9839,
+        "itemchoices": [
+          [
+            25619,
+            1
+          ],
+          [
+            25618,
+            1
+          ],
+          [
+            31770,
+            1
+          ]
+        ],
+        "level": 64,
+        "money": 31000,
+        "name": "Overlord Gorefist",
+        "popularity": 14,
+        "reprewards": [
+          [
+            978,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 1,
+        "xp": 13350
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25619/glowing-crystal-insignia"
+}

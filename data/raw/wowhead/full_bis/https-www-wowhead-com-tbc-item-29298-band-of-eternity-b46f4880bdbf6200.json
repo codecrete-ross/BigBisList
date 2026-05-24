@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 128 goes in the \"Finger\" slot. It is a quest reward from Champion's Pledge. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:04:29+00:00",
+  "item_id": 29298,
+  "name": "Band of Eternity",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10462,
+      "entity_name": "Champion's Pledge",
+      "quest_id": 10462,
+      "source_url": "https://www.wowhead.com/tbc/item=29298/band-of-eternity",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 1941,
+        "category2": 2,
+        "id": 10462,
+        "itemrewards": [
+          [
+            29298,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Champion's Pledge",
+        "popularity": 14,
+        "reprewards": [
+          [
+            990,
+            250
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 16,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29298/band-of-eternity"
+}

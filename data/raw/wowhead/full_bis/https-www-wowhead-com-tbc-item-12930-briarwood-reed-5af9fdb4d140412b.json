@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 60 goes in the \"Trinket\" slot. It is looted from Jed Runewatcher. In the Trinkets category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T04:52:34+00:00",
+  "item_id": 12930,
+  "name": "Briarwood Reed",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 4291,
+      "drop_percent": 30.32,
+      "entity_id": 10509,
+      "entity_name": "Jed Runewatcher",
+      "out_of": 14154,
+      "source_url": "https://www.wowhead.com/tbc/item=12930/briarwood-reed",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 2,
+        "count": 4291,
+        "id": 10509,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4291,
+                "outof": 14154
+              }
+            }
+          }
+        },
+        "location": [
+          1583
+        ],
+        "maxlevel": 59,
+        "minlevel": 59,
+        "modes": {
+          "0": {
+            "count": 4291,
+            "outof": 14154
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jed Runewatcher",
+        "outof": 14154,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Blackhand Legion",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=12930/briarwood-reed"
+}

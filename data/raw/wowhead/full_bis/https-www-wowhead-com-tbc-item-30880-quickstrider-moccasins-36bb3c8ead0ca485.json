@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 141 goes in the \"Feet\" slot. It is looted from Anetheron. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:49:33+00:00",
+  "item_id": 30880,
+  "name": "Quickstrider Moccasins",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 294,
+      "drop_percent": 14.97,
+      "entity_id": 17808,
+      "entity_name": "Anetheron",
+      "out_of": 1964,
+      "source_url": "https://www.wowhead.com/tbc/item=30880/quickstrider-moccasins",
+      "type": "drop",
+      "zone": "Hyjal Summit"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 294,
+        "id": 17808,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 661,
+                "outof": 4019
+              }
+            },
+            "4": {
+              "0": {
+                "count": 444,
+                "outof": 2618
+              }
+            },
+            "5": {
+              "0": {
+                "count": 294,
+                "outof": 1964
+              }
+            }
+          }
+        },
+        "location": [
+          3606
+        ],
+        "modes": {
+          "0": {
+            "count": 661,
+            "outof": 4019
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anetheron",
+        "outof": 1964,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30880/quickstrider-moccasins"
+}

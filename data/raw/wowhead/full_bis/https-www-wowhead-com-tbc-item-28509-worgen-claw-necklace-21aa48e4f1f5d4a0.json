@@ -1,0 +1,135 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 115 goes in the \"Neck\" slot. It is looted from Attumen the Huntsman. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:47:38+00:00",
+  "item_id": 28509,
+  "name": "Worgen Claw Necklace",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 15550,
+      "entity_name": "Attumen the Huntsman",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=28509/worgen-claw-necklace",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3714,
+      "drop_percent": 16.4,
+      "entity_id": 16152,
+      "entity_name": "Attumen the Huntsman",
+      "out_of": 22642,
+      "source_url": "https://www.wowhead.com/tbc/item=28509/worgen-claw-necklace",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 15550,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 17.8
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 17.8
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Attumen the Huntsman",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 17.8,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 3714,
+        "id": 16152,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3714,
+                "outof": 22642
+              }
+            },
+            "4": {
+              "0": {
+                "count": 429,
+                "outof": 2506
+              }
+            },
+            "5": {
+              "0": {
+                "count": 265,
+                "outof": 1906
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3714,
+            "outof": 22642
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Attumen the Huntsman",
+        "outof": 22642,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 154,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28509/worgen-claw-necklace"
+}

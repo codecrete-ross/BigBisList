@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Big BiS List items",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "quality", "binding", "boe", "wowhead_url", "sources", "primary_source", "source_summary"],
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "quality": { "type": "string" },
+          "binding": {
+            "type": "string",
+            "enum": ["bind_on_equip", "bind_on_pickup", "bind_on_use", "quest", "unknown"]
+          },
+          "boe": { "type": ["boolean", "null"] },
+          "wowhead_url": { "type": "string" },
+          "source_summary": { "type": "string" },
+          "primary_source": { "$ref": "#/$defs/source" },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/$defs/source" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["type", "confidence"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["drop", "quest", "vendor", "crafted", "pvp", "token_turnin", "world_drop", "unknown"]
+        },
+        "entity_id": { "type": "integer" },
+        "entity_name": { "type": "string" },
+        "zone": { "type": "string" },
+        "difficulty": { "type": "string" },
+        "drop_percent": { "type": "number" },
+        "count": { "type": "integer" },
+        "out_of": { "type": "integer" },
+        "quest_id": { "type": "integer" },
+        "vendor_id": { "type": "integer" },
+        "profession": { "type": "string" },
+        "side": { "type": "string" },
+        "source_url": { "type": "string" },
+        "confidence": { "type": "string" },
+        "world_drop": { "type": "boolean" },
+        "token_sources": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              { "$ref": "#/$defs/source" },
+              {
+                "type": "object",
+                "required": ["token_item_id", "token_name", "token_count"],
+                "properties": {
+                  "token_item_id": { "type": "integer" },
+                  "token_name": { "type": "string" },
+                  "token_count": { "type": "integer" },
+                  "token_source_url": { "type": "string" }
+                }
+              }
+            ]
+          }
+        },
+        "costs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["amount", "name"],
+            "properties": {
+              "amount": { "type": "integer" },
+              "name": { "type": "string" },
+              "currency_id": { "type": "integer" },
+              "item_id": { "type": "integer" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

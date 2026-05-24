@@ -1,0 +1,113 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warbringer Breastplate is 1 out of the 5 pieces of gear that make up the Warbringer Battlegear item set for Fury Warriors. This epic plate armor of item level 120 goes in the \"Chest\" slot.",
+  "fetched_at": "2026-05-24T04:39:35+00:00",
+  "item_id": 29019,
+  "name": "Warbringer Breastplate",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 29753,
+          "name": "Item 29753"
+        }
+      ],
+      "entity_id": 20613,
+      "entity_name": "Arodis Sunblade",
+      "source_url": "https://www.wowhead.com/tbc/item=29019/warbringer-breastplate",
+      "type": "vendor",
+      "vendor_id": 20613,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 29753,
+          "name": "Item 29753"
+        }
+      ],
+      "entity_id": 20616,
+      "entity_name": "Asuur",
+      "source_url": "https://www.wowhead.com/tbc/item=29019/warbringer-breastplate",
+      "type": "vendor",
+      "vendor_id": 20616,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29753,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 20613,
+        "location": [
+          3703
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Arodis Sunblade",
+        "popularity": 32,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Artifacts",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29753,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 20616,
+        "location": [
+          3703
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Asuur",
+        "popularity": 8,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Artifacts",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29019/warbringer-breastplate"
+}

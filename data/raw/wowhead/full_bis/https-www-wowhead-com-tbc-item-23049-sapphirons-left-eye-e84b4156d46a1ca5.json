@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sapphiron's Left Eye is considered a best-in-slot item for Mages that became available during Phase in WoW Classic. This epic off-hand frill of item level 90 goes in the \"Held In Off-hand\" slot.",
+  "fetched_at": "2026-05-24T04:42:07+00:00",
+  "item_id": 23049,
+  "name": "Sapphiron's Left Eye",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 16.18,
+      "entity_id": 15989,
+      "entity_name": "Sapphiron",
+      "out_of": 68,
+      "source_url": "https://www.wowhead.com/tbc/item=23049/sapphirons-left-eye",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 11,
+        "id": 15989,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 55,
+                "outof": 332
+              }
+            },
+            "4": {
+              "0": {
+                "count": 14,
+                "outof": 78
+              }
+            },
+            "5": {
+              "0": {
+                "count": 11,
+                "outof": 68
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 55,
+            "outof": 332
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sapphiron",
+        "outof": 68,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23049/sapphirons-left-eye"
+}

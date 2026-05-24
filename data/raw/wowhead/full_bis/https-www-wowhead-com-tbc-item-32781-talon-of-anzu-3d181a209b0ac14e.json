@@ -1,0 +1,80 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue dagger has an item level of 115. It is looted from Anzu. In the Daggers category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:05:26+00:00",
+  "item_id": 32781,
+  "name": "Talon of Anzu",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 139,
+      "drop_percent": 19.04,
+      "entity_id": 23035,
+      "entity_name": "Anzu",
+      "out_of": 730,
+      "source_url": "https://www.wowhead.com/tbc/item=32781/talon-of-anzu",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 139,
+        "id": 23035,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 441,
+                "outof": 2480
+              }
+            },
+            "4": {
+              "0": {
+                "count": 149,
+                "outof": 720
+              }
+            },
+            "5": {
+              "0": {
+                "count": 139,
+                "outof": 730
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "modes": {
+          "0": {
+            "count": 441,
+            "outof": 2480
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anzu",
+        "outof": 730,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32781/talon-of-anzu"
+}

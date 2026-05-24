@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 115 goes in the \"Trinket\" slot. It is sold by Quartermaster Enuril. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:29:18+00:00",
+  "item_id": 29132,
+  "name": "Scryer's Bloodgem",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19331,
+      "entity_name": "Quartermaster Enuril",
+      "source_url": "https://www.wowhead.com/tbc/item=29132/scryers-bloodgem",
+      "type": "vendor",
+      "vendor_id": 19331,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            149559
+          ]
+        ],
+        "id": 19331,
+        "location": [
+          3703
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Quartermaster Enuril",
+        "popularity": 5,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Scryers: Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29132/scryers-bloodgem"
+}

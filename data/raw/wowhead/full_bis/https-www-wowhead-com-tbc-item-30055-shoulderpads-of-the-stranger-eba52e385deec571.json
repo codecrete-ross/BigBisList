@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 128 goes in the \"Shoulder\" slot. It is looted from Hydross the Unstable. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:36:35+00:00",
+  "item_id": 30055,
+  "name": "Shoulderpads of the Stranger",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1526,
+      "drop_percent": 16.36,
+      "entity_id": 21216,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 9328,
+      "source_url": "https://www.wowhead.com/tbc/item=30055/shoulderpads-of-the-stranger",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 21932,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=30055/shoulderpads-of-the-stranger",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1526,
+        "id": 21216,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1526,
+                "outof": 9328
+              }
+            },
+            "4": {
+              "0": {
+                "count": 181,
+                "outof": 1208
+              }
+            },
+            "5": {
+              "0": {
+                "count": 95,
+                "outof": 603
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 1526,
+            "outof": 9328
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 9328,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Duke of Currents",
+        "type": 4
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21932,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 21.8
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 21.8
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 21.8,
+        "personal_loot": 0,
+        "popularity": 22,
+        "tag": "Duke of Currents",
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30055/shoulderpads-of-the-stranger"
+}

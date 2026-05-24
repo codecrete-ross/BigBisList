@@ -1,0 +1,85 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 105 goes in the \"Neck\" slot. It is sold by NPCs. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:39:42+00:00",
+  "item_id": 29119,
+  "name": "Haramad's Bargain",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 20242,
+      "entity_name": "Karaaz",
+      "source_url": "https://www.wowhead.com/tbc/item=29119/haramads-bargain",
+      "type": "vendor",
+      "vendor_id": 20242,
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 23007,
+      "entity_name": "Paulsta'ats",
+      "source_url": "https://www.wowhead.com/tbc/item=29119/haramads-bargain",
+      "type": "vendor",
+      "vendor_id": 23007,
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            632090
+          ]
+        ],
+        "id": 20242,
+        "location": [
+          3523
+        ],
+        "maxlevel": 68,
+        "minlevel": 68,
+        "name": "Karaaz",
+        "popularity": 14,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Consortium Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            671595
+          ]
+        ],
+        "id": 23007,
+        "location": [
+          3518
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Paulsta'ats",
+        "popularity": 4,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Consortium Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29119/haramads-bargain"
+}

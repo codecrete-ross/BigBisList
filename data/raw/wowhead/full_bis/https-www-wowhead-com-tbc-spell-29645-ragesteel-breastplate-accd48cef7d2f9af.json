@@ -1,0 +1,44 @@
+{
+  "fetched_at": "2026-05-24T05:11:05+00:00",
+  "name": "Ragesteel Breastplate",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 23613,
+      "entity_name": "Plans: Ragesteel Breastplate",
+      "item_id": 23613,
+      "source_url": "https://www.wowhead.com/tbc/spell=29645/ragesteel-breastplate",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23613,
+        "level": 74,
+        "name": "Plans: Ragesteel Breastplate",
+        "quality": 3,
+        "skill": 370,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 3520
+          }
+        ],
+        "subclass": 4
+      }
+    ]
+  },
+  "spell_id": 29645,
+  "url": "https://www.wowhead.com/tbc/spell=29645/ragesteel-breastplate"
+}

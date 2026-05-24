@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloth armor of item level 109 goes in the \"Legs\" slot. It is looted from Nuramoc. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:20:34+00:00",
+  "item_id": 31212,
+  "name": "Chimaerahide Leggings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 14,
+      "drop_percent": 20.59,
+      "entity_id": 20932,
+      "entity_name": "Nuramoc",
+      "out_of": 68,
+      "source_url": "https://www.wowhead.com/tbc/item=31212&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 4,
+        "count": 14,
+        "id": 20932,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 14,
+                "outof": 68
+              }
+            }
+          }
+        },
+        "location": [
+          3523
+        ],
+        "modes": {
+          "0": {
+            "count": 14,
+            "outof": 68
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nuramoc",
+        "outof": 68,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31212&&rand=-25"
+}

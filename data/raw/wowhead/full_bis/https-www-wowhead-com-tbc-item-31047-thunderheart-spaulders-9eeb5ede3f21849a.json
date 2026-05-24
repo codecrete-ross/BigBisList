@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 146 goes in the \"Shoulder\" slot. Requires Druid. It is sold by Tydormu. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:28:31+00:00",
+  "item_id": 31047,
+  "name": "Thunderheart Spaulders",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 31102,
+          "name": "Item 31102"
+        }
+      ],
+      "entity_id": 23381,
+      "entity_name": "Tydormu",
+      "source_url": "https://www.wowhead.com/tbc/item=31047/thunderheart-spaulders",
+      "type": "vendor",
+      "vendor_id": 23381
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                31102,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 23381,
+        "name": "Tydormu",
+        "popularity": 53,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Lost Artifacts",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=31047/thunderheart-spaulders"
+}

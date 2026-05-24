@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 115 goes in the \"Head\" slot. It is a quest reward from The Warlord's Hideout. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:20:11+00:00",
+  "item_id": 28183,
+  "name": "Hydromancer's Headwrap",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9763,
+      "entity_name": "The Warlord's Hideout",
+      "quest_id": 9763,
+      "source_url": "https://www.wowhead.com/tbc/item=28183/hydromancers-headwrap",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3715,
+        "category2": 2,
+        "id": 9763,
+        "itemchoices": [
+          [
+            28183,
+            1
+          ],
+          [
+            28182,
+            1
+          ],
+          [
+            28181,
+            1
+          ],
+          [
+            28180,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "The Warlord's Hideout",
+        "popularity": 9,
+        "reprewards": [
+          [
+            942,
+            500
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28183/hydromancers-headwrap"
+}

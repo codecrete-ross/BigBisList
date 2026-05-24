@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 115 goes in the \"Feet\" slot. It is a quest reward from Into the Heart of the Labyrinth. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:33:50+00:00",
+  "item_id": 28179,
+  "name": "Shattrath Jumpers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10095,
+      "entity_name": "Into the Heart of the Labyrinth",
+      "quest_id": 10095,
+      "source_url": "https://www.wowhead.com/tbc/item=28179/shattrath-jumpers",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3688,
+        "category2": 8,
+        "id": 10095,
+        "itemchoices": [
+          [
+            28179,
+            1
+          ],
+          [
+            28178,
+            1
+          ],
+          [
+            28177,
+            1
+          ],
+          [
+            28176,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Into the Heart of the Labyrinth",
+        "popularity": 11,
+        "reprewards": [
+          [
+            1011,
+            500
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28179/shattrath-jumpers"
+}

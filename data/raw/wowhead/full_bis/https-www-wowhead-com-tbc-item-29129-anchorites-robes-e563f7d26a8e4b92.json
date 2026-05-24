@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 115 goes in the \"Chest\" slot. It is sold by Quartermaster Endarin. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:34:34+00:00",
+  "item_id": 29129,
+  "name": "Anchorite's Robes",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19321,
+      "entity_name": "Quartermaster Endarin",
+      "source_url": "https://www.wowhead.com/tbc/item=29129/anchorites-robes",
+      "type": "vendor",
+      "vendor_id": 19321,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            143675
+          ]
+        ],
+        "id": 19321,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Quartermaster Endarin",
+        "popularity": 15,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Aldor: Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29129/anchorites-robes"
+}

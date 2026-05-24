@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue ring of item level 115 goes in the \"Finger\" slot. It is a quest reward from Hero of the Brood. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:14:14+00:00",
+  "item_id": 29323,
+  "name": "Andormu's Tear",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10298,
+      "entity_name": "Hero of the Brood",
+      "quest_id": 10298,
+      "source_url": "https://www.wowhead.com/tbc/item=29323/andormus-tear",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 1941,
+        "category2": 2,
+        "id": 10298,
+        "itemchoices": [
+          [
+            29320,
+            1
+          ],
+          [
+            29322,
+            1
+          ],
+          [
+            29321,
+            1
+          ],
+          [
+            29323,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Hero of the Brood",
+        "popularity": 8,
+        "reprewards": [
+          [
+            989,
+            8000
+          ]
+        ],
+        "reqlevel": 66,
+        "side": 3,
+        "xp": 1250
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29323/andormus-tear"
+}

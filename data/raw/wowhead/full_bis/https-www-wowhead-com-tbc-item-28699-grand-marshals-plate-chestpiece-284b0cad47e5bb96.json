@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Chest\" slot. Requires Warrior. It is obtained through PvP. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:27:19+00:00",
+  "item_id": 28699,
+  "name": "Grand Marshal's Plate Chestpiece",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 4285,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12777,
+      "entity_name": "Captain Dirgehammer",
+      "source_url": "https://www.wowhead.com/tbc/item=28699/grand-marshals-plate-chestpiece",
+      "type": "pvp",
+      "vendor_id": 12777
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                4285
+              ]
+            ],
+            []
+          ]
+        ],
+        "id": 12777,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Captain Dirgehammer",
+        "popularity": 3,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=28699/grand-marshals-plate-chestpiece"
+}

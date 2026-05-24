@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue shield of item level 115 goes in the \"Off Hand\" slot. It is sold by Jho'nass. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:15:54+00:00",
+  "item_id": 32652,
+  "name": "Ogri'la Aegis",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 32572,
+          "name": "Item 32572"
+        },
+        {
+          "amount": 50,
+          "item_id": 32569,
+          "name": "Item 32569"
+        }
+      ],
+      "entity_id": 23428,
+      "entity_name": "Jho'nass",
+      "source_url": "https://www.wowhead.com/tbc/item=32652/ogrila-aegis",
+      "type": "vendor",
+      "vendor_id": 23428,
+      "zone": "Blade's Edge Mountains"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                32572,
+                1
+              ],
+              [
+                32569,
+                50
+              ]
+            ]
+          ]
+        ],
+        "id": 23428,
+        "location": [
+          3522
+        ],
+        "name": "Jho'nass",
+        "popularity": 12,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Ogri'la Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=32652/ogrila-aegis"
+}

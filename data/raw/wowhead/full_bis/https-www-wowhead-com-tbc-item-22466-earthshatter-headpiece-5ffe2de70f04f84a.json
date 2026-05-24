@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 88 goes in the \"Head\" slot. It is a quest reward from Earthshatter Headpiece. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:24:31+00:00",
+  "item_id": 22466,
+  "name": "Earthshatter Headpiece",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9070,
+      "entity_name": "Earthshatter Headpiece",
+      "quest_id": 9070,
+      "source_url": "https://www.wowhead.com/tbc/item=22466/earthshatter-headpiece",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "id": 9070,
+        "itemrewards": [
+          [
+            22466,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Earthshatter Headpiece",
+        "popularity": 10,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22466/earthshatter-headpiece"
+}

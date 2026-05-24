@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue staff has an item level of 115. It is looted from Warp Splinter. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:44:14+00:00",
+  "item_id": 28341,
+  "name": "Warpstaff of Arcanum",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 76,
+      "drop_percent": 12.5,
+      "entity_id": 17977,
+      "entity_name": "Warp Splinter",
+      "out_of": 608,
+      "source_url": "https://www.wowhead.com/tbc/item=28341/warpstaff-of-arcanum",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 76,
+        "id": 17977,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1561,
+                "outof": 11954
+              }
+            },
+            "4": {
+              "0": {
+                "count": 117,
+                "outof": 960
+              }
+            },
+            "5": {
+              "0": {
+                "count": 76,
+                "outof": 608
+              }
+            }
+          }
+        },
+        "location": [
+          3847
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1561,
+            "outof": 11954
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Warp Splinter",
+        "outof": 608,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28341/warpstaff-of-arcanum"
+}

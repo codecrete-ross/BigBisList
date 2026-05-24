@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 114 goes in the \"Hands\" slot. It is a quest reward from Fel Embers. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:02:19+00:00",
+  "item_id": 25791,
+  "name": "Gloves of Preservation",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9494,
+      "entity_name": "Fel Embers",
+      "quest_id": 9494,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25791/gloves-of-preservation",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3535,
+        "category2": 2,
+        "id": 9494,
+        "itemchoices": [
+          [
+            25792,
+            1
+          ],
+          [
+            25789,
+            1
+          ],
+          [
+            25791,
+            1
+          ],
+          [
+            25790,
+            1
+          ],
+          [
+            25788,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Fel Embers",
+        "popularity": 15,
+        "reprewards": [
+          [
+            946,
+            250
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 1,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25791/gloves-of-preservation"
+}

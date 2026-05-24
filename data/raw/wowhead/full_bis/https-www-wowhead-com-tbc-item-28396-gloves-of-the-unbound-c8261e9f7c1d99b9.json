@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 115 goes in the \"Hands\" slot. It is looted from Wrath-Scryer Soccothrates. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:54:31+00:00",
+  "item_id": 28396,
+  "name": "Gloves of the Unbound",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 67,
+      "drop_percent": 20.94,
+      "entity_id": 20886,
+      "entity_name": "Wrath-Scryer Soccothrates",
+      "out_of": 320,
+      "source_url": "https://www.wowhead.com/tbc/item=28396/gloves-of-the-unbound",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 67,
+        "id": 20886,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1860,
+                "outof": 9968
+              }
+            },
+            "4": {
+              "0": {
+                "count": 80,
+                "outof": 456
+              }
+            },
+            "5": {
+              "0": {
+                "count": 67,
+                "outof": 320
+              }
+            }
+          }
+        },
+        "location": [
+          3848
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1860,
+            "outof": 9968
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Wrath-Scryer Soccothrates",
+        "outof": 320,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28396/gloves-of-the-unbound"
+}

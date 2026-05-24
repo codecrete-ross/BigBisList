@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 141 goes in the \"Waist\" slot. It is looted from Supremus. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:27:33+00:00",
+  "item_id": 32256,
+  "name": "Waistwrap of Infinity",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 50,
+      "drop_percent": 14.04,
+      "entity_id": 22898,
+      "entity_name": "Supremus",
+      "out_of": 356,
+      "source_url": "https://www.wowhead.com/tbc/item=32256/waistwrap-of-infinity",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 50,
+        "id": 22898,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 90,
+                "outof": 566
+              }
+            },
+            "4": {
+              "0": {
+                "count": 50,
+                "outof": 356
+              }
+            },
+            "5": {
+              "0": {
+                "count": 80,
+                "outof": 528
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 90,
+            "outof": 566
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Supremus",
+        "outof": 356,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32256/waistwrap-of-infinity"
+}

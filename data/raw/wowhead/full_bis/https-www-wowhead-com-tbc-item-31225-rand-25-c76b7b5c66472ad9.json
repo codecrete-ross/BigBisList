@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloth armor of item level 103 goes in the \"Wrist\" slot. It is looted from Ambassador Jerrikar. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:20:39+00:00",
+  "item_id": 31225,
+  "name": "Illidari Bindings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 22.22,
+      "entity_id": 18695,
+      "entity_name": "Ambassador Jerrikar",
+      "out_of": 9,
+      "source_url": "https://www.wowhead.com/tbc/item=31225&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 4,
+        "count": 2,
+        "id": 18695,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 20,
+                "outof": 86
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 9
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 69,
+        "minlevel": 69,
+        "modes": {
+          "0": {
+            "count": 20,
+            "outof": 86
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ambassador Jerrikar",
+        "outof": 9,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Servant of Illidan",
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31225&&rand=-25"
+}

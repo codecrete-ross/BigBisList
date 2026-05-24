@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Hands\" slot. It is looted from Dalliah the Doomsayer. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:16:28+00:00",
+  "item_id": 28390,
+  "name": "Thatia's Self-Correcting Gauntlets",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 42,
+      "drop_percent": 15.05,
+      "entity_id": 20885,
+      "entity_name": "Dalliah the Doomsayer",
+      "out_of": 279,
+      "source_url": "https://www.wowhead.com/tbc/item=28390/thatias-self-correcting-gauntlets",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 42,
+        "id": 20885,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1801,
+                "outof": 9910
+              }
+            },
+            "4": {
+              "0": {
+                "count": 75,
+                "outof": 421
+              }
+            },
+            "5": {
+              "0": {
+                "count": 42,
+                "outof": 279
+              }
+            }
+          }
+        },
+        "location": [
+          3848
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1801,
+            "outof": 9910
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Dalliah the Doomsayer",
+        "outof": 279,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28390/thatias-self-correcting-gauntlets"
+}

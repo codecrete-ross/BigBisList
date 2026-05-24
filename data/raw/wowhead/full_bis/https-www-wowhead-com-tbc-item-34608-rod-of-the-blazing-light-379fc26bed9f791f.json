@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic staff has an item level of 115. It is looted from Vexallus. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:30:27+00:00",
+  "item_id": 34608,
+  "name": "Rod of the Blazing Light",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.5,
+      "entity_id": 24744,
+      "entity_name": "Vexallus",
+      "out_of": 200,
+      "source_url": "https://www.wowhead.com/tbc/item=34608/rod-of-the-blazing-light",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": -1,
+        "id": 24744,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 200,
+                "percentOverride": 7.7
+              }
+            },
+            "4": {
+              "0": {
+                "count": 12,
+                "outof": 200
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1697,
+                "outof": 11202
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 200,
+            "percentOverride": 7.7
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vexallus",
+        "outof": 200,
+        "pctstack": null,
+        "percentOverride": 7.7,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34608/rod-of-the-blazing-light"
+}

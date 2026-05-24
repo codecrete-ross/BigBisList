@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 115 goes in the \"Shoulder\" slot. It is looted from Vexallus. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:31:16+00:00",
+  "item_id": 34607,
+  "name": "Fel-tinged Mantle",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.5,
+      "entity_id": 24744,
+      "entity_name": "Vexallus",
+      "out_of": 200,
+      "source_url": "https://www.wowhead.com/tbc/item=34607/fel-tinged-mantle",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": -1,
+        "id": 24744,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 200,
+                "percentOverride": 7.4
+              }
+            },
+            "4": {
+              "0": {
+                "count": 16,
+                "outof": 200
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1649,
+                "outof": 11202
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 200,
+            "percentOverride": 7.4
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vexallus",
+        "outof": 200,
+        "pctstack": null,
+        "percentOverride": 7.4,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34607/fel-tinged-mantle"
+}

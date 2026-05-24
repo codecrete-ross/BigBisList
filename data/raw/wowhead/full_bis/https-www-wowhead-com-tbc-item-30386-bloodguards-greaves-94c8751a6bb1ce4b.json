@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 108 goes in the \"Feet\" slot. It is a quest reward from Information Gathering. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:15:11+00:00",
+  "item_id": 30386,
+  "name": "Bloodguard's Greaves",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10198,
+      "entity_name": "Information Gathering",
+      "quest_id": 10198,
+      "source_url": "https://www.wowhead.com/tbc/item=30386/bloodguards-greaves",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10198,
+        "itemchoices": [
+          [
+            30397,
+            1
+          ],
+          [
+            30383,
+            1
+          ],
+          [
+            30384,
+            1
+          ],
+          [
+            30386,
+            1
+          ]
+        ],
+        "level": 68,
+        "name": "Information Gathering",
+        "popularity": 16,
+        "reprewards": [
+          [
+            934,
+            150
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 9000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30386/bloodguards-greaves"
+}

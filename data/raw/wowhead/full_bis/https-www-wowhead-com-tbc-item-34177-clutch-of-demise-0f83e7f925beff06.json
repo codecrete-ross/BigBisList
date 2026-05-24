@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 154 goes in the \"Neck\" slot. It is looted from Brutallus. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:40:56+00:00",
+  "item_id": 34177,
+  "name": "Clutch of Demise",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.23,
+      "entity_id": 24882,
+      "entity_name": "Brutallus",
+      "out_of": 430,
+      "source_url": "https://www.wowhead.com/tbc/item=34177/clutch-of-demise",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 24882,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 430,
+                "percentOverride": 40
+              }
+            },
+            "5": {
+              "0": {
+                "count": 68,
+                "outof": 430
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 430,
+            "percentOverride": 40
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Brutallus",
+        "outof": 430,
+        "pctstack": null,
+        "percentOverride": 40,
+        "personal_loot": 0,
+        "react": [
+          0,
+          0
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34177/clutch-of-demise"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic two-handed mace has an item level of 100. It is sold by Fedryen Swiftspear. In the Two-Handed Maces category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:53:15+00:00",
+  "item_id": 29171,
+  "name": "Earthwarden",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17904,
+      "entity_name": "Fedryen Swiftspear",
+      "source_url": "https://www.wowhead.com/tbc/item=29171/earthwarden",
+      "type": "vendor",
+      "vendor_id": 17904
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            2391135
+          ]
+        ],
+        "id": 17904,
+        "location": [
+          3521
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Fedryen Swiftspear",
+        "popularity": 16,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Cenarion Expedition Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29171/earthwarden"
+}

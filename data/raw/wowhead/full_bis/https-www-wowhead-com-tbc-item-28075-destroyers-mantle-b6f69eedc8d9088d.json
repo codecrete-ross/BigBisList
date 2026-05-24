@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 91 goes in the \"Shoulder\" slot. It is a quest reward from Natural Remedies. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:33:46+00:00",
+  "item_id": 28075,
+  "name": "Destroyers' Mantle",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10351,
+      "entity_name": "Natural Remedies",
+      "quest_id": 10351,
+      "source_url": "https://www.wowhead.com/tbc/item=28075/destroyers-mantle",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3483,
+        "category2": 8,
+        "id": 10351,
+        "itemchoices": [
+          [
+            28074,
+            1
+          ],
+          [
+            28075,
+            1
+          ],
+          [
+            28069,
+            1
+          ],
+          [
+            28070,
+            1
+          ]
+        ],
+        "level": 63,
+        "money": 58000,
+        "name": "Natural Remedies",
+        "popularity": 16,
+        "reprewards": [
+          [
+            942,
+            350
+          ]
+        ],
+        "reqlevel": 61,
+        "side": 3,
+        "type": 1,
+        "xp": 12950
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28075/destroyers-mantle"
+}

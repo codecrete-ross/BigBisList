@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic wand has an item level of 83. It is looted from Instructor Razuvious. In the Wands category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T05:17:40+00:00",
+  "item_id": 23009,
+  "name": "Wand of the Whispering Dead",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 28,
+      "drop_percent": 14.29,
+      "entity_id": 16061,
+      "entity_name": "Instructor Razuvious",
+      "out_of": 196,
+      "source_url": "https://www.wowhead.com/tbc/item=23009/wand-of-the-whispering-dead",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 28,
+        "id": 16061,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 579,
+                "outof": 3574
+              }
+            },
+            "4": {
+              "0": {
+                "count": 31,
+                "outof": 183
+              }
+            },
+            "5": {
+              "0": {
+                "count": 28,
+                "outof": 196
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 579,
+            "outof": 3574
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Instructor Razuvious",
+        "outof": 196,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23009/wand-of-the-whispering-dead"
+}

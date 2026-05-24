@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green leather armor of item level 99 goes in the \"Shoulder\" slot. It is a quest reward from The Fallen Exarch. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:45:16+00:00",
+  "item_id": 31797,
+  "name": "Elekk Hide Spaulders",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10915,
+      "entity_name": "The Fallen Exarch",
+      "quest_id": 10915,
+      "source_url": "https://www.wowhead.com/tbc/item=31797/elekk-hide-spaulders",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10915,
+        "itemchoices": [
+          [
+            31798,
+            1
+          ],
+          [
+            31797,
+            1
+          ],
+          [
+            31796,
+            1
+          ],
+          [
+            31794,
+            1
+          ]
+        ],
+        "level": 65,
+        "name": "The Fallen Exarch",
+        "popularity": 22,
+        "reprewards": [
+          [
+            1011,
+            250
+          ]
+        ],
+        "reqlevel": 63,
+        "side": 3,
+        "xp": 11000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31797/elekk-hide-spaulders"
+}

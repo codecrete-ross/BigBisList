@@ -1,0 +1,111 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 99 goes in the \"Waist\" slot. It is a quest reward. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T05:27:00+00:00",
+  "item_id": 25922,
+  "name": "Fearless Girdle",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9902,
+      "entity_name": "The Terror of Marshlight Lake",
+      "quest_id": 9902,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25922/fearless-girdle",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9904,
+      "entity_name": "Pursuing Terrorclaw",
+      "quest_id": 9904,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25922/fearless-girdle",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9902,
+        "itemchoices": [
+          [
+            25924,
+            1
+          ],
+          [
+            25923,
+            1
+          ],
+          [
+            25922,
+            1
+          ],
+          [
+            25925,
+            1
+          ]
+        ],
+        "level": 64,
+        "money": 31000,
+        "name": "The Terror of Marshlight Lake",
+        "popularity": 28,
+        "reprewards": [
+          [
+            978,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 1,
+        "xp": 10750
+      },
+      {
+        "category": 3521,
+        "category2": 8,
+        "id": 9904,
+        "itemchoices": [
+          [
+            25924,
+            1
+          ],
+          [
+            25923,
+            1
+          ],
+          [
+            25922,
+            1
+          ],
+          [
+            25925,
+            1
+          ]
+        ],
+        "level": 64,
+        "money": 31000,
+        "name": "Pursuing Terrorclaw",
+        "popularity": 12,
+        "reprewards": [
+          [
+            530,
+            250
+          ]
+        ],
+        "reqlevel": 62,
+        "side": 2,
+        "xp": 10750
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25922/fearless-girdle"
+}

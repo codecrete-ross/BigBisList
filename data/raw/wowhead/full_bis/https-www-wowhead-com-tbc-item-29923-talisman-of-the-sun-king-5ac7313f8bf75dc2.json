@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic off-hand frill of item level 128 goes in the \"Held In Off-hand\" slot. It is looted from Al'ar. In the Off-hand Frills category. Always up to date.",
+  "fetched_at": "2026-05-24T04:59:55+00:00",
+  "item_id": 29923,
+  "name": "Talisman of the Sun King",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 113,
+      "drop_percent": 24.46,
+      "entity_id": 19514,
+      "entity_name": "Al'ar",
+      "out_of": 462,
+      "source_url": "https://www.wowhead.com/tbc/item=29923/talisman-of-the-sun-king",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 113,
+        "id": 19514,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1095,
+                "outof": 5563
+              }
+            },
+            "4": {
+              "0": {
+                "count": 166,
+                "outof": 932
+              }
+            },
+            "5": {
+              "0": {
+                "count": 113,
+                "outof": 462
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 1095,
+            "outof": 5563
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Al'ar",
+        "outof": 462,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Phoenix God",
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29923/talisman-of-the-sun-king"
+}

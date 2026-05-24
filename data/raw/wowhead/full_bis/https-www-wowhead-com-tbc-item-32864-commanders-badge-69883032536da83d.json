@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 109 goes in the \"Trinket\" slot. It is a quest reward from Hail, Commander!. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T05:16:00+00:00",
+  "item_id": 32864,
+  "name": "Commander's Badge",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11092,
+      "entity_name": "Hail, Commander!",
+      "quest_id": 11092,
+      "source_url": "https://www.wowhead.com/tbc/item=32864/commanders-badge",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 11092,
+        "itemrewards": [
+          [
+            32864,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Hail, Commander!",
+        "popularity": 9,
+        "reprewards": [
+          [
+            1015,
+            500
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32864/commanders-badge"
+}

@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Legs\" slot. It is sold by Alurmi. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T05:14:00+00:00",
+  "item_id": 29184,
+  "name": "Timewarden's Leggings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21643,
+      "entity_name": "Alurmi",
+      "source_url": "https://www.wowhead.com/tbc/item=29184/timewardens-leggings",
+      "type": "vendor",
+      "vendor_id": 21643,
+      "zone": "Tanaris"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            262226
+          ]
+        ],
+        "id": 21643,
+        "location": [
+          440
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Alurmi",
+        "popularity": 6,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keepers of Time Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29184/timewardens-leggings"
+}

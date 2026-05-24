@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Compressing the madness of your average carny, and shuffling in the madness of your average card collector, the Darkmoon Card: Madness taps into the insanity lurking at the borders of every mind. Once collected into the Lunacy Deck, the cards of Lunacy can be turned in to Gelvas Grimegate at the Darkmoon Faire in exchange for this valuable trinket.",
+  "fetched_at": "2026-05-24T05:37:40+00:00",
+  "item_id": 31859,
+  "name": "Darkmoon Card: Madness",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10941,
+      "entity_name": "Darkmoon Lunacy Deck",
+      "quest_id": 10941,
+      "source_url": "https://www.wowhead.com/tbc/item=31859/darkmoon-card-madness",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": -364,
+        "category2": 9,
+        "id": 10941,
+        "itemrewards": [
+          [
+            31859,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Darkmoon Lunacy Deck",
+        "popularity": 12,
+        "reprewards": [
+          [
+            909,
+            350
+          ]
+        ],
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 8
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31859/darkmoon-card-madness"
+}

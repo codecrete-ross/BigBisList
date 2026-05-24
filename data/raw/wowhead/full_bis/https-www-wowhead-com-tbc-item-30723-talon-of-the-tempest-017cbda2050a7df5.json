@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic dagger has an item level of 120. It is looted from Doomwalker. In the Daggers category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:26:46+00:00",
+  "item_id": 30723,
+  "name": "Talon of the Tempest",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 6.67,
+      "entity_id": 17711,
+      "entity_name": "Doomwalker",
+      "out_of": 30,
+      "source_url": "https://www.wowhead.com/tbc/item=30723/talon-of-the-tempest",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "id": 17711,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 73,
+                "outof": 346
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 30
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 73,
+            "outof": 346
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Doomwalker",
+        "outof": 30,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30723/talon-of-the-tempest"
+}

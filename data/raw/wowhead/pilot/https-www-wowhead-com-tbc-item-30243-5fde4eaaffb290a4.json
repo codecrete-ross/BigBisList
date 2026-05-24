@@ -1,0 +1,80 @@
+{
+  "description": "Requires Warrior, Priest, or Druid. It is looted from Lady Vashj. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:58+00:00",
+  "item_id": 30243,
+  "name": "Helm of the Vanquished Defender",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 453,
+      "drop_percent": 58.38,
+      "entity_id": 21212,
+      "entity_name": "Lady Vashj",
+      "out_of": 776,
+      "source_url": "https://www.wowhead.com/tbc/item=30243",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 453,
+        "id": 21212,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3669,
+                "outof": 6257
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1145,
+                "outof": 1950
+              }
+            },
+            "5": {
+              "0": {
+                "count": 453,
+                "outof": 776
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 3669,
+            "outof": 6257
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lady Vashj",
+        "outof": 776,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Coilfang Matron",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30243"
+}

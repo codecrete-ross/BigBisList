@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 113 goes in the \"Wrist\" slot. Requires Rogue or Druid. It is obtained through PvP. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:04:21+00:00",
+  "item_id": 31599,
+  "name": "Marshal's Kodohide Bracers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 9785,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 10,
+          "item_id": 20558,
+          "name": "Item 20558"
+        }
+      ],
+      "entity_id": 12777,
+      "entity_name": "Captain Dirgehammer",
+      "source_url": "https://www.wowhead.com/tbc/item=31599/marshals-kodohide-bracers",
+      "type": "pvp",
+      "vendor_id": 12777
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                9785
+              ]
+            ],
+            [
+              [
+                20558,
+                10
+              ]
+            ]
+          ]
+        ],
+        "id": 12777,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Captain Dirgehammer",
+        "popularity": 4,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=31599/marshals-kodohide-bracers"
+}

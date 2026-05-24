@@ -1,0 +1,80 @@
+{
+  "description": "This blue cloak of item level 115 goes in the \"Back\" slot. It is looted from Mechano-Lord Capacitus. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:55+00:00",
+  "item_id": 28256,
+  "name": "Thoriumweave Cloak",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 50,
+      "drop_percent": 17.79,
+      "entity_id": 19219,
+      "entity_name": "Mechano-Lord Capacitus",
+      "out_of": 281,
+      "source_url": "https://www.wowhead.com/tbc/item=28256/thoriumweave-cloak",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 50,
+        "id": 19219,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1326,
+                "outof": 7445
+              }
+            },
+            "4": {
+              "0": {
+                "count": 94,
+                "outof": 493
+              }
+            },
+            "5": {
+              "0": {
+                "count": 50,
+                "outof": 281
+              }
+            }
+          }
+        },
+        "location": [
+          3849
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1326,
+            "outof": 7445
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Mechano-Lord Capacitus",
+        "outof": 281,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28256/thoriumweave-cloak"
+}

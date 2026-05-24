@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Paladin, Rogue, or Shaman. It is looted from Prince Malchezaar. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:42:49+00:00",
+  "item_id": 29760,
+  "name": "Helm of the Fallen Champion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 541,
+      "drop_percent": 29.69,
+      "entity_id": 15690,
+      "entity_name": "Prince Malchezaar",
+      "out_of": 1822,
+      "source_url": "https://www.wowhead.com/tbc/item=29760/helm-of-the-fallen-champion",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 541,
+        "id": 15690,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6603,
+                "outof": 21169
+              }
+            },
+            "4": {
+              "0": {
+                "count": 772,
+                "outof": 2431
+              }
+            },
+            "5": {
+              "0": {
+                "count": 541,
+                "outof": 1822
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 6603,
+            "outof": 21169
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Prince Malchezaar",
+        "outof": 1822,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29760/helm-of-the-fallen-champion"
+}

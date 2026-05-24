@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Rogue, Mage, or Druid. It is looted from Illidan Stormrage. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:46:48+00:00",
+  "item_id": 31090,
+  "name": "Chestguard of the Forgotten Vanquisher",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1557,
+      "drop_percent": 52.23,
+      "entity_id": 22917,
+      "entity_name": "Illidan Stormrage",
+      "out_of": 2981,
+      "source_url": "https://www.wowhead.com/tbc/item=31090",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1557,
+        "id": 22917,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1576,
+                "outof": 3101
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1557,
+                "outof": 2981
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2135,
+                "outof": 3691
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 1576,
+            "outof": 3101
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Illidan Stormrage",
+        "outof": 2981,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Betrayer",
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31090"
+}

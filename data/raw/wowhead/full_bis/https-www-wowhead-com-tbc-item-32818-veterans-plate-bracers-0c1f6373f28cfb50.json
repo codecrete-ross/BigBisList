@@ -1,0 +1,180 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 126 goes in the \"Wrist\" slot. Requires Warrior or Paladin. It is obtained through PvP. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:26:43+00:00",
+  "item_id": 32818,
+  "name": "Veteran's Plate Bracers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 9785,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 10,
+          "item_id": 20558,
+          "name": "Item 20558"
+        }
+      ],
+      "entity_id": 12777,
+      "entity_name": "Captain Dirgehammer",
+      "source_url": "https://www.wowhead.com/tbc/item=32818/veterans-plate-bracers",
+      "type": "pvp",
+      "vendor_id": 12777
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 9785,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 10,
+          "item_id": 20558,
+          "name": "Item 20558"
+        }
+      ],
+      "entity_id": 12792,
+      "entity_name": "Lady Palanseer",
+      "source_url": "https://www.wowhead.com/tbc/item=32818/veterans-plate-bracers",
+      "type": "pvp",
+      "vendor_id": 12792
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 25,
+          "currency_id": 29434,
+          "name": "Badge of Justice"
+        }
+      ],
+      "entity_id": 26089,
+      "entity_name": "Kayri",
+      "source_url": "https://www.wowhead.com/tbc/item=32818/veterans-plate-bracers",
+      "type": "vendor",
+      "vendor_id": 26089
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                9785
+              ]
+            ],
+            [
+              [
+                20558,
+                10
+              ]
+            ]
+          ]
+        ],
+        "id": 12777,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Captain Dirgehammer",
+        "popularity": 3,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                9785
+              ]
+            ],
+            [
+              [
+                20558,
+                10
+              ]
+            ]
+          ]
+        ],
+        "id": 12792,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Lady Palanseer",
+        "popularity": 5,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29434,
+                25
+              ]
+            ]
+          ]
+        ],
+        "id": 26089,
+        "location": [
+          4080
+        ],
+        "name": "Kayri",
+        "popularity": 19,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Exotic Gear Purveyor",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=32818/veterans-plate-bracers"
+}

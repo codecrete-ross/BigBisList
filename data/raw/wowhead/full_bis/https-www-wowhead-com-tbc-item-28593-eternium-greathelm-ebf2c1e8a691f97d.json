@@ -1,0 +1,209 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 115 goes in the \"Head\" slot. It is looted from The Big Bad Wolf. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:13:26+00:00",
+  "item_id": 28593,
+  "name": "Eternium Greathelm",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1158,
+      "drop_percent": 15.97,
+      "entity_id": 17521,
+      "entity_name": "The Big Bad Wolf",
+      "out_of": 7249,
+      "source_url": "https://www.wowhead.com/tbc/item=28593/eternium-greathelm",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 972,
+      "drop_percent": 17.4,
+      "entity_id": 17533,
+      "entity_name": "Romulo",
+      "out_of": 5585,
+      "source_url": "https://www.wowhead.com/tbc/item=28593/eternium-greathelm",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1141,
+      "drop_percent": 15.64,
+      "entity_id": 18168,
+      "entity_name": "The Crone",
+      "out_of": 7295,
+      "source_url": "https://www.wowhead.com/tbc/item=28593/eternium-greathelm",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1158,
+        "id": 17521,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1158,
+                "outof": 7249
+              }
+            },
+            "4": {
+              "0": {
+                "count": 122,
+                "outof": 766
+              }
+            },
+            "5": {
+              "0": {
+                "count": 103,
+                "outof": 640
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1158,
+            "outof": 7249
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Big Bad Wolf",
+        "outof": 7249,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 972,
+        "id": 17533,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 972,
+                "outof": 5585
+              }
+            },
+            "4": {
+              "0": {
+                "count": 119,
+                "outof": 790
+              }
+            },
+            "5": {
+              "0": {
+                "count": 97,
+                "outof": 540
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 972,
+            "outof": 5585
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Romulo",
+        "outof": 5585,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1141,
+        "id": 18168,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1141,
+                "outof": 7295
+              }
+            },
+            "4": {
+              "0": {
+                "count": 130,
+                "outof": 861
+              }
+            },
+            "5": {
+              "0": {
+                "count": 103,
+                "outof": 652
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1141,
+            "outof": 7295
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Crone",
+        "outof": 7295,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28593/eternium-greathelm"
+}

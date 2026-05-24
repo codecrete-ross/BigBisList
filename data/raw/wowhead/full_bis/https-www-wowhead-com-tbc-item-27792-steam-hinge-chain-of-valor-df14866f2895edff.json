@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue amulet of item level 112 goes in the \"Neck\" slot. It is looted from Mekgineer Steamrigger. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:12:25+00:00",
+  "item_id": 27792,
+  "name": "Steam-Hinge Chain of Valor",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 109,
+      "drop_percent": 17.69,
+      "entity_id": 17796,
+      "entity_name": "Mekgineer Steamrigger",
+      "out_of": 616,
+      "source_url": "https://www.wowhead.com/tbc/item=27792/steam-hinge-chain-of-valor",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 109,
+        "id": 17796,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2866,
+                "outof": 16485
+              }
+            },
+            "4": {
+              "0": {
+                "count": 156,
+                "outof": 969
+              }
+            },
+            "5": {
+              "0": {
+                "count": 109,
+                "outof": 616
+              }
+            }
+          }
+        },
+        "location": [
+          3715
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2866,
+            "outof": 16485
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Mekgineer Steamrigger",
+        "outof": 616,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27792/steam-hinge-chain-of-valor"
+}

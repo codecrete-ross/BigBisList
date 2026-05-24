@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Big BiS List classes",
+  "type": "object",
+  "required": ["classes"],
+  "properties": {
+    "classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "icon", "specs"],
+        "properties": {
+          "name": { "type": "string" },
+          "icon": { "type": "integer" },
+          "specs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "icon"],
+              "properties": {
+                "name": { "type": "string" },
+                "icon": { "type": "integer" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,109 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue libram of item level 106 goes in the \"Relic\" slot. It is a quest reward. In the Librams category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:10:50+00:00",
+  "item_id": 31033,
+  "name": "Libram of Righteous Power",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10744,
+      "entity_name": "News of Victory",
+      "quest_id": 10744,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=31033/libram-of-righteous-power",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10745,
+      "entity_name": "News of Victory",
+      "quest_id": 10745,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31033/libram-of-righteous-power",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10744,
+        "itemchoices": [
+          [
+            30973,
+            1
+          ],
+          [
+            30924,
+            1
+          ],
+          [
+            31025,
+            1
+          ],
+          [
+            31033,
+            1
+          ],
+          [
+            31031,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "News of Victory",
+        "popularity": 19,
+        "reqlevel": 67,
+        "side": 1,
+        "xp": 15800
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10745,
+        "itemchoices": [
+          [
+            30973,
+            1
+          ],
+          [
+            30924,
+            1
+          ],
+          [
+            31025,
+            1
+          ],
+          [
+            31033,
+            1
+          ],
+          [
+            31031,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "News of Victory",
+        "popularity": 13,
+        "reqlevel": 67,
+        "side": 2,
+        "xp": 15800
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31033/libram-of-righteous-power"
+}

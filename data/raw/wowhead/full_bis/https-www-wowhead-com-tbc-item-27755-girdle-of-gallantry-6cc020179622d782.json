@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Waist\" slot. It is looted from Ghaz'an. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:10:23+00:00",
+  "item_id": 27755,
+  "name": "Girdle of Gallantry",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 16,
+      "drop_percent": 3.09,
+      "entity_id": 18105,
+      "entity_name": "Ghaz'an",
+      "out_of": 518,
+      "source_url": "https://www.wowhead.com/tbc/item=27755/girdle-of-gallantry",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 16,
+        "id": 18105,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 754,
+                "outof": 12396
+              }
+            },
+            "4": {
+              "0": {
+                "count": 65,
+                "outof": 754
+              }
+            },
+            "5": {
+              "0": {
+                "count": 16,
+                "outof": 518
+              }
+            }
+          }
+        },
+        "location": [
+          3716
+        ],
+        "maxlevel": 72,
+        "minlevel": 65,
+        "modes": {
+          "0": {
+            "count": 754,
+            "outof": 12396
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ghaz'an",
+        "outof": 518,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27755/girdle-of-gallantry"
+}

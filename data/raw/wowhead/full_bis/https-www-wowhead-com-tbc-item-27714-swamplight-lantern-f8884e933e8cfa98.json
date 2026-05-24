@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue off-hand frill of item level 115 goes in the \"Held In Off-hand\" slot. It is looted from Quagmirran. In the Off-hand Frills category.",
+  "fetched_at": "2026-05-24T05:02:45+00:00",
+  "item_id": 27714,
+  "name": "Swamplight Lantern",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 55,
+      "drop_percent": 7.72,
+      "entity_id": 17942,
+      "entity_name": "Quagmirran",
+      "out_of": 712,
+      "source_url": "https://www.wowhead.com/tbc/item=27714/swamplight-lantern",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 55,
+        "id": 17942,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1796,
+                "outof": 23080
+              }
+            },
+            "4": {
+              "0": {
+                "count": 128,
+                "outof": 1207
+              }
+            },
+            "5": {
+              "0": {
+                "count": 55,
+                "outof": 712
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "maxlevel": 72,
+        "minlevel": 64,
+        "modes": {
+          "0": {
+            "count": 1796,
+            "outof": 23080
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Quagmirran",
+        "outof": 712,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27714/swamplight-lantern"
+}

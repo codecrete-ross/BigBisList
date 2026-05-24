@@ -1,0 +1,131 @@
+{
+  "description": "This epic leather armor of item level 138 goes in the \"Legs\" slot. It is looted from Kael'thas Sunstrider. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:56+00:00",
+  "item_id": 29995,
+  "name": "Leggings of Murderous Intent",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1035,
+      "drop_percent": 15.27,
+      "entity_id": 19622,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 6777,
+      "source_url": "https://www.wowhead.com/tbc/item=29995/leggings-of-murderous-intent",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 23054,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=29995/leggings-of-murderous-intent",
+      "type": "drop",
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1035,
+        "id": 19622,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1035,
+                "outof": 6777
+              }
+            },
+            "4": {
+              "0": {
+                "count": 230,
+                "outof": 1563
+              }
+            },
+            "5": {
+              "0": {
+                "count": 103,
+                "outof": 724
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 1035,
+            "outof": 6777
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 6777,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 23054,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 21
+              }
+            }
+          }
+        },
+        "location": [
+          3703
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 21
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 21,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29995/leggings-of-murderous-intent"
+}

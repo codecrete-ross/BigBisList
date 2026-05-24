@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Warrior, Priest, or Druid. It is looted from Void Reaver. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:25:21+00:00",
+  "item_id": 30249,
+  "name": "Pauldrons of the Vanquished Defender",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 303,
+      "drop_percent": 57.82,
+      "entity_id": 19516,
+      "entity_name": "Void Reaver",
+      "out_of": 524,
+      "source_url": "https://www.wowhead.com/tbc/item=30249/pauldrons-of-the-vanquished-defender",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 303,
+        "id": 19516,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4450,
+                "outof": 7529
+              }
+            },
+            "4": {
+              "0": {
+                "count": 675,
+                "outof": 1067
+              }
+            },
+            "5": {
+              "0": {
+                "count": 303,
+                "outof": 524
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 4450,
+            "outof": 7529
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Void Reaver",
+        "outof": 524,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30249/pauldrons-of-the-vanquished-defender"
+}

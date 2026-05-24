@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 109 goes in the \"Hands\" slot. It is a quest reward from Turning Point. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:27:45+00:00",
+  "item_id": 30375,
+  "name": "Gauntlets of the Vanquisher",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10507,
+      "entity_name": "Turning Point",
+      "quest_id": 10507,
+      "source_url": "https://www.wowhead.com/tbc/item=30375/gauntlets-of-the-vanquisher",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10507,
+        "itemchoices": [
+          [
+            30375,
+            1
+          ],
+          [
+            30372,
+            1
+          ],
+          [
+            30373,
+            1
+          ],
+          [
+            30374,
+            1
+          ],
+          [
+            30859,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Turning Point",
+        "popularity": 20,
+        "reprewards": [
+          [
+            934,
+            1000
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30375/gauntlets-of-the-vanquisher"
+}

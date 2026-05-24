@@ -1,0 +1,205 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Rogue, Mage, or Druid. It is looted from Gathios the Shatterer. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:46:49+00:00",
+  "item_id": 31099,
+  "name": "Leggings of the Forgotten Vanquisher",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 22949,
+      "entity_name": "Gathios the Shatterer",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=31099",
+      "type": "drop",
+      "zone": "Black Temple"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 690,
+      "drop_percent": 33.96,
+      "entity_id": 22951,
+      "entity_name": "Lady Malande",
+      "out_of": 2032,
+      "source_url": "https://www.wowhead.com/tbc/item=31099",
+      "type": "drop",
+      "zone": "Black Temple"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 661,
+      "drop_percent": 32.71,
+      "entity_id": 22952,
+      "entity_name": "Veras Darkshadow",
+      "out_of": 2021,
+      "source_url": "https://www.wowhead.com/tbc/item=31099",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 22949,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 54.4
+              }
+            },
+            "4": {
+              "0": {
+                "count": 5,
+                "outof": 20
+              }
+            },
+            "5": {
+              "0": {
+                "count": 633,
+                "outof": 1829
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 54.4
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Gathios the Shatterer",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 54.4,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 690,
+        "id": 22951,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 690,
+                "outof": 2032
+              }
+            },
+            "4": {
+              "0": {
+                "count": 552,
+                "outof": 1683
+              }
+            },
+            "5": {
+              "0": {
+                "count": 662,
+                "outof": 1947
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 690,
+            "outof": 2032
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lady Malande",
+        "outof": 2032,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 661,
+        "id": 22952,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 661,
+                "outof": 2021
+              }
+            },
+            "4": {
+              "0": {
+                "count": 561,
+                "outof": 1650
+              }
+            },
+            "5": {
+              "0": {
+                "count": 614,
+                "outof": 1890
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 661,
+            "outof": 2021
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Veras Darkshadow",
+        "outof": 2021,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31099"
+}

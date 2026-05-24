@@ -1,0 +1,151 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 152 goes in the \"Finger\" slot. It is a quest reward. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:37:21+00:00",
+  "item_id": 29297,
+  "name": "Band of the Eternal Defender",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10475,
+      "entity_name": "Defender's Covenant",
+      "quest_id": 10475,
+      "source_url": "https://www.wowhead.com/tbc/item=29297/band-of-the-eternal-defender",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11103,
+      "entity_name": "Sage No More",
+      "quest_id": 11103,
+      "source_url": "https://www.wowhead.com/tbc/item=29297/band-of-the-eternal-defender",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11104,
+      "entity_name": "Restorer No More",
+      "quest_id": 11104,
+      "source_url": "https://www.wowhead.com/tbc/item=29297/band-of-the-eternal-defender",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11105,
+      "entity_name": "Champion No More",
+      "quest_id": 11105,
+      "source_url": "https://www.wowhead.com/tbc/item=29297/band-of-the-eternal-defender",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 1941,
+        "category2": 2,
+        "id": 10475,
+        "itemrewards": [
+          [
+            29297,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Defender's Covenant",
+        "popularity": 9,
+        "reprewards": [
+          [
+            990,
+            350
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 15800
+      },
+      {
+        "category": 1941,
+        "category2": 2,
+        "id": 11103,
+        "itemchoices": [
+          [
+            29301,
+            1
+          ],
+          [
+            29297,
+            1
+          ],
+          [
+            29309,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Sage No More",
+        "popularity": 12,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      },
+      {
+        "category": 1941,
+        "category2": 2,
+        "id": 11104,
+        "itemchoices": [
+          [
+            29301,
+            1
+          ],
+          [
+            29297,
+            1
+          ],
+          [
+            29305,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Restorer No More",
+        "popularity": 9,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      },
+      {
+        "category": 1941,
+        "category2": 2,
+        "id": 11105,
+        "itemchoices": [
+          [
+            29305,
+            1
+          ],
+          [
+            29297,
+            1
+          ],
+          [
+            29309,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Champion No More",
+        "popularity": 13,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29297/band-of-the-eternal-defender"
+}

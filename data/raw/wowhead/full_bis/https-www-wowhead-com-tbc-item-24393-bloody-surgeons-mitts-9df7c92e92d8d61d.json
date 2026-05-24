@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 88 goes in the \"Hands\" slot. It is looted from Broggok. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:02:15+00:00",
+  "item_id": 24393,
+  "name": "Bloody Surgeon's Mitts",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 69,
+      "drop_percent": 15.33,
+      "entity_id": 17380,
+      "entity_name": "Broggok",
+      "out_of": 450,
+      "source_url": "https://www.wowhead.com/tbc/item=24393/bloody-surgeons-mitts",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 69,
+        "id": 17380,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2646,
+                "outof": 15219
+              }
+            },
+            "4": {
+              "0": {
+                "count": 92,
+                "outof": 627
+              }
+            },
+            "5": {
+              "0": {
+                "count": 69,
+                "outof": 450
+              }
+            }
+          }
+        },
+        "location": [
+          3713
+        ],
+        "maxlevel": 72,
+        "minlevel": 63,
+        "modes": {
+          "0": {
+            "count": 2646,
+            "outof": 15219
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Broggok",
+        "outof": 450,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=24393/bloody-surgeons-mitts"
+}

@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 78 goes in the \"Neck\" slot. It is looted from Ragnaros. In the Amulets category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:06:52+00:00",
+  "item_id": 18814,
+  "name": "Choker of the Fire Lord",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 22,
+      "drop_percent": 18.8,
+      "entity_id": 11502,
+      "entity_name": "Ragnaros",
+      "out_of": 117,
+      "source_url": "https://www.wowhead.com/tbc/item=18814/choker-of-the-fire-lord",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 22,
+        "id": 11502,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 22,
+                "outof": 117
+              }
+            }
+          }
+        },
+        "location": [
+          2717
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 22,
+            "outof": 117
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ragnaros",
+        "outof": 117,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=18814/choker-of-the-fire-lord"
+}

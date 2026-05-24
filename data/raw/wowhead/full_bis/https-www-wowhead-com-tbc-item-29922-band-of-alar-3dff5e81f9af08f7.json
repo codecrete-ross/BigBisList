@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 128 goes in the \"Finger\" slot. It is looted from Al'ar. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:05:42+00:00",
+  "item_id": 29922,
+  "name": "Band of Al'ar",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 76,
+      "drop_percent": 16.45,
+      "entity_id": 19514,
+      "entity_name": "Al'ar",
+      "out_of": 462,
+      "source_url": "https://www.wowhead.com/tbc/item=29922/band-of-alar",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 76,
+        "id": 19514,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1045,
+                "outof": 5563
+              }
+            },
+            "4": {
+              "0": {
+                "count": 198,
+                "outof": 932
+              }
+            },
+            "5": {
+              "0": {
+                "count": 76,
+                "outof": 462
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 1045,
+            "outof": 5563
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Al'ar",
+        "outof": 462,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Phoenix God",
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29922/band-of-alar"
+}

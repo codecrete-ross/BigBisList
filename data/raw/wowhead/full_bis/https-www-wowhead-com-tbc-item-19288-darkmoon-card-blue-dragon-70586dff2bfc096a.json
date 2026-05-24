@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 66 goes in the \"Trinket\" slot. It is a quest reward from Darkmoon Beast Deck. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T05:17:23+00:00",
+  "item_id": 19288,
+  "name": "Darkmoon Card: Blue Dragon",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7907,
+      "entity_name": "Darkmoon Beast Deck",
+      "quest_id": 7907,
+      "source_url": "https://www.wowhead.com/tbc/item=19288/darkmoon-card-blue-dragon",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": -364,
+        "category2": 9,
+        "id": 7907,
+        "itemrewards": [
+          [
+            19288,
+            1
+          ]
+        ],
+        "name": "Darkmoon Beast Deck",
+        "popularity": 7,
+        "reprewards": [
+          [
+            909,
+            350
+          ]
+        ],
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 8
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=19288/darkmoon-card-blue-dragon"
+}

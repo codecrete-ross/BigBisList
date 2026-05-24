@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue libram of item level 115 goes in the \"Relic\" slot. It is looted from The Maker. In the Librams category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:09:33+00:00",
+  "item_id": 27484,
+  "name": "Libram of Avengement",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 36,
+      "drop_percent": 6.51,
+      "entity_id": 17381,
+      "entity_name": "The Maker",
+      "out_of": 553,
+      "source_url": "https://www.wowhead.com/tbc/item=27484/libram-of-avengement",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 36,
+        "id": 17381,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 437,
+                "outof": 17738
+              }
+            },
+            "4": {
+              "0": {
+                "count": 65,
+                "outof": 785
+              }
+            },
+            "5": {
+              "0": {
+                "count": 36,
+                "outof": 553
+              }
+            }
+          }
+        },
+        "location": [
+          3713
+        ],
+        "maxlevel": 71,
+        "minlevel": 62,
+        "modes": {
+          "0": {
+            "count": 437,
+            "outof": 17738
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Maker",
+        "outof": 553,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27484/libram-of-avengement"
+}

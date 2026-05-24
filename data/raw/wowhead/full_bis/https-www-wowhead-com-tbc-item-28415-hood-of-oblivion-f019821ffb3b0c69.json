@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 115 goes in the \"Head\" slot. It is looted from Harbinger Skyriss. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:34:12+00:00",
+  "item_id": 28415,
+  "name": "Hood of Oblivion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1304,
+      "drop_percent": 14.48,
+      "entity_id": 20912,
+      "entity_name": "Harbinger Skyriss",
+      "out_of": 9004,
+      "source_url": "https://www.wowhead.com/tbc/item=28415/hood-of-oblivion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 21466,
+      "entity_name": "Harbinger Skyriss",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=28415/hood-of-oblivion",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 1304,
+        "id": 20912,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1304,
+                "outof": 9004
+              }
+            },
+            "4": {
+              "0": {
+                "count": 75,
+                "outof": 414
+              }
+            },
+            "5": {
+              "0": {
+                "count": 39,
+                "outof": 289
+              }
+            }
+          }
+        },
+        "location": [
+          3848
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1304,
+            "outof": 9004
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Harbinger Skyriss",
+        "outof": 9004,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 21466,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 14.8
+              }
+            }
+          }
+        },
+        "location": [
+          3848
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 14.8
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Harbinger Skyriss",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 14.8,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28415/hood-of-oblivion"
+}

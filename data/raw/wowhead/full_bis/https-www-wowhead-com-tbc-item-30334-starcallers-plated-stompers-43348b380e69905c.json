@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 114 goes in the \"Feet\" slot. It is a quest reward from Escape from the Staging Grounds. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:15:05+00:00",
+  "item_id": 30334,
+  "name": "Starcaller's Plated Stompers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10425,
+      "entity_name": "Escape from the Staging Grounds",
+      "quest_id": 10425,
+      "source_url": "https://www.wowhead.com/tbc/item=30334/starcallers-plated-stompers",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10425,
+        "itemchoices": [
+          [
+            30331,
+            1
+          ],
+          [
+            30332,
+            1
+          ],
+          [
+            30333,
+            1
+          ],
+          [
+            30334,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Escape from the Staging Grounds",
+        "popularity": 14,
+        "reprewards": [
+          [
+            933,
+            250
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30334/starcallers-plated-stompers"
+}

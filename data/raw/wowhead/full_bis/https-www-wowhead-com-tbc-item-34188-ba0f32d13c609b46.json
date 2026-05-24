@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 159 goes in the \"Legs\" slot. It is looted from Felmyst. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:48:29+00:00",
+  "item_id": 34188,
+  "name": "Leggings of the Immortal Night",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.1,
+      "entity_id": 25038,
+      "entity_name": "Felmyst",
+      "out_of": 1045,
+      "source_url": "https://www.wowhead.com/tbc/item=34188",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 25038,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 1045,
+                "percentOverride": 30.6
+              }
+            },
+            "5": {
+              "0": {
+                "count": 142,
+                "outof": 1045
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 1045,
+            "percentOverride": 30.6
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Felmyst",
+        "outof": 1045,
+        "pctstack": null,
+        "percentOverride": 30.6,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34188"
+}

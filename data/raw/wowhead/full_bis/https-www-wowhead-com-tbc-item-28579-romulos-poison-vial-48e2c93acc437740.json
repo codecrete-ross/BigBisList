@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 115 goes in the \"Trinket\" slot. It is looted from Julianne. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:55:19+00:00",
+  "item_id": 28579,
+  "name": "Romulo's Poison Vial",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 143,
+      "drop_percent": 25.77,
+      "entity_id": 17534,
+      "entity_name": "Julianne",
+      "out_of": 555,
+      "source_url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 143,
+        "id": 17534,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1603,
+                "outof": 5642
+              }
+            },
+            "4": {
+              "0": {
+                "count": 219,
+                "outof": 780
+              }
+            },
+            "5": {
+              "0": {
+                "count": 143,
+                "outof": 555
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1603,
+            "outof": 5642
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Julianne",
+        "outof": 555,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial"
+}

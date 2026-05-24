@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 81 goes in the \"Wrist\" slot. It is looted from Emperor Vek'lor. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T05:33:42+00:00",
+  "item_id": 21602,
+  "name": "Qiraji Execution Bracers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 31.25,
+      "entity_id": 15276,
+      "entity_name": "Emperor Vek'lor",
+      "out_of": 16,
+      "source_url": "https://www.wowhead.com/tbc/item=21602/qiraji-execution-bracers",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 5,
+        "id": 15276,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2173,
+                "outof": 14670
+              }
+            },
+            "4": {
+              "0": {
+                "count": 5,
+                "outof": 16
+              }
+            },
+            "5": {
+              "0": {
+                "count": 6,
+                "outof": 26
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2173,
+            "outof": 14670
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Emperor Vek'lor",
+        "outof": 16,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21602/qiraji-execution-bracers"
+}

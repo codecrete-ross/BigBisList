@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloth armor of item level 94 goes in the \"Wrist\" slot. It is looted from Goretooth. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:20:27+00:00",
+  "item_id": 31192,
+  "name": "Crocolisk Hide Bindings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 40.0,
+      "entity_id": 17144,
+      "entity_name": "Goretooth",
+      "out_of": 10,
+      "source_url": "https://www.wowhead.com/tbc/item=31192&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 4,
+        "count": 4,
+        "family": 6,
+        "id": 17144,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 15,
+                "outof": 86
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 10
+              }
+            }
+          }
+        },
+        "location": [
+          3518
+        ],
+        "modes": {
+          "0": {
+            "count": 15,
+            "outof": 86
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Goretooth",
+        "outof": 10,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31192&&rand=-25"
+}

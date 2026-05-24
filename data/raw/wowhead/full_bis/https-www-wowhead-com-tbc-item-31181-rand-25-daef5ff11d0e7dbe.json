@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloth armor of item level 91 goes in the \"Hands\" slot. It is looted from Fulgorge. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:20:25+00:00",
+  "item_id": 31181,
+  "name": "Rockwurm Hide Handwraps",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 18.18,
+      "entity_id": 18678,
+      "entity_name": "Fulgorge",
+      "out_of": 11,
+      "source_url": "https://www.wowhead.com/tbc/item=31181&&rand=-25",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 4,
+        "count": 2,
+        "id": 18678,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13,
+                "outof": 76
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 11
+              }
+            }
+          }
+        },
+        "location": [
+          3483
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "modes": {
+          "0": {
+            "count": 13,
+            "outof": 76
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Fulgorge",
+        "outof": 11,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31181&&rand=-25"
+}

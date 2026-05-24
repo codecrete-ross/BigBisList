@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 141 goes in the \"Head\" slot. It is looted from Essence of Anger. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:36:19+00:00",
+  "item_id": 32354,
+  "name": "Crown of Empowered Fate",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 291,
+      "drop_percent": 14.8,
+      "entity_id": 23420,
+      "entity_name": "Essence of Anger",
+      "out_of": 1966,
+      "source_url": "https://www.wowhead.com/tbc/item=32354/crown-of-empowered-fate",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 291,
+        "id": 23420,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 556,
+                "outof": 3349
+              }
+            },
+            "4": {
+              "0": {
+                "count": 428,
+                "outof": 2554
+              }
+            },
+            "5": {
+              "0": {
+                "count": 291,
+                "outof": 1966
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 556,
+            "outof": 3349
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Essence of Anger",
+        "outof": 1966,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32354/crown-of-empowered-fate"
+}

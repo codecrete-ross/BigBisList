@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 115 goes in the \"Trinket\" slot. It is looted from Aeonus. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:58:19+00:00",
+  "item_id": 28190,
+  "name": "Scarab of the Infinite Cycle",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 93,
+      "drop_percent": 16.37,
+      "entity_id": 17881,
+      "entity_name": "Aeonus",
+      "out_of": 568,
+      "source_url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 93,
+        "id": 17881,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2678,
+                "outof": 17300
+              }
+            },
+            "4": {
+              "0": {
+                "count": 123,
+                "outof": 849
+              }
+            },
+            "5": {
+              "0": {
+                "count": 93,
+                "outof": 568
+              }
+            }
+          }
+        },
+        "location": [
+          2366
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2678,
+            "outof": 17300
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Aeonus",
+        "outof": 568,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle"
+}

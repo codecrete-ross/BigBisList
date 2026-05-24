@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green gun has an item level of 111. It is a quest reward from Declawing Doomclaw. In the Guns category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:40:03+00:00",
+  "item_id": 30279,
+  "name": "Mama's Insurance",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10235,
+      "entity_name": "Declawing Doomclaw",
+      "quest_id": 10235,
+      "source_url": "https://www.wowhead.com/tbc/item=30279/mamas-insurance",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10235,
+        "itemchoices": [
+          [
+            30279,
+            1
+          ],
+          [
+            30278,
+            1
+          ],
+          [
+            30277,
+            1
+          ]
+        ],
+        "level": 69,
+        "money": 41000,
+        "name": "Declawing Doomclaw",
+        "popularity": 18,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 12300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30279/mamas-insurance"
+}

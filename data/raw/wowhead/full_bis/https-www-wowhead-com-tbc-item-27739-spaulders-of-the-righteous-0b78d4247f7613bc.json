@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Shoulder\" slot. It is looted from Laj. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:12:23+00:00",
+  "item_id": 27739,
+  "name": "Spaulders of the Righteous",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 96,
+      "drop_percent": 17.98,
+      "entity_id": 17980,
+      "entity_name": "Laj",
+      "out_of": 534,
+      "source_url": "https://www.wowhead.com/tbc/item=27739/spaulders-of-the-righteous",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 96,
+        "id": 17980,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1739,
+                "outof": 9288
+              }
+            },
+            "4": {
+              "0": {
+                "count": 149,
+                "outof": 801
+              }
+            },
+            "5": {
+              "0": {
+                "count": 96,
+                "outof": 534
+              }
+            }
+          }
+        },
+        "location": [
+          3847
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 1739,
+            "outof": 9288
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Laj",
+        "outof": 534,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27739/spaulders-of-the-righteous"
+}

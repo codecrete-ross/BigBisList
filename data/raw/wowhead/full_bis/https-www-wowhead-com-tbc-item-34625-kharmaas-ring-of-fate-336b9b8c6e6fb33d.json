@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 110 goes in the \"Finger\" slot. It is looted from Kael'thas Sunstrider. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:30:30+00:00",
+  "item_id": 34625,
+  "name": "Kharmaa's Ring of Fate",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.46,
+      "entity_id": 24664,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 217,
+      "source_url": "https://www.wowhead.com/tbc/item=34625/kharmaas-ring-of-fate",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": -1,
+        "id": 24664,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 217,
+                "percentOverride": 12.1
+              }
+            },
+            "4": {
+              "0": {
+                "count": 28,
+                "outof": 217
+              }
+            },
+            "5": {
+              "0": {
+                "count": 641,
+                "outof": 11459
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 217,
+            "percentOverride": 12.1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 217,
+        "pctstack": null,
+        "percentOverride": 12.1,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34625/kharmaas-ring-of-fate"
+}

@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Hungering Cold was considered a best-in-slot item for Rogues, Fury Warriors and Protection Warriors that became available starting Phase 6 of WoW Classic. While equipped, this increases your expertise rating by 14. This item is obtainable by defeating Kel'Thuzad within Naxxramas.",
+  "fetched_at": "2026-05-24T05:26:58+00:00",
+  "item_id": 23577,
+  "name": "The Hungering Cold",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 28,
+      "drop_percent": 14.74,
+      "entity_id": 15990,
+      "entity_name": "Kel'Thuzad",
+      "out_of": 190,
+      "source_url": "https://www.wowhead.com/tbc/item=23577/the-hungering-cold",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 28,
+        "id": 15990,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 291,
+                "outof": 2058
+              }
+            },
+            "4": {
+              "0": {
+                "count": 30,
+                "outof": 189
+              }
+            },
+            "5": {
+              "0": {
+                "count": 28,
+                "outof": 190
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 291,
+            "outof": 2058
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kel'Thuzad",
+        "outof": 190,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23577/the-hungering-cold"
+}

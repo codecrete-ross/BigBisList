@@ -1,0 +1,79 @@
+{
+  "description": "This epic ring of item level 128 goes in the \"Finger\" slot. It is looted from The Lurker Below. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:57+00:00",
+  "item_id": 33054,
+  "name": "The Seal of Danzalar",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 9.3,
+      "entity_id": 21217,
+      "entity_name": "The Lurker Below",
+      "out_of": 43,
+      "source_url": "https://www.wowhead.com/tbc/item=33054/the-seal-of-danzalar",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 4,
+        "id": 21217,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 26,
+                "outof": 125
+              }
+            },
+            "4": {
+              "0": {
+                "count": 4,
+                "outof": 43
+              }
+            },
+            "5": {
+              "0": {
+                "count": 5,
+                "outof": 14
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 26,
+            "outof": 125
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Lurker Below",
+        "outof": 43,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=33054/the-seal-of-danzalar"
+}

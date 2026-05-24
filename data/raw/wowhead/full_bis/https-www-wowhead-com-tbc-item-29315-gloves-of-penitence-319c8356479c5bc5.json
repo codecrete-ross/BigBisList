@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 97 goes in the \"Hands\" slot. It is a quest reward from Levixus the Soul Caller. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:18:02+00:00",
+  "item_id": 29315,
+  "name": "Gloves of Penitence",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10253,
+      "entity_name": "Levixus the Soul Caller",
+      "quest_id": 10253,
+      "source_url": "https://www.wowhead.com/tbc/item=29315/gloves-of-penitence",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3688,
+        "category2": 8,
+        "id": 10253,
+        "itemchoices": [
+          [
+            29312,
+            1
+          ],
+          [
+            29313,
+            1
+          ],
+          [
+            29315,
+            1
+          ],
+          [
+            29314,
+            1
+          ]
+        ],
+        "level": 67,
+        "name": "Levixus the Soul Caller",
+        "popularity": 15,
+        "reprewards": [
+          [
+            935,
+            500
+          ]
+        ],
+        "reqlevel": 64,
+        "side": 3,
+        "type": 1,
+        "xp": 17450
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29315/gloves-of-penitence"
+}

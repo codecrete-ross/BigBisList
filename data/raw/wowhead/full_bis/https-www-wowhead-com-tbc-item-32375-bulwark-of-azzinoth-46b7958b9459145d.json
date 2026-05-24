@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic shield of item level 151 goes in the \"Off Hand\" slot. It is looted from Illidan Stormrage. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:38:01+00:00",
+  "item_id": 32375,
+  "name": "Bulwark of Azzinoth",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 470,
+      "drop_percent": 15.16,
+      "entity_id": 22917,
+      "entity_name": "Illidan Stormrage",
+      "out_of": 3101,
+      "source_url": "https://www.wowhead.com/tbc/item=32375/bulwark-of-azzinoth",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 470,
+        "id": 22917,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 470,
+                "outof": 3101
+              }
+            },
+            "4": {
+              "0": {
+                "count": 474,
+                "outof": 2981
+              }
+            },
+            "5": {
+              "0": {
+                "count": 503,
+                "outof": 3691
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 470,
+            "outof": 3101
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Illidan Stormrage",
+        "outof": 3101,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Betrayer",
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32375/bulwark-of-azzinoth"
+}

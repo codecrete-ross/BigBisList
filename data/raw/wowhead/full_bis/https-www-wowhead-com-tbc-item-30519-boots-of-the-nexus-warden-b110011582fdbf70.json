@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green cloth armor of item level 114 goes in the \"Feet\" slot. It is a quest reward from The Flesh Lies.... Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:44:59+00:00",
+  "item_id": 30519,
+  "name": "Boots of the Nexus Warden",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10345,
+      "entity_name": "The Flesh Lies...",
+      "quest_id": 10345,
+      "source_url": "https://www.wowhead.com/tbc/item=30519/boots-of-the-nexus-warden",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10345,
+        "itemchoices": [
+          [
+            30352,
+            1
+          ],
+          [
+            30341,
+            1
+          ],
+          [
+            30342,
+            1
+          ],
+          [
+            30519,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "The Flesh Lies...",
+        "popularity": 12,
+        "reprewards": [
+          [
+            933,
+            250
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30519/boots-of-the-nexus-warden"
+}

@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 103 goes in the \"Legs\" slot. It is a quest reward from Hero of the Mag'har. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:27:11+00:00",
+  "item_id": 28175,
+  "name": "Mag'hari Warlord's Legplates",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10212,
+      "entity_name": "Hero of the Mag'har",
+      "quest_id": 10212,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=28175/maghari-warlords-legplates",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 10212,
+        "itemchoices": [
+          [
+            28169,
+            1
+          ],
+          [
+            28172,
+            1
+          ],
+          [
+            28173,
+            1
+          ],
+          [
+            28175,
+            1
+          ]
+        ],
+        "itemrewards": [
+          [
+            28168,
+            1
+          ]
+        ],
+        "level": 68,
+        "name": "Hero of the Mag'har",
+        "popularity": 13,
+        "reprewards": [
+          [
+            941,
+            1000
+          ]
+        ],
+        "reqlevel": 66,
+        "side": 2,
+        "xp": 17950
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28175/maghari-warlords-legplates"
+}

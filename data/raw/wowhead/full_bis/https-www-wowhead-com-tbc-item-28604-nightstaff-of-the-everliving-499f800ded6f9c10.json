@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic staff has an item level of 115. It is looted from Nightbane. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:58:37+00:00",
+  "item_id": 28604,
+  "name": "Nightstaff of the Everliving",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 223,
+      "drop_percent": 15.94,
+      "entity_id": 17225,
+      "entity_name": "Nightbane",
+      "out_of": 1399,
+      "source_url": "https://www.wowhead.com/tbc/item=28604/nightstaff-of-the-everliving",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 223,
+        "id": 17225,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2002,
+                "outof": 12670
+              }
+            },
+            "4": {
+              "0": {
+                "count": 279,
+                "outof": 1884
+              }
+            },
+            "5": {
+              "0": {
+                "count": 223,
+                "outof": 1399
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2002,
+            "outof": 12670
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nightbane",
+        "outof": 1399,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28604/nightstaff-of-the-everliving"
+}

@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue off-hand frill of item level 115 goes in the \"Held In Off-hand\" slot. It is looted from Omor the Unscarred. In the Off-hand Frills category.",
+  "fetched_at": "2026-05-24T04:58:11+00:00",
+  "item_id": 27477,
+  "name": "Faol's Signet of Cleansing",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 38,
+      "drop_percent": 3.58,
+      "entity_id": 17308,
+      "entity_name": "Omor the Unscarred",
+      "out_of": 1060,
+      "source_url": "https://www.wowhead.com/tbc/item=27477/faols-signet-of-cleansing",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 38,
+        "id": 17308,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 874,
+                "outof": 23219
+              }
+            },
+            "4": {
+              "0": {
+                "count": 67,
+                "outof": 1404
+              }
+            },
+            "5": {
+              "0": {
+                "count": 38,
+                "outof": 1060
+              }
+            }
+          }
+        },
+        "location": [
+          3562
+        ],
+        "maxlevel": 72,
+        "minlevel": 62,
+        "modes": {
+          "0": {
+            "count": 874,
+            "outof": 23219
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Omor the Unscarred",
+        "outof": 1060,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27477/faols-signet-of-cleansing"
+}

@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 88 goes in the \"Legs\" slot. It is a quest reward from Cryptstalker Legguards. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:04:43+00:00",
+  "item_id": 22437,
+  "name": "Cryptstalker Legguards",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9055,
+      "entity_name": "Cryptstalker Legguards",
+      "quest_id": 9055,
+      "source_url": "https://www.wowhead.com/tbc/item=22437/cryptstalker-legguards",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "classs": 4,
+        "id": 9055,
+        "itemrewards": [
+          [
+            22437,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Cryptstalker Legguards",
+        "popularity": 9,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqclass": 4,
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22437/cryptstalker-legguards"
+}

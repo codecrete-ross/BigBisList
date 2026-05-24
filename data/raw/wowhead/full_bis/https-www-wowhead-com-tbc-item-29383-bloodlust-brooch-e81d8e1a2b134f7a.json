@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 110 goes in the \"Trinket\" slot. It is sold by G'eras. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:36:12+00:00",
+  "item_id": 29383,
+  "name": "Bloodlust Brooch",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 41,
+          "currency_id": 29434,
+          "name": "Badge of Justice"
+        }
+      ],
+      "entity_id": 18525,
+      "entity_name": "G'eras",
+      "source_url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch",
+      "type": "vendor",
+      "vendor_id": 18525,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29434,
+                41
+              ]
+            ]
+          ]
+        ],
+        "id": 18525,
+        "location": [
+          3703
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "name": "G'eras",
+        "popularity": 33,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "type": 10
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch"
+}

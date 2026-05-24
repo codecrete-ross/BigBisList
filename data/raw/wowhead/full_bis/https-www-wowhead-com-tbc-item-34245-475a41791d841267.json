@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 164 goes in the \"Head\" slot. It is looted from Kil'jaeden. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:47:46+00:00",
+  "item_id": 34245,
+  "name": "Cover of Ursol the Wise",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.76,
+      "entity_id": 25315,
+      "entity_name": "Kil'jaeden",
+      "out_of": 132,
+      "source_url": "https://www.wowhead.com/tbc/item=34245",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 25315,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 132,
+                "percentOverride": 40
+              }
+            },
+            "5": {
+              "0": {
+                "count": 26,
+                "outof": 132
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 132,
+            "percentOverride": 40
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kil'jaeden",
+        "outof": 132,
+        "pctstack": null,
+        "percentOverride": 40,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Deceiver",
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34245"
+}

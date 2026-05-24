@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 103 goes in the \"Shoulder\" slot. It is looted from Epoch Hunter. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:51:16+00:00",
+  "item_id": 27434,
+  "name": "Mantle of Perenolde",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 50,
+      "drop_percent": 12.79,
+      "entity_id": 18096,
+      "entity_name": "Epoch Hunter",
+      "out_of": 391,
+      "source_url": "https://www.wowhead.com/tbc/item=27434/mantle-of-perenolde",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 50,
+        "id": 18096,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 969,
+                "outof": 7974
+              }
+            },
+            "4": {
+              "0": {
+                "count": 60,
+                "outof": 457
+              }
+            },
+            "5": {
+              "0": {
+                "count": 50,
+                "outof": 391
+              }
+            }
+          }
+        },
+        "location": [
+          2367
+        ],
+        "maxlevel": 72,
+        "minlevel": 68,
+        "modes": {
+          "0": {
+            "count": 969,
+            "outof": 7974
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Epoch Hunter",
+        "outof": 391,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27434/mantle-of-perenolde"
+}

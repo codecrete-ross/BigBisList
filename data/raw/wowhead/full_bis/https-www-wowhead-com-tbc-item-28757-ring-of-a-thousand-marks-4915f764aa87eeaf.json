@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 125 goes in the \"Finger\" slot. It is looted from Prince Malchezaar. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:35:54+00:00",
+  "item_id": 28757,
+  "name": "Ring of a Thousand Marks",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 279,
+      "drop_percent": 15.31,
+      "entity_id": 15690,
+      "entity_name": "Prince Malchezaar",
+      "out_of": 1822,
+      "source_url": "https://www.wowhead.com/tbc/item=28757/ring-of-a-thousand-marks",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 279,
+        "id": 15690,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3361,
+                "outof": 21169
+              }
+            },
+            "4": {
+              "0": {
+                "count": 366,
+                "outof": 2431
+              }
+            },
+            "5": {
+              "0": {
+                "count": 279,
+                "outof": 1822
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3361,
+            "outof": 21169
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Prince Malchezaar",
+        "outof": 1822,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28757/ring-of-a-thousand-marks"
+}

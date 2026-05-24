@@ -1,0 +1,111 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green leather armor of item level 114 goes in the \"Wrist\" slot. It is a quest reward. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T05:26:01+00:00",
+  "item_id": 30940,
+  "name": "Aged Leather Bindings",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10816,
+      "entity_name": "Reclaiming Holy Grounds",
+      "quest_id": 10816,
+      "source_url": "https://www.wowhead.com/tbc/item=30940/aged-leather-bindings",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10817,
+      "entity_name": "The Great Retribution",
+      "quest_id": 10817,
+      "source_url": "https://www.wowhead.com/tbc/item=30940/aged-leather-bindings",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10816,
+        "itemchoices": [
+          [
+            30940,
+            1
+          ],
+          [
+            30961,
+            1
+          ],
+          [
+            30922,
+            1
+          ],
+          [
+            30958,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Reclaiming Holy Grounds",
+        "popularity": 11,
+        "reprewards": [
+          [
+            932,
+            250
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 12650
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10817,
+        "itemchoices": [
+          [
+            30940,
+            1
+          ],
+          [
+            30961,
+            1
+          ],
+          [
+            30922,
+            1
+          ],
+          [
+            30958,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "The Great Retribution",
+        "popularity": 11,
+        "reprewards": [
+          [
+            934,
+            250
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30940/aged-leather-bindings"
+}

@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic off-hand frill of item level 141 goes in the \"Held In Off-hand\" slot. It is looted from Essence of Anger. In the Off-hand Frills category.",
+  "fetched_at": "2026-05-24T05:28:47+00:00",
+  "item_id": 32350,
+  "name": "Touch of Inspiration",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 304,
+      "drop_percent": 15.46,
+      "entity_id": 23420,
+      "entity_name": "Essence of Anger",
+      "out_of": 1966,
+      "source_url": "https://www.wowhead.com/tbc/item=32350/touch-of-inspiration",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 304,
+        "id": 23420,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 530,
+                "outof": 3349
+              }
+            },
+            "4": {
+              "0": {
+                "count": 433,
+                "outof": 2554
+              }
+            },
+            "5": {
+              "0": {
+                "count": 304,
+                "outof": 1966
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 530,
+            "outof": 3349
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Essence of Anger",
+        "outof": 1966,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32350/touch-of-inspiration"
+}

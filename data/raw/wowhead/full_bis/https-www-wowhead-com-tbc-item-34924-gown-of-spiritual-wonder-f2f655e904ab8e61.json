@@ -1,0 +1,109 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 141 goes in the \"Chest\" slot. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T05:40:16+00:00",
+  "item_id": 34924,
+  "name": "Gown of Spiritual Wonder",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 100,
+          "currency_id": 29434,
+          "name": "Badge of Justice"
+        }
+      ],
+      "entity_id": 25046,
+      "entity_name": "Smith Hauthaa",
+      "source_url": "https://www.wowhead.com/tbc/item=34924/gown-of-spiritual-wonder",
+      "type": "vendor",
+      "vendor_id": 25046
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 100,
+          "currency_id": 29434,
+          "name": "Badge of Justice"
+        }
+      ],
+      "entity_id": 27667,
+      "entity_name": "Anwehu",
+      "source_url": "https://www.wowhead.com/tbc/item=34924/gown-of-spiritual-wonder",
+      "type": "vendor",
+      "vendor_id": 27667,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29434,
+                100
+              ]
+            ]
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 25046,
+        "location": [
+          4080
+        ],
+        "name": "Smith Hauthaa",
+        "popularity": 19,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Weapons & Armorsmith",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29434,
+                100
+              ]
+            ]
+          ]
+        ],
+        "id": 27667,
+        "location": [
+          3703
+        ],
+        "name": "Anwehu",
+        "popularity": 15,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Weapons & Armorsmith",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=34924/gown-of-spiritual-wonder"
+}

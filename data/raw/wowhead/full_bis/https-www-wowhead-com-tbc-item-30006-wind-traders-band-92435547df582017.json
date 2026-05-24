@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green ring of item level 114 goes in the \"Finger\" slot. It is a quest reward from Dealing with the Overmaster. In the Rings category. Always up to date.",
+  "fetched_at": "2026-05-24T05:27:41+00:00",
+  "item_id": 30006,
+  "name": "Wind Trader's Band",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10318,
+      "entity_name": "Dealing with the Overmaster",
+      "quest_id": 10318,
+      "source_url": "https://www.wowhead.com/tbc/item=30006/wind-traders-band",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10318,
+        "itemchoices": [
+          [
+            30003,
+            1
+          ],
+          [
+            30004,
+            1
+          ],
+          [
+            30005,
+            1
+          ],
+          [
+            30006,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Dealing with the Overmaster",
+        "popularity": 22,
+        "reprewards": [
+          [
+            933,
+            250
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30006/wind-traders-band"
+}

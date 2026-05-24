@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue mail armor of item level 103 goes in the \"Head\" slot. It is a quest reward from Forge Camp: Annihilated. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:08:17+00:00",
+  "item_id": 25820,
+  "name": "Metallic Headband of Simm'onz",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10011,
+      "entity_name": "Forge Camp: Annihilated",
+      "quest_id": 10011,
+      "source_url": "https://www.wowhead.com/tbc/item=25820/metallic-headband-of-simmonz",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 10011,
+        "itemchoices": [
+          [
+            25822,
+            1
+          ],
+          [
+            25821,
+            1
+          ],
+          [
+            25820,
+            1
+          ],
+          [
+            25819,
+            1
+          ]
+        ],
+        "level": 68,
+        "money": 117000,
+        "name": "Forge Camp: Annihilated",
+        "popularity": 32,
+        "reqlevel": 66,
+        "side": 3,
+        "type": 1,
+        "xp": 17950
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25820/metallic-headband-of-simmonz"
+}

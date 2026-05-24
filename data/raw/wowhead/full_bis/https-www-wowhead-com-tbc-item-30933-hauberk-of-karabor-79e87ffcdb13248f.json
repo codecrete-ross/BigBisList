@@ -1,0 +1,127 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 109 goes in the \"Chest\" slot. It is a quest reward. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T04:49:43+00:00",
+  "item_id": 30933,
+  "name": "Hauberk of Karabor",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10651,
+      "entity_name": "Varedis Must Be Stopped",
+      "quest_id": 10651,
+      "source_url": "https://www.wowhead.com/tbc/item=30933/hauberk-of-karabor",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10692,
+      "entity_name": "Varedis Must Be Stopped",
+      "quest_id": 10692,
+      "source_url": "https://www.wowhead.com/tbc/item=30933/hauberk-of-karabor",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10651,
+        "itemchoices": [
+          [
+            31013,
+            1
+          ],
+          [
+            30933,
+            1
+          ],
+          [
+            31010,
+            1
+          ],
+          [
+            31002,
+            1
+          ],
+          [
+            30948,
+            1
+          ],
+          [
+            31009,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Varedis Must Be Stopped",
+        "popularity": 13,
+        "reprewards": [
+          [
+            932,
+            1000
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10692,
+        "itemchoices": [
+          [
+            31013,
+            1
+          ],
+          [
+            30933,
+            1
+          ],
+          [
+            31010,
+            1
+          ],
+          [
+            31002,
+            1
+          ],
+          [
+            30948,
+            1
+          ],
+          [
+            31009,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Varedis Must Be Stopped",
+        "popularity": 7,
+        "reprewards": [
+          [
+            934,
+            1000
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30933/hauberk-of-karabor"
+}

@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic two-handed sword has an item level of 115. It is looted from Julianne. In the Two-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:39:08+00:00",
+  "item_id": 28573,
+  "name": "Despair",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 135,
+      "drop_percent": 24.32,
+      "entity_id": 17534,
+      "entity_name": "Julianne",
+      "out_of": 555,
+      "source_url": "https://www.wowhead.com/tbc/item=28573/despair",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 135,
+        "id": 17534,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1576,
+                "outof": 5642
+              }
+            },
+            "4": {
+              "0": {
+                "count": 200,
+                "outof": 780
+              }
+            },
+            "5": {
+              "0": {
+                "count": 135,
+                "outof": 555
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1576,
+            "outof": 5642
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Julianne",
+        "outof": 555,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28573/despair"
+}

@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green leather armor of item level 111 goes in the \"Legs\" slot. It is a quest reward from Thwart the Dark Conclave. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:57:21+00:00",
+  "item_id": 30941,
+  "name": "Ash Tempered Legguards",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10808,
+      "entity_name": "Thwart the Dark Conclave",
+      "quest_id": 10808,
+      "source_url": "https://www.wowhead.com/tbc/item=30941/ash-tempered-legguards",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10808,
+        "itemchoices": [
+          [
+            30941,
+            1
+          ],
+          [
+            30955,
+            1
+          ],
+          [
+            30960,
+            1
+          ],
+          [
+            30928,
+            1
+          ]
+        ],
+        "level": 69,
+        "money": 41000,
+        "name": "Thwart the Dark Conclave",
+        "popularity": 10,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 15400
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30941/ash-tempered-legguards"
+}

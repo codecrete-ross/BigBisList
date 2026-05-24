@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 115 goes in the \"Waist\" slot. It is looted from Terestian Illhoof. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:58:47+00:00",
+  "item_id": 28655,
+  "name": "Cord of Nature's Sustenance",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 295,
+      "drop_percent": 16.12,
+      "entity_id": 15688,
+      "entity_name": "Terestian Illhoof",
+      "out_of": 1830,
+      "source_url": "https://www.wowhead.com/tbc/item=28655/cord-of-natures-sustenance",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 295,
+        "id": 15688,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3501,
+                "outof": 21329
+              }
+            },
+            "4": {
+              "0": {
+                "count": 385,
+                "outof": 2454
+              }
+            },
+            "5": {
+              "0": {
+                "count": 295,
+                "outof": 1830
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3501,
+            "outof": 21329
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Terestian Illhoof",
+        "outof": 1830,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28655/cord-of-natures-sustenance"
+}

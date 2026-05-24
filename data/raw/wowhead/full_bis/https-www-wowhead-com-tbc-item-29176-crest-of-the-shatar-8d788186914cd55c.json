@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic shield of item level 105 goes in the \"Off Hand\" slot. It is sold by Almaador. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:13:58+00:00",
+  "item_id": 29176,
+  "name": "Crest of the Sha'tar",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21432,
+      "entity_name": "Almaador",
+      "source_url": "https://www.wowhead.com/tbc/item=29176/crest-of-the-shatar",
+      "type": "vendor",
+      "vendor_id": 21432,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            1143189
+          ]
+        ],
+        "id": 21432,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Almaador",
+        "popularity": 35,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Sha'tari Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29176/crest-of-the-shatar"
+}

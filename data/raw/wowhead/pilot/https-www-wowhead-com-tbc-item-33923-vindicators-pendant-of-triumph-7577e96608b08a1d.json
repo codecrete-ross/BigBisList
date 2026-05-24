@@ -1,0 +1,109 @@
+{
+  "description": "This epic amulet of item level 141 goes in the \"Neck\" slot. It is obtained through PvP. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:58+00:00",
+  "item_id": 33923,
+  "name": "Vindicator's Pendant of Triumph",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 6345,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12781,
+      "entity_name": "Master Sergeant Biggins",
+      "source_url": "https://www.wowhead.com/tbc/item=33923/vindicators-pendant-of-triumph",
+      "type": "pvp",
+      "vendor_id": 12781
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 6345,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12793,
+      "entity_name": "Brave Stonehide",
+      "source_url": "https://www.wowhead.com/tbc/item=33923/vindicators-pendant-of-triumph",
+      "type": "pvp",
+      "vendor_id": 12793
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                6345
+              ]
+            ],
+            []
+          ]
+        ],
+        "id": 12781,
+        "location": [
+          1519
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Master Sergeant Biggins",
+        "popularity": 6,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Officer Accessories Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                6345
+              ]
+            ],
+            []
+          ]
+        ],
+        "id": 12793,
+        "location": [
+          1637
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Brave Stonehide",
+        "popularity": 4,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Officer Accessories Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=33923/vindicators-pendant-of-triumph"
+}

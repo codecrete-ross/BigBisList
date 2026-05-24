@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 141 goes in the \"Wrist\" slot. It is looted from Rage Winterchill. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:37:08+00:00",
+  "item_id": 30861,
+  "name": "Furious Shackles",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 271,
+      "drop_percent": 13.14,
+      "entity_id": 17767,
+      "entity_name": "Rage Winterchill",
+      "out_of": 2063,
+      "source_url": "https://www.wowhead.com/tbc/item=30861/furious-shackles",
+      "type": "drop",
+      "zone": "Hyjal Summit"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 271,
+        "id": 17767,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 761,
+                "outof": 4884
+              }
+            },
+            "4": {
+              "0": {
+                "count": 409,
+                "outof": 2812
+              }
+            },
+            "5": {
+              "0": {
+                "count": 271,
+                "outof": 2063
+              }
+            }
+          }
+        },
+        "location": [
+          3606
+        ],
+        "modes": {
+          "0": {
+            "count": 761,
+            "outof": 4884
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Rage Winterchill",
+        "outof": 2063,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30861/furious-shackles"
+}

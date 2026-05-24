@@ -1,0 +1,132 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 109 goes in the \"Waist\" slot. It is a quest reward. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T05:09:13+00:00",
+  "item_id": 30932,
+  "name": "Akama's Sash",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10708,
+      "entity_name": "Akama's Promise",
+      "quest_id": 10708,
+      "source_url": "https://www.wowhead.com/tbc/item=30932/akamas-sash",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11052,
+      "entity_name": "Akama's Promise",
+      "quest_id": 11052,
+      "source_url": "https://www.wowhead.com/tbc/item=30932/akamas-sash",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10708,
+        "itemchoices": [
+          [
+            30932,
+            1
+          ],
+          [
+            30999,
+            1
+          ],
+          [
+            31000,
+            1
+          ],
+          [
+            30943,
+            1
+          ],
+          [
+            30984,
+            1
+          ],
+          [
+            31417,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Akama's Promise",
+        "popularity": 28,
+        "reprewards": [
+          [
+            935,
+            1000
+          ],
+          [
+            1012,
+            1000
+          ]
+        ],
+        "reqlevel": 68,
+        "xp": 19000
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 11052,
+        "itemchoices": [
+          [
+            30932,
+            1
+          ],
+          [
+            30999,
+            1
+          ],
+          [
+            31000,
+            1
+          ],
+          [
+            30943,
+            1
+          ],
+          [
+            30984,
+            1
+          ],
+          [
+            31417,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Akama's Promise",
+        "popularity": 16,
+        "reprewards": [
+          [
+            935,
+            1000
+          ],
+          [
+            1012,
+            1000
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30932/akamas-sash"
+}

@@ -1,0 +1,221 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 154 goes in the \"Finger\" slot. It is looted from Kalecgos. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:29:47+00:00",
+  "item_id": 34166,
+  "name": "Band of Lucent Beams",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 24844,
+      "entity_name": "Kalecgos",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=34166/band-of-lucent-beams",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 24850,
+      "entity_name": "Kalecgos",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=34166/band-of-lucent-beams",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 24892,
+      "entity_name": "Sathrovarr the Corruptor",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=34166/band-of-lucent-beams",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 25319,
+      "entity_name": "Kalecgos",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=34166/band-of-lucent-beams",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 24844,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 15
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 15
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kalecgos",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 15,
+        "personal_loot": 0,
+        "react": [
+          1,
+          1
+        ],
+        "type": 2
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 24850,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 15
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 15
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kalecgos",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 15,
+        "personal_loot": 0,
+        "popularity": 141,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 24892,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 15
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 15
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sathrovarr the Corruptor",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 15,
+        "personal_loot": 0,
+        "popularity": 27,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 25319,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 2.7
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 2.7
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kalecgos",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 2.7,
+        "personal_loot": 0,
+        "popularity": 20,
+        "react": [
+          1,
+          1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34166/band-of-lucent-beams"
+}

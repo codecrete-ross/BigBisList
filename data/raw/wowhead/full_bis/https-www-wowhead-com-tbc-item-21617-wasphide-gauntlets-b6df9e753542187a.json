@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 78 goes in the \"Hands\" slot. It is looted from Princess Huhuran. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T05:01:44+00:00",
+  "item_id": 21617,
+  "name": "Wasphide Gauntlets",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 9.09,
+      "entity_id": 15509,
+      "entity_name": "Princess Huhuran",
+      "out_of": 22,
+      "source_url": "https://www.wowhead.com/tbc/item=21617/wasphide-gauntlets",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "id": 15509,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2710,
+                "outof": 16653
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 22
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 30
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2710,
+            "outof": 16653
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Princess Huhuran",
+        "outof": 22,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21617/wasphide-gauntlets"
+}

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 100 goes in the \"Chest\" slot. It is a quest reward from Everything Will Be Alright. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:25:55+00:00",
+  "item_id": 29337,
+  "name": "The Exarch's Protector",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10164,
+      "entity_name": "Everything Will Be Alright",
+      "quest_id": 10164,
+      "source_url": "https://www.wowhead.com/tbc/item=29337/the-exarchs-protector",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3790,
+        "category2": 2,
+        "id": 10164,
+        "itemchoices": [
+          [
+            29341,
+            1
+          ],
+          [
+            29340,
+            1
+          ],
+          [
+            29339,
+            1
+          ],
+          [
+            29337,
+            1
+          ]
+        ],
+        "level": 67,
+        "name": "Everything Will Be Alright",
+        "popularity": 8,
+        "reprewards": [
+          [
+            935,
+            500
+          ]
+        ],
+        "reqlevel": 64,
+        "side": 3,
+        "type": 81,
+        "xp": 23300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29337/the-exarchs-protector"
+}

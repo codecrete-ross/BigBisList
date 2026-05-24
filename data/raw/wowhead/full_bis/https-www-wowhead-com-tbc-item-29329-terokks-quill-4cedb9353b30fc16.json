@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue polearm has an item level of 115. It is a quest reward from Terokk's Legacy. In the Polearms category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:48:20+00:00",
+  "item_id": 29329,
+  "name": "Terokk's Quill",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10098,
+      "entity_name": "Terokk's Legacy",
+      "quest_id": 10098,
+      "source_url": "https://www.wowhead.com/tbc/item=29329/terokks-quill",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3688,
+        "category2": 8,
+        "id": 10098,
+        "itemchoices": [
+          [
+            29330,
+            1
+          ],
+          [
+            29332,
+            1
+          ],
+          [
+            29329,
+            1
+          ]
+        ],
+        "level": 69,
+        "money": 82000,
+        "name": "Terokk's Legacy",
+        "popularity": 19,
+        "reqlevel": 65,
+        "side": 3,
+        "type": 81,
+        "xp": 24600
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29329/terokks-quill"
+}

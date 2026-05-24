@@ -1,0 +1,129 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 159 goes in the \"Shoulder\" slot. It is looted from Lady Sacrolash. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:48:46+00:00",
+  "item_id": 34193,
+  "name": "Spaulders of the Thalassian Savior",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 25165,
+      "entity_name": "Lady Sacrolash",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=34193",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "drop_percent": -0.07,
+      "entity_id": 25166,
+      "entity_name": "Grand Warlock Alythess",
+      "out_of": 1457,
+      "source_url": "https://www.wowhead.com/tbc/item=34193",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 25165,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 15
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 15
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lady Sacrolash",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 15,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 25166,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 1457,
+                "percentOverride": 13.8
+              }
+            },
+            "5": {
+              "0": {
+                "count": 247,
+                "outof": 1457
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 1457,
+            "percentOverride": 13.8
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Grand Warlock Alythess",
+        "outof": 1457,
+        "pctstack": null,
+        "percentOverride": 13.8,
+        "personal_loot": 0,
+        "popularity": 154,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34193"
+}

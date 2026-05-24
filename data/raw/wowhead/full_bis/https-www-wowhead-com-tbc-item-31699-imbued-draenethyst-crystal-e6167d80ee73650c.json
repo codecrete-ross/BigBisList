@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green off-hand frill of item level 108 goes in the \"Held In Off-hand\" slot. It is a quest reward from Teleport This!. In the Off-hand Frills category.",
+  "fetched_at": "2026-05-24T05:06:20+00:00",
+  "item_id": 31699,
+  "name": "Imbued Draenethyst Crystal",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10857,
+      "entity_name": "Teleport This!",
+      "quest_id": 10857,
+      "source_url": "https://www.wowhead.com/tbc/item=31699/imbued-draenethyst-crystal",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10857,
+        "itemchoices": [
+          [
+            31701,
+            1
+          ],
+          [
+            31700,
+            1
+          ],
+          [
+            31703,
+            1
+          ],
+          [
+            31699,
+            1
+          ]
+        ],
+        "level": 69,
+        "name": "Teleport This!",
+        "popularity": 19,
+        "reprewards": [
+          [
+            933,
+            350
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 15400
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31699/imbued-draenethyst-crystal"
+}

@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 141 goes in the \"Finger\" slot. It is looted from Supremus. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:37:48+00:00",
+  "item_id": 32261,
+  "name": "Band of the Abyssal Lord",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 63,
+      "drop_percent": 17.7,
+      "entity_id": 22898,
+      "entity_name": "Supremus",
+      "out_of": 356,
+      "source_url": "https://www.wowhead.com/tbc/item=32261/band-of-the-abyssal-lord",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 63,
+        "id": 22898,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 86,
+                "outof": 566
+              }
+            },
+            "4": {
+              "0": {
+                "count": 63,
+                "outof": 356
+              }
+            },
+            "5": {
+              "0": {
+                "count": 77,
+                "outof": 528
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 86,
+            "outof": 566
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Supremus",
+        "outof": 356,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32261/band-of-the-abyssal-lord"
+}

@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue ring of item level 109 goes in the \"Finger\" slot. It is a quest reward from Battle of the Crimson Watch. In the Rings category. Always up to date.",
+  "fetched_at": "2026-05-24T05:10:59+00:00",
+  "item_id": 31380,
+  "name": "Acrobat's Mark of the Sha'tar",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10781,
+      "entity_name": "Battle of the Crimson Watch",
+      "quest_id": 10781,
+      "source_url": "https://www.wowhead.com/tbc/item=31380/acrobats-mark-of-the-shatar",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10781,
+        "itemchoices": [
+          [
+            31380,
+            1
+          ],
+          [
+            31381,
+            1
+          ],
+          [
+            31382,
+            1
+          ],
+          [
+            31383,
+            1
+          ]
+        ],
+        "itemrewards": [
+          [
+            31408,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Battle of the Crimson Watch",
+        "popularity": 25,
+        "reprewards": [
+          [
+            935,
+            500
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31380/acrobats-mark-of-the-shatar"
+}

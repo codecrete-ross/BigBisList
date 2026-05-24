@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloak of item level 125 goes in the \"Back\" slot. It is looted from High King Maulgar. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:25:40+00:00",
+  "item_id": 28797,
+  "name": "Brute Cloak of the Ogre-Magi",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 235,
+      "drop_percent": 12.16,
+      "entity_id": 18831,
+      "entity_name": "High King Maulgar",
+      "out_of": 1932,
+      "source_url": "https://www.wowhead.com/tbc/item=28797/brute-cloak-of-the-ogre-magi",
+      "type": "drop",
+      "zone": "Gruul's Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 235,
+        "id": 18831,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3042,
+                "outof": 18894
+              }
+            },
+            "4": {
+              "0": {
+                "count": 470,
+                "outof": 3225
+              }
+            },
+            "5": {
+              "0": {
+                "count": 235,
+                "outof": 1932
+              }
+            }
+          }
+        },
+        "location": [
+          3923
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3042,
+            "outof": 18894
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "High King Maulgar",
+        "outof": 1932,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Ogres",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28797/brute-cloak-of-the-ogre-magi"
+}

@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 83 goes in the \"Finger\" slot. It is looted from Anub'Rekhan. In the Rings category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:01:59+00:00",
+  "item_id": 22939,
+  "name": "Band of Unanswered Prayers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 39,
+      "drop_percent": 20.0,
+      "entity_id": 15956,
+      "entity_name": "Anub'Rekhan",
+      "out_of": 195,
+      "source_url": "https://www.wowhead.com/tbc/item=22939/band-of-unanswered-prayers",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 39,
+        "id": 15956,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 927,
+                "outof": 4890
+              }
+            },
+            "4": {
+              "0": {
+                "count": 51,
+                "outof": 187
+              }
+            },
+            "5": {
+              "0": {
+                "count": 39,
+                "outof": 195
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 927,
+            "outof": 4890
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anub'Rekhan",
+        "outof": 195,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22939/band-of-unanswered-prayers"
+}

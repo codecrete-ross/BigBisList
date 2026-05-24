@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Big BiS List BiS lists",
+  "type": "object",
+  "required": ["coverage", "lists"],
+  "properties": {
+    "coverage": { "type": "string" },
+    "lists": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["class", "spec", "phase", "slot", "items", "source_url"],
+        "properties": {
+          "class": { "type": "string" },
+          "spec": { "type": "string" },
+          "phase": { "type": "string" },
+          "slot": { "type": "string" },
+          "source_url": { "type": "string" },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["item_id", "rank_label", "rank_group", "context"],
+              "properties": {
+                "item_id": { "type": "integer" },
+                "rank": { "type": "integer" },
+                "rank_label": { "type": "string" },
+                "rank_group": { "type": "string" },
+                "context": { "type": "string" },
+                "note": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

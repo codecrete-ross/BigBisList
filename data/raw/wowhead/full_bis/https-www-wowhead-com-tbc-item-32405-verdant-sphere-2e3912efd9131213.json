@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Verdant Sphere is a quest item needed for Kael'thas and the Verdant Sphere. In the Items category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:38:01+00:00",
+  "item_id": 32405,
+  "name": "Verdant Sphere",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 6203,
+      "drop_percent": 91.53,
+      "entity_id": 19622,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 6777,
+      "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 23054,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+      "type": "drop",
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 6203,
+        "id": 19622,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6203,
+                "outof": 6777
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1350,
+                "outof": 1563
+              }
+            },
+            "5": {
+              "0": {
+                "count": 603,
+                "outof": 724
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 6203,
+            "outof": 6777
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 6777,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 23054,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 89.1
+              }
+            }
+          }
+        },
+        "location": [
+          3703
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 89.1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 89.1,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere"
+}

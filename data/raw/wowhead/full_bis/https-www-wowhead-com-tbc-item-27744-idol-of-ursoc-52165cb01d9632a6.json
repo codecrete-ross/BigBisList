@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue idol of item level 115 goes in the \"Relic\" slot. It is looted from Hungarfen. In the Idols category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:55:08+00:00",
+  "item_id": 27744,
+  "name": "Idol of Ursoc",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 25,
+      "drop_percent": 5.53,
+      "entity_id": 17770,
+      "entity_name": "Hungarfen",
+      "out_of": 452,
+      "source_url": "https://www.wowhead.com/tbc/item=27744/idol-of-ursoc",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 25,
+        "id": 17770,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 602,
+                "outof": 9261
+              }
+            },
+            "4": {
+              "0": {
+                "count": 56,
+                "outof": 602
+              }
+            },
+            "5": {
+              "0": {
+                "count": 25,
+                "outof": 452
+              }
+            }
+          }
+        },
+        "location": [
+          3716
+        ],
+        "maxlevel": 72,
+        "minlevel": 65,
+        "modes": {
+          "0": {
+            "count": 602,
+            "outof": 9261
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hungarfen",
+        "outof": 452,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27744/idol-of-ursoc"
+}

@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic shield of item level 128 goes in the \"Off Hand\" slot. It is looted from Jan'alai. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:39:14+00:00",
+  "item_id": 33326,
+  "name": "Bulwark of the Amani Empire",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 18,
+      "drop_percent": 7.59,
+      "entity_id": 23578,
+      "entity_name": "Jan'alai",
+      "out_of": 237,
+      "source_url": "https://www.wowhead.com/tbc/item=33326/bulwark-of-the-amani-empire",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 18,
+        "id": 23578,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 18,
+                "outof": 237
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1048,
+                "outof": 8147
+              }
+            },
+            "5": {
+              "0": {
+                "count": 472,
+                "outof": 4029
+              }
+            }
+          }
+        },
+        "location": [
+          3805
+        ],
+        "modes": {
+          "0": {
+            "count": 18,
+            "outof": 237
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jan'alai",
+        "outof": 237,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Dragonhawk Avatar",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=33326/bulwark-of-the-amani-empire"
+}

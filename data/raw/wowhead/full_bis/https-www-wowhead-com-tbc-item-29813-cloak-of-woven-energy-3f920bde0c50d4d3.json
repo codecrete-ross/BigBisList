@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloak of item level 106 goes in the \"Back\" slot. It is a quest reward from Hitting the Motherlode. In the Cloaks category. Always up to date.",
+  "fetched_at": "2026-05-24T04:35:05+00:00",
+  "item_id": 29813,
+  "name": "Cloak of Woven Energy",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10293,
+      "entity_name": "Hitting the Motherlode",
+      "quest_id": 10293,
+      "source_url": "https://www.wowhead.com/tbc/item=29813/cloak-of-woven-energy",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10293,
+        "itemchoices": [
+          [
+            29813,
+            1
+          ],
+          [
+            29814,
+            1
+          ],
+          [
+            29815,
+            1
+          ]
+        ],
+        "level": 69,
+        "money": 41000,
+        "name": "Hitting the Motherlode",
+        "popularity": 11,
+        "reprewards": [
+          [
+            933,
+            250
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 1,
+        "xp": 12300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29813/cloak-of-woven-energy"
+}

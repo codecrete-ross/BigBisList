@@ -1,0 +1,31 @@
+{
+  "parser_version": "wowhead-skeleton-0.1.0",
+  "captured_at": "2026-05-23T00:00:00Z",
+  "rows": [
+    {
+      "guide_url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+      "class": "Druid",
+      "spec": "Balance",
+      "phase": "SWP",
+      "slot": "Idol",
+      "items": [
+        { "item_id": 32387, "rank_label": "BiS", "context": "party_buff" },
+        { "item_id": 27518, "rank_label": "BiS", "context": "starfire" },
+        { "item_id": 33510, "rank_label": "Option", "context": "moonfire" }
+      ]
+    },
+    {
+      "guide_url": "https://www.wowhead.com/tbc/guide/feral-druid-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+      "class": "Druid",
+      "spec": "Feral dps",
+      "phase": "SWP",
+      "slot": "Idol",
+      "items": [
+        { "item_id": 29390, "rank_label": "BiS (Personal DPS)", "context": "personal_dps" },
+        { "item_id": 32387, "rank_label": "BiS (Raid DPS)", "context": "raid_dps" },
+        { "item_id": 33509, "rank_label": "Option", "context": "shred_mangle" }
+      ]
+    }
+  ]
+}
+

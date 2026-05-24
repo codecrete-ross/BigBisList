@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Aldor: +100 dodge rating for 10 sec. This epic amulet of item level 115 goes in the \"Neck\" slot. It is sold by Eldara Dawnrunner. In the Amulets category.",
+  "fetched_at": "2026-05-24T05:38:55+00:00",
+  "item_id": 34680,
+  "name": "Shattered Sun Pendant of Resolve",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 25032,
+      "entity_name": "Eldara Dawnrunner",
+      "source_url": "https://www.wowhead.com/tbc/item=34680/shattered-sun-pendant-of-resolve",
+      "type": "vendor",
+      "vendor_id": 25032
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            186202
+          ]
+        ],
+        "id": 25032,
+        "location": [
+          4080
+        ],
+        "name": "Eldara Dawnrunner",
+        "popularity": 13,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Shattered Sun Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=34680/shattered-sun-pendant-of-resolve"
+}

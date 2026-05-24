@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green leather armor of item level 114 goes in the \"Waist\" slot. It is a quest reward from Enraged Spirits of Air. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:57:23+00:00",
+  "item_id": 30942,
+  "name": "Manimal's Cinch",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10481,
+      "entity_name": "Enraged Spirits of Air",
+      "quest_id": 10481,
+      "source_url": "https://www.wowhead.com/tbc/item=30942/manimals-cinch",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10481,
+        "itemchoices": [
+          [
+            30953,
+            1
+          ],
+          [
+            30930,
+            1
+          ],
+          [
+            30942,
+            1
+          ],
+          [
+            30964,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Enraged Spirits of Air",
+        "popularity": 13,
+        "reqlevel": 68,
+        "side": 3,
+        "xp": 12650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30942/manimals-cinch"
+}

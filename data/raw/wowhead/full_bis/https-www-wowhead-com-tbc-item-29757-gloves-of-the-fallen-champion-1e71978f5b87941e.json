@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Paladin, Rogue, or Shaman. It is looted from The Curator. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:42:48+00:00",
+  "item_id": 29757,
+  "name": "Gloves of the Fallen Champion",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 584,
+      "drop_percent": 31.2,
+      "entity_id": 15691,
+      "entity_name": "The Curator",
+      "out_of": 1872,
+      "source_url": "https://www.wowhead.com/tbc/item=29757/gloves-of-the-fallen-champion",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 584,
+        "id": 15691,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7603,
+                "outof": 23228
+              }
+            },
+            "4": {
+              "0": {
+                "count": 843,
+                "outof": 2519
+              }
+            },
+            "5": {
+              "0": {
+                "count": 584,
+                "outof": 1872
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 7603,
+            "outof": 23228
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Curator",
+        "outof": 1872,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29757/gloves-of-the-fallen-champion"
+}

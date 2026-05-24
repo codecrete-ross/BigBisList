@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue amulet of item level 115 goes in the \"Neck\" slot. It is a quest reward from Brother Against Brother. In the Amulets category. Always up to date.",
+  "fetched_at": "2026-05-24T04:34:51+00:00",
+  "item_id": 29333,
+  "name": "Torc of the Sethekk Prophet",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10097,
+      "entity_name": "Brother Against Brother",
+      "quest_id": 10097,
+      "source_url": "https://www.wowhead.com/tbc/item=29333/torc-of-the-sethekk-prophet",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3688,
+        "category2": 8,
+        "id": 10097,
+        "itemchoices": [
+          [
+            29333,
+            1
+          ],
+          [
+            29334,
+            1
+          ],
+          [
+            29335,
+            1
+          ],
+          [
+            29336,
+            1
+          ]
+        ],
+        "level": 69,
+        "money": 82000,
+        "name": "Brother Against Brother",
+        "popularity": 14,
+        "reprewards": [
+          [
+            1011,
+            350
+          ]
+        ],
+        "reqlevel": 65,
+        "side": 3,
+        "type": 81,
+        "xp": 24600
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29333/torc-of-the-sethekk-prophet"
+}

@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic one-handed sword has an item level of 132. It is looted from Akil'zon. In the One-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:42:09+00:00",
+  "item_id": 33214,
+  "name": "Akil'zon's Talonblade",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 30,
+      "drop_percent": 12.4,
+      "entity_id": 23574,
+      "entity_name": "Akil'zon",
+      "out_of": 242,
+      "source_url": "https://www.wowhead.com/tbc/item=33214/akilzons-talonblade",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 30,
+        "id": 23574,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 30,
+                "outof": 242
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1107,
+                "outof": 8282
+              }
+            },
+            "5": {
+              "0": {
+                "count": 547,
+                "outof": 4053
+              }
+            }
+          }
+        },
+        "location": [
+          3805
+        ],
+        "modes": {
+          "0": {
+            "count": 30,
+            "outof": 242
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Akil'zon",
+        "outof": 242,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Eagle Avatar",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=33214/akilzons-talonblade"
+}

@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 128 goes in the \"Feet\" slot. It is looted from Morogrim Tidewalker. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:36:39+00:00",
+  "item_id": 30081,
+  "name": "Warboots of Obliteration",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 122,
+      "drop_percent": 20.82,
+      "entity_id": 21213,
+      "entity_name": "Morogrim Tidewalker",
+      "out_of": 586,
+      "source_url": "https://www.wowhead.com/tbc/item=30081/warboots-of-obliteration",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 122,
+        "id": 21213,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1406,
+                "outof": 7025
+              }
+            },
+            "4": {
+              "0": {
+                "count": 247,
+                "outof": 1249
+              }
+            },
+            "5": {
+              "0": {
+                "count": 122,
+                "outof": 586
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 1406,
+            "outof": 7025
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Morogrim Tidewalker",
+        "outof": 586,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30081/warboots-of-obliteration"
+}

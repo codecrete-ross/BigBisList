@@ -1,0 +1,44 @@
+{
+  "fetched_at": "2026-05-24T05:11:28+00:00",
+  "name": "Ragesteel Shoulders",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 33174,
+      "entity_name": "Plans: Ragesteel Shoulders",
+      "item_id": 33174,
+      "source_url": "https://www.wowhead.com/tbc/spell=42662/ragesteel-shoulders",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 33174,
+        "level": 73,
+        "name": "Plans: Ragesteel Shoulders",
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 3520
+          }
+        ],
+        "subclass": 4
+      }
+    ]
+  },
+  "spell_id": 42662,
+  "url": "https://www.wowhead.com/tbc/spell=42662/ragesteel-shoulders"
+}

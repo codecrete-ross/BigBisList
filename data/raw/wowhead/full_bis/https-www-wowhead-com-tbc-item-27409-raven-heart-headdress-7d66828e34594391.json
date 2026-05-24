@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 100 goes in the \"Head\" slot. It is looted from Shirrak the Dead Watcher. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:02:23+00:00",
+  "item_id": 27409,
+  "name": "Raven-Heart Headdress",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 54,
+      "drop_percent": 7.93,
+      "entity_id": 18371,
+      "entity_name": "Shirrak the Dead Watcher",
+      "out_of": 681,
+      "source_url": "https://www.wowhead.com/tbc/item=27409/raven-heart-headdress",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 54,
+        "id": 18371,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1160,
+                "outof": 12489
+              }
+            },
+            "4": {
+              "0": {
+                "count": 54,
+                "outof": 681
+              }
+            },
+            "5": {
+              "0": {
+                "count": 58,
+                "outof": 443
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 71,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 1160,
+            "outof": 12489
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shirrak the Dead Watcher",
+        "outof": 681,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27409/raven-heart-headdress"
+}

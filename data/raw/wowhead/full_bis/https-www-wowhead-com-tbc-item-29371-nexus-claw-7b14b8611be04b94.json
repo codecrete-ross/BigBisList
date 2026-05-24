@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green fist weapon has an item level of 108. It is sold by Dealer Jadyan. In the Fist Weapons category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:23:30+00:00",
+  "item_id": 29371,
+  "name": "Nexus-Claw",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19536,
+      "entity_name": "Dealer Jadyan",
+      "source_url": "https://www.wowhead.com/tbc/item=29371/nexus-claw",
+      "type": "vendor",
+      "vendor_id": 19536,
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            278667
+          ]
+        ],
+        "id": 19536,
+        "location": [
+          3523
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Dealer Jadyan",
+        "popularity": 14,
+        "react": [
+          1,
+          1
+        ],
+        "stock": 1,
+        "tag": "Exotic Weapons",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29371/nexus-claw"
+}

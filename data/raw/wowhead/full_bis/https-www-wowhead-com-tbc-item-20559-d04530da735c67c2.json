@@ -1,0 +1,129 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Arathi Basin Mark of Honor is a currency in World of Warcraft. It is a quest reward. In the Items category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:47:56+00:00",
+  "item_id": 20559,
+  "name": "Arathi Basin Mark of Honor",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8565,
+      "entity_name": "Past Victories in Arathi",
+      "quest_id": 8565,
+      "source_url": "https://www.wowhead.com/tbc/item=20559",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8566,
+      "entity_name": "Past Victories in Arathi",
+      "quest_id": 8566,
+      "source_url": "https://www.wowhead.com/tbc/item=20559",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11335,
+      "entity_name": "Call to Arms: Arathi Basin",
+      "quest_id": 11335,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=20559",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11339,
+      "entity_name": "Call to Arms: Arathi Basin",
+      "quest_id": 11339,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=20559",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 0,
+        "category2": -2,
+        "id": 8565,
+        "itemrewards": [
+          [
+            20559,
+            3
+          ]
+        ],
+        "level": 1,
+        "name": "Past Victories in Arathi",
+        "popularity": 7,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 16
+      },
+      {
+        "category": 0,
+        "category2": -2,
+        "id": 8566,
+        "itemrewards": [
+          [
+            20559,
+            3
+          ]
+        ],
+        "level": 1,
+        "name": "Past Victories in Arathi",
+        "popularity": 9,
+        "reqlevel": 1,
+        "side": 3,
+        "wflags": 16
+      },
+      {
+        "category": 3358,
+        "category2": 6,
+        "daily": 1,
+        "id": 11335,
+        "itemrewards": [
+          [
+            20559,
+            3
+          ]
+        ],
+        "money": 15,
+        "name": "Call to Arms: Arathi Basin",
+        "popularity": 13,
+        "reqlevel": 21,
+        "side": 1,
+        "type": 41,
+        "wflags": 2,
+        "xp": 1650
+      },
+      {
+        "category": 3358,
+        "category2": 6,
+        "daily": 1,
+        "id": 11339,
+        "itemrewards": [
+          [
+            20559,
+            3
+          ]
+        ],
+        "money": 100,
+        "name": "Call to Arms: Arathi Basin",
+        "popularity": 15,
+        "reqlevel": 21,
+        "side": 2,
+        "type": 41,
+        "wflags": 2,
+        "xp": 1650
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=20559"
+}

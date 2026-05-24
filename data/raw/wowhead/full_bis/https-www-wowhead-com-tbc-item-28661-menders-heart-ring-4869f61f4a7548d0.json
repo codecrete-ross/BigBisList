@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 115 goes in the \"Finger\" slot. It is looted from Terestian Illhoof. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:39:59+00:00",
+  "item_id": 28661,
+  "name": "Mender's Heart-Ring",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 276,
+      "drop_percent": 15.08,
+      "entity_id": 15688,
+      "entity_name": "Terestian Illhoof",
+      "out_of": 1830,
+      "source_url": "https://www.wowhead.com/tbc/item=28661/menders-heart-ring",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 276,
+        "id": 15688,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3551,
+                "outof": 21329
+              }
+            },
+            "4": {
+              "0": {
+                "count": 408,
+                "outof": 2454
+              }
+            },
+            "5": {
+              "0": {
+                "count": 276,
+                "outof": 1830
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3551,
+            "outof": 21329
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Terestian Illhoof",
+        "outof": 1830,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28661/menders-heart-ring"
+}

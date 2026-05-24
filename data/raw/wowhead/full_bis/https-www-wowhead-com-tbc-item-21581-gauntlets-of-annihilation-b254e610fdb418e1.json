@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 88 goes in the \"Hands\" slot. It is looted from C'Thun. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T05:25:26+00:00",
+  "item_id": 21581,
+  "name": "Gauntlets of Annihilation",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 106,
+      "drop_percent": 21.59,
+      "entity_id": 15727,
+      "entity_name": "C'Thun",
+      "out_of": 491,
+      "source_url": "https://www.wowhead.com/tbc/item=21581/gauntlets-of-annihilation",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 106,
+        "id": 15727,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 106,
+                "outof": 491
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 106,
+            "outof": 491
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "C'Thun",
+        "outof": 491,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21581/gauntlets-of-annihilation"
+}

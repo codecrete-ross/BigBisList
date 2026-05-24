@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 141 goes in the \"Neck\" slot. It is looted from Mother Shahraz. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:28:51+00:00",
+  "item_id": 32370,
+  "name": "Nadina's Pendant of Purity",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 395,
+      "drop_percent": 15.06,
+      "entity_id": 22947,
+      "entity_name": "Mother Shahraz",
+      "out_of": 2623,
+      "source_url": "https://www.wowhead.com/tbc/item=32370/nadinas-pendant-of-purity",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 395,
+        "id": 22947,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 479,
+                "outof": 3230
+              }
+            },
+            "4": {
+              "0": {
+                "count": 395,
+                "outof": 2623
+              }
+            },
+            "5": {
+              "0": {
+                "count": 444,
+                "outof": 3504
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 479,
+            "outof": 3230
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Mother Shahraz",
+        "outof": 2623,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32370/nadinas-pendant-of-purity"
+}

@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 100 goes in the \"Trinket\" slot. It is looted from Shirrak the Dead Watcher. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-05-24T04:43:33+00:00",
+  "item_id": 26055,
+  "name": "Oculus of the Hidden Eye",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 48,
+      "drop_percent": 10.84,
+      "entity_id": 18371,
+      "entity_name": "Shirrak the Dead Watcher",
+      "out_of": 443,
+      "source_url": "https://www.wowhead.com/tbc/item=26055/oculus-of-the-hidden-eye",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 48,
+        "id": 18371,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1222,
+                "outof": 12489
+              }
+            },
+            "4": {
+              "0": {
+                "count": 80,
+                "outof": 681
+              }
+            },
+            "5": {
+              "0": {
+                "count": 48,
+                "outof": 443
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 71,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 1222,
+            "outof": 12489
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shirrak the Dead Watcher",
+        "outof": 443,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=26055/oculus-of-the-hidden-eye"
+}

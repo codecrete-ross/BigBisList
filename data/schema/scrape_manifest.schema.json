@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Big BiS List scrape manifest",
+  "type": "object",
+  "required": ["parser_version", "source_policy", "snapshot_policy", "conflict_policy", "sources"],
+  "properties": {
+    "parser_version": { "type": "string" },
+    "source_policy": { "type": "string" },
+    "snapshot_policy": { "type": "string" },
+    "conflict_policy": { "type": "string" },
+    "registry_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "type", "status"],
+        "oneOf": [
+          { "required": ["data_family"] },
+          { "required": ["data_families"] }
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "url": {
+            "type": "string",
+            "pattern": "^https://www\\.wowhead\\.com/tbc/"
+          },
+          "type": { "type": "string" },
+          "data_family": {
+            "type": "string",
+            "enum": ["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases", "items", "spells"]
+          },
+          "data_families": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases", "items", "spells"]
+            }
+          },
+          "class": { "type": "string" },
+          "spec": { "type": "string" },
+          "phase": {
+            "type": "string",
+            "enum": ["PR", "T4", "T5", "T6", "ZA", "SWP", "*"]
+          },
+          "phases": {
+            "oneOf": [
+              { "const": "*" },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["PR", "T4", "T5", "T6", "ZA", "SWP"]
+                }
+              }
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "enum": ["all_phases"]
+          },
+          "status": { "type": "string" },
+          "fetched_at": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

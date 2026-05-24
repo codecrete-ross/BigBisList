@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 88 goes in the \"Legs\" slot. It is looted from Broggok. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:02:13+00:00",
+  "item_id": 24391,
+  "name": "Kilt of the Night Strider",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 65,
+      "drop_percent": 14.44,
+      "entity_id": 17380,
+      "entity_name": "Broggok",
+      "out_of": 450,
+      "source_url": "https://www.wowhead.com/tbc/item=24391/kilt-of-the-night-strider",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 65,
+        "id": 17380,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2650,
+                "outof": 15219
+              }
+            },
+            "4": {
+              "0": {
+                "count": 88,
+                "outof": 627
+              }
+            },
+            "5": {
+              "0": {
+                "count": 65,
+                "outof": 450
+              }
+            }
+          }
+        },
+        "location": [
+          3713
+        ],
+        "maxlevel": 72,
+        "minlevel": 63,
+        "modes": {
+          "0": {
+            "count": 2650,
+            "outof": 15219
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Broggok",
+        "outof": 450,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=24391/kilt-of-the-night-strider"
+}

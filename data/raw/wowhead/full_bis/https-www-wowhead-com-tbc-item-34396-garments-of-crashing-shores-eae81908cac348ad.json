@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 159 goes in the \"Chest\" slot. It is sold by Yrma. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T05:31:59+00:00",
+  "item_id": 34396,
+  "name": "Garments of Crashing Shores",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 34229,
+          "name": "Item 34229"
+        },
+        {
+          "amount": 1,
+          "item_id": 34664,
+          "name": "Item 34664"
+        }
+      ],
+      "entity_id": 25977,
+      "entity_name": "Yrma",
+      "source_url": "https://www.wowhead.com/tbc/item=34396/garments-of-crashing-shores",
+      "type": "vendor",
+      "vendor_id": 25977
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                34229,
+                1
+              ],
+              [
+                34664,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 25977,
+        "location": [
+          4080
+        ],
+        "name": "Yrma",
+        "popularity": 5,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Transmuter of Sin'dorei Relics",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=34396/garments-of-crashing-shores"
+}

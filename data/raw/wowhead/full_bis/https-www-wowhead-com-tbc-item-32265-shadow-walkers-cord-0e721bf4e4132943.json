@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 141 goes in the \"Waist\" slot. It is looted from Shade of Akama. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:32:25+00:00",
+  "item_id": 32265,
+  "name": "Shadow-walker's Cord",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 510,
+      "drop_percent": 16.58,
+      "entity_id": 22841,
+      "entity_name": "Shade of Akama",
+      "out_of": 3076,
+      "source_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 510,
+        "id": 22841,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 769,
+                "outof": 4476
+              }
+            },
+            "4": {
+              "0": {
+                "count": 510,
+                "outof": 3076
+              }
+            },
+            "5": {
+              "0": {
+                "count": 567,
+                "outof": 3832
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 769,
+            "outof": 4476
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shade of Akama",
+        "outof": 3076,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
+}

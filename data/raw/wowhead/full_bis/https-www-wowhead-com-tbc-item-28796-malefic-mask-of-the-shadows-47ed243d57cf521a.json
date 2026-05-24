@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 125 goes in the \"Head\" slot. It is looted from High King Maulgar. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:35:02+00:00",
+  "item_id": 28796,
+  "name": "Malefic Mask of the Shadows",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 292,
+      "drop_percent": 15.11,
+      "entity_id": 18831,
+      "entity_name": "High King Maulgar",
+      "out_of": 1932,
+      "source_url": "https://www.wowhead.com/tbc/item=28796/malefic-mask-of-the-shadows",
+      "type": "drop",
+      "zone": "Gruul's Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 292,
+        "id": 18831,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3098,
+                "outof": 18894
+              }
+            },
+            "4": {
+              "0": {
+                "count": 454,
+                "outof": 3225
+              }
+            },
+            "5": {
+              "0": {
+                "count": 292,
+                "outof": 1932
+              }
+            }
+          }
+        },
+        "location": [
+          3923
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3098,
+            "outof": 18894
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "High King Maulgar",
+        "outof": 1932,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Ogres",
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28796/malefic-mask-of-the-shadows"
+}

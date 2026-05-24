@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 115 goes in the \"Feet\" slot. It is looted from Shadikith the Glider. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:44:25+00:00",
+  "item_id": 30680,
+  "name": "Glider's Foot-Wraps",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 20.0,
+      "entity_id": 16180,
+      "entity_name": "Shadikith the Glider",
+      "out_of": 25,
+      "source_url": "https://www.wowhead.com/tbc/item=30680&&rand=-25",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 2,
+        "count": 5,
+        "id": 16180,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 179,
+                "outof": 865
+              }
+            },
+            "4": {
+              "0": {
+                "count": 5,
+                "outof": 25
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 73,
+        "minlevel": 73,
+        "modes": {
+          "0": {
+            "count": 179,
+            "outof": 865
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shadikith the Glider",
+        "outof": 25,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30680&&rand=-25"
+}

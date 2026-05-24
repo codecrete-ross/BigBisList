@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 76 goes in the \"Trinket\" slot. It is looted from Battleguard Sartura. In the Trinkets category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T04:35:45+00:00",
+  "item_id": 21670,
+  "name": "Badge of the Swarmguard",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 19.57,
+      "entity_id": 15516,
+      "entity_name": "Battleguard Sartura",
+      "out_of": 46,
+      "source_url": "https://www.wowhead.com/tbc/item=21670/badge-of-the-swarmguard",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 9,
+        "id": 15516,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2598,
+                "outof": 16713
+              }
+            },
+            "4": {
+              "0": {
+                "count": 11,
+                "outof": 78
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 46
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2598,
+            "outof": 16713
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Battleguard Sartura",
+        "outof": 46,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21670/badge-of-the-swarmguard"
+}

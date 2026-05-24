@@ -1,0 +1,85 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic dagger has an item level of 100. It is sold by NPCs. In the Daggers category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T04:48:06+00:00",
+  "item_id": 29121,
+  "name": "Guile of Khoraazi",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 20242,
+      "entity_name": "Karaaz",
+      "source_url": "https://www.wowhead.com/tbc/item=29121/guile-of-khoraazi",
+      "type": "vendor",
+      "vendor_id": 20242,
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 23007,
+      "entity_name": "Paulsta'ats",
+      "source_url": "https://www.wowhead.com/tbc/item=29121/guile-of-khoraazi",
+      "type": "vendor",
+      "vendor_id": 23007,
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            1596138
+          ]
+        ],
+        "id": 20242,
+        "location": [
+          3523
+        ],
+        "maxlevel": 68,
+        "minlevel": 68,
+        "name": "Karaaz",
+        "popularity": 14,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Consortium Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            1695896
+          ]
+        ],
+        "id": 23007,
+        "location": [
+          3518
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Paulsta'ats",
+        "popularity": 5,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Consortium Quartermaster",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=29121/guile-of-khoraazi"
+}

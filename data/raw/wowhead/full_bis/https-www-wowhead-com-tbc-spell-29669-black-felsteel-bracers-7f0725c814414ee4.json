@@ -1,0 +1,39 @@
+{
+  "fetched_at": "2026-05-24T05:11:06+00:00",
+  "name": "Black Felsteel Bracers",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 23626,
+      "entity_name": "Plans: Black Felsteel Bracers",
+      "item_id": 23626,
+      "source_url": "https://www.wowhead.com/tbc/spell=29669/black-felsteel-bracers",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "related_tables": {
+    "created-by": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23626,
+        "level": 73,
+        "name": "Plans: Black Felsteel Bracers",
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ]
+  },
+  "spell_id": 29669,
+  "url": "https://www.wowhead.com/tbc/spell=29669/black-felsteel-bracers"
+}

@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic one-handed sword has an item level of 105. It is looted from Pathaleon the Calculator. In the One-Handed Swords category. Always up to date.",
+  "fetched_at": "2026-05-24T05:27:39+00:00",
+  "item_id": 29362,
+  "name": "The Sun Eater",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 50,
+      "drop_percent": 10.37,
+      "entity_id": 19220,
+      "entity_name": "Pathaleon the Calculator",
+      "out_of": 482,
+      "source_url": "https://www.wowhead.com/tbc/item=29362/the-sun-eater",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 50,
+        "id": 19220,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 329,
+                "outof": 13622
+              }
+            },
+            "4": {
+              "0": {
+                "count": 75,
+                "outof": 870
+              }
+            },
+            "5": {
+              "0": {
+                "count": 50,
+                "outof": 482
+              }
+            }
+          }
+        },
+        "location": [
+          3849
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 329,
+            "outof": 13622
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Pathaleon the Calculator",
+        "outof": 482,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29362/the-sun-eater"
+}

@@ -1,0 +1,123 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Warrior, Priest, or Druid. It is looted from Leotheras the Blind. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:25:16+00:00",
+  "item_id": 30240,
+  "name": "Gloves of the Vanquished Defender",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 4859,
+      "drop_percent": 56.92,
+      "entity_id": 21215,
+      "entity_name": "Leotheras the Blind",
+      "out_of": 8537,
+      "source_url": "https://www.wowhead.com/tbc/item=30240/gloves-of-the-vanquished-defender",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 21845,
+      "entity_name": "Leotheras the Blind",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=30240/gloves-of-the-vanquished-defender",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 4859,
+        "id": 21215,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4859,
+                "outof": 8537
+              }
+            },
+            "4": {
+              "0": {
+                "count": 733,
+                "outof": 1259
+              }
+            },
+            "5": {
+              "0": {
+                "count": 344,
+                "outof": 632
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 4859,
+            "outof": 8537
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Leotheras the Blind",
+        "outof": 8537,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21845,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 85.3
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 85.3
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Leotheras the Blind",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 85.3,
+        "personal_loot": 0,
+        "popularity": 20,
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30240/gloves-of-the-vanquished-defender"
+}

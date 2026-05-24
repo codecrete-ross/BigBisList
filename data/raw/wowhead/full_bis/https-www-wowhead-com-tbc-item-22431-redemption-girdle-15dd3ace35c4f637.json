@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 88 goes in the \"Waist\" slot. It is a quest reward from Redemption Girdle. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:08:12+00:00",
+  "item_id": 22431,
+  "name": "Redemption Girdle",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9049,
+      "entity_name": "Redemption Girdle",
+      "quest_id": 9049,
+      "source_url": "https://www.wowhead.com/tbc/item=22431/redemption-girdle",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "id": 9049,
+        "itemrewards": [
+          [
+            22431,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Redemption Girdle",
+        "popularity": 15,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22431/redemption-girdle"
+}

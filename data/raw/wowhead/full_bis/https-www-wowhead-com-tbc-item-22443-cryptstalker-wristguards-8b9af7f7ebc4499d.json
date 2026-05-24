@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 88 goes in the \"Wrist\" slot. It is a quest reward from Cryptstalker Wristguards. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T05:04:55+00:00",
+  "item_id": 22443,
+  "name": "Cryptstalker Wristguards",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9061,
+      "entity_name": "Cryptstalker Wristguards",
+      "quest_id": 9061,
+      "source_url": "https://www.wowhead.com/tbc/item=22443/cryptstalker-wristguards",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3456,
+        "category2": 3,
+        "classs": 4,
+        "id": 9061,
+        "itemrewards": [
+          [
+            22443,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Cryptstalker Wristguards",
+        "popularity": 9,
+        "reprewards": [
+          [
+            529,
+            500
+          ]
+        ],
+        "reqclass": 4,
+        "reqlevel": 60,
+        "side": 3,
+        "type": 62
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=22443/cryptstalker-wristguards"
+}

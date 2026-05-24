@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue idol of item level 115 goes in the \"Relic\" slot. It is a quest reward from Vanquish the Raven God. In the Idols category. Always up to date.",
+  "fetched_at": "2026-05-24T04:27:54+00:00",
+  "item_id": 32387,
+  "name": "Idol of the Raven Goddess",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11001,
+      "entity_name": "Vanquish the Raven God",
+      "quest_id": 11001,
+      "source_url": "https://www.wowhead.com/tbc/item=32387/idol-of-the-raven-goddess",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": -263,
+        "category2": 4,
+        "classs": 1024,
+        "id": 11001,
+        "itemrewards": [
+          [
+            32387,
+            1
+          ]
+        ],
+        "name": "Vanquish the Raven God",
+        "popularity": 19,
+        "reprewards": [
+          [
+            942,
+            500
+          ]
+        ],
+        "reqclass": 1024,
+        "reqlevel": 70,
+        "side": 3,
+        "type": 85,
+        "xp": 19000
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32387/idol-of-the-raven-goddess"
+}

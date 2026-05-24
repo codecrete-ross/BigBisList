@@ -1,0 +1,561 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 141 goes in the \"Feet\" slot. It is looted from Ghoul. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-05-24T05:29:14+00:00",
+  "item_id": 32609,
+  "name": "Boots of the Divine Light",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 332,
+      "drop_percent": 1.35,
+      "entity_id": 17895,
+      "entity_name": "Ghoul",
+      "out_of": 24555,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 210,
+      "drop_percent": 1.45,
+      "entity_id": 17897,
+      "entity_name": "Crypt Fiend",
+      "out_of": 14520,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 149,
+      "drop_percent": 1.13,
+      "entity_id": 17898,
+      "entity_name": "Abomination",
+      "out_of": 13145,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 130,
+      "drop_percent": 1.28,
+      "entity_id": 17899,
+      "entity_name": "Shadowy Necromancer",
+      "out_of": 10136,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 41,
+      "drop_percent": 1.45,
+      "entity_id": 17905,
+      "entity_name": "Banshee",
+      "out_of": 2835,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 78,
+      "drop_percent": 1.02,
+      "entity_id": 17906,
+      "entity_name": "Gargoyle",
+      "out_of": 7678,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.8,
+      "entity_id": 17907,
+      "entity_name": "Frost Wyrm",
+      "out_of": 373,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 52,
+      "drop_percent": 1.32,
+      "entity_id": 17908,
+      "entity_name": "Giant Infernal",
+      "out_of": 3932,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 22,
+      "drop_percent": 0.56,
+      "entity_id": 17916,
+      "entity_name": "Fel Stalker",
+      "out_of": 3926,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": -1,
+      "entity_id": 23421,
+      "entity_name": "Ashtongue Channeler",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 332,
+        "id": 17895,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 332,
+                "outof": 24555
+              }
+            },
+            "4": {
+              "0": {
+                "count": 142,
+                "outof": 11495
+              }
+            },
+            "5": {
+              "0": {
+                "count": 89,
+                "outof": 6571
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 332,
+            "outof": 24555
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ghoul",
+        "outof": 24555,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 210,
+        "id": 17897,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 210,
+                "outof": 14520
+              }
+            },
+            "4": {
+              "0": {
+                "count": 102,
+                "outof": 6748
+              }
+            },
+            "5": {
+              "0": {
+                "count": 52,
+                "outof": 3773
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 210,
+            "outof": 14520
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Crypt Fiend",
+        "outof": 14520,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 149,
+        "id": 17898,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 149,
+                "outof": 13145
+              }
+            },
+            "4": {
+              "0": {
+                "count": 93,
+                "outof": 6591
+              }
+            },
+            "5": {
+              "0": {
+                "count": 54,
+                "outof": 3784
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 149,
+            "outof": 13145
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Abomination",
+        "outof": 13145,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 130,
+        "id": 17899,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 130,
+                "outof": 10136
+              }
+            },
+            "4": {
+              "0": {
+                "count": 56,
+                "outof": 5030
+              }
+            },
+            "5": {
+              "0": {
+                "count": 39,
+                "outof": 2914
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 130,
+            "outof": 10136
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shadowy Necromancer",
+        "outof": 10136,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 41,
+        "id": 17905,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 41,
+                "outof": 2835
+              }
+            },
+            "4": {
+              "0": {
+                "count": 23,
+                "outof": 1675
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 942
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 41,
+            "outof": 2835
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Banshee",
+        "outof": 2835,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 78,
+        "id": 17906,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 78,
+                "outof": 7678
+              }
+            },
+            "4": {
+              "0": {
+                "count": 39,
+                "outof": 4611
+              }
+            },
+            "5": {
+              "0": {
+                "count": 24,
+                "outof": 2388
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 78,
+            "outof": 7678
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Gargoyle",
+        "outof": 7678,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "id": 17907,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 373
+              }
+            },
+            "4": {
+              "0": {
+                "count": 3,
+                "outof": 224
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 373
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Frost Wyrm",
+        "outof": 373,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 52,
+        "id": 17908,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 52,
+                "outof": 3932
+              }
+            },
+            "4": {
+              "0": {
+                "count": 28,
+                "outof": 2291
+              }
+            },
+            "5": {
+              "0": {
+                "count": 17,
+                "outof": 1395
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 52,
+            "outof": 3932
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Giant Infernal",
+        "outof": 3932,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 22,
+        "id": 17916,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 22,
+                "outof": 3926
+              }
+            },
+            "4": {
+              "0": {
+                "count": 14,
+                "outof": 2181
+              }
+            },
+            "5": {
+              "0": {
+                "count": 11,
+                "outof": 1231
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": 22,
+            "outof": 3926
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Fel Stalker",
+        "outof": 3926,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 23421,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 1
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ashtongue Channeler",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 1,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32609/boots-of-the-divine-light"
+}

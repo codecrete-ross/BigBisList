@@ -1,0 +1,79 @@
+{
+  "description": "This epic leather armor of item level 141 goes in the \"Wrist\" slot. It is looted from Rage Winterchill. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T03:15:57+00:00",
+  "item_id": 30863,
+  "name": "Deadly Cuffs",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 294,
+      "drop_percent": 14.25,
+      "entity_id": 17767,
+      "entity_name": "Rage Winterchill",
+      "out_of": 2063,
+      "source_url": "https://www.wowhead.com/tbc/item=30863/deadly-cuffs",
+      "type": "drop",
+      "zone": "Hyjal Summit"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 294,
+        "id": 17767,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 757,
+                "outof": 4884
+              }
+            },
+            "4": {
+              "0": {
+                "count": 457,
+                "outof": 2812
+              }
+            },
+            "5": {
+              "0": {
+                "count": 294,
+                "outof": 2063
+              }
+            }
+          }
+        },
+        "location": [
+          3606
+        ],
+        "modes": {
+          "0": {
+            "count": 757,
+            "outof": 4884
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Rage Winterchill",
+        "outof": 2063,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30863/deadly-cuffs"
+}

@@ -1,0 +1,12 @@
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+.DS_Store
+Thumbs.db
+dist/
+build/
+*.zip
+data/raw/wowhead/html_cache/
+data/raw/wowhead/**/html_cache/

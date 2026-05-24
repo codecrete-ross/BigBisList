@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 76 goes in the \"Trinket\" slot. Requires Mage. It is looted from Vaelastrasz the Corrupt. In the Trinkets category.",
+  "fetched_at": "2026-05-24T05:05:28+00:00",
+  "item_id": 19339,
+  "name": "Mind Quickening Gem",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 18.18,
+      "entity_id": 13020,
+      "entity_name": "Vaelastrasz the Corrupt",
+      "out_of": 11,
+      "source_url": "https://www.wowhead.com/tbc/item=19339/mind-quickening-gem",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "hasQuests": 1,
+        "id": 13020,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2867,
+                "outof": 14949
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 11
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 17
+              }
+            }
+          }
+        },
+        "location": [
+          2677
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2867,
+            "outof": 14949
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vaelastrasz the Corrupt",
+        "outof": 11,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          1,
+          1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=19339/mind-quickening-gem"
+}

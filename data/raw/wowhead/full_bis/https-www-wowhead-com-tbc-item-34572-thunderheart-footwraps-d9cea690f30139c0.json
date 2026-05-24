@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 154 goes in the \"Feet\" slot. Requires Druid. It is sold by Theremis. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:46:02+00:00",
+  "item_id": 34572,
+  "name": "Thunderheart Footwraps",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 34858,
+          "name": "Item 34858"
+        }
+      ],
+      "entity_id": 25976,
+      "entity_name": "Theremis",
+      "source_url": "https://www.wowhead.com/tbc/item=34572/thunderheart-footwraps",
+      "type": "vendor",
+      "vendor_id": 25976
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                34858,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 25976,
+        "location": [
+          4080
+        ],
+        "name": "Theremis",
+        "popularity": 30,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Lost Artifacts",
+        "type": 7
+      }
+    ]
+  },
+  "url": "https://www.wowhead.com/tbc/item=34572/thunderheart-footwraps"
+}

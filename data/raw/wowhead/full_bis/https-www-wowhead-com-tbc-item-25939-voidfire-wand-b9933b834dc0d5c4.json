@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Voidfire Wand is considered a best-in-slot item for Mages that becomes available starting Phase 1. While equipped, this item improves spell hit rating by 7 and increases damage and healing done by magical spells and effects by up to 11. This item is obtainable by defeating Pandemonius within Mana-Tombs.",
+  "fetched_at": "2026-05-24T04:33:12+00:00",
+  "item_id": 25939,
+  "name": "Voidfire Wand",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 80,
+      "drop_percent": 8.83,
+      "entity_id": 18341,
+      "entity_name": "Pandemonius",
+      "out_of": 906,
+      "source_url": "https://www.wowhead.com/tbc/item=25939/voidfire-wand",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 80,
+        "id": 18341,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2273,
+                "outof": 21217
+              }
+            },
+            "4": {
+              "0": {
+                "count": 80,
+                "outof": 906
+              }
+            },
+            "5": {
+              "0": {
+                "count": 86,
+                "outof": 708
+              }
+            }
+          }
+        },
+        "location": [
+          3792
+        ],
+        "maxlevel": 72,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 2273,
+            "outof": 21217
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Pandemonius",
+        "outof": 906,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25939/voidfire-wand"
+}

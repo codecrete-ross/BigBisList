@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Hunter, Mage, or Warlock. It is looted from Void Reaver. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:45:59+00:00",
+  "item_id": 30250,
+  "name": "Pauldrons of the Vanquished Hero",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 333,
+      "drop_percent": 63.55,
+      "entity_id": 19516,
+      "entity_name": "Void Reaver",
+      "out_of": 524,
+      "source_url": "https://www.wowhead.com/tbc/item=30250",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 333,
+        "id": 19516,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4398,
+                "outof": 7529
+              }
+            },
+            "4": {
+              "0": {
+                "count": 684,
+                "outof": 1067
+              }
+            },
+            "5": {
+              "0": {
+                "count": 333,
+                "outof": 524
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 4398,
+            "outof": 7529
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Void Reaver",
+        "outof": 524,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=30250"
+}

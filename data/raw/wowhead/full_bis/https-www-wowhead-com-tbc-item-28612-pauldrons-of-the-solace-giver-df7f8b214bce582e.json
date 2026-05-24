@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 115 goes in the \"Shoulder\" slot. It is looted from The Curator. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:58:41+00:00",
+  "item_id": 28612,
+  "name": "Pauldrons of the Solace-Giver",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 301,
+      "drop_percent": 16.08,
+      "entity_id": 15691,
+      "entity_name": "The Curator",
+      "out_of": 1872,
+      "source_url": "https://www.wowhead.com/tbc/item=28612/pauldrons-of-the-solace-giver",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 301,
+        "id": 15691,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3870,
+                "outof": 23228
+              }
+            },
+            "4": {
+              "0": {
+                "count": 403,
+                "outof": 2519
+              }
+            },
+            "5": {
+              "0": {
+                "count": 301,
+                "outof": 1872
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3870,
+            "outof": 23228
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Curator",
+        "outof": 1872,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28612/pauldrons-of-the-solace-giver"
+}

@@ -1,0 +1,898 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 154 goes in the \"Hands\" slot. It is looted from Sunblade Cabalist. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:45:44+00:00",
+  "item_id": 34351,
+  "name": "Tranquil Majesty Wraps",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_name": "World Drop",
+      "source_url": "https://www.wowhead.com/tbc/item=34351/tranquil-majesty-wraps",
+      "type": "world_drop",
+      "world_drop": true
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 44,
+        "id": 25363,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 44,
+                "outof": 6079
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": 44,
+            "outof": 6079
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Cabalist",
+        "outof": 6079,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25367,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 4706,
+                "percentOverride": 1.2
+              }
+            },
+            "5": {
+              "0": {
+                "count": 28,
+                "outof": 4706
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 4706,
+            "percentOverride": 1.2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Arch Mage",
+        "outof": 4706,
+        "pctstack": null,
+        "percentOverride": 1.2,
+        "personal_loot": 0,
+        "popularity": 154,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25368,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 2111,
+                "percentOverride": 1
+              }
+            },
+            "5": {
+              "0": {
+                "count": 12,
+                "outof": 2111
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 2111,
+            "percentOverride": 1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Slayer",
+        "outof": 2111,
+        "pctstack": null,
+        "percentOverride": 1,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 52,
+        "id": 25369,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 52,
+                "outof": 6628
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": 52,
+            "outof": 6628
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Vindicator",
+        "outof": 6628,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 31,
+        "id": 25370,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 31,
+                "outof": 4537
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": 31,
+            "outof": 4537
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Dusk Priest",
+        "outof": 4537,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 15,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 53,
+        "id": 25371,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 53,
+                "outof": 6403
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": 53,
+            "outof": 6403
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Dawn Priest",
+        "outof": 6403,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25483,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 529,
+                "percentOverride": 1.2
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 529,
+            "percentOverride": 1.2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shadowsword Manafiend",
+        "outof": 529,
+        "pctstack": null,
+        "percentOverride": 1.2,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25484,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 322,
+                "percentOverride": 1.3
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 322
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 322,
+            "percentOverride": 1.3
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shadowsword Assassin",
+        "outof": 322,
+        "pctstack": null,
+        "percentOverride": 1.3,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25486,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 642,
+                "percentOverride": 1
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 642
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 642,
+            "percentOverride": 1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shadowsword Vanquisher",
+        "outof": 642,
+        "pctstack": null,
+        "percentOverride": 1,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25506,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 312,
+                "percentOverride": 1.3
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 312,
+            "percentOverride": 1.3
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shadowsword Lifeshaper",
+        "outof": 312,
+        "pctstack": null,
+        "percentOverride": 1.3,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25507,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 4340,
+                "percentOverride": 1.3
+              }
+            },
+            "5": {
+              "0": {
+                "count": 22,
+                "outof": 4340
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 4340,
+            "percentOverride": 1.3
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Protector",
+        "outof": 4340,
+        "pctstack": null,
+        "percentOverride": 1.3,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25508,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 317,
+                "percentOverride": 1.9
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 317,
+            "percentOverride": 1.9
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shadowsword Guardian",
+        "outof": 317,
+        "pctstack": null,
+        "percentOverride": 1.9,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25509,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 323,
+                "percentOverride": 1.8
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 323
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 323,
+            "percentOverride": 1.8
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Priestess of Torment",
+        "outof": 323,
+        "pctstack": null,
+        "percentOverride": 1.8,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25591,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 419,
+                "percentOverride": 1.8
+              }
+            },
+            "5": {
+              "0": {
+                "count": 8,
+                "outof": 419
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 419,
+            "percentOverride": 1.8
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Painbringer",
+        "outof": 419,
+        "pctstack": null,
+        "percentOverride": 1.8,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25592,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 233,
+                "percentOverride": 1.6
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 233
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 233,
+            "percentOverride": 1.6
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Doomfire Destroyer",
+        "outof": 233,
+        "pctstack": null,
+        "percentOverride": 1.6,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25593,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 1060,
+                "percentOverride": 1.4
+              }
+            },
+            "5": {
+              "0": {
+                "count": 8,
+                "outof": 1060
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 1060,
+            "percentOverride": 1.4
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Apocalypse Guard",
+        "outof": 1060,
+        "pctstack": null,
+        "percentOverride": 1.4,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25595,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 151,
+                "percentOverride": 2
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 151,
+            "percentOverride": 2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Chaos Gazer",
+        "outof": 151,
+        "pctstack": null,
+        "percentOverride": 2,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25597,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 807,
+                "percentOverride": 1.3
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 807,
+            "percentOverride": 1.3
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Oblivion Mage",
+        "outof": 807,
+        "pctstack": null,
+        "percentOverride": 1.3,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25599,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 613,
+                "percentOverride": 1.7
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 613
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 613,
+            "percentOverride": 1.7
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Cataclysm Hound",
+        "outof": 613,
+        "pctstack": null,
+        "percentOverride": 1.7,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "id": 25837,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 137,
+                "percentOverride": 1.6
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 137,
+            "percentOverride": 1.6
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shadowsword Commander",
+        "outof": 137,
+        "pctstack": null,
+        "percentOverride": 1.6,
+        "personal_loot": 0,
+        "popularity": 8,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 8,
+        "id": 25867,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 8,
+                "outof": 1192
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": 8,
+            "outof": 1192
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Sunblade Dragonhawk",
+        "outof": 1192,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=34351/tranquil-majesty-wraps"
+}

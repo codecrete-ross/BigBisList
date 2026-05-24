@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic fist weapon has an item level of 76. It is looted from Battleguard Sartura. In the Fist Weapons category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T04:46:35+00:00",
+  "item_id": 21673,
+  "name": "Silithid Claw",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 11.54,
+      "entity_id": 15516,
+      "entity_name": "Battleguard Sartura",
+      "out_of": 78,
+      "source_url": "https://www.wowhead.com/tbc/item=21673/silithid-claw",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 9,
+        "id": 15516,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1460,
+                "outof": 16713
+              }
+            },
+            "4": {
+              "0": {
+                "count": 9,
+                "outof": 78
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 46
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1460,
+            "outof": 16713
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Battleguard Sartura",
+        "outof": 78,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21673/silithid-claw"
+}

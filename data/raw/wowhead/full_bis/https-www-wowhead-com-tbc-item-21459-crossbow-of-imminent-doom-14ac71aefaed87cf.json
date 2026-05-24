@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crossbow of Imminent Doom was considered a best-in-slot item for Rogues, Fury Warriors and Protection Warriors that became available starting Phase 5 of WoW Classic. While equipped, this item increases your hit rating by 10. This item is obtainable by defeating Ossirian the Unscarred within Ruins of Ahn'Qiraj.",
+  "fetched_at": "2026-05-24T05:26:49+00:00",
+  "item_id": 21459,
+  "name": "Crossbow of Imminent Doom",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 1044,
+      "drop_percent": 10.07,
+      "entity_id": 15339,
+      "entity_name": "Ossirian the Unscarred",
+      "out_of": 10369,
+      "source_url": "https://www.wowhead.com/tbc/item=21459/crossbow-of-imminent-doom",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1044,
+        "id": 15339,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1044,
+                "outof": 10369
+              }
+            }
+          }
+        },
+        "location": [
+          3429
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1044,
+            "outof": 10369
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ossirian the Unscarred",
+        "outof": 10369,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=21459/crossbow-of-imminent-doom"
+}

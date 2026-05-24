@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 115 goes in the \"Legs\" slot. It is looted from Netherspite. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:58:57+00:00",
+  "item_id": 28742,
+  "name": "Pantaloons of Repentance",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 171,
+      "drop_percent": 14.29,
+      "entity_id": 15689,
+      "entity_name": "Netherspite",
+      "out_of": 1197,
+      "source_url": "https://www.wowhead.com/tbc/item=28742/pantaloons-of-repentance",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 171,
+        "id": 15689,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2008,
+                "outof": 12460
+              }
+            },
+            "4": {
+              "0": {
+                "count": 276,
+                "outof": 1612
+              }
+            },
+            "5": {
+              "0": {
+                "count": 171,
+                "outof": 1197
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2008,
+            "outof": 12460
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Netherspite",
+        "outof": 1197,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=28742/pantaloons-of-repentance"
+}

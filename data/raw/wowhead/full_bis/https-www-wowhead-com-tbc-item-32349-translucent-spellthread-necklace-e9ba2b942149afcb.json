@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 141 goes in the \"Neck\" slot. It is looted from Essence of Anger. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:27:45+00:00",
+  "item_id": 32349,
+  "name": "Translucent Spellthread Necklace",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 302,
+      "drop_percent": 15.36,
+      "entity_id": 23420,
+      "entity_name": "Essence of Anger",
+      "out_of": 1966,
+      "source_url": "https://www.wowhead.com/tbc/item=32349/translucent-spellthread-necklace",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 302,
+        "id": 23420,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 574,
+                "outof": 3349
+              }
+            },
+            "4": {
+              "0": {
+                "count": 414,
+                "outof": 2554
+              }
+            },
+            "5": {
+              "0": {
+                "count": 302,
+                "outof": 1966
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 574,
+            "outof": 3349
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Essence of Anger",
+        "outof": 1966,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=32349/translucent-spellthread-necklace"
+}

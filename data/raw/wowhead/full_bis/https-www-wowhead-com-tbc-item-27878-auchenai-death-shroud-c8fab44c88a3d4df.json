@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloak of item level 115 goes in the \"Back\" slot. It is looted from Avatar of the Martyred. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:47:06+00:00",
+  "item_id": 27878,
+  "name": "Auchenai Death Shroud",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 17,
+      "drop_percent": 12.5,
+      "entity_id": 18478,
+      "entity_name": "Avatar of the Martyred",
+      "out_of": 136,
+      "source_url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 17,
+        "id": 18478,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 549,
+                "outof": 4157
+              }
+            },
+            "4": {
+              "0": {
+                "count": 30,
+                "outof": 215
+              }
+            },
+            "5": {
+              "0": {
+                "count": 17,
+                "outof": 136
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 72,
+        "minlevel": 67,
+        "modes": {
+          "0": {
+            "count": 549,
+            "outof": 4157
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Avatar of the Martyred",
+        "outof": 136,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud"
+}

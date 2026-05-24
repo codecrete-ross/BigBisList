@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Requires Paladin, Priest, or Warlock. It is looted from Archimonde. In the Armor Tokens category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:46:03+00:00",
+  "item_id": 31097,
+  "name": "Helm of the Forgotten Conqueror",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 744,
+      "drop_percent": 58.12,
+      "entity_id": 17968,
+      "entity_name": "Archimonde",
+      "out_of": 1280,
+      "source_url": "https://www.wowhead.com/tbc/item=31097",
+      "type": "drop",
+      "zone": "Hyjal Summit"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "unknown",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 744,
+        "id": 17968,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1282,
+                "outof": 2469
+              }
+            },
+            "4": {
+              "0": {
+                "count": 894,
+                "outof": 1777
+              }
+            },
+            "5": {
+              "0": {
+                "count": 744,
+                "outof": 1280
+              }
+            }
+          }
+        },
+        "location": [
+          3606
+        ],
+        "modes": {
+          "0": {
+            "count": 1282,
+            "outof": 2469
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Archimonde",
+        "outof": 1280,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=31097"
+}

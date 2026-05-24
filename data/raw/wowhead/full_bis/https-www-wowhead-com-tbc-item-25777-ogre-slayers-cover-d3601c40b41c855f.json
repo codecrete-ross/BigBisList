@@ -1,0 +1,107 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloak of item level 100 goes in the \"Back\" slot. It is a quest reward. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T04:32:05+00:00",
+  "item_id": 25777,
+  "name": "Ogre Slayer's Cover",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9946,
+      "entity_name": "Cho'war the Pillager",
+      "quest_id": 9946,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=25777/ogre-slayers-cover",
+      "type": "quest",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9955,
+      "entity_name": "Cho'war the Pillager",
+      "quest_id": 9955,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=25777/ogre-slayers-cover",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "rare",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9946,
+        "itemchoices": [
+          [
+            25777,
+            1
+          ],
+          [
+            25776,
+            1
+          ],
+          [
+            25775,
+            1
+          ]
+        ],
+        "level": 67,
+        "money": 74000,
+        "name": "Cho'war the Pillager",
+        "popularity": 33,
+        "reprewards": [
+          [
+            941,
+            350
+          ]
+        ],
+        "reqlevel": 65,
+        "side": 2,
+        "type": 1,
+        "xp": 14600
+      },
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9955,
+        "itemchoices": [
+          [
+            25777,
+            1
+          ],
+          [
+            25776,
+            1
+          ],
+          [
+            25775,
+            1
+          ]
+        ],
+        "level": 67,
+        "money": 74000,
+        "name": "Cho'war the Pillager",
+        "popularity": 17,
+        "reprewards": [
+          [
+            978,
+            350
+          ]
+        ],
+        "reqlevel": 65,
+        "side": 1,
+        "type": 1,
+        "xp": 14600
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=25777/ogre-slayers-cover"
+}

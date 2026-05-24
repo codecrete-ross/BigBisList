@@ -1,0 +1,33 @@
+## Interface: 20504
+## Title: BIS-TBC-Anniversary
+## Notes: In game BiS lists and item tooltip enrichment.
+## Author: Hellixoid
+## Author: Dweem
+## Version: 1.15
+## SavedVariables: BISTBCDB
+## OptionalDeps:
+
+# Libs.
+lib\LibStub\LibStub.lua
+lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
+lib\LibDataBroker-1.1\LibDataBroker-1.1.lua
+lib\LibDBIcon-1.0\LibDBIcon-1.0.lua
+lib\Ace3\AceGUI-3.0\AceGUI-3.0.xml
+lib\Ace3\AceDB-3.0\AceDB-3.0.lua
+lib\Ace3\AceConsole-3.0\AceConsole-3.0.xml
+lib\Ace3\AceAddon-3.0\AceAddon-3.0.xml
+lib\Ace3\AceConfig-3.0\AceConfig-3.0.xml
+
+BIS-TBC_items.lua
+BIS-TBC_classes.lua
+BIS-TBC_bislists.lua
+BIS-TBC_sources.lua
+BIS-TBC_gems.lua
+BIS-TBC_enchants.lua
+BIS-TBC_gemsources.lua
+BIS-TBC_enchantsources.lua
+BIS-TBC_consumables.lua
+Core.lua
+Config.lua
+BIS-TBC.lua
+Bislist.lua

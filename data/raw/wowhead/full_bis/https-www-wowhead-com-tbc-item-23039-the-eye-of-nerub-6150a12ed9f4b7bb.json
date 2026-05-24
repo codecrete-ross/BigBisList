@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic polearm has an item level of 83. It is looted from Loatheb. In the Polearms category. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-05-24T04:46:41+00:00",
+  "item_id": 23039,
+  "name": "The Eye of Nerub",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 36,
+      "drop_percent": 16.29,
+      "entity_id": 16011,
+      "entity_name": "Loatheb",
+      "out_of": 221,
+      "source_url": "https://www.wowhead.com/tbc/item=23039/the-eye-of-nerub",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 36,
+        "id": 16011,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 558,
+                "outof": 3036
+              }
+            },
+            "4": {
+              "0": {
+                "count": 36,
+                "outof": 221
+              }
+            },
+            "5": {
+              "0": {
+                "count": 46,
+                "outof": 237
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 558,
+            "outof": 3036
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Loatheb",
+        "outof": 221,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23039/the-eye-of-nerub"
+}

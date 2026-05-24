@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green plate armor of item level 111 goes in the \"Legs\" slot. It is a quest reward from The Sigil of Krasus. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-05-24T05:14:27+00:00",
+  "item_id": 29774,
+  "name": "Kirin'Var Defender's Chausses",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10188,
+      "entity_name": "The Sigil of Krasus",
+      "quest_id": 10188,
+      "source_url": "https://www.wowhead.com/tbc/item=29774/kirinvar-defenders-chausses",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10188,
+        "itemchoices": [
+          [
+            29771,
+            1
+          ],
+          [
+            29772,
+            1
+          ],
+          [
+            29773,
+            1
+          ],
+          [
+            29774,
+            1
+          ]
+        ],
+        "level": 69,
+        "money": 41000,
+        "name": "The Sigil of Krasus",
+        "popularity": 10,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 12300
+      }
+    ],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=29774/kirinvar-defenders-chausses"
+}

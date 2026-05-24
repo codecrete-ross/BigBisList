@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 83 goes in the \"Finger\" slot. It is looted from Noth the Plaguebringer. In the Rings category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-05-24T04:52:42+00:00",
+  "item_id": 23031,
+  "name": "Band of the Inevitable",
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 16,
+      "drop_percent": 8.0,
+      "entity_id": 15954,
+      "entity_name": "Noth the Plaguebringer",
+      "out_of": 200,
+      "source_url": "https://www.wowhead.com/tbc/item=23031/band-of-the-inevitable",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.4.0",
+  "quality": "epic",
+  "related_tables": {
+    "created-by": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 16,
+        "id": 15954,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 713,
+                "outof": 4513
+              }
+            },
+            "4": {
+              "0": {
+                "count": 16,
+                "outof": 200
+              }
+            },
+            "5": {
+              "0": {
+                "count": 17,
+                "outof": 210
+              }
+            }
+          }
+        },
+        "location": [
+          3456
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 713,
+            "outof": 4513
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Noth the Plaguebringer",
+        "outof": 200,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": []
+  },
+  "url": "https://www.wowhead.com/tbc/item=23031/band-of-the-inevitable"
+}
