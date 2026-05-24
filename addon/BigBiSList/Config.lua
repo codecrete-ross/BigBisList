@@ -10,6 +10,9 @@ local DEFAULTS_VERSION = 2
 BigBiSList.defaults = {
     profile = {
         showMinimap = true,
+        minimap = {
+            angle = 225,
+        },
         window = {
             point = "CENTER",
             relativePoint = "CENTER",

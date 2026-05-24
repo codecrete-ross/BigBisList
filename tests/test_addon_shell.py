@@ -14,7 +14,7 @@ class AddonShellTests(unittest.TestCase):
         ]
         self.assertEqual(
             referenced_files,
-            ["Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "Tooltip.lua", "Core.lua"],
+            ["Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "Tooltip.lua", "Minimap.lua", "Core.lua"],
         )
         for file_name in referenced_files:
             self.assertTrue((ADDON_DIR / file_name).is_file(), file_name)

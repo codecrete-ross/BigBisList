@@ -12,6 +12,7 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn('BigBiSList.displayName = "Big BiS List"', self.read_lua("Config.lua"))
         self.assertIn("Big BiS List", self.read_lua("UI.lua"))
         self.assertIn("Big BiS List", self.read_lua("Tooltip.lua"))
+        self.assertIn("BigBiSList.displayName", self.read_lua("Minimap.lua"))
 
     def test_phase_display_labels_are_phase_based(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -36,6 +37,8 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "local DEFAULTS_VERSION = 2",
             "window = {",
+            "showMinimap = true",
+            "minimap = {",
             "tooltips = {",
             "selection = {",
             'selectedPhase = "PR"',
@@ -75,3 +78,19 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn('"BigBiSListMainFrame"', ui)
         self.assertIn("UISpecialFrames", ui)
         self.assertIn("OnEscapePressed", ui)
+
+    def test_minimap_button_is_native_and_toggleable(self):
+        minimap = self.read_lua("Minimap.lua")
+        ui = self.read_lua("UI.lua")
+        core = self.read_lua("Core.lua")
+        for token in [
+            '"BigBiSListMinimapButton"',
+            "Interface\\\\Icons\\\\INV_Misc_QuestionMark",
+            "RegisterForDrag",
+            "ToggleMainFrame",
+            "RefreshMinimapButton",
+            "profile.showMinimap",
+        ]:
+            self.assertIn(token, minimap)
+        self.assertIn("Show minimap button", ui)
+        self.assertIn("InitMinimapButton", core)

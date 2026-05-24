@@ -733,6 +733,16 @@ function UI:RenderSettingsTab()
             set = function(value) profile.tooltips.enabled = value end,
         },
         {
+            label = "Show minimap button",
+            get = function() return profile.showMinimap end,
+            set = function(value)
+                profile.showMinimap = value
+                if BigBiSList.RefreshMinimapButton then
+                    BigBiSList:RefreshMinimapButton()
+                end
+            end,
+        },
+        {
             label = "Compact tooltip rows by default",
             get = function() return profile.tooltips.compact end,
             set = function(value) profile.tooltips.compact = value end,

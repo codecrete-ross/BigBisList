@@ -73,6 +73,7 @@ frame:SetScript("OnEvent", function(_, event, loadedAddon)
     BigBiSList:EnsureDatabase()
     BigBiSList:InitUIEvents()
     BigBiSList:InitTooltip()
+    BigBiSList:InitMinimapButton()
     printLine("loaded. Use /bbl or /bigbis.")
 end)
 
