@@ -1375,9 +1375,32 @@ def resolve_enchant_source_spell_snapshot(
     return spell_snapshot
 
 
+def unique_taught_by_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    unique_sources: list[dict[str, Any]] = []
+    seen: set[tuple[Any, ...]] = set()
+    for source in sources:
+        if "item_id" in source:
+            key = (source.get("type"), "item_id", source["item_id"])
+        elif "spell_id" in source:
+            key = (source.get("type"), "spell_id", source["spell_id"])
+        elif "entity_id" in source:
+            key = (source.get("type"), "entity_id", source["entity_id"])
+        else:
+            key = tuple(sorted(source.items()))
+        if key in seen:
+            continue
+        seen.add(key)
+        unique_sources.append(source)
+    return unique_sources
+
+
 def slot_from_row(table: dict[str, Any], row: dict[str, Any]) -> str | None:
     if table.get("slot") in SLOT_NAMES:
         return str(table["slot"])
+    for cell in row.get("cells", []):
+        slot = slot_from_heading(str(cell))
+        if slot:
+            return slot
     text = compact_cells(row).lower()
     for slot in sorted(SLOT_NAMES, key=len, reverse=True):
         if re.search(rf"\b{re.escape(slot.lower())}\b", text):
@@ -1539,7 +1562,7 @@ def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                                 if item_id in item_snapshots
                             )
                             if taught_by:
-                                enchant_row["taught_by"] = taught_by
+                                enchant_row["taught_by"] = unique_taught_by_sources(taught_by)
                         else:
                             sources = item_snapshots.get(int(entity["id"]), {}).get("normalized_sources", [])
                             if sources:
@@ -2114,6 +2137,49 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
     return apply_item_overrides({"items": items})
 
 
+IMPORT_OUTPUT_FILES = {
+    "items.json": "items",
+    "bis_lists.json": "bis_lists",
+    "gems.json": "gems",
+    "gem_sources.json": "gem_sources",
+    "enchants.json": "enchants",
+    "enchant_sources.json": "enchant_sources",
+    "consumables.json": "consumables",
+    "leveling.json": "leveling",
+}
+
+IMPORT_FILES_BY_FAMILY = {
+    "bis_lists": ["items.json", "bis_lists.json"],
+    "gems": ["items.json", "gems.json", "gem_sources.json"],
+    "enchants": ["items.json", "enchants.json", "enchant_sources.json"],
+    "consumables": ["items.json", "consumables.json"],
+    "leveling": ["leveling.json"],
+}
+
+
+def import_dry_run_counts(output_docs: dict[str, dict[str, Any]], family: str | None) -> dict[str, Any]:
+    file_names = IMPORT_FILES_BY_FAMILY.get(family, list(output_docs))
+    counted_docs = {}
+    for file_name, canonical_name in IMPORT_OUTPUT_FILES.items():
+        counted_docs[file_name] = output_docs[file_name] if file_name in file_names else canonical_json(canonical_name)
+
+    bis_lists_doc = counted_docs["bis_lists.json"]
+    counts = {
+        "bis_lists": len(bis_lists_doc["lists"]),
+        "coverage": bis_lists_doc["coverage"],
+        "consumables": len(counted_docs["consumables.json"]["consumables"]),
+        "enchant_sources": len(counted_docs["enchant_sources.json"]["enchant_sources"]),
+        "enchants": len(counted_docs["enchants.json"]["enchants"]),
+        "gem_sources": len(counted_docs["gem_sources.json"]["gem_sources"]),
+        "gems": len(counted_docs["gems.json"]["gems"]),
+        "items": len(counted_docs["items.json"]["items"]),
+        "leveling": len(counted_docs["leveling.json"]["leveling"]),
+    }
+    if family:
+        counts["family"] = family
+    return counts
+
+
 def command_import(args: argparse.Namespace) -> int:
     snapshots = load_snapshots(args.input_dir)
     imported_items = import_items_from_snapshots(snapshots)
@@ -2125,23 +2191,6 @@ def command_import(args: argparse.Namespace) -> int:
     imported_consumables = import_consumables_from_snapshots(snapshots)
     imported_leveling = import_leveling_from_snapshots(snapshots)
 
-    if args.dry_run:
-        counts = {
-            "bis_lists": len(imported_bis_lists["lists"]),
-            "coverage": imported_bis_lists["coverage"],
-            "consumables": len(imported_consumables["consumables"]),
-            "enchant_sources": len(imported_enchant_sources["enchant_sources"]),
-            "enchants": len(imported_enchants["enchants"]),
-            "gem_sources": len(imported_gem_sources["gem_sources"]),
-            "gems": len(imported_gems["gems"]),
-            "items": len(imported_items["items"]),
-            "leveling": len(imported_leveling["leveling"]),
-        }
-        if args.family:
-            counts["family"] = args.family
-        print(json.dumps(counts, indent=2, sort_keys=True))
-        return 0
-
     output_docs = {
         "items.json": imported_items,
         "bis_lists.json": imported_bis_lists,
@@ -2152,14 +2201,13 @@ def command_import(args: argparse.Namespace) -> int:
         "consumables.json": imported_consumables,
         "leveling.json": imported_leveling,
     }
-    files_by_family = {
-        "bis_lists": ["items.json", "bis_lists.json"],
-        "gems": ["items.json", "gems.json", "gem_sources.json"],
-        "enchants": ["items.json", "enchants.json", "enchant_sources.json"],
-        "consumables": ["items.json", "consumables.json"],
-        "leveling": ["leveling.json"],
-    }
-    file_names = files_by_family.get(args.family, list(output_docs))
+
+    if args.dry_run:
+        counts = import_dry_run_counts(output_docs, args.family)
+        print(json.dumps(counts, indent=2, sort_keys=True))
+        return 0
+
+    file_names = IMPORT_FILES_BY_FAMILY.get(args.family, list(output_docs))
     for file_name in file_names:
         write_text(CANONICAL_DIR / file_name, json.dumps(output_docs[file_name], indent=2, sort_keys=True) + "\n")
         print(f"Wrote {CANONICAL_DIR / file_name}")

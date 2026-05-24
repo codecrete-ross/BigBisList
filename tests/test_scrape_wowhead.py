@@ -1,3 +1,7 @@
+import contextlib
+import io
+import json
+from types import SimpleNamespace
 import tempfile
 import unittest
 
@@ -202,6 +206,10 @@ class WowheadScraperParserTests(unittest.TestCase):
             </body></html>
             """,
         )
+        formula_item = parse_item_html(
+            "https://www.wowhead.com/tbc/item=22547/formula-enchant-chest-exceptional-stats",
+            "<html><head><title>Formula: Enchant Chest - Exceptional Stats - Item - TBC Classic</title></head><body></body></html>",
+        )
         source = {
             "id": "synthetic-enchants",
             "url": guide_url,
@@ -214,7 +222,7 @@ class WowheadScraperParserTests(unittest.TestCase):
         scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
         try:
             row = scraper.import_enchants_from_snapshots(
-                [guide_snapshot, anniversary_spell, sourced_spell],
+                [guide_snapshot, anniversary_spell, sourced_spell, formula_item],
                 fallback_to_canonical=False,
             )["enchants"][0]
         finally:
@@ -224,6 +232,7 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(row["source_spell_id"], 27960)
         self.assertEqual(row["formula_item_ids"], [22547])
         self.assertEqual(row["taught_by"][0]["item_id"], 22547)
+        self.assertEqual(len(row["taught_by"]), 1)
 
     def test_enchant_audit_accepts_sourced_spell_alias_by_name(self):
         guide_url = "https://www.wowhead.com/tbc/guide/synthetic-enchants"
@@ -295,6 +304,8 @@ class WowheadScraperParserTests(unittest.TestCase):
         <table><tr><td>PR</td><td><a href="/tbc/item=34220/chaotic-skyfire-diamond">Chaotic Skyfire Diamond</a></td><td>Meta</td></tr></table>
         <h3>Best Enchants</h3>
         <table><tr><td>Head</td><td><a href="/tbc/spell=46540/enchant-weapon-sunfire">Enchant Weapon - Sunfire</a></td><td>PR</td></tr></table>
+        <table><tr><td>Bracer</td><td><a href="/tbc/spell=46500/enchant-bracer-superior-healing">Enchant Bracer - Superior Healing</a></td><td>PR</td></tr></table>
+        <table><tr><td>Gloves</td><td><a href="/tbc/spell=33999/major-healing">Major Healing</a></td><td>PR</td></tr></table>
         <h3>Consumables</h3>
         <table><tr><td>Flasks</td><td><a href="/tbc/item=22861/flask-of-blinding-light">Flask of Blinding Light</a> <a href="/tbc/item=22866/flask-of-pure-death">Flask of Pure Death</a></td></tr></table>
         <h3>Leveling Talents</h3>
@@ -327,9 +338,70 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(enchants[0]["id"], 46540)
         self.assertEqual(enchants[0]["type"], "spell")
         self.assertEqual(enchants[0]["context"], "standard")
+        enchant_by_id = {row["id"]: row for row in enchants}
+        self.assertEqual(enchant_by_id[46500]["slot"], "Wrist")
+        self.assertEqual(enchant_by_id[33999]["slot"], "Hands")
         self.assertEqual(consumables[0]["category"], "flask")
         self.assertEqual(consumables[0]["items"], [22861, 22866])
         self.assertEqual(leveling[0]["entities"][0]["id"], 16814)
+
+    def test_family_dry_run_reports_counts_for_files_that_would_change(self):
+        url = "https://www.wowhead.com/tbc/guide/synthetic-leveling"
+        guide_snapshot = parse_guide_html(
+            url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Leveling Talents</h3>
+            <table><tr><td>10-20</td><td><a href="/tbc/spell=123/test-spell">Test Spell</a></td></tr></table>
+            </body></html>
+            """,
+        )
+        spell_snapshot = parse_spell_html(
+            "https://www.wowhead.com/tbc/spell=123/test-spell",
+            "<html><head><title>Test Spell - Spell - TBC Classic</title></head><body></body></html>",
+        )
+        canonical_docs = {
+            "bis_lists": {"coverage": "scraped_snapshot", "lists": []},
+            "consumables": {"consumables": []},
+            "enchants": {"enchants": [{"id": 123, "type": "spell"}]},
+            "enchant_sources": {"enchant_sources": [{"id": index} for index in range(40)]},
+            "gem_sources": {"gem_sources": []},
+            "gems": {"gems": []},
+            "items": {"items": []},
+            "leveling": {"leveling": []},
+            "overrides": {"overrides": []},
+            "scrape_manifest": {
+                "sources": [
+                    {
+                        "id": "synthetic-leveling",
+                        "url": url,
+                        "data_family": "leveling",
+                        "class": "Druid",
+                        "spec": "Balance",
+                        "phase": "PR",
+                    }
+                ]
+            },
+        }
+        original_canonical_json = scraper.canonical_json
+        scraper.canonical_json = lambda name: scraper.deepcopy(canonical_docs[name])
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                tmp_path = scraper.Path(tmp)
+                for snapshot in [guide_snapshot, spell_snapshot]:
+                    scraper.write_snapshot(snapshot, tmp_path)
+                output = io.StringIO()
+                args = SimpleNamespace(input_dir=tmp_path, family="leveling", dry_run=True)
+                with contextlib.redirect_stdout(output):
+                    exit_code = scraper.command_import(args)
+        finally:
+            scraper.canonical_json = original_canonical_json
+
+        self.assertEqual(exit_code, 0)
+        counts = json.loads(output.getvalue())
+        self.assertEqual(counts["family"], "leveling")
+        self.assertEqual(counts["leveling"], 1)
+        self.assertEqual(counts["enchant_sources"], 40)
 
     def test_leveling_import_uses_narrative_sections_without_tables(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-leveling"
