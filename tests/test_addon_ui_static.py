@@ -112,6 +112,30 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("bankCache = {", config)
         self.assertIn('elseif filters.ownedState == "bank"', data_index)
 
+    def test_enhance_spell_rows_are_not_rendered_as_items(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            "entity_type = entityType",
+            "row.spell_id = enchant.id",
+            "row.item_id = enchant.id",
+        ]:
+            self.assertIn(token, data_index)
+
+        for token in [
+            "function UI:SetSpellButton",
+            "button.spellId = spellId",
+            "GameTooltip:SetSpellByID",
+            'entityType == "spell"',
+            "self:SetSpellButton(iconButton",
+        ]:
+            self.assertIn(token, ui)
+
+        spell_button_index = ui.index("self:SetSpellButton(iconButton")
+        item_button_index = ui.index("self:SetItemButton(iconButton, data.item_id")
+        self.assertLess(spell_button_index, item_button_index)
+
     def test_details_drawer_uses_measured_blocks(self):
         ui = self.read_lua("UI.lua")
         self.assertIn("CreateDetailsTitle", ui)

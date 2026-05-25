@@ -814,8 +814,12 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
 
     for _, gem in ipairs(index.enhancement.gems or {}) do
         if gem["class"] == className and gem.spec == specName and gem.phase == phaseKey then
+            local item = index.itemsById[gem.id]
             table.insert(sections[1].rows, {
+                entity_type = "item",
+                entity_id = gem.id,
                 item_id = gem.id,
+                item = item,
                 name = gem.name,
                 detail = (gem.socket_category or "gem") .. (gem.meta and " meta" or ""),
                 source_summary = gem.source_summary or "",
@@ -825,12 +829,24 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
 
     for _, enchant in ipairs(index.enhancement.enchants or {}) do
         if enchant["class"] == className and enchant.spec == specName and enchant.phase == phaseKey then
-            table.insert(sections[2].rows, {
-                item_id = enchant.id,
+            local entityType = enchant.type or "item"
+            local row = {
+                entity_type = entityType,
+                entity_id = enchant.id,
                 name = enchant.name,
                 detail = enchant.slot or "Enchant",
                 source_summary = enchant.source_summary or "",
-            })
+                slot = enchant.slot,
+            }
+
+            if entityType == "spell" then
+                row.spell_id = enchant.id
+            else
+                row.item_id = enchant.id
+                row.item = index.itemsById[enchant.id]
+            end
+
+            table.insert(sections[2].rows, row)
         end
     end
 
@@ -840,7 +856,10 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 local item = index.itemsById[itemId]
                 local sourceSummary = consumable.source_summaries and consumable.source_summaries[tostring(itemId)] or ""
                 table.insert(sections[3].rows, {
+                    entity_type = "item",
+                    entity_id = itemId,
                     item_id = itemId,
+                    item = item,
                     name = consumable.item_names and consumable.item_names[itemIndex] or getItemName(itemId, item),
                     detail = consumable.category_label or consumable.category or "Consumable",
                     source_summary = sourceSummary,

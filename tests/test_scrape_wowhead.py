@@ -234,6 +234,117 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(row["taught_by"][0]["item_id"], 22547)
         self.assertEqual(len(row["taught_by"]), 1)
 
+    def test_enchant_import_maps_generic_weapon_and_shield_slots(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-enchants"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Enchants</h3>
+            <table>
+              <tr><td>Weapon</td><td><a href="/tbc/spell=27984/enchant-weapon-mongoose">Enchant Weapon - Mongoose</a></td></tr>
+              <tr><td>Weapon</td><td><a href="/tbc/spell=27977/enchant-2h-weapon-major-agility">Enchant 2H Weapon - Major Agility</a></td></tr>
+              <tr><td>Shield</td><td><a href="/tbc/spell=27945/enchant-shield-intellect">Enchant Shield - Intellect</a></td></tr>
+            </table>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-enchants",
+            "url": guide_url,
+            "data_family": "enchants",
+            "class": "Shaman",
+            "spec": "Enhancement",
+            "phase": "PR",
+        }
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            rows = scraper.import_enchants_from_snapshots([guide_snapshot], fallback_to_canonical=False)["enchants"]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        slots_by_id = {row["id"]: row["slot"] for row in rows}
+        self.assertEqual(slots_by_id[27984], "Main Hand")
+        self.assertEqual(slots_by_id[27977], "Two Hand")
+        self.assertEqual(slots_by_id[27945], "Off Hand")
+
+    def test_enchant_import_summarizes_spell_formula_sources(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-enchants"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Enchants</h3>
+            <table><tr><td>Chest</td><td><a href="/tbc/spell=27960/enchant-chest-exceptional-stats">Enchant Chest - Exceptional Stats</a></td></tr></table>
+            </body></html>
+            """,
+        )
+        spell_snapshot = parse_spell_html(
+            "https://www.wowhead.com/tbc/spell=27960/enchant-chest-exceptional-stats",
+            """
+            <html><head><title>Enchant Chest - Exceptional Stats - Spell - TBC Classic</title></head><body>
+            <script>
+            new Listview({ id: 'taught-by-item', data: [{"id":22547,"name":"Formula: Enchant Chest - Exceptional Stats"}], });
+            </script>
+            </body></html>
+            """,
+        )
+        formula_item = parse_item_html(
+            "https://www.wowhead.com/tbc/item=22547/formula-enchant-chest-exceptional-stats",
+            """
+            <html><head>
+            <title>Formula: Enchant Chest - Exceptional Stats - Item - TBC Classic</title>
+            <meta name="description" content="This enchanting formula is sold by a vendor.">
+            </head><body>
+            <script>
+            new Listview({ id: 'sold-by', data: [{"id":17657,"name":"Logistics Officer Ulrike","location":[3483]}], });
+            </script>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-enchants",
+            "url": guide_url,
+            "data_family": "enchants",
+            "class": "Druid",
+            "spec": "Feral dps",
+            "phase": "PR",
+        }
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            row = scraper.import_enchants_from_snapshots(
+                [guide_snapshot, spell_snapshot, formula_item],
+                fallback_to_canonical=False,
+            )["enchants"][0]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        self.assertEqual(row["source_summary"], "Vendor: Logistics Officer Ulrike")
+
+    def test_feral_druid_dps_imports_all_wowhead_enchants(self):
+        snapshot_path = next((scraper.RAW_WOWHEAD_DIR / "full_enchants").glob("*druid-feral-dps-enchants-gems*.json"))
+        snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+        rows = scraper.import_enchants_from_snapshots([snapshot], fallback_to_canonical=False)["enchants"]
+        pr_rows = [row for row in rows if row["phase"] == "PR"]
+
+        self.assertEqual(
+            [(row["slot"], row["type"], row["id"], row["name"]) for row in pr_rows],
+            [
+                ("Head", "item", 29192, "Glyph of Ferocity"),
+                ("Shoulder", "item", 28888, "Greater Inscription of Vengeance"),
+                ("Back", "spell", 34004, "Enchant Cloak - Greater Agility"),
+                ("Chest", "spell", 46502, "Enchant Chest - Exceptional Stats"),
+                ("Wrist", "spell", 34002, "Enchant Bracer - Assault"),
+                ("Hands", "spell", 25080, "Enchant Gloves - Superior Agility"),
+                ("Legs", "item", 29535, "Nethercobra Leg Armor"),
+                ("Feet", "spell", 34007, "Enchant Boots - Cat's Swiftness"),
+                ("Two Hand", "spell", 27977, "Enchant 2H Weapon - Major Agility"),
+                ("Ring", "spell", 27927, "Enchant Ring - Stats"),
+            ],
+        )
+
     def test_enchant_audit_accepts_sourced_spell_alias_by_name(self):
         guide_url = "https://www.wowhead.com/tbc/guide/synthetic-enchants"
         guide_snapshot = parse_guide_html(

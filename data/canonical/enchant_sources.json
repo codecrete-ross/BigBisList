@@ -1,6 +1,31 @@
 {
   "enchant_sources": [
     {
+      "id": 19445,
+      "name": "Formula: Enchant Weapon - Agility",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 11557,
+        "entity_name": "Meilosh",
+        "source_url": "https://www.wowhead.com/tbc/item=19445",
+        "type": "vendor",
+        "vendor_id": 11557
+      },
+      "source_summary": "Vendor: Meilosh",
+      "source_url": "https://www.wowhead.com/tbc/item=19445",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 11557,
+          "entity_name": "Meilosh",
+          "source_url": "https://www.wowhead.com/tbc/item=19445",
+          "type": "vendor",
+          "vendor_id": 11557
+        }
+      ],
+      "type": "item"
+    },
+    {
       "id": 19782,
       "name": "Presence of Might",
       "primary_source": {
@@ -588,6 +613,31 @@
       "type": "item"
     },
     {
+      "id": 22539,
+      "name": "Formula: Enchant Shield - Intellect",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 18664,
+        "entity_name": "Aged Dalaran Wizard",
+        "source_url": "https://www.wowhead.com/tbc/item=22539",
+        "type": "vendor",
+        "vendor_id": 18664
+      },
+      "source_summary": "Vendor: Aged Dalaran Wizard",
+      "source_url": "https://www.wowhead.com/tbc/item=22539",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 18664,
+          "entity_name": "Aged Dalaran Wizard",
+          "source_url": "https://www.wowhead.com/tbc/item=22539",
+          "type": "vendor",
+          "vendor_id": 18664
+        }
+      ],
+      "type": "item"
+    },
+    {
       "id": 22543,
       "name": "Formula: Enchant Boots - Fortitude",
       "primary_source": {
@@ -1025,6 +1075,79 @@
       "type": "item"
     },
     {
+      "id": 22551,
+      "name": "Formula: Enchant Weapon - Major Intellect",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "count": 8,
+        "drop_percent": 0.63,
+        "entity_id": 20136,
+        "entity_name": "Sunfury Researcher",
+        "out_of": 1271,
+        "source_url": "https://www.wowhead.com/tbc/item=22551",
+        "type": "drop",
+        "zone": "Netherstorm"
+      },
+      "source_summary": "Drop: Sunfury Researcher (Netherstorm) 0.6%",
+      "source_url": "https://www.wowhead.com/tbc/item=22551",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "count": 8,
+          "drop_percent": 0.63,
+          "entity_id": 20136,
+          "entity_name": "Sunfury Researcher",
+          "out_of": 1271,
+          "source_url": "https://www.wowhead.com/tbc/item=22551",
+          "type": "drop",
+          "zone": "Netherstorm"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22555,
+      "name": "Formula: Enchant Weapon - Major Spellpower",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "count": 520,
+        "drop_percent": 4.2,
+        "entity_id": 22242,
+        "entity_name": "Bash'ir Spell-Thief",
+        "out_of": 12374,
+        "source_url": "https://www.wowhead.com/tbc/item=22555",
+        "type": "drop",
+        "zone": "Blade's Edge Mountains"
+      },
+      "source_summary": "Drop: Bash'ir Spell-Thief (Blade's Edge Mountains) 4.2% +1",
+      "source_url": "https://www.wowhead.com/tbc/item=22555",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "count": 520,
+          "drop_percent": 4.2,
+          "entity_id": 22242,
+          "entity_name": "Bash'ir Spell-Thief",
+          "out_of": 12374,
+          "source_url": "https://www.wowhead.com/tbc/item=22555",
+          "type": "drop",
+          "zone": "Blade's Edge Mountains"
+        },
+        {
+          "confidence": "wowhead_item",
+          "count": 7,
+          "drop_percent": 0.06,
+          "entity_id": 23385,
+          "entity_name": "Simon Unit",
+          "out_of": 12154,
+          "source_url": "https://www.wowhead.com/tbc/item=22555",
+          "type": "drop",
+          "zone": "Blade's Edge Mountains"
+        }
+      ],
+      "type": "item"
+    },
+    {
       "id": 22556,
       "name": "Formula: Enchant 2H Weapon - Major Agility",
       "primary_source": {
@@ -1078,6 +1201,68 @@
           "entity_name": "Moroes",
           "out_of": 1888,
           "source_url": "https://www.wowhead.com/tbc/item=22559",
+          "type": "drop",
+          "zone": "Karazhan"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22560,
+      "name": "Formula: Enchant Weapon - Sunfire",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "count": 72,
+        "drop_percent": 4.07,
+        "entity_id": 16524,
+        "entity_name": "Shade of Aran",
+        "out_of": 1767,
+        "source_url": "https://www.wowhead.com/tbc/item=22560",
+        "type": "drop",
+        "zone": "Karazhan"
+      },
+      "source_summary": "Drop: Shade of Aran (Karazhan) 4.1%",
+      "source_url": "https://www.wowhead.com/tbc/item=22560",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "count": 72,
+          "drop_percent": 4.07,
+          "entity_id": 16524,
+          "entity_name": "Shade of Aran",
+          "out_of": 1767,
+          "source_url": "https://www.wowhead.com/tbc/item=22560",
+          "type": "drop",
+          "zone": "Karazhan"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 22561,
+      "name": "Formula: Enchant Weapon - Soulfrost",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "count": 72,
+        "drop_percent": 3.93,
+        "entity_id": 15688,
+        "entity_name": "Terestian Illhoof",
+        "out_of": 1830,
+        "source_url": "https://www.wowhead.com/tbc/item=22561",
+        "type": "drop",
+        "zone": "Karazhan"
+      },
+      "source_summary": "Drop: Terestian Illhoof (Karazhan) 3.9%",
+      "source_url": "https://www.wowhead.com/tbc/item=22561",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "count": 72,
+          "drop_percent": 3.93,
+          "entity_id": 15688,
+          "entity_name": "Terestian Illhoof",
+          "out_of": 1830,
+          "source_url": "https://www.wowhead.com/tbc/item=22561",
           "type": "drop",
           "zone": "Karazhan"
         }
@@ -1428,6 +1613,60 @@
           "source_url": "https://www.wowhead.com/tbc/item=28280",
           "type": "world_drop",
           "world_drop": true
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 28281,
+      "name": "Formula: Enchant Weapon - Major Healing",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 21432,
+        "entity_name": "Almaador",
+        "source_url": "https://www.wowhead.com/tbc/item=28281",
+        "type": "vendor",
+        "vendor_id": 21432,
+        "zone": "Shattrath City"
+      },
+      "source_summary": "Vendor: Almaador (Shattrath City)",
+      "source_url": "https://www.wowhead.com/tbc/item=28281",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21432,
+          "entity_name": "Almaador",
+          "source_url": "https://www.wowhead.com/tbc/item=28281",
+          "type": "vendor",
+          "vendor_id": 21432,
+          "zone": "Shattrath City"
+        }
+      ],
+      "type": "item"
+    },
+    {
+      "id": 28282,
+      "name": "Formula: Enchant Shield - Major Stamina",
+      "primary_source": {
+        "confidence": "wowhead_item",
+        "entity_id": 19663,
+        "entity_name": "Madame Ruby",
+        "source_url": "https://www.wowhead.com/tbc/item=28282",
+        "type": "vendor",
+        "vendor_id": 19663,
+        "zone": "Shattrath City"
+      },
+      "source_summary": "Vendor: Madame Ruby (Shattrath City)",
+      "source_url": "https://www.wowhead.com/tbc/item=28282",
+      "sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 19663,
+          "entity_name": "Madame Ruby",
+          "source_url": "https://www.wowhead.com/tbc/item=28282",
+          "type": "vendor",
+          "vendor_id": 19663,
+          "zone": "Shattrath City"
         }
       ],
       "type": "item"
@@ -2012,6 +2251,22 @@
       "type": "item"
     },
     {
+      "id": 23800,
+      "name": "Enchant Weapon - Agility",
+      "source_url": "https://www.wowhead.com/tbc/spell=23800/agility",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 19445,
+          "entity_name": "Formula: Enchant Weapon - Agility",
+          "item_id": 19445,
+          "source_url": "https://www.wowhead.com/tbc/spell=23800/agility",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
       "id": 25072,
       "name": "Enchant Gloves - Threat",
       "source_url": "https://www.wowhead.com/tbc/spell=25072/threat",
@@ -2221,6 +2476,22 @@
       "type": "spell"
     },
     {
+      "id": 27945,
+      "name": "Enchant Shield - Intellect",
+      "source_url": "https://www.wowhead.com/tbc/spell=27945/intellect",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22539,
+          "entity_name": "Formula: Enchant Shield - Intellect",
+          "item_id": 22539,
+          "source_url": "https://www.wowhead.com/tbc/spell=27945/intellect",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
       "id": 27950,
       "name": "Enchant Boots - Fortitude",
       "source_url": "https://www.wowhead.com/tbc/spell=27950/fortitude",
@@ -2310,6 +2581,38 @@
       "type": "spell"
     },
     {
+      "id": 27968,
+      "name": "Enchant Weapon - Major Intellect",
+      "source_url": "https://www.wowhead.com/tbc/spell=27968/enchant-weapon-major-intellect",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22551,
+          "entity_name": "Formula: Enchant Weapon - Major Intellect",
+          "item_id": 22551,
+          "source_url": "https://www.wowhead.com/tbc/spell=27968/enchant-weapon-major-intellect",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27975,
+      "name": "Enchant Weapon - Major Spellpower",
+      "source_url": "https://www.wowhead.com/tbc/spell=27975/major-spellpower",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22555,
+          "entity_name": "Formula: Enchant Weapon - Major Spellpower",
+          "item_id": 22555,
+          "source_url": "https://www.wowhead.com/tbc/spell=27975/major-spellpower",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
       "id": 27977,
       "name": "Enchant 2H Weapon - Major Agility",
       "source_url": "https://www.wowhead.com/tbc/spell=27977/enchant-2h-weapon-major-agility",
@@ -2320,6 +2623,38 @@
           "entity_name": "Formula: Enchant 2H Weapon - Major Agility",
           "item_id": 22556,
           "source_url": "https://www.wowhead.com/tbc/spell=27977/enchant-2h-weapon-major-agility",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27981,
+      "name": "Enchant Weapon - Sunfire",
+      "source_url": "https://www.wowhead.com/tbc/spell=27981/sunfire",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22560,
+          "entity_name": "Formula: Enchant Weapon - Sunfire",
+          "item_id": 22560,
+          "source_url": "https://www.wowhead.com/tbc/spell=27981/sunfire",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 27982,
+      "name": "Enchant Weapon - Soulfrost",
+      "source_url": "https://www.wowhead.com/tbc/spell=27982/soulfrost",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 22561,
+          "entity_name": "Formula: Enchant Weapon - Soulfrost",
+          "item_id": 22561,
+          "source_url": "https://www.wowhead.com/tbc/spell=27982/soulfrost",
           "type": "taught_by_item"
         }
       ],
@@ -2539,6 +2874,38 @@
       "type": "spell"
     },
     {
+      "id": 34009,
+      "name": "Enchant Shield - Major Stamina",
+      "source_url": "https://www.wowhead.com/tbc/spell=34009/enchant-shield-major-stamina",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 28282,
+          "entity_name": "Formula: Enchant Shield - Major Stamina",
+          "item_id": 28282,
+          "source_url": "https://www.wowhead.com/tbc/spell=34009/enchant-shield-major-stamina",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
+      "id": 34010,
+      "name": "Enchant Weapon - Major Healing",
+      "source_url": "https://www.wowhead.com/tbc/spell=34010/major-healing",
+      "sources": [
+        {
+          "confidence": "wowhead_spell",
+          "entity_id": 28281,
+          "entity_name": "Formula: Enchant Weapon - Major Healing",
+          "item_id": 28281,
+          "source_url": "https://www.wowhead.com/tbc/spell=34010/major-healing",
+          "type": "taught_by_item"
+        }
+      ],
+      "type": "spell"
+    },
+    {
       "id": 46470,
       "name": "Enchant Boots - Boar's Speed",
       "source_url": "https://www.wowhead.com/tbc/spell=46470/enchant-boots-boars-speed",
@@ -2598,6 +2965,27 @@
       "id": 46518,
       "name": "Enchant Ring - Spellpower",
       "source_url": "https://www.wowhead.com/tbc/spell=46518/enchant-ring-spellpower",
+      "sources": [],
+      "type": "spell"
+    },
+    {
+      "id": 46524,
+      "name": "Enchant Shield - Major Stamina",
+      "source_url": "https://www.wowhead.com/tbc/spell=46524",
+      "sources": [],
+      "type": "spell"
+    },
+    {
+      "id": 46531,
+      "name": "Enchant Weapon - Major Healing",
+      "source_url": "https://www.wowhead.com/tbc/spell=46531",
+      "sources": [],
+      "type": "spell"
+    },
+    {
+      "id": 46540,
+      "name": "Enchant Weapon - Sunfire",
+      "source_url": "https://www.wowhead.com/tbc/spell=46540/enchant-weapon-sunfire",
       "sources": [],
       "type": "spell"
     }

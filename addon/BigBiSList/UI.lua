@@ -557,10 +557,15 @@ function UI:UnignoreItem(itemId)
 end
 
 function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQuality, detailData, detailMode)
+    button.entityType = "item"
+    button.entityId = itemId
     button.itemId = itemId
+    button.spellId = nil
     button.itemLink = nil
+    button.spellLink = nil
     button.detailData = detailData
     button.detailMode = detailMode
+    button.icon:SetDesaturated(false)
     button.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
 
     safeSetText(nameText, fallbackName or ("Item " .. tostring(itemId)))
@@ -635,6 +640,114 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
     end)
 end
 
+function UI:SetSpellButton(button, spellId, nameText, fallbackName, detailData, detailMode)
+    button.entityType = "spell"
+    button.entityId = spellId
+    button.itemId = nil
+    button.spellId = spellId
+    button.itemLink = nil
+    button.spellLink = nil
+    button.detailData = detailData
+    button.detailMode = detailMode
+    button.icon:SetDesaturated(false)
+    button.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
+
+    safeSetText(nameText, fallbackName or ("Spell " .. tostring(spellId)))
+    if nameText then
+        nameText:SetTextColor(1, 0.82, 0.28, 1)
+    end
+
+    local function applySpellInfo(spellName, spellLink, spellTexture)
+        if button.spellId ~= spellId then
+            return
+        end
+
+        if spellTexture then
+            button.icon:SetTexture(spellTexture)
+        end
+        if spellName and nameText then
+            nameText:SetText(spellName)
+        end
+        if spellLink then
+            button.spellLink = spellLink
+        end
+    end
+
+    local spellName, spellTexture
+    if C_Spell and C_Spell.GetSpellInfo then
+        local ok, info = pcall(C_Spell.GetSpellInfo, spellId)
+        if ok and type(info) == "table" then
+            spellName = info.name
+            spellTexture = info.iconID
+        elseif ok and type(info) == "string" then
+            spellName = info
+        end
+    end
+    if GetSpellInfo and (not spellName or not spellTexture) then
+        local ok, name, _, icon = pcall(GetSpellInfo, spellId)
+        if ok then
+            spellName = spellName or name
+            spellTexture = spellTexture or icon
+        end
+    end
+    if C_Spell and C_Spell.GetSpellTexture and not spellTexture then
+        local ok, icon = pcall(C_Spell.GetSpellTexture, spellId)
+        if ok then
+            spellTexture = icon
+        end
+    end
+    if GetSpellTexture and not spellTexture then
+        local ok, icon = pcall(GetSpellTexture, spellId)
+        if ok then
+            spellTexture = icon
+        end
+    end
+
+    local spellLink
+    if C_Spell and C_Spell.GetSpellLink then
+        local ok, link = pcall(C_Spell.GetSpellLink, spellId)
+        if ok then
+            spellLink = link
+        end
+    end
+    if GetSpellLink and not spellLink then
+        local ok, link = pcall(GetSpellLink, spellId)
+        if ok then
+            spellLink = link
+        end
+    end
+    applySpellInfo(spellName, spellLink, spellTexture)
+
+    button:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT", 4, 0)
+        if self.spellLink then
+            GameTooltip:SetHyperlink(self.spellLink)
+        elseif GameTooltip.SetSpellByID then
+            GameTooltip:SetSpellByID(spellId)
+        else
+            GameTooltip:SetText(fallbackName or ("Spell " .. tostring(spellId)))
+        end
+        GameTooltip:Show()
+    end)
+    button:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+    button:SetScript("OnClick", function(self, buttonName)
+        if buttonName == "RightButton" then
+            UI:RefreshDetails(spellId, self.detailData, self.detailMode)
+            return
+        end
+
+        if self.spellLink then
+            if IsShiftKeyDown and IsShiftKeyDown() and ChatEdit_InsertLink then
+                ChatEdit_InsertLink(self.spellLink)
+            elseif SetItemRef then
+                SetItemRef(self.spellLink, self.spellLink, "LeftButton")
+            end
+        end
+    end)
+end
+
 function UI:GetOwnershipState(itemId)
     if not itemId then
         return "missing"
@@ -675,16 +788,20 @@ end
 
 function UI:CreateDataRow(parent, yOffset, data, mode)
     local widgets = BigBiSList.Widgets
+    local entityType = data.entity_type or (data.spell_id and "spell") or "item"
+    local entityId = data.entity_id or data.spell_id or data.item_id
     local row = widgets:CreateItemRow(parent, ROW_HEIGHT)
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     row:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
     row.itemId = data.item_id
+    row.entityType = entityType
+    row.entityId = entityId
     row.detailData = data
     row.detailMode = mode
 
     local iconButton = widgets:CreateIconButton(row, 30, function(_, buttonName)
         if buttonName == "RightButton" then
-            self:RefreshDetails(data.item_id, data, mode)
+            self:RefreshDetails(entityId, data, mode)
         end
     end)
     iconButton:SetPoint("LEFT", row, "LEFT", 8, 0)
@@ -702,9 +819,11 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     detailText:SetWordWrap(false)
     detailText:SetTextColor(0.68, 0.68, 0.72, 1)
 
-    local ownershipState = self:GetOwnershipState(data.item_id)
-    local ownershipBadge = self:CreateOwnershipBadge(row, ownershipState)
-    ownershipBadge:SetPoint("RIGHT", row, "RIGHT", -170, 0)
+    if data.item_id then
+        local ownershipState = self:GetOwnershipState(data.item_id)
+        local ownershipBadge = self:CreateOwnershipBadge(row, ownershipState)
+        ownershipBadge:SetPoint("RIGHT", row, "RIGHT", -170, 0)
+    end
 
     local rightText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     rightText:SetPoint("RIGHT", row, "RIGHT", -8, 7)
@@ -720,8 +839,12 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     sourceText:SetWordWrap(false)
     sourceText:SetTextColor(0.54, 0.54, 0.58, 1)
 
-    local item = data.item or BigBiSList:GetItemData(data.item_id)
-    self:SetItemButton(iconButton, data.item_id, nameText, data.name, item and item.quality, data, mode)
+    local item = data.item or (data.item_id and BigBiSList:GetItemData(data.item_id))
+    if entityType == "spell" then
+        self:SetSpellButton(iconButton, data.spell_id or entityId, nameText, data.name, data, mode)
+    else
+        self:SetItemButton(iconButton, data.item_id, nameText, data.name, item and item.quality, data, mode)
+    end
 
     if mode == "planner" then
         safeSetText(detailText, data.slot .. " - " .. data.priorityTier .. " - " .. table.concat(data.reasons or {}, ", "))
@@ -743,9 +866,11 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
 
     row:SetScript("OnMouseUp", function(_, buttonName)
         if buttonName == "LeftButton" then
-            self:RefreshDetails(data.item_id, data, mode)
+            self:RefreshDetails(entityId, data, mode)
         elseif buttonName == "RightButton" then
-            if BigBiSListDB.char.wishlist[tostring(data.item_id)] then
+            if not data.item_id then
+                self:RefreshDetails(entityId, data, mode)
+            elseif BigBiSListDB.char.wishlist[tostring(data.item_id)] then
                 self:RemoveWishlist(data.item_id)
             else
                 self:AddWishlist(data.item_id)
@@ -1214,15 +1339,23 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         return
     end
 
-    self.selectedItemId = itemId
+    local entityType = detailData and (detailData.entity_type or (detailData.spell_id and "spell")) or "item"
+    local entityId = detailData and (detailData.entity_id or detailData.spell_id or detailData.item_id) or itemId
+    local detailItemId = detailData and detailData.item_id or (entityType == "item" and entityId or nil)
+
+    self.selectedItemId = entityId
     self.selectedItemData = detailData
     self.selectedItemMode = detailMode
     local index = BigBiSList:GetDataIndex()
-    local item = index.itemsById[itemId]
-    local plannerContext = detailData and detailData.priority and detailData or self:FindPlannerContext(itemId, detailData)
+    local item = detailItemId and index.itemsById[detailItemId] or nil
+    local plannerContext = detailItemId and (detailData and detailData.priority and detailData or self:FindPlannerContext(detailItemId, detailData)) or nil
 
     local r, g, b = itemQualityColor(item)
-    local anchor = self:CreateDetailsTitle(content, item and item.name or ("Item " .. tostring(itemId)), r, g, b)
+    if entityType == "spell" then
+        r, g, b = 1, 0.82, 0.28
+    end
+    local titleText = item and item.name or (detailData and detailData.name) or ((entityType == "spell" and "Spell " or "Item ") .. tostring(entityId))
+    local anchor = self:CreateDetailsTitle(content, titleText, r, g, b)
     local contentHeight = anchor.contentHeight or 32
 
     if detailData and detailData.slot then
@@ -1237,15 +1370,17 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         contentHeight = contentHeight + anchor.contentHeight
     end
 
-    local ownershipState = self:GetOwnershipState(itemId)
-    local ownershipText = ownershipStateLabel(ownershipState)
-    if ownershipState == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
-        ownershipText = ownershipText .. " - bank cache " .. self.currentOwned.bankUpdatedAt
-    elseif ownershipState == "missing" and self.currentOwned and not self.currentOwned.bankScanned then
-        ownershipText = ownershipText .. " - open your bank once to include banked items"
+    if detailItemId then
+        local ownershipState = self:GetOwnershipState(detailItemId)
+        local ownershipText = ownershipStateLabel(ownershipState)
+        if ownershipState == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
+            ownershipText = ownershipText .. " - bank cache " .. self.currentOwned.bankUpdatedAt
+        elseif ownershipState == "missing" and self.currentOwned and not self.currentOwned.bankScanned then
+            ownershipText = ownershipText .. " - open your bank once to include banked items"
+        end
+        anchor = self:CreateDetailsText(content, anchor, "Ownership", ownershipText, 0.82, 0.86, 0.92)
+        contentHeight = contentHeight + anchor.contentHeight
     end
-    anchor = self:CreateDetailsText(content, anchor, "Ownership", ownershipText, 0.82, 0.86, 0.92)
-    contentHeight = contentHeight + anchor.contentHeight
 
     if plannerContext then
         local score = tostring(plannerContext.priority or 0) .. "/100"
@@ -1263,12 +1398,29 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         end
     end
 
-    anchor = self:CreateDetailsText(content, anchor, "Current Spec Timeline", self:BuildPhaseUseText(itemId), 0.64, 0.78, 0.94)
-    contentHeight = contentHeight + anchor.contentHeight
-    anchor = self:CreateDetailsText(content, anchor, "Source", item and item.source_summary or "No source data", 0.76, 0.76, 0.80)
+    if detailItemId then
+        anchor = self:CreateDetailsText(content, anchor, "Current Spec Timeline", self:BuildPhaseUseText(detailItemId), 0.64, 0.78, 0.94)
+        contentHeight = contentHeight + anchor.contentHeight
+    end
+
+    local sourceSummary = detailData and detailData.source_summary
+    if not sourceSummary or sourceSummary == "" then
+        sourceSummary = item and item.source_summary
+    end
+    if not sourceSummary or sourceSummary == "" then
+        sourceSummary = "No source data"
+    end
+    anchor = self:CreateDetailsText(content, anchor, "Source", sourceSummary, 0.76, 0.76, 0.80)
     contentHeight = contentHeight + anchor.contentHeight
 
-    local wishlistKey = tostring(itemId)
+    if not detailItemId then
+        contentHeight = contentHeight + 16
+        local minimum = self.detailsScroll and self.detailsScroll:GetHeight() or 1
+        content:SetHeight(math.max(contentHeight, minimum + 1))
+        return
+    end
+
+    local wishlistKey = tostring(detailItemId)
     local isWishlisted = BigBiSListDB.char.wishlist[wishlistKey]
     local actionRow = CreateFrame("Frame", nil, content)
     actionRow:SetHeight(24)
@@ -1277,9 +1429,9 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
 
     local wishlistButton = widgets:CreateTextButton(actionRow, isWishlisted and "Remove wishlist" or "Add wishlist", 132, 24, function()
         if BigBiSListDB.char.wishlist[wishlistKey] then
-            self:RemoveWishlist(itemId)
+            self:RemoveWishlist(detailItemId)
         else
-            self:AddWishlist(itemId)
+            self:AddWishlist(detailItemId)
         end
         self:Refresh()
     end)
@@ -1288,9 +1440,9 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local ignored = BigBiSListDB.char.ignoredItems[wishlistKey]
     local ignoreButton = widgets:CreateTextButton(actionRow, ignored and "Unignore" or "Ignore", 78, 24, function()
         if BigBiSListDB.char.ignoredItems[wishlistKey] then
-            self:UnignoreItem(itemId)
+            self:UnignoreItem(detailItemId)
         else
-            self:IgnoreItem(itemId)
+            self:IgnoreItem(detailItemId)
         end
     end)
     ignoreButton:SetPoint("LEFT", wishlistButton, "RIGHT", 8, 0)

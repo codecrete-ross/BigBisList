@@ -1408,6 +1408,42 @@ def slot_from_row(table: dict[str, Any], row: dict[str, Any]) -> str | None:
     return None
 
 
+def enchant_slot_from_row(table: dict[str, Any], row: dict[str, Any]) -> str | None:
+    slot = slot_from_row(table, row)
+    if slot:
+        return slot
+
+    exact_cells = {str(cell).strip().lower() for cell in row.get("cells", [])}
+    text = compact_cells(row).lower()
+    if exact_cells & {"shield", "shields"}:
+        return "Off Hand"
+    if exact_cells & {"weapon", "weapons"}:
+        if re.search(r"\b(2h|2[- ]hand|two[- ]hand|2 handed|two handed)\b", text):
+            return "Two Hand"
+        return "Main Hand"
+    return None
+
+
+def summarize_enchant_spell_sources(
+    source_spell_snapshot: dict[str, Any] | None,
+    formula_item_ids: list[int],
+    item_snapshots: dict[int, dict[str, Any]],
+) -> str:
+    formula_sources: list[dict[str, Any]] = []
+    for item_id in formula_item_ids:
+        formula_sources.extend(item_snapshots.get(item_id, {}).get("normalized_sources", []))
+    if formula_sources:
+        return summarize_sources(formula_sources)
+
+    spell_sources = (source_spell_snapshot or {}).get("normalized_sources", [])
+    trainer = next((source for source in spell_sources if source.get("type") == "trainer"), None)
+    if trainer:
+        return f"Trainer: {trainer.get('entity_name') or 'Enchanting Trainer'}"
+    if spell_sources:
+        return summarize_sources(spell_sources)
+    return ""
+
+
 def table_matches_family(source_meta: dict[str, Any], table: dict[str, Any], data_family: str) -> bool:
     if not source_meta:
         return False
@@ -1494,7 +1530,7 @@ def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                 for row in table.get("rows", []):
                     entity = first_row_entity(row)
                     phases = phases_from_row(source_meta, table, row)
-                    slot = slot_from_row(table, row)
+                    slot = enchant_slot_from_row(table, row)
                     if not entity or not phases or not slot:
                         continue
                     context = row_context(table, row)
@@ -1563,6 +1599,9 @@ def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                             )
                             if taught_by:
                                 enchant_row["taught_by"] = unique_taught_by_sources(taught_by)
+                            source_summary = summarize_enchant_spell_sources(source_spell_snapshot, formula_item_ids, item_snapshots)
+                            if source_summary:
+                                enchant_row["source_summary"] = source_summary
                         else:
                             sources = item_snapshots.get(int(entity["id"]), {}).get("normalized_sources", [])
                             if sources:
