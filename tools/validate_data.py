@@ -11,7 +11,7 @@ if __package__ is None or __package__ == "":
 
 from tools.manifest_coverage import GLOBAL_FAMILIES, MATRIX_FAMILIES, STATIC_DATA_FAMILIES, units_covered_by_source
 from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES, canonical_json
-from tools.sources import derive_primary_source, summarize_sources
+from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 
 
 REQUIREMENT_TYPES = {
@@ -154,6 +154,7 @@ def validate() -> ValidationResult:
         if isinstance(sources, list) and sources:
             _require(item.get("primary_source") == derive_primary_source(sources), errors, f"Item {item_id} primary_source is not derived from sources")
             _require(item.get("source_summary") == summarize_sources(sources), errors, f"Item {item_id} source_summary is not derived from sources")
+            _require(item.get("acquisition_phase") == derive_acquisition_phase(sources), errors, f"Item {item_id} acquisition_phase is not derived from sources")
             for source in sources:
                 source_type = source.get("type")
                 _require(source_type in {"drop", "quest", "vendor", "crafted", "pvp", "token_turnin", "world_drop", "unknown"}, errors, f"Item {item_id} has invalid source type: {source_type}")

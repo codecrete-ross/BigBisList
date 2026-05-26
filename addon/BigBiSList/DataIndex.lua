@@ -622,12 +622,14 @@ local function addSourceZone(zones, seen, zone)
     end
 end
 
-local function addZonesFromSource(zones, seen, source)
+local function addZonesFromSource(zones, seen, source, includeDropZone)
     if type(source) ~= "table" then
         return
     end
 
-    addSourceZone(zones, seen, source.zone)
+    if source.type ~= "drop" or includeDropZone then
+        addSourceZone(zones, seen, source.zone)
+    end
 
     if source.type == "token_turnin" then
         for _, tokenSource in ipairs(source.token_sources or {}) do
@@ -641,9 +643,9 @@ local function getSourceZones(item)
     local seen = {}
 
     if item then
-        addZonesFromSource(zones, seen, item.primary_source)
+        addZonesFromSource(zones, seen, item.primary_source, true)
         for _, source in ipairs(item.sources or {}) do
-            addZonesFromSource(zones, seen, source)
+            addZonesFromSource(zones, seen, source, false)
         end
     end
 
@@ -652,6 +654,10 @@ local function getSourceZones(item)
     end
 
     return zones
+end
+
+local function getAcquisitionPhase(item)
+    return item and item.acquisition_phase or "PR"
 end
 
 local function getSourceSide(item)
@@ -679,6 +685,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     local sourceType = getSourceType(item)
     local zone = getSourceZone(item)
     local zones = getSourceZones(item)
+    local acquisitionPhase = getAcquisitionPhase(item)
 
     return {
         class = className,
@@ -698,6 +705,8 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         source_summary = item and item.source_summary or "",
         source_type = sourceType,
         source_type_label = SOURCE_TYPE_LABELS[sourceType] or sourceType,
+        acquisition_phase = acquisitionPhase,
+        acquisitionPhaseIndex = phaseIndex(acquisitionPhase),
         zone = zone,
         zones = zones,
         side = getSourceSide(item),
@@ -1192,6 +1201,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
                         source_summary = use.source_summary,
                         source_type = use.source_type,
                         source_type_label = use.source_type_label,
+                        acquisition_phase = use.acquisition_phase,
+                        acquisitionPhaseIndex = use.acquisitionPhaseIndex,
                         zone = use.zone,
                         zones = use.zones,
                         binding = use.binding,
@@ -1232,7 +1243,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         group.requirements = group.bestUse and group.bestUse.requirements or group.requirements
         group.access_options = group.bestUse and group.bestUse.access_options or group.access_options
 
-        if group.priority > 0 and includeByFilter(group, filters) then
+        if group.priority > 0 and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters) then
             if filters and filters.longevity == "current" and not group.hasCurrent then
                 -- excluded below
             elseif filters and filters.longevity == "future" and group.lastUsefulPhase == selectedPhaseKey then

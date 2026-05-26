@@ -163,6 +163,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "addZonesFromSource",
             'source.type == "token_turnin"',
             "source.token_sources",
+            "includeDropZone",
             "rowMatchesZoneFilter",
             "rowMatchesAnySelectedZone",
             "zones = getSourceZones(item)",
@@ -171,6 +172,18 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, data_index)
         self.assertLess(data_index.index("getSourceZones"), data_index.index("includeByFilter"))
         self.assertLess(data_index.index("rowMatchesZoneFilter"), data_index.index("includeByFilter"))
+
+    def test_planner_filters_future_acquisition_phases(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "getAcquisitionPhase",
+            "acquisition_phase = acquisitionPhase",
+            "acquisitionPhaseIndex = phaseIndex(acquisitionPhase)",
+            "acquisition_phase = use.acquisition_phase",
+            "group.acquisitionPhaseIndex <= selectedIndex",
+        ]:
+            self.assertIn(token, data_index)
+        self.assertLess(data_index.index("scorePlannerGroup"), data_index.index("group.acquisitionPhaseIndex <= selectedIndex"))
 
     def test_source_aware_access_status_prefers_ready_options(self):
         ui = self.read_lua("UI.lua")

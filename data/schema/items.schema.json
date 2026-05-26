@@ -8,7 +8,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "quality", "binding", "boe", "wowhead_url", "sources", "primary_source", "source_summary"],
+        "required": ["id", "name", "quality", "binding", "boe", "wowhead_url", "sources", "primary_source", "source_summary", "acquisition_phase"],
         "properties": {
           "id": { "type": "integer" },
           "name": { "type": "string" },
@@ -19,6 +19,10 @@
           },
           "boe": { "type": ["boolean", "null"] },
           "wowhead_url": { "type": "string" },
+          "acquisition_phase": {
+            "type": "string",
+            "enum": ["PR", "T4", "T5", "T6", "ZA", "SWP"]
+          },
           "source_summary": { "type": "string" },
           "primary_source": { "$ref": "#/$defs/source" },
           "sources": {

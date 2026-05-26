@@ -29,6 +29,21 @@
       "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-dps-swp-phase-5-best-in-slot-gear-burning-crusade"
     },
     {
+      "id": "druid-feral-dps-pr-raid-shoulder-exclusion",
+      "type": "bis_exclusion",
+      "target": {
+        "class": "Druid",
+        "spec": "Feral dps",
+        "phase": "PR",
+        "slot": "Shoulder",
+        "item_id": 28755
+      },
+      "reason": "Bladed Shoulderpads of the Merciless are a Karazhan chest drop and should not appear in Pre-Raid planning.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-26",
+      "source_url": "https://www.wowhead.com/tbc/item=28755/bladed-shoulderpads-of-the-merciless"
+    },
+    {
       "id": "item-28568-source-gap",
       "type": "source_gap",
       "target": {

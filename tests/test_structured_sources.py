@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import tools.scrape_wowhead as scraper
 from tools.project import canonical_json
 from tools.scrape_wowhead import build_audit
-from tools.sources import summarize_sources
+from tools.sources import phase_rank, summarize_sources
 
 
 class StructuredSourceTests(unittest.TestCase):
@@ -37,6 +37,38 @@ class StructuredSourceTests(unittest.TestCase):
         cost_names = {cost["name"] for source in item["sources"] for cost in source.get("costs", [])}
         self.assertIn("Arena Points", cost_names)
         self.assertIn("Honor Points", cost_names)
+
+    def test_acquisition_phase_covers_raid_and_pre_raid_edge_cases(self):
+        gladiator = self.items[28137]
+        self.assertEqual(gladiator["primary_source"]["type"], "pvp")
+        self.assertEqual(gladiator["acquisition_phase"], "PR")
+        self.assertTrue(gladiator["source_summary"].startswith("PvP: "))
+
+        tier = self.items[31037]
+        self.assertEqual(tier["primary_source"]["type"], "token_turnin")
+        self.assertEqual(tier["acquisition_phase"], "T6")
+
+        zulaman = self.items[33214]
+        self.assertEqual(zulaman["primary_source"]["zone"], "Zul'Aman")
+        self.assertEqual(zulaman["acquisition_phase"], "ZA")
+        self.assertIn("Zul'Aman", zulaman["source_summary"])
+
+        self.assertEqual(self.items[31461]["acquisition_phase"], "PR")
+        self.assertEqual(self.items[29290]["acquisition_phase"], "T4")
+
+    def test_bis_rows_do_not_reference_future_acquisitions(self):
+        violations = []
+        for row in canonical_json("bis_lists")["lists"]:
+            row_phase = row["phase"]
+            for entry in row["items"]:
+                item = self.items[entry["item_id"]]
+                acquisition_phase = item["acquisition_phase"]
+                if phase_rank(acquisition_phase) > phase_rank(row_phase):
+                    violations.append(
+                        f"{row['class']}/{row['spec']}/{row_phase}/{row['slot']}: "
+                        f"{entry['item_id']} {item['name']} acquires in {acquisition_phase}"
+                    )
+        self.assertEqual(violations, [])
 
     def test_source_summary_formats_key_source_types(self):
         self.assertEqual(

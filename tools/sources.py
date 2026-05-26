@@ -3,22 +3,86 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
+PHASE_ORDER = ["PR", "T4", "T5", "T6", "ZA", "SWP"]
+PHASE_INDEX = {phase: index for index, phase in enumerate(PHASE_ORDER)}
+
+RAID_ZONE_PHASE = {
+    "Karazhan": "T4",
+    "Gruul's Lair": "T4",
+    "Magtheridon's Lair": "T4",
+    "Serpentshrine Cavern": "T5",
+    "Tempest Keep": "T5",
+    "Hyjal Summit": "T6",
+    "Black Temple": "T6",
+    "Zul'Aman": "ZA",
+    "Sunwell Plateau": "SWP",
+}
+
+RAID_QUEST_PHASE_BY_ID = {
+    10725: "T4",
+    10726: "T4",
+    10727: "T4",
+    10728: "T4",
+    11031: "T4",
+    11032: "T4",
+    11033: "T4",
+    11034: "T4",
+    11007: "T5",
+}
+
 SOURCE_TYPE_PRIORITY = {
     "drop": 0,
     "token_turnin": 1,
     "quest": 2,
-    "vendor": 3,
-    "crafted": 4,
-    "pvp": 5,
+    "pvp": 3,
+    "vendor": 4,
+    "crafted": 5,
     "world_drop": 6,
     "unknown": 99,
 }
+
+
+def phase_rank(phase: str | None) -> int:
+    return PHASE_INDEX.get(str(phase or "PR"), 999)
+
+
+def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
+    source_type = source.get("type")
+
+    if source_type == "token_turnin":
+        token_phases = [
+            derive_source_acquisition_phase(token_source)
+            for token_source in source.get("token_sources", [])
+            if isinstance(token_source, dict)
+        ]
+        return min(token_phases, key=phase_rank) if token_phases else "PR"
+
+    if source_type == "drop":
+        return RAID_ZONE_PHASE.get(str(source.get("zone") or ""), "PR")
+
+    if source_type == "quest":
+        quest_id = source.get("quest_id")
+        if isinstance(quest_id, int):
+            return RAID_QUEST_PHASE_BY_ID.get(quest_id, "PR")
+        return "PR"
+
+    if source_type == "vendor" and source.get("zone") == "Black Temple":
+        return "T6"
+
+    return "PR"
+
+
+def derive_acquisition_phase(sources: list[dict[str, Any]]) -> str:
+    if not sources:
+        return "PR"
+    return min((derive_source_acquisition_phase(source) for source in sources), key=phase_rank)
 
 
 def _source_sort_key(source: dict[str, Any]) -> tuple:
     drop_percent = source.get("drop_percent")
     drop_rank = -float(drop_percent) if isinstance(drop_percent, (int, float)) else 0.0
     return (
+        phase_rank(derive_source_acquisition_phase(source)),
         SOURCE_TYPE_PRIORITY.get(str(source.get("type", "unknown")), 99),
         drop_rank,
         str(source.get("entity_name") or ""),

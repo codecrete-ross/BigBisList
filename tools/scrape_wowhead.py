@@ -20,7 +20,7 @@ if __package__ is None or __package__ == "":
 
 from tools.manifest_coverage import build_manifest_coverage
 from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES, canonical_json, write_text
-from tools.sources import derive_primary_source, summarize_sources
+from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 from tools.validate_data import validate
 
 PARSER_VERSION = "wowhead-scraper-0.6.0"
@@ -109,6 +109,7 @@ ZONE_ID_NAMES = {
     3606: "Hyjal Summit",
     3607: "Serpentshrine Cavern",
     3703: "Shattrath City",
+    3805: "Zul'Aman",
     3836: "Magtheridon's Lair",
     3845: "Tempest Keep",
     3923: "Gruul's Lair",
@@ -2652,11 +2653,29 @@ def target_matches(row: dict[str, Any], target: dict[str, Any]) -> bool:
     return all(row.get(key) == value for key, value in target.items())
 
 
+def bis_row_matches_target(row: dict[str, Any], target: dict[str, Any]) -> bool:
+    row_keys = {"class", "spec", "phase", "slot", "source_url"}
+    return all(row.get(key) == value for key, value in target.items() if key in row_keys)
+
+
+def bis_item_matches_target(item: dict[str, Any], target: dict[str, Any]) -> bool:
+    item_keys = {"item_id", "context", "rank_group", "rank_label"}
+    matched_item_key = False
+    for key, value in target.items():
+        if key not in item_keys:
+            continue
+        matched_item_key = True
+        if item.get(key) != value:
+            return False
+    return matched_item_key
+
+
 def refresh_item_derived_fields(item: dict[str, Any]) -> dict[str, Any]:
     refreshed = deepcopy(item)
     sources = refreshed.get("sources", [])
     refreshed["primary_source"] = derive_primary_source(sources)
     refreshed["source_summary"] = summarize_sources(sources)
+    refreshed["acquisition_phase"] = derive_acquisition_phase(sources)
     return refreshed
 
 
@@ -2713,6 +2732,28 @@ def apply_bis_overrides(imported_bis_lists: dict[str, Any]) -> dict[str, Any]:
         if not replaced:
             rows.append(replacement)
 
+    for override in reviewed_overrides():
+        if override.get("type") != "bis_exclusion":
+            continue
+
+        target = override.get("target", {})
+        filtered_rows: list[dict[str, Any]] = []
+        for row in rows:
+            if not bis_row_matches_target(row, target):
+                filtered_rows.append(row)
+                continue
+
+            filtered_items = [
+                item
+                for item in row.get("items", [])
+                if not bis_item_matches_target(item, target)
+            ]
+            if filtered_items:
+                filtered = deepcopy(row)
+                filtered["items"] = filtered_items
+                filtered_rows.append(filtered)
+        rows = filtered_rows
+
     return {"coverage": imported_bis_lists.get("coverage", "scraped_snapshot"), "lists": rows}
 
 
@@ -2742,6 +2783,7 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
             "sources": sources,
             "primary_source": derive_primary_source(sources),
             "source_summary": summarize_sources(sources),
+            "acquisition_phase": derive_acquisition_phase(sources),
         }
         if current.get("requirements"):
             item["requirements"] = deepcopy(current["requirements"])
