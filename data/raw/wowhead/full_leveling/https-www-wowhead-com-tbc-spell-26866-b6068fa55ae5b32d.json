@@ -1,11 +1,14 @@
 {
+  "description": "Finishing move that exposes the target for 30 sec, reducing armor per combo point: 1 point : 410 armor 2 points: 820 armor 3 points: 1230 armor 4 points: 1640 armor 5 points: 2050 armor",
   "fetched_at": "2026-05-24T09:13:30+00:00",
   "name": "Expose Armor",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

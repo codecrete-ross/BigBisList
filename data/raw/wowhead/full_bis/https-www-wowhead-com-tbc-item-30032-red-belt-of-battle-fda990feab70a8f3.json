@@ -5,15 +5,118 @@
   "fetched_at": "2026-05-24T04:36:31+00:00",
   "item_id": 30032,
   "name": "Red Belt of Battle",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36390,
+      "entity_name": "Red Belt of Battle",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle",
+      "spell_id": 36390,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          30032,
+          1,
+          1
+        ],
+        "id": 36390,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Red Belt of Battle",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 4,
+        "reagents": [
+          [
+            30183,
+            2
+          ],
+          [
+            23573,
+            5
+          ],
+          [
+            21884,
+            10
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 30322,
+        "level": 75,
+        "name": "Plans: Red Belt of Battle",
+        "popularity": 9,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 30322,
+      "level": 75,
+      "name": "Plans: Red Belt of Battle",
+      "popularity": 9,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle"
 }

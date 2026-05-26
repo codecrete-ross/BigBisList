@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "item_id": 186683,
   "name": "Formula: Enchant Ring - Stats",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Ring - Stats Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Requires The Scale of the Sands - Revered Use: Teaches you how to permanently enchant a ring to increase all stats by 4. Permanently enchant a ring to increase all stats by 4. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item. Sell Price: 5 This enchanting formula is used for the Enchanting profession. It is sold by Andormu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=186683",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,12 +28,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {

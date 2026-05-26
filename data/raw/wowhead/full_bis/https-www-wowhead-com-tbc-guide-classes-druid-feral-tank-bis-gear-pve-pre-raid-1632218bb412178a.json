@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:36+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -28,6 +29,16 @@
           "item_id": 29502,
           "item_name": "Cobrascale Hood",
           "item_url": "https://www.wowhead.com/tbc/item=29502/cobrascale-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best - Mititgation",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -344,6 +355,16 @@
           "item_id": 24258,
           "item_name": "Resolute Cape",
           "item_url": "https://www.wowhead.com/tbc/item=24258/resolute-cape",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Tailoring"
@@ -509,6 +530,16 @@
           "item_id": 25689,
           "item_name": "Heavy Clefthoof Vest",
           "item_url": "https://www.wowhead.com/tbc/item=25689/heavy-clefthoof-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best - Mitigation",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -564,6 +595,17 @@
           "item_id": 29525,
           "item_name": "Primalstrike Vest",
           "item_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking"
@@ -871,6 +913,16 @@
           "item_id": 29503,
           "item_name": "Cobrascale Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=29503/cobrascale-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -903,6 +955,16 @@
           "item_id": 27531,
           "item_name": "Wastewalker Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=27531/wastewalker-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1108,6 +1170,16 @@
           "item_id": 25690,
           "item_name": "Heavy Clefthoof Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=25690/heavy-clefthoof-leggings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best - Mitigation",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1343,6 +1415,16 @@
           "item_id": 25691,
           "item_name": "Heavy Clefthoof Boots",
           "item_url": "https://www.wowhead.com/tbc/item=25691/heavy-clefthoof-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best - Mitigation",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -2100,6 +2182,16 @@
           "item_id": 23836,
           "item_name": "Goblin Rocket Launcher",
           "item_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Survivability Option",
           "source_links": [],
           "source_text": "Profession: Engineering"
@@ -2289,6 +2381,18 @@
           "item_id": 29171,
           "item_name": "Earthwarden",
           "item_url": "https://www.wowhead.com/tbc/item=29171/earthwarden",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear Requires Exalted with Cenarion Expedition",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {

@@ -1,6 +1,8 @@
 {
+  "description": "Veiled Nightseye is an Orange gem that can be crafted by Jewelcrafters with a skill of 350. The pattern for this item, Design: Veiled Nightseye, is a rare world drop.",
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "name": "Veiled Noble Topaz",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,44 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          350,
+          365,
+          380
+        ],
+        "creates": [
+          31867,
+          1,
+          1
+        ],
+        "id": 39470,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Veiled Noble Topaz",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            23439,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

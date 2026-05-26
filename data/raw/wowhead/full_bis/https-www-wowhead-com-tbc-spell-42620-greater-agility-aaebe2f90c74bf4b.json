@@ -1,6 +1,8 @@
 {
+  "description": "Permanently enchant a weapon to increase Agility by 20. Requires a level 35 or higher item. In the Profession Spells category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:51:10+00:00",
   "name": "Enchant Weapon - Greater Agility",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,50 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          367,
+          375
+        ],
+        "id": 42620,
+        "learnedat": 350,
+        "level": 35,
+        "name": "Enchant Weapon - Greater Agility",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22445,
+            8
+          ],
+          [
+            22446,
+            4
+          ],
+          [
+            22449,
+            6
+          ],
+          [
+            22451,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [
@@ -40,7 +83,10 @@
         ],
         "subclass": 8
       }
-    ]
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 42620,
   "url": "https://www.wowhead.com/tbc/spell=42620/greater-agility"

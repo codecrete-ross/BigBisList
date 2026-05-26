@@ -5,6 +5,26 @@
   "fetched_at": "2026-05-24T05:11:58+00:00",
   "item_id": 24181,
   "name": "Design: Living Ruby Serpent",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Living Ruby Serpent Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Keepers of Time - Revered Use: Teaches you how to craft a Living Ruby Serpent. Sell Price: 3 Figurine - Living Ruby Serpent Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50 Requires Felsteel Bar (2), Living Ruby (2), Primal Fire (4) This jewelcrafting design is used for the Jewelcrafting profession. It is sold by Alurmi. In the Jewelcrafting Designs category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 370,
+      "source_url": "https://www.wowhead.com/tbc/item=24181/design-living-ruby-serpent",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Living Ruby Serpent Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Keepers of Time - Revered Use: Teaches you how to craft a Living Ruby Serpent. Sell Price: 3 Figurine - Living Ruby Serpent Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50 Requires Felsteel Bar (2), Living Ruby (2), Primal Fire (4) This jewelcrafting design is used for the Jewelcrafting profession. It is sold by Alurmi. In the Jewelcrafting Designs category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24181/design-living-ruby-serpent",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,11 +37,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -47,7 +71,13 @@
         "tag": "Keepers of Time Quartermaster",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    31081,
+    31040
+  ],
   "url": "https://www.wowhead.com/tbc/item=24181/design-living-ruby-serpent"
 }

@@ -5,15 +5,114 @@
   "fetched_at": "2026-05-24T05:11:52+00:00",
   "item_id": 24088,
   "name": "Delicate Eternium Ring",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31060,
+      "entity_name": "Delicate Eternium Ring",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24088/delicate-eternium-ring",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24088/delicate-eternium-ring",
+      "spell_id": 31060,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          355,
+          365,
+          375,
+          385
+        ],
+        "creates": [
+          24088,
+          1,
+          1
+        ],
+        "id": 31060,
+        "learnedat": 355,
+        "level": 0,
+        "name": "Delicate Eternium Ring",
+        "nskillup": 1,
+        "popularity": 11,
+        "quality": 3,
+        "reagents": [
+          [
+            23447,
+            1
+          ],
+          [
+            31079,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24164,
+        "level": 71,
+        "name": "Design: Delicate Eternium Ring",
+        "popularity": 5,
+        "quality": 3,
+        "skill": 355,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24164,
+      "level": 71,
+      "name": "Design: Delicate Eternium Ring",
+      "popularity": 5,
+      "quality": 3,
+      "skill": 355,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24088/delicate-eternium-ring"
 }

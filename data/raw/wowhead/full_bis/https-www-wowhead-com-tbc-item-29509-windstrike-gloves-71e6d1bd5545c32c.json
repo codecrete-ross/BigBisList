@@ -5,15 +5,174 @@
   "fetched_at": "2026-05-24T05:10:45+00:00",
   "item_id": 29509,
   "name": "Windstrike Gloves",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35568,
+      "entity_name": "Windstrike Gloves",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29509/windstrike-gloves",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29509/windstrike-gloves",
+      "spell_id": 35568,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          29509,
+          1,
+          1
+        ],
+        "id": 35568,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Windstrike Gloves",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            29547,
+            14
+          ],
+          [
+            22451,
+            14
+          ],
+          [
+            21884,
+            10
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 29731,
+        "level": 73,
+        "name": "Pattern: Windstrike Gloves",
+        "popularity": 8,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35300,
+        "level": 73,
+        "name": "Pattern: Windstrike Gloves",
+        "popularity": 5,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Kael'thas Sunstrider",
+            "t": 1,
+            "ti": 24664,
+            "z": 4131
+          }
+        ],
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 29731,
+      "level": 73,
+      "name": "Pattern: Windstrike Gloves",
+      "popularity": 8,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 1
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35300,
+      "level": 73,
+      "name": "Pattern: Windstrike Gloves",
+      "popularity": 5,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Kael'thas Sunstrider",
+          "t": 1,
+          "ti": 24664,
+          "z": 4131
+        }
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29509/windstrike-gloves"
 }

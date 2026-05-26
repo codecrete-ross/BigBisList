@@ -5,15 +5,158 @@
   "fetched_at": "2026-05-24T04:41:32+00:00",
   "item_id": 34358,
   "name": "Hard Khorium Choker",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Hard Khorium Choker Phase 5 Item Level 159 Binds when picked up Neck +42 Stamina Yellow Socket Socket Bonus: +4 Attack Power Requires Level 70 Requires Jewelcrafting (350) Equip: Improves haste rating by 29. Equip: Increases attack power by 58. Equip: Your attacks ignore 150 of your opponent's armor. Sell Price: 8 83 55 This epic amulet of item level 159 goes in the \"Neck\" slot. It is crafted. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46127,
+      "entity_name": "Hard Khorium Choker",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+      "spell_id": 46127,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          392,
+          410
+        ],
+        "creates": [
+          34358,
+          1,
+          1
+        ],
+        "id": 46127,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Hard Khorium Choker",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 4,
+        "reagents": [
+          [
+            35128,
+            6
+          ],
+          [
+            23572,
+            9
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35203,
+        "level": 70,
+        "name": "Design: Hard Khorium Choker",
+        "popularity": 3,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 4075
+          }
+        ],
+        "subclass": 10
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35535,
+        "level": 70,
+        "name": "Design: Hard Khorium Choker",
+        "popularity": 8,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "subclass": 10
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35203,
+      "level": 70,
+      "name": "Design: Hard Khorium Choker",
+      "popularity": 3,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 4075
+        }
+      ],
+      "subclass": 10
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35535,
+      "level": 70,
+      "name": "Design: Hard Khorium Choker",
+      "popularity": 8,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker"
 }

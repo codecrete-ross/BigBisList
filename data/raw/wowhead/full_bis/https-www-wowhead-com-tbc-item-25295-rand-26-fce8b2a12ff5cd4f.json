@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:17:45+00:00",
   "item_id": 25295,
   "name": "Flawless Wand",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -2145,13 +2146,189 @@
       "source_url": "https://www.wowhead.com/tbc/item=25295&&rand=-26",
       "type": "drop",
       "zone": "Sunwell Plateau"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 2.38,
+      "entity_id": 186744,
+      "entity_name": "Amani Treasure Box",
+      "out_of": 42,
+      "source_url": "https://www.wowhead.com/tbc/item=25295&&rand=-26",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 3.28,
+      "entity_id": 184940,
+      "entity_name": "Bound Adamantite Chest",
+      "out_of": 61,
+      "source_url": "https://www.wowhead.com/tbc/item=25295&&rand=-26",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 1.44,
+      "entity_id": 184941,
+      "entity_name": "Solid Adamantite Chest",
+      "out_of": 762,
+      "source_url": "https://www.wowhead.com/tbc/item=25295&&rand=-26",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 2.2,
+      "entity_id": 32064,
+      "entity_name": "Contained in: Protectorate Treasure Cache",
+      "item_id": 32064,
+      "out_of": 409,
+      "source_url": "https://www.wowhead.com/tbc/item=25295&&rand=-26",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "count": 9,
+        "flags2": 24580,
+        "id": 32064,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 9,
+                "outof": 409
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Protectorate Treasure Cache",
+        "outof": 409,
+        "pctstack": "",
+        "quality": 2,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 3522,
+            "c2": 8,
+            "n": "Stasis Chambers of Bash'ir",
+            "t": 5,
+            "ti": 10974
+          }
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 186744,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 42
+              }
+            },
+            "4": {
+              "0": {
+                "count": 17,
+                "outof": 1841
+              }
+            },
+            "5": {
+              "0": {
+                "count": 7,
+                "outof": 760
+              }
+            }
+          }
+        },
+        "location": [
+          3805
+        ],
+        "name": "Amani Treasure Box",
+        "outof": 42,
+        "pctstack": "",
+        "type": 3
+      },
+      {
+        "count": 2,
+        "id": 184940,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 61
+              }
+            }
+          }
+        },
+        "location": [
+          3789,
+          3847,
+          3714,
+          -1
+        ],
+        "name": "Bound Adamantite Chest",
+        "outof": 61,
+        "pctstack": "",
+        "skill": 350,
+        "type": -5
+      },
+      {
+        "count": 11,
+        "id": 184941,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 455,
+                "outof": 24042
+              }
+            },
+            "4": {
+              "0": {
+                "count": 23,
+                "outof": 1467
+              }
+            },
+            "5": {
+              "0": {
+                "count": 11,
+                "outof": 762
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3562,
+          3792,
+          -1
+        ],
+        "name": "Solid Adamantite Chest",
+        "outof": 762,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 1,
@@ -10629,8 +10806,12 @@
         "type": 3
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=25295&&rand=-26"
 }

@@ -5,15 +5,68 @@
   "fetched_at": "2026-05-24T05:29:37+00:00",
   "item_id": 33483,
   "name": "Life-step Belt",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 16.13,
+      "entity_id": 187021,
+      "entity_name": "Harkor's Satchel",
+      "out_of": 62,
+      "source_url": "https://www.wowhead.com/tbc/item=33483/life-step-belt",
+      "type": "drop"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 10,
+        "id": 187021,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 10,
+                "outof": 62
+              }
+            },
+            "4": {
+              "0": {
+                "count": 155,
+                "outof": 1198
+              }
+            },
+            "5": {
+              "0": {
+                "count": 75,
+                "outof": 593
+              }
+            }
+          }
+        },
+        "location": [
+          3805
+        ],
+        "name": "Harkor's Satchel",
+        "outof": 62,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=33483/life-step-belt"
 }

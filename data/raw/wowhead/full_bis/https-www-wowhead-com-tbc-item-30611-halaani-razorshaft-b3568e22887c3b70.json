@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T04:49:23+00:00",
   "item_id": 30611,
   "name": "Halaani Razorshaft",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -26,11 +27,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -81,7 +86,10 @@
         "tag": "Ammunition",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=30611/halaani-razorshaft"
 }

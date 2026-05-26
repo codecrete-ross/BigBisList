@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 23618,
   "name": "Plans: Adamantite Sharpening Stone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Adamantite Sharpening Stone Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make an Adamantite Sharpening Stone. Sell Price: 1 50 Adamantite Sharpening Stone Item Level 70 Requires Level 60 Use: Increase sharp weapon damage by 12 and add 14 melee critical strike rating for 1 hour. Max Stack: 20 Sell Price: 10 Requires Adamantite Bar , Mote of Earth (2) This blacksmithing plans is used for the Blacksmithing profession. It is sold by Fedryen Swiftspear. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23618",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

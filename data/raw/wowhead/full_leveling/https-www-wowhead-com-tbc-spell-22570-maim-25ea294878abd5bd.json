@@ -1,11 +1,14 @@
 {
+  "description": "Finishing move that causes damage and incapacitates the target. Any directly damaging attack will revive the target. Causes more damage and lasts longer per combo point: 1 point : (84 + 45 + mainhandWeaponMinDamage)-(84 + 45 + mainhandWeaponMaxDamage) damage, 2 sec 2 points: (84 * 2 + 45 + mainhandWeaponMinDamage)-(84 * 2 + 45 + mainhandWeaponMaxDamage) damage, 3 sec 3 points: (84 * 3 + 45 + mainhandWeaponMinDamage)-(84 * 3 + 45 + mainhandWeaponMaxDamage) damage, 4 sec 4 points: (84 * 4 + 45 + mainhandWeaponMinDamage)-(84 * 4 + 45 + mainhandWeaponMaxDamage) damage, 5 sec 5 points: (84 * 5 + 45 + mainhandWeaponMinDamage)-(84 * 5 + 45 + mainhandWeaponMaxDamage) damage, 6 sec",
   "fetched_at": "2026-05-24T08:59:47+00:00",
   "name": "Maim",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

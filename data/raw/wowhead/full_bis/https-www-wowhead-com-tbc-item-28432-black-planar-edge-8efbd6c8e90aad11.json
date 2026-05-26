@@ -5,15 +5,95 @@
   "fetched_at": "2026-05-24T05:22:37+00:00",
   "item_id": 28432,
   "name": "Black Planar Edge",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Black Planar Edge Phase 1 Item Level 123 Binds when picked up Main Hand Axe 172 - 320 Damage Speed 2.70 (91.11 damage per second) Durability 105 / 105 Requires Level 70 Requires Master Axesmith Equip: Improves critical strike rating by 21. Equip: Increases attack power by 44. Sell Price: 12 44 67 This epic one-handed axe has an item level of 123. It is crafted. In the One-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge",
+      "specialization": "Master Axesmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 34542,
+      "entity_name": "Black Planar Edge",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge",
+      "spell_id": 34542,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28432,
+          1,
+          1
+        ],
+        "id": 34542,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Black Planar Edge",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            28431,
+            1
+          ],
+          [
+            23572,
+            8
+          ],
+          [
+            23448,
+            6
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17041,
+        "trainingcost": 250000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge"
 }

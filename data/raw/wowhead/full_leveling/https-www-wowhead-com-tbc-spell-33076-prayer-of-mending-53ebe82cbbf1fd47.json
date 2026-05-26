@@ -1,11 +1,14 @@
 {
+  "description": "Places a spell on the target that heals them for 800 the next time they take damage. When the heal occurs, Prayer of Mending jumps to a raid member within 20 yards. Jumps up to 5 times and lasts 30 sec after each jump. This spell can only be placed on one target at a time.",
   "fetched_at": "2026-05-24T09:12:02+00:00",
   "name": "Prayer of Mending",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

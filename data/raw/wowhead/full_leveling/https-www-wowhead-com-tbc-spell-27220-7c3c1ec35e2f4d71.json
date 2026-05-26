@@ -1,11 +1,14 @@
 {
+  "description": "Transfers 108 health every 1 sec from the target to the caster. Lasts 5 sec. In the Affliction Abilities category. Requires Warlock. A spell.",
   "fetched_at": "2026-05-24T09:18:05+00:00",
   "name": "Drain Life",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -5,15 +5,145 @@
   "fetched_at": "2026-05-24T05:39:55+00:00",
   "item_id": 21873,
   "name": "Primal Mooncloth Belt",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Primal Mooncloth Belt Phase 1 Item Level 115 Binds when picked up Waist Cloth 109 Armor +12 Intellect +11 Spirit Yellow Socket Blue Socket Socket Bonus: +3 Intellect Durability 35 / 35 Requires Level 70 Requires Mooncloth Tailoring Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects. Equip: Restores 8 mana per 5 sec. Primal Mooncloth (0/3) Primal Mooncloth Robe Primal Mooncloth Shoulders Primal Mooncloth Belt (3) Set : Allow 5% of your Mana regeneration to continue while casting. Sell Price: 2 40 89 Primal Mooncloth Belt is a Cloth belt crafted by Tailors who specialize in Mooncloth tailoring. Crafting the belt requires 4 Primal Mooncloth, 8 Primal Life and 2 Netherweb Spider Silk.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21873&&gems=24029:24029:",
+      "specialization": "Mooncloth Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26760,
+      "entity_name": "Primal Mooncloth Belt",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21873&&gems=24029:24029:",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21873&&gems=24029:24029:",
+      "spell_id": 26760,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          355,
+          365,
+          370,
+          375
+        ],
+        "creates": [
+          21873,
+          1,
+          1
+        ],
+        "id": 26760,
+        "learnedat": 355,
+        "level": 0,
+        "name": "Primal Mooncloth Belt",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            21845,
+            4
+          ],
+          [
+            21881,
+            2
+          ],
+          [
+            21886,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ],
+        "specialization": 26798
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21916,
+        "level": 71,
+        "name": "Pattern: Primal Mooncloth Belt",
+        "popularity": 6,
+        "quality": 1,
+        "skill": 355,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Nasmara Moonsong",
+            "t": 1,
+            "ti": 22208,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21916,
+      "level": 71,
+      "name": "Pattern: Primal Mooncloth Belt",
+      "popularity": 6,
+      "quality": 1,
+      "skill": 355,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Nasmara Moonsong",
+          "t": 1,
+          "ti": 22208,
+          "z": 3703
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=21873&&gems=24029:24029:"
 }

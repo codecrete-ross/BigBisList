@@ -5,21 +5,34 @@
   "fetched_at": "2026-05-24T08:32:55+00:00",
   "item_id": 24030,
   "name": "Runed Living Ruby",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 31088,
       "entity_name": "Runed Living Ruby",
       "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24030/brilliant-living-ruby",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=24030/brilliant-living-ruby",
       "spell_id": 31088,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [
       {
@@ -58,6 +71,7 @@
       }
     ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

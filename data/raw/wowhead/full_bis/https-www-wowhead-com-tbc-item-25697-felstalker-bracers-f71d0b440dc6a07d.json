@@ -5,15 +5,198 @@
   "fetched_at": "2026-05-24T04:46:51+00:00",
   "item_id": 25697,
   "name": "Felstalker Bracers",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Felstalker Bracers Phase 1 Item Level 114 Binds when equipped Wrist Mail 283 Armor +18 Agility +11 Intellect Blue Socket Socket Bonus: +3 Stamina Durability 40 / 40 Requires Level 70 Equip: Increases attack power by 38. Felstalker Armor (0/3) Requires Leatherworking (350) Felstalker Belt Felstalker Bracers Felstalker Breastplate (3) Set : Increases your hit rating by 20. Sell Price: 2 51 55 This blue mail armor of item level 114 goes in the \"Wrist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32499,
+      "entity_name": "Felstalker Bracer",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers",
+      "spell_id": 32499,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          25697,
+          1,
+          1
+        ],
+        "id": 32499,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Felstalker Bracer",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 3,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            25707,
+            6
+          ],
+          [
+            25699,
+            6
+          ],
+          [
+            22451,
+            4
+          ],
+          [
+            14341,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 25739,
+        "level": 72,
+        "name": "Pattern: Felstalker Bracers",
+        "popularity": 5,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Urgronn",
+            "t": 1,
+            "ti": 17585,
+            "z": 3483
+          }
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 29214,
+        "level": 72,
+        "name": "Pattern: Felstalker Bracers",
+        "popularity": 4,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Logistics Officer Ulrike",
+            "t": 1,
+            "ti": 17657,
+            "z": 3483
+          }
+        ],
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 25739,
+      "level": 72,
+      "name": "Pattern: Felstalker Bracers",
+      "popularity": 5,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Quartermaster Urgronn",
+          "t": 1,
+          "ti": 17585,
+          "z": 3483
+        }
+      ],
+      "subclass": 1
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 29214,
+      "level": 72,
+      "name": "Pattern: Felstalker Bracers",
+      "popularity": 4,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Logistics Officer Ulrike",
+          "t": 1,
+          "ti": 17657,
+          "z": 3483
+        }
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers"
 }

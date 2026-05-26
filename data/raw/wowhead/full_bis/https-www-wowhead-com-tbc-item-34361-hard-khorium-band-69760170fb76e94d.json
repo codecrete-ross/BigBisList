@@ -5,15 +5,156 @@
   "fetched_at": "2026-05-24T04:41:34+00:00",
   "item_id": 34361,
   "name": "Hard Khorium Band",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46124,
+      "entity_name": "Hard Khorium Band",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+      "spell_id": 46124,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          392,
+          410
+        ],
+        "creates": [
+          34361,
+          1,
+          1
+        ],
+        "id": 46124,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Hard Khorium Band",
+        "nskillup": 1,
+        "popularity": 10,
+        "quality": 4,
+        "reagents": [
+          [
+            35128,
+            4
+          ],
+          [
+            22451,
+            20
+          ],
+          [
+            31079,
+            12
+          ],
+          [
+            34664,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35200,
+        "level": 70,
+        "name": "Design: Hard Khorium Band",
+        "popularity": 10,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 4075
+          }
+        ],
+        "subclass": 10
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35534,
+        "level": 70,
+        "name": "Design: Hard Khorium Band",
+        "popularity": 7,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "subclass": 10
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35200,
+      "level": 70,
+      "name": "Design: Hard Khorium Band",
+      "popularity": 10,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 4075
+        }
+      ],
+      "subclass": 10
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35534,
+      "level": 70,
+      "name": "Design: Hard Khorium Band",
+      "popularity": 7,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band"
 }

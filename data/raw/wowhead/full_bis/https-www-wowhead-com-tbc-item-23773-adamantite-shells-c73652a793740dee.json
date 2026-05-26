@@ -5,15 +5,47 @@
   "fetched_at": "2026-05-24T04:46:45+00:00",
   "item_id": 23773,
   "name": "Adamantite Shells",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 45171,
+      "entity_name": "Create Adamantite Shells",
+      "source_url": "https://www.wowhead.com/tbc/item=23773/adamantite-shells",
+      "spell_id": 45171,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": -26,
+        "creates": [
+          23773,
+          200,
+          200
+        ],
+        "id": 45171,
+        "level": 0,
+        "name": "Create Adamantite Shells",
+        "popularity": 6,
+        "quality": 3,
+        "schools": 1
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=23773/adamantite-shells"
 }

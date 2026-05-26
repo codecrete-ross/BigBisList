@@ -2,6 +2,17 @@
   "description": "Permanently enchant gloves to grant +15 Strength. Requires a level 35 or higher item. In the Profession Spells category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T09:42:33+00:00",
   "name": "Enchant Gloves - Major Strength",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Enchanting",
+      "raw_text": "Enchanting",
+      "scope": "learn_recipe",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/spell=33995/major-strength",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell_recipe",
@@ -9,12 +20,23 @@
       "entity_name": "Enchanting Trainer",
       "profession": "Enchanting",
       "required_skill": 340,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "learn_recipe",
+          "skill": 340,
+          "source_url": "https://www.wowhead.com/tbc/spell=33995/major-strength",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/spell=33995/major-strength",
       "type": "trainer"
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
     "recipes": [

@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:45+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -88,6 +89,16 @@
           "item_id": 23519,
           "item_name": "Felsteel Helm",
           "item_url": "https://www.wowhead.com/tbc/item=23519/felsteel-helm",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Alternative",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -323,6 +334,18 @@
           "item_id": 35411,
           "item_name": "Savage Plate Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=35411/savage-plate-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Honored with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -517,6 +540,16 @@
           "item_id": 24253,
           "item_name": "Cloak of Eternity",
           "item_url": "https://www.wowhead.com/tbc/item=24253/cloak-of-eternity",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Optional",
           "source_links": [],
           "source_text": "Profession: Tailoring"
@@ -722,6 +755,18 @@
           "item_id": 35407,
           "item_name": "Savage Plate Chestpiece",
           "item_url": "https://www.wowhead.com/tbc/item=35407/savage-plate-chestpiece",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador - Requires Honored with The Sha'tar",
+              "reputation": "The Sha'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1060,6 +1105,16 @@
           "item_id": 23517,
           "item_name": "Felsteel Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=23517/felsteel-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -1085,6 +1140,28 @@
           "item_id": 29134,
           "item_name": "Gauntlets of the Chosen",
           "item_url": "https://www.wowhead.com/tbc/item=29134/gauntlets-of-the-chosen",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril - Requires Revered with The Scryers",
+              "reputation": "The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril - Requires Revered with The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Easy to Obtain",
           "source_links": [
             {
@@ -1397,6 +1474,18 @@
           "item_id": 29184,
           "item_name": "Timewarden's Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=29184/timewardens-leggings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Requires Revered with Keepers of Time",
+              "reputation": "Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1427,6 +1516,16 @@
           "item_id": 23518,
           "item_name": "Felsteel Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=23518/felsteel-leggings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -1942,6 +2041,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Threat",
           "source_links": [
             {
@@ -2150,6 +2261,15 @@
           "item_id": 23836,
           "item_name": "Goblin Rocket Launcher",
           "item_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Goblin Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [],
           "source_text": "Profession: Goblin Engineering"
@@ -2175,6 +2295,15 @@
           "item_id": 23835,
           "item_name": "Gnomish Poultryizer",
           "item_url": "https://www.wowhead.com/tbc/item=23835/gnomish-poultryizer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Gnomish Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [],
           "source_text": "Profession: Gnomish Engineering"
@@ -2297,6 +2426,18 @@
           "item_id": 29181,
           "item_name": "Timelapse Shard",
           "item_url": "https://www.wowhead.com/tbc/item=29181/timelapse-shard",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Requires Exalted with Keepers of Time",
+              "reputation": "Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Mitigation Alternative",
           "source_links": [
             {
@@ -2498,6 +2639,17 @@
           "item_id": 28438,
           "item_name": "Dragonmaw",
           "item_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best Overall",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"
@@ -2650,6 +2802,18 @@
           "item_id": 29156,
           "item_name": "Honor's Call",
           "item_url": "https://www.wowhead.com/tbc/item=29156/honors-call",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike - Requires Exalted with Honor Hold",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Fast Alternative",
           "source_links": [
             {
@@ -2680,6 +2844,18 @@
           "item_id": 29165,
           "item_name": "Warbringer",
           "item_url": "https://www.wowhead.com/tbc/item=29165/warbringer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn - Requires Exalted with Thrallmar",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Fast Alternative",
           "source_links": [
             {
@@ -2807,6 +2983,18 @@
           "item_id": 29176,
           "item_name": "Crest of the Sha'tar",
           "item_url": "https://www.wowhead.com/tbc/item=29176/crest-of-the-shatar",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador - Requires Exalted with The Sha'tar",
+              "reputation": "The Sha'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -3136,6 +3324,18 @@
           "item_id": 29115,
           "item_name": "Consortium Blaster",
           "item_url": "https://www.wowhead.com/tbc/item=29115/consortium-blaster",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Karaaz - Requires Revered with The Consortium",
+              "reputation": "The Consortium",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [
             {

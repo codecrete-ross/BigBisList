@@ -5,15 +5,99 @@
   "fetched_at": "2026-05-24T04:48:32+00:00",
   "item_id": 29517,
   "name": "Ebon Netherscale Bracers",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Ebon Netherscale Bracers Phase 1 Item Level 105 Binds when picked up Wrist Mail 325 Armor +25 Stamina +8 Intellect Yellow Socket Socket Bonus: +2 Agility Durability 50 / 50 Requires Level 70 Requires Dragonscale Leatherworking Equip: Improves critical strike rating by 17. Equip: Increases attack power by 38. Equip: Restores 5 mana per 5 sec. Netherscale Armor (0/3) Ebon Netherscale Belt Ebon Netherscale Bracers Ebon Netherscale Breastplate (3) Set : Increases your hit rating by 20. Sell Price: 3 17 58 This epic mail armor of item level 105 goes in the \"Wrist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers",
+      "specialization": "Dragonscale Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35577,
+      "entity_name": "Ebon Netherscale Bracers",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers",
+      "spell_id": 35577,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29517,
+          1,
+          1
+        ],
+        "id": 35577,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Ebon Netherscale Bracers",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            29548,
+            18
+          ],
+          [
+            21884,
+            8
+          ],
+          [
+            22456,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10656,
+        "trainingcost": 100000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers"
 }

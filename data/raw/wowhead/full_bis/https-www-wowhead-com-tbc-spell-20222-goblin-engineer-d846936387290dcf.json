@@ -1,14 +1,20 @@
 {
+  "description": "Allows an engineer to make lethal goblin devices. In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch.",
   "fetched_at": "2026-05-24T05:38:20+00:00",
   "name": "Goblin Engineer",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
-    "taught-by-item": []
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 20222,
   "url": "https://www.wowhead.com/tbc/spell=20222/goblin-engineer"

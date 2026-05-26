@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:45:22+00:00",
   "item_id": 24212,
   "name": "Design: Royal Nightseye",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Royal Nightseye Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Royal Nightseye. Sell Price: 3 Royal Nightseye Item Level 70 +9 Healing +3 Spell Damage and +2 Mana every 5 seconds \"Matches a Red or Blue Socket.\" Sell Price: 3 Requires Nightseye This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Spectral Stable Hand. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24212",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,7 +26,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

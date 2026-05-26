@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:30:51+00:00",
   "item_id": 35733,
   "name": "Ring of Harmonic Beauty",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,10 +16,13 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 1,
@@ -903,8 +907,12 @@
         "type": 1
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=35733/ring-of-harmonic-beauty"
 }

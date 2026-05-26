@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:22:59+00:00",
   "item_id": 22907,
   "name": "Recipe: Super Mana Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Super Mana Potion Item Level 68 Binds when picked up Requires Alchemy (340) Use: Teaches you how to make a Super Mana Potion. Sell Price: 1 25 Super Mana Potion Item Level 68 Requires Level 55 Use: Restores 1800 to 3000 mana. (2 Min Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreaming Glory (2), Felweed , Imbued Vial This alchemy recipe is used for the Alchemy profession. It is sold by NPCs. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/item=22907",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -25,7 +36,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

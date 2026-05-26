@@ -5,15 +5,132 @@
   "fetched_at": "2026-05-24T04:54:10+00:00",
   "item_id": 25687,
   "name": "Fel Leather Leggings",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Fel Leather Leggings Phase 1 Item Level 112 Binds when equipped Legs Leather 249 Armor Red Socket Yellow Socket Yellow Socket Socket Bonus: +8 Attack Power Durability 75 / 75 Requires Level 69 Equip: Improves hit rating by 25. Equip: Improves critical strike rating by 25. Equip: Increases attack power by 52. Fel Skin (0/3) Requires Leatherworking (350) Fel Leather Gloves Fel Leather Boots Fel Leather Leggings (3) Set : Increases your dodge rating by 20. Sell Price: 4 39 76 Fel Leather Leggings is a Leather legs crafted by Leatherworkers with a skill of 350. This blue leather armor of item level 112 goes in the \"Legs\" slot.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25687/fel-leather-leggings",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32494,
+      "entity_name": "Fel Leather Leggings",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=25687/fel-leather-leggings",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=25687/fel-leather-leggings",
+      "spell_id": 32494,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          370,
+          380
+        ],
+        "creates": [
+          25687,
+          1,
+          1
+        ],
+        "id": 32494,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Fel Leather Leggings",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            23793,
+            10
+          ],
+          [
+            25707,
+            10
+          ],
+          [
+            22456,
+            10
+          ],
+          [
+            14341,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 25734,
+        "level": 70,
+        "name": "Pattern: Fel Leather Leggings",
+        "popularity": 5,
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 25734,
+      "level": 70,
+      "name": "Pattern: Fel Leather Leggings",
+      "popularity": 5,
+      "quality": 3,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=25687/fel-leather-leggings"
 }

@@ -1,11 +1,85 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:33+00:00",
   "name": "Adept's Elixir",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Alchemy",
+      "raw_text": "Alchemy",
+      "scope": "learn_recipe",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/spell=33740",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Alchemy Trainer",
+      "profession": "Alchemy",
+      "required_skill": 300,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "learn_recipe",
+          "skill": 300,
+          "source_url": "https://www.wowhead.com/tbc/spell=33740",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=33740",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          315,
+          322,
+          330
+        ],
+        "creates": [
+          28103,
+          1,
+          1
+        ],
+        "id": 33740,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Adept's Elixir",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            13463,
+            1
+          ],
+          [
+            22785,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "trainingcost": 20000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

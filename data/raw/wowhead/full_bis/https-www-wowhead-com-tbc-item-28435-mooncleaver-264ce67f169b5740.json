@@ -5,15 +5,95 @@
   "fetched_at": "2026-05-24T04:47:30+00:00",
   "item_id": 28435,
   "name": "Mooncleaver",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Mooncleaver Phase 1 Item Level 123 Binds when picked up Unique Two-Hand Axe 351 - 527 Damage Speed 3.70 (118.65 damage per second) Durability 120 / 120 Requires Level 70 Requires Master Axesmith Equip: Improves critical strike rating by 52. Equip: Increases attack power by 106. Sell Price: 16 14 30 This epic two-handed axe has an item level of 123. It is crafted. In the Two-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28435/mooncleaver",
+      "specialization": "Master Axesmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 34544,
+      "entity_name": "Mooncleaver",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28435/mooncleaver",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28435/mooncleaver",
+      "spell_id": 34544,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28435,
+          1,
+          1
+        ],
+        "id": 34544,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Mooncleaver",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 4,
+        "reagents": [
+          [
+            28434,
+            1
+          ],
+          [
+            23572,
+            8
+          ],
+          [
+            22457,
+            10
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17041,
+        "trainingcost": 250000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28435/mooncleaver"
 }

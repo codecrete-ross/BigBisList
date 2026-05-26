@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:42+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -225,6 +226,28 @@
           "item_id": 29148,
           "item_name": "Blackened Leather Spaulders",
           "item_url": "https://www.wowhead.com/tbc/item=29148/blackened-leather-spaulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Trader Narasu - Requires Revered with The Kurenai Vendor: Provisioner Nasela - Requires Revered with The Mag'har",
+              "reputation": "The Kurenai",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Trader Narasu - Requires Revered with The Kurenai Vendor: Provisioner Nasela - Requires Revered with The Mag'har",
+              "reputation": "The Mag'har",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -296,6 +319,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -321,6 +354,16 @@
           "item_id": 33122,
           "item_name": "Cloak of Darkness",
           "item_url": "https://www.wowhead.com/tbc/item=33122/cloak-of-darkness",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -480,6 +523,17 @@
           "item_id": 29525,
           "item_name": "Primalstrike Vest",
           "item_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -505,6 +559,17 @@
           "item_id": 29515,
           "item_name": "Ebon Netherscale Breastplate",
           "item_url": "https://www.wowhead.com/tbc/item=29515/ebon-netherscale-breastplate",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Dragonscale Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Dragonscale Leatherworking (BoP)"
@@ -571,6 +636,17 @@
           "item_id": 29527,
           "item_name": "Primalstrike Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -596,6 +672,17 @@
           "item_id": 29517,
           "item_name": "Ebon Netherscale Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Dragonscale Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Dragonscale Leatherworking (BoP)"
@@ -621,6 +708,16 @@
           "item_id": 25697,
           "item_name": "Felstalker Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -750,6 +847,16 @@
           "item_id": 25685,
           "item_name": "Fel Leather Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=25685/fel-leather-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -876,6 +983,16 @@
           "item_id": 29503,
           "item_name": "Cobrascale Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=29503/cobrascale-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -938,6 +1055,17 @@
           "item_id": 29526,
           "item_name": "Primalstrike Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -963,6 +1091,17 @@
           "item_id": 29516,
           "item_name": "Ebon Netherscale Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29516/ebon-netherscale-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Dragonscale Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Dragonscale Leatherworking (BoP)"
@@ -1126,6 +1265,16 @@
           "item_id": 25687,
           "item_name": "Fel Leather Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=25687/fel-leather-leggings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1218,6 +1367,16 @@
           "item_id": 25686,
           "item_name": "Fel Leather Boots",
           "item_url": "https://www.wowhead.com/tbc/item=25686/fel-leather-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1432,6 +1591,18 @@
           "item_id": 29119,
           "item_name": "Haramad's Bargain",
           "item_url": "https://www.wowhead.com/tbc/item=29119/haramads-bargain",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium",
+              "reputation": "The Consortium",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -1566,6 +1737,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -2109,6 +2292,17 @@
           "item_id": 28438,
           "item_name": "Dragonmaw",
           "item_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-pre-raid",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Crafted Best MH - 2.7",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"

@@ -1,14 +1,100 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:11:24+00:00",
   "name": "Ebon Netherscale Belt",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Leatherworking",
+      "raw_text": "Leatherworking",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/spell=35576/ebon-netherscale-belt",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Leatherworking Trainer",
+      "profession": "Leatherworking",
+      "required_skill": 375,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "learn_recipe",
+          "skill": 375,
+          "source_url": "https://www.wowhead.com/tbc/spell=35576/ebon-netherscale-belt",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=35576/ebon-netherscale-belt",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29516,
+          1,
+          1
+        ],
+        "id": 35576,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Ebon Netherscale Belt",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            29548,
+            24
+          ],
+          [
+            21884,
+            12
+          ],
+          [
+            22456,
+            12
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10656,
+        "trainingcost": 100000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
-    "taught-by-item": []
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 35576,
   "url": "https://www.wowhead.com/tbc/spell=35576/ebon-netherscale-belt"

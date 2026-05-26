@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 5642,
   "name": "Recipe: Free Action Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Free Action Potion Item Level 30 Requires Alchemy (150) Use: Teaches you how to make a Free Action Potion. Sell Price: 4 50 Free Action Potion Item Level 30 Requires Level 20 Use: Makes you immune to Stun and Movement Impairing effects for the next 30 sec. Does not remove effects already on the imbiber. (2 Min Cooldown) Max Stack: 5 Sell Price: 75 Requires Blackmouth Oil (2), Stranglekelp , Leaded Vial This alchemy recipe is used for the Alchemy profession. It is sold by NPCs. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 150,
+      "source_url": "https://www.wowhead.com/tbc/item=5642",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -40,7 +51,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

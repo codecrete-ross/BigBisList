@@ -5,15 +5,93 @@
   "fetched_at": "2026-05-24T04:54:06+00:00",
   "item_id": 8345,
   "name": "Wolfshead Helm",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10621,
+      "entity_name": "Wolfshead Helm",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=8345/wolfshead-helm",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=8345/wolfshead-helm",
+      "spell_id": 10621,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          225,
+          245,
+          255,
+          265
+        ],
+        "creates": [
+          8345,
+          1,
+          1
+        ],
+        "id": 10621,
+        "learnedat": 225,
+        "level": 0,
+        "name": "Wolfshead Helm",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 3,
+        "reagents": [
+          [
+            4304,
+            18
+          ],
+          [
+            8368,
+            2
+          ],
+          [
+            8146,
+            8
+          ],
+          [
+            8343,
+            4
+          ],
+          [
+            8172,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10660,
+        "trainingcost": 10000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=8345/wolfshead-helm"
 }

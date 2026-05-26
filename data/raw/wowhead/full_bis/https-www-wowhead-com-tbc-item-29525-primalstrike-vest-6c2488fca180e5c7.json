@@ -5,15 +5,95 @@
   "fetched_at": "2026-05-24T04:48:34+00:00",
   "item_id": 29525,
   "name": "Primalstrike Vest",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Primalstrike Vest Phase 1 Item Level 120 Binds when picked up Chest Leather 379 Armor +38 Agility +39 Stamina Durability 120 / 120 Requires Level 70 Requires Elemental Leatherworking Equip: Improves hit rating by 12. Equip: Increases attack power by 108. Primal Intent (0/3) Primalstrike Bracers Primalstrike Belt Primalstrike Vest (3) Set : Increases attack power by 40. Sell Price: 6 15 34 Primalstrike Vest is a Leather Chest crafted by Leatherworkers with 375 skill and specialized in Elemental Leatherworking. This epic leather armor of item level 120 goes in the \"Chest\" slot.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+      "specialization": "Elemental Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35589,
+      "entity_name": "Primalstrike Vest",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+      "spell_id": 35589,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29525,
+          1,
+          1
+        ],
+        "id": 35589,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Primalstrike Vest",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            8
+          ],
+          [
+            23571,
+            6
+          ],
+          [
+            23572,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10658,
+        "trainingcost": 100000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest"
 }

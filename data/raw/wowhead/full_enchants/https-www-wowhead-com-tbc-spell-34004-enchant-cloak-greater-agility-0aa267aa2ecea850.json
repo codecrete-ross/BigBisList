@@ -2,6 +2,17 @@
   "description": "Greater Agility is an Enchanting that grants 12 Agility to a Cloak item slot. This formula can be crafted by Enchanters at a skill of 310 and uses 1 Greater Planar Essence, 4 Arcane Dust and 1 Primal Air.",
   "fetched_at": "2026-05-24T09:39:48+00:00",
   "name": "Enchant Cloak - Greater Agility",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Enchanting",
+      "raw_text": "Enchanting",
+      "scope": "learn_recipe",
+      "skill": 310,
+      "source_url": "https://www.wowhead.com/tbc/spell=34004/enchant-cloak-greater-agility",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell_recipe",
@@ -9,12 +20,23 @@
       "entity_name": "Enchanting Trainer",
       "profession": "Enchanting",
       "required_skill": 310,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "learn_recipe",
+          "skill": 310,
+          "source_url": "https://www.wowhead.com/tbc/spell=34004/enchant-cloak-greater-agility",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/spell=34004/enchant-cloak-greater-agility",
       "type": "trainer"
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
     "recipes": [

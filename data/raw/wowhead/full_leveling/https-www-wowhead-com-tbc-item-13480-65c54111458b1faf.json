@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:21:48+00:00",
   "item_id": 13480,
   "name": "Recipe: Major Healing Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Major Healing Potion Item Level 55 Requires Alchemy (275) Use: Teaches you how to make a Major Healing Potion. Sell Price: 37 50 Major Healing Potion Item Level 55 Requires Level 45 Use: Restores 1050 to 1750 health. (2 Min Cooldown) Max Stack: 5 Sell Price: 10 Requires Golden Sansam (2), Mountain Silversage , Crystal Vial This alchemy recipe is used for the Alchemy profession. It is sold by Evie Whirlbrew. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 275,
+      "source_url": "https://www.wowhead.com/tbc/item=13480",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

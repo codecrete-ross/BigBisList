@@ -23,7 +23,7 @@ from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES
 from tools.sources import derive_primary_source, summarize_sources
 from tools.validate_data import validate
 
-PARSER_VERSION = "wowhead-scraper-0.5.1"
+PARSER_VERSION = "wowhead-scraper-0.6.0"
 USER_AGENT = "BigBiSListScraper/0.4 (+https://github.com/codecrete-dev/BigBisList)"
 
 CURRENCY_NAMES = {
@@ -40,6 +40,62 @@ PROFESSION_SKILL_NAMES = {
     202: "Engineering",
     333: "Enchanting",
     755: "Jewelcrafting",
+}
+
+PROFESSION_NAMES = tuple(sorted(PROFESSION_SKILL_NAMES.values()))
+
+REPUTATION_STANDING_RANKS = {
+    "Neutral": 4,
+    "Friendly": 5,
+    "Honored": 6,
+    "Revered": 7,
+    "Exalted": 8,
+}
+
+REQUIREMENT_TYPES = {
+    "reputation",
+    "profession",
+    "profession_specialization",
+    "recipe_known",
+    "faction_choice",
+    "source_access",
+    "unknown_text",
+}
+
+REQUIREMENT_SCOPES = {
+    "vendor_purchase",
+    "quest_reward",
+    "self_craft",
+    "learn_recipe",
+    "cast_enchant",
+    "equip_or_use",
+    "source_access",
+}
+
+REQUIREMENT_CONFIDENCES = {
+    "wowhead_item",
+    "wowhead_spell_recipe",
+    "parsed_source_text",
+    "manual_review",
+}
+
+PROFESSION_SPECIALIZATION_PROFESSIONS = {
+    "Armorsmith": "Blacksmithing",
+    "Master Axesmith": "Blacksmithing",
+    "Master Hammersmith": "Blacksmithing",
+    "Master Swordsmithing": "Blacksmithing",
+    "Weaponsmith": "Blacksmithing",
+    "Dragonscale Leatherworking": "Leatherworking",
+    "Elemental Leatherworking": "Leatherworking",
+    "Tribal Leatherworking": "Leatherworking",
+    "Gnomish Engineer": "Engineering",
+    "Goblin Engineer": "Engineering",
+    "Mooncloth Tailoring": "Tailoring",
+    "Shadoweave Tailoring": "Tailoring",
+    "Spellfire Tailoring": "Tailoring",
+    "Elixir Master": "Alchemy",
+    "Potion Master": "Alchemy",
+    "Transmutation Master": "Alchemy",
 }
 
 ZONE_ID_NAMES = {
@@ -301,6 +357,292 @@ def level_range_from_text(text: str) -> str | None:
     return None
 
 
+def canonical_standing(value: str | None) -> str | None:
+    if not value:
+        return None
+    normalized = value.strip().lower()
+    for standing in REPUTATION_STANDING_RANKS:
+        if standing.lower() == normalized:
+            return standing
+    return None
+
+
+def canonical_profession(value: str | None) -> str | None:
+    if not value:
+        return None
+    normalized = value.strip().lower()
+    for profession in PROFESSION_NAMES:
+        if profession.lower() == normalized:
+            return profession
+    return None
+
+
+def clean_requirement_target(value: str) -> str:
+    cleaned = clean_text(value)
+    cleaned = re.split(
+        r"\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|\s+requires?\b|\s+when\b",
+        cleaned,
+        maxsplit=1,
+        flags=re.IGNORECASE,
+    )[0]
+    return cleaned.strip(" .:-()")
+
+
+def requirement_looks_like_text(text: str | None) -> bool:
+    if not text:
+        return False
+    lowered = text.lower()
+    return bool(
+        re.search(r"\brequires?\b|\bwhen\s+(?:friendly|honored|revered|exalted)\b|\bprofession:\b", lowered)
+        or re.search(r"\b(?:friendly|honored|revered|exalted)\s+(?:reputation\s+)?with\b", lowered)
+        or re.search(r"\b(?:the aldor|the scryers)\b", lowered)
+        or re.search(r"\bbop\b|\bboe\b", lowered)
+        or any(specialization.lower() in lowered for specialization in PROFESSION_SPECIALIZATION_PROFESSIONS)
+    )
+
+
+def requirement_scope_from_source_text(text: str) -> str:
+    lowered = text.lower()
+    if "vendor:" in lowered or lowered.startswith("vendor") or "arena point" in lowered or "honor point" in lowered:
+        return "vendor_purchase"
+    if "quest:" in lowered or lowered.startswith("quest"):
+        return "quest_reward"
+    if "profession:" in lowered or "crafted" in lowered or lowered.startswith("profession"):
+        if "bop" in lowered or "bind" in lowered:
+            return "equip_or_use"
+        return "self_craft"
+    if "requires" in lowered and any(profession.lower() in lowered for profession in PROFESSION_NAMES):
+        return "equip_or_use"
+    return "source_access"
+
+
+def make_requirement(
+    requirement_type: str,
+    scope: str,
+    source_url: str,
+    raw_text: str,
+    confidence: str,
+    **fields: Any,
+) -> dict[str, Any]:
+    requirement = {
+        "type": requirement_type,
+        "scope": scope,
+        "source_url": source_url,
+        "raw_text": clean_text(raw_text),
+        "confidence": confidence,
+    }
+    for key, value in fields.items():
+        if value not in (None, "", []):
+            requirement[key] = value
+    return requirement
+
+
+def requirement_identity(requirement: dict[str, Any]) -> tuple[tuple[str, str], ...]:
+    keys = [
+        "type",
+        "scope",
+        "reputation",
+        "standing",
+        "profession",
+        "specialization",
+        "skill",
+        "spell_id",
+        "item_id",
+        "choices",
+        "source_url",
+        "raw_text",
+        "confidence",
+    ]
+    return tuple(
+        (key, json.dumps(requirement.get(key), sort_keys=True))
+        for key in keys
+        if key in requirement
+    )
+
+
+def dedupe_requirements(requirements: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduped: list[dict[str, Any]] = []
+    seen: set[tuple[tuple[str, str], ...]] = set()
+    for requirement in requirements:
+        requirement_type = requirement.get("type")
+        scope = requirement.get("scope")
+        if requirement_type not in REQUIREMENT_TYPES or scope not in REQUIREMENT_SCOPES:
+            continue
+        key = requirement_identity(requirement)
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append({key: value for key, value in requirement.items() if value not in (None, "", [])})
+    return deduped
+
+
+def extract_reputation_requirements(text: str, source_url: str, scope: str, confidence: str) -> list[dict[str, Any]]:
+    requirements: list[dict[str, Any]] = []
+    standing_pattern = "|".join(REPUTATION_STANDING_RANKS)
+    patterns = [
+        rf"\b(?:requires?|when|at|learned at)\s+(?P<standing>{standing_pattern})(?:\s+reputation)?\s+(?:with|from)\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
+        rf"\((?P<reputation>[^()]+?)\s*(?:-\s*)?(?P<standing>{standing_pattern})\)",
+    ]
+    for pattern in patterns:
+        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+            standing = canonical_standing(match.group("standing"))
+            reputation = clean_requirement_target(match.group("reputation"))
+            if not standing or not reputation:
+                continue
+            requirements.append(
+                make_requirement(
+                    "reputation",
+                    scope,
+                    source_url,
+                    text,
+                    confidence,
+                    reputation=reputation,
+                    standing=standing,
+                    standing_rank=REPUTATION_STANDING_RANKS[standing],
+                )
+            )
+    return requirements
+
+
+def extract_profession_requirements(text: str, source_url: str, scope: str, confidence: str) -> list[dict[str, Any]]:
+    requirements: list[dict[str, Any]] = []
+    profession_pattern = "|".join(re.escape(profession) for profession in PROFESSION_NAMES)
+    for match in re.finditer(
+        rf"\b(?:Profession:\s*|Requires\s+)(?P<profession>{profession_pattern})(?:\s*\((?P<skill>\d+)\))?",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        profession = canonical_profession(match.group("profession"))
+        if not profession:
+            continue
+        skill = int(match.group("skill")) if match.group("skill") else None
+        requirements.append(
+            make_requirement(
+                "profession",
+                scope,
+                source_url,
+                text,
+                confidence,
+                profession=profession,
+                skill=skill,
+            )
+        )
+
+    for specialization, profession in PROFESSION_SPECIALIZATION_PROFESSIONS.items():
+        if not re.search(rf"\b(?:requires?\s+)?{re.escape(specialization)}\b", text, flags=re.IGNORECASE):
+            continue
+        requirements.append(
+            make_requirement(
+                "profession_specialization",
+                scope,
+                source_url,
+                text,
+                confidence,
+                profession=profession,
+                specialization=specialization,
+            )
+        )
+
+    return requirements
+
+
+def extract_faction_choice_requirements(text: str, source_url: str, scope: str, confidence: str) -> list[dict[str, Any]]:
+    choices = [faction for faction in ["The Aldor", "The Scryers"] if re.search(rf"\b{re.escape(faction)}\b", text, flags=re.IGNORECASE)]
+    if not choices:
+        return []
+    lowered = text.lower()
+    if "requires" not in lowered and not re.search(r"\((?:the aldor|the scryers)", lowered):
+        return []
+    return [
+        make_requirement(
+            "faction_choice",
+            scope,
+            source_url,
+            text,
+            confidence,
+            choices=choices,
+        )
+    ]
+
+
+def extract_source_access_requirements(text: str, source_url: str, scope: str, confidence: str) -> list[dict[str, Any]]:
+    if not re.search(r"\brequires?\s+(?:attun|access|key|heroic)\b", text, flags=re.IGNORECASE):
+        return []
+    return [make_requirement("source_access", scope, source_url, text, confidence)]
+
+
+def extract_requirements_from_text(
+    text: str | None,
+    source_url: str,
+    scope: str,
+    confidence: str,
+    include_unknown: bool = True,
+) -> list[dict[str, Any]]:
+    raw_text = clean_text(str(text or ""))
+    if not raw_text or not source_url:
+        return []
+    requirements: list[dict[str, Any]] = []
+    requirements.extend(extract_reputation_requirements(raw_text, source_url, scope, confidence))
+    requirements.extend(extract_profession_requirements(raw_text, source_url, scope, confidence))
+    requirements.extend(extract_faction_choice_requirements(raw_text, source_url, scope, confidence))
+    requirements.extend(extract_source_access_requirements(raw_text, source_url, scope, confidence))
+    if include_unknown and not requirements and requirement_looks_like_text(raw_text):
+        requirements.append(make_requirement("unknown_text", scope, source_url, raw_text, confidence))
+    return dedupe_requirements(requirements)
+
+
+def source_requirements_from_source(source: dict[str, Any], source_url: str, default_scope: str, confidence: str) -> list[dict[str, Any]]:
+    requirements: list[dict[str, Any]] = []
+    source_text = clean_text(str(source.get("raw_source_text") or ""))
+    if source_text:
+        requirements.extend(extract_requirements_from_text(source_text, source_url, requirement_scope_from_source_text(source_text), "parsed_source_text"))
+
+    profession = canonical_profession(str(source.get("profession") or ""))
+    required_skill = source.get("required_skill")
+    if profession:
+        skill = int(required_skill) if isinstance(required_skill, int) else None
+        requirements.append(
+            make_requirement(
+                "profession",
+                default_scope,
+                source.get("source_url") or source_url,
+                source_text or profession,
+                confidence,
+                profession=profession,
+                skill=skill,
+            )
+        )
+    return dedupe_requirements(requirements)
+
+
+def requirement_scope_for_source(source: dict[str, Any]) -> str:
+    source_type = source.get("type")
+    if source_type in {"vendor", "pvp", "token_turnin"}:
+        return "vendor_purchase"
+    if source_type == "quest":
+        return "quest_reward"
+    if source_type == "crafted":
+        return "self_craft"
+    if source_type == "trainer":
+        return "learn_recipe"
+    return "source_access"
+
+
+def attach_requirements_to_source(source: dict[str, Any], source_url: str, default_scope: str, confidence: str) -> dict[str, Any]:
+    requirements = source_requirements_from_source(source, source_url, default_scope, confidence)
+    if requirements:
+        source["requirements"] = requirements
+    return source
+
+
+def row_requirements(row: dict[str, Any], source_url: str) -> list[dict[str, Any]]:
+    requirements = row.get("normalized_requirements")
+    if isinstance(requirements, list):
+        return dedupe_requirements([requirement for requirement in requirements if isinstance(requirement, dict)])
+    source_text = clean_text(str(row.get("source_text") or row.get("text") or ""))
+    return extract_requirements_from_text(source_text, source_url, requirement_scope_from_source_text(source_text), "parsed_source_text")
+
+
 def parse_guide_sections(soup: BeautifulSoup, entity_names: dict[str, dict[int, str]] | None = None) -> list[dict[str, Any]]:
     sections: list[dict[str, Any]] = []
 
@@ -396,6 +738,14 @@ def parse_guide_html(url: str, html: str) -> dict[str, Any]:
                 row["spell_id"] = primary_spell["id"]
                 row["spell_name"] = primary_spell["name"]
                 row["spell_url"] = primary_spell["url"]
+            requirements = extract_requirements_from_text(
+                row["source_text"],
+                url,
+                requirement_scope_from_source_text(row["source_text"]),
+                "parsed_source_text",
+            )
+            if requirements:
+                row["normalized_requirements"] = requirements
             rows.append(row)
 
         if rows:
@@ -674,6 +1024,9 @@ def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) ->
                 }
             ]
 
+    for source in sources:
+        attach_requirements_to_source(source, url, requirement_scope_for_source(source), "wowhead_item")
+
     return sources
 
 
@@ -699,7 +1052,8 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
     meta = soup.find("meta", attrs={"name": "description"})
     description = meta.get("content", "") if meta else ""
     item_id = item_id_from_href(url)
-    binding, boe = parse_binding_from_text(item_tooltip_text(item_id, html) or description)
+    tooltip_text = item_tooltip_text(item_id, html)
+    binding, boe = parse_binding_from_text(tooltip_text or description)
     listview_ids = [
         "dropped-by",
         "sold-by",
@@ -713,6 +1067,13 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
     ]
     related_tables = {listview_id: extract_listview_data(html, listview_id) for listview_id in listview_ids}
     sources = normalize_item_sources(url, related_tables)
+    normalized_requirements = extract_requirements_from_text(
+        f"{tooltip_text} {description}",
+        url,
+        "equip_or_use",
+        "wowhead_item",
+        include_unknown=False,
+    )
 
     return {
         "parser_version": PARSER_VERSION,
@@ -727,6 +1088,7 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
         "description": clean_text(description),
         "related_tables": related_tables,
         "normalized_sources": sources,
+        "normalized_requirements": normalized_requirements,
         "taught_by_items": related_tables.get("taught-by-item", []),
         "teaches_spell_ids": item_teaches_spell_ids(item_id, name, html),
     }
@@ -807,6 +1169,10 @@ def normalize_spell_sources(url: str, tables: dict[str, list[dict[str, Any]]]) -
         }
         sources.append({key: value for key, value in source.items() if value is not None})
 
+    for source in sources:
+        confidence = "wowhead_spell_recipe" if source.get("type") == "trainer" or source.get("required_skill") else "wowhead_spell_recipe"
+        attach_requirements_to_source(source, url, requirement_scope_for_source(source), confidence)
+
     return sources
 
 
@@ -818,6 +1184,16 @@ def parse_spell_html(url: str, html: str) -> dict[str, Any]:
     description = meta.get("content", "") if meta else ""
     listview_ids = ["taught-by-item", "taught-by-npc", "taught-by-spell", "trained-by", "sold-by", "reward-from-q", "created-by", "recipes"]
     related_tables = {listview_id: extract_listview_data(html, listview_id) for listview_id in listview_ids}
+    normalized_sources = normalize_spell_sources(url, related_tables)
+    normalized_requirements = extract_requirements_from_text(
+        description,
+        url,
+        "cast_enchant",
+        "wowhead_spell_recipe",
+        include_unknown=False,
+    )
+    for source in normalized_sources:
+        normalized_requirements.extend(source.get("requirements", []))
     return {
         "parser_version": PARSER_VERSION,
         "url": url,
@@ -827,7 +1203,8 @@ def parse_spell_html(url: str, html: str) -> dict[str, Any]:
         "name": name,
         "description": clean_text(description),
         "related_tables": related_tables,
-        "normalized_sources": normalize_spell_sources(url, related_tables),
+        "normalized_sources": normalized_sources,
+        "normalized_requirements": dedupe_requirements(normalized_requirements),
     }
 
 
@@ -1067,6 +1444,42 @@ def load_snapshots(input_dir: Path) -> list[dict[str, Any]]:
     return snapshots
 
 
+def reprocess_cached_snapshots(input_dir: Path, output_dir: Path) -> dict[str, Any]:
+    cache_dir = input_dir / "html_cache"
+    snapshots = load_snapshots(input_dir)
+    reprocessed = 0
+    missing_html: list[str] = []
+
+    for snapshot in snapshots:
+        url = str(snapshot.get("url") or "")
+        if not url:
+            continue
+        html_path = cache_dir / html_cache_name(url)
+        if not html_path.is_file():
+            missing_html.append(url)
+            continue
+        updated = normalize_html(url, html_path.read_text(encoding="utf-8", errors="replace"))
+        if snapshot.get("fetched_at"):
+            updated["fetched_at"] = snapshot["fetched_at"]
+        write_snapshot(updated, output_dir)
+        reprocessed += 1
+
+    return {
+        "input_dir": str(input_dir),
+        "output_dir": str(output_dir),
+        "snapshots": len(snapshots),
+        "reprocessed": reprocessed,
+        "missing_html": missing_html,
+    }
+
+
+def command_reprocess(args: argparse.Namespace) -> int:
+    output_dir = args.output_dir or args.input_dir
+    result = reprocess_cached_snapshots(args.input_dir, output_dir)
+    print(json.dumps(result, indent=2, sort_keys=True))
+    return 0 if not result["missing_html"] else 1
+
+
 def rank_group_from_label(label: str) -> str:
     lowered = label.lower()
     if "bis" in lowered and "(" in lowered:
@@ -1141,14 +1554,16 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                     if not item_id or key in seen:
                         continue
                     seen.add(key)
-                    items_by_phase.setdefault(phase, []).append(
-                        {
-                            "item_id": item_id,
-                            "rank_label": rank_label,
-                            "rank_group": rank_group_from_label(rank_label),
-                            "context": context,
-                        }
-                    )
+                    item_entry = {
+                        "item_id": item_id,
+                        "rank_label": rank_label,
+                        "rank_group": rank_group_from_label(rank_label),
+                        "context": context,
+                    }
+                    requirements = row_requirements(row, snapshot["url"])
+                    if requirements:
+                        item_entry["requirements"] = requirements
+                    items_by_phase.setdefault(phase, []).append(item_entry)
                 for phase, items in items_by_phase.items():
                     rows.append(
                         {
@@ -1501,6 +1916,11 @@ def import_gems_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_cano
                         sources = (item_snapshot or {}).get("normalized_sources", [])
                         if sources:
                             gem_row["source_summary"] = summarize_sources(sources)
+                        requirements = row_requirements(row, snapshot["url"])
+                        requirements.extend(snapshot_requirements(item_snapshot))
+                        requirements = dedupe_requirements(requirements)
+                        if requirements:
+                            gem_row["requirements"] = requirements
                         rows.append(gem_row)
 
     if not rows and fallback_to_canonical:
@@ -1583,7 +2003,7 @@ def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                             taught_by = [
                                 {
                                     key: source[key]
-                                    for key in ["type", "item_id", "spell_id", "entity_id", "entity_name", "zone"]
+                                    for key in ["type", "item_id", "spell_id", "entity_id", "entity_name", "zone", "requirements"]
                                     if key in source
                                 }
                                 for source in (source_spell_snapshot or {}).get("normalized_sources", [])
@@ -1602,10 +2022,32 @@ def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                             source_summary = summarize_enchant_spell_sources(source_spell_snapshot, formula_item_ids, item_snapshots)
                             if source_summary:
                                 enchant_row["source_summary"] = source_summary
+                            requirements = enchant_requirements_for_import(
+                                row,
+                                snapshot["url"],
+                                entity,
+                                spell_snapshot,
+                                source_spell_snapshot,
+                                formula_item_ids,
+                                item_snapshots,
+                            )
+                            if requirements:
+                                enchant_row["requirements"] = requirements
                         else:
                             sources = item_snapshots.get(int(entity["id"]), {}).get("normalized_sources", [])
                             if sources:
                                 enchant_row["source_summary"] = summarize_sources(sources)
+                            requirements = enchant_requirements_for_import(
+                                row,
+                                snapshot["url"],
+                                entity,
+                                None,
+                                None,
+                                [],
+                                item_snapshots,
+                            )
+                            if requirements:
+                                enchant_row["requirements"] = requirements
                         rows.append(enchant_row)
 
     if not rows and fallback_to_canonical:
@@ -1667,6 +2109,12 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                         }
                         if source_summaries:
                             consumable_row["source_summaries"] = source_summaries
+                        requirements = row_requirements(row, snapshot["url"])
+                        for item_id in item_ids:
+                            requirements.extend(snapshot_requirements(item_snapshots.get(item_id)))
+                        requirements = dedupe_requirements(requirements)
+                        if requirements:
+                            consumable_row["requirements"] = requirements
                         rows.append(consumable_row)
 
             for section in snapshot.get("sections", []):
@@ -1703,6 +2151,12 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                         }
                         if source_summaries:
                             consumable_row["source_summaries"] = source_summaries
+                        requirements = row_requirements(entry, snapshot["url"])
+                        for item_id in item_ids:
+                            requirements.extend(snapshot_requirements(item_snapshots.get(item_id)))
+                        requirements = dedupe_requirements(requirements)
+                        if requirements:
+                            consumable_row["requirements"] = requirements
                         rows.append(consumable_row)
 
     if not rows and fallback_to_canonical:
@@ -1802,29 +2256,34 @@ def import_entity_sources_from_snapshots(
     for item_id in sorted(item_id for item_id in wanted_item_ids if item_id in item_snapshots):
         snapshot = item_snapshots[item_id]
         sources = snapshot.get("normalized_sources", [])
-        source_rows.append(
-            {
-                "id": item_id,
-                "type": "item",
-                "name": snapshot.get("name"),
-                "sources": sources,
-                "primary_source": derive_primary_source(sources),
-                "source_summary": summarize_sources(sources),
-                "source_url": snapshot["url"],
-            }
-        )
+        requirements = dedupe_requirements(snapshot_requirements(snapshot) + source_list_requirements(sources))
+        source_row = {
+            "id": item_id,
+            "type": "item",
+            "name": snapshot.get("name"),
+            "sources": sources,
+            "primary_source": derive_primary_source(sources),
+            "source_summary": summarize_sources(sources),
+            "source_url": snapshot["url"],
+        }
+        if requirements:
+            source_row["requirements"] = requirements
+        source_rows.append(source_row)
 
     for spell_id in sorted(spell_id for spell_id in wanted_spell_ids if spell_id in spell_snapshots):
         snapshot = spell_snapshots[spell_id]
-        source_rows.append(
-            {
-                "id": spell_id,
-                "type": "spell",
-                "name": snapshot.get("name"),
-                "sources": snapshot.get("normalized_sources", []),
-                "source_url": snapshot["url"],
-            }
-        )
+        sources = snapshot.get("normalized_sources", [])
+        requirements = dedupe_requirements(snapshot_requirements(snapshot) + source_list_requirements(sources))
+        source_row = {
+            "id": spell_id,
+            "type": "spell",
+            "name": snapshot.get("name"),
+            "sources": sources,
+            "source_url": snapshot["url"],
+        }
+        if requirements:
+            source_row["requirements"] = requirements
+        source_rows.append(source_row)
 
     if not source_rows:
         return canonical_json(output_key)
@@ -1922,6 +2381,106 @@ def guide_item_source_hints(snapshots: list[dict[str, Any]]) -> dict[int, list[d
     return hints
 
 
+def snapshot_requirements(snapshot: dict[str, Any] | None) -> list[dict[str, Any]]:
+    if not snapshot:
+        return []
+    requirements = snapshot.get("normalized_requirements", [])
+    return dedupe_requirements([requirement for requirement in requirements if isinstance(requirement, dict)])
+
+
+def source_list_requirements(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    requirements: list[dict[str, Any]] = []
+    for source in sources:
+        for requirement in source.get("requirements", []):
+            if isinstance(requirement, dict):
+                requirements.append(requirement)
+    return dedupe_requirements(requirements)
+
+
+def guide_hint_requirements(hints: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    requirements: list[dict[str, Any]] = []
+    for hint in hints:
+        source_text = clean_text(str(hint.get("source_text") or ""))
+        source_url = str(hint.get("source_url") or "")
+        requirements.extend(
+            extract_requirements_from_text(
+                source_text,
+                source_url,
+                requirement_scope_from_source_text(source_text),
+                "parsed_source_text",
+            )
+        )
+    return dedupe_requirements(requirements)
+
+
+def item_requirements_for_import(
+    item_id: int,
+    item: dict[str, Any],
+    snapshot: dict[str, Any] | None,
+    sources: list[dict[str, Any]],
+    hints: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    requirements: list[dict[str, Any]] = []
+    requirements.extend(item.get("requirements", []))
+    requirements.extend(snapshot_requirements(snapshot))
+    requirements.extend(guide_hint_requirements(hints))
+
+    is_bind_on_pickup = item.get("binding") == "bind_on_pickup" or (snapshot and snapshot.get("binding") == "bind_on_pickup")
+    if is_bind_on_pickup:
+        for source in sources:
+            if source.get("type") != "crafted":
+                continue
+            profession = canonical_profession(str(source.get("profession") or ""))
+            if profession:
+                requirements.append(
+                    make_requirement(
+                        "profession",
+                        "self_craft",
+                        source.get("source_url") or (snapshot or {}).get("url") or item.get("wowhead_url") or item_url_for_id(item_id),
+                        str(source.get("raw_source_text") or profession),
+                        "wowhead_item" if source.get("confidence") == "wowhead_item" else "parsed_source_text",
+                        profession=profession,
+                    )
+                )
+    return dedupe_requirements(requirements)
+
+
+def recipe_known_requirement(spell_snapshot: dict[str, Any] | None, spell_id: int, spell_name: str | None) -> dict[str, Any]:
+    source_url = (spell_snapshot or {}).get("url") or spell_url_for_id(spell_id)
+    return make_requirement(
+        "recipe_known",
+        "cast_enchant",
+        source_url,
+        spell_name or f"Spell {spell_id}",
+        "wowhead_spell_recipe",
+        spell_id=spell_id,
+        spell_name=spell_name,
+    )
+
+
+def enchant_requirements_for_import(
+    row: dict[str, Any],
+    guide_url: str,
+    entity: dict[str, Any],
+    spell_snapshot: dict[str, Any] | None,
+    source_spell_snapshot: dict[str, Any] | None,
+    formula_item_ids: list[int],
+    item_snapshots: dict[int, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    requirements = row_requirements(row, guide_url)
+    if entity.get("type") == "spell":
+        spell_id = int(entity["id"])
+        requirements.append(recipe_known_requirement(source_spell_snapshot or spell_snapshot, spell_id, entity.get("name")))
+        requirements.extend(snapshot_requirements(spell_snapshot))
+        if source_spell_snapshot is not spell_snapshot:
+            requirements.extend(snapshot_requirements(source_spell_snapshot))
+        for formula_item_id in formula_item_ids:
+            requirements.extend(snapshot_requirements(item_snapshots.get(formula_item_id)))
+    else:
+        requirements.extend(snapshot_requirements(item_snapshots.get(int(entity["id"]))))
+    return dedupe_requirements(requirements)
+
+
 def source_name_and_zone_from_text(text: str, prefix_pattern: str) -> tuple[str, str | None]:
     cleaned = clean_text(re.sub(prefix_pattern, "", text, flags=re.IGNORECASE).strip(" :-"))
     zone = None
@@ -1934,6 +2493,8 @@ def source_name_and_zone_from_text(text: str, prefix_pattern: str) -> tuple[str,
         if dash_match:
             cleaned = clean_text(dash_match.group(1))
             zone = clean_text(dash_match.group(2))
+    if zone and requirement_looks_like_text(zone):
+        zone = None
     return cleaned or text, zone
 
 
@@ -1946,22 +2507,33 @@ def guide_fallback_source(hint: dict[str, Any]) -> dict[str, Any]:
         "confidence": "wowhead_guide_fallback",
         "raw_source_text": text,
     }
+    requirements = extract_requirements_from_text(
+        text,
+        source_url,
+        requirement_scope_from_source_text(text),
+        "parsed_source_text",
+    )
+
+    def with_requirements(parsed_source: dict[str, Any]) -> dict[str, Any]:
+        if requirements:
+            parsed_source["requirements"] = requirements
+        return parsed_source
 
     if "world drop" in lowered:
-        return {
+        return with_requirements({
             **source,
             "type": "world_drop",
             "entity_name": "World Drop",
             "world_drop": True,
-        }
+        })
 
     if lowered.startswith("conjured"):
-        return {
+        return with_requirements({
             **source,
             "type": "crafted",
             "entity_name": "Conjured",
             "profession": "Warlock",
-        }
+        })
 
     if "apexis shard" in lowered and "depleted" in lowered:
         entity_name, zone = source_name_and_zone_from_text(text, r"^(zone drop|drop):")
@@ -1977,13 +2549,13 @@ def guide_fallback_source(hint: dict[str, Any]) -> dict[str, Any]:
         depleted_match = re.search(r"\b(depleted [a-z' -]+)", entity_name, flags=re.IGNORECASE)
         if depleted_match:
             parsed_source["costs"].append({"amount": 1, "name": clean_text(depleted_match.group(1)).title()})
-        return parsed_source
+        return with_requirements(parsed_source)
 
     if lowered.startswith("zone drop:"):
         entity_name, zone = source_name_and_zone_from_text(text, r"^zone drop:")
         if zone:
             source["zone"] = zone
-        return {**source, "type": "drop", "entity_name": entity_name}
+        return with_requirements({**source, "type": "drop", "entity_name": entity_name})
 
     professions = [
         "alchemy",
@@ -2003,42 +2575,42 @@ def guide_fallback_source(hint: dict[str, Any]) -> dict[str, Any]:
             entity_name = profession
         if zone:
             source["zone"] = zone
-        return {
+        return with_requirements({
             **source,
             "type": "crafted",
             "entity_name": entity_name,
             "profession": profession or entity_name,
-        }
+        })
 
     if lowered.startswith("quest:"):
         entity_name, zone = source_name_and_zone_from_text(text, r"^quest:")
         if zone:
             source["zone"] = zone
-        return {**source, "type": "quest", "entity_name": entity_name}
+        return with_requirements({**source, "type": "quest", "entity_name": entity_name})
 
     if lowered.startswith("vendor:") or "arena point" in lowered or "honor point" in lowered:
         entity_name, zone = source_name_and_zone_from_text(text, r"^vendor:")
         if zone:
             source["zone"] = zone
-        return {
+        return with_requirements({
             **source,
             "type": "pvp" if "arena point" in lowered or "honor point" in lowered else "vendor",
             "entity_name": entity_name,
-        }
+        })
 
     if lowered.startswith("drop:"):
         entity_name, zone = source_name_and_zone_from_text(text, r"^drop:")
         if zone:
             source["zone"] = zone
-        return {**source, "type": "drop", "entity_name": entity_name}
+        return with_requirements({**source, "type": "drop", "entity_name": entity_name})
 
     if re.search(r"\([^()]+\)\s*$", text) or " - " in text:
         entity_name, zone = source_name_and_zone_from_text(text, r"")
         if zone:
             source["zone"] = zone
-        return {**source, "type": "drop", "entity_name": entity_name}
+        return with_requirements({**source, "type": "drop", "entity_name": entity_name})
 
-    return {**source, "type": "unknown", "entity_name": text or "Unknown"}
+    return with_requirements({**source, "type": "unknown", "entity_name": text or "Unknown"})
 
 
 def guide_fallback_sources(hints: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -2171,6 +2743,11 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
             "primary_source": derive_primary_source(sources),
             "source_summary": summarize_sources(sources),
         }
+        if current.get("requirements"):
+            item["requirements"] = deepcopy(current["requirements"])
+        requirements = item_requirements_for_import(item_id, item, snapshot, sources, item_source_hints.get(item_id, []))
+        if requirements:
+            item["requirements"] = requirements
         items.append(item)
 
     return apply_item_overrides({"items": items})
@@ -2580,6 +3157,132 @@ def enchant_spell_source_errors(
     return errors
 
 
+def requirement_records_from_snapshots(snapshots: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    for snapshot in snapshots:
+        snapshot_url = snapshot.get("url")
+        if snapshot.get("page_type") in {"item", "spell"}:
+            for requirement in snapshot_requirements(snapshot):
+                records.append({"snapshot": snapshot, "requirement": requirement, "source_url": snapshot_url})
+            for source in snapshot.get("normalized_sources", []):
+                for requirement in source.get("requirements", []):
+                    if isinstance(requirement, dict):
+                        records.append({"snapshot": snapshot, "source": source, "requirement": requirement, "source_url": snapshot_url})
+        if snapshot.get("page_type") != "guide":
+            continue
+        for table in snapshot.get("tables", []):
+            for row in table.get("rows", []):
+                for requirement in row_requirements(row, str(snapshot_url or "")):
+                    records.append({"snapshot": snapshot, "table": table, "row": row, "requirement": requirement, "source_url": snapshot_url})
+        for section in snapshot.get("sections", []):
+            for entry in section.get("entries", []):
+                for requirement in row_requirements(entry, str(snapshot_url or "")):
+                    records.append({"snapshot": snapshot, "section": section, "row": entry, "requirement": requirement, "source_url": snapshot_url})
+    return records
+
+
+def requirement_text_audit_errors(snapshots: list[dict[str, Any]]) -> list[str]:
+    errors: list[str] = []
+    for snapshot in snapshots:
+        if snapshot.get("page_type") != "guide":
+            continue
+        for table in snapshot.get("tables", []):
+            for row in table.get("rows", []):
+                source_text = clean_text(str(row.get("source_text") or ""))
+                if requirement_looks_like_text(source_text) and not row.get("normalized_requirements"):
+                    item_label = row.get("entity_name") or row.get("item_name") or row.get("spell_name") or "row"
+                    errors.append(f"Requirement-looking source text without normalized requirement for {item_label}: {source_text} ({snapshot.get('url')})")
+        for section in snapshot.get("sections", []):
+            for entry in section.get("entries", []):
+                text = clean_text(str(entry.get("text") or ""))
+                if requirement_looks_like_text(text) and not entry.get("normalized_requirements"):
+                    errors.append(f"Requirement-looking section text without normalized requirement: {text} ({snapshot.get('url')})")
+    return errors
+
+
+def requirement_zone_audit_errors(snapshots: list[dict[str, Any]]) -> list[str]:
+    errors: list[str] = []
+    for snapshot in snapshots:
+        for source in snapshot.get("normalized_sources", []):
+            zone = source.get("zone")
+            if isinstance(zone, str) and requirement_looks_like_text(zone):
+                label = snapshot.get("name") or snapshot.get("url")
+                errors.append(f"Source zone is requirement text for {label}: {zone} ({snapshot.get('url')})")
+    return errors
+
+
+def requirement_missing_urls(
+    snapshots: list[dict[str, Any]],
+    data_family: str | None = None,
+) -> list[str]:
+    item_snapshots = item_snapshots_by_id(snapshots)
+    spell_snapshots = spell_snapshots_by_id(snapshots)
+    item_ids: set[int] = set()
+    spell_ids: set[int] = set()
+
+    for record in requirement_records_from_snapshots(snapshots):
+        requirement = record.get("requirement", {})
+        item_id = requirement.get("item_id")
+        spell_id = requirement.get("spell_id")
+        if isinstance(item_id, int) and item_id > 0:
+            item_ids.add(item_id)
+        if isinstance(spell_id, int) and spell_id > 0:
+            spell_ids.add(spell_id)
+
+    families = [data_family] if data_family else ["gems", "enchants", "consumables"]
+    for family in families:
+        if family == "bis_lists":
+            item_ids.update(int(row["item_id"]) for row in raw_bis_rows_from_snapshots(snapshots) if isinstance(row.get("item_id"), int))
+            continue
+        if family == "leveling":
+            entries = guide_entries_for_family(snapshots, family)
+            referenced_items, referenced_spells = referenced_entity_ids(entries)
+            item_ids.update(referenced_items)
+            spell_ids.update(referenced_spells)
+            continue
+        imported_rows = import_rows_for_family(snapshots, family)
+        imported_item_ids, imported_spell_ids, formula_item_ids = imported_entity_ids(imported_rows)
+        item_ids.update(imported_item_ids)
+        spell_ids.update(imported_spell_ids)
+        item_ids.update(formula_item_ids)
+
+    missing_urls: set[str] = set()
+    for item_id in sorted(item_ids):
+        if item_id not in item_snapshots:
+            missing_urls.add(item_url_for_id(item_id))
+    for spell_id in sorted(spell_ids):
+        if spell_id not in spell_snapshots:
+            missing_urls.add(spell_url_for_id(spell_id))
+    return sorted(missing_urls)
+
+
+def build_requirements_audit(input_dir: Path, data_family: str | None = None) -> dict[str, Any]:
+    snapshots = load_snapshots(input_dir)
+    errors = requirement_text_audit_errors(snapshots)
+    errors.extend(requirement_zone_audit_errors(snapshots))
+    missing_urls = requirement_missing_urls(snapshots, data_family)
+    for url in missing_urls:
+        errors.append(f"Missing snapshot needed for requirements: {url}")
+    records = requirement_records_from_snapshots(snapshots)
+    return {
+        "ok": not errors,
+        "errors": errors,
+        "missing_urls": missing_urls,
+        "summary": {
+            "family": data_family or "all",
+            "snapshots": len(snapshots),
+            "requirements": len(records),
+            "missing_urls": len(missing_urls),
+        },
+    }
+
+
+def command_requirements_audit(args: argparse.Namespace) -> int:
+    audit = build_requirements_audit(args.input_dir, args.family)
+    print(json.dumps(audit, indent=2, sort_keys=True))
+    return 0 if audit["ok"] else 1
+
+
 def build_snapshot_audit(input_dir: Path, data_family: str, guide_only: bool = False, source_urls: set[str] | None = None) -> dict[str, Any]:
     snapshots = [
         snapshot
@@ -2811,8 +3514,18 @@ def build_parser() -> argparse.ArgumentParser:
     import_parser.add_argument("--dry-run", action="store_true")
     import_parser.set_defaults(func=command_import)
 
+    reprocess_parser = subparsers.add_parser("reprocess", help="Rebuild normalized snapshots from the local html_cache without network fetches.")
+    reprocess_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
+    reprocess_parser.add_argument("--output-dir", type=Path)
+    reprocess_parser.set_defaults(func=command_reprocess)
+
     audit_parser = subparsers.add_parser("audit", help="Audit canonical scraped data.")
     audit_parser.set_defaults(func=command_audit)
+
+    requirements_audit_parser = subparsers.add_parser("requirements-audit", help="Audit normalized prerequisite extraction and missing prerequisite snapshots.")
+    requirements_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
+    requirements_audit_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling"])
+    requirements_audit_parser.set_defaults(func=command_requirements_audit)
 
     snapshot_audit_parser = subparsers.add_parser("snapshot-audit", help="Audit normalized raw snapshots before import.")
     snapshot_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)

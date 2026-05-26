@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:34:00+00:00",
   "item_id": 35322,
   "name": "Design: Quick Dawnstone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Quick Dawnstone Item Level 70 Binds when picked up Requires Jewelcrafting (350) Requires Shattered Sun Offensive - Exalted Use: Teaches you how to cut a Quick Dawnstone. Sell Price: 3 Quick Dawnstone Item Level 70 +8 Spell Haste Rating \"Matches a Yellow Socket.\" Sell Price: 3 Requires Dawnstone This jewelcrafting design is used for the Jewelcrafting profession. It is sold by NPCs. In the Jewelcrafting Designs category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35322",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -25,12 +36,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {

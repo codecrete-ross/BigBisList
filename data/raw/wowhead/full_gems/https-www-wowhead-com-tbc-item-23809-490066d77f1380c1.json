@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:32:57+00:00",
   "item_id": 23809,
   "name": "Schematic: Stabilized Eternium Scope",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Stabilized Eternium Scope Phase 1 Item Level 75 Binds when picked up Requires Engineering (375) Use: Teaches you how to make a Stabilized Eternium Scope. Sell Price: 1 50 Stabilized Eternium Scope Item Level 75 Requires Level 60 Use: Attaches a permanent scope to a bow or gun that increases its critical strike rating by 28. Max Stack: 5 Sell Price: 2 Requires Hardened Adamantite Tube (2), Felsteel Stabilizer (6), Star of Elune (2) This engineering schematic is used for the Engineering profession. It is looted from Attumen the Huntsman. In the Engineering Schematics category.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=23809",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -29,9 +40,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -129,6 +142,7 @@
         "type": 6
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

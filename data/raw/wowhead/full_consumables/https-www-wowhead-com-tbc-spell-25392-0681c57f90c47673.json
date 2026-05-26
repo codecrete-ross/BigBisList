@@ -1,6 +1,8 @@
 {
+  "description": "Power infuses the target's party, increasing their Stamina by 79 for 1 hour. In the Discipline Abilities category. Requires Priest. A spell.",
   "fetched_at": "2026-05-24T08:50:59+00:00",
   "name": "Prayer of Fortitude",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,34 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 16,
+        "id": 25392,
+        "level": 70,
+        "name": "Prayer of Fortitude",
+        "nskillup": 1,
+        "rank": "Rank 3",
+        "reagents": [
+          [
+            17029,
+            1
+          ]
+        ],
+        "reqclass": 16,
+        "schools": 2,
+        "skill": [
+          613
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

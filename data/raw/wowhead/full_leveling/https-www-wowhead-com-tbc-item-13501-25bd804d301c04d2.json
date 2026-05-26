@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:22:31+00:00",
   "item_id": 13501,
   "name": "Recipe: Major Mana Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Major Mana Potion Item Level 59 Binds when picked up Requires Alchemy (295) Use: Teaches you how to make a Major Mana Potion. Sell Price: 75 Major Mana Potion Item Level 59 Requires Level 49 Use: Restores 1350 to 2250 mana. (2 Min Cooldown) Max Stack: 5 Sell Price: 15 Requires Dreamfoil (3), Icecap (2), Crystal Vial This alchemy recipe is used for the Alchemy profession. It is looted and sold by NPCs. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 295,
+      "source_url": "https://www.wowhead.com/tbc/item=13501",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -26,7 +37,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

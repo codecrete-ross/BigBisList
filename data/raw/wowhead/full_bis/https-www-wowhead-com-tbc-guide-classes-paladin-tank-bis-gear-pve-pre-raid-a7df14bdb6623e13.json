@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:41+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -88,6 +89,16 @@
           "item_id": 23536,
           "item_name": "Oathkeeper's Helm",
           "item_url": "https://www.wowhead.com/tbc/item=23536/oathkeepers-helm",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best - Crafting",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -150,6 +161,16 @@
           "item_id": 23535,
           "item_name": "Helm of the Stalwart Defender",
           "item_url": "https://www.wowhead.com/tbc/item=23535/helm-of-the-stalwart-defender",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -175,6 +196,16 @@
           "item_id": 23519,
           "item_name": "Felsteel Helm",
           "item_url": "https://www.wowhead.com/tbc/item=23519/felsteel-helm",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -491,6 +522,16 @@
           "item_id": 24253,
           "item_name": "Cloak of Eternity",
           "item_url": "https://www.wowhead.com/tbc/item=24253/cloak-of-eternity",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Tailoring"
@@ -770,6 +811,15 @@
           "item_id": 29127,
           "item_name": "Vindicator's Hauberk",
           "item_url": "https://www.wowhead.com/tbc/item=29127/vindicators-hauberk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Endarin - Revered with The Aldor",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Aldor Only Great- Avoidance",
           "source_links": [
             {
@@ -837,6 +887,16 @@
           "item_id": 23507,
           "item_name": "Adamantite Breastplate",
           "item_url": "https://www.wowhead.com/tbc/item=23507/adamantite-breastplate",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Okay",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -899,6 +959,16 @@
           "item_id": 23538,
           "item_name": "Bracers of the Green Fortress",
           "item_url": "https://www.wowhead.com/tbc/item=23538/bracers-of-the-green-fortress",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best - Avoidance",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -1240,6 +1310,16 @@
           "item_id": 23517,
           "item_name": "Felsteel Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=23517/felsteel-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -1325,6 +1405,15 @@
           "item_id": 29134,
           "item_name": "Gauntlets of the Chosen",
           "item_url": "https://www.wowhead.com/tbc/item=29134/gauntlets-of-the-chosen",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril - Revered with The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [
             {
@@ -1586,6 +1675,15 @@
           "item_id": 29184,
           "item_name": "Timewarden's Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=29184/timewardens-leggings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Revered with The Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1646,6 +1744,16 @@
           "item_id": 23518,
           "item_name": "Felsteel Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=23518/felsteel-leggings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -2216,6 +2324,15 @@
           "item_id": 29173,
           "item_name": "Strength of the Untamed",
           "item_url": "https://www.wowhead.com/tbc/item=29173/strength-of-the-untamed",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear - Revered with Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Great - Avoidance",
           "source_links": [
             {
@@ -2246,6 +2363,16 @@
           "item_id": 24121,
           "item_name": "Chain of the Twilight Owl",
           "item_url": "https://www.wowhead.com/tbc/item=24121/chain-of-the-twilight-owl",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great - Party Buff",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting"
@@ -2428,6 +2555,15 @@
           "item_id": 29172,
           "item_name": "Ashyen's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear - Exalted with Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best - Threat",
           "source_links": [
             {
@@ -2539,6 +2675,15 @@
           "item_id": 29126,
           "item_name": "Seer's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=29126/seers-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril - Exalted with The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [
             {
@@ -2804,6 +2949,16 @@
           "item_id": 24088,
           "item_name": "Delicate Eternium Ring",
           "item_url": "https://www.wowhead.com/tbc/item=24088/delicate-eternium-ring",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting"
@@ -2873,6 +3028,15 @@
           "item_id": 23836,
           "item_name": "Goblin Rocket Launcher",
           "item_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Goblin Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best + Snap Threat",
           "source_links": [],
           "source_text": "Profession: Goblin Engineering"
@@ -2898,6 +3062,15 @@
           "item_id": 23835,
           "item_name": "Gnomish Poultryizer",
           "item_url": "https://www.wowhead.com/tbc/item=23835/gnomish-poultryizer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Goblin Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Goblin Engineering"
@@ -3087,6 +3260,16 @@
           "item_id": 24125,
           "item_name": "Figurine - Dawnstone Crab",
           "item_url": "https://www.wowhead.com/tbc/item=24125/figurine-dawnstone-crab",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable - Avoidance Utility Jewelcrafters",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting"
@@ -3213,6 +3396,15 @@
           "item_id": 32864,
           "item_name": "Commander's Badge",
           "item_url": "https://www.wowhead.com/tbc/item=32864/commanders-badge",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Hail, Commander! - Revered with Netherwing",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Viable",
           "source_links": [
             {
@@ -3273,6 +3465,16 @@
           "item_id": 24126,
           "item_name": "Figurine - Living Ruby Serpent",
           "item_url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable - Threat Jewelcrafter",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting"
@@ -3298,6 +3500,16 @@
           "item_id": 13503,
           "item_name": "Alchemist Stone",
           "item_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Alchemy",
+              "raw_text": "Profession: Alchemy",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable Alchemists",
           "source_links": [],
           "source_text": "Profession: Alchemy"
@@ -3330,6 +3542,15 @@
           "item_id": 29132,
           "item_name": "Scryer's Bloodgem",
           "item_url": "https://www.wowhead.com/tbc/item=29132/scryers-bloodgem",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril - Revered with The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [
             {
@@ -3360,6 +3581,16 @@
           "item_id": 24126,
           "item_name": "Figurine - Living Ruby Serpent",
           "item_url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable Jewelcrafters",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting"
@@ -3559,6 +3790,15 @@
           "item_id": 32450,
           "item_name": "Gladiator's Gavel",
           "item_url": "https://www.wowhead.com/tbc/item=32450/gladiators-gavel",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Arena Vendors - Requires Season 1 Gladiator PvP Rank, Shattrath City",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best - PvP",
           "source_links": [
             {
@@ -3619,6 +3859,15 @@
           "item_id": 29153,
           "item_name": "Blade of the Archmage",
           "item_url": "https://www.wowhead.com/tbc/item=29153/blade-of-the-archmage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn - Exalted with Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best (Alliance Only)",
           "source_links": [
             {
@@ -3649,6 +3898,15 @@
           "item_id": 29155,
           "item_name": "Stormcaller",
           "item_url": "https://www.wowhead.com/tbc/item=29155/stormcaller",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike - Exalted with Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best (Horde Only)",
           "source_links": [
             {
@@ -3686,6 +3944,15 @@
           "item_id": 29185,
           "item_name": "Continuum Blade",
           "item_url": "https://www.wowhead.com/tbc/item=29185/continuum-blade",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Revered with Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -3783,6 +4050,15 @@
           "item_id": 29176,
           "item_name": "Crest of the Sha'tar",
           "item_url": "https://www.wowhead.com/tbc/item=29176/crest-of-the-shatar",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador - Exalted with The Sha'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best - Survivability",
           "source_links": [
             {
@@ -3843,6 +4119,15 @@
           "item_id": 28358,
           "item_name": "Gladiator's Shield Wall",
           "item_url": "https://www.wowhead.com/tbc/item=28358/gladiators-shield-wall",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Arena Vendors - Requires Season 1 Gladiator PvP Rank, Shattrath City",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Viable- PvP",
           "source_links": [
             {

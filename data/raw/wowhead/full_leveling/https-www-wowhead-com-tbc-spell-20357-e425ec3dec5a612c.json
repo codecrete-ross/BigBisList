@@ -1,11 +1,14 @@
 {
+  "description": "Fills the Paladin with divine wisdom for 30 sec, giving each melee attack a chance to restore 90 of the Paladin's mana. Only one Seal can be active on the Paladin at any one time.Unleashing this Seal's energy will judge an enemy for 20 sec, granting attacks and spells used against the judged enemy a chance to restore 59 mana to the attacker. Your melee strikes will refresh the spell's duration. Only one Judgement per Paladin can be active at any one time.",
   "fetched_at": "2026-05-24T09:08:35+00:00",
   "name": "Seal of Wisdom",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

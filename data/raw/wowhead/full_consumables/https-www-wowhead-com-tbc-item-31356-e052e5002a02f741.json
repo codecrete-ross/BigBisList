@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:33+00:00",
   "item_id": 31356,
   "name": "Recipe: Flask of Distilled Wisdom",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Flask of Distilled Wisdom Phase 1 Item Level 60 Binds when picked up Requires Alchemy (300) Requires Cenarion Expedition - Exalted Use: Teaches you how to make a Flask of Distilled Wisdom. Sell Price: 1 Flask of Distilled Wisdom Item Level 60 Requires Level 50 Use: Increases Intellect by 65 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreamfoil (7), Icecap (3), Black Lotus , Crystal Vial This alchemy recipe is used for the Alchemy profession. It is sold by Fedryen Swiftspear. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=31356",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

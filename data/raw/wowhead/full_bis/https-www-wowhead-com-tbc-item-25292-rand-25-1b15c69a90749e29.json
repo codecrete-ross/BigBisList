@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:19:51+00:00",
   "item_id": 25292,
   "name": "Mechano-Wand",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -2067,13 +2068,67 @@
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
       "type": "drop",
       "zone": "Sunwell Plateau"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 76,
+      "drop_percent": 1.19,
+      "entity_id": 31952,
+      "entity_name": "Contained in: Khorium Lockbox",
+      "item_id": 31952,
+      "out_of": 6404,
+      "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "commondrop": true,
+        "count": 76,
+        "flags2": 24580,
+        "id": 31952,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 76,
+                "outof": 6404
+              }
+            },
+            "4": {
+              "0": {
+                "count": 6,
+                "outof": 667
+              }
+            },
+            "5": {
+              "0": {
+                "count": 7,
+                "outof": 871
+              }
+            }
+          }
+        },
+        "level": 68,
+        "name": "Khorium Lockbox",
+        "outof": 6404,
+        "pctstack": "",
+        "quality": 2,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 1,
@@ -10367,8 +10422,12 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=25292&&rand=-25"
 }

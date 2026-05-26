@@ -2,6 +2,17 @@
   "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T09:44:10+00:00",
   "name": "Purified Shadow Pearl",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Jewelcrafting",
+      "raw_text": "Jewelcrafting",
+      "scope": "learn_recipe",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/spell=41429",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell_recipe",
@@ -9,12 +20,23 @@
       "entity_name": "Jewelcrafting Trainer",
       "profession": "Jewelcrafting",
       "required_skill": 350,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "learn_recipe",
+          "skill": 350,
+          "source_url": "https://www.wowhead.com/tbc/spell=41429",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/spell=41429",
       "type": "trainer"
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
     "recipes": [

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 22919,
   "name": "Recipe: Elixir of Major Mageblood",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Elixir of Major Mageblood Item Level 71 Requires Alchemy (355) Use: Teaches you how to make an Elixir of Major Mageblood. Sell Price: 2 50 Elixir of Major Mageblood Item Level 71 Requires Level 60 Use: Regenerate 16 mana per 5 sec for 1 hour. Guardian Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 60 Requires Ancient Lichen , Netherbloom , Imbued Vial This alchemy recipe is used for the Alchemy profession. It is looted from Spectral Stallion. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 355,
+      "source_url": "https://www.wowhead.com/tbc/item=22919",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,7 +26,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

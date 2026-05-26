@@ -5,15 +5,160 @@
   "fetched_at": "2026-05-24T05:41:43+00:00",
   "item_id": 34378,
   "name": "Hard Khorium Battlefists",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46141,
+      "entity_name": "Hard Khorium Battlefists",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=34378/hard-khorium-battlefists",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=34378/hard-khorium-battlefists",
+      "spell_id": 46141,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          392,
+          410
+        ],
+        "creates": [
+          34378,
+          1,
+          1
+        ],
+        "id": 46141,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Hard Khorium Battlefists",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 4,
+        "reagents": [
+          [
+            35128,
+            10
+          ],
+          [
+            21884,
+            12
+          ],
+          [
+            22456,
+            12
+          ],
+          [
+            22451,
+            12
+          ],
+          [
+            34664,
+            6
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35209,
+        "level": 70,
+        "name": "Plans: Hard Khorium Battlefists",
+        "popularity": 6,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 4075
+          }
+        ],
+        "subclass": 4
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35553,
+        "level": 70,
+        "name": "Plans: Hard Khorium Battlefists",
+        "popularity": 10,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35209,
+      "level": 70,
+      "name": "Plans: Hard Khorium Battlefists",
+      "popularity": 6,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 4075
+        }
+      ],
+      "subclass": 4
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35553,
+      "level": 70,
+      "name": "Plans: Hard Khorium Battlefists",
+      "popularity": 10,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34378/hard-khorium-battlefists"
 }

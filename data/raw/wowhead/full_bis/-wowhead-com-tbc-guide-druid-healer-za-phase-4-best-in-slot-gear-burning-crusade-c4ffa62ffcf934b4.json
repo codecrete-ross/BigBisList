@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:47+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -118,6 +119,16 @@
           "item_id": 32479,
           "item_name": "Wonderheal XT40 Shades",
           "item_url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -337,6 +348,16 @@
           "item_id": 32583,
           "item_name": "Shoulderpads of Renewed Life",
           "item_url": "https://www.wowhead.com/tbc/item=32583/shoulderpads-of-renewed-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking - BoP only"
@@ -369,6 +390,16 @@
           "item_id": 32585,
           "item_name": "Swiftheal Mantle",
           "item_url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -454,6 +485,25 @@
           "item_id": 21874,
           "item_name": "Primal Mooncloth Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -760,6 +810,25 @@
           "item_id": 21875,
           "item_name": "Primal Mooncloth Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -865,6 +934,16 @@
           "item_id": 32584,
           "item_name": "Swiftheal Wraps",
           "item_url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -890,6 +969,16 @@
           "item_id": 32582,
           "item_name": "Bracers of Renewed Life",
           "item_url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
@@ -1323,6 +1412,25 @@
           "item_id": 21873,
           "item_name": "Primal Mooncloth Belt",
           "item_url": "https://www.wowhead.com/tbc/item=21873/primal-mooncloth-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -1385,6 +1493,16 @@
           "item_id": 30036,
           "item_name": "Belt of the Long Road",
           "item_url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -2229,6 +2347,18 @@
           "item_id": 29309,
           "item_name": "Band of the Eternal Restorer",
           "item_url": "https://www.wowhead.com/tbc/item=29309/band-of-the-eternal-restorer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Restorer's Covenant (The Scale of the Sands Exalted)",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -2633,6 +2763,18 @@
           "item_id": 32486,
           "item_name": "Ashtongue Talisman of Equilibrium",
           "item_url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Okuno (Ashtongue Deathsworn Exalted)",
+              "reputation": "Ashtongue Deathsworn",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2693,6 +2835,18 @@
           "item_id": 30841,
           "item_name": "Lower City Prayerbook",
           "item_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu (Lower City Revered)",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3333,6 +3487,18 @@
           "item_id": 29170,
           "item_name": "Windcaller's Orb",
           "item_url": "https://www.wowhead.com/tbc/item=29170/windcallers-orb",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

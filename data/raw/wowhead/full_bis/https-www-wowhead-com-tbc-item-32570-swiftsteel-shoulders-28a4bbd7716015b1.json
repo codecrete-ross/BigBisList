@@ -5,15 +5,148 @@
   "fetched_at": "2026-05-24T04:38:11+00:00",
   "item_id": 32570,
   "name": "Swiftsteel Shoulders",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41133,
+      "entity_name": "Swiftsteel Shoulders",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders",
+      "spell_id": 41133,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          32570,
+          1,
+          1
+        ],
+        "id": 41133,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Swiftsteel Shoulders",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            23448,
+            18
+          ],
+          [
+            23573,
+            2
+          ],
+          [
+            22451,
+            8
+          ],
+          [
+            32428,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 32737,
+        "level": 70,
+        "name": "Plans: Swiftsteel Shoulders",
+        "popularity": 9,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35532,
+        "level": 70,
+        "name": "Plans: Swiftsteel Shoulders",
+        "popularity": 4,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 32737,
+      "level": 70,
+      "name": "Plans: Swiftsteel Shoulders",
+      "popularity": 9,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 4
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35532,
+      "level": 70,
+      "name": "Plans: Swiftsteel Shoulders",
+      "popularity": 4,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders"
 }

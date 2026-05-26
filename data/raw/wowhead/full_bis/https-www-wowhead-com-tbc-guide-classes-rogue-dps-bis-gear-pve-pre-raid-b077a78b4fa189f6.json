@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:42+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -191,6 +192,28 @@
           "item_id": 29148,
           "item_name": "Blackened Leather Spaulders",
           "item_url": "https://www.wowhead.com/tbc/item=29148/blackened-leather-spaulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Trader Narasu - Requires Revered with The Kurenai Vendor: Provisioner Nasela - Requires Revered with The Mag'har",
+              "reputation": "The Kurenai",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Trader Narasu - Requires Revered with The Kurenai Vendor: Provisioner Nasela - Requires Revered with The Mag'har",
+              "reputation": "The Mag'har",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -232,6 +255,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Tailoring"
@@ -384,6 +417,17 @@
           "item_id": 29525,
           "item_name": "Primalstrike Vest",
           "item_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -409,6 +453,15 @@
           "item_id": 30933,
           "item_name": "Hauberk of Karabor",
           "item_url": "https://www.wowhead.com/tbc/item=30933/hauberk-of-karabor",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Varedis Must Be Stopped - The Aldor Quest: Varedis Must Be Stopped - The Scryers",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -480,6 +533,17 @@
           "item_id": 29527,
           "item_name": "Primalstrike Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -542,6 +606,16 @@
           "item_id": 25685,
           "item_name": "Fel Leather Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=25685/fel-leather-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -664,6 +738,17 @@
           "item_id": 29526,
           "item_name": "Primalstrike Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -786,6 +871,16 @@
           "item_id": 25687,
           "item_name": "Fel Leather Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=25687/fel-leather-leggings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -848,6 +943,16 @@
           "item_id": 25686,
           "item_name": "Fel Leather Boots",
           "item_url": "https://www.wowhead.com/tbc/item=25686/fel-leather-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -940,6 +1045,16 @@
           "item_id": 24114,
           "item_name": "Braided Eternium Chain",
           "item_url": "https://www.wowhead.com/tbc/item=24114/braided-eternium-chain",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting"
@@ -1062,6 +1177,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1456,6 +1583,17 @@
           "item_id": 28438,
           "item_name": "Dragonmaw",
           "item_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"
@@ -1531,6 +1669,28 @@
           "item_id": 29124,
           "item_name": "Vindicator's Brand",
           "item_url": "https://www.wowhead.com/tbc/item=29124/vindicators-brand",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Endarin - Requires Exalted with The Aldor",
+              "reputation": "The Aldor",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Aldor"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Endarin - Requires Exalted with The Aldor",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Cheapest Option - Aldor Only",
           "source_links": [
             {
@@ -1645,6 +1805,28 @@
           "item_id": 29151,
           "item_name": "Veteran's Musket",
           "item_url": "https://www.wowhead.com/tbc/item=29151/veterans-musket",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike - Requires Exalted with Honor Hold Vendor: Quartermaster Urgronn - Requires Exalted with Thrallmar",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike - Requires Exalted with Honor Hold Vendor: Quartermaster Urgronn - Requires Exalted with Thrallmar",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:44:23+00:00",
   "item_id": 19445,
   "name": "Formula: Enchant Weapon - Agility",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Weapon - Agility Phase 1 Item Level 58 Binds when picked up Requires Enchanting (290) Requires Timbermaw Hold - Honored Use: Teaches you how to permanently enchant a weapon to increase your agility by 15. Permanently enchant a melee weapon to grant +15 Agility. Sell Price: 75 This enchanting formula is used for the Enchanting profession. It is sold by Meilosh. In the Enchanting Formulae category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 290,
+      "source_url": "https://www.wowhead.com/tbc/item=19445",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -5,15 +5,99 @@
   "fetched_at": "2026-05-24T05:04:03+00:00",
   "item_id": 29974,
   "name": "Living Crystal Breastplate",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Living Crystal Breastplate Phase 1 Item Level 100 Binds when picked up Chest Leather 255 Armor +25 Stamina +23 Intellect +17 Spirit Durability 100 / 100 Requires Level 65 Requires Tribal Leatherworking Equip: Increases damage and healing done by magical spells and effects by up to 29. Equip: Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects. Sell Price: 3 87 8 This blue leather armor of item level 100 goes in the \"Chest\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29974/living-crystal-breastplate",
+      "specialization": "Tribal Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36078,
+      "entity_name": "Living Crystal Breastplate",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29974/living-crystal-breastplate",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29974/living-crystal-breastplate",
+      "spell_id": 36078,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          330,
+          350,
+          360,
+          370
+        ],
+        "creates": [
+          29974,
+          1,
+          1
+        ],
+        "id": 36078,
+        "learnedat": 330,
+        "level": 0,
+        "name": "Living Crystal Breastplate",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            21887,
+            20
+          ],
+          [
+            25699,
+            12
+          ],
+          [
+            21886,
+            3
+          ],
+          [
+            14341,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10660,
+        "trainingcost": 20000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29974/living-crystal-breastplate"
 }

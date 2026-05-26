@@ -1,11 +1,14 @@
 {
+  "description": "Protects the caster, increasing armor by 660, Shadow resistance by 18 and restores 18 health every 5 sec. Only one type of Armor spell can be active on the Warlock at any time. Lasts 30 min.",
   "fetched_at": "2026-05-24T09:18:27+00:00",
   "name": "Demon Armor",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

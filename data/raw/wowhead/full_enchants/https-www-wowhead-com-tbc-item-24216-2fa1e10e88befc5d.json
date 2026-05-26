@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:43:15+00:00",
   "item_id": 24216,
   "name": "Design: Glinting Noble Topaz",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Glinting Noble Topaz Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Glinting Noble Topaz. Sell Price: 3 Glinting Noble Topaz Item Level 70 +4 Hit Rating and +4 Agility \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Spectral Apprentice. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24216",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,7 +26,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

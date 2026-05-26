@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:53+00:00",
   "item_id": 22910,
   "name": "Recipe: Elixir of Major Shadow Power",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Elixir of Major Shadow Power Item Level 70 Binds when picked up Requires Alchemy (350) Requires Lower City - Revered Use: Teaches you how to make an Elixir of Major Shadow Power. Sell Price: 2 Elixir of Major Shadow Power Item Level 70 Requires Level 60 Use: Increases shadow spell damage by up to 55 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 60 Requires Ancient Lichen , Nightmare Vine , Imbued Vial This alchemy recipe is used for the Alchemy profession. It is sold by Nakodu. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=22910",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,7 +28,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -1,11 +1,14 @@
 {
+  "description": "Charge an enemy, generate 9 rage, and stun it for 1 sec. Cannot be used in combat. In the Arms Abilities category. Requires Warrior. A spell.",
   "fetched_at": "2026-05-24T09:19:26+00:00",
   "name": "Charge",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -1,6 +1,8 @@
 {
+  "description": "Enchanters can learn Major Spellpower from Formula: Enchant Weapon - Major Spellpower at 350 Enchanting skill. Permanently enchant a melee weapon to increase spell damage and healing by up to 40. Requires a level 35 or higher item.",
   "fetched_at": "2026-05-24T08:32:55+00:00",
   "name": "Enchant Weapon - Major Spellpower",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,42 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          375,
+          390
+        ],
+        "id": 27975,
+        "learnedat": 350,
+        "level": 35,
+        "name": "Enchant Weapon - Major Spellpower",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22449,
+            8
+          ],
+          [
+            22446,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

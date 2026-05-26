@@ -1,11 +1,14 @@
 {
+  "description": "Place a trap that will release several venomous snakes to attack the first enemy to approach. The snakes will die after 15 sec. Trap will exist for 1 min. Only one trap can be active at a time.",
   "fetched_at": "2026-05-24T09:03:56+00:00",
   "name": "Snake Trap",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

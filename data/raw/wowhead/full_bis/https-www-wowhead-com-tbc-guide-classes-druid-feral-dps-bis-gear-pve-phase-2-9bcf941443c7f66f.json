@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:36+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -28,6 +29,16 @@
           "item_id": 8345,
           "item_name": "Wolfshead Helm",
           "item_url": "https://www.wowhead.com/tbc/item=8345/wolfshead-helm",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
@@ -376,6 +387,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -565,6 +586,25 @@
           "item_id": 29525,
           "item_name": "Primalstrike Vest",
           "item_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Elemental Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Elemental Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Elemental Leatherworking) - BoP only"
@@ -687,6 +727,18 @@
           "item_id": 32647,
           "item_name": "Shard-Bound Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=32647/shard-bound-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Jho'nass (Ogri'la Exalted)",
+              "reputation": "Ogri'la",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -878,6 +930,16 @@
           "item_id": 29507,
           "item_name": "Windslayer Wraps",
           "item_url": "https://www.wowhead.com/tbc/item=29507/windslayer-wraps",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
@@ -903,6 +965,16 @@
           "item_id": 25685,
           "item_name": "Fel Leather Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=25685/fel-leather-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
@@ -965,6 +1037,16 @@
           "item_id": 30040,
           "item_name": "Belt of Deep Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=30040/belt-of-deep-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
@@ -1087,6 +1169,16 @@
           "item_id": 30042,
           "item_name": "Belt of Natural Power",
           "item_url": "https://www.wowhead.com/tbc/item=30042/belt-of-natural-power",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
@@ -1317,6 +1409,16 @@
           "item_id": 30039,
           "item_name": "Boots of Utter Darkness",
           "item_url": "https://www.wowhead.com/tbc/item=30039/boots-of-utter-darkness",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking - BoP only"
@@ -1342,6 +1444,16 @@
           "item_id": 25686,
           "item_name": "Fel Leather Boots",
           "item_url": "https://www.wowhead.com/tbc/item=25686/fel-leather-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
@@ -1367,6 +1479,16 @@
           "item_id": 30041,
           "item_name": "Boots of Natural Grace",
           "item_url": "https://www.wowhead.com/tbc/item=30041/boots-of-natural-grace",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking - BoP only"
@@ -1466,6 +1588,16 @@
           "item_id": 24114,
           "item_name": "Braided Eternium Chain",
           "item_url": "https://www.wowhead.com/tbc/item=24114/braided-eternium-chain",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS when Active",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -1680,6 +1812,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu (Lower City Exalted)",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best in 6% Hit Set",
           "source_links": [
             {
@@ -2031,6 +2175,18 @@
           "item_id": 32654,
           "item_name": "Crystalforged Trinket",
           "item_url": "https://www.wowhead.com/tbc/item=32654/crystalforged-trinket",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Jho'nass (Ogri'la Revered)",
+              "reputation": "Ogri'la",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2295,6 +2451,18 @@
           "item_id": 29171,
           "item_name": "Earthwarden",
           "item_url": "https://www.wowhead.com/tbc/item=29171/earthwarden",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

@@ -5,6 +5,27 @@
   "fetched_at": "2026-05-24T08:51:53+00:00",
   "item_id": 22908,
   "name": "Recipe: Elixir of Major Firepower",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Elixir of Major Firepower Item Level 69 Binds when picked up Requires Alchemy (345) Requires The Scryers - Revered Use: Teaches you how to make an Elixir of Major Firepower. Sell Price: 1 50 Elixir of Major Firepower Item Level 64 Requires Level 50 Use: Increases fire spell damage by up to 55 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 25 Requires Mote of Fire (2), Ancient Lichen , Imbued Vial This alchemy recipe is used for the Alchemy profession. It is sold by Quartermaster Enuril. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 345,
+      "source_url": "https://www.wowhead.com/tbc/item=22908",
+      "type": "profession"
+    },
+    {
+      "choices": [
+        "The Scryers"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Recipe: Elixir of Major Firepower Item Level 69 Binds when picked up Requires Alchemy (345) Requires The Scryers - Revered Use: Teaches you how to make an Elixir of Major Firepower. Sell Price: 1 50 Elixir of Major Firepower Item Level 64 Requires Level 50 Use: Increases fire spell damage by up to 55 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 25 Requires Mote of Fire (2), Ancient Lichen , Imbued Vial This alchemy recipe is used for the Alchemy profession. It is sold by Quartermaster Enuril. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=22908",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,7 +38,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

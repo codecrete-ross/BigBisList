@@ -1,11 +1,14 @@
 {
+  "description": "Curses the target with recklessness, increasing melee attack power by 135 but reducing armor by 800 for 2 min. Cursed enemies will not flee and will ignore Fear and Horror effects. Only one Curse per Warlock can be active on any one target.",
   "fetched_at": "2026-05-24T08:51:00+00:00",
   "name": "Curse of Recklessness",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -1,11 +1,14 @@
 {
+  "description": "Heals the friendly target for 567to_lc646, then jumps to heal additional nearby targets. If cast on a party member, the heal will only jump to other party members. Each jump reduces the effectiveness of the heal by 50%. Heals 3 total targets.",
   "fetched_at": "2026-05-24T09:16:54+00:00",
   "name": "Chain Heal",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

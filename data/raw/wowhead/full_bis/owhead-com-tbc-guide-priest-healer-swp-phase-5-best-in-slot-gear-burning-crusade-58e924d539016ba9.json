@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:55+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -58,6 +59,16 @@
           "item_id": 35181,
           "item_name": "Powerheal 9000 Lens",
           "item_url": "https://www.wowhead.com/tbc/item=35181/powerheal-9000-lens",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -180,6 +191,16 @@
           "item_id": 32495,
           "item_name": "Powerheal 4000 Lens",
           "item_url": "https://www.wowhead.com/tbc/item=32495/powerheal-4000-lens",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -336,6 +357,16 @@
           "item_id": 32585,
           "item_name": "Swiftheal Mantle",
           "item_url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -651,6 +682,16 @@
           "item_id": 34365,
           "item_name": "Robe of Eternal Light",
           "item_url": "https://www.wowhead.com/tbc/item=34365/robe-of-eternal-light",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -852,6 +893,16 @@
           "item_id": 32584,
           "item_name": "Swiftheal Wraps",
           "item_url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1036,6 +1087,16 @@
           "item_id": 34367,
           "item_name": "Hands of Eternal Light",
           "item_url": "https://www.wowhead.com/tbc/item=34367/hands-of-eternal-light",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1293,6 +1354,16 @@
           "item_id": 30036,
           "item_name": "Belt of the Long Road",
           "item_url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1749,6 +1820,16 @@
           "item_id": 30035,
           "item_name": "Boots of the Long Road",
           "item_url": "https://www.wowhead.com/tbc/item=30035/boots-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -1811,6 +1892,16 @@
           "item_id": 34360,
           "item_name": "Amulet of Flowing Life",
           "item_url": "https://www.wowhead.com/tbc/item=34360/amulet-of-flowing-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - BoP only"
@@ -1898,6 +1989,18 @@
           "item_id": 34677,
           "item_name": "Shattered Sun Pendant of Restoration",
           "item_url": "https://www.wowhead.com/tbc/item=34677/shattered-sun-pendant-of-restoration",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner (Shattered Sun Offensive Exalted)",
+              "reputation": "Shattered Sun Offensive",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [
             {
@@ -2020,6 +2123,16 @@
           "item_id": 34363,
           "item_name": "Ring of Flowing Life",
           "item_url": "https://www.wowhead.com/tbc/item=34363/ring-of-flowing-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -2107,6 +2220,18 @@
           "item_id": 29309,
           "item_name": "Band of the Eternal Restorer",
           "item_url": "https://www.wowhead.com/tbc/item=29309/band-of-the-eternal-restorer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Restorer's Covenant (The Scale of the Sands Exalted)",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [
             {
@@ -2222,6 +2347,18 @@
           "item_id": 29290,
           "item_name": "Violet Signet of the Grand Restorer",
           "item_url": "https://www.wowhead.com/tbc/item=29290/violet-signet-of-the-grand-restorer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Eminence Among the Violet Eye (The Violet Eye Exalted)",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Viable",
           "source_links": [
             {
@@ -2409,6 +2546,16 @@
           "item_id": 35750,
           "item_name": "Redeemer's Alchemist Stone",
           "item_url": "https://www.wowhead.com/tbc/item=35750/redeemers-alchemist-stone",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Alchemy",
+              "raw_text": "Profession: Alchemy - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Regen BiS",
           "source_links": [],
           "source_text": "Profession: Alchemy - BoP only"

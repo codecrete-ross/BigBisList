@@ -1,11 +1,14 @@
 {
+  "description": "Attempt to finish off a wounded foe, causing 125 damage and converting each extra point of rage into 3 additional damage. Only usable on enemies that have less than 20% health.",
   "fetched_at": "2026-05-24T09:20:12+00:00",
   "name": "Execute",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -1,11 +1,14 @@
 {
+  "description": "Place a fire trap that explodes when an enemy approaches, causing (rangedAttackPower * 0.1 + 263) to (rangedAttackPower * 0.1 + 337) Fire damage and burning all enemies for 450 additional Fire damage over 20 sec to all within 10 yards. Trap will exist for 1 min. Only one trap can be active at a time.",
   "fetched_at": "2026-05-24T09:03:39+00:00",
   "name": "Explosive Trap",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

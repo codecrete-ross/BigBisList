@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 31682,
   "name": "Recipe: Fel Mana Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Fel Mana Potion Item Level 72 Binds when picked up Requires Alchemy (360) Use: Teaches you how to make a Fel Mana Potion. Sell Price: 1 Fel Mana Potion Item Level 72 Requires Level 60 Use: Restores 3200 mana over 24 sec, but at a cost. Also reduces spell damage by 25 and healing done by 50 for 15 min. (2 Min Cooldown) Max Stack: 5 Sell Price: 50 Requires Mana Thistle , Nightmare Vine (2), Imbued Vial This alchemy recipe is used for the Alchemy profession. It is looted from Eclipsion Centurion. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -117,7 +128,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

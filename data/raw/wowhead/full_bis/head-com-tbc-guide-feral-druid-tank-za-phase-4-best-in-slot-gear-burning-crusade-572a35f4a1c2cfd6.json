@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:50+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -891,6 +892,15 @@
           "item_id": 32580,
           "item_name": "Swiftstrike Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=32580/swiftstrike-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Drop: Leatherworking (BoE)",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Drop: Leatherworking (BoE)"
@@ -1177,6 +1187,16 @@
           "item_id": 30042,
           "item_name": "Belt of Natural Power",
           "item_url": "https://www.wowhead.com/tbc/item=30042/belt-of-natural-power",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1239,6 +1259,15 @@
           "item_id": 30040,
           "item_name": "Belt of Deep Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=30040/belt-of-deep-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Drop: Leatherworking (BoE)",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Drop: Leatherworking (BoE)"
@@ -1605,6 +1634,16 @@
           "item_id": 30041,
           "item_name": "Boots of Natural Grace",
           "item_url": "https://www.wowhead.com/tbc/item=30041/boots-of-natural-grace",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1734,6 +1773,17 @@
           "item_id": 24114,
           "item_name": "Braided Eternium Chain",
           "item_url": "https://www.wowhead.com/tbc/item=24114/braided-eternium-chain",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (360)",
+              "scope": "self_craft",
+              "skill": 360,
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best for Raid DPS",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (360)"
@@ -1952,6 +2002,18 @@
           "item_id": 29279,
           "item_name": "Violet Signet of the Great Protector",
           "item_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Path of the Violet Protector - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Overall",
           "source_links": [
             {
@@ -2012,6 +2074,18 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Champion's Covenant - Requires Exalted with Scale of the Sands",
+              "reputation": "Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Balanced Alternative",
           "source_links": [
             {
@@ -2079,6 +2153,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Threat Alternative",
           "source_links": [
             {
@@ -2925,6 +3011,18 @@
           "item_id": 29171,
           "item_name": "Earthwarden",
           "item_url": "https://www.wowhead.com/tbc/item=29171/earthwarden",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear Requires Exalted with Cenarion Expedition",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [
             {

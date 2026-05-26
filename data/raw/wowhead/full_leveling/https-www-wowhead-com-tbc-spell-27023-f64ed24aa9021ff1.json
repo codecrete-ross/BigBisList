@@ -1,11 +1,14 @@
 {
+  "description": "Place a fire trap that will burn the first enemy to approach for (rangedAttackPower * 0.1 + 197 * 5) Fire damage over 15 sec. Trap will exist for 1 min. Only one trap can be active at a time.",
   "fetched_at": "2026-05-24T09:03:37+00:00",
   "name": "Immolation Trap",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

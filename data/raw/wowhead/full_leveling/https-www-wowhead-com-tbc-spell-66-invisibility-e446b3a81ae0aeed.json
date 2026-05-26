@@ -1,11 +1,14 @@
 {
+  "description": "Fades the caster to invisibility over 5 sec, reducing threat each second. The effect is cancelled if you perform or receive any actions. While invisible, you can only see other invisible targets and those whom can see invisible. Lasts 20 sec.",
   "fetched_at": "2026-05-24T09:05:53+00:00",
   "name": "Invisibility",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -1,11 +1,14 @@
 {
+  "description": "Instantly attack the target causing (attackPower * 45 / 100) damage. Can only be used within 20 sec after you kill an enemy that yields experience or honor. Damage is based on your attack power.",
   "fetched_at": "2026-05-24T09:20:07+00:00",
   "name": "Victory Rush",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

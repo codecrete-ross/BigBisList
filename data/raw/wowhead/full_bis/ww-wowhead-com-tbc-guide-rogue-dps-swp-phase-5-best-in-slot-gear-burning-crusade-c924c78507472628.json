@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:57+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -88,6 +89,16 @@
           "item_id": 34353,
           "item_name": "Quad Deathblow X44 Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=34353/quad-deathblow-x44-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -214,6 +225,16 @@
           "item_id": 32581,
           "item_name": "Swiftstrike Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking - BoP only"
@@ -392,6 +413,16 @@
           "item_id": 34369,
           "item_name": "Carapace of Sun and Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=34369/carapace-of-sun-and-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoP)"
@@ -522,6 +553,16 @@
           "item_id": 32580,
           "item_name": "Swiftstrike Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=32580/swiftstrike-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - Can be Purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking - Can be Purchased on the Auction House"
@@ -584,6 +625,16 @@
           "item_id": 34370,
           "item_name": "Gloves of Immortal Dusk",
           "item_url": "https://www.wowhead.com/tbc/item=34370/gloves-of-immortal-dusk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -754,6 +805,16 @@
           "item_id": 30040,
           "item_name": "Belt of Deep Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=30040/belt-of-deep-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - Can be Purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking - Can be Purchased on the Auction House"
@@ -988,6 +1049,16 @@
           "item_id": 34358,
           "item_name": "Hard Khorium Choker",
           "item_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -1073,6 +1144,18 @@
           "item_id": 34679,
           "item_name": "Shattered Sun Pendant of Might",
           "item_url": "https://www.wowhead.com/tbc/item=34679/shattered-sun-pendant-of-might",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner - Requires Exalted with Shattered Sun Offensive",
+              "reputation": "Shattered Sun Offensive",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -1114,6 +1197,16 @@
           "item_id": 24114,
           "item_name": "Braided Eternium Chain",
           "item_url": "https://www.wowhead.com/tbc/item=24114/braided-eternium-chain",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - Can be Purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - Can be Purchased on the Auction House"
@@ -1210,6 +1303,16 @@
           "item_id": 34361,
           "item_name": "Hard Khorium Band",
           "item_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -1297,6 +1400,18 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Champion's Covenant (The Scale of the Sands Exalted)",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {

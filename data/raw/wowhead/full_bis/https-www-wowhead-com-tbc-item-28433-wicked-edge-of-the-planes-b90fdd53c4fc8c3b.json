@@ -5,15 +5,91 @@
   "fetched_at": "2026-05-24T05:22:39+00:00",
   "item_id": 28433,
   "name": "Wicked Edge of the Planes",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Wicked Edge of the Planes Phase 1 Item Level 136 Binds when picked up Main Hand Axe 184 - 343 Damage Speed 2.70 (97.59 damage per second) Durability 105 / 105 Requires Level 70 Requires Master Axesmith Equip: Improves critical strike rating by 23. Equip: Increases attack power by 48. Sell Price: 14 6 23 This epic one-handed axe has an item level of 136. It is crafted. In the One-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28433/wicked-edge-of-the-planes",
+      "specialization": "Master Axesmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36260,
+      "entity_name": "Wicked Edge of the Planes",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28433/wicked-edge-of-the-planes",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28433/wicked-edge-of-the-planes",
+      "spell_id": 36260,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28433,
+          1,
+          1
+        ],
+        "id": 36260,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Wicked Edge of the Planes",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            28432,
+            1
+          ],
+          [
+            30183,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17041,
+        "trainingcost": 500000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28433/wicked-edge-of-the-planes"
 }

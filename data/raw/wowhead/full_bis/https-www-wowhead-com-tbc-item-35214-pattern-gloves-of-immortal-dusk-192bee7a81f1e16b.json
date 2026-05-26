@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T04:52:19+00:00",
   "item_id": 35214,
   "name": "Pattern: Gloves of Immortal Dusk",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Gloves of Immortal Dusk Item Level 75 Binds when picked up Requires Leatherworking (365) Use: Teaches you how to craft Gloves of Immortal Dusk. Sell Price: 2 Gloves of Immortal Dusk Item Level 159 Binds when equipped Hands Leather 312 Armor +30 Agility +33 Stamina Red Socket Red Socket Socket Bonus: +3 Critical Strike Rating Durability 40 / 40 Requires Level 70 Equip: Improves critical strike rating by 30. Equip: Increases attack power by 90. Equip: Your attacks ignore 154 of your opponent's armor. Sell Price: 3 89 Requires Heavy Knothide Leather (30), Fel Hide (16), Primal Shadow (18), Primal Might (8), Sunmote (6) This leatherworking pattern is used for the Leatherworking profession. It is looted from Sunblade Arch Mage. In the Leatherworking Patterns category.",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35214/pattern-gloves-of-immortal-dusk",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,10 +26,13 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 1,
@@ -683,8 +697,16 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    46134,
+    15831,
+    40555
+  ],
   "url": "https://www.wowhead.com/tbc/item=35214/pattern-gloves-of-immortal-dusk"
 }

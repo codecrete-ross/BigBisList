@@ -5,15 +5,149 @@
   "fetched_at": "2026-05-24T04:43:11+00:00",
   "item_id": 35514,
   "name": "Frostscythe of Lord Ahune",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 3.99,
+      "entity_id": 188192,
+      "entity_name": "Ice Chest",
+      "out_of": 276,
+      "source_url": "https://www.wowhead.com/tbc/item=35514/frostscythe-of-lord-ahune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13,
+      "drop_percent": 7.14,
+      "entity_id": 188191,
+      "entity_name": "Ice Chest",
+      "out_of": 182,
+      "source_url": "https://www.wowhead.com/tbc/item=35514/frostscythe-of-lord-ahune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 96,
+      "drop_percent": 3.82,
+      "entity_id": 187892,
+      "entity_name": "Ice Chest",
+      "out_of": 2512,
+      "source_url": "https://www.wowhead.com/tbc/item=35514/frostscythe-of-lord-ahune",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 119,
+      "drop_percent": 6.99,
+      "entity_id": 188124,
+      "entity_name": "Ice Chest",
+      "out_of": 1702,
+      "source_url": "https://www.wowhead.com/tbc/item=35514/frostscythe-of-lord-ahune",
+      "type": "drop"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 11,
+        "id": 188192,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 11,
+                "outof": 276
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "name": "Ice Chest",
+        "outof": 276,
+        "pctstack": "",
+        "type": 3
+      },
+      {
+        "count": 13,
+        "id": 188191,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13,
+                "outof": 182
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "name": "Ice Chest",
+        "outof": 182,
+        "pctstack": "",
+        "type": 3
+      },
+      {
+        "count": 96,
+        "id": 187892,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 96,
+                "outof": 2512
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "name": "Ice Chest",
+        "outof": 2512,
+        "pctstack": "",
+        "type": 3
+      },
+      {
+        "count": 119,
+        "id": 188124,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 119,
+                "outof": 1702
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "name": "Ice Chest",
+        "outof": 1702,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=35514/frostscythe-of-lord-ahune"
 }

@@ -5,6 +5,18 @@
   "fetched_at": "2026-05-24T09:39:13+00:00",
   "item_id": 28909,
   "name": "Greater Inscription of the Orb",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Scryers"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Greater Inscription of the Orb Item Level 70 Binds when picked up Requires Level 70 Requires The Scryers - Exalted Use: Permanently adds 15 spell critical strike rating and up to 12 spell damage to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot. It is sold by Inscriber Veredis. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28909/greater-inscription-of-the-orb",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -24,7 +36,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

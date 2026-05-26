@@ -5,15 +5,126 @@
   "fetched_at": "2026-05-24T04:53:20+00:00",
   "item_id": 29507,
   "name": "Windslayer Wraps",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35563,
+      "entity_name": "Windslayer Wraps",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29507/windslayer-wraps",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29507/windslayer-wraps",
+      "spell_id": 35563,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          29507,
+          1,
+          1
+        ],
+        "id": 35563,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Windslayer Wraps",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            29547,
+            12
+          ],
+          [
+            22452,
+            18
+          ],
+          [
+            22451,
+            8
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 29728,
+        "level": 73,
+        "name": "Pattern: Windslayer Wraps",
+        "popularity": 6,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 29728,
+      "level": 73,
+      "name": "Pattern: Windslayer Wraps",
+      "popularity": 6,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29507/windslayer-wraps"
 }

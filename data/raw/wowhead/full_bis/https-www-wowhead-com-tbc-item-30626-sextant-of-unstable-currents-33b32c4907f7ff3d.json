@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T04:26:40+00:00",
   "item_id": 30626,
   "name": "Sextant of Unstable Currents",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -19,10 +20,13 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "boss": 1,
@@ -74,8 +78,12 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=30626/sextant-of-unstable-currents"
 }

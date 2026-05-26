@@ -5,15 +5,95 @@
   "fetched_at": "2026-05-24T05:07:59+00:00",
   "item_id": 32472,
   "name": "Justicebringer 2000 Specs",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Justicebringer 2000 Specs Phase 2 Item Level 127 Binds when picked up Head Plate 1296 Armor +29 Stamina +13 Intellect Meta Socket Blue Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 100 / 100 Requires Level 62 Requires Engineering (350) Equip: Improves spell critical strike rating by 39. Equip: Increases healing done by up to 101 and damage done by up to 34 for all magical spells and effects. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 6 69 71 This epic plate armor of item level 127 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=32472/justicebringer-2000-specs",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41311,
+      "entity_name": "Justicebringer 2000 Specs",
+      "source_url": "https://www.wowhead.com/tbc/item=32472/justicebringer-2000-specs",
+      "spell_id": 41311,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "chrclass": 2,
+        "colors": [
+          350,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          32472,
+          1,
+          1
+        ],
+        "id": 41311,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Justicebringer 2000 Specs",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            23786,
+            1
+          ],
+          [
+            23785,
+            2
+          ],
+          [
+            23787,
+            4
+          ],
+          [
+            23572,
+            1
+          ],
+          [
+            23440,
+            2
+          ]
+        ],
+        "reqclass": 2,
+        "schools": 1,
+        "skill": [],
+        "trainingcost": 50000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32472/justicebringer-2000-specs"
 }

@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T04:54:53+00:00",
   "name": "Braided Eternium Chain",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,48 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          24114,
+          1,
+          1
+        ],
+        "id": 31070,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Braided Eternium Chain",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            23447,
+            2
+          ],
+          [
+            31079,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [
@@ -32,7 +73,10 @@
         ],
         "subclass": 10
       }
-    ]
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 31070,
   "url": "https://www.wowhead.com/tbc/spell=31070/braided-eternium-chain"

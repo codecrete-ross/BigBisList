@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:38+00:00",
   "item_id": 20757,
   "name": "Formula: Brilliant Mana Oil",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Brilliant Mana Oil Phase 1 Item Level 60 Binds when picked up Requires Enchanting (300) Requires Zandalar Tribe - Friendly Use: Teaches you how to create Brilliant Mana Oil. Creates Brilliant Mana Oil. Sell Price: 1 Brilliant Mana Oil Item Level 55 Requires Level 45 Use: While applied to target weapon it restores 12 mana to the caster every 5 seconds and increases the effect of healing spells by up to 25. Lasts for 1 hour. 5 Charges Sell Price: 10 Requires Large Brilliant Shard (2), Purple Lotus (3), Imbued Vial This enchanting formula is used for the Enchanting profession. It is sold by Rin'wosho the Trader. In the Enchanting Formulae category. An item.",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=20757",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

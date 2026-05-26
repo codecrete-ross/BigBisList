@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:35:35+00:00",
   "item_id": 31142,
   "name": "Blade of Trapped Knowledge",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,10 +16,50 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 184930,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 57,
+                "outof": 5576
+              }
+            },
+            "4": {
+              "0": {
+                "count": 4,
+                "outof": 300
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 194
+              }
+            }
+          }
+        },
+        "location": [
+          3562,
+          3792,
+          3713,
+          -1
+        ],
+        "name": "Solid Fel Iron Chest",
+        "outof": 194,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 0,
@@ -1762,8 +1803,12 @@
         "type": 3
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31142/blade-of-trapped-knowledge"
 }

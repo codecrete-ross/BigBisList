@@ -1,11 +1,79 @@
 {
+  "description": "Permanently enchant a piece of chest armor to grant +150 health. Requires a level 35 or higher item. In the Profession Spells category. Always up to date.",
   "fetched_at": "2026-05-24T08:32:55+00:00",
   "name": "Enchant Chest - Exceptional Health",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Enchanting",
+      "raw_text": "Enchanting",
+      "scope": "learn_recipe",
+      "skill": 315,
+      "source_url": "https://www.wowhead.com/tbc/spell=27957/exceptional-health",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Enchanting Trainer",
+      "profession": "Enchanting",
+      "required_skill": 315,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "learn_recipe",
+          "skill": 315,
+          "source_url": "https://www.wowhead.com/tbc/spell=27957/exceptional-health",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=27957/exceptional-health",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          315,
+          325,
+          340,
+          355
+        ],
+        "id": 27957,
+        "learnedat": 315,
+        "level": 35,
+        "name": "Enchant Chest - Exceptional Health",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22445,
+            8
+          ],
+          [
+            13446,
+            4
+          ],
+          [
+            14344,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "trainingcost": 17500
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

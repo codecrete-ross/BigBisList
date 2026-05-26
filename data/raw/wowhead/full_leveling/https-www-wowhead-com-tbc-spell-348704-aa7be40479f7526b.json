@@ -1,11 +1,14 @@
 {
+  "description": "Fills the Paladin with holy power, granting each melee attack a chance to apply Blood Corruption, which deals 150 additional Holy damage over 15 sec. Blood Corruption can stack up to 5 times. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.Unleashing this Seal's energy will judge an enemy, instantly causing 120 Holy damage for each application of Blood Corruption on the target.",
   "fetched_at": "2026-05-24T09:07:31+00:00",
   "name": "Seal of Corruption",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

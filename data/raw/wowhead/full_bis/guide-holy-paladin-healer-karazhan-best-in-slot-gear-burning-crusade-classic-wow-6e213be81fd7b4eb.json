@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:53+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -118,6 +119,16 @@
           "item_id": 24264,
           "item_name": "Whitemend Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24264/whitemend-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE - Requires 350 Tailoring for Set Bonus)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE - Requires 350 Tailoring for Set Bonus)"
@@ -277,6 +288,17 @@
           "item_id": 21874,
           "item_name": "Primal Mooncloth Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Mooncloth Tailoring (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Mooncloth Tailoring (BoP)"
@@ -528,6 +550,16 @@
           "item_id": 24254,
           "item_name": "White Remedy Cape",
           "item_url": "https://www.wowhead.com/tbc/item=24254/white-remedy-cape",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -590,6 +622,17 @@
           "item_id": 29522,
           "item_name": "Windhawk Hauberk",
           "item_url": "https://www.wowhead.com/tbc/item=29522/windhawk-hauberk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Tribal Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tribal Leatherworking (BoP)"
@@ -712,6 +755,17 @@
           "item_id": 21875,
           "item_name": "Primal Mooncloth Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Mooncloth Tailoring (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Mooncloth Tailoring (BoP)"
@@ -744,6 +798,17 @@
           "item_id": 29523,
           "item_name": "Windhawk Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Tribal Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tribal Leatherworking (BoP)"
@@ -769,6 +834,16 @@
           "item_id": 23539,
           "item_name": "Blessed Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=23539/blessed-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (BoE)"
@@ -794,6 +869,18 @@
           "item_id": 29183,
           "item_name": "Bindings of the Timewalker",
           "item_url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Requires Exalted with Keepers of Time",
+              "reputation": "Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -1085,6 +1172,16 @@
           "item_id": 29506,
           "item_name": "Gloves of the Living Touch",
           "item_url": "https://www.wowhead.com/tbc/item=29506/gloves-of-the-living-touch",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1117,6 +1214,17 @@
           "item_id": 29524,
           "item_name": "Windhawk Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29524/windhawk-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Tribal Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tribal Leatherworking (BoP)"
@@ -1269,6 +1377,17 @@
           "item_id": 21873,
           "item_name": "Primal Mooncloth Belt",
           "item_url": "https://www.wowhead.com/tbc/item=21873/primal-mooncloth-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Mooncloth Tailoring (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Mooncloth Tailoring (BoP)"
@@ -1518,6 +1637,16 @@
           "item_id": 24261,
           "item_name": "Whitemend Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24261/whitemend-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -2044,6 +2173,18 @@
           "item_id": 29290,
           "item_name": "Violet Signet of the Grand Restorer",
           "item_url": "https://www.wowhead.com/tbc/item=29290/violet-signet-of-the-grand-restorer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Eminence Among the Violet Eye - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -2147,6 +2288,28 @@
           "item_id": 29169,
           "item_name": "Ring of Convalescence",
           "item_url": "https://www.wowhead.com/tbc/item=29169/ring-of-convalescence",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike - Requires Revered with Honor Hold Vendor: Quartermaster Urgronn - Requires Revered with Thrallmar",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike - Requires Revered with Honor Hold Vendor: Quartermaster Urgronn - Requires Revered with Thrallmar",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2338,6 +2501,18 @@
           "item_id": 30841,
           "item_name": "Lower City Prayerbook",
           "item_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Revered with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2662,6 +2837,16 @@
           "item_id": 23556,
           "item_name": "Hand of Eternity",
           "item_url": "https://www.wowhead.com/tbc/item=23556/hand-of-eternity",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (BoE)"
@@ -2742,6 +2927,18 @@
           "item_id": 29175,
           "item_name": "Gavel of Pure Light",
           "item_url": "https://www.wowhead.com/tbc/item=29175/gavel-of-pure-light",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador - Requires Exalted with The Shat'tar",
+              "reputation": "The Shat'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

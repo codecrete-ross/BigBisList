@@ -5,6 +5,18 @@
   "fetched_at": "2026-05-24T05:13:54+00:00",
   "item_id": 29134,
   "name": "Gauntlets of the Chosen",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Scryers"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Gauntlets of the Chosen Phase 1 Item Level 115 Binds when picked up Unique Hands Plate 728 Armor +15 Agility +30 Stamina Durability 45 / 45 Requires Level 70 Requires The Scryers - Revered Equip: Increases defense rating by 35. Sell Price: 3 21 78 This blue plate armor of item level 115 goes in the \"Hands\" slot. It is sold by Quartermaster Enuril. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29134/gauntlets-of-the-chosen",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,11 +29,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -47,7 +63,10 @@
         "tag": "Scryers: Quartermaster",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29134/gauntlets-of-the-chosen"
 }

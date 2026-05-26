@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "name": "Relentless Earthstorm Diamond",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -20,9 +22,44 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          32409,
+          1,
+          1
+        ],
+        "id": 39961,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Relentless Earthstorm Diamond",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            25867,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

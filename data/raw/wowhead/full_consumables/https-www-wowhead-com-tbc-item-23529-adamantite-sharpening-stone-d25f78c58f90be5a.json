@@ -5,19 +5,30 @@
   "fetched_at": "2026-05-24T08:51:00+00:00",
   "item_id": 23529,
   "name": "Adamantite Sharpening Stone",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 29656,
       "entity_name": "Adamantite Sharpening Stone",
       "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23529/adamantite-sharpening-stone",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=23529/adamantite-sharpening-stone",
       "spell_id": 29656,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

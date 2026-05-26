@@ -1,11 +1,14 @@
 {
+  "description": "Creates a violent storm in the target area causing 206 Nature damage to enemies every 1 sec, and increasing the time between attacks by 25%. Lasts 10 sec. Druid must channel to maintain the spell.",
   "fetched_at": "2026-05-24T09:00:33+00:00",
   "name": "Hurricane",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

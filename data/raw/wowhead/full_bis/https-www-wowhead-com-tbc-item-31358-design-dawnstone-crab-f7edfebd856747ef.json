@@ -5,6 +5,26 @@
   "fetched_at": "2026-05-24T05:15:29+00:00",
   "item_id": 31358,
   "name": "Design: Dawnstone Crab",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Dawnstone Crab Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Thrallmar - Revered Use: Teaches you how to craft a Dawnstone Crab. Sell Price: 3 Figurine - Dawnstone Crab Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Requires Jewelcrafting (350) Equip: Increases defense rating by 32. Use: Increases dodge rating by 125 for 20 sec. (2 Min Cooldown) Sell Price: 1 50 Requires Khorium Bar (4), Dawnstone (2), Golden Draenite (4) This jewelcrafting design is used for the Jewelcrafting profession. It is sold by Quartermaster Urgronn. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 370,
+      "source_url": "https://www.wowhead.com/tbc/item=31358/design-dawnstone-crab",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Dawnstone Crab Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Thrallmar - Revered Use: Teaches you how to craft a Dawnstone Crab. Sell Price: 3 Figurine - Dawnstone Crab Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Requires Jewelcrafting (350) Equip: Increases defense rating by 32. Use: Increases dodge rating by 125 for 20 sec. (2 Min Cooldown) Sell Price: 1 50 Requires Khorium Bar (4), Dawnstone (2), Golden Draenite (4) This jewelcrafting design is used for the Jewelcrafting profession. It is sold by Quartermaster Urgronn. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=31358/design-dawnstone-crab",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,11 +36,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -46,7 +70,13 @@
         "tag": "Thrallmar Quartermaster",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    31080,
+    31039
+  ],
   "url": "https://www.wowhead.com/tbc/item=31358/design-dawnstone-crab"
 }

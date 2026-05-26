@@ -1,11 +1,14 @@
 {
+  "description": "Summons a Flametongue Totem that enchants all party members' main-hand weapons with fire if they are within 20 yards. Each hit causes 19.4 to 59.7 additional Fire damage. Lasts 2 min.",
   "fetched_at": "2026-05-24T09:15:54+00:00",
   "name": "Flametongue Totem",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

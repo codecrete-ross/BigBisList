@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:46:42+00:00",
   "item_id": 28274,
   "name": "Formula: Enchant Cloak - Spell Penetration",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Cloak - Spell Penetration Phase 1 Item Level 65 Binds when picked up Requires Enchanting (325) Requires The Consortium - Friendly Use: Teaches you how to permanently enchant a cloak to give 20 Spell Penetration. Permanently enchant a cloak to increase Spell Penetration by 20. Requires a level 35 or higher item. Sell Price: 1 This enchanting formula is used for the Enchanting profession. It is sold by NPCs. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 325,
+      "source_url": "https://www.wowhead.com/tbc/item=28274",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -26,7 +37,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

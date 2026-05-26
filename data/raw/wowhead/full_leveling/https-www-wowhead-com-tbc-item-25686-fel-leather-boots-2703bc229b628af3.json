@@ -5,19 +5,40 @@
   "fetched_at": "2026-05-24T09:16:25+00:00",
   "item_id": 25686,
   "name": "Fel Leather Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Fel Leather Boots Phase 1 Item Level 112 Binds when equipped Feet Leather 196 Armor Yellow Socket Red Socket Socket Bonus: +6 Attack Power Durability 50 / 50 Requires Level 69 Equip: Improves hit rating by 25. Equip: Improves critical strike rating by 17. Equip: Increases attack power by 36. Fel Skin (0/3) Requires Leatherworking (350) Fel Leather Gloves Fel Leather Boots Fel Leather Leggings (3) Set : Increases your dodge rating by 20. Sell Price: 3 28 62 Fel Leather Boots is a Leather boots crafted by Leatherworkers with a skill of 350. This blue leather armor of item level 112 goes in the \"Feet\" slot.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25686/fel-leather-boots",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 32493,
       "entity_name": "Fel Leather Boots",
       "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=25686/fel-leather-boots",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=25686/fel-leather-boots",
       "spell_id": 32493,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
     "contained-in-item": [],

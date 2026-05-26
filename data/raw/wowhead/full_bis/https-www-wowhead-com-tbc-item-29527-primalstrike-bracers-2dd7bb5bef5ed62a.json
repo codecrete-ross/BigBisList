@@ -5,15 +5,91 @@
   "fetched_at": "2026-05-24T04:48:38+00:00",
   "item_id": 29527,
   "name": "Primalstrike Bracers",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Primalstrike Bracers Phase 1 Item Level 115 Binds when picked up Wrist Leather 159 Armor +15 Agility +21 Stamina Durability 40 / 40 Requires Level 70 Requires Elemental Leatherworking Equip: Increases attack power by 64. Primal Intent (0/3) Primalstrike Bracers Primalstrike Belt Primalstrike Vest (3) Set : Increases attack power by 40. Sell Price: 3 5 89 Primalstrike Bracers is a Leather Bracer crafted by Leatherworkers with 375 skill and specialized in Elemental Leatherworking. This epic leather armor of item level 115 goes in the \"Wrist\" slot.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
+      "specialization": "Elemental Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35591,
+      "entity_name": "Primalstrike Bracers",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
+      "spell_id": 35591,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29527,
+          1,
+          1
+        ],
+        "id": 35591,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Primalstrike Bracers",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            23571,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10658,
+        "trainingcost": 100000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers"
 }

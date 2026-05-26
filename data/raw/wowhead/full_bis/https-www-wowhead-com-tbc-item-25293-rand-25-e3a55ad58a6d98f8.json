@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:19:54+00:00",
   "item_id": 25293,
   "name": "Draenethyst Wand",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -2092,13 +2093,60 @@
       "source_url": "https://www.wowhead.com/tbc/item=25293&&rand=-25",
       "type": "drop",
       "zone": "Sunwell Plateau"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 1.44,
+      "entity_id": 184939,
+      "entity_name": "Solid Adamantite Chest",
+      "out_of": 139,
+      "source_url": "https://www.wowhead.com/tbc/item=25293&&rand=-25",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 2,
+        "id": 184939,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 64,
+                "outof": 3325
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 139
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 78
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "name": "Solid Adamantite Chest",
+        "outof": 139,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 1,
@@ -10638,8 +10686,12 @@
         "type": 3
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=25293&&rand=-25"
 }

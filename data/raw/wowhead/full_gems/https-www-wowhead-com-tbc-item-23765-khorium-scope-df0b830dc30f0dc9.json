@@ -5,21 +5,34 @@
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "item_id": 23765,
   "name": "Khorium Scope",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 30332,
       "entity_name": "Khorium Scope",
       "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23765/khorium-scope",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=23765/khorium-scope",
       "spell_id": 30332,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [
       {
@@ -66,6 +79,7 @@
       }
     ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

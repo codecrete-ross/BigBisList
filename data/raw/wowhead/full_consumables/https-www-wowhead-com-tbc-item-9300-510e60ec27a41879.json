@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:33+00:00",
   "item_id": 9300,
   "name": "Recipe: Elixir of Demonslaying",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Elixir of Demonslaying Item Level 50 Requires Alchemy (250) Use: Teaches you how to make an Elixir of Demonslaying. Sell Price: 25 Elixir of Demonslaying Item Level 50 Requires Level 40 Use: Increases attack power by 265 against demons. Lasts 5 min. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 7 Dropped by: Cenarion Hold Infantry Requires Gromsblood , Ghost Mushroom , Crystal Vial This alchemy recipe is used for the Alchemy profession. It is sold by NPCs. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 250,
+      "source_url": "https://www.wowhead.com/tbc/item=9300",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -24,7 +35,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T04:53:47+00:00",
   "item_id": 31255,
   "name": "Cloak of the Craft",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,10 +16,50 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 184937,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 31,
+                "outof": 5042
+              }
+            },
+            "4": {
+              "0": {
+                "count": 5,
+                "outof": 296
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 154
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3792,
+          3791,
+          -1
+        ],
+        "name": "Solid Adamantite Chest",
+        "outof": 154,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 0,
@@ -1178,8 +1219,12 @@
         "type": 1
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31255/cloak-of-the-craft"
 }

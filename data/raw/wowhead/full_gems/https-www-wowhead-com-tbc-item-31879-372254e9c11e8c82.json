@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:32:57+00:00",
   "item_id": 31879,
   "name": "Design: Wicked Noble Topaz",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Wicked Noble Topaz Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Wicked Noble Topaz. Sell Price: 3 Wicked Noble Topaz Item Level 70 +4 Critical Strike Rating and +8 Attack Power \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Phantom Attendant. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=31879",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,9 +26,46 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 1,
+        "flags2": 24580,
+        "id": 33926,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 263
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Sealed Scroll Case",
+        "outof": 263,
+        "pctstack": "",
+        "quality": 3,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Forest Frog",
+            "t": 1,
+            "ti": 24396,
+            "z": 3805
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -1410,6 +1458,7 @@
         "type": 6
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

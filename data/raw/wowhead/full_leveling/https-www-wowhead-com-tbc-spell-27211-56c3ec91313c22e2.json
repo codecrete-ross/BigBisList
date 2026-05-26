@@ -1,11 +1,44 @@
 {
+  "description": "Burn the enemy's soul, causing 853to_lc1065 Fire damage. In the Destruction Abilities category. Requires Warlock. Learn how to use this in our class guide.",
   "fetched_at": "2026-05-24T09:17:49+00:00",
   "name": "Soul Fire",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=27211",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 256,
+        "id": 27211,
+        "level": 64,
+        "name": "Soul Fire",
+        "nskillup": 1,
+        "rank": "Rank 3",
+        "reagents": [
+          [
+            6265,
+            1
+          ]
+        ],
+        "reqclass": 256,
+        "schools": 4,
+        "skill": [
+          593
+        ],
+        "trainingcost": 42000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

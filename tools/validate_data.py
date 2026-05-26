@@ -14,6 +14,34 @@ from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES
 from tools.sources import derive_primary_source, summarize_sources
 
 
+REQUIREMENT_TYPES = {
+    "reputation",
+    "profession",
+    "profession_specialization",
+    "recipe_known",
+    "faction_choice",
+    "source_access",
+    "unknown_text",
+}
+
+REQUIREMENT_SCOPES = {
+    "vendor_purchase",
+    "quest_reward",
+    "self_craft",
+    "learn_recipe",
+    "cast_enchant",
+    "equip_or_use",
+    "source_access",
+}
+
+REQUIREMENT_CONFIDENCES = {
+    "wowhead_item",
+    "wowhead_spell_recipe",
+    "parsed_source_text",
+    "manual_review",
+}
+
+
 @dataclass
 class ValidationResult:
     ok: bool
@@ -24,6 +52,40 @@ class ValidationResult:
 def _require(condition: bool, errors: list[str], message: str) -> None:
     if not condition:
         errors.append(message)
+
+
+def validate_requirements(label: str, requirements: object, errors: list[str], required: bool = False) -> None:
+    if requirements is None:
+        _require(not required, errors, f"{label} requires a requirements array")
+        return
+    _require(isinstance(requirements, list), errors, f"{label} requirements must be an array")
+    if not isinstance(requirements, list):
+        return
+    for index, requirement in enumerate(requirements):
+        req_label = f"{label} requirement {index}"
+        _require(isinstance(requirement, dict), errors, f"{req_label} must be an object")
+        if not isinstance(requirement, dict):
+            continue
+        _require(requirement.get("type") in REQUIREMENT_TYPES, errors, f"{req_label} has invalid type: {requirement.get('type')}")
+        _require(requirement.get("scope") in REQUIREMENT_SCOPES, errors, f"{req_label} has invalid scope: {requirement.get('scope')}")
+        source_url = requirement.get("source_url")
+        _require(str(source_url or "").startswith("https://www.wowhead.com/tbc/"), errors, f"{req_label} needs a Wowhead source_url")
+        _require(requirement.get("confidence") in REQUIREMENT_CONFIDENCES, errors, f"{req_label} has invalid confidence: {requirement.get('confidence')}")
+        if "raw_text" in requirement:
+            _require(isinstance(requirement.get("raw_text"), str), errors, f"{req_label} raw_text must be a string")
+        if requirement.get("type") == "reputation":
+            _require(bool(requirement.get("reputation")), errors, f"{req_label} reputation needs a faction name")
+            _require(bool(requirement.get("standing")), errors, f"{req_label} reputation needs a standing")
+        if requirement.get("type") == "profession":
+            _require(bool(requirement.get("profession")), errors, f"{req_label} profession needs a profession name")
+            if "skill" in requirement:
+                _require(isinstance(requirement.get("skill"), int), errors, f"{req_label} skill must be an integer")
+        if requirement.get("type") == "profession_specialization":
+            _require(bool(requirement.get("specialization")), errors, f"{req_label} specialization needs a name")
+        if requirement.get("type") == "recipe_known":
+            _require(isinstance(requirement.get("spell_id"), int) and requirement.get("spell_id") > 0, errors, f"{req_label} recipe_known needs spell_id")
+        if requirement.get("type") == "faction_choice":
+            _require(isinstance(requirement.get("choices"), list) and bool(requirement.get("choices")), errors, f"{req_label} faction_choice needs choices")
 
 
 def validate() -> ValidationResult:
@@ -86,6 +148,7 @@ def validate() -> ValidationResult:
         if item.get("binding") in {"bind_on_pickup", "quest"}:
             _require(item.get("boe") is False, errors, f"Item {item_id} {item.get('binding')} must have boe=false")
         _require(str(item.get("wowhead_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Item {item_id} must have a Wowhead TBC URL")
+        validate_requirements(f"Item {item_id}", item.get("requirements"), errors)
         sources = item.get("sources")
         _require(isinstance(sources, list) and len(sources) > 0, errors, f"Item {item_id} must have at least one structured source")
         if isinstance(sources, list) and sources:
@@ -95,6 +158,7 @@ def validate() -> ValidationResult:
                 source_type = source.get("type")
                 _require(source_type in {"drop", "quest", "vendor", "crafted", "pvp", "token_turnin", "world_drop", "unknown"}, errors, f"Item {item_id} has invalid source type: {source_type}")
                 _require(bool(source.get("confidence")), errors, f"Item {item_id} source is missing confidence")
+                validate_requirements(f"Item {item_id} source {source_type}", source.get("requirements"), errors)
                 source_url = source.get("source_url")
                 if source_url:
                     _require(str(source_url).startswith("https://www.wowhead.com/tbc/"), errors, f"Item {item_id} source URL must be a Wowhead TBC URL")
@@ -142,6 +206,7 @@ def validate() -> ValidationResult:
             _require(bool(entry.get("rank_label")), errors, f"Item {item_id} is missing rank_label")
             _require(bool(entry.get("rank_group")), errors, f"Item {item_id} is missing rank_group")
             _require(bool(entry.get("context")), errors, f"Item {item_id} is missing context")
+            validate_requirements(f"BiS list item {item_id}", entry.get("requirements"), errors)
             item_context = (item_id, str(entry.get("context")))
             _require(item_context not in seen_item_contexts, errors, f"Duplicate BiS item/context in {class_name}/{spec_name}/{phase}/{slot}: {item_id}/{entry.get('context')}")
             seen_item_contexts.add(item_context)
@@ -160,6 +225,7 @@ def validate() -> ValidationResult:
         if "meta" in gem:
             _require(isinstance(gem.get("meta"), bool), errors, f"Gem {gem_id} meta must be boolean")
         _require(str(gem.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Gem {gem_id} needs a Wowhead source URL")
+        validate_requirements(f"Gem {gem_id}", gem.get("requirements"), errors)
 
     for enchant in enchants_doc.get("enchants", []):
         class_name = enchant.get("class")
@@ -173,6 +239,7 @@ def validate() -> ValidationResult:
         _require(isinstance(enchant_id, int) and enchant_id > 0, errors, f"Invalid enchant id: {enchant_id}")
         _require(enchant.get("type") in {"item", "spell"}, errors, f"Enchant {enchant_id} has invalid type: {enchant.get('type')}")
         _require(str(enchant.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Enchant {enchant_id} needs a Wowhead source URL")
+        validate_requirements(f"Enchant {enchant_id}", enchant.get("requirements"), errors)
 
     for consumable in consumables_doc.get("consumables", []):
         class_name = consumable.get("class")
@@ -186,6 +253,7 @@ def validate() -> ValidationResult:
         if consumable.get("phase"):
             _require(consumable.get("phase") in PHASE_KEYS, errors, f"Unknown consumable phase: {consumable.get('phase')}")
         _require(str(consumable.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Consumable {consumable.get('category')} needs a Wowhead source URL")
+        validate_requirements(f"Consumable {consumable.get('category')}", consumable.get("requirements"), errors)
 
     for leveling in leveling_doc.get("leveling", []):
         class_name = leveling.get("class")
@@ -213,6 +281,9 @@ def validate() -> ValidationResult:
             seen_source_ids.add(source_key)
             _require(bool(source_row.get("name")), errors, f"{source_doc_name} {source_id} needs name")
             _require(str(source_row.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"{source_doc_name} {source_id} needs a Wowhead source URL")
+            validate_requirements(f"{source_doc_name} {source_id}", source_row.get("requirements"), errors)
+            for source in source_row.get("sources", []):
+                validate_requirements(f"{source_doc_name} {source_id} source", source.get("requirements"), errors)
 
     for source in manifest_doc.get("sources", []):
         _require(str(source.get("url", "")).startswith("https://www.wowhead.com/tbc/"), errors, "Manifest source URL must be a Wowhead TBC URL")

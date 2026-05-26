@@ -5,12 +5,23 @@
   "fetched_at": "2026-05-24T08:51:01+00:00",
   "item_id": 22835,
   "name": "Elixir of Major Shadow Power",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 28558,
       "entity_name": "Elixir of Major Shadow Power",
       "profession": "Alchemy",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=22835/elixir-of-major-shadow-power",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=22835/elixir-of-major-shadow-power",
       "spell_id": 28558,
       "type": "crafted"
@@ -83,7 +94,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

@@ -1,11 +1,14 @@
 {
+  "description": "Conjures a mana emerald that can be used to instantly restore 2340to_lc2460 mana. 3 charges.Conjured items disappear if logged out for more than 15 minutes.",
   "fetched_at": "2026-05-24T08:51:33+00:00",
   "name": "Conjure Mana Emerald",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

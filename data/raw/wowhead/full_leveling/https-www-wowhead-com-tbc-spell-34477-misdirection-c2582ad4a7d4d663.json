@@ -1,11 +1,14 @@
 {
+  "description": "Threat caused by your next 3 attacks is redirected to the target raid member. Caster and target can only be affected by one Misdirection spell at a time. Effect lasts 30 sec.",
   "fetched_at": "2026-05-24T09:03:54+00:00",
   "name": "Misdirection",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -5,15 +5,53 @@
   "fetched_at": "2026-05-24T04:32:57+00:00",
   "item_id": 32655,
   "name": "Crystalweave Bracers",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 40748,
+      "entity_name": "Apexis Crystal Infusion",
+      "source_url": "https://www.wowhead.com/tbc/item=32655/crystalweave-bracers",
+      "spell_id": 40748,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": -26,
+        "creates": [
+          32655,
+          50,
+          50
+        ],
+        "id": 40748,
+        "level": 0,
+        "name": "Apexis Crystal Infusion",
+        "popularity": 15,
+        "quality": 4,
+        "reagents": [
+          [
+            32569,
+            50
+          ]
+        ],
+        "schools": 1
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32655/crystalweave-bracers"
 }

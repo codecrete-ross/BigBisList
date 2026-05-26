@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:42:55+00:00",
   "item_id": 31878,
   "name": "Design: Veiled Noble Topaz",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Veiled Noble Topaz Phase 1 Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Veiled Noble Topaz. Sell Price: 3 Veiled Noble Topaz Item Level 70 +4 Spell Hit Rating and +5 Spell Damage \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz Design: Veiled Nightseye is a rare world drop recipe that allows Jewelcrafters with 350 Jewelcrafting skill to craft Veiled Nightseye. An item.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=31878",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,7 +26,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

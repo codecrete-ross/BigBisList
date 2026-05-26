@@ -5,12 +5,23 @@
   "fetched_at": "2026-05-24T09:07:41+00:00",
   "item_id": 13512,
   "name": "Flask of Supreme Power",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 17637,
       "entity_name": "Flask of Supreme Power",
       "profession": "Alchemy",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=13512/flask-of-supreme-power",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=13512/flask-of-supreme-power",
       "spell_id": 17637,
       "type": "crafted"
@@ -28,7 +39,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

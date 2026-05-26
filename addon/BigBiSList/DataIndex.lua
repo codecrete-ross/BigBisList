@@ -78,10 +78,25 @@ local SOURCE_TYPE_LABELS = {
     quest = "Quests",
     vendor = "Vendors",
     crafted = "Crafted",
+    trade = "Trade/AH",
     pvp = "PvP",
     token_turnin = "Token turn-ins",
+    taught_by_item = "Formulae",
     world_drop = "World drops",
     unknown = "Unknown",
+}
+
+local SOURCE_TYPE_PREFIXES = {
+    drop = "Drop",
+    quest = "Quest",
+    vendor = "Vendor",
+    crafted = "Craft",
+    trade = "Trade/AH",
+    pvp = "PvP",
+    token_turnin = "Token",
+    taught_by_item = "Formula",
+    world_drop = "World drop",
+    unknown = "Source",
 }
 
 local RANK_GROUP_ORDER = {
@@ -135,6 +150,339 @@ local function sortedKeys(values)
     end
     table.sort(result)
     return result
+end
+
+local function concatValues(values)
+    if type(values) ~= "table" then
+        return ""
+    end
+    local parts = {}
+    for _, value in ipairs(values) do
+        table.insert(parts, tostring(value))
+    end
+    return table.concat(parts, "/")
+end
+
+local function requirementKey(requirement)
+    if type(requirement) ~= "table" then
+        return tostring(requirement or "")
+    end
+
+    return table.concat({
+        tostring(requirement.type or ""),
+        tostring(requirement.scope or ""),
+        tostring(requirement.confidence or ""),
+        tostring(requirement.profession or ""),
+        tostring(requirement.skill or ""),
+        tostring(requirement.specialization or ""),
+        tostring(requirement.reputation or ""),
+        tostring(requirement.standing or ""),
+        tostring(requirement.standing_rank or ""),
+        tostring(requirement.spell_id or ""),
+        tostring(requirement.spell_name or ""),
+        concatValues(requirement.choices),
+        tostring(requirement.raw_text or ""),
+        tostring(requirement.source_url or ""),
+    }, "|")
+end
+
+local function appendUniqueRequirement(result, seen, requirement)
+    if type(requirement) ~= "table" then
+        return
+    end
+
+    local key = requirementKey(requirement)
+    if seen[key] then
+        return
+    end
+
+    seen[key] = true
+    table.insert(result, requirement)
+end
+
+local function appendRequirements(result, requirements, seen)
+    for _, requirement in ipairs(requirements or {}) do
+        if seen then
+            appendUniqueRequirement(result, seen, requirement)
+        else
+            table.insert(result, requirement)
+        end
+    end
+end
+
+local function mergedRequirements(...)
+    local result = {}
+    local seen = {}
+    for index = 1, select("#", ...) do
+        appendRequirements(result, select(index, ...), seen)
+    end
+    if #result == 0 then
+        return nil
+    end
+    return result
+end
+
+local function splitRequirements(globalRequirements, globalSeen, sourceRequirements, sourceSeen, requirements, options)
+    options = options or {}
+
+    for _, requirement in ipairs(requirements or {}) do
+        local scope = requirement.scope
+        local forceSourceScopedEquip = options.forceSourceScopedEquip
+            and scope == "equip_or_use"
+            and requirement.source_url
+            and string.find(requirement.source_url, "/item=", 1, true)
+
+        if (not forceSourceScopedEquip) and (not scope or scope == "" or scope == "equip_or_use") then
+            appendUniqueRequirement(globalRequirements, globalSeen, requirement)
+        else
+            appendUniqueRequirement(sourceRequirements, sourceSeen, requirement)
+        end
+    end
+end
+
+local function sourceIdentity(source)
+    if type(source) ~= "table" then
+        return nil
+    end
+
+    return table.concat({
+        tostring(source.type or ""),
+        tostring(source.entity_id or ""),
+        tostring(source.item_id or ""),
+        tostring(source.spell_id or ""),
+        tostring(source.quest_id or ""),
+        tostring(source.vendor_id or ""),
+        tostring(source.source_url or ""),
+        tostring(source.entity_name or ""),
+    }, "|")
+end
+
+local function idFromUrl(url, key)
+    if not url then
+        return nil
+    end
+
+    local value = string.match(url, key .. "=(%d+)")
+    return value and tonumber(value) or nil
+end
+
+local function sourceMatchesRequirement(source, requirement)
+    if type(source) ~= "table" or type(requirement) ~= "table" then
+        return false
+    end
+
+    if requirement.source_url and source.source_url and requirement.source_url == source.source_url then
+        return true
+    end
+
+    local requirementItemId = idFromUrl(requirement.source_url, "item")
+    if requirementItemId and (source.item_id == requirementItemId or source.entity_id == requirementItemId) then
+        return true
+    end
+
+    local requirementSpellId = idFromUrl(requirement.source_url, "spell")
+    if requirementSpellId and (source.spell_id == requirementSpellId or source.entity_id == requirementSpellId) then
+        return true
+    end
+
+    local scope = requirement.scope
+    local sourceType = source.type or "unknown"
+
+    if scope == "self_craft" or scope == "learn_recipe" or scope == "cast_enchant" then
+        return sourceType == "crafted" or sourceType == "taught_by_item"
+    elseif scope == "vendor_purchase" then
+        return sourceType == "vendor" or sourceType == "token_turnin" or sourceType == "pvp"
+    elseif scope == "quest_reward" then
+        return sourceType == "quest"
+    elseif scope == "source_access" then
+        return true
+    end
+
+    return false
+end
+
+local function sourceLabel(source, fallbackLabel)
+    local sourceType = source and source.type or "unknown"
+    local prefix = SOURCE_TYPE_PREFIXES[sourceType] or SOURCE_TYPE_PREFIXES.unknown
+    local name = source and (source.entity_name or source.profession)
+
+    if sourceType == "crafted" and source and source.profession then
+        name = source.profession
+    end
+
+    if name and name ~= "" then
+        return prefix .. ": " .. name
+    elseif fallbackLabel and fallbackLabel ~= "" then
+        return prefix .. ": " .. fallbackLabel
+    end
+
+    return prefix
+end
+
+local function addSourceInput(inputs, seen, source, isPrimary, fallbackLabel)
+    if type(source) ~= "table" then
+        return nil
+    end
+
+    local key = sourceIdentity(source)
+    if not key then
+        return nil
+    end
+
+    local input = seen[key]
+    if not input then
+        input = {
+            source = source,
+            fallbackLabel = fallbackLabel,
+            extraRequirements = {},
+            extraSeen = {},
+        }
+        seen[key] = input
+        table.insert(inputs, input)
+    end
+
+    if isPrimary then
+        input.isPrimary = true
+    end
+
+    return input
+end
+
+local function addSourceRecordInputs(inputs, seen, record, primaryAssigned)
+    if type(record) ~= "table" then
+        return primaryAssigned
+    end
+
+    if record.primary_source then
+        local input = addSourceInput(inputs, seen, record.primary_source, not primaryAssigned, record.name)
+        if input and not primaryAssigned then
+            primaryAssigned = true
+        end
+    end
+
+    for sourceIndex, source in ipairs(record.sources or {}) do
+        local input = addSourceInput(inputs, seen, source, sourceIndex == 1 and not primaryAssigned, record.name)
+        if input and sourceIndex == 1 and not primaryAssigned then
+            primaryAssigned = true
+        end
+    end
+
+    return primaryAssigned
+end
+
+local function isBindOnPickup(item)
+    return item and (item.binding == "bind_on_pickup" or item.boe == false)
+end
+
+local function shouldAddTradeOption(item, inputs, options)
+    if options and options.alwaysTradeOption then
+        return true
+    end
+
+    local hasCrafted = false
+    for _, input in ipairs(inputs or {}) do
+        if input.source and input.source.type == "crafted" then
+            hasCrafted = true
+            break
+        end
+    end
+
+    if item and (item.boe == true or item.binding == "bind_on_equip") then
+        return true
+    end
+
+    return hasCrafted and not isBindOnPickup(item)
+end
+
+local function normalizeSourceRecords(sourceRecords)
+    if not sourceRecords then
+        return {}
+    end
+
+    if sourceRecords.sources or sourceRecords.primary_source then
+        return { sourceRecords }
+    end
+
+    return sourceRecords
+end
+
+local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
+    options = options or {}
+    sourceRecords = normalizeSourceRecords(sourceRecords)
+
+    local globalRequirements = {}
+    local globalSeen = {}
+    local sourceRequirements = {}
+    local sourceSeen = {}
+    local inputs = {}
+    local inputSeen = {}
+    local primaryAssigned = false
+
+    if item then
+        primaryAssigned = addSourceRecordInputs(inputs, inputSeen, item, primaryAssigned)
+        splitRequirements(globalRequirements, globalSeen, sourceRequirements, sourceSeen, item.requirements, options)
+    end
+
+    for _, record in ipairs(sourceRecords) do
+        primaryAssigned = addSourceRecordInputs(inputs, inputSeen, record, primaryAssigned)
+        splitRequirements(globalRequirements, globalSeen, sourceRequirements, sourceSeen, record.requirements, options)
+    end
+
+    splitRequirements(globalRequirements, globalSeen, sourceRequirements, sourceSeen, rowRequirements, options)
+
+    if #inputs == 0 then
+        return nil
+    end
+
+    if not primaryAssigned and inputs[1] then
+        inputs[1].isPrimary = true
+    end
+
+    for _, requirement in ipairs(sourceRequirements) do
+        local matched = false
+        for _, input in ipairs(inputs) do
+            if sourceMatchesRequirement(input.source, requirement) then
+                appendUniqueRequirement(input.extraRequirements, input.extraSeen, requirement)
+                matched = true
+            end
+        end
+
+        if not matched then
+            for _, input in ipairs(inputs) do
+                if input.isPrimary then
+                    appendUniqueRequirement(input.extraRequirements, input.extraSeen, requirement)
+                    matched = true
+                    break
+                end
+            end
+        end
+    end
+
+    local accessOptions = {}
+    for _, input in ipairs(inputs) do
+        local source = input.source
+        table.insert(accessOptions, {
+            label = sourceLabel(source, input.fallbackLabel),
+            source_type = source.type or "unknown",
+            source_url = source.source_url or (item and item.wowhead_url),
+            requirements = mergedRequirements(globalRequirements, source.requirements, input.extraRequirements),
+            is_primary = input.isPrimary or false,
+            is_trade_option = false,
+        })
+    end
+
+    if shouldAddTradeOption(item, inputs, options) then
+        table.insert(accessOptions, {
+            label = options.tradeLabel or "Trade/Auction House",
+            source_type = "trade",
+            source_url = item and item.wowhead_url or (sourceRecords[1] and sourceRecords[1].source_url),
+            requirements = mergedRequirements(globalRequirements),
+            is_primary = false,
+            is_trade_option = true,
+        })
+    end
+
+    return accessOptions
 end
 
 local function phaseIndex(phaseKey)
@@ -283,6 +631,10 @@ local function getItemName(itemId, item)
     return "Item " .. tostring(itemId)
 end
 
+local function enhancementSourceKey(entityType, entityId)
+    return tostring(entityType or "item") .. ":" .. tostring(entityId or "")
+end
+
 local function buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
     local itemId = itemEntry.item_id
     local item = index.itemsById[itemId]
@@ -312,6 +664,8 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         binding = item and item.binding or "unknown",
         boe = item and item.boe,
         quality = item and item.quality,
+        requirements = mergedRequirements(item and item.requirements, itemEntry.requirements),
+        access_options = buildAccessOptions(item, nil, itemEntry.requirements, { entityType = "item" }),
     }
 end
 
@@ -541,7 +895,9 @@ function BigBiSList:GetDataIndex()
         usesByItemId = {},
         enhancement = {
             gems = data.gems or {},
+            gemSourcesById = {},
             enchants = data.enchants or {},
+            enchantSourcesByKey = {},
             consumables = data.consumables or {},
         },
     }
@@ -553,6 +909,16 @@ function BigBiSList:GetDataIndex()
         index.itemsById[item.id] = item
         addUnique(index.sourceTypes, sourceSeen, getSourceType(item))
         addUnique(index.zones, zoneSeen, getSourceZone(item) or "Unknown")
+    end
+
+    for _, sourceData in ipairs(data.gem_sources or {}) do
+        index.enhancement.gemSourcesById[sourceData.id] = sourceData
+    end
+
+    for _, sourceData in ipairs(data.enchant_sources or {}) do
+        local key = enhancementSourceKey(sourceData.type or "item", sourceData.id)
+        index.enhancement.enchantSourcesByKey[key] = index.enhancement.enchantSourcesByKey[key] or {}
+        table.insert(index.enhancement.enchantSourcesByKey[key], sourceData)
     end
 
     table.sort(index.sourceTypes)
@@ -671,6 +1037,8 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
             disabledReason = disabledReason,
             column = slot.column,
             dataSlots = slot.slots,
+            requirements = mergedRequirements(bestUse and bestUse.requirements, item and item.requirements),
+            access_options = bestUse and bestUse.access_options or buildAccessOptions(item, nil, nil, { entityType = "item" }),
         })
     end
 
@@ -747,6 +1115,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
                         binding = use.binding,
                         boe = use.boe,
                         side = use.side,
+                        requirements = use.requirements,
+                        access_options = use.access_options,
                         uses = {},
                         phases = {},
                         bestUse = use,
@@ -777,6 +1147,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         scorePlannerGroup(group, selectedPhaseKey)
         group.rank_group = group.bestUse and group.bestUse.rank_group or "option"
         group.rank_label = group.bestUse and group.bestUse.rank_label or "Option"
+        group.requirements = group.bestUse and group.bestUse.requirements or group.requirements
+        group.access_options = group.bestUse and group.bestUse.access_options or group.access_options
 
         if group.priority > 0 and includeByFilter(group, filters) then
             if filters and filters.longevity == "current" and not group.hasCurrent then
@@ -815,6 +1187,7 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
     for _, gem in ipairs(index.enhancement.gems or {}) do
         if gem["class"] == className and gem.spec == specName and gem.phase == phaseKey then
             local item = index.itemsById[gem.id]
+            local sourceData = index.enhancement.gemSourcesById[gem.id]
             table.insert(sections[1].rows, {
                 entity_type = "item",
                 entity_id = gem.id,
@@ -823,6 +1196,8 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 name = gem.name,
                 detail = (gem.socket_category or "gem") .. (gem.meta and " meta" or ""),
                 source_summary = gem.source_summary or "",
+                requirements = mergedRequirements(gem.requirements, item and item.requirements),
+                access_options = buildAccessOptions(item, sourceData, gem.requirements, { entityType = "item" }),
             })
         end
     end
@@ -846,6 +1221,14 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 row.item = index.itemsById[enchant.id]
             end
 
+            row.requirements = mergedRequirements(enchant.requirements, row.item and row.item.requirements)
+            row.access_options = buildAccessOptions(row.item, index.enhancement.enchantSourcesByKey[enhancementSourceKey(entityType, enchant.id)], enchant.requirements, {
+                entityType = entityType,
+                forceSourceScopedEquip = entityType == "spell",
+                alwaysTradeOption = entityType == "spell",
+                tradeLabel = entityType == "spell" and "Trade enchant service" or "Trade/Auction House",
+            })
+
             table.insert(sections[2].rows, row)
         end
     end
@@ -863,6 +1246,8 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                     name = consumable.item_names and consumable.item_names[itemIndex] or getItemName(itemId, item),
                     detail = consumable.category_label or consumable.category or "Consumable",
                     source_summary = sourceSummary,
+                    requirements = mergedRequirements(consumable.requirements, item and item.requirements),
+                    access_options = buildAccessOptions(item, nil, consumable.requirements, { entityType = "item" }),
                 })
             end
         end

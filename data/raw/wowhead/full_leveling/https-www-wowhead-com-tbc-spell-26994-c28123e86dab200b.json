@@ -1,11 +1,44 @@
 {
+  "description": "Returns the spirit to the body, restoring a dead target to life with 3200 health and 3200 mana. In the Restoration Abilities category. Requires Druid.",
   "fetched_at": "2026-05-24T09:00:12+00:00",
   "name": "Rebirth",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=26994",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 1024,
+        "id": 26994,
+        "level": 69,
+        "name": "Rebirth",
+        "nskillup": 1,
+        "rank": "Rank 6",
+        "reagents": [
+          [
+            22147,
+            1
+          ]
+        ],
+        "reqclass": 1024,
+        "schools": 8,
+        "skill": [
+          573
+        ],
+        "trainingcost": 90000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:23:19+00:00",
   "item_id": 35303,
   "name": "Pattern: Gloves of the Living Touch",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Gloves of the Living Touch Item Level 73 Binds when picked up Requires Leatherworking (365) Use: Teaches you how to make Gloves of the Living Touch. Sell Price: 6 Dropped by: Kael'thas Sunstrider Drop Chance: 32.26% Gloves of the Living Touch Item Level 105 Binds when equipped Hands Leather 208 Armor +16 Stamina +18 Intellect +22 Spirit Durability 40 / 40 Requires Level 70 Equip: Increases healing done by up to 77 and damage done by up to 26 for all magical spells and effects. Sell Price: 2 73 61 Requires Heavy Knothide Leather (4), Primal Life (16), Primal Earth (12), Primal Nether This leatherworking pattern is used for the Leatherworking profession. It is looted from Kael'thas Sunstrider. In the Leatherworking Patterns category.",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35303",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -18,7 +29,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

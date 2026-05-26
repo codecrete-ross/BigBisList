@@ -5,15 +5,116 @@
   "fetched_at": "2026-05-24T04:55:04+00:00",
   "item_id": 23836,
   "name": "Goblin Rocket Launcher",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Rocket Launcher Phase 1 Item Level 70 Binds when equipped Trinket +45 Stamina Requires Engineering (350) Requires Goblin Engineer Use: Fire a powerful rocket at the enemy that does 960 to 1440 damage and stuns them for 3 sec. This thing has quite a kick though... (2 Min Cooldown) Sell Price: 2 25 This blue trinket of item level 70 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Rocket Launcher Phase 1 Item Level 70 Binds when equipped Trinket +45 Stamina Requires Engineering (350) Requires Goblin Engineer Use: Fire a powerful rocket at the enemy that does 960 to 1440 damage and stuns them for 3 sec. This thing has quite a kick though... (2 Min Cooldown) Sell Price: 2 25 This blue trinket of item level 70 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+      "specialization": "Goblin Engineer",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30563,
+      "entity_name": "Goblin Rocket Launcher",
+      "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+      "spell_id": 30563,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          370,
+          380
+        ],
+        "creates": [
+          23836,
+          1,
+          1
+        ],
+        "id": 30563,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Goblin Rocket Launcher",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 3,
+        "reagents": [
+          [
+            23785,
+            2
+          ],
+          [
+            23786,
+            1
+          ],
+          [
+            23787,
+            2
+          ],
+          [
+            21884,
+            6
+          ],
+          [
+            22452,
+            6
+          ],
+          [
+            16006,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20222,
+        "trainingcost": 50000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher"
 }

@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:56+00:00",
   "name": "Elixir of the Mongoose",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,52 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          280,
+          295,
+          315,
+          335
+        ],
+        "creates": [
+          13452,
+          1,
+          1
+        ],
+        "id": 17571,
+        "learnedat": 280,
+        "level": 0,
+        "name": "Elixir of the Mongoose",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            13465,
+            2
+          ],
+          [
+            13466,
+            2
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

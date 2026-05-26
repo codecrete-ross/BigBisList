@@ -5,15 +5,118 @@
   "fetched_at": "2026-05-24T04:29:31+00:00",
   "item_id": 24121,
   "name": "Chain of the Twilight Owl",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31076,
+      "entity_name": "Chain of the Twilight Owl",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24121/chain-of-the-twilight-owl",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24121/chain-of-the-twilight-owl",
+      "spell_id": 31076,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          24121,
+          1,
+          1
+        ],
+        "id": 31076,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Chain of the Twilight Owl",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            23449,
+            2
+          ],
+          [
+            31079,
+            4
+          ],
+          [
+            23117,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24171,
+        "level": 73,
+        "name": "Design: Chain of the Twilight Owl",
+        "popularity": 7,
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24171,
+      "level": 73,
+      "name": "Design: Chain of the Twilight Owl",
+      "popularity": 7,
+      "quality": 3,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24121/chain-of-the-twilight-owl"
 }

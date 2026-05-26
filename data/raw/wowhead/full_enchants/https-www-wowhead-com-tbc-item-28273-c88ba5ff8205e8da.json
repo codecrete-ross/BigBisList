@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:45:37+00:00",
   "item_id": 28273,
   "name": "Formula: Enchant Gloves - Major Healing",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Gloves - Major Healing Phase 1 Item Level 70 Binds when picked up Requires Enchanting (350) Requires The Sha'tar - Honored Use: Teaches you how to permanently enchant gloves to increase Healing by 35 and Spell Damage by 12. Permanently enchant gloves to increase Healing by 35 and Spell Damage by 12. Requires a level 35 or higher item. Sell Price: 1 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=28273",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,7 +28,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 9296,
   "name": "Recipe: Gift of Arthas",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Gift of Arthas Item Level 48 Requires Alchemy (240) Use: Teaches you how to make a Gift of Arthas. Sell Price: 20 Gift of Arthas Item Level 48 Requires Level 38 Use: Increases resistance to shadow by 10. If an enemy strikes the imbiber, the attacker has a 30% chance of being inflicted with disease that increases their damage taken by 8 for 3 min. Lasts for 30 min. Guardian Elixir. (Proc chance: 30%) (3 Sec Cooldown) Max Stack: 20 Sell Price: 2 50 Requires Arthas' Tears , Blindweed , Crystal Vial This alchemy recipe is used for the Alchemy profession. It is looted from Skeletal Flayer. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 240,
+      "source_url": "https://www.wowhead.com/tbc/item=9296",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -28,7 +39,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

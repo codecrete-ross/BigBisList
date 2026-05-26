@@ -1,11 +1,85 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:41+00:00",
   "name": "Super Healing Potion",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Alchemy",
+      "raw_text": "Alchemy",
+      "scope": "learn_recipe",
+      "skill": 325,
+      "source_url": "https://www.wowhead.com/tbc/spell=28551",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Alchemy Trainer",
+      "profession": "Alchemy",
+      "required_skill": 325,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "learn_recipe",
+          "skill": 325,
+          "source_url": "https://www.wowhead.com/tbc/spell=28551",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=28551",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          325,
+          340,
+          347,
+          355
+        ],
+        "creates": [
+          22829,
+          1,
+          1
+        ],
+        "id": 28551,
+        "learnedat": 325,
+        "level": 0,
+        "name": "Super Healing Potion",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            22791,
+            2
+          ],
+          [
+            22785,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "trainingcost": 50000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

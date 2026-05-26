@@ -1,11 +1,14 @@
 {
+  "description": "Generates 10 rage at the cost of health, and then generates an additional 10 rage over 10 sec. In the Protection Abilities category. Requires Warrior.",
   "fetched_at": "2026-05-24T09:20:03+00:00",
   "name": "Bloodrage",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

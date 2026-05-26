@@ -1,11 +1,44 @@
 {
+  "description": "Instantly blasts the target for 468to_lc520 Shadow damage. If the target dies within 5 sec of Shadowburn, and yields experience or honor, the caster gains a Soul Shard.",
   "fetched_at": "2026-05-24T09:19:12+00:00",
   "name": "Shadowburn",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=18871",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": -2,
+        "chrclass": 256,
+        "id": 18871,
+        "level": 56,
+        "name": "Shadowburn",
+        "nskillup": 1,
+        "rank": "Rank 6",
+        "reagents": [
+          [
+            6265,
+            1
+          ]
+        ],
+        "reqclass": 256,
+        "schools": 32,
+        "skill": [
+          593
+        ],
+        "trainingcost": 1100
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

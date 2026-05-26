@@ -5,19 +5,30 @@
   "fetched_at": "2026-05-24T08:51:00+00:00",
   "item_id": 22825,
   "name": "Elixir of Healing Power",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 28545,
       "entity_name": "Elixir of Healing Power",
       "profession": "Alchemy",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=22825/elixir-of-healing-power",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=22825/elixir-of-healing-power",
       "spell_id": 28545,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -1,11 +1,44 @@
 {
+  "description": "Allows the rogue to vanish from sight, entering an improved stealth mode for 10 sec. Also breaks movement impairing effects. More effective than Vanish (Rank 2).",
   "fetched_at": "2026-05-24T09:13:35+00:00",
   "name": "Vanish",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=26889",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 8,
+        "id": 26889,
+        "level": 62,
+        "name": "Vanish",
+        "nskillup": 1,
+        "rank": "Rank 3",
+        "reagents": [
+          [
+            5140,
+            1
+          ]
+        ],
+        "reqclass": 8,
+        "schools": 1,
+        "skill": [
+          39
+        ],
+        "trainingcost": 59000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -1,11 +1,14 @@
 {
+  "description": "Summons a Stoneclaw Totem with 1324 health at the feet of the caster for 15 sec that taunts creatures within 8 yards to attack it. Enemies attacking the Stoneclaw Totem have a 50% chance to be stunned for 3 sec.",
   "fetched_at": "2026-05-24T09:15:42+00:00",
   "name": "Stoneclaw Totem",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

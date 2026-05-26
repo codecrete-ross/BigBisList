@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:01+00:00",
   "item_id": 23736,
   "name": "Fel Iron Bomb",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Fel Iron Bomb Item Level 60 Requires Engineering (300) Use: Inflicts 330 to 770 Fire damage and incapacitates targets in a 5 yard radius for 3 sec. Any damage will break the effect. Unreliable against targets higher than level 76. (1 Min Cooldown) Max Stack: 10 Sell Price: 25 It is crafted and sold by NPCs. In the Explosives category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=23736/fel-iron-bomb",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -38,13 +49,23 @@
       "entity_id": 30310,
       "entity_name": "Fel Iron Bomb",
       "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23736/fel-iron-bomb",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=23736/fel-iron-bomb",
       "spell_id": 30310,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:19+00:00",
   "item_id": 22914,
   "name": "Recipe: Destruction Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Destruction Potion Item Level 70 Requires Alchemy (350) Use: Teaches you how to make a Destruction Potion. Sell Price: 2 Destruction Potion Item Level 70 Requires Level 60 Use: Increases spell critical chance by 2% and spell damage by 120 for 15 sec. (2 Min Cooldown) Max Stack: 5 Sell Price: 50 Requires Nightmare Vine (2), Netherbloom , Imbued Vial This alchemy recipe is used for the Alchemy profession. It is looted from Spectral Stallion. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=22914",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -417,7 +428,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

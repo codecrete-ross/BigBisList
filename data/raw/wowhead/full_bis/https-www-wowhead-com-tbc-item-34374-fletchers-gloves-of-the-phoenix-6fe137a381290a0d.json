@@ -5,15 +5,160 @@
   "fetched_at": "2026-05-24T05:32:57+00:00",
   "item_id": 34374,
   "name": "Fletcher's Gloves of the Phoenix",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46133,
+      "entity_name": "Fletcher's Gloves of the Phoenix",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=34374/fletchers-gloves-of-the-phoenix",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=34374/fletchers-gloves-of-the-phoenix",
+      "spell_id": 46133,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          392,
+          410
+        ],
+        "creates": [
+          34374,
+          1,
+          1
+        ],
+        "id": 46133,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Fletcher's Gloves of the Phoenix",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            30
+          ],
+          [
+            29547,
+            16
+          ],
+          [
+            22451,
+            18
+          ],
+          [
+            23571,
+            8
+          ],
+          [
+            34664,
+            6
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35213,
+        "level": 75,
+        "name": "Pattern: Fletcher's Gloves of the Phoenix",
+        "popularity": 3,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 4075
+          }
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35541,
+        "level": 75,
+        "name": "Pattern: Fletcher's Gloves of the Phoenix",
+        "popularity": 9,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35213,
+      "level": 75,
+      "name": "Pattern: Fletcher's Gloves of the Phoenix",
+      "popularity": 3,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 4075
+        }
+      ],
+      "subclass": 1
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35541,
+      "level": 75,
+      "name": "Pattern: Fletcher's Gloves of the Phoenix",
+      "popularity": 9,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34374/fletchers-gloves-of-the-phoenix"
 }

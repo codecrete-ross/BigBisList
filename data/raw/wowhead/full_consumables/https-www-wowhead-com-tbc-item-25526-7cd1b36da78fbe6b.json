@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:38+00:00",
   "item_id": 25526,
   "name": "Plans: Greater Rune of Warding",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Greater Rune of Warding Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make a Greater Rune of Warding. Sell Price: 1 50 Greater Rune of Warding Item Level 70 Requires Level 60 Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20 Sell Price: 30 Requires Khorium Bar This blacksmithing plans is used for the Blacksmithing profession. It is sold by Fedryen Swiftspear. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25526",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

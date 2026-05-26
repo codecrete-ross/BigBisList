@@ -5,15 +5,91 @@
   "fetched_at": "2026-05-24T05:25:11+00:00",
   "item_id": 28485,
   "name": "Bulwark of the Ancient Kings",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Bulwark of the Ancient Kings Phase 2 Item Level 146 Binds when picked up Chest Plate 1825 Armor +40 Strength +56 Stamina Blue Socket Yellow Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Armorsmith Equip: Improves hit rating by 25. Equip: Improves critical strike rating by 41. Use: Temporarily Increases Health by 1500 and Strength by 150 for 15 sec. (30 Min Cooldown) Sell Price: 10 20 60 This epic plate armor of item level 146 goes in the \"Chest\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
+      "specialization": "Armorsmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36257,
+      "entity_name": "Bulwark of the Ancient Kings",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
+      "spell_id": 36257,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28485,
+          1,
+          1
+        ],
+        "id": 36257,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Bulwark of the Ancient Kings",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            28484,
+            1
+          ],
+          [
+            30183,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 9788,
+        "trainingcost": 500000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings"
 }

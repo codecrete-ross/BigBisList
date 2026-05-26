@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:34:06+00:00",
   "item_id": 23808,
   "name": "Schematic: Khorium Scope",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Khorium Scope Item Level 72 Binds when picked up Requires Engineering (360) Use: Teaches you how to make a Khorium Scope. Sell Price: 4 Khorium Scope Item Level 72 Requires Level 55 Use: Attaches a permanent scope to a bow or gun that increases its damage by 12. Max Stack: 5 Sell Price: 25 Requires Hardened Adamantite Tube , Khorium Bar (4), Dawnstone (2) This engineering schematic is used for the Engineering profession. It is looted from Sunfury Bowman. In the Engineering Schematics category.",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=23808",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -19,9 +30,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -76,6 +89,7 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

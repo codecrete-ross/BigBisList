@@ -5,6 +5,18 @@
   "fetched_at": "2026-05-24T04:44:35+00:00",
   "item_id": 29126,
   "name": "Seer's Signet",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Scryers"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Seer's Signet Phase 1 Item Level 105 Binds when picked up Unique Finger +24 Stamina Requires Level 70 Requires The Scryers - Exalted Equip: Improves spell critical strike rating by 12. Equip: Increases damage and healing done by magical spells and effects by up to 34. Sell Price: 19 75 28 This epic ring of item level 105 goes in the \"Finger\" slot. It is sold by Quartermaster Enuril. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29126/seers-signet",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,11 +29,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -47,7 +63,10 @@
         "tag": "Scryers: Quartermaster",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29126/seers-signet"
 }

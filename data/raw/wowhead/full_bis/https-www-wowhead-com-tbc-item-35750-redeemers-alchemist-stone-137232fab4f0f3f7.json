@@ -5,15 +5,144 @@
   "fetched_at": "2026-05-24T05:30:53+00:00",
   "item_id": 35750,
   "name": "Redeemer's Alchemist Stone",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Redeemer's Alchemist Stone Phase 5 Item Level 125 Binds when picked up Unique Trinket Requires Alchemy (350) Equip: Increases healing done by up to 119 and damage done by up to 40 for all magical spells and effects. Equip: Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack. Sell Price: 2 50 This epic trinket of item level 125 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35750/redeemers-alchemist-stone",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 47049,
+      "entity_name": "Redeemer's Alchemist Stone",
+      "profession": "Alchemy",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=35750/redeemers-alchemist-stone",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=35750/redeemers-alchemist-stone",
+      "spell_id": 47049,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          390,
+          397,
+          405
+        ],
+        "creates": [
+          35750,
+          1,
+          1
+        ],
+        "id": 47049,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Redeemer's Alchemist Stone",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            13503,
+            1
+          ],
+          [
+            21886,
+            6
+          ],
+          [
+            30183,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35754,
+        "level": 70,
+        "name": "Recipe: Redeemer's Alchemist Stone",
+        "popularity": 3,
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Eldara Dawnrunner",
+            "t": 1,
+            "ti": 25032,
+            "z": 4080
+          }
+        ],
+        "subclass": 6
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35754,
+      "level": 70,
+      "name": "Recipe: Redeemer's Alchemist Stone",
+      "popularity": 3,
+      "quality": 1,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Eldara Dawnrunner",
+          "t": 1,
+          "ti": 25032,
+          "z": 4080
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=35750/redeemers-alchemist-stone"
 }

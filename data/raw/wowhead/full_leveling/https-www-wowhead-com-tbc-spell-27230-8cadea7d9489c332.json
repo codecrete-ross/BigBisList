@@ -1,11 +1,44 @@
 {
+  "description": "Creates a Master Healthstone that can be used to instantly restore 2080 health.Conjured items disappear if logged out for more than 15 minutes.",
   "fetched_at": "2026-05-24T09:18:18+00:00",
   "name": "Create Healthstone",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=27230",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 256,
+        "id": 27230,
+        "level": 68,
+        "name": "Create Healthstone",
+        "nskillup": 1,
+        "rank": "Rank 6",
+        "reagents": [
+          [
+            6265,
+            1
+          ]
+        ],
+        "reqclass": 256,
+        "schools": 32,
+        "skill": [
+          354
+        ],
+        "trainingcost": 63000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

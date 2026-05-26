@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:33:44+00:00",
   "item_id": 22555,
   "name": "Formula: Enchant Weapon - Major Spellpower",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Weapon - Major Spellpower Phase 1 Item Level 70 Binds when picked up Requires Enchanting (350) Use: Teaches you how to permanently enchant a melee weapon to increase spell damage and healing by up to 40. Permanently enchant a melee weapon to increase spell damage and healing by up to 40. Requires a level 35 or higher item. Sell Price: 2 Formula: Enchant Weapon - Major Spellpower can be used by Enchanters to learn Major Spellpower at 350 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=22555",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -30,9 +41,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -126,6 +139,7 @@
         "type": 10
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

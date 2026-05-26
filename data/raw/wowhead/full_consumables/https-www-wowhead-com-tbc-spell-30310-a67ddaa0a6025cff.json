@@ -1,11 +1,85 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:53+00:00",
   "name": "Fel Iron Bomb",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Engineering",
+      "scope": "learn_recipe",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/spell=30310",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Engineering Trainer",
+      "profession": "Engineering",
+      "required_skill": 300,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "learn_recipe",
+          "skill": 300,
+          "source_url": "https://www.wowhead.com/tbc/spell=30310",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=30310",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          320,
+          330,
+          340
+        ],
+        "creates": [
+          23736,
+          4,
+          4
+        ],
+        "id": 30310,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Fel Iron Bomb",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            23782,
+            1
+          ],
+          [
+            23783,
+            2
+          ],
+          [
+            23781,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "trainingcost": 15000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

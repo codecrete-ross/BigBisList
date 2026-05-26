@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:48+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -155,6 +156,16 @@
           "item_id": 32476,
           "item_name": "Gadgetstorm Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=32476/gadgetstorm-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -210,6 +221,16 @@
           "item_id": 24266,
           "item_name": "Spellstrike Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24266/spellstrike-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -387,6 +408,16 @@
           "item_id": 32587,
           "item_name": "Mantle of Nimble Thought",
           "item_url": "https://www.wowhead.com/tbc/item=32587/mantle-of-nimble-thought",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option (Tailoring)",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -942,6 +973,25 @@
           "item_id": 29519,
           "item_name": "Netherstrike Breastplate",
           "item_url": "https://www.wowhead.com/tbc/item=29519/netherstrike-breastplate",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only"
@@ -967,6 +1017,25 @@
           "item_id": 29522,
           "item_name": "Windhawk Hauberk",
           "item_url": "https://www.wowhead.com/tbc/item=29522/windhawk-hauberk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
@@ -1054,6 +1123,16 @@
           "item_id": 32586,
           "item_name": "Bracers of Nimble Thought",
           "item_url": "https://www.wowhead.com/tbc/item=32586/bracers-of-nimble-thought",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1176,6 +1255,25 @@
           "item_id": 29521,
           "item_name": "Netherstrike Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29521/netherstrike-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only"
@@ -1201,6 +1299,25 @@
           "item_id": 29523,
           "item_name": "Windhawk Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
@@ -1597,6 +1714,16 @@
           "item_id": 30038,
           "item_name": "Belt of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=30038/belt-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1719,6 +1846,25 @@
           "item_id": 29520,
           "item_name": "Netherstrike Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29520/netherstrike-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Dragonscale Leatherworking) - BoP only"
@@ -1744,6 +1890,16 @@
           "item_id": 24256,
           "item_name": "Girdle of Ruination",
           "item_url": "https://www.wowhead.com/tbc/item=24256/girdle-of-ruination",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1769,6 +1925,25 @@
           "item_id": 29524,
           "item_name": "Windhawk Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29524/windhawk-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
@@ -1988,6 +2163,16 @@
           "item_id": 24262,
           "item_name": "Spellstrike Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -2079,6 +2264,18 @@
           "item_id": 29141,
           "item_name": "Tempest Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=29141/tempest-leggings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
+              "reputation": "The Mag'har / Kurenai",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2307,6 +2504,16 @@
           "item_id": 30037,
           "item_name": "Boots of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=30037/boots-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -2332,6 +2539,16 @@
           "item_id": 30043,
           "item_name": "Hurricane Boots",
           "item_url": "https://www.wowhead.com/tbc/item=30043/hurricane-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -2703,6 +2920,18 @@
           "item_id": 29305,
           "item_name": "Band of the Eternal Sage",
           "item_url": "https://www.wowhead.com/tbc/item=29305/band-of-the-eternal-sage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: (The Scale of the Sands Exalted)",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Quest: (The Scale of the Sands Exalted)"
@@ -2951,6 +3180,18 @@
           "item_id": 29287,
           "item_name": "Violet Signet of the Archmage",
           "item_url": "https://www.wowhead.com/tbc/item=29287/violet-signet-of-the-archmage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Path of the Violet Mage (The Violet Eye Exalted)",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2981,6 +3222,28 @@
           "item_id": 29126,
           "item_name": "Seer's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=29126/seers-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
+              "reputation": "The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3350,6 +3613,18 @@
           "item_id": 29179,
           "item_name": "Xi'ri's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29179/xiris-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador (The Sha'tar Revered)",
+              "reputation": "The Sha'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3380,6 +3655,28 @@
           "item_id": 29132,
           "item_name": "Scryer's Bloodgem",
           "item_url": "https://www.wowhead.com/tbc/item=29132/scryers-bloodgem",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
+              "reputation": "The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3764,6 +4061,16 @@
           "item_id": 23554,
           "item_name": "Eternium Runed Blade",
           "item_url": "https://www.wowhead.com/tbc/item=23554/eternium-runed-blade",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"
@@ -3789,6 +4096,18 @@
           "item_id": 30832,
           "item_name": "Gavel of Unearthed Secrets",
           "item_url": "https://www.wowhead.com/tbc/item=30832/gavel-of-unearthed-secrets",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu (Lower City Exalted)",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

@@ -1,11 +1,14 @@
 {
+  "description": "Give the command to kill, causing your pet to instantly attack for an additional 127 damage. Can only be used after the Hunter lands a critical strike on the target.",
   "fetched_at": "2026-05-24T09:03:48+00:00",
   "name": "Kill Command",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

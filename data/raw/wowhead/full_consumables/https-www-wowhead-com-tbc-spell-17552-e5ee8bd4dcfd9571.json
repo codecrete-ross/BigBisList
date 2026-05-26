@@ -1,6 +1,18 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:56+00:00",
   "name": "Mighty Rage Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Alchemy",
+      "raw_text": "Alchemy",
+      "scope": "learn_recipe",
+      "skill": 255,
+      "source_url": "https://www.wowhead.com/tbc/spell=17552",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -9,12 +21,72 @@
       "item_id": 13476,
       "source_url": "https://www.wowhead.com/tbc/spell=17552",
       "type": "taught_by_item"
+    },
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Alchemy Trainer",
+      "profession": "Alchemy",
+      "required_skill": 255,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "learn_recipe",
+          "skill": 255,
+          "source_url": "https://www.wowhead.com/tbc/spell=17552",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=17552",
+      "type": "trainer"
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          255,
+          270,
+          290,
+          310
+        ],
+        "creates": [
+          13442,
+          1,
+          1
+        ],
+        "id": 17552,
+        "learnedat": 255,
+        "level": 0,
+        "name": "Mighty Rage Potion",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            8846,
+            3
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          2
+        ],
+        "trainingcost": 15000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

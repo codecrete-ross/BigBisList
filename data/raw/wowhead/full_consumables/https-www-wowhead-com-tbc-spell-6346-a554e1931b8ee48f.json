@@ -1,6 +1,8 @@
 {
+  "description": "Wards the friendly target against Fear. The next Fear effect used against the target will fail, using up the ward. Lasts 3 min. Requires Priest.",
   "fetched_at": "2026-05-24T08:51:00+00:00",
   "name": "Fear Ward",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -44,9 +46,10 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [
       {
         "category": -262,

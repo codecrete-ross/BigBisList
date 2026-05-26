@@ -5,20 +5,431 @@
   "fetched_at": "2026-05-24T05:22:23+00:00",
   "item_id": 31280,
   "name": "Thundercaller's Gauntlets",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
-      "entity_name": "World Drop",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 17137,
+      "entity_name": "Boulderfist Mage",
+      "out_of": 72019,
       "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
-      "type": "world_drop",
-      "world_drop": true
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.01,
+      "entity_id": 17669,
+      "entity_name": "Rabid Warhound",
+      "out_of": 29394,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 17819,
+      "entity_name": "Durnholde Sentry",
+      "out_of": 18934,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 17833,
+      "entity_name": "Durnholde Warden",
+      "out_of": 11184,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18037,
+      "entity_name": "Warmaul Warlock",
+      "out_of": 37112,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18065,
+      "entity_name": "Warmaul Brute",
+      "out_of": 39038,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.1,
+      "entity_id": 18203,
+      "entity_name": "Murkblood Raider",
+      "out_of": 2084,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 18312,
+      "entity_name": "Ethereal Spellbinder",
+      "out_of": 20908,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 18315,
+      "entity_name": "Ethereal Theurgist",
+      "out_of": 9231,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.21,
+      "entity_id": 18318,
+      "entity_name": "Sethekk Initiate",
+      "out_of": 935,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.03,
+      "entity_id": 18319,
+      "entity_name": "Time-Lost Scryer",
+      "out_of": 11904,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 18322,
+      "entity_name": "Sethekk Ravenguard",
+      "out_of": 11160,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 18323,
+      "entity_name": "Sethekk Guard",
+      "out_of": 22793,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18327,
+      "entity_name": "Time-Lost Controller",
+      "out_of": 14581,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18343,
+      "entity_name": "Tavarok",
+      "out_of": 20445,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18493,
+      "entity_name": "Auchenai Soulpriest",
+      "out_of": 13639,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 18495,
+      "entity_name": "Auchenai Vindicator",
+      "out_of": 12797,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.0,
+      "entity_id": 18875,
+      "entity_name": "Zaxxis Raider",
+      "out_of": 97955,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 18877,
+      "entity_name": "Nether Drake",
+      "out_of": 20256,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 18879,
+      "entity_name": "Phase Hunter",
+      "out_of": 43925,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18880,
+      "entity_name": "Nether Ray",
+      "out_of": 24347,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18982,
+      "entity_name": "Sable Jaguar",
+      "out_of": 17148,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18983,
+      "entity_name": "Blackfang Tarantula",
+      "out_of": 30573,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.03,
+      "entity_id": 19429,
+      "entity_name": "Avian Darkhawk",
+      "out_of": 19668,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.35,
+      "entity_id": 19960,
+      "entity_name": "Doomforge Engineer",
+      "out_of": 568,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20749,
+      "entity_name": "Scalewing Serpent",
+      "out_of": 34645,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.23,
+      "entity_id": 20801,
+      "entity_name": "Silroth",
+      "out_of": 1277,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20865,
+      "entity_name": "Protean Horror",
+      "out_of": 33534,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 21302,
+      "entity_name": "Shadow Council Warlock",
+      "out_of": 109208,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 21450,
+      "entity_name": "Skethyl Owl",
+      "out_of": 12434,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 21809,
+      "entity_name": "Wyrmcult Poacher",
+      "out_of": 17866,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.01,
+      "entity_id": 21891,
+      "entity_name": "Avian Ripper",
+      "out_of": 71553,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 1.35,
+      "entity_id": 184937,
+      "entity_name": "Solid Adamantite Chest",
+      "out_of": 296,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13,
+      "drop_percent": 0.2,
+      "entity_id": 31952,
+      "entity_name": "Contained in: Khorium Lockbox",
+      "item_id": 31952,
+      "out_of": 6404,
+      "source_url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "commondrop": true,
+        "count": 13,
+        "flags2": 24580,
+        "id": 31952,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13,
+                "outof": 6404
+              }
+            }
+          }
+        },
+        "level": 68,
+        "name": "Khorium Lockbox",
+        "outof": 6404,
+        "pctstack": "",
+        "quality": 2,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 4,
+        "id": 184937,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 23,
+                "outof": 5042
+              }
+            },
+            "4": {
+              "0": {
+                "count": 4,
+                "outof": 296
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3792,
+          3791,
+          -1
+        ],
+        "name": "Solid Adamantite Chest",
+        "outof": 296,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 0,
@@ -1259,8 +1670,12 @@
         "type": 1
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31280/thundercallers-gauntlets"
 }

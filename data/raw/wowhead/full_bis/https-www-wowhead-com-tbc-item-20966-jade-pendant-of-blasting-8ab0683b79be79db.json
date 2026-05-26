@@ -5,15 +5,114 @@
   "fetched_at": "2026-05-24T05:18:08+00:00",
   "item_id": 20966,
   "name": "Jade Pendant of Blasting",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 25618,
+      "entity_name": "Jade Pendant of Blasting",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=20966/jade-pendant-of-blasting",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=20966/jade-pendant-of-blasting",
+      "spell_id": 25618,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          160,
+          190,
+          205,
+          220
+        ],
+        "creates": [
+          20966,
+          1,
+          1
+        ],
+        "id": 25618,
+        "learnedat": 160,
+        "level": 0,
+        "name": "Jade Pendant of Blasting",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 2,
+        "reagents": [
+          [
+            1529,
+            1
+          ],
+          [
+            20963,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 20974,
+        "level": 36,
+        "name": "Design: Jade Pendant of Blasting",
+        "popularity": 13,
+        "quality": 2,
+        "skill": 160,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 20974,
+      "level": 36,
+      "name": "Design: Jade Pendant of Blasting",
+      "popularity": 13,
+      "quality": 2,
+      "skill": 160,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=20966/jade-pendant-of-blasting"
 }

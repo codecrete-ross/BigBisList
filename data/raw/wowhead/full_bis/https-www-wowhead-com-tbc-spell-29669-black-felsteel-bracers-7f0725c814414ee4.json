@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:11:06+00:00",
   "name": "Black Felsteel Bracers",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,52 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          23537,
+          1,
+          1
+        ],
+        "id": 29669,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Black Felsteel Bracers",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            23448,
+            6
+          ],
+          [
+            22456,
+            15
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [
@@ -32,7 +77,10 @@
         ],
         "subclass": 4
       }
-    ]
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 29669,
   "url": "https://www.wowhead.com/tbc/spell=29669/black-felsteel-bracers"

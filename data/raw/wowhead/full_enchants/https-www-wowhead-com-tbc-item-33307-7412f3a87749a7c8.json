@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:46:53+00:00",
   "item_id": 33307,
   "name": "Formula: Enchant Weapon - Executioner",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Weapon - Executioner Phase 4 Item Level 75 Binds when picked up Requires Enchanting (375) Use: Learn how to permanently enchant a Melee Weapon to occasionally ignore 840 of your enemy's armor. Requires a level 60 or higher item. Permanently enchant a Melee Weapon to occasionally ignore 840 of your enemy's armor. Requires a level 60 or higher item. Sell Price: 1 50 This enchanting formula is used for the Enchanting profession. It is looted from Akil'zon. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=33307",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -77,7 +88,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -1,11 +1,49 @@
 {
+  "description": "In the Secondary Skill Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:36+00:00",
   "name": "Smoked Desert Dumplings",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 9,
+        "colors": [
+          285,
+          310,
+          322,
+          335
+        ],
+        "creates": [
+          20452,
+          1,
+          1
+        ],
+        "id": 24801,
+        "learnedat": 285,
+        "level": 0,
+        "name": "Smoked Desert Dumplings",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            20424,
+            1
+          ],
+          [
+            3713,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

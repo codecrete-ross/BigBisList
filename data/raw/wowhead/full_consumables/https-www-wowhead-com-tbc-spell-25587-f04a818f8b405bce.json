@@ -1,11 +1,14 @@
 {
+  "description": "Summons a Windfury Totem with 5 health at the feet of the caster. The totem enchants all party members main-hand weapons with wind, if they are within 20 yards. Each hit has a 20% chance of granting the attacker 1 extra attack with 445 extra attack power. Lasts 2 min.",
   "fetched_at": "2026-05-24T08:51:00+00:00",
   "name": "Windfury Totem",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

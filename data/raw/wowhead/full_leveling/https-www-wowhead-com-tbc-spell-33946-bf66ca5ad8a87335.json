@@ -1,11 +1,14 @@
 {
+  "description": "Amplifies magic used against the targeted party member, increasing damage taken from spells by up to 120 and healing spells by up to 240. Lasts 10 min.",
   "fetched_at": "2026-05-24T09:05:39+00:00",
   "name": "Amplify Magic",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

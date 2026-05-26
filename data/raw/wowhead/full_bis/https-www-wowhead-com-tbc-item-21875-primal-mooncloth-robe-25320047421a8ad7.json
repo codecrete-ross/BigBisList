@@ -5,15 +5,145 @@
   "fetched_at": "2026-05-24T04:57:48+00:00",
   "item_id": 21875,
   "name": "Primal Mooncloth Robe",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Primal Mooncloth Robe Phase 1 Item Level 120 Binds when picked up Unique Chest Cloth 202 Armor +20 Intellect +20 Spirit Yellow Socket Blue Socket Socket Bonus: +3 Intellect Durability 100 / 100 Requires Level 70 Requires Mooncloth Tailoring Equip: Increases healing done by up to 121 and damage done by up to 41 for all magical spells and effects. Equip: Restores 10 mana per 5 sec. Primal Mooncloth (0/3) Primal Mooncloth Robe Primal Mooncloth Shoulders Primal Mooncloth Belt (3) Set : Allow 5% of your Mana regeneration to continue while casting. Sell Price: 4 68 52 Primal Mooncloth Robe is a Cloth chestpiece crafted by Tailors who specialize in Mooncloth tailoring. This epic cloth armor of item level 120 goes in the \"Chest\" slot.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+      "specialization": "Mooncloth Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26762,
+      "entity_name": "Primal Mooncloth Robe",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+      "spell_id": 26762,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          21875,
+          1,
+          1
+        ],
+        "id": 26762,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Primal Mooncloth Robe",
+        "nskillup": 1,
+        "popularity": 12,
+        "quality": 4,
+        "reagents": [
+          [
+            21845,
+            14
+          ],
+          [
+            22457,
+            12
+          ],
+          [
+            21881,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ],
+        "specialization": 26798
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21917,
+        "level": 75,
+        "name": "Pattern: Primal Mooncloth Robe",
+        "popularity": 8,
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Nasmara Moonsong",
+            "t": 1,
+            "ti": 22208,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21917,
+      "level": 75,
+      "name": "Pattern: Primal Mooncloth Robe",
+      "popularity": 8,
+      "quality": 1,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Nasmara Moonsong",
+          "t": 1,
+          "ti": 22208,
+          "z": 3703
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe"
 }

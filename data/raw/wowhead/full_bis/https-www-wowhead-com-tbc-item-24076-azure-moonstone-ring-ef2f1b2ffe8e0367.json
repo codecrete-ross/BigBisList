@@ -5,15 +5,84 @@
   "fetched_at": "2026-05-24T05:02:07+00:00",
   "item_id": 24076,
   "name": "Azure Moonstone Ring",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31050,
+      "entity_name": "Azure Moonstone Ring",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24076/azure-moonstone-ring",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24076/azure-moonstone-ring",
+      "spell_id": 31050,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          320,
+          330,
+          340,
+          350
+        ],
+        "creates": [
+          24076,
+          1,
+          1
+        ],
+        "id": 31050,
+        "learnedat": 320,
+        "level": 0,
+        "name": "Azure Moonstone Ring",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 2,
+        "reagents": [
+          [
+            23445,
+            1
+          ],
+          [
+            23117,
+            2
+          ],
+          [
+            23079,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "trainingcost": 25000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24076/azure-moonstone-ring"
 }

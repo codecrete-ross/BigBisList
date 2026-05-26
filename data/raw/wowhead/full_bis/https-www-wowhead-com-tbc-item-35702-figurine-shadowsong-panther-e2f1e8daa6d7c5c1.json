@@ -5,15 +5,144 @@
   "fetched_at": "2026-05-24T05:33:09+00:00",
   "item_id": 35702,
   "name": "Figurine - Shadowsong Panther",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Shadowsong Panther Phase 5 Item Level 125 Binds when picked up Unique Trinket Requires Level 70 Requires Jewelcrafting (375) Equip: Increases your effective stealth level by 1. Equip: Increases attack power by 80. Use: Increases attack power by 320 for 15 sec. (1 Min, 30 Sec Cooldown) Sell Price: 1 50 This epic trinket of item level 125 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=35702/figurine-shadowsong-panther",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46778,
+      "entity_name": "Figurine - Shadowsong Panther",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=35702/figurine-shadowsong-panther",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=35702/figurine-shadowsong-panther",
+      "spell_id": 46778,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          375,
+          387,
+          400
+        ],
+        "creates": [
+          35702,
+          1,
+          1
+        ],
+        "id": 46778,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Figurine - Shadowsong Panther",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            23573,
+            4
+          ],
+          [
+            32230,
+            2
+          ],
+          [
+            22456,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35698,
+        "level": 75,
+        "name": "Design: Figurine - Shadowsong Panther",
+        "popularity": 11,
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Eldara Dawnrunner",
+            "t": 1,
+            "ti": 25032,
+            "z": 4080
+          }
+        ],
+        "subclass": 10
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35698,
+      "level": 75,
+      "name": "Design: Figurine - Shadowsong Panther",
+      "popularity": 11,
+      "quality": 1,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Eldara Dawnrunner",
+          "t": 1,
+          "ti": 25032,
+          "z": 4080
+        }
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=35702/figurine-shadowsong-panther"
 }

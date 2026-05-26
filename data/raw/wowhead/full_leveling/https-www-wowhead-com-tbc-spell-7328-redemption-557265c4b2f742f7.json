@@ -1,6 +1,8 @@
 {
+  "description": "Brings a dead player back to life with 65 health and 120 mana. Cannot be cast when in combat. In the Holy Abilities category. Requires Paladin.",
   "fetched_at": "2026-05-24T09:07:36+00:00",
   "name": "Redemption",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -44,9 +46,10 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [
       {
         "category": -141,

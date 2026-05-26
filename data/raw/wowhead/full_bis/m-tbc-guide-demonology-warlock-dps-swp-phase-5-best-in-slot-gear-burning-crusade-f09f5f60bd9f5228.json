@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:45+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -88,6 +89,16 @@
           "item_id": 34847,
           "item_name": "Annihilator Holo-Gogs",
           "item_url": "https://www.wowhead.com/tbc/item=34847/annihilator-holo-gogs",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -204,6 +215,16 @@
           "item_id": 32494,
           "item_name": "Destruction Holo-Gogs",
           "item_url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Mediocre",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -417,6 +438,16 @@
           "item_id": 32587,
           "item_name": "Mantle of Nimble Thought",
           "item_url": "https://www.wowhead.com/tbc/item=32587/mantle-of-nimble-thought",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -838,6 +869,16 @@
           "item_id": 34364,
           "item_name": "Sunfire Robe",
           "item_url": "https://www.wowhead.com/tbc/item=34364/sunfire-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -1205,6 +1246,16 @@
           "item_id": 32586,
           "item_name": "Bracers of Nimble Thought",
           "item_url": "https://www.wowhead.com/tbc/item=32586/bracers-of-nimble-thought",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1529,6 +1580,16 @@
           "item_id": 34366,
           "item_name": "Sunfire Handwraps",
           "item_url": "https://www.wowhead.com/tbc/item=34366/sunfire-handwraps",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1803,6 +1864,16 @@
           "item_id": 30038,
           "item_name": "Belt of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=30038/belt-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Good",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -2173,6 +2244,16 @@
           "item_id": 24262,
           "item_name": "Spellstrike Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Mediocre",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -2417,6 +2498,25 @@
           "item_id": 21870,
           "item_name": "Frozen Shadoweave Boots",
           "item_url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Shadoweave Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Mediocre",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only"
@@ -2472,6 +2572,16 @@
           "item_id": 30037,
           "item_name": "Boots of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=30037/boots-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Mediocre",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -2564,6 +2674,16 @@
           "item_id": 34359,
           "item_name": "Pendant of Sunfire",
           "item_url": "https://www.wowhead.com/tbc/item=34359/pendant-of-sunfire",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - BoP only"
@@ -2653,6 +2773,16 @@
           "item_id": 24116,
           "item_name": "Eye of the Night",
           "item_url": "https://www.wowhead.com/tbc/item=24116/eye-of-the-night",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Buff",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -2685,6 +2815,16 @@
           "item_id": 24121,
           "item_name": "Chain of the Twilight Owl",
           "item_url": "https://www.wowhead.com/tbc/item=24121/chain-of-the-twilight-owl",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Buff",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -2795,6 +2935,18 @@
           "item_id": 34678,
           "item_name": "Shattered Sun Pendant of Acumen",
           "item_url": "https://www.wowhead.com/tbc/item=34678/shattered-sun-pendant-of-acumen",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner (Shattered Sun Offensive Exalted)",
+              "reputation": "Shattered Sun Offensive",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Mediocre",
           "source_links": [
             {
@@ -2887,6 +3039,16 @@
           "item_id": 34362,
           "item_name": "Loop of Forged Power",
           "item_url": "https://www.wowhead.com/tbc/item=34362/loop-of-forged-power",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -2999,6 +3161,18 @@
           "item_id": 29305,
           "item_name": "Band of the Eternal Sage",
           "item_url": "https://www.wowhead.com/tbc/item=29305/band-of-the-eternal-sage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: (The Scale of the Sands Exalted)",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/demonology-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Mediocre",
           "source_links": [],
           "source_text": "Quest: (The Scale of the Sands Exalted)"

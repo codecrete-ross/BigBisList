@@ -5,20 +5,448 @@
   "fetched_at": "2026-05-24T05:09:15+00:00",
   "item_id": 31202,
   "name": "Girdle of Divine Blessing",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
-      "entity_name": "World Drop",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 16769,
+      "entity_name": "Firewing Warlock",
+      "out_of": 41799,
       "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
-      "type": "world_drop",
-      "world_drop": true
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.06,
+      "entity_id": 17135,
+      "entity_name": "Boulderfist Mystic",
+      "out_of": 3159,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.0,
+      "entity_id": 17137,
+      "entity_name": "Boulderfist Mage",
+      "out_of": 72019,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.05,
+      "entity_id": 17141,
+      "entity_name": "Windyreed Wretch",
+      "out_of": 4116,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 17154,
+      "entity_name": "Muck Spawn",
+      "out_of": 40469,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 17158,
+      "entity_name": "Dust Howler",
+      "out_of": 24427,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 17726,
+      "entity_name": "Wrathfin Myrmidon",
+      "out_of": 11979,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.06,
+      "entity_id": 17771,
+      "entity_name": "Murkblood Oracle",
+      "out_of": 4993,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 17819,
+      "entity_name": "Durnholde Sentry",
+      "out_of": 18934,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.0,
+      "entity_id": 17981,
+      "entity_name": "Voidspawn",
+      "out_of": 86205,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.03,
+      "entity_id": 18043,
+      "entity_name": "Agitated Orc Spirit",
+      "out_of": 12074,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.06,
+      "entity_id": 18064,
+      "entity_name": "Warmaul Shaman",
+      "out_of": 3117,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 18205,
+      "entity_name": "Clefthoof",
+      "out_of": 92303,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.04,
+      "entity_id": 18309,
+      "entity_name": "Ethereal Scavenger",
+      "out_of": 16479,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.03,
+      "entity_id": 18311,
+      "entity_name": "Ethereal Crypt Raider",
+      "out_of": 29275,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.04,
+      "entity_id": 18312,
+      "entity_name": "Ethereal Spellbinder",
+      "out_of": 20908,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13,
+      "drop_percent": 0.03,
+      "entity_id": 18313,
+      "entity_name": "Ethereal Sorcerer",
+      "out_of": 37781,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 18315,
+      "entity_name": "Ethereal Theurgist",
+      "out_of": 9231,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.02,
+      "entity_id": 18317,
+      "entity_name": "Ethereal Priest",
+      "out_of": 28712,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.04,
+      "entity_id": 18331,
+      "entity_name": "Ethereal Darkcaster",
+      "out_of": 24262,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 18460,
+      "entity_name": "Lost Spirit",
+      "out_of": 11542,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 18463,
+      "entity_name": "Dampscale Devourer",
+      "out_of": 38094,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 18467,
+      "entity_name": "Dreadfang Widow",
+      "out_of": 104800,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 18470,
+      "entity_name": "Bonelasher",
+      "out_of": 52639,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 18495,
+      "entity_name": "Auchenai Vindicator",
+      "out_of": 12797,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.98,
+      "entity_id": 18503,
+      "entity_name": "Phantasmal Possessor",
+      "out_of": 204,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 19307,
+      "entity_name": "Nexus Terror",
+      "out_of": 11675,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 19948,
+      "entity_name": "Bloodmaul Skirmisher",
+      "out_of": 34805,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 20751,
+      "entity_name": "Daggermaw Lashtail",
+      "out_of": 25962,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 21123,
+      "entity_name": "Felsworn Scalewing",
+      "out_of": 8781,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 21242,
+      "entity_name": "Auchenai Death-Speaker",
+      "out_of": 22786,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 21285,
+      "entity_name": "Auchenai Doomsayer",
+      "out_of": 25250,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 21370,
+      "entity_name": "Ethereal Nethermancer",
+      "out_of": 11562,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 21381,
+      "entity_name": "Young Crust Burster",
+      "out_of": 25554,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 3.45,
+      "entity_id": 184934,
+      "entity_name": "Bound Fel Iron Chest",
+      "out_of": 58,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.87,
+      "entity_id": 184935,
+      "entity_name": "Solid Fel Iron Chest",
+      "out_of": 231,
+      "source_url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 2,
+        "id": 184934,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 58
+              }
+            }
+          }
+        },
+        "location": [
+          3792,
+          3716
+        ],
+        "name": "Bound Fel Iron Chest",
+        "outof": 58,
+        "pctstack": "",
+        "skill": 300,
+        "type": -5
+      },
+      {
+        "count": 2,
+        "id": 184935,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 24,
+                "outof": 3862
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 231
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 135
+              }
+            }
+          }
+        },
+        "location": [
+          3792,
+          3716
+        ],
+        "name": "Solid Fel Iron Chest",
+        "outof": 231,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 0,
@@ -1323,8 +1751,12 @@
         "type": 10
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31202/girdle-of-divine-blessing"
 }

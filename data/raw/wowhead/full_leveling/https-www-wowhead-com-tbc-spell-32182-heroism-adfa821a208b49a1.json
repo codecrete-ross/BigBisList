@@ -1,11 +1,14 @@
 {
+  "description": "Increases melee, ranged, and spell haste by 30% for all party and raid members. Lasts 40 sec.Allies receiving this effect will become Exhausted and be unable to benefit from Heroism again for 10 min.",
   "fetched_at": "2026-05-24T09:16:17+00:00",
   "name": "Heroism",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

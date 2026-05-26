@@ -1,11 +1,98 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T09:23:50+00:00",
   "name": "Goblin Rocket Launcher",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Engineering",
+      "scope": "learn_recipe",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/spell=30563",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Engineering Trainer",
+      "profession": "Engineering",
+      "required_skill": 350,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "learn_recipe",
+          "skill": 350,
+          "source_url": "https://www.wowhead.com/tbc/spell=30563",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=30563",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          370,
+          380
+        ],
+        "creates": [
+          23836,
+          1,
+          1
+        ],
+        "id": 30563,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Goblin Rocket Launcher",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            23785,
+            2
+          ],
+          [
+            23786,
+            1
+          ],
+          [
+            23787,
+            2
+          ],
+          [
+            21884,
+            6
+          ],
+          [
+            22452,
+            6
+          ],
+          [
+            16006,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20222,
+        "trainingcost": 50000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

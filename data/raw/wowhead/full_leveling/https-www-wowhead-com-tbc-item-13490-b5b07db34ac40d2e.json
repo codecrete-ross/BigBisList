@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:23:30+00:00",
   "item_id": 13490,
   "name": "Recipe: Greater Stoneshield Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Greater Stoneshield Potion Item Level 56 Requires Alchemy (280) Use: Teaches you how to make a Greater Stoneshield Potion. Sell Price: 40 Greater Stoneshield Potion Item Level 56 Requires Level 46 Use: Increases armor by 2000 for 2 min. (2 Min Cooldown) Max Stack: 5 Sell Price: 7 50 Requires Stonescale Oil (2), Thorium Ore , Crystal Vial This alchemy recipe is used for the Alchemy profession. It is looted from Skeletal Warlord. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 280,
+      "source_url": "https://www.wowhead.com/tbc/item=13490",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -2139,7 +2150,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

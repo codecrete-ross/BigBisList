@@ -1,11 +1,14 @@
 {
+  "description": "Soothes the target, reducing the range at which it will attack you by 10 yards. Only affects Humanoid targets level 85 or lower. Lasts 15 sec.",
   "fetched_at": "2026-05-24T09:11:51+00:00",
   "name": "Mind Soothe",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

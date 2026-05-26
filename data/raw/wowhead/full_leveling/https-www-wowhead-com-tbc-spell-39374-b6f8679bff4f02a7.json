@@ -1,6 +1,8 @@
 {
+  "description": "Power infuses the target's party, increasing their Shadow resistance by 70 for 20 min. In the Shadow Magic Abilities category. Requires Priest.",
   "fetched_at": "2026-05-24T09:12:09+00:00",
   "name": "Prayer of Shadow Protection",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,34 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 16,
+        "id": 39374,
+        "level": 70,
+        "name": "Prayer of Shadow Protection",
+        "nskillup": 1,
+        "rank": "Rank 2",
+        "reagents": [
+          [
+            17029,
+            1
+          ]
+        ],
+        "reqclass": 16,
+        "schools": 2,
+        "skill": [
+          78
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

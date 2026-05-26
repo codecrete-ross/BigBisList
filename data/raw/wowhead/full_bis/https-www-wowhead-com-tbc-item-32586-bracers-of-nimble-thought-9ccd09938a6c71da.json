@@ -5,15 +5,148 @@
   "fetched_at": "2026-05-24T04:28:07+00:00",
   "item_id": 32586,
   "name": "Bracers of Nimble Thought",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41205,
+      "entity_name": "Bracers of Nimble Thought",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32586/bracers-of-nimble-thought",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32586/bracers-of-nimble-thought",
+      "spell_id": 41205,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          32586,
+          1,
+          1
+        ],
+        "id": 41205,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Bracers of Nimble Thought",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            21842,
+            3
+          ],
+          [
+            24271,
+            4
+          ],
+          [
+            22457,
+            8
+          ],
+          [
+            32428,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 32754,
+        "level": 70,
+        "name": "Pattern: Bracers of Nimble Thought",
+        "popularity": 6,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 2
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35518,
+        "level": 70,
+        "name": "Pattern: Bracers of Nimble Thought",
+        "popularity": 7,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 32754,
+      "level": 70,
+      "name": "Pattern: Bracers of Nimble Thought",
+      "popularity": 6,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 2
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35518,
+      "level": 70,
+      "name": "Pattern: Bracers of Nimble Thought",
+      "popularity": 7,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32586/bracers-of-nimble-thought"
 }

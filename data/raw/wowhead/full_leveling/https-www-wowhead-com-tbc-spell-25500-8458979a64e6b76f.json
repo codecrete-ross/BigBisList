@@ -1,11 +1,14 @@
 {
+  "description": "Imbue the Shaman's weapon with frost. Each hit has a chance of causing 246 additional Frost damage and slowing the target's movement speed by 25% for 8 sec. Lasts 30 minutes.",
   "fetched_at": "2026-05-24T09:15:34+00:00",
   "name": "Frostbrand Weapon",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

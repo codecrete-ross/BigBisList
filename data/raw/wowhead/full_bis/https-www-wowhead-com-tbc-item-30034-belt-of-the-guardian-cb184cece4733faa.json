@@ -5,15 +5,122 @@
   "fetched_at": "2026-05-24T05:14:45+00:00",
   "item_id": 30034,
   "name": "Belt of the Guardian",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36389,
+      "entity_name": "Belt of the Guardian",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30034/belt-of-the-guardian",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30034/belt-of-the-guardian",
+      "spell_id": 36389,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          30034,
+          1,
+          1
+        ],
+        "id": 36389,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Belt of the Guardian",
+        "nskillup": 1,
+        "popularity": 11,
+        "quality": 4,
+        "reagents": [
+          [
+            30183,
+            2
+          ],
+          [
+            23573,
+            5
+          ],
+          [
+            21885,
+            10
+          ],
+          [
+            22452,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 30321,
+        "level": 75,
+        "name": "Plans: Belt of the Guardian",
+        "popularity": 7,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 30321,
+      "level": 75,
+      "name": "Plans: Belt of the Guardian",
+      "popularity": 7,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=30034/belt-of-the-guardian"
 }

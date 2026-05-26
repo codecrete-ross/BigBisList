@@ -5,19 +5,40 @@
   "fetched_at": "2026-05-24T09:07:47+00:00",
   "item_id": 23827,
   "name": "Super Sapper Charge",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Super Sapper Charge Item Level 68 Requires Engineering (340) Use: Explodes when triggered, dealing 900 to 1500 Fire damage to all enemies nearby and 675 to 1125 damage to you. (5 Min Cooldown) Max Stack: 10 Sell Price: 40 It is crafted. In the Explosives category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
+      "scope": "equip_or_use",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/item=23827/super-sapper-charge",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 30560,
       "entity_name": "Super Sapper Charge",
       "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23827/super-sapper-charge",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=23827/super-sapper-charge",
       "spell_id": 30560,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

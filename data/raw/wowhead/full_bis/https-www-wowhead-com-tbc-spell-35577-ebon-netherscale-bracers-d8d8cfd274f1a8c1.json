@@ -1,14 +1,96 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:11:26+00:00",
   "name": "Ebon Netherscale Bracers",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Leatherworking",
+      "raw_text": "Leatherworking",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/spell=35577/ebon-netherscale-bracers",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Leatherworking Trainer",
+      "profession": "Leatherworking",
+      "required_skill": 375,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "learn_recipe",
+          "skill": 375,
+          "source_url": "https://www.wowhead.com/tbc/spell=35577/ebon-netherscale-bracers",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=35577/ebon-netherscale-bracers",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29517,
+          1,
+          1
+        ],
+        "id": 35577,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Ebon Netherscale Bracers",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            29548,
+            18
+          ],
+          [
+            21884,
+            8
+          ],
+          [
+            22456,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10656,
+        "trainingcost": 100000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
-    "taught-by-item": []
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 35577,
   "url": "https://www.wowhead.com/tbc/spell=35577/ebon-netherscale-bracers"

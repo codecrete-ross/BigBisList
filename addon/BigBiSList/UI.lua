@@ -38,6 +38,37 @@ local OWNERSHIP_COLORS = {
     missing = { 0.22, 0.12, 0.12, 0.96, 0.92, 0.48, 0.48, 1 },
 }
 
+local ACCESS_LABELS = {
+    ready = "Ready",
+    ready_alternate = "Ready via alternate source",
+    needs_rep = "Needs rep",
+    needs_profession = "Needs profession",
+    needs_recipe = "Needs recipe",
+    check_prereq = "Check prereq",
+    unknown = "Unknown",
+}
+
+local ACCESS_COLORS = {
+    ready = { 0.12, 0.24, 0.14, 0.96, 0.46, 0.95, 0.48, 1 },
+    ready_alternate = { 0.12, 0.24, 0.14, 0.96, 0.46, 0.95, 0.48, 1 },
+    needs_rep = { 0.30, 0.20, 0.08, 0.96, 0.96, 0.72, 0.34, 1 },
+    needs_profession = { 0.26, 0.13, 0.13, 0.96, 0.94, 0.48, 0.48, 1 },
+    needs_recipe = { 0.26, 0.13, 0.13, 0.96, 0.94, 0.48, 0.48, 1 },
+    check_prereq = { 0.16, 0.18, 0.24, 0.96, 0.66, 0.78, 0.94, 1 },
+    unknown = { 0.16, 0.16, 0.18, 0.96, 0.62, 0.62, 0.66, 1 },
+}
+
+local REPUTATION_STANDINGS = {
+    Hated = 1,
+    Hostile = 2,
+    Unfriendly = 3,
+    Neutral = 4,
+    Friendly = 5,
+    Honored = 6,
+    Revered = 7,
+    Exalted = 8,
+}
+
 local CLASS_COLORS = {
     Druid = { 1.00, 0.49, 0.04 },
     Hunter = { 0.67, 0.83, 0.45 },
@@ -159,6 +190,112 @@ end
 
 local function ownershipStateLabel(state)
     return OWNERSHIP_LABELS[state or "missing"] or OWNERSHIP_LABELS.missing
+end
+
+local function accessStateLabel(state)
+    return ACCESS_LABELS[state or "unknown"] or ACCESS_LABELS.unknown
+end
+
+local function requirementSummary(requirement)
+    if not requirement then
+        return "Unknown prerequisite"
+    elseif requirement.type == "reputation" then
+        return (requirement.standing or "Required") .. " with " .. (requirement.reputation or "unknown faction")
+    elseif requirement.type == "profession" then
+        local text = requirement.profession or "Profession"
+        if requirement.skill then
+            text = text .. " " .. tostring(requirement.skill)
+        end
+        return text
+    elseif requirement.type == "profession_specialization" then
+        return requirement.specialization or "Profession specialization"
+    elseif requirement.type == "recipe_known" then
+        return "Known recipe: " .. (requirement.spell_name or ("Spell " .. tostring(requirement.spell_id or "")))
+    elseif requirement.type == "faction_choice" then
+        return "Faction choice: " .. table.concat(requirement.choices or {}, " / ")
+    elseif requirement.raw_text and requirement.raw_text ~= "" then
+        return requirement.raw_text
+    end
+    return requirement.type or "Prerequisite"
+end
+
+local function isLowConfidenceRequirement(requirement)
+    return not requirement or requirement.confidence == "parsed_source_text" or requirement.type == "unknown_text"
+end
+
+local function isBlockingAccessState(state)
+    return state == "needs_recipe" or state == "needs_profession" or state == "needs_rep"
+end
+
+local function getFactionStandingRank(factionName)
+    if not factionName or factionName == "" then
+        return nil
+    end
+
+    if C_Reputation and C_Reputation.GetFactionDataByName then
+        local ok, data = pcall(C_Reputation.GetFactionDataByName, factionName)
+        if ok and data then
+            return data.reaction or data.standingID
+        end
+    end
+
+    if GetFactionInfoByName then
+        local ok, _, _, standing = pcall(GetFactionInfoByName, factionName)
+        if ok then
+            return standing
+        end
+    end
+
+    if GetNumFactions and GetFactionInfo then
+        for index = 1, GetNumFactions() do
+            local name, _, standing = GetFactionInfo(index)
+            if name == factionName then
+                return standing
+            end
+        end
+    end
+
+    return nil
+end
+
+local function collectProfessionState()
+    local professions = {}
+    if not GetProfessions or not GetProfessionInfo then
+        return professions
+    end
+
+    local professionSlots = { GetProfessions() }
+    for _, professionIndex in ipairs(professionSlots) do
+        if professionIndex then
+            local name, _, rank = GetProfessionInfo(professionIndex)
+            if name and name ~= "" then
+                professions[lower(name)] = {
+                    name = name,
+                    skill = rank or 0,
+                }
+            end
+        end
+    end
+    return professions
+end
+
+local function isSpellKnownSafe(spellId)
+    if not spellId then
+        return false
+    end
+    if IsSpellKnown then
+        local ok, known = pcall(IsSpellKnown, spellId)
+        if ok and known then
+            return true
+        end
+    end
+    if IsPlayerSpell then
+        local ok, known = pcall(IsPlayerSpell, spellId)
+        if ok and known then
+            return true
+        end
+    end
+    return false
 end
 
 local function ensureSpecialFrame(frameName)
@@ -303,6 +440,226 @@ function UI:BuildOwnedItems()
     return owned
 end
 
+function UI:BuildAccessState()
+    return {
+        professions = collectProfessionState(),
+    }
+end
+
+function UI:EvaluateRequirement(requirement, accessState)
+    if not requirement then
+        return "unknown"
+    end
+
+    if isLowConfidenceRequirement(requirement) then
+        return "check_prereq"
+    end
+
+    if requirement.type == "reputation" then
+        local requiredRank = tonumber(requirement.standing_rank) or REPUTATION_STANDINGS[requirement.standing or ""] or 0
+        local currentRank = getFactionStandingRank(requirement.reputation)
+        if not currentRank then
+            return "unknown"
+        elseif currentRank < requiredRank then
+            return "needs_rep"
+        end
+        return "ready"
+    elseif requirement.type == "profession" then
+        local profession = accessState.professions[lower(requirement.profession)]
+        local requiredSkill = tonumber(requirement.skill) or 0
+        if not profession or (profession.skill or 0) < requiredSkill then
+            return "needs_profession"
+        end
+        return "ready"
+    elseif requirement.type == "profession_specialization" then
+        local profession = accessState.professions[lower(requirement.profession)]
+        if not profession then
+            return "needs_profession"
+        end
+        return "check_prereq"
+    elseif requirement.type == "recipe_known" then
+        if not isSpellKnownSafe(requirement.spell_id) then
+            return "needs_recipe"
+        end
+        return "ready"
+    elseif requirement.type == "faction_choice" then
+        for _, faction in ipairs(requirement.choices or {}) do
+            local standing = getFactionStandingRank(faction)
+            if standing and standing > 4 then
+                return "ready"
+            end
+        end
+        return "needs_rep"
+    elseif requirement.type == "source_access" then
+        return "check_prereq"
+    end
+
+    return "unknown"
+end
+
+function UI:GetAccessStatus(data)
+    return self:GetAccessEvaluation(data).status
+end
+
+function UI:EvaluateRequirementList(requirements, accessState)
+    accessState = accessState or self.currentAccess or self:BuildAccessState()
+
+    if not requirements or #requirements == 0 then
+        return { status = "ready" }
+    end
+
+    local firstBlockerState
+    local firstBlockerRequirement
+    local firstCheckRequirement
+    local firstUnknownRequirement
+
+    for _, requirement in ipairs(requirements) do
+        local state = self:EvaluateRequirement(requirement, accessState)
+        if isBlockingAccessState(state) and not firstBlockerState then
+            firstBlockerState = state
+            firstBlockerRequirement = requirement
+        elseif state == "check_prereq" then
+            firstCheckRequirement = firstCheckRequirement or requirement
+        elseif state == "unknown" then
+            firstUnknownRequirement = firstUnknownRequirement or requirement
+        end
+    end
+
+    if firstBlockerState then
+        return {
+            status = firstBlockerState,
+            blockingRequirement = firstBlockerRequirement,
+        }
+    elseif firstCheckRequirement then
+        return {
+            status = "check_prereq",
+            checkRequirement = firstCheckRequirement,
+        }
+    elseif firstUnknownRequirement then
+        return {
+            status = "unknown",
+            unknownRequirement = firstUnknownRequirement,
+        }
+    end
+
+    return { status = "ready" }
+end
+
+function UI:EvaluateAccessOption(option, accessState)
+    local evaluation = self:EvaluateRequirementList(option and option.requirements, accessState)
+    evaluation.option = option
+    return evaluation
+end
+
+function UI:GetAccessEvaluation(data)
+    local accessState = self.currentAccess or self:BuildAccessState()
+    local options = data and data.access_options
+
+    if options and #options > 0 then
+        local optionEvaluations = {}
+        local primaryEvaluation
+        local firstEvaluation
+        local firstReadyEvaluation
+
+        for _, option in ipairs(options) do
+            local evaluation = self:EvaluateAccessOption(option, accessState)
+            table.insert(optionEvaluations, evaluation)
+
+            firstEvaluation = firstEvaluation or evaluation
+            if option.is_primary and not primaryEvaluation then
+                primaryEvaluation = evaluation
+            end
+            if evaluation.status == "ready" and not firstReadyEvaluation then
+                firstReadyEvaluation = evaluation
+            end
+        end
+
+        local selectedEvaluation = primaryEvaluation or firstEvaluation
+        local status = selectedEvaluation and selectedEvaluation.status or "unknown"
+
+        if primaryEvaluation and primaryEvaluation.status == "ready" then
+            selectedEvaluation = primaryEvaluation
+            status = "ready"
+        elseif firstReadyEvaluation then
+            selectedEvaluation = firstReadyEvaluation
+            status = (firstReadyEvaluation.option and firstReadyEvaluation.option.is_primary) and "ready" or "ready_alternate"
+        end
+
+        return {
+            status = status,
+            optionEvaluation = selectedEvaluation,
+            options = optionEvaluations,
+        }
+    end
+
+    local flatEvaluation = self:EvaluateRequirementList(data and data.requirements, accessState)
+    return {
+        status = flatEvaluation.status,
+        optionEvaluation = flatEvaluation,
+    }
+end
+
+function UI:GetAccessBlockingReason(evaluation)
+    if not evaluation then
+        return "No access data available."
+    end
+
+    if evaluation.status == "ready" then
+        return "Character prerequisites appear satisfied. Drops, vendors, auctions, groups, and services are not guaranteed."
+    elseif evaluation.blockingRequirement then
+        return accessStateLabel(evaluation.status) .. " - " .. requirementSummary(evaluation.blockingRequirement)
+    elseif evaluation.checkRequirement then
+        return "Check prereq - " .. requirementSummary(evaluation.checkRequirement)
+    elseif evaluation.unknownRequirement then
+        return "Unknown - " .. requirementSummary(evaluation.unknownRequirement)
+    end
+
+    return accessStateLabel(evaluation.status)
+end
+
+function UI:FormatRequirements(data)
+    local requirements = data and data.requirements
+    if not requirements or #requirements == 0 then
+        return "No known prerequisites."
+    end
+
+    local lines = {}
+    for _, requirement in ipairs(requirements) do
+        table.insert(lines, accessStateLabel(self:EvaluateRequirement(requirement, self.currentAccess or self:BuildAccessState())) .. " - " .. requirementSummary(requirement))
+    end
+    return table.concat(lines, "\n")
+end
+
+function UI:FormatAccessOptionRequirements(optionEvaluation)
+    local option = optionEvaluation and optionEvaluation.option
+    local requirements = option and option.requirements
+    if not requirements or #requirements == 0 then
+        return "No known character prerequisites."
+    end
+
+    local lines = {}
+    local accessState = self.currentAccess or self:BuildAccessState()
+    for _, requirement in ipairs(requirements) do
+        table.insert(lines, accessStateLabel(self:EvaluateRequirement(requirement, accessState)) .. " - " .. requirementSummary(requirement))
+    end
+    return table.concat(lines, "\n")
+end
+
+function UI:FormatAccessOptions(accessEvaluation)
+    local lines = {}
+    for _, optionEvaluation in ipairs(accessEvaluation and accessEvaluation.options or {}) do
+        local option = optionEvaluation.option or {}
+        table.insert(lines, accessStateLabel(optionEvaluation.status) .. " - " .. (option.label or "Source"))
+        table.insert(lines, self:FormatAccessOptionRequirements(optionEvaluation))
+    end
+
+    if #lines == 0 then
+        return "No alternate source paths are known."
+    end
+
+    return table.concat(lines, "\n")
+end
+
 function UI:ScanBankItems()
     BigBiSList:EnsureDatabase()
 
@@ -333,6 +690,7 @@ end
 
 function UI:BuildFilterPayload()
     local filters = self:GetFilters()
+    self.currentAccess = self:BuildAccessState()
     return {
         search = filters.search,
         sourceType = filters.sourceType,
@@ -786,6 +1144,47 @@ function UI:CreateOwnershipBadge(parent, state)
     return badge
 end
 
+function UI:CreateAccessBadge(parent, state, data)
+    local widgets = BigBiSList.Widgets
+    local color = ACCESS_COLORS[state] or ACCESS_COLORS.unknown
+    local badge = widgets:CreatePanel(nil, parent, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
+    badge:SetSize(state == "ready_alternate" and 132 or 86, 18)
+    badge:EnableMouse(true)
+
+    local label = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    label:SetPoint("LEFT", badge, "LEFT", 4, 0)
+    label:SetPoint("RIGHT", badge, "RIGHT", -4, 0)
+    label:SetJustifyH("CENTER")
+    label:SetWordWrap(false)
+    label:SetText(accessStateLabel(state))
+    badge.label = label
+
+    badge:SetScript("OnEnter", function(selfBadge)
+        local evaluation = UI:GetAccessEvaluation(data)
+        local optionEvaluation = evaluation.optionEvaluation
+        local option = optionEvaluation and optionEvaluation.option
+        GameTooltip:SetOwner(selfBadge, "ANCHOR_RIGHT")
+        GameTooltip:AddLine("Prereq", 1, 0.82, 0.28)
+        GameTooltip:AddLine(accessStateLabel(evaluation.status), 0.86, 0.86, 0.86)
+        if option then
+            GameTooltip:AddLine("Best path: " .. (option.label or "Source"), 0.62, 0.78, 0.94, true)
+            GameTooltip:AddLine(UI:GetAccessBlockingReason(optionEvaluation), 0.62, 0.62, 0.66, true)
+        elseif data and data.requirements and #data.requirements > 0 then
+            for _, requirement in ipairs(data.requirements) do
+                GameTooltip:AddLine(requirementSummary(requirement), 0.62, 0.62, 0.66, true)
+            end
+        else
+            GameTooltip:AddLine("No known character prerequisites.", 0.62, 0.62, 0.66, true)
+        end
+        GameTooltip:Show()
+    end)
+    badge:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+
+    return badge
+end
+
 function UI:CreateDataRow(parent, yOffset, data, mode)
     local widgets = BigBiSList.Widgets
     local entityType = data.entity_type or (data.spell_id and "spell") or "item"
@@ -825,12 +1224,9 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
         ownershipBadge:SetPoint("RIGHT", row, "RIGHT", -170, 0)
     end
 
-    local rightText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    rightText:SetPoint("RIGHT", row, "RIGHT", -8, 7)
-    rightText:SetWidth(158)
-    rightText:SetJustifyH("RIGHT")
-    rightText:SetWordWrap(false)
-    rightText:SetTextColor(0.66, 0.78, 0.94, 1)
+    local accessState = self:GetAccessStatus(data)
+    local accessBadge = self:CreateAccessBadge(row, accessState, data)
+    accessBadge:SetPoint("RIGHT", row, "RIGHT", -8, 7)
 
     local sourceText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     sourceText:SetPoint("RIGHT", row, "RIGHT", -8, -9)
@@ -848,19 +1244,15 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
 
     if mode == "planner" then
         safeSetText(detailText, data.slot .. " - " .. data.priorityTier .. " - " .. table.concat(data.reasons or {}, ", "))
-        safeSetText(rightText, tostring(data.priority or 0) .. "/100")
-        safeSetText(sourceText, data.source_summary or "")
+        safeSetText(sourceText, tostring(data.priority or 0) .. "/100 - " .. (data.source_summary or ""))
     elseif mode == "enhance" then
         safeSetText(detailText, data.detail or "")
-        safeSetText(rightText, "Enhance")
         safeSetText(sourceText, data.source_summary or "")
     elseif mode == "wishlist" then
         safeSetText(detailText, data.detail or "")
-        safeSetText(rightText, "Wishlisted")
         safeSetText(sourceText, data.source_summary or "")
     else
         safeSetText(detailText, (data.rank_label or "Option") .. " - " .. (data.source_type_label or "Source"))
-        safeSetText(rightText, data.slot or "")
         safeSetText(sourceText, data.source_summary or "")
     end
 
@@ -1142,6 +1534,8 @@ function UI:RenderWishlistTab()
             name = item and item.name or ("Item " .. tostring(itemId)),
             detail = bestUse and (bestUse.class .. " " .. bestUse.spec .. " - " .. bestUse.slot) or "Saved item",
             source_summary = item and item.source_summary or "",
+            requirements = item and item.requirements,
+            access_options = bestUse and bestUse.access_options,
         }
         local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, data, "wishlist")
         yOffset = yOffset - rowHeight - 4
@@ -1382,6 +1776,32 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         contentHeight = contentHeight + anchor.contentHeight
     end
 
+    local accessData = detailData or item or {}
+    local requirementData = (accessData and accessData.requirements and #accessData.requirements > 0) and accessData or item
+    local accessEvaluation = self:GetAccessEvaluation(accessData)
+    anchor = self:CreateDetailsText(content, anchor, "Prereq", accessStateLabel(accessEvaluation.status), 0.82, 0.86, 0.92)
+    contentHeight = contentHeight + anchor.contentHeight
+
+    local optionEvaluation = accessEvaluation.optionEvaluation
+    local option = optionEvaluation and optionEvaluation.option
+    local bestPathText
+    if option then
+        bestPathText = accessStateLabel(accessEvaluation.status) .. " - " .. (option.label or "Source")
+            .. "\n" .. self:GetAccessBlockingReason(optionEvaluation)
+    else
+        bestPathText = self:GetAccessBlockingReason(optionEvaluation)
+    end
+    anchor = self:CreateDetailsText(content, anchor, "Best access path", bestPathText, 0.76, 0.76, 0.80)
+    contentHeight = contentHeight + anchor.contentHeight
+
+    if accessEvaluation.options and #accessEvaluation.options > 0 then
+        anchor = self:CreateDetailsText(content, anchor, "Other ways to acquire", self:FormatAccessOptions(accessEvaluation), 0.76, 0.76, 0.80)
+        contentHeight = contentHeight + anchor.contentHeight
+    elseif requirementData and requirementData.requirements and #requirementData.requirements > 0 then
+        anchor = self:CreateDetailsText(content, anchor, "Requirements", self:FormatRequirements(requirementData), 0.76, 0.76, 0.80)
+        contentHeight = contentHeight + anchor.contentHeight
+    end
+
     if plannerContext then
         local score = tostring(plannerContext.priority or 0) .. "/100"
         local tier = plannerContext.priorityTier or "Priority"
@@ -1503,6 +1923,7 @@ function UI:Refresh()
     self:ValidateSelection()
     self:RefreshControls()
     self.currentOwned = self:BuildOwnedItems()
+    self.currentAccess = self:BuildAccessState()
 
     BigBiSList.Widgets:ClearChildren(self.contentChild)
     self.contentChild:SetHeight(1)

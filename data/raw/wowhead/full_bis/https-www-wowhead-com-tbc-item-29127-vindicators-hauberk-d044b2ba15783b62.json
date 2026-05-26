@@ -5,6 +5,18 @@
   "fetched_at": "2026-05-24T05:13:52+00:00",
   "item_id": 29127,
   "name": "Vindicator's Hauberk",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Aldor"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Vindicator's Hauberk Phase 1 Item Level 115 Binds when picked up Unique Chest Plate 1164 Armor +39 Stamina Durability 135 / 135 Requires Level 70 Requires The Aldor - Revered Equip: Increases defense rating by 46. Equip: Increases your dodge rating by 19. Sell Price: 6 24 8 This blue plate armor of item level 115 goes in the \"Chest\" slot. It is sold by Quartermaster Endarin. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29127/vindicators-hauberk",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,11 +29,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -47,7 +63,10 @@
         "tag": "Aldor: Quartermaster",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29127/vindicators-hauberk"
 }

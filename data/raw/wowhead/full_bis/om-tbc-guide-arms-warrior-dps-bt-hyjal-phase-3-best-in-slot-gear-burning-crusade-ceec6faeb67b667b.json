@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:33+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -155,6 +156,16 @@
           "item_id": 32461,
           "item_name": "Furious Gizmatic Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=32461/furious-gizmatic-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Optional",
           "source_links": [],
           "source_text": "Profession: Engineering (BoP)"
@@ -247,6 +258,16 @@
           "item_id": 32570,
           "item_name": "Swiftsteel Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Best",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -406,6 +427,16 @@
           "item_id": 33122,
           "item_name": "Cloak of Darkness",
           "item_url": "https://www.wowhead.com/tbc/item=33122/cloak-of-darkness",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -431,6 +462,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Tailoring"
@@ -754,6 +795,16 @@
           "item_id": 32574,
           "item_name": "Bindings of Lightning Reflexes",
           "item_url": "https://www.wowhead.com/tbc/item=32574/bindings-of-lightning-reflexes",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1107,6 +1158,16 @@
           "item_id": 30032,
           "item_name": "Red Belt of Battle",
           "item_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -1754,6 +1815,18 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Champion's Covenant - Requires Exalted with the Scales of the Sand",
+              "reputation": "the Scales of the Sand",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {

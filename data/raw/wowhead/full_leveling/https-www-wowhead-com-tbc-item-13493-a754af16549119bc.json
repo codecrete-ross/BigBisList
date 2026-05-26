@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:23:26+00:00",
   "item_id": 13493,
   "name": "Recipe: Greater Arcane Elixir",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Greater Arcane Elixir Item Level 57 Requires Alchemy (285) Use: Teaches you how to make a Greater Arcane Elixir. Sell Price: 50 Greater Arcane Elixir Item Level 57 Requires Level 47 Use: Increases spell damage by up to 35 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 7 50 Requires Dreamfoil (3), Mountain Silversage , Crystal Vial This alchemy recipe is used for the Alchemy profession. It is looted from Cobalt Scalebane. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 285,
+      "source_url": "https://www.wowhead.com/tbc/item=13493",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -303,7 +314,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

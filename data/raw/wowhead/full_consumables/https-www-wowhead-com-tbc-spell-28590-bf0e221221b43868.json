@@ -1,11 +1,57 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:19+00:00",
   "name": "Flask of Blinding Light",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          0,
+          390,
+          397,
+          405
+        ],
+        "creates": [
+          22861,
+          1,
+          1
+        ],
+        "id": 28590,
+        "learnedat": 390,
+        "level": 0,
+        "name": "Flask of Blinding Light",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            22794,
+            1
+          ],
+          [
+            22793,
+            3
+          ],
+          [
+            22791,
+            7
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

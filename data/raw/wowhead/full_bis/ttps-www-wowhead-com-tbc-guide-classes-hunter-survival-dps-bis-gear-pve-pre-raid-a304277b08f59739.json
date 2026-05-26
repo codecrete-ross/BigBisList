@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:38+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -391,6 +392,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Strong",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -550,6 +561,17 @@
           "item_id": 29525,
           "item_name": "Primalstrike Vest",
           "item_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (Bind on Creation)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (Bind on Creation)"
@@ -642,6 +664,16 @@
           "item_id": 25697,
           "item_name": "Felstalker Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -697,6 +729,17 @@
           "item_id": 29527,
           "item_name": "Primalstrike Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (Bind on Creation)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (Bind on Creation)"
@@ -997,6 +1040,17 @@
           "item_id": 29526,
           "item_name": "Primalstrike Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (Bind on Creation)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (Bind on Creation)"
@@ -1022,6 +1076,16 @@
           "item_id": 25695,
           "item_name": "Felstalker Belt",
           "item_url": "https://www.wowhead.com/tbc/item=25695/felstalker-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1370,6 +1434,16 @@
           "item_id": 25686,
           "item_name": "Fel Leather Boots",
           "item_url": "https://www.wowhead.com/tbc/item=25686/fel-leather-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -2068,6 +2142,18 @@
           "item_id": 29121,
           "item_name": "Guile of Khoraazi",
           "item_url": "https://www.wowhead.com/tbc/item=29121/guile-of-khoraazi",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium",
+              "reputation": "The Consortium",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional MH / OH",
           "source_links": [
             {
@@ -2202,6 +2288,18 @@
           "item_id": 29121,
           "item_name": "Guile of Khoraazi",
           "item_url": "https://www.wowhead.com/tbc/item=29121/guile-of-khoraazi",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium",
+              "reputation": "The Consortium",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional MH / OH",
           "source_links": [
             {
@@ -2269,6 +2367,17 @@
           "item_id": 28435,
           "item_name": "Mooncleaver",
           "item_url": "https://www.wowhead.com/tbc/item=28435/mooncleaver",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Axesmith Blacksmithing (Bind on Creation)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "specialization": "Master Axesmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Master Axesmith Blacksmithing (Bind on Creation)"
@@ -2464,6 +2573,28 @@
           "item_id": 29151,
           "item_name": "Veteran's Musket",
           "item_url": "https://www.wowhead.com/tbc/item=29151/veterans-musket",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike Requires Exalted with Honor Hold Vendor: Quartermaster Urgronn Requires Exalted with Thrallmar",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike Requires Exalted with Honor Hold Vendor: Quartermaster Urgronn Requires Exalted with Thrallmar",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -2638,6 +2769,28 @@
           "item_id": 29143,
           "item_name": "Clefthoof Hide Quiver",
           "item_url": "https://www.wowhead.com/tbc/item=29143/clefthoof-hide-quiver",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela - Requires Honored with The Mag'har Vendor: Trader Narasu - Requires Honored with Kurenai",
+              "reputation": "The Mag'har",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela - Requires Honored with The Mag'har Vendor: Trader Narasu - Requires Honored with Kurenai",
+              "reputation": "Kurenai",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -2713,6 +2866,18 @@
           "item_id": 29118,
           "item_name": "Smuggler's Ammo Pouch",
           "item_url": "https://www.wowhead.com/tbc/item=29118/smugglers-ammo-pouch",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Karaaz - Requires Honored with The Consortium",
+              "reputation": "The Consortium",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -2784,6 +2949,18 @@
           "item_id": 31949,
           "item_name": "Warden's Arrow",
           "item_url": "https://www.wowhead.com/tbc/item=31949/wardens-arrow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear - Requires Revered with Cenarion Expedition",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -2891,6 +3068,28 @@
           "item_id": 32882,
           "item_name": "Hellfire Shot",
           "item_url": "https://www.wowhead.com/tbc/item=32882/hellfire-shot",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike Requires Revered with Honor Hold Vendor: Quartermaster Urgronn Requires Revered with Thrallmar",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike Requires Revered with Honor Hold Vendor: Quartermaster Urgronn Requires Revered with Thrallmar",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {

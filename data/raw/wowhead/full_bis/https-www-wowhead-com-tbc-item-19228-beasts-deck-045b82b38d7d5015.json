@@ -5,15 +5,81 @@
   "fetched_at": "2026-05-24T05:39:52+00:00",
   "item_id": 19228,
   "name": "Beasts Deck",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 23677,
+      "entity_name": "Beasts Deck",
+      "source_url": "https://www.wowhead.com/tbc/item=19228/beasts-deck",
+      "spell_id": 23677,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": -26,
+        "creates": [
+          19228,
+          0,
+          0
+        ],
+        "id": 23677,
+        "level": 0,
+        "name": "Beasts Deck",
+        "popularity": 7,
+        "quality": 4,
+        "reagents": [
+          [
+            19227,
+            1
+          ],
+          [
+            19230,
+            1
+          ],
+          [
+            19231,
+            1
+          ],
+          [
+            19232,
+            1
+          ],
+          [
+            19233,
+            1
+          ],
+          [
+            19234,
+            1
+          ],
+          [
+            19235,
+            1
+          ],
+          [
+            19236,
+            1
+          ]
+        ],
+        "schools": 1
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=19228/beasts-deck"
 }

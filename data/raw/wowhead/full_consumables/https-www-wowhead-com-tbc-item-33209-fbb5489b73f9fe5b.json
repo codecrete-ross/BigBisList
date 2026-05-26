@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 33209,
   "name": "Recipe: Flask of Chromatic Wonder",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Flask of Chromatic Wonder Item Level 70 Requires Alchemy (375) Requires The Violet Eye - Honored Use: Teaches you how to make a Flask of Chromatic Wonder. Sell Price: 1 Flask of Chromatic Wonder Item Level 70 Requires Level 65 Use: Increases resistance to all schools of magic by 35 and all stats by 18 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreaming Glory (7), Netherbloom (3), Fel Lotus , Imbued Vial This alchemy recipe is used for the Alchemy profession. It is sold by Apprentice Darius. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=33209",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

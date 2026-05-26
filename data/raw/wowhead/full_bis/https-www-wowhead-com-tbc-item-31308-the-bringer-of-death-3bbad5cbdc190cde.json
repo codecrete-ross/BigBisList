@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T04:45:14+00:00",
   "item_id": 31308,
   "name": "The Bringer of Death",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -2120,13 +2121,135 @@
       "source_url": "https://www.wowhead.com/tbc/item=31308/the-bringer-of-death",
       "type": "drop",
       "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 2.38,
+      "entity_id": 186744,
+      "entity_name": "Amani Treasure Box",
+      "out_of": 42,
+      "source_url": "https://www.wowhead.com/tbc/item=31308/the-bringer-of-death",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 2.46,
+      "entity_id": 184936,
+      "entity_name": "Bound Adamantite Chest",
+      "out_of": 122,
+      "source_url": "https://www.wowhead.com/tbc/item=31308/the-bringer-of-death",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.39,
+      "entity_id": 184941,
+      "entity_name": "Solid Adamantite Chest",
+      "out_of": 762,
+      "source_url": "https://www.wowhead.com/tbc/item=31308/the-bringer-of-death",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 186744,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 42
+              }
+            },
+            "4": {
+              "0": {
+                "count": 9,
+                "outof": 1841
+              }
+            }
+          }
+        },
+        "location": [
+          3805
+        ],
+        "name": "Amani Treasure Box",
+        "outof": 42,
+        "pctstack": "",
+        "type": 3
+      },
+      {
+        "count": 3,
+        "id": 184936,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 122
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3792,
+          3791,
+          -1
+        ],
+        "name": "Bound Adamantite Chest",
+        "outof": 122,
+        "pctstack": "",
+        "skill": 325,
+        "type": -5
+      },
+      {
+        "count": 3,
+        "id": 184941,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 183,
+                "outof": 24042
+              }
+            },
+            "4": {
+              "0": {
+                "count": 7,
+                "outof": 1467
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 762
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3562,
+          3792,
+          -1
+        ],
+        "name": "Solid Adamantite Chest",
+        "outof": 762,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 0,
@@ -10016,8 +10139,12 @@
         "type": 3
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31308/the-bringer-of-death"
 }

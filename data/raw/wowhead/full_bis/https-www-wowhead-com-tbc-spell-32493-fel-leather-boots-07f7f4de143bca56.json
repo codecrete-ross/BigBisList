@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:11:13+00:00",
   "name": "Fel Leather Boots",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,56 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          370,
+          380
+        ],
+        "creates": [
+          25686,
+          1,
+          1
+        ],
+        "id": 32493,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Fel Leather Boots",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            23793,
+            10
+          ],
+          [
+            25707,
+            8
+          ],
+          [
+            22456,
+            8
+          ],
+          [
+            14341,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [
@@ -32,7 +81,10 @@
         ],
         "subclass": 1
       }
-    ]
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 32493,
   "url": "https://www.wowhead.com/tbc/spell=32493/fel-leather-boots"

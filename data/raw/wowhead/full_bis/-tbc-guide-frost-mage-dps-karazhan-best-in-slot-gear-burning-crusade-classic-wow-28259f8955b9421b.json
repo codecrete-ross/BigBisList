@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:51+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -155,6 +156,16 @@
           "item_id": 24266,
           "item_name": "Spellstrike Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24266/spellstrike-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -187,6 +198,16 @@
           "item_id": 21869,
           "item_name": "Frozen Shadoweave Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21869/frozen-shadoweave-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -790,6 +811,16 @@
           "item_id": 21871,
           "item_name": "Frozen Shadoweave Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21871/frozen-shadoweave-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -1133,6 +1164,16 @@
           "item_id": 24250,
           "item_name": "Bracers of Havok",
           "item_url": "https://www.wowhead.com/tbc/item=24250/bracers-of-havok",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1515,6 +1556,16 @@
           "item_id": 24256,
           "item_name": "Girdle of Ruination",
           "item_url": "https://www.wowhead.com/tbc/item=24256/girdle-of-ruination",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1704,6 +1755,16 @@
           "item_id": 24262,
           "item_name": "Spellstrike Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -2021,6 +2082,16 @@
           "item_id": 21870,
           "item_name": "Frozen Shadoweave Boots",
           "item_url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -2579,6 +2650,18 @@
           "item_id": 29287,
           "item_name": "Violet Signet of the Archmage",
           "item_url": "https://www.wowhead.com/tbc/item=29287/violet-signet-of-the-archmage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Path of the Violet Mage (The Violet Eye Exalted)",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -2673,6 +2756,18 @@
           "item_id": 29172,
           "item_name": "Ashyen's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2944,6 +3039,18 @@
           "item_id": 29179,
           "item_name": "Xi'ri's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29179/xiris-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador (The Sha'tar Revered)",
+              "reputation": "The Sha'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3008,6 +3115,28 @@
           "item_id": 29132,
           "item_name": "Scryer's Bloodgem",
           "item_url": "https://www.wowhead.com/tbc/item=29132/scryers-bloodgem",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
+              "reputation": "The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3135,6 +3264,16 @@
           "item_id": 23554,
           "item_name": "Eternium Runed Blade",
           "item_url": "https://www.wowhead.com/tbc/item=23554/eternium-runed-blade",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"
@@ -3173,6 +3312,18 @@
           "item_id": 29155,
           "item_name": "Stormcaller",
           "item_url": "https://www.wowhead.com/tbc/item=29155/stormcaller",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Exalted)",
+              "reputation": "Thrallmar / Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3292,6 +3443,18 @@
           "item_id": 29185,
           "item_name": "Continuum Blade",
           "item_url": "https://www.wowhead.com/tbc/item=29185/continuum-blade",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi (Keepers of Time Revered)",
+              "reputation": "Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3474,6 +3637,28 @@
           "item_id": 29130,
           "item_name": "Auchenai Staff",
           "item_url": "https://www.wowhead.com/tbc/item=29130/auchenai-staff",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Endarin (The Aldor Revered)",
+              "reputation": "The Aldor",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Aldor"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Endarin (The Aldor Revered)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

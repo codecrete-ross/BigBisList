@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:46:14+00:00",
   "item_id": 35304,
   "name": "Design: Solid Star of Elune",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Solid Star of Elune Item Level 70 Binds when picked up Requires Jewelcrafting (350) Use: Teaches you how to cut a Solid Star of Elune. Sell Price: 3 Dropped by: Kael'thas Sunstrider Drop Chance: 22.12% Solid Star of Elune Item Level 70 +12 Stamina \"Matches a Blue Socket.\" Sell Price: 3 Requires Star of Elune This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Kael'thas Sunstrider. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35304",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -18,7 +29,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

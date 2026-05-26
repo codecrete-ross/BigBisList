@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 22563,
   "name": "Formula: Superior Wizard Oil",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Superior Wizard Oil Phase 1 Item Level 68 Requires Enchanting (340) Use: Teaches you how to make Superior Wizard Oil. Creates Superior Wizard Oil. Sell Price: 1 75 Superior Wizard Oil Item Level 68 Requires Level 58 Use: While applied to target weapon it increases spell damage by up to 42. Lasts for 1 hour. 5 Charges Sell Price: 15 Requires Arcane Dust (3), Nightmare Vine , Imbued Vial This enchanting formula is used for the Enchanting profession. It is sold by NPCs. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/item=22563",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -33,7 +44,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

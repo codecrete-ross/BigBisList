@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T09:23:57+00:00",
   "name": "Mana Potion Injector",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -20,9 +22,56 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          345,
+          345,
+          355,
+          365
+        ],
+        "creates": [
+          33093,
+          20,
+          20
+        ],
+        "id": 30552,
+        "learnedat": 345,
+        "level": 0,
+        "name": "Mana Potion Injector",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            23782,
+            1
+          ],
+          [
+            23783,
+            1
+          ],
+          [
+            21887,
+            2
+          ],
+          [
+            22832,
+            20
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

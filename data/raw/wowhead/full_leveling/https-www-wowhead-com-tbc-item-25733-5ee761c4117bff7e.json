@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:24:32+00:00",
   "item_id": 25733,
   "name": "Pattern: Fel Leather Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Fel Leather Boots Item Level 70 Binds when picked up Requires Leatherworking (350) Requires The Consortium - Honored Use: Teaches you how to make Fel Leather Boots. Sell Price: 3 50 Fel Leather Boots Item Level 112 Binds when equipped Feet Leather 196 Armor Yellow Socket Red Socket Socket Bonus: +6 Attack Power Durability 50 / 50 Requires Level 69 Equip: Improves hit rating by 25. Equip: Improves critical strike rating by 17. Equip: Increases attack power by 36. Fel Skin (0/3) Requires Leatherworking (350) Fel Leather Gloves Fel Leather Boots Fel Leather Leggings Sell Price: 3 28 62 Requires Heavy Knothide Leather (10), Fel Hide (8), Primal Shadow (8), Rune Thread (3) This leatherworking pattern is used for the Leatherworking profession. It is sold by NPCs. In the Leatherworking Patterns category. An item.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25733",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -26,7 +37,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

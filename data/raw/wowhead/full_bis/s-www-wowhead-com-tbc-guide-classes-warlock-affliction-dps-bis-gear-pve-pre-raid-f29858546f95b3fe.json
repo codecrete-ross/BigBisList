@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:43+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -28,6 +29,16 @@
           "item_id": 24266,
           "item_name": "Spellstrike Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24266/spellstrike-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -187,6 +198,16 @@
           "item_id": 21869,
           "item_name": "Frozen Shadoweave Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21869/frozen-shadoweave-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -468,6 +489,16 @@
           "item_id": 21871,
           "item_name": "Frozen Shadoweave Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21871/frozen-shadoweave-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -682,6 +713,16 @@
           "item_id": 24250,
           "item_name": "Bracers of Havok",
           "item_url": "https://www.wowhead.com/tbc/item=24250/bracers-of-havok",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -903,6 +944,16 @@
           "item_id": 24256,
           "item_name": "Girdle of Ruination",
           "item_url": "https://www.wowhead.com/tbc/item=24256/girdle-of-ruination",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1062,6 +1113,16 @@
           "item_id": 24262,
           "item_name": "Spellstrike Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1251,6 +1312,16 @@
           "item_id": 21870,
           "item_name": "Frozen Shadoweave Boots",
           "item_url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -1574,6 +1645,18 @@
           "item_id": 29172,
           "item_name": "Ashyen's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -1634,6 +1717,28 @@
           "item_id": 29126,
           "item_name": "Seer's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=29126/seers-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
+              "reputation": "The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -1902,6 +2007,28 @@
           "item_id": 29132,
           "item_name": "Scryer's Bloodgem",
           "item_url": "https://www.wowhead.com/tbc/item=29132/scryers-bloodgem",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
+              "reputation": "The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2127,6 +2254,18 @@
           "item_id": 29155,
           "item_name": "Stormcaller",
           "item_url": "https://www.wowhead.com/tbc/item=29155/stormcaller",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Exalted)",
+              "reputation": "Thrallmar / Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warlock/affliction/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:22:34+00:00",
   "item_id": 20011,
   "name": "Recipe: Mageblood Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Mageblood Potion Item Level 55 Binds when picked up Requires Alchemy (275) Requires Zandalar Tribe - Revered Use: Teaches you how to make a Mageblood Potion. Sell Price: 1 25 Mageblood Potion Item Level 50 Requires Level 40 Use: Regenerate 12 mana per 5 sec for 1 hour. Guardian Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 10 Requires Dreamfoil , Plaguebloom (2), Crystal Vial This alchemy recipe is used for the Alchemy profession. It is sold by Rin'wosho the Trader. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 275,
+      "source_url": "https://www.wowhead.com/tbc/item=20011",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

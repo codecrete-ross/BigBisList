@@ -5,15 +5,107 @@
   "fetched_at": "2026-05-24T05:40:30+00:00",
   "item_id": 10725,
   "name": "Gnomish Battle Chicken",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Battle Chicken Item Level 45 Binds when picked up Trinket Requires Engineering (230) Use: Creates a Battle Chicken that will fight for you for 1.50 min or until it is destroyed. (20 Min Cooldown) Sell Price: 15 This white trinket of item level 45 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 230,
+      "source_url": "https://www.wowhead.com/tbc/item=10725/gnomish-battle-chicken",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12906,
+      "entity_name": "Gnomish Battle Chicken",
+      "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10725/gnomish-battle-chicken",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10725/gnomish-battle-chicken",
+      "spell_id": 12906,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "common",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          230,
+          250,
+          260,
+          270
+        ],
+        "creates": [
+          10725,
+          1,
+          1
+        ],
+        "id": 12906,
+        "learnedat": 230,
+        "level": 0,
+        "name": "Gnomish Battle Chicken",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 1,
+        "reagents": [
+          [
+            10561,
+            1
+          ],
+          [
+            6037,
+            6
+          ],
+          [
+            3860,
+            6
+          ],
+          [
+            9060,
+            2
+          ],
+          [
+            10558,
+            1
+          ],
+          [
+            1529,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20219,
+        "trainingcost": 2400
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=10725/gnomish-battle-chicken"
 }

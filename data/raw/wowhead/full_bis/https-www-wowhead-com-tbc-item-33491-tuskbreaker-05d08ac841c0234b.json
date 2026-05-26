@@ -5,15 +5,69 @@
   "fetched_at": "2026-05-24T04:52:23+00:00",
   "item_id": 33491,
   "name": "Tuskbreaker",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 13.04,
+      "entity_id": 186648,
+      "entity_name": "Tanzar's Trunk",
+      "out_of": 46,
+      "source_url": "https://www.wowhead.com/tbc/item=33491/tuskbreaker",
+      "type": "drop"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 6,
+        "id": 186648,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6,
+                "outof": 46
+              }
+            },
+            "4": {
+              "0": {
+                "count": 189,
+                "outof": 1069
+              }
+            },
+            "5": {
+              "0": {
+                "count": 93,
+                "outof": 501
+              }
+            }
+          }
+        },
+        "location": [
+          3805
+        ],
+        "name": "Tanzar's Trunk",
+        "outof": 46,
+        "pctstack": "",
+        "skill": 5000,
+        "type": -5
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=33491/tuskbreaker"
 }

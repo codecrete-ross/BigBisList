@@ -5,15 +5,81 @@
   "fetched_at": "2026-05-24T05:09:37+00:00",
   "item_id": 28430,
   "name": "Lionheart Executioner",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36259,
+      "entity_name": "Lionheart Executioner",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28430/lionheart-executioner",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28430/lionheart-executioner",
+      "spell_id": 36259,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28430,
+          1,
+          1
+        ],
+        "id": 36259,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Lionheart Executioner",
+        "nskillup": 1,
+        "popularity": 13,
+        "quality": 4,
+        "reagents": [
+          [
+            28429,
+            1
+          ],
+          [
+            30183,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17039,
+        "trainingcost": 500000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28430/lionheart-executioner"
 }

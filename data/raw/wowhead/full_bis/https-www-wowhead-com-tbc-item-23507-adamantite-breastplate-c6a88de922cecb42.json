@@ -5,15 +5,118 @@
   "fetched_at": "2026-05-24T05:16:08+00:00",
   "item_id": 23507,
   "name": "Adamantite Breastplate",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 29606,
+      "entity_name": "Adamantite Breastplate",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23507/adamantite-breastplate",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23507/adamantite-breastplate",
+      "spell_id": 29606,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          350,
+          360,
+          370
+        ],
+        "creates": [
+          23507,
+          1,
+          1
+        ],
+        "id": 29606,
+        "learnedat": 340,
+        "level": 0,
+        "name": "Adamantite Breastplate",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 3,
+        "reagents": [
+          [
+            23446,
+            12
+          ],
+          [
+            22452,
+            4
+          ],
+          [
+            21884,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23596,
+        "level": 68,
+        "name": "Plans: Adamantite Breastplate",
+        "popularity": 18,
+        "quality": 1,
+        "skill": 340,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23596,
+      "level": 68,
+      "name": "Plans: Adamantite Breastplate",
+      "popularity": 18,
+      "quality": 1,
+      "skill": 340,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=23507/adamantite-breastplate"
 }

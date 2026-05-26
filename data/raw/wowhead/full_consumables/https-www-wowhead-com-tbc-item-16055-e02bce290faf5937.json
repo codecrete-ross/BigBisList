@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:41+00:00",
   "item_id": 16055,
   "name": "Schematic: Arcane Bomb",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Arcane Bomb Item Level 60 Requires Engineering (300) Use: Teaches you how to make an Arcane Bomb. Sell Price: 60 Arcane Bomb Item Level 60 Requires Engineering (300) Use: Drains 675 to 1125 mana from those in the blast radius and does 50% of the mana drained in damage to the target. Also Silences targets in the blast for 5 sec. (1 Min Cooldown) Max Stack: 10 Sell Price: 40 Requires Delicate Arcanite Converter , Thorium Bar (3), Runecloth This engineering schematic is used for the Engineering profession. It is looted from Winterfall Totemic. In the Engineering Schematics category.",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=16055",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -351,7 +362,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

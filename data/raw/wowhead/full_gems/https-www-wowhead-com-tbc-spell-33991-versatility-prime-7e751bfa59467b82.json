@@ -1,11 +1,75 @@
 {
+  "description": "Permanently enchant a piece of chest armor to grant 6 Mana every 5 seconds. Requires a level 35 or higher item. In the Profession Spells category.",
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "name": "Enchant Chest - Restore Mana Prime",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Enchanting",
+      "raw_text": "Enchanting",
+      "scope": "learn_recipe",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/spell=33991/versatility-prime",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Enchanting Trainer",
+      "profession": "Enchanting",
+      "required_skill": 300,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "learn_recipe",
+          "skill": 300,
+          "source_url": "https://www.wowhead.com/tbc/spell=33991/versatility-prime",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=33991/versatility-prime",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          310,
+          325,
+          340
+        ],
+        "id": 33991,
+        "learnedat": 300,
+        "level": 35,
+        "name": "Enchant Chest - Restore Mana Prime",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22447,
+            2
+          ],
+          [
+            22445,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "trainingcost": 12500
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

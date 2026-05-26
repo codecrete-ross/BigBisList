@@ -1,6 +1,8 @@
 {
+  "description": "Summons a warhorse, which serves as a mount. Speed is increased by 60%. In the Holy Abilities category. Requires Paladin. Learn how to use this in our class guide.",
   "fetched_at": "2026-05-24T09:06:25+00:00",
   "name": "Summon Warhorse",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -20,9 +22,10 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [
       {
         "category": -141,

@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:37+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -58,6 +59,16 @@
           "item_id": 32479,
           "item_name": "Wonderheal XT40 Shades",
           "item_url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -145,6 +156,16 @@
           "item_id": 24264,
           "item_name": "Whitemend Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24264/whitemend-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -322,6 +343,25 @@
           "item_id": 21874,
           "item_name": "Primal Mooncloth Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -653,6 +693,18 @@
           "item_id": 32653,
           "item_name": "Apexis Cloak",
           "item_url": "https://www.wowhead.com/tbc/item=32653/apexis-cloak",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Jho'nass (Ogri'la Revered)",
+              "reputation": "Ogri'la",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -683,6 +735,16 @@
           "item_id": 24254,
           "item_name": "White Remedy Cape",
           "item_url": "https://www.wowhead.com/tbc/item=24254/white-remedy-cape",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -745,6 +807,25 @@
           "item_id": 21875,
           "item_name": "Primal Mooncloth Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -800,6 +881,25 @@
           "item_id": 29522,
           "item_name": "Windhawk Hauberk",
           "item_url": "https://www.wowhead.com/tbc/item=29522/windhawk-hauberk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
@@ -949,6 +1049,25 @@
           "item_id": 29523,
           "item_name": "Windhawk Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
@@ -974,6 +1093,18 @@
           "item_id": 29183,
           "item_name": "Bindings of the Timewalker",
           "item_url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi (Keepers of Time Exalted)",
+              "reputation": "Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -1235,6 +1366,16 @@
           "item_id": 29506,
           "item_name": "Gloves of the Living Touch",
           "item_url": "https://www.wowhead.com/tbc/item=29506/gloves-of-the-living-touch",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1342,6 +1483,25 @@
           "item_id": 21873,
           "item_name": "Primal Mooncloth Belt",
           "item_url": "https://www.wowhead.com/tbc/item=21873/primal-mooncloth-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -1367,6 +1527,16 @@
           "item_id": 30036,
           "item_name": "Belt of the Long Road",
           "item_url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1422,6 +1592,25 @@
           "item_id": 29524,
           "item_name": "Windhawk Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29524/windhawk-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "specialization": "Tribal Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
@@ -1656,6 +1845,16 @@
           "item_id": 24261,
           "item_name": "Whitemend Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24261/whitemend-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1962,6 +2161,16 @@
           "item_id": 30035,
           "item_name": "Boots of the Long Road",
           "item_url": "https://www.wowhead.com/tbc/item=30035/boots-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -2303,6 +2512,18 @@
           "item_id": 29290,
           "item_name": "Violet Signet of the Grand Restorer",
           "item_url": "https://www.wowhead.com/tbc/item=29290/violet-signet-of-the-grand-restorer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Eminence Among the Violet Eye (The Violet Eye Exalted)",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2496,6 +2717,18 @@
           "item_id": 29168,
           "item_name": "Ancestral Band",
           "item_url": "https://www.wowhead.com/tbc/item=29168/ancestral-band",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
+              "reputation": "Thrallmar / Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2597,6 +2830,18 @@
           "item_id": 30841,
           "item_name": "Lower City Prayerbook",
           "item_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu (Lower City Revered)",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2971,6 +3216,16 @@
           "item_id": 23556,
           "item_name": "Hand of Eternity",
           "item_url": "https://www.wowhead.com/tbc/item=23556/hand-of-eternity",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"
@@ -3051,6 +3306,18 @@
           "item_id": 29175,
           "item_name": "Gavel of Pure Light",
           "item_url": "https://www.wowhead.com/tbc/item=29175/gavel-of-pure-light",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador (The Sha'tar Exalted)",
+              "reputation": "The Sha'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3307,6 +3574,18 @@
           "item_id": 29170,
           "item_name": "Windcaller's Orb",
           "item_url": "https://www.wowhead.com/tbc/item=29170/windcallers-orb",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {

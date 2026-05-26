@@ -5,15 +5,80 @@
   "fetched_at": "2026-05-24T05:04:28+00:00",
   "item_id": 32772,
   "name": "Brilliant Pearl Band",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41414,
+      "entity_name": "Brilliant Pearl Band",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32772/brilliant-pearl-band",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32772/brilliant-pearl-band",
+      "spell_id": 41414,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          325,
+          335,
+          345,
+          355
+        ],
+        "creates": [
+          32772,
+          1,
+          1
+        ],
+        "id": 41414,
+        "learnedat": 325,
+        "level": 0,
+        "name": "Brilliant Pearl Band",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            24478,
+            8
+          ],
+          [
+            23447,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "trainingcost": 10000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32772/brilliant-pearl-band"
 }

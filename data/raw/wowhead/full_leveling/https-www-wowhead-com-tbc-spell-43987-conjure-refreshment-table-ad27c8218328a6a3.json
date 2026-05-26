@@ -1,11 +1,44 @@
 {
+  "description": "Begins a ritual that creates a refreshment table. Raid members can click the table to acquire Conjured Manna Biscuits. The tables lasts for 3 min or 50 charges. Requires the caster and 2 additional party members to complete the ritual. In order to participate, all players must right-click the refreshment portal and not move until the ritual is complete.",
   "fetched_at": "2026-05-24T09:05:51+00:00",
   "name": "Ritual of Refreshment",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=43987/conjure-refreshment-table",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 128,
+        "id": 43987,
+        "level": 70,
+        "name": "Ritual of Refreshment",
+        "nskillup": 1,
+        "rank": "Rank 1",
+        "reagents": [
+          [
+            17020,
+            2
+          ]
+        ],
+        "reqclass": 128,
+        "schools": 64,
+        "skill": [
+          237
+        ],
+        "trainingcost": 120000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

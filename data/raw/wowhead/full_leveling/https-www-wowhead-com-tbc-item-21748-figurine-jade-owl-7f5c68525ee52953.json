@@ -5,19 +5,40 @@
   "fetched_at": "2026-05-24T09:04:13+00:00",
   "item_id": 21748,
   "name": "Figurine - Jade Owl",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Jade Owl Item Level 40 Binds when picked up Unique Trinket +3 Intellect +2 Spirit Requires Level 35 Requires Jewelcrafting (285) Use: Restores 30 mana every second for 12 sec. (5 Min Cooldown) Sell Price: 15 This green trinket of item level 40 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 285,
+      "source_url": "https://www.wowhead.com/tbc/item=21748/figurine-jade-owl",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 26872,
       "entity_name": "Figurine - Jade Owl",
       "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21748/figurine-jade-owl",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=21748/figurine-jade-owl",
       "spell_id": 26872,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
     "contained-in-item": [],

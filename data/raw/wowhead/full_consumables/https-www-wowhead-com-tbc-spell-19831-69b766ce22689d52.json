@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:41+00:00",
   "name": "Arcane Bomb",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,52 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          320,
+          330,
+          340
+        ],
+        "creates": [
+          16040,
+          3,
+          3
+        ],
+        "id": 19831,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Arcane Bomb",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            16006,
+            1
+          ],
+          [
+            12359,
+            3
+          ],
+          [
+            14047,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

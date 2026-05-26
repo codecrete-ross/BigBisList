@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "item_id": 23548,
   "name": "Might of the Scourge",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -18,9 +19,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -76,6 +79,7 @@
         "type": 6
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

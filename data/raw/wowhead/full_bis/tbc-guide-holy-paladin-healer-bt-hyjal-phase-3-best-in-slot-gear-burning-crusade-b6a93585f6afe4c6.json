@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:52+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -526,6 +527,16 @@
           "item_id": 32571,
           "item_name": "Dawnsteel Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=32571/dawnsteel-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"
@@ -1233,6 +1244,18 @@
           "item_id": 29309,
           "item_name": "Band of the Eternal Restorer",
           "item_url": "https://www.wowhead.com/tbc/item=29309/band-of-the-eternal-restorer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Restorer's Covenant (Scale of the Sands Exalted)",
+              "reputation": "Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS - Reputation",
           "source_links": [
             {
@@ -1579,6 +1602,18 @@
           "item_id": 30841,
           "item_name": "Lower City Prayerbook",
           "item_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu (Lower City Revered)",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -1886,6 +1921,16 @@
           "item_id": 23556,
           "item_name": "Hand of Eternity",
           "item_url": "https://www.wowhead.com/tbc/item=23556/hand-of-eternity",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"

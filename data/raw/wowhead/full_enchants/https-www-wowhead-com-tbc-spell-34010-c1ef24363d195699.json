@@ -2,6 +2,7 @@
   "description": "Permanently enchant a Melee Weapon to add +81 Healing and +27 Spell Damage. Requires a level 35 or higher item. In the Profession Spells category.",
   "fetched_at": "2026-05-24T09:47:57+00:00",
   "name": "Enchant Weapon - Major Healing",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -13,7 +14,7 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
     "recipes": [

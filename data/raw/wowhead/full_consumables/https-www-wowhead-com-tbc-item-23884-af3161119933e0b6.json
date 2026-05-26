@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:53+00:00",
   "item_id": 23884,
   "name": "Schematic: Mana Potion Injector",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Mana Potion Injector Item Level 69 Requires Engineering (345) Use: Teaches you how to make a Mana Potion Injector. Sell Price: 2 Mana Potion Injector Item Level 69 Requires Level 55 Use: Restores 1800 to 3000 mana. (2 Min Cooldown) Max Stack: 20 Sell Price: 50 Requires Fel Iron Casing , Handful of Fel Iron Bolts , Knothide Leather (2), Super Mana Potion (20) This engineering schematic is used for the Engineering profession. It is looted from Spectral Charger. In the Engineering Schematics category.",
+      "scope": "equip_or_use",
+      "skill": 345,
+      "source_url": "https://www.wowhead.com/tbc/item=23884",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -627,7 +638,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

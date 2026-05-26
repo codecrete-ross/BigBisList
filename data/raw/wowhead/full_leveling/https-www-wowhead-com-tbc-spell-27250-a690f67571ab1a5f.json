@@ -1,11 +1,50 @@
 {
+  "description": "Creates a Master Firestone which can be equipped. When equipped, enchants the main hand weapon with fire, granting each attack a chance to deal 116to_lc174 additional Fire damage. In addition, equipping the Master Firestone increases the damage done by fire spells by 30.Conjured items disappear if logged out for more than 15 minutes.",
   "fetched_at": "2026-05-24T09:18:24+00:00",
   "name": "Create Firestone",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=27250",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 256,
+        "creates": [
+          22128,
+          1,
+          1
+        ],
+        "id": 27250,
+        "level": 66,
+        "name": "Create Firestone",
+        "nskillup": 1,
+        "quality": 1,
+        "rank": "Rank 5",
+        "reagents": [
+          [
+            6265,
+            1
+          ]
+        ],
+        "reqclass": 256,
+        "schools": 4,
+        "skill": [
+          354
+        ],
+        "trainingcost": 51000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

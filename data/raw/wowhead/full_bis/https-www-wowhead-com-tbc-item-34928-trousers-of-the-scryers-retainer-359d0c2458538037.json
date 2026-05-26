@@ -5,6 +5,18 @@
   "fetched_at": "2026-05-24T04:52:14+00:00",
   "item_id": 34928,
   "name": "Trousers of the Scryers' Retainer",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Scryers"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Trousers of the Scryers' Retainer Phase 5 Item Level 141 Binds when picked up Legs Leather 388 Armor +43 Agility +45 Stamina Yellow Socket Blue Socket Socket Bonus: +3 Hit Rating Durability 90 / 90 Requires Level 70 Equip: Improves hit rating by 30. Equip: Increases attack power by 104. This epic leather armor of item level 141 goes in the \"Legs\" slot. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=34928/trousers-of-the-scryers-retainer",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -39,11 +51,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -103,7 +119,10 @@
         "tag": "Weapons & Armorsmith",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34928/trousers-of-the-scryers-retainer"
 }

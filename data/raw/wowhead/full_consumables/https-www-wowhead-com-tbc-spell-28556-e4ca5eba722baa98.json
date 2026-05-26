@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:53+00:00",
   "name": "Elixir of Major Firepower",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,52 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          345,
+          360,
+          367,
+          375
+        ],
+        "creates": [
+          22833,
+          1,
+          1
+        ],
+        "id": 28556,
+        "learnedat": 345,
+        "level": 0,
+        "name": "Elixir of Major Firepower",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            22574,
+            2
+          ],
+          [
+            22790,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

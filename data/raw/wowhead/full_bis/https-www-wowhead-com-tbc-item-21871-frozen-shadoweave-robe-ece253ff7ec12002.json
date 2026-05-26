@@ -5,15 +5,145 @@
   "fetched_at": "2026-05-24T04:28:37+00:00",
   "item_id": 21871,
   "name": "Frozen Shadoweave Robe",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Frozen Shadoweave Robe Phase 1 Item Level 105 Binds when picked up Chest Cloth 178 Armor +30 Stamina +20 Intellect Yellow Socket Blue Socket Socket Bonus: +3 Spell Hit Rating Durability 100 / 100 Requires Level 70 Requires Shadoweave Tailoring Equip: Increases damage done by Shadow spells and effects by up to 72. Equip: Increases damage done by Frost spells and effects by up to 72. Shadow's Embrace (0/3) Frozen Shadoweave Robe Frozen Shadoweave Shoulders Frozen Shadoweave Boots (3) Set : Your Frost and Shadow damage spells heal you for 2% of the damage they deal. Sell Price: 4 40 55 Frozen Shadoweave Robe is a Cloth chestpiece crafted by Tailors who specialize in Shadoweave tailoring. This epic cloth armor of item level 105 goes in the \"Chest\" slot.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21871/frozen-shadoweave-robe",
+      "specialization": "Shadoweave Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26758,
+      "entity_name": "Frozen Shadoweave Robe",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21871/frozen-shadoweave-robe",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21871/frozen-shadoweave-robe",
+      "spell_id": 26758,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          21871,
+          1,
+          1
+        ],
+        "id": 26758,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Frozen Shadoweave Robe",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 4,
+        "reagents": [
+          [
+            24272,
+            14
+          ],
+          [
+            21885,
+            16
+          ],
+          [
+            21881,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ],
+        "specialization": 26801
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21913,
+        "level": 75,
+        "name": "Pattern: Frozen Shadoweave Robe",
+        "popularity": 4,
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Andrion Darkspinner",
+            "t": 1,
+            "ti": 22212,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21913,
+      "level": 75,
+      "name": "Pattern: Frozen Shadoweave Robe",
+      "popularity": 4,
+      "quality": 1,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Andrion Darkspinner",
+          "t": 1,
+          "ti": 22212,
+          "z": 3703
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=21871/frozen-shadoweave-robe"
 }

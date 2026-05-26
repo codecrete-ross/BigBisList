@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:43:53+00:00",
   "item_id": 28280,
   "name": "Formula: Enchant Boots - Boar's Speed",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Boots - Boar's Speed Phase 1 Item Level 72 Requires Enchanting (360) Use: Teaches you how to permanently enchant boots to increase move speed slightly and Stamina by 9. Permanently enchant boots to give a minor movement speed increase and 9 Stamina. Requires a level 35 or higher item. Sell Price: 3 Formula: Enchant Boots - Boar's Speed can be used by Enchanters to learn Boar's Speed at 360 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=28280",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,7 +26,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

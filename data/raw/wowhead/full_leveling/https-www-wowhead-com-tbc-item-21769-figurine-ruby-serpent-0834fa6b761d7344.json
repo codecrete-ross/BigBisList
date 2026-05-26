@@ -5,19 +5,40 @@
   "fetched_at": "2026-05-24T09:04:15+00:00",
   "item_id": 21769,
   "name": "Figurine - Ruby Serpent",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Ruby Serpent Item Level 52 Binds when picked up Unique Trinket +4 Stamina +4 Intellect Requires Level 47 Requires Jewelcrafting (260) Use: Increases damage and healing done by magical spells and effects by up to 100 for 20 sec. (5 Min Cooldown) Sell Price: 15 This green trinket of item level 52 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 260,
+      "source_url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 26900,
       "entity_name": "Figurine - Ruby Serpent",
       "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent",
       "spell_id": 26900,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
     "contained-in-item": [],

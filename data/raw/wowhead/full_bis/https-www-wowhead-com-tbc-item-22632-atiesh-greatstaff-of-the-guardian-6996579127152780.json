@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T04:57:50+00:00",
   "item_id": 22632,
   "name": "Atiesh, Greatstaff of the Guardian",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,11 +17,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "legendary",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [
       {
         "category": -344,
@@ -51,7 +56,10 @@
         "xp": 14300
       }
     ],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=22632/atiesh-greatstaff-of-the-guardian"
 }

@@ -5,15 +5,148 @@
   "fetched_at": "2026-05-24T04:56:33+00:00",
   "item_id": 25691,
   "name": "Heavy Clefthoof Boots",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Heavy Clefthoof Boots Phase 1 Item Level 113 Binds when equipped Feet Leather 394 Armor +30 Stamina Yellow Socket Blue Socket Socket Bonus: +3 Dodge Rating Durability 50 / 50 Requires Level 69 Equip: Increases defense rating by 21. Strength of the Clefthoof (0/3) Requires Leatherworking (350) Heavy Clefthoof Boots Heavy Clefthoof Leggings Heavy Clefthoof Vest (3) Set : +20 Strength. Sell Price: 3 37 26 This blue leather armor of item level 113 goes in the \"Feet\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25691/heavy-clefthoof-boots",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32497,
+      "entity_name": "Heavy Clefthoof Boots",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=25691/heavy-clefthoof-boots",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=25691/heavy-clefthoof-boots",
+      "spell_id": 32497,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          355,
+          365,
+          375,
+          385
+        ],
+        "creates": [
+          25691,
+          1,
+          1
+        ],
+        "id": 32497,
+        "learnedat": 355,
+        "level": 0,
+        "name": "Heavy Clefthoof Boots",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 3,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            25708,
+            20
+          ],
+          [
+            22452,
+            4
+          ],
+          [
+            14341,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 25737,
+        "level": 71,
+        "name": "Pattern: Heavy Clefthoof Boots",
+        "popularity": 7,
+        "quality": 3,
+        "skill": 355,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Fedryen Swiftspear",
+            "t": 1,
+            "ti": 17904,
+            "z": 3521
+          }
+        ],
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 25737,
+      "level": 71,
+      "name": "Pattern: Heavy Clefthoof Boots",
+      "popularity": 7,
+      "quality": 3,
+      "skill": 355,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Fedryen Swiftspear",
+          "t": 1,
+          "ti": 17904,
+          "z": 3521
+        }
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=25691/heavy-clefthoof-boots"
 }

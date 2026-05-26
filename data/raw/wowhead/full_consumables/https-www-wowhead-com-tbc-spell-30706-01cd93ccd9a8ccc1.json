@@ -1,11 +1,14 @@
 {
+  "description": "Summons a Totem of Wrath with 5 health at the feet of the caster. The totem increases the chance to hit and critically strike with spells by 3% for all party members within 20 yards. Lasts 2 min.",
   "fetched_at": "2026-05-24T08:51:01+00:00",
   "name": "Totem of Wrath",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

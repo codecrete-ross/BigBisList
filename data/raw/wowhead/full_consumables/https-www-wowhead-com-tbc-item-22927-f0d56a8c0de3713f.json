@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 22927,
   "name": "Recipe: Ironshield Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Ironshield Potion Phase 1 Item Level 73 Binds when picked up Requires Alchemy (365) Use: Teaches you how to make an Ironshield Potion. Sell Price: 1 50 Ironshield Potion Item Level 73 Requires Level 60 Use: Increases armor by 2500 for 2 min. (2 Min Cooldown) Max Stack: 5 Sell Price: 70 Requires Ancient Lichen (2), Mote of Earth (3), Imbued Vial This alchemy recipe is used for the Alchemy profession. It is looted from Captain Skarloc. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=22927",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -18,7 +29,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

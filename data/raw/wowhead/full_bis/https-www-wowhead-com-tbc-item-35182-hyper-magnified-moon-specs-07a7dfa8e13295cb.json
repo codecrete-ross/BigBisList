@@ -5,15 +5,135 @@
   "fetched_at": "2026-05-24T04:46:15+00:00",
   "item_id": 35182,
   "name": "Hyper-Magnified Moon Specs",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Hyper-Magnified Moon Specs Phase 5 Item Level 159 Binds when picked up Head Leather 405 Armor +40 Stamina +37 Intellect Meta Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 70 / 70 Requires Level 70 Requires Engineering (350) Equip: Improves spell critical strike rating by 54. Equip: Increases damage and healing done by magical spells and effects by up to 64. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 5 85 64 This epic leather armor of item level 159 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35182/hyper-magnified-moon-specs",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46109,
+      "entity_name": "Hyper-Magnified Moon Specs",
+      "source_url": "https://www.wowhead.com/tbc/item=35182/hyper-magnified-moon-specs",
+      "spell_id": 46109,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "chrclass": 1024,
+        "colors": [
+          375,
+          390,
+          410,
+          430
+        ],
+        "creates": [
+          35182,
+          1,
+          1
+        ],
+        "id": 46109,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Hyper-Magnified Moon Specs",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            32480,
+            1
+          ],
+          [
+            21885,
+            6
+          ],
+          [
+            21886,
+            12
+          ],
+          [
+            23572,
+            4
+          ]
+        ],
+        "reqclass": 1024,
+        "schools": 1,
+        "skill": [],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35190,
+        "level": 70,
+        "name": "Schematic: Hyper-Magnified Moon Specs",
+        "popularity": 11,
+        "quality": 4,
+        "reqclass": 1024,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "dd": 2,
+            "z": 4075
+          }
+        ],
+        "subclass": 3
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35190,
+      "level": 70,
+      "name": "Schematic: Hyper-Magnified Moon Specs",
+      "popularity": 11,
+      "quality": 4,
+      "reqclass": 1024,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": 2,
+          "z": 4075
+        }
+      ],
+      "subclass": 3
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=35182/hyper-magnified-moon-specs"
 }

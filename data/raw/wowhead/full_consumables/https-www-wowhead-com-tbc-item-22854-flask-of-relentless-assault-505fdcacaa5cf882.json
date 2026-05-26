@@ -5,12 +5,23 @@
   "fetched_at": "2026-05-24T08:51:00+00:00",
   "item_id": 22854,
   "name": "Flask of Relentless Assault",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 28589,
       "entity_name": "Flask of Relentless Assault",
       "profession": "Alchemy",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=22854/flask-of-relentless-assault",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=22854/flask-of-relentless-assault",
       "spell_id": 28589,
       "type": "crafted"
@@ -28,7 +39,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

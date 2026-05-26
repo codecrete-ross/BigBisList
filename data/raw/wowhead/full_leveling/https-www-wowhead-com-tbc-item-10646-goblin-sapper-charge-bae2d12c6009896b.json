@@ -5,19 +5,40 @@
   "fetched_at": "2026-05-24T09:00:57+00:00",
   "item_id": 10646,
   "name": "Goblin Sapper Charge",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Sapper Charge Item Level 41 Requires Engineering (205) Use: Explodes when triggered dealing 450 to 750 Fire damage to all enemies nearby and 375 to 625 damage to you. (5 Min Cooldown) Max Stack: 10 Sell Price: 5 It is crafted. In the Explosives category. An item from Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/tbc/item=10646/goblin-sapper-charge",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 12760,
       "entity_name": "Goblin Sapper Charge",
       "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10646/goblin-sapper-charge",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=10646/goblin-sapper-charge",
       "spell_id": 12760,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

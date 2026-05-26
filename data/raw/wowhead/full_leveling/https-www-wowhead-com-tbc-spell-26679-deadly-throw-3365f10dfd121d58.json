@@ -1,11 +1,14 @@
 {
+  "description": "Finishing move that reduces the movement of the target by 50% for 6 sec and causes increased thrown weapon damage: 1 point : (59 + 105 + rangedWeaponMinBaseDamage) - (75 + 105 + rangedWeaponMaxBaseDamage) damage 2 points: [59 + (210) + rangedWeaponMinBaseDamage] - [75 + (210) + rangedWeaponMaxBaseDamage] damage 3 points: [59 + (315) + rangedWeaponMinBaseDamage] - [75 + (315) + rangedWeaponMaxBaseDamage] damage 4 points: [59 + (420) + rangedWeaponMinBaseDamage] - [75 + (420) + rangedWeaponMaxBaseDamage] damage 5 points: [59 + (525) + rangedWeaponMinBaseDamage] - [75 + (525) + rangedWeaponMaxBaseDamage] damage",
   "fetched_at": "2026-05-24T09:13:16+00:00",
   "name": "Deadly Throw",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:25:00+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -526,6 +527,15 @@
           "item_id": 34373,
           "item_name": "Embrace of the Phoenix",
           "item_url": "https://www.wowhead.com/tbc/item=34373/embrace-of-the-phoenix",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession; Leatherworking: Drop: M'uru (Sunwell Plateau - BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Leatherworking Alternative",
           "source_links": [
             {
@@ -556,6 +566,15 @@
           "item_id": 34369,
           "item_name": "Carapace of Sun and Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=34369/carapace-of-sun-and-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession; Leatherworking: Drop: M'uru (Sunwell Plateau - BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Leatherworking Hit Alternative",
           "source_links": [
             {
@@ -920,6 +939,16 @@
           "item_id": 34370,
           "item_name": "Gloves of Immortal Dusk",
           "item_url": "https://www.wowhead.com/tbc/item=34370/gloves-of-immortal-dusk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Sunwell Plateau) Pattern: Gloves of Immortal Dusk",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Alternative",
           "source_links": [
             {
@@ -1181,6 +1210,16 @@
           "item_id": 30040,
           "item_name": "Belt of Deep Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=30040/belt-of-deep-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1206,6 +1245,16 @@
           "item_id": 30046,
           "item_name": "Belt of the Black Eagle",
           "item_url": "https://www.wowhead.com/tbc/item=30046/belt-of-the-black-eagle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1656,6 +1705,16 @@
           "item_id": 34358,
           "item_name": "Hard Khorium Choker",
           "item_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Personal",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -1799,6 +1858,16 @@
           "item_id": 34361,
           "item_name": "Hard Khorium Band",
           "item_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting"
@@ -1884,6 +1953,18 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Champion's Covenant - Requires Exalted with The Scale of the Sands",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [
             {
@@ -2205,6 +2286,18 @@
           "item_id": 32487,
           "item_name": "Ashtongue Talisman of Swiftness",
           "item_url": "https://www.wowhead.com/tbc/item=32487/ashtongue-talisman-of-swiftness",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Okuno - Requires Exalted with Ashtongue Deathsworn",
+              "reputation": "Ashtongue Deathsworn",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -2944,6 +3037,16 @@
           "item_id": 34105,
           "item_name": "Quiver of a Thousand Feathers",
           "item_url": "https://www.wowhead.com/tbc/item=34105/quiver-of-a-thousand-feathers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -3015,6 +3118,28 @@
           "item_id": 29143,
           "item_name": "Clefthoof Hide Quiver",
           "item_url": "https://www.wowhead.com/tbc/item=29143/clefthoof-hide-quiver",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela - Requires Honored with The Mag'har Vendor: Trader Narasu - Requires Honored with Kurenai",
+              "reputation": "The Mag'har",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela - Requires Honored with The Mag'har Vendor: Trader Narasu - Requires Honored with Kurenai",
+              "reputation": "Kurenai",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -3090,6 +3215,16 @@
           "item_id": 34106,
           "item_name": "Netherscale Ammo Pouch",
           "item_url": "https://www.wowhead.com/tbc/item=34106/netherscale-ammo-pouch",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -3115,6 +3250,18 @@
           "item_id": 29118,
           "item_name": "Smuggler's Ammo Pouch",
           "item_url": "https://www.wowhead.com/tbc/item=29118/smugglers-ammo-pouch",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Karaaz - Requires Honored with The Consortium",
+              "reputation": "The Consortium",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -3256,6 +3403,16 @@
           "item_id": 33803,
           "item_name": "Adamantite Stinger",
           "item_url": "https://www.wowhead.com/tbc/item=33803/adamantite-stinger",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Dropped by Sunfury Archer - Profession: Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -3286,6 +3443,18 @@
           "item_id": 31949,
           "item_name": "Warden's Arrow",
           "item_url": "https://www.wowhead.com/tbc/item=31949/wardens-arrow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear - Requires Revered with Cenarion Expedition",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -3455,6 +3624,16 @@
           "item_id": 23773,
           "item_name": "Adamantite Shells",
           "item_url": "https://www.wowhead.com/tbc/item=23773/adamantite-shells",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Vendor: Wind Trader Lathrai - Profession: Engineering",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -3491,6 +3670,28 @@
           "item_id": 32882,
           "item_name": "Hellfire Shot",
           "item_url": "https://www.wowhead.com/tbc/item=32882/hellfire-shot",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike Requires Revered with Honor Hold Vendor: Quartermaster Urgronn Requires Revered with Thrallmar",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike Requires Revered with Honor Hold Vendor: Quartermaster Urgronn Requires Revered with Thrallmar",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {

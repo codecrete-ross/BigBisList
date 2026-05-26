@@ -1,6 +1,8 @@
 {
+  "description": "Fires several missiles, hitting 3 targets for an additional 150 damage. In the Marksmanship Abilities category. Requires Hunter. Learn how to use this in our class guide.",
   "fetched_at": "2026-05-24T09:03:19+00:00",
   "name": "Multi-Shot",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,10 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

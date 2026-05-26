@@ -112,6 +112,90 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("bankCache = {", config)
         self.assertIn('elseif filters.ownedState == "bank"', data_index)
 
+    def test_access_badges_are_separate_from_ownership(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "CreateAccessBadge",
+            "ACCESS_LABELS",
+            "GetAccessStatus",
+            "EvaluateRequirement",
+            "BuildAccessState",
+            "Requirements",
+            "Prereq",
+        ]:
+            self.assertIn(token, ui)
+        self.assertIn("CreateOwnershipBadge", ui)
+        self.assertLess(ui.index("CreateOwnershipBadge"), ui.index("CreateAccessBadge"))
+        self.assertIn("requirements = mergedRequirements", data_index)
+
+    def test_source_aware_access_options_are_indexed(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "buildAccessOptions",
+            "splitRequirements",
+            "sourceMatchesRequirement",
+            "source.requirements",
+            "access_options = buildAccessOptions",
+            "gemSourcesById",
+            "enchantSourcesByKey",
+            "enhancementSourceKey(entityType, enchant.id)",
+            "forceSourceScopedEquip = entityType == \"spell\"",
+        ]:
+            self.assertIn(token, data_index)
+
+    def test_trade_paths_are_explicit_access_options(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "shouldAddTradeOption",
+            "Trade/Auction House",
+            "Trade enchant service",
+            "is_trade_option = true",
+            "isBindOnPickup",
+            "hasCrafted and not isBindOnPickup(item)",
+        ]:
+            self.assertIn(token, data_index)
+
+    def test_source_aware_access_status_prefers_ready_options(self):
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "ready_alternate",
+            "Ready via alternate source",
+            "EvaluateRequirementList",
+            "EvaluateAccessOption",
+            "GetAccessEvaluation",
+            "data and data.access_options",
+            "firstReadyEvaluation",
+            "local flatEvaluation = self:EvaluateRequirementList",
+        ]:
+            self.assertIn(token, ui)
+        self.assertLess(ui.index("data and data.access_options"), ui.index("local flatEvaluation = self:EvaluateRequirementList"))
+
+    def test_low_confidence_requirements_are_check_only(self):
+        ui = self.read_lua("UI.lua")
+        self.assertIn('requirement.confidence == "parsed_source_text"', ui)
+        self.assertIn('requirement.type == "unknown_text"', ui)
+        self.assertIn('elseif requirement.type == "source_access" then', ui)
+        self.assertIn('return "check_prereq"', ui)
+        evaluate_body = ui.split("function UI:EvaluateRequirement", 1)[1].split("function UI:GetAccessStatus", 1)[0]
+        self.assertLess(evaluate_body.index("isLowConfidenceRequirement(requirement)"), evaluate_body.index('requirement.type == "reputation"'))
+
+    def test_details_drawer_lists_access_paths(self):
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "GetAccessBlockingReason",
+            "FormatAccessOptionRequirements",
+            "FormatAccessOptions",
+            "Best access path",
+            "Other ways to acquire",
+            "Ownership",
+            "Prereq",
+        ]:
+            self.assertIn(token, ui)
+        self.assertLess(ui.index('"Ownership"'), ui.index('"Prereq"'))
+        self.assertLess(ui.index('"Prereq"'), ui.index('"Best access path"'))
+        self.assertLess(ui.index('"Best access path"'), ui.index('"Other ways to acquire"'))
+
     def test_enhance_spell_rows_are_not_rendered_as_items(self):
         ui = self.read_lua("UI.lua")
         data_index = self.read_lua("DataIndex.lua")

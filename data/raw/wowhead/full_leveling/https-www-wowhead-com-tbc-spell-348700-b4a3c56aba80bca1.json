@@ -1,11 +1,14 @@
 {
+  "description": "All melee attacks deal additional Holy damage equal to 35% of normal weapon damage, but the Paladin loses health equal to 10% of the total damage inflicted.Unleashing this Seal's energy will judge an enemy, instantly causing 295to_lc325 Holy damage at the cost of health equal to 33% of the damage caused.",
   "fetched_at": "2026-05-24T09:07:29+00:00",
   "name": "Seal of the Martyr",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

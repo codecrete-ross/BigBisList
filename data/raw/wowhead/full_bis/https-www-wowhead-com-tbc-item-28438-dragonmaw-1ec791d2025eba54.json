@@ -5,15 +5,95 @@
   "fetched_at": "2026-05-24T04:39:02+00:00",
   "item_id": 28438,
   "name": "Dragonmaw",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Dragonmaw Phase 1 Item Level 123 Binds when picked up Main Hand Mace 172 - 320 Damage Speed 2.70 (91.11 damage per second) +9 Stamina Durability 105 / 105 Requires Level 70 Requires Master Hammersmith Chance on hit: Increases your haste rating by 212 for 10 sec. Sell Price: 13 5 28 Dragonmaw is a one-handed Mace, Bind on Pick-up item crafted by Blacksmiths with 375 skill and Hammersmith specialization. This epic one-handed mace has an item level of 123.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+      "specialization": "Master Hammersmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 34546,
+      "entity_name": "Dragonmaw",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+      "spell_id": 34546,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28438,
+          1,
+          1
+        ],
+        "id": 34546,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Dragonmaw",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 4,
+        "reagents": [
+          [
+            28437,
+            1
+          ],
+          [
+            23572,
+            8
+          ],
+          [
+            23571,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17040,
+        "trainingcost": 250000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28438/dragonmaw"
 }

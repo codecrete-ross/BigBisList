@@ -1,11 +1,75 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T09:23:52+00:00",
   "name": "Tankatronic Goggles",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "required_skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/spell=41312",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "chrclass": 3,
+        "colors": [
+          350,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          32473,
+          1,
+          1
+        ],
+        "id": 41312,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Tankatronic Goggles",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            23786,
+            1
+          ],
+          [
+            23785,
+            2
+          ],
+          [
+            23787,
+            4
+          ],
+          [
+            23572,
+            1
+          ],
+          [
+            23437,
+            2
+          ]
+        ],
+        "reqclass": 3,
+        "schools": 1,
+        "skill": [],
+        "trainingcost": 50000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

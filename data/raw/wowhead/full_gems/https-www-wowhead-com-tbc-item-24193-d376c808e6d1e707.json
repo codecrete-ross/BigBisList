@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:33:07+00:00",
   "item_id": 24193,
   "name": "Design: Bold Living Ruby",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Bold Living Ruby Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Bold Living Ruby. Sell Price: 3 Bold Living Ruby Item Level 70 +8 Strength \"Matches a Red Socket.\" Sell Price: 3 Requires Living Ruby This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Spectral Charger. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24193",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -503,9 +514,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -2337,6 +2350,7 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

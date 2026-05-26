@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:33:16+00:00",
   "item_id": 24213,
   "name": "Design: Inscribed Noble Topaz",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Inscribed Noble Topaz Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut an Inscribed Noble Topaz. Sell Price: 3 Inscribed Noble Topaz Item Level 70 +4 Critical Strike Rating and +4 Strength \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Spectral Stallion. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24213",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,9 +26,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -1342,6 +1355,7 @@
         "type": 6
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

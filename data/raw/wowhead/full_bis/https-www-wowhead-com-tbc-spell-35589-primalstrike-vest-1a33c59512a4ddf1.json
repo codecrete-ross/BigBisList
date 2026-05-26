@@ -1,14 +1,92 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:42:57+00:00",
   "name": "Primalstrike Vest",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Leatherworking",
+      "raw_text": "Leatherworking",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/spell=35589/primalstrike-vest",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Leatherworking Trainer",
+      "profession": "Leatherworking",
+      "required_skill": 375,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "learn_recipe",
+          "skill": 375,
+          "source_url": "https://www.wowhead.com/tbc/spell=35589/primalstrike-vest",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=35589/primalstrike-vest",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29525,
+          1,
+          1
+        ],
+        "id": 35589,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Primalstrike Vest",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            8
+          ],
+          [
+            23571,
+            6
+          ],
+          [
+            23572,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10658,
+        "trainingcost": 100000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
-    "taught-by-item": []
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 35589,
   "url": "https://www.wowhead.com/tbc/spell=35589/primalstrike-vest"

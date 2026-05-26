@@ -1,11 +1,14 @@
 {
+  "description": "Is a spell learned by Shaman starting at level 64. This spell summons a totem at the Shaman's feet that increases the Spell Damage and Healing of all party members within 20 yards of the totem by 101.",
   "fetched_at": "2026-05-24T09:16:21+00:00",
   "name": "Wrath of Air Totem",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

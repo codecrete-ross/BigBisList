@@ -2,6 +2,17 @@
   "description": "Permanently enchants bracers to increase attack power by 24. Requires a level 35 or higher item. In the Profession Spells category. Always up to date.",
   "fetched_at": "2026-05-24T09:40:37+00:00",
   "name": "Enchant Bracer - Assault",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Enchanting",
+      "raw_text": "Enchanting",
+      "scope": "learn_recipe",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/spell=34002/lesser-assault",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell_recipe",
@@ -9,12 +20,23 @@
       "entity_name": "Enchanting Trainer",
       "profession": "Enchanting",
       "required_skill": 300,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "learn_recipe",
+          "skill": 300,
+          "source_url": "https://www.wowhead.com/tbc/spell=34002/lesser-assault",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/spell=34002/lesser-assault",
       "type": "trainer"
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
     "recipes": [

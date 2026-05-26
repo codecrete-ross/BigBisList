@@ -5,15 +5,80 @@
   "fetched_at": "2026-05-24T05:06:50+00:00",
   "item_id": 32774,
   "name": "The Black Pearl",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41415,
+      "entity_name": "The Black Pearl",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32774/the-black-pearl",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32774/the-black-pearl",
+      "spell_id": 41415,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          330,
+          340,
+          350,
+          360
+        ],
+        "creates": [
+          32774,
+          1,
+          1
+        ],
+        "id": 41415,
+        "learnedat": 330,
+        "level": 0,
+        "name": "The Black Pearl",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            24479,
+            1
+          ],
+          [
+            31079,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "trainingcost": 10000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32774/the-black-pearl"
 }

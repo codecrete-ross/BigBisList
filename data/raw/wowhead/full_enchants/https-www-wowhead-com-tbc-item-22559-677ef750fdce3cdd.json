@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:45:52+00:00",
   "item_id": 22559,
   "name": "Formula: Enchant Weapon - Mongoose",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Weapon - Mongoose Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Use: Learn how to permanently enchant a Melee Weapon to occasionally increase Agility by 120 and attack speed slightly. Permanently enchant a Melee Weapon to occasionally increase Agility by 120 and attack speed slightly. Requires a level 35 or higher item. Sell Price: 1 50 Formula: Enchant Weapon - Mongoose can be used by Enchanters to learn Mongoose at 375 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=22559",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -19,7 +30,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

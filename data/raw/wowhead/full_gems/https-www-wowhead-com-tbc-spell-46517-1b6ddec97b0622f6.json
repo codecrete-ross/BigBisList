@@ -1,11 +1,14 @@
 {
+  "description": "Permanently enchant a ring to increase healing spells by up to 20 and damage spells by up to 7. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item.",
   "fetched_at": "2026-05-24T08:32:55+00:00",
   "name": "Enchant Ring - Healing Power",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

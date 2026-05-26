@@ -5,20 +5,2198 @@
   "fetched_at": "2026-05-24T05:19:49+00:00",
   "item_id": 25291,
   "name": "Nobility Torch",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
-      "entity_name": "World Drop",
+      "count": 5,
+      "drop_percent": 0.05,
+      "entity_id": 12377,
+      "entity_name": "Wailing Spectre",
+      "out_of": 10998,
       "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
-      "type": "world_drop",
-      "world_drop": true
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 12378,
+      "entity_name": "Damned Soul",
+      "out_of": 11002,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.07,
+      "entity_id": 16173,
+      "entity_name": "Shadowbat",
+      "out_of": 3003,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.4,
+      "entity_id": 16176,
+      "entity_name": "Shadowbeast",
+      "out_of": 1253,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 25,
+      "drop_percent": 0.18,
+      "entity_id": 16407,
+      "entity_name": "Spectral Servant",
+      "out_of": 13532,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 22,
+      "drop_percent": 0.25,
+      "entity_id": 16507,
+      "entity_name": "Shattered Hand Sentry",
+      "out_of": 8838,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 45,
+      "drop_percent": 0.24,
+      "entity_id": 16523,
+      "entity_name": "Shattered Hand Savage",
+      "out_of": 18682,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 16,
+      "drop_percent": 0.09,
+      "entity_id": 16699,
+      "entity_name": "Shattered Hand Reaver",
+      "out_of": 18652,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 21,
+      "drop_percent": 0.17,
+      "entity_id": 16704,
+      "entity_name": "Shattered Hand Sharpshooter",
+      "out_of": 12243,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.09,
+      "entity_id": 16944,
+      "entity_name": "Mo'arg Doomsmith",
+      "out_of": 2129,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.12,
+      "entity_id": 16945,
+      "entity_name": "Mo'arg Engineer",
+      "out_of": 2593,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 0.34,
+      "entity_id": 16948,
+      "entity_name": "Gan'arg Engineer",
+      "out_of": 3218,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.06,
+      "entity_id": 16949,
+      "entity_name": "Gan'arg Mekgineer",
+      "out_of": 14079,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.04,
+      "entity_id": 16952,
+      "entity_name": "Anger Guard",
+      "out_of": 8267,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 34,
+      "drop_percent": 0.21,
+      "entity_id": 17083,
+      "entity_name": "Fel Orc Convert",
+      "out_of": 16420,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.2,
+      "entity_id": 17150,
+      "entity_name": "Vir'aani Arcanist",
+      "out_of": 1004,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 17160,
+      "entity_name": "Living Cyclone",
+      "out_of": 15596,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 12,
+      "drop_percent": 0.01,
+      "entity_id": 17280,
+      "entity_name": "Shattered Hand Warhound",
+      "out_of": 80704,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 14,
+      "drop_percent": 0.13,
+      "entity_id": 17356,
+      "entity_name": "Creeping Ooze",
+      "out_of": 11076,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 35,
+      "drop_percent": 0.2,
+      "entity_id": 17420,
+      "entity_name": "Shattered Hand Heathen",
+      "out_of": 17106,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 0.27,
+      "entity_id": 17427,
+      "entity_name": "Shattered Hand Archer",
+      "out_of": 4020,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 43,
+      "drop_percent": 0.15,
+      "entity_id": 17669,
+      "entity_name": "Rabid Warhound",
+      "out_of": 29394,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 20,
+      "drop_percent": 0.11,
+      "entity_id": 17819,
+      "entity_name": "Durnholde Sentry",
+      "out_of": 18934,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 36,
+      "drop_percent": 0.25,
+      "entity_id": 17820,
+      "entity_name": "Durnholde Rifleman",
+      "out_of": 14258,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 36,
+      "drop_percent": 0.32,
+      "entity_id": 17833,
+      "entity_name": "Durnholde Warden",
+      "out_of": 11184,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 17840,
+      "entity_name": "Durnholde Tracking Hound",
+      "out_of": 9199,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 16,
+      "drop_percent": 0.18,
+      "entity_id": 17860,
+      "entity_name": "Durnholde Veteran",
+      "out_of": 8882,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 22,
+      "drop_percent": 0.05,
+      "entity_id": 17952,
+      "entity_name": "Darkwater Crocolisk",
+      "out_of": 42817,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 25,
+      "drop_percent": 0.06,
+      "entity_id": 17993,
+      "entity_name": "Bloodwarder Protector",
+      "out_of": 43220,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.01,
+      "entity_id": 18037,
+      "entity_name": "Warmaul Warlock",
+      "out_of": 37112,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.02,
+      "entity_id": 18065,
+      "entity_name": "Warmaul Brute",
+      "out_of": 39038,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.49,
+      "entity_id": 18092,
+      "entity_name": "Tarren Mill Guardsman",
+      "out_of": 2059,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.1,
+      "entity_id": 18093,
+      "entity_name": "Tarren Mill Protector",
+      "out_of": 1960,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 0.34,
+      "entity_id": 18094,
+      "entity_name": "Tarren Mill Lookout",
+      "out_of": 3200,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 25,
+      "drop_percent": 0.18,
+      "entity_id": 18155,
+      "entity_name": "Bloodfalcon",
+      "out_of": 14028,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.08,
+      "entity_id": 18170,
+      "entity_name": "Infinite Slayer",
+      "out_of": 2464,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.43,
+      "entity_id": 18171,
+      "entity_name": "Infinite Defiler",
+      "out_of": 1640,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.12,
+      "entity_id": 18172,
+      "entity_name": "Infinite Saboteur",
+      "out_of": 1627,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.04,
+      "entity_id": 18203,
+      "entity_name": "Murkblood Raider",
+      "out_of": 25710,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.03,
+      "entity_id": 18211,
+      "entity_name": "Murkblood Brute",
+      "out_of": 6167,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 0.04,
+      "entity_id": 18258,
+      "entity_name": "Bach'lor",
+      "out_of": 2519,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 53,
+      "drop_percent": 0.27,
+      "entity_id": 18318,
+      "entity_name": "Sethekk Initiate",
+      "out_of": 19628,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 25,
+      "drop_percent": 0.21,
+      "entity_id": 18319,
+      "entity_name": "Time-Lost Scryer",
+      "out_of": 11904,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 17,
+      "drop_percent": 0.17,
+      "entity_id": 18320,
+      "entity_name": "Time-Lost Shadowmage",
+      "out_of": 10037,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 23,
+      "drop_percent": 0.27,
+      "entity_id": 18321,
+      "entity_name": "Sethekk Talon Lord",
+      "out_of": 8647,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 22,
+      "drop_percent": 0.2,
+      "entity_id": 18322,
+      "entity_name": "Sethekk Ravenguard",
+      "out_of": 11160,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 56,
+      "drop_percent": 0.25,
+      "entity_id": 18323,
+      "entity_name": "Sethekk Guard",
+      "out_of": 22793,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 32,
+      "drop_percent": 0.17,
+      "entity_id": 18325,
+      "entity_name": "Sethekk Prophet",
+      "out_of": 19237,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 15,
+      "drop_percent": 0.21,
+      "entity_id": 18326,
+      "entity_name": "Sethekk Shaman",
+      "out_of": 6978,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 35,
+      "drop_percent": 0.24,
+      "entity_id": 18327,
+      "entity_name": "Time-Lost Controller",
+      "out_of": 14581,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 31,
+      "drop_percent": 0.25,
+      "entity_id": 18328,
+      "entity_name": "Sethekk Oracle",
+      "out_of": 12333,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.06,
+      "entity_id": 18404,
+      "entity_name": "Bloodwarder Steward",
+      "out_of": 8597,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.05,
+      "entity_id": 18419,
+      "entity_name": "Bloodwarder Greenkeeper",
+      "out_of": 17279,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.03,
+      "entity_id": 18473,
+      "entity_name": "Talon King Ikiss",
+      "out_of": 21036,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 0.13,
+      "entity_id": 18521,
+      "entity_name": "Raging Skeleton",
+      "out_of": 8235,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 23,
+      "drop_percent": 0.07,
+      "entity_id": 18587,
+      "entity_name": "Frayer",
+      "out_of": 32005,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 34,
+      "drop_percent": 0.07,
+      "entity_id": 18631,
+      "entity_name": "Cabal Cultist",
+      "out_of": 48531,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 92,
+      "drop_percent": 0.14,
+      "entity_id": 18633,
+      "entity_name": "Cabal Acolyte",
+      "out_of": 66017,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 66,
+      "drop_percent": 0.1,
+      "entity_id": 18635,
+      "entity_name": "Cabal Deathsworn",
+      "out_of": 68814,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 40,
+      "drop_percent": 0.21,
+      "entity_id": 18640,
+      "entity_name": "Cabal Warlock",
+      "out_of": 19225,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.03,
+      "entity_id": 18641,
+      "entity_name": "Cabal Familiar",
+      "out_of": 23599,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.05,
+      "entity_id": 18702,
+      "entity_name": "Auchenai Necromancer",
+      "out_of": 4345,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 57,
+      "drop_percent": 0.08,
+      "entity_id": 18794,
+      "entity_name": "Cabal Ritualist",
+      "out_of": 72640,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 18850,
+      "entity_name": "Sunfury Guardsman",
+      "out_of": 14982,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.04,
+      "entity_id": 18853,
+      "entity_name": "Sunfury Bloodwarder",
+      "out_of": 25609,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 18855,
+      "entity_name": "Sunfury Magister",
+      "out_of": 18416,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.08,
+      "entity_id": 18856,
+      "entity_name": "Arcane Annihilator",
+      "out_of": 2650,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.11,
+      "entity_id": 18857,
+      "entity_name": "Sunfury Warp-Master",
+      "out_of": 1828,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.07,
+      "entity_id": 18858,
+      "entity_name": "Wrathbringer",
+      "out_of": 11880,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.02,
+      "entity_id": 18864,
+      "entity_name": "Mana Wraith",
+      "out_of": 59269,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 15,
+      "drop_percent": 0.02,
+      "entity_id": 18866,
+      "entity_name": "Mageslayer",
+      "out_of": 77248,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13,
+      "drop_percent": 0.01,
+      "entity_id": 18867,
+      "entity_name": "Mana Seeker",
+      "out_of": 117444,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 14,
+      "drop_percent": 0.04,
+      "entity_id": 18869,
+      "entity_name": "Unstable Voidwraith",
+      "out_of": 37051,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.02,
+      "entity_id": 18870,
+      "entity_name": "Voidshrieker",
+      "out_of": 42390,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 18872,
+      "entity_name": "Disembodied Vindicator",
+      "out_of": 11569,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 18873,
+      "entity_name": "Disembodied Protector",
+      "out_of": 9639,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 28,
+      "drop_percent": 0.03,
+      "entity_id": 18875,
+      "entity_name": "Zaxxis Raider",
+      "out_of": 97955,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.03,
+      "entity_id": 18877,
+      "entity_name": "Nether Drake",
+      "out_of": 20256,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.01,
+      "entity_id": 18879,
+      "entity_name": "Phase Hunter",
+      "out_of": 43925,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.02,
+      "entity_id": 18880,
+      "entity_name": "Nether Ray",
+      "out_of": 24347,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 18881,
+      "entity_name": "Sundered Rumbler",
+      "out_of": 12196,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.03,
+      "entity_id": 18884,
+      "entity_name": "Warp Chaser",
+      "out_of": 29939,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 15,
+      "drop_percent": 0.32,
+      "entity_id": 18934,
+      "entity_name": "Durnholde Mage",
+      "out_of": 4682,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.05,
+      "entity_id": 18982,
+      "entity_name": "Sable Jaguar",
+      "out_of": 17148,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.03,
+      "entity_id": 18983,
+      "entity_name": "Blackfang Tarantula",
+      "out_of": 30573,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 32,
+      "drop_percent": 0.15,
+      "entity_id": 19168,
+      "entity_name": "Sunseeker Astromage",
+      "out_of": 21240,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.09,
+      "entity_id": 19201,
+      "entity_name": "Mountain Gronn",
+      "out_of": 2213,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.13,
+      "entity_id": 19209,
+      "entity_name": "Summoned Cabal Deathsworn",
+      "out_of": 1592,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 25,
+      "drop_percent": 0.18,
+      "entity_id": 19428,
+      "entity_name": "Cobalt Serpent",
+      "out_of": 13770,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 34,
+      "drop_percent": 0.17,
+      "entity_id": 19429,
+      "entity_name": "Avian Darkhawk",
+      "out_of": 19668,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.06,
+      "entity_id": 19557,
+      "entity_name": "Greater Frayer",
+      "out_of": 13983,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.03,
+      "entity_id": 19642,
+      "entity_name": "Zaxxis Stalker",
+      "out_of": 29547,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.27,
+      "entity_id": 19643,
+      "entity_name": "Sunfury Astromancer",
+      "out_of": 1132,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.04,
+      "entity_id": 19707,
+      "entity_name": "Sunfury Archer",
+      "out_of": 18176,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 0.06,
+      "entity_id": 19716,
+      "entity_name": "Mechanar Tinkerer",
+      "out_of": 19685,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 12,
+      "drop_percent": 0.04,
+      "entity_id": 19740,
+      "entity_name": "Wrathwalker",
+      "out_of": 27385,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.16,
+      "entity_id": 19755,
+      "entity_name": "Mo'arg Weaponsmith",
+      "out_of": 1282,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.04,
+      "entity_id": 19779,
+      "entity_name": "Sunfury Geologist",
+      "out_of": 26600,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 19784,
+      "entity_name": "Coilskar Cobra",
+      "out_of": 18425,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.03,
+      "entity_id": 19792,
+      "entity_name": "Eclipsion Centurion",
+      "out_of": 27680,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.02,
+      "entity_id": 19796,
+      "entity_name": "Eclipsion Archmage",
+      "out_of": 20689,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.1,
+      "entity_id": 19926,
+      "entity_name": "Spellreaver Marathelle",
+      "out_of": 2007,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.12,
+      "entity_id": 19960,
+      "entity_name": "Doomforge Engineer",
+      "out_of": 5911,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.06,
+      "entity_id": 19961,
+      "entity_name": "Doomforge Attendant",
+      "out_of": 6344,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.06,
+      "entity_id": 19988,
+      "entity_name": "Grishna Falconwing",
+      "out_of": 3634,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.45,
+      "entity_id": 19990,
+      "entity_name": "Grishna Scorncrow",
+      "out_of": 449,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.04,
+      "entity_id": 19993,
+      "entity_name": "Bloodmaul Mauler",
+      "out_of": 7028,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.27,
+      "entity_id": 19997,
+      "entity_name": "Bladespire Enforcer",
+      "out_of": 2634,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.66,
+      "entity_id": 20095,
+      "entity_name": "Grimnok Battleborn",
+      "out_of": 458,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 0.08,
+      "entity_id": 20134,
+      "entity_name": "Sunfury Arcanist",
+      "out_of": 14435,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 20136,
+      "entity_name": "Sunfury Researcher",
+      "out_of": 24928,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 20139,
+      "entity_name": "Sunfury Conjurer",
+      "out_of": 16432,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.05,
+      "entity_id": 20140,
+      "entity_name": "Sunfury Centurion",
+      "out_of": 8127,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.03,
+      "entity_id": 20207,
+      "entity_name": "Sunfury Bowman",
+      "out_of": 13445,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.04,
+      "entity_id": 20210,
+      "entity_name": "Shaleskin Flayer",
+      "out_of": 18790,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.03,
+      "entity_id": 20221,
+      "entity_name": "Sunfury Flamekeeper",
+      "out_of": 5866,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.04,
+      "entity_id": 20248,
+      "entity_name": "Sunfury Nethermancer",
+      "out_of": 18322,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.08,
+      "entity_id": 20285,
+      "entity_name": "Gan'arg Warp-Tinker",
+      "out_of": 12766,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.1,
+      "entity_id": 20416,
+      "entity_name": "Overseer Theredis",
+      "out_of": 1949,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.08,
+      "entity_id": 20453,
+      "entity_name": "Ethereum Shocktrooper",
+      "out_of": 7609,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.06,
+      "entity_id": 20459,
+      "entity_name": "Ethereum Overlord",
+      "out_of": 7087,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20512,
+      "entity_name": "Tormented Soul",
+      "out_of": 17102,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.01,
+      "entity_id": 20514,
+      "entity_name": "Searing Elemental",
+      "out_of": 35376,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.08,
+      "entity_id": 20601,
+      "entity_name": "Razaani Raider",
+      "out_of": 5015,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.06,
+      "entity_id": 20609,
+      "entity_name": "Razaani Nexus Stalker",
+      "out_of": 4669,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.04,
+      "entity_id": 20634,
+      "entity_name": "Scythetooth Raptor",
+      "out_of": 23277,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 20668,
+      "entity_name": "Fiendling Flesh Beast",
+      "out_of": 12942,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.03,
+      "entity_id": 20671,
+      "entity_name": "Ripfang Lynx",
+      "out_of": 37817,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.09,
+      "entity_id": 20729,
+      "entity_name": "Bladespire Ravager",
+      "out_of": 2168,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 20749,
+      "entity_name": "Scalewing Serpent",
+      "out_of": 34645,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 20773,
+      "entity_name": "Barbscale Crocolisk",
+      "out_of": 15987,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 20774,
+      "entity_name": "Farahlon Lasher",
+      "out_of": 14514,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.16,
+      "entity_id": 20801,
+      "entity_name": "Silroth",
+      "out_of": 1277,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.21,
+      "entity_id": 20857,
+      "entity_name": "Arcatraz Defender",
+      "out_of": 3347,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 18,
+      "drop_percent": 0.36,
+      "entity_id": 20859,
+      "entity_name": "Arcatraz Warder",
+      "out_of": 5002,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 24,
+      "drop_percent": 0.07,
+      "entity_id": 20865,
+      "entity_name": "Protean Horror",
+      "out_of": 33534,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.09,
+      "entity_id": 20872,
+      "entity_name": "Deathforge Summoner",
+      "out_of": 7800,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.03,
+      "entity_id": 20878,
+      "entity_name": "Deathforge Guardian",
+      "out_of": 23546,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.16,
+      "entity_id": 20887,
+      "entity_name": "Deathforge Imp",
+      "out_of": 1855,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.15,
+      "entity_id": 20924,
+      "entity_name": "Grishnath Basilisk",
+      "out_of": 2031,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.09,
+      "entity_id": 20934,
+      "entity_name": "Severed Defender",
+      "out_of": 8480,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 25,
+      "drop_percent": 0.18,
+      "entity_id": 20988,
+      "entity_name": "Sunseeker Engineer",
+      "out_of": 13835,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 29,
+      "drop_percent": 0.14,
+      "entity_id": 20990,
+      "entity_name": "Bloodwarder Physician",
+      "out_of": 20206,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 21004,
+      "entity_name": "Lesser Nether Drake",
+      "out_of": 14486,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.03,
+      "entity_id": 21021,
+      "entity_name": "Scorch Imp",
+      "out_of": 7224,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 21046,
+      "entity_name": "Boulder'mok Brute",
+      "out_of": 5446,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.02,
+      "entity_id": 21050,
+      "entity_name": "Enraged Earth Spirit",
+      "out_of": 24540,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.07,
+      "entity_id": 21058,
+      "entity_name": "Disembodied Exarch",
+      "out_of": 2866,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 0.03,
+      "entity_id": 21059,
+      "entity_name": "Enraged Water Spirit",
+      "out_of": 32435,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 12,
+      "drop_percent": 0.01,
+      "entity_id": 21060,
+      "entity_name": "Enraged Air Spirit",
+      "out_of": 120284,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 21,
+      "drop_percent": 0.02,
+      "entity_id": 21061,
+      "entity_name": "Enraged Fire Spirit",
+      "out_of": 84604,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 21065,
+      "entity_name": "Tormented Citizen",
+      "out_of": 9464,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 21124,
+      "entity_name": "Felsworn Daggermaw",
+      "out_of": 10191,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.05,
+      "entity_id": 21196,
+      "entity_name": "Ravenous Flayer",
+      "out_of": 14249,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 29,
+      "drop_percent": 0.03,
+      "entity_id": 21302,
+      "entity_name": "Shadow Council Warlock",
+      "out_of": 109208,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 21305,
+      "entity_name": "Mutant Horror",
+      "out_of": 4986,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.04,
+      "entity_id": 21382,
+      "entity_name": "Wyrmcult Zealot",
+      "out_of": 9254,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 21386,
+      "entity_name": "Dark Conclave Hawkeye",
+      "out_of": 5146,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 22,
+      "drop_percent": 0.03,
+      "entity_id": 21408,
+      "entity_name": "Felfire Diemetradon",
+      "out_of": 63183,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 21450,
+      "entity_name": "Skethyl Owl",
+      "out_of": 12434,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.03,
+      "entity_id": 21453,
+      "entity_name": "Ashtongue Shaman",
+      "out_of": 7294,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.03,
+      "entity_id": 21455,
+      "entity_name": "Ashtongue Worker",
+      "out_of": 25852,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.01,
+      "entity_id": 21462,
+      "entity_name": "Greater Felfire Diemetradon",
+      "out_of": 35924,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 10,
+      "drop_percent": 0.05,
+      "entity_id": 21478,
+      "entity_name": "Rocknail Ripper",
+      "out_of": 20893,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 0.02,
+      "entity_id": 21637,
+      "entity_name": "Wyrmcult Scout",
+      "out_of": 4984,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.06,
+      "entity_id": 21717,
+      "entity_name": "Dragonmaw Wrangler",
+      "out_of": 8100,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.04,
+      "entity_id": 21742,
+      "entity_name": "Sunfury Eradicator",
+      "out_of": 16547,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.09,
+      "entity_id": 21743,
+      "entity_name": "Sunfury Blood Lord",
+      "out_of": 3262,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.11,
+      "entity_id": 21795,
+      "entity_name": "Shadowmoon Harbinger",
+      "out_of": 4591,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 21809,
+      "entity_name": "Wyrmcult Poacher",
+      "out_of": 17866,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.03,
+      "entity_id": 21810,
+      "entity_name": "Wyrmcult Hewer",
+      "out_of": 14677,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 11,
+      "drop_percent": 0.02,
+      "entity_id": 21878,
+      "entity_name": "Felboar",
+      "out_of": 64742,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 122,
+      "drop_percent": 0.17,
+      "entity_id": 21891,
+      "entity_name": "Avian Ripper",
+      "out_of": 71553,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.03,
+      "entity_id": 21901,
+      "entity_name": "Netherskate",
+      "out_of": 19427,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 24,
+      "drop_percent": 0.16,
+      "entity_id": 21904,
+      "entity_name": "Avian Warhawk",
+      "out_of": 14969,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.06,
+      "entity_id": 21923,
+      "entity_name": "Terrorguard Protector",
+      "out_of": 3439,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 18,
+      "drop_percent": 0.06,
+      "entity_id": 22016,
+      "entity_name": "Eclipsion Soldier",
+      "out_of": 31470,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.04,
+      "entity_id": 22017,
+      "entity_name": "Eclipsion Spellbinder",
+      "out_of": 9169,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.05,
+      "entity_id": 22081,
+      "entity_name": "Shadowmoon Darkweaver",
+      "out_of": 3928,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 22082,
+      "entity_name": "Shadowmoon Slayer",
+      "out_of": 8898,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 23026,
+      "entity_name": "Twilight Serpent",
+      "out_of": 17311,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.44,
+      "entity_id": 23176,
+      "entity_name": "Tarren Mill Guardsman",
+      "out_of": 903,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 8,
+      "drop_percent": 0.43,
+      "entity_id": 23177,
+      "entity_name": "Tarren Mill Lookout",
+      "out_of": 1862,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.22,
+      "entity_id": 23178,
+      "entity_name": "Tarren Mill Lookout",
+      "out_of": 1858,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.33,
+      "entity_id": 23180,
+      "entity_name": "Tarren Mill Protector",
+      "out_of": 919,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 23219,
+      "entity_name": "Blackwind Warp Chaser",
+      "out_of": 17438,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 23501,
+      "entity_name": "Netherwing Ray",
+      "out_of": 22355,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 14,
+      "drop_percent": 0.33,
+      "entity_id": 24688,
+      "entity_name": "Wretched Skulker",
+      "out_of": 4210,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 18,
+      "drop_percent": 0.45,
+      "entity_id": 24689,
+      "entity_name": "Wretched Bruiser",
+      "out_of": 3983,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 15,
+      "drop_percent": 0.34,
+      "entity_id": 24690,
+      "entity_name": "Wretched Husk",
+      "out_of": 4424,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.02,
+      "entity_id": 24919,
+      "entity_name": "Wrath Herald",
+      "out_of": 24509,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 15,
+      "drop_percent": 0.03,
+      "entity_id": 24960,
+      "entity_name": "Wretched Devourer",
+      "out_of": 46857,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 13,
+      "drop_percent": 0.03,
+      "entity_id": 24966,
+      "entity_name": "Wretched Fiend",
+      "out_of": 44602,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 0.82,
+      "entity_id": 184936,
+      "entity_name": "Bound Adamantite Chest",
+      "out_of": 122,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 0.65,
+      "entity_id": 184937,
+      "entity_name": "Solid Adamantite Chest",
+      "out_of": 154,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 81,
+      "drop_percent": 1.26,
+      "entity_id": 31952,
+      "entity_name": "Contained in: Khorium Lockbox",
+      "item_id": 31952,
+      "out_of": 6404,
+      "source_url": "https://www.wowhead.com/tbc/item=25291&&rand=-25",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "commondrop": true,
+        "count": 81,
+        "flags2": 24580,
+        "id": 31952,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 81,
+                "outof": 6404
+              }
+            },
+            "4": {
+              "0": {
+                "count": 9,
+                "outof": 667
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 871
+              }
+            }
+          }
+        },
+        "level": 68,
+        "name": "Khorium Lockbox",
+        "outof": 6404,
+        "pctstack": "",
+        "quality": 2,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 184936,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 122
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3792,
+          3791,
+          -1
+        ],
+        "name": "Bound Adamantite Chest",
+        "outof": 122,
+        "pctstack": "",
+        "skill": 325,
+        "type": -5
+      },
+      {
+        "count": 1,
+        "id": 184937,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 95,
+                "outof": 5042
+              }
+            },
+            "4": {
+              "0": {
+                "count": 7,
+                "outof": 296
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 154
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3792,
+          3791,
+          -1
+        ],
+        "name": "Solid Adamantite Chest",
+        "outof": 154,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 0,
@@ -7662,8 +9840,12 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=25291&&rand=-25"
 }

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:33:22+00:00",
   "item_id": 22544,
   "name": "Formula: Enchant Boots - Dexterity",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Boots - Dexterity Phase 1 Item Level 68 Binds when picked up Requires Enchanting (340) Use: Teaches you how to permanently enchant boots to grant 12 Agility. Permanently enchant boots to increase Agility by 12. Requires a level 35 or higher item. Sell Price: 1 50 Formula: Enchant Boots - Dexterity is the Enchanting formula for . It has a low chance to drop from Raging Skeleton mobs in Auchenai Crypts.",
+      "scope": "equip_or_use",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/item=22544",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -18,9 +29,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -75,6 +88,7 @@
         "type": 6
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

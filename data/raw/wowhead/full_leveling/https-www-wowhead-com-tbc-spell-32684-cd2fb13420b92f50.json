@@ -1,11 +1,14 @@
 {
+  "description": "Finishing move that consumes your Deadly Poison doses on the target and deals instant poison damage. One dose is consumed for each combo point: 1 dose: (180 + attackPower * 0.03) damage 2 doses: (180 * 2 + attackPower * 0.06) damage 3 doses: (180 * 3 + attackPower * 0.09) damage 4 doses: (180 * 4 + attackPower * 0.12) damage 5 doses: (180 * 5 + attackPower * 0.15) damage",
   "fetched_at": "2026-05-24T09:13:53+00:00",
   "name": "Envenom",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -1,11 +1,14 @@
 {
+  "description": "Tosses the enemy target into the air, preventing all action but making them invulnerable for up to 6 sec. Only one target can be affected by your Cyclone at a time.",
   "fetched_at": "2026-05-24T09:00:42+00:00",
   "name": "Cyclone",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

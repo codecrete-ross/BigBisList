@@ -1,11 +1,14 @@
 {
+  "description": "Imbue the Shaman's weapon with fire. Each hit causes 46 to 140 additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts 30 minutes.",
   "fetched_at": "2026-05-24T09:15:32+00:00",
   "name": "Flametongue Weapon",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

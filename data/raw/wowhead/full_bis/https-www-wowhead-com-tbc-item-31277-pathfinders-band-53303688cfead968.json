@@ -5,20 +5,549 @@
   "fetched_at": "2026-05-24T05:05:14+00:00",
   "item_id": 31277,
   "name": "Pathfinder's Band",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
-      "entity_name": "World Drop",
+      "count": 3,
+      "drop_percent": 0.0,
+      "entity_id": 17132,
+      "entity_name": "Clefthoof Bull",
+      "out_of": 112984,
       "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
-      "type": "world_drop",
-      "world_drop": true
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 17137,
+      "entity_name": "Boulderfist Mage",
+      "out_of": 72019,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.01,
+      "entity_id": 17669,
+      "entity_name": "Rabid Warhound",
+      "out_of": 29394,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 17819,
+      "entity_name": "Durnholde Sentry",
+      "out_of": 18934,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 17820,
+      "entity_name": "Durnholde Rifleman",
+      "out_of": 14258,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 17860,
+      "entity_name": "Durnholde Veteran",
+      "out_of": 8882,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 17981,
+      "entity_name": "Voidspawn",
+      "out_of": 86205,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Nagrand"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.06,
+      "entity_id": 18094,
+      "entity_name": "Tarren Mill Lookout",
+      "out_of": 3200,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.08,
+      "entity_id": 18170,
+      "entity_name": "Infinite Slayer",
+      "out_of": 2464,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18312,
+      "entity_name": "Ethereal Spellbinder",
+      "out_of": 20908,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.03,
+      "entity_id": 18314,
+      "entity_name": "Nexus Stalker",
+      "out_of": 17465,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 18318,
+      "entity_name": "Sethekk Initiate",
+      "out_of": 19628,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 18319,
+      "entity_name": "Time-Lost Scryer",
+      "out_of": 11904,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.04,
+      "entity_id": 18322,
+      "entity_name": "Sethekk Ravenguard",
+      "out_of": 11160,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 18323,
+      "entity_name": "Sethekk Guard",
+      "out_of": 22793,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 18327,
+      "entity_name": "Time-Lost Controller",
+      "out_of": 14581,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.03,
+      "entity_id": 18328,
+      "entity_name": "Sethekk Oracle",
+      "out_of": 12333,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 18493,
+      "entity_name": "Auchenai Soulpriest",
+      "out_of": 13639,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 18497,
+      "entity_name": "Auchenai Monk",
+      "out_of": 12457,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.04,
+      "entity_id": 18501,
+      "entity_name": "Unliving Stalker",
+      "out_of": 7578,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 0.01,
+      "entity_id": 18524,
+      "entity_name": "Angered Skeleton",
+      "out_of": 7848,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.13,
+      "entity_id": 18588,
+      "entity_name": "Floon",
+      "out_of": 1581,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18869,
+      "entity_name": "Unstable Voidwraith",
+      "out_of": 37051,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 18983,
+      "entity_name": "Blackfang Tarantula",
+      "out_of": 30573,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 19428,
+      "entity_name": "Cobalt Serpent",
+      "out_of": 13770,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 19429,
+      "entity_name": "Avian Darkhawk",
+      "out_of": 19668,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 19779,
+      "entity_name": "Sunfury Geologist",
+      "out_of": 26600,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.07,
+      "entity_id": 20134,
+      "entity_name": "Sunfury Arcanist",
+      "out_of": 2902,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20136,
+      "entity_name": "Sunfury Researcher",
+      "out_of": 24928,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 20512,
+      "entity_name": "Tormented Soul",
+      "out_of": 17102,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.01,
+      "entity_id": 20514,
+      "entity_name": "Searing Elemental",
+      "out_of": 35376,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 20601,
+      "entity_name": "Razaani Raider",
+      "out_of": 5015,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20774,
+      "entity_name": "Farahlon Lasher",
+      "out_of": 14514,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 20859,
+      "entity_name": "Arcatraz Warder",
+      "out_of": 5002,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 21302,
+      "entity_name": "Shadow Council Warlock",
+      "out_of": 109208,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 21381,
+      "entity_name": "Young Crust Burster",
+      "out_of": 25554,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 21891,
+      "entity_name": "Avian Ripper",
+      "out_of": 71553,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 22016,
+      "entity_name": "Eclipsion Soldier",
+      "out_of": 31470,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.14,
+      "entity_id": 22052,
+      "entity_name": "Daggermaw Blackhide",
+      "out_of": 1418,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 0.82,
+      "entity_id": 184936,
+      "entity_name": "Bound Adamantite Chest",
+      "out_of": 122,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 1.3,
+      "entity_id": 184937,
+      "entity_name": "Solid Adamantite Chest",
+      "out_of": 154,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.06,
+      "entity_id": 31952,
+      "entity_name": "Contained in: Khorium Lockbox",
+      "item_id": 31952,
+      "out_of": 6404,
+      "source_url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "commondrop": true,
+        "count": 4,
+        "flags2": 24580,
+        "id": 31952,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 6404
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 871
+              }
+            }
+          }
+        },
+        "level": 68,
+        "name": "Khorium Lockbox",
+        "outof": 6404,
+        "pctstack": "",
+        "quality": 2,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 184936,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 122
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3792,
+          3791,
+          -1
+        ],
+        "name": "Bound Adamantite Chest",
+        "outof": 122,
+        "pctstack": "",
+        "skill": 325,
+        "type": -5
+      },
+      {
+        "count": 2,
+        "id": 184937,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 49,
+                "outof": 5042
+              }
+            },
+            "4": {
+              "0": {
+                "count": 3,
+                "outof": 296
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 154
+              }
+            }
+          }
+        },
+        "location": [
+          3790,
+          3792,
+          3791,
+          -1
+        ],
+        "name": "Solid Adamantite Chest",
+        "outof": 154,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 0,
@@ -1510,8 +2039,12 @@
         "type": 1
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31277/pathfinders-band"
 }

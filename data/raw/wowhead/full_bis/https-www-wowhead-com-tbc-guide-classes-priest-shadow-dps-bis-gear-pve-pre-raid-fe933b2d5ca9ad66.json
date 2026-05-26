@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:41+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -28,6 +29,16 @@
           "item_id": 24266,
           "item_name": "Spellstrike Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24266/spellstrike-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -246,6 +257,16 @@
           "item_id": 21869,
           "item_name": "Frozen Shadoweave Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21869/frozen-shadoweave-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -527,6 +548,16 @@
           "item_id": 24252,
           "item_name": "Cloak of the Black Void",
           "item_url": "https://www.wowhead.com/tbc/item=24252/cloak-of-the-black-void",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -626,6 +657,16 @@
           "item_id": 21871,
           "item_name": "Frozen Shadoweave Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21871/frozen-shadoweave-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -773,6 +814,28 @@
           "item_id": 29129,
           "item_name": "Anchorite's Robes",
           "item_url": "https://www.wowhead.com/tbc/item=29129/anchorites-robes",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Endarin (The Aldor - Honored)",
+              "reputation": "The Aldor",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Aldor"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Endarin (The Aldor - Honored)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -997,6 +1060,16 @@
           "item_id": 24250,
           "item_name": "Bracers of Havok",
           "item_url": "https://www.wowhead.com/tbc/item=24250/bracers-of-havok",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1602,6 +1675,16 @@
           "item_id": 24256,
           "item_name": "Girdle of Ruination",
           "item_url": "https://www.wowhead.com/tbc/item=24256/girdle-of-ruination",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1821,6 +1904,16 @@
           "item_id": 24262,
           "item_name": "Spellstrike Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -2071,6 +2164,16 @@
           "item_id": 21870,
           "item_name": "Frozen Shadoweave Boots",
           "item_url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailor) - BoP only"
@@ -2156,6 +2259,17 @@
           "item_id": 35581,
           "item_name": "Rocket Boots Xtreme Lite",
           "item_url": "https://www.wowhead.com/tbc/item=35581/rocket-boots-xtreme-lite",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (330) required to equip - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "skill": 330,
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Engineering (330) required to equip - can be purchased on the Auction House"
@@ -2401,6 +2515,16 @@
           "item_id": 24121,
           "item_name": "Chain of the Twilight Owl",
           "item_url": "https://www.wowhead.com/tbc/item=24121/chain-of-the-twilight-owl",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -2426,6 +2550,16 @@
           "item_id": 24116,
           "item_name": "Eye of the Night",
           "item_url": "https://www.wowhead.com/tbc/item=24116/eye-of-the-night",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -2518,6 +2652,16 @@
           "item_id": 20966,
           "item_name": "Jade Pendant of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=20966/jade-pendant-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -2771,6 +2915,28 @@
           "item_id": 29126,
           "item_name": "Seer's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=29126/seers-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
+              "reputation": "The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2890,6 +3056,18 @@
           "item_id": 29172,
           "item_name": "Ashyen's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3218,6 +3396,28 @@
           "item_id": 29132,
           "item_name": "Scryer's Bloodgem",
           "item_url": "https://www.wowhead.com/tbc/item=29132/scryers-bloodgem",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
+              "reputation": "The Scryers",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -3315,6 +3515,18 @@
           "item_id": 30832,
           "item_name": "Gavel of Unearthed Secrets",
           "item_url": "https://www.wowhead.com/tbc/item=30832/gavel-of-unearthed-secrets",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador (Lower City Exalted)",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -3345,6 +3557,16 @@
           "item_id": 23554,
           "item_name": "Eternium Runed Blade",
           "item_url": "https://www.wowhead.com/tbc/item=23554/eternium-runed-blade",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"

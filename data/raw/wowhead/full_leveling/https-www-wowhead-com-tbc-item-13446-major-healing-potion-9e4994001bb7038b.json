@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T09:00:58+00:00",
   "item_id": 13446,
   "name": "Major Healing Potion",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -2115,6 +2116,16 @@
       "entity_id": 17556,
       "entity_name": "Major Healing Potion",
       "profession": "Alchemy",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=13446/major-healing-potion",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=13446/major-healing-potion",
       "spell_id": 17556,
       "type": "crafted"
@@ -2319,7 +2330,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

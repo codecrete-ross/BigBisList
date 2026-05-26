@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:48:17+00:00",
   "item_id": 24579,
   "name": "Mark of Honor Hold",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -32,14 +33,85 @@
       "side": "Alliance",
       "source_url": "https://www.wowhead.com/tbc/item=24579",
       "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32155,
+      "entity_name": "Hellfire Tower Token, Alliance (1)",
+      "source_url": "https://www.wowhead.com/tbc/item=24579",
+      "spell_id": 32155,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32159,
+      "entity_name": "Hellfire Tower Token, Alliance (2)",
+      "source_url": "https://www.wowhead.com/tbc/item=24579",
+      "spell_id": 32159,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32160,
+      "entity_name": "Hellfire Tower Token, Alliance (3)",
+      "source_url": "https://www.wowhead.com/tbc/item=24579",
+      "spell_id": 32160,
+      "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          24579,
+          1,
+          1
+        ],
+        "id": 32155,
+        "level": 1,
+        "name": "Hellfire Tower Token, Alliance (1)",
+        "popularity": 3,
+        "quality": 1,
+        "schools": 1
+      },
+      {
+        "cat": 0,
+        "creates": [
+          24579,
+          2,
+          2
+        ],
+        "id": 32159,
+        "level": 1,
+        "name": "Hellfire Tower Token, Alliance (2)",
+        "popularity": 4,
+        "quality": 1,
+        "schools": 1
+      },
+      {
+        "cat": 0,
+        "creates": [
+          24579,
+          3,
+          3
+        ],
+        "id": 32160,
+        "level": 1,
+        "name": "Hellfire Tower Token, Alliance (3)",
+        "popularity": 3,
+        "quality": 1,
+        "schools": 1
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [
       {
         "category": 3483,
@@ -126,7 +198,10 @@
         "xp": 1060
       }
     ],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24579"
 }

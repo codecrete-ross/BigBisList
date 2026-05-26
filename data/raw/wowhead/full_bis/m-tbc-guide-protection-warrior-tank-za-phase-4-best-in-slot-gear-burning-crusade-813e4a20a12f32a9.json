@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:56+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -1440,6 +1441,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Threat Alternative",
           "source_links": [
             {
@@ -1470,6 +1483,18 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Champion's Covenant - Requires Exalted with The Scale of the Sands",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Threat + AP",
           "source_links": [
             {
@@ -1570,6 +1595,18 @@
           "item_id": 29296,
           "item_name": "Band of Eternity",
           "item_url": "https://www.wowhead.com/tbc/item=29296/band-of-eternity",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Defender's Oath Requires Revered with The Scale of the Sands",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [
             {
@@ -1630,6 +1667,18 @@
           "item_id": 29279,
           "item_name": "Violet Signet of the Great Protector",
           "item_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Archmage Leryda - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Mitigation Alternative",
           "source_links": [
             {
@@ -1847,6 +1896,15 @@
           "item_id": 23836,
           "item_name": "Goblin Rocket Launcher",
           "item_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Goblin Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "45 Stamina",
           "source_links": [],
           "source_text": "Profession: Goblin Engineering"
@@ -1872,6 +1930,15 @@
           "item_id": 23835,
           "item_name": "Gnomish Poultryizer",
           "item_url": "https://www.wowhead.com/tbc/item=23835/gnomish-poultryizer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Gnomish Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "45 Stamina",
           "source_links": [],
           "source_text": "Profession: Gnomish Engineering"
@@ -1897,6 +1964,15 @@
           "item_id": 29181,
           "item_name": "Timelapse Shard",
           "item_url": "https://www.wowhead.com/tbc/item=29181/timelapse-shard",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Exalted with Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "27 Stam - 24 resilience",
           "source_links": [
             {
@@ -2562,6 +2638,16 @@
           "item_id": 32756,
           "item_name": "Gyro-Balanced Khorium Destroyer",
           "item_url": "https://www.wowhead.com/tbc/item=32756/gyro-balanced-khorium-destroyer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-za-phase-4-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [],
           "source_text": "Profession: Engineering"

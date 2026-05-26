@@ -5,6 +5,18 @@
   "fetched_at": "2026-05-24T05:03:43+00:00",
   "item_id": 29133,
   "name": "Seer's Cane",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Scryers"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Seer's Cane Phase 1 Item Level 115 Binds when picked up Unique Two-Hand Staff 92 - 171 Damage Speed 2.10 (62.62 damage per second) +28 Stamina +46 Intellect Durability 100 / 100 Requires Level 70 Requires The Scryers - Revered Equip: Increases healing done by up to 228 and damage done by up to 76 for all magical spells and effects. Equip: Restores 10 mana per 5 sec. Sell Price: 11 38 63 This blue staff has an item level of 115. It is sold by Quartermaster Enuril. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29133/seers-cane",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,11 +29,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -47,7 +63,10 @@
         "tag": "Scryers: Quartermaster",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29133/seers-cane"
 }

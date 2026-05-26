@@ -5,6 +5,19 @@
   "fetched_at": "2026-05-24T05:38:55+00:00",
   "item_id": 34680,
   "name": "Shattered Sun Pendant of Resolve",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Aldor",
+        "The Scryers"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Shattered Sun Pendant of Resolve Phase 5 Item Level 115 Binds when picked up Neck +48 Stamina Requires Level 70 Requires Shattered Sun Offensive - Exalted Equip: Improves hit rating by 13. Equip: Increases your expertise rating by 18. Equip: Your melee and ranged attacks have a chance to call on the power of the Arcane if you're exalted with the Scryers, or the Light if you're exalted with the Aldor. (Proc chance: 15%, 45s cooldown) Sell Price: 5 81 88 Aldor: +100 dodge rating for 10 sec. This epic amulet of item level 115 goes in the \"Neck\" slot. It is sold by Eldara Dawnrunner. In the Amulets category.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=34680/shattered-sun-pendant-of-resolve",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,11 +29,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -44,7 +61,10 @@
         "tag": "Shattered Sun Quartermaster",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34680/shattered-sun-pendant-of-resolve"
 }

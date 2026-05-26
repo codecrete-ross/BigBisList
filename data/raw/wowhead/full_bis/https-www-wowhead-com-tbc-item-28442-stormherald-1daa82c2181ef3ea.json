@@ -5,15 +5,91 @@
   "fetched_at": "2026-05-24T05:09:39+00:00",
   "item_id": 28442,
   "name": "Stormherald",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Stormherald Phase 1 Item Level 136 Binds when picked up Unique Two-Hand Mace 386 - 579 Damage Speed 3.80 (126.97 damage per second) +42 Strength +42 Agility +61 Stamina Durability 120 / 120 Requires Level 70 Requires Master Hammersmith Chance on hit: Stuns target for 4 sec. Sell Price: 16 43 24 This epic two-handed mace has an item level of 136. It is crafted. In the Two-Handed Maces category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28442/stormherald",
+      "specialization": "Master Hammersmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36263,
+      "entity_name": "Stormherald",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28442/stormherald",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28442/stormherald",
+      "spell_id": 36263,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28442,
+          1,
+          1
+        ],
+        "id": 36263,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Stormherald",
+        "nskillup": 1,
+        "popularity": 14,
+        "quality": 4,
+        "reagents": [
+          [
+            28441,
+            1
+          ],
+          [
+            30183,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17040,
+        "trainingcost": 500000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28442/stormherald"
 }

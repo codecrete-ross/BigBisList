@@ -1,6 +1,8 @@
 {
+  "description": "In the Secondary Skill Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "name": "Grilled Mudfish",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,44 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 9,
+        "colors": [
+          320,
+          340,
+          350,
+          360
+        ],
+        "creates": [
+          27664,
+          1,
+          1
+        ],
+        "id": 33293,
+        "learnedat": 320,
+        "level": 0,
+        "name": "Grilled Mudfish",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            27435,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

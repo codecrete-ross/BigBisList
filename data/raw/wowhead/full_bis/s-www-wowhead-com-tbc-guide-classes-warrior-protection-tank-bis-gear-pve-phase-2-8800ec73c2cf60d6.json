@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:45+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -68,6 +69,16 @@
           "item_id": 32473,
           "item_name": "Tankatronic Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=32473/tankatronic-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [],
           "source_text": "Profession: Engineering (BoP)"
@@ -890,6 +901,16 @@
           "item_id": 30032,
           "item_name": "Red Belt of Battle",
           "item_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Hit Alternative",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (BoE)"
@@ -1297,6 +1318,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Threat",
           "source_links": [
             {
@@ -1327,6 +1360,18 @@
           "item_id": 29283,
           "item_name": "Violet Signet of the Master Assassin",
           "item_url": "https://www.wowhead.com/tbc/item=29283/violet-signet-of-the-master-assassin",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Archmage Leryda - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Hit Alternative",
           "source_links": [
             {
@@ -1387,6 +1432,18 @@
           "item_id": 29279,
           "item_name": "Violet Signet of the Great Protector",
           "item_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Archmage Leryda - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Mitigation Alternative",
           "source_links": [
             {
@@ -1537,6 +1594,16 @@
           "item_id": 23836,
           "item_name": "Goblin Rocket Launcher",
           "item_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [],
           "source_text": "Profession: Engineering"
@@ -1744,6 +1811,15 @@
           "item_id": 29181,
           "item_name": "Timelapse Shard",
           "item_url": "https://www.wowhead.com/tbc/item=29181/timelapse-shard",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Exalted with Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "27 Stamina - 24 resilience",
           "source_links": [
             {
@@ -1811,6 +1887,17 @@
           "item_id": 28439,
           "item_name": "Dragonstrike",
           "item_url": "https://www.wowhead.com/tbc/item=28439/dragonstrike",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best Overall",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"
@@ -1866,6 +1953,17 @@
           "item_id": 28438,
           "item_name": "Dragonmaw",
           "item_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"
@@ -2055,6 +2153,16 @@
           "item_id": 32756,
           "item_name": "Gyro-Balanced Khorium Destroyer",
           "item_url": "https://www.wowhead.com/tbc/item=32756/gyro-balanced-khorium-destroyer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [],
           "source_text": "Profession: Engineering (BoE)"
@@ -2105,6 +2213,15 @@
           "item_id": 34622,
           "item_name": "Spinesever",
           "item_url": "https://www.wowhead.com/tbc/item=34622/spinesever",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Drop: World Drop BoE",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-phase-2",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Hit Alternative",
           "source_links": [],
           "source_text": "Drop: World Drop BoE"

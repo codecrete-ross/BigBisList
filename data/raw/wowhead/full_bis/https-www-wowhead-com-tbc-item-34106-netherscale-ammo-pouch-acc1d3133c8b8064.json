@@ -5,15 +5,184 @@
   "fetched_at": "2026-05-24T04:51:00+00:00",
   "item_id": 34106,
   "name": "Netherscale Ammo Pouch",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 44768,
+      "entity_name": "Netherscale Ammo Pouch",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=34106/netherscale-ammo-pouch",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=34106/netherscale-ammo-pouch",
+      "spell_id": 44768,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          370,
+          380
+        ],
+        "creates": [
+          34106,
+          1,
+          1
+        ],
+        "id": 44768,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Netherscale Ammo Pouch",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 3,
+        "reagents": [
+          [
+            23793,
+            12
+          ],
+          [
+            29548,
+            12
+          ],
+          [
+            22452,
+            4
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 34201,
+        "level": 70,
+        "name": "Pattern: Netherscale Ammo Pouch",
+        "popularity": 5,
+        "quality": 1,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Quartermaster Urgronn",
+            "t": 1,
+            "ti": 17585,
+            "z": 3483
+          }
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 34218,
+        "level": 70,
+        "name": "Pattern: Netherscale Ammo Pouch",
+        "popularity": 10,
+        "quality": 1,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Logistics Officer Ulrike",
+            "t": 1,
+            "ti": 17657,
+            "z": 3483
+          }
+        ],
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 34201,
+      "level": 70,
+      "name": "Pattern: Netherscale Ammo Pouch",
+      "popularity": 5,
+      "quality": 1,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Quartermaster Urgronn",
+          "t": 1,
+          "ti": 17585,
+          "z": 3483
+        }
+      ],
+      "subclass": 1
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 34218,
+      "level": 70,
+      "name": "Pattern: Netherscale Ammo Pouch",
+      "popularity": 10,
+      "quality": 1,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Logistics Officer Ulrike",
+          "t": 1,
+          "ti": 17657,
+          "z": 3483
+        }
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34106/netherscale-ammo-pouch"
 }

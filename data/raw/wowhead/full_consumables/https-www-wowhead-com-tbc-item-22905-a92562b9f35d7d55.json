@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:19+00:00",
   "item_id": 22905,
   "name": "Recipe: Elixir of Major Agility",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Elixir of Major Agility Item Level 66 Binds when picked up Requires Alchemy (330) Requires Honor Hold - Honored Use: Teaches you how to make an Elixir of Major Agility. Sell Price: 1 25 Elixir of Major Agility Item Level 66 Requires Level 55 Use: Increases your Agility by 35 and your critical strike rating by 20 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 40 Requires Terocone , Felweed (2), Imbued Vial This alchemy recipe is used for the Alchemy profession. It is sold by Logistics Officer Ulrike. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 330,
+      "source_url": "https://www.wowhead.com/tbc/item=22905",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

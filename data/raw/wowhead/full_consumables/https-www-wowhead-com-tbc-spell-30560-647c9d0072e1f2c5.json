@@ -1,11 +1,86 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:19+00:00",
   "name": "Super Sapper Charge",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Engineering",
+      "scope": "learn_recipe",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/spell=30560",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Engineering Trainer",
+      "profession": "Engineering",
+      "required_skill": 340,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "learn_recipe",
+          "skill": 340,
+          "source_url": "https://www.wowhead.com/tbc/spell=30560",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=30560",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          340,
+          350,
+          360
+        ],
+        "creates": [
+          23827,
+          2,
+          2
+        ],
+        "id": 30560,
+        "learnedat": 340,
+        "level": 0,
+        "name": "Super Sapper Charge",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            21877,
+            4
+          ],
+          [
+            23781,
+            4
+          ],
+          [
+            22457,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20222,
+        "trainingcost": 35000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

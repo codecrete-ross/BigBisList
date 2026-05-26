@@ -1,11 +1,14 @@
 {
+  "description": "Causes 75 Fire damage when hit, increases your chance to critically hit with spells by 3%, and reduces the chance you are critically hit by 5%. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min.",
   "fetched_at": "2026-05-24T09:05:28+00:00",
   "name": "Molten Armor",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

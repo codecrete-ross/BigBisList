@@ -1,11 +1,14 @@
 {
+  "description": "Warrior goes on a rampage, increasing attack power by 30 and causing most successful melee attacks to increase attack power by an additional 30. This effect will stack up to 5 times. Lasts 30 sec. This ability can only be used after scoring a critical hit.",
   "fetched_at": "2026-05-24T09:20:43+00:00",
   "name": "Rampage",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

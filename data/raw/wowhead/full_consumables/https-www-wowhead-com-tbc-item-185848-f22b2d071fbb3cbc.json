@@ -5,19 +5,40 @@
   "fetched_at": "2026-05-24T08:51:00+00:00",
   "item_id": 185848,
   "name": "Greater Drums of Battle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Greater Drums of Battle Item Level 73 Requires Leatherworking (350) Use: Increases melee, ranged and spell haste rating on party members within 40 yards by 80. Lasts 30 sec. Drums can be used while shapeshifted. (2 Min Cooldown) 50 Charges Sell Price: 50 It is crafted. In the Other Consumables category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=185848",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 351771,
       "entity_name": "Greater Drums of Battle",
       "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=185848",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=185848",
       "spell_id": 351771,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

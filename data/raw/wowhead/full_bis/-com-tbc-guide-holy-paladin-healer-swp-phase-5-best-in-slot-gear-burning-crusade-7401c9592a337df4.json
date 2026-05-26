@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:53+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -112,6 +113,16 @@
           "item_id": 35185,
           "item_name": "Justicebringer 3000 Specs",
           "item_url": "https://www.wowhead.com/tbc/item=35185/justicebringer-3000-specs",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional -- Crafted",
           "source_links": [
             {
@@ -671,6 +682,16 @@
           "item_id": 34379,
           "item_name": "Sunblessed Breastplate",
           "item_url": "https://www.wowhead.com/tbc/item=34379/sunblessed-breastplate",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional -- Crafted",
           "source_links": [
             {
@@ -952,6 +973,16 @@
           "item_id": 32571,
           "item_name": "Dawnsteel Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=32571/dawnsteel-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"
@@ -1021,6 +1052,16 @@
           "item_id": 34380,
           "item_name": "Sunblessed Gauntlets",
           "item_url": "https://www.wowhead.com/tbc/item=34380/sunblessed-gauntlets",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best -- Crafted",
           "source_links": [
             {
@@ -1762,6 +1803,16 @@
           "item_id": 34360,
           "item_name": "Amulet of Flowing Life",
           "item_url": "https://www.wowhead.com/tbc/item=34360/amulet-of-flowing-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best -- Crafted",
           "source_links": [
             {
@@ -1926,6 +1977,16 @@
           "item_id": 34363,
           "item_name": "Ring of Flowing Life",
           "item_url": "https://www.wowhead.com/tbc/item=34363/ring-of-flowing-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best -- Crafted",
           "source_links": [
             {
@@ -2048,6 +2109,18 @@
           "item_id": 29309,
           "item_name": "Band of the Eternal Restorer",
           "item_url": "https://www.wowhead.com/tbc/item=29309/band-of-the-eternal-restorer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Restorer's Covenant (Scale of the Sands Exalted)",
+              "reputation": "Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional -- Reputation",
           "source_links": [
             {
@@ -2295,6 +2368,16 @@
           "item_id": 35750,
           "item_name": "Redeemer's Alchemist Stone",
           "item_url": "https://www.wowhead.com/tbc/item=35750/redeemers-alchemist-stone",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Alchemy",
+              "raw_text": "Profession: Alchemy (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best -- Crafted",
           "source_links": [
             {
@@ -2474,6 +2557,18 @@
           "item_id": 30841,
           "item_name": "Lower City Prayerbook",
           "item_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu (Lower City Revered)",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2830,6 +2925,16 @@
           "item_id": 23556,
           "item_name": "Hand of Eternity",
           "item_url": "https://www.wowhead.com/tbc/item=23556/hand-of-eternity",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"

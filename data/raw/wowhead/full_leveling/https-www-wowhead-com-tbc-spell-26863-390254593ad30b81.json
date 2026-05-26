@@ -1,11 +1,14 @@
 {
+  "description": "Backstab the target, causing 150% weapon damage plus 255 to the target. Must be behind the target. Requires a dagger in the main hand. Awards 1 combo point.",
   "fetched_at": "2026-05-24T09:13:26+00:00",
   "name": "Backstab",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

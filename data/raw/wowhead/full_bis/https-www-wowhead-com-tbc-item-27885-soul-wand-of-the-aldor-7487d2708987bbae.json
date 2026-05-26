@@ -5,6 +5,18 @@
   "fetched_at": "2026-05-24T05:17:53+00:00",
   "item_id": 27885,
   "name": "Soul-Wand of the Aldor",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Aldor"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Soul-Wand of the Aldor Phase 1 Item Level 112 Binds when picked up Ranged Wand 158 - 293 Shadow Damage Speed 1.80 (125.28 damage per second) +9 Stamina +8 Intellect +10 Spirit Durability 65 / 65 Requires Level 68 Equip: Increases healing done by up to 22 and damage done by up to 8 for all magical spells and effects. Sell Price: 6 38 6 This blue wand has an item level of 112. It is looted from Ambassador Hellmaw. In the Wands category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=27885/soul-wand-of-the-aldor",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -18,10 +30,13 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "boss": 1,
@@ -75,8 +90,12 @@
         "type": 3
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=27885/soul-wand-of-the-aldor"
 }

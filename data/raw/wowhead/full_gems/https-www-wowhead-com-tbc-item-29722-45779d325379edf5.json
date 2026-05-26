@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "item_id": 29722,
   "name": "Pattern: Nethercobra Leg Armor",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Nethercobra Leg Armor Item Level 73 Binds when picked up Requires Leatherworking (365) Requires Honor Hold - Exalted Use: Teaches you how to make Nethercobra Leg Armor. Sell Price: 3 Nethercobra Leg Armor Item Level 73 Requires Level 60 Use: Permanently attach nethercobra armor onto pants to increase attack power by 50 and critical strike rating by 12. Max Stack: 20 Sell Price: 4 Requires Heavy Knothide Leather (4), Cobra Scales (4), Primal Air (8), Primal Nether This leatherworking pattern is used for the Leatherworking profession. It is sold by Logistics Officer Ulrike. In the Leatherworking Patterns category.",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=29722",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,12 +27,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {

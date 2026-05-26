@@ -1,11 +1,14 @@
 {
+  "description": "Summons a Mana Spring Totem with 5 health at the feet of the caster for 2 min that restores 20 mana every 2 seconds to group members within 20 yards.",
   "fetched_at": "2026-05-24T09:16:01+00:00",
   "name": "Mana Spring Totem",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

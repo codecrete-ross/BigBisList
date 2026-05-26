@@ -5,15 +5,99 @@
   "fetched_at": "2026-05-24T04:42:19+00:00",
   "item_id": 29523,
   "name": "Windhawk Bracers",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Windhawk Bracers Phase 1 Item Level 115 Binds when picked up Wrist Leather 159 Armor +22 Stamina +17 Intellect +7 Spirit Yellow Socket Socket Bonus: +2 Intellect Durability 40 / 40 Requires Level 70 Requires Tribal Leatherworking Equip: Improves spell critical strike rating by 16. Equip: Increases damage and healing done by magical spells and effects by up to 16. Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects. Windhawk Armor (0/3) Windhawk Bracers Windhawk Belt Windhawk Hauberk (3) Set : Restores 8 mana per 5 sec. Sell Price: 2 93 81 This epic leather armor of item level 115 goes in the \"Wrist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers",
+      "specialization": "Tribal Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35588,
+      "entity_name": "Windhawk Bracers",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers",
+      "spell_id": 35588,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29523,
+          1,
+          1
+        ],
+        "id": 35588,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Windhawk Bracers",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            29547,
+            12
+          ],
+          [
+            22451,
+            8
+          ],
+          [
+            23571,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10660,
+        "trainingcost": 100000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers"
 }

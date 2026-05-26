@@ -1,14 +1,92 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:11:21+00:00",
   "name": "Deep Thunder",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Blacksmithing",
+      "raw_text": "Blacksmithing",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/spell=34548/deep-thunder",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Blacksmithing Trainer",
+      "profession": "Blacksmithing",
+      "required_skill": 375,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "learn_recipe",
+          "skill": 375,
+          "source_url": "https://www.wowhead.com/tbc/spell=34548/deep-thunder",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=34548/deep-thunder",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28441,
+          1,
+          1
+        ],
+        "id": 34548,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Deep Thunder",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            28440,
+            1
+          ],
+          [
+            23572,
+            8
+          ],
+          [
+            22457,
+            10
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17040,
+        "trainingcost": 250000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
-    "taught-by-item": []
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 34548,
   "url": "https://www.wowhead.com/tbc/spell=34548/deep-thunder"

@@ -1,11 +1,86 @@
 {
+  "description": "In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:19+00:00",
   "name": "Goblin Sapper Charge",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Engineering",
+      "scope": "learn_recipe",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/tbc/spell=12760",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Engineering Trainer",
+      "profession": "Engineering",
+      "required_skill": 205,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "learn_recipe",
+          "skill": 205,
+          "source_url": "https://www.wowhead.com/tbc/spell=12760",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=12760",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          205,
+          205,
+          225,
+          245
+        ],
+        "creates": [
+          10646,
+          1,
+          1
+        ],
+        "id": 12760,
+        "learnedat": 205,
+        "level": 0,
+        "name": "Goblin Sapper Charge",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            4338,
+            1
+          ],
+          [
+            10505,
+            3
+          ],
+          [
+            10560,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20222,
+        "trainingcost": 1500
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

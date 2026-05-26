@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:55+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -88,6 +89,16 @@
           "item_id": 24264,
           "item_name": "Whitemend Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24264/whitemend-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Can be Purchased on the Auction House)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Can be Purchased on the Auction House)"
@@ -217,6 +228,25 @@
           "item_id": 21874,
           "item_name": "Primal Mooncloth Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -498,6 +528,25 @@
           "item_id": 21875,
           "item_name": "Primal Mooncloth Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -874,6 +923,25 @@
           "item_id": 21873,
           "item_name": "Primal Mooncloth Belt",
           "item_url": "https://www.wowhead.com/tbc/item=21873&&gems=24029:24029:",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Mooncloth Tailoring) - BoP only"
@@ -1056,6 +1124,16 @@
           "item_id": 24261,
           "item_name": "Whitemend Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24261/whitemend-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Can be Purchased on the Auction House)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Can be Purchased on the Auction House)"
@@ -1991,6 +2069,16 @@
           "item_id": 23556,
           "item_name": "Hand of Eternity",
           "item_url": "https://www.wowhead.com/tbc/item=23556/hand-of-eternity",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (Can be Purchased on the Auction House)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (Can be Purchased on the Auction House)"

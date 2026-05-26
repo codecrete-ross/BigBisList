@@ -1,11 +1,14 @@
 {
+  "description": "The next melee attack on the caster will cause 80 Shadow damage and reduce the damage caused by the attacker by 35 for 2 min. Requires Priest.",
   "fetched_at": "2026-05-24T09:11:43+00:00",
   "name": "Touch of Weakness",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

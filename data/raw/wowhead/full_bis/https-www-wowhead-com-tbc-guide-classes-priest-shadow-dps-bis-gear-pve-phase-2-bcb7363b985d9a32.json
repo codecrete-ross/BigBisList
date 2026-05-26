@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:41+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -28,6 +29,16 @@
           "item_id": 32494,
           "item_name": "Destruction Holo-Gogs",
           "item_url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS - Engineering",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -113,6 +124,16 @@
           "item_id": 24266,
           "item_name": "Spellstrike Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24266/spellstrike-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -175,6 +196,25 @@
           "item_id": 21869,
           "item_name": "Frozen Shadoweave Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21869/frozen-shadoweave-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "specialization": "Shadoweave Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS - Tailoring",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only"
@@ -419,6 +459,25 @@
           "item_id": 21871,
           "item_name": "Frozen Shadoweave Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21871/frozen-shadoweave-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "specialization": "Shadoweave Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option - Tailoring",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only"
@@ -834,6 +893,16 @@
           "item_id": 30038,
           "item_name": "Belt of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=30038/belt-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -986,6 +1055,16 @@
           "item_id": 24262,
           "item_name": "Spellstrike Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1110,6 +1189,25 @@
           "item_id": 21870,
           "item_name": "Frozen Shadoweave Boots",
           "item_url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "specialization": "Shadoweave Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS - Tailoring",
           "source_links": [],
           "source_text": "Profession: Tailoring (Shadoweave Tailoring) - BoP only"
@@ -1227,6 +1325,16 @@
           "item_id": 24121,
           "item_name": "Chain of the Twilight Owl",
           "item_url": "https://www.wowhead.com/tbc/item=24121/chain-of-the-twilight-owl",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS - Group Content",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -1252,6 +1360,16 @@
           "item_id": 24116,
           "item_name": "Eye of the Night",
           "item_url": "https://www.wowhead.com/tbc/item=24116/eye-of-the-night",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS - Group Content",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -1277,6 +1395,16 @@
           "item_id": 20966,
           "item_name": "Jade Pendant of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=20966/jade-pendant-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option - Group Content",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting - can be purchased on the Auction House"
@@ -1583,6 +1711,18 @@
           "item_id": 29287,
           "item_name": "Violet Signet of the Archmage",
           "item_url": "https://www.wowhead.com/tbc/item=29287/violet-signet-of-the-archmage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Path of the Violet Mage (The Violet Eye Exalted)",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

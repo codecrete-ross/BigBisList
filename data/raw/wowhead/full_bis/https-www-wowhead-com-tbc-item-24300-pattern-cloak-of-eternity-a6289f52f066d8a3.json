@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T05:12:02+00:00",
   "item_id": 24300,
   "name": "Pattern: Cloak of Eternity",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Cloak of Eternity Item Level 70 Requires Tailoring (350) Use: Teaches you how to sew a Cloak of Eternity. Sell Price: 2 Cloak of Eternity Item Level 112 Binds when equipped Back 76 Armor +36 Stamina Requires Level 69 Equip: Increases defense rating by 23. Sell Price: 2 52 23 Requires Bolt of Imbued Netherweave (6), Primal Earth (6) This tailoring pattern is used for the Tailoring profession. It is looted from Phantom Guest. In the Tailoring Patterns category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24300/pattern-cloak-of-eternity",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,10 +26,48 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 2,
+        "flags2": 24580,
+        "id": 33926,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 263
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Sealed Scroll Case",
+        "outof": 263,
+        "pctstack": "",
+        "quality": 3,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Forest Frog",
+            "t": 1,
+            "ti": 24396,
+            "z": 3805
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 0,
@@ -1149,8 +1198,14 @@
         "type": 9
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    31440
+  ],
   "url": "https://www.wowhead.com/tbc/item=24300/pattern-cloak-of-eternity"
 }

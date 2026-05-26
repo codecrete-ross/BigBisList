@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "item_id": 35299,
   "name": "Formula: Enchant Boots - Cat's Swiftness",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Boots - Cat's Swiftness Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Use: Teaches you how to permanently enchant boots to increase move speed slightly and Agility by 6. Permanently enchant boots to give a minor movement speed increase and 6 Agility. Requires a level 35 or higher item. Sell Price: 3 This enchanting formula is used for the Enchanting profession. It is looted from Kael'thas Sunstrider. In the Enchanting Formulae category. An item.",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=35299",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -18,9 +29,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -69,6 +82,7 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

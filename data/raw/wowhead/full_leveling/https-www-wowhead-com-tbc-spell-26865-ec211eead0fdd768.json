@@ -1,11 +1,14 @@
 {
+  "description": "Finishing move that causes damage per combo point: 1 point : (60 + 185 + attackPower * 0.03)-(180 + 185 + attackPower * 0.03) damage 2 points: [60 + (370) + attackPower * 0.06]-[180 + (370) + attackPower * 0.06] damage 3 points: [60 + (555) + attackPower * 0.09]-[180 + (555) + attackPower * 0.09] damage 4 points: [60 + (740) + attackPower * 0.12]-[180 + (740) + attackPower * 0.12] damage 5 points: [60 + (925) + attackPower * 0.15]-[180 + (925) + attackPower * 0.15] damage",
   "fetched_at": "2026-05-24T09:13:28+00:00",
   "name": "Eviscerate",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

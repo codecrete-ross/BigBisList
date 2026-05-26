@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:11:08+00:00",
   "name": "Khorium Champion",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,56 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          23541,
+          1,
+          1
+        ],
+        "id": 29693,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Khorium Champion",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            23449,
+            20
+          ],
+          [
+            23573,
+            2
+          ],
+          [
+            23571,
+            6
+          ],
+          [
+            23572,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [
@@ -32,7 +81,10 @@
         ],
         "subclass": 4
       }
-    ]
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 29693,
   "url": "https://www.wowhead.com/tbc/spell=29693/khorium-champion"

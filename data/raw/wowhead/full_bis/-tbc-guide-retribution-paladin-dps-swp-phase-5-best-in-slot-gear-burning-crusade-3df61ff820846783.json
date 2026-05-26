@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:57+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -88,6 +89,16 @@
           "item_id": 34354,
           "item_name": "Mayhem Projection Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=34354/mayhem-projection-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "P5 Engi Option",
           "source_links": [],
           "source_text": "Profession: Engineering"
@@ -240,6 +251,16 @@
           "item_id": 32461,
           "item_name": "Furious Gizmatic Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=32461/furious-gizmatic-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "P2 BIS",
           "source_links": [],
           "source_text": "Profession: Engineering"
@@ -447,6 +468,16 @@
           "item_id": 32581,
           "item_name": "Swiftstrike Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "P4 BIS - no expertise option",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -629,6 +660,16 @@
           "item_id": 33122,
           "item_name": "Cloak of Darkness",
           "item_url": "https://www.wowhead.com/tbc/item=33122/cloak-of-darkness",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional - crafted",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -691,6 +732,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional-Crafted",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -897,6 +948,16 @@
           "item_id": 34369,
           "item_name": "Carapace of Sun and Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=34369/carapace-of-sun-and-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "P5 - Leatherworking",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoP)"
@@ -1019,6 +1080,15 @@
           "item_id": 28485,
           "item_name": "Bulwark of the Ancient Kings",
           "item_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Armorsmithing Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Crafting - Alternate",
           "source_links": [],
           "source_text": "Profession: Armorsmithing Blacksmithing (BoP)"
@@ -1201,6 +1271,16 @@
           "item_id": 32574,
           "item_name": "Bindings of Lightning Reflexes",
           "item_url": "https://www.wowhead.com/tbc/item=32574/bindings-of-lightning-reflexes",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "P4 BIS",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1226,6 +1306,16 @@
           "item_id": 32568,
           "item_name": "Swiftsteel Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=32568/swiftsteel-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "P4 Optional",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -1348,6 +1438,16 @@
           "item_id": 23537,
           "item_name": "Black Felsteel Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=23537/black-felsteel-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional-Crafted",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -1410,6 +1510,16 @@
           "item_id": 34370,
           "item_name": "Gloves of Immortal Dusk",
           "item_url": "https://www.wowhead.com/tbc/item=34370/gloves-of-immortal-dusk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "P5 BIS - crafted",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -2245,6 +2355,16 @@
           "item_id": 34358,
           "item_name": "Hard Khorium Choker",
           "item_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BIS",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -2270,6 +2390,18 @@
           "item_id": 34679,
           "item_name": "Shattered Sun Pendant of Might",
           "item_url": "https://www.wowhead.com/tbc/item=34679/shattered-sun-pendant-of-might",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner - Requires Exalted with Shattered Sun Offensive",
+              "reputation": "Shattered Sun Offensive",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Rep Option",
           "source_links": [
             {
@@ -2491,6 +2623,18 @@
           "item_id": 29119,
           "item_name": "Haramad's Bargain",
           "item_url": "https://www.wowhead.com/tbc/item=29119/haramads-bargain",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium",
+              "reputation": "The Consortium",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
@@ -2553,6 +2697,16 @@
           "item_id": 34361,
           "item_name": "Hard Khorium Band",
           "item_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BIS",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -2608,6 +2762,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Finally un-equip",
           "source_links": [
             {
@@ -3063,6 +3229,16 @@
           "item_id": 35702,
           "item_name": "Figurine - Shadowsong Panther",
           "item_url": "https://www.wowhead.com/tbc/item=35702/figurine-shadowsong-panther",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "JC BoP Trinket",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -3612,6 +3788,15 @@
           "item_id": 28430,
           "item_name": "Lionheart Executioner",
           "item_url": "https://www.wowhead.com/tbc/item=28430/lionheart-executioner",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Master Swordsmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "P2 Crafted",
           "source_links": [],
           "source_text": "Profession: Master Swordsmith Blacksmithing (BoP)"

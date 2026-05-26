@@ -1,11 +1,14 @@
 {
+  "description": "Cleanses a friendly target, removing 1 poison effect, 1 disease effect, and 1 magic effect. In the NPC Abilities category. Requires Paladin.",
   "fetched_at": "2026-05-24T09:07:17+00:00",
   "name": "Cleanse",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

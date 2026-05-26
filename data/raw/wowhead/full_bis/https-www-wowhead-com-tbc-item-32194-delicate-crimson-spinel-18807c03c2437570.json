@@ -5,15 +5,154 @@
   "fetched_at": "2026-05-24T04:50:12+00:00",
   "item_id": 32194,
   "name": "Delicate Crimson Spinel",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 39706,
+      "entity_name": "Delicate Crimson Spinel",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32194/delicate-crimson-spinel",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32194/delicate-crimson-spinel",
+      "spell_id": 39706,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          375,
+          387,
+          400
+        ],
+        "creates": [
+          32194,
+          1,
+          1
+        ],
+        "id": 39706,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Delicate Crimson Spinel",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            32227,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 32277,
+        "level": 75,
+        "name": "Design: Delicate Crimson Spinel",
+        "popularity": 3,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Indormi",
+            "t": 1,
+            "ti": 23437
+          }
+        ],
+        "subclass": 10
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35246,
+        "level": 75,
+        "name": "Design: Delicate Crimson Spinel",
+        "popularity": 3,
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 10
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 32277,
+      "level": 75,
+      "name": "Design: Delicate Crimson Spinel",
+      "popularity": 3,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Indormi",
+          "t": 1,
+          "ti": 23437
+        }
+      ],
+      "subclass": 10
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35246,
+      "level": 75,
+      "name": "Design: Delicate Crimson Spinel",
+      "popularity": 3,
+      "quality": 1,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32194/delicate-crimson-spinel"
 }

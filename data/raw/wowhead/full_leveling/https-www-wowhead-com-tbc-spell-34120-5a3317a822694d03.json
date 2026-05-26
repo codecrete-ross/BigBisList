@@ -1,11 +1,14 @@
 {
+  "description": "Is a new ability that Hunters can learn starting at level 62 in Burning Crusade Classic. A steady shot that causes base weapon damage plus (rangedAttackPower * 0.2 + 150). Causes an additional 175 against Dazed targets.",
   "fetched_at": "2026-05-24T09:03:52+00:00",
   "name": "Steady Shot",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

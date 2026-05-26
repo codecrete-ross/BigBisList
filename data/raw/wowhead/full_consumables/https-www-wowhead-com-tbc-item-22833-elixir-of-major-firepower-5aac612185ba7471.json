@@ -5,12 +5,23 @@
   "fetched_at": "2026-05-24T08:51:01+00:00",
   "item_id": 22833,
   "name": "Elixir of Major Firepower",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 28556,
       "entity_name": "Elixir of Major Firepower",
       "profession": "Alchemy",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=22833/elixir-of-major-firepower",
       "spell_id": 28556,
       "type": "crafted"
@@ -72,7 +83,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

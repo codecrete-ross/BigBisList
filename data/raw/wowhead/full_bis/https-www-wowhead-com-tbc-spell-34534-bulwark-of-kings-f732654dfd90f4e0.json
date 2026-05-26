@@ -1,14 +1,92 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:11:17+00:00",
   "name": "Bulwark of Kings",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Blacksmithing",
+      "raw_text": "Blacksmithing",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/spell=34534/bulwark-of-kings",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Blacksmithing Trainer",
+      "profession": "Blacksmithing",
+      "required_skill": 375,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "learn_recipe",
+          "skill": 375,
+          "source_url": "https://www.wowhead.com/tbc/spell=34534/bulwark-of-kings",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=34534/bulwark-of-kings",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28484,
+          1,
+          1
+        ],
+        "id": 34534,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Bulwark of Kings",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            28483,
+            1
+          ],
+          [
+            23572,
+            10
+          ],
+          [
+            22457,
+            10
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 9788,
+        "trainingcost": 250000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
-    "taught-by-item": []
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 34534,
   "url": "https://www.wowhead.com/tbc/spell=34534/bulwark-of-kings"

@@ -5,15 +5,152 @@
   "fetched_at": "2026-05-24T04:54:56+00:00",
   "item_id": 13503,
   "name": "Alchemist's Stone",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Alchemist's Stone Item Level 90 Binds when picked up Unique Trinket +15 Strength +15 Agility +15 Stamina +15 Intellect +15 Spirit Requires Alchemy (350) Equip: Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack. Sell Price: 2 50 This epic trinket of item level 90 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in Classic World of Warcraft. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17632,
+      "entity_name": "Alchemist's Stone",
+      "profession": "Alchemy",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+      "spell_id": 17632,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          365,
+          372,
+          380
+        ],
+        "creates": [
+          13503,
+          1,
+          1
+        ],
+        "id": 17632,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Alchemist's Stone",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 4,
+        "reagents": [
+          [
+            9149,
+            1
+          ],
+          [
+            25867,
+            1
+          ],
+          [
+            25868,
+            1
+          ],
+          [
+            22794,
+            2
+          ],
+          [
+            23571,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13517,
+        "level": 70,
+        "name": "Recipe: Alchemist's Stone",
+        "popularity": 7,
+        "quality": 1,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Almaador",
+            "t": 1,
+            "ti": 21432,
+            "z": 3703
+          }
+        ],
+        "subclass": 6
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 13517,
+      "level": 70,
+      "name": "Recipe: Alchemist's Stone",
+      "popularity": 7,
+      "quality": 1,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Almaador",
+          "t": 1,
+          "ti": 21432,
+          "z": 3703
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone"
 }

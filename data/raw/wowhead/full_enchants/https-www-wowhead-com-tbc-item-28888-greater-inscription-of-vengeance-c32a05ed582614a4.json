@@ -5,6 +5,18 @@
   "fetched_at": "2026-05-24T09:39:35+00:00",
   "item_id": 28888,
   "name": "Greater Inscription of Vengeance",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Aldor"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Greater Inscription of Vengeance Item Level 70 Binds when picked up Requires Level 70 Requires The Aldor - Exalted Use: Permanently adds 30 attack power and 10 critical strike rating to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot. It is sold by Inscriber Saalyn. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28888/greater-inscription-of-vengeance",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -24,7 +36,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

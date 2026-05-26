@@ -1,11 +1,52 @@
 {
+  "description": "Coats a weapon with poison that lasts for 1 hour.Each strike has a 30% chance of poisoning the enemy for 180 Nature damage over 12 sec. Stacks up to 5 times on a single target.",
   "fetched_at": "2026-05-24T09:13:41+00:00",
   "name": "Deadly Poison VII",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=27282",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 8,
+        "creates": [
+          22054,
+          1,
+          1
+        ],
+        "id": 27282,
+        "level": 70,
+        "name": "Deadly Poison VII",
+        "nskillup": 1,
+        "quality": 1,
+        "rank": "Rank 7",
+        "reagents": [
+          [
+            2931,
+            1
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "reqclass": 8,
+        "schools": 1,
+        "skill": [],
+        "trainingcost": 140000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T08:51:01+00:00",
   "item_id": 20748,
   "name": "Brilliant Mana Oil",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -20,13 +21,23 @@
       "entity_id": 25130,
       "entity_name": "Brilliant Mana Oil",
       "profession": "Enchanting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=20748/expired-mana-oil",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=20748/expired-mana-oil",
       "spell_id": 25130,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

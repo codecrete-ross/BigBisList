@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:48+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -390,6 +391,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -542,6 +553,17 @@
           "item_id": 29515,
           "item_name": "Ebon Netherscale Breastplate",
           "item_url": "https://www.wowhead.com/tbc/item=29515/ebon-netherscale-breastplate",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Dragonscale Leatherworking BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Dragonscale Leatherworking BoP)"
@@ -629,6 +651,17 @@
           "item_id": 29525,
           "item_name": "Primalstrike Vest",
           "item_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -661,6 +694,17 @@
           "item_id": 29517,
           "item_name": "Ebon Netherscale Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Dragonscale Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Dragonscale Leatherworking (BoP)"
@@ -716,6 +760,17 @@
           "item_id": 29527,
           "item_name": "Primalstrike Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -741,6 +796,16 @@
           "item_id": 25697,
           "item_name": "Felstalker Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -967,6 +1032,16 @@
           "item_id": 29503,
           "item_name": "Cobrascale Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=29503/cobrascale-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -999,6 +1074,17 @@
           "item_id": 29516,
           "item_name": "Ebon Netherscale Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29516/ebon-netherscale-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Dragonscale Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Dragonscale Leatherworking (BoP)"
@@ -1054,6 +1140,17 @@
           "item_id": 29526,
           "item_name": "Primalstrike Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -1314,6 +1411,16 @@
           "item_id": 25686,
           "item_name": "Fel Leather Boots",
           "item_url": "https://www.wowhead.com/tbc/item=25686/fel-leather-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1540,6 +1647,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1667,6 +1786,18 @@
           "item_id": 29283,
           "item_name": "Violet Signet of the Master Assassin",
           "item_url": "https://www.wowhead.com/tbc/item=29283/violet-signet-of-the-master-assassin",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Eminence Among the Violet Eye - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -2164,6 +2295,17 @@
           "item_id": 28432,
           "item_name": "Black Planar Edge",
           "item_url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Axesmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Master Axesmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional MH - 2.7",
           "source_links": [],
           "source_text": "Profession: Master Axesmith Blacksmithing (BoP)"
@@ -2189,6 +2331,17 @@
           "item_id": 28438,
           "item_name": "Dragonmaw",
           "item_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional MH - 2.7",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"
@@ -2244,6 +2397,15 @@
           "item_id": 31139,
           "item_name": "Fist of Reckoning",
           "item_url": "https://www.wowhead.com/tbc/item=31139/fist-of-reckoning",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Drop: BoE World Drop",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Optional OH - 2.7",
           "source_links": [],
           "source_text": "Drop: BoE World Drop"

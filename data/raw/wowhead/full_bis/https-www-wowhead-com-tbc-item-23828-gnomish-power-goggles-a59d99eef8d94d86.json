@@ -5,15 +5,116 @@
   "fetched_at": "2026-05-24T04:43:15+00:00",
   "item_id": 23828,
   "name": "Gnomish Power Goggles",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Power Goggles Phase 1 Item Level 95 Binds when picked up Head Cloth 132 Armor +21 Intellect Durability 60 / 60 Requires Engineering (375) Requires Gnomish Engineer Equip: Increases damage and healing done by magical spells and effects by up to 59. Equip: Increases your spell critical strike rating by 28. Sell Price: 3 5 47 This epic cloth armor of item level 95 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=23828/gnomish-power-goggles",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Power Goggles Phase 1 Item Level 95 Binds when picked up Head Cloth 132 Armor +21 Intellect Durability 60 / 60 Requires Engineering (375) Requires Gnomish Engineer Equip: Increases damage and healing done by magical spells and effects by up to 59. Equip: Increases your spell critical strike rating by 28. Sell Price: 3 5 47 This epic cloth armor of item level 95 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=23828/gnomish-power-goggles",
+      "specialization": "Gnomish Engineer",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30574,
+      "entity_name": "Gnomish Power Goggles",
+      "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23828/gnomish-power-goggles",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23828/gnomish-power-goggles",
+      "spell_id": 30574,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          23828,
+          1,
+          1
+        ],
+        "id": 30574,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Gnomish Power Goggles",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 4,
+        "reagents": [
+          [
+            24271,
+            4
+          ],
+          [
+            21884,
+            8
+          ],
+          [
+            22451,
+            8
+          ],
+          [
+            22452,
+            8
+          ],
+          [
+            21885,
+            8
+          ],
+          [
+            23437,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20219,
+        "trainingcost": 90000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=23828/gnomish-power-goggles"
 }

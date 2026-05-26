@@ -1,6 +1,8 @@
 {
+  "description": "Infuses the target's party with brilliance, increasing their Intellect by 40 for 1 hour. In the Arcane Abilities category. Requires Mage. A spell.",
   "fetched_at": "2026-05-24T09:05:13+00:00",
   "name": "Arcane Brilliance",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,34 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 128,
+        "id": 27127,
+        "level": 70,
+        "name": "Arcane Brilliance",
+        "nskillup": 1,
+        "rank": "Rank 2",
+        "reagents": [
+          [
+            17020,
+            1
+          ]
+        ],
+        "reqclass": 128,
+        "schools": 64,
+        "skill": [
+          237
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

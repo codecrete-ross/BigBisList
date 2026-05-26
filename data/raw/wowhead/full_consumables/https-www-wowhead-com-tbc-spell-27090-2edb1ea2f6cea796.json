@@ -1,6 +1,8 @@
 {
+  "description": "Conjures 10 skin of glacier water, providing the mage and his allies with something to drink.Conjured items disappear if logged out for more than 15 minutes.",
   "fetched_at": "2026-05-24T08:51:50+00:00",
   "name": "Conjure Water",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,10 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

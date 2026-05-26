@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:40+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -539,6 +540,15 @@
           "item_id": 28484,
           "item_name": "Bulwark of Kings",
           "item_url": "https://www.wowhead.com/tbc/item=28484/bulwark-of-kings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Crafted: Blacksmithing (Bind on Pickup) (requires Armorsmithing)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/dps-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best: Armorsmith",
           "source_links": [
             {
@@ -1552,6 +1562,15 @@
           "item_id": 29119,
           "item_name": "Haramad's Bargain",
           "item_url": "https://www.wowhead.com/tbc/item=29119/haramads-bargain",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Exalted with The Consortium",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/dps-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1674,6 +1693,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1704,6 +1735,18 @@
           "item_id": 29177,
           "item_name": "A'dal's Command",
           "item_url": "https://www.wowhead.com/tbc/item=29177/adals-command",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador - Requires Exalted with The Sha'tar",
+              "reputation": "The Sha'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/dps-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -2064,6 +2107,17 @@
           "item_id": 28429,
           "item_name": "Lionheart Champion",
           "item_url": "https://www.wowhead.com/tbc/item=28429/lionheart-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Crafting: Blacksmithing (Bind on Pickup) (requires Master Swordsmithing)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/dps-bis-gear-pve-pre-raid",
+              "specialization": "Master Swordsmithing",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best: Swordsmith",
           "source_links": [
             {
@@ -2094,6 +2148,15 @@
           "entity_name": "Blacksmithing",
           "entity_type": "spell",
           "entity_url": "https://www.wowhead.com/tbc/spell=34548/deep-thunder",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Crafting: Blacksmithing (Bind on Pickup) (requires Master Hammersmithing)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/retribution/dps-bis-gear-pve-pre-raid",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best: Hammersmith",
           "source_links": [
             {

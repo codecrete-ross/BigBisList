@@ -5,15 +5,152 @@
   "fetched_at": "2026-05-24T05:45:00+00:00",
   "item_id": 32577,
   "name": "Living Earth Bindings",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41163,
+      "entity_name": "Living Earth Bindings",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32577/living-earth-bindings",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32577/living-earth-bindings",
+      "spell_id": 41163,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          32577,
+          1,
+          1
+        ],
+        "id": 41163,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Living Earth Bindings",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            22451,
+            4
+          ],
+          [
+            22452,
+            4
+          ],
+          [
+            29547,
+            12
+          ],
+          [
+            32428,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 32750,
+        "level": 70,
+        "name": "Pattern: Living Earth Bindings",
+        "popularity": 8,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35520,
+        "level": 70,
+        "name": "Pattern: Living Earth Bindings",
+        "popularity": 4,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 32750,
+      "level": 70,
+      "name": "Pattern: Living Earth Bindings",
+      "popularity": 8,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 1
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35520,
+      "level": 70,
+      "name": "Pattern: Living Earth Bindings",
+      "popularity": 4,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32577/living-earth-bindings"
 }

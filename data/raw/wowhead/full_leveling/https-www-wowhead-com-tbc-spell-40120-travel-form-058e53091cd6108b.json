@@ -1,6 +1,8 @@
 {
+  "description": "Swift Flight Form, available in Phase 2 of Burning Crusade Classic, grants Druids a 280% speed boost. Shapeshift into swift flight form, increasing movement speed by 280% and allowing you to fly. Cannot use in combat. Can only use this form in Outland.The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
   "fetched_at": "2026-05-24T09:00:48+00:00",
   "name": "Swift Flight Form",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,10 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [
       {
         "category": -263,

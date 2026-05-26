@@ -5,15 +5,144 @@
   "fetched_at": "2026-05-24T05:11:56+00:00",
   "item_id": 24126,
   "name": "Figurine - Living Ruby Serpent",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Living Ruby Serpent Phase 1 Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50 This blue trinket of item level 115 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31081,
+      "entity_name": "Figurine - Living Ruby Serpent",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent",
+      "spell_id": 31081,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          370,
+          380,
+          390,
+          400
+        ],
+        "creates": [
+          24126,
+          1,
+          1
+        ],
+        "id": 31081,
+        "learnedat": 370,
+        "level": 0,
+        "name": "Figurine - Living Ruby Serpent",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            23448,
+            2
+          ],
+          [
+            23436,
+            2
+          ],
+          [
+            21884,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24181,
+        "level": 74,
+        "name": "Design: Living Ruby Serpent",
+        "popularity": 5,
+        "quality": 3,
+        "skill": 370,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Alurmi",
+            "t": 1,
+            "ti": 21643,
+            "z": 440
+          }
+        ],
+        "subclass": 10
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24181,
+      "level": 74,
+      "name": "Design: Living Ruby Serpent",
+      "popularity": 5,
+      "quality": 3,
+      "skill": 370,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Alurmi",
+          "t": 1,
+          "ti": 21643,
+          "z": 440
+        }
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent"
 }

@@ -5,15 +5,148 @@
   "fetched_at": "2026-05-24T05:10:16+00:00",
   "item_id": 23520,
   "name": "Ragesteel Gloves",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Ragesteel Gloves Phase 1 Item Level 115 Binds when equipped Hands Plate 728 Armor +35 Strength Durability 45 / 45 Requires Level 70 Equip: Improves critical strike rating by 27. Burning Rage (0/4) Requires Blacksmithing (350) Ragesteel Breastplate Ragesteel Helm Ragesteel Gloves Ragesteel Shoulders (2) Set : Increases your hit rating by 20. Sell Price: 3 8 96 This blue plate armor of item level 115 goes in the \"Hands\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23520/ragesteel-gloves",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 29642,
+      "entity_name": "Ragesteel Gloves",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23520/ragesteel-gloves",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23520/ragesteel-gloves",
+      "spell_id": 29642,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          23520,
+          1,
+          1
+        ],
+        "id": 29642,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Ragesteel Gloves",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 3,
+        "reagents": [
+          [
+            23445,
+            8
+          ],
+          [
+            21884,
+            6
+          ],
+          [
+            23449,
+            3
+          ],
+          [
+            22824,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23611,
+        "level": 73,
+        "name": "Plans: Ragesteel Gloves",
+        "popularity": 5,
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Boulderfist Warrior",
+            "t": 1,
+            "ti": 17136,
+            "z": 3518
+          }
+        ],
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23611,
+      "level": 73,
+      "name": "Plans: Ragesteel Gloves",
+      "popularity": 5,
+      "quality": 3,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Boulderfist Warrior",
+          "t": 1,
+          "ti": 17136,
+          "z": 3518
+        }
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=23520/ragesteel-gloves"
 }

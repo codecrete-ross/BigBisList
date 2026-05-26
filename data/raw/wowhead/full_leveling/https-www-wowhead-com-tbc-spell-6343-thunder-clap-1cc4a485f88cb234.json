@@ -1,6 +1,8 @@
 {
+  "description": "Blasts nearby enemies increasing the time between their attacks by 10% for 10 sec and doing 10 damage to them. This ability causes additonal threat and will affect up to 4 targets.",
   "fetched_at": "2026-05-24T09:20:14+00:00",
   "name": "Thunder Clap",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,10 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

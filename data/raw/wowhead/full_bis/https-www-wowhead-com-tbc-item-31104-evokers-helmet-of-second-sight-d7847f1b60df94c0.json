@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:06:18+00:00",
   "item_id": 31104,
   "name": "Evoker's Helmet of Second Sight",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -28,11 +29,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [
       {
         "category": 3520,
@@ -109,7 +114,10 @@
         "xp": 19000
       }
     ],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31104/evokers-helmet-of-second-sight"
 }

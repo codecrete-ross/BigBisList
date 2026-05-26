@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:49+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -118,6 +119,16 @@
           "item_id": 34356,
           "item_name": "Surestrike Goggles v3.0",
           "item_url": "https://www.wowhead.com/tbc/item=34356/surestrike-goggles-v3-0",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -390,6 +401,16 @@
           "item_id": 32581,
           "item_name": "Swiftstrike Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best in slot",
           "source_links": [
             {
@@ -427,6 +448,16 @@
           "item_id": 32575,
           "item_name": "Shoulders of Lightning Reflexes",
           "item_url": "https://www.wowhead.com/tbc/item=32575/shoulders-of-lightning-reflexes",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best in slot",
           "source_links": [
             {
@@ -711,6 +742,26 @@
           "item_id": 33122,
           "item_name": "Cloak of Darkness",
           "item_url": "https://www.wowhead.com/tbc/item=33122/cloak-of-darkness",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Leatherworking - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - Requires Exalted with The Violet Eye",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -771,6 +822,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -873,6 +934,16 @@
           "item_id": 34369,
           "item_name": "Carapace of Sun and Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=34369/carapace-of-sun-and-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best in slot",
           "source_links": [
             {
@@ -903,6 +974,16 @@
           "item_id": 34373,
           "item_name": "Embrace of the Phoenix",
           "item_url": "https://www.wowhead.com/tbc/item=34373/embrace-of-the-phoenix",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -1180,6 +1261,17 @@
           "item_id": 29525,
           "item_name": "Primalstrike Vest",
           "item_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -1205,6 +1297,17 @@
           "item_id": 29515,
           "item_name": "Ebon Netherscale Breastplate",
           "item_url": "https://www.wowhead.com/tbc/item=29515/ebon-netherscale-breastplate",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Dragonscale Leatherworking BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Dragonscale Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Dragonscale Leatherworking BoP)"
@@ -1297,6 +1400,16 @@
           "item_id": 32574,
           "item_name": "Bindings of Lightning Reflexes",
           "item_url": "https://www.wowhead.com/tbc/item=32574/bindings-of-lightning-reflexes",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -1551,6 +1664,16 @@
           "item_id": 34370,
           "item_name": "Gloves of Immortal Dusk",
           "item_url": "https://www.wowhead.com/tbc/item=34370/gloves-of-immortal-dusk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best in slot",
           "source_links": [
             {
@@ -1611,6 +1734,16 @@
           "item_id": 34374,
           "item_name": "Fletcher's Gloves of the Phoenix",
           "item_url": "https://www.wowhead.com/tbc/item=34374/fletchers-gloves-of-the-phoenix",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -1714,6 +1847,16 @@
           "item_id": 29947,
           "item_name": "Gloves of the Searing Grip",
           "item_url": "https://www.wowhead.com/tbc/item=29947/gloves-of-the-searing-grip",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tempest Keep) Pattern: Gloves of Immortal Dusk",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -2058,6 +2201,17 @@
           "item_id": 29526,
           "item_name": "Primalstrike Belt",
           "item_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking (BoP)"
@@ -2596,6 +2750,16 @@
           "item_id": 30039,
           "item_name": "Boots of Utter Darkness",
           "item_url": "https://www.wowhead.com/tbc/item=30039/boots-of-utter-darkness",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (Tier 5 Raid Drop)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tier 5 Raid Drop)"
@@ -2688,6 +2852,16 @@
           "item_id": 34358,
           "item_name": "Hard Khorium Choker",
           "item_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best in slot (Jewelcrafting)",
           "source_links": [
             {
@@ -2778,6 +2952,18 @@
           "item_id": 34679,
           "item_name": "Shattered Sun Pendant of Might",
           "item_url": "https://www.wowhead.com/tbc/item=34679/shattered-sun-pendant-of-might",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner - Requires Exalted with Shattered Sun Offensive",
+              "reputation": "Shattered Sun Offensive",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -3044,6 +3230,16 @@
           "item_id": 34361,
           "item_name": "Hard Khorium Band",
           "item_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -3415,6 +3611,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {
@@ -3609,6 +3817,16 @@
           "item_id": 35702,
           "item_name": "Figurine - Shadowsong Panther",
           "item_url": "https://www.wowhead.com/tbc/item=35702/figurine-shadowsong-panther",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional (Jewelcrafting)",
           "source_links": [
             {
@@ -4003,6 +4221,17 @@
           "item_id": 28433,
           "item_name": "Wicked Edge of the Planes",
           "item_url": "https://www.wowhead.com/tbc/item=28433/wicked-edge-of-the-planes",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Axesmith Blacksmith (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Master Axesmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional (2.7 MH)",
           "source_links": [],
           "source_text": "Profession: Master Axesmith Blacksmith (BoP)"
@@ -4148,6 +4377,17 @@
           "item_id": 28439,
           "item_name": "Dragonstrike",
           "item_url": "https://www.wowhead.com/tbc/item=28439/dragonstrike",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Blacksmithing (Master Hammersmith)",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional (2.7 MH)",
           "source_links": [
             {

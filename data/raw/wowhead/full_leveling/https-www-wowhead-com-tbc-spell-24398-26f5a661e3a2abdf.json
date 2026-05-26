@@ -1,11 +1,14 @@
 {
+  "description": "The caster is surrounded by 3 globes of water, granting 43 mana per 5 sec. When a spell, melee or ranged attack hits the caster, 182 mana is restored to the caster. This expends one water globe. Only one globe will activate every few seconds. Lasts 10 min. Only one Elemental Shield can be active on the Shaman at any one time.",
   "fetched_at": "2026-05-24T09:14:57+00:00",
   "name": "Water Shield",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

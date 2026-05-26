@@ -1,11 +1,44 @@
 {
+  "description": "Power infuses the target's party, increasing their Spirit by 50 for 1 hour. In the Discipline Abilities category. Requires Priest. A spell. Always up to date.",
   "fetched_at": "2026-05-24T09:12:00+00:00",
   "name": "Prayer of Spirit",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=32999",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 16,
+        "id": 32999,
+        "level": 70,
+        "name": "Prayer of Spirit",
+        "nskillup": 1,
+        "rank": "Rank 2",
+        "reagents": [
+          [
+            17029,
+            1
+          ]
+        ],
+        "reqclass": 16,
+        "schools": 2,
+        "skill": [
+          613
+        ],
+        "trainingcost": 3400
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

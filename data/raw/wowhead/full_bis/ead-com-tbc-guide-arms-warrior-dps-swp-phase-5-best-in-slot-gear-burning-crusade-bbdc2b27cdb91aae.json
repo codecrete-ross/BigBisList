@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:33+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -88,6 +89,16 @@
           "item_id": 34354,
           "item_name": "Mayhem Projection Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=34354/mayhem-projection-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Optional",
           "source_links": [],
           "source_text": "Profession: Engineering (BoP)"
@@ -210,6 +221,16 @@
           "item_id": 32461,
           "item_name": "Furious Gizmatic Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=32461/furious-gizmatic-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Optional",
           "source_links": [],
           "source_text": "Profession: Engineering (BoP)"
@@ -429,6 +450,16 @@
           "item_id": 32570,
           "item_name": "Swiftsteel Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (BoP)"
@@ -557,6 +588,16 @@
           "item_id": 33122,
           "item_name": "Cloak of Darkness",
           "item_url": "https://www.wowhead.com/tbc/item=33122/cloak-of-darkness",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -643,6 +684,16 @@
           "item_id": 34377,
           "item_name": "Hard Khorium Battleplate",
           "item_url": "https://www.wowhead.com/tbc/item=34377/hard-khorium-battleplate",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (BoP)"
@@ -862,6 +913,16 @@
           "item_id": 32574,
           "item_name": "Bindings of Lightning Reflexes",
           "item_url": "https://www.wowhead.com/tbc/item=32574/bindings-of-lightning-reflexes",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
@@ -1093,6 +1154,16 @@
           "item_id": 34370,
           "item_name": "Gloves of Immortal Dusk",
           "item_url": "https://www.wowhead.com/tbc/item=34370/gloves-of-immortal-dusk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1312,6 +1383,16 @@
           "item_id": 30032,
           "item_name": "Red Belt of Battle",
           "item_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (BoE)"
@@ -1738,6 +1819,16 @@
           "item_id": 34358,
           "item_name": "Hard Khorium Choker",
           "item_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Crafted Best",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -1971,6 +2062,16 @@
           "item_id": 34361,
           "item_name": "Hard Khorium Band",
           "item_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting( BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting( BoE)"
@@ -2183,6 +2284,18 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Champion's Covenant - Requires Exalted with the Scales of the Sand",
+              "reputation": "the Scales of the Sand",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -2819,6 +2932,17 @@
           "item_id": 28439,
           "item_name": "Dragonstrike",
           "item_url": "https://www.wowhead.com/tbc/item=28439/dragonstrike",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional MH",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith (BoP)"

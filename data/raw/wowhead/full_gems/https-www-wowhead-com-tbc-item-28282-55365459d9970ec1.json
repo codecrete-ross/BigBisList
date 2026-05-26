@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:34:17+00:00",
   "item_id": 28282,
   "name": "Formula: Enchant Shield - Major Stamina",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Shield - Major Stamina Phase 1 Item Level 65 Requires Enchanting (325) Use: Teaches you how to permanently enchant a shield to give 18 Stamina. Permanently enchant a shield to give 18 Stamina. Requires a level 35 or higher item. Sell Price: 1 This enchanting formula is used for the Enchanting profession. It is sold by Madame Ruby. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 325,
+      "source_url": "https://www.wowhead.com/tbc/item=28282",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,12 +28,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {

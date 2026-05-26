@@ -1,11 +1,14 @@
 {
+  "description": "Increases your resistance to all magic by 18 and allows 30% of your mana regeneration to continue while casting. Only one type of Armor spell can be active on the Mage at any time. Lasts 30 min.",
   "fetched_at": "2026-05-24T09:05:10+00:00",
   "name": "Mage Armor",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

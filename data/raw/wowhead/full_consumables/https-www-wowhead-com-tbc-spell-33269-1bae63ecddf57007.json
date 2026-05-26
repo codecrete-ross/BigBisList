@@ -1,11 +1,14 @@
 {
+  "description": "Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and increase healing done by 44 and Spirit by 20 for 30 min.",
   "fetched_at": "2026-05-24T08:51:58+00:00",
   "name": "Food",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

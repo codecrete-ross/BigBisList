@@ -1,11 +1,14 @@
 {
+  "description": "Wounds the target causing them to bleed for 15 damage plus an additional [0.00743 * 3 * ((mainhandWeaponMaxBaseDamage + mainhandWeaponMinBaseDamage) / 2 + attackPower / 14 * mainhandWeaponMaxBaseSpeed)] (based on weapon damage) over 9 sec.",
   "fetched_at": "2026-05-24T09:20:29+00:00",
   "name": "Rend",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

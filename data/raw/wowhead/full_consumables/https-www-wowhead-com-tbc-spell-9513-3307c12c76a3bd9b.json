@@ -1,6 +1,8 @@
 {
+  "description": "In the Secondary Skill Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:53+00:00",
   "name": "Thistle Tea",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -20,9 +22,49 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 9,
+        "colors": [
+          60,
+          100,
+          120,
+          140
+        ],
+        "creates": [
+          7676,
+          1,
+          1
+        ],
+        "id": 9513,
+        "learnedat": 60,
+        "level": 0,
+        "name": "Thistle Tea",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            2452,
+            1
+          ],
+          [
+            159,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          4,
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

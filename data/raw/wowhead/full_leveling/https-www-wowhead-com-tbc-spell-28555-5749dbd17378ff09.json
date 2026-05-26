@@ -1,6 +1,8 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T09:23:15+00:00",
   "name": "Super Mana Potion",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,52 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          355,
+          362,
+          370
+        ],
+        "creates": [
+          22832,
+          1,
+          1
+        ],
+        "id": 28555,
+        "learnedat": 340,
+        "level": 0,
+        "name": "Super Mana Potion",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            22786,
+            2
+          ],
+          [
+            22785,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

@@ -180,6 +180,120 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(source["type"], "trainer")
         self.assertEqual(source["entity_name"], "Enchanting Trainer")
         self.assertEqual(source["required_skill"], 305)
+        requirement = snapshot["normalized_requirements"][0]
+        self.assertEqual(requirement["type"], "profession")
+        self.assertEqual(requirement["scope"], "learn_recipe")
+        self.assertEqual(requirement["profession"], "Enchanting")
+        self.assertEqual(requirement["skill"], 305)
+
+    def test_requirement_parser_extracts_reputation_phrases(self):
+        source_url = "https://www.wowhead.com/tbc/guide/example"
+        requirements = scraper.extract_requirements_from_text(
+            "Vendor: Okuno in Black Temple. Requires Exalted reputation with Ashtongue Deathsworn.",
+            source_url,
+            "vendor_purchase",
+            "parsed_source_text",
+        )
+        self.assertEqual(requirements[0]["type"], "reputation")
+        self.assertEqual(requirements[0]["reputation"], "Ashtongue Deathsworn")
+        self.assertEqual(requirements[0]["standing"], "Exalted")
+
+        requirements = scraper.extract_requirements_from_text(
+            "Vendor: Fedryen Swiftspear when Revered with Cenarion Expedition",
+            source_url,
+            "vendor_purchase",
+            "parsed_source_text",
+        )
+        self.assertEqual(requirements[0]["reputation"], "Cenarion Expedition")
+        self.assertEqual(requirements[0]["standing"], "Revered")
+
+    def test_requirement_parser_extracts_faction_profession_and_specialization(self):
+        source_url = "https://www.wowhead.com/tbc/guide/example"
+        requirements = scraper.extract_requirements_from_text(
+            "Vendor: Eldara Dawnrunner when Exalted with Shattered Sun Offensive and requires The Aldor",
+            source_url,
+            "vendor_purchase",
+            "parsed_source_text",
+        )
+        self.assertIn("faction_choice", {requirement["type"] for requirement in requirements})
+
+        requirements = scraper.extract_requirements_from_text(
+            "Profession: Engineering - BoP only",
+            source_url,
+            "equip_or_use",
+            "parsed_source_text",
+        )
+        self.assertEqual(requirements[0]["type"], "profession")
+        self.assertEqual(requirements[0]["profession"], "Engineering")
+
+        requirements = scraper.extract_requirements_from_text(
+            "Crafted: Lionheart Champion - requires Master Swordsmithing",
+            source_url,
+            "self_craft",
+            "parsed_source_text",
+        )
+        self.assertEqual(requirements[0]["type"], "profession_specialization")
+        self.assertEqual(requirements[0]["specialization"], "Master Swordsmithing")
+
+    def test_item_parser_extracts_equip_profession_requirement(self):
+        html = """
+        <html><head>
+        <title>Goggles - Item - TBC Classic</title>
+        <meta name="description" content="This epic armor goes in the Head slot.">
+        </head><body>
+        <script>
+        g_items[1].tooltip_enus = "<table><tr><td><b class=\\"q4\\">Goggles</b><br>Requires Engineering (350)</td></tr></table>";
+        </script>
+        </body></html>
+        """
+        snapshot = parse_item_html("https://www.wowhead.com/tbc/item=1/goggles", html)
+        requirement = snapshot["normalized_requirements"][0]
+        self.assertEqual(requirement["type"], "profession")
+        self.assertEqual(requirement["scope"], "equip_or_use")
+        self.assertEqual(requirement["skill"], 350)
+
+    def test_guide_fallback_source_does_not_store_requirement_text_as_zone(self):
+        source = scraper.guide_fallback_source(
+            {
+                "source_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+                "source_url": "https://www.wowhead.com/tbc/guide/example",
+            }
+        )
+        self.assertNotIn("zone", source)
+        self.assertEqual(source["requirements"][0]["reputation"], "Lower City")
+
+    def test_bis_import_persists_guide_requirements(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-bis"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best in Slot Head</h3>
+            <table><tr>
+              <td>BiS</td>
+              <td><a href="/tbc/item=29191/glyph-of-power">Glyph of Power</a></td>
+              <td>Vendor: Almaador - Requires Revered with The Sha'tar</td>
+            </tr></table>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-bis",
+            "url": guide_url,
+            "data_family": "bis_lists",
+            "class": "Druid",
+            "spec": "Balance",
+            "phase": "PR",
+        }
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            imported = scraper.import_bis_lists_from_snapshots([guide_snapshot])
+        finally:
+            scraper.manifest_sources_by_url = original
+        requirements = imported["lists"][0]["items"][0]["requirements"]
+        self.assertEqual(requirements[0]["type"], "reputation")
+        self.assertEqual(requirements[0]["source_url"], guide_url)
 
     def test_enchant_import_uses_sourced_spell_alias_by_name(self):
         guide_url = "https://www.wowhead.com/tbc/guide/synthetic-enchants"
@@ -233,6 +347,7 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(row["formula_item_ids"], [22547])
         self.assertEqual(row["taught_by"][0]["item_id"], 22547)
         self.assertEqual(len(row["taught_by"]), 1)
+        self.assertIn("recipe_known", {requirement["type"] for requirement in row["requirements"]})
 
     def test_enchant_import_maps_generic_weapon_and_shield_slots(self):
         guide_url = "https://www.wowhead.com/tbc/guide/synthetic-enchants"

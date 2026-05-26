@@ -5,6 +5,19 @@
   "fetched_at": "2026-05-24T04:31:23+00:00",
   "item_id": 34678,
   "name": "Shattered Sun Pendant of Acumen",
+  "normalized_requirements": [
+    {
+      "choices": [
+        "The Aldor",
+        "The Scryers"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Shattered Sun Pendant of Acumen Phase 5 Item Level 115 Binds when picked up Neck +19 Stamina +18 Intellect Requires Level 70 Requires Shattered Sun Offensive - Exalted Equip: Increases damage and healing done by magical spells and effects by up to 37. Equip: Your spells have a chance to call on the power of the Arcane if you're exalted with the Scryers, or the Light if you're exalted with the Aldor. (Proc chance: 15%, 45s cooldown) Sell Price: 5 81 88 Aldor: +120 spell damage for 10 sec. This epic amulet of item level 115 goes in the \"Neck\" slot. It is sold by Eldara Dawnrunner. In the Amulets category.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=34678/shattered-sun-pendant-of-acumen",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,11 +29,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {
@@ -44,7 +61,10 @@
         "tag": "Shattered Sun Quartermaster",
         "type": 7
       }
-    ]
+    ],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34678/shattered-sun-pendant-of-acumen"
 }

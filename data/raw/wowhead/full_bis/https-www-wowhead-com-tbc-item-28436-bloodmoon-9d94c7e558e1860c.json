@@ -5,15 +5,91 @@
   "fetched_at": "2026-05-24T04:47:32+00:00",
   "item_id": 28436,
   "name": "Bloodmoon",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Bloodmoon Phase 1 Item Level 136 Binds when picked up Unique Two-Hand Axe 375 - 564 Damage Speed 3.70 (126.89 damage per second) Durability 120 / 120 Requires Level 70 Requires Master Axesmith Equip: Improves critical strike rating by 56. Equip: Increases attack power by 112. Sell Price: 17 76 59 This epic two-handed axe has an item level of 136. It is crafted. In the Two-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28436/bloodmoon",
+      "specialization": "Master Axesmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36261,
+      "entity_name": "Bloodmoon",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28436/bloodmoon",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28436/bloodmoon",
+      "spell_id": 36261,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28436,
+          1,
+          1
+        ],
+        "id": 36261,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Bloodmoon",
+        "nskillup": 1,
+        "popularity": 11,
+        "quality": 4,
+        "reagents": [
+          [
+            28435,
+            1
+          ],
+          [
+            30183,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17041,
+        "trainingcost": 500000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28436/bloodmoon"
 }

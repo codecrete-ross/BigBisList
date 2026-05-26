@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T04:32:55+00:00",
   "item_id": 32569,
   "name": "Apexis Shard",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -316,13 +317,121 @@
       "source_url": "https://www.wowhead.com/tbc/item=32569/apexis-shard",
       "type": "quest",
       "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 57,
+      "drop_percent": 91.94,
+      "entity_id": 185911,
+      "entity_name": "Apexis Shard Formation",
+      "out_of": 62,
+      "source_url": "https://www.wowhead.com/tbc/item=32569/apexis-shard",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5930,
+      "drop_percent": 88.28,
+      "entity_id": 32777,
+      "entity_name": "Contained in: Kronk's Grab Bag",
+      "item_id": 32777,
+      "out_of": 6717,
+      "source_url": "https://www.wowhead.com/tbc/item=32569/apexis-shard",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "count": 5930,
+        "flags2": 24580,
+        "id": 32777,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5930,
+                "outof": 6717
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1027,
+                "outof": 1129
+              }
+            },
+            "5": {
+              "0": {
+                "count": 839,
+                "outof": 892
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Kronk's Grab Bag",
+        "outof": 6717,
+        "pctstack": "",
+        "quality": 1,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 3522,
+            "c2": 8,
+            "n": "Banish More Demons",
+            "t": 5,
+            "ti": 11051
+          }
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 57,
+        "id": 185911,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2716,
+                "outof": 2797
+              }
+            },
+            "4": {
+              "0": {
+                "count": 91,
+                "outof": 92
+              }
+            },
+            "5": {
+              "0": {
+                "count": 57,
+                "outof": 62
+              }
+            }
+          }
+        },
+        "location": [
+          3522
+        ],
+        "name": "Apexis Shard Formation",
+        "outof": 62,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 4,
@@ -1576,6 +1685,7 @@
         "type": 10
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [
       {
         "category": 3522,
@@ -1694,7 +1804,10 @@
         "xp": 9500
       }
     ],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32569/apexis-shard"
 }

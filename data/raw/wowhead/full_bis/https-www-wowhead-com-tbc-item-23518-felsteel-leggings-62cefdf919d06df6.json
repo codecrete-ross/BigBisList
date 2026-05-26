@@ -5,15 +5,136 @@
   "fetched_at": "2026-05-24T05:11:44+00:00",
   "item_id": 23518,
   "name": "Felsteel Leggings",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Felsteel Leggings Phase 1 Item Level 114 Binds when equipped Legs Plate 1257 Armor +39 Stamina Yellow Socket Red Socket Blue Socket Socket Bonus: +4 Dodge Rating Durability 100 / 100 Requires Level 70 Equip: Increases defense rating by 33. Faith in Felsteel (0/3) Requires Blacksmithing (350) Felsteel Helm Felsteel Leggings Felsteel Gloves (3) Set : +25 Strength. Sell Price: 6 5 4 This blue plate armor of item level 114 goes in the \"Legs\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23518/felsteel-leggings",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 29620,
+      "entity_name": "Felsteel Leggings",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23518/felsteel-leggings",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23518/felsteel-leggings",
+      "spell_id": 29620,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          23518,
+          1,
+          1
+        ],
+        "id": 29620,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Felsteel Leggings",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            23448,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23606,
+        "level": 72,
+        "name": "Plans: Felsteel Leggings",
+        "popularity": 7,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Unchained Doombringer",
+            "t": 1,
+            "ti": 20900,
+            "z": 3848
+          }
+        ],
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23606,
+      "level": 72,
+      "name": "Plans: Felsteel Leggings",
+      "popularity": 7,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Unchained Doombringer",
+          "t": 1,
+          "ti": 20900,
+          "z": 3848
+        }
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=23518/felsteel-leggings"
 }

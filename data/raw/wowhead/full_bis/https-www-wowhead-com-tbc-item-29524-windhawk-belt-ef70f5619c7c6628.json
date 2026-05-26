@@ -5,15 +5,103 @@
   "fetched_at": "2026-05-24T04:44:53+00:00",
   "item_id": 29524,
   "name": "Windhawk Belt",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Windhawk Belt Phase 1 Item Level 115 Binds when picked up Waist Leather 205 Armor +17 Stamina +19 Intellect +20 Spirit Blue Socket Yellow Socket Socket Bonus: +4 Spell Damage and Healing Durability 40 / 40 Requires Level 70 Requires Tribal Leatherworking Equip: Improves spell critical strike rating by 12. Equip: Increases damage and healing done by magical spells and effects by up to 23. Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects. Windhawk Armor (0/3) Windhawk Bracers Windhawk Belt Windhawk Hauberk (3) Set : Restores 8 mana per 5 sec. Sell Price: 2 94 89 This epic leather armor of item level 115 goes in the \"Waist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29524/windhawk-belt",
+      "specialization": "Tribal Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35587,
+      "entity_name": "Windhawk Belt",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29524/windhawk-belt",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29524/windhawk-belt",
+      "spell_id": 35587,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29524,
+          1,
+          1
+        ],
+        "id": 35587,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Windhawk Belt",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            29547,
+            16
+          ],
+          [
+            22451,
+            12
+          ],
+          [
+            23571,
+            2
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10660,
+        "trainingcost": 100000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29524/windhawk-belt"
 }

@@ -1,11 +1,90 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "name": "Gnomish Flame Turret",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Engineering",
+      "scope": "learn_recipe",
+      "skill": 325,
+      "source_url": "https://www.wowhead.com/tbc/spell=30568",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Engineering Trainer",
+      "profession": "Engineering",
+      "required_skill": 325,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "learn_recipe",
+          "skill": 325,
+          "source_url": "https://www.wowhead.com/tbc/spell=30568",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=30568",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          325,
+          335,
+          345,
+          355
+        ],
+        "creates": [
+          23841,
+          3,
+          3
+        ],
+        "id": 30568,
+        "learnedat": 325,
+        "level": 0,
+        "name": "Gnomish Flame Turret",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            23784,
+            1
+          ],
+          [
+            23783,
+            2
+          ],
+          [
+            23781,
+            3
+          ],
+          [
+            23782,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20219,
+        "trainingcost": 22500
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:43:04+00:00",
   "item_id": 33150,
   "name": "Formula: Enchant Cloak - Subtlety",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Cloak - Subtlety Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Honor Hold - Exalted Use: Teaches you how to permanently enchant a cloak to reduce how threatening the wearer is to monsters by 2%. Permanently enchant a cloak to decrease threat caused by the wearer by 2%. Sell Price: 2 50 Formula: Enchant Cloak - Subtlety can be used by Enchanters to learn Subtlety at 300 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=33150",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:19:02+00:00",
   "item_id": 24678,
   "name": "Archmage Slippers",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -2124,13 +2125,55 @@
       "source_url": "https://www.wowhead.com/tbc/item=24678&&rand=-25",
       "type": "drop",
       "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 0.01,
+      "entity_id": 184716,
+      "entity_name": "Coilskar Chest",
+      "out_of": 13111,
+      "source_url": "https://www.wowhead.com/tbc/item=24678&&rand=-25",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "uncommon",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 184716,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 13111
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 708
+              }
+            }
+          }
+        },
+        "location": [
+          3520
+        ],
+        "name": "Coilskar Chest",
+        "outof": 13111,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 1,
@@ -10732,8 +10775,12 @@
         "type": 3
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24678&&rand=-25"
 }

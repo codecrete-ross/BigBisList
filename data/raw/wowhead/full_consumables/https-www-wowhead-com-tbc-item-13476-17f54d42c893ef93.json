@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:56+00:00",
   "item_id": 13476,
   "name": "Recipe: Mighty Rage Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Mighty Rage Potion Item Level 51 Requires Alchemy (255) Use: Teaches you how to make a Mighty Rage Potion. Sell Price: 30 Dropped by: Blackrock Slayer Drop Chance: 3.78% Mighty Rage Potion Item Level 51 Classes: Warrior Requires Level 46 Use: Increases Rage by 45 to 75 and increases Strength by 60 for 20 sec. (2 Min Cooldown) Max Stack: 5 Sell Price: 5 Requires Gromsblood (3), Crystal Vial This alchemy recipe is used for the Alchemy profession. It is looted from Blackrock Slayer. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 255,
+      "source_url": "https://www.wowhead.com/tbc/item=13476",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -18,7 +29,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

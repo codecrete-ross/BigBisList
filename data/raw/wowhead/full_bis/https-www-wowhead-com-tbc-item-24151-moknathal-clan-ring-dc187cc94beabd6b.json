@@ -5,15 +5,68 @@
   "fetched_at": "2026-05-24T04:56:24+00:00",
   "item_id": 24151,
   "name": "Mok'Nathal Clan Ring",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "count": 50,
+      "drop_percent": 16.56,
+      "entity_id": 185168,
+      "entity_name": "Reinforced Fel Iron Chest",
+      "out_of": 302,
+      "source_url": "https://www.wowhead.com/tbc/item=24151/moknathal-clan-ring",
+      "type": "drop"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 50,
+        "id": 185168,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1399,
+                "outof": 6915
+              }
+            },
+            "4": {
+              "0": {
+                "count": 66,
+                "outof": 357
+              }
+            },
+            "5": {
+              "0": {
+                "count": 50,
+                "outof": 302
+              }
+            }
+          }
+        },
+        "location": [
+          3562
+        ],
+        "name": "Reinforced Fel Iron Chest",
+        "outof": 302,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24151/moknathal-clan-ring"
 }

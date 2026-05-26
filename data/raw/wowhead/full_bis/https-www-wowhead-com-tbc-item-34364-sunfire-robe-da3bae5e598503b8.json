@@ -5,15 +5,162 @@
   "fetched_at": "2026-05-24T04:30:54+00:00",
   "item_id": 34364,
   "name": "Sunfire Robe",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Sunfire Robe Phase 5 Item Level 159 Binds when picked up Chest Cloth 266 Armor +36 Stamina +34 Intellect Red Socket Red Socket Red Socket Socket Bonus: +5 Spell Damage and Healing Durability 100 / 100 Requires Level 70 Requires Tailoring (350) Equip: Improves spell critical strike rating by 40. Equip: Improves spell haste rating by 40. Equip: Increases damage and healing done by magical spells and effects by up to 71. Sell Price: 6 8 49 This epic cloth armor of item level 159 goes in the \"Chest\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34364/sunfire-robe",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46130,
+      "entity_name": "Sunfire Robe",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=34364/sunfire-robe",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=34364/sunfire-robe",
+      "spell_id": 46130,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          392,
+          410
+        ],
+        "creates": [
+          34364,
+          1,
+          1
+        ],
+        "id": 46130,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Sunfire Robe",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 4,
+        "reagents": [
+          [
+            24271,
+            12
+          ],
+          [
+            24272,
+            12
+          ],
+          [
+            23572,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35206,
+        "level": 70,
+        "name": "Pattern: Sunfire Robe",
+        "popularity": 18,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 4075
+          }
+        ],
+        "subclass": 2
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35552,
+        "level": 70,
+        "name": "Pattern: Sunfire Robe",
+        "popularity": 10,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35206,
+      "level": 70,
+      "name": "Pattern: Sunfire Robe",
+      "popularity": 18,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 4075
+        }
+      ],
+      "subclass": 2
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35552,
+      "level": 70,
+      "name": "Pattern: Sunfire Robe",
+      "popularity": 10,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34364/sunfire-robe"
 }

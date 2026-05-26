@@ -1,11 +1,14 @@
 {
+  "description": "Restores 874.8 health over 27 sec. Must remain seated while eating. Also restores 8 Mana every 5 seconds for 10 min. A spell from Classic World of Warcraft.",
   "fetched_at": "2026-05-24T09:25:20+00:00",
   "name": "Food",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -5,15 +5,145 @@
   "fetched_at": "2026-05-24T04:25:03+00:00",
   "item_id": 21870,
   "name": "Frozen Shadoweave Boots",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Frozen Shadoweave Boots Phase 1 Item Level 105 Binds when picked up Feet Cloth 122 Armor +15 Stamina +9 Intellect Yellow Socket Blue Socket Socket Bonus: +3 Spell Hit Rating Durability 50 / 50 Requires Level 70 Requires Shadoweave Tailoring Equip: Increases damage done by Shadow spells and effects by up to 57. Equip: Increases damage done by Frost spells and effects by up to 57. Shadow's Embrace (0/3) Frozen Shadoweave Robe Frozen Shadoweave Shoulders Frozen Shadoweave Boots (3) Set : Your Frost and Shadow damage spells heal you for 2% of the damage they deal. Sell Price: 3 29 21 Frozen Shadoweave Boots is a Cloth feet crafted by Tailors who specialize in Shadoweave tailoring. Crafting the boots requires 8 Shadowcloth, 12 Primal Water and 2 Netherweb Spider Silk.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots",
+      "specialization": "Shadoweave Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26757,
+      "entity_name": "Frozen Shadoweave Boots",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots",
+      "spell_id": 26757,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          380,
+          385
+        ],
+        "creates": [
+          21870,
+          1,
+          1
+        ],
+        "id": 26757,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Frozen Shadoweave Boots",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            24272,
+            8
+          ],
+          [
+            21885,
+            12
+          ],
+          [
+            21881,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ],
+        "specialization": 26801
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21914,
+        "level": 73,
+        "name": "Pattern: Frozen Shadoweave Boots",
+        "popularity": 4,
+        "quality": 1,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Andrion Darkspinner",
+            "t": 1,
+            "ti": 22212,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21914,
+      "level": 73,
+      "name": "Pattern: Frozen Shadoweave Boots",
+      "popularity": 4,
+      "quality": 1,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Andrion Darkspinner",
+          "t": 1,
+          "ti": 22212,
+          "z": 3703
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=21870/frozen-shadoweave-boots"
 }

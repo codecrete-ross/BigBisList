@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:33:52+00:00",
   "item_id": 25909,
   "name": "Design: Mystical Skyfire Diamond",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Mystical Skyfire Diamond Item Level 73 Requires Jewelcrafting (365) Use: Teaches you how to cut a Mystical Skyfire Diamond. Sell Price: 3 Mystical Skyfire Diamond Item Level 70 Chance to Increase Spell Cast Speed \"Only fits in a meta gem slot.\" Sell Price: 3 Requires Skyfire Diamond This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Phantom Guest. In the Jewelcrafting Designs category. An item.",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=25909",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,9 +26,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -1008,6 +1021,7 @@
         "type": 9
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

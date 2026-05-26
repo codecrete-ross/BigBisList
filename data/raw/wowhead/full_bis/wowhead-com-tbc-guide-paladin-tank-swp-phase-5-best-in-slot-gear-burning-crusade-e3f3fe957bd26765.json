@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:55+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -203,6 +204,16 @@
           "item_id": 34357,
           "item_name": "Hard Khorium Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=34357/hard-khorium-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (Sunwell Plateau - BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable Crafted",
           "source_links": [],
           "source_text": "Profession: Engineering (Sunwell Plateau - BoP)"
@@ -1335,6 +1346,29 @@
           "item_id": 34680,
           "item_name": "Shattered Sun Pendant of Resolve",
           "item_url": "https://www.wowhead.com/tbc/item=34680/shattered-sun-pendant-of-resolve",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner when Exalted with Shattered Sun Offensive and requires The Aldor / The Scryers .",
+              "reputation": "Shattered Sun Offensive",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Aldor",
+                "The Scryers"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner when Exalted with Shattered Sun Offensive and requires The Aldor / The Scryers .",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Viable EHP",
           "source_links": [
             {
@@ -1384,6 +1418,28 @@
           "item_id": 34678,
           "item_name": "Shattered Sun Pendant of Acumen",
           "item_url": "https://www.wowhead.com/tbc/item=34678/shattered-sun-pendant-of-acumen",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner when Exalted with Shattered Sun Offensive and requires The Aldor",
+              "reputation": "Shattered Sun Offensive",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "choices": [
+                "The Aldor"
+              ],
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Eldara Dawnrunner when Exalted with Shattered Sun Offensive and requires The Aldor",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "faction_choice"
+            }
+          ],
           "rank_label": "Best AoE-Threat",
           "source_links": [
             {
@@ -1649,6 +1705,18 @@
           "item_id": 29297,
           "item_name": "Band of the Eternal Defender",
           "item_url": "https://www.wowhead.com/tbc/item=29297/band-of-the-eternal-defender",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Defender's Covenant . Requires Exalted with The Scale of the Sands.",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional Mitigation",
           "source_links": [
             {
@@ -1771,6 +1839,15 @@
           "item_id": 29172,
           "item_name": "Ashyen's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear - Exalted with Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Great Threat",
           "source_links": [
             {
@@ -1885,6 +1962,18 @@
           "item_id": 29305,
           "item_name": "Band of the Eternal Sage",
           "item_url": "https://www.wowhead.com/tbc/item=29305/band-of-the-eternal-sage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Sage's Covenant . Requires Exalted with The Scale of the Sands.",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best AoE-Threat",
           "source_links": [
             {
@@ -2096,6 +2185,17 @@
           "item_id": 23836,
           "item_name": "Goblin Rocket Launcher",
           "item_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Goblin Engineer - Goblin Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Goblin Engineer",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -2135,6 +2235,17 @@
           "item_id": 23835,
           "item_name": "Gnomish Poultryizer",
           "item_url": "https://www.wowhead.com/tbc/item=23835/gnomish-poultryizer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Gnomish Engineer - Gnomish Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "specialization": "Gnomish Engineer",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -2168,6 +2279,18 @@
           "item_id": 32864,
           "item_name": "Commander's Badge",
           "item_url": "https://www.wowhead.com/tbc/item=32864/commanders-badge",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Hail, Commander! - Requires Revered with Netherwing",
+              "reputation": "Netherwing",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -2701,6 +2824,18 @@
           "item_id": 32489,
           "item_name": "Ashtongue Talisman of Zeal",
           "item_url": "https://www.wowhead.com/tbc/item=32489/ashtongue-talisman-of-zeal",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Okuno in Black Temple. Requires Exalted reputation with Ashtongue Deathsworn.",
+              "reputation": "Ashtongue Deathsworn",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Good Single Target",
           "source_links": [
             {

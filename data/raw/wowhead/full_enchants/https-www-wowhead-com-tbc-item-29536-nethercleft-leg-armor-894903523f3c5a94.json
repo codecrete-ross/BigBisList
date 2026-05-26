@@ -5,19 +5,30 @@
   "fetched_at": "2026-05-24T09:39:52+00:00",
   "item_id": 29536,
   "name": "Nethercleft Leg Armor",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 35557,
       "entity_name": "Nethercleft Leg Armor",
       "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29536/nethercleft-leg-armor",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=29536/nethercleft-leg-armor",
       "spell_id": 35557,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

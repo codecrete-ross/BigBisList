@@ -1,11 +1,79 @@
 {
+  "description": "Greater Agility is an Enchanting that grants 12 Agility to a Cloak item slot. This formula can be crafted by Enchanters at a skill of 310 and uses 1 Greater Planar Essence, 4 Arcane Dust and 1 Primal Air.",
   "fetched_at": "2026-05-24T08:32:54+00:00",
   "name": "Enchant Cloak - Greater Agility",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Enchanting",
+      "raw_text": "Enchanting",
+      "scope": "learn_recipe",
+      "skill": 310,
+      "source_url": "https://www.wowhead.com/tbc/spell=34004/enchant-cloak-greater-agility",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Enchanting Trainer",
+      "profession": "Enchanting",
+      "required_skill": 310,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "learn_recipe",
+          "skill": 310,
+          "source_url": "https://www.wowhead.com/tbc/spell=34004/enchant-cloak-greater-agility",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=34004/enchant-cloak-greater-agility",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          310,
+          320,
+          335,
+          350
+        ],
+        "id": 34004,
+        "learnedat": 310,
+        "level": 35,
+        "name": "Enchant Cloak - Greater Agility",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22446,
+            1
+          ],
+          [
+            22445,
+            4
+          ],
+          [
+            22451,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "trainingcost": 15000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

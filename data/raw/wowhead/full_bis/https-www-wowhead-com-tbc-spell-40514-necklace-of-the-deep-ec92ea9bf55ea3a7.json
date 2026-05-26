@@ -1,14 +1,91 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:35:29+00:00",
   "name": "Necklace of the Deep",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Jewelcrafting",
+      "raw_text": "Jewelcrafting",
+      "scope": "learn_recipe",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/spell=40514/necklace-of-the-deep",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Jewelcrafting Trainer",
+      "profession": "Jewelcrafting",
+      "required_skill": 340,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "learn_recipe",
+          "skill": 340,
+          "source_url": "https://www.wowhead.com/tbc/spell=40514/necklace-of-the-deep",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=40514/necklace-of-the-deep",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          340,
+          355,
+          370
+        ],
+        "creates": [
+          32508,
+          1,
+          1
+        ],
+        "id": 40514,
+        "learnedat": 340,
+        "level": 0,
+        "name": "Necklace of the Deep",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            22578,
+            3
+          ],
+          [
+            24478,
+            10
+          ],
+          [
+            24479,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "trainingcost": 8500
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
-    "taught-by-item": []
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 40514,
   "url": "https://www.wowhead.com/tbc/spell=40514/necklace-of-the-deep"

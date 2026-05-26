@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:48:19+00:00",
   "item_id": 24581,
   "name": "Mark of Thrallmar",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -32,14 +33,85 @@
       "side": "Horde",
       "source_url": "https://www.wowhead.com/tbc/item=24581",
       "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32158,
+      "entity_name": "Hellfire Tower Token, Horde (1)",
+      "source_url": "https://www.wowhead.com/tbc/item=24581",
+      "spell_id": 32158,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32161,
+      "entity_name": "Hellfire Tower Token, Horde (2)",
+      "source_url": "https://www.wowhead.com/tbc/item=24581",
+      "spell_id": 32161,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32162,
+      "entity_name": "Hellfire Tower Token, Horde (3)",
+      "source_url": "https://www.wowhead.com/tbc/item=24581",
+      "spell_id": 32162,
+      "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          24581,
+          1,
+          1
+        ],
+        "id": 32158,
+        "level": 1,
+        "name": "Hellfire Tower Token, Horde (1)",
+        "popularity": 5,
+        "quality": 1,
+        "schools": 1
+      },
+      {
+        "cat": 0,
+        "creates": [
+          24581,
+          2,
+          2
+        ],
+        "id": 32161,
+        "level": 1,
+        "name": "Hellfire Tower Token, Horde (2)",
+        "popularity": 6,
+        "quality": 1,
+        "schools": 1
+      },
+      {
+        "cat": 0,
+        "creates": [
+          24581,
+          3,
+          3
+        ],
+        "id": 32162,
+        "level": 1,
+        "name": "Hellfire Tower Token, Horde (3)",
+        "popularity": 4,
+        "quality": 1,
+        "schools": 1
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [
       {
         "category": 3483,
@@ -126,7 +198,10 @@
         "xp": 1060
       }
     ],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24581"
 }

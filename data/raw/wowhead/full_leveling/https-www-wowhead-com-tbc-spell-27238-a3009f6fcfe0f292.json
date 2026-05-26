@@ -1,11 +1,50 @@
 {
+  "description": "Creates a Master Soulstone. The Soulstone can be used to store one target's soul. If the target dies while their soul is stored, they will be able to resurrect with 2900 health and 3300 mana.Conjured items disappear if logged out for more than 15 minutes.",
   "fetched_at": "2026-05-24T09:18:20+00:00",
   "name": "Create Soulstone",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=27238",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 256,
+        "creates": [
+          22116,
+          1,
+          1
+        ],
+        "id": 27238,
+        "level": 70,
+        "name": "Create Soulstone",
+        "nskillup": 1,
+        "quality": 1,
+        "rank": "Rank 6",
+        "reagents": [
+          [
+            6265,
+            1
+          ]
+        ],
+        "reqclass": 256,
+        "schools": 32,
+        "skill": [
+          354
+        ],
+        "trainingcost": 78000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

@@ -5,15 +5,146 @@
   "fetched_at": "2026-05-24T04:25:12+00:00",
   "item_id": 24262,
   "name": "Spellstrike Pants",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Spellstrike Pants Phase 1 Item Level 105 Binds when equipped Legs Cloth 156 Armor +12 Stamina +8 Intellect Blue Socket Yellow Socket Red Socket Socket Bonus: +6 Stamina Durability 75 / 75 Requires Level 70 Equip: Improves spell hit rating by 22. Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 46. Spellstrike Infusion (0/2) Requires Tailoring (350) Spellstrike Hood Spellstrike Pants (2) Set : Gives a chance when your harmful spells land to increase the damage of your spells and effects by 92 for 10 sec. (Proc chance: 5%) Sell Price: 4 48 76 Spellstrike Pants is a Cloth pants that can be crafted by Tailors with a skill of 375. The pattern for this item, Pattern: Spellstrike Pants, has a chance to drop for Tailors from Murmur in Shadow Labyrinth.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31452,
+      "entity_name": "Spellstrike Pants",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+      "spell_id": 31452,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          24262,
+          1,
+          1
+        ],
+        "id": 31452,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Spellstrike Pants",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            24271,
+            10
+          ],
+          [
+            23571,
+            5
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24309,
+        "level": 75,
+        "name": "Pattern: Spellstrike Pants",
+        "popularity": 14,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Murmur",
+            "t": 1,
+            "ti": 18708,
+            "z": 3789
+          }
+        ],
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24309,
+      "level": 75,
+      "name": "Pattern: Spellstrike Pants",
+      "popularity": 14,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Murmur",
+          "t": 1,
+          "ti": 18708,
+          "z": 3789
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants"
 }

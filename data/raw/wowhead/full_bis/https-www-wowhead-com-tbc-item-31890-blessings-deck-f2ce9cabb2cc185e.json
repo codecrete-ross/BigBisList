@@ -5,15 +5,81 @@
   "fetched_at": "2026-05-24T05:44:14+00:00",
   "item_id": 31890,
   "name": "Blessings Deck",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 39480,
+      "entity_name": "Blessings Deck",
+      "source_url": "https://www.wowhead.com/tbc/item=31890/blessings-deck",
+      "spell_id": 39480,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": -26,
+        "creates": [
+          31890,
+          0,
+          0
+        ],
+        "id": 39480,
+        "level": 0,
+        "name": "Blessings Deck",
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            31882,
+            1
+          ],
+          [
+            31889,
+            1
+          ],
+          [
+            31888,
+            1
+          ],
+          [
+            31885,
+            1
+          ],
+          [
+            31884,
+            1
+          ],
+          [
+            31887,
+            1
+          ],
+          [
+            31886,
+            1
+          ],
+          [
+            31883,
+            1
+          ]
+        ],
+        "schools": 1
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31890/blessings-deck"
 }

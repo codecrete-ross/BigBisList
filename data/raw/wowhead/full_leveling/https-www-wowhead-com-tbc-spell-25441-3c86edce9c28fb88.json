@@ -1,11 +1,14 @@
 {
+  "description": "The priest becomes surrounded with anti-magic energy. Any successful spell cast against the priest will burn 165 of the attacker's Mana, causing 1 Shadow damage for each point of Mana burned. Lasts 15 sec.",
   "fetched_at": "2026-05-24T09:11:39+00:00",
   "name": "Feedback",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

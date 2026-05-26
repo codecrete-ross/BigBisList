@@ -1,11 +1,14 @@
 {
+  "description": "Increases resistance to shadow by 10. If an enemy strikes the imbiber, the attacker has a 30% chance of being inflicted with disease that increases their damage taken by 8 for 3 min. Lasts for 30 min. Guardian Elixir.",
   "fetched_at": "2026-05-24T08:51:57+00:00",
   "name": "Gift of Arthas",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

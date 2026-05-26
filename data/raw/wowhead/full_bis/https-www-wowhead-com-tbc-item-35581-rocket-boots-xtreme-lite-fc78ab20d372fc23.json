@@ -5,15 +5,150 @@
   "fetched_at": "2026-05-24T05:20:45+00:00",
   "item_id": 35581,
   "name": "Rocket Boots Xtreme Lite",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Rocket Boots Xtreme Lite Phase 1 Item Level 112 Binds when equipped Feet Cloth 105 Armor Durability 40 / 40 Requires Engineering (330) Equip: Increases damage and healing done by magical spells and effects by up to 47. Use: Engage the rocket boots to greatly increase your speed... most of the time. (5 Min Cooldown) Sell Price: 2 61 27 This blue cloth armor of item level 112 goes in the \"Feet\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 330,
+      "source_url": "https://www.wowhead.com/tbc/item=35581/rocket-boots-xtreme-lite",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46697,
+      "entity_name": "Rocket Boots Xtreme Lite",
+      "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=35581/rocket-boots-xtreme-lite",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=35581/rocket-boots-xtreme-lite",
+      "spell_id": 46697,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          355,
+          365,
+          375,
+          385
+        ],
+        "creates": [
+          35581,
+          1,
+          1
+        ],
+        "id": 46697,
+        "learnedat": 355,
+        "level": 0,
+        "name": "Rocket Boots Xtreme Lite",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 3,
+        "reagents": [
+          [
+            21840,
+            8
+          ],
+          [
+            23786,
+            2
+          ],
+          [
+            23785,
+            2
+          ],
+          [
+            23787,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35582,
+        "level": 71,
+        "name": "Schematic: Rocket Boots Xtreme Lite",
+        "popularity": 10,
+        "quality": 3,
+        "skill": 355,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Mechano-Lord Capacitus",
+            "t": 1,
+            "ti": 19219,
+            "z": 3849
+          }
+        ],
+        "subclass": 3
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35582,
+      "level": 71,
+      "name": "Schematic: Rocket Boots Xtreme Lite",
+      "popularity": 10,
+      "quality": 3,
+      "skill": 355,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Mechano-Lord Capacitus",
+          "t": 1,
+          "ti": 19219,
+          "z": 3849
+        }
+      ],
+      "subclass": 3
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=35581/rocket-boots-xtreme-lite"
 }

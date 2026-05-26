@@ -5,15 +5,84 @@
   "fetched_at": "2026-05-24T05:05:16+00:00",
   "item_id": 32508,
   "name": "Necklace of the Deep",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 40514,
+      "entity_name": "Necklace of the Deep",
+      "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32508/necklace-of-the-deep",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32508/necklace-of-the-deep",
+      "spell_id": 40514,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          340,
+          355,
+          370
+        ],
+        "creates": [
+          32508,
+          1,
+          1
+        ],
+        "id": 40514,
+        "learnedat": 340,
+        "level": 0,
+        "name": "Necklace of the Deep",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            22578,
+            3
+          ],
+          [
+            24478,
+            10
+          ],
+          [
+            24479,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "trainingcost": 8500
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32508/necklace-of-the-deep"
 }

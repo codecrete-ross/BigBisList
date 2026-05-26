@@ -1,11 +1,14 @@
 {
+  "description": "Heals the target for 273 over 7 sec. When Lifebloom completes its duration or is dispelled, the target instantly heals themself for 600. This effect can stack up to 3 times on the same target.",
   "fetched_at": "2026-05-24T09:00:40+00:00",
   "name": "Lifebloom",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

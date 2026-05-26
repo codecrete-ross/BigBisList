@@ -1,11 +1,51 @@
 {
+  "description": "Teleports the caster to Shattrath. In the Arcane Abilities category. Requires Mage. Learn how to use this in our class guide. A spell from World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T09:05:32+00:00",
   "name": "Teleport: Shattrath",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=33690/teleport-shattrath",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 128,
+        "id": 33690,
+        "level": 60,
+        "name": "Teleport: Shattrath",
+        "nskillup": 1,
+        "races": [
+          1,
+          3,
+          4,
+          7,
+          11
+        ],
+        "reagents": [
+          [
+            17031,
+            1
+          ]
+        ],
+        "reqclass": 128,
+        "reqrace": 1101,
+        "schools": 64,
+        "skill": [
+          237
+        ],
+        "trainingcost": 20000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

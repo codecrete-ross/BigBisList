@@ -1,6 +1,8 @@
 {
+  "description": "In the Secondary Skill Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:19+00:00",
   "name": "Crunchy Serpent",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,45 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 9,
+        "colors": [
+          335,
+          355,
+          365,
+          375
+        ],
+        "creates": [
+          31673,
+          1,
+          1
+        ],
+        "id": 38868,
+        "learnedat": 335,
+        "level": 0,
+        "name": "Crunchy Serpent",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            31671,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          185
+        ],
+        "source": [
+          4,
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

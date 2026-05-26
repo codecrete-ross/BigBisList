@@ -5,15 +5,145 @@
   "fetched_at": "2026-05-24T04:32:01+00:00",
   "item_id": 21847,
   "name": "Spellfire Gloves",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Spellfire Gloves Phase 1 Item Level 105 Binds when picked up Hands Cloth 111 Armor +10 Intellect Yellow Socket Blue Socket Socket Bonus: +4 Stamina Durability 35 / 35 Requires Level 70 Requires Spellfire Tailoring Equip: Improves spell critical strike rating by 23. Equip: Increases damage done by Fire spells and effects by up to 50. Equip: Increases damage done by Arcane spells and effects by up to 50. Wrath of Spellfire (0/3) Spellfire Robe Spellfire Gloves Spellfire Belt (3) Set : Increases spell damage by up to 7% of your total Intellect. Sell Price: 2 17 12 Spellfire Gloves is a Cloth glove crafted by Tailors who specialize in Spellfire tailoring. Crafting the gloves requires 8 Spellcloth, 12 Primal Fire and 4 Netherweb Spider Silk.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21847/spellfire-gloves",
+      "specialization": "Spellfire Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26753,
+      "entity_name": "Spellfire Gloves",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21847/spellfire-gloves",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21847/spellfire-gloves",
+      "spell_id": 26753,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          380,
+          385
+        ],
+        "creates": [
+          21847,
+          1,
+          1
+        ],
+        "id": 26753,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Spellfire Gloves",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            24271,
+            8
+          ],
+          [
+            21884,
+            12
+          ],
+          [
+            21881,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ],
+        "specialization": 26797
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21909,
+        "level": 73,
+        "name": "Pattern: Spellfire Gloves",
+        "popularity": 11,
+        "quality": 1,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Gidge Spellweaver",
+            "t": 1,
+            "ti": 22213,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21909,
+      "level": 73,
+      "name": "Pattern: Spellfire Gloves",
+      "popularity": 11,
+      "quality": 1,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Gidge Spellweaver",
+          "t": 1,
+          "ti": 22213,
+          "z": 3703
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=21847/spellfire-gloves"
 }

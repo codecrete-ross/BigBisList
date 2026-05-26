@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:39+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -908,6 +909,25 @@
           "item_id": 21848,
           "item_name": "Spellfire Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21848/spellfire-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "specialization": "Spellfire Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only"
@@ -1291,6 +1311,16 @@
           "item_id": 24250,
           "item_name": "Bracers of Havok",
           "item_url": "https://www.wowhead.com/tbc/item=24250/bracers-of-havok",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1413,6 +1443,25 @@
           "item_id": 21847,
           "item_name": "Spellfire Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=21847/spellfire-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "specialization": "Spellfire Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only"
@@ -1662,6 +1711,16 @@
           "item_id": 30038,
           "item_name": "Belt of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=30038/belt-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1687,6 +1746,25 @@
           "item_id": 21846,
           "item_name": "Spellfire Belt",
           "item_url": "https://www.wowhead.com/tbc/item=21846/spellfire-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "specialization": "Spellfire Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Spellfire Tailoring) - BoP only"
@@ -1749,6 +1827,16 @@
           "item_id": 24256,
           "item_name": "Girdle of Ruination",
           "item_url": "https://www.wowhead.com/tbc/item=24256/girdle-of-ruination",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1993,6 +2081,16 @@
           "item_id": 24262,
           "item_name": "Spellstrike Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24262/spellstrike-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -2175,6 +2273,16 @@
           "item_id": 30037,
           "item_name": "Boots of Blasting",
           "item_url": "https://www.wowhead.com/tbc/item=30037/boots-of-blasting",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -2608,6 +2716,18 @@
           "item_id": 29287,
           "item_name": "Violet Signet of the Archmage",
           "item_url": "https://www.wowhead.com/tbc/item=29287/violet-signet-of-the-archmage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Path of the Violet Mage (The Violet Eye Exalted)",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -3214,6 +3334,18 @@
           "item_id": 29155,
           "item_name": "Stormcaller",
           "item_url": "https://www.wowhead.com/tbc/item=29155/stormcaller",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Exalted)",
+              "reputation": "Thrallmar / Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

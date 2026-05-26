@@ -1,11 +1,52 @@
 {
+  "description": "Coats a weapon with poison that lasts for 1 hour.Each strike has a 20% chance of poisoning the enemy which instantly inflicts 146to_lc194 Nature damage.",
   "fetched_at": "2026-05-24T09:13:38+00:00",
   "name": "Instant Poison VII",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=26892",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 8,
+        "creates": [
+          21927,
+          1,
+          1
+        ],
+        "id": 26892,
+        "level": 68,
+        "name": "Instant Poison VII",
+        "nskillup": 1,
+        "quality": 1,
+        "rank": "Rank 7",
+        "reagents": [
+          [
+            2931,
+            1
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "reqclass": 8,
+        "schools": 1,
+        "skill": [],
+        "trainingcost": 110000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

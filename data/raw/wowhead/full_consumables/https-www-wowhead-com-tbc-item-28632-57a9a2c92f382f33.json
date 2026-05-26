@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "item_id": 28632,
   "name": "Plans: Adamantite Weightstone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Adamantite Weightstone Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make an Adamantite Weightstone. Sell Price: 1 50 Adamantite Weightstone Item Level 70 Requires Level 60 Use: Increase blunt weapon damage by 12 and add 14 critical hit rating for 1 hour. Max Stack: 20 Sell Price: 10 Requires Adamantite Bar , Netherweave Cloth (2) This blacksmithing plans is used for the Blacksmithing profession. It is sold by Fedryen Swiftspear. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=28632",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:46:32+00:00",
   "item_id": 24214,
   "name": "Design: Potent Noble Topaz",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Potent Noble Topaz Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Potent Noble Topaz. Sell Price: 3 Potent Noble Topaz Item Level 70 +4 Spell Critical Rating and +5 Spell Damage \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Phantom Guest. In the Jewelcrafting Designs category. An item.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24214",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,7 +26,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

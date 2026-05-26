@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:44+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -68,6 +69,16 @@
           "item_id": 32461,
           "item_name": "Furious Gizmatic Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=32461/furious-gizmatic-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/arms/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Engineering (BoP)"
@@ -307,6 +318,16 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/arms/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -469,6 +490,17 @@
           "item_id": 28485,
           "item_name": "Bulwark of the Ancient Kings",
           "item_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Armorsmith (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/arms/dps-bis-gear-pve-phase-2",
+              "specialization": "Armorsmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Armorsmith (BoP)"
@@ -839,6 +871,16 @@
           "item_id": 30032,
           "item_name": "Red Belt of Battle",
           "item_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/arms/dps-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Blacksmithing"
@@ -1429,6 +1471,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/arms/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1907,6 +1961,15 @@
           "item_id": 28430,
           "item_name": "Lionheart Executioner",
           "item_url": "https://www.wowhead.com/tbc/item=28430/lionheart-executioner",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Master Swordsmith Blacksmith (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/arms/dps-bis-gear-pve-phase-2",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Master Swordsmith Blacksmith (BoP)"
@@ -2146,6 +2209,17 @@
           "item_id": 28439,
           "item_name": "Dragonstrike",
           "item_url": "https://www.wowhead.com/tbc/item=28439/dragonstrike",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/arms/dps-bis-gear-pve-phase-2",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"

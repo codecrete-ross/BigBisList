@@ -1,6 +1,8 @@
 {
+  "description": "Permanently enchant a Two Handed Melee Weapon to add 35 Agility. Requires a level 35 or higher item. In the Profession Spells category. Always up to date.",
   "fetched_at": "2026-05-24T08:32:54+00:00",
   "name": "Enchant 2H Weapon - Major Agility",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,46 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          385,
+          400
+        ],
+        "id": 27977,
+        "learnedat": 360,
+        "level": 35,
+        "name": "Enchant 2H Weapon - Major Agility",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22449,
+            8
+          ],
+          [
+            22446,
+            6
+          ],
+          [
+            22445,
+            20
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

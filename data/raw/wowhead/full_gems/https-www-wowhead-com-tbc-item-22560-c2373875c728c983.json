@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:32:57+00:00",
   "item_id": 22560,
   "name": "Formula: Enchant Weapon - Sunfire",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Weapon - Sunfire Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Use: Learn how to permanently enchant a Melee Weapon to increase the damage done by your arcane and fire spells by up to 50. Permanently enchant a Melee Weapon to add up to 50 damage to fire and arcane spells. Requires a level 35 or higher item. Sell Price: 1 50 Formula: Enchant Weapon - Sunfire can be used by Enchanters to learn Sunfire at 375 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=22560",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -19,9 +30,11 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -77,6 +90,7 @@
         "type": 6
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

@@ -1,11 +1,56 @@
 {
+  "description": "Coats a weapon with poison that lasts for 1 hour. Each strike has a 20% chance of poisoning the enemy which instantly inflicts 134to_lc172 Nature damage, but causes no additional threat.",
   "fetched_at": "2026-05-24T09:13:18+00:00",
   "name": "Anesthetic Poison",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=26786",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 8,
+        "creates": [
+          21835,
+          1,
+          1
+        ],
+        "id": 26786,
+        "level": 68,
+        "name": "Anesthetic Poison",
+        "nskillup": 1,
+        "quality": 1,
+        "rank": "Rank 1",
+        "reagents": [
+          [
+            2931,
+            1
+          ],
+          [
+            5173,
+            1
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "reqclass": 8,
+        "schools": 1,
+        "skill": [],
+        "trainingcost": 110000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

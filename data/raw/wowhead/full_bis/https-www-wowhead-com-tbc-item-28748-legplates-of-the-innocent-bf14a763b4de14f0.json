@@ -5,6 +5,7 @@
   "fetched_at": "2026-05-24T05:36:37+00:00",
   "item_id": 28748,
   "name": "Legplates of the Innocent",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,13 +16,61 @@
       "source_url": "https://www.wowhead.com/tbc/item=28748/legplates-of-the-innocent",
       "type": "drop",
       "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 164,
+      "drop_percent": 11.22,
+      "entity_id": 185119,
+      "entity_name": "Dust Covered Chest",
+      "out_of": 1462,
+      "source_url": "https://www.wowhead.com/tbc/item=28748/legplates-of-the-innocent",
+      "type": "drop",
+      "zone": "Karazhan"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 164,
+        "id": 185119,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 255,
+                "outof": 1627
+              }
+            },
+            "4": {
+              "0": {
+                "count": 207,
+                "outof": 1841
+              }
+            },
+            "5": {
+              "0": {
+                "count": 164,
+                "outof": 1462
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "name": "Dust Covered Chest",
+        "outof": 1462,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 3,
@@ -65,8 +114,12 @@
         "type": 6
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=28748/legplates-of-the-innocent"
 }

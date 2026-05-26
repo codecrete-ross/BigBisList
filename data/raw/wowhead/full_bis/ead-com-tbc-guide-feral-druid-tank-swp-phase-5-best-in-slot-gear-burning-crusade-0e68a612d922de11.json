@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:50+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -40,6 +41,15 @@
           "item_id": 34404,
           "item_name": "Mask of the Fury Hunter",
           "item_url": "https://www.wowhead.com/tbc/item=34404/mask-of-the-fury-hunter",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Yrma - Requires Duplicitous Guise + 1 Sunmote - Kil'jaeden (Sunwell Plateau)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -191,6 +201,15 @@
           "item_id": 34392,
           "item_name": "Demontooth Shoulderpads",
           "item_url": "https://www.wowhead.com/tbc/item=34392/demontooth-shoulderpads",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Yrma - Requires Shoulderpads of Vehemence + 1 Sunmote - Lady Sacrolash (Sunwell Plateau)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best Mit Skewed",
           "source_links": [
             {
@@ -491,6 +510,16 @@
           "item_id": 34369,
           "item_name": "Carapace of Sun and Shadow",
           "item_url": "https://www.wowhead.com/tbc/item=34369/carapace-of-sun-and-shadow",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Threat Skewed Alternative",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoP)"
@@ -946,6 +975,16 @@
           "item_id": 34370,
           "item_name": "Gloves of Immortal Dusk",
           "item_url": "https://www.wowhead.com/tbc/item=34370/gloves-of-immortal-dusk",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Threat Skewed Alternative",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1530,6 +1569,16 @@
           "item_id": 34358,
           "item_name": "Hard Khorium Choker",
           "item_url": "https://www.wowhead.com/tbc/item=34358/hard-khorium-choker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Threat Skewed Alternative",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -1626,6 +1675,16 @@
           "item_id": 34361,
           "item_name": "Hard Khorium Band",
           "item_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Above Armor Cap",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting (BoP)"
@@ -1651,6 +1710,18 @@
           "item_id": 29279,
           "item_name": "Violet Signet of the Great Protector",
           "item_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Path of the Violet Protector - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Alternative (below Armor cap)",
           "source_links": [
             {
@@ -1688,6 +1759,18 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Champion's Covenant - Requires Exalted with Scale of the Sands",
+              "reputation": "Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Alternative (above Armor cap)",
           "source_links": [
             {

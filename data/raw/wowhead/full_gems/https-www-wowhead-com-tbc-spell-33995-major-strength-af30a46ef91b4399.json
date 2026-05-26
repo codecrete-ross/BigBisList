@@ -1,11 +1,75 @@
 {
+  "description": "Permanently enchant gloves to grant +15 Strength. Requires a level 35 or higher item. In the Profession Spells category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "name": "Enchant Gloves - Major Strength",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Enchanting",
+      "raw_text": "Enchanting",
+      "scope": "learn_recipe",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/spell=33995/major-strength",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Enchanting Trainer",
+      "profession": "Enchanting",
+      "required_skill": 340,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "learn_recipe",
+          "skill": 340,
+          "source_url": "https://www.wowhead.com/tbc/spell=33995/major-strength",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=33995/major-strength",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          350,
+          365,
+          380
+        ],
+        "id": 33995,
+        "learnedat": 340,
+        "level": 35,
+        "name": "Enchant Gloves - Major Strength",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22445,
+            12
+          ],
+          [
+            22446,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "trainingcost": 25000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

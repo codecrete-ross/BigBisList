@@ -1,6 +1,8 @@
 {
+  "description": "Agility is a Weapon Enchant made available starting in Phase 3. When used, this enchant permanently enchants a melee weapon to grant +15 Agility.",
   "fetched_at": "2026-05-24T08:32:55+00:00",
   "name": "Enchant Weapon - Agility",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,50 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          290,
+          305,
+          322,
+          340
+        ],
+        "id": 23800,
+        "learnedat": 290,
+        "level": 0,
+        "name": "Enchant Weapon - Agility",
+        "nskillup": 1,
+        "reagents": [
+          [
+            14344,
+            6
+          ],
+          [
+            16203,
+            6
+          ],
+          [
+            16204,
+            4
+          ],
+          [
+            7082,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

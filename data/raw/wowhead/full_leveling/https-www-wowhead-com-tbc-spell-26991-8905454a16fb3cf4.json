@@ -1,6 +1,8 @@
 {
+  "description": "Gives the Gift of the Wild to the target's party, increasing armor by 340, all attributes by 14 and all resistances by 25 for 1 hour. Requires Druid.",
   "fetched_at": "2026-05-24T09:00:08+00:00",
   "name": "Gift of the Wild",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,34 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 1024,
+        "id": 26991,
+        "level": 70,
+        "name": "Gift of the Wild",
+        "nskillup": 1,
+        "rank": "Rank 3",
+        "reagents": [
+          [
+            22148,
+            1
+          ]
+        ],
+        "reqclass": 1024,
+        "schools": 8,
+        "skill": [
+          573
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "item_id": 25903,
   "name": "Design: Bracing Earthstorm Diamond",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Bracing Earthstorm Diamond Item Level 73 Binds when picked up Requires Jewelcrafting (365) Requires The Consortium - Revered Use: Teaches you how to cut a Bracing Earthstorm Diamond. Sell Price: 3 Bracing Earthstorm Diamond Item Level 70 +26 Healing +9 Spell Damage and 2% Reduced Threat \"Only fits in a meta gem slot.\" Sell Price: 3 Requires Earthstorm Diamond This jewelcrafting design is used for the Jewelcrafting profession. It is sold by Ythyar. In the Jewelcrafting Designs category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=25903",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,12 +28,15 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [
       {

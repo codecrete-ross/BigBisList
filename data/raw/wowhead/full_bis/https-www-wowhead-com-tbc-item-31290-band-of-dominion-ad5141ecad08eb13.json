@@ -5,20 +5,593 @@
   "fetched_at": "2026-05-24T04:45:11+00:00",
   "item_id": 31290,
   "name": "Band of Dominion",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
-      "entity_name": "World Drop",
+      "count": 3,
+      "drop_percent": 0.02,
+      "entity_id": 16407,
+      "entity_name": "Spectral Servant",
+      "out_of": 13532,
       "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
-      "type": "world_drop",
-      "world_drop": true
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 16507,
+      "entity_name": "Shattered Hand Sentry",
+      "out_of": 8838,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.03,
+      "entity_id": 16523,
+      "entity_name": "Shattered Hand Savage",
+      "out_of": 18682,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.06,
+      "entity_id": 16948,
+      "entity_name": "Gan'arg Engineer",
+      "out_of": 3218,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 17083,
+      "entity_name": "Fel Orc Convert",
+      "out_of": 16420,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.05,
+      "entity_id": 17427,
+      "entity_name": "Shattered Hand Archer",
+      "out_of": 4020,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 17669,
+      "entity_name": "Rabid Warhound",
+      "out_of": 29394,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.32,
+      "entity_id": 17819,
+      "entity_name": "Durnholde Sentry",
+      "out_of": 935,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 17820,
+      "entity_name": "Durnholde Rifleman",
+      "out_of": 14258,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.04,
+      "entity_id": 17833,
+      "entity_name": "Durnholde Warden",
+      "out_of": 11184,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.05,
+      "entity_id": 17860,
+      "entity_name": "Durnholde Veteran",
+      "out_of": 8882,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 17993,
+      "entity_name": "Bloodwarder Protector",
+      "out_of": 43220,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18318,
+      "entity_name": "Sethekk Initiate",
+      "out_of": 19628,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.32,
+      "entity_id": 18320,
+      "entity_name": "Time-Lost Shadowmage",
+      "out_of": 618,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 18321,
+      "entity_name": "Sethekk Talon Lord",
+      "out_of": 8647,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.03,
+      "entity_id": 18323,
+      "entity_name": "Sethekk Guard",
+      "out_of": 22793,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.02,
+      "entity_id": 18325,
+      "entity_name": "Sethekk Prophet",
+      "out_of": 19237,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 18631,
+      "entity_name": "Cabal Cultist",
+      "out_of": 48531,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 7,
+      "drop_percent": 0.01,
+      "entity_id": 18633,
+      "entity_name": "Cabal Acolyte",
+      "out_of": 66017,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 18635,
+      "entity_name": "Cabal Deathsworn",
+      "out_of": 68814,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18641,
+      "entity_name": "Cabal Familiar",
+      "out_of": 23599,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 18642,
+      "entity_name": "Fel Guardhound",
+      "out_of": 8745,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.01,
+      "entity_id": 18794,
+      "entity_name": "Cabal Ritualist",
+      "out_of": 72640,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 18867,
+      "entity_name": "Mana Seeker",
+      "out_of": 117444,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 18875,
+      "entity_name": "Zaxxis Raider",
+      "out_of": 97955,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 18982,
+      "entity_name": "Sable Jaguar",
+      "out_of": 17148,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 18983,
+      "entity_name": "Blackfang Tarantula",
+      "out_of": 30573,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 19740,
+      "entity_name": "Wrathwalker",
+      "out_of": 27385,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 19979,
+      "entity_name": "Deathforge Technician",
+      "out_of": 8733,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.04,
+      "entity_id": 20394,
+      "entity_name": "Eye of Culuthas",
+      "out_of": 8340,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20512,
+      "entity_name": "Tormented Soul",
+      "out_of": 17102,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20634,
+      "entity_name": "Scythetooth Raptor",
+      "out_of": 23277,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Netherstorm"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20749,
+      "entity_name": "Scalewing Serpent",
+      "out_of": 34645,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 20878,
+      "entity_name": "Deathforge Guardian",
+      "out_of": 23546,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 6,
+      "drop_percent": 0.03,
+      "entity_id": 20990,
+      "entity_name": "Bloodwarder Physician",
+      "out_of": 20206,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 5,
+      "drop_percent": 0.01,
+      "entity_id": 21061,
+      "entity_name": "Enraged Fire Spirit",
+      "out_of": 84604,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.0,
+      "entity_id": 21302,
+      "entity_name": "Shadow Council Warlock",
+      "out_of": 109208,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 3,
+      "drop_percent": 0.0,
+      "entity_id": 21408,
+      "entity_name": "Felfire Diemetradon",
+      "out_of": 63183,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 21455,
+      "entity_name": "Ashtongue Worker",
+      "out_of": 25852,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 21878,
+      "entity_name": "Felboar",
+      "out_of": 64742,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 12,
+      "drop_percent": 0.02,
+      "entity_id": 21891,
+      "entity_name": "Avian Ripper",
+      "out_of": 71553,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.49,
+      "entity_id": 22018,
+      "entity_name": "Eclipsion Cavalier",
+      "out_of": 405,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.44,
+      "entity_id": 23180,
+      "entity_name": "Tarren Mill Protector",
+      "out_of": 919,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.05,
+      "entity_id": 24688,
+      "entity_name": "Wretched Skulker",
+      "out_of": 4210,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.05,
+      "entity_id": 24690,
+      "entity_name": "Wretched Husk",
+      "out_of": 4424,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 9,
+      "drop_percent": 0.02,
+      "entity_id": 24960,
+      "entity_name": "Wretched Devourer",
+      "out_of": 46857,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 24966,
+      "entity_name": "Wretched Fiend",
+      "out_of": 44602,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 1,
+      "drop_percent": 1.28,
+      "entity_id": 184939,
+      "entity_name": "Solid Adamantite Chest",
+      "out_of": 78,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "count": 4,
+      "drop_percent": 0.06,
+      "entity_id": 31952,
+      "entity_name": "Contained in: Khorium Lockbox",
+      "item_id": 31952,
+      "out_of": 6404,
+      "source_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion",
+      "type": "drop"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "commondrop": true,
+        "count": 4,
+        "flags2": 24580,
+        "id": 31952,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 6404
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1,
+                "outof": 667
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 871
+              }
+            }
+          }
+        },
+        "level": 68,
+        "name": "Khorium Lockbox",
+        "outof": 6404,
+        "pctstack": "",
+        "quality": 2,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 184939,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 21,
+                "outof": 3325
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 78
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "name": "Solid Adamantite Chest",
+        "outof": 78,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
     "created-by": [],
+    "created-by-spell": [],
     "dropped-by": [
       {
         "classification": 1,
@@ -1820,8 +2393,12 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion"
 }

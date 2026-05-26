@@ -5,15 +5,95 @@
   "fetched_at": "2026-05-24T05:04:35+00:00",
   "item_id": 32474,
   "name": "Surestrike Goggles v2.0",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Surestrike Goggles v2.0 Phase 2 Item Level 127 Binds when picked up Head Mail 726 Armor +28 Stamina Meta Socket Blue Socket Socket Bonus: +4 Agility Durability 85 / 85 Requires Level 62 Requires Engineering (350) Equip: Improves hit rating by 13. Equip: Improves critical strike rating by 38. Equip: Increases attack power by 96. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 5 79 41 This epic mail armor of item level 127 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=32474/surestrike-goggles-v2-0",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41314,
+      "entity_name": "Surestrike Goggles v2.0",
+      "source_url": "https://www.wowhead.com/tbc/item=32474/surestrike-goggles-v2-0",
+      "spell_id": 41314,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "chrclass": 68,
+        "colors": [
+          350,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          32474,
+          1,
+          1
+        ],
+        "id": 41314,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Surestrike Goggles v2.0",
+        "nskillup": 1,
+        "popularity": 19,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            23786,
+            1
+          ],
+          [
+            23785,
+            2
+          ],
+          [
+            23787,
+            4
+          ],
+          [
+            23572,
+            1
+          ],
+          [
+            23441,
+            2
+          ]
+        ],
+        "reqclass": 68,
+        "schools": 1,
+        "skill": [],
+        "trainingcost": 50000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32474/surestrike-goggles-v2-0"
 }

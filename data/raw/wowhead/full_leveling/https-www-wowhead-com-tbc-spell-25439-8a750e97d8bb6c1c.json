@@ -1,11 +1,14 @@
 {
+  "description": "Hurls a lightning bolt at the enemy, dealing 620to_lc705 Nature damage and then jumping to additional nearby enemies. Each jump reduces the damage by 30%. Affects 3 total targets.",
   "fetched_at": "2026-05-24T09:15:09+00:00",
   "name": "Chain Lightning",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

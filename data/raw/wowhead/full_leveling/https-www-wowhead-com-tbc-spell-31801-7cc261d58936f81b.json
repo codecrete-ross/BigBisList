@@ -1,11 +1,14 @@
 {
+  "description": "Fills the Paladin with holy power, granting each melee attack a chance to cause 150 Holy damage over 15 sec. This effect can stack up to 5 times. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.Unleashing this Seal's energy will judge an enemy, instantly causing 120 Holy damage per application of Holy Vengeance.",
   "fetched_at": "2026-05-24T09:07:19+00:00",
   "name": "Seal of Vengeance",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

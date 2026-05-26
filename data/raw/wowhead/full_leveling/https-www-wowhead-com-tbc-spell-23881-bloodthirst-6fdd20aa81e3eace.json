@@ -1,11 +1,14 @@
 {
+  "description": "Instantly attack the target causing (attackPower * 45 / 100) damage. In addition, the next 5 successful melee attacks will restore 10 health. This effect lasts 8 sec. Damage is based on your attack power.",
   "fetched_at": "2026-05-24T09:20:39+00:00",
   "name": "Bloodthirst",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

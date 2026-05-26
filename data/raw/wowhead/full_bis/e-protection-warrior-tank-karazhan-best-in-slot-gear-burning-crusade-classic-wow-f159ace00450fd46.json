@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:56+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -1337,6 +1338,18 @@
           "item_id": 29279,
           "item_name": "Violet Signet of the Great Protector",
           "item_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Archmage Leryda - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [
             {
@@ -1367,6 +1380,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Threat",
           "source_links": [
             {
@@ -1534,6 +1559,18 @@
           "item_id": 29283,
           "item_name": "Violet Signet of the Master Assassin",
           "item_url": "https://www.wowhead.com/tbc/item=29283/violet-signet-of-the-master-assassin",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Archmage Leryda - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Threat Alternative",
           "source_links": [
             {
@@ -1601,6 +1638,15 @@
           "item_id": 23836,
           "item_name": "Goblin Rocket Launcher",
           "item_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Goblin Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [],
           "source_text": "Profession: Goblin Engineering"
@@ -1626,6 +1672,15 @@
           "item_id": 23835,
           "item_name": "Gnomish Poultryizer",
           "item_url": "https://www.wowhead.com/tbc/item=23835/gnomish-poultryizer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Gnomish Engineering",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [],
           "source_text": "Profession: Gnomish Engineering"
@@ -1808,6 +1863,15 @@
           "item_id": 29181,
           "item_name": "Timelapse Shard",
           "item_url": "https://www.wowhead.com/tbc/item=29181/timelapse-shard",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Exalted with Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Mitigation Alternative",
           "source_links": [
             {
@@ -1845,6 +1909,17 @@
           "item_id": 28438,
           "item_name": "Dragonmaw",
           "item_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Master Hammersmith",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Best Overall",
           "source_links": [],
           "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"
@@ -2172,6 +2247,18 @@
           "item_id": 29156,
           "item_name": "Honor's Call",
           "item_url": "https://www.wowhead.com/tbc/item=29156/honors-call",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike - Requires Exalted with Honor Hold",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Fast Alternative",
           "source_links": [
             {
@@ -2202,6 +2289,18 @@
           "item_id": 29165,
           "item_name": "Warbringer",
           "item_url": "https://www.wowhead.com/tbc/item=29165/warbringer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn - Requires Exalted with Thrallmar",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Fast Alternative",
           "source_links": [
             {
@@ -2329,6 +2428,15 @@
           "item_id": 29176,
           "item_name": "Crest of the Sha'tar",
           "item_url": "https://www.wowhead.com/tbc/item=29176/crest-of-the-shatar",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Almaador - Exalted with The Sha'tar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best Pre-Raid",
           "source_links": [
             {

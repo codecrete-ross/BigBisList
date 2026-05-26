@@ -1,11 +1,14 @@
 {
+  "description": "Fills the Paladin with holy spirit for 30 sec, granting each melee attack an additional [1.2 * (2068 * 1.2 * 1.03 * mainhandWeaponMaxBaseSpeed / 100) + 0.03 * (mainhandWeaponMaxDamage + mainhandWeaponMinDamage) / 2 + 1] Holy damage. Only one Seal can be active on the Paladin at any one time.Unleashing this Seal's energy will cause 186to_lc203 Holy damage to an enemy.",
   "fetched_at": "2026-05-24T09:08:31+00:00",
   "name": "Seal of Righteousness",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

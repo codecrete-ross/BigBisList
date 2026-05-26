@@ -5,15 +5,136 @@
   "fetched_at": "2026-05-24T05:11:42+00:00",
   "item_id": 23517,
   "name": "Felsteel Gloves",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Felsteel Gloves Phase 1 Item Level 114 Binds when equipped Hands Plate 943 Armor +27 Stamina Blue Socket Red Socket Socket Bonus: +3 Parry Rating Durability 45 / 45 Requires Level 70 Equip: Increases defense rating by 25. Faith in Felsteel (0/3) Requires Blacksmithing (350) Felsteel Helm Felsteel Leggings Felsteel Gloves (3) Set : +25 Strength. Sell Price: 3 3 11 This blue plate armor of item level 114 goes in the \"Hands\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23517/felsteel-gloves",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 29619,
+      "entity_name": "Felsteel Gloves",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23517/felsteel-gloves",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23517/felsteel-gloves",
+      "spell_id": 29619,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          23517,
+          1,
+          1
+        ],
+        "id": 29619,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Felsteel Gloves",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            23448,
+            6
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23605,
+        "level": 72,
+        "name": "Plans: Felsteel Gloves",
+        "popularity": 16,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Auchenai Monk",
+            "t": 1,
+            "ti": 18497,
+            "z": 3790
+          }
+        ],
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23605,
+      "level": 72,
+      "name": "Plans: Felsteel Gloves",
+      "popularity": 16,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Auchenai Monk",
+          "t": 1,
+          "ti": 18497,
+          "z": 3790
+        }
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=23517/felsteel-gloves"
 }

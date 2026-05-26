@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:01+00:00",
   "item_id": 20756,
   "name": "Formula: Brilliant Wizard Oil",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Brilliant Wizard Oil Phase 1 Item Level 60 Binds when picked up Requires Enchanting (300) Requires Zandalar Tribe - Honored Use: Teaches you how to create Brilliant Wizard Oil. Creates Brilliant Wizard Oil. Sell Price: 1 Brilliant Wizard Oil Item Level 55 Requires Level 45 Use: While applied to target weapon it increases spell damage by up to 36 and increases spell critical strike rating by 14. Lasts for 1 hour. 5 Charges Sell Price: 10 Requires Large Brilliant Shard (2), Firebloom (3), Imbued Vial This enchanting formula is used for the Enchanting profession. It is sold by Rin'wosho the Trader. In the Enchanting Formulae category. An item.",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=20756",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -16,7 +27,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

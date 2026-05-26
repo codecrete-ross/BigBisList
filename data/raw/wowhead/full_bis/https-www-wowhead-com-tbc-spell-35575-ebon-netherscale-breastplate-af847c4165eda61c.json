@@ -1,14 +1,100 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T05:42:55+00:00",
   "name": "Ebon Netherscale Breastplate",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Leatherworking",
+      "raw_text": "Leatherworking",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/spell=35575/ebon-netherscale-breastplate",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Leatherworking Trainer",
+      "profession": "Leatherworking",
+      "required_skill": 375,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "learn_recipe",
+          "skill": 375,
+          "source_url": "https://www.wowhead.com/tbc/spell=35575/ebon-netherscale-breastplate",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=35575/ebon-netherscale-breastplate",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29515,
+          1,
+          1
+        ],
+        "id": 35575,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Ebon Netherscale Breastplate",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            8
+          ],
+          [
+            29548,
+            30
+          ],
+          [
+            21884,
+            16
+          ],
+          [
+            22456,
+            16
+          ],
+          [
+            23572,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10656,
+        "trainingcost": 100000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
-    "taught-by-item": []
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
   },
   "spell_id": 35575,
   "url": "https://www.wowhead.com/tbc/spell=35575/ebon-netherscale-breastplate"

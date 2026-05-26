@@ -5,19 +5,30 @@
   "fetched_at": "2026-05-24T09:40:03+00:00",
   "item_id": 24060,
   "name": "Luminous Noble Topaz",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
       "entity_id": 31108,
       "entity_name": "Luminous Noble Topaz",
       "profession": "Jewelcrafting",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24060/reckless-noble-topaz",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=24060/reckless-noble-topaz",
       "spell_id": 31108,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
     "contained-in-item": [],

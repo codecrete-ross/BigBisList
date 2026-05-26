@@ -1,11 +1,14 @@
 {
+  "description": "Finishing move that causes damage over time. Damage increases per combo point and by your attack power: 1 point : 300 damage over 12 sec. 2 points: 498 damage over 12 sec. 3 points: 696 damage over 12 sec. 4 points: 894 damage over 12 sec. 5 points: 1092 damage over 12 sec.",
   "fetched_at": "2026-05-24T09:00:32+00:00",
   "name": "Rip",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

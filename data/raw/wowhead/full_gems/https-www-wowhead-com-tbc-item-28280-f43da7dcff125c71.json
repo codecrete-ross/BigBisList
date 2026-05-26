@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:32:56+00:00",
   "item_id": 28280,
   "name": "Formula: Enchant Boots - Boar's Speed",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Boots - Boar's Speed Phase 1 Item Level 72 Requires Enchanting (360) Use: Teaches you how to permanently enchant boots to increase move speed slightly and Stamina by 9. Permanently enchant boots to give a minor movement speed increase and 9 Stamina. Requires a level 35 or higher item. Sell Price: 3 Formula: Enchant Boots - Boar's Speed can be used by Enchanters to learn Boar's Speed at 360 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=28280",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,9 +26,46 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 1,
+        "flags2": 24580,
+        "id": 33926,
+        "itemSeasonPhaseData": {
+          "0": {
+            "4": {
+              "0": {
+                "count": 1,
+                "outof": 476
+              }
+            }
+          }
+        },
+        "level": 1,
+        "name": "Sealed Scroll Case",
+        "outof": 476,
+        "pctstack": "",
+        "quality": 3,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Forest Frog",
+            "t": 1,
+            "ti": 24396,
+            "z": 3805
+          }
+        ],
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [],
     "created-by": [],
     "created-by-spell": [],
     "dropped-by": [
@@ -935,6 +983,7 @@
         "type": 7
       }
     ],
+    "gathered-from-object": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": []

@@ -5,15 +5,145 @@
   "fetched_at": "2026-05-24T04:32:03+00:00",
   "item_id": 21848,
   "name": "Spellfire Robe",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Spellfire Robe Phase 1 Item Level 105 Binds when picked up Chest Cloth 178 Armor +17 Intellect Yellow Socket Blue Socket Socket Bonus: +4 Stamina Durability 100 / 100 Requires Level 70 Requires Spellfire Tailoring Equip: Improves spell critical strike rating by 28. Equip: Increases damage done by Fire spells and effects by up to 72. Equip: Increases damage done by Arcane spells and effects by up to 72. Wrath of Spellfire (0/3) Spellfire Robe Spellfire Gloves Spellfire Belt (3) Set : Increases spell damage by up to 7% of your total Intellect. Sell Price: 4 35 84 Spellfire Robe is a Cloth chestpiece crafted by Tailors who specialize in Spellfire tailoring. Crafting the robe requires 14 Spellcloth, 16 Primal Fire and 4 Netherweb Spider Silk.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21848/spellfire-robe",
+      "specialization": "Spellfire Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26754,
+      "entity_name": "Spellfire Robe",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21848/spellfire-robe",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21848/spellfire-robe",
+      "spell_id": 26754,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          21848,
+          1,
+          1
+        ],
+        "id": 26754,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Spellfire Robe",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 4,
+        "reagents": [
+          [
+            24271,
+            14
+          ],
+          [
+            21884,
+            16
+          ],
+          [
+            21881,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ],
+        "specialization": 26797
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21910,
+        "level": 75,
+        "name": "Pattern: Spellfire Robe",
+        "popularity": 9,
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Gidge Spellweaver",
+            "t": 1,
+            "ti": 22213,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21910,
+      "level": 75,
+      "name": "Pattern: Spellfire Robe",
+      "popularity": 9,
+      "quality": 1,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Gidge Spellweaver",
+          "t": 1,
+          "ti": 22213,
+          "z": 3703
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=21848/spellfire-robe"
 }

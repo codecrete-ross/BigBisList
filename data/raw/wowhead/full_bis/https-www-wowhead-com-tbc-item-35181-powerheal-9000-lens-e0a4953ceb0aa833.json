@@ -5,15 +5,135 @@
   "fetched_at": "2026-05-24T05:40:22+00:00",
   "item_id": 35181,
   "name": "Powerheal 9000 Lens",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Powerheal 9000 Lens Phase 5 Item Level 159 Binds when picked up Head Cloth 216 Armor +33 Stamina +51 Intellect +41 Spirit Meta Socket Blue Socket Socket Bonus: +9 Healing and +3 Spell Damage Durability 60 / 60 Requires Level 70 Requires Engineering (350) Equip: Increases healing done by up to 128 and damage done by up to 43 for all magical spells and effects. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 4 66 76 This epic cloth armor of item level 159 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35181/powerheal-9000-lens",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46108,
+      "entity_name": "Powerheal 9000 Lens",
+      "source_url": "https://www.wowhead.com/tbc/item=35181/powerheal-9000-lens",
+      "spell_id": 46108,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "chrclass": 16,
+        "colors": [
+          375,
+          390,
+          410,
+          430
+        ],
+        "creates": [
+          35181,
+          1,
+          1
+        ],
+        "id": 46108,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Powerheal 9000 Lens",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 4,
+        "reagents": [
+          [
+            32495,
+            1
+          ],
+          [
+            21886,
+            8
+          ],
+          [
+            22457,
+            8
+          ],
+          [
+            23572,
+            4
+          ]
+        ],
+        "reqclass": 16,
+        "schools": 1,
+        "skill": [],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35189,
+        "level": 70,
+        "name": "Schematic: Powerheal 9000 Lens",
+        "popularity": 8,
+        "quality": 4,
+        "reqclass": 16,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "dd": 2,
+            "z": 4075
+          }
+        ],
+        "subclass": 3
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35189,
+      "level": 70,
+      "name": "Schematic: Powerheal 9000 Lens",
+      "popularity": 8,
+      "quality": 4,
+      "reqclass": 16,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": 2,
+          "z": 4075
+        }
+      ],
+      "subclass": 3
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=35181/powerheal-9000-lens"
 }

@@ -233,6 +233,35 @@ class StructuredSourceTests(unittest.TestCase):
         audit = self._snapshot_audit_with_fake_docs([guide], guide_only=True)
         self.assertTrue(audit["ok"], audit["errors"])
 
+    def test_requirements_audit_flags_requirement_text_without_normalized_requirement(self):
+        original_load_snapshots = scraper.load_snapshots
+        guide = {
+            "parser_version": "fixture",
+            "page_type": "guide",
+            "url": "https://www.wowhead.com/tbc/guide/synthetic",
+            "tables": [
+                {
+                    "slot": "Head",
+                    "data_family": "bis_lists",
+                    "rows": [
+                        {
+                            "item_id": 1,
+                            "entity_name": "Rep Helm",
+                            "source_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+                            "entities": [{"type": "item", "id": 1, "name": "Rep Helm", "url": "https://www.wowhead.com/tbc/item=1"}],
+                        }
+                    ],
+                }
+            ],
+        }
+        scraper.load_snapshots = lambda _path: [guide]
+        try:
+            audit = scraper.build_requirements_audit(SimpleNamespace(), "bis_lists")
+        finally:
+            scraper.load_snapshots = original_load_snapshots
+        self.assertFalse(audit["ok"])
+        self.assertIn("Requirement-looking source text without normalized requirement", audit["errors"][0])
+
     def _audit_with_fake_docs(self, items, bis_items):
         original_validate = scraper.validate
         original_canonical_json = scraper.canonical_json

@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T08:51:01+00:00",
   "item_id": 23737,
   "name": "Adamantite Grenade",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Adamantite Grenade Item Level 65 Requires Engineering (325) Use: Inflicts 450 to 750 Fire damage and incapacitates targets for 3 sec in a 3 yard radius. Any damage will break the effect. Unreliable against targets higher than level 80. (1 Min Cooldown) Max Stack: 10 Sell Price: 25 It is crafted and sold by NPCs. In the Explosives category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
+      "scope": "equip_or_use",
+      "skill": 325,
+      "source_url": "https://www.wowhead.com/tbc/item=23737/adamantite-grenade",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -20,13 +31,23 @@
       "entity_id": 30311,
       "entity_name": "Adamantite Grenade",
       "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23737/adamantite-grenade",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/item=23737/adamantite-grenade",
       "spell_id": 30311,
       "type": "crafted"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

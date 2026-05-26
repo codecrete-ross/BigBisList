@@ -1,11 +1,14 @@
 {
+  "description": "Dispels magic in a 15 yard radius, removing 1 harmful spell from each friendly target and 1 beneficial spell from each enemy target. Affects a maximum of 10 friendly targets and 10 enemy targets. This dispel is potent enough to remove Magic effects that are normally undispellable.",
   "fetched_at": "2026-05-24T09:11:52+00:00",
   "name": "Mass Dispel",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

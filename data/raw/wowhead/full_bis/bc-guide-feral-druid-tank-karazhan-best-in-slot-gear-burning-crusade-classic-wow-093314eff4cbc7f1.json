@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:50+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -483,6 +484,16 @@
           "item_id": 24258,
           "item_name": "Resolute Cape",
           "item_url": "https://www.wowhead.com/tbc/item=24258/resolute-cape",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Mitigation Alternative",
           "source_links": [],
           "source_text": "Profession: Tailoring (BoE)"
@@ -605,6 +616,17 @@
           "item_id": 29525,
           "item_name": "Primalstrike Vest",
           "item_url": "https://www.wowhead.com/tbc/item=29525/primalstrike-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Elemental Leatherworking",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "specialization": "Elemental Leatherworking",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Threat skewed alternative",
           "source_links": [],
           "source_text": "Profession: Elemental Leatherworking"
@@ -667,6 +689,16 @@
           "item_id": 25689,
           "item_name": "Heavy Clefthoof Vest",
           "item_url": "https://www.wowhead.com/tbc/item=25689/heavy-clefthoof-vest",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1062,6 +1094,16 @@
           "item_id": 29503,
           "item_name": "Cobrascale Gloves",
           "item_url": "https://www.wowhead.com/tbc/item=29503/cobrascale-gloves",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Alternative",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1573,6 +1615,16 @@
           "item_id": 25691,
           "item_name": "Heavy Clefthoof Boots",
           "item_url": "https://www.wowhead.com/tbc/item=25691/heavy-clefthoof-boots",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Recommended Pre-raid Mitigation",
           "source_links": [],
           "source_text": "Profession: Leatherworking (BoE)"
@@ -1835,6 +1887,18 @@
           "item_id": 29279,
           "item_name": "Violet Signet of the Great Protector",
           "item_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Path of the Violet Protector - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best",
           "source_links": [
             {
@@ -1909,6 +1973,18 @@
           "item_id": 30834,
           "item_name": "Shapeshifter's Signet",
           "item_url": "https://www.wowhead.com/tbc/item=30834/shapeshifters-signet",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Threat",
           "source_links": [
             {
@@ -2183,6 +2259,16 @@
           "item_id": 23836,
           "item_name": "Goblin Rocket Launcher",
           "item_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - (BoE, Requires 350 Engineering skill)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Survivability Option",
           "source_links": [],
           "source_text": "Profession: Engineering - (BoE, Requires 350 Engineering skill)"
@@ -2215,6 +2301,16 @@
           "item_id": 13503,
           "item_name": "Alchemist Stone",
           "item_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Alchemy",
+              "raw_text": "Profession: Alchemy (Bind on Creation)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Balanced Option",
           "source_links": [],
           "source_text": "Profession: Alchemy (Bind on Creation)"
@@ -2270,6 +2366,18 @@
           "item_id": 29181,
           "item_name": "Timelapse Shard",
           "item_url": "https://www.wowhead.com/tbc/item=29181/timelapse-shard",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi - Requires Exalted with Keepers of TIme",
+              "reputation": "Keepers of TIme",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Defense Swap",
           "source_links": [
             {
@@ -2517,6 +2625,18 @@
           "item_id": 29171,
           "item_name": "Earthwarden",
           "item_url": "https://www.wowhead.com/tbc/item=29171/earthwarden",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear Requires Exalted with Cenarion Expedition",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [
             {

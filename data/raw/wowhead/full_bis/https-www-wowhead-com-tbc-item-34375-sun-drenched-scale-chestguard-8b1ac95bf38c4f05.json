@@ -5,15 +5,166 @@
   "fetched_at": "2026-05-24T05:45:22+00:00",
   "item_id": 34375,
   "name": "Sun-Drenched Scale Chestguard",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Sun-Drenched Scale Chestguard Phase 5 Item Level 159 Binds when picked up Chest Mail 1110 Armor +48 Stamina +41 Intellect Red Socket Red Socket Red Socket Socket Bonus: 2 mana per 5 sec. Durability 140 / 140 Requires Level 70 Requires Leatherworking (350) Equip: Improves spell haste rating by 40. Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects. Equip: Restores 10 mana per 5 sec. Sell Price: 9 51 6 This epic mail armor of item level 159 goes in the \"Chest\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34375/sun-drenched-scale-chestguard",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 46139,
+      "entity_name": "Sun-Drenched Scale Chestguard",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=34375/sun-drenched-scale-chestguard",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=34375/sun-drenched-scale-chestguard",
+      "spell_id": 46139,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          392,
+          410
+        ],
+        "creates": [
+          34375,
+          1,
+          1
+        ],
+        "id": 46139,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Sun-Drenched Scale Chestguard",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            40
+          ],
+          [
+            29548,
+            24
+          ],
+          [
+            23571,
+            6
+          ],
+          [
+            23572,
+            6
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35219,
+        "level": 75,
+        "name": "Pattern: Sun-Drenched Scale Chestguard",
+        "popularity": 8,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "z": 4075
+          }
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35549,
+        "level": 75,
+        "name": "Pattern: Sun-Drenched Scale Chestguard",
+        "popularity": 13,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "subclass": 1
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35219,
+      "level": 75,
+      "name": "Pattern: Sun-Drenched Scale Chestguard",
+      "popularity": 8,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 4075
+        }
+      ],
+      "subclass": 1
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35549,
+      "level": 75,
+      "name": "Pattern: Sun-Drenched Scale Chestguard",
+      "popularity": 13,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=34375/sun-drenched-scale-chestguard"
 }

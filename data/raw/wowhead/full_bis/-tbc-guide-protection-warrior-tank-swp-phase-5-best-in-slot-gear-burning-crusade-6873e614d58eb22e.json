@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:56+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -40,6 +41,15 @@
           "item_id": 34400,
           "item_name": "Crown of Dath'Remar",
           "item_url": "https://www.wowhead.com/tbc/item=34400/crown-of-dathremar",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Yrma - Requires Sunmote and Crown of Anasterian - Kil'jaeden (Sunwell Plateau)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best Mitigation",
           "source_links": [
             {
@@ -82,6 +92,15 @@
           "item_id": 34357,
           "item_name": "Hard Khorium Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=34357/hard-khorium-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession - Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Mitigation + Hit",
           "source_links": [],
           "source_text": "Profession - Engineering (BoP)"
@@ -137,6 +156,15 @@
           "item_id": 34354,
           "item_name": "Mayhem Projection Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=34354/mayhem-projection-goggles",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession - Engineering (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Threat Alternative",
           "source_links": [],
           "source_text": "Profession - Engineering (BoP)"
@@ -248,6 +276,15 @@
           "item_id": 34388,
           "item_name": "Pauldrons of Berserking",
           "item_url": "https://www.wowhead.com/tbc/item=34388/pauldrons-of-berserking",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Yrma - Requires Sunmote and Pauldrons of Perseverance - Lady Sacrolash (Sunwell Plateau)",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Best Threat",
           "source_links": [
             {
@@ -484,6 +521,16 @@
           "item_id": 34377,
           "item_name": "Hard Khorium Battleplate",
           "item_url": "https://www.wowhead.com/tbc/item=34377/hard-khorium-battleplate",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Threat",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (BoP)"
@@ -764,6 +811,16 @@
           "item_id": 34378,
           "item_name": "Hard Khorium Battlefists",
           "item_url": "https://www.wowhead.com/tbc/item=34378/hard-khorium-battlefists",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Blacksmithing",
+              "raw_text": "Profession: Blacksmithing (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Hit Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing (BoE)"
@@ -1225,6 +1282,15 @@
           "item_id": 34680,
           "item_name": "Shattered Sun Pendant of Resolve",
           "item_url": "https://www.wowhead.com/tbc/item=34680/shattered-sun-pendant-of-resolve",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Exalted with Shattered Sun Offensive )",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
           "rank_label": "Mitigation Alternative",
           "source_links": [
             {
@@ -1386,6 +1452,18 @@
           "item_id": 29279,
           "item_name": "Violet Signet of the Great Protector",
           "item_url": "https://www.wowhead.com/tbc/item=29279/violet-signet-of-the-great-protector",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Archmage Leryda - Requires Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Mitigation Alternative",
           "source_links": [
             {
@@ -1446,6 +1524,16 @@
           "item_id": 34361,
           "item_name": "Hard Khorium Band",
           "item_url": "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Jewelcrafting",
+              "raw_text": "Profession: Jewelcrafting",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Best Threat",
           "source_links": [],
           "source_text": "Profession: Jewelcrafting"
@@ -1561,6 +1649,18 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Champion's Covenant - Requires Exalted with The Scale of the Sands",
+              "reputation": "The Scale of the Sands",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Threat + AP",
           "source_links": [
             {

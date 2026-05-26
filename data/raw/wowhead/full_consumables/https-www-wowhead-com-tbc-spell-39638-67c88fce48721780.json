@@ -1,11 +1,85 @@
 {
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:30+00:00",
   "name": "Elixir of Draenic Wisdom",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Alchemy",
+      "raw_text": "Alchemy",
+      "scope": "learn_recipe",
+      "skill": 320,
+      "source_url": "https://www.wowhead.com/tbc/spell=39638",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Alchemy Trainer",
+      "profession": "Alchemy",
+      "required_skill": 320,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "learn_recipe",
+          "skill": 320,
+          "source_url": "https://www.wowhead.com/tbc/spell=39638",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=39638",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          320,
+          335,
+          342,
+          350
+        ],
+        "creates": [
+          32067,
+          1,
+          1
+        ],
+        "id": 39638,
+        "learnedat": 320,
+        "level": 0,
+        "name": "Elixir of Draenic Wisdom",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            22785,
+            1
+          ],
+          [
+            22789,
+            1
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "trainingcost": 30000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

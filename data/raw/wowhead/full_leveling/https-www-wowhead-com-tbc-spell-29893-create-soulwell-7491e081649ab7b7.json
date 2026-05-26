@@ -1,11 +1,44 @@
 {
+  "description": "Begins a ritual that creates a Soulwell. Raid members can click the Soulwell to acquire a Master Healthstone. The Soulwell lasts for 3 min or 10 charges. Requires the caster and 2 additional party members to complete the ritual. In order to participate, all players must right-click the soul portal and not move until the ritual is complete.",
   "fetched_at": "2026-05-24T09:18:41+00:00",
   "name": "Ritual of Souls",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=29893/create-soulwell",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 256,
+        "id": 29893,
+        "level": 68,
+        "name": "Ritual of Souls",
+        "nskillup": 1,
+        "rank": "Rank 1",
+        "reagents": [
+          [
+            6265,
+            1
+          ]
+        ],
+        "reqclass": 256,
+        "schools": 32,
+        "skill": [
+          354
+        ],
+        "trainingcost": 63000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

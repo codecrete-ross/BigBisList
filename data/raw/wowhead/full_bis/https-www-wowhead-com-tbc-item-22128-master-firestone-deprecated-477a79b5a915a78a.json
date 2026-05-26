@@ -5,15 +5,61 @@
   "fetched_at": "2026-05-24T05:25:07+00:00",
   "item_id": 22128,
   "name": "Master Firestone",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 27250,
+      "entity_name": "Create Firestone",
+      "source_url": "https://www.wowhead.com/tbc/item=22128/master-firestone-deprecated",
+      "spell_id": 27250,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "common",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 7,
+        "chrclass": 256,
+        "creates": [
+          22128,
+          1,
+          1
+        ],
+        "id": 27250,
+        "level": 66,
+        "name": "Create Firestone",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 1,
+        "rank": "Rank 5",
+        "reagents": [
+          [
+            6265,
+            1
+          ]
+        ],
+        "reqclass": 256,
+        "schools": 4,
+        "skill": [
+          354
+        ],
+        "trainingcost": 51000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=22128/master-firestone-deprecated"
 }

@@ -1,6 +1,8 @@
 {
+  "description": "Enchanters can learn Boar's Speed from Formula: Enchant Boots - Boar's Speed at 360 Enchanting skill. This enchanting formula is a rare world drop.",
   "fetched_at": "2026-05-24T08:32:55+00:00",
   "name": "Enchant Boots - Boar's Speed",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -20,9 +22,42 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          385,
+          400
+        ],
+        "id": 34008,
+        "learnedat": 360,
+        "level": 35,
+        "name": "Enchant Boots - Boar's Speed",
+        "nskillup": 1,
+        "reagents": [
+          [
+            22449,
+            8
+          ],
+          [
+            22452,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

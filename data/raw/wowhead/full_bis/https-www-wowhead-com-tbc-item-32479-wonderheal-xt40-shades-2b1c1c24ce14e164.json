@@ -5,15 +5,95 @@
   "fetched_at": "2026-05-24T05:01:25+00:00",
   "item_id": 32479,
   "name": "Wonderheal XT40 Shades",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Wonderheal XT40 Shades Phase 2 Item Level 127 Binds when picked up Head Leather 326 Armor +15 Stamina +38 Intellect +22 Spirit Meta Socket Blue Socket Socket Bonus: +9 Healing and +3 Spell Damage Durability 70 / 70 Requires Level 62 Requires Engineering (350) Equip: Increases healing done by up to 106 and damage done by up to 36 for all magical spells and effects. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 4 91 65 This epic leather armor of item level 127 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41318,
+      "entity_name": "Wonderheal XT40 Shades",
+      "source_url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades",
+      "spell_id": 41318,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "chrclass": 1024,
+        "colors": [
+          350,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          32479,
+          1,
+          1
+        ],
+        "id": 41318,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Wonderheal XT40 Shades",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            23786,
+            1
+          ],
+          [
+            23785,
+            2
+          ],
+          [
+            23787,
+            4
+          ],
+          [
+            23572,
+            1
+          ],
+          [
+            23440,
+            2
+          ]
+        ],
+        "reqclass": 1024,
+        "schools": 1,
+        "skill": [],
+        "trainingcost": 50000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades"
 }

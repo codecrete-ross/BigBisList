@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:42:48+00:00",
   "item_id": 24211,
   "name": "Design: Glowing Nightseye",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Glowing Nightseye Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Glowing Nightseye. Sell Price: 3 Glowing Nightseye Item Level 70 +5 Spell Damage and +6 Stamina \"Matches a Red or Blue Socket.\" Sell Price: 3 Requires Nightseye This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Spectral Charger. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24211",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -15,7 +26,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

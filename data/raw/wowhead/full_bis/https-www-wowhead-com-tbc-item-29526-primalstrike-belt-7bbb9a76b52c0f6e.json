@@ -5,15 +5,95 @@
   "fetched_at": "2026-05-24T04:48:36+00:00",
   "item_id": 29526,
   "name": "Primalstrike Belt",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Primalstrike Belt Phase 1 Item Level 115 Binds when picked up Waist Leather 205 Armor +20 Agility +32 Stamina Durability 40 / 40 Requires Level 70 Requires Elemental Leatherworking Equip: Increases attack power by 84. Primal Intent (0/3) Primalstrike Bracers Primalstrike Belt Primalstrike Vest (3) Set : Increases attack power by 40. Sell Price: 3 4 83 Primalstrike Vest is a Leather Belt crafted by Leatherworkers with 375 skill and specialized in Elemental Leatherworking. This epic leather armor of item level 115 goes in the \"Waist\" slot.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
+      "specialization": "Elemental Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 35590,
+      "entity_name": "Primalstrike Belt",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
+      "spell_id": 35590,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          29526,
+          1,
+          1
+        ],
+        "id": 35590,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Primalstrike Belt",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            23571,
+            5
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10658,
+        "trainingcost": 100000
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": []
   },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt"
 }

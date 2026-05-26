@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:22:47+00:00",
   "item_id": 21949,
   "name": "Design: Ruby Serpent",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Ruby Serpent Item Level 52 Requires Jewelcrafting (260) Use: Teaches you how to craft a Ruby Serpent. Sell Price: 25 Figurine - Ruby Serpent Item Level 52 Binds when picked up Unique Trinket +4 Stamina +4 Intellect Requires Level 47 Requires Jewelcrafting (260) Use: Increases damage and healing done by magical spells and effects by up to 100 for 20 sec. (5 Min Cooldown) Sell Price: 15 Requires Star Ruby (2), Essence of Fire (2), Flask of Big Mojo (4), Truesilver Bar (2) This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Hitah'ya the Keeper. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 260,
+      "source_url": "https://www.wowhead.com/tbc/item=21949",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -69,7 +80,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

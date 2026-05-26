@@ -5,6 +5,27 @@
   "fetched_at": "2026-05-24T09:44:03+00:00",
   "item_id": 24295,
   "name": "Pattern: Golden Spellthread",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Golden Spellthread Item Level 75 Binds when picked up Requires Tailoring (375) Requires The Aldor - Exalted Use: Teaches you how to create Golden Spellthread. Sell Price: 9 Golden Spellthread Item Level 75 Requires Level 60 Use: Permanently embroiders spellthread into pants, increasing healing by up to 66, spell damage by up to 22, and Stamina by 20. Max Stack: 20 Sell Price: 5 Requires Rune Thread , Primal Life (10), Primal Nether This tailoring pattern is used for the Tailoring profession. It is sold by Quartermaster Endarin. In the Tailoring Patterns category. An item.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=24295",
+      "type": "profession"
+    },
+    {
+      "choices": [
+        "The Aldor"
+      ],
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Golden Spellthread Item Level 75 Binds when picked up Requires Tailoring (375) Requires The Aldor - Exalted Use: Teaches you how to create Golden Spellthread. Sell Price: 9 Golden Spellthread Item Level 75 Requires Level 60 Use: Permanently embroiders spellthread into pants, increasing healing by up to 66, spell damage by up to 22, and Stamina by 20. Max Stack: 20 Sell Price: 5 Requires Rune Thread , Primal Life (10), Primal Nether This tailoring pattern is used for the Tailoring profession. It is sold by Quartermaster Endarin. In the Tailoring Patterns category. An item.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=24295",
+      "type": "faction_choice"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,7 +38,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

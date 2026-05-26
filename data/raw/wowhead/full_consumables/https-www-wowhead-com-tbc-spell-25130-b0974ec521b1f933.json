@@ -1,6 +1,8 @@
 {
+  "description": "Creates Brilliant Mana Oil. In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.5).",
   "fetched_at": "2026-05-24T08:51:38+00:00",
   "name": "Brilliant Mana Oil",
+  "normalized_requirements": [],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell",
@@ -12,9 +14,52 @@
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          310,
+          320,
+          330
+        ],
+        "creates": [
+          20748,
+          0,
+          0
+        ],
+        "id": 25130,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Brilliant Mana Oil",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            14344,
+            2
+          ],
+          [
+            8831,
+            3
+          ],
+          [
+            18256,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          333
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [

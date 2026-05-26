@@ -2,6 +2,17 @@
   "description": "Permanently enchant a piece of chest armor to grant +15 Spirit. Requires a level 35 or higher item. In the Profession Spells category. Always up to date.",
   "fetched_at": "2026-05-24T09:44:13+00:00",
   "name": "Enchant Chest - Major Spirit",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Enchanting",
+      "raw_text": "Enchanting",
+      "scope": "learn_recipe",
+      "skill": 320,
+      "source_url": "https://www.wowhead.com/tbc/spell=33990/enchant-chest-major-spirit",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_spell_recipe",
@@ -9,12 +20,23 @@
       "entity_name": "Enchanting Trainer",
       "profession": "Enchanting",
       "required_skill": 320,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Enchanting",
+          "raw_text": "Enchanting",
+          "scope": "learn_recipe",
+          "skill": 320,
+          "source_url": "https://www.wowhead.com/tbc/spell=33990/enchant-chest-major-spirit",
+          "type": "profession"
+        }
+      ],
       "source_url": "https://www.wowhead.com/tbc/spell=33990/enchant-chest-major-spirit",
       "type": "trainer"
     }
   ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.1",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
     "recipes": [

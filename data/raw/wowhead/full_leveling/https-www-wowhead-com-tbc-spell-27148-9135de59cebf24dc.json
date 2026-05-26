@@ -1,11 +1,14 @@
 {
+  "description": "Places a Blessing on the party member, transfering 104 damage taken per hit to the caster. Lasts 30 sec. Players may only have one Blessing on them per Paladin at any one time.",
   "fetched_at": "2026-05-24T09:06:50+00:00",
   "name": "Blessing of Sacrifice",
+  "normalized_requirements": [],
   "normalized_sources": [],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

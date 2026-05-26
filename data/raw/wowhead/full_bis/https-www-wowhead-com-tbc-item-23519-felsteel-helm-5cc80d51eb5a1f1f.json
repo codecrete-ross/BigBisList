@@ -5,15 +5,136 @@
   "fetched_at": "2026-05-24T05:11:47+00:00",
   "item_id": 23519,
   "name": "Felsteel Helm",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Felsteel Helm Phase 1 Item Level 115 Binds when equipped Head Plate 1284 Armor +27 Stamina Red Socket Blue Socket Blue Socket Socket Bonus: +4 Hit Rating Durability 80 / 80 Requires Level 70 Equip: Increases defense rating by 33. Faith in Felsteel (0/3) Requires Blacksmithing (350) Felsteel Helm Felsteel Leggings Felsteel Gloves (3) Set : +25 Strength. Sell Price: 4 58 22 This blue plate armor of item level 115 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23519/felsteel-helm",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 29621,
+      "entity_name": "Felsteel Helm",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23519/felsteel-helm",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23519/felsteel-helm",
+      "spell_id": 29621,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "rare",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          23519,
+          1,
+          1
+        ],
+        "id": 29621,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Felsteel Helm",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 3,
+        "reagents": [
+          [
+            23448,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23607,
+        "level": 73,
+        "name": "Plans: Felsteel Helm",
+        "popularity": 10,
+        "quality": 3,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Cabal Fanatic",
+            "t": 1,
+            "ti": 18830,
+            "z": 3789
+          }
+        ],
+        "subclass": 4
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23607,
+      "level": 73,
+      "name": "Plans: Felsteel Helm",
+      "popularity": 10,
+      "quality": 3,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Cabal Fanatic",
+          "t": 1,
+          "ti": 18830,
+          "z": 3789
+        }
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=23519/felsteel-helm"
 }

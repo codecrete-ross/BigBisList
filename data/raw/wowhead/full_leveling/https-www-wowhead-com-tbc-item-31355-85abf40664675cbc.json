@@ -5,6 +5,17 @@
   "fetched_at": "2026-05-24T09:23:36+00:00",
   "item_id": 31355,
   "name": "Recipe: Flask of Supreme Power",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Flask of Supreme Power Item Level 60 Binds when picked up Requires Alchemy (300) Requires Keepers of Time - Exalted Use: Teaches you how to make a Flask of Supreme Power. Sell Price: 1 Flask of Supreme Power Item Level 60 Requires Level 50 Use: Increases damage done by magical spells and effects by up to 70 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreamfoil (7), Mountain Silversage (3), Black Lotus , Crystal Vial This alchemy recipe is used for the Alchemy profession. It is sold by Alurmi. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=31355",
+      "type": "profession"
+    }
+  ],
   "normalized_sources": [
     {
       "confidence": "wowhead_item",
@@ -17,7 +28,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

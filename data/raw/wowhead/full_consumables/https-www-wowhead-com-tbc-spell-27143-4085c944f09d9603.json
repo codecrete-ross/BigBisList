@@ -1,11 +1,44 @@
 {
+  "description": "Gives all members of the raid or group that share the same class with the target the Greater Blessing of Wisdom, restoring 41 mana every 5 seconds for 30 min. Players may only have one Blessing on them per Paladin at any one time.",
   "fetched_at": "2026-05-24T08:51:00+00:00",
   "name": "Greater Blessing of Wisdom",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Profession Trainer",
+      "source_url": "https://www.wowhead.com/tbc/spell=27143",
+      "type": "trainer"
+    }
+  ],
   "page_type": "spell",
-  "parser_version": "wowhead-scraper-0.5.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "related_tables": {
     "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 2,
+        "id": 27143,
+        "level": 65,
+        "name": "Greater Blessing of Wisdom",
+        "nskillup": 1,
+        "rank": "Rank 3",
+        "reagents": [
+          [
+            21177,
+            1
+          ]
+        ],
+        "reqclass": 2,
+        "schools": 2,
+        "skill": [
+          594
+        ],
+        "trainingcost": 75000
+      }
+    ],
     "reward-from-q": [],
     "sold-by": [],
     "taught-by-item": [],

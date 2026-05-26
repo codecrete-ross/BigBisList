@@ -5,15 +5,146 @@
   "fetched_at": "2026-05-24T04:58:02+00:00",
   "item_id": 24261,
   "name": "Whitemend Pants",
-  "normalized_sources": [],
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Whitemend Pants Phase 1 Item Level 105 Binds when equipped Legs Cloth 156 Armor +21 Stamina +21 Intellect Blue Socket Yellow Socket Red Socket Socket Bonus: +4 Intellect Durability 75 / 75 Requires Level 70 Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects. Equip: Restores 11 mana per 5 sec. Whitemend Wisdom (0/2) Requires Tailoring (350) Whitemend Hood Whitemend Pants (2) Set : Increases healing by up to 10% of your total Intellect. Sell Price: 4 47 16 This epic cloth armor of item level 105 goes in the \"Legs\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24261/whitemend-pants",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31451,
+      "entity_name": "Whitemend Pants",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24261/whitemend-pants",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24261/whitemend-pants",
+      "spell_id": 31451,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          24261,
+          1,
+          1
+        ],
+        "id": 31451,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Whitemend Pants",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            21845,
+            10
+          ],
+          [
+            23571,
+            5
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24308,
+        "level": 75,
+        "name": "Pattern: Whitemend Pants",
+        "popularity": 7,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Dalliah the Doomsayer",
+            "t": 1,
+            "ti": 20885,
+            "z": 3848
+          }
+        ],
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24308,
+      "level": 75,
+      "name": "Pattern: Whitemend Pants",
+      "popularity": 7,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Dalliah the Doomsayer",
+          "t": 1,
+          "ti": 20885,
+          "z": 3848
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=24261/whitemend-pants"
 }

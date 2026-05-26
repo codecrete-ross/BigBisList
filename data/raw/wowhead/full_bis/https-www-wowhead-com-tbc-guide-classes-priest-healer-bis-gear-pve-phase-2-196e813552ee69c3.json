@@ -1,7 +1,8 @@
 {
   "fetched_at": "2026-05-24T04:24:41+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
+  "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
@@ -58,6 +59,16 @@
           "item_id": 32495,
           "item_name": "Powerheal 4000 Lens",
           "item_url": "https://www.wowhead.com/tbc/item=32495/powerheal-4000-lens",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Engineering - BoP only"
@@ -150,6 +161,16 @@
           "item_id": 24264,
           "item_name": "Whitemend Hood",
           "item_url": "https://www.wowhead.com/tbc/item=24264/whitemend-hood",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -212,6 +233,25 @@
           "item_id": 21874,
           "item_name": "Primal Mooncloth Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
@@ -426,6 +466,25 @@
           "item_id": 21875,
           "item_name": "Primal Mooncloth Robe",
           "item_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
@@ -513,6 +572,18 @@
           "item_id": 29183,
           "item_name": "Bindings of the Timewalker",
           "item_url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi (Keepers of Time Exalted)",
+              "reputation": "Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Throughput BiS",
           "source_links": [
             {
@@ -774,6 +845,16 @@
           "item_id": 30036,
           "item_name": "Belt of the Long Road",
           "item_url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -799,6 +880,25 @@
           "item_id": 21873,
           "item_name": "Primal Mooncloth Belt",
           "item_url": "https://www.wowhead.com/tbc/item=21873/primal-mooncloth-belt",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
@@ -988,6 +1088,16 @@
           "item_id": 24261,
           "item_name": "Whitemend Pants",
           "item_url": "https://www.wowhead.com/tbc/item=24261/whitemend-pants",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Viable",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
@@ -1050,6 +1160,16 @@
           "item_id": 30035,
           "item_name": "Boots of the Long Road",
           "item_url": "https://www.wowhead.com/tbc/item=30035/boots-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "type": "profession"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
@@ -1336,6 +1456,18 @@
           "item_id": 29290,
           "item_name": "Violet Signet of the Grand Restorer",
           "item_url": "https://www.wowhead.com/tbc/item=29290/violet-signet-of-the-grand-restorer",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quest: Eminence Among the Violet Eye (The Violet Eye Exalted)",
+              "reputation": "The Violet Eye",
+              "scope": "quest_reward",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -1871,6 +2003,18 @@
           "item_id": 29170,
           "item_name": "Windcaller's Orb",
           "item_url": "https://www.wowhead.com/tbc/item=29170/windcallers-orb",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/healer-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Great",
           "source_links": [
             {

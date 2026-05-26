@@ -5,15 +5,146 @@
   "fetched_at": "2026-05-24T05:29:10+00:00",
   "item_id": 32584,
   "name": "Swiftheal Wraps",
-  "normalized_sources": [],
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41207,
+      "entity_name": "Swiftheal Wraps",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps",
+      "spell_id": 41207,
+      "type": "crafted"
+    }
+  ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.4.0",
+  "parser_version": "wowhead-scraper-0.6.0",
   "quality": "epic",
   "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
     "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          32584,
+          1,
+          1
+        ],
+        "id": 41207,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Swiftheal Wraps",
+        "nskillup": 1,
+        "popularity": 10,
+        "quality": 4,
+        "reagents": [
+          [
+            21842,
+            3
+          ],
+          [
+            21845,
+            4
+          ],
+          [
+            21886,
+            8
+          ],
+          [
+            32428,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
     "dropped-by": [],
+    "gathered-from-object": [],
     "reward-from-q": [],
-    "sold-by": []
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 32752,
+        "level": 70,
+        "name": "Pattern: Swiftheal Wraps",
+        "popularity": 4,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 2
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35526,
+        "level": 70,
+        "name": "Pattern: Swiftheal Wraps",
+        "popularity": 8,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "subclass": 2
+      }
+    ]
   },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 32752,
+      "level": 70,
+      "name": "Pattern: Swiftheal Wraps",
+      "popularity": 4,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 2
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35526,
+      "level": 70,
+      "name": "Pattern: Swiftheal Wraps",
+      "popularity": 8,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
   "url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps"
 }
