@@ -156,6 +156,22 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, data_index)
 
+    def test_token_turnin_raid_zones_feed_zone_filters(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "getSourceZones",
+            "addZonesFromSource",
+            'source.type == "token_turnin"',
+            "source.token_sources",
+            "rowMatchesZoneFilter",
+            "rowMatchesAnySelectedZone",
+            "zones = getSourceZones(item)",
+            "zones = use.zones",
+        ]:
+            self.assertIn(token, data_index)
+        self.assertLess(data_index.index("getSourceZones"), data_index.index("includeByFilter"))
+        self.assertLess(data_index.index("rowMatchesZoneFilter"), data_index.index("includeByFilter"))
+
     def test_source_aware_access_status_prefers_ready_options(self):
         ui = self.read_lua("UI.lua")
         for token in [

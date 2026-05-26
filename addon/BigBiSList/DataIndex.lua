@@ -616,6 +616,44 @@ local function getSourceZone(item)
     return nil
 end
 
+local function addSourceZone(zones, seen, zone)
+    if zone and zone ~= "" then
+        addUnique(zones, seen, zone)
+    end
+end
+
+local function addZonesFromSource(zones, seen, source)
+    if type(source) ~= "table" then
+        return
+    end
+
+    addSourceZone(zones, seen, source.zone)
+
+    if source.type == "token_turnin" then
+        for _, tokenSource in ipairs(source.token_sources or {}) do
+            addSourceZone(zones, seen, tokenSource.zone)
+        end
+    end
+end
+
+local function getSourceZones(item)
+    local zones = {}
+    local seen = {}
+
+    if item then
+        addZonesFromSource(zones, seen, item.primary_source)
+        for _, source in ipairs(item.sources or {}) do
+            addZonesFromSource(zones, seen, source)
+        end
+    end
+
+    if #zones == 0 then
+        table.insert(zones, "Unknown")
+    end
+
+    return zones
+end
+
 local function getSourceSide(item)
     local source = getPrimarySource(item)
     if source and source.side and source.side ~= "" then
@@ -640,6 +678,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     local item = index.itemsById[itemId]
     local sourceType = getSourceType(item)
     local zone = getSourceZone(item)
+    local zones = getSourceZones(item)
 
     return {
         class = className,
@@ -660,6 +699,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         source_type = sourceType,
         source_type_label = SOURCE_TYPE_LABELS[sourceType] or sourceType,
         zone = zone,
+        zones = zones,
         side = getSourceSide(item),
         binding = item and item.binding or "unknown",
         boe = item and item.boe,
@@ -667,6 +707,45 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         requirements = mergedRequirements(item and item.requirements, itemEntry.requirements),
         access_options = buildAccessOptions(item, nil, itemEntry.requirements, { entityType = "item" }),
     }
+end
+
+local function rowHasZone(row, zone)
+    if not row or not zone or zone == "" then
+        return false
+    end
+
+    if (row.zone or "Unknown") == zone then
+        return true
+    end
+
+    for _, rowZone in ipairs(row.zones or {}) do
+        if rowZone == zone then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function rowMatchesZoneFilter(row, zone)
+    if not zone or zone == "all" then
+        return true
+    end
+    return rowHasZone(row, zone)
+end
+
+local function rowMatchesAnySelectedZone(row, selectedZones)
+    if not tableHasAnyEnabled(selectedZones) then
+        return true
+    end
+
+    for zone, selected in pairs(selectedZones or {}) do
+        if selected and rowHasZone(row, zone) then
+            return true
+        end
+    end
+
+    return false
 end
 
 local function includeByFilter(row, filters)
@@ -697,10 +776,10 @@ local function includeByFilter(row, filters)
         return false
     end
 
-    if filters.zone and filters.zone ~= "all" and (row.zone or "Unknown") ~= filters.zone then
+    if not rowMatchesZoneFilter(row, filters.zone) then
         return false
     end
-    if tableHasAnyEnabled(filters.zones) and not filters.zones[row.zone or "Unknown"] then
+    if not rowMatchesAnySelectedZone(row, filters.zones) then
         return false
     end
 
@@ -908,7 +987,9 @@ function BigBiSList:GetDataIndex()
     for _, item in ipairs(data.items or {}) do
         index.itemsById[item.id] = item
         addUnique(index.sourceTypes, sourceSeen, getSourceType(item))
-        addUnique(index.zones, zoneSeen, getSourceZone(item) or "Unknown")
+        for _, zone in ipairs(getSourceZones(item)) do
+            addUnique(index.zones, zoneSeen, zone)
+        end
     end
 
     for _, sourceData in ipairs(data.gem_sources or {}) do
@@ -1112,6 +1193,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
                         source_type = use.source_type,
                         source_type_label = use.source_type_label,
                         zone = use.zone,
+                        zones = use.zones,
                         binding = use.binding,
                         boe = use.boe,
                         side = use.side,
