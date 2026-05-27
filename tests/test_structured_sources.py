@@ -23,6 +23,40 @@ class StructuredSourceTests(unittest.TestCase):
         self.assertEqual(source["entity_name"], "Moroes")
         self.assertEqual(source["zone"], "Karazhan")
 
+    def test_caverns_of_time_vendor_sources_are_normalized(self):
+        item = self.items[29185]
+        source = item["primary_source"]
+        self.assertEqual(source["type"], "vendor")
+        self.assertEqual(source["entity_name"], "Alurmi")
+        self.assertEqual(source["zone"], "Caverns of Time")
+        self.assertEqual(item["source_summary"], "Vendor: Alurmi (Caverns of Time)")
+
+        caverns_vendor_ids = {19932, 20080, 21643, 25177, 25178}
+        violations = []
+        for item in self.items.values():
+            for source in item.get("sources", []):
+                if source.get("zone") == "Tanaris" and (source.get("entity_id") in caverns_vendor_ids or source.get("vendor_id") in caverns_vendor_ids):
+                    violations.append(f"{item['id']} {item['name']} still labels {source.get('entity_name')} as Tanaris")
+        self.assertEqual(violations, [])
+
+    def test_no_synthetic_unknown_zone_in_item_sources(self):
+        violations = []
+        for item in self.items.values():
+            for source in item.get("sources", []):
+                if source.get("zone") == "Unknown":
+                    violations.append(f"{item['id']} {item['name']}")
+        self.assertEqual(violations, [])
+
+    def test_earthwarden_rep_prereq_is_structured(self):
+        item = self.items[29171]
+        matching = [
+            requirement
+            for requirement in item.get("requirements", [])
+            if requirement.get("type") == "reputation" and requirement.get("reputation") == "Cenarion Expedition"
+        ]
+        self.assertTrue(matching)
+        self.assertTrue(any(requirement.get("standing_rank") == 8 for requirement in matching))
+
     def test_avenger_keeps_both_faction_quest_sources(self):
         item = self.items[31025]
         quest_ids = {source["quest_id"] for source in item["sources"]}

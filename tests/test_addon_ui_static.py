@@ -200,14 +200,77 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, ui)
         self.assertLess(ui.index("data and data.access_options"), ui.index("local flatEvaluation = self:EvaluateRequirementList"))
 
-    def test_low_confidence_requirements_are_check_only(self):
+    def test_typed_parsed_requirements_are_actionable(self):
         ui = self.read_lua("UI.lua")
-        self.assertIn('requirement.confidence == "parsed_source_text"', ui)
+        self.assertIn("local function isCheckOnlyRequirement", ui)
         self.assertIn('requirement.type == "unknown_text"', ui)
         self.assertIn('elseif requirement.type == "source_access" then', ui)
         self.assertIn('return "check_prereq"', ui)
+        self.assertIn("reputations = collectReputationState()", ui)
+        self.assertIn("local function splitFactionNames", ui)
+        self.assertIn("getFactionStandingRank(requirement.reputation, accessState)", ui)
+        self.assertIn("getFactionStandingRank(faction, accessState)", ui)
+        self.assertNotIn('requirement.confidence == "parsed_source_text"', ui)
         evaluate_body = ui.split("function UI:EvaluateRequirement", 1)[1].split("function UI:GetAccessStatus", 1)[0]
-        self.assertLess(evaluate_body.index("isLowConfidenceRequirement(requirement)"), evaluate_body.index('requirement.type == "reputation"'))
+        self.assertLess(evaluate_body.index('requirement.type == "reputation"'), evaluate_body.index('requirement.type == "source_access"'))
+
+    def test_details_prereq_lines_are_deduped(self):
+        ui = self.read_lua("UI.lua")
+        self.assertIn("appendRequirementLine", ui)
+        self.assertIn("requirementLineKey", ui)
+        self.assertIn("local seen = {}", ui)
+        self.assertIn("appendRequirementLine(lines, seen, state, requirement)", ui)
+
+    def test_current_gear_row_reserves_distinct_regions(self):
+        ui = self.read_lua("UI.lua")
+        body = ui.split("function UI:CreateGearSlotRow", 1)[1].split("function UI:RenderGearTab", 1)[0]
+        self.assertIn("local badgeRightInset = 92", body)
+        self.assertIn('slotLabel:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -4)', body)
+        self.assertIn('iconButton:SetPoint("TOPLEFT", slotLabel, "BOTTOMLEFT", 0, -2)', body)
+        self.assertIn('nameText:SetPoint("TOPLEFT", iconButton, "TOPRIGHT", 8, 2)', body)
+        self.assertIn('nameText:SetPoint("RIGHT", row, "RIGHT", -badgeRightInset, 0)', body)
+        self.assertIn('detailText:SetPoint("RIGHT", row, "RIGHT", -badgeRightInset, 0)', body)
+        self.assertNotIn('iconButton:SetPoint("BOTTOMLEFT"', body)
+        self.assertLess(body.index("slotLabel:SetPoint"), body.index("iconButton:SetPoint"))
+
+    def test_tooltip_settings_drive_rendering(self):
+        tooltip = self.read_lua("Tooltip.lua")
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "itemIdFromTooltipData",
+            "itemIdFromTooltip(tooltip, tooltipData)",
+            "__bigBisListRenderKey",
+            "OnTooltipCleared",
+            "settings.selectedSpecFirst ~= false",
+            "settings.compact and 4 or 8",
+            "settings.showAllOnAlt and IsAltKeyDown",
+            "#matches > maxRows and not showAll and settings.showAllOnAlt",
+        ]:
+            self.assertIn(token, tooltip)
+        self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst)", data_index)
+        self.assertIn("selectedSpecFirst = selectedSpecFirst ~= false", data_index)
+
+    def test_zone_filter_options_are_context_aware(self):
+        data_index = self.read_lua("DataIndex.lua")
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "GetAvailableFilterZones",
+            "cloneFiltersForZoneOptions",
+            'scopedFilters.zone = "all"',
+            "scopedFilters.zones = nil",
+            "addZonesFromRow",
+        ]:
+            self.assertIn(token, data_index)
+        self.assertNotIn('table.insert(zones, "Unknown")', data_index)
+        self.assertNotIn('(row.zone or "Unknown")', data_index)
+        for token in [
+            "GetAvailableZoneValues",
+            "ValidateZoneFilter",
+            "IsZoneValueAvailable",
+            "for _, zone in ipairs(self:GetAvailableZoneValues())",
+        ]:
+            self.assertIn(token, ui)
+        self.assertNotIn("BigBiSList:GetDataIndex().zones", ui)
 
     def test_details_drawer_lists_access_paths(self):
         ui = self.read_lua("UI.lua")

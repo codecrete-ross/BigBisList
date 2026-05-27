@@ -117,6 +117,14 @@ ZONE_ID_NAMES = {
     4075: "Sunwell Plateau",
 }
 
+CAVERNS_OF_TIME_ENTITY_IDS = {
+    19932,  # Andormu
+    20080,  # Galgrom
+    21643,  # Alurmi
+    25177,  # Evee Copperspring
+    25178,  # Ecton Brasstumbler
+}
+
 RECIPE_ITEM_PREFIXES = ("design:", "formula:", "pattern:", "plans:", "recipe:", "schematic:", "manual:")
 
 SLOT_PATTERNS = [
@@ -513,6 +521,7 @@ def extract_reputation_requirements(text: str, source_url: str, scope: str, conf
     standing_pattern = "|".join(REPUTATION_STANDING_RANKS)
     patterns = [
         rf"\b(?:requires?|when|at|learned at)\s+(?P<standing>{standing_pattern})(?:\s+reputation)?\s+(?:with|from)\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
+        rf"\b(?P<standing>{standing_pattern})(?:\s+reputation)?\s+with\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
         rf"\((?P<reputation>[^()]+?)\s*(?:-\s*)?(?P<standing>{standing_pattern})\)",
     ]
     for pattern in patterns:
@@ -910,13 +919,23 @@ def extract_gatherer_names(html: str) -> dict[str, dict[int, str]]:
     return names
 
 
+def zone_name_for_row(zone_id: int, row: dict[str, Any]) -> str | None:
+    try:
+        entity_id = int(row.get("id"))
+    except (TypeError, ValueError):
+        entity_id = None
+    if zone_id == 440 and entity_id in CAVERNS_OF_TIME_ENTITY_IDS:
+        return "Caverns of Time"
+    return ZONE_ID_NAMES.get(zone_id)
+
+
 def first_zone_name(row: dict[str, Any]) -> str | None:
     locations = row.get("location")
     if isinstance(locations, list) and locations:
-        return ZONE_ID_NAMES.get(int(locations[0]))
+        return zone_name_for_row(int(locations[0]), row)
     category = row.get("category")
     if isinstance(category, int):
-        return ZONE_ID_NAMES.get(category)
+        return zone_name_for_row(category, row)
     return None
 
 
@@ -3939,12 +3958,42 @@ def command_snapshot_audit(args: argparse.Namespace) -> int:
     return 0 if audit["ok"] else 1
 
 
+def canonical_zone_audit_errors() -> list[str]:
+    errors: list[str] = []
+
+    def walk(value: Any, path: str) -> None:
+        if isinstance(value, dict):
+            zone = value.get("zone")
+            if zone == "Unknown":
+                errors.append(f"Synthetic Unknown zone emitted at {path}")
+
+            raw_entity_id = value.get("entity_id") or value.get("vendor_id")
+            try:
+                entity_id = int(raw_entity_id)
+            except (TypeError, ValueError):
+                entity_id = None
+            if zone == "Tanaris" and entity_id in CAVERNS_OF_TIME_ENTITY_IDS:
+                errors.append(f"Caverns of Time source {entity_id} is mislabeled Tanaris at {path}")
+
+            for key, child in value.items():
+                walk(child, f"{path}.{key}")
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                walk(child, f"{path}[{index}]")
+
+    for name in ["items", "enchants", "enchant_sources"]:
+        walk(canonical_json(name), name)
+
+    return errors
+
+
 def build_audit() -> dict[str, Any]:
     result = validate()
     items = {item["id"]: item for item in canonical_json("items").get("items", [])}
     bis_doc = canonical_json("bis_lists")
     audit_errors = list(result.errors)
     audit_errors.extend(canonical_semantic_errors())
+    audit_errors.extend(canonical_zone_audit_errors())
     duplicate_warnings: list[str] = []
     reviewed_unknown_item_ids = reviewed_unknown_source_item_ids()
 

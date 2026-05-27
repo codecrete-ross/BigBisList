@@ -219,43 +219,159 @@ local function requirementSummary(requirement)
     return requirement.type or "Prerequisite"
 end
 
-local function isLowConfidenceRequirement(requirement)
-    return not requirement or requirement.confidence == "parsed_source_text" or requirement.type == "unknown_text"
+local function requirementLineKey(state, requirement)
+    return accessStateLabel(state) .. " - " .. requirementSummary(requirement)
+end
+
+local function appendRequirementLine(lines, seen, state, requirement)
+    local key = requirementLineKey(state, requirement)
+    if seen[key] then
+        return
+    end
+    seen[key] = true
+    table.insert(lines, key)
+end
+
+local function isCheckOnlyRequirement(requirement)
+    if not requirement then
+        return false
+    elseif requirement.type == "unknown_text" or requirement.type == "source_access" then
+        return true
+    elseif requirement.type == "reputation" then
+        return trim(requirement.reputation) == "" or not (tonumber(requirement.standing_rank) or REPUTATION_STANDINGS[requirement.standing or ""])
+    elseif requirement.type == "profession" then
+        return trim(requirement.profession) == ""
+    elseif requirement.type == "recipe_known" then
+        return not tonumber(requirement.spell_id)
+    elseif requirement.type == "faction_choice" then
+        return not requirement.choices or #requirement.choices == 0
+    end
+    return false
 end
 
 local function isBlockingAccessState(state)
     return state == "needs_recipe" or state == "needs_profession" or state == "needs_rep"
 end
 
-local function getFactionStandingRank(factionName)
+local FACTION_NAME_ALIASES = {
+    ["scale of the sands"] = "The Scale of the Sands",
+    ["the scale of the sands"] = "The Scale of the Sands",
+    ["mag'har"] = "The Mag'har",
+    ["the mag'har"] = "The Mag'har",
+    ["the maghar"] = "The Mag'har",
+}
+
+local function splitFactionNames(factionName)
+    local names = {}
+    for part in string.gmatch(tostring(factionName or ""), "[^/]+") do
+        local name = trim(part)
+        if name ~= "" then
+            table.insert(names, name)
+        end
+    end
+    return names
+end
+
+local function cacheReputationStanding(accessState, factionName, standing)
+    if not accessState or not factionName or not standing then
+        return
+    end
+    accessState.reputations = accessState.reputations or {}
+    accessState.reputations[lower(factionName)] = tonumber(standing)
+end
+
+local function getSingleFactionStandingRank(factionName, accessState)
     if not factionName or factionName == "" then
         return nil
     end
 
-    if C_Reputation and C_Reputation.GetFactionDataByName then
-        local ok, data = pcall(C_Reputation.GetFactionDataByName, factionName)
-        if ok and data then
-            return data.reaction or data.standingID
-        end
+    local lookupNames = { trim(factionName) }
+    local alias = FACTION_NAME_ALIASES[lower(factionName)]
+    if alias and alias ~= lookupNames[1] then
+        table.insert(lookupNames, alias)
     end
 
-    if GetFactionInfoByName then
-        local ok, _, _, standing = pcall(GetFactionInfoByName, factionName)
-        if ok then
-            return standing
-        end
-    end
-
-    if GetNumFactions and GetFactionInfo then
-        for index = 1, GetNumFactions() do
-            local name, _, standing = GetFactionInfo(index)
-            if name == factionName then
+    if accessState and accessState.reputations then
+        for _, name in ipairs(lookupNames) do
+            local standing = accessState.reputations[lower(name)]
+            if standing then
                 return standing
             end
         end
     end
 
+    if C_Reputation and C_Reputation.GetFactionDataByName then
+        for _, name in ipairs(lookupNames) do
+            local ok, data = pcall(C_Reputation.GetFactionDataByName, name)
+            if ok and data then
+                local standing = data.reaction or data.standingID
+                cacheReputationStanding(accessState, name, standing)
+                if data.name then
+                    cacheReputationStanding(accessState, data.name, standing)
+                end
+                return standing
+            end
+        end
+    end
+
+    if GetFactionInfoByName then
+        for _, name in ipairs(lookupNames) do
+            local ok, _, _, standing = pcall(GetFactionInfoByName, name)
+            if ok and standing then
+                cacheReputationStanding(accessState, name, standing)
+                return standing
+            end
+        end
+    end
+
+    if GetNumFactions and GetFactionInfo then
+        local okCount, factionCount = pcall(GetNumFactions)
+        if okCount then
+            for index = 1, factionCount do
+                local okInfo, name, _, standing = pcall(GetFactionInfo, index)
+                if okInfo and name then
+                    cacheReputationStanding(accessState, name, standing)
+                    for _, lookupName in ipairs(lookupNames) do
+                        if name == lookupName then
+                            return standing
+                        end
+                    end
+                end
+            end
+        end
+    end
+
     return nil
+end
+
+local function getFactionStandingRank(factionName, accessState)
+    local bestStanding
+    for _, name in ipairs(splitFactionNames(factionName)) do
+        local standing = getSingleFactionStandingRank(name, accessState)
+        if standing and (not bestStanding or standing > bestStanding) then
+            bestStanding = standing
+        end
+    end
+    return bestStanding
+end
+
+local function collectReputationState()
+    local reputations = {}
+    local accessState = { reputations = reputations }
+
+    if GetNumFactions and GetFactionInfo then
+        local okCount, factionCount = pcall(GetNumFactions)
+        if okCount then
+            for index = 1, factionCount do
+                local okInfo, name, _, standing = pcall(GetFactionInfo, index)
+                if okInfo and name and name ~= "" then
+                    cacheReputationStanding(accessState, name, standing)
+                end
+            end
+        end
+    end
+
+    return reputations
 end
 
 local function collectProfessionState()
@@ -443,6 +559,7 @@ end
 function UI:BuildAccessState()
     return {
         professions = collectProfessionState(),
+        reputations = collectReputationState(),
     }
 end
 
@@ -451,13 +568,15 @@ function UI:EvaluateRequirement(requirement, accessState)
         return "unknown"
     end
 
-    if isLowConfidenceRequirement(requirement) then
+    accessState = accessState or self.currentAccess or self:BuildAccessState()
+
+    if isCheckOnlyRequirement(requirement) then
         return "check_prereq"
     end
 
     if requirement.type == "reputation" then
         local requiredRank = tonumber(requirement.standing_rank) or REPUTATION_STANDINGS[requirement.standing or ""] or 0
-        local currentRank = getFactionStandingRank(requirement.reputation)
+        local currentRank = getFactionStandingRank(requirement.reputation, accessState)
         if not currentRank then
             return "unknown"
         elseif currentRank < requiredRank then
@@ -465,14 +584,14 @@ function UI:EvaluateRequirement(requirement, accessState)
         end
         return "ready"
     elseif requirement.type == "profession" then
-        local profession = accessState.professions[lower(requirement.profession)]
+        local profession = accessState.professions and accessState.professions[lower(requirement.profession)]
         local requiredSkill = tonumber(requirement.skill) or 0
         if not profession or (profession.skill or 0) < requiredSkill then
             return "needs_profession"
         end
         return "ready"
     elseif requirement.type == "profession_specialization" then
-        local profession = accessState.professions[lower(requirement.profession)]
+        local profession = accessState.professions and accessState.professions[lower(requirement.profession)]
         if not profession then
             return "needs_profession"
         end
@@ -484,7 +603,7 @@ function UI:EvaluateRequirement(requirement, accessState)
         return "ready"
     elseif requirement.type == "faction_choice" then
         for _, faction in ipairs(requirement.choices or {}) do
-            local standing = getFactionStandingRank(faction)
+            local standing = getFactionStandingRank(faction, accessState)
             if standing and standing > 4 then
                 return "ready"
             end
@@ -624,8 +743,11 @@ function UI:FormatRequirements(data)
     end
 
     local lines = {}
+    local seen = {}
+    local accessState = self.currentAccess or self:BuildAccessState()
     for _, requirement in ipairs(requirements) do
-        table.insert(lines, accessStateLabel(self:EvaluateRequirement(requirement, self.currentAccess or self:BuildAccessState())) .. " - " .. requirementSummary(requirement))
+        local state = self:EvaluateRequirement(requirement, accessState)
+        appendRequirementLine(lines, seen, state, requirement)
     end
     return table.concat(lines, "\n")
 end
@@ -638,9 +760,11 @@ function UI:FormatAccessOptionRequirements(optionEvaluation)
     end
 
     local lines = {}
+    local seen = {}
     local accessState = self.currentAccess or self:BuildAccessState()
     for _, requirement in ipairs(requirements) do
-        table.insert(lines, accessStateLabel(self:EvaluateRequirement(requirement, accessState)) .. " - " .. requirementSummary(requirement))
+        local state = self:EvaluateRequirement(requirement, accessState)
+        appendRequirementLine(lines, seen, state, requirement)
     end
     return table.concat(lines, "\n")
 end
@@ -688,8 +812,35 @@ function UI:ScanBankItems()
     cache.updatedAt = date and date("%Y-%m-%d %H:%M") or "this session"
 end
 
+function UI:GetAvailableZoneValues()
+    local selection = self:GetSelection()
+    local filters = self:GetFilters()
+    return BigBiSList:GetAvailableFilterZones(selection.class, selection.spec, selection.phase, selection.tab, filters)
+end
+
+function UI:IsZoneValueAvailable(zone)
+    if not zone or zone == "all" then
+        return true
+    end
+
+    for _, availableZone in ipairs(self:GetAvailableZoneValues()) do
+        if availableZone == zone then
+            return true
+        end
+    end
+    return false
+end
+
+function UI:ValidateZoneFilter()
+    local filters = self:GetFilters()
+    if filters.zone and filters.zone ~= "all" and not self:IsZoneValueAvailable(filters.zone) then
+        filters.zone = "all"
+    end
+end
+
 function UI:BuildFilterPayload()
     local filters = self:GetFilters()
+    self:ValidateZoneFilter()
     self.currentAccess = self:BuildAccessState()
     return {
         search = filters.search,
@@ -821,10 +972,11 @@ end
 
 function UI:GetZoneDropdownItems()
     local filters = self:GetFilters()
+    self:ValidateZoneFilter()
     local items = {
         { value = "all", text = "All zones", checked = filters.zone == "all" },
     }
-    for _, zone in ipairs(BigBiSList:GetDataIndex().zones) do
+    for _, zone in ipairs(self:GetAvailableZoneValues()) do
         table.insert(items, {
             value = zone,
             text = zone,
@@ -838,27 +990,34 @@ function UI:SetClass(className)
     local index = BigBiSList:GetDataIndex()
     local specs = index.specsByClass[className] or {}
     BigBiSList:SetSelection(className, firstSpecName(specs), nil, nil)
+    self:ValidateZoneFilter()
     self:Refresh()
 end
 
 function UI:SetSpec(specName)
     BigBiSList:SetSelection(nil, specName, nil, nil)
+    self:ValidateZoneFilter()
     self:Refresh()
 end
 
 function UI:SetPhase(phaseKey)
     BigBiSList:SetSelection(nil, nil, phaseKey, nil)
+    self:ValidateZoneFilter()
     self:Refresh()
 end
 
 function UI:SetTab(tabName)
     BigBiSList:SetSelection(nil, nil, nil, tabName)
+    self:ValidateZoneFilter()
     self:Refresh()
 end
 
 function UI:SetFilter(key, value)
     local filters = self:GetFilters()
     filters[key] = value
+    if key == "sourceType" or key == "zone" then
+        self:ValidateZoneFilter()
+    end
     self:Refresh()
 end
 
@@ -1369,6 +1528,7 @@ end
 
 function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
     local widgets = BigBiSList.Widgets
+    local badgeRightInset = 92
     local row = widgets:CreateItemRow(parent, GEAR_ROW_HEIGHT)
     row:SetSize(width, GEAR_ROW_HEIGHT)
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", xOffset, yOffset)
@@ -1377,8 +1537,8 @@ function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
     row.detailMode = "gear"
 
     local slotLabel = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    slotLabel:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -5)
-    slotLabel:SetPoint("RIGHT", row, "RIGHT", -92, 0)
+    slotLabel:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -4)
+    slotLabel:SetPoint("RIGHT", row, "RIGHT", -badgeRightInset, 0)
     slotLabel:SetJustifyH("LEFT")
     slotLabel:SetWordWrap(false)
     slotLabel:SetTextColor(1, 0.82, 0.28, 1)
@@ -1392,17 +1552,17 @@ function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
             self:RefreshDetails(rowData.item_id, rowData, "gear")
         end
     end)
-    iconButton:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 8, 7)
+    iconButton:SetPoint("TOPLEFT", slotLabel, "BOTTOMLEFT", 0, -2)
 
     local nameText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    nameText:SetPoint("TOPLEFT", iconButton, "TOPRIGHT", 8, 1)
-    nameText:SetPoint("RIGHT", row, "RIGHT", -92, 0)
+    nameText:SetPoint("TOPLEFT", iconButton, "TOPRIGHT", 8, 2)
+    nameText:SetPoint("RIGHT", row, "RIGHT", -badgeRightInset, 0)
     nameText:SetJustifyH("LEFT")
     nameText:SetWordWrap(false)
 
     local detailText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     detailText:SetPoint("TOPLEFT", nameText, "BOTTOMLEFT", 0, -2)
-    detailText:SetPoint("RIGHT", row, "RIGHT", -92, 0)
+    detailText:SetPoint("RIGHT", row, "RIGHT", -badgeRightInset, 0)
     detailText:SetJustifyH("LEFT")
     detailText:SetWordWrap(false)
     detailText:SetTextColor(0.68, 0.68, 0.72, 1)
@@ -1921,6 +2081,7 @@ function UI:Refresh()
     end
 
     self:ValidateSelection()
+    self:ValidateZoneFilter()
     self:RefreshControls()
     self.currentOwned = self:BuildOwnedItems()
     self.currentAccess = self:BuildAccessState()

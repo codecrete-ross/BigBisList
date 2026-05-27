@@ -318,6 +318,37 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(requirements[0]["reputation"], "Cenarion Expedition")
         self.assertEqual(requirements[0]["standing"], "Revered")
 
+        requirements = scraper.extract_requirements_from_text(
+            "Vendor: Alurmi - Revered with Keepers of Time",
+            source_url,
+            "vendor_purchase",
+            "parsed_source_text",
+        )
+        self.assertEqual(requirements[0]["type"], "reputation")
+        self.assertEqual(requirements[0]["reputation"], "Keepers of Time")
+        self.assertEqual(requirements[0]["standing"], "Revered")
+
+    def test_caverns_of_time_zone_normalizes_known_location_440_vendors(self):
+        self.assertEqual(scraper.first_zone_name({"id": 21643, "name": "Alurmi", "location": [440]}), "Caverns of Time")
+        self.assertEqual(scraper.first_zone_name({"id": 19932, "name": "Andormu", "location": [440]}), "Caverns of Time")
+        self.assertEqual(scraper.first_zone_name({"id": 99999, "name": "Tanaris NPC", "location": [440]}), "Tanaris")
+
+    def test_item_parser_uses_caverns_of_time_for_known_vendors(self):
+        html = """
+        <html><head>
+        <title>Continuum Blade - Item - TBC Classic</title>
+        <meta name="description" content="This rare weapon goes in the One-Hand slot.">
+        </head><body>
+        <script>
+        new Listview({ id: 'sold-by', data: [{"id":21643,"name":"Alurmi","location":[440]}], });
+        </script>
+        </body></html>
+        """
+        snapshot = parse_item_html("https://www.wowhead.com/tbc/item=29185/continuum-blade", html)
+        source = snapshot["normalized_sources"][0]
+        self.assertEqual(source["entity_name"], "Alurmi")
+        self.assertEqual(source["zone"], "Caverns of Time")
+
     def test_requirement_parser_extracts_faction_profession_and_specialization(self):
         source_url = "https://www.wowhead.com/tbc/guide/example"
         requirements = scraper.extract_requirements_from_text(

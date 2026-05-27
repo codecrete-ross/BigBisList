@@ -658,10 +658,6 @@ local function getSourceZones(item)
         end
     end
 
-    if #zones == 0 then
-        table.insert(zones, "Unknown")
-    end
-
     return zones
 end
 
@@ -732,7 +728,7 @@ local function rowHasZone(row, zone)
         return false
     end
 
-    if (row.zone or "Unknown") == zone then
+    if row.zone == zone then
         return true
     end
 
@@ -1278,6 +1274,48 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
     return rows
 end
 
+local function cloneFiltersForZoneOptions(filters)
+    local scopedFilters = {}
+    for key, value in pairs(filters or {}) do
+        scopedFilters[key] = value
+    end
+    scopedFilters.zone = "all"
+    scopedFilters.zones = nil
+    return scopedFilters
+end
+
+local function addZonesFromRow(zones, seen, row)
+    if type(row) ~= "table" then
+        return
+    end
+
+    addSourceZone(zones, seen, row.zone)
+    for _, zone in ipairs(row.zones or {}) do
+        addSourceZone(zones, seen, zone)
+    end
+end
+
+function BigBiSList:GetAvailableFilterZones(className, specName, phaseKey, tabName, filters)
+    local zones = {}
+    local seen = {}
+    local scopedFilters = cloneFiltersForZoneOptions(filters)
+
+    if tabName == "Planner" then
+        for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
+            addZonesFromRow(zones, seen, row)
+        end
+    else
+        for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
+            for _, row in ipairs(group.items or {}) do
+                addZonesFromRow(zones, seen, row)
+            end
+        end
+    end
+
+    table.sort(zones)
+    return zones
+end
+
 function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
     local index = self:GetDataIndex()
     local sections = {
@@ -1358,19 +1396,22 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
     return sections
 end
 
-function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec)
+function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst)
     local uses = self:GetDataIndex().usesByItemId[itemId] or {}
     local matches = {}
+    selectedSpecFirst = selectedSpecFirst ~= false
 
     for _, use in ipairs(uses) do
         table.insert(matches, use)
     end
 
     table.sort(matches, function(a, b)
-        local aSelected = (a.class == selectedClass and a.spec == selectedSpec) and 1 or 0
-        local bSelected = (b.class == selectedClass and b.spec == selectedSpec) and 1 or 0
-        if aSelected ~= bSelected then
-            return aSelected > bSelected
+        if selectedSpecFirst then
+            local aSelected = (a.class == selectedClass and a.spec == selectedSpec) and 1 or 0
+            local bSelected = (b.class == selectedClass and b.spec == selectedSpec) and 1 or 0
+            if aSelected ~= bSelected then
+                return aSelected > bSelected
+            end
         end
         if a.phaseIndex ~= b.phaseIndex then
             return a.phaseIndex < b.phaseIndex
