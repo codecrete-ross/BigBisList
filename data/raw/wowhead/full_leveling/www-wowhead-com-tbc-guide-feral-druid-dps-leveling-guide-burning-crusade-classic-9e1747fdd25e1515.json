@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:04+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -73,18 +73,18 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=9885",
-              "text": ""
+              "text": "Mark of the Wild"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=26992",
-              "text": ""
+              "text": "Thorns"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=16864/omen-of-clarity",
               "text": "Omen of Clarity"
             }
           ],
-          "text": "Keep , , and Omen of Clarity (once talented at level 61) applied."
+          "text": "Keep Mark of the Wild , Thorns , and Omen of Clarity (once talented at level 61) applied."
         },
         {
           "entities": [
@@ -100,10 +100,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=27011",
-              "text": ""
+              "text": "Faerie Fire (Feral)"
             }
           ],
-          "text": "Pull mob with from a distance."
+          "text": "Pull mob with Faerie Fire (Feral) from a distance."
         },
         {
           "entities": [
@@ -119,10 +119,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=33982",
-              "text": ""
+              "text": "Mangle (Cat)"
             }
           ],
-          "text": "Use repeatedly, waiting for Energy ticks when needed."
+          "text": "Use Mangle (Cat) repeatedly, waiting for Energy ticks when needed."
         },
         {
           "entities": [
@@ -138,10 +138,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=24248",
-              "text": ""
+              "text": "Ferocious Bite"
             }
           ],
-          "text": "If you have 5 Combo Points and your target is not yet dead, then use ."
+          "text": "If you have 5 Combo Points and your target is not yet dead, then use Ferocious Bite ."
         },
         {
           "entities": [
@@ -173,14 +173,14 @@
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=26980",
-              "text": ""
+              "text": "Regrowth"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=26981",
-              "text": ""
+              "text": "Rejuvenation"
             }
           ],
-          "text": "Use Lifebloom , , and/or when low on health."
+          "text": "Use Lifebloom , Regrowth , and/or Rejuvenation when low on health."
         }
       ],
       "heading": "Leveling Rotation for Feral Druid DPS in Burning Crusade"
@@ -359,6 +359,18 @@
       "heading": "Mandatory Abilities to Train for Feral Druid",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27001,
+                "name": "Shred",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27001"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -384,6 +396,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27001"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26998,
+                "name": "Demoralizing Roar",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26998"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -409,6 +433,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26998"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 22570,
+                "name": "Maim",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=22570/maim"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "Maim",
@@ -434,6 +470,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=22570/maim"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24248,
+                "name": "Ferocious Bite",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=24248"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -459,6 +507,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=24248"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26981,
+                "name": "Rejuvenation",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26981"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -484,6 +544,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26981"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33763,
+                "name": "Lifebloom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33763/lifebloom"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Lifebloom",
@@ -509,6 +581,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33763/lifebloom"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26992,
+                "name": "Thorns",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26992"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -534,6 +618,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26992"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27003,
+                "name": "Rake",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27003"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -559,6 +655,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27003"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26997,
+                "name": "Swipe",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26997"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -584,6 +692,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26997"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33357,
+                "name": "Dash",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33357"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -609,6 +729,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33357"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26980,
+                "name": "Regrowth",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26980"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -634,6 +766,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26980"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26999,
+                "name": "Frenzied Regeneration",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26999"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -659,6 +803,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26999"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33745,
+                "name": "Lacerate",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33745"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -684,6 +840,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33745"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27011,
+                "name": "Faerie Fire (Feral)",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27011"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -709,6 +877,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27011"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27006,
+                "name": "Pounce",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27006"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -734,6 +914,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27006"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27005,
+                "name": "Ravage",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27005"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -759,6 +951,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27005"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26996,
+                "name": "Maul",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26996"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -784,6 +988,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26996"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27008,
+                "name": "Rip",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27008"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -809,6 +1025,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27008"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33943,
+                "name": "Travel Form",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33943/travel-form"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Travel Form",
@@ -834,6 +1062,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33943/travel-form"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33987,
+                "name": "Mangle (Bear)",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33987"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -859,6 +1099,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33987"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33983,
+                "name": "Mangle (Cat)",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33983"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -884,6 +1136,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33983"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27004,
+                "name": "Cower",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27004"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -909,6 +1173,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27004"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26982,
+                "name": "Rejuvenation",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26982"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -934,6 +1210,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26982"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27002,
+                "name": "Shred",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27002"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -959,6 +1247,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27002"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33786,
+                "name": "Cyclone",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33786/cyclone"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Cyclone",
@@ -984,6 +1284,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33786/cyclone"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26990,
+                "name": "Mark of the Wild",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26990"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1009,6 +1321,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26990"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 40120,
+                "name": "Travel Form",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=40120/travel-form"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70+",
             "Travel Form",
@@ -1041,6 +1365,18 @@
       "heading": "Optional Abilities to Train for Feral Druid",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26984,
+                "name": "Wrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26984"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -1066,6 +1402,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26984"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26978,
+                "name": "Healing Touch",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26978"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -1091,6 +1439,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26978"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26987,
+                "name": "Moonfire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26987"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -1116,6 +1476,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26987"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26993,
+                "name": "Faerie Fire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26993"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -1141,6 +1513,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26993"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26986,
+                "name": "Starfire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26986"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -1166,6 +1550,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26986"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27000,
+                "name": "Claw",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27000"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -1191,6 +1587,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27000"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26994,
+                "name": "Rebirth",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26994"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1216,6 +1624,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26994"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26985,
+                "name": "Wrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26985"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1241,6 +1661,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26985"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26979,
+                "name": "Healing Touch",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26979"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1266,6 +1698,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26979"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26989,
+                "name": "Entangling Roots",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26989"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1291,6 +1735,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26989"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26995,
+                "name": "Soothe Animal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26995"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1316,6 +1772,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26995"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26983,
+                "name": "Tranquility",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26983"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1341,6 +1809,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26983"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27012,
+                "name": "Hurricane",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27012"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1366,6 +1846,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27012"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26988,
+                "name": "Moonfire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26988"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1391,6 +1883,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26988"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26991,
+                "name": "Gift of the Wild",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26991"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70+",
             "",
@@ -1419,10 +1923,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Feral Druid DPS in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 1310,
+                "name": "Smith's Trousers",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=1310/smiths-trousers"
+              }
+            ],
+            []
+          ],
           "cells": [
             "15-20",
             "Smith's Trousers",
@@ -1454,6 +1970,18 @@
           "source_text": "The Everstill Bridge in Redridge Mountains"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 10653,
+                "name": "Trailblazer Boots",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=10653/trailblazer-boots"
+              }
+            ],
+            []
+          ],
           "cells": [
             "15-20",
             "Trailblazer Boots",
@@ -1485,6 +2013,18 @@
           "source_text": "Horde Presence in The Barrens"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6093,
+                "name": "Orc Crusher",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6093/orc-crusher"
+              }
+            ],
+            []
+          ],
           "cells": [
             "20-30",
             "Orc Crusher",
@@ -1516,6 +2056,18 @@
           "source_text": "Tharil'zun in Redridge Mountains"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 16977,
+                "name": "Warsong Boots",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=16977/warsong-boots"
+              }
+            ],
+            []
+          ],
           "cells": [
             "20-30",
             "Warsong Boots",
@@ -1547,6 +2099,18 @@
           "source_text": "Warsong Supplies in Ashenvale"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 4548,
+                "name": "Servomechanic Sledgehammer",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=4548/servomechanic-sledgehammer"
+              }
+            ],
+            []
+          ],
           "cells": [
             "30-40",
             "Servomechanic Sledgehammer",
@@ -1578,6 +2142,18 @@
           "source_text": "Sunken Treasure in Arathi Highlands"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 9652,
+                "name": "Gryphon Rider's Leggings",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=9652/gryphon-riders-leggings"
+              }
+            ],
+            []
+          ],
           "cells": [
             "40-50",
             "Gryphon Rider's Leggings",
@@ -1609,6 +2185,18 @@
           "source_text": "Saving Sharpbeak in The Hinterlands"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 19120,
+                "name": "Rune of the Guard Captain",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=19120/rune-of-the-guard-captain"
+              }
+            ],
+            []
+          ],
           "cells": [
             "40-50",
             "Rune of the Guard Captain",
@@ -1640,6 +2228,18 @@
           "source_text": "Job Opening: Guard Captain of Revantusk Village in The Hinterlands"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 21319,
+                "name": "Gloves of the Pathfinder",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=21319/gloves-of-the-pathfinder"
+              }
+            ],
+            []
+          ],
           "cells": [
             "50-58",
             "Gloves of the Pathfinder",
@@ -1671,6 +2271,18 @@
           "source_text": "Winterfall Activity in Winterspring"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34423,
+                "name": "Strength of the High Chief",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=34423/strength-of-the-high-chief"
+              }
+            ],
+            []
+          ],
           "cells": [
             "50-58",
             "Strength of the High Chief",
@@ -1702,6 +2314,18 @@
           "source_text": "Words of the High Chief in Winterspring"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24155,
+                "name": "Ursol's Claw",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24155/ursols-claw"
+              }
+            ],
+            []
+          ],
           "cells": [
             "59-60",
             "Ursol's Claw",
@@ -1733,6 +2357,18 @@
           "source_text": "Vazruden in Hellfire Ramparts"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28041,
+                "name": "Bladefist's Breadth",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28041/bladefists-breadth"
+              }
+            ],
+            []
+          ],
           "cells": [
             "60-61",
             "Bladefist's Breadth",
@@ -1768,6 +2404,18 @@
           "source_text": "Overlord / Cruel's Intentions in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24396,
+                "name": "Vest of Vengeance",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24396/vest-of-vengeance"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61-62",
             "Vest of Vengeance",
@@ -1799,6 +2447,18 @@
           "source_text": "Keli'dan the Breaker in The Blood Furnace"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28064,
+                "name": "Idol of the Wild",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28064/idol-of-the-wild"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62-63",
             "Idol of the Wild",
@@ -1830,6 +2490,18 @@
           "source_text": "Colossal Menace in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25937,
+                "name": "Terokkar Tablet of Precision",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25937/terokkar-tablet-of-precision"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63-64",
             "Terokkar Tablet of Precision",
@@ -1865,6 +2537,18 @@
           "source_text": "Torgos! / Torgos! in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28031,
+                "name": "Nomad's Woven Cloak",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28031/nomads-woven-cloak"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64-65",
             "Nomad's Woven Cloak",
@@ -1896,6 +2580,18 @@
           "source_text": "Bring Me The Egg! in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25562,
+                "name": "Earthen Mark of Razing",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25562/earthen-mark-of-razing"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65-66",
             "Earthen Mark of Razing",
@@ -1927,6 +2623,18 @@
           "source_text": "Gurok the Usurper in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25761,
+                "name": "Staff of Beasts",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25761/staff-of-beasts"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66-67",
             "Staff of Beasts",
@@ -1958,6 +2666,18 @@
           "source_text": "The Ring of Blood: The Final Challenge in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31544,
+                "name": "Clefthoof Hide Leggings",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67-68",
             "Clefthoof Hide Leggings",
@@ -1989,6 +2709,18 @@
           "source_text": "Showdown in Blade's Edge Mountains"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27434,
+                "name": "Mantle of Perenolde",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27434/mantle-of-perenolde"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68-69",
             "Mantle of Perenolde",
@@ -2020,6 +2752,18 @@
           "source_text": "Epoch Hunter in Old Hillsbrad Foothills"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28034,
+                "name": "Hourglass of the Unraveller",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28034/hourglass-of-the-unraveller"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69-70",
             "Hourglass of the Unraveller",
@@ -2051,7 +2795,7 @@
           "source_text": "Temporus in The Black Morass"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "Feral Druid DPS Leveling Guide - TBC Classic - Wowhead",

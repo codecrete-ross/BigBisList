@@ -3,6 +3,7 @@
   "boe": null,
   "description": "Requires Mage. It is looted from Spectral Charger. In the Spell Books category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T09:22:55+00:00",
+  "inventory_slot": null,
   "item_id": 31501,
   "name": "Tome of Conjure Food VIII",
   "normalized_requirements": [],
@@ -1828,7 +1829,8 @@
       "entity_name": "Amani'shi Axe Thrower",
       "out_of": 1215,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1838,7 +1840,8 @@
       "entity_name": "Amani'shi Warbringer",
       "out_of": 2418,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1848,7 +1851,8 @@
       "entity_name": "Amani'shi Tribesman",
       "out_of": 2156,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1858,7 +1862,8 @@
       "entity_name": "Amani'shi Flame Caster",
       "out_of": 4881,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1868,7 +1873,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1878,7 +1884,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 4033,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1888,7 +1895,8 @@
       "entity_name": "Amani'shi Handler",
       "out_of": 3405,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1897,7 +1905,8 @@
       "entity_name": "Amani'shi Lookout",
       "out_of": 0,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1907,7 +1916,8 @@
       "entity_name": "Amani'shi Wind Walker",
       "out_of": 2871,
       "source_url": "https://www.wowhead.com/tbc/item=31501",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2116,7 +2126,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

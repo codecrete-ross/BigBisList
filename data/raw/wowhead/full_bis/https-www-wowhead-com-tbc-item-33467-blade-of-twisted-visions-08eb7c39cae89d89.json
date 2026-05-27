@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic one-handed sword has an item level of 138. It is looted from Zul'jin. In the One-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:29:55+00:00",
+  "inventory_slot": "Main Hand",
   "item_id": 33467,
   "name": "Blade of Twisted Visions",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Zul'jin",
       "out_of": 203,
       "source_url": "https://www.wowhead.com/tbc/item=33467/blade-of-twisted-visions",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

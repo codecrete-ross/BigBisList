@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic ring of item level 141 goes in the \"Finger\" slot. It is looted from Kraz's Package. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:30:00+00:00",
+  "inventory_slot": "Ring",
   "item_id": 33498,
   "name": "Signet of the Quiet Forest",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Kraz's Package",
       "out_of": 42,
       "source_url": "https://www.wowhead.com/tbc/item=33498/signet-of-the-quiet-forest",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This green cloak of item level 114 goes in the \"Back\" slot. It is looted from Spectral Charger. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:19:31+00:00",
+  "inventory_slot": "Back",
   "item_id": 25041,
   "name": "Ambusher's Cloak",
   "normalized_requirements": [],
@@ -1863,7 +1864,8 @@
       "entity_name": "Amani'shi Medicine Man",
       "out_of": 2470,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1873,7 +1875,8 @@
       "entity_name": "Amani'shi Flame Caster",
       "out_of": 4881,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1883,7 +1886,8 @@
       "entity_name": "Amani'shi Guardian",
       "out_of": 234,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1893,7 +1897,8 @@
       "entity_name": "Amani'shi Trainer",
       "out_of": 1094,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1903,7 +1908,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1913,7 +1919,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1923,7 +1930,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 4033,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1933,7 +1941,8 @@
       "entity_name": "Amani'shi Handler",
       "out_of": 3405,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1943,7 +1952,8 @@
       "entity_name": "Amani'shi Protector",
       "out_of": 1155,
       "source_url": "https://www.wowhead.com/tbc/item=25041&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2113,7 +2123,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "uncommon",
   "related_tables": {
     "contained-in-item": [

@@ -3,6 +3,7 @@
   "boe": null,
   "description": "It is looted from Firewing Bloodwarder. In the Other Items category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
   "fetched_at": "2026-05-24T08:51:41+00:00",
+  "inventory_slot": null,
   "item_id": 29569,
   "name": "Strong Junkbox",
   "normalized_requirements": [],
@@ -2045,7 +2046,8 @@
       "entity_name": "Amani'shi Medicine Man",
       "out_of": 2470,
       "source_url": "https://www.wowhead.com/tbc/item=29569",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2055,7 +2057,8 @@
       "entity_name": "Amani'shi Scout",
       "out_of": 448,
       "source_url": "https://www.wowhead.com/tbc/item=29569",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2100,7 +2103,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

@@ -3,6 +3,7 @@
   "boe": null,
   "description": "Requires Mage. It is looted from Spectral Charger. In the Spell Books category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T09:22:53+00:00",
+  "inventory_slot": null,
   "item_id": 22153,
   "name": "Tome of Arcane Brilliance 2",
   "normalized_requirements": [],
@@ -1778,7 +1779,8 @@
       "entity_name": "Amani'shi Axe Thrower",
       "out_of": 1215,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1788,7 +1790,8 @@
       "entity_name": "Amani'shi Warbringer",
       "out_of": 2418,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1798,7 +1801,8 @@
       "entity_name": "Amani'shi Tribesman",
       "out_of": 2156,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1808,7 +1812,8 @@
       "entity_name": "Amani Bear",
       "out_of": 177,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1818,7 +1823,8 @@
       "entity_name": "Amani'shi Scout",
       "out_of": 954,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1828,7 +1834,8 @@
       "entity_name": "Amani'shi Flame Caster",
       "out_of": 4881,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1838,7 +1845,8 @@
       "entity_name": "Amani'shi Trainer",
       "out_of": 1094,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1848,7 +1856,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1858,7 +1867,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1868,7 +1878,8 @@
       "entity_name": "Amani'shi Beast Tamer",
       "out_of": 4238,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1877,7 +1888,8 @@
       "entity_name": "Amani'shi Lookout",
       "out_of": 0,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1887,7 +1899,8 @@
       "entity_name": "Amani'shi Wind Walker",
       "out_of": 2871,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1897,7 +1910,8 @@
       "entity_name": "Amani'shi Berserker",
       "out_of": 2800,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1907,7 +1921,8 @@
       "entity_name": "Amani'shi Tempest",
       "out_of": 1733,
       "source_url": "https://www.wowhead.com/tbc/item=22153",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2117,7 +2132,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

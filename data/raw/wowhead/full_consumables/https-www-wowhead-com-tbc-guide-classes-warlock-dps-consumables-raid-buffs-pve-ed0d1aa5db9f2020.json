@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:50:59+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "consumables",
@@ -210,6 +210,17 @@
       "heading": "All Raid Buffs that Benefit Warlock DPS Raid Buffs",
       "rows": [
         {
+          "cell_entities": [
+            [
+              {
+                "id": 26990,
+                "name": "Mark of the Wild",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26990"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Armor & Resistances"
@@ -234,6 +245,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26990"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 25392,
+                "name": "Prayer of Fortitude",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25392"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Stamina"
@@ -258,6 +280,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25392"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 33182,
+                "name": "Improved Divine Spirit",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33182"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Spirit & Spell damage"
@@ -282,6 +315,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33182"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 27127,
+                "name": "Arcane Brilliance",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27127"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Intellect"
@@ -306,6 +350,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27127"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 27143,
+                "name": "Greater Blessing of Wisdom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27143"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "MP5"
@@ -330,6 +385,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27143"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 25895,
+                "name": "Greater Blessing of Salvation",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25895"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Threat reduction"
@@ -354,6 +420,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25895"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 25898,
+                "name": "Greater Blessing of Kings",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25898"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "All stats"
@@ -385,6 +462,17 @@
       "heading": "All Raid Buffs that Benefit Warlock DPS Raid Buffs",
       "rows": [
         {
+          "cell_entities": [
+            [
+              {
+                "id": 12873,
+                "name": "Improved Scorch",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=12873"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Increased fire damage taken"
@@ -409,6 +497,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=12873"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 15334,
+                "name": "Shadow Weaving",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=15334"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Increased shadow damage taken"
@@ -433,6 +532,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=15334"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 33195,
+                "name": "Misery",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33195"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Increased spell damage taken"
@@ -457,6 +567,23 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33195"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 27228,
+                "name": "Curse of the Elements",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27228"
+              },
+              {
+                "id": 32477,
+                "name": "Malediction",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32477"
+              }
+            ],
+            []
+          ],
           "cells": [
             "/",
             "Reduced resistance & increased damage taken by most schools"
@@ -487,6 +614,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27228"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 17800,
+                "name": "Shadow Vulnerability",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=17800"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Increased shadow damage taken"
@@ -511,6 +649,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=17800"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 20337,
+                "name": "Improved Seal of the Crusader",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=20337"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Increased critical strike chance"
@@ -535,6 +684,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=20337"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 27164,
+                "name": "Judgement of Wisdom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27164"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Spells have a chance to restore mana"

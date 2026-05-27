@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic dagger has an item level of 132. It is looted from Jan'alai. In the Daggers category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:29:47+00:00",
+  "inventory_slot": "Main Hand",
   "item_id": 33354,
   "name": "Wub's Cursed Hexblade",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Jan'alai",
       "out_of": 237,
       "source_url": "https://www.wowhead.com/tbc/item=33354/wubs-cursed-hexblade",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

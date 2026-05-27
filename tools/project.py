@@ -30,6 +30,8 @@ SLOT_NAMES = {
     "Two Hand",
     "Dual Wield",
     "Ranged",
+    "Ammo",
+    "Quiver",
     "Idol",
     "Totem",
     "Libram",

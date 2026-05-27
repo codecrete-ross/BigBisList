@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic plate armor of item level 128 goes in the \"Waist\" slot. It is looted from Hex Lord Malacrass. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:36:47+00:00",
+  "inventory_slot": "Waist",
   "item_id": 33446,
   "name": "Girdle of Stromgarde's Hope",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Hex Lord Malacrass",
       "out_of": 221,
       "source_url": "https://www.wowhead.com/tbc/item=33446/girdle-of-stromgardes-hope",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

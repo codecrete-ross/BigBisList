@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic cloak of item level 128 goes in the \"Back\" slot. It is looted from Harkor's Satchel. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:51:41+00:00",
+  "inventory_slot": "Back",
   "item_id": 33590,
   "name": "Cloak of Fiends",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Harkor's Satchel",
       "out_of": 62,
       "source_url": "https://www.wowhead.com/tbc/item=33590/cloak-of-fiends",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

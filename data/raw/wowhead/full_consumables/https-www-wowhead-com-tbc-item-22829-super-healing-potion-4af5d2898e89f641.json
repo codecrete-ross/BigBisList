@@ -3,6 +3,7 @@
   "boe": null,
   "description": "It is crafted, looted, a quest reward and sold by NPCs. In the Potions category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T08:51:01+00:00",
+  "inventory_slot": null,
   "item_id": 22829,
   "name": "Super Healing Potion",
   "normalized_requirements": [],
@@ -2045,7 +2046,8 @@
       "entity_name": "Amani Bear",
       "out_of": 10,
       "source_url": "https://www.wowhead.com/tbc/item=22829/super-healing-potion",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2055,7 +2057,8 @@
       "entity_name": "Amani'shi Scout",
       "out_of": 954,
       "source_url": "https://www.wowhead.com/tbc/item=22829/super-healing-potion",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2065,7 +2068,8 @@
       "entity_name": "Amani'shi Trainer",
       "out_of": 33,
       "source_url": "https://www.wowhead.com/tbc/item=22829/super-healing-potion",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2217,7 +2221,8 @@
       "entity_name": "Forest Frog",
       "source_url": "https://www.wowhead.com/tbc/item=22829/super-healing-potion",
       "type": "vendor",
-      "vendor_id": 24396
+      "vendor_id": 24396,
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2453,7 +2458,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

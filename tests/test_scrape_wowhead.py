@@ -31,6 +31,117 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(row["rank_label"], "BiS")
         self.assertEqual(row["source_links"][0]["href"], "https://www.wowhead.com/tbc/npc=15687/moroes")
 
+    def test_guide_parser_does_not_import_nested_table_rows_under_parent_slot(self):
+        html = """
+        <html><head><title>Guide</title></head><body>
+        <h3>Best in Slot Feet Armor for Beast Mastery Hunter in TBC Classic Phase 4</h3>
+        <table>
+          <tr>
+            <td>Best</td>
+            <td><a href="/tbc/item=33222/quickstrider-moccasins">Quickstrider Moccasins</a></td>
+            <td>Drop: Boss
+              <table>
+                <tr><td>Best</td><td><a href="/tbc/item=32260/choker-of-endless-nightmares">Choker of Endless Nightmares</a></td><td>Drop: Other Boss</td></tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        </body></html>
+        """
+        snapshot = parse_guide_html("https://www.wowhead.com/tbc/guide/example", html)
+        self.assertEqual(len(snapshot["tables"]), 1)
+        self.assertEqual([row["item_id"] for row in snapshot["tables"][0]["rows"]], [33222])
+
+    def test_guide_parser_classifies_weapon_offhand_and_ammo_headings(self):
+        html = """
+        <html><head><title>Guide</title></head><body>
+        <h3>Best in Slot Weapons for Elemental Shaman in TBC Classic Phase 4</h3>
+        <table><tr><td>Best</td><td><a href="/tbc/item=33354/wubs-cursed-hexblade">Wub's Cursed Hexblade</a></td><td>Drop</td></tr></table>
+        <h3>Best in Slot Off Hands and Shields for Holy Paladin in TBC Classic Pre-Raid</h3>
+        <table><tr><td>BiS</td><td><a href="/tbc/item=29267/light-bearers-faith-shield">Light-Bearer's Faith Shield</a></td><td>Quest</td></tr></table>
+        <h3>Quivers / Ammo Pouches for Beast Mastery Hunter DPS in TBC Classic Phase 1</h3>
+        <table><tr><td>BiS</td><td><a href="/tbc/item=29143/clefthoof-hide-quiver">Clefthoof Hide Quiver</a></td><td>Vendor</td></tr></table>
+        <h3>Ammunition for Beast Mastery Hunter DPS in TBC Classic Phase 1</h3>
+        <table><tr><td>BiS</td><td><a href="/tbc/item=28056/blackflight-arrow">Blackflight Arrow</a></td><td>Vendor</td></tr></table>
+        </body></html>
+        """
+        snapshot = parse_guide_html("https://www.wowhead.com/tbc/guide/example", html)
+        self.assertEqual([table["slot"] for table in snapshot["tables"]], ["Weapon", "Off Hand", "Quiver", "Ammo"])
+        self.assertTrue(all(table["data_family"] == "bis_lists" for table in snapshot["tables"]))
+
+    def test_bis_import_derives_generic_weapon_slots_from_item_pages(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-weapons"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best in Slot Weapons for Elemental Shaman in TBC Classic Phase 4</h3>
+            <table>
+              <tr><td>Best</td><td><a href="/tbc/item=33354/wubs-cursed-hexblade">Wub's Cursed Hexblade</a></td><td>Drop</td></tr>
+              <tr><td>Option</td><td><a href="/tbc/item=32374/zhardoom-greatstaff-of-the-devourer">Zhar'doom</a></td><td>Drop</td></tr>
+            </table>
+            </body></html>
+            """,
+        )
+        one_hand = parse_item_html(
+            "https://www.wowhead.com/tbc/item=33354/wubs-cursed-hexblade",
+            '<html><head><title>Wub - Item - TBC Classic</title><meta name="description" content="This epic weapon goes in the &quot;One-Hand&quot; slot."></head><body></body></html>',
+        )
+        two_hand = parse_item_html(
+            "https://www.wowhead.com/tbc/item=32374/zhardoom-greatstaff-of-the-devourer",
+            '<html><head><title>Zhar - Item - TBC Classic</title><meta name="description" content="This epic staff goes in the &quot;Two-Hand&quot; slot."></head><body></body></html>',
+        )
+        source = {"id": "synthetic", "url": guide_url, "data_family": "bis_lists", "class": "Shaman", "spec": "Elemental", "phase": "ZA"}
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            rows = scraper.import_bis_lists_from_snapshots([guide_snapshot, one_hand, two_hand])["lists"]
+        finally:
+            scraper.manifest_sources_by_url = original
+        self.assertEqual({row["slot"] for row in rows}, {"Main Hand", "Two Hand"})
+
+    def test_bis_import_dedupes_same_item_contexts_with_best_label(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-duplicates"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best in Slot Two-Hand Weapons for Restoration Shaman in TBC Classic Phase 1</h3>
+            <table>
+              <tr><td>Option</td><td><a href="/tbc/item=28604/terestians-stranglestaff">Terestian's Stranglestaff</a></td><td>Drop</td></tr>
+              <tr><td>Innervate</td><td><a href="/tbc/item=28604/terestians-stranglestaff">Terestian's Stranglestaff</a></td><td>Drop</td></tr>
+            </table>
+            <h3>Best in Slot Wrists for Feral Druid in TBC Classic Phase 1</h3>
+            <table>
+              <tr><td>Alternative (unrealistic)</td><td><a href="/tbc/item=30685/ravagers-wrist-wraps">Ravager's Wrist-Wraps</a></td><td>Drop</td></tr>
+              <tr><td>Best (Unrealistic)</td><td><a href="/tbc/item=30685/ravagers-wrist-wraps">Ravager's Wrist-Wraps</a></td><td>Drop</td></tr>
+            </table>
+            </body></html>
+            """,
+        )
+        source = {"id": "synthetic", "url": guide_url, "data_family": "bis_lists", "class": "Shaman", "spec": "Restoration", "phase": "T4"}
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            rows = scraper.import_bis_lists_from_snapshots([guide_snapshot])["lists"]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        items_by_slot = {row["slot"]: row["items"] for row in rows}
+        self.assertEqual(len(items_by_slot["Two Hand"]), 1)
+        self.assertEqual(items_by_slot["Two Hand"][0]["rank_label"], "Innervate")
+        self.assertEqual(len(items_by_slot["Wrist"]), 1)
+        self.assertEqual(items_by_slot["Wrist"][0]["rank_label"], "Best (Unrealistic)")
+
+    def test_rank_normalization_preserves_wowhead_best_as_top_rank(self):
+        self.assertEqual(scraper.rank_group_from_label("Best"), "bis")
+        self.assertEqual(scraper.rank_group_from_label("Best Until Tier 5"), "situational")
+        self.assertEqual(scraper.rank_group_from_label("PvP"), "pvp")
+        self.assertEqual(scraper.normalize_rank_group_value("situational_bis", "BiS (Group Performance)"), "situational")
+
+    def test_requirement_audit_ignores_leveling_rotation_verbs(self):
+        self.assertFalse(scraper.requirement_looks_like_text("Renew may be used, but require reapplying Shadowform before pulling."))
+
     def test_item_parser_extracts_drop_vendor_quest_and_crafted_sources(self):
         html = """
         <html><head>
@@ -658,6 +769,38 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(rows[0]["section"], "Leveling Talents Levels 20-30")
         self.assertEqual(rows[0]["level_range"], "20-30")
         self.assertEqual(rows[0]["entities"][0]["type"], "spell")
+
+    def test_leveling_import_formats_training_tables_without_pipe_artifacts(self):
+        url = "https://www.wowhead.com/tbc/guide/synthetic-leveling"
+        snapshot = parse_guide_html(
+            url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <script>WH.Gatherer.addData(6, 5, {"26984":{"name_enus":"Wrath"}});</script>
+            <h3>Mandatory Abilities to Train for Balance Druid</h3>
+            <table><tr><td>61</td><td><a href="/tbc/spell=26984"></a></td><td>9</td></tr></table>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-leveling",
+            "url": url,
+            "data_family": "leveling",
+            "class": "Druid",
+            "spec": "Balance",
+            "phase": "*",
+        }
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {url: [source]}
+        try:
+            rows = scraper.import_leveling_from_snapshots([snapshot], fallback_to_canonical=False)["leveling"]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["text"], "Level 61: Train Wrath (Rank 9)")
+        self.assertNotIn("phase", rows[0])
+        self.assertEqual(rows[0]["entities"][0]["name"], "Wrath")
 
     def test_consumables_import_uses_section_lists_without_tables(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-consumables"

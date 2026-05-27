@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This blue cloak of item level 100 goes in the \"Back\" slot. It is a quest reward. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:32:05+00:00",
+  "inventory_slot": "Back",
   "item_id": 25777,
   "name": "Ogre Slayer's Cover",
   "normalized_requirements": [],
@@ -29,7 +30,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "rare",
   "related_tables": {
     "contained-in-item": [],

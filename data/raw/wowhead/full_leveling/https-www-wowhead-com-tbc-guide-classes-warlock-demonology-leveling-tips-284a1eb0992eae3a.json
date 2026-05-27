@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:04+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -32,10 +32,48 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=11713",
-              "text": ""
+              "text": "Curse of Agony"
             }
           ],
-          "text": "Cast if the target is expected to survive for 12 seconds or longer."
+          "text": "Cast Curse of Agony if the target is expected to survive for 12 seconds or longer."
+        },
+        {
+          "entities": [
+            {
+              "id": 25311,
+              "name": "Corruption",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=25311"
+            }
+          ],
+          "level_range": null,
+          "section": "Leveling Rotation for Demonology Warlock DPS in Burning Crusade",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=25311",
+              "text": "Corruption"
+            }
+          ],
+          "text": "Cast Corruption if the target is expected to survive for 12 seconds or longer."
+        },
+        {
+          "entities": [
+            {
+              "id": 11668,
+              "name": "Immolate",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=11668"
+            }
+          ],
+          "level_range": null,
+          "section": "Leveling Rotation for Demonology Warlock DPS in Burning Crusade",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=11668",
+              "text": "Immolate"
+            }
+          ],
+          "text": "Cast Immolate if the target is expected to survive for 12 seconds or longer."
         },
         {
           "entities": [
@@ -51,10 +89,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=11700",
-              "text": ""
+              "text": "Drain Life"
             }
           ],
-          "text": "Channel once all DoTs are up."
+          "text": "Channel Drain Life once all DoTs are up."
         },
         {
           "entities": [
@@ -76,14 +114,14 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=11675",
-              "text": ""
+              "text": "Drain Soul"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=18372",
-              "text": ""
+              "text": "Improved Drain Soul"
             }
           ],
-          "text": "just as your target dies to proc ."
+          "text": "Drain Soul just as your target dies to proc Improved Drain Soul ."
         },
         {
           "entities": [
@@ -103,10 +141,10 @@
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=30219",
-              "text": ""
+              "text": "Cleave"
             }
           ],
-          "text": "Send in your Felguard to ."
+          "text": "Send in your Felguard to Cleave ."
         },
         {
           "entities": [
@@ -128,14 +166,33 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25311",
-              "text": ""
+              "text": "Corruption"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=11713",
-              "text": ""
+              "text": "Curse of Agony"
             }
           ],
-          "text": "and on multiple targets while closing distance."
+          "text": "Corruption and Curse of Agony on multiple targets while closing distance."
+        },
+        {
+          "entities": [
+            {
+              "id": 11684,
+              "name": "Hellfire",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=11684"
+            }
+          ],
+          "level_range": null,
+          "section": "Leveling Rotation for Demonology Warlock DPS in Burning Crusade",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=11684",
+              "text": "Hellfire"
+            }
+          ],
+          "text": "Spam Hellfire ."
         }
       ],
       "heading": "Leveling Rotation for Demonology Warlock DPS in Burning Crusade"
@@ -169,18 +226,18 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=11689",
-              "text": ""
+              "text": "Life Tap"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=18881",
-              "text": ""
+              "text": "Siphon Life"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=11700",
-              "text": ""
+              "text": "Drain Life"
             }
           ],
-          "text": "Resource management is the most important aspect of Warlock leveling. Thanks to , Warlocks have two resources to pull from to decrease downtime and thus maximize experience gain. To get full use out of and , make sure you keep an eye on your health and mana, and Life Tap frequently to try to maintain both resources at close to 100%."
+          "text": "Resource management is the most important aspect of Warlock leveling. Thanks to Life Tap , Warlocks have two resources to pull from to decrease downtime and thus maximize experience gain. To get full use out of Siphon Life and Drain Life , make sure you keep an eye on your health and mana, and Life Tap frequently to try to maintain both resources at close to 100%."
         },
         {
           "entities": [
@@ -196,10 +253,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=18938",
-              "text": ""
+              "text": "Dark Pact"
             }
           ],
-          "text": "If you use , you want to keep your pets' mana-using spells off auto-cast. This will allow you to manage your pet\u2019s mana to ensure your demon will have enough for when you want to use Dark Pact."
+          "text": "If you use Dark Pact , you want to keep your pets' mana-using spells off auto-cast. This will allow you to manage your pet\u2019s mana to ensure your demon will have enough for when you want to use Dark Pact."
         },
         {
           "entities": [],
@@ -218,6 +275,18 @@
       "heading": "Mandatory Abilities to Train for Demonology Warlock",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28176,
+                "name": "Fel Armor",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=28176"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -243,6 +312,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=28176"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27219,
+                "name": "Drain Life",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27219"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -268,6 +349,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27219"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27263,
+                "name": "Shadowburn",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27263"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -293,6 +386,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27263"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29722,
+                "name": "Incinerate",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=29722/incinerate"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Incinerate",
@@ -318,6 +423,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=29722/incinerate"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27210,
+                "name": "Searing Pain",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27210"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -343,6 +460,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27210"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27216,
+                "name": "Corruption",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27216"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -368,6 +497,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27216"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29858,
+                "name": "Soulshatter",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=29858/soulshatter"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "Soulshatter",
@@ -393,6 +534,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=29858/soulshatter"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27250,
+                "name": "Create Firestone",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27250"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -418,6 +571,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27250"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28172,
+                "name": "Create Spellstone",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=28172"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -443,6 +608,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=28172"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27259,
+                "name": "Health Funnel",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27259"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -468,6 +645,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27259"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27218,
+                "name": "Curse of Agony",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27218"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -493,6 +682,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27218"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29893,
+                "name": "Create Soulwell",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=29893/create-soulwell"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Create Soulwell",
@@ -518,6 +719,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=29893/create-soulwell"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27222,
+                "name": "Life Tap",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27222"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -543,6 +756,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27222"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27230,
+                "name": "Create Healthstone",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27230"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -568,6 +793,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27230"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27213,
+                "name": "Hellfire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27213"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -593,6 +830,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27213"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27223,
+                "name": "Death Coil",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27223"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -618,6 +867,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27223"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27228,
+                "name": "Curse of the Elements",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27228"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -643,6 +904,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27228"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27209,
+                "name": "Shadow Bolt",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27209"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -668,6 +941,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27209"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28189,
+                "name": "Fel Armor",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=28189"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -693,6 +978,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=28189"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27220,
+                "name": "Drain Life",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27220"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -718,6 +1015,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27220"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27215,
+                "name": "Immolate",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27215"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -743,6 +1052,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27215"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27212,
+                "name": "Rain of Fire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27212"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -768,6 +1089,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27212"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30546,
+                "name": "Shadowburn",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30546"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -793,6 +1126,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30546"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27243,
+                "name": "Seed of Corruption",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27243/seed-of-corruption"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Seed of Corruption",
@@ -818,6 +1163,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27243/seed-of-corruption"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32231,
+                "name": "Incinerate",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32231"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -843,6 +1200,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32231"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30910,
+                "name": "Curse of Doom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30910"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -868,6 +1237,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30910"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27238,
+                "name": "Create Soulstone",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27238"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -893,6 +1274,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27238"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30459,
+                "name": "Searing Pain",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30459"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -925,6 +1318,18 @@
       "heading": "Optional Abilities to Train for Demonology Warlock",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27224,
+                "name": "Curse of Weakness",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27224"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -950,6 +1355,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27224"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27221,
+                "name": "Drain Mana",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27221"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -975,6 +1392,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27221"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27211,
+                "name": "Soul Fire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27211"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -1000,6 +1429,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27211"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27217,
+                "name": "Drain Soul",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27217"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -1025,6 +1466,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27217"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30909,
+                "name": "Curse of Weakness",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30909"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1050,6 +1503,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30909"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27226,
+                "name": "Curse of Recklessness",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27226"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1075,6 +1540,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27226"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30545,
+                "name": "Soul Fire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30545"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1100,6 +1577,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30545"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30908,
+                "name": "Drain Mana",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30908"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1125,6 +1614,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30908"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27260,
+                "name": "Demon Armor",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27260"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1153,10 +1654,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Demonology Warlock DPS in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25936,
+                "name": "Terokkar Tablet of Vim",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25936/terokkar-tablet-of-vim"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "Terokkar Tablet of Vim",
@@ -1187,6 +1700,18 @@
           "source_text": "Torgos! in Terokkar Forest"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25777,
+                "name": "Ogre Slayer's Cover",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25777/ogre-slayers-cover"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "Ogre Slayer's Cover",
@@ -1217,6 +1742,18 @@
           "source_text": "Cho'war the Pillager in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25637,
+                "name": "Ethereal Sash",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25637/ethereal-sash"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "Ethereal Sash",
@@ -1247,6 +1784,18 @@
           "source_text": "Gava'xi in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31692,
+                "name": "Natasha's Ember Necklace",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31692/natashas-ember-necklace"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "Natasha's Ember Necklace",
@@ -1277,6 +1826,18 @@
           "source_text": "The Hound-Master in Blade\u2019s Edge Mountain"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29780,
+                "name": "Kirin Tor Apprentice's Robes",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29780/kirin-tor-apprentices-robes"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Kirin Tor Apprentice's Robes",
@@ -1307,6 +1868,18 @@
           "source_text": "Destroy Naberius! in Netherstorm"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30268,
+                "name": "Heap Leggings",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30268/heap-leggings"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Heap Leggings",
@@ -1337,6 +1910,18 @@
           "source_text": "It's a Fel Reaver, But with Heart in Netherstorm"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30366,
+                "name": "Manastorm Band",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30366/manastorm-band"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Manastorm Band",
@@ -1367,6 +1952,18 @@
           "source_text": "Shutting Down Manaforge Ara in Netherstorm"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31104,
+                "name": "Evoker's Helmet of Second Sight",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31104/evokers-helmet-of-second-sight"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Evoker's Helmet of Second Sight",
@@ -1397,6 +1994,18 @@
           "source_text": "Teron Gorefiend, I am... in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30927,
+                "name": "Earthmender's Bracer of Shattering",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30927/earthmenders-bracer-of-shattering"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Earthmender's Bracer of Shattering",
@@ -1427,6 +2036,18 @@
           "source_text": "Escape from Coilskar Cistern in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32872,
+                "name": "Illidari Rod of Discipline",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32872/illidari-rod-of-discipline"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Illidari Rod of Discipline",
@@ -1457,6 +2078,18 @@
           "source_text": "Subdue the Subduer in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30924,
+                "name": "Gloves of the High Magus",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30924/gloves-of-the-high-magus"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Gloves of the High Magus",
@@ -1487,6 +2120,18 @@
           "source_text": "News of Victory in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31075,
+                "name": "Evoker's Mark of the Redemption",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31075/evokers-mark-of-the-redemption"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Evoker's Mark of the Redemption",
@@ -1517,6 +2162,18 @@
           "source_text": "Dissension Amongst the Ranks... in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30011,
+                "name": "Ameer's Impulse Taser",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30011/ameers-impulse-taser"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Ameer's Impulse Taser",
@@ -1547,6 +2204,18 @@
           "source_text": "Nexus-King Salhadaar in Netherstorm"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30925,
+                "name": "Spaulders of the Torn-Heart",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Spaulders of the Torn-Heart",
@@ -1577,6 +2246,18 @@
           "source_text": "The Cipher of Damnation - The Third Fragment Recovered in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30519,
+                "name": "Boots of the Nexus Warden",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30519/boots-of-the-nexus-warden"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Boots of the Nexus Warden",
@@ -1607,6 +2288,18 @@
           "source_text": "The Flesh Lies... in Netherstorm"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30340,
+                "name": "Starkiller's Bauble",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30340/starkillers-bauble"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Starkiller's Bauble",
@@ -1637,7 +2330,7 @@
           "source_text": "The Horrors of Pollution in Netherstorm"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "Demonology Warlock Leveling Guide - TBC Classic - Wowhead",

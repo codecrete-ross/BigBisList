@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This green cloth armor of item level 120 goes in the \"Legs\" slot. It is looted from Spectral Charger. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:19:24+00:00",
+  "inventory_slot": "Legs",
   "item_id": 24690,
   "name": "Elementalist Leggings",
   "normalized_requirements": [],
@@ -2010,7 +2011,8 @@
       "entity_name": "Amani'shi Medicine Man",
       "out_of": 2470,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2020,7 +2022,8 @@
       "entity_name": "Amani'shi Tribesman",
       "out_of": 2156,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2030,7 +2033,8 @@
       "entity_name": "Amani'shi Flame Caster",
       "out_of": 4881,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2040,7 +2044,8 @@
       "entity_name": "Amani'shi Guardian",
       "out_of": 7840,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2050,7 +2055,8 @@
       "entity_name": "Amani'shi Beast Tamer",
       "out_of": 4238,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2060,7 +2066,8 @@
       "entity_name": "Amani'shi Wind Walker",
       "out_of": 2871,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2070,7 +2077,8 @@
       "entity_name": "Amani'shi Protector",
       "out_of": 2484,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2080,7 +2088,8 @@
       "entity_name": "Amani'shi Tempest",
       "out_of": 1733,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2162,7 +2171,8 @@
       "entity_name": "Amani Treasure Box",
       "out_of": 760,
       "source_url": "https://www.wowhead.com/tbc/item=24690&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2187,7 +2197,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "uncommon",
   "related_tables": {
     "contained-in-item": [

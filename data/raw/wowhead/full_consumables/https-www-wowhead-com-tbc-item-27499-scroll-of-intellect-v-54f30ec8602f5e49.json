@@ -3,6 +3,7 @@
   "boe": null,
   "description": "It is looted, a quest reward and sold by NPCs. In the Scrolls category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T08:51:01+00:00",
+  "inventory_slot": null,
   "item_id": 27499,
   "name": "Scroll of Intellect V",
   "normalized_requirements": [],
@@ -2036,7 +2037,8 @@
       "entity_name": "Amani'shi Axe Thrower",
       "out_of": 2695,
       "source_url": "https://www.wowhead.com/tbc/item=27499/scroll-of-intellect-v",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2388,7 +2390,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

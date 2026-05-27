@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:04+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -20,10 +20,29 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=10947",
-              "text": ""
+              "text": "Mind Blast"
             }
           ],
-          "text": "Engage with . Cast this whenever it's off cooldown."
+          "text": "Engage with Mind Blast . Cast this whenever it's off cooldown."
+        },
+        {
+          "entities": [
+            {
+              "id": 34916,
+              "name": "Vampiric Touch",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=34916"
+            }
+          ],
+          "level_range": null,
+          "section": "Leveling Rotation for Shadow Priest DPS in Burning Crusade",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=34916",
+              "text": "Vampiric Touch"
+            }
+          ],
+          "text": "Apply Vampiric Touch ."
         },
         {
           "entities": [
@@ -39,10 +58,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=10894",
-              "text": ""
+              "text": "Shadow Word: Pain"
             }
           ],
-          "text": "Apply . You can use GCD downtime to move away from the mob."
+          "text": "Apply Shadow Word: Pain . You can use GCD downtime to move away from the mob."
         },
         {
           "entities": [
@@ -77,10 +96,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=18807",
-              "text": ""
+              "text": "Mind Flay"
             }
           ],
-          "text": "Channel . This has a shorter range than others, but it slows down the enemy a little. You can get in a cast or two before getting pushback. Refresh DoTs if they fall off, but standard mobs should die before then."
+          "text": "Channel Mind Flay . This has a shorter range than others, but it slows down the enemy a little. You can get in a cast or two before getting pushback. Refresh DoTs if they fall off, but standard mobs should die before then."
         },
         {
           "entities": [
@@ -114,11 +133,11 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=10901",
-              "text": ""
+              "text": "Power Word: Shield"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=25315",
-              "text": ""
+              "text": "Renew"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=33076/prayer-of-mending",
@@ -126,10 +145,10 @@
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=15473",
-              "text": ""
+              "text": "Shadowform"
             }
           ],
-          "text": "Pre-shield yourself with before pulling. and Prayer of Mending may also be used, but require reapplying before pulling the first mob."
+          "text": "Pre-shield yourself with Power Word: Shield before pulling. Renew and Prayer of Mending may also be used, but require reapplying Shadowform before pulling the first mob."
         },
         {
           "entities": [
@@ -145,10 +164,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=34916",
-              "text": ""
+              "text": "Vampiric Touch"
             }
           ],
-          "text": "Apply . Engage the target from the maximum range you can."
+          "text": "Apply Vampiric Touch . Engage the target from the maximum range you can."
         },
         {
           "entities": [
@@ -164,10 +183,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=10894",
-              "text": ""
+              "text": "Shadow Word: Pain"
             }
           ],
-          "text": "Apply . Use GCD downtime to gain distance towards another mob."
+          "text": "Apply Shadow Word: Pain . Use GCD downtime to gain distance towards another mob."
         },
         {
           "entities": [],
@@ -190,10 +209,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=10890",
-              "text": ""
+              "text": "Psychic Scream"
             }
           ],
-          "text": "Damage received from numerous mobs can be dangerous, so use to gain some reprieve from the onslaught."
+          "text": "Damage received from numerous mobs can be dangerous, so use Psychic Scream to gain some reprieve from the onslaught."
         }
       ],
       "heading": "Leveling Rotation for Shadow Priest DPS in Burning Crusade"
@@ -215,10 +234,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=15338",
-              "text": ""
+              "text": "Spirit Tap"
             }
           ],
-          "text": "Depending on your mana levels, you can rush another mob or wait for a while. grants mana while casting, but 5 seconds after your last successful cast, the amount regenerated is doubled. Manage this mechanic to squeeze as much mana as needed!"
+          "text": "Depending on your mana levels, you can rush another mob or wait for a while. Spirit Tap grants mana while casting, but 5 seconds after your last successful cast, the amount regenerated is doubled. Manage this mechanic to squeeze as much mana as needed!"
         },
         {
           "entities": [],
@@ -241,10 +260,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=10890",
-              "text": ""
+              "text": "Psychic Scream"
             }
           ],
-          "text": "Mass DoT pulls are a viable strategy, but always make sure it is worth the risk. You become a vulnerable gank target on PvP servers. Watch out for respawns and hidden mobs. Try to avoid casters unless you can make good use of ."
+          "text": "Mass DoT pulls are a viable strategy, but always make sure it is worth the risk. You become a vulnerable gank target on PvP servers. Watch out for respawns and hidden mobs. Try to avoid casters unless you can make good use of Psychic Scream ."
         },
         {
           "entities": [],
@@ -279,18 +298,18 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=588",
-              "text": ""
+              "text": "Inner Fire"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=6346",
-              "text": ""
+              "text": "Fear Ward"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=15473",
-              "text": ""
+              "text": "Shadowform"
             }
           ],
-          "text": "Always keep your buffs up. Even if appears unassuming, it prevents some incoming damage and is not consumed when shielded. now belongs to the Discipline category, making it usable in . Moreover, it can be accessed by all races, so make sure to make good use of this spell, especially on heavily contested PvP servers."
+          "text": "Always keep your buffs up. Even if Inner Fire appears unassuming, it prevents some incoming damage and is not consumed when shielded. Fear Ward now belongs to the Discipline category, making it usable in Shadowform . Moreover, it can be accessed by all races, so make sure to make good use of this spell, especially on heavily contested PvP servers."
         }
       ],
       "heading": "Leveling Tips for Shadow Priest DPS in TBC Classic"
@@ -302,6 +321,18 @@
       "heading": "Mandatory Abilities to Train for Shadow Priest",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25233,
+                "name": "Flash Heal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25233"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -327,6 +358,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25233"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32379,
+                "name": "Shadow Word: Death",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32379/shadow-word-death"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "Shadow Word: Death",
@@ -352,6 +395,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32379/shadow-word-death"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25372,
+                "name": "Mind Blast",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25372"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -377,6 +432,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25372"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25367,
+                "name": "Shadow Word: Pain",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25367"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -402,6 +469,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25367"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25221,
+                "name": "Renew",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25221"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -427,6 +506,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25221"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25217,
+                "name": "Power Word: Shield",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25217"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -452,6 +543,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25217"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34433,
+                "name": "Shadowfiend",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=34433/shadowfiend"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "Shadowfiend",
@@ -477,6 +580,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=34433/shadowfiend"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25429,
+                "name": "Fade",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25429"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -502,6 +617,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25429"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25235,
+                "name": "Flash Heal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25235"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -527,6 +654,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25235"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33076,
+                "name": "Prayer of Mending",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33076/prayer-of-mending"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Prayer of Mending",
@@ -552,6 +691,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33076/prayer-of-mending"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25433,
+                "name": "Shadow Protection",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25433"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -577,6 +728,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25433"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25435,
+                "name": "Resurrection",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25435"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -602,6 +765,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25435"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25375,
+                "name": "Mind Blast",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25375"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -627,6 +802,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25375"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25431,
+                "name": "Inner Fire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25431"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -652,6 +839,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25431"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32375,
+                "name": "Mass Dispel",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32375/mass-dispel"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Mass Dispel",
@@ -677,6 +876,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32375/mass-dispel"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32996,
+                "name": "Shadow Word: Death",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32996"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -702,6 +913,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32996"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25368,
+                "name": "Shadow Word: Pain",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25368"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -727,6 +950,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25368"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25392,
+                "name": "Prayer of Fortitude",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25392"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -752,6 +987,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25392"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25389,
+                "name": "Power Word: Fortitude",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25389"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -777,6 +1024,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25389"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32999,
+                "name": "Prayer of Spirit",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32999"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -802,6 +1061,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32999"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25218,
+                "name": "Power Word: Shield",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25218"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -827,6 +1098,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25218"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25222,
+                "name": "Renew",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25222"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -852,6 +1135,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25222"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 39374,
+                "name": "Prayer of Shadow Protection",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=39374"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -877,6 +1172,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=39374"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34917,
+                "name": "Vampiric Touch",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=34917"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -909,6 +1216,18 @@
       "heading": "Race-Specific Abilities to Train for Shadow Priest",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25446,
+                "name": "Starshards",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25446"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -934,6 +1253,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25446"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25437,
+                "name": "Desperate Prayer",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25437"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -959,6 +1290,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25437"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25467,
+                "name": "Devouring Plague",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25467"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -984,6 +1327,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25467"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25477,
+                "name": "Shadowguard",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25477"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1009,6 +1364,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25477"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 44047,
+                "name": "Chastise",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=44047"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1034,6 +1401,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=44047"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25441,
+                "name": "Feedback",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25441"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1059,6 +1438,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25441"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25461,
+                "name": "Touch of Weakness",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25461"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1084,6 +1475,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25461"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25470,
+                "name": "Hex of Weakness",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25470"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1116,6 +1519,18 @@
       "heading": "Optional Abilities to Train for Shadow Priest",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25363,
+                "name": "Smite",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25363"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -1141,6 +1556,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25363"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25210,
+                "name": "Greater Heal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25210"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -1166,6 +1593,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25210"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25379,
+                "name": "Mana Burn",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25379"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -1191,6 +1630,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25379"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32546,
+                "name": "Binding Heal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32546/binding-heal"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Binding Heal",
@@ -1216,6 +1667,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32546/binding-heal"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25384,
+                "name": "Holy Fire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25384"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -1241,6 +1704,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25384"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25596,
+                "name": "Mind Soothe",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25596"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -1266,6 +1741,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25596"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25308,
+                "name": "Prayer of Healing",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25308"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1291,6 +1778,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25308"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25213,
+                "name": "Greater Heal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25213"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1316,6 +1815,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25213"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25364,
+                "name": "Smite",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25364"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1341,6 +1852,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25364"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25380,
+                "name": "Mana Burn",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25380"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1369,10 +1892,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Shadow Priest DPS in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29910,
+                "name": "The Staff of Twin Worlds",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29910/the-staff-of-twin-worlds"
+              }
+            ],
+            []
+          ],
           "cells": [
             "58-60",
             "The Staff of Twin Worlds",
@@ -1408,6 +1943,18 @@
           "source_text": "The Path of Anguish / Felspark Ravine in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24069,
+                "name": "Crystalfire Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24069/crystalfire-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "60-62",
             "Crystalfire Staff",
@@ -1439,6 +1986,18 @@
           "source_text": "Omor the Unscarred in Hellfire Ramparts"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31142,
+                "name": "Blade of Trapped Knowledge",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31142/blade-of-trapped-knowledge"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61-66",
             "Blade of Trapped Knowledge",
@@ -1465,6 +2024,18 @@
           "source_text": "World Drop"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24384,
+                "name": "Diamond-Core Sledgemace",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24384/diamond-core-sledgemace"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61-64",
             "Diamond-Core Sledgemace",
@@ -1496,6 +2067,18 @@
           "source_text": "The Maker in The Blood Furnace"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25494,
+                "name": "Totemic Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25494/totemic-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61-62",
             "Totemic Staff",
@@ -1527,6 +2110,18 @@
           "source_text": "Administering the Salve in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27753,
+                "name": "Ensorcelled Marshfang Blade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27753/ensorcelled-marshfang-blade"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62-63",
             "Ensorcelled Marshfang Blade",
@@ -1558,6 +2153,18 @@
           "source_text": "Never Leave a Dinner Behind in Zangarmarsh"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29457,
+                "name": "Nethershard",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29457/nethershard"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63-66",
             "Nethershard",
@@ -1589,6 +2196,18 @@
           "source_text": "The Consortium - Honored"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24453,
+                "name": "Zangartooth Shortblade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24453/zangartooth-shortblade"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63-68",
             "Zangartooth Shortblade",
@@ -1620,6 +2239,18 @@
           "source_text": "Swamplord Musel'ek in The Underbog"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25543,
+                "name": "Talbuk Sticker",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25543/talbuk-sticker"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64-66",
             "Talbuk Sticker",
@@ -1651,6 +2282,18 @@
           "source_text": "Talbuk Mastery in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25950,
+                "name": "Staff of Polarities",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25950/staff-of-polarities"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64-66",
             "Staff of Polarities",
@@ -1682,6 +2325,18 @@
           "source_text": "Tavarok in Mana-Tombs"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25760,
+                "name": "Battle Mage's Baton",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25760/battle-mages-baton"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65-67",
             "Battle Mage's Baton",
@@ -1713,6 +2368,18 @@
           "source_text": "The Ring of Blood: The Final Challenge in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27431,
+                "name": "Time-Shifted Dagger",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27431/time-shifted-dagger"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66-70",
             "Time-Shifted Dagger",
@@ -1744,6 +2411,18 @@
           "source_text": "Epoch Hunter in Old Hillsbrad Foothills"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31036,
+                "name": "Oronok's Ancient Scepter",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31036/oronoks-ancient-scepter"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68-70",
             "Oronok's Ancient Scepter",
@@ -1775,6 +2454,18 @@
           "source_text": "The Cipher of Damnation in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30011,
+                "name": "Ameer's Impulse Taser",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30011/ameers-impulse-taser"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68-70",
             "Ameer's Impulse Taser",
@@ -1806,7 +2497,7 @@
           "source_text": "Nexus-King Salhadaar in Netherstorm"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "TBC Classic Shadow Priest Leveling Guide 1-70 & Best Leveling Talent Builds - Wowhead",

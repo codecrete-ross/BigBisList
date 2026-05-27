@@ -3,6 +3,7 @@
   "boe": null,
   "description": "It is crafted, looted, a quest reward and sold by NPCs. In the Potions category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T08:50:59+00:00",
+  "inventory_slot": null,
   "item_id": 22832,
   "name": "Super Mana Potion",
   "normalized_requirements": [],
@@ -2074,7 +2075,8 @@
       "entity_name": "Amani Bear",
       "out_of": 376,
       "source_url": "https://www.wowhead.com/tbc/item=22832/super-mana-potion",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2084,7 +2086,8 @@
       "entity_name": "Amani Elder Lynx",
       "out_of": 59,
       "source_url": "https://www.wowhead.com/tbc/item=22832/super-mana-potion",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2203,7 +2206,8 @@
       "entity_name": "Forest Frog",
       "source_url": "https://www.wowhead.com/tbc/item=22832/super-mana-potion",
       "type": "vendor",
-      "vendor_id": 24396
+      "vendor_id": 24396,
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2273,7 +2277,8 @@
       "entity_name": "Amani Treasure Box",
       "out_of": 42,
       "source_url": "https://www.wowhead.com/tbc/item=22832/super-mana-potion",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2427,7 +2432,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

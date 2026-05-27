@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This blue bow has an item level of 115. It is looted from Spectral Charger. In the Bows category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:49:59+00:00",
+  "inventory_slot": "Ranged",
   "item_id": 31303,
   "name": "Valanos' Longbow",
   "normalized_requirements": [],
@@ -1944,7 +1945,8 @@
       "entity_name": "Amani'shi Warbringer",
       "out_of": 2418,
       "source_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1954,7 +1956,8 @@
       "entity_name": "Amani'shi Tribesman",
       "out_of": 2156,
       "source_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1964,7 +1967,8 @@
       "entity_name": "Amani'shi Flame Caster",
       "out_of": 4881,
       "source_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1974,7 +1978,8 @@
       "entity_name": "Amani'shi Guardian",
       "out_of": 7840,
       "source_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1984,7 +1989,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1994,7 +2000,8 @@
       "entity_name": "Amani'shi Beast Tamer",
       "out_of": 4238,
       "source_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2004,7 +2011,8 @@
       "entity_name": "Amani'shi Handler",
       "out_of": 3405,
       "source_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2139,7 +2147,8 @@
       "entity_name": "Amani Treasure Box",
       "out_of": 1841,
       "source_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2153,7 +2162,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "rare",
   "related_tables": {
     "contained-in-item": [],

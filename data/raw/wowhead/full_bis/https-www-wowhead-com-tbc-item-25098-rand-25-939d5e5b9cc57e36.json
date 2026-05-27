@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This green off-hand frill of item level 117 goes in the \"Held In Off-hand\" slot. It is looted from Spectral Charger. In the Off-hand Frills category.",
   "fetched_at": "2026-05-24T05:19:39+00:00",
+  "inventory_slot": "Off Hand",
   "item_id": 25098,
   "name": "Tuurik Torch",
   "normalized_requirements": [],
@@ -1960,7 +1961,8 @@
       "entity_name": "Amani'shi Medicine Man",
       "out_of": 2470,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1970,7 +1972,8 @@
       "entity_name": "Amani'shi Tribesman",
       "out_of": 2156,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1980,7 +1983,8 @@
       "entity_name": "Amani'shi Flame Caster",
       "out_of": 2051,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1990,7 +1994,8 @@
       "entity_name": "Amani'shi Guardian",
       "out_of": 7840,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2000,7 +2005,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2010,7 +2016,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2020,7 +2027,8 @@
       "entity_name": "Amani'shi Beast Tamer",
       "out_of": 4238,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2030,7 +2038,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 4033,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2040,7 +2049,8 @@
       "entity_name": "Amani'shi Wind Walker",
       "out_of": 2871,
       "source_url": "https://www.wowhead.com/tbc/item=25098&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2127,7 +2137,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "uncommon",
   "related_tables": {
     "contained-in-item": [],

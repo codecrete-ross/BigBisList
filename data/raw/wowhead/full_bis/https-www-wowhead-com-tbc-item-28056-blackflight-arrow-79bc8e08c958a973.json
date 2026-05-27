@@ -3,6 +3,7 @@
   "boe": null,
   "description": "This arrow can deal 32.0 damage per second. It is sold by NPCs. In the Arrows category. An item from World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:47:16+00:00",
+  "inventory_slot": "Ammo",
   "item_id": 28056,
   "name": "Blackflight Arrow",
   "normalized_requirements": [],
@@ -430,7 +431,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

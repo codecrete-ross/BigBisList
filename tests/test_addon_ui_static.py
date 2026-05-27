@@ -78,7 +78,7 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertNotIn('key = "Idol"', display_block)
         self.assertIn('slots = { "Main Hand", "Two Hand", "Dual Wield" }', display_block)
         self.assertIn('slots = { "Off Hand", "Dual Wield" }', display_block)
-        self.assertIn('slots = { "Ranged", "Idol", "Totem", "Libram", "Relic" }', display_block)
+        self.assertIn('slots = { "Ranged", "Ammo", "Quiver", "Idol", "Totem", "Libram", "Relic" }', display_block)
 
     def test_gear_tab_uses_real_equipment_slots(self):
         ui = self.read_lua("UI.lua")

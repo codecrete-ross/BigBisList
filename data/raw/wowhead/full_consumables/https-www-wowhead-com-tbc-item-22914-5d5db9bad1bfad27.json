@@ -3,6 +3,7 @@
   "boe": null,
   "description": "This alchemy recipe is used for the Alchemy profession. It is looted from Spectral Stallion. In the Alchemy Recipes category. An item from World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T08:51:19+00:00",
+  "inventory_slot": null,
   "item_id": 22914,
   "name": "Recipe: Destruction Potion",
   "normalized_requirements": [
@@ -403,7 +404,8 @@
       "entity_name": "Amani'shi Berserker",
       "out_of": 2800,
       "source_url": "https://www.wowhead.com/tbc/item=22914",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -428,7 +430,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

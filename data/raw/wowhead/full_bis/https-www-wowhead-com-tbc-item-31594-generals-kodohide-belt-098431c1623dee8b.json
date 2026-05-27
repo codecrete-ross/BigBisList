@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic leather armor of item level 123 goes in the \"Waist\" slot. Requires Rogue or Druid. It is obtained through PvP. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:01:05+00:00",
+  "inventory_slot": "Waist",
   "item_id": 31594,
   "name": "General's Kodohide Belt",
   "normalized_requirements": [],
@@ -29,7 +30,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

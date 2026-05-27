@@ -3,6 +3,7 @@
   "boe": null,
   "description": "This engineering schematic is used for the Engineering profession. It is looted from Spectral Charger. In the Engineering Schematics category.",
   "fetched_at": "2026-05-24T08:51:53+00:00",
+  "inventory_slot": null,
   "item_id": 23884,
   "name": "Schematic: Mana Potion Injector",
   "normalized_requirements": [
@@ -591,7 +592,8 @@
       "entity_name": "Amani'shi Flame Caster",
       "out_of": 4881,
       "source_url": "https://www.wowhead.com/tbc/item=23884",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -638,7 +640,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

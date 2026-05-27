@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This green cloth armor of item level 114 goes in the \"Wrist\" slot. It is looted from Wailing Spectre. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:18:56+00:00",
+  "inventory_slot": "Wrist",
   "item_id": 24676,
   "name": "Eldr'naan Bracelets",
   "normalized_requirements": [],
@@ -1850,7 +1851,8 @@
       "entity_name": "Amani'shi Axe Thrower",
       "out_of": 2695,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1860,7 +1862,8 @@
       "entity_name": "Amani'shi Warbringer",
       "out_of": 2418,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1870,7 +1873,8 @@
       "entity_name": "Amani'shi Guardian",
       "out_of": 7840,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1880,7 +1884,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1890,7 +1895,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1900,7 +1906,8 @@
       "entity_name": "Amani'shi Beast Tamer",
       "out_of": 4238,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1910,7 +1917,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 4033,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1920,7 +1928,8 @@
       "entity_name": "Amani'shi Wind Walker",
       "out_of": 2871,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1930,7 +1939,8 @@
       "entity_name": "Amani'shi Protector",
       "out_of": 2484,
       "source_url": "https://www.wowhead.com/tbc/item=24676&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2120,7 +2130,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "uncommon",
   "related_tables": {
     "contained-in-item": [

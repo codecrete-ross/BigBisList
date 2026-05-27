@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic cloak of item level 128 goes in the \"Back\" slot. It is looted from Hex Lord Malacrass. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:30:11+00:00",
+  "inventory_slot": "Back",
   "item_id": 33592,
   "name": "Cloak of Ancient Rituals",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Hex Lord Malacrass",
       "out_of": 221,
       "source_url": "https://www.wowhead.com/tbc/item=33592/cloak-of-ancient-rituals",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

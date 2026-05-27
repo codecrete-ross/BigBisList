@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic leather armor of item level 128 goes in the \"Head\" slot. It is looted from Jan'alai. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:30:59+00:00",
+  "inventory_slot": "Head",
   "item_id": 33356,
   "name": "Helm of Natural Regeneration",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Jan'alai",
       "out_of": 237,
       "source_url": "https://www.wowhead.com/tbc/item=33356/helm-of-natural-regeneration",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

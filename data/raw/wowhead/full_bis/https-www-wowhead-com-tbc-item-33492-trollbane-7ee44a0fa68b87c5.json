@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic two-handed axe has an item level of 132. It is looted from Tanzar's Trunk. In the Two-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:51:37+00:00",
+  "inventory_slot": "Two Hand",
   "item_id": 33492,
   "name": "Trollbane",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Tanzar's Trunk",
       "out_of": 46,
       "source_url": "https://www.wowhead.com/tbc/item=33492/trollbane",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

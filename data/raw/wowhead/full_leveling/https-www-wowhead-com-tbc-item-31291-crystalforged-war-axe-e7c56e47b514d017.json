@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This blue two-handed axe has an item level of 112. It is looted from Spectral Stable Hand. In the Two-Handed Axes category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T09:19:24+00:00",
+  "inventory_slot": "Two Hand",
   "item_id": 31291,
   "name": "Crystalforged War Axe",
   "normalized_requirements": [],
@@ -1141,7 +1142,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=31291/crystalforged-war-axe",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1223,7 +1225,8 @@
       "entity_name": "Amani Treasure Box",
       "out_of": 1841,
       "source_url": "https://www.wowhead.com/tbc/item=31291/crystalforged-war-axe",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1258,7 +1261,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "rare",
   "related_tables": {
     "contained-in-item": [

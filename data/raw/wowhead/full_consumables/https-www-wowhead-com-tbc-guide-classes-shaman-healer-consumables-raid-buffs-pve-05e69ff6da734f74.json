@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:50:59+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "consumables",
@@ -191,6 +191,25 @@
         {
           "entities": [
             {
+              "id": 185848,
+              "name": "Greater Drums of Battle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=185848"
+            }
+          ],
+          "level_range": null,
+          "section": "Best Consumable Check List for Restoration Shaman Healing in TBC Classic",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/item=185848",
+              "text": "Greater Drums of Battle"
+            }
+          ],
+          "text": "Greater Drums of Battle (if LW)"
+        },
+        {
+          "entities": [
+            {
               "id": 23827,
               "name": "Super Sapper Charge",
               "type": "item",
@@ -217,6 +236,17 @@
       "heading": "All Raid Buffs that Benefit Restoration Shaman",
       "rows": [
         {
+          "cell_entities": [
+            [
+              {
+                "id": 25392,
+                "name": "Prayer of Fortitude",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25392"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Stamina"
@@ -241,6 +271,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25392"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 39374,
+                "name": "Prayer of Shadow Protection",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=39374"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Shadow Resistance"
@@ -265,6 +306,23 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=39374"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 33182,
+                "name": "Improved Divine Spirit",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33182"
+              },
+              {
+                "id": 27501,
+                "name": "Scroll of Versatility V",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27501/scroll-of-versatility-v"
+              }
+            ],
+            []
+          ],
           "cells": [
             "(or Scroll of Versatility V )",
             "Spell Damage, Healing & Regen"
@@ -298,6 +356,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33182"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 25898,
+                "name": "Greater Blessing of Kings",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25898"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "All Stats"
@@ -322,6 +391,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25898"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 27143,
+                "name": "Greater Blessing of Wisdom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27143"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "MP5"
@@ -346,6 +426,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27143"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 25895,
+                "name": "Greater Blessing of Salvation",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25895"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Reduced Threat"
@@ -370,6 +461,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25895"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 27127,
+                "name": "Arcane Brilliance",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27127"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Intellect"
@@ -394,6 +496,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27127"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 26990,
+                "name": "Mark of the Wild",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26990"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "Armor & Resistances"

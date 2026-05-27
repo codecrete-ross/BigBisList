@@ -2115,15 +2115,17 @@ function UI:CreateLeftRail(body)
         function(value) self:SetFilter("zone", value) end)
     self.zoneDropdown:SetPoint("TOPLEFT", self.sourceDropdown, "BOTTOMLEFT", 0, -4)
 
+    local rankCycle = { "all", "bis", "ranked", "situational", "pvp", "unrealistic", "option" }
     local rankButton = widgets:CreateTextButton(rail, "Rank: All", LEFT_CONTROL_WIDTH, 22, function()
         local filters = self:GetFilters()
-        if filters.rankGroup == "all" then
-            filters.rankGroup = "bis"
-        elseif filters.rankGroup == "bis" then
-            filters.rankGroup = "option"
-        else
-            filters.rankGroup = "all"
+        local nextIndex = 1
+        for index, value in ipairs(rankCycle) do
+            if filters.rankGroup == value then
+                nextIndex = (index % #rankCycle) + 1
+                break
+            end
         end
+        filters.rankGroup = rankCycle[nextIndex]
         self:Refresh()
     end)
     rankButton:SetPoint("TOPLEFT", self.zoneDropdown, "BOTTOMLEFT", LEFT_RAIL_INSET - LEFT_DROPDOWN_X, -12)

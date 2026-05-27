@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic mail armor of item level 128 goes in the \"Legs\" slot. It is looted from Halazzi. Added in World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T05:31:35+00:00",
+  "inventory_slot": "Legs",
   "item_id": 33533,
   "name": "Avalanche Leggings",
   "normalized_requirements": [],
@@ -15,7 +16,8 @@
       "entity_name": "Halazzi",
       "out_of": 240,
       "source_url": "https://www.wowhead.com/tbc/item=33533/avalanche-leggings",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -28,7 +30,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

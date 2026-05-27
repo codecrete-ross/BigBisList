@@ -23,7 +23,7 @@ from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 from tools.validate_data import validate
 
-PARSER_VERSION = "wowhead-scraper-0.6.0"
+PARSER_VERSION = "wowhead-scraper-0.7.0"
 USER_AGENT = "BigBiSListScraper/0.4 (+https://github.com/codecrete-dev/BigBisList)"
 
 CURRENCY_NAMES = {
@@ -126,9 +126,9 @@ SLOT_PATTERNS = [
     ("Back", r"\bbacks?\b|\bcloaks?\b"),
     ("Chest", r"\bchests?\b"),
     ("Wrist", r"\bwrists?\b|\bbracers?\b"),
-    ("Main Hand", r"\bmain[- ]hand\b"),
-    ("Off Hand", r"\boff[- ]hand\b"),
-    ("Two Hand", r"\btwo[- ]hand\b|\b2h\b"),
+    ("Off Hand", r"\boff[- ]?hands?\b|\boffhands?\b|\bshields?\b"),
+    ("Two Hand", r"\btwo[- ]?hand(?:ed)?\b|\b2h\b"),
+    ("Main Hand", r"\bmain[- ]?hand(?:ed)?\b|\bone[- ]?hand(?:ed)?\b"),
     ("Dual Wield", r"\bdual wield\b"),
     ("Hands", r"\bhands?\b|\bgloves?\b"),
     ("Waist", r"\bwaists?\b|\bbelts?\b"),
@@ -136,7 +136,10 @@ SLOT_PATTERNS = [
     ("Feet", r"\bfeet\b|\bboots?\b"),
     ("Ring", r"\brings?\b"),
     ("Trinket", r"\btrinkets?\b"),
-    ("Ranged", r"\branged\b|\bwands?\b"),
+    ("Quiver", r"\bquivers?\b|\bammo pouches?\b"),
+    ("Ammo", r"\bammunition\b|\bammo\b|\barrows?\b|\bbullets?\b"),
+    ("Ranged", r"\branged\b|\bwands?\b|\bwandss\b"),
+    ("Weapon", r"\bweapons?\b|\bmelee\b"),
     ("Idol", r"\bidols?\b"),
     ("Totem", r"\btotems?\b"),
     ("Libram", r"\blibrams?\b"),
@@ -272,6 +275,8 @@ def parse_binding_from_text(text: str) -> tuple[str, bool | None]:
 
 def slot_from_heading(heading: str) -> str | None:
     normalized = heading.lower()
+    if re.search(r"\bweapons?\b\s*(?:and|/)\s*\boff[- ]?hands?\b|\boff[- ]?hands?\b\s*(?:and|/)\s*\bweapons?\b", normalized):
+        return "Weapon"
     for slot, pattern in SLOT_PATTERNS:
         if re.search(pattern, normalized):
             return slot
@@ -348,6 +353,30 @@ def source_links_from_element(element: Any) -> list[dict[str, str]]:
     ]
 
 
+def element_without_nested_tables(element: Any) -> Any:
+    clone_soup = BeautifulSoup(str(element), "html.parser")
+    clone = clone_soup.find(getattr(element, "name", None))
+    if clone is None:
+        return element
+    for nested_table in clone.find_all("table"):
+        nested_table.decompose()
+    return clone
+
+
+def element_with_resolved_link_text(element: Any, entity_names: dict[str, dict[int, str]] | None = None) -> Any:
+    clone_soup = BeautifulSoup(str(element), "html.parser")
+    clone = clone_soup.find(getattr(element, "name", None))
+    if clone is None:
+        return element
+    for link in clone.find_all("a", href=True):
+        if element_text(link):
+            continue
+        entity = entity_from_link(link, entity_names)
+        if entity and entity.get("name"):
+            link.string = entity["name"]
+    return clone
+
+
 def level_range_from_text(text: str) -> str | None:
     match = re.search(r"\b(?:levels?\s*)?(\d{1,2})\s*[-–]\s*(\d{1,2})\b", text, flags=re.IGNORECASE)
     if match:
@@ -393,6 +422,8 @@ def requirement_looks_like_text(text: str | None) -> bool:
     if not text:
         return False
     lowered = text.lower()
+    if re.search(r"\brequires?\s+(?:reapplying|refreshing|casting|using|switching)\b", lowered):
+        return False
     return bool(
         re.search(r"\brequires?\b|\bwhen\s+(?:friendly|honored|revered|exalted)\b|\bprofession:\b", lowered)
         or re.search(r"\b(?:friendly|honored|revered|exalted)\s+(?:reputation\s+)?with\b", lowered)
@@ -669,7 +700,8 @@ def parse_guide_sections(soup: BeautifulSoup, entity_names: dict[str, dict[int, 
             for block in blocks:
                 if block.find_parent("table"):
                     continue
-                text = element_text(block)
+                clean_block = element_with_resolved_link_text(block, entity_names)
+                text = element_text(clean_block)
                 if len(text) < 8 or text in seen_text:
                     continue
                 seen_text.add(text)
@@ -678,8 +710,8 @@ def parse_guide_sections(soup: BeautifulSoup, entity_names: dict[str, dict[int, 
                         "section": heading,
                         "text": text,
                         "level_range": level_range_from_text(f"{heading} {text}"),
-                        "entities": unique_entities(block.find_all("a", href=True), entity_names),
-                        "source_links": source_links_from_element(block),
+                        "entities": unique_entities(clean_block.find_all("a", href=True), entity_names),
+                        "source_links": source_links_from_element(clean_block),
                     }
                 )
 
@@ -697,34 +729,47 @@ def parse_guide_html(url: str, html: str) -> dict[str, Any]:
     sections = parse_guide_sections(soup, entity_names)
 
     for table in soup.find_all("table"):
+        if table.find_parent("table"):
+            continue
         heading = nearest_heading(table)
         slot = slot_from_heading(heading)
         data_family = data_family_from_heading(heading)
         rows: list[dict[str, Any]] = []
 
-        for tr in table.find_all("tr"):
-            cells = tr.find_all(["td", "th"])
+        for tr in table.find_all("tr", recursive=False):
+            cells = tr.find_all(["td", "th"], recursive=False)
             if len(cells) < 2:
                 continue
             if any(cell.name == "th" for cell in cells):
                 continue
 
-            entities = unique_entities(tr.find_all("a", href=True), entity_names)
+            clean_cells = [element_without_nested_tables(cell) for cell in cells]
+            cell_entities = [unique_entities(cell.find_all("a", href=True), entity_names) for cell in clean_cells]
+            entities = []
+            seen_entities: set[tuple[str, int]] = set()
+            for cell_entity_list in cell_entities:
+                for entity in cell_entity_list:
+                    key = (entity["type"], entity["id"])
+                    if key in seen_entities:
+                        continue
+                    seen_entities.add(key)
+                    entities.append(entity)
             if not entities:
                 continue
 
             primary_entity = entities[0]
             primary_item = next((entity for entity in entities if entity["type"] == "item"), None)
             primary_spell = next((entity for entity in entities if entity["type"] == "spell"), None)
-            source_cell = cells[2] if len(cells) > 2 else cells[-1]
+            source_cell = clean_cells[2] if len(clean_cells) > 2 else clean_cells[-1]
             row = {
-                "rank_label": element_text(cells[0]),
+                "rank_label": element_text(clean_cells[0]),
                 "entity_type": primary_entity["type"],
                 "entity_id": primary_entity["id"],
                 "entity_name": primary_entity["name"],
                 "entity_url": primary_entity["url"],
                 "entities": entities,
-                "cells": [element_text(cell) for cell in cells],
+                "cell_entities": cell_entities,
+                "cells": [element_text(cell) for cell in clean_cells],
                 "source_text": element_text(source_cell),
                 "source_links": source_links_from_element(source_cell),
             }
@@ -1046,6 +1091,62 @@ def parse_quality_from_description(description: str) -> str:
     return "unknown"
 
 
+def parse_inventory_slot_from_text(text: str, name: str = "") -> str | None:
+    combined = clean_text(f"{name} {text}")
+    match = re.search(r"goes in the \"([^\"]+)\" slot", combined, flags=re.IGNORECASE)
+    if match:
+        return match.group(1)
+    lowered = combined.lower()
+    if re.search(r"\btwo-hand\b", lowered):
+        return "Two Hand"
+    if re.search(r"\bmain hand\b", lowered):
+        return "Main Hand"
+    if re.search(r"\bone-hand\b", lowered):
+        return "One Hand"
+    if re.search(r"\bheld in off-hand\b|\boff hand\b|\boff-hand\b", lowered):
+        return "Off Hand"
+    if re.search(r"\branged\s+(?:bow|crossbow|gun|weapon)\b|\bwand\b|\bthrown\b", lowered):
+        return "Ranged"
+    if re.search(r"\bfinger\b", lowered):
+        return "Finger"
+    if re.search(r"\btrinket\b", lowered):
+        return "Trinket"
+    if re.search(r"\brelic\b", lowered):
+        return "Relic"
+    if " in the arrows category" in lowered or " in the bullets category" in lowered or " this arrow " in f" {lowered} " or " this bullet " in f" {lowered} ":
+        return "Ammo"
+    name_lower = name.lower()
+    if "quiver" in name_lower or "ammo pouch" in name_lower or "bandolier" in name_lower or " in the quivers category" in lowered:
+        return "Quiver"
+    return None
+
+
+def canonical_inventory_slot(value: str | None) -> str | None:
+    if not value:
+        return None
+    normalized = value.strip().lower()
+    aliases = {
+        "finger": "Ring",
+        "held in off-hand": "Off Hand",
+        "held in off hand": "Off Hand",
+        "off-hand": "Off Hand",
+        "off hand": "Off Hand",
+        "one-hand": "One Hand",
+        "one hand": "One Hand",
+        "main hand": "Main Hand",
+        "two-hand": "Two Hand",
+        "two hand": "Two Hand",
+        "ranged": "Ranged",
+        "wand": "Ranged",
+        "thrown": "Ranged",
+        "projectile": "Ammo",
+        "ammo": "Ammo",
+        "quiver": "Quiver",
+        "relic": "Relic",
+    }
+    return aliases.get(normalized, value.strip())
+
+
 def parse_item_html(url: str, html: str) -> dict[str, Any]:
     soup = BeautifulSoup(html, "html.parser")
     title = element_text(soup.title) if soup.title else ""
@@ -1054,6 +1155,7 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
     description = meta.get("content", "") if meta else ""
     item_id = item_id_from_href(url)
     tooltip_text = item_tooltip_text(item_id, html)
+    inventory_slot = parse_inventory_slot_from_text(f"{tooltip_text} {description}", name)
     binding, boe = parse_binding_from_text(tooltip_text or description)
     listview_ids = [
         "dropped-by",
@@ -1084,6 +1186,7 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
         "item_id": item_id,
         "name": name,
         "quality": parse_quality_from_description(description),
+        "inventory_slot": canonical_inventory_slot(inventory_slot),
         "binding": binding,
         "boe": boe,
         "description": clean_text(description),
@@ -1482,18 +1585,30 @@ def command_reprocess(args: argparse.Namespace) -> int:
 
 
 def rank_group_from_label(label: str) -> str:
-    lowered = label.lower()
-    if "bis" in lowered and "(" in lowered:
-        return "situational_bis"
-    if lowered == "bis":
-        return "bis"
-    if "option" in lowered or "alternative" in lowered or "viable" in lowered:
-        return "option"
+    lowered = clean_text(label).lower()
     if "pvp" in lowered:
         return "pvp"
+    if "unrealistic" in lowered:
+        return "unrealistic"
+    if "bis" in lowered and "(" in lowered:
+        return "situational"
+    if lowered == "bis" or lowered == "best" or re.search(r"\bbis\b", lowered):
+        return "bis"
+    if lowered.startswith("best until") or "until tier" in lowered or "until t" in lowered:
+        return "situational"
+    if "option" in lowered or "alternative" in lowered or "viable" in lowered:
+        return "option"
     if re.search(r"\d", lowered):
         return "ranked"
     return "option"
+
+
+def normalize_rank_group_value(rank_group: str | None, rank_label: str | None = None) -> str:
+    if rank_group == "situational_bis":
+        return "situational"
+    if rank_group in {"bis", "ranked", "situational", "pvp", "unrealistic", "option"}:
+        return rank_group
+    return rank_group_from_label(rank_label or "")
 
 
 def context_from_rank_label(label: str) -> str:
@@ -1523,8 +1638,43 @@ def context_from_rank_label(label: str) -> str:
     return "standard"
 
 
+GENERIC_BIS_LABELS = {"option", "optional", "alternative", "viable"}
+
+
+def bis_item_entry_preference_key(entry: dict[str, Any]) -> tuple[int, int, int, int, str]:
+    label = str(entry.get("rank_label") or "")
+    normalized_label = clean_text(label).lower()
+    rank_group = normalize_rank_group_value(str(entry.get("rank_group") or ""), label)
+    rank_order = {
+        "bis": 0,
+        "ranked": 1,
+        "pvp": 2,
+        "situational": 3,
+        "unrealistic": 4,
+        "option": 5,
+    }
+    best_label_penalty = 0 if re.search(r"\b(best|bis)\b", normalized_label) else 1
+    generic_label_penalty = 1 if normalized_label in GENERIC_BIS_LABELS else 0
+    empty_label_penalty = 1 if not normalized_label else 0
+    return (
+        rank_order.get(rank_group, 99),
+        best_label_penalty,
+        generic_label_penalty,
+        empty_label_penalty,
+        normalized_label,
+    )
+
+
+def merge_bis_item_entries(preferred: dict[str, Any], discarded: dict[str, Any]) -> dict[str, Any]:
+    merged = dict(preferred)
+    if "requirements" not in merged and discarded.get("requirements"):
+        merged["requirements"] = discarded["requirements"]
+    return merged
+
+
 def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
+    item_snapshots = item_snapshots_by_id(snapshots)
 
     for snapshot in snapshots:
         if snapshot.get("page_type") != "guide":
@@ -1538,23 +1688,18 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
             for table in snapshot.get("tables", []):
                 if table.get("data_family") not in (None, "bis_lists", "unknown"):
                     continue
-                slot = table.get("slot")
-                if not slot:
-                    continue
-                items_by_phase: dict[str, list[dict[str, Any]]] = {}
-                seen_by_phase: dict[str, set[tuple[int, str]]] = {}
+                items_by_phase_slot: dict[tuple[str, str], dict[int, dict[str, Any]]] = {}
                 for row in table.get("rows", []):
                     item_id = row.get("item_id")
                     phase = phase_from_row(source_meta, table, row)
-                    if not phase:
+                    if not item_id or not phase:
+                        continue
+                    slot = bis_slot_from_row(table, row, item_snapshots.get(int(item_id)))
+                    if not slot:
                         continue
                     rank_label = row.get("rank_label") or "Option"
                     context = context_from_rank_label(rank_label)
-                    key = (item_id, context)
-                    seen = seen_by_phase.setdefault(phase, set())
-                    if not item_id or key in seen:
-                        continue
-                    seen.add(key)
+                    phase_slot = (phase, slot)
                     item_entry = {
                         "item_id": item_id,
                         "rank_label": rank_label,
@@ -1564,8 +1709,16 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                     requirements = row_requirements(row, snapshot["url"])
                     if requirements:
                         item_entry["requirements"] = requirements
-                    items_by_phase.setdefault(phase, []).append(item_entry)
-                for phase, items in items_by_phase.items():
+                    items_for_slot = items_by_phase_slot.setdefault(phase_slot, {})
+                    existing = items_for_slot.get(int(item_id))
+                    if existing:
+                        if bis_item_entry_preference_key(item_entry) < bis_item_entry_preference_key(existing):
+                            items_for_slot[int(item_id)] = merge_bis_item_entries(item_entry, existing)
+                        else:
+                            items_for_slot[int(item_id)] = merge_bis_item_entries(existing, item_entry)
+                    else:
+                        items_for_slot[int(item_id)] = item_entry
+                for (phase, slot), items_by_id in items_by_phase_slot.items():
                     rows.append(
                         {
                             "class": class_name,
@@ -1573,7 +1726,7 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                             "phase": phase,
                             "slot": slot,
                             "source_url": snapshot["url"],
-                            "items": items,
+                            "items": list(items_by_id.values()),
                         }
                     )
 
@@ -1628,6 +1781,94 @@ def phases_from_row(source_meta: dict[str, Any], table: dict[str, Any], row: dic
     return []
 
 
+def item_inventory_slot(snapshot: dict[str, Any] | None) -> str | None:
+    if not snapshot:
+        return None
+    slot = snapshot.get("inventory_slot")
+    if isinstance(slot, str) and slot:
+        return canonical_inventory_slot(slot)
+    return canonical_inventory_slot(parse_inventory_slot_from_text(str(snapshot.get("description") or ""), str(snapshot.get("name") or "")))
+
+
+def bis_slot_compatible(bis_slot: str, inventory_slot: str | None) -> bool:
+    if not inventory_slot:
+        return True
+    inv_slot = canonical_inventory_slot(inventory_slot)
+    if bis_slot == inv_slot:
+        return True
+    if bis_slot == "Ring" and inv_slot == "Finger":
+        return True
+    if bis_slot == "Main Hand" and inv_slot in {"Main Hand", "One Hand"}:
+        return True
+    if bis_slot == "Off Hand" and inv_slot in {"Off Hand", "One Hand"}:
+        return True
+    if bis_slot == "Dual Wield" and inv_slot in {"One Hand", "Main Hand", "Off Hand"}:
+        return True
+    if bis_slot == "Two Hand" and inv_slot == "Two Hand":
+        return True
+    if bis_slot == "Ranged" and inv_slot in {"Ranged", "Relic"}:
+        return True
+    if bis_slot in {"Idol", "Totem", "Libram", "Relic"} and inv_slot == "Relic":
+        return True
+    if bis_slot == "Ammo" and inv_slot == "Ammo":
+        return True
+    if bis_slot == "Quiver" and inv_slot == "Quiver":
+        return True
+    return False
+
+
+def bis_slot_from_inventory_slot(inventory_slot: str | None) -> str | None:
+    inv_slot = canonical_inventory_slot(inventory_slot)
+    if inv_slot in {"Head", "Neck", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet", "Trinket", "Ammo", "Quiver", "Ranged", "Off Hand", "Two Hand"}:
+        return inv_slot
+    if inv_slot == "Finger":
+        return "Ring"
+    if inv_slot in {"One Hand", "Main Hand"}:
+        return "Main Hand"
+    if inv_slot == "Relic":
+        return "Relic"
+    return None
+
+
+def bis_slot_from_rank_label(rank_label: str | None, inventory_slot: str | None = None) -> str | None:
+    lowered = clean_text(rank_label or "").lower()
+    inv_slot = canonical_inventory_slot(inventory_slot)
+    if re.search(r"\bmh\s*/\s*oh\b|\bmh\boh\b", lowered):
+        if inv_slot == "Off Hand":
+            return "Off Hand"
+        if inv_slot in {"One Hand", "Main Hand"}:
+            return "Dual Wield"
+    if re.search(r"\boh\b", lowered):
+        return "Off Hand"
+    if re.search(r"\bmh\b", lowered):
+        return "Main Hand"
+    return None
+
+
+def bis_slot_from_row(table: dict[str, Any], row: dict[str, Any], item_snapshot: dict[str, Any] | None = None) -> str | None:
+    table_slot = table.get("slot")
+    inv_slot = item_inventory_slot(item_snapshot)
+    rank_slot = bis_slot_from_rank_label(row.get("rank_label"), inv_slot)
+    if rank_slot and (not inv_slot or bis_slot_compatible(rank_slot, inv_slot)):
+        return rank_slot
+    if table_slot in SLOT_NAMES:
+        if bis_slot_compatible(str(table_slot), inv_slot):
+            return str(table_slot)
+        return bis_slot_from_inventory_slot(inv_slot)
+    if table_slot == "Weapon":
+        if inv_slot == "Two Hand":
+            return "Two Hand"
+        if inv_slot == "Off Hand":
+            return "Off Hand"
+        if inv_slot in {"One Hand", "Main Hand"}:
+            return "Main Hand"
+        if inv_slot == "Ranged":
+            return "Ranged"
+    if table_slot in {"Ammo", "Quiver"}:
+        return str(table_slot)
+    return None
+
+
 def row_item_ids(row: dict[str, Any]) -> list[int]:
     return [int(entity["id"]) for entity in row.get("entities", []) if entity.get("type") == "item" and entity.get("id")]
 
@@ -1653,7 +1894,57 @@ def quality_from_row(row: dict[str, Any]) -> int | None:
 
 
 def compact_cells(row: dict[str, Any]) -> str:
-    return " | ".join(cell for cell in row.get("cells", []) if cell)
+    parts: list[str] = []
+    cell_entities = row.get("cell_entities", [])
+    for index, cell in enumerate(row.get("cells", [])):
+        text = str(cell or "").strip()
+        if not text and index < len(cell_entities):
+            names = [entity.get("name") for entity in cell_entities[index] if entity.get("name")]
+            text = ", ".join(names)
+        if text:
+            parts.append(text)
+    return " | ".join(parts)
+
+
+def resolved_cell_texts(row: dict[str, Any]) -> list[str]:
+    values: list[str] = []
+    cell_entities = row.get("cell_entities", [])
+    for index, cell in enumerate(row.get("cells", [])):
+        text = str(cell or "").strip()
+        if not text and index < len(cell_entities):
+            text = ", ".join(entity.get("name", "") for entity in cell_entities[index] if entity.get("name"))
+        values.append(text)
+    return values
+
+
+def leveling_text_from_row(section: str, row: dict[str, Any]) -> str:
+    cells = resolved_cell_texts(row)
+    section_lower = section.lower()
+    if "abilities to train" in section_lower and len(cells) >= 2:
+        level = cells[0].strip()
+        ability = cells[1].strip()
+        rank = cells[2].strip() if len(cells) > 2 else ""
+        if level and ability:
+            suffix = f" (Rank {rank})" if rank and rank not in {"-", "0"} else ""
+            return f"Level {level}: Train {ability}{suffix}"
+    text = compact_cells(row)
+    if "|" in text:
+        named_entities = [entity.get("name") for entity in row.get("entities", []) if entity.get("name")]
+        if named_entities:
+            level = cells[0].strip() if cells else ""
+            prefix = f"Level {level}: " if re.fullmatch(r"\d{1,2}", level) else ""
+            return prefix + ", ".join(named_entities)
+    return text
+
+
+def repair_empty_link_punctuation(text: str, entities: list[dict[str, Any]]) -> str:
+    names = [entity.get("name") for entity in entities if entity.get("name")]
+    repaired = text
+    for name in names:
+        repaired = re.sub(rf"{re.escape(name)}\s+\.", f"{name}.", repaired)
+    if names and re.search(r"\s\.($|\s)", repaired):
+        repaired = re.sub(r"\s\.", f" {names[0]}.", repaired, count=1)
+    return re.sub(r"\s+([.,;:])", r"\1", repaired)
 
 
 def row_context(table: dict[str, Any], row: dict[str, Any]) -> str:
@@ -1826,14 +2117,14 @@ def slot_from_row(table: dict[str, Any], row: dict[str, Any]) -> str | None:
 
 def enchant_slot_from_row(table: dict[str, Any], row: dict[str, Any]) -> str | None:
     slot = slot_from_row(table, row)
-    if slot:
+    if slot and slot != "Weapon":
         return slot
 
     exact_cells = {str(cell).strip().lower() for cell in row.get("cells", [])}
     text = compact_cells(row).lower()
     if exact_cells & {"shield", "shields"}:
         return "Off Hand"
-    if exact_cells & {"weapon", "weapons"}:
+    if slot == "Weapon" or exact_cells & {"weapon", "weapons"}:
         if re.search(r"\b(2h|2[- ]hand|two[- ]hand|2 handed|two handed)\b", text):
             return "Two Hand"
         return "Main Hand"
@@ -1864,7 +2155,17 @@ def table_matches_family(source_meta: dict[str, Any], table: dict[str, Any], dat
     if not source_meta:
         return False
     table_family = table.get("data_family")
-    return table_family in (data_family, "unknown", None)
+    if table_family == data_family:
+        return True
+    if table_family not in ("unknown", None):
+        return False
+    heading = str(table.get("heading") or "")
+    normalized = heading.lower()
+    if data_family == "leveling":
+        return any(token in normalized for token in ["leveling", "abilities to train", "rotation", "talent"])
+    if data_family == "consumables":
+        return any(re.search(pattern, heading, flags=re.IGNORECASE) for _, pattern in CONSUMABLE_CATEGORY_PATTERNS)
+    return data_family in {"gems", "enchants"}
 
 
 def import_gems_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
@@ -2058,10 +2359,22 @@ def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
 
 def consumable_category(table: dict[str, Any], row: dict[str, Any]) -> str:
     first_cell = str(row.get("cells", [""])[0]).strip() if row.get("cells") else ""
-    if first_cell and not re.fullmatch(r"\d+|bis|option", first_cell, flags=re.IGNORECASE):
+    if (
+        first_cell
+        and len(first_cell) <= 80
+        and not re.fullmatch(r"\d+|bis|best|option", first_cell, flags=re.IGNORECASE)
+        and any(re.search(pattern, first_cell, flags=re.IGNORECASE) for _, pattern in CONSUMABLE_CATEGORY_PATTERNS)
+    ):
         return normalize_consumable_category(first_cell)
     heading = str(table.get("heading") or "").strip()
     return normalize_consumable_category(heading or "Consumables")
+
+
+def consumable_category_label(table: dict[str, Any], row: dict[str, Any]) -> str:
+    first_cell = str(row.get("cells", [""])[0]).strip() if row.get("cells") else ""
+    if first_cell and len(first_cell) <= 80 and any(re.search(pattern, first_cell, flags=re.IGNORECASE) for _, pattern in CONSUMABLE_CATEGORY_PATTERNS):
+        return first_cell
+    return str(table.get("heading") or "Consumables")
 
 
 def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
@@ -2086,6 +2399,9 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                     if not item_ids:
                         continue
                     category = consumable_category(table, row)
+                    category_label = consumable_category_label(table, row)
+                    if len(category_label) > 120:
+                        continue
                     phases = phases_from_row(source_meta, table, row) or [str(source_meta.get("phase") or "")]
                     for phase in phases:
                         key = (str(class_name), str(spec_name), phase, category, tuple(item_ids))
@@ -2096,7 +2412,7 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                             "class": class_name,
                             "spec": spec_name,
                             "category": category,
-                            "category_label": str(row.get("cells", [""])[0]).strip() if row.get("cells") else str(table.get("heading") or ""),
+                            "category_label": category_label,
                             "items": item_ids,
                             "item_names": [entity["name"] for entity in row.get("entities", []) if entity.get("type") == "item" and entity.get("id") in item_ids],
                             "source_url": snapshot["url"],
@@ -2122,6 +2438,8 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                 if section.get("data_family") != "consumables":
                     continue
                 section_title = str(section.get("heading") or "Consumables")
+                if len(section_title) > 120:
+                    continue
                 category = normalize_consumable_category(section_title)
                 for entry in section.get("entries", []):
                     item_ids = row_item_ids(entry)
@@ -2168,6 +2486,8 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
 def import_leveling_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
     seen: set[tuple[str, str, str, str, str, str]] = set()
+    item_snapshots = item_snapshots_by_id(snapshots)
+    spell_snapshots = spell_snapshots_by_id(snapshots)
 
     for snapshot in snapshots:
         if snapshot.get("page_type") != "guide":
@@ -2182,11 +2502,16 @@ def import_leveling_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                 if not table_matches_family(source_meta, table, "leveling"):
                     continue
                 for row in table.get("rows", []):
-                    text = compact_cells(row)
+                    row = row_with_resolved_entities(row, item_snapshots, spell_snapshots)
+                    text = leveling_text_from_row(str(table.get("heading") or "Leveling"), row)
+                    text = repair_empty_link_punctuation(text, row.get("entities", []))
                     if not text:
                         continue
                     section = str(table.get("heading") or "Leveling")
-                    phases = phases_from_row(source_meta, table, row) or [str(source_meta.get("phase") or "PR")]
+                    phases = phases_from_row(source_meta, table, row)
+                    if source_meta.get("phases") == "*" or source_meta.get("phase") == "*" or source_meta.get("scope") == "all_phases":
+                        phases = [""]
+                    phases = phases or [str(source_meta.get("phase") or "")]
                     level_range = row.get("level_range") or level_range_from_text(f"{section} {text}")
                     for phase in phases:
                         key = (str(class_name), str(spec_name), phase, section, str(level_range or ""), text)
@@ -2196,13 +2521,14 @@ def import_leveling_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                         leveling_row = {
                             "class": class_name,
                             "spec": spec_name,
-                            "phase": phase,
                             "section": section,
                             "label": row.get("rank_label") or "",
                             "text": text,
                             "entities": row.get("entities", []),
                             "source_url": snapshot["url"],
                         }
+                        if phase:
+                            leveling_row["phase"] = phase
                         if level_range:
                             leveling_row["level_range"] = level_range
                         rows.append(leveling_row)
@@ -2212,11 +2538,16 @@ def import_leveling_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                     continue
                 section_title = str(section.get("heading") or "Leveling")
                 for entry in section.get("entries", []):
+                    entry = row_with_resolved_entities(entry, item_snapshots, spell_snapshots)
                     text = clean_text(str(entry.get("text") or ""))
+                    text = repair_empty_link_punctuation(text, entry.get("entities", []))
                     if not text:
                         continue
                     phase_row = {"cells": [text], "source_text": text}
-                    phases = phases_from_row(source_meta, {"heading": section_title}, phase_row) or [str(source_meta.get("phase") or "PR")]
+                    phases = phases_from_row(source_meta, {"heading": section_title}, phase_row)
+                    if source_meta.get("phases") == "*" or source_meta.get("phase") == "*" or source_meta.get("scope") == "all_phases":
+                        phases = [""]
+                    phases = phases or [str(source_meta.get("phase") or "")]
                     level_range = entry.get("level_range") or level_range_from_text(f"{section_title} {text}")
                     for phase in phases:
                         key = (str(class_name), str(spec_name), phase, section_title, str(level_range or ""), text)
@@ -2226,12 +2557,13 @@ def import_leveling_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
                         leveling_row = {
                             "class": class_name,
                             "spec": spec_name,
-                            "phase": phase,
                             "section": section_title,
                             "text": text,
                             "entities": entry.get("entities", []),
                             "source_url": snapshot["url"],
                         }
+                        if phase:
+                            leveling_row["phase"] = phase
                         if level_range:
                             leveling_row["level_range"] = level_range
                         rows.append(leveling_row)
@@ -2754,6 +3086,10 @@ def apply_bis_overrides(imported_bis_lists: dict[str, Any]) -> dict[str, Any]:
                 filtered_rows.append(filtered)
         rows = filtered_rows
 
+    for row in rows:
+        for item in row.get("items", []):
+            item["rank_group"] = normalize_rank_group_value(item.get("rank_group"), item.get("rank_label"))
+
     return {"coverage": imported_bis_lists.get("coverage", "scraped_snapshot"), "lists": rows}
 
 
@@ -2777,6 +3113,7 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
             "id": item_id,
             "name": snapshot.get("name") if snapshot and snapshot.get("name") else current.get("name") or ref.get("name") or f"Item {item_id}",
             "quality": snapshot.get("quality") if snapshot and snapshot.get("quality") != "unknown" else current.get("quality", "unknown"),
+            "inventory_slot": item_inventory_slot(snapshot) or current.get("inventory_slot"),
             "binding": snapshot.get("binding") if snapshot and snapshot.get("binding") != "unknown" else current.get("binding", "unknown"),
             "boe": snapshot.get("boe") if snapshot and snapshot.get("boe") is not None else current.get("boe"),
             "wowhead_url": current.get("wowhead_url") or ref.get("wowhead_url") or item_url_for_id(item_id),
@@ -2891,6 +3228,7 @@ def manifest_urls_for_family(data_family: str) -> set[str]:
 
 def raw_bis_rows_from_snapshots(snapshots: list[dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
+    item_snapshots = item_snapshots_by_id(snapshots)
     for snapshot in snapshots:
         if snapshot.get("page_type") != "guide":
             continue
@@ -2902,13 +3240,13 @@ def raw_bis_rows_from_snapshots(snapshots: list[dict[str, Any]]) -> list[dict[st
             for table in snapshot.get("tables", []):
                 if table.get("data_family") not in (None, "bis_lists", "unknown"):
                     continue
-                slot = table.get("slot")
-                if not slot:
-                    continue
                 for row in table.get("rows", []):
                     item_id = row.get("item_id")
                     phase = phase_from_row(source_meta, table, row)
                     if not item_id or not phase:
+                        continue
+                    slot = bis_slot_from_row(table, row, item_snapshots.get(int(item_id)))
+                    if not slot:
                         continue
                     rank_label = row.get("rank_label") or "Option"
                     rows.append(
@@ -2926,6 +3264,44 @@ def raw_bis_rows_from_snapshots(snapshots: list[dict[str, Any]]) -> list[dict[st
                         }
                     )
     return rows
+
+
+BIS_RELEVANT_HEADING_RE = re.compile(
+    r"\b(best in slot|bis|weapons?|one[- ]?hand(?:ed)?|two[- ]?hand(?:ed)?|off ?hands?|offhands?|shields?|quivers?|ammo pouches?|ammunition|arrows?|bullets?)\b",
+    flags=re.IGNORECASE,
+)
+
+
+def bis_snapshot_semantic_errors(snapshots: list[dict[str, Any]]) -> list[str]:
+    errors: list[str] = []
+    item_snapshots = item_snapshots_by_id(snapshots)
+    for snapshot in snapshots:
+        if snapshot.get("page_type") != "guide":
+            continue
+        if not manifest_sources_for_snapshot(snapshot, "bis_lists"):
+            continue
+        for table in snapshot.get("tables", []):
+            heading = str(table.get("heading") or "")
+            table_slot = table.get("slot")
+            table_family = table.get("data_family")
+            if table_family in {"unknown", None} and BIS_RELEVANT_HEADING_RE.search(heading):
+                errors.append(f"BiS-relevant table was not classified: {snapshot.get('url')} / {heading}")
+                continue
+            if table_family not in {"bis_lists", "unknown", None}:
+                continue
+            for row in table.get("rows", []):
+                item_id = row.get("item_id")
+                if not isinstance(item_id, int):
+                    continue
+                item_snapshot = item_snapshots.get(item_id)
+                inv_slot = item_inventory_slot(item_snapshot)
+                derived_slot = bis_slot_from_row(table, row, item_snapshot)
+                row_label = f"{snapshot.get('url')} / {heading} / {row.get('item_name') or item_id}"
+                if table_slot in SLOT_NAMES and inv_slot and not derived_slot and not bis_slot_compatible(str(table_slot), inv_slot):
+                    errors.append(f"BiS row slot mismatch: {row_label} imported as {table_slot}, item slot is {inv_slot}")
+                elif table_slot in {"Weapon", "Ammo", "Quiver"} and not derived_slot:
+                    errors.append(f"BiS row slot could not be derived: {row_label} from table slot {table_slot}, item slot is {inv_slot or 'unknown'}")
+    return errors
 
 
 def reviewed_unknown_source_item_ids() -> set[int]:
@@ -3044,6 +3420,33 @@ def imported_entity_ids(rows: list[dict[str, Any]]) -> tuple[set[int], set[int],
     return item_ids, spell_ids, formula_item_ids
 
 
+def resolve_entity_names(entities: list[dict[str, Any]], item_snapshots: dict[int, dict[str, Any]], spell_snapshots: dict[int, dict[str, Any]]) -> list[dict[str, Any]]:
+    resolved: list[dict[str, Any]] = []
+    for entity in entities:
+        if not isinstance(entity, dict):
+            continue
+        copy = deepcopy(entity)
+        if not copy.get("name"):
+            entity_id = copy.get("id")
+            if copy.get("type") == "item" and isinstance(entity_id, int):
+                copy["name"] = item_snapshots.get(entity_id, {}).get("name", "")
+            elif copy.get("type") == "spell" and isinstance(entity_id, int):
+                copy["name"] = spell_snapshots.get(entity_id, {}).get("name", "")
+        resolved.append(copy)
+    return resolved
+
+
+def row_with_resolved_entities(row: dict[str, Any], item_snapshots: dict[int, dict[str, Any]], spell_snapshots: dict[int, dict[str, Any]]) -> dict[str, Any]:
+    resolved = deepcopy(row)
+    resolved["entities"] = resolve_entity_names(row.get("entities", []), item_snapshots, spell_snapshots)
+    if isinstance(row.get("cell_entities"), list):
+        resolved["cell_entities"] = [
+            resolve_entity_names(cell_entities, item_snapshots, spell_snapshots)
+            for cell_entities in row.get("cell_entities", [])
+        ]
+    return resolved
+
+
 def non_gear_row_errors(row: dict[str, Any], data_family: str) -> list[str]:
     errors: list[str] = []
     row_label = f"{data_family} row from {row.get('source_url') or '<unknown source>'}"
@@ -3079,6 +3482,8 @@ def non_gear_row_errors(row: dict[str, Any], data_family: str) -> list[str]:
     if data_family == "consumables":
         if not row.get("category"):
             errors.append(f"{row_label} is missing a normalized category")
+        if len(str(row.get("category_label") or row.get("category") or "")) > 120:
+            errors.append(f"{row_label} has a prose-sized consumable category label")
         if not isinstance(row.get("items"), list) or not row.get("items"):
             errors.append(f"{row_label} has no item ids")
         for item_id in row.get("items", []):
@@ -3090,6 +3495,14 @@ def non_gear_row_errors(row: dict[str, Any], data_family: str) -> list[str]:
             errors.append(f"{row_label} is missing section title")
         if not row.get("text"):
             errors.append(f"{row_label} has empty narrative/table text")
+        text = str(row.get("text") or "")
+        if "|" in text:
+            errors.append(f"{row_label} contains table pipe artifacts")
+        if re.search(r"\s\.($|\s)", text):
+            errors.append(f"{row_label} contains broken empty-link punctuation")
+        for entity in row.get("entities", []):
+            if isinstance(entity, dict) and not entity.get("name"):
+                errors.append(f"{row_label} has linked entity {entity.get('type')}={entity.get('id')} without a name")
 
     return errors
 
@@ -3116,6 +3529,44 @@ def duplicate_row_errors(rows: list[dict[str, Any]], data_family: str) -> list[s
             errors.append(f"Duplicate {data_family} row without distinct context: {key}")
         else:
             seen[key] = source_url
+    return errors
+
+
+KNOWN_RANK_GROUPS = {"bis", "ranked", "situational", "pvp", "unrealistic", "option"}
+
+
+def canonical_semantic_errors() -> list[str]:
+    errors: list[str] = []
+    items_by_id = {item.get("id"): item for item in canonical_json("items").get("items", [])}
+    for row in canonical_json("bis_lists").get("lists", []):
+        slot = row.get("slot")
+        if slot not in SLOT_NAMES:
+            errors.append(f"BiS list has invalid slot: {row.get('class')}/{row.get('spec')}/{row.get('phase')}/{slot}")
+        for item in row.get("items", []):
+            item_id = item.get("item_id")
+            rank_group = normalize_rank_group_value(item.get("rank_group"), item.get("rank_label"))
+            if rank_group not in KNOWN_RANK_GROUPS:
+                errors.append(f"BiS item {item_id} has unsupported rank group: {item.get('rank_group')}")
+            if str(item.get("rank_label") or "").strip().lower() == "best" and rank_group == "option":
+                errors.append(f"BiS item {item_id} label Best was normalized as option")
+            inventory_slot = items_by_id.get(item_id, {}).get("inventory_slot")
+            if inventory_slot and slot and not bis_slot_compatible(str(slot), str(inventory_slot)):
+                errors.append(f"BiS item {item_id} slot mismatch: list slot {slot}, item slot {inventory_slot}")
+
+    for row in canonical_json("consumables").get("consumables", []):
+        if len(str(row.get("category_label") or row.get("category") or "")) > 120:
+            errors.append(f"Consumable row has prose-sized category label: {row.get('class')}/{row.get('spec')}/{row.get('phase')}")
+
+    for row in canonical_json("leveling").get("leveling", []):
+        text = str(row.get("text") or "")
+        row_label = f"{row.get('class')}/{row.get('spec')}/{row.get('section')}"
+        if "|" in text:
+            errors.append(f"Leveling row contains table pipe artifacts: {row_label}")
+        if re.search(r"\s\.($|\s)", text):
+            errors.append(f"Leveling row contains broken empty-link punctuation: {row_label}")
+        for entity in row.get("entities", []):
+            if isinstance(entity, dict) and not entity.get("name"):
+                errors.append(f"Leveling row has unnamed entity {entity.get('type')}={entity.get('id')}: {row_label}")
     return errors
 
 
@@ -3277,10 +3728,6 @@ def requirement_missing_urls(
             item_ids.update(int(row["item_id"]) for row in raw_bis_rows_from_snapshots(snapshots) if isinstance(row.get("item_id"), int))
             continue
         if family == "leveling":
-            entries = guide_entries_for_family(snapshots, family)
-            referenced_items, referenced_spells = referenced_entity_ids(entries)
-            item_ids.update(referenced_items)
-            spell_ids.update(referenced_spells)
             continue
         imported_rows = import_rows_for_family(snapshots, family)
         imported_item_ids, imported_spell_ids, formula_item_ids = imported_entity_ids(imported_rows)
@@ -3376,10 +3823,11 @@ def build_snapshot_audit(input_dir: Path, data_family: str, guide_only: bool = F
                 },
             }
 
-        for item_id in sorted(referenced_item_ids - set(item_snapshots)):
-            errors.append(f"Missing item snapshot for linked {data_family} item {item_id}: {item_url_for_id(item_id)}")
-        for spell_id in sorted(referenced_spell_ids - set(spell_snapshots)):
-            errors.append(f"Missing spell snapshot for linked {data_family} spell {spell_id}: {spell_url_for_id(spell_id)}")
+        if data_family != "leveling":
+            for item_id in sorted(referenced_item_ids - set(item_snapshots)):
+                errors.append(f"Missing item snapshot for linked {data_family} item {item_id}: {item_url_for_id(item_id)}")
+            for spell_id in sorted(referenced_spell_ids - set(spell_snapshots)):
+                errors.append(f"Missing spell snapshot for linked {data_family} spell {spell_id}: {spell_url_for_id(spell_id)}")
 
         reviewed_unknown_item_ids = reviewed_unknown_source_item_ids()
         if data_family in {"gems", "consumables"}:
@@ -3414,6 +3862,7 @@ def build_snapshot_audit(input_dir: Path, data_family: str, guide_only: bool = F
         }
 
     raw_rows = raw_bis_rows_from_snapshots(snapshots)
+    errors.extend(bis_snapshot_semantic_errors(snapshots))
     if guide_snapshots and not raw_rows:
         errors.append("No BiS item rows found in guide snapshots")
 
@@ -3436,9 +3885,7 @@ def build_snapshot_audit(input_dir: Path, data_family: str, guide_only: bool = F
         if key in seen:
             message = f"Duplicate BiS item/context in snapshots: {row['class']}/{row['spec']}/{row['phase']}/{row['slot']}: {row['item_id']}/{row['context']}"
             same_guide_rank = seen[key][0] == signature[0] and seen[key][2] == signature[2] and seen[key][3] == signature[3]
-            if seen[key] == signature or same_guide_rank:
-                warnings.append(message)
-            else:
+            if seen[key] != signature and not same_guide_rank:
                 errors.append(message)
         else:
             seen[key] = signature
@@ -3497,6 +3944,7 @@ def build_audit() -> dict[str, Any]:
     items = {item["id"]: item for item in canonical_json("items").get("items", [])}
     bis_doc = canonical_json("bis_lists")
     audit_errors = list(result.errors)
+    audit_errors.extend(canonical_semantic_errors())
     duplicate_warnings: list[str] = []
     reviewed_unknown_item_ids = reviewed_unknown_source_item_ids()
 
@@ -3514,7 +3962,8 @@ def build_audit() -> dict[str, Any]:
             if context in contexts:
                 audit_errors.append(f"Duplicate BiS item/context: {item_id}/{context}")
             elif contexts:
-                duplicate_warnings.append(f"BiS item {item_id} appears multiple times with distinct contexts")
+                all_contexts = ", ".join(sorted(contexts | {context}))
+                audit_errors.append(f"Duplicate BiS item with distinct contexts: {item_id} ({all_contexts})")
             contexts.add(context)
 
     return {

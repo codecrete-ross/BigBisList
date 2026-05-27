@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic plate armor of item level 123 goes in the \"Hands\" slot. Requires Paladin. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:12:17+00:00",
+  "inventory_slot": "Hands",
   "item_id": 27703,
   "name": "Gladiator's Lamellar Gauntlets",
   "normalized_requirements": [],
@@ -293,7 +294,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

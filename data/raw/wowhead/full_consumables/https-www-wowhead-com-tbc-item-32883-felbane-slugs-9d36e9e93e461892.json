@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This bullet can deal 37.0 damage per second. It is sold by NPCs. In the Bullets category. An item from World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T08:51:00+00:00",
+  "inventory_slot": "Ammo",
   "item_id": 32883,
   "name": "Felbane Slugs",
   "normalized_requirements": [],
@@ -35,7 +36,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

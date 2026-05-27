@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:04+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -20,10 +20,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=30356",
-              "text": ""
+              "text": "Shield Slam"
             }
           ],
-          "text": ": Shield Slam is your highest threat ability and should be used on cooldown, never delayed."
+          "text": "Shield Slam : Shield Slam is your highest threat ability and should be used on cooldown, never delayed."
         },
         {
           "entities": [
@@ -39,10 +39,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25269",
-              "text": ""
+              "text": "Revenge"
             }
           ],
-          "text": ": Revenge should be used on cooldown."
+          "text": "Revenge : Revenge should be used on cooldown."
         },
         {
           "entities": [
@@ -58,10 +58,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25203",
-              "text": ""
+              "text": "Demoralizing Shout"
             }
           ],
-          "text": ": Demo Shout reduces incoming damage by ~18% and must always be applied on the boss."
+          "text": "Demoralizing Shout : Demo Shout reduces incoming damage by ~18% and must always be applied on the boss."
         },
         {
           "entities": [
@@ -77,10 +77,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25264",
-              "text": ""
+              "text": "Thunder Clap"
             }
           ],
-          "text": ": Thunder Clap reduces incoming damage by ~17% and must always be applied on the boss."
+          "text": "Thunder Clap : Thunder Clap reduces incoming damage by ~17% and must always be applied on the boss."
         },
         {
           "entities": [
@@ -96,10 +96,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=30022",
-              "text": ""
+              "text": "Devastate"
             }
           ],
-          "text": ": Use Devastate with spare rage whenever your other abilities are on cooldown."
+          "text": "Devastate : Use Devastate with spare rage whenever your other abilities are on cooldown."
         },
         {
           "entities": [
@@ -134,10 +134,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=78",
-              "text": ""
+              "text": "Heroic Strike"
             }
           ],
-          "text": ": Finally, only use HS if you have spare rage, without ever going overboard and risking delaying your main abilities."
+          "text": "Heroic Strike : Finally, only use HS if you have spare rage, without ever going overboard and risking delaying your main abilities."
         },
         {
           "entities": [
@@ -153,10 +153,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25264",
-              "text": ""
+              "text": "Thunder Clap"
             }
           ],
-          "text": ": Thunder Clap is your strongest ability to generate equal threat on up to 4 targets and should be used on cooldown if 2 targets or more."
+          "text": "Thunder Clap : Thunder Clap is your strongest ability to generate equal threat on up to 4 targets and should be used on cooldown if 2 targets or more."
         },
         {
           "entities": [
@@ -172,10 +172,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25203",
-              "text": ""
+              "text": "Demoralizing Shout"
             }
           ],
-          "text": ": Demo Shout greatly reduces incoming damage against large groups, but is weak for threat generation below a dozen targets."
+          "text": "Demoralizing Shout : Demo Shout greatly reduces incoming damage against large groups, but is weak for threat generation below a dozen targets."
         },
         {
           "entities": [
@@ -191,10 +191,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=30356",
-              "text": ""
+              "text": "Shield Slam"
             }
           ],
-          "text": ": Shield Slam remains your best single-target threat ability, to use on cooldown."
+          "text": "Shield Slam : Shield Slam remains your best single-target threat ability, to use on cooldown."
         },
         {
           "entities": [
@@ -210,10 +210,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25264",
-              "text": ""
+              "text": "Thunder Clap"
             }
           ],
-          "text": ": Thunder Clap should be used on cooldown for AoE."
+          "text": "Thunder Clap : Thunder Clap should be used on cooldown for AoE."
         },
         {
           "entities": [
@@ -229,10 +229,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=30022",
-              "text": ""
+              "text": "Devastate"
             }
           ],
-          "text": ": Use Devastate as your main filler, if rage allows for it."
+          "text": "Devastate : Use Devastate as your main filler, if rage allows for it."
         },
         {
           "entities": [
@@ -248,10 +248,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25231",
-              "text": ""
+              "text": "Cleave"
             }
           ],
-          "text": ": Cleave replaces Heroic Strike as your rage dump if 2 targets or more."
+          "text": "Cleave : Cleave replaces Heroic Strike as your rage dump if 2 targets or more."
         }
       ],
       "heading": "Leveling Rotation for Protection Warrior Tank in Burning Crusade"
@@ -263,6 +263,18 @@
       "heading": "Mandatory Abilities to Train for Protection Warrior",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 78,
+                "name": "Heroic Strike",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=78"
+              }
+            ],
+            []
+          ],
           "cells": [
             "1",
             "",
@@ -288,6 +300,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=78"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6673,
+                "name": "Battle Shout",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=6673/battle-shout"
+              }
+            ],
+            []
+          ],
           "cells": [
             "1",
             "Battle Shout",
@@ -313,6 +337,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=6673/battle-shout"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 100,
+                "name": "Charge",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=100/charge"
+              }
+            ],
+            []
+          ],
           "cells": [
             "4",
             "Charge",
@@ -338,6 +374,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=100/charge"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 772,
+                "name": "Rend",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=772/rend"
+              }
+            ],
+            []
+          ],
           "cells": [
             "4",
             "Rend",
@@ -363,6 +411,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=772/rend"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6343,
+                "name": "Thunder Clap",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=6343/thunder-clap"
+              }
+            ],
+            []
+          ],
           "cells": [
             "6",
             "Thunder Clap",
@@ -388,6 +448,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=6343/thunder-clap"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 1715,
+                "name": "Hamstring",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=1715/hamstring"
+              }
+            ],
+            []
+          ],
           "cells": [
             "8",
             "Hamstring",
@@ -413,6 +485,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=1715/hamstring"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7386,
+                "name": "Sunder Armor",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=7386"
+              }
+            ],
+            []
+          ],
           "cells": [
             "10",
             "",
@@ -438,6 +522,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=7386"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 2687,
+                "name": "Bloodrage",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=2687"
+              }
+            ],
+            []
+          ],
           "cells": [
             "10",
             "",
@@ -463,6 +559,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=2687"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7384,
+                "name": "Overpower",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=7384/overpower"
+              }
+            ],
+            []
+          ],
           "cells": [
             "12",
             "Overpower",
@@ -488,6 +596,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=7384/overpower"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6572,
+                "name": "Revenge",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=6572/revenge"
+              }
+            ],
+            []
+          ],
           "cells": [
             "14",
             "Revenge",
@@ -513,6 +633,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=6572/revenge"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 1160,
+                "name": "Demoralizing Shout",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=1160/demoralizing-shout"
+              }
+            ],
+            []
+          ],
           "cells": [
             "14",
             "Demoralizing Shout",
@@ -538,6 +670,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=1160/demoralizing-shout"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 2565,
+                "name": "Shield Block",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=2565/shield-block"
+              }
+            ],
+            []
+          ],
           "cells": [
             "16",
             "Shield Block",
@@ -563,6 +707,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=2565/shield-block"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 676,
+                "name": "Disarm",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=676"
+              }
+            ],
+            []
+          ],
           "cells": [
             "18",
             "",
@@ -588,6 +744,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=676"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 845,
+                "name": "Cleave",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=845/cleave"
+              }
+            ],
+            []
+          ],
           "cells": [
             "20",
             "Cleave",
@@ -613,6 +781,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=845/cleave"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 20230,
+                "name": "Retaliation",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=20230"
+              }
+            ],
+            []
+          ],
           "cells": [
             "20",
             "",
@@ -638,6 +818,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=20230"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 12678,
+                "name": "Stance Mastery",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=12678"
+              }
+            ],
+            []
+          ],
           "cells": [
             "20",
             "",
@@ -663,6 +855,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=12678"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 5246,
+                "name": "Intimidating Shout",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=5246/intimidating-shout"
+              }
+            ],
+            []
+          ],
           "cells": [
             "22",
             "Intimidating Shout",
@@ -688,6 +892,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=5246/intimidating-shout"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 5308,
+                "name": "Execute",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=5308/execute"
+              }
+            ],
+            []
+          ],
           "cells": [
             "24",
             "Execute",
@@ -713,6 +929,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=5308/execute"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 1161,
+                "name": "Challenging Shout",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=1161/challenging-shout"
+              }
+            ],
+            []
+          ],
           "cells": [
             "26",
             "Challenging Shout",
@@ -738,6 +966,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=1161/challenging-shout"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 871,
+                "name": "Shield Wall",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=871/shield-wall"
+              }
+            ],
+            []
+          ],
           "cells": [
             "28",
             "Shield Wall",
@@ -763,6 +1003,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=871/shield-wall"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 20252,
+                "name": "Intercept",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=20252"
+              }
+            ],
+            []
+          ],
           "cells": [
             "30",
             "",
@@ -788,6 +1040,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=20252"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 18499,
+                "name": "Berserker Rage",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=18499/berserker-rage"
+              }
+            ],
+            []
+          ],
           "cells": [
             "32",
             "Berserker Rage",
@@ -813,6 +1077,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=18499/berserker-rage"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 1680,
+                "name": "Whirlwind",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=1680/whirlwind"
+              }
+            ],
+            []
+          ],
           "cells": [
             "36",
             "Whirlwind",
@@ -838,6 +1114,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=1680/whirlwind"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6552,
+                "name": "Pummel",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=6552/pummel"
+              }
+            ],
+            []
+          ],
           "cells": [
             "38",
             "Pummel",
@@ -863,6 +1151,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=6552/pummel"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 23922,
+                "name": "Shield Slam",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=23922/shield-slam"
+              }
+            ],
+            []
+          ],
           "cells": [
             "40",
             "Shield Slam",
@@ -888,6 +1188,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=23922/shield-slam"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 20243,
+                "name": "Devastate",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=20243/devastate"
+              }
+            ],
+            []
+          ],
           "cells": [
             "50",
             "Devastate",
@@ -913,6 +1225,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=20243/devastate"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 1719,
+                "name": "Recklessness",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=1719/recklessness"
+              }
+            ],
+            []
+          ],
           "cells": [
             "50",
             "Recklessness",
@@ -938,6 +1262,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=1719/recklessness"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34428,
+                "name": "Victory Rush",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=34428/victory-rush"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "Victory Rush",
@@ -963,6 +1299,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=34428/victory-rush"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 23920,
+                "name": "Spell Reflection",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=23920/spell-reflection"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Spell Reflection",
@@ -988,6 +1336,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=23920/spell-reflection"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 469,
+                "name": "Commanding Shout",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=469"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1013,6 +1373,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=469"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 3411,
+                "name": "Intervene",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=3411/intervene"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Intervene",
@@ -1045,6 +1417,18 @@
       "heading": "Optional Abilities to Train for Protection Warrior",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 772,
+                "name": "Rend",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=772/rend"
+              }
+            ],
+            []
+          ],
           "cells": [
             "4",
             "Rend",
@@ -1070,6 +1454,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=772/rend"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 1715,
+                "name": "Hamstring",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=1715/hamstring"
+              }
+            ],
+            []
+          ],
           "cells": [
             "8",
             "Hamstring",
@@ -1095,6 +1491,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=1715/hamstring"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 72,
+                "name": "Shield Bash",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=72"
+              }
+            ],
+            []
+          ],
           "cells": [
             "12",
             "",
@@ -1120,6 +1528,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=72"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7384,
+                "name": "Overpower",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=7384/overpower"
+              }
+            ],
+            []
+          ],
           "cells": [
             "12",
             "Overpower",
@@ -1145,6 +1565,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=7384/overpower"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 694,
+                "name": "Mocking Blow",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=694"
+              }
+            ],
+            []
+          ],
           "cells": [
             "16",
             "",
@@ -1170,6 +1602,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=694"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 1464,
+                "name": "Slam",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=1464/slam"
+              }
+            ],
+            []
+          ],
           "cells": [
             "30",
             "Slam",
@@ -1195,6 +1639,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=1464/slam"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 20252,
+                "name": "Intercept",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=20252"
+              }
+            ],
+            []
+          ],
           "cells": [
             "30",
             "",
@@ -1220,6 +1676,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=20252"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6552,
+                "name": "Pummel",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=6552/pummel"
+              }
+            ],
+            []
+          ],
           "cells": [
             "38",
             "Pummel",
@@ -1248,10 +1716,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Protection Warrior Tank in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28042,
+                "name": "Regal Protectorate",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28042/regal-protectorate"
+              }
+            ],
+            []
+          ],
           "cells": [
             "58-61",
             "Regal Protectorate",
@@ -1287,6 +1767,18 @@
           "source_text": "Overlord or Cruel's Intentions"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25715,
+                "name": "Jade Warrior Pauldrons",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25715/jade-warrior-pauldrons"
+              }
+            ],
+            []
+          ],
           "cells": [
             "58-61",
             "Jade Warrior Pauldrons",
@@ -1322,6 +1814,18 @@
           "source_text": "Weaken the Ramparts or Weaken the Ramparts"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24020,
+                "name": "Shadowrend Longblade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24020/shadowrend-longblade"
+              }
+            ],
+            []
+          ],
           "cells": [
             "60-62",
             "Shadowrend Longblade",
@@ -1353,6 +1857,18 @@
           "source_text": "Watchkeeper Gargolmar"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29211,
+                "name": "Fitz's Throwing Axe",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29211/fitzs-throwing-axe"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64-68",
             "Fitz's Throwing Axe",
@@ -1384,7 +1900,7 @@
           "source_text": "The Ultimate Bloodsport"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "TBC Classic Protection Warrior Leveling Guide 1-70 & Best Leveling Talent Builds - Wowhead",

@@ -3,6 +3,7 @@
   "boe": false,
   "description": "Badge of Justice is a reward that drops from each boss in Heroic dungeons, and in raids in a later phase (added in patches 2.3 and 2.4 originally).",
   "fetched_at": "2026-05-24T04:35:01+00:00",
+  "inventory_slot": null,
   "item_id": 29434,
   "name": "Badge of Justice",
   "normalized_requirements": [],
@@ -1024,7 +1025,8 @@
       "entity_name": "Akil'zon",
       "out_of": 242,
       "source_url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1034,7 +1036,8 @@
       "entity_name": "Nalorakk",
       "out_of": 251,
       "source_url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1044,7 +1047,8 @@
       "entity_name": "Halazzi",
       "out_of": 240,
       "source_url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1054,7 +1058,8 @@
       "entity_name": "Jan'alai",
       "out_of": 237,
       "source_url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1064,7 +1069,8 @@
       "entity_name": "Zul'jin",
       "out_of": 203,
       "source_url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1074,7 +1080,8 @@
       "entity_name": "Hex Lord Malacrass",
       "out_of": 221,
       "source_url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1213,7 +1220,8 @@
       "entity_name": "Hex Lord? Hah!",
       "quest_id": 11171,
       "source_url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
-      "type": "quest"
+      "type": "quest",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1435,7 +1443,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

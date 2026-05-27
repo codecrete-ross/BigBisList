@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This green cloth armor of item level 117 goes in the \"Hands\" slot. It is looted from Spectral Charger. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:19:05+00:00",
+  "inventory_slot": "Hands",
   "item_id": 24680,
   "name": "Archmage Gloves",
   "normalized_requirements": [],
@@ -1955,7 +1956,8 @@
       "entity_name": "Amani'shi Trainer",
       "out_of": 453,
       "source_url": "https://www.wowhead.com/tbc/item=24680&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1965,7 +1967,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=24680&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1975,7 +1978,8 @@
       "entity_name": "Amani'shi Handler",
       "out_of": 3405,
       "source_url": "https://www.wowhead.com/tbc/item=24680&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1985,7 +1989,8 @@
       "entity_name": "Amani'shi Protector",
       "out_of": 2484,
       "source_url": "https://www.wowhead.com/tbc/item=24680&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1995,7 +2000,8 @@
       "entity_name": "Amani'shi Berserker",
       "out_of": 1232,
       "source_url": "https://www.wowhead.com/tbc/item=24680&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2005,7 +2011,8 @@
       "entity_name": "Amani Elder Lynx",
       "out_of": 1583,
       "source_url": "https://www.wowhead.com/tbc/item=24680&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2122,7 +2129,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "uncommon",
   "related_tables": {
     "contained-in-item": [],

@@ -3,6 +3,7 @@
   "boe": null,
   "description": "Requires Mage. It is looted from Spectral Charger. In the Spell Books category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T08:51:50+00:00",
+  "inventory_slot": null,
   "item_id": 29550,
   "name": "Tome of Conjure Water IX",
   "normalized_requirements": [],
@@ -1809,7 +1810,8 @@
       "entity_name": "Amani'shi Medicine Man",
       "out_of": 1071,
       "source_url": "https://www.wowhead.com/tbc/item=29550",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1819,7 +1821,8 @@
       "entity_name": "Amani'shi Scout",
       "out_of": 954,
       "source_url": "https://www.wowhead.com/tbc/item=29550",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1829,7 +1832,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=29550",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1839,7 +1843,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=29550",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1849,7 +1854,8 @@
       "entity_name": "Amani'shi Beast Tamer",
       "out_of": 4238,
       "source_url": "https://www.wowhead.com/tbc/item=29550",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1858,7 +1864,8 @@
       "entity_name": "Amani'shi Lookout",
       "out_of": 0,
       "source_url": "https://www.wowhead.com/tbc/item=29550",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1868,7 +1875,8 @@
       "entity_name": "Amani'shi Berserker",
       "out_of": 2800,
       "source_url": "https://www.wowhead.com/tbc/item=29550",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2120,7 +2128,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

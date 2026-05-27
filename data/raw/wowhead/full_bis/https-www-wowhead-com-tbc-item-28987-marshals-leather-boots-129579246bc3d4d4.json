@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic leather armor of item level 123 goes in the \"Feet\" slot. Requires Rogue or Druid. It is obtained through PvP. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:57:07+00:00",
+  "inventory_slot": "Feet",
   "item_id": 28987,
   "name": "Marshal's Leather Boots",
   "normalized_requirements": [],
@@ -29,7 +30,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

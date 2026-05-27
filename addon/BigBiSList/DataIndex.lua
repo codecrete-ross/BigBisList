@@ -17,7 +17,7 @@ local SLOT_ORDER = {
     "Head", "Neck", "Shoulder", "Back", "Chest", "Wrist",
     "Hands", "Waist", "Legs", "Feet", "Ring", "Trinket",
     "Main Hand", "Off Hand", "Two Hand", "Dual Wield",
-    "Ranged", "Idol", "Totem", "Libram", "Relic",
+    "Ranged", "Ammo", "Quiver", "Idol", "Totem", "Libram", "Relic",
 }
 
 local DISPLAY_SLOT_FILTERS = {
@@ -35,7 +35,7 @@ local DISPLAY_SLOT_FILTERS = {
     { key = "Trinkets", label = "Trinkets", slots = { "Trinket" } },
     { key = "Main Hand", label = "Main Hand", slots = { "Main Hand", "Two Hand", "Dual Wield" } },
     { key = "Off Hand", label = "Off Hand", slots = { "Off Hand", "Dual Wield" } },
-    { key = "Ranged/Relic", label = "Ranged/Relic", slots = { "Ranged", "Idol", "Totem", "Libram", "Relic" } },
+    { key = "Ranged/Relic", label = "Ranged/Relic", slots = { "Ranged", "Ammo", "Quiver", "Idol", "Totem", "Libram", "Relic" } },
 }
 
 local DISPLAY_SLOT_FILTER_MAP = {}
@@ -101,8 +101,11 @@ local SOURCE_TYPE_PREFIXES = {
 
 local RANK_GROUP_ORDER = {
     bis = 1,
-    situational = 2,
-    option = 3,
+    ranked = 2,
+    situational = 3,
+    pvp = 4,
+    unrealistic = 5,
+    option = 6,
 }
 
 BigBiSList.phaseOrder = PHASE_ORDER
@@ -542,8 +545,14 @@ local function rankShortLabel(use)
         return "No match"
     elseif use.rank_group == "bis" then
         return "BiS"
+    elseif use.rank_group == "ranked" then
+        return "Rank"
     elseif use.rank_group == "situational" then
         return "Sit"
+    elseif use.rank_group == "pvp" then
+        return "PvP"
+    elseif use.rank_group == "unrealistic" then
+        return "Unreal"
     end
     return "Opt"
 end

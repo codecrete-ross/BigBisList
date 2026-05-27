@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:04+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -20,10 +20,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25525",
-              "text": ""
+              "text": "Stoneclaw Totem"
             }
           ],
-          "text": "is your best friend when dealing with multiple enemies at once. In TBC, it has the new power of stunning enemies who attack it very often, making it much better at actually distracting enemies long enough for you to kill them one by one without breaking a sweat. Do not sleep on this totem\u2014try it out on those tough multi-mob pulls."
+          "text": "Stoneclaw Totem is your best friend when dealing with multiple enemies at once. In TBC, it has the new power of stunning enemies who attack it very often, making it much better at actually distracting enemies long enough for you to kill them one by one without breaking a sweat. Do not sleep on this totem\u2014try it out on those tough multi-mob pulls."
         },
         {
           "entities": [
@@ -58,10 +58,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=25472",
-              "text": ""
+              "text": "Lightning Shield"
             }
           ],
-          "text": "Try to group your spell casts together. The \"5 second\" rule determines that your mana can only naturally regenerate when you have not cast anything for 5 seconds, which means that you can get a significant amount of mana back from remembering to refresh , using your spells, and healing yourself in consecutive global cooldowns, rather than spacing these casts out."
+          "text": "Try to group your spell casts together. The \"5 second\" rule determines that your mana can only naturally regenerate when you have not cast anything for 5 seconds, which means that you can get a significant amount of mana back from remembering to refresh Lightning Shield , using your spells, and healing yourself in consecutive global cooldowns, rather than spacing these casts out."
         },
         {
           "entities": [],
@@ -87,6 +87,18 @@
       "heading": "Mandatory Abilities to Train for Elemental Shaman",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25585,
+                "name": "Windfury Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25585"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -112,6 +124,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25585"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25546,
+                "name": "Fire Nova Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25546"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -137,6 +161,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25546"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25448,
+                "name": "Lightning Bolt",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25448"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -162,6 +198,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25448"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24398,
+                "name": "Water Shield",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=24398"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -187,6 +235,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=24398"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25391,
+                "name": "Healing Wave",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25391"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -212,6 +272,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25391"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25469,
+                "name": "Lightning Shield",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25469"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -237,6 +309,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25469"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25439,
+                "name": "Chain Lightning",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25439"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -262,6 +346,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25439"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 3738,
+                "name": "Wrath of Air Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=3738"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -287,6 +383,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=3738"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25528,
+                "name": "Strength of Earth Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25528"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -312,6 +420,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25528"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25570,
+                "name": "Mana Spring Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25570"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -337,6 +457,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25570"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25552,
+                "name": "Magma Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25552"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -362,6 +494,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25552"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 2062,
+                "name": "Earth Elemental Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=2062"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -387,6 +531,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=2062"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25420,
+                "name": "Lesser Healing Wave",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25420"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -412,6 +568,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25420"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25525,
+                "name": "Stoneclaw Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25525"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -437,6 +605,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25525"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25449,
+                "name": "Lightning Bolt",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25449"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -462,6 +642,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25449"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25464,
+                "name": "Frost Shock",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25464"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -487,6 +679,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25464"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 2894,
+                "name": "Fire Elemental Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=2894"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -512,6 +716,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=2894"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33736,
+                "name": "Water Shield",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33736"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -537,6 +753,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33736"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25567,
+                "name": "Healing Stream Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25567"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -562,6 +790,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25567"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25454,
+                "name": "Earth Shock",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25454"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -587,6 +827,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25454"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25533,
+                "name": "Searing Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25533"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -612,6 +864,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25533"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25442,
+                "name": "Chain Lightning",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25442"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -637,6 +901,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25442"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25547,
+                "name": "Fire Nova Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25547"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -662,6 +938,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25547"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25457,
+                "name": "Flame Shock",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25457"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -687,6 +975,24 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25457"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 2825,
+                "name": "Bloodlust",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=2825/bloodlust"
+              },
+              {
+                "id": 32182,
+                "name": "Heroism",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32182/heroism"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Bloodlust / Heroism",
@@ -718,6 +1024,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=2825/bloodlust"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25587,
+                "name": "Windfury Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25587"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -743,6 +1061,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25587"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25396,
+                "name": "Healing Wave",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25396"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -768,6 +1098,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25396"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25472,
+                "name": "Lightning Shield",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25472"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -800,6 +1142,18 @@
       "heading": "Optional Abilities to Train for Elemental Shaman",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25422,
+                "name": "Chain Heal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25422"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -825,6 +1179,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25422"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25479,
+                "name": "Rockbiter Weapon",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25479"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -850,6 +1216,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25479"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25508,
+                "name": "Stoneskin Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25508"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -875,6 +1253,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25508"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25489,
+                "name": "Flametongue Weapon",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25489"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -900,6 +1290,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25489"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25577,
+                "name": "Windwall Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25577"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -925,6 +1327,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25577"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25500,
+                "name": "Frostbrand Weapon",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25500"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -950,6 +1364,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25500"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25557,
+                "name": "Flametongue Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25557"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -975,6 +1401,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25557"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25560,
+                "name": "Frost Resistance Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25560"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -1000,6 +1438,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25560"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25563,
+                "name": "Fire Resistance Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25563"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1025,6 +1475,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25563"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25505,
+                "name": "Windfury Weapon",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25505"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1050,6 +1512,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25505"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25423,
+                "name": "Chain Heal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25423"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1075,6 +1549,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25423"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25574,
+                "name": "Nature Resistance Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25574"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1100,6 +1586,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25574"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25509,
+                "name": "Stoneskin Totem",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25509"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1125,6 +1623,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25509"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25485,
+                "name": "Rockbiter Weapon",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25485"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1153,10 +1663,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Elemental Shaman DPS in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6505,
+                "name": "Crescent Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6505/crescent-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "22",
             "Crescent Staff",
@@ -1187,6 +1709,24 @@
           "source_text": "Leaders of the Fang in Wailing Caverns"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7714,
+                "name": "Hypnotic Blade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=7714/hypnotic-blade"
+              },
+              {
+                "id": 7685,
+                "name": "Orb of the Forgotten Seer",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=7685/orb-of-the-forgotten-seer"
+              }
+            ],
+            []
+          ],
           "cells": [
             "34",
             "Hypnotic Blade + Orb of the Forgotten Seer",
@@ -1227,6 +1767,18 @@
           "source_text": "Arcanist Doan + Bloodmage Thalnos in Scarlet Monastery Library and Graveyard"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7713,
+                "name": "Illusionary Rod",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=7713/illusionary-rod"
+              }
+            ],
+            []
+          ],
           "cells": [
             "34",
             "Illusionary Rod",
@@ -1257,6 +1809,18 @@
           "source_text": "Arcanist Doan in Scarlet Monastery Library"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 873,
+                "name": "Staff of Jordan",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=873/staff-of-jordan"
+              }
+            ],
+            []
+          ],
           "cells": [
             "35",
             "Staff of Jordan",
@@ -1282,6 +1846,18 @@
           "source_text": "World Drop"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 18082,
+                "name": "Zum'rah's Vexing Cane",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=18082/zumrahs-vexing-cane"
+              }
+            ],
+            []
+          ],
           "cells": [
             "42",
             "Zum'rah's Vexing Cane",
@@ -1312,6 +1888,18 @@
           "source_text": "Witch Doctor Zum'rah in Zul'Farrak"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29910,
+                "name": "The Staff of Twin Worlds",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29910/the-staff-of-twin-worlds"
+              }
+            ],
+            []
+          ],
           "cells": [
             "58",
             "The Staff of Twin Worlds",
@@ -1346,6 +1934,18 @@
           "source_text": "Felspark Ravine / The Path of Anguish in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24069,
+                "name": "Crystalfire Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24069/crystalfire-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "60",
             "Crystalfire Staff",
@@ -1376,6 +1976,18 @@
           "source_text": "Omor the Unscarred in Hellfire Ramparts"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24384,
+                "name": "Diamond-Core Sledgemace",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24384/diamond-core-sledgemace"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "Diamond-Core Sledgemace",
@@ -1406,6 +2018,18 @@
           "source_text": "The Maker in The Blood Furnace"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31758,
+                "name": "Revered Mother's Crysknife",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31758/revered-mothers-crysknife"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "Revered Mother's Crysknife",
@@ -1436,6 +2060,18 @@
           "source_text": "The Big Bone Worm in Terokkar Forest"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24453,
+                "name": "Zangartooth Shortblade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24453/zangartooth-shortblade"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "Zangartooth Shortblade",
@@ -1466,6 +2102,18 @@
           "source_text": "Swamplord Musel'ek in The Underbog"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25950,
+                "name": "Staff of Polarities",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25950/staff-of-polarities"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Staff of Polarities",
@@ -1496,6 +2144,18 @@
           "source_text": "Tavarok in Mana-Tombs"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25760,
+                "name": "Battle Mage's Baton",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25760/battle-mages-baton"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "Battle Mage's Baton",
@@ -1526,6 +2186,18 @@
           "source_text": "The Ring of Blood: The Final Challenge in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27431,
+                "name": "Time-Shifted Dagger",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27431/time-shifted-dagger"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "Time-Shifted Dagger",
@@ -1556,6 +2228,18 @@
           "source_text": "Epoch Hunter in Old Hillsbrad Foothills"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30011,
+                "name": "Ameer's Impulse Taser",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30011/ameers-impulse-taser"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Ameer's Impulse Taser",
@@ -1586,6 +2270,18 @@
           "source_text": "Nexus-King Salhadaar in Netherstorm"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27868,
+                "name": "Runesong Dagger",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27868/runesong-dagger"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Runesong Dagger",
@@ -1616,7 +2312,7 @@
           "source_text": "Warbringer O'mrogg in The Shattered Halls"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "Elemental Shaman Leveling Guide - TBC Classic - Wowhead",

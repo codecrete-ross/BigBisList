@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic bow has an item level of 132. It is looted from Zul'jin. In the Bows category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T04:40:40+00:00",
+  "inventory_slot": "Ranged",
   "item_id": 33474,
   "name": "Ancient Amani Longbow",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Zul'jin",
       "out_of": 203,
       "source_url": "https://www.wowhead.com/tbc/item=33474/ancient-amani-longbow",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

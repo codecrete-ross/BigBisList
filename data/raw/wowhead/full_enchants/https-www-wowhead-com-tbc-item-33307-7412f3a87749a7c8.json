@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This enchanting formula is used for the Enchanting profession. It is looted from Akil'zon. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T09:46:53+00:00",
+  "inventory_slot": null,
   "item_id": 33307,
   "name": "Formula: Enchant Weapon - Executioner",
   "normalized_requirements": [
@@ -25,7 +26,8 @@
       "entity_name": "Akil'zon",
       "out_of": 242,
       "source_url": "https://www.wowhead.com/tbc/item=33307",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -35,7 +37,8 @@
       "entity_name": "Nalorakk",
       "out_of": 251,
       "source_url": "https://www.wowhead.com/tbc/item=33307",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -45,7 +48,8 @@
       "entity_name": "Halazzi",
       "out_of": 240,
       "source_url": "https://www.wowhead.com/tbc/item=33307",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -55,7 +59,8 @@
       "entity_name": "Jan'alai",
       "out_of": 237,
       "source_url": "https://www.wowhead.com/tbc/item=33307",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -65,7 +70,8 @@
       "entity_name": "Zul'jin",
       "out_of": 203,
       "source_url": "https://www.wowhead.com/tbc/item=33307",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -84,11 +90,12 @@
       "entity_name": "Hex Lord Malacrass",
       "out_of": 221,
       "source_url": "https://www.wowhead.com/tbc/item=33307",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

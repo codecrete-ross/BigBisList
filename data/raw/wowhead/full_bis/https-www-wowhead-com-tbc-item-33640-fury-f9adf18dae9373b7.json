@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic fist weapon has an item level of 132. It is looted from Nalorakk. In the Fist Weapons category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:32:49+00:00",
+  "inventory_slot": "Off Hand",
   "item_id": 33640,
   "name": "Fury",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Nalorakk",
       "out_of": 251,
       "source_url": "https://www.wowhead.com/tbc/item=33640/fury",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

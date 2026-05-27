@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:03+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -39,10 +39,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=26982",
-              "text": ""
+              "text": "Rejuvenation"
             }
           ],
-          "text": "Keep up on the target."
+          "text": "Keep Rejuvenation up on the target."
         },
         {
           "entities": [
@@ -121,14 +121,14 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=17116",
-              "text": ""
+              "text": "Nature's Swiftness"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=26979",
-              "text": ""
+              "text": "Healing Touch"
             }
           ],
-          "text": "In an emergency, combine with a max rank ."
+          "text": "In an emergency, combine Nature's Swiftness with a max rank Healing Touch ."
         },
         {
           "entities": [
@@ -163,10 +163,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=26979",
-              "text": ""
+              "text": "Healing Touch"
             }
           ],
-          "text": "Cast varying ranks of on targets who have taken damage."
+          "text": "Cast varying ranks of Healing Touch on targets who have taken damage."
         },
         {
           "entities": [
@@ -182,10 +182,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=26979",
-              "text": ""
+              "text": "Healing Touch"
             }
           ],
-          "text": "Precast varying ranks of on targets who are about to take damage and cancel if needed."
+          "text": "Precast varying ranks of Healing Touch on targets who are about to take damage and cancel if needed."
         },
         {
           "entities": [
@@ -201,10 +201,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=26982",
-              "text": ""
+              "text": "Rejuvenation"
             }
           ],
-          "text": "Use on a target who will be taking consistent damage."
+          "text": "Use Rejuvenation on a target who will be taking consistent damage."
         },
         {
           "entities": [
@@ -252,10 +252,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=26993",
-              "text": ""
+              "text": "Faerie Fire"
             }
           ],
-          "text": "Even in dungeons, you aren't just a heal-bot. Yes, you're there to keep people alive, and that is the important focus, but you are also able to cast things like and damaging abilities. This will help the dungeons go by a lot faster."
+          "text": "Even in dungeons, you aren't just a heal-bot. Yes, you're there to keep people alive, and that is the important focus, but you are also able to cast things like Faerie Fire and damaging abilities. This will help the dungeons go by a lot faster."
         },
         {
           "entities": [],
@@ -321,14 +321,14 @@
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=9634",
-              "text": ""
+              "text": "Dire Bear Form"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=40120/travel-form",
               "text": "Travel Form"
             }
           ],
-          "text": "While you don't need to venture back to the trainer each time you level up, there are a few key levels where you get access to new forms. At level 10, you'll gain access to Bear Form , which is a huge boost to survival. At level 20, you'll gain Cat Form . At level 30, you can learn Travel Form , which will greatly reduce travel time until you can get a mount at level 40. At level 40, you gain . And finally, at level 68, you can train Travel Form \u2014two whole levels before other classes can buy a flying mount."
+          "text": "While you don't need to venture back to the trainer each time you level up, there are a few key levels where you get access to new forms. At level 10, you'll gain access to Bear Form , which is a huge boost to survival. At level 20, you'll gain Cat Form . At level 30, you can learn Travel Form , which will greatly reduce travel time until you can get a mount at level 40. At level 40, you gain Dire Bear Form . And finally, at level 68, you can train Travel Form \u2014two whole levels before other classes can buy a flying mount."
         }
       ],
       "heading": "Leveling Tips for Restoration Druid Healer in TBC Classic"
@@ -340,6 +340,18 @@
       "heading": "Mandatory Abilities to Train for Restoration Druid",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26978,
+                "name": "Healing Touch",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26978"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -365,6 +377,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26978"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26981,
+                "name": "Rejuvenation",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26981"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -390,6 +414,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26981"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26987,
+                "name": "Moonfire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26987"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -415,6 +451,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26987"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33763,
+                "name": "Lifebloom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33763/lifebloom"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Lifebloom",
@@ -440,6 +488,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33763/lifebloom"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26992,
+                "name": "Thorns",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26992"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -465,6 +525,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26992"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26980,
+                "name": "Regrowth",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26980"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -490,6 +562,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26980"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26993,
+                "name": "Faerie Fire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26993"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -515,6 +599,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26993"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33943,
+                "name": "Travel Form",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33943/travel-form"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Travel Form",
@@ -540,6 +636,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33943/travel-form"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26979,
+                "name": "Healing Touch",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26979"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -565,6 +673,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26979"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26982,
+                "name": "Rejuvenation",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26982"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -590,6 +710,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26982"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26994,
+                "name": "Rebirth",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26994"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -615,6 +747,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26994"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26990,
+                "name": "Mark of the Wild",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26990"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -640,6 +784,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26990"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26983,
+                "name": "Tranquility",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26983"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -665,6 +821,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26983"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33786,
+                "name": "Cyclone",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33786/cyclone"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Cyclone",
@@ -690,6 +858,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33786/cyclone"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26991,
+                "name": "Gift of the Wild",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26991"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70+",
             "",
@@ -715,6 +895,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26991"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 40120,
+                "name": "Travel Form",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=40120/travel-form"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70+",
             "Travel Form",
@@ -747,6 +939,18 @@
       "heading": "Optional Abilities to Train for Restoration Druid",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26984,
+                "name": "Wrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26984"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -772,6 +976,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26984"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33357,
+                "name": "Dash",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33357"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -797,6 +1013,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33357"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26986,
+                "name": "Starfire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26986"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -822,6 +1050,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26986"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26989,
+                "name": "Entangling Roots",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26989"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -847,6 +1087,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26989"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26985,
+                "name": "Wrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26985"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -872,6 +1124,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26985"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27012,
+                "name": "Hurricane",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27012"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -897,6 +1161,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27012"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27013,
+                "name": "Insect Swarm",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27013"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -922,6 +1198,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27013"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26988,
+                "name": "Moonfire",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26988"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -947,6 +1235,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26988"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26995,
+                "name": "Soothe Animal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26995"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -979,6 +1279,18 @@
       "heading": "Form-Dependent Abilities to Train for Restoration Druid",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27001,
+                "name": "Shred",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27001"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -1004,6 +1316,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27001"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26998,
+                "name": "Demoralizing Roar",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26998"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -1029,6 +1353,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26998"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 22570,
+                "name": "Maim",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=22570/maim"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "Maim",
@@ -1054,6 +1390,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=22570/maim"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24248,
+                "name": "Ferocious Bite",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=24248"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -1079,6 +1427,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=24248"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27003,
+                "name": "Rake",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27003"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -1104,6 +1464,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27003"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26997,
+                "name": "Swipe",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26997"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -1129,6 +1501,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26997"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26999,
+                "name": "Frenzied Regeneration",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26999"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -1154,6 +1538,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26999"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33745,
+                "name": "Lacerate",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33745"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -1179,6 +1575,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33745"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27006,
+                "name": "Pounce",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27006"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -1204,6 +1612,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27006"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27005,
+                "name": "Ravage",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27005"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -1229,6 +1649,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27005"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27000,
+                "name": "Claw",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27000"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -1254,6 +1686,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27000"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26996,
+                "name": "Maul",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26996"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -1279,6 +1723,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26996"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27008,
+                "name": "Rip",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27008"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -1304,6 +1760,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27008"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33987,
+                "name": "Mangle (Bear)",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33987"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1329,6 +1797,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33987"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33983,
+                "name": "Mangle (Cat)",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33983"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -1354,6 +1834,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33983"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27004,
+                "name": "Cower",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27004"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1379,6 +1871,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27004"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27002,
+                "name": "Shred",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27002"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1407,10 +1911,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Restoration Druid Healer in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6318,
+                "name": "Odo's Ley Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6318/odos-ley-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "21",
             "Odo's Ley Staff",
@@ -1441,6 +1957,18 @@
           "source_text": "Odo the Blindwatcher in Shadowfang Keep"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6505,
+                "name": "Crescent Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6505/crescent-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "22",
             "Crescent Staff",
@@ -1471,6 +1999,18 @@
           "source_text": "Leaders of the Fang in Wailing Caverns"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7685,
+                "name": "Orb of the Forgotten Seer",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=7685/orb-of-the-forgotten-seer"
+              }
+            ],
+            []
+          ],
           "cells": [
             "33",
             "Orb of the Forgotten Seer",
@@ -1501,6 +2041,18 @@
           "source_text": "Bloodmage Thalnos in Scarlet Monastery Graveyard"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7713,
+                "name": "Illusionary Rod",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=7713/illusionary-rod"
+              }
+            ],
+            []
+          ],
           "cells": [
             "34",
             "Illusionary Rod",
@@ -1531,6 +2083,18 @@
           "source_text": "Arcanist Doan in Scarlet Monastery Library"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 873,
+                "name": "Staff of Jordan",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=873/staff-of-jordan"
+              }
+            ],
+            []
+          ],
           "cells": [
             "35",
             "Staff of Jordan",
@@ -1556,6 +2120,18 @@
           "source_text": "World Drop"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7721,
+                "name": "Hand of Righteousness",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=7721/hand-of-righteousness"
+              }
+            ],
+            []
+          ],
           "cells": [
             "39",
             "Hand of Righteousness",
@@ -1586,6 +2162,18 @@
           "source_text": "High Inquisitor Whitemane in Scarlet Monastery Cathedral"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 18082,
+                "name": "Zum'rah's Vexing Cane",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=18082/zumrahs-vexing-cane"
+              }
+            ],
+            []
+          ],
           "cells": [
             "42",
             "Zum'rah's Vexing Cane",
@@ -1616,6 +2204,18 @@
           "source_text": "Witch Doctor Zum'rah in Zul'Farrak"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29910,
+                "name": "The Staff of Twin Worlds",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29910/the-staff-of-twin-worlds"
+              }
+            ],
+            []
+          ],
           "cells": [
             "58",
             "The Staff of Twin Worlds",
@@ -1650,6 +2250,24 @@
           "source_text": "Felspark Ravine / The Path of Anguish in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24393,
+                "name": "Bloody Surgeon's Mitts",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24393/bloody-surgeons-mitts"
+              },
+              {
+                "id": 24390,
+                "name": "Auslese's Light Channeler",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24390/ausleses-light-channeler"
+              }
+            ],
+            []
+          ],
           "cells": [
             "59-61",
             "Bloody Surgeon's Mitts Auslese's Light Channeler",
@@ -1691,6 +2309,18 @@
           "source_text": "Broggok in The Blood Furnace Broggok in The Blood Furnace"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29345,
+                "name": "Haramad's Leg Wraps",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29345/haramads-leg-wraps"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62-63",
             "Haramad's Leg Wraps",
@@ -1722,6 +2352,24 @@
           "source_text": "in Mana-Tombs"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28268,
+                "name": "Natural Mender's Wraps",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28268/natural-menders-wraps"
+              },
+              {
+                "id": 27411,
+                "name": "Slippers of Serenity",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27411/slippers-of-serenity"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63-65",
             "Natural Mender's Wraps Slippers of Serenity",
@@ -1763,6 +2411,30 @@
           "source_text": "Avatar of the Martyred in Auchenai Crypts Exarch Maladaar in Auchenai Crypts"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29327,
+                "name": "Cryo-Mitts",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
+              },
+              {
+                "id": 31691,
+                "name": "Natasha's Guardian Cord",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31691/natashas-guardian-cord"
+              },
+              {
+                "id": 25634,
+                "name": "Oshu'gun Relic",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64-65",
             "Cryo-Mitts Natasha's Guardian Cord Oshu'gun Relic",
@@ -1814,6 +2486,30 @@
           "source_text": "Someone Else's Hard Work Pays Off in Mana-Tombs The Hound-Master in Blade's Edge Mountains Gava'xi in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27433,
+                "name": "Pauldrons of Sufferance",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27433/pauldrons-of-sufferance"
+              },
+              {
+                "id": 27946,
+                "name": "Avian Cloak of Feathers",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27946/avian-cloak-of-feathers"
+              },
+              {
+                "id": 27875,
+                "name": "Hallowed Trousers",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27875/hallowed-trousers"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66-67",
             "Pauldrons of Sufferance Avian Cloak of Feathers Hallowed Trousers",
@@ -1865,6 +2561,66 @@
           "source_text": "Epoch Hunter in Old Hillsbrad Foothills Talon King Ikiss in Sethekk Halls Talon King Ikiss in Sethekk Halls"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25791,
+                "name": "Gloves of Preservation",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25791/gloves-of-preservation"
+              },
+              {
+                "id": 25792,
+                "name": "Curate's Boots",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25792/curates-boots"
+              },
+              {
+                "id": 27525,
+                "name": "Jeweled Boots of Sanctification",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27525/jeweled-boots-of-sanctification"
+              },
+              {
+                "id": 28251,
+                "name": "Boots of the Glade-Keeper",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28251/boots-of-the-glade-keeper"
+              },
+              {
+                "id": 30377,
+                "name": "Karja's Medallion",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30377/karjas-medallion"
+              },
+              {
+                "id": 29814,
+                "name": "Celestial Jewel Ring",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29814/celestial-jewel-ring"
+              },
+              {
+                "id": 28257,
+                "name": "Hammer of the Penitent",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28257/hammer-of-the-penitent"
+              },
+              {
+                "id": 27538,
+                "name": "Lightsworn Hammer",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27538/lightsworn-hammer"
+              },
+              {
+                "id": 27791,
+                "name": "Serpentcrest Life-Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27791/serpentcrest-life-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67-68",
             "Gloves of Preservation Curate's Boots Jeweled Boots of Sanctification Boots of the Glade-Keeper Karja's Medallion Celestial Jewel Ring Hammer of the Penitent Lightsworn Hammer Serpentcrest Life-Staff",
@@ -1976,6 +2732,18 @@
           "source_text": "Fel Embers in The Shattered Halls Fel Embers in The Shattered Halls Warbringer O'mrogg in The Shattered Halls Cache of the Legion in The Mechanar Shutting Down Manaforge Ara in Netherstorm Hitting the Motherlode in Netherstorm Mechano-Lord Capacitus in The Mechanar Warchief Kargath Bladefist in The Shattered Halls Mekgineer Steamrigger in The Steamvault"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31383,
+                "name": "Spiritualist's Mark of the Sha'tar",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31383/spiritualists-mark-of-the-shatar"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68-69",
             "Spiritualist's Mark of the Sha'tar",
@@ -2007,6 +2775,48 @@
           "source_text": "Battle of the Crimson Watch in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28413,
+                "name": "Hallowed Crown",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28413/hallowed-crown"
+              },
+              {
+                "id": 28348,
+                "name": "Moonglade Cowl",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28348/moonglade-cowl"
+              },
+              {
+                "id": 27775,
+                "name": "Hallowed Pauldrons",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27775/hallowed-pauldrons"
+              },
+              {
+                "id": 28230,
+                "name": "Hallowed Garments",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28230/hallowed-garments"
+              },
+              {
+                "id": 28202,
+                "name": "Moonglade Robe",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28202/moonglade-robe"
+              },
+              {
+                "id": 28398,
+                "name": "The Sleeper's Cord",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28398/the-sleepers-cord"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69-70",
             "Hallowed Crown Moonglade Cowl Hallowed Pauldrons Hallowed Garments Moonglade Robe The Sleeper's Cord",
@@ -2088,7 +2898,7 @@
           "source_text": "Harbinger Skyriss in The Arcatraz High Botanist Freywinn in The Botanica Grandmaster Vorpil in Shadow Labyrinth Murmur in Shadow Labyrinth Nethermancer Sepethrea in The Mechanar Wrath-Scryer Soccothrates in The Arcatraz"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "Restoration Druid Leveling Guide - TBC Classic - Wowhead",

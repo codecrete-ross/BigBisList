@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic plate armor of item level 159 goes in the \"Head\" slot. Requires Warrior. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:42:02+00:00",
+  "inventory_slot": "Head",
   "item_id": 35068,
   "name": "Brutal Gladiator's Plate Helm",
   "normalized_requirements": [],
@@ -136,7 +137,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

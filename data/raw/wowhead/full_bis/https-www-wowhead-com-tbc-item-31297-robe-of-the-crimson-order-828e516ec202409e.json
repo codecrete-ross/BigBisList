@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This blue cloth armor of item level 112 goes in the \"Chest\" slot. It is looted from Spectral Stable Hand. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:35:21+00:00",
+  "inventory_slot": "Chest",
   "item_id": 31297,
   "name": "Robe of the Crimson Order",
   "normalized_requirements": [],
@@ -1243,7 +1244,8 @@
       "entity_name": "Amani'shi Medicine Man",
       "out_of": 2470,
       "source_url": "https://www.wowhead.com/tbc/item=31297/robe-of-the-crimson-order",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1253,7 +1255,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 1176,
       "source_url": "https://www.wowhead.com/tbc/item=31297/robe-of-the-crimson-order",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1263,7 +1266,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 3647,
       "source_url": "https://www.wowhead.com/tbc/item=31297/robe-of-the-crimson-order",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1273,7 +1277,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 4033,
       "source_url": "https://www.wowhead.com/tbc/item=31297/robe-of-the-crimson-order",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1429,7 +1434,8 @@
       "entity_name": "Amani Treasure Box",
       "out_of": 1841,
       "source_url": "https://www.wowhead.com/tbc/item=31297/robe-of-the-crimson-order",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1444,7 +1450,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "rare",
   "related_tables": {
     "contained-in-item": [

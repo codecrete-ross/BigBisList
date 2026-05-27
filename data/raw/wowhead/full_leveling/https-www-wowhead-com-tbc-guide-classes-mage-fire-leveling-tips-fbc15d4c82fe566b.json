@@ -1,11 +1,30 @@
 {
   "fetched_at": "2026-05-24T08:59:03+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
       "entries": [
+        {
+          "entities": [
+            {
+              "id": 38692,
+              "name": "Fireball",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=38692"
+            }
+          ],
+          "level_range": null,
+          "section": "Leveling Rotation for Fire Mage DPS in Burning Crusade",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=38692",
+              "text": "Fireball"
+            }
+          ],
+          "text": "Cast Fireball ."
+        },
         {
           "entities": [
             {
@@ -26,14 +45,14 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=27074",
-              "text": ""
+              "text": "Scorch"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=27079",
-              "text": ""
+              "text": "Fire Blast"
             }
           ],
-          "text": "When the target is low health, or , if one of these spells is enough to kill the target."
+          "text": "When the target is low health, Scorch or Fire Blast , if one of these spells is enough to kill the target."
         }
       ],
       "heading": "Leveling Rotation for Fire Mage DPS in Burning Crusade"
@@ -80,22 +99,22 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=27086",
-              "text": ""
+              "text": "Flamestrike"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=27087",
-              "text": ""
+              "text": "Cone of Cold"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=33043",
-              "text": ""
+              "text": "Dragon's Breath"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=27088",
-              "text": ""
+              "text": "Frost Nova"
             }
           ],
-          "text": "Take advantage of AoE opportunities . As a Mage, your area-of-effect damage potential is huge. With spells like , , , and , taking down groups of monsters is an easy task."
+          "text": "Take advantage of AoE opportunities . As a Mage, your area-of-effect damage potential is huge. With spells like Flamestrike , Cone of Cold , Dragon's Breath , and Frost Nova , taking down groups of monsters is an easy task."
         },
         {
           "entities": [
@@ -111,10 +130,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=12826",
-              "text": ""
+              "text": "Polymorph"
             }
           ],
-          "text": "Don't forget about . Polymorph is easily one of the best crowd control tools in the game. You can turn the tide of any fight very easily, and good use of it will make your leveling much smoother."
+          "text": "Don't forget about Polymorph . Polymorph is easily one of the best crowd control tools in the game. You can turn the tide of any fight very easily, and good use of it will make your leveling much smoother."
         },
         {
           "entities": [],
@@ -140,6 +159,18 @@
       "heading": "Mandatory Abilities to Train for Fire Mage",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33690,
+                "name": "Teleport: Shattrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33690/teleport-shattrath"
+              }
+            ],
+            []
+          ],
           "cells": [
             "60",
             "Teleport: Shattrath",
@@ -165,6 +196,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33690/teleport-shattrath"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27078,
+                "name": "Fire Blast",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27078"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -190,6 +233,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27078"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30482,
+                "name": "Molten Armor",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30482"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -215,6 +270,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30482"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27086,
+                "name": "Flamestrike",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27086"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -240,6 +307,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27086"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33691,
+                "name": "Portal: Shattrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33691/portal-shattrath"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "Portal: Shattrath",
@@ -265,6 +344,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33691/portal-shattrath"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 37420,
+                "name": "Conjure Water",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=37420"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -290,6 +381,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=37420"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27087,
+                "name": "Cone of Cold",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27087"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -315,6 +418,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27087"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27073,
+                "name": "Scorch",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27073"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -340,6 +455,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27073"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27133,
+                "name": "Blast Wave",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27133"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -365,6 +492,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27133"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27070,
+                "name": "Fireball",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27070"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -390,6 +529,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27070"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27132,
+                "name": "Pyroblast",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27132"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -415,6 +566,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27132"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27088,
+                "name": "Frost Nova",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27088"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -440,6 +603,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27088"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27085,
+                "name": "Blizzard",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27085"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -465,6 +640,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27085"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 66,
+                "name": "Invisibility",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=66/invisibility"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Invisibility",
@@ -490,6 +677,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=66/invisibility"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27101,
+                "name": "Conjure Mana Emerald",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27101"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -515,6 +714,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27101"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27131,
+                "name": "Mana Shield",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27131"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -540,6 +751,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27131"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 43987,
+                "name": "Conjure Refreshment Table",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=43987/conjure-refreshment-table"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Conjure Refreshment Table",
@@ -565,6 +788,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=43987/conjure-refreshment-table"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30449,
+                "name": "Spellsteal",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30449/spellsteal"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Spellsteal",
@@ -590,6 +825,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30449/spellsteal"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27090,
+                "name": "Conjure Water",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27090"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -615,6 +862,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27090"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33717,
+                "name": "Conjure Food",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33717"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -640,6 +899,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33717"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27126,
+                "name": "Arcane Intellect",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27126"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -665,6 +936,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27126"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27079,
+                "name": "Fire Blast",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27079"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -690,6 +973,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27079"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27127,
+                "name": "Arcane Brilliance",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27127"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -715,6 +1010,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27127"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38692,
+                "name": "Fireball",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=38692"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -740,6 +1047,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=38692"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27074,
+                "name": "Scorch",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27074"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -765,6 +1084,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27074"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33933,
+                "name": "Blast Wave",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33933"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -790,6 +1121,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33933"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33938,
+                "name": "Pyroblast",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33938"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -822,6 +1165,18 @@
       "heading": "Optional Abilities to Train for Fire Mage",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27080,
+                "name": "Arcane Explosion",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27080"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -847,6 +1202,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27080"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27075,
+                "name": "Arcane Missiles",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27075"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -872,6 +1239,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27075"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27130,
+                "name": "Amplify Magic",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27130"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -897,6 +1276,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27130"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27071,
+                "name": "Frostbolt",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27071"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -922,6 +1313,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27071"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30451,
+                "name": "Arcane Blast",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30451/arcane-blast"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Arcane Blast",
@@ -947,6 +1350,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30451/arcane-blast"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30455,
+                "name": "Ice Lance",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=30455/ice-lance"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "Ice Lance",
@@ -972,6 +1387,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=30455/ice-lance"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33944,
+                "name": "Dampen Magic",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33944"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -997,6 +1424,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33944"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27124,
+                "name": "Ice Armor",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27124"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1022,6 +1461,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27124"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33946,
+                "name": "Amplify Magic",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33946"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1047,6 +1498,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33946"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27128,
+                "name": "Fire Ward",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27128"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1072,6 +1535,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27128"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38699,
+                "name": "Arcane Missiles",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=38699"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1097,6 +1572,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=38699"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27125,
+                "name": "Mage Armor",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27125"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1122,6 +1609,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27125"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27072,
+                "name": "Frostbolt",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27072"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -1147,6 +1646,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27072"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32796,
+                "name": "Frost Ward",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32796"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1172,6 +1683,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32796"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38704,
+                "name": "Arcane Missiles",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=38704"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1197,6 +1720,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=38704"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38697,
+                "name": "Frostbolt",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=38697"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1222,6 +1757,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=38697"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27082,
+                "name": "Arcane Explosion",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27082"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1250,10 +1797,28 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Fire Mage DPS in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6505,
+                "name": "Crescent Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6505/crescent-staff"
+              },
+              {
+                "id": 2042,
+                "name": "Staff of Westfall",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=2042/staff-of-westfall"
+              }
+            ],
+            []
+          ],
           "cells": [
             "18",
             "Crescent Staff / Staff of Westfall",
@@ -1294,6 +1859,18 @@
           "source_text": "Leaders of the Fang / The Defias Brotherhood In Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6324,
+                "name": "Robes of Arugal",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6324/robes-of-arugal"
+              }
+            ],
+            []
+          ],
           "cells": [
             "20",
             "Robes of Arugal",
@@ -1324,6 +1901,18 @@
           "source_text": "Archmage Arugal in Shadowfang Keep"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 7713,
+                "name": "Illusionary Rod",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=7713/illusionary-rod"
+              }
+            ],
+            []
+          ],
           "cells": [
             "34",
             "Illusionary Rod",
@@ -1354,6 +1943,25 @@
           "source_text": "Arcanist Doan in Scarlet Monastery"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 21748,
+                "name": "Figurine - Jade Owl",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=21748/figurine-jade-owl"
+              }
+            ],
+            [
+              {
+                "id": 26872,
+                "name": "Figurine - Jade Owl",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26872/figurine-jade-owl"
+              }
+            ]
+          ],
           "cells": [
             "35",
             "Figurine - Jade Owl",
@@ -1393,6 +2001,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26872/figurine-jade-owl"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 10021,
+                "name": "Dreamweave Vest",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=10021/dreamweave-vest"
+              }
+            ],
+            []
+          ],
           "cells": [
             "40",
             "Dreamweave Vest",
@@ -1418,6 +2038,18 @@
           "source_text": "Crafted by Tailors"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 18082,
+                "name": "Zum'rah's Vexing Cane",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=18082/zumrahs-vexing-cane"
+              }
+            ],
+            []
+          ],
           "cells": [
             "42",
             "Zum'rah's Vexing Cane",
@@ -1448,6 +2080,18 @@
           "source_text": "Witch Doctor Zum'rah in Zul'Farrak"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 812,
+                "name": "Glowing Brightwood Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=812/glowing-brightwood-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "49",
             "Glowing Brightwood Staff",
@@ -1473,6 +2117,18 @@
           "source_text": "World Drop"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 13161,
+                "name": "Trindlehaven Staff",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=13161/trindlehaven-staff"
+              }
+            ],
+            []
+          ],
           "cells": [
             "56",
             "Trindlehaven Staff",
@@ -1503,6 +2159,25 @@
           "source_text": "Overlord Wyrmthalak in Blackrock Depths"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 21769,
+                "name": "Figurine - Ruby Serpent",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent"
+              }
+            ],
+            [
+              {
+                "id": 26900,
+                "name": "Figurine - Ruby Serpent",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26900/figurine-ruby-serpent"
+              }
+            ]
+          ],
           "cells": [
             "58",
             "Figurine - Ruby Serpent",
@@ -1542,6 +2217,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26900/figurine-ruby-serpent"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28040,
+                "name": "Vengeance of the Illidari",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28040/vengeance-of-the-illidari"
+              }
+            ],
+            []
+          ],
           "cells": [
             "58",
             "Vengeance of the Illidari",
@@ -1576,6 +2263,18 @@
           "source_text": "Cruel's Intentions / Overlord in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29910,
+                "name": "The Staff of Twin Worlds",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29910/the-staff-of-twin-worlds"
+              }
+            ],
+            []
+          ],
           "cells": [
             "59",
             "The Staff of Twin Worlds",
@@ -1610,6 +2309,18 @@
           "source_text": "The Path of Anguish / Felspark Ravine in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25620,
+                "name": "Ancient Crystal Talisman",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25620/ancient-crystal-talisman"
+              }
+            ],
+            []
+          ],
           "cells": [
             "60",
             "Ancient Crystal Talisman",
@@ -1640,6 +2351,18 @@
           "source_text": "A Spirit Ally? in Zangarmarsh"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25935,
+                "name": "Invincible Stave",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25935/invincible-stave"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "Invincible Stave",
@@ -1670,6 +2393,18 @@
           "source_text": "Kill the Shadow Council! in Terokkar Forest"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25619,
+                "name": "Glowing Crystal Insignia",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25619/glowing-crystal-insignia"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "Glowing Crystal Insignia",
@@ -1700,6 +2435,18 @@
           "source_text": "Overlord Gorefist in Zangarmarsh"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25936,
+                "name": "Terokkar Tablet of Vim",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25936/terokkar-tablet-of-vim"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "Terokkar Tablet of Vim",
@@ -1734,6 +2481,18 @@
           "source_text": "Torgos! / Torgos! in Terokkar Forest"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31615,
+                "name": "Ancient Draenei Arcane Relic",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31615/ancient-draenei-arcane-relic"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "Ancient Draenei Arcane Relic",
@@ -1764,6 +2523,18 @@
           "source_text": "Vengeful Souls in Terokkar Forest"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25760,
+                "name": "Battle Mage's Baton",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25760/battle-mages-baton"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "Battle Mage's Baton",
@@ -1794,6 +2565,18 @@
           "source_text": "The Ring of Blood: The Final Challenge in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30011,
+                "name": "Ameer's Impulse Taser",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30011/ameers-impulse-taser"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Ameer's Impulse Taser",
@@ -1824,7 +2607,7 @@
           "source_text": "Nexus-King Salhadaar in Netherstorm"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "TBC Classic Fire Mage Leveling Guide 1-70 & Best Leveling Talent Builds - Wowhead",

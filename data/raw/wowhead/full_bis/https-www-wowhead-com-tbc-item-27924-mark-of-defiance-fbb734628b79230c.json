@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This blue trinket of item level 91 goes in the \"Trinket\" slot. Requires Priest, Mage, or Warlock. It is sold by Horde Field Scout. In the Trinkets category.",
   "fetched_at": "2026-05-24T05:20:07+00:00",
+  "inventory_slot": "Trinket",
   "item_id": 27924,
   "name": "Mark of Defiance",
   "normalized_requirements": [],
@@ -24,7 +25,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "rare",
   "related_tables": {
     "contained-in-item": [],

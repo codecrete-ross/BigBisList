@@ -3,6 +3,7 @@
   "boe": null,
   "description": "It is looted and sold by NPCs. In the Food & Drinks category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
   "fetched_at": "2026-05-24T08:51:00+00:00",
+  "inventory_slot": null,
   "item_id": 27860,
   "name": "Purified Draenic Water",
   "normalized_requirements": [],
@@ -2033,7 +2034,8 @@
       "entity_name": "Amani Bear",
       "out_of": 10,
       "source_url": "https://www.wowhead.com/tbc/item=27860/purified-draenic-water",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2043,7 +2045,8 @@
       "entity_name": "Amani'shi Scout",
       "out_of": 954,
       "source_url": "https://www.wowhead.com/tbc/item=27860/purified-draenic-water",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2053,7 +2056,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 164,
       "source_url": "https://www.wowhead.com/tbc/item=27860/purified-draenic-water",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2701,7 +2705,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

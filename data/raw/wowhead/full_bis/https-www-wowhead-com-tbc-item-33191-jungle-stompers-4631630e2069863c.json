@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic plate armor of item level 128 goes in the \"Feet\" slot. It is looted from Nalorakk. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:39:10+00:00",
+  "inventory_slot": "Feet",
   "item_id": 33191,
   "name": "Jungle Stompers",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Nalorakk",
       "out_of": 251,
       "source_url": "https://www.wowhead.com/tbc/item=33191/jungle-stompers",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

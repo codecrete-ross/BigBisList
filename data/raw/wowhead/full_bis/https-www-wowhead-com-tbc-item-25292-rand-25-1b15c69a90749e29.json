@@ -3,6 +3,7 @@
   "boe": true,
   "description": "This green wand has an item level of 111. It is looted from Spectral Stallion. In the Wands category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T05:19:51+00:00",
+  "inventory_slot": "Ranged",
   "item_id": 25292,
   "name": "Mechano-Wand",
   "normalized_requirements": [],
@@ -1851,7 +1852,8 @@
       "entity_name": "Amani'shi Scout",
       "out_of": 954,
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1861,7 +1863,8 @@
       "entity_name": "Amani'shi Trainer",
       "out_of": 1094,
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1871,7 +1874,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1881,7 +1885,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1891,7 +1896,8 @@
       "entity_name": "Amani Crocolisk",
       "out_of": 128,
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1901,7 +1907,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 4033,
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1911,7 +1918,8 @@
       "entity_name": "Amani'shi Berserker",
       "out_of": 2800,
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1921,7 +1929,8 @@
       "entity_name": "Amani Elder Lynx",
       "out_of": 1583,
       "source_url": "https://www.wowhead.com/tbc/item=25292&&rand=-25",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2082,7 +2091,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "uncommon",
   "related_tables": {
     "contained-in-item": [

@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic trinket of item level 133 goes in the \"Trinket\" slot. It is looted from Zul'jin. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:40:52+00:00",
+  "inventory_slot": "Trinket",
   "item_id": 33831,
   "name": "Berserker's Call",
   "normalized_requirements": [],
@@ -15,11 +16,12 @@
       "entity_name": "Zul'jin",
       "out_of": 203,
       "source_url": "https://www.wowhead.com/tbc/item=33831/berserkers-call",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

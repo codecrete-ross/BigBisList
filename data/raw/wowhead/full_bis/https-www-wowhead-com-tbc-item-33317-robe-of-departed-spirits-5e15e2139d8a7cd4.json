@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic cloth armor of item level 128 goes in the \"Chest\" slot. It is looted from Halazzi. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:31:52+00:00",
+  "inventory_slot": "Chest",
   "item_id": 33317,
   "name": "Robe of Departed Spirits",
   "normalized_requirements": [],
@@ -15,7 +16,8 @@
       "entity_name": "Halazzi",
       "out_of": 240,
       "source_url": "https://www.wowhead.com/tbc/item=33317/robe-of-departed-spirits",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -28,7 +30,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:04+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -204,14 +204,14 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=26669",
-              "text": ""
+              "text": "Evasion"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=26889",
-              "text": ""
+              "text": "Vanish"
             }
           ],
-          "text": "Be sure to use your defensive cooldowns like when fighting multiple enemies. If you think you still won't make it, ! Avoiding death is very important while leveling, since dying costs a lot of time returning to your corpse."
+          "text": "Be sure to use your defensive cooldowns like Evasion when fighting multiple enemies. If you think you still won't make it, Vanish ! Avoiding death is very important while leveling, since dying costs a lot of time returning to your corpse."
         },
         {
           "entities": [],
@@ -230,6 +230,18 @@
       "heading": "Mandatory Abilities to Train for Combat Rogue",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26839,
+                "name": "Garrote",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26839"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -255,6 +267,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26839"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26889,
+                "name": "Vanish",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26889"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -280,6 +304,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26889"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26861,
+                "name": "Sinister Strike",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26861"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -305,6 +341,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26861"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26969,
+                "name": "Deadly Poison VI",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26969"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -330,6 +378,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26969"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26865,
+                "name": "Eviscerate",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26865"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -355,6 +415,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26865"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26679,
+                "name": "Deadly Throw",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26679/deadly-throw"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Deadly Throw",
@@ -380,6 +452,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26679/deadly-throw"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27283,
+                "name": "Wound Poison V",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27283"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -405,6 +489,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27283"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27448,
+                "name": "Feint",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27448"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -430,6 +526,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27448"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31224,
+                "name": "Cloak of Shadows",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=31224/cloak-of-shadows"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "Cloak of Shadows",
@@ -455,6 +563,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=31224/cloak-of-shadows"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26866,
+                "name": "Expose Armor",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26866"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -480,6 +600,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26866"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38764,
+                "name": "Gouge",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=38764"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -505,6 +637,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=38764"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26867,
+                "name": "Rupture",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26867"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -530,6 +674,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26867"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26892,
+                "name": "Instant Poison VII",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26892"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -555,6 +711,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26892"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38768,
+                "name": "Kick",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=38768"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -580,6 +748,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=38768"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 5938,
+                "name": "Shiv",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=5938/shiv"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Shiv",
@@ -605,6 +785,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=5938/shiv"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26884,
+                "name": "Garrote",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26884"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -630,6 +822,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26884"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27282,
+                "name": "Deadly Poison VII",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27282"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -655,6 +859,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27282"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26862,
+                "name": "Sinister Strike",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26862"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -687,6 +903,18 @@
       "heading": "Optional Abilities to Train for Combat Rogue",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32645,
+                "name": "Envenom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32645/envenom"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "Envenom",
@@ -712,6 +940,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32645/envenom"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27441,
+                "name": "Ambush",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27441"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -737,6 +977,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27441"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26863,
+                "name": "Backstab",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26863"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -762,6 +1014,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26863"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 26786,
+                "name": "Anesthetic Poison",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=26786"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -787,6 +1051,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=26786"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32684,
+                "name": "Envenom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32684"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -815,10 +1091,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Combat Rogue DPS in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 5192,
+                "name": "Thief's Blade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=5192/thiefs-blade"
+              }
+            ],
+            []
+          ],
           "cells": [
             "17",
             "Thief's Blade",
@@ -849,6 +1137,18 @@
           "source_text": "Mr. Smite in The Deadmines"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6633,
+                "name": "Butcher's Slicer",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6633/butchers-slicer"
+              }
+            ],
+            []
+          ],
           "cells": [
             "18",
             "Butcher's Slicer",
@@ -879,6 +1179,18 @@
           "source_text": "Razorclaw the Butcher in Shadowfang Keep"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 5191,
+                "name": "Cruel Barb",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=5191/cruel-barb"
+              }
+            ],
+            []
+          ],
           "cells": [
             "19",
             "Cruel Barb",
@@ -909,6 +1221,18 @@
           "source_text": "Edwin VanCleef in The Deadmines"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 13033,
+                "name": "Zealot Blade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=13033/zealot-blade"
+              }
+            ],
+            []
+          ],
           "cells": [
             "29",
             "Zealot Blade",
@@ -934,6 +1258,18 @@
           "source_text": "World Drop"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6802,
+                "name": "Sword of Omen",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6802/sword-of-omen"
+              }
+            ],
+            []
+          ],
           "cells": [
             "30-40",
             "Sword of Omen",
@@ -965,6 +1301,18 @@
           "source_text": "Into The Scarlet Monastery in Scarlet Monastery"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6829,
+                "name": "Sword of Serenity",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6829/sword-of-serenity"
+              }
+            ],
+            []
+          ],
           "cells": [
             "34-40",
             "Sword of Serenity",
@@ -996,6 +1344,18 @@
           "source_text": "In the Name of the Light in Scarlet Monastery"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 10823,
+                "name": "Vanquisher's Sword",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=10823/vanquishers-sword"
+              }
+            ],
+            []
+          ],
           "cells": [
             "32-40",
             "Vanquisher's Sword",
@@ -1031,6 +1391,18 @@
           "source_text": "Bring the Light / Bring the End in Razorfen Downs"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 17705,
+                "name": "Thrash Blade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=17705/thrash-blade"
+              }
+            ],
+            []
+          ],
           "cells": [
             "45-50",
             "Thrash Blade",
@@ -1066,6 +1438,18 @@
           "source_text": "Corruption of Earth and Seed / Corruption of Earth and Seed in Maraudon"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24020,
+                "name": "Shadowrend Longblade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24020/shadowrend-longblade"
+              }
+            ],
+            []
+          ],
           "cells": [
             "60",
             "Shadowrend Longblade",
@@ -1096,6 +1480,18 @@
           "source_text": "Watchkeeper Gargolmar in Hellfire Ramparts"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24396,
+                "name": "Vest of Vengeance",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24396/vest-of-vengeance"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "Vest of Vengeance",
@@ -1126,6 +1522,18 @@
           "source_text": "Keli'dan the Breaker in The Blood Furnace"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25952,
+                "name": "Scimitar of the Nexus-Stalkers",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25952/scimitar-of-the-nexus-stalkers"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "Scimitar of the Nexus-Stalkers",
@@ -1156,6 +1564,18 @@
           "source_text": "Tavarok in Mana-Tombs"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27434,
+                "name": "Mantle of Perenolde",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27434/mantle-of-perenolde"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "Mantle of Perenolde",
@@ -1186,6 +1606,18 @@
           "source_text": "Epoch Hunter in Old Hillsbrad Foothills"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28182,
+                "name": "Helm of the Claw",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28182/helm-of-the-claw"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Helm of the Claw",
@@ -1216,6 +1648,18 @@
           "source_text": "The Warlord's Hideout in The Steamvault"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31464,
+                "name": "Naaru Belt of Precision",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31464/naaru-belt-of-precision"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "Naaru Belt of Precision",
@@ -1246,6 +1690,18 @@
           "source_text": "How to Break Into the Arcatraz in The Botanica and The Mechanar"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28171,
+                "name": "Spymistress' Wristguards",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Spymistress' Wristguards",
@@ -1276,6 +1732,18 @@
           "source_text": "The Soul Devices in Shadow Labyrinth"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30939,
+                "name": "Felboar Hide Shoes",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30939/felboar-hide-shoes"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "Felboar Hide Shoes",
@@ -1306,6 +1774,18 @@
           "source_text": "The Cipher of Damnation - The Third Fragment Recovered in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28267,
+                "name": "Edge of the Cosmos",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28267/edge-of-the-cosmos"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Edge of the Cosmos",
@@ -1336,6 +1816,18 @@
           "source_text": "Pathaleon the Calculator in The Mechanar"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28189,
+                "name": "Latro's Shifting Sword",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28189/latros-shifting-sword"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Latro's Shifting Sword",
@@ -1366,7 +1858,7 @@
           "source_text": "Aeonus in The Black Morass"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "Combat Rogue Leveling Guide - TBC Classic - Wowhead",

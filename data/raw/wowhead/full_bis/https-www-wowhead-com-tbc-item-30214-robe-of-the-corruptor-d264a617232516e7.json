@@ -3,6 +3,7 @@
   "boe": false,
   "description": "This epic cloth armor of item level 133 goes in the \"Chest\" slot. Requires Warlock. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade.",
   "fetched_at": "2026-05-24T04:26:36+00:00",
+  "inventory_slot": "Chest",
   "item_id": 30214,
   "name": "Robe of the Corruptor",
   "normalized_requirements": [],
@@ -41,7 +42,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "epic",
   "related_tables": {
     "contained-in-item": [],

@@ -3,6 +3,7 @@
   "boe": null,
   "description": "It is looted, a quest reward and sold by NPCs. In the Scrolls category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T08:51:00+00:00",
+  "inventory_slot": null,
   "item_id": 27500,
   "name": "Scroll of Protection V",
   "normalized_requirements": [],
@@ -2066,7 +2067,8 @@
       "entity_name": "Amani'shi Scout",
       "out_of": 448,
       "source_url": "https://www.wowhead.com/tbc/item=27500/scroll-of-protection-v",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2076,7 +2078,8 @@
       "entity_name": "Amani Elder Lynx",
       "out_of": 882,
       "source_url": "https://www.wowhead.com/tbc/item=27500/scroll-of-protection-v",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2399,7 +2402,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [

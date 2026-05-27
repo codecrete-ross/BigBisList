@@ -3,6 +3,7 @@
   "boe": false,
   "description": "It is sold by Forest Frog. In the Consumables category. An item from World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
   "fetched_at": "2026-05-24T08:51:07+00:00",
+  "inventory_slot": null,
   "item_id": 33928,
   "name": "Hollowed Bone Decanter",
   "normalized_requirements": [],
@@ -13,11 +14,12 @@
       "entity_name": "Forest Frog",
       "source_url": "https://www.wowhead.com/tbc/item=33928",
       "type": "vendor",
-      "vendor_id": 24396
+      "vendor_id": 24396,
+      "zone": "Zul'Aman"
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

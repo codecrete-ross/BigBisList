@@ -3,6 +3,7 @@
   "boe": null,
   "description": "It is looted from Spectral Stable Hand. In the Other Items category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch.",
   "fetched_at": "2026-05-24T09:24:43+00:00",
+  "inventory_slot": null,
   "item_id": 31952,
   "name": "Khorium Lockbox",
   "normalized_requirements": [],
@@ -1828,7 +1829,8 @@
       "entity_name": "Amani'shi Scout",
       "out_of": 954,
       "source_url": "https://www.wowhead.com/tbc/item=31952",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1838,7 +1840,8 @@
       "entity_name": "Amani'shi Trainer",
       "out_of": 33,
       "source_url": "https://www.wowhead.com/tbc/item=31952",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1848,7 +1851,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=31952",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1858,7 +1862,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 202,
       "source_url": "https://www.wowhead.com/tbc/item=31952",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1868,7 +1873,8 @@
       "entity_name": "Amani Crocolisk",
       "out_of": 128,
       "source_url": "https://www.wowhead.com/tbc/item=31952",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1878,7 +1884,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 164,
       "source_url": "https://www.wowhead.com/tbc/item=31952",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1888,7 +1895,8 @@
       "entity_name": "Amani'shi Berserker",
       "out_of": 2800,
       "source_url": "https://www.wowhead.com/tbc/item=31952",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1898,7 +1906,8 @@
       "entity_name": "Amani Elder Lynx",
       "out_of": 1583,
       "source_url": "https://www.wowhead.com/tbc/item=31952",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2058,7 +2067,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

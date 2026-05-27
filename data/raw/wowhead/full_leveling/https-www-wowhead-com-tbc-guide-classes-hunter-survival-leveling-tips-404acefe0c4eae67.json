@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:03+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -73,10 +73,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=14287",
-              "text": ""
+              "text": "Arcane Shot"
             }
           ],
-          "text": "will be the first ability you cast after your initial Auto Shot."
+          "text": "Arcane Shot will be the first ability you cast after your initial Auto Shot."
         },
         {
           "entities": [
@@ -92,10 +92,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=27021",
-              "text": ""
+              "text": "Multi-Shot"
             }
           ],
-          "text": "should always be used when it is off cooldown. Pay attention to the situation and avoid using it when it will break crowd control."
+          "text": "Multi-Shot should always be used when it is off cooldown. Pay attention to the situation and avoid using it when it will break crowd control."
         },
         {
           "entities": [
@@ -111,10 +111,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=14266",
-              "text": ""
+              "text": "Raptor Strike"
             }
           ],
-          "text": "Should you choose to make things a little more interesting for yourself, you can use to fill in the gaps in your rotation."
+          "text": "Should you choose to make things a little more interesting for yourself, you can use Raptor Strike to fill in the gaps in your rotation."
         },
         {
           "entities": [
@@ -130,10 +130,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/spell=34120",
-              "text": ""
+              "text": "Steady Shot"
             }
           ],
-          "text": "will now be your primary ability to cast after each Auto Shot."
+          "text": "Steady Shot will now be your primary ability to cast after each Auto Shot."
         },
         {
           "entities": [
@@ -227,6 +227,18 @@
       "heading": "Mandatory Abilities to Train for Survival Hunter",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34120,
+                "name": "Steady Shot",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=34120"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -252,6 +264,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=34120"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27014,
+                "name": "Raptor Strike",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27014"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -277,6 +301,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27014"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34074,
+                "name": "Aspect of the Viper",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=34074"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -302,6 +338,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=34074"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34026,
+                "name": "Kill Command",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=34026/kill-command"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "Kill Command",
@@ -327,6 +375,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=34026/kill-command"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27021,
+                "name": "Multi-Shot",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27021"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -352,6 +412,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27021"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27022,
+                "name": "Volley",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27022"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -377,6 +449,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27022"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27046,
+                "name": "Mend Pet",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27046"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -402,6 +486,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27046"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27044,
+                "name": "Aspect of the Hawk",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27044"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -427,6 +523,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27044"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27019,
+                "name": "Arcane Shot",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27019"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -452,6 +560,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27019"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34477,
+                "name": "Misdirection",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=34477/misdirection"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Misdirection",
@@ -477,6 +597,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=34477/misdirection"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27065,
+                "name": "Aimed Shot",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27065"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -509,6 +641,18 @@
       "heading": "Optional Abilities to Train for Survival Hunter",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27025,
+                "name": "Explosive Trap",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27025"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -534,6 +678,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27025"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27015,
+                "name": "Disengage",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27015"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -559,6 +715,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27015"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27023,
+                "name": "Immolation Trap",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27023"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -584,6 +752,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27023"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27018,
+                "name": "Viper Sting",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27018"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -609,6 +789,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27018"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27016,
+                "name": "Serpent Sting",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27016"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -634,6 +826,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27016"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 34600,
+                "name": "Snake Trap",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=34600"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -659,6 +863,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=34600"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27045,
+                "name": "Aspect of the Wild",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27045"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -684,6 +900,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27045"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27020,
+                "name": "Distracting Shot",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27020"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -709,6 +937,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27020"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 36916,
+                "name": "Mongoose Bite",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=36916"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -737,10 +977,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Survival Hunter DPS in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 6469,
+                "name": "Venomstrike",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=6469/venomstrike"
+              }
+            ],
+            []
+          ],
           "cells": [
             "19",
             "Venomstrike",
@@ -771,6 +1023,18 @@
           "source_text": "Lord Serpentis in Wailing Caverns"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 3021,
+                "name": "Ranger Bow",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=3021/ranger-bow"
+              }
+            ],
+            []
+          ],
           "cells": [
             "20",
             "Ranger Bow",
@@ -796,6 +1060,18 @@
           "source_text": "World Drop"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 10567,
+                "name": "Quillshooter",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=10567/quillshooter"
+              }
+            ],
+            []
+          ],
           "cells": [
             "33",
             "Quillshooter",
@@ -830,6 +1106,18 @@
           "source_text": "Zone Drop in Razorfen Downs (BoE)"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 2825,
+                "name": "Bow of Searing Arrows",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=2825/bow-of-searing-arrows"
+              }
+            ],
+            []
+          ],
           "cells": [
             "37",
             "Bow of Searing Arrows",
@@ -855,6 +1143,18 @@
           "source_text": "World Drop"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 17753,
+                "name": "Verdant Keeper's Aim",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=17753/verdant-keepers-aim"
+              }
+            ],
+            []
+          ],
           "cells": [
             "45",
             "Verdant Keeper's Aim",
@@ -889,6 +1189,18 @@
           "source_text": "Corruption of Earth and Seed / Corruption of Earth and Seed in Desolace"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 18680,
+                "name": "Ancient Bone Bow",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=18680/ancient-bone-bow"
+              }
+            ],
+            []
+          ],
           "cells": [
             "56",
             "Ancient Bone Bow",
@@ -919,6 +1231,18 @@
           "source_text": "Lady Illucia Barov in Scholomance"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29916,
+                "name": "Ironstar Repeater",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29916/ironstar-repeater"
+              }
+            ],
+            []
+          ],
           "cells": [
             "59-61",
             "Ironstar Repeater",
@@ -954,6 +1278,18 @@
           "source_text": "Fel Orc Scavengers / Bonechewer Blood in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25496,
+                "name": "Mag'har Bow",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25496/maghar-bow"
+              }
+            ],
+            []
+          ],
           "cells": [
             "60-62",
             "Mag'har Bow",
@@ -985,6 +1321,24 @@
           "source_text": "Administering the Salve in Hellfire Peninsula"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28062,
+                "name": "Expedition Repeater",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28062/expedition-repeater"
+              },
+              {
+                "id": 24389,
+                "name": "Legion Blunderbuss",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24389/legion-blunderbuss"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61-62",
             "Expedition Repeater Legion Blunderbuss",
@@ -1026,6 +1380,18 @@
           "source_text": "Colossal Menace in Hellfire Peninsula Broggok in The Blood Furnace"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24381,
+                "name": "Coilfang Needler",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24381/coilfang-needler"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62-64",
             "Coilfang Needler",
@@ -1057,6 +1423,18 @@
           "source_text": "Rokmar the Crackler in The Slave Pens"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25953,
+                "name": "Ethereal Warp-Bow",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25953/ethereal-warp-bow"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64-68",
             "Ethereal Warp-Bow",
@@ -1088,6 +1466,30 @@
           "source_text": "Nexus-Prince Shaffar in Mana-Tombs"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27526,
+                "name": "Skyfire Hawk-Bow",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27526/skyfire-hawk-bow"
+              },
+              {
+                "id": 27898,
+                "name": "Wrathfire Hand-Cannon",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27898/wrathfire-hand-cannon"
+              },
+              {
+                "id": 27987,
+                "name": "Melmorta's Twilight Longbow",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27987/melmortas-twilight-longbow"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68-70",
             "Skyfire Hawk-Bow Wrathfire Hand-Cannon Melmorta's Twilight Longbow",
@@ -1139,13 +1541,24 @@
           "source_text": "Warbringer O'mrogg in The Shattered Halls Grandmaster Vorpil in Shadow Labyrinth Chrono Lord Deja in The Black Morass"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     },
     {
       "data_family": "leveling",
       "heading": "Leveling Tips for Survival Hunter DPS in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [
+              {
+                "id": 14287,
+                "name": "Arcane Shot",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=14287"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "6/12/20/28/36/44/52/60"
@@ -1170,6 +1583,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=14287"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 27046,
+                "name": "Mend Pet",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27046"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "12/20/28/36/44/52/60"
@@ -1194,6 +1618,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27046"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 25294,
+                "name": "Multi-Shot",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=25294"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "18/30/42/54"
@@ -1218,6 +1653,17 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=25294"
         },
         {
+          "cell_entities": [
+            [
+              {
+                "id": 5118,
+                "name": "Aspect of the Cheetah",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=5118"
+              }
+            ],
+            []
+          ],
           "cells": [
             "",
             "20"

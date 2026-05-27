@@ -3,6 +3,7 @@
   "boe": null,
   "description": "Requires Priest. It is looted from Spectral Stallion. In the Spell Books category. An item from World of Warcraft: The Burning Crusade. Always up to date.",
   "fetched_at": "2026-05-24T09:24:19+00:00",
+  "inventory_slot": null,
   "item_id": 31837,
   "name": "Codex: Prayer of Shadow Protection II",
   "normalized_requirements": [],
@@ -1843,7 +1844,8 @@
       "entity_name": "Amani'shi Medicine Man",
       "out_of": 1071,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1853,7 +1855,8 @@
       "entity_name": "Amani Dragonhawk",
       "out_of": 2456,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1863,7 +1866,8 @@
       "entity_name": "Amani Lynx",
       "out_of": 7059,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1873,7 +1877,8 @@
       "entity_name": "Amani'shi Beast Tamer",
       "out_of": 4238,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1883,7 +1888,8 @@
       "entity_name": "Amani Lynx Cub",
       "out_of": 4033,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1892,7 +1898,8 @@
       "entity_name": "Amani'shi Lookout",
       "out_of": 0,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1902,7 +1909,8 @@
       "entity_name": "Amani'shi Berserker",
       "out_of": 1232,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1912,7 +1920,8 @@
       "entity_name": "Amani Elder Lynx",
       "out_of": 882,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -1922,7 +1931,8 @@
       "entity_name": "Amani'shi Tempest",
       "out_of": 1733,
       "source_url": "https://www.wowhead.com/tbc/item=31837",
-      "type": "drop"
+      "type": "drop",
+      "zone": "Zul'Aman"
     },
     {
       "confidence": "wowhead_item",
@@ -2121,7 +2131,7 @@
     }
   ],
   "page_type": "item",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "quality": "unknown",
   "related_tables": {
     "contained-in-item": [],

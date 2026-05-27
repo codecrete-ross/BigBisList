@@ -1,7 +1,7 @@
 {
   "fetched_at": "2026-05-24T08:59:04+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.6.0",
+  "parser_version": "wowhead-scraper-0.7.0",
   "sections": [
     {
       "data_family": "leveling",
@@ -40,10 +40,10 @@
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=27137",
-              "text": ""
+              "text": "Flash of Light"
             }
           ],
-          "text": "As your best leveling strategy is being with a questing partner or a dungeon group, there are a few tips to keep in mind. First, full utilization of spells like Cleanse and Blessing of Freedom will provide the best results when leveling through TBC Classic. It's easy to fall into the trap of spamming , but the Paladin toolkit is massive, and using each spell is paramount to your success."
+          "text": "As your best leveling strategy is being with a questing partner or a dungeon group, there are a few tips to keep in mind. First, full utilization of spells like Cleanse and Blessing of Freedom will provide the best results when leveling through TBC Classic. It's easy to fall into the trap of spamming Flash of Light , but the Paladin toolkit is massive, and using each spell is paramount to your success."
         },
         {
           "entities": [
@@ -158,14 +158,14 @@
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=635",
-              "text": ""
+              "text": "Holy Light"
             },
             {
               "href": "https://www.wowhead.com/tbc/spell=13819/summon-warhorse",
               "text": "Summon Warhorse"
             }
           ],
-          "text": "There are a few \"milestone\" spells worth picking up as you level. At level 6, you can train Divine Protection , which is your first in the line of \"bubbles\", rendering you invulnerable for a short period. At level 12, there is a quest available to obtain Redemption , your resurrection spell. At level 20, you can train Flash of Light , which is a quicker, smaller heal compared to . At level 40, you get a quest to obtain a free mount, Summon Warhorse !"
+          "text": "There are a few \"milestone\" spells worth picking up as you level. At level 6, you can train Divine Protection , which is your first in the line of \"bubbles\", rendering you invulnerable for a short period. At level 12, there is a quest available to obtain Redemption , your resurrection spell. At level 20, you can train Flash of Light , which is a quicker, smaller heal compared to Holy Light . At level 40, you get a quest to obtain a free mount, Summon Warhorse !"
         }
       ],
       "heading": "Leveling Tips for Holy Paladin Healer in TBC Classic"
@@ -177,6 +177,18 @@
       "heading": "Mandatory Abilities to Train for Holy Paladin",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27147,
+                "name": "Blessing of Sacrifice",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27147"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -202,6 +214,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27147"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27135,
+                "name": "Holy Light",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27135"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "",
@@ -227,6 +251,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27135"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32223,
+                "name": "Crusader Aura",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=32223/crusader-aura"
+              }
+            ],
+            []
+          ],
           "cells": [
             "62",
             "Crusader Aura",
@@ -252,6 +288,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=32223/crusader-aura"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27143,
+                "name": "Greater Blessing of Wisdom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27143"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -277,6 +325,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27143"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27142,
+                "name": "Blessing of Wisdom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27142"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65",
             "",
@@ -302,6 +362,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27142"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33776,
+                "name": "Spiritual Attunement",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=33776"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -327,6 +399,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=33776"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27137,
+                "name": "Flash of Light",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27137"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -352,6 +436,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27137"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27166,
+                "name": "Seal of Wisdom",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27166"
+              }
+            ],
+            []
+          ],
           "cells": [
             "67",
             "",
@@ -377,6 +473,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27166"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27144,
+                "name": "Blessing of Light",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27144"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -402,6 +510,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27144"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27145,
+                "name": "Greater Blessing of Light",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27145"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -427,6 +547,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27145"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27154,
+                "name": "Lay on Hands",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27154"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -452,6 +584,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27154"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27136,
+                "name": "Holy Light",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27136"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -477,6 +621,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27136"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27140,
+                "name": "Blessing of Might",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27140"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -502,6 +658,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27140"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27148,
+                "name": "Blessing of Sacrifice",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27148"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -527,6 +695,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27148"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27149,
+                "name": "Devotion Aura",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27149"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -552,6 +732,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27149"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27141,
+                "name": "Greater Blessing of Might",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27141"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -577,6 +769,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27141"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27169,
+                "name": "Greater Blessing of Sanctuary",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27169"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -609,6 +813,18 @@
       "heading": "Optional Abilities to Train for Holy Paladin",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27158,
+                "name": "Seal of the Crusader",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27158"
+              }
+            ],
+            []
+          ],
           "cells": [
             "61",
             "",
@@ -634,6 +850,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27158"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27151,
+                "name": "Shadow Resistance Aura",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27151"
+              }
+            ],
+            []
+          ],
           "cells": [
             "63",
             "",
@@ -659,6 +887,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27151"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31892,
+                "name": "Seal of Blood",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=31892"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -684,6 +924,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=31892"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31801,
+                "name": "Seal of Vengeance",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=31801"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64",
             "",
@@ -709,6 +961,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=31801"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27155,
+                "name": "Seal of Righteousness",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27155"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -734,6 +998,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27155"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27150,
+                "name": "Retribution Aura",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27150"
+              }
+            ],
+            []
+          ],
           "cells": [
             "66",
             "",
@@ -759,6 +1035,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27150"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27138,
+                "name": "Exorcism",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27138"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -784,6 +1072,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27138"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27180,
+                "name": "Hammer of Wrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27180"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -809,6 +1109,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27180"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27152,
+                "name": "Frost Resistance Aura",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27152"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68",
             "",
@@ -834,6 +1146,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27152"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27139,
+                "name": "Holy Wrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27139"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -859,6 +1183,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27139"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27160,
+                "name": "Seal of Light",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27160"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69",
             "",
@@ -884,6 +1220,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27160"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 348700,
+                "name": "Seal of the Martyr",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=348700"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -909,6 +1257,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=348700"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27173,
+                "name": "Consecration",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27173"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -934,6 +1294,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=27173"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31884,
+                "name": "Avenging Wrath",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=31884/avenging-wrath"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Avenging Wrath",
@@ -959,6 +1331,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=31884/avenging-wrath"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 348704,
+                "name": "Seal of Corruption",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=348704"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -984,6 +1368,18 @@
           "spell_url": "https://www.wowhead.com/tbc/spell=348704"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27153,
+                "name": "Fire Resistance Aura",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=27153"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "",
@@ -1012,10 +1408,22 @@
       "slot": null
     },
     {
-      "data_family": "leveling",
+      "data_family": "bis_lists",
       "heading": "Best Leveling Weapons and Gear for Holy Paladin Healer in TBC Classic",
       "rows": [
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25634,
+                "name": "Oshu'gun Relic",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65-67",
             "Oshu'gun Relic",
@@ -1047,6 +1455,18 @@
           "source_text": "Gava'xi in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25759,
+                "name": "Mogor's Anointing Club",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25759/mogors-anointing-club"
+              }
+            ],
+            []
+          ],
           "cells": [
             "65-68",
             "Mogor's Anointing Club",
@@ -1078,6 +1498,18 @@
           "source_text": "The Ring of Blood: The Final Challenge in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25644,
+                "name": "Blessed Book of Nagrand",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25644/blessed-book-of-nagrand"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64-68",
             "Blessed Book of Nagrand",
@@ -1109,6 +1541,18 @@
           "source_text": "The Ultimate Bloodsport in Nagrand"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31383,
+                "name": "Spiritualist's Mark of the Sha'tar",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31383/spiritualists-mark-of-the-shatar"
+              }
+            ],
+            []
+          ],
           "cells": [
             "68-70",
             "Spiritualist's Mark of the Sha'tar",
@@ -1140,6 +1584,18 @@
           "source_text": "Battle of the Crimson Watch in Shadowmoon Valley"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28413,
+                "name": "Hallowed Crown",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28413/hallowed-crown"
+              }
+            ],
+            []
+          ],
           "cells": [
             "69-70",
             "Hallowed Crown",
@@ -1171,6 +1627,18 @@
           "source_text": "Drops from Harbinger Skyriss in The Arcatraz"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27411,
+                "name": "Slippers of Serenity",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27411/slippers-of-serenity"
+              }
+            ],
+            []
+          ],
           "cells": [
             "64-68",
             "Slippers of Serenity",
@@ -1202,6 +1670,18 @@
           "source_text": "Drops from Exarch Maladaar in Auchenai Crypts"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31329,
+                "name": "Lifegiving Cloak",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31329/lifegiving-cloak"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Lifegiving Cloak",
@@ -1227,6 +1707,18 @@
           "source_text": "World Drop"
         },
         {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29506,
+                "name": "Gloves of the Living Touch",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29506/gloves-of-the-living-touch"
+              }
+            ],
+            []
+          ],
           "cells": [
             "70",
             "Gloves of the Living Touch",
@@ -1252,7 +1744,7 @@
           "source_text": "Leatherworking"
         }
       ],
-      "slot": null
+      "slot": "Weapon"
     }
   ],
   "title": "TBC Classic Holy Paladin Leveling Guide 1-70 & Best Leveling Talent Builds - Wowhead",
