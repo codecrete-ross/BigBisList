@@ -3,16 +3,16 @@ enable-nolib-creation: no
 manual-changelog:
   filename: CHANGELOG.md
   markup-type: markdown
-move-folders:
-  addon/BigBiSList: BigBiSList
 ignore:
+  - AGENTS.md
+  - CLAUDE.md
   - .gitignore
+  - .pkgmeta
   - .pytest_cache
   - __pycache__
   - .codex
   - .claude
-  - AGENTS.md
-  - CLAUDE.md
+  - README.md
   - pyproject.toml
   - data
   - dist

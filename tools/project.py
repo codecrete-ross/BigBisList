@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-ADDON_DIR = ROOT / "addon" / "BigBiSList"
+ADDON_DIR = ROOT
 CANONICAL_DIR = ROOT / "data" / "canonical"
 RAW_WOWHEAD_DIR = ROOT / "data" / "raw" / "wowhead"
 SCHEMA_DIR = ROOT / "data" / "schema"

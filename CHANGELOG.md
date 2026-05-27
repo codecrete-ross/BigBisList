@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.1.0 - Prerelease
+## 0.1.0 - Release
 
-Initial public prerelease for Big BiS List. This release targets TBC
+Initial public release for Big BiS List. This release targets TBC
 Anniversary only using WoW interface `20505`.
 
 ### Added
@@ -19,6 +19,7 @@ Anniversary only using WoW interface `20505`.
   items, token turn-ins, reputation gates, profession gates, and tradeable
   alternatives.
 - Audited generated data from local Wowhead TBC snapshots.
+- CurseForge-compatible root addon layout for repository webhook packaging.
 
 ### Data Quality
 
@@ -34,7 +35,7 @@ Anniversary only using WoW interface `20505`.
 
 ### Known Limitations
 
-- This is a prerelease and should be checked during normal in-game use.
+- This release should be checked during normal in-game use.
 - Planner priority is heuristic and not simulation-backed.
 - Leveling data is reference guidance, not a full route.
 - Bank ownership requires opening the bank once per character.
