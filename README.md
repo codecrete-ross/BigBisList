@@ -5,7 +5,10 @@ Warcraft. It shows phase-based BiS lists, acquisition details, gem/enchant and
 consumable recommendations, item tooltip matches, ownership state, and a simple
 priority planner.
 
-This repository is prepared for the `0.1.0` prerelease.
+This repository is prepared for the `0.1.0` prerelease. This addon targets TBC
+Anniversary only. The `0.1.0` package uses WoW interface `20505`, matching the
+local `wow_anniversary` 2.5.5 client, and is not intended for Retail, Classic
+Era, Cataclysm Classic, Mists Classic, or other WoW releases.
 
 ## Install
 
@@ -131,6 +134,7 @@ by git.
 
 - Display name: `Big BiS List`
 - Folder/root: `BigBiSList`
+- Target client: TBC Anniversary only (`## Interface: 20505`)
 - Saved variable: `BigBiSListDB`
 - Globals: `BigBiSList`, `BigBiSListData`
 - Slash commands: `/bigbis`, `/bbl`, `/bbltest`

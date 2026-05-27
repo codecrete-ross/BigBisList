@@ -2,7 +2,8 @@
 
 ## 0.1.0 - Prerelease
 
-Initial public prerelease for Big BiS List.
+Initial public prerelease for Big BiS List. This release targets TBC
+Anniversary only using WoW interface `20505`.
 
 ### Added
 
