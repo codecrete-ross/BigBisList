@@ -1,80 +1,123 @@
 # Big BiS List
 
-Big BiS List is a renamed, coexistable TBC Anniversary BiS addon scaffold.
-This repository is starting from tooling and data provenance rather than
-hand-maintained generated Lua.
+Big BiS List is an in-game TBC Anniversary gearing companion for World of
+Warcraft. It shows phase-based BiS lists, acquisition details, gem/enchant and
+consumable recommendations, item tooltip matches, ownership state, and a simple
+priority planner.
 
-## Current Status
+This repository is prepared for the `0.1.0` prerelease.
 
-This first development pass provides:
+## Install
 
-- A minimal loadable WoW addon shell in `addon/BigBiSList`.
-- Canonical JSON seed data in `data/canonical`.
-- JSON schema documents in `data/schema`.
-- Python tooling for validation, deterministic Lua generation, reference
-  count reporting, parity reporting, and a normalized Wowhead scraping
-  pipeline.
-- Tests for canonical data, generation, reference counts, and Druid idol
-  situational BiS handling.
+Copy the addon folder to your Anniversary client:
 
-Full UI/runtime feature parity is intentionally not implemented yet.
-
-## Reference Baseline
-
-The local `BIS-TBC-Anniversary` 1.15 addon is used only as a parity and
-runtime reference. It should live in:
-
-`vendor/reference/BIS-TBC-1.15`
-
-The canonical data source for Big BiS List is expected to be Wowhead TBC guide
-data plus explicit curated overrides where Wowhead does not expose clean data.
-
-## Tooling
-
-Run the local validation and test flow from the repository root:
-
-```powershell
-python tools/validate_data.py
-python tools/generate_lua.py --check
-python tools/reference_counts.py
-python tools/parity_report.py
-python -m unittest discover -s tests
+```text
+World of Warcraft\_anniversary_\Interface\AddOns\BigBiSList
 ```
 
-Regenerate the addon data file:
+The folder must contain `BigBiSList.toc` directly inside it.
+
+In game, use `/bbl` or `/bigbis` to open the main window. Use `/bbl status` to
+print the loaded data summary and `/bbltest` for a basic saved-variable smoke
+test.
+
+## Features
+
+- Phase-based TBC Anniversary BiS lists from Pre-Raid through Sunwell.
+- Class, spec, phase, slot, source, zone, rank, ownership, binding, faction, and
+  longevity filters.
+- Gear view for currently equipped slots.
+- Priority planner for missing and future-use items.
+- Wishlist and ignore actions from item rows and details.
+- Item tooltip matches for selected and alternate specs.
+- Bank cache support after opening the bank once.
+- Gem, enchant, and consumable recommendations with source and prerequisite
+  details.
+- Source-aware acquisition paths for drops, vendors, quests, crafted items,
+  token turn-ins, reputation gates, profession gates, and tradeable alternatives.
+
+## Data Scope
+
+The `0.1.0` prerelease ships with generated data from audited local Wowhead TBC
+snapshots plus curated overrides where source data needed correction.
+
+Current generated data includes:
+
+- 9 classes
+- 28 specs
+- 6 phases
+- 4,549 BiS slot lists
+- 2,382 item records
+- 666 gem rows
+- 1,776 enchant rows
+- 1,536 consumable rows
+- 1,337 leveling rows
+
+The data pipeline validates manifest coverage, source requirements, duplicate
+rows, slot compatibility, rank groups, and generated Lua consistency before
+release.
+
+## Known Limitations
+
+- This prerelease is data-heavy and should still be checked against in-game
+  behavior during normal play.
+- Leveling entries are reference guidance, not a full questing route.
+- Planner priority is heuristic; it is not a simulator and does not replace
+  class-specific stat weights.
+- Bank ownership only includes banked items after the character opens the bank.
+- No profile import/export is included in `0.1.0`.
+
+## Release Checks
+
+Run these from the repository root before tagging or packaging:
+
+```powershell
+python -m unittest discover -s tests
+python tools/validate_data.py --json
+python tools/generate_lua.py --check
+python tools/scrape_wowhead.py audit
+python tools/scrape_wowhead.py coverage --summary --strict
+```
+
+For the full data audit, also run snapshot and requirements audits for each
+family:
+
+```powershell
+python tools/scrape_wowhead.py snapshot-audit --input-dir data/raw/wowhead/full_bis --family bis_lists
+python tools/scrape_wowhead.py snapshot-audit --input-dir data/raw/wowhead/full_gems --family gems
+python tools/scrape_wowhead.py snapshot-audit --input-dir data/raw/wowhead/full_enchants --family enchants
+python tools/scrape_wowhead.py snapshot-audit --input-dir data/raw/wowhead/full_consumables --family consumables
+python tools/scrape_wowhead.py snapshot-audit --input-dir data/raw/wowhead/full_leveling --family leveling
+
+python tools/scrape_wowhead.py requirements-audit --input-dir data/raw/wowhead/full_bis --family bis_lists
+python tools/scrape_wowhead.py requirements-audit --input-dir data/raw/wowhead/full_gems --family gems
+python tools/scrape_wowhead.py requirements-audit --input-dir data/raw/wowhead/full_enchants --family enchants
+python tools/scrape_wowhead.py requirements-audit --input-dir data/raw/wowhead/full_consumables --family consumables
+python tools/scrape_wowhead.py requirements-audit --input-dir data/raw/wowhead/full_leveling --family leveling
+```
+
+## Development
+
+Regenerate addon data after canonical JSON changes:
 
 ```powershell
 python tools/generate_lua.py
 ```
 
-Run the scraper workflow:
+The scraper can fetch, reprocess, import, and audit Wowhead snapshots:
 
 ```powershell
-python tools/scrape_wowhead.py coverage --summary
+python tools/scrape_wowhead.py coverage --summary --strict
 python tools/scrape_wowhead.py fetch
-python tools/scrape_wowhead.py import --dry-run
+python tools/scrape_wowhead.py reprocess --input-dir data/raw/wowhead/full_bis
+python tools/scrape_wowhead.py import --input-dir data/raw/wowhead/full_bis --family bis_lists
 python tools/scrape_wowhead.py audit
 ```
 
-`coverage` is fully offline. It reports the explicit manifest units required
-before scraping: gear BiS, gems, enchants, consumables, and leveling for every
-class/spec/phase, plus global class and phase sources. Gear BiS coverage is now
-registered for every class/spec/phase unit; full strict coverage still fails
-until gems, enchants, consumables, leveling, classes, and phases are registered.
+Full HTML cache files live under `data/raw/wowhead/html_cache` and are ignored
+by git.
 
-Check only the gear BiS registry:
-
-```powershell
-python tools/scrape_wowhead.py coverage --family bis_lists --strict --summary
-```
-
-The fetch command writes normalized JSON snapshots to `data/raw/wowhead`.
-Full HTML cache files are stored under `data/raw/wowhead/html_cache` and are
-ignored by git.
-
-## Addon Shell
-
-The addon shell exposes:
+## Project Identity
 
 - Display name: `Big BiS List`
 - Folder/root: `BigBiSList`
@@ -82,9 +125,9 @@ The addon shell exposes:
 - Globals: `BigBiSList`, `BigBiSListData`
 - Slash commands: `/bigbis`, `/bbl`, `/bbltest`
 
-## Attribution
+## License
 
-This project preserves attribution to `BIS-TBC-Anniversary`, Hellixoid, Dweem,
-csm_sudo, and future data contributors. The reference addon is MIT licensed.
-Big BiS List should keep a distinct name, package root, saved variable, and
-description when published.
+Big BiS List is All Rights Reserved. See [LICENSE](LICENSE).
+
+Third-party reference material and attribution are documented in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
