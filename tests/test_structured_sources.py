@@ -57,6 +57,21 @@ class StructuredSourceTests(unittest.TestCase):
         self.assertTrue(matching)
         self.assertTrue(any(requirement.get("standing_rank") == 8 for requirement in matching))
 
+    def test_staff_of_natural_fury_has_raw_tooltip_duplicates_to_group(self):
+        item = next(item for item in self.items.values() if item["name"] == "Staff of Natural Fury")
+        matching_uses = []
+        for row in canonical_json("bis_lists")["lists"]:
+            if row["class"] != "Druid" or row["spec"] != "Feral dps" or row["slot"] != "Two Hand":
+                continue
+            for entry in row.get("items", []):
+                if entry.get("item_id") == item["id"]:
+                    matching_uses.append((row["phase"], entry.get("rank_label")))
+
+        self.assertEqual(
+            sorted(matching_uses),
+            [("PR", "Best"), ("T4", "Alternative"), ("T5", "Option")],
+        )
+
     def test_avenger_keeps_both_faction_quest_sources(self):
         item = self.items[31025]
         quest_ids = {source["quest_id"] for source in item["sources"]}

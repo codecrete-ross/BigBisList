@@ -81,15 +81,19 @@ local function clearTooltipRenderGuard(tooltip)
     end
 end
 
-local function lineForUse(use)
-    local left = use.class .. " " .. use.spec
-    if use.slot and use.slot ~= "" then
-        left = left .. " - " .. use.slot
+local function lineForTooltipMatch(match)
+    local left = match.class .. " " .. match.spec
+    if match.slot and match.slot ~= "" then
+        left = left .. " - " .. match.slot
     end
 
-    local right = BigBiSList:GetPhaseDisplayName(use.phase)
-    if use.rank_label and use.rank_label ~= "" then
-        right = right .. " " .. use.rank_label
+    if match.tooltip_grouped then
+        return left, match.phase_summary or ""
+    end
+
+    local right = BigBiSList:GetPhaseDisplayName(match.phase)
+    if match.rank_label and match.rank_label ~= "" then
+        right = right .. " " .. match.rank_label
     end
 
     return left, right
@@ -109,19 +113,26 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     end
 
     local selection = BigBiSListDB.char.selection or {}
-    local matches = self:GetTooltipMatches(itemId, selection.class, selection.spec, settings.selectedSpecFirst ~= false)
-    if #matches == 0 then
+    local selectedSpecFirst = settings.selectedSpecFirst ~= false
+    local specFilters = settings.specFilters
+    local rawMatches = self:GetTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters)
+    if #rawMatches == 0 then
         return
     end
+    local groupedMatches = self:GetGroupedTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters)
 
-    local showAll = settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown()
-    local maxRows = showAll and #matches or (settings.compact and 4 or 8)
+    local showRaw = settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown()
+    local matches = showRaw and rawMatches or groupedMatches
+    local maxRows = showRaw and #matches or (settings.compact and 4 or 8)
     local renderKey = table.concat({
         tostring(itemId),
         tostring(settings.compact),
         tostring(settings.selectedSpecFirst),
         tostring(settings.showAllOnAlt),
-        tostring(showAll),
+        tostring(showRaw),
+        tostring(selection.class),
+        tostring(selection.spec),
+        self:GetTooltipSpecFilterKey(specFilters),
     }, ":")
     if tooltip.__bigBisListRenderKey == renderKey then
         return
@@ -132,9 +143,9 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     tooltip:AddLine("Big BiS List", 0.2, 1.0, 0.65)
 
     for index = 1, math.min(#matches, maxRows) do
-        local use = matches[index]
-        local left, right = lineForUse(use)
-        local selected = use.class == selection.class and use.spec == selection.spec
+        local match = matches[index]
+        local left, right = lineForTooltipMatch(match)
+        local selected = match.class == selection.class and match.spec == selection.spec
         if selected then
             tooltip:AddDoubleLine(left, right, 0.25, 1.0, 0.45, 0.25, 1.0, 0.45)
         else
@@ -142,7 +153,9 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         end
     end
 
-    if #matches > maxRows and not showAll and settings.showAllOnAlt then
+    local rawDiffersFromGrouped = #rawMatches ~= #groupedMatches
+    local hasHiddenRows = #matches > maxRows
+    if not showRaw and settings.showAllOnAlt and (rawDiffersFromGrouped or hasHiddenRows) then
         tooltip:AddLine("Hold ALT to show all Big BiS List matches", 0.62, 0.62, 0.66)
     end
 end

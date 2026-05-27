@@ -1898,6 +1898,50 @@ function UI:CreateSettingToggle(parent, yOffset, labelText, getValue, setValue)
     return row, 34
 end
 
+function UI:SetTooltipSpecFilter(className, specName, enabled)
+    local filters = BigBiSList:EnsureTooltipSpecFilters()
+    if not filters or not className or not specName then
+        return
+    end
+
+    filters[className] = filters[className] or {}
+    filters[className][specName] = enabled and true or false
+end
+
+function UI:SetTooltipClassSpecFilters(className, enabled)
+    local filters = BigBiSList:EnsureTooltipSpecFilters()
+    local specs = BigBiSList:GetDataIndex().specsByClass[className] or {}
+    if not filters or not className then
+        return
+    end
+
+    filters[className] = filters[className] or {}
+    for _, spec in ipairs(specs) do
+        if spec.name then
+            filters[className][spec.name] = enabled and true or false
+        end
+    end
+end
+
+function UI:CreateTooltipSpecClassHeader(parent, yOffset, className)
+    local widgets = BigBiSList.Widgets
+    local header, headerHeight = widgets:CreateSectionHeader(parent, "Tooltip Specs - " .. className, yOffset)
+
+    local noneButton = widgets:CreateTextButton(header, "None", 54, 22, function()
+        self:SetTooltipClassSpecFilters(className, false)
+        self:Refresh()
+    end)
+    noneButton:SetPoint("TOPRIGHT", header, "TOPRIGHT", -8, -2)
+
+    local allButton = widgets:CreateTextButton(header, "All", 54, 22, function()
+        self:SetTooltipClassSpecFilters(className, true)
+        self:Refresh()
+    end)
+    allButton:SetPoint("RIGHT", noneButton, "LEFT", -6, 0)
+
+    return header, headerHeight
+end
+
 function UI:RenderSettingsTab()
     local widgets = BigBiSList.Widgets
     local yOffset = -2
@@ -1905,6 +1949,7 @@ function UI:RenderSettingsTab()
     yOffset = yOffset - headerHeight
 
     local profile = BigBiSListDB.profile
+    BigBiSList:EnsureTooltipSpecFilters()
     local settings = {
         {
             label = "Show Big BiS List info in item tooltips",
@@ -1946,6 +1991,30 @@ function UI:RenderSettingsTab()
     for _, setting in ipairs(settings) do
         local row, rowHeight = self:CreateSettingToggle(self.contentChild, yOffset, setting.label, setting.get, setting.set)
         yOffset = yOffset - rowHeight - 4
+    end
+
+    yOffset = yOffset - 8
+    local specFilters = profile.tooltips.specFilters or {}
+    for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {}) do
+        local className = classData.name
+        if className then
+            local currentClassName = className
+            local _, classHeaderHeight = self:CreateTooltipSpecClassHeader(self.contentChild, yOffset, currentClassName)
+            yOffset = yOffset - classHeaderHeight
+
+            for _, specData in ipairs(classData.specs or {}) do
+                local specName = specData.name
+                if specName then
+                    local currentSpecName = specName
+                    local row, rowHeight = self:CreateSettingToggle(self.contentChild, yOffset, currentSpecName, function()
+                        return type(specFilters[currentClassName]) == "table" and specFilters[currentClassName][currentSpecName] == true
+                    end, function(value)
+                        self:SetTooltipSpecFilter(currentClassName, currentSpecName, value)
+                    end)
+                    yOffset = yOffset - rowHeight - 4
+                end
+            end
+        end
     end
 
     self:SetContentHeight(yOffset)

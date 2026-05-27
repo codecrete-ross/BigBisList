@@ -35,11 +35,13 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 3",
+            "local DEFAULTS_VERSION = 4",
             "window = {",
             "showMinimap = true",
             "minimap = {",
             "tooltips = {",
+            "specFilters = {}",
+            "specFiltersInitialized = false",
             "selection = {",
             'selectedPhase = "PR"',
             'phase = "PR"',
@@ -49,6 +51,10 @@ class AddonUIStaticTests(unittest.TestCase):
             "wishlist = {}",
             "ignoredItems = {}",
             "migrateLegacyDefaults",
+            "ensureTooltipSpecFilters",
+            "EnsureTooltipSpecFilters",
+            "GetTooltipSpecFilterKey",
+            "firstInitialization and className == selectedClass or false",
         ]:
             self.assertIn(token, config)
 
@@ -245,11 +251,54 @@ class AddonUIStaticTests(unittest.TestCase):
             "settings.selectedSpecFirst ~= false",
             "settings.compact and 4 or 8",
             "settings.showAllOnAlt and IsAltKeyDown",
-            "#matches > maxRows and not showAll and settings.showAllOnAlt",
+            "local specFilters = settings.specFilters",
+            "rawMatches = self:GetTooltipMatches",
+            "groupedMatches = self:GetGroupedTooltipMatches",
+            "showRaw = settings.showAllOnAlt and IsAltKeyDown",
+            "matches = showRaw and rawMatches or groupedMatches",
+            "rawDiffersFromGrouped",
+            "self:GetTooltipSpecFilterKey(specFilters)",
         ]:
             self.assertIn(token, tooltip)
-        self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst)", data_index)
+        self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)", data_index)
+        self.assertIn("function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)", data_index)
         self.assertIn("selectedSpecFirst = selectedSpecFirst ~= false", data_index)
+        self.assertIn("tooltipSpecEnabled(specFilters, use.class, use.spec)", data_index)
+
+        body = data_index.split("function BigBiSList:GetTooltipMatches", 1)[1].split("function BigBiSList:GetGroupedTooltipMatches", 1)[0]
+        self.assertLess(body.index("tooltipSpecEnabled"), body.index("table.sort(matches"))
+        self.assertLess(body.index("selectedSpecFirst = selectedSpecFirst ~= false"), body.index("table.sort(matches"))
+
+    def test_tooltip_spec_filter_settings_are_rendered(self):
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "function UI:SetTooltipSpecFilter",
+            "function UI:SetTooltipClassSpecFilters",
+            "function UI:CreateTooltipSpecClassHeader",
+            '"Tooltip Specs - " .. className',
+            '"All"',
+            '"None"',
+            "BigBiSList:EnsureTooltipSpecFilters()",
+            "profile.tooltips.specFilters",
+            "for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {})",
+            "self:CreateSettingToggle(self.contentChild, yOffset, currentSpecName",
+        ]:
+            self.assertIn(token, ui)
+
+    def test_tooltip_grouping_builds_semantic_phase_summary(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "TOOLTIP_SUMMARY_CHUNK_LIMIT = 3",
+            "tooltipGroupKey",
+            "tooltipRankShortLabel",
+            "tooltipPhaseSummary",
+            "buildTooltipGroupSummary",
+            "group.phase_summary = buildTooltipGroupSummary(group)",
+            "tooltip_grouped = true",
+            'return "Alt"',
+            'return "Opt"',
+        ]:
+            self.assertIn(token, data_index)
 
     def test_zone_filter_options_are_context_aware(self):
         data_index = self.read_lua("DataIndex.lua")

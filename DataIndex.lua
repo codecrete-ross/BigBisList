@@ -1559,13 +1559,97 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
     return sections
 end
 
-function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst)
+local TOOLTIP_SUMMARY_CHUNK_LIMIT = 3
+
+local function tooltipGroupKey(use)
+    return table.concat({
+        tostring(use.class or ""),
+        tostring(use.spec or ""),
+        tostring(use.slot or ""),
+    }, "|")
+end
+
+local function tooltipRankShortLabel(use)
+    local label = use and use.rank_label or ""
+    local normalized = lower(label)
+
+    if string.find(normalized, "pvp", 1, true) then
+        return "PvP"
+    elseif normalized == "best" or string.find(normalized, "^best") then
+        return "Best"
+    elseif string.find(normalized, "bis", 1, true) then
+        return "BiS"
+    elseif string.find(normalized, "alt", 1, true) then
+        return "Alt"
+    elseif string.find(normalized, "option", 1, true) or string.find(normalized, "optional", 1, true) or string.find(normalized, "viable", 1, true) then
+        return "Opt"
+    elseif label and label ~= "" then
+        return label
+    end
+
+    return rankShortLabel(use)
+end
+
+local function tooltipPhaseSummary(use)
+    local phase = PHASE_SHORT_DISPLAY[use.phase] or PHASE_DISPLAY[use.phase] or tostring(use.phase or "")
+    return phase .. " " .. tooltipRankShortLabel(use)
+end
+
+local function buildTooltipGroupSummary(group)
+    local uses = {}
+    local seen = {}
+    for _, use in ipairs(group.uses or {}) do
+        table.insert(uses, use)
+    end
+    table.sort(uses, function(a, b)
+        if a.phaseIndex ~= b.phaseIndex then
+            return a.phaseIndex < b.phaseIndex
+        end
+        return sortUses(a, b)
+    end)
+
+    local parts = {}
+    for _, use in ipairs(uses) do
+        local part = tooltipPhaseSummary(use)
+        if not seen[part] then
+            seen[part] = true
+            table.insert(parts, part)
+        end
+    end
+
+    if #parts > TOOLTIP_SUMMARY_CHUNK_LIMIT then
+        local remaining = #parts - TOOLTIP_SUMMARY_CHUNK_LIMIT
+        while #parts > TOOLTIP_SUMMARY_CHUNK_LIMIT do
+            table.remove(parts)
+        end
+        table.insert(parts, "+" .. tostring(remaining))
+    end
+
+    return table.concat(parts, ", ")
+end
+
+local function tooltipSpecEnabled(specFilters, className, specName)
+    if type(specFilters) ~= "table" then
+        return true
+    end
+
+    local classFilters = specFilters[className]
+    if type(classFilters) ~= "table" then
+        return false
+    end
+
+    return classFilters[specName] == true
+end
+
+function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)
     local uses = self:GetDataIndex().usesByItemId[itemId] or {}
     local matches = {}
     selectedSpecFirst = selectedSpecFirst ~= false
 
     for _, use in ipairs(uses) do
-        table.insert(matches, use)
+        if tooltipSpecEnabled(specFilters, use.class, use.spec) then
+            table.insert(matches, use)
+        end
     end
 
     table.sort(matches, function(a, b)
@@ -1589,4 +1673,33 @@ function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selec
     end)
 
     return matches
+end
+
+function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)
+    local rawMatches = self:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)
+    local groups = {}
+    local groupedMatches = {}
+
+    for _, use in ipairs(rawMatches) do
+        local key = tooltipGroupKey(use)
+        local group = groups[key]
+        if not group then
+            group = {
+                class = use.class,
+                spec = use.spec,
+                slot = use.slot,
+                uses = {},
+                tooltip_grouped = true,
+            }
+            groups[key] = group
+            table.insert(groupedMatches, group)
+        end
+        table.insert(group.uses, use)
+    end
+
+    for _, group in ipairs(groupedMatches) do
+        group.phase_summary = buildTooltipGroupSummary(group)
+    end
+
+    return groupedMatches
 end

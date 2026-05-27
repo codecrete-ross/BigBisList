@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 3
+local DEFAULTS_VERSION = 4
 
 BigBiSList.defaults = {
     profile = {
@@ -43,6 +43,8 @@ BigBiSList.defaults = {
             compact = true,
             selectedSpecFirst = true,
             showAllOnAlt = true,
+            specFilters = {},
+            specFiltersInitialized = false,
         },
     },
     char = {
@@ -121,6 +123,76 @@ local function migrateLegacyDefaults(db, previousVersion)
     end
 end
 
+local function ensureTooltipSpecFilters(db)
+    local profile = db.profile or {}
+    local tooltips = profile.tooltips or {}
+    profile.tooltips = tooltips
+
+    if type(tooltips.specFilters) ~= "table" then
+        tooltips.specFilters = {}
+    end
+
+    if not BigBiSList.GetDataIndex then
+        return tooltips.specFilters
+    end
+
+    local index = BigBiSList:GetDataIndex()
+    local firstInitialization = tooltips.specFiltersInitialized ~= true
+    local selectedClass = db.char and db.char.selection and db.char.selection.class
+
+    for _, classData in ipairs(index.classes or {}) do
+        local className = classData.name
+        if className then
+            if type(tooltips.specFilters[className]) ~= "table" then
+                tooltips.specFilters[className] = {}
+            end
+
+            for _, specData in ipairs(classData.specs or {}) do
+                local specName = specData.name
+                if specName and (firstInitialization or tooltips.specFilters[className][specName] == nil) then
+                    tooltips.specFilters[className][specName] = firstInitialization and className == selectedClass or false
+                end
+            end
+        end
+    end
+
+    tooltips.specFiltersInitialized = true
+    return tooltips.specFilters
+end
+
+function BigBiSList:EnsureTooltipSpecFilters()
+    if not BigBiSListDB or not BigBiSListDB.profile or not BigBiSListDB.profile.tooltips then
+        return nil
+    end
+
+    return ensureTooltipSpecFilters(BigBiSListDB)
+end
+
+function BigBiSList:GetTooltipSpecFilterKey(specFilters)
+    if type(specFilters) ~= "table" then
+        return "all"
+    end
+
+    if not self.GetDataIndex then
+        return ""
+    end
+
+    local parts = {}
+    local index = self:GetDataIndex()
+    for _, classData in ipairs(index.classes or {}) do
+        local className = classData.name
+        local classFilters = className and specFilters[className] or nil
+        for _, specData in ipairs(classData.specs or {}) do
+            local specName = specData.name
+            if className and specName then
+                table.insert(parts, className .. ":" .. specName .. "=" .. (type(classFilters) == "table" and classFilters[specName] == true and "1" or "0"))
+            end
+        end
+    end
+
+    return table.concat(parts, ";")
+end
+
 function BigBiSList:GetSelection()
     self:EnsureDatabase()
     return BigBiSListDB.char.selection
@@ -159,6 +231,7 @@ function BigBiSList:EnsureDatabase()
     applyDefaults(BigBiSListDB, self.defaults)
     migrateSelection(BigBiSListDB.char)
     migrateLegacyDefaults(BigBiSListDB, previousVersion)
+    ensureTooltipSpecFilters(BigBiSListDB)
 
     BigBiSListDB.char.selectedClass = BigBiSListDB.char.selection.class
     BigBiSListDB.char.selectedSpec = BigBiSListDB.char.selection.spec
