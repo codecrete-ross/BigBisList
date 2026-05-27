@@ -1,6 +1,7 @@
 import unittest
 
 from tools.project import canonical_json
+from tools.reputations import CANONICAL_REPUTATIONS, normalize_reputation_names
 from tools.validate_data import validate
 
 
@@ -49,3 +50,48 @@ class CanonicalDataTests(unittest.TestCase):
             if item["primary_source"]["type"] == "unknown"
         ]
         self.assertEqual(unknown_source_items, [])
+
+    def iter_requirements(self):
+        for family in ["items", "gems", "gem_sources", "enchants", "enchant_sources", "consumables"]:
+            doc = canonical_json(family)
+            stack = [doc]
+            while stack:
+                value = stack.pop()
+                if isinstance(value, dict):
+                    if value.get("type") in {"reputation", "faction_choice"}:
+                        yield value
+                    stack.extend(value.values())
+                elif isinstance(value, list):
+                    stack.extend(value)
+
+    def test_reputation_requirements_use_canonical_names(self):
+        allowed = set(CANONICAL_REPUTATIONS)
+        seen = set()
+        for requirement in self.iter_requirements():
+            if requirement["type"] == "reputation":
+                reputation = requirement["reputation"]
+                self.assertIn(reputation, allowed)
+                seen.add(reputation)
+            elif requirement["type"] == "faction_choice":
+                for choice in requirement["choices"]:
+                    self.assertIn(choice, allowed)
+                    seen.add(choice)
+
+        self.assertEqual(seen, allowed)
+
+    def test_reputation_aliases_normalize_and_split(self):
+        cases = {
+            "Scale of the Sands": ["The Scale of the Sands"],
+            "the Scales of the Sand": ["The Scale of the Sands"],
+            "Keepers of TIme": ["Keepers of Time"],
+            "The Keepers of Time": ["Keepers of Time"],
+            "The Shat'tar": ["The Sha'tar"],
+            "The Kurenai": ["Kurenai"],
+            "Classic - Cenarion Circle": ["Cenarion Circle"],
+            "Honor Hold / Thrallmar": ["Honor Hold", "Thrallmar"],
+            "Thrallmar / Honor Hold": ["Thrallmar", "Honor Hold"],
+            "Honor Hold / Thrallmar (BoE": ["Honor Hold", "Thrallmar"],
+            "The Mag'har / Kurenai": ["The Mag'har", "Kurenai"],
+        }
+        for raw, expected in cases.items():
+            self.assertEqual(normalize_reputation_names(raw), expected)

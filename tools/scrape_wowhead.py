@@ -13,13 +13,17 @@ from typing import Any
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ModuleNotFoundError:
+    BeautifulSoup = None
 
 if __package__ is None or __package__ == "":
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from tools.manifest_coverage import build_manifest_coverage
 from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES, canonical_json, write_text
+from tools.reputations import normalize_reputation_names
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 from tools.validate_data import validate
 
@@ -78,6 +82,12 @@ REQUIREMENT_CONFIDENCES = {
     "parsed_source_text",
     "manual_review",
 }
+
+
+def make_soup(markup: str) -> Any:
+    if BeautifulSoup is None:
+        raise ModuleNotFoundError("beautifulsoup4 is required for Wowhead HTML parsing")
+    return BeautifulSoup(markup, "html.parser")
 
 PROFESSION_SPECIALIZATION_PROFESSIONS = {
     "Armorsmith": "Blacksmithing",
@@ -248,7 +258,7 @@ def item_tooltip_text(item_id: int | None, html: str) -> str:
     tooltip_html = item_tooltip_html(item_id, html)
     if not tooltip_html:
         return ""
-    return element_text(BeautifulSoup(tooltip_html, "html.parser"))
+    return element_text(make_soup(tooltip_html))
 
 
 def item_teaches_spell_ids(item_id: int | None, name: str, html: str) -> list[int]:
@@ -259,7 +269,7 @@ def item_teaches_spell_ids(item_id: int | None, name: str, html: str) -> list[in
         return []
     spell_ids: list[int] = []
     seen: set[int] = set()
-    for link in BeautifulSoup(tooltip_html, "html.parser").find_all("a", href=True):
+    for link in make_soup(tooltip_html).find_all("a", href=True):
         spell_id = spell_id_from_href(link["href"])
         if not spell_id or spell_id in seen:
             continue
@@ -362,7 +372,7 @@ def source_links_from_element(element: Any) -> list[dict[str, str]]:
 
 
 def element_without_nested_tables(element: Any) -> Any:
-    clone_soup = BeautifulSoup(str(element), "html.parser")
+    clone_soup = make_soup(str(element))
     clone = clone_soup.find(getattr(element, "name", None))
     if clone is None:
         return element
@@ -372,7 +382,7 @@ def element_without_nested_tables(element: Any) -> Any:
 
 
 def element_with_resolved_link_text(element: Any, entity_names: dict[str, dict[int, str]] | None = None) -> Any:
-    clone_soup = BeautifulSoup(str(element), "html.parser")
+    clone_soup = make_soup(str(element))
     clone = clone_soup.find(getattr(element, "name", None))
     if clone is None:
         return element
@@ -530,18 +540,19 @@ def extract_reputation_requirements(text: str, source_url: str, scope: str, conf
             reputation = clean_requirement_target(match.group("reputation"))
             if not standing or not reputation:
                 continue
-            requirements.append(
-                make_requirement(
-                    "reputation",
-                    scope,
-                    source_url,
-                    text,
-                    confidence,
-                    reputation=reputation,
-                    standing=standing,
-                    standing_rank=REPUTATION_STANDING_RANKS[standing],
+            for reputation_name in normalize_reputation_names(reputation):
+                requirements.append(
+                    make_requirement(
+                        "reputation",
+                        scope,
+                        source_url,
+                        text,
+                        confidence,
+                        reputation=reputation_name,
+                        standing=standing,
+                        standing_rank=REPUTATION_STANDING_RANKS[standing],
+                    )
                 )
-            )
     return requirements
 
 
@@ -588,7 +599,13 @@ def extract_profession_requirements(text: str, source_url: str, scope: str, conf
 
 
 def extract_faction_choice_requirements(text: str, source_url: str, scope: str, confidence: str) -> list[dict[str, Any]]:
-    choices = [faction for faction in ["The Aldor", "The Scryers"] if re.search(rf"\b{re.escape(faction)}\b", text, flags=re.IGNORECASE)]
+    choices: list[str] = []
+    for faction in ["The Aldor", "The Scryers"]:
+        if not re.search(rf"\b{re.escape(faction)}\b", text, flags=re.IGNORECASE):
+            continue
+        for reputation_name in normalize_reputation_names(faction):
+            if reputation_name not in choices:
+                choices.append(reputation_name)
     if not choices:
         return []
     lowered = text.lower()
@@ -731,7 +748,7 @@ def parse_guide_sections(soup: BeautifulSoup, entity_names: dict[str, dict[int, 
 
 
 def parse_guide_html(url: str, html: str) -> dict[str, Any]:
-    soup = BeautifulSoup(html, "html.parser")
+    soup = make_soup(html)
     title = element_text(soup.title) if soup.title else ""
     entity_names = extract_gatherer_names(html)
     tables: list[dict[str, Any]] = []
@@ -1167,7 +1184,7 @@ def canonical_inventory_slot(value: str | None) -> str | None:
 
 
 def parse_item_html(url: str, html: str) -> dict[str, Any]:
-    soup = BeautifulSoup(html, "html.parser")
+    soup = make_soup(html)
     title = element_text(soup.title) if soup.title else ""
     name = re.sub(r"\s+-\s+Item\s+-\s+TBC Classic.*$", "", title).strip()
     meta = soup.find("meta", attrs={"name": "description"})
@@ -1300,7 +1317,7 @@ def normalize_spell_sources(url: str, tables: dict[str, list[dict[str, Any]]]) -
 
 
 def parse_spell_html(url: str, html: str) -> dict[str, Any]:
-    soup = BeautifulSoup(html, "html.parser")
+    soup = make_soup(html)
     title = element_text(soup.title) if soup.title else ""
     name = re.sub(r"\s+-\s+Spell\s+-\s+TBC Classic.*$", "", title).strip()
     meta = soup.find("meta", attrs={"name": "description"})

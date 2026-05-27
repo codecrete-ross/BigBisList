@@ -11,6 +11,7 @@ if __package__ is None or __package__ == "":
 
 from tools.manifest_coverage import GLOBAL_FAMILIES, MATRIX_FAMILIES, STATIC_DATA_FAMILIES, units_covered_by_source
 from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES, canonical_json
+from tools.reputations import CANONICAL_REPUTATIONS
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 
 
@@ -75,6 +76,7 @@ def validate_requirements(label: str, requirements: object, errors: list[str], r
             _require(isinstance(requirement.get("raw_text"), str), errors, f"{req_label} raw_text must be a string")
         if requirement.get("type") == "reputation":
             _require(bool(requirement.get("reputation")), errors, f"{req_label} reputation needs a faction name")
+            _require(requirement.get("reputation") in CANONICAL_REPUTATIONS, errors, f"{req_label} has non-canonical reputation: {requirement.get('reputation')}")
             _require(bool(requirement.get("standing")), errors, f"{req_label} reputation needs a standing")
         if requirement.get("type") == "profession":
             _require(bool(requirement.get("profession")), errors, f"{req_label} profession needs a profession name")
@@ -86,6 +88,8 @@ def validate_requirements(label: str, requirements: object, errors: list[str], r
             _require(isinstance(requirement.get("spell_id"), int) and requirement.get("spell_id") > 0, errors, f"{req_label} recipe_known needs spell_id")
         if requirement.get("type") == "faction_choice":
             _require(isinstance(requirement.get("choices"), list) and bool(requirement.get("choices")), errors, f"{req_label} faction_choice needs choices")
+            for choice in requirement.get("choices") or []:
+                _require(choice in CANONICAL_REPUTATIONS, errors, f"{req_label} has non-canonical faction choice: {choice}")
 
 
 def validate() -> ValidationResult:

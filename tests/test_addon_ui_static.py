@@ -44,6 +44,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'selectedPhase = "PR"',
             'phase = "PR"',
             "filters = {",
+            'reputation = "all"',
             "bankCache = {",
             "wishlist = {}",
             "ignoredItems = {}",
@@ -106,7 +107,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "BANKFRAME_OPENED",
             "PLAYERBANKSLOTS_CHANGED",
             "ScanBankItems",
-            'filters.ownedState = "bank"',
+            'bank = "Bank"',
         ]:
             self.assertIn(token, ui)
         self.assertIn("bankCache = {", config)
@@ -275,17 +276,78 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertNotIn("Unknown", zone_dropdown_body)
         self.assertNotIn("unknown", zone_dropdown_body)
 
+    def test_reputation_filter_options_are_context_aware(self):
+        data_index = self.read_lua("DataIndex.lua")
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "GetAvailableFilterReputations",
+            "cloneFiltersForReputationOptions",
+            'scopedFilters.reputation = "all"',
+            "addReputationsFromRow",
+            "rowMatchesReputationFilter",
+        ]:
+            self.assertIn(token, data_index)
+        for token in [
+            "GetAvailableReputationValues",
+            "ValidateReputationFilter",
+            "IsReputationValueAvailable",
+            "GetReputationDropdownItems",
+            "BigBiSListReputationDropdown",
+        ]:
+            self.assertIn(token, ui)
+
     def test_rank_filter_labels_are_clear(self):
         ui = self.read_lua("UI.lua")
         for token in [
             "local RANK_FILTER_LABELS",
             'bis = "BiS only"',
             'option = "Options only"',
-            "rankFilterLabel(filters.rankGroup)",
+            "rankFilterLabel(self:GetFilters().rankGroup)",
             '"Rank: " .. rankFilterLabel',
         ]:
             self.assertIn(token, ui)
         self.assertNotIn('filters.rankGroup == "all" and "All" or filters.rankGroup', ui)
+
+    def test_scalar_filters_use_dropdowns_not_cycle_buttons(self):
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "BigBiSListRankDropdown",
+            "BigBiSListOwnedDropdown",
+            "BigBiSListBoeDropdown",
+            "BigBiSListLongevityDropdown",
+            "GetRankDropdownItems",
+            "GetOwnedDropdownItems",
+            "GetBoeDropdownItems",
+            "GetLongevityDropdownItems",
+        ]:
+            self.assertIn(token, ui)
+        for token in [
+            "rankCycle",
+            "rankButton",
+            "ownedButton",
+            "boeButton",
+            "longevityButton",
+            "RefreshFilterButtonLabels",
+        ]:
+            self.assertNotIn(token, ui)
+
+    def test_faction_side_filter_is_automatic(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "UnitFactionGroup",
+            "playerSide = getPlayerSide()",
+            "optionMatchesPlayerSide",
+            "faction = self.currentAccess and self.currentAccess.playerSide or \"all\"",
+        ]:
+            self.assertIn(token, ui)
+        for token in [
+            "getSourceSides",
+            "rowMatchesFactionFilter",
+            "sides = getSourceSides(item)",
+            "sides = use.sides",
+        ]:
+            self.assertIn(token, data_index)
 
     def test_details_drawer_lists_access_paths(self):
         ui = self.read_lua("UI.lua")

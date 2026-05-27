@@ -30,7 +30,7 @@ test.
 ## Features
 
 - Phase-based TBC Anniversary BiS lists from Pre-Raid through Sunwell.
-- Class, spec, phase, slot, source, zone, rank, ownership, binding, faction, and
+- Class, spec, phase, slot, source, zone, reputation, rank, ownership, BoE, and
   longevity filters.
 - Gear view for currently equipped slots.
 - Priority planner for missing and future-use items.

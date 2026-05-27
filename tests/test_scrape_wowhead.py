@@ -328,6 +328,22 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(requirements[0]["reputation"], "Keepers of Time")
         self.assertEqual(requirements[0]["standing"], "Revered")
 
+        requirements = scraper.extract_requirements_from_text(
+            "Quest: Champion's Covenant - Requires Exalted with the Scales of the Sand",
+            source_url,
+            "quest_reward",
+            "parsed_source_text",
+        )
+        self.assertEqual(requirements[0]["reputation"], "The Scale of the Sands")
+
+        requirements = scraper.extract_requirements_from_text(
+            "Vendor: Logistics Officer Ulrike / Quartermaster Urgronn ( Honor Hold / Thrallmar Exalted)",
+            source_url,
+            "vendor_purchase",
+            "parsed_source_text",
+        )
+        self.assertEqual([requirement["reputation"] for requirement in requirements], ["Honor Hold", "Thrallmar"])
+
     def test_caverns_of_time_zone_normalizes_known_location_440_vendors(self):
         self.assertEqual(scraper.first_zone_name({"id": 21643, "name": "Alurmi", "location": [440]}), "Caverns of Time")
         self.assertEqual(scraper.first_zone_name({"id": 19932, "name": "Andormu", "location": [440]}), "Caverns of Time")

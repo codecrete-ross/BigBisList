@@ -60,6 +60,7 @@ BigBiSList.defaults = {
             search = "",
             sourceType = "all",
             zone = "all",
+            reputation = "all",
             rankGroup = "all",
             ownedState = "all",
             binding = "all",

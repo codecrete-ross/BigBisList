@@ -146,6 +146,43 @@ local function addUnique(list, seen, value)
     table.insert(list, value)
 end
 
+local function addReputationsFromRequirement(reputations, seen, requirement)
+    if type(requirement) ~= "table" then
+        return
+    elseif requirement.type == "reputation" then
+        addUnique(reputations, seen, requirement.reputation)
+    elseif requirement.type == "faction_choice" then
+        for _, reputation in ipairs(requirement.choices or {}) do
+            addUnique(reputations, seen, reputation)
+        end
+    end
+end
+
+local function addReputationsFromRequirements(reputations, seen, requirements)
+    for _, requirement in ipairs(requirements or {}) do
+        addReputationsFromRequirement(reputations, seen, requirement)
+    end
+end
+
+local function reputationsFromRequirements(requirements)
+    local reputations = {}
+    local seen = {}
+    addReputationsFromRequirements(reputations, seen, requirements)
+    table.sort(reputations)
+    return reputations
+end
+
+local function rowReputations(requirements, accessOptions)
+    local reputations = {}
+    local seen = {}
+    addReputationsFromRequirements(reputations, seen, requirements)
+    for _, option in ipairs(accessOptions or {}) do
+        addReputationsFromRequirements(reputations, seen, option.requirements)
+    end
+    table.sort(reputations)
+    return reputations
+end
+
 local function sortedKeys(values)
     local result = {}
     for key in pairs(values) do
@@ -464,22 +501,27 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
     local accessOptions = {}
     for _, input in ipairs(inputs) do
         local source = input.source
+        local requirements = mergedRequirements(globalRequirements, source.requirements, input.extraRequirements)
         table.insert(accessOptions, {
             label = sourceLabel(source, input.fallbackLabel),
             source_type = source.type or "unknown",
             source_url = source.source_url or (item and item.wowhead_url),
-            requirements = mergedRequirements(globalRequirements, source.requirements, input.extraRequirements),
+            side = source.side,
+            requirements = requirements,
+            reputations = reputationsFromRequirements(requirements),
             is_primary = input.isPrimary or false,
             is_trade_option = false,
         })
     end
 
     if shouldAddTradeOption(item, inputs, options) then
+        local requirements = mergedRequirements(globalRequirements)
         table.insert(accessOptions, {
             label = options.tradeLabel or "Trade/Auction House",
             source_type = "trade",
             source_url = item and item.wowhead_url or (sourceRecords[1] and sourceRecords[1].source_url),
-            requirements = mergedRequirements(globalRequirements),
+            requirements = requirements,
+            reputations = reputationsFromRequirements(requirements),
             is_primary = false,
             is_trade_option = true,
         })
@@ -661,6 +703,33 @@ local function getSourceZones(item)
     return zones
 end
 
+local function addSourceSide(sides, seen, side)
+    if side == "Alliance" or side == "Horde" then
+        addUnique(sides, seen, side)
+    end
+end
+
+local function addSidesFromSource(sides, seen, source)
+    if type(source) == "table" then
+        addSourceSide(sides, seen, source.side)
+    end
+end
+
+local function getSourceSides(item)
+    local sides = {}
+    local seen = {}
+
+    if item then
+        addSidesFromSource(sides, seen, item.primary_source)
+        for _, source in ipairs(item.sources or {}) do
+            addSidesFromSource(sides, seen, source)
+        end
+    end
+
+    table.sort(sides)
+    return sides
+end
+
 local function getAcquisitionPhase(item)
     return item and item.acquisition_phase or "PR"
 end
@@ -690,7 +759,10 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     local sourceType = getSourceType(item)
     local zone = getSourceZone(item)
     local zones = getSourceZones(item)
+    local sides = getSourceSides(item)
     local acquisitionPhase = getAcquisitionPhase(item)
+    local requirements = mergedRequirements(item and item.requirements, itemEntry.requirements)
+    local accessOptions = buildAccessOptions(item, nil, itemEntry.requirements, { entityType = "item" })
 
     return {
         class = className,
@@ -715,11 +787,13 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         zone = zone,
         zones = zones,
         side = getSourceSide(item),
+        sides = sides,
         binding = item and item.binding or "unknown",
         boe = item and item.boe,
         quality = item and item.quality,
-        requirements = mergedRequirements(item and item.requirements, itemEntry.requirements),
-        access_options = buildAccessOptions(item, nil, itemEntry.requirements, { entityType = "item" }),
+        requirements = requirements,
+        access_options = accessOptions,
+        reputations = rowReputations(requirements, accessOptions),
     }
 end
 
@@ -762,6 +836,47 @@ local function rowMatchesAnySelectedZone(row, selectedZones)
     return false
 end
 
+local function rowHasReputation(row, reputation)
+    if not row or not reputation or reputation == "" then
+        return false
+    end
+
+    for _, rowReputation in ipairs(row.reputations or {}) do
+        if rowReputation == reputation then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function rowMatchesReputationFilter(row, reputation)
+    if not reputation or reputation == "all" then
+        return true
+    end
+    return rowHasReputation(row, reputation)
+end
+
+local function rowMatchesFactionFilter(row, faction)
+    if not faction or faction == "all" then
+        return true
+    end
+
+    local hasSide = false
+    for _, side in ipairs(row.sides or {}) do
+        hasSide = true
+        if side == faction then
+            return true
+        end
+    end
+
+    if not hasSide and row.side then
+        return row.side == faction
+    end
+
+    return not hasSide
+end
+
 local function includeByFilter(row, filters)
     filters = filters or {}
 
@@ -797,6 +912,10 @@ local function includeByFilter(row, filters)
         return false
     end
 
+    if not rowMatchesReputationFilter(row, filters.reputation) then
+        return false
+    end
+
     if filters.rankGroup and filters.rankGroup ~= "all" and row.rank_group ~= filters.rankGroup then
         return false
     end
@@ -827,7 +946,7 @@ local function includeByFilter(row, filters)
         return false
     end
 
-    if filters.faction and filters.faction ~= "all" and row.side and row.side ~= filters.faction then
+    if not rowMatchesFactionFilter(row, filters.faction) then
         return false
     end
 
@@ -1213,6 +1332,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
                         binding = use.binding,
                         boe = use.boe,
                         side = use.side,
+                        sides = use.sides,
+                        reputations = use.reputations,
                         requirements = use.requirements,
                         access_options = use.access_options,
                         uses = {},
@@ -1245,6 +1366,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         scorePlannerGroup(group, selectedPhaseKey)
         group.rank_group = group.bestUse and group.bestUse.rank_group or "option"
         group.rank_label = group.bestUse and group.bestUse.rank_label or "Option"
+        group.sides = group.bestUse and group.bestUse.sides or group.sides
+        group.reputations = group.bestUse and group.bestUse.reputations or group.reputations
         group.requirements = group.bestUse and group.bestUse.requirements or group.requirements
         group.access_options = group.bestUse and group.bestUse.access_options or group.access_options
 
@@ -1284,6 +1407,15 @@ local function cloneFiltersForZoneOptions(filters)
     return scopedFilters
 end
 
+local function cloneFiltersForReputationOptions(filters)
+    local scopedFilters = {}
+    for key, value in pairs(filters or {}) do
+        scopedFilters[key] = value
+    end
+    scopedFilters.reputation = "all"
+    return scopedFilters
+end
+
 local function addZonesFromRow(zones, seen, row)
     if type(row) ~= "table" then
         return
@@ -1314,6 +1446,37 @@ function BigBiSList:GetAvailableFilterZones(className, specName, phaseKey, tabNa
 
     table.sort(zones)
     return zones
+end
+
+local function addReputationsFromRow(reputations, seen, row)
+    if type(row) ~= "table" then
+        return
+    end
+
+    for _, reputation in ipairs(row.reputations or {}) do
+        addUnique(reputations, seen, reputation)
+    end
+end
+
+function BigBiSList:GetAvailableFilterReputations(className, specName, phaseKey, tabName, filters)
+    local reputations = {}
+    local seen = {}
+    local scopedFilters = cloneFiltersForReputationOptions(filters)
+
+    if tabName == "Planner" then
+        for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
+            addReputationsFromRow(reputations, seen, row)
+        end
+    else
+        for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
+            for _, row in ipairs(group.items or {}) do
+                addReputationsFromRow(reputations, seen, row)
+            end
+        end
+    end
+
+    table.sort(reputations)
+    return reputations
 end
 
 function BigBiSList:GetEnhancementRows(className, specName, phaseKey)

@@ -99,6 +99,32 @@ local RANK_FILTER_LABELS = {
     unrealistic = "Unrealistic",
     option = "Options only",
 }
+local RANK_FILTER_ORDER = { "all", "bis", "ranked", "situational", "pvp", "unrealistic", "option" }
+
+local OWNED_FILTER_LABELS = {
+    all = "All ownership",
+    missing = "Missing",
+    owned = "Owned",
+    equipped = "Equipped",
+    bag = "Bags",
+    bank = "Bank",
+}
+local OWNED_FILTER_ORDER = { "all", "missing", "owned", "equipped", "bag", "bank" }
+
+local BOE_FILTER_LABELS = {
+    all = "All binding",
+    boe = "BoE only",
+    not_boe = "Not BoE",
+}
+local BOE_FILTER_ORDER = { "all", "boe", "not_boe" }
+
+local LONGEVITY_FILTER_LABELS = {
+    all = "All longevity",
+    current = "Useful now",
+    future = "Future value",
+    long = "Long-lived",
+}
+local LONGEVITY_FILTER_ORDER = { "all", "current", "future", "long" }
 
 local function clamp(value, minValue, maxValue)
     if value < minValue then
@@ -210,6 +236,18 @@ local function rankFilterLabel(rankGroup)
     return RANK_FILTER_LABELS[rankGroup or "all"] or tostring(rankGroup or "All")
 end
 
+local function ownedFilterLabel(ownedState)
+    return OWNED_FILTER_LABELS[ownedState or "all"] or ownershipStateLabel(ownedState)
+end
+
+local function boeFilterLabel(boe)
+    return BOE_FILTER_LABELS[boe or "all"] or tostring(boe or "All binding")
+end
+
+local function longevityFilterLabel(longevity)
+    return LONGEVITY_FILTER_LABELS[longevity or "all"] or tostring(longevity or "All longevity")
+end
+
 local function requirementSummary(requirement)
     if not requirement then
         return "Unknown prerequisite"
@@ -268,11 +306,18 @@ local function isBlockingAccessState(state)
 end
 
 local FACTION_NAME_ALIASES = {
+    ["classic - cenarion circle"] = "Cenarion Circle",
+    ["keepers of time"] = "Keepers of Time",
+    ["the keepers of time"] = "Keepers of Time",
+    ["kurenai"] = "Kurenai",
+    ["the kurenai"] = "Kurenai",
     ["scale of the sands"] = "The Scale of the Sands",
     ["the scale of the sands"] = "The Scale of the Sands",
+    ["the scales of the sand"] = "The Scale of the Sands",
     ["mag'har"] = "The Mag'har",
     ["the mag'har"] = "The Mag'har",
     ["the maghar"] = "The Mag'har",
+    ["the shat'tar"] = "The Sha'tar",
 }
 
 local function splitFactionNames(factionName)
@@ -386,6 +431,16 @@ local function collectReputationState()
     end
 
     return reputations
+end
+
+local function getPlayerSide()
+    if UnitFactionGroup then
+        local ok, side = pcall(UnitFactionGroup, "player")
+        if ok and (side == "Alliance" or side == "Horde") then
+            return side
+        end
+    end
+    return nil
 end
 
 local function collectProfessionState()
@@ -574,6 +629,7 @@ function UI:BuildAccessState()
     return {
         professions = collectProfessionState(),
         reputations = collectReputationState(),
+        playerSide = getPlayerSide(),
     }
 end
 
@@ -678,6 +734,12 @@ function UI:EvaluateRequirementList(requirements, accessState)
     return { status = "ready" }
 end
 
+local function optionMatchesPlayerSide(option, accessState)
+    local playerSide = accessState and accessState.playerSide
+    local optionSide = option and option.side
+    return not playerSide or not optionSide or optionSide == playerSide
+end
+
 function UI:EvaluateAccessOption(option, accessState)
     local evaluation = self:EvaluateRequirementList(option and option.requirements, accessState)
     evaluation.option = option
@@ -695,15 +757,17 @@ function UI:GetAccessEvaluation(data)
         local firstReadyEvaluation
 
         for _, option in ipairs(options) do
-            local evaluation = self:EvaluateAccessOption(option, accessState)
-            table.insert(optionEvaluations, evaluation)
+            if optionMatchesPlayerSide(option, accessState) then
+                local evaluation = self:EvaluateAccessOption(option, accessState)
+                table.insert(optionEvaluations, evaluation)
 
-            firstEvaluation = firstEvaluation or evaluation
-            if option.is_primary and not primaryEvaluation then
-                primaryEvaluation = evaluation
-            end
-            if evaluation.status == "ready" and not firstReadyEvaluation then
-                firstReadyEvaluation = evaluation
+                firstEvaluation = firstEvaluation or evaluation
+                if option.is_primary and not primaryEvaluation then
+                    primaryEvaluation = evaluation
+                end
+                if evaluation.status == "ready" and not firstReadyEvaluation then
+                    firstReadyEvaluation = evaluation
+                end
             end
         end
 
@@ -826,10 +890,26 @@ function UI:ScanBankItems()
     cache.updatedAt = date and date("%Y-%m-%d %H:%M") or "this session"
 end
 
+function UI:GetAvailabilityFilters()
+    local filters = {}
+    for key, value in pairs(self:GetFilters() or {}) do
+        filters[key] = value
+    end
+    local accessState = self.currentAccess or self:BuildAccessState()
+    filters.faction = accessState and accessState.playerSide or "all"
+    return filters
+end
+
 function UI:GetAvailableZoneValues()
     local selection = self:GetSelection()
-    local filters = self:GetFilters()
+    local filters = self:GetAvailabilityFilters()
     return BigBiSList:GetAvailableFilterZones(selection.class, selection.spec, selection.phase, selection.tab, filters)
+end
+
+function UI:GetAvailableReputationValues()
+    local selection = self:GetSelection()
+    local filters = self:GetAvailabilityFilters()
+    return BigBiSList:GetAvailableFilterReputations(selection.class, selection.spec, selection.phase, selection.tab, filters)
 end
 
 function UI:IsZoneValueAvailable(zone)
@@ -852,19 +932,41 @@ function UI:ValidateZoneFilter()
     end
 end
 
+function UI:IsReputationValueAvailable(reputation)
+    if not reputation or reputation == "all" then
+        return true
+    end
+
+    for _, availableReputation in ipairs(self:GetAvailableReputationValues()) do
+        if availableReputation == reputation then
+            return true
+        end
+    end
+    return false
+end
+
+function UI:ValidateReputationFilter()
+    local filters = self:GetFilters()
+    if filters.reputation and filters.reputation ~= "all" and not self:IsReputationValueAvailable(filters.reputation) then
+        filters.reputation = "all"
+    end
+end
+
 function UI:BuildFilterPayload()
     local filters = self:GetFilters()
     self:ValidateZoneFilter()
+    self:ValidateReputationFilter()
     self.currentAccess = self:BuildAccessState()
     return {
         search = filters.search,
         sourceType = filters.sourceType,
         zone = filters.zone,
+        reputation = filters.reputation,
         rankGroup = filters.rankGroup,
         ownedState = filters.ownedState,
         binding = filters.binding,
         boe = filters.boe,
-        faction = filters.faction,
+        faction = self.currentAccess and self.currentAccess.playerSide or "all",
         longevity = filters.longevity,
         slots = filters.slots,
         ownedItems = self:BuildOwnedItems(),
@@ -1000,37 +1102,90 @@ function UI:GetZoneDropdownItems()
     return items
 end
 
+function UI:GetReputationDropdownItems()
+    local filters = self:GetFilters()
+    self:ValidateReputationFilter()
+    local items = {
+        { value = "all", text = "All reps", checked = filters.reputation == "all" },
+    }
+    for _, reputation in ipairs(self:GetAvailableReputationValues()) do
+        table.insert(items, {
+            value = reputation,
+            text = reputation,
+            checked = filters.reputation == reputation,
+        })
+    end
+    return items
+end
+
+local function filterDropdownItems(values, labels, selectedValue)
+    local items = {}
+    for _, value in ipairs(values) do
+        table.insert(items, {
+            value = value,
+            text = labels[value] or value,
+            checked = selectedValue == value,
+        })
+    end
+    return items
+end
+
+function UI:GetRankDropdownItems()
+    local filters = self:GetFilters()
+    return filterDropdownItems(RANK_FILTER_ORDER, RANK_FILTER_LABELS, filters.rankGroup or "all")
+end
+
+function UI:GetOwnedDropdownItems()
+    local filters = self:GetFilters()
+    return filterDropdownItems(OWNED_FILTER_ORDER, OWNED_FILTER_LABELS, filters.ownedState or "all")
+end
+
+function UI:GetBoeDropdownItems()
+    local filters = self:GetFilters()
+    return filterDropdownItems(BOE_FILTER_ORDER, BOE_FILTER_LABELS, filters.boe or "all")
+end
+
+function UI:GetLongevityDropdownItems()
+    local filters = self:GetFilters()
+    return filterDropdownItems(LONGEVITY_FILTER_ORDER, LONGEVITY_FILTER_LABELS, filters.longevity or "all")
+end
+
 function UI:SetClass(className)
     local index = BigBiSList:GetDataIndex()
     local specs = index.specsByClass[className] or {}
     BigBiSList:SetSelection(className, firstSpecName(specs), nil, nil)
     self:ValidateZoneFilter()
+    self:ValidateReputationFilter()
     self:Refresh()
 end
 
 function UI:SetSpec(specName)
     BigBiSList:SetSelection(nil, specName, nil, nil)
     self:ValidateZoneFilter()
+    self:ValidateReputationFilter()
     self:Refresh()
 end
 
 function UI:SetPhase(phaseKey)
     BigBiSList:SetSelection(nil, nil, phaseKey, nil)
     self:ValidateZoneFilter()
+    self:ValidateReputationFilter()
     self:Refresh()
 end
 
 function UI:SetTab(tabName)
     BigBiSList:SetSelection(nil, nil, nil, tabName)
     self:ValidateZoneFilter()
+    self:ValidateReputationFilter()
     self:Refresh()
 end
 
 function UI:SetFilter(key, value)
     local filters = self:GetFilters()
     filters[key] = value
-    if key == "sourceType" or key == "zone" then
+    if key == "sourceType" or key == "zone" or key == "reputation" then
         self:ValidateZoneFilter()
+        self:ValidateReputationFilter()
     end
     self:Refresh()
 end
@@ -1047,6 +1202,7 @@ function UI:ClearFilters()
     filters.search = ""
     filters.sourceType = "all"
     filters.zone = "all"
+    filters.reputation = "all"
     filters.rankGroup = "all"
     filters.ownedState = "all"
     filters.binding = "all"
@@ -2062,6 +2218,21 @@ function UI:RefreshControls()
     if self.zoneDropdown then
         self.zoneDropdown:Refresh()
     end
+    if self.reputationDropdown then
+        self.reputationDropdown:Refresh()
+    end
+    if self.rankDropdown then
+        self.rankDropdown:Refresh()
+    end
+    if self.ownedDropdown then
+        self.ownedDropdown:Refresh()
+    end
+    if self.boeDropdown then
+        self.boeDropdown:Refresh()
+    end
+    if self.longevityDropdown then
+        self.longevityDropdown:Refresh()
+    end
     if self.searchBox and self.searchBox:GetText() ~= (filters.search or "") then
         self.searchBox:SetText(filters.search or "")
     end
@@ -2086,7 +2257,6 @@ function UI:RefreshControls()
         button:SetSelected(filters.slots and filters.slots[slotName])
     end
 
-    self:RefreshFilterButtonLabels()
 end
 
 function UI:Refresh()
@@ -2096,6 +2266,7 @@ function UI:Refresh()
 
     self:ValidateSelection()
     self:ValidateZoneFilter()
+    self:ValidateReputationFilter()
     self:RefreshControls()
     self.currentOwned = self:BuildOwnedItems()
     self.currentAccess = self:BuildAccessState()
@@ -2290,72 +2461,49 @@ function UI:CreateLeftRail(body)
         function(value) self:SetFilter("zone", value) end)
     self.zoneDropdown:SetPoint("TOPLEFT", self.sourceDropdown, "BOTTOMLEFT", 0, -4)
 
-    local rankCycle = { "all", "bis", "ranked", "situational", "pvp", "unrealistic", "option" }
-    local rankButton = widgets:CreateTextButton(rail, "Rank: All", LEFT_CONTROL_WIDTH, 22, function()
-        local filters = self:GetFilters()
-        local nextIndex = 1
-        for index, value in ipairs(rankCycle) do
-            if filters.rankGroup == value then
-                nextIndex = (index % #rankCycle) + 1
-                break
-            end
-        end
-        filters.rankGroup = rankCycle[nextIndex]
-        self:Refresh()
-    end)
-    rankButton:SetPoint("TOPLEFT", self.zoneDropdown, "BOTTOMLEFT", LEFT_RAIL_INSET - LEFT_DROPDOWN_X, -12)
-    self.rankButton = rankButton
+    self.reputationDropdown = widgets:CreateDropdown("BigBiSListReputationDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            local value = self:GetFilters().reputation or "all"
+            return value == "all" and "All reps" or value
+        end,
+        function() return self:GetReputationDropdownItems() end,
+        function(value) self:SetFilter("reputation", value) end)
+    self.reputationDropdown:SetPoint("TOPLEFT", self.zoneDropdown, "BOTTOMLEFT", 0, -4)
 
-    local ownedButton = widgets:CreateTextButton(rail, "Owned: All", LEFT_CONTROL_WIDTH, 22, function()
-        local filters = self:GetFilters()
-        if filters.ownedState == "all" then
-            filters.ownedState = "missing"
-        elseif filters.ownedState == "missing" then
-            filters.ownedState = "owned"
-        elseif filters.ownedState == "owned" then
-            filters.ownedState = "equipped"
-        elseif filters.ownedState == "equipped" then
-            filters.ownedState = "bag"
-        elseif filters.ownedState == "bag" then
-            filters.ownedState = "bank"
-        else
-            filters.ownedState = "all"
-        end
-        self:Refresh()
-    end)
-    ownedButton:SetPoint("TOPLEFT", rankButton, "BOTTOMLEFT", 0, -5)
-    self.ownedButton = ownedButton
+    self.rankDropdown = widgets:CreateDropdown("BigBiSListRankDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return "Rank: " .. rankFilterLabel(self:GetFilters().rankGroup)
+        end,
+        function() return self:GetRankDropdownItems() end,
+        function(value) self:SetFilter("rankGroup", value) end)
+    self.rankDropdown:SetPoint("TOPLEFT", self.reputationDropdown, "BOTTOMLEFT", 0, -8)
 
-    local boeButton = widgets:CreateTextButton(rail, "BoE: All", LEFT_CONTROL_WIDTH, 22, function()
-        local filters = self:GetFilters()
-        if filters.boe == "all" then
-            filters.boe = "boe"
-        elseif filters.boe == "boe" then
-            filters.boe = "not_boe"
-        else
-            filters.boe = "all"
-        end
-        self:Refresh()
-    end)
-    boeButton:SetPoint("TOPLEFT", ownedButton, "BOTTOMLEFT", 0, -5)
-    self.boeButton = boeButton
+    self.ownedDropdown = widgets:CreateDropdown("BigBiSListOwnedDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return "Owned: " .. ownedFilterLabel(self:GetFilters().ownedState)
+        end,
+        function() return self:GetOwnedDropdownItems() end,
+        function(value) self:SetFilter("ownedState", value) end)
+    self.ownedDropdown:SetPoint("TOPLEFT", self.rankDropdown, "BOTTOMLEFT", 0, -4)
 
-    local longevityButton = widgets:CreateTextButton(rail, "Longevity: All", LEFT_CONTROL_WIDTH, 22, function()
-        local filters = self:GetFilters()
-        if filters.longevity == "all" then
-            filters.longevity = "future"
-        elseif filters.longevity == "future" then
-            filters.longevity = "long"
-        else
-            filters.longevity = "all"
-        end
-        self:Refresh()
-    end)
-    longevityButton:SetPoint("TOPLEFT", boeButton, "BOTTOMLEFT", 0, -5)
-    self.longevityButton = longevityButton
+    self.boeDropdown = widgets:CreateDropdown("BigBiSListBoeDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return "BoE: " .. boeFilterLabel(self:GetFilters().boe)
+        end,
+        function() return self:GetBoeDropdownItems() end,
+        function(value) self:SetFilter("boe", value) end)
+    self.boeDropdown:SetPoint("TOPLEFT", self.ownedDropdown, "BOTTOMLEFT", 0, -4)
+
+    self.longevityDropdown = widgets:CreateDropdown("BigBiSListLongevityDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return "Longevity: " .. longevityFilterLabel(self:GetFilters().longevity)
+        end,
+        function() return self:GetLongevityDropdownItems() end,
+        function(value) self:SetFilter("longevity", value) end)
+    self.longevityDropdown:SetPoint("TOPLEFT", self.boeDropdown, "BOTTOMLEFT", 0, -4)
 
     local slotHeader = rail:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    slotHeader:SetPoint("TOPLEFT", longevityButton, "BOTTOMLEFT", 0, -16)
+    slotHeader:SetPoint("TOPLEFT", self.longevityDropdown, "BOTTOMLEFT", LEFT_RAIL_INSET - LEFT_DROPDOWN_X, -16)
     slotHeader:SetTextColor(0.68, 0.68, 0.72, 1)
     slotHeader:SetText("Slots")
 
@@ -2394,28 +2542,6 @@ function UI:CreateLeftRail(body)
 
     self.leftRail = rail
     self.slotsScroll = slotsScroll
-end
-
-function UI:RefreshFilterButtonLabels()
-    local filters = self:GetFilters()
-
-    if self.rankButton then
-        self.rankButton.label:SetText("Rank: " .. rankFilterLabel(filters.rankGroup))
-    end
-    if self.ownedButton then
-        local label = filters.ownedState == "all" and "All"
-            or filters.ownedState == "owned" and "Owned"
-            or ownershipStateLabel(filters.ownedState)
-        self.ownedButton.label:SetText("Owned: " .. label)
-    end
-    if self.boeButton then
-        local label = filters.boe == "all" and "All" or filters.boe
-        self.boeButton.label:SetText("BoE: " .. label)
-    end
-    if self.longevityButton then
-        local label = filters.longevity == "all" and "All" or filters.longevity
-        self.longevityButton.label:SetText("Longevity: " .. label)
-    end
 end
 
 function UI:CreateBody(frame)
