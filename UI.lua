@@ -90,6 +90,16 @@ local QUALITY_COLORS = {
     legendary = { 1.00, 0.50, 0.00 },
 }
 
+local RANK_FILTER_LABELS = {
+    all = "All",
+    bis = "BiS only",
+    ranked = "Ranked only",
+    situational = "Situational",
+    pvp = "PvP only",
+    unrealistic = "Unrealistic",
+    option = "Options only",
+}
+
 local function clamp(value, minValue, maxValue)
     if value < minValue then
         return minValue
@@ -194,6 +204,10 @@ end
 
 local function accessStateLabel(state)
     return ACCESS_LABELS[state or "unknown"] or ACCESS_LABELS.unknown
+end
+
+local function rankFilterLabel(rankGroup)
+    return RANK_FILTER_LABELS[rankGroup or "all"] or tostring(rankGroup or "All")
 end
 
 local function requirementSummary(requirement)
@@ -2386,8 +2400,7 @@ function UI:RefreshFilterButtonLabels()
     local filters = self:GetFilters()
 
     if self.rankButton then
-        local label = filters.rankGroup == "all" and "All" or filters.rankGroup
-        self.rankButton.label:SetText("Rank: " .. label)
+        self.rankButton.label:SetText("Rank: " .. rankFilterLabel(filters.rankGroup))
     end
     if self.ownedButton then
         local label = filters.ownedState == "all" and "All"

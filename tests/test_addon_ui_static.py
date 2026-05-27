@@ -271,6 +271,21 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, ui)
         self.assertNotIn("BigBiSList:GetDataIndex().zones", ui)
+        zone_dropdown_body = ui.split("function UI:GetZoneDropdownItems()", 1)[1].split("function UI:SetClass", 1)[0]
+        self.assertNotIn("Unknown", zone_dropdown_body)
+        self.assertNotIn("unknown", zone_dropdown_body)
+
+    def test_rank_filter_labels_are_clear(self):
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "local RANK_FILTER_LABELS",
+            'bis = "BiS only"',
+            'option = "Options only"',
+            "rankFilterLabel(filters.rankGroup)",
+            '"Rank: " .. rankFilterLabel',
+        ]:
+            self.assertIn(token, ui)
+        self.assertNotIn('filters.rankGroup == "all" and "All" or filters.rankGroup', ui)
 
     def test_details_drawer_lists_access_paths(self):
         ui = self.read_lua("UI.lua")
