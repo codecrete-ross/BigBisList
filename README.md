@@ -9,13 +9,14 @@ This repository is prepared for the `0.1.0` prerelease.
 
 ## Install
 
-Copy the addon folder to your Anniversary client:
+Install via CurseForge, or copy the addon folder to your Anniversary client:
 
 ```text
 World of Warcraft\_anniversary_\Interface\AddOns\BigBiSList
 ```
 
-The folder must contain `BigBiSList.toc` directly inside it.
+The folder must contain `BigBiSList.toc` directly inside it. Do not copy the
+repository root or the `addon` parent folder into `Interface\AddOns`.
 
 In game, use `/bbl` or `/bigbis` to open the main window. Use `/bbl status` to
 print the loaded data summary and `/bbltest` for a basic saved-variable smoke
@@ -78,6 +79,15 @@ python tools/generate_lua.py --check
 python tools/scrape_wowhead.py audit
 python tools/scrape_wowhead.py coverage --summary --strict
 ```
+
+Build the CurseForge/GitHub upload zip:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1 -Version 0.1.0
+```
+
+The package script writes `dist\BigBiSList-0.1.0.zip`. The archive root is
+`BigBiSList/`, and `BigBiSList.toc` is directly inside that folder.
 
 For the full data audit, also run snapshot and requirements audits for each
 family:

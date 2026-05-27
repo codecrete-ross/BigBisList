@@ -1,0 +1,22 @@
+package-as: BigBiSList
+enable-nolib-creation: no
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+move-folders:
+  addon/BigBiSList: BigBiSList
+ignore:
+  - .gitignore
+  - .pytest_cache
+  - __pycache__
+  - .codex
+  - .claude
+  - AGENTS.md
+  - CLAUDE.md
+  - pyproject.toml
+  - data
+  - dist
+  - scripts
+  - tests
+  - tools
+  - vendor

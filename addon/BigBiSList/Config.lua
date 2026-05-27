@@ -3,7 +3,22 @@ local addonName = ...
 BigBiSList = BigBiSList or {}
 BigBiSList.addonName = addonName or "BigBiSList"
 BigBiSList.displayName = "Big BiS List"
-BigBiSList.version = "0.1.0"
+
+local function addonMetadata(field)
+    if C_AddOns and C_AddOns.GetAddOnMetadata then
+        return C_AddOns.GetAddOnMetadata(BigBiSList.addonName, field)
+    end
+    if GetAddOnMetadata then
+        return GetAddOnMetadata(BigBiSList.addonName, field)
+    end
+    return nil
+end
+
+local version = addonMetadata("Version")
+if version == nil or version == "" or version == "@project-version@" then
+    version = "0.1.0"
+end
+BigBiSList.version = version
 
 local DEFAULTS_VERSION = 3
 
