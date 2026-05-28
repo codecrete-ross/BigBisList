@@ -1505,6 +1505,45 @@ local function cloneFiltersForReputationOptions(filters)
     return scopedFilters
 end
 
+local function cloneFiltersForSourceTypeOptions(filters)
+    local scopedFilters = {}
+    for key, value in pairs(filters or {}) do
+        scopedFilters[key] = value
+    end
+    scopedFilters.sourceType = "all"
+    scopedFilters.sourceTypes = nil
+    return scopedFilters
+end
+
+local function addSourceTypeFromRow(sourceTypes, seen, row)
+    if type(row) ~= "table" then
+        return
+    end
+
+    addUnique(sourceTypes, seen, row.source_type)
+end
+
+function BigBiSList:GetAvailableFilterSourceTypes(className, specName, phaseKey, tabName, filters)
+    local sourceTypes = {}
+    local seen = {}
+    local scopedFilters = cloneFiltersForSourceTypeOptions(filters)
+
+    if tabName == "Planner" then
+        for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
+            addSourceTypeFromRow(sourceTypes, seen, row)
+        end
+    else
+        for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
+            for _, row in ipairs(group.items or {}) do
+                addSourceTypeFromRow(sourceTypes, seen, row)
+            end
+        end
+    end
+
+    table.sort(sourceTypes)
+    return sourceTypes
+end
+
 local function addZonesFromRow(zones, seen, row)
     if type(row) ~= "table" then
         return

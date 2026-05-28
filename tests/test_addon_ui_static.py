@@ -35,10 +35,11 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 4",
+            "local DEFAULTS_VERSION = 5",
             "window = {",
-            "showMinimap = true",
             "minimap = {",
+            "hide = false",
+            "minimapPos = 225",
             "tooltips = {",
             "specFilters = {}",
             "specFiltersInitialized = false",
@@ -51,6 +52,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "wishlist = {}",
             "ignoredItems = {}",
             "migrateLegacyDefaults",
+            "migrateMinimapSettings",
             "ensureTooltipSpecFilters",
             "EnsureTooltipSpecFilters",
             "GetTooltipSpecFilterKey",
@@ -63,7 +65,7 @@ class AddonUIStaticTests(unittest.TestCase):
         data_index = self.read_lua("DataIndex.lua")
         for method in ["OpenMainFrame", "CloseMainFrame", "ToggleMainFrame", "RefreshUI"]:
             self.assertIn(f"function BigBiSList:{method}()", ui)
-        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
+        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
             self.assertIn(f"function BigBiSList:{method}", data_index)
         self.assertIn("function BigBiSList:SetSelection", self.read_lua("Config.lua"))
 
@@ -387,6 +389,37 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, ui)
 
+    def test_source_filter_options_are_context_aware(self):
+        data_index = self.read_lua("DataIndex.lua")
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "GetAvailableFilterSourceTypes",
+            "cloneFiltersForSourceTypeOptions",
+            'scopedFilters.sourceType = "all"',
+            "scopedFilters.sourceTypes = nil",
+            "addSourceTypeFromRow",
+        ]:
+            self.assertIn(token, data_index)
+        for token in [
+            "GetAvailableSourceTypeValues",
+            "ValidateSourceTypeFilter",
+            "IsSourceTypeValueAvailable",
+            "for _, sourceType in ipairs(self:GetAvailableSourceTypeValues())",
+        ]:
+            self.assertIn(token, ui)
+        source_dropdown_body = ui.split("function UI:GetSourceDropdownItems()", 1)[1].split("function UI:GetZoneDropdownItems()", 1)[0]
+        self.assertNotIn("BigBiSList:GetDataIndex().sourceTypes", source_dropdown_body)
+
+    def test_availability_filters_include_runtime_filter_payloads(self):
+        ui = self.read_lua("UI.lua")
+        availability_body = ui.split("function UI:GetAvailabilityFilters()", 1)[1].split("function UI:GetAvailableSourceTypeValues()", 1)[0]
+        for token in [
+            "filters.ownedItems = self.currentOwned or self:BuildOwnedItems()",
+            "filters.ignoredItems = BigBiSListDB.char.ignoredItems",
+            "filters.hideIgnored = true",
+        ]:
+            self.assertIn(token, availability_body)
+
     def test_rank_filter_labels_are_clear(self):
         ui = self.read_lua("UI.lua")
         for token in [
@@ -507,18 +540,24 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("UISpecialFrames", ui)
         self.assertIn("OnEscapePressed", ui)
 
-    def test_minimap_button_is_native_and_toggleable(self):
+    def test_minimap_button_is_broker_based_and_toggleable(self):
         minimap = self.read_lua("Minimap.lua")
         ui = self.read_lua("UI.lua")
         core = self.read_lua("Core.lua")
         for token in [
-            '"BigBiSListMinimapButton"',
-            "Interface\\\\Icons\\\\INV_Misc_QuestionMark",
-            "RegisterForDrag",
+            "Interface\\\\AddOns\\\\BigBiSList\\\\assets\\\\icon.tga",
+            'LibStub("LibDataBroker-1.1", true)',
+            'LibStub("LibDBIcon-1.0", true)',
+            "NewDataObject",
+            'type = "launcher"',
+            "LDBIcon:Register",
+            "LDBIcon:Refresh",
+            "GetMinimapButton",
             "ToggleMainFrame",
             "RefreshMinimapButton",
-            "profile.showMinimap",
+            "profile.minimap.hide",
         ]:
             self.assertIn(token, minimap)
         self.assertIn("Show minimap button", ui)
+        self.assertIn("profile.minimap.hide", ui)
         self.assertIn("InitMinimapButton", core)

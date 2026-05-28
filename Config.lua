@@ -20,13 +20,13 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 4
+local DEFAULTS_VERSION = 5
 
 BigBiSList.defaults = {
     profile = {
-        showMinimap = true,
         minimap = {
-            angle = 225,
+            hide = false,
+            minimapPos = 225,
         },
         window = {
             point = "CENTER",
@@ -121,6 +121,26 @@ local function migrateLegacyDefaults(db, previousVersion)
         char.selection.phase = "PR"
         char.selectedPhase = "PR"
     end
+end
+
+local function migrateMinimapSettings(db)
+    local profile = db.profile or {}
+    db.profile = profile
+
+    if type(profile.minimap) ~= "table" then
+        profile.minimap = {}
+    end
+
+    local minimap = profile.minimap
+    if minimap.minimapPos == nil and minimap.angle ~= nil then
+        minimap.minimapPos = minimap.angle
+    end
+    minimap.angle = nil
+
+    if profile.showMinimap == false then
+        minimap.hide = true
+    end
+    profile.showMinimap = nil
 end
 
 local function ensureTooltipSpecFilters(db)
@@ -228,6 +248,7 @@ function BigBiSList:EnsureDatabase()
     local previousVersion = BigBiSListDB.profile.defaultsVersion
 
     migrateSelection(BigBiSListDB.char)
+    migrateMinimapSettings(BigBiSListDB)
     applyDefaults(BigBiSListDB, self.defaults)
     migrateSelection(BigBiSListDB.char)
     migrateLegacyDefaults(BigBiSListDB, previousVersion)

@@ -42,10 +42,20 @@ $addonsRoot = Join-Path $clientRootFull "Interface\AddOns"
 $targetRoot = Join-Path $addonsRoot $AddonName
 Assert-SafeAddonTarget -TargetPath $targetRoot -AddonName $AddonName
 
-$tocEntries = Get-Content -LiteralPath $tocPath | ForEach-Object {
-    $line = $_.Trim()
-    if ($line -and -not $line.StartsWith("#")) {
-        $line
+$tocEntries = [System.Collections.Generic.List[string]]::new()
+$iconTexture = $null
+foreach ($tocLine in Get-Content -LiteralPath $tocPath) {
+    $line = $tocLine.Trim()
+    if (-not $line) {
+        continue
+    }
+
+    if ($line -match "^##\s*IconTexture\s*:\s*(.+)$") {
+        $iconTexture = $Matches[1].Trim()
+    }
+
+    if (-not $line.StartsWith("#")) {
+        [void]$tocEntries.Add($line)
     }
 }
 
@@ -54,6 +64,16 @@ $deployEntries = [System.Collections.Generic.List[string]]::new()
 foreach ($entry in $tocEntries) {
     if (-not $deployEntries.Contains($entry)) {
         [void]$deployEntries.Add($entry)
+    }
+}
+
+if ($iconTexture) {
+    $addonTexturePrefix = "Interface\AddOns\$AddonName\"
+    if ($iconTexture.StartsWith($addonTexturePrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
+        $iconEntry = $iconTexture.Substring($addonTexturePrefix.Length)
+        if ($iconEntry -and -not $deployEntries.Contains($iconEntry)) {
+            [void]$deployEntries.Add($iconEntry)
+        }
     }
 }
 

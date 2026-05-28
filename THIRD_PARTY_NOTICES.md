@@ -18,6 +18,18 @@ The reference addon is identified in project documentation as MIT licensed.
 Big BiS List preserves attribution to that project while publishing Big BiS
 List itself under the All Rights Reserved license in `LICENSE`.
 
+## Embedded Libraries
+
+Big BiS List bundles lightweight WoW addon libraries under `lib/` for
+DataBroker launcher and minimap-button integration:
+
+- `LibStub`
+- `CallbackHandler-1.0`
+- `LibDataBroker-1.1`
+- `LibDBIcon-1.0`
+
+Library source headers are preserved in the bundled files.
+
 ## Data Sources
 
 Generated release data is derived from audited local snapshots of Wowhead TBC

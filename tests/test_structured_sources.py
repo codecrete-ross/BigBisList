@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import tools.scrape_wowhead as scraper
 from tools.project import canonical_json
 from tools.scrape_wowhead import build_audit
-from tools.sources import phase_rank, summarize_sources
+from tools.sources import derive_primary_source, phase_rank, summarize_sources
 
 
 class StructuredSourceTests(unittest.TestCase):
@@ -39,6 +39,32 @@ class StructuredSourceTests(unittest.TestCase):
                     violations.append(f"{item['id']} {item['name']} still labels {source.get('entity_name')} as Tanaris")
         self.assertEqual(violations, [])
 
+    def test_primary_source_prefers_observed_drop_over_placeholder_duplicate(self):
+        primary = derive_primary_source(
+            [
+                {
+                    "type": "drop",
+                    "entity_id": 21174,
+                    "entity_name": "Magtheridon",
+                    "count": -1,
+                    "out_of": 0,
+                    "confidence": "fixture",
+                },
+                {
+                    "type": "drop",
+                    "entity_id": 17257,
+                    "entity_name": "Magtheridon",
+                    "zone": "Magtheridon's Lair",
+                    "count": 1541,
+                    "out_of": 10798,
+                    "drop_percent": 14.27,
+                    "confidence": "fixture",
+                },
+            ]
+        )
+        self.assertEqual(primary["entity_id"], 17257)
+        self.assertEqual(primary["zone"], "Magtheridon's Lair")
+
     def test_no_synthetic_unknown_zone_in_item_sources(self):
         violations = []
         for item in self.items.values():
@@ -46,6 +72,22 @@ class StructuredSourceTests(unittest.TestCase):
                 if source.get("zone") == "Unknown":
                     violations.append(f"{item['id']} {item['name']}")
         self.assertEqual(violations, [])
+
+    def test_feral_dps_phase_1_has_expected_dungeon_zones(self):
+        rows = [
+            row
+            for row in canonical_json("bis_lists")["lists"]
+            if row["class"] == "Druid" and row["spec"] == "Feral dps" and row["phase"] == "T4"
+        ]
+        item_ids = {entry["item_id"] for row in rows for entry in row.get("items", [])}
+        zones = {
+            source["zone"]
+            for item_id in item_ids
+            for source in self.items[item_id].get("sources", [])
+            if source.get("zone")
+        }
+        for zone in ["Auchenai Crypts", "Old Hillsbrad Foothills", "The Black Morass", "The Blood Furnace", "The Botanica", "The Arcatraz", "The Underbog"]:
+            self.assertIn(zone, zones)
 
     def test_earthwarden_rep_prereq_is_structured(self):
         item = self.items[29171]

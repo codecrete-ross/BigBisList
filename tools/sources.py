@@ -78,10 +78,25 @@ def derive_acquisition_phase(sources: list[dict[str, Any]]) -> str:
     return min((derive_source_acquisition_phase(source) for source in sources), key=phase_rank)
 
 
+def _source_data_quality_rank(source: dict[str, Any]) -> int:
+    if source.get("type") != "drop":
+        return 0
+
+    count = source.get("count")
+    out_of = source.get("out_of")
+    if isinstance(count, (int, float)) and isinstance(out_of, (int, float)):
+        if count >= 0 and out_of > 0:
+            return 0
+        return 2
+
+    return 1 if source.get("drop_percent") is None else 0
+
+
 def _source_sort_key(source: dict[str, Any]) -> tuple:
     drop_percent = source.get("drop_percent")
     drop_rank = -float(drop_percent) if isinstance(drop_percent, (int, float)) else 0.0
     return (
+        _source_data_quality_rank(source),
         phase_rank(derive_source_acquisition_phase(source)),
         SOURCE_TYPE_PRIORITY.get(str(source.get("type", "unknown")), 99),
         drop_rank,

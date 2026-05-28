@@ -110,21 +110,54 @@ PROFESSION_SPECIALIZATION_PROFESSIONS = {
 
 ZONE_ID_NAMES = {
     440: "Tanaris",
+    1377: "Silithus",
+    1583: "Blackrock Spire",
+    1584: "Blackrock Depths",
+    1941: "Caverns of Time",
+    1977: "Zul'Gurub",
     2017: "Stratholme",
+    2057: "Scholomance",
+    2366: "The Black Morass",
+    2367: "Old Hillsbrad Foothills",
+    2557: "Dire Maul",
+    2677: "Blackwing Lair",
+    2717: "Molten Core",
+    3428: "Ahn'Qiraj",
+    3429: "Ruins of Ahn'Qiraj",
+    3456: "Naxxramas",
     3457: "Karazhan",
+    3483: "Hellfire Peninsula",
     3518: "Nagrand",
+    3519: "Terokkar Forest",
     3520: "Shadowmoon Valley",
+    3521: "Zangarmarsh",
     3522: "Blade's Edge Mountains",
     3523: "Netherstorm",
+    3562: "Hellfire Ramparts",
     3606: "Hyjal Summit",
     3607: "Serpentshrine Cavern",
+    3688: "Auchindoun",
     3703: "Shattrath City",
+    3713: "The Blood Furnace",
+    3714: "The Shattered Halls",
+    3715: "The Steamvault",
+    3716: "The Underbog",
+    3717: "The Slave Pens",
+    3789: "Shadow Labyrinth",
+    3790: "Auchenai Crypts",
+    3791: "Sethekk Halls",
+    3792: "Mana-Tombs",
     3805: "Zul'Aman",
     3836: "Magtheridon's Lair",
     3845: "Tempest Keep",
+    3847: "The Botanica",
+    3848: "The Arcatraz",
+    3849: "The Mechanar",
     3923: "Gruul's Lair",
     3959: "Black Temple",
     4075: "Sunwell Plateau",
+    4080: "Isle of Quel'Danas",
+    4131: "Magisters' Terrace",
 }
 
 CAVERNS_OF_TIME_ENTITY_IDS = {
@@ -533,6 +566,7 @@ def extract_reputation_requirements(text: str, source_url: str, scope: str, conf
         rf"\b(?:requires?|when|at|learned at)\s+(?P<standing>{standing_pattern})(?:\s+reputation)?\s+(?:with|from)\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
         rf"\b(?P<standing>{standing_pattern})(?:\s+reputation)?\s+with\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
         rf"\((?P<reputation>[^()]+?)\s*(?:-\s*)?(?P<standing>{standing_pattern})\)",
+        rf"(?:^|[-:]\s+|\()\s*(?P<reputation>[^,().:;-]+?)\s+(?P<standing>{standing_pattern})(?=[,.)]|$)",
     ]
     for pattern in patterns:
         for match in re.finditer(pattern, text, flags=re.IGNORECASE):
@@ -693,12 +727,45 @@ def attach_requirements_to_source(source: dict[str, Any], source_url: str, defau
     return source
 
 
+def normalize_requirement_reputation_names(requirements: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    normalized: list[dict[str, Any]] = []
+    for requirement in requirements:
+        if not isinstance(requirement, dict):
+            continue
+        if requirement.get("type") == "reputation":
+            reputation_names = normalize_reputation_names(requirement.get("reputation"))
+            if reputation_names:
+                for reputation_name in reputation_names:
+                    copy = deepcopy(requirement)
+                    copy["reputation"] = reputation_name
+                    normalized.append(copy)
+                continue
+        elif requirement.get("type") == "faction_choice":
+            choices: list[str] = []
+            for choice in requirement.get("choices") or []:
+                for reputation_name in normalize_reputation_names(choice):
+                    if reputation_name not in choices:
+                        choices.append(reputation_name)
+            if choices:
+                copy = deepcopy(requirement)
+                copy["choices"] = choices
+                normalized.append(copy)
+                continue
+        normalized.append(requirement)
+    return dedupe_requirements(normalized)
+
+
 def row_requirements(row: dict[str, Any], source_url: str) -> list[dict[str, Any]]:
+    source_text = clean_text(str(row.get("source_text") or row.get("text") or ""))
+    parsed_requirements = extract_requirements_from_text(source_text, source_url, requirement_scope_from_source_text(source_text), "parsed_source_text")
     requirements = row.get("normalized_requirements")
     if isinstance(requirements, list):
-        return dedupe_requirements([requirement for requirement in requirements if isinstance(requirement, dict)])
-    source_text = clean_text(str(row.get("source_text") or row.get("text") or ""))
-    return extract_requirements_from_text(source_text, source_url, requirement_scope_from_source_text(source_text), "parsed_source_text")
+        normalized_requirements = normalize_requirement_reputation_names([requirement for requirement in requirements if isinstance(requirement, dict)])
+        if parsed_requirements:
+            structured_requirements = [requirement for requirement in normalized_requirements if requirement.get("type") != "unknown_text"]
+            return dedupe_requirements(parsed_requirements + structured_requirements)
+        return normalized_requirements
+    return parsed_requirements
 
 
 def parse_guide_sections(soup: BeautifulSoup, entity_names: dict[str, dict[int, str]] | None = None) -> list[dict[str, Any]]:
@@ -1580,8 +1647,27 @@ def load_snapshots(input_dir: Path) -> list[dict[str, Any]]:
         with path.open("r", encoding="utf-8") as handle:
             snapshot = json.load(handle)
         if isinstance(snapshot, dict) and snapshot.get("parser_version"):
-            snapshots.append(snapshot)
+            snapshots.append(refresh_snapshot_normalized_sources(snapshot))
     return snapshots
+
+
+def refresh_snapshot_normalized_sources(snapshot: dict[str, Any]) -> dict[str, Any]:
+    related_tables = snapshot.get("related_tables")
+    if not isinstance(related_tables, dict):
+        return snapshot
+
+    page_type = snapshot.get("page_type")
+    url = str(snapshot.get("url") or "")
+    if page_type == "item":
+        refreshed = deepcopy(snapshot)
+        refreshed["normalized_sources"] = normalize_item_sources(url, related_tables)
+        refreshed["taught_by_items"] = related_tables.get("taught-by-item", [])
+        return refreshed
+    if page_type == "spell":
+        refreshed = deepcopy(snapshot)
+        refreshed["normalized_sources"] = normalize_spell_sources(url, related_tables)
+        return refreshed
+    return snapshot
 
 
 def reprocess_cached_snapshots(input_dir: Path, output_dir: Path) -> dict[str, Any]:
@@ -2801,7 +2887,7 @@ def snapshot_requirements(snapshot: dict[str, Any] | None) -> list[dict[str, Any
     if not snapshot:
         return []
     requirements = snapshot.get("normalized_requirements", [])
-    return dedupe_requirements([requirement for requirement in requirements if isinstance(requirement, dict)])
+    return normalize_requirement_reputation_names([requirement for requirement in requirements if isinstance(requirement, dict)])
 
 
 def source_list_requirements(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:

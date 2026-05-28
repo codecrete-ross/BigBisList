@@ -14,10 +14,23 @@ class AddonShellTests(unittest.TestCase):
         ]
         self.assertEqual(
             referenced_files,
-            ["Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "Tooltip.lua", "Minimap.lua", "Core.lua"],
+            [
+                "lib\\LibStub\\LibStub.lua",
+                "lib\\CallbackHandler-1.0\\CallbackHandler-1.0.lua",
+                "lib\\LibDataBroker-1.1\\LibDataBroker-1.1.lua",
+                "lib\\LibDBIcon-1.0\\LibDBIcon-1.0.lua",
+                "Data.lua",
+                "Config.lua",
+                "DataIndex.lua",
+                "Widgets.lua",
+                "UI.lua",
+                "Tooltip.lua",
+                "Minimap.lua",
+                "Core.lua",
+            ],
         )
         for file_name in referenced_files:
-            self.assertTrue((ADDON_DIR / file_name).is_file(), file_name)
+            self.assertTrue(ADDON_DIR.joinpath(*file_name.split("\\")).is_file(), file_name)
 
     def test_addon_shell_uses_bigbislist_identity(self):
         toc_text = (ADDON_DIR / "BigBiSList.toc").read_text(encoding="utf-8")

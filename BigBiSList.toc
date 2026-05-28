@@ -4,8 +4,13 @@
 ## Author: Big BiS List contributors
 ## Version: @project-version@
 ## SavedVariables: BigBiSListDB
+## IconTexture: Interface\AddOns\BigBiSList\assets\icon.tga
 ## X-Game-Flavor: TBC Anniversary
 
+lib\LibStub\LibStub.lua
+lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
+lib\LibDataBroker-1.1\LibDataBroker-1.1.lua
+lib\LibDBIcon-1.0\LibDBIcon-1.0.lua
 Data.lua
 Config.lua
 DataIndex.lua

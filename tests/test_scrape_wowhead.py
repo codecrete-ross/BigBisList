@@ -1,6 +1,7 @@
 import contextlib
 import io
 import json
+from pathlib import Path
 from types import SimpleNamespace
 import tempfile
 import unittest
@@ -344,10 +345,121 @@ class WowheadScraperParserTests(unittest.TestCase):
         )
         self.assertEqual([requirement["reputation"] for requirement in requirements], ["Honor Hold", "Thrallmar"])
 
+        requirements = scraper.extract_requirements_from_text(
+            "Quartermaster Enuril - The Scryers Exalted, Shattrath City",
+            source_url,
+            "vendor_purchase",
+            "parsed_source_text",
+        )
+        self.assertEqual(requirements[0]["reputation"], "The Scryers")
+
+    def test_row_requirements_normalize_committed_snapshot_reputation_aliases(self):
+        requirements = scraper.row_requirements(
+            {
+                "normalized_requirements": [
+                    {
+                        "type": "reputation",
+                        "reputation": "The Mag'har / Kurenai",
+                        "standing": "Revered",
+                        "standing_rank": 7,
+                        "scope": "vendor_purchase",
+                        "source_url": "https://www.wowhead.com/tbc/guide/example",
+                        "confidence": "parsed_source_text",
+                    }
+                ]
+            },
+            "https://www.wowhead.com/tbc/guide/example",
+        )
+        self.assertEqual([requirement["reputation"] for requirement in requirements], ["The Mag'har", "Kurenai"])
+
+    def test_row_requirements_reparse_stale_unknown_text(self):
+        requirements = scraper.row_requirements(
+            {
+                "source_text": "Vendor: Fedryen Swiftspear - Exalted with Cenarion Expedition",
+                "normalized_requirements": [
+                    {
+                        "type": "unknown_text",
+                        "raw_text": "Vendor: Fedryen Swiftspear - Exalted with Cenarion Expedition",
+                        "scope": "vendor_purchase",
+                        "source_url": "https://www.wowhead.com/tbc/guide/example",
+                        "confidence": "parsed_source_text",
+                    }
+                ],
+            },
+            "https://www.wowhead.com/tbc/guide/example",
+        )
+        self.assertEqual(requirements[0]["type"], "reputation")
+        self.assertEqual(requirements[0]["reputation"], "Cenarion Expedition")
+
     def test_caverns_of_time_zone_normalizes_known_location_440_vendors(self):
         self.assertEqual(scraper.first_zone_name({"id": 21643, "name": "Alurmi", "location": [440]}), "Caverns of Time")
         self.assertEqual(scraper.first_zone_name({"id": 19932, "name": "Andormu", "location": [440]}), "Caverns of Time")
         self.assertEqual(scraper.first_zone_name({"id": 99999, "name": "Tanaris NPC", "location": [440]}), "Tanaris")
+
+    def test_tbc_dungeon_zone_ids_are_normalized(self):
+        cases = {
+            2366: "The Black Morass",
+            2367: "Old Hillsbrad Foothills",
+            3562: "Hellfire Ramparts",
+            3713: "The Blood Furnace",
+            3714: "The Shattered Halls",
+            3715: "The Steamvault",
+            3716: "The Underbog",
+            3717: "The Slave Pens",
+            3789: "Shadow Labyrinth",
+            3790: "Auchenai Crypts",
+            3791: "Sethekk Halls",
+            3792: "Mana-Tombs",
+            3847: "The Botanica",
+            3848: "The Arcatraz",
+            3849: "The Mechanar",
+            4131: "Magisters' Terrace",
+        }
+        for zone_id, expected in cases.items():
+            with self.subTest(zone_id=zone_id):
+                self.assertEqual(scraper.first_zone_name({"id": 1, "location": [zone_id]}), expected)
+
+    def test_load_snapshots_refreshes_normalized_sources_from_related_tables(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "snapshot.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "parser_version": "fixture",
+                        "url": "https://www.wowhead.com/tbc/item=27797/wastewalker-shoulderpads",
+                        "page_type": "item",
+                        "item_id": 27797,
+                        "name": "Wastewalker Shoulderpads",
+                        "related_tables": {
+                            "dropped-by": [
+                                {
+                                    "id": 18478,
+                                    "name": "Avatar of the Martyred",
+                                    "location": [3790],
+                                    "count": 14,
+                                    "outof": 136,
+                                }
+                            ]
+                        },
+                        "normalized_sources": [
+                            {
+                                "type": "drop",
+                                "entity_id": 18478,
+                                "entity_name": "Avatar of the Martyred",
+                                "source_url": "https://www.wowhead.com/tbc/item=27797/wastewalker-shoulderpads",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            snapshot = scraper.load_snapshots(Path(tmpdir))[0]
+
+        source = snapshot["normalized_sources"][0]
+        self.assertEqual(source["entity_name"], "Avatar of the Martyred")
+        self.assertEqual(source["zone"], "Auchenai Crypts")
+        self.assertEqual(source["drop_percent"], 10.29)
 
     def test_item_parser_uses_caverns_of_time_for_known_vendors(self):
         html = """
@@ -594,7 +706,7 @@ class WowheadScraperParserTests(unittest.TestCase):
         finally:
             scraper.manifest_sources_by_url = original
 
-        self.assertEqual(row["source_summary"], "Vendor: Logistics Officer Ulrike")
+        self.assertEqual(row["source_summary"], "Vendor: Logistics Officer Ulrike (Hellfire Peninsula)")
 
     def test_feral_druid_dps_imports_all_wowhead_enchants(self):
         snapshot_path = next((scraper.RAW_WOWHEAD_DIR / "full_enchants").glob("*druid-feral-dps-enchants-gems*.json"))

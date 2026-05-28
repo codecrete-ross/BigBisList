@@ -897,7 +897,16 @@ function UI:GetAvailabilityFilters()
     end
     local accessState = self.currentAccess or self:BuildAccessState()
     filters.faction = accessState and accessState.playerSide or "all"
+    filters.ownedItems = self.currentOwned or self:BuildOwnedItems()
+    filters.ignoredItems = BigBiSListDB.char.ignoredItems
+    filters.hideIgnored = true
     return filters
+end
+
+function UI:GetAvailableSourceTypeValues()
+    local selection = self:GetSelection()
+    local filters = self:GetAvailabilityFilters()
+    return BigBiSList:GetAvailableFilterSourceTypes(selection.class, selection.spec, selection.phase, selection.tab, filters)
 end
 
 function UI:GetAvailableZoneValues()
@@ -910,6 +919,26 @@ function UI:GetAvailableReputationValues()
     local selection = self:GetSelection()
     local filters = self:GetAvailabilityFilters()
     return BigBiSList:GetAvailableFilterReputations(selection.class, selection.spec, selection.phase, selection.tab, filters)
+end
+
+function UI:IsSourceTypeValueAvailable(sourceType)
+    if not sourceType or sourceType == "all" then
+        return true
+    end
+
+    for _, availableSourceType in ipairs(self:GetAvailableSourceTypeValues()) do
+        if availableSourceType == sourceType then
+            return true
+        end
+    end
+    return false
+end
+
+function UI:ValidateSourceTypeFilter()
+    local filters = self:GetFilters()
+    if filters.sourceType and filters.sourceType ~= "all" and not self:IsSourceTypeValueAvailable(filters.sourceType) then
+        filters.sourceType = "all"
+    end
 end
 
 function UI:IsZoneValueAvailable(zone)
@@ -954,9 +983,11 @@ end
 
 function UI:BuildFilterPayload()
     local filters = self:GetFilters()
+    self.currentAccess = self:BuildAccessState()
+    self.currentOwned = self:BuildOwnedItems()
+    self:ValidateSourceTypeFilter()
     self:ValidateZoneFilter()
     self:ValidateReputationFilter()
-    self.currentAccess = self:BuildAccessState()
     return {
         search = filters.search,
         sourceType = filters.sourceType,
@@ -969,7 +1000,7 @@ function UI:BuildFilterPayload()
         faction = self.currentAccess and self.currentAccess.playerSide or "all",
         longevity = filters.longevity,
         slots = filters.slots,
-        ownedItems = self:BuildOwnedItems(),
+        ownedItems = self.currentOwned,
         ignoredItems = BigBiSListDB.char.ignoredItems,
         hideIgnored = true,
     }
@@ -1072,11 +1103,12 @@ end
 
 function UI:GetSourceDropdownItems()
     local filters = self:GetFilters()
+    self:ValidateSourceTypeFilter()
     local labels = BigBiSList:GetSourceTypeLabels()
     local items = {
         { value = "all", text = labels.all, checked = filters.sourceType == "all" },
     }
-    for _, sourceType in ipairs(BigBiSList:GetDataIndex().sourceTypes) do
+    for _, sourceType in ipairs(self:GetAvailableSourceTypeValues()) do
         table.insert(items, {
             value = sourceType,
             text = labels[sourceType] or sourceType,
@@ -1161,6 +1193,7 @@ end
 
 function UI:SetSpec(specName)
     BigBiSList:SetSelection(nil, specName, nil, nil)
+    self:ValidateSourceTypeFilter()
     self:ValidateZoneFilter()
     self:ValidateReputationFilter()
     self:Refresh()
@@ -1168,6 +1201,7 @@ end
 
 function UI:SetPhase(phaseKey)
     BigBiSList:SetSelection(nil, nil, phaseKey, nil)
+    self:ValidateSourceTypeFilter()
     self:ValidateZoneFilter()
     self:ValidateReputationFilter()
     self:Refresh()
@@ -1175,6 +1209,7 @@ end
 
 function UI:SetTab(tabName)
     BigBiSList:SetSelection(nil, nil, nil, tabName)
+    self:ValidateSourceTypeFilter()
     self:ValidateZoneFilter()
     self:ValidateReputationFilter()
     self:Refresh()
@@ -1184,6 +1219,7 @@ function UI:SetFilter(key, value)
     local filters = self:GetFilters()
     filters[key] = value
     if key == "sourceType" or key == "zone" or key == "reputation" then
+        self:ValidateSourceTypeFilter()
         self:ValidateZoneFilter()
         self:ValidateReputationFilter()
     end
@@ -2059,9 +2095,9 @@ function UI:RenderSettingsTab()
     local generalSettings = {
         {
             label = "Show minimap button",
-            get = function() return profile.showMinimap end,
+            get = function() return not profile.minimap.hide end,
             set = function(value)
-                profile.showMinimap = value
+                profile.minimap.hide = not value
                 if BigBiSList.RefreshMinimapButton then
                     BigBiSList:RefreshMinimapButton()
                 end
