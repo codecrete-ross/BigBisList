@@ -81,6 +81,32 @@ local function clearTooltipRenderGuard(tooltip)
     end
 end
 
+local function shouldAnnotateTooltip(tooltip)
+    if not tooltip or not tooltip.AddLine or not tooltip.AddDoubleLine then
+        return false
+    end
+
+    return tooltip == GameTooltip or tooltip == ItemRefTooltip
+end
+
+local function reportTooltipError(err)
+    local handler = geterrorhandler and geterrorhandler()
+    if handler then
+        pcall(handler, err)
+    end
+end
+
+local function addTooltipInfoSafely(tooltip, tooltipData)
+    if not shouldAnnotateTooltip(tooltip) then
+        return
+    end
+
+    local ok, err = pcall(BigBiSList.AddTooltipInfo, BigBiSList, tooltip, tooltipData)
+    if not ok then
+        reportTooltipError(err)
+    end
+end
+
 local function lineForTooltipMatch(match)
     local left = match.class .. " " .. match.spec
     if match.slot and match.slot ~= "" then
@@ -100,6 +126,10 @@ local function lineForTooltipMatch(match)
 end
 
 function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
+    if not shouldAnnotateTooltip(tooltip) then
+        return
+    end
+
     self:EnsureDatabase()
 
     local settings = BigBiSListDB.profile.tooltips
@@ -166,7 +196,7 @@ local function hookTooltip(tooltip)
     end
     tooltip.__bigBisListHooked = true
     tooltip:HookScript("OnTooltipSetItem", function(hookedTooltip)
-        BigBiSList:AddTooltipInfo(hookedTooltip)
+        addTooltipInfoSafely(hookedTooltip)
     end)
     tooltip:HookScript("OnTooltipCleared", clearTooltipRenderGuard)
 end
@@ -178,7 +208,7 @@ function BigBiSList:InitTooltip()
 
     if TooltipDataProcessor and Enum and Enum.TooltipDataType and Enum.TooltipDataType.Item then
         TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip, tooltipData)
-            BigBiSList:AddTooltipInfo(tooltip, tooltipData)
+            addTooltipInfoSafely(tooltip, tooltipData)
         end)
     end
 

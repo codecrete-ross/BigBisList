@@ -1925,19 +1925,37 @@ end
 
 function UI:CreateTooltipSpecClassHeader(parent, yOffset, className)
     local widgets = BigBiSList.Widgets
-    local header, headerHeight = widgets:CreateSectionHeader(parent, "Tooltip Specs - " .. className, yOffset)
+    local headerHeight = 34
+    local header = CreateFrame("Frame", nil, parent)
+    header:SetHeight(headerHeight)
+    header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
+    header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
+
+    local line = header:CreateTexture(nil, "ARTWORK")
+    line:SetColorTexture(0.55, 0.55, 0.58, 0.45)
+    line:SetHeight(1)
+    line:SetPoint("BOTTOMLEFT", header, "BOTTOMLEFT", 0, 6)
+    line:SetPoint("BOTTOMRIGHT", header, "BOTTOMRIGHT", 0, 6)
 
     local noneButton = widgets:CreateTextButton(header, "None", 54, 22, function()
         self:SetTooltipClassSpecFilters(className, false)
         self:Refresh()
     end)
-    noneButton:SetPoint("TOPRIGHT", header, "TOPRIGHT", -8, -2)
+    noneButton:SetPoint("RIGHT", header, "RIGHT", -8, 4)
 
     local allButton = widgets:CreateTextButton(header, "All", 54, 22, function()
         self:SetTooltipClassSpecFilters(className, true)
         self:Refresh()
     end)
     allButton:SetPoint("RIGHT", noneButton, "LEFT", -6, 0)
+
+    local label = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    label:SetPoint("LEFT", header, "LEFT", 8, 4)
+    label:SetPoint("RIGHT", allButton, "LEFT", -8, 0)
+    label:SetJustifyH("LEFT")
+    label:SetWordWrap(false)
+    label:SetTextColor(1, 0.82, 0.28, 1)
+    label:SetText("Tooltip Specs - " .. className)
 
     return header, headerHeight
 end

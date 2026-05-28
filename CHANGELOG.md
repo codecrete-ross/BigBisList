@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.2.0 - 2026-05-28
+
+### Added
+
+- Tooltip settings for choosing exactly which class/spec matches should appear.
+- Grouped tooltip summaries that collapse repeated phase matches by class, spec,
+  and slot while preserving ALT expansion for full details.
+- Gear, planner, source, reputation, and access-path UI hardening from the
+  prerelease data cleanup work.
+- Internal release governance and a local deploy script for Anniversary client
+  smoke testing.
+
+### Changed
+
+- Big BiS tooltip annotations now stay on the primary item tooltip frames to
+  avoid interfering with comparison and auxiliary tooltip layouts.
+- Tooltip callbacks are protected so Big BiS errors cannot break the tooltip
+  hook chain.
+- Settings class/spec filter headers align class labels with their All/None
+  controls.
+
+### Data Quality
+
+- Normalized source and reputation data used by acquisition filters and access
+  checks.
+- Refreshed generated Lua from the audited canonical data set.
+
 ## 0.1.0 - Release
 
 Initial public release for Big BiS List. This release targets TBC
