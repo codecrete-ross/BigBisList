@@ -99,6 +99,19 @@ local SOURCE_TYPE_PREFIXES = {
     unknown = "Source",
 }
 
+local CONSUMABLE_CATEGORY_LABELS = {
+    battle_elixir = "Battle Elixir",
+    guardian_elixir = "Guardian Elixir",
+    elixir = "Elixir",
+    flask = "Flask",
+    potion = "Potion",
+    food = "Food",
+    weapon_oil = "Weapon Buff",
+    scroll = "Scroll",
+    drum = "Drum",
+    utility = "Utility",
+}
+
 local RANK_GROUP_ORDER = {
     bis = 1,
     ranked = 2,
@@ -747,6 +760,82 @@ local function getItemName(itemId, item)
         return item.name
     end
     return "Item " .. tostring(itemId)
+end
+
+local function consumableCategoryLabel(category)
+    return CONSUMABLE_CATEGORY_LABELS[category or ""] or tostring(category or "Consumable")
+end
+
+local function consumableDetailLabel(consumable, itemIndex)
+    local category = consumable and consumable.category
+    if itemIndex and consumable and consumable.item_categories then
+        category = consumable.item_categories[itemIndex] or category
+    end
+    return consumableCategoryLabel(category)
+end
+
+local function consumableCanGroupAlternatives(consumable, itemIds)
+    if not consumable or consumable.relationship ~= "or" or #(itemIds or {}) <= 1 then
+        return false
+    end
+
+    local firstCategory
+    for itemIndex in ipairs(itemIds) do
+        local category = consumable.item_categories and consumable.item_categories[itemIndex] or consumable.category
+        if itemIndex == 1 then
+            firstCategory = category
+        elseif category ~= firstCategory then
+            return false
+        end
+    end
+
+    return true
+end
+
+local function consumableDisplayName(consumable, itemIds, index)
+    if consumable and consumable.text and consumable.text ~= "" then
+        return consumable.text
+    end
+
+    local names = {}
+    for itemIndex, itemId in ipairs(itemIds or {}) do
+        local item = index.itemsById[itemId]
+        names[itemIndex] = consumable.item_names and consumable.item_names[itemIndex] or getItemName(itemId, item)
+    end
+
+    local separator = consumable and consumable.relationship == "or" and " or " or " and "
+    return table.concat(names, separator)
+end
+
+local function consumableSourceSummary(consumable, itemIds)
+    local summaries = {}
+    local seen = {}
+    for _, itemId in ipairs(itemIds or {}) do
+        local summary = consumable.source_summaries and consumable.source_summaries[tostring(itemId)] or ""
+        if summary ~= "" and not seen[summary] then
+            seen[summary] = true
+            table.insert(summaries, summary)
+        end
+    end
+    return table.concat(summaries, " / ")
+end
+
+local function appendAccessOptions(result, options)
+    for _, option in ipairs(options or {}) do
+        table.insert(result, option)
+    end
+end
+
+local function buildConsumableAccessOptions(index, itemIds)
+    local accessOptions = {}
+    for _, itemId in ipairs(itemIds or {}) do
+        local item = index.itemsById[itemId]
+        appendAccessOptions(accessOptions, buildAccessOptions(item, nil, nil, { entityType = "item" }))
+    end
+    if #accessOptions == 0 then
+        return nil
+    end
+    return accessOptions
 end
 
 local function enhancementSourceKey(entityType, entityId)
@@ -1538,20 +1627,36 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
 
     for _, consumable in ipairs(index.enhancement.consumables or {}) do
         if consumable["class"] == className and consumable.spec == specName and consumable.phase == phaseKey then
-            for itemIndex, itemId in ipairs(consumable.items or {}) do
-                local item = index.itemsById[itemId]
-                local sourceSummary = consumable.source_summaries and consumable.source_summaries[tostring(itemId)] or ""
+            local itemIds = consumable.items or {}
+            if consumableCanGroupAlternatives(consumable, itemIds) then
+                local primaryItemId = itemIds[1]
+                local primaryItem = index.itemsById[primaryItemId]
                 table.insert(sections[3].rows, {
                     entity_type = "item",
-                    entity_id = itemId,
-                    item_id = itemId,
-                    item = item,
-                    name = consumable.item_names and consumable.item_names[itemIndex] or getItemName(itemId, item),
-                    detail = consumable.category_label or consumable.category or "Consumable",
-                    source_summary = sourceSummary,
-                    requirements = mergedRequirements(consumable.requirements, item and item.requirements),
-                    access_options = buildAccessOptions(item, nil, consumable.requirements, { entityType = "item" }),
+                    entity_id = primaryItemId,
+                    item_id = primaryItemId,
+                    item_ids = itemIds,
+                    item = primaryItem,
+                    name = consumableDisplayName(consumable, itemIds, index),
+                    detail = consumableDetailLabel(consumable),
+                    source_summary = consumableSourceSummary(consumable, itemIds),
+                    access_options = buildConsumableAccessOptions(index, itemIds),
                 })
+            else
+                for itemIndex, itemId in ipairs(itemIds) do
+                    local item = index.itemsById[itemId]
+                    table.insert(sections[3].rows, {
+                        entity_type = "item",
+                        entity_id = itemId,
+                        item_id = itemId,
+                        item = item,
+                        name = consumable.item_names and consumable.item_names[itemIndex] or getItemName(itemId, item),
+                        detail = consumableDetailLabel(consumable, itemIndex),
+                        source_summary = consumableSourceSummary(consumable, { itemId }),
+                        requirements = mergedRequirements(consumable.requirements, item and item.requirements),
+                        access_options = buildAccessOptions(item, nil, consumable.requirements, { entityType = "item" }),
+                    })
+                end
             end
         end
     end

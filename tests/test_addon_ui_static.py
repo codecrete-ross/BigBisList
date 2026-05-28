@@ -151,6 +151,29 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, data_index)
 
+    def test_enhance_consumable_alternatives_are_grouped(self):
+        data_index = self.read_lua("DataIndex.lua")
+        ui = self.read_lua("UI.lua")
+
+        for token in [
+            "CONSUMABLE_CATEGORY_LABELS",
+            "consumable.relationship == \"or\"",
+            "consumableCanGroupAlternatives",
+            "item_ids = itemIds",
+            "buildConsumableAccessOptions",
+            "consumableDisplayName",
+            "consumableDetailLabel",
+        ]:
+            self.assertIn(token, data_index)
+        self.assertLess(
+            data_index.index("consumableCanGroupAlternatives"),
+            data_index.index("for itemIndex, itemId in ipairs(itemIds)"),
+        )
+
+        self.assertIn("function UI:GetOwnershipState(itemId, itemIds)", ui)
+        self.assertIn("for _, candidateItemId in ipairs(itemIds or {})", ui)
+        self.assertIn("self:GetOwnershipState(data.item_id, data.item_ids)", ui)
+
     def test_trade_paths_are_explicit_access_options(self):
         data_index = self.read_lua("DataIndex.lua")
         for token in [

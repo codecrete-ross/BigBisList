@@ -2063,6 +2063,37 @@ def normalize_consumable_category(value: str) -> str:
     return "utility"
 
 
+def infer_consumable_category_from_item(snapshot: dict[str, Any] | None) -> str:
+    if not snapshot:
+        return "utility"
+    searchable = " ".join(
+        str(snapshot.get(key) or "")
+        for key in ["name", "description"]
+    )
+    return normalize_consumable_category(searchable)
+
+
+def merge_consumable_categories(categories: list[str], fallback: str) -> str:
+    meaningful = [category for category in categories if category and category != "utility"]
+    unique = sorted(set(meaningful))
+    if len(unique) == 1:
+        return unique[0]
+    if unique and all(category in {"battle_elixir", "guardian_elixir", "elixir"} for category in unique):
+        return "elixir"
+    return fallback or "utility"
+
+
+def consumable_relationship(text: str, item_count: int) -> str:
+    if item_count <= 1:
+        return "single"
+    normalized = f" {clean_text(text).lower()} "
+    has_or = bool(re.search(r"\bor\b", normalized)) or "/" in normalized
+    has_and = bool(re.search(r"\band\b", normalized)) or "+" in normalized
+    if has_or and not has_and:
+        return "or"
+    return "and"
+
+
 def enchant_formula_item_ids(spell_snapshot: dict[str, Any] | None) -> list[int]:
     if not spell_snapshot:
         return []
@@ -2434,10 +2465,14 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                     item_ids = row_item_ids(row)
                     if not item_ids:
                         continue
-                    category = consumable_category(table, row)
+                    row_text = clean_text(str(row.get("source_text") or compact_cells(row) or ""))
+                    raw_category = consumable_category(table, row)
+                    item_categories = [infer_consumable_category_from_item(item_snapshots.get(item_id)) for item_id in item_ids]
+                    category = merge_consumable_categories(item_categories, raw_category)
                     category_label = consumable_category_label(table, row)
                     if len(category_label) > 120:
                         continue
+                    relationship = consumable_relationship(row_text, len(item_ids))
                     phases = phases_from_row(source_meta, table, row) or [str(source_meta.get("phase") or "")]
                     for phase in phases:
                         key = (str(class_name), str(spec_name), phase, category, tuple(item_ids))
@@ -2451,8 +2486,12 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                             "category_label": category_label,
                             "items": item_ids,
                             "item_names": [entity["name"] for entity in row.get("entities", []) if entity.get("type") == "item" and entity.get("id") in item_ids],
+                            "item_categories": item_categories,
+                            "relationship": relationship,
                             "source_url": snapshot["url"],
                         }
+                        if row_text:
+                            consumable_row["text"] = row_text
                         if phase:
                             consumable_row["phase"] = phase
                         source_summaries = {
@@ -2476,12 +2515,16 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                 section_title = str(section.get("heading") or "Consumables")
                 if len(section_title) > 120:
                     continue
-                category = normalize_consumable_category(section_title)
+                raw_category = normalize_consumable_category(section_title)
                 for entry in section.get("entries", []):
                     item_ids = row_item_ids(entry)
                     if not item_ids:
                         continue
-                    phase_row = {"cells": [entry.get("text")], "source_text": entry.get("text")}
+                    entry_text = clean_text(str(entry.get("text") or ""))
+                    item_categories = [infer_consumable_category_from_item(item_snapshots.get(item_id)) for item_id in item_ids]
+                    category = merge_consumable_categories(item_categories, raw_category)
+                    relationship = consumable_relationship(entry_text, len(item_ids))
+                    phase_row = {"cells": [entry_text], "source_text": entry_text}
                     phases = phases_from_row(source_meta, {"heading": section_title}, phase_row) or [str(source_meta.get("phase") or "")]
                     for phase in phases:
                         key = (str(class_name), str(spec_name), phase, category, tuple(item_ids))
@@ -2495,8 +2538,12 @@ def import_consumables_from_snapshots(snapshots: list[dict[str, Any]], fallback_
                             "category_label": section_title,
                             "items": item_ids,
                             "item_names": [entity["name"] for entity in entry.get("entities", []) if entity.get("type") == "item" and entity.get("id") in item_ids],
+                            "item_categories": item_categories,
+                            "relationship": relationship,
                             "source_url": snapshot["url"],
                         }
+                        if entry_text:
+                            consumable_row["text"] = entry_text
                         if phase:
                             consumable_row["phase"] = phase
                         source_summaries = {

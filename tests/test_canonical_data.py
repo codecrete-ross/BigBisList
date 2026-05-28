@@ -43,6 +43,25 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertIn(29383, bis_rank_ids)
         self.assertNotIn(28034, bis_rank_ids)
 
+    def test_feral_dps_consumable_checklist_semantics(self):
+        rows = [
+            row
+            for row in canonical_json("consumables")["consumables"]
+            if row["class"] == "Druid"
+            and row["spec"] == "Feral dps"
+            and row.get("phase") == "T4"
+        ]
+        by_items = {tuple(row["items"]): row for row in rows}
+
+        self.assertEqual(by_items[(22831,)]["category"], "battle_elixir")
+        self.assertEqual(by_items[(22831,)]["relationship"], "single")
+        self.assertEqual(by_items[(32067,)]["category"], "guardian_elixir")
+        self.assertEqual(by_items[(27659, 27664)]["category"], "food")
+        self.assertEqual(by_items[(27659, 27664)]["relationship"], "or")
+        self.assertEqual(by_items[(27659, 27664)]["text"], "Warp Burger or Grilled Mudfish")
+        self.assertEqual(by_items[(20520, 12662)]["relationship"], "or")
+        self.assertEqual(by_items[(23827, 10646)]["relationship"], "and")
+
     def test_canonical_items_do_not_have_unknown_primary_sources(self):
         unknown_source_items = [
             item["id"]

@@ -878,6 +878,90 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(rows[0]["category"], "flask")
         self.assertEqual(rows[0]["items"], [22861])
 
+    def test_consumables_import_preserves_checklist_relationships_and_item_categories(self):
+        url = "https://www.wowhead.com/tbc/guide/classes/druid/feral/dps-consumables-raid-buffs-pve"
+        guide_snapshot = parse_guide_html(
+            url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Consumable Check List for Feral Druid DPS in TBC Classic</h3>
+            <ul>
+              <li><a href="/tbc/item=22831/elixir-of-major-agility">Elixir of Major Agility</a></li>
+              <li><a href="/tbc/item=32067/elixir-of-draenic-wisdom">Elixir of Draenic Wisdom</a></li>
+              <li><a href="/tbc/item=27659/warp-burger">Warp Burger</a> or <a href="/tbc/item=27664/grilled-mudfish">Grilled Mudfish</a></li>
+              <li><a href="/tbc/item=20520/dark-rune">Dark Rune</a> / <a href="/tbc/item=12662/demonic-rune">Demonic Rune</a></li>
+              <li><a href="/tbc/item=23827/super-sapper-charge">Super Sapper Charge</a> and <a href="/tbc/item=10646/goblin-sapper-charge">Goblin Sapper Charge</a></li>
+            </ul>
+            </body></html>
+            """,
+        )
+        item_snapshots = [
+            parse_item_html(
+                "https://www.wowhead.com/tbc/item=22831/elixir-of-major-agility",
+                """<html><head><title>Elixir of Major Agility - Item - TBC Classic</title>
+                <meta name="description" content="Elixir of Major Agility is a level 66 battle elixir. In the Elixirs category."></head><body></body></html>""",
+            ),
+            parse_item_html(
+                "https://www.wowhead.com/tbc/item=32067/elixir-of-draenic-wisdom",
+                """<html><head><title>Elixir of Draenic Wisdom - Item - TBC Classic</title>
+                <meta name="description" content="Elixir of Draenic Wisdom is a guardian elixir. In the Elixirs category."></head><body></body></html>""",
+            ),
+            parse_item_html(
+                "https://www.wowhead.com/tbc/item=27659/warp-burger",
+                """<html><head><title>Warp Burger - Item - TBC Classic</title>
+                <meta name="description" content="It is crafted. In the Food &amp; Drinks category."></head><body></body></html>""",
+            ),
+            parse_item_html(
+                "https://www.wowhead.com/tbc/item=27664/grilled-mudfish",
+                """<html><head><title>Grilled Mudfish - Item - TBC Classic</title>
+                <meta name="description" content="It is crafted. In the Food &amp; Drinks category."></head><body></body></html>""",
+            ),
+            parse_item_html(
+                "https://www.wowhead.com/tbc/item=20520/dark-rune",
+                """<html><head><title>Dark Rune - Item - TBC Classic</title>
+                <meta name="description" content="Restores mana at the cost of life."></head><body></body></html>""",
+            ),
+            parse_item_html(
+                "https://www.wowhead.com/tbc/item=12662/demonic-rune",
+                """<html><head><title>Demonic Rune - Item - TBC Classic</title>
+                <meta name="description" content="Restores mana at the cost of life."></head><body></body></html>""",
+            ),
+            parse_item_html(
+                "https://www.wowhead.com/tbc/item=23827/super-sapper-charge",
+                """<html><head><title>Super Sapper Charge - Item - TBC Classic</title>
+                <meta name="description" content="Explodes to deal fire damage."></head><body></body></html>""",
+            ),
+            parse_item_html(
+                "https://www.wowhead.com/tbc/item=10646/goblin-sapper-charge",
+                """<html><head><title>Goblin Sapper Charge - Item - TBC Classic</title>
+                <meta name="description" content="Explodes to deal fire damage."></head><body></body></html>""",
+            ),
+        ]
+        source = {
+            "id": "synthetic-feral-consumables",
+            "url": url,
+            "data_family": "consumables",
+            "class": "Druid",
+            "spec": "Feral dps",
+            "phase": "T4",
+        }
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {url: [source]}
+        try:
+            rows = scraper.import_consumables_from_snapshots([guide_snapshot, *item_snapshots], fallback_to_canonical=False)["consumables"]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        by_items = {tuple(row["items"]): row for row in rows}
+        self.assertEqual(by_items[(22831,)]["category"], "battle_elixir")
+        self.assertEqual(by_items[(22831,)]["relationship"], "single")
+        self.assertEqual(by_items[(32067,)]["category"], "guardian_elixir")
+        self.assertEqual(by_items[(27659, 27664)]["category"], "food")
+        self.assertEqual(by_items[(27659, 27664)]["relationship"], "or")
+        self.assertEqual(by_items[(27659, 27664)]["text"], "Warp Burger or Grilled Mudfish")
+        self.assertEqual(by_items[(20520, 12662)]["relationship"], "or")
+        self.assertEqual(by_items[(23827, 10646)]["relationship"], "and")
+
     def test_non_gear_import_fans_out_shared_manifest_url_by_spec(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-shared-gems"
         snapshot = parse_guide_html(

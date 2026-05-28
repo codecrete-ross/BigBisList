@@ -1435,11 +1435,20 @@ function UI:SetSpellButton(button, spellId, nameText, fallbackName, detailData, 
     end)
 end
 
-function UI:GetOwnershipState(itemId)
-    if not itemId then
-        return "missing"
+function UI:GetOwnershipState(itemId, itemIds)
+    local priority = { missing = 0, bank = 1, bag = 2, equipped = 3 }
+    local bestState = itemId and self.currentOwned and self.currentOwned[itemId] or nil
+
+    for _, candidateItemId in ipairs(itemIds or {}) do
+        local candidateState = self.currentOwned and self.currentOwned[candidateItemId]
+        if candidateState == "equipped" then
+            return "equipped"
+        elseif candidateState and (priority[candidateState] or 0) > (priority[bestState or "missing"] or 0) then
+            bestState = candidateState
+        end
     end
-    return (self.currentOwned and self.currentOwned[itemId]) or "missing"
+
+    return bestState or "missing"
 end
 
 function UI:CreateOwnershipBadge(parent, state)
@@ -1547,8 +1556,8 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     detailText:SetWordWrap(false)
     detailText:SetTextColor(0.68, 0.68, 0.72, 1)
 
-    if data.item_id then
-        local ownershipState = self:GetOwnershipState(data.item_id)
+    if data.item_id or data.item_ids then
+        local ownershipState = self:GetOwnershipState(data.item_id, data.item_ids)
         local ownershipBadge = self:CreateOwnershipBadge(row, ownershipState)
         ownershipBadge:SetPoint("RIGHT", row, "RIGHT", -170, 0)
     end
@@ -2259,7 +2268,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     if entityType == "spell" then
         r, g, b = 1, 0.82, 0.28
     end
-    local titleText = item and item.name or (detailData and detailData.name) or ((entityType == "spell" and "Spell " or "Item ") .. tostring(entityId))
+    local titleText = (detailData and detailData.name) or (item and item.name) or ((entityType == "spell" and "Spell " or "Item ") .. tostring(entityId))
     local anchor = self:CreateDetailsTitle(content, titleText, r, g, b)
     local contentHeight = anchor.contentHeight or 32
 
@@ -2276,7 +2285,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
 
     if detailItemId then
-        local ownershipState = self:GetOwnershipState(detailItemId)
+        local ownershipState = self:GetOwnershipState(detailItemId, detailData and detailData.item_ids)
         local ownershipText = ownershipStateLabel(ownershipState)
         if ownershipState == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
             ownershipText = ownershipText .. " - bank cache " .. self.currentOwned.bankUpdatedAt
