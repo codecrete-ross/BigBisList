@@ -1874,10 +1874,10 @@ function UI:RenderWishlistTab()
     self:SetContentHeight(yOffset)
 end
 
-function UI:CreateSettingToggle(parent, yOffset, labelText, getValue, setValue)
+function UI:CreateSettingToggle(parent, yOffset, labelText, getValue, setValue, leftInset)
     local widgets = BigBiSList.Widgets
     local row = widgets:CreateItemRow(parent, 34)
-    row:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
+    row:SetPoint("TOPLEFT", parent, "TOPLEFT", leftInset or 0, yOffset)
     row:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
 
     local label = row:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -1923,7 +1923,54 @@ function UI:SetTooltipClassSpecFilters(className, enabled)
     end
 end
 
-function UI:CreateTooltipSpecClassHeader(parent, yOffset, className)
+function UI:SetAllTooltipSpecFilters(enabled)
+    local filters = BigBiSList:EnsureTooltipSpecFilters()
+    if not filters then
+        return
+    end
+
+    for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {}) do
+        if classData.name then
+            self:SetTooltipClassSpecFilters(classData.name, enabled)
+        end
+    end
+end
+
+function UI:GetTooltipSpecSelectionCount(className)
+    local filters = BigBiSList:EnsureTooltipSpecFilters() or {}
+    local selected = 0
+    local total = 0
+
+    local function countSpec(specName, classFilters)
+        total = total + 1
+        if type(classFilters) == "table" and classFilters[specName] == true then
+            selected = selected + 1
+        end
+    end
+
+    if className then
+        local classFilters = filters[className]
+        for _, spec in ipairs(BigBiSList:GetDataIndex().specsByClass[className] or {}) do
+            if spec.name then
+                countSpec(spec.name, classFilters)
+            end
+        end
+    else
+        for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {}) do
+            local currentClassName = classData.name
+            local classFilters = currentClassName and filters[currentClassName] or nil
+            for _, spec in ipairs(classData.specs or {}) do
+                if spec.name then
+                    countSpec(spec.name, classFilters)
+                end
+            end
+        end
+    end
+
+    return selected, total
+end
+
+function UI:CreateSettingsActionHeader(parent, yOffset, titleText, countText, onAll, onNone)
     local widgets = BigBiSList.Widgets
     local headerHeight = 34
     local header = CreateFrame("Frame", nil, parent)
@@ -1938,26 +1985,58 @@ function UI:CreateTooltipSpecClassHeader(parent, yOffset, className)
     line:SetPoint("BOTTOMRIGHT", header, "BOTTOMRIGHT", 0, 6)
 
     local noneButton = widgets:CreateTextButton(header, "None", 54, 22, function()
-        self:SetTooltipClassSpecFilters(className, false)
-        self:Refresh()
+        if onNone then
+            onNone()
+        end
     end)
     noneButton:SetPoint("RIGHT", header, "RIGHT", -8, 4)
 
     local allButton = widgets:CreateTextButton(header, "All", 54, 22, function()
-        self:SetTooltipClassSpecFilters(className, true)
-        self:Refresh()
+        if onAll then
+            onAll()
+        end
     end)
     allButton:SetPoint("RIGHT", noneButton, "LEFT", -6, 0)
 
+    local countLabel = header:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    countLabel:SetPoint("RIGHT", allButton, "LEFT", -10, 0)
+    countLabel:SetWidth(96)
+    countLabel:SetJustifyH("RIGHT")
+    countLabel:SetWordWrap(false)
+    countLabel:SetTextColor(0.62, 0.62, 0.66, 1)
+    countLabel:SetText(countText or "")
+
     local label = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     label:SetPoint("LEFT", header, "LEFT", 8, 4)
-    label:SetPoint("RIGHT", allButton, "LEFT", -8, 0)
+    label:SetPoint("RIGHT", countLabel, "LEFT", -8, 0)
     label:SetJustifyH("LEFT")
     label:SetWordWrap(false)
     label:SetTextColor(1, 0.82, 0.28, 1)
-    label:SetText("Tooltip Specs - " .. className)
+    label:SetText(titleText)
 
     return header, headerHeight
+end
+
+function UI:CreateSettingsClassHeader(parent, yOffset, className)
+    local selected, total = self:GetTooltipSpecSelectionCount(className)
+    return self:CreateSettingsActionHeader(parent, yOffset, className, tostring(selected) .. "/" .. tostring(total), function()
+        self:SetTooltipClassSpecFilters(className, true)
+        self:Refresh()
+    end, function()
+        self:SetTooltipClassSpecFilters(className, false)
+        self:Refresh()
+    end)
+end
+
+function UI:CreateTooltipSpecsHeader(parent, yOffset)
+    local selected, total = self:GetTooltipSpecSelectionCount()
+    return self:CreateSettingsActionHeader(parent, yOffset, "Specs in Tooltips", tostring(selected) .. "/" .. tostring(total) .. " selected", function()
+        self:SetAllTooltipSpecFilters(true)
+        self:Refresh()
+    end, function()
+        self:SetAllTooltipSpecFilters(false)
+        self:Refresh()
+    end)
 end
 
 function UI:RenderSettingsTab()
@@ -1968,12 +2047,7 @@ function UI:RenderSettingsTab()
 
     local profile = BigBiSListDB.profile
     BigBiSList:EnsureTooltipSpecFilters()
-    local settings = {
-        {
-            label = "Show Big BiS List info in item tooltips",
-            get = function() return profile.tooltips.enabled end,
-            set = function(value) profile.tooltips.enabled = value end,
-        },
+    local generalSettings = {
         {
             label = "Show minimap button",
             get = function() return profile.showMinimap end,
@@ -1983,6 +2057,18 @@ function UI:RenderSettingsTab()
                     BigBiSList:RefreshMinimapButton()
                 end
             end,
+        },
+        {
+            label = "Lock window position",
+            get = function() return profile.window.locked end,
+            set = function(value) profile.window.locked = value end,
+        },
+    }
+    local tooltipSettings = {
+        {
+            label = "Show Big BiS List info in item tooltips",
+            get = function() return profile.tooltips.enabled end,
+            set = function(value) profile.tooltips.enabled = value end,
         },
         {
             label = "Compact tooltip rows by default",
@@ -1999,25 +2085,32 @@ function UI:RenderSettingsTab()
             get = function() return profile.tooltips.showAllOnAlt end,
             set = function(value) profile.tooltips.showAllOnAlt = value end,
         },
-        {
-            label = "Lock window position",
-            get = function() return profile.window.locked end,
-            set = function(value) profile.window.locked = value end,
-        },
     }
 
-    for _, setting in ipairs(settings) do
+    local _, generalHeaderHeight = widgets:CreateSectionHeader(self.contentChild, "General", yOffset)
+    yOffset = yOffset - generalHeaderHeight
+    for _, setting in ipairs(generalSettings) do
         local row, rowHeight = self:CreateSettingToggle(self.contentChild, yOffset, setting.label, setting.get, setting.set)
         yOffset = yOffset - rowHeight - 4
     end
 
     yOffset = yOffset - 8
+    local _, tooltipHeaderHeight = widgets:CreateSectionHeader(self.contentChild, "Tooltip Display", yOffset)
+    yOffset = yOffset - tooltipHeaderHeight
+    for _, setting in ipairs(tooltipSettings) do
+        local row, rowHeight = self:CreateSettingToggle(self.contentChild, yOffset, setting.label, setting.get, setting.set)
+        yOffset = yOffset - rowHeight - 4
+    end
+
+    local _, tooltipSpecsHeaderHeight = self:CreateTooltipSpecsHeader(self.contentChild, yOffset)
+    yOffset = yOffset - tooltipSpecsHeaderHeight
+
     local specFilters = profile.tooltips.specFilters or {}
     for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {}) do
         local className = classData.name
         if className then
             local currentClassName = className
-            local _, classHeaderHeight = self:CreateTooltipSpecClassHeader(self.contentChild, yOffset, currentClassName)
+            local _, classHeaderHeight = self:CreateSettingsClassHeader(self.contentChild, yOffset, currentClassName)
             yOffset = yOffset - classHeaderHeight
 
             for _, specData in ipairs(classData.specs or {}) do
@@ -2028,10 +2121,11 @@ function UI:RenderSettingsTab()
                         return type(specFilters[currentClassName]) == "table" and specFilters[currentClassName][currentSpecName] == true
                     end, function(value)
                         self:SetTooltipSpecFilter(currentClassName, currentSpecName, value)
-                    end)
+                    end, 14)
                     yOffset = yOffset - rowHeight - 4
                 end
             end
+            yOffset = yOffset - 4
         end
     end
 

@@ -280,16 +280,29 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "function UI:SetTooltipSpecFilter",
             "function UI:SetTooltipClassSpecFilters",
-            "function UI:CreateTooltipSpecClassHeader",
-            '"Tooltip Specs - " .. className',
+            "function UI:SetAllTooltipSpecFilters",
+            "function UI:GetTooltipSpecSelectionCount",
+            "function UI:CreateSettingsActionHeader",
+            "function UI:CreateSettingsClassHeader",
+            "function UI:CreateTooltipSpecsHeader",
+            '"General"',
+            '"Tooltip Display"',
+            '"Specs in Tooltips"',
+            "tostring(selected) .. \"/\" .. tostring(total)",
+            "tostring(selected) .. \"/\" .. tostring(total) .. \" selected\"",
+            "self:SetAllTooltipSpecFilters(true)",
+            "self:SetAllTooltipSpecFilters(false)",
             '"All"',
             '"None"',
             "BigBiSList:EnsureTooltipSpecFilters()",
             "profile.tooltips.specFilters",
             "for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {})",
             "self:CreateSettingToggle(self.contentChild, yOffset, currentSpecName",
+            "end, 14)",
         ]:
             self.assertIn(token, ui)
+        self.assertNotIn("Tooltip Specs - ", ui)
+        self.assertNotIn("Visible Specs", ui)
 
     def test_tooltip_grouping_builds_semantic_phase_summary(self):
         data_index = self.read_lua("DataIndex.lua")
