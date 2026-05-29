@@ -1088,6 +1088,10 @@ end
 
 function UI:GetAccessBadgeLabel(state, data)
     if state == "ready" or state == "ready_alternate" then
+        if data and data.ready_access_label and data.ready_access_label ~= "" then
+            return data.ready_access_label
+        end
+
         local evaluation = self:GetAccessEvaluation(data)
         local optionEvaluation = evaluation and evaluation.optionEvaluation
         local option = optionEvaluation and optionEvaluation.option
@@ -1095,6 +1099,14 @@ function UI:GetAccessBadgeLabel(state, data)
     end
 
     return ACCESS_BADGE_LABELS[state] or ACCESS_BADGE_LABELS.unknown
+end
+
+function UI:GetAccessHelpText(evaluation, data)
+    if evaluation and evaluation.status == "ready" and data and data.ready_access_detail and data.ready_access_detail ~= "" then
+        return data.ready_access_detail
+    end
+
+    return self:GetAccessBlockingReason(evaluation)
 end
 
 function UI:GetAccessBlockingReason(evaluation)
@@ -1845,7 +1857,9 @@ function UI:CreateAccessBadge(parent, state, data)
         GameTooltip:AddLine(accessStateLabel(evaluation.status), 0.86, 0.86, 0.86)
         if option then
             GameTooltip:AddLine("How to get: " .. (option.label or "Source"), 0.62, 0.78, 0.94, true)
-            GameTooltip:AddLine(UI:GetAccessBlockingReason(optionEvaluation), 0.62, 0.62, 0.66, true)
+            GameTooltip:AddLine(UI:GetAccessHelpText(optionEvaluation, data), 0.62, 0.62, 0.66, true)
+        elseif data and data.ready_access_detail and evaluation.status == "ready" then
+            GameTooltip:AddLine(data.ready_access_detail, 0.62, 0.62, 0.66, true)
         elseif data and data.requirements and #data.requirements > 0 then
             for _, requirement in ipairs(data.requirements) do
                 GameTooltip:AddLine(requirementSummary(requirement), 0.62, 0.62, 0.66, true)
@@ -2784,7 +2798,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local accessData = detailData or item or {}
     local requirementData = (accessData and accessData.requirements and #accessData.requirements > 0) and accessData or item
     local accessEvaluation = self:GetAccessEvaluation(accessData)
-    appendText(recommendationLines, "Get: " .. accessStateLabel(accessEvaluation.status))
+    appendText(recommendationLines, "Get: " .. self:GetAccessBadgeLabel(accessEvaluation.status, accessData))
     anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
     contentHeight = contentHeight + anchor.contentHeight
 
@@ -2798,11 +2812,13 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local bestPathText
     if option then
         bestPathText = option.label or "Source"
-        if optionEvaluation and optionEvaluation.status ~= "ready" then
-            bestPathText = bestPathText .. "\n" .. self:GetAccessBlockingReason(optionEvaluation)
+        if optionEvaluation and (optionEvaluation.status ~= "ready" or (accessData and accessData.ready_access_detail and accessData.ready_access_detail ~= "")) then
+            bestPathText = bestPathText .. "\n" .. self:GetAccessHelpText(optionEvaluation, accessData)
         end
+    elseif accessData and accessData.ready_access_detail and accessEvaluation.status == "ready" then
+        bestPathText = accessData.ready_access_detail
     else
-        bestPathText = self:GetAccessBlockingReason(optionEvaluation)
+        bestPathText = self:GetAccessHelpText(optionEvaluation, accessData)
     end
     anchor = self:CreateDetailsText(content, anchor, "How to get", bestPathText, 0.76, 0.76, 0.80)
     contentHeight = contentHeight + anchor.contentHeight

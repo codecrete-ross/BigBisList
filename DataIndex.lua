@@ -930,6 +930,117 @@ local function buildConsumableAccessOptions(index, itemIds)
     return accessOptions
 end
 
+local ENHANCEMENT_READY_ACCESS_DETAILS = {
+    ["Craft/AH"] = "Craft yourself or buy on the Auction House.",
+    ["Drop/AH"] = "Farm the drop or buy on the Auction House.",
+    ["Trade/AH"] = "Buy, trade, or check the Auction House.",
+    Enchanter = "Find an enchanter or use your own profession.",
+    Vendor = "Buy from the listed vendor.",
+    PvP = "Buy from the PvP vendor.",
+    ["Turn in"] = "Turn in the required token or currency.",
+    Formula = "Learn or buy the listed formula.",
+}
+
+local function enhancementReadyAccessFromOptions(accessOptions)
+    local hasCrafted
+    local hasDrop
+    local hasVendor
+    local hasPvp
+    local hasTokenTurnin
+    local hasFormula
+    local hasTrade
+
+    for _, option in ipairs(accessOptions or {}) do
+        local sourceType = option.source_type
+        if sourceType == "crafted" then
+            hasCrafted = true
+        elseif sourceType == "drop" or sourceType == "world_drop" then
+            hasDrop = true
+        elseif sourceType == "vendor" then
+            hasVendor = true
+        elseif sourceType == "pvp" then
+            hasPvp = true
+        elseif sourceType == "token_turnin" then
+            hasTokenTurnin = true
+        elseif sourceType == "taught_by_item" then
+            hasFormula = true
+        elseif sourceType == "trade" then
+            hasTrade = true
+        end
+    end
+
+    if hasCrafted then
+        return "Craft/AH"
+    elseif hasDrop then
+        return "Drop/AH"
+    elseif hasVendor then
+        return "Vendor"
+    elseif hasPvp then
+        return "PvP"
+    elseif hasTokenTurnin then
+        return "Turn in"
+    elseif hasFormula then
+        return "Formula"
+    elseif hasTrade then
+        return "Trade/AH"
+    end
+
+    return nil
+end
+
+local function enhancementReadyAccessFromSummary(sourceSummary)
+    local summary = lower(sourceSummary)
+    if summary == "" then
+        return nil
+    elseif string.find(summary, "crafted:", 1, true) then
+        return "Craft/AH"
+    elseif string.find(summary, "drop:", 1, true) or string.find(summary, "contained in:", 1, true) then
+        return "Drop/AH"
+    elseif string.find(summary, "vendor:", 1, true) then
+        return "Vendor"
+    elseif string.find(summary, "pvp", 1, true) then
+        return "PvP"
+    end
+
+    return nil
+end
+
+local CRAFTED_MARKET_CONSUMABLE_CATEGORIES = {
+    battle_elixir = true,
+    elixir = true,
+    flask = true,
+    food = true,
+    guardian_elixir = true,
+    potion = true,
+    weapon_oil = true,
+}
+
+local function consumableReadyAccessOverride(consumable, itemIndex)
+    local category = consumable and consumable.category
+    if itemIndex and consumable and consumable.item_categories then
+        category = consumable.item_categories[itemIndex] or category
+    end
+
+    if CRAFTED_MARKET_CONSUMABLE_CATEGORIES[category or ""] then
+        return "Craft/AH"
+    end
+
+    return nil
+end
+
+local function applyEnhancementReadyAccess(row, accessOptions, sourceSummary, fallbackLabel, preferredLabel)
+    local label = enhancementReadyAccessFromOptions(accessOptions)
+        or preferredLabel
+        or enhancementReadyAccessFromSummary(sourceSummary)
+        or fallbackLabel
+    if not label or label == "" then
+        return
+    end
+
+    row.ready_access_label = label
+    row.ready_access_detail = ENHANCEMENT_READY_ACCESS_DETAILS[label]
+end
+
 local function enhancementSourceKey(entityType, entityId)
     return tostring(entityType or "item") .. ":" .. tostring(entityId or "")
 end
@@ -1743,7 +1854,8 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
         if gem["class"] == className and gem.spec == specName and gem.phase == phaseKey then
             local item = index.itemsById[gem.id]
             local sourceData = index.enhancement.gemSourcesById[gem.id]
-            table.insert(sections[1].rows, {
+            local accessOptions = buildAccessOptions(item, sourceData, gem.requirements, { entityType = "item" })
+            local row = {
                 entity_type = "item",
                 entity_id = gem.id,
                 item_id = gem.id,
@@ -1752,9 +1864,11 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 detail = gemDetailLabel(gem),
                 source_summary = gem.source_summary or "",
                 requirements = mergedRequirements(gem.requirements, item and item.requirements),
-                access_options = buildAccessOptions(item, sourceData, gem.requirements, { entityType = "item" }),
+                access_options = accessOptions,
                 recommendation_summary = "Socket this gem",
-            })
+            }
+            applyEnhancementReadyAccess(row, accessOptions, row.source_summary, "Craft/AH")
+            table.insert(sections[1].rows, row)
         end
     end
 
@@ -1788,6 +1902,11 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 alwaysTradeOption = entityType == "spell",
                 tradeLabel = entityType == "spell" and "Trade enchant service" or "Trade/Auction House",
             })
+            if entityType == "spell" then
+                applyEnhancementReadyAccess(row, nil, nil, "Enchanter")
+            else
+                applyEnhancementReadyAccess(row, row.access_options, row.source_summary, "Trade/AH")
+            end
 
             table.insert(sections[2].rows, row)
         end
@@ -1799,7 +1918,9 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
             if consumableCanGroupAlternatives(consumable, itemIds) then
                 local primaryItemId = itemIds[1]
                 local primaryItem = index.itemsById[primaryItemId]
-                table.insert(sections[3].rows, {
+                local sourceSummary = consumableSourceSummary(consumable, itemIds)
+                local accessOptions = buildConsumableAccessOptions(index, itemIds)
+                local row = {
                     entity_type = "item",
                     entity_id = primaryItemId,
                     item_id = primaryItemId,
@@ -1807,25 +1928,31 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                     item = primaryItem,
                     name = consumableDisplayName(consumable, itemIds, index),
                     detail = consumableDetailLabel(consumable),
-                    source_summary = consumableSourceSummary(consumable, itemIds),
-                    access_options = buildConsumableAccessOptions(index, itemIds),
+                    source_summary = sourceSummary,
+                    access_options = accessOptions,
                     recommendation_summary = consumableRecommendationSummary(consumable, true),
-                })
+                }
+                applyEnhancementReadyAccess(row, accessOptions, sourceSummary, "Trade/AH", consumableReadyAccessOverride(consumable))
+                table.insert(sections[3].rows, row)
             else
                 for itemIndex, itemId in ipairs(itemIds) do
                     local item = index.itemsById[itemId]
-                    table.insert(sections[3].rows, {
+                    local sourceSummary = consumableSourceSummary(consumable, { itemId })
+                    local accessOptions = buildAccessOptions(item, nil, consumable.requirements, { entityType = "item" })
+                    local row = {
                         entity_type = "item",
                         entity_id = itemId,
                         item_id = itemId,
                         item = item,
                         name = consumable.item_names and consumable.item_names[itemIndex] or getItemName(itemId, item),
                         detail = consumableDetailLabel(consumable, itemIndex),
-                        source_summary = consumableSourceSummary(consumable, { itemId }),
+                        source_summary = sourceSummary,
                         requirements = mergedRequirements(consumable.requirements, item and item.requirements),
-                        access_options = buildAccessOptions(item, nil, consumable.requirements, { entityType = "item" }),
+                        access_options = accessOptions,
                         recommendation_summary = consumableRecommendationSummary(consumable, false, itemIndex),
-                    })
+                    }
+                    applyEnhancementReadyAccess(row, accessOptions, sourceSummary, "Trade/AH", consumableReadyAccessOverride(consumable, itemIndex))
+                    table.insert(sections[3].rows, row)
                 end
             end
         end

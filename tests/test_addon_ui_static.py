@@ -203,6 +203,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "DUNGEON_DROP_ZONES",
             "accessSourceBadgeLabel",
             "GetAccessBadgeLabel",
+            "GetAccessHelpText",
             '"Raid drop"',
             '"Dungeon drop"',
             '"Trade/AH"',
@@ -214,6 +215,44 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, ui)
         self.assertIn("zone = source.zone", data_index)
         self.assertNotIn('"Alt ready"', ui)
+
+    def test_enhancement_access_badges_use_practical_paths(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            "ENHANCEMENT_READY_ACCESS_DETAILS",
+            "CRAFTED_MARKET_CONSUMABLE_CATEGORIES",
+            "enhancementReadyAccessFromOptions",
+            "enhancementReadyAccessFromSummary",
+            "consumableReadyAccessOverride",
+            "applyEnhancementReadyAccess",
+            '["Craft/AH"] = "Craft yourself or buy on the Auction House."',
+            '["Drop/AH"] = "Farm the drop or buy on the Auction House."',
+            '["Trade/AH"] = "Buy, trade, or check the Auction House."',
+            "flask = true",
+            "battle_elixir = true",
+            "guardian_elixir = true",
+            "weapon_oil = true",
+            'applyEnhancementReadyAccess(row, accessOptions, row.source_summary, "Craft/AH")',
+            'applyEnhancementReadyAccess(row, nil, nil, "Enchanter")',
+            'applyEnhancementReadyAccess(row, accessOptions, sourceSummary, "Trade/AH", consumableReadyAccessOverride',
+            "preferredLabel",
+            "ready_access_label = label",
+            "ready_access_detail = ENHANCEMENT_READY_ACCESS_DETAILS[label]",
+        ]:
+            self.assertIn(token, data_index)
+
+        for token in [
+            "data.ready_access_label",
+            "data.ready_access_detail",
+            "GetAccessHelpText(optionEvaluation, data)",
+            "GetAccessHelpText(optionEvaluation, accessData)",
+        ]:
+            self.assertIn(token, ui)
+
+        get_badge_body = ui.split("function UI:GetAccessBadgeLabel", 1)[1].split("function UI:GetAccessHelpText", 1)[0]
+        self.assertLess(get_badge_body.index('state == "ready"'), get_badge_body.index("data.ready_access_label"))
 
     def test_enhance_rows_omit_redundant_tag_column(self):
         ui = self.read_lua("UI.lua")
