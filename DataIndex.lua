@@ -528,6 +528,7 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
         table.insert(accessOptions, {
             label = sourceLabel(source, input.fallbackLabel),
             source_type = source.type or "unknown",
+            zone = source.zone,
             source_url = source.source_url or (item and item.wowhead_url),
             side = source.side,
             requirements = requirements,
@@ -1773,8 +1774,8 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
             if entityType == "spell" then
                 row.spell_id = enchant.id
                 row.ownership_state = "service"
-                row.ownership_label = "Service"
-                row.ownership_detail = "Not an inventory item; find an enchanter or use your own profession."
+                row.ownership_label = "No item"
+                row.ownership_detail = "Spell enchant; find an enchanter or use your own profession."
             else
                 row.item_id = enchant.id
                 row.item = index.itemsById[enchant.id]

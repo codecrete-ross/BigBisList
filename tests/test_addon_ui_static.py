@@ -165,7 +165,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "CreateRankBadge",
             "GetRowOwnershipState",
             "data and data.ownership_label",
-            "ACCESS_BADGE_LABELS[state]",
+            "GetAccessBadgeLabel",
             "GetRowRecommendationText",
             "GetRowSubline",
             "MeasureTextHeight",
@@ -193,6 +193,28 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertNotIn('"Have: "', ownership_badge_body)
         self.assertNotIn('"Get: "', access_badge_body)
 
+    def test_get_badges_use_source_path_labels(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            "ACCESS_SOURCE_BADGE_LABELS",
+            "RAID_DROP_ZONES",
+            "DUNGEON_DROP_ZONES",
+            "accessSourceBadgeLabel",
+            "GetAccessBadgeLabel",
+            '"Raid drop"',
+            '"Dungeon drop"',
+            '"Trade/AH"',
+            '"Enchanter"',
+            '"Turn in"',
+            '"Need prof"',
+            '"Check reqs"',
+        ]:
+            self.assertIn(token, ui)
+        self.assertIn("zone = source.zone", data_index)
+        self.assertNotIn('"Alt ready"', ui)
+
     def test_enhance_rows_omit_redundant_tag_column(self):
         ui = self.read_lua("UI.lua")
 
@@ -214,6 +236,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "sourceMatchesRequirement",
             "source.requirements",
             "access_options = buildAccessOptions",
+            "zone = source.zone",
             "gemSourcesById",
             "enchantSourcesByKey",
             "enhancementSourceKey(entityType, enchant.id)",
@@ -260,11 +283,11 @@ class AddonUIStaticTests(unittest.TestCase):
             "recommendation_summary = enchantRecommendationSummary(enchant)",
             "recommendation_summary = consumableRecommendationSummary",
             'ownership_state = "service"',
-            'ownership_label = "Service"',
+            'ownership_label = "No item"',
             "find an enchanter",
         ]:
             self.assertIn(token, data_index)
-        self.assertIn('service = "Service"', ui)
+        self.assertIn('service = "No item"', ui)
         self.assertIn("No gems, enchants, or consumables found for this class, spec, and phase.", ui)
 
     def test_trade_paths_are_explicit_access_options(self):
@@ -312,7 +335,7 @@ class AddonUIStaticTests(unittest.TestCase):
         ui = self.read_lua("UI.lua")
         for token in [
             "ready_alternate",
-            "Ready via alternate source",
+            "Farmable through alternate source",
             "EvaluateRequirementList",
             "EvaluateAccessOption",
             "GetAccessEvaluation",

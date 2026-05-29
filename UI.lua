@@ -48,7 +48,7 @@ local OWNERSHIP_LABELS = {
     equipped = "Equipped",
     bag = "Bags",
     bank = "Bank",
-    service = "Service",
+    service = "No item",
     missing = "Missing",
 }
 
@@ -61,22 +61,22 @@ local OWNERSHIP_COLORS = {
 }
 
 local ACCESS_LABELS = {
-    ready = "Ready",
-    ready_alternate = "Ready via alternate source",
+    ready = "Farmable",
+    ready_alternate = "Farmable through alternate source",
     needs_rep = "Need rep",
-    needs_profession = "Need profession",
+    needs_profession = "Need prof",
     needs_recipe = "Need recipe",
-    check_prereq = "Check",
+    check_prereq = "Check reqs",
     unknown = "Unknown",
 }
 
 local ACCESS_BADGE_LABELS = {
-    ready = "Ready",
-    ready_alternate = "Alt ready",
+    ready = "Farmable",
+    ready_alternate = "Farmable",
     needs_rep = "Need rep",
-    needs_profession = "Need profession",
+    needs_profession = "Need prof",
     needs_recipe = "Need recipe",
-    check_prereq = "Check",
+    check_prereq = "Check reqs",
     unknown = "Unknown",
 }
 
@@ -88,6 +88,59 @@ local ACCESS_DETAIL_LABELS = {
     needs_recipe = "Recipe gated",
     check_prereq = "Check requirements",
     unknown = "Unknown",
+}
+
+local ACCESS_SOURCE_BADGE_LABELS = {
+    crafted = "Craft",
+    quest = "Quest",
+    vendor = "Vendor",
+    trade = "Trade/AH",
+    pvp = "PvP",
+    token_turnin = "Turn in",
+    taught_by_item = "Formula",
+    world_drop = "World drop",
+    unknown = "Source",
+}
+
+local RAID_DROP_ZONES = {
+    ["ahn'qiraj"] = true,
+    ["black temple"] = true,
+    ["blackwing lair"] = true,
+    ["gruul's lair"] = true,
+    ["hyjal summit"] = true,
+    ["karazhan"] = true,
+    ["magtheridon's lair"] = true,
+    ["molten core"] = true,
+    ["naxxramas"] = true,
+    ["onyxia's lair"] = true,
+    ["serpentshrine cavern"] = true,
+    ["sunwell plateau"] = true,
+    ["tempest keep"] = true,
+    ["zul'aman"] = true,
+    ["zul'gurub"] = true,
+}
+
+local DUNGEON_DROP_ZONES = {
+    ["auchenai crypts"] = true,
+    ["blackrock depths"] = true,
+    ["blackrock spire"] = true,
+    ["dire maul"] = true,
+    ["hellfire ramparts"] = true,
+    ["magisters' terrace"] = true,
+    ["mana-tombs"] = true,
+    ["old hillsbrad foothills"] = true,
+    ["sethekk halls"] = true,
+    ["shadow labyrinth"] = true,
+    ["stratholme"] = true,
+    ["the arcatraz"] = true,
+    ["the black morass"] = true,
+    ["the blood furnace"] = true,
+    ["the botanica"] = true,
+    ["the mechanar"] = true,
+    ["the shattered halls"] = true,
+    ["the slave pens"] = true,
+    ["the steamvault"] = true,
+    ["the underbog"] = true,
 }
 
 local ACCESS_COLORS = {
@@ -446,6 +499,27 @@ end
 
 local function accessDetailLabel(state)
     return ACCESS_DETAIL_LABELS[state or "unknown"] or ACCESS_DETAIL_LABELS.unknown
+end
+
+local function accessSourceBadgeLabel(option)
+    if not option then
+        return nil
+    end
+
+    local sourceType = option.source_type or "unknown"
+    if sourceType == "drop" then
+        local zone = lower(option.zone)
+        if RAID_DROP_ZONES[zone] then
+            return "Raid drop"
+        elseif DUNGEON_DROP_ZONES[zone] then
+            return "Dungeon drop"
+        end
+        return "Drop"
+    elseif sourceType == "trade" and option.label == "Trade enchant service" then
+        return "Enchanter"
+    end
+
+    return ACCESS_SOURCE_BADGE_LABELS[sourceType] or ACCESS_SOURCE_BADGE_LABELS.unknown
 end
 
 local function rankFilterLabel(rankGroup)
@@ -1010,6 +1084,17 @@ function UI:GetAccessEvaluation(data)
         status = flatEvaluation.status,
         optionEvaluation = flatEvaluation,
     }
+end
+
+function UI:GetAccessBadgeLabel(state, data)
+    if state == "ready" or state == "ready_alternate" then
+        local evaluation = self:GetAccessEvaluation(data)
+        local optionEvaluation = evaluation and evaluation.optionEvaluation
+        local option = optionEvaluation and optionEvaluation.option
+        return accessSourceBadgeLabel(option) or ACCESS_BADGE_LABELS[state] or ACCESS_BADGE_LABELS.unknown
+    end
+
+    return ACCESS_BADGE_LABELS[state] or ACCESS_BADGE_LABELS.unknown
 end
 
 function UI:GetAccessBlockingReason(evaluation)
@@ -1748,7 +1833,7 @@ end
 function UI:CreateAccessBadge(parent, state, data)
     local widgets = BigBiSList.Widgets
     local color = ACCESS_COLORS[state] or ACCESS_COLORS.unknown
-    local badge = widgets:CreateStatusBadge(parent, ACCESS_BADGE_LABELS[state] or ACCESS_BADGE_LABELS.unknown, GET_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
+    local badge = widgets:CreateStatusBadge(parent, self:GetAccessBadgeLabel(state, data), GET_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
     badge:EnableMouse(true)
 
     badge:SetScript("OnEnter", function(selfBadge)
