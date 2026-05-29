@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 6",
+            "local DEFAULTS_VERSION = 7",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -60,9 +60,15 @@ class AddonUIStaticTests(unittest.TestCase):
             "ensureTooltipSpecFilters",
             "EnsureTooltipSpecFilters",
             "GetTooltipSpecFilterKey",
-            "firstInitialization and className == selectedClass or false",
+            "migrateTooltipSpecFilterDefaults",
+            "tooltipSpecFiltersMatchLegacyDruidDefault",
+            "enableAllTooltipSpecFilters",
+            "previousVersion ~= nil and previousVersion >= 7",
+            "tooltips.specFilters[className][specName] = true",
         ]:
             self.assertIn(token, config)
+        self.assertNotIn("local selectedClass = db.char and db.char.selection and db.char.selection.class", config)
+        self.assertNotIn("firstInitialization and className == selectedClass or false", config)
 
     def test_public_ui_methods_exist(self):
         ui = self.read_lua("UI.lua")

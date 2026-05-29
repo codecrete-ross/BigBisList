@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 6
+local DEFAULTS_VERSION = 7
 
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -162,6 +162,83 @@ local function migrateMinimapSettings(db)
     profile.showMinimap = nil
 end
 
+local function enableAllTooltipSpecFilters(tooltips, index)
+    if type(tooltips.specFilters) ~= "table" then
+        tooltips.specFilters = {}
+    end
+
+    for _, classData in ipairs(index.classes or {}) do
+        local className = classData.name
+        if className then
+            if type(tooltips.specFilters[className]) ~= "table" then
+                tooltips.specFilters[className] = {}
+            end
+
+            for _, specData in ipairs(classData.specs or {}) do
+                local specName = specData.name
+                if specName then
+                    tooltips.specFilters[className][specName] = true
+                end
+            end
+        end
+    end
+
+    tooltips.specFiltersInitialized = true
+end
+
+local function tooltipSpecFiltersMatchLegacyDruidDefault(tooltips, index)
+    if type(tooltips.specFilters) ~= "table" or tooltips.specFiltersInitialized ~= true then
+        return false
+    end
+
+    local sawSpec = false
+    local sawDruidSpec = false
+
+    for _, classData in ipairs(index.classes or {}) do
+        local className = classData.name
+        local classFilters = className and tooltips.specFilters[className] or nil
+
+        for _, specData in ipairs(classData.specs or {}) do
+            local specName = specData.name
+            if className and specName then
+                sawSpec = true
+
+                if className == "Druid" then
+                    sawDruidSpec = true
+                    if type(classFilters) ~= "table" or classFilters[specName] ~= true then
+                        return false
+                    end
+                elseif type(classFilters) == "table" and classFilters[specName] == true then
+                    return false
+                end
+            end
+        end
+    end
+
+    return sawSpec and sawDruidSpec
+end
+
+local function migrateTooltipSpecFilterDefaults(db, previousVersion)
+    if previousVersion ~= nil and previousVersion >= 7 then
+        return
+    end
+
+    if not BigBiSList.GetDataIndex then
+        return
+    end
+
+    local profile = db.profile or {}
+    local tooltips = profile.tooltips
+    if type(tooltips) ~= "table" then
+        return
+    end
+
+    local index = BigBiSList:GetDataIndex()
+    if tooltipSpecFiltersMatchLegacyDruidDefault(tooltips, index) then
+        enableAllTooltipSpecFilters(tooltips, index)
+    end
+end
+
 local function ensureTooltipSpecFilters(db)
     local profile = db.profile or {}
     local tooltips = profile.tooltips or {}
@@ -177,7 +254,6 @@ local function ensureTooltipSpecFilters(db)
 
     local index = BigBiSList:GetDataIndex()
     local firstInitialization = tooltips.specFiltersInitialized ~= true
-    local selectedClass = db.char and db.char.selection and db.char.selection.class
 
     for _, classData in ipairs(index.classes or {}) do
         local className = classData.name
@@ -189,7 +265,7 @@ local function ensureTooltipSpecFilters(db)
             for _, specData in ipairs(classData.specs or {}) do
                 local specName = specData.name
                 if specName and (firstInitialization or tooltips.specFilters[className][specName] == nil) then
-                    tooltips.specFilters[className][specName] = firstInitialization and className == selectedClass or false
+                    tooltips.specFilters[className][specName] = true
                 end
             end
         end
@@ -271,6 +347,7 @@ function BigBiSList:EnsureDatabase()
     applyDefaults(BigBiSListDB, self.defaults)
     migrateSelection(BigBiSListDB.char)
     migrateLegacyDefaults(BigBiSListDB, previousVersion)
+    migrateTooltipSpecFilterDefaults(BigBiSListDB, previousVersion)
     ensureTooltipSpecFilters(BigBiSListDB)
 
     BigBiSListDB.char.selectedClass = BigBiSListDB.char.selection.class
