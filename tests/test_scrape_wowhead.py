@@ -171,6 +171,27 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(by_type["quest"]["side"], "Alliance")
         self.assertEqual(by_type["crafted"]["profession"], "Leatherworking")
 
+    def test_item_parser_attaches_recipe_source_zone_to_crafted_source(self):
+        html = """
+        <html><head>
+        <title>Hard Khorium Band - Item - TBC Classic</title>
+        <meta name="description" content="This epic ring goes in the Finger slot.">
+        </head><body>
+        <script>
+        g_items[34361].tooltip_enus = "<table><tr><td><b class=\\"q4\\">Hard Khorium Band</b><br>Binds when equipped</td></tr></table>";
+        new Listview({ id: 'created-by-spell', data: [{"id":46124,"name":"Hard Khorium Band","skill":"Jewelcrafting"}], });
+        new Listview({ id: 'taught-by-item', data: [{"id":35200,"name":"Design: Hard Khorium Band","source":[2],"sourcemore":[{"z":4075}]}], });
+        </script>
+        </body></html>
+        """
+        snapshot = parse_item_html("https://www.wowhead.com/tbc/item=34361/hard-khorium-band", html)
+        source = snapshot["normalized_sources"][0]
+        self.assertEqual(source["type"], "crafted")
+        self.assertEqual(source["zone"], "Sunwell Plateau")
+        self.assertEqual(source["recipe_sources"][0]["type"], "drop")
+        self.assertEqual(source["recipe_sources"][0]["item_id"], 35200)
+        self.assertEqual(source["recipe_sources"][0]["zone"], "Sunwell Plateau")
+
     def test_cost_parser_handles_flat_and_live_wowhead_shapes(self):
         self.assertEqual(parse_costs([0, [], [[29434, 20]]])[0]["currency_id"], 29434)
         live_shape_cost = parse_costs([[0, [], [[31095, 1]]]])[0]
@@ -1406,3 +1427,72 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(item["sources"][0]["type"], "crafted")
         self.assertEqual(item["sources"][0]["profession"], "Leatherworking")
         self.assertEqual(item["source_summary"], "Crafted: Leatherworking")
+
+    def test_boe_crafted_import_keeps_profession_on_craft_path_and_recipe_phase(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-swp-bis"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best in Slot Ring</h3>
+            <table><tr>
+              <td>Option</td>
+              <td><a href="/tbc/item=34361/hard-khorium-band">Hard Khorium Band</a></td>
+              <td>Profession: Jewelcrafting (BoP)</td>
+            </tr></table>
+            </body></html>
+            """,
+        )
+        item_snapshot = parse_item_html(
+            "https://www.wowhead.com/tbc/item=34361/hard-khorium-band",
+            """
+            <html><head>
+            <title>Hard Khorium Band - Item - TBC Classic</title>
+            <meta name="description" content="This epic ring goes in the Finger slot.">
+            </head><body>
+            <script>
+            g_items[34361].tooltip_enus = "<table><tr><td><b class=\\"q4\\">Hard Khorium Band</b><br>Binds when equipped</td></tr></table>";
+            new Listview({ id: 'created-by-spell', data: [{"id":46124,"name":"Hard Khorium Band","skill":"Jewelcrafting"}], });
+            new Listview({ id: 'taught-by-item', data: [{"id":35200,"name":"Design: Hard Khorium Band","source":[2],"sourcemore":[{"z":4075}]}], });
+            </script>
+            </body></html>
+            """,
+        )
+        source = {
+            "id": "synthetic-swp-bis",
+            "url": guide_url,
+            "data_family": "bis_lists",
+            "class": "Druid",
+            "spec": "Feral dps",
+            "phase": "SWP",
+        }
+        original = scraper.canonical_json
+        original_sources_by_url = scraper.manifest_sources_by_url
+
+        def fake_canonical_json(name):
+            if name == "items":
+                return {"items": []}
+            if name == "bis_lists":
+                return {"coverage": "fixture", "lists": []}
+            return original(name)
+
+        scraper.canonical_json = fake_canonical_json
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            item = scraper.import_items_from_snapshots([guide_snapshot, item_snapshot])["items"][0]
+            bis_item = scraper.import_bis_lists_from_snapshots([guide_snapshot, item_snapshot])["lists"][0]["items"][0]
+        finally:
+            scraper.canonical_json = original
+            scraper.manifest_sources_by_url = original_sources_by_url
+
+        self.assertEqual(item["binding"], "bind_on_equip")
+        self.assertEqual(item["acquisition_phase"], "SWP")
+        self.assertEqual(item["sources"][0]["recipe_sources"][0]["zone"], "Sunwell Plateau")
+        self.assertNotIn(
+            ("profession", "equip_or_use", "Jewelcrafting"),
+            {(requirement["type"], requirement["scope"], requirement.get("profession")) for requirement in item.get("requirements", [])},
+        )
+        self.assertIn(
+            ("profession", "self_craft", "Jewelcrafting"),
+            {(requirement["type"], requirement["scope"], requirement.get("profession")) for requirement in bis_item.get("requirements", [])},
+        )

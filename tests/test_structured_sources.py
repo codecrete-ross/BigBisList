@@ -109,6 +109,48 @@ class StructuredSourceTests(unittest.TestCase):
             "PR",
         )
 
+    def test_crafted_recipe_sources_drive_acquisition_phase(self):
+        self.assertEqual(
+            derive_acquisition_phase(
+                [
+                    {
+                        "type": "crafted",
+                        "entity_name": "Hard Khorium Band",
+                        "recipe_sources": [
+                            {
+                                "type": "drop",
+                                "entity_name": "Design: Hard Khorium Band",
+                                "zone": "Sunwell Plateau",
+                                "confidence": "fixture",
+                            }
+                        ],
+                        "confidence": "fixture",
+                    }
+                ]
+            ),
+            "SWP",
+        )
+        self.assertEqual(
+            derive_acquisition_phase(
+                [
+                    {
+                        "type": "crafted",
+                        "entity_name": "Sorcerer's Alchemist Stone",
+                        "recipe_sources": [
+                            {
+                                "type": "vendor",
+                                "entity_name": "Eldara Dawnrunner",
+                                "zone": "Isle of Quel'Danas",
+                                "confidence": "fixture",
+                            }
+                        ],
+                        "confidence": "fixture",
+                    }
+                ]
+            ),
+            "SWP",
+        )
+
     def test_no_synthetic_unknown_zone_in_item_sources(self):
         violations = []
         for item in self.items.values():
@@ -142,6 +184,20 @@ class StructuredSourceTests(unittest.TestCase):
         ]
         self.assertTrue(matching)
         self.assertTrue(any(requirement.get("standing_rank") == 8 for requirement in matching))
+
+    def test_hard_khorium_band_uses_sunwell_recipe_phase_without_equip_profession_gate(self):
+        item = self.items[34361]
+        self.assertEqual(item["binding"], "bind_on_equip")
+        self.assertEqual(item["acquisition_phase"], "SWP")
+        self.assertEqual(item["sources"][0]["recipe_sources"][0]["zone"], "Sunwell Plateau")
+        profession_gates = [
+            requirement
+            for requirement in item.get("requirements", [])
+            if requirement.get("type") == "profession"
+            and requirement.get("scope") == "equip_or_use"
+            and requirement.get("profession") == "Jewelcrafting"
+        ]
+        self.assertEqual(profession_gates, [])
 
     def test_staff_of_natural_fury_has_raw_tooltip_duplicates_to_group(self):
         item = next(item for item in self.items.values() if item["name"] == "Staff of Natural Fury")

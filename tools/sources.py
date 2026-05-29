@@ -18,6 +18,11 @@ RAID_ZONE_PHASE = {
     "Sunwell Plateau": "SWP",
 }
 
+ZONE_PHASE = {
+    **RAID_ZONE_PHASE,
+    "Isle of Quel'Danas": "SWP",
+}
+
 RAID_QUEST_PHASE_BY_ID = {
     10725: "T4",
     10726: "T4",
@@ -54,13 +59,22 @@ def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
         return derive_acquisition_phase(token_sources) if token_sources else "PR"
 
     if source_type == "drop":
-        return RAID_ZONE_PHASE.get(str(source.get("zone") or ""), "PR")
+        return ZONE_PHASE.get(str(source.get("zone") or ""), "PR")
 
     if source_type == "quest":
         quest_id = source.get("quest_id")
         if isinstance(quest_id, int):
             return RAID_QUEST_PHASE_BY_ID.get(quest_id, "PR")
         return "PR"
+
+    if source_type == "crafted":
+        recipe_sources = [recipe_source for recipe_source in source.get("recipe_sources", []) if isinstance(recipe_source, dict)]
+        if recipe_sources:
+            return derive_acquisition_phase(recipe_sources)
+        return ZONE_PHASE.get(str(source.get("zone") or ""), "PR")
+
+    if source_type == "vendor" and source.get("zone") in ZONE_PHASE:
+        return ZONE_PHASE[str(source.get("zone"))]
 
     if source_type == "vendor" and source.get("zone") == "Black Temple":
         return "T6"

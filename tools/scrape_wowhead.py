@@ -27,7 +27,7 @@ from tools.reputations import normalize_reputation_names
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 from tools.validate_data import validate
 
-PARSER_VERSION = "wowhead-scraper-0.7.0"
+PARSER_VERSION = "wowhead-scraper-0.8.0"
 USER_AGENT = "BigBiSListScraper/0.4 (+https://github.com/codecrete-dev/BigBisList)"
 
 CURRENCY_NAMES = {
@@ -1075,14 +1075,40 @@ def zone_name_for_row(zone_id: int, row: dict[str, Any]) -> str | None:
     return ZONE_ID_NAMES.get(zone_id)
 
 
-def first_zone_name(row: dict[str, Any]) -> str | None:
+def append_zone_name(result: list[str], seen: set[str], zone_id: Any, row: dict[str, Any]) -> None:
+    try:
+        zone = zone_name_for_row(int(zone_id), row)
+    except (TypeError, ValueError):
+        return
+    if zone and zone not in seen:
+        seen.add(zone)
+        result.append(zone)
+
+
+def zone_names_for_row(row: dict[str, Any]) -> list[str]:
+    zones: list[str] = []
+    seen: set[str] = set()
+
     locations = row.get("location")
-    if isinstance(locations, list) and locations:
-        return zone_name_for_row(int(locations[0]), row)
+    if isinstance(locations, list):
+        for zone_id in locations:
+            append_zone_name(zones, seen, zone_id, row)
+
     category = row.get("category")
     if isinstance(category, int):
-        return zone_name_for_row(category, row)
-    return None
+        append_zone_name(zones, seen, category, row)
+
+    for source_more in row.get("sourcemore") or []:
+        if not isinstance(source_more, dict):
+            continue
+        append_zone_name(zones, seen, source_more.get("z") or source_more.get("zone"), row)
+
+    return zones
+
+
+def first_zone_name(row: dict[str, Any]) -> str | None:
+    zones = zone_names_for_row(row)
+    return zones[0] if zones else None
 
 
 def parse_costs(raw_cost: Any) -> list[dict[str, Any]]:
@@ -1133,6 +1159,77 @@ def profession_from_skill(value: Any) -> str | None:
             if profession:
                 return profession
     return None
+
+
+def recipe_source_type(row: dict[str, Any]) -> str:
+    source_kinds = row.get("source")
+    if isinstance(source_kinds, list):
+        if 5 in source_kinds:
+            return "vendor"
+        if 4 in source_kinds:
+            return "quest"
+        if 2 in source_kinds:
+            return "drop"
+    return "unknown"
+
+
+def recipe_sources_from_taught_by_items(rows: list[dict[str, Any]], source_url: str) -> list[dict[str, Any]]:
+    sources: list[dict[str, Any]] = []
+    seen: set[tuple[Any, ...]] = set()
+
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        zones = zone_names_for_row(row)
+        zone_values = zones or [None]
+        for zone in zone_values:
+            source = {
+                "type": recipe_source_type(row),
+                "item_id": row.get("id"),
+                "entity_id": row.get("id"),
+                "entity_name": row.get("name"),
+                "zone": zone,
+                "source_url": source_url,
+                "confidence": "wowhead_item",
+            }
+            cleaned = {key: value for key, value in source.items() if value not in (None, "", [])}
+            key = (
+                cleaned.get("type"),
+                cleaned.get("item_id"),
+                cleaned.get("entity_name"),
+                cleaned.get("zone"),
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            sources.append(cleaned)
+
+    if any(source.get("zone") for source in sources):
+        sources = [source for source in sources if source.get("zone")]
+
+    return sources
+
+
+def add_recipe_sources_to_crafted_sources(
+    sources: list[dict[str, Any]],
+    recipe_sources: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    if not recipe_sources:
+        return sources
+
+    recipe_zones = sorted({source["zone"] for source in recipe_sources if source.get("zone")})
+    enriched: list[dict[str, Any]] = []
+    for source in sources:
+        if source.get("type") != "crafted":
+            enriched.append(source)
+            continue
+        enriched_source = deepcopy(source)
+        enriched_source["recipe_sources"] = deepcopy(recipe_sources)
+        if "zone" not in enriched_source and len(recipe_zones) == 1:
+            enriched_source["zone"] = recipe_zones[0]
+        enriched.append(enriched_source)
+
+    return enriched
 
 
 def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
@@ -1234,6 +1331,11 @@ def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) ->
                     "confidence": "wowhead_item",
                 }
             ]
+
+    sources = add_recipe_sources_to_crafted_sources(
+        sources,
+        recipe_sources_from_taught_by_items(tables.get("taught-by-item", []), url),
+    )
 
     for source in sources:
         attach_requirements_to_source(source, url, requirement_scope_for_source(source), "wowhead_item")
@@ -1891,6 +1993,13 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                         "context": context,
                     }
                     requirements = row_requirements(row, snapshot["url"])
+                    item_snapshot = item_snapshots.get(int(item_id))
+                    requirements = normalize_tradeable_crafted_profession_requirements(
+                        requirements,
+                        None,
+                        item_snapshot,
+                        (item_snapshot or {}).get("normalized_sources", []),
+                    )
                     if requirements:
                         item_entry["requirements"] = requirements
                     items_for_slot = items_by_phase_slot.setdefault(phase_slot, {})
@@ -2977,6 +3086,40 @@ def guide_hint_requirements(hints: list[dict[str, Any]]) -> list[dict[str, Any]]
     return dedupe_requirements(requirements)
 
 
+def is_tradeable_item(item: dict[str, Any] | None, snapshot: dict[str, Any] | None = None) -> bool:
+    for candidate in (snapshot, item):
+        if not isinstance(candidate, dict):
+            continue
+        if candidate.get("boe") is True or candidate.get("binding") == "bind_on_equip":
+            return True
+    return False
+
+
+def has_crafted_source(sources: list[dict[str, Any]] | None) -> bool:
+    return any(isinstance(source, dict) and source.get("type") == "crafted" for source in sources or [])
+
+
+def normalize_tradeable_crafted_profession_requirements(
+    requirements: list[dict[str, Any]],
+    item: dict[str, Any] | None,
+    snapshot: dict[str, Any] | None,
+    sources: list[dict[str, Any]] | None,
+) -> list[dict[str, Any]]:
+    if not is_tradeable_item(item, snapshot) or not has_crafted_source(sources):
+        return dedupe_requirements(requirements)
+
+    normalized: list[dict[str, Any]] = []
+    for requirement in requirements:
+        if (
+            requirement.get("type") == "profession"
+            and requirement.get("scope") == "equip_or_use"
+            and requirement.get("confidence") == "parsed_source_text"
+        ):
+            requirement = {**requirement, "scope": "self_craft"}
+        normalized.append(requirement)
+    return dedupe_requirements(normalized)
+
+
 def item_requirements_for_import(
     item_id: int,
     item: dict[str, Any],
@@ -2985,7 +3128,8 @@ def item_requirements_for_import(
     hints: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     requirements: list[dict[str, Any]] = []
-    requirements.extend(item.get("requirements", []))
+    if not snapshot and not hints:
+        requirements.extend(item.get("requirements", []))
     requirements.extend(snapshot_requirements(snapshot))
     requirements.extend(guide_hint_requirements(hints))
 
@@ -3006,7 +3150,7 @@ def item_requirements_for_import(
                         profession=profession,
                     )
                 )
-    return dedupe_requirements(requirements)
+    return normalize_tradeable_crafted_profession_requirements(requirements, item, snapshot, sources)
 
 
 def recipe_known_requirement(spell_snapshot: dict[str, Any] | None, spell_id: int, spell_name: str | None) -> dict[str, Any]:
@@ -3339,6 +3483,14 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
         raw_sources = snapshot.get("normalized_sources") if snapshot else current.get("sources", [])
         if not raw_sources:
             raw_sources = guide_fallback_sources(item_source_hints.get(item_id, []))
+        if snapshot:
+            raw_sources = add_recipe_sources_to_crafted_sources(
+                deepcopy(raw_sources),
+                recipe_sources_from_taught_by_items(
+                    (snapshot.get("related_tables") or {}).get("taught-by-item", []),
+                    str(snapshot.get("url") or item_url_for_id(item_id)),
+                ),
+            )
         sources = attach_token_turnins_to_sources(raw_sources, item_snapshots)
         item = {
             "id": item_id,
@@ -3768,9 +3920,27 @@ def duplicate_row_errors(rows: list[dict[str, Any]], data_family: str) -> list[s
 KNOWN_RANK_GROUPS = {"bis", "ranked", "situational", "pvp", "unrealistic", "option"}
 
 
+def has_tradeable_crafted_profession_gate(requirements: list[dict[str, Any]] | None) -> bool:
+    return any(
+        isinstance(requirement, dict)
+        and requirement.get("type") == "profession"
+        and requirement.get("scope") == "equip_or_use"
+        and requirement.get("confidence") == "parsed_source_text"
+        for requirement in requirements or []
+    )
+
+
 def canonical_semantic_errors() -> list[str]:
     errors: list[str] = []
     items_by_id = {item.get("id"): item for item in canonical_json("items").get("items", [])}
+    for item_id, item in items_by_id.items():
+        if (
+            is_tradeable_item(item)
+            and has_crafted_source(item.get("sources", []))
+            and has_tradeable_crafted_profession_gate(item.get("requirements"))
+        ):
+            errors.append(f"BoE crafted item {item_id} has guide-derived equip profession gate")
+
     for row in canonical_json("bis_lists").get("lists", []):
         slot = row.get("slot")
         if slot not in SLOT_NAMES:
@@ -3782,9 +3952,16 @@ def canonical_semantic_errors() -> list[str]:
                 errors.append(f"BiS item {item_id} has unsupported rank group: {item.get('rank_group')}")
             if str(item.get("rank_label") or "").strip().lower() == "best" and rank_group == "option":
                 errors.append(f"BiS item {item_id} label Best was normalized as option")
-            inventory_slot = items_by_id.get(item_id, {}).get("inventory_slot")
+            item_data = items_by_id.get(item_id, {})
+            inventory_slot = item_data.get("inventory_slot")
             if inventory_slot and slot and not bis_slot_compatible(str(slot), str(inventory_slot)):
                 errors.append(f"BiS item {item_id} slot mismatch: list slot {slot}, item slot {inventory_slot}")
+            if (
+                is_tradeable_item(item_data)
+                and has_crafted_source(item_data.get("sources", []))
+                and has_tradeable_crafted_profession_gate(item.get("requirements"))
+            ):
+                errors.append(f"BiS item {item_id} has guide-derived equip profession gate in {row.get('class')}/{row.get('spec')}/{row.get('phase')}/{slot}")
 
     for row in canonical_json("consumables").get("consumables", []):
         if len(str(row.get("category_label") or row.get("category") or "")) > 120:
