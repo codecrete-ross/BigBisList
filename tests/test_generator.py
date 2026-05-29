@@ -15,6 +15,7 @@ class GeneratorTests(unittest.TestCase):
         self.assertIn('["gems"] = {', rendered)
         self.assertIn('["gem_sources"] = {', rendered)
         self.assertIn('["enchants"] = {', rendered)
+        self.assertIn('["enchant_effects"] = {', rendered)
         self.assertIn('["consumables"] = {', rendered)
         self.assertIn('["leveling"] = {', rendered)
         self.assertNotIn("BISTBC", rendered)

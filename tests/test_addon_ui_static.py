@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 8",
+            "local DEFAULTS_VERSION = 9",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -52,6 +52,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "filters = {",
             'reputation = "all"',
             "bankCache = {",
+            "links = {}",
             "wishlist = {}",
             "ignoredItems = {}",
             "migrateLegacyDefaults",
@@ -130,10 +131,16 @@ class AddonUIStaticTests(unittest.TestCase):
             "BANKFRAME_OPENED",
             "PLAYERBANKSLOTS_CHANGED",
             "ScanBankItems",
+            "getContainerItemLinkSafe",
+            "getInventoryItemLinkSafe",
+            "enhancementItems = {}",
+            "cache.links = {}",
+            "table.insert(cache.links, itemLink)",
             'bank = "Bank"',
         ]:
             self.assertIn(token, ui)
         self.assertIn("bankCache = {", config)
+        self.assertIn("links = {}", config)
         self.assertIn('elseif filters.ownedState == "bank"', data_index)
 
     def test_access_badges_are_separate_from_ownership(self):
@@ -284,6 +291,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "zone = source.zone",
             "gemSourcesById",
             "enchantSourcesByKey",
+            "enchantEffectsByKey",
+            "data.enchant_effects",
             "enhancementSourceKey(entityType, enchant.id)",
             "forceSourceScopedEquip = entityType == \"spell\"",
         ]:
@@ -298,6 +307,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "consumable.relationship == \"or\"",
             "consumableCanGroupAlternatives",
             "item_ids = itemIds",
+            'enhancement_kind = "consumable"',
             "buildConsumableAccessOptions",
             "consumableDisplayName",
             "consumableDetailLabel",
@@ -314,6 +324,43 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("function UI:GetOwnershipState(itemId, itemIds)", ui)
         self.assertIn("for _, candidateItemId in ipairs(itemIds or {})", ui)
         self.assertIn("self:GetOwnershipState(data.item_id, data.item_ids)", ui)
+
+    def test_enhance_tracks_applied_gems_and_enchants_from_item_links(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+        data_lua = self.read_lua("Data.lua")
+
+        for token in [
+            "parseItemLinkEnhancements",
+            "getContainerItemLinkSafe",
+            "getInventoryItemLinkSafe",
+            "enchant_id = tonumber(fields[2])",
+            "gem_ids = {}",
+            "enhancementEffectIdsContain",
+            "gemIdsContain",
+            "slotMatchesEnhancement",
+            "GetEnhancementAppliedMatches",
+            "GetEnhancementAppliedSummary",
+            'title = "Applied"',
+            '"Applied: " .. appliedSummary.label',
+            'mode == "enhance" and "Status" or "Have"',
+            "table.insert(cache.links, itemLink)",
+        ]:
+            self.assertIn(token, ui)
+
+        for token in [
+            "enchantEffectsByKey",
+            "data.enchant_effects",
+            'enhancement_kind = "gem"',
+            "gem_item_id = gem.id",
+            'enhancement_kind = "enchant"',
+            "match_slot = enchant.slot",
+            "enchant_effect_ids = effectData and effectData.effect_ids or {}",
+            "enchant_effect_source_spell_id",
+        ]:
+            self.assertIn(token, data_index)
+
+        self.assertIn('["enchant_effects"] = {', data_lua)
 
     def test_enhancement_rows_use_actionable_copy(self):
         data_index = self.read_lua("DataIndex.lua")

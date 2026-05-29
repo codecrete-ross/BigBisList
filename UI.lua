@@ -60,6 +60,65 @@ local OWNERSHIP_COLORS = {
     missing = { 0.22, 0.12, 0.12, 0.96, 0.92, 0.48, 0.48, 1 },
 }
 
+local OWNERSHIP_PRIORITY = {
+    missing = 0,
+    bank = 1,
+    bag = 2,
+    equipped = 3,
+}
+
+local ENHANCEMENT_LOCATION_SORT = {
+    equipped = 1,
+    bag = 2,
+    bank = 3,
+}
+
+local EQUIP_LOCATION_ENHANCEMENT_SLOTS = {
+    INVTYPE_HEAD = { "Head" },
+    INVTYPE_SHOULDER = { "Shoulder" },
+    INVTYPE_CLOAK = { "Back" },
+    INVTYPE_CHEST = { "Chest" },
+    INVTYPE_ROBE = { "Chest" },
+    INVTYPE_WRIST = { "Wrist" },
+    INVTYPE_HAND = { "Hands" },
+    INVTYPE_WAIST = { "Waist" },
+    INVTYPE_LEGS = { "Legs" },
+    INVTYPE_FEET = { "Feet" },
+    INVTYPE_FINGER = { "Ring" },
+    INVTYPE_WEAPON = { "Main Hand", "Off Hand", "Dual Wield" },
+    INVTYPE_WEAPONMAINHAND = { "Main Hand" },
+    INVTYPE_WEAPONOFFHAND = { "Off Hand", "Dual Wield" },
+    INVTYPE_2HWEAPON = { "Main Hand", "Two Hand" },
+    INVTYPE_SHIELD = { "Off Hand" },
+    INVTYPE_HOLDABLE = { "Off Hand" },
+    INVTYPE_RANGED = { "Ranged" },
+    INVTYPE_RANGEDRIGHT = { "Ranged" },
+    INVTYPE_THROWN = { "Ranged" },
+}
+
+local EQUIP_LOCATION_SLOT_LABELS = {
+    INVTYPE_HEAD = "Head",
+    INVTYPE_SHOULDER = "Shoulder",
+    INVTYPE_CLOAK = "Back",
+    INVTYPE_CHEST = "Chest",
+    INVTYPE_ROBE = "Chest",
+    INVTYPE_WRIST = "Wrist",
+    INVTYPE_HAND = "Hands",
+    INVTYPE_WAIST = "Waist",
+    INVTYPE_LEGS = "Legs",
+    INVTYPE_FEET = "Feet",
+    INVTYPE_FINGER = "Ring",
+    INVTYPE_WEAPON = "Weapon",
+    INVTYPE_WEAPONMAINHAND = "Main Hand",
+    INVTYPE_WEAPONOFFHAND = "Off Hand",
+    INVTYPE_2HWEAPON = "Two Hand",
+    INVTYPE_SHIELD = "Off Hand",
+    INVTYPE_HOLDABLE = "Off Hand",
+    INVTYPE_RANGED = "Ranged",
+    INVTYPE_RANGEDRIGHT = "Ranged",
+    INVTYPE_THROWN = "Ranged",
+}
+
 local ACCESS_LABELS = {
     ready = "Farmable",
     ready_alternate = "Farmable through alternate source",
@@ -471,6 +530,22 @@ local function getContainerItemIDSafe(bag, slot)
     return nil
 end
 
+local function getContainerItemLinkSafe(bag, slot)
+    local ok, result
+    if C_Container and C_Container.GetContainerItemLink then
+        ok, result = pcall(C_Container.GetContainerItemLink, bag, slot)
+        if ok then
+            return result
+        end
+    elseif GetContainerItemLink then
+        ok, result = pcall(GetContainerItemLink, bag, slot)
+        if ok then
+            return result
+        end
+    end
+    return nil
+end
+
 local function getInventorySlotId(slotDefinition)
     if GetInventorySlotInfo and slotDefinition.inventorySlotName then
         local slotId = GetInventorySlotInfo(slotDefinition.inventorySlotName)
@@ -481,12 +556,78 @@ local function getInventorySlotId(slotDefinition)
     return slotDefinition.inventorySlotId
 end
 
+local function getInventoryItemLinkSafe(slotId)
+    if GetInventoryItemLink and slotId then
+        local ok, itemLink = pcall(GetInventoryItemLink, "player", slotId)
+        if ok then
+            return itemLink
+        end
+    end
+    return nil
+end
+
 local function getItemEquipLocation(itemId)
     if GetItemInfoInstant and itemId then
         local _, _, _, equipLocation = GetItemInfoInstant(itemId)
         return equipLocation
     end
     return nil
+end
+
+local function parseItemLinkEnhancements(itemLink)
+    local itemString = itemLink and string.match(itemLink, "item:([^|%]]+)")
+    if not itemString then
+        return nil
+    end
+
+    local fields = {}
+    for field in string.gmatch(itemString .. ":", "([^:]*):") do
+        table.insert(fields, field)
+    end
+
+    local parsed = {
+        item_id = tonumber(fields[1]),
+        enchant_id = tonumber(fields[2]),
+        gem_ids = {},
+    }
+    if not parsed.item_id then
+        return nil
+    end
+    if parsed.enchant_id == 0 then
+        parsed.enchant_id = nil
+    end
+    for index = 3, 6 do
+        local gemId = tonumber(fields[index])
+        if gemId and gemId > 0 then
+            table.insert(parsed.gem_ids, gemId)
+        end
+    end
+    return parsed
+end
+
+local function itemNameFromLink(itemLink)
+    return itemLink and string.match(itemLink, "%[([^%]]+)%]") or nil
+end
+
+local function enhancementSlotsContain(slots, slotName)
+    if not slotName or slotName == "" then
+        return true
+    end
+
+    for _, candidate in ipairs(slots or {}) do
+        if candidate == slotName then
+            return true
+        end
+    end
+    return false
+end
+
+local function enhancementSlotsForEquipLocation(equipLocation)
+    return EQUIP_LOCATION_ENHANCEMENT_SLOTS[equipLocation] or {}
+end
+
+local function slotLabelForEquipLocation(equipLocation)
+    return EQUIP_LOCATION_SLOT_LABELS[equipLocation]
 end
 
 local function ownershipStateLabel(state)
@@ -868,21 +1009,48 @@ function UI:BuildOwnedItems()
 
     local owned = {
         equippedSlots = {},
+        enhancementItems = {},
         bankScanned = BigBiSListDB.char.bankCache and BigBiSListDB.char.bankCache.scanned or false,
         bankUpdatedAt = BigBiSListDB.char.bankCache and BigBiSListDB.char.bankCache.updatedAt or "",
+        bankLinkCount = BigBiSListDB.char.bankCache and BigBiSListDB.char.bankCache.links and #BigBiSListDB.char.bankCache.links or 0,
     }
+
+    local function addEnhancedItem(itemLink, state, locationLabel, slotDefinition)
+        local parsed = parseItemLinkEnhancements(itemLink)
+        if not parsed then
+            return
+        end
+
+        local equipLocation = getItemEquipLocation(parsed.item_id)
+        local slots = slotDefinition and slotDefinition.slots or enhancementSlotsForEquipLocation(equipLocation)
+        table.insert(owned.enhancementItems, {
+            item_id = parsed.item_id,
+            item_link = itemLink,
+            enchant_id = parsed.enchant_id,
+            gem_ids = parsed.gem_ids,
+            state = state,
+            location_label = locationLabel,
+            slot = slotDefinition and slotDefinition.label or slotLabelForEquipLocation(equipLocation),
+            slot_key = slotDefinition and slotDefinition.key or nil,
+            slots = slots,
+            equip_location = equipLocation,
+        })
+    end
 
     if GetInventoryItemID then
         for _, slotDefinition in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
             local slotId = getInventorySlotId(slotDefinition)
             local itemId = slotId and GetInventoryItemID("player", slotId)
             if itemId then
+                local itemLink = getInventoryItemLinkSafe(slotId)
                 owned[itemId] = "equipped"
                 owned.equippedSlots[slotDefinition.key] = {
                     item_id = itemId,
+                    item_link = itemLink,
                     slotId = slotId,
                     slot = slotDefinition.label,
                 }
+                addEnhancedItem(itemLink, "equipped", "Equipped", slotDefinition)
 
                 if slotDefinition.key == "MainHand" and getItemEquipLocation(itemId) == "INVTYPE_2HWEAPON" then
                     owned.equippedTwoHand = true
@@ -896,9 +1064,11 @@ function UI:BuildOwnedItems()
 
         for slot = 1, numSlots do
             local itemId = getContainerItemIDSafe(bag, slot)
+            local itemLink = getContainerItemLinkSafe(bag, slot)
             if itemId and not owned[itemId] then
                 owned[itemId] = "bag"
             end
+            addEnhancedItem(itemLink, "bag", "Bags")
         end
     end
 
@@ -909,6 +1079,11 @@ function UI:BuildOwnedItems()
             if itemId and not owned[itemId] then
                 owned[itemId] = "bank"
             end
+        end
+    end
+    if bankCache and bankCache.links then
+        for _, itemLink in ipairs(bankCache.links) do
+            addEnhancedItem(itemLink, "bank", "Bank")
         end
     end
 
@@ -1183,13 +1358,18 @@ function UI:ScanBankItems()
 
     local cache = BigBiSListDB.char.bankCache
     cache.items = {}
+    cache.links = {}
 
     local function addContainerItems(bag)
         local numSlots = getContainerNumSlotsSafe(bag)
         for slot = 1, numSlots do
             local itemId = getContainerItemIDSafe(bag, slot)
+            local itemLink = getContainerItemLinkSafe(bag, slot)
             if itemId then
                 cache.items[tostring(itemId)] = true
+            end
+            if itemLink then
+                table.insert(cache.links, itemLink)
             end
         end
     end
@@ -1787,15 +1967,170 @@ function UI:SetSpellButton(button, spellId, nameText, fallbackName, detailData, 
     end)
 end
 
+local function enhancementEffectIdsContain(effectIds, effectId)
+    local numericEffectId = tonumber(effectId)
+    if not numericEffectId then
+        return false
+    end
+
+    for _, candidate in ipairs(effectIds or {}) do
+        if tonumber(candidate) == numericEffectId then
+            return true
+        end
+    end
+    return false
+end
+
+local function gemIdsContain(gemIds, gemId)
+    local numericGemId = tonumber(gemId)
+    if not numericGemId then
+        return false
+    end
+
+    for _, candidate in ipairs(gemIds or {}) do
+        if tonumber(candidate) == numericGemId then
+            return true
+        end
+    end
+    return false
+end
+
+local function slotMatchesEnhancement(instance, data)
+    local matchSlot = data and data.match_slot
+    if not matchSlot or matchSlot == "" then
+        return true
+    end
+
+    if enhancementSlotsContain(instance and instance.slots, matchSlot) then
+        return true
+    end
+
+    local equipLocation = instance and (instance.equip_location or getItemEquipLocation(instance.item_id))
+    return enhancementSlotsContain(enhancementSlotsForEquipLocation(equipLocation), matchSlot)
+end
+
+local function enhancementInstanceItemName(instance)
+    local itemName = itemNameFromLink(instance and instance.item_link)
+    if itemName and itemName ~= "" then
+        return itemName
+    end
+
+    if GetItemInfo and instance and instance.item_id then
+        itemName = GetItemInfo(instance.item_id)
+        if itemName and itemName ~= "" then
+            return itemName
+        end
+    end
+
+    local item = instance and instance.item_id and BigBiSList.GetItemData and BigBiSList:GetItemData(instance.item_id)
+    return (item and item.name) or ("Item " .. tostring(instance and instance.item_id or ""))
+end
+
+local function enhancementInstanceLine(instance)
+    local location = instance and (instance.location_label or ownershipStateLabel(instance.state)) or "Item"
+    local slot = instance and instance.slot
+    if slot and slot ~= "" then
+        return location .. " " .. slot .. ": " .. enhancementInstanceItemName(instance)
+    end
+    return location .. ": " .. enhancementInstanceItemName(instance)
+end
+
+local function sortEnhancementMatches(a, b)
+    local aSort = ENHANCEMENT_LOCATION_SORT[a.state or "missing"] or 99
+    local bSort = ENHANCEMENT_LOCATION_SORT[b.state or "missing"] or 99
+    if aSort ~= bSort then
+        return aSort < bSort
+    end
+    return enhancementInstanceItemName(a) < enhancementInstanceItemName(b)
+end
+
+local function enhancementAppliedLabel(state, stateCount, totalCount)
+    local label = ownershipStateLabel(state)
+    if stateCount and stateCount > 1 then
+        return label .. " x" .. tostring(stateCount)
+    elseif totalCount and totalCount > 1 then
+        return label .. " +" .. tostring(totalCount - 1)
+    end
+    return label
+end
+
+function UI:GetEnhancementAppliedMatches(data)
+    if not data or (data.enhancement_kind ~= "gem" and data.enhancement_kind ~= "enchant") then
+        return {}
+    end
+
+    local owned = self.currentOwned or self:BuildOwnedItems()
+    local matches = {}
+    for _, instance in ipairs(owned.enhancementItems or {}) do
+        if data.enhancement_kind == "gem" then
+            if gemIdsContain(instance.gem_ids, data.gem_item_id or data.item_id) then
+                table.insert(matches, instance)
+            end
+        elseif data.enhancement_kind == "enchant"
+            and instance.enchant_id
+            and enhancementEffectIdsContain(data.enchant_effect_ids, instance.enchant_id)
+            and slotMatchesEnhancement(instance, data) then
+            table.insert(matches, instance)
+        end
+    end
+
+    table.sort(matches, sortEnhancementMatches)
+    return matches
+end
+
+function UI:GetEnhancementAppliedSummary(data)
+    local matches = self:GetEnhancementAppliedMatches(data)
+    local owned = self.currentOwned or self:BuildOwnedItems()
+    if #matches == 0 then
+        local enhancementType = data and data.enhancement_kind == "gem" and "gem" or "enchant"
+        local detail = "No matching applied " .. enhancementType .. " found on equipped gear or bags."
+        if owned and (not owned.bankScanned or (owned.bankLinkCount or 0) == 0) then
+            detail = detail .. " Open your bank once to include banked gear."
+        end
+        return {
+            state = "missing",
+            label = ownershipStateLabel("missing"),
+            title = "Applied",
+            detail = detail,
+        }
+    end
+
+    local bestState = matches[1].state or "missing"
+    local stateCounts = {}
+    for _, match in ipairs(matches) do
+        local state = match.state or "missing"
+        stateCounts[state] = (stateCounts[state] or 0) + 1
+        if (OWNERSHIP_PRIORITY[state] or 0) > (OWNERSHIP_PRIORITY[bestState] or 0) then
+            bestState = state
+        end
+    end
+
+    local lines = {}
+    for index, match in ipairs(matches) do
+        if index > 5 then
+            table.insert(lines, "+" .. tostring(#matches - 5) .. " more")
+            break
+        end
+        table.insert(lines, enhancementInstanceLine(match))
+    end
+
+    return {
+        state = bestState,
+        label = enhancementAppliedLabel(bestState, stateCounts[bestState], #matches),
+        title = "Applied",
+        detail = "Detected from equipped gear, bags, and your latest bank scan.",
+        lines = lines,
+    }
+end
+
 function UI:GetOwnershipState(itemId, itemIds)
-    local priority = { missing = 0, bank = 1, bag = 2, equipped = 3 }
     local bestState = itemId and self.currentOwned and self.currentOwned[itemId] or nil
 
     for _, candidateItemId in ipairs(itemIds or {}) do
         local candidateState = self.currentOwned and self.currentOwned[candidateItemId]
         if candidateState == "equipped" then
             return "equipped"
-        elseif candidateState and (priority[candidateState] or 0) > (priority[bestState or "missing"] or 0) then
+        elseif candidateState and (OWNERSHIP_PRIORITY[candidateState] or 0) > (OWNERSHIP_PRIORITY[bestState or "missing"] or 0) then
             bestState = candidateState
         end
     end
@@ -1806,6 +2141,14 @@ end
 function UI:GetRowOwnershipState(data)
     if not data then
         return nil
+    end
+    if data.enhancement_kind == "gem" or data.enhancement_kind == "enchant" then
+        local summary = self:GetEnhancementAppliedSummary(data)
+        data.ownership_label = summary.label
+        data.ownership_title = summary.title
+        data.ownership_detail = summary.detail
+        data.ownership_lines = summary.lines
+        return summary.state
     end
     if data.ownership_state then
         return data.ownership_state
@@ -1820,13 +2163,17 @@ function UI:CreateOwnershipBadge(parent, state, data)
     local widgets = BigBiSList.Widgets
     local color = OWNERSHIP_COLORS[state] or OWNERSHIP_COLORS.missing
     local label = data and data.ownership_label or ownershipStateLabel(state)
+    local title = data and data.ownership_title or "Have"
     local badge = widgets:CreateStatusBadge(parent, label, HAVE_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
     badge:EnableMouse(true)
 
     badge:SetScript("OnEnter", function(selfBadge)
         GameTooltip:SetOwner(selfBadge, "ANCHOR_RIGHT")
-        GameTooltip:AddLine("Have", 1, 0.82, 0.28)
+        GameTooltip:AddLine(title, 1, 0.82, 0.28)
         GameTooltip:AddLine(label, 0.86, 0.86, 0.86)
+        for _, line in ipairs(data and data.ownership_lines or {}) do
+            GameTooltip:AddLine(line, 0.62, 0.78, 0.94, true)
+        end
         if data and data.ownership_detail and data.ownership_detail ~= "" then
             GameTooltip:AddLine(data.ownership_detail, 0.62, 0.62, 0.66, true)
         end
@@ -1947,7 +2294,7 @@ function UI:CreateListColumnHeader(parent, yOffset, mode)
 
     local labels = {
         { text = layout.showWhy and "Item" or "Item / Why", column = layout.item },
-        { text = "Have", column = layout.have },
+        { text = mode == "enhance" and "Status" or "Have", column = layout.have },
         { text = "Get", column = layout.get },
     }
     if layout.showRank then
@@ -1962,7 +2309,7 @@ function UI:CreateListColumnHeader(parent, yOffset, mode)
         local label = header:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
         label:SetPoint("TOPLEFT", header, "TOPLEFT", entry.column.x, -2)
         label:SetWidth(entry.column.width)
-        local justify = (entry.text == "Have" or entry.text == "Get") and "CENTER" or "LEFT"
+        local justify = (entry.column == layout.have or entry.column == layout.get) and "CENTER" or "LEFT"
         label:SetJustifyH(justify)
         label:SetWordWrap(false)
         label:SetTextColor(0.62, 0.62, 0.66, 1)
@@ -2778,7 +3125,16 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
 
     local ownershipText
-    if detailItemId then
+    if detailData and (detailData.enhancement_kind == "gem" or detailData.enhancement_kind == "enchant") then
+        local appliedSummary = self:GetEnhancementAppliedSummary(detailData)
+        appendText(recommendationLines, "Applied: " .. appliedSummary.label)
+        for _, line in ipairs(appliedSummary.lines or {}) do
+            appendText(recommendationLines, line)
+        end
+        if appliedSummary.state == "missing" and appliedSummary.detail and appliedSummary.detail ~= "" then
+            appendText(recommendationLines, appliedSummary.detail)
+        end
+    elseif detailItemId then
         local ownershipState = self:GetOwnershipState(detailItemId, detailData and detailData.item_ids)
         ownershipText = ownershipStateLabel(ownershipState)
         if ownershipState == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then

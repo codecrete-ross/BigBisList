@@ -23,6 +23,7 @@ def build_data() -> dict:
     gem_sources = canonical_json("gem_sources")["gem_sources"]
     enchants = canonical_json("enchants")["enchants"]
     enchant_sources = canonical_json("enchant_sources")["enchant_sources"]
+    enchant_effects = canonical_json("enchant_effects")["enchant_effects"]
     consumables = canonical_json("consumables")["consumables"]
     leveling = canonical_json("leveling")["leveling"]
     credits = canonical_json("credits")["credits"]
@@ -73,6 +74,7 @@ def build_data() -> dict:
         "gem_sources": gem_sources,
         "enchants": enchants,
         "enchant_sources": enchant_sources,
+        "enchant_effects": enchant_effects,
         "consumables": consumables,
         "leveling": leveling,
         "overrides": overrides,

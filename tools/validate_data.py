@@ -109,6 +109,7 @@ def validate() -> ValidationResult:
     gem_sources_doc = canonical_json("gem_sources")
     enchants_doc = canonical_json("enchants")
     enchant_sources_doc = canonical_json("enchant_sources")
+    enchant_effects_doc = canonical_json("enchant_effects")
     consumables_doc = canonical_json("consumables")
     leveling_doc = canonical_json("leveling")
     manifest_doc = canonical_json("scrape_manifest")
@@ -240,19 +241,54 @@ def validate() -> ValidationResult:
         _require(str(gem.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Gem {gem_id} needs a Wowhead source URL")
         validate_requirements(f"Gem {gem_id}", gem.get("requirements"), errors)
 
+    referenced_enchant_keys: set[tuple[str, int]] = set()
+    referenced_enchant_slots: dict[tuple[str, int], set[str]] = {}
     for enchant in enchants_doc.get("enchants", []):
         class_name = enchant.get("class")
         spec_name = enchant.get("spec")
         phase = enchant.get("phase")
         enchant_id = enchant.get("id")
+        enchant_type = enchant.get("type")
         _require(class_name in class_names, errors, f"Unknown class in enchant row: {class_name}")
         _require(spec_name in specs_by_class.get(class_name, set()), errors, f"Unknown spec in enchant row: {class_name}/{spec_name}")
         _require(phase in PHASE_KEYS, errors, f"Unknown phase in enchant row: {phase}")
         _require(enchant.get("slot") in SLOT_NAMES, errors, f"Unknown enchant slot: {enchant.get('slot')}")
         _require(isinstance(enchant_id, int) and enchant_id > 0, errors, f"Invalid enchant id: {enchant_id}")
-        _require(enchant.get("type") in {"item", "spell"}, errors, f"Enchant {enchant_id} has invalid type: {enchant.get('type')}")
+        _require(enchant_type in {"item", "spell"}, errors, f"Enchant {enchant_id} has invalid type: {enchant_type}")
         _require(str(enchant.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Enchant {enchant_id} needs a Wowhead source URL")
         validate_requirements(f"Enchant {enchant_id}", enchant.get("requirements"), errors)
+        if enchant_type in {"item", "spell"} and isinstance(enchant_id, int):
+            enchant_key = (str(enchant_type), int(enchant_id))
+            referenced_enchant_keys.add(enchant_key)
+            referenced_enchant_slots.setdefault(enchant_key, set()).add(str(enchant.get("slot")))
+
+    enchant_effect_keys: set[tuple[str, int]] = set()
+    for effect_row in enchant_effects_doc.get("enchant_effects", []):
+        effect_type = effect_row.get("type")
+        effect_id = effect_row.get("id")
+        effect_label = f"{effect_type}/{effect_id}"
+        _require(effect_type in {"item", "spell"}, errors, f"Enchant effect {effect_label} has invalid type: {effect_type}")
+        _require(isinstance(effect_id, int) and effect_id > 0, errors, f"Enchant effect row has invalid id: {effect_id}")
+        _require(bool(effect_row.get("name")), errors, f"Enchant effect {effect_label} needs name")
+        _require(effect_row.get("slot") in SLOT_NAMES, errors, f"Enchant effect {effect_label} has invalid slot: {effect_row.get('slot')}")
+        _require(isinstance(effect_row.get("source_spell_id"), int) and effect_row.get("source_spell_id") > 0, errors, f"Enchant effect {effect_label} needs source_spell_id")
+        _require(str(effect_row.get("source_url", "")).startswith("https://www.wowhead.com/tbc/spell="), errors, f"Enchant effect {effect_label} needs a Wowhead spell source_url")
+        effect_ids = effect_row.get("effect_ids")
+        _require(isinstance(effect_ids, list) and bool(effect_ids), errors, f"Enchant effect {effect_label} needs effect_ids")
+        if isinstance(effect_ids, list):
+            for applied_effect_id in effect_ids:
+                _require(isinstance(applied_effect_id, int) and applied_effect_id > 0, errors, f"Enchant effect {effect_label} has invalid applied effect id: {applied_effect_id}")
+        if effect_type in {"item", "spell"} and isinstance(effect_id, int):
+            effect_key = (str(effect_type), int(effect_id))
+            _require(effect_key not in enchant_effect_keys, errors, f"Duplicate enchant effect row: {effect_type}/{effect_id}")
+            valid_slots = referenced_enchant_slots.get(effect_key)
+            _require(valid_slots is None or effect_row.get("slot") in valid_slots, errors, f"Enchant effect {effect_label} slot does not match canonical enchants: {effect_row.get('slot')}")
+            enchant_effect_keys.add(effect_key)
+
+    for enchant_key in sorted(referenced_enchant_keys):
+        _require(enchant_key in enchant_effect_keys, errors, f"Missing enchant effect row for {enchant_key[0]}/{enchant_key[1]}")
+    for effect_key in sorted(enchant_effect_keys):
+        _require(effect_key in referenced_enchant_keys, errors, f"Orphan enchant effect row for {effect_key[0]}/{effect_key[1]}")
 
     for consumable in consumables_doc.get("consumables", []):
         class_name = consumable.get("class")
@@ -331,6 +367,7 @@ def validate() -> ValidationResult:
         "bis_lists": len(bis_doc.get("lists", [])),
         "consumables": len(consumables_doc.get("consumables", [])),
         "enchant_sources": len(enchant_sources_doc.get("enchant_sources", [])),
+        "enchant_effects": len(enchant_effects_doc.get("enchant_effects", [])),
         "enchants": len(enchants_doc.get("enchants", [])),
         "gem_sources": len(gem_sources_doc.get("gem_sources", [])),
         "gems": len(gems_doc.get("gems", [])),

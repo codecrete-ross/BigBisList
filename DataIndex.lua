@@ -1496,6 +1496,7 @@ function BigBiSList:GetDataIndex()
             gemSourcesById = {},
             enchants = data.enchants or {},
             enchantSourcesByKey = {},
+            enchantEffectsByKey = {},
             consumables = data.consumables or {},
         },
     }
@@ -1519,6 +1520,11 @@ function BigBiSList:GetDataIndex()
         local key = enhancementSourceKey(sourceData.type or "item", sourceData.id)
         index.enhancement.enchantSourcesByKey[key] = index.enhancement.enchantSourcesByKey[key] or {}
         table.insert(index.enhancement.enchantSourcesByKey[key], sourceData)
+    end
+
+    for _, effectData in ipairs(data.enchant_effects or {}) do
+        local key = enhancementSourceKey(effectData.type or "item", effectData.id)
+        index.enhancement.enchantEffectsByKey[key] = effectData
     end
 
     table.sort(index.sourceTypes, sortSourceFilterKeys)
@@ -1941,6 +1947,8 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 item = item,
                 name = gem.name,
                 detail = gemDetailLabel(gem),
+                enhancement_kind = "gem",
+                gem_item_id = gem.id,
                 source_summary = gem.source_summary or "",
                 requirements = mergedRequirements(gem.requirements, item and item.requirements),
                 access_options = accessOptions,
@@ -1954,11 +1962,16 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
     for _, enchant in ipairs(index.enhancement.enchants or {}) do
         if enchant["class"] == className and enchant.spec == specName and enchant.phase == phaseKey then
             local entityType = enchant.type or "item"
+            local effectData = index.enhancement.enchantEffectsByKey[enhancementSourceKey(entityType, enchant.id)]
             local row = {
                 entity_type = entityType,
                 entity_id = enchant.id,
                 name = enchant.name,
                 detail = enchantDetailLabel(enchant),
+                enhancement_kind = "enchant",
+                match_slot = enchant.slot,
+                enchant_effect_ids = effectData and effectData.effect_ids or {},
+                enchant_effect_source_spell_id = effectData and effectData.source_spell_id or nil,
                 source_summary = enchant.source_summary or "",
                 slot = enchant.slot,
                 recommendation_summary = enchantRecommendationSummary(enchant),
@@ -2007,6 +2020,7 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                     item = primaryItem,
                     name = consumableDisplayName(consumable, itemIds, index),
                     detail = consumableDetailLabel(consumable),
+                    enhancement_kind = "consumable",
                     source_summary = sourceSummary,
                     access_options = accessOptions,
                     recommendation_summary = consumableRecommendationSummary(consumable, true),
@@ -2025,6 +2039,7 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                         item = item,
                         name = consumable.item_names and consumable.item_names[itemIndex] or getItemName(itemId, item),
                         detail = consumableDetailLabel(consumable, itemIndex),
+                        enhancement_kind = "consumable",
                         source_summary = sourceSummary,
                         requirements = mergedRequirements(consumable.requirements, item and item.requirements),
                         access_options = accessOptions,

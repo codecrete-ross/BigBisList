@@ -47,6 +47,7 @@ CANONICAL_FILES = {
     "gem_sources": "gem_sources.json",
     "enchants": "enchants.json",
     "enchant_sources": "enchant_sources.json",
+    "enchant_effects": "enchant_effects.json",
     "consumables": "consumables.json",
     "leveling": "leveling.json",
     "credits": "credits.json",

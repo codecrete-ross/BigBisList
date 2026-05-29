@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 8
+local DEFAULTS_VERSION = 9
 
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -86,6 +86,7 @@ BigBiSList.defaults = {
             scanned = false,
             updatedAt = "",
             items = {},
+            links = {},
         },
         wishlist = {},
         ignoredItems = {},

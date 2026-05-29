@@ -11,6 +11,7 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertTrue(result.ok, result.errors)
         self.assertEqual(result.summary["classes"], 9)
         self.assertEqual(result.summary["specs"], 28)
+        self.assertEqual(result.summary["enchant_effects"], 65)
         self.assertEqual(result.summary["coverage"], "scraped_snapshot")
 
     def test_feral_dps_phase_2_trinket_regressions(self):
