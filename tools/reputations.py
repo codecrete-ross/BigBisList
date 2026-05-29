@@ -23,6 +23,7 @@ CANONICAL_REPUTATIONS = (
     "The Scryers",
     "The Sha'tar",
     "The Violet Eye",
+    "Timbermaw Hold",
     "Thrallmar",
 )
 

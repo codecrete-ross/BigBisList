@@ -469,6 +469,57 @@ def clean_requirement_target(value: str) -> str:
     return cleaned.strip(" .:-()")
 
 
+def is_conditional_bonus_reputation_match(text: str, match_start: int) -> bool:
+    context_start = max(
+        text.rfind("Equip:", 0, match_start),
+        text.rfind("Use:", 0, match_start),
+        text.rfind(".", 0, match_start),
+        text.rfind(";", 0, match_start),
+    )
+    context = text[context_start + 1 : match_start].lower()
+    return bool(re.search(r"\b(?:if|when)\s+you(?:'re|\s+are)?\b", context))
+
+
+def extract_aldor_scryer_choices(value: str) -> list[str]:
+    choices: list[str] = []
+    for faction in ["The Aldor", "The Scryers"]:
+        if not re.search(rf"\b{re.escape(faction)}\b", value, flags=re.IGNORECASE):
+            continue
+        for reputation_name in normalize_reputation_names(faction):
+            if reputation_name not in choices:
+                choices.append(reputation_name)
+    return choices
+
+
+def extract_explicit_faction_choice_names(text: str) -> list[str]:
+    choices: list[str] = []
+    choice_patterns = [
+        r"\brequires?\s+(?P<choices>(?:the aldor|the scryers)(?:\s*/\s*(?:the aldor|the scryers))*)\b(?!\s*[-–]?\s*(?:Neutral|Friendly|Honored|Revered|Exalted)\b)",
+        r"\((?P<choices>(?:the aldor|the scryers)(?:\s*/\s*(?:the aldor|the scryers))*)\)",
+    ]
+    for pattern in choice_patterns:
+        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+            for reputation_name in extract_aldor_scryer_choices(match.group("choices")):
+                if reputation_name not in choices:
+                    choices.append(reputation_name)
+    return choices
+
+
+def is_explicit_faction_choice_requirement(requirement: dict[str, Any]) -> bool:
+    raw_text = str(requirement.get("raw_text") or "")
+    if not raw_text:
+        return True
+    explicit_choices = extract_explicit_faction_choice_names(raw_text)
+    if not explicit_choices:
+        return False
+    requirement_choices: list[str] = []
+    for choice in requirement.get("choices") or []:
+        for reputation_name in normalize_reputation_names(choice):
+            if reputation_name not in requirement_choices:
+                requirement_choices.append(reputation_name)
+    return bool(requirement_choices) and all(choice in explicit_choices for choice in requirement_choices)
+
+
 def requirement_looks_like_text(text: str | None) -> bool:
     if not text:
         return False
@@ -551,6 +602,8 @@ def dedupe_requirements(requirements: list[dict[str, Any]]) -> list[dict[str, An
         scope = requirement.get("scope")
         if requirement_type not in REQUIREMENT_TYPES or scope not in REQUIREMENT_SCOPES:
             continue
+        if requirement_type == "faction_choice" and not is_explicit_faction_choice_requirement(requirement):
+            continue
         key = requirement_identity(requirement)
         if key in seen:
             continue
@@ -563,6 +616,7 @@ def extract_reputation_requirements(text: str, source_url: str, scope: str, conf
     requirements: list[dict[str, Any]] = []
     standing_pattern = "|".join(REPUTATION_STANDING_RANKS)
     patterns = [
+        rf"\brequires?\s+(?:level\s+\d+\s+requires?\s+)?(?P<reputation>(?:(?!\s+requires?\b).)+?)\s*[-–]\s*(?P<standing>{standing_pattern})(?=(?:\s+(?:Vendor|Quest|Drop|Profession|Use|Equip|Sell Price):|\s+and\s+requires?\b|[.;,]|$))",
         rf"\b(?:requires?|when|at|learned at)\s+(?P<standing>{standing_pattern})(?:\s+reputation)?\s+(?:with|from)\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
         rf"\b(?P<standing>{standing_pattern})(?:\s+reputation)?\s+with\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
         rf"\((?P<reputation>[^()]+?)\s*(?:-\s*)?(?P<standing>{standing_pattern})\)",
@@ -570,6 +624,8 @@ def extract_reputation_requirements(text: str, source_url: str, scope: str, conf
     ]
     for pattern in patterns:
         for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+            if is_conditional_bonus_reputation_match(text, match.start()):
+                continue
             standing = canonical_standing(match.group("standing"))
             reputation = clean_requirement_target(match.group("reputation"))
             if not standing or not reputation:
@@ -633,17 +689,8 @@ def extract_profession_requirements(text: str, source_url: str, scope: str, conf
 
 
 def extract_faction_choice_requirements(text: str, source_url: str, scope: str, confidence: str) -> list[dict[str, Any]]:
-    choices: list[str] = []
-    for faction in ["The Aldor", "The Scryers"]:
-        if not re.search(rf"\b{re.escape(faction)}\b", text, flags=re.IGNORECASE):
-            continue
-        for reputation_name in normalize_reputation_names(faction):
-            if reputation_name not in choices:
-                choices.append(reputation_name)
+    choices = extract_explicit_faction_choice_names(text)
     if not choices:
-        return []
-    lowered = text.lower()
-    if "requires" not in lowered and not re.search(r"\((?:the aldor|the scryers)", lowered):
         return []
     return [
         make_requirement(
@@ -727,10 +774,25 @@ def attach_requirements_to_source(source: dict[str, Any], source_url: str, defau
     return source
 
 
+def reparse_requirement_from_raw_text(requirement: dict[str, Any]) -> list[dict[str, Any]]:
+    raw_text = clean_text(str(requirement.get("raw_text") or ""))
+    source_url = str(requirement.get("source_url") or "")
+    scope = str(requirement.get("scope") or "")
+    confidence = str(requirement.get("confidence") or "")
+    if not raw_text or not source_url or scope not in REQUIREMENT_SCOPES or confidence not in REQUIREMENT_CONFIDENCES:
+        return [requirement]
+    reparsed = extract_requirements_from_text(raw_text, source_url, scope, confidence, include_unknown=False)
+    return reparsed or [requirement]
+
+
 def normalize_requirement_reputation_names(requirements: list[dict[str, Any]]) -> list[dict[str, Any]]:
     normalized: list[dict[str, Any]] = []
     for requirement in requirements:
         if not isinstance(requirement, dict):
+            continue
+        reparsed_requirements = reparse_requirement_from_raw_text(requirement)
+        if len(reparsed_requirements) != 1 or reparsed_requirements[0] is not requirement:
+            normalized.extend(reparsed_requirements)
             continue
         if requirement.get("type") == "reputation":
             reputation_names = normalize_reputation_names(requirement.get("reputation"))
@@ -3296,6 +3358,8 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
         requirements = item_requirements_for_import(item_id, item, snapshot, sources, item_source_hints.get(item_id, []))
         if requirements:
             item["requirements"] = requirements
+        else:
+            item.pop("requirements", None)
         items.append(item)
 
     return apply_item_overrides({"items": items})

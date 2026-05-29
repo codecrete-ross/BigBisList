@@ -601,15 +601,63 @@ local function rankShortLabel(use)
     elseif use.rank_group == "bis" then
         return "BiS"
     elseif use.rank_group == "ranked" then
-        return "Rank"
+        return "Alt"
     elseif use.rank_group == "situational" then
-        return "Sit"
+        return "Sidegrade"
     elseif use.rank_group == "pvp" then
         return "PvP"
     elseif use.rank_group == "unrealistic" then
-        return "Unreal"
+        return "Hard Farm"
     end
-    return "Opt"
+    return "Nice-to-have"
+end
+
+local function displayRankInfo(use)
+    if not use then
+        return "No match", "missing"
+    end
+
+    local rank = tonumber(use.rank)
+    if use.rank_group == "bis" then
+        return "BiS", "best"
+    elseif use.rank_group == "ranked" then
+        return "Alt", "ranked"
+    elseif use.rank_group == "situational" then
+        return "Sidegrade", "situational"
+    elseif use.rank_group == "pvp" then
+        return "PvP", "pvp"
+    elseif use.rank_group == "unrealistic" then
+        return "Hard Farm", "hard"
+    elseif rank and rank > 1 then
+        return "Alt", "ranked"
+    end
+
+    return "Nice-to-have", "backup"
+end
+
+local function recommendationSummary(use)
+    if not use then
+        return "No recommendation available"
+    end
+
+    if use.note and use.note ~= "" then
+        return use.note
+    end
+
+    local phaseLabel = PHASE_DISPLAY[use.phase] or tostring(use.phase or "this phase")
+    if use.rank_group == "bis" then
+        return "BiS for " .. phaseLabel
+    elseif use.rank_group == "ranked" then
+        return "Alt for " .. phaseLabel
+    elseif use.rank_group == "situational" then
+        return "Sidegrade for a specific fight, role, or gearing setup"
+    elseif use.rank_group == "pvp" then
+        return "PvP option"
+    elseif use.rank_group == "unrealistic" then
+        return "Hard Farm with unusual access"
+    end
+
+    return "Nice-to-have alternate"
 end
 
 local function isBetterGearUse(candidate, current, preferredPhaseKey)
@@ -853,7 +901,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     local requirements = mergedRequirements(item and item.requirements, itemEntry.requirements)
     local accessOptions = buildAccessOptions(item, nil, itemEntry.requirements, { entityType = "item" })
 
-    return {
+    local row = {
         class = className,
         spec = specName,
         phase = phaseKey,
@@ -884,6 +932,10 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         access_options = accessOptions,
         reputations = rowReputations(requirements, accessOptions),
     }
+
+    row.display_rank_label, row.display_rank_kind = displayRankInfo(row)
+    row.recommendation_summary = recommendationSummary(row)
+    return row
 end
 
 local function rowHasZone(row, zone)
@@ -1063,13 +1115,24 @@ end
 
 local function plannerTier(score)
     if score >= 75 then
-        return "Core"
+        return "BiS Now"
     elseif score >= 55 then
-        return "High"
+        return "Future BiS"
     elseif score >= 30 then
-        return "Useful"
+        return "Alt"
     end
-    return "Opportunistic"
+    return "Nice-to-have"
+end
+
+local function plannerRecommendationTier(score)
+    if score >= 75 then
+        return "chase_first"
+    elseif score >= 55 then
+        return "strong_targets"
+    elseif score >= 30 then
+        return "useful_backups"
+    end
+    return "only_if_easy"
 end
 
 local function scorePlannerGroup(group, selectedPhaseKey)
@@ -1108,10 +1171,10 @@ local function scorePlannerGroup(group, selectedPhaseKey)
 
     if hasCurrentBis then
         score = score + 60
-        addPlannerReason(reasons, reasonSeen, "BiS now")
+        addPlannerReason(reasons, reasonSeen, "BiS Now")
     elseif hasCurrent then
         score = score + 30
-        addPlannerReason(reasons, reasonSeen, "Option now")
+        addPlannerReason(reasons, reasonSeen, "Alt now")
     elseif firstFutureBis then
         score = score + 35
         addPlannerReason(reasons, reasonSeen, "Future BiS " .. (PHASE_DISPLAY[PHASE_ORDER[firstFutureBis]] or "future phase"))
@@ -1124,7 +1187,7 @@ local function scorePlannerGroup(group, selectedPhaseKey)
         addPlannerReason(reasons, reasonSeen, tostring(futureBisCount) .. " future BiS")
     end
     if futureOptionCount > 0 then
-        addPlannerReason(reasons, reasonSeen, tostring(futureOptionCount) .. " future options")
+        addPlannerReason(reasons, reasonSeen, tostring(futureOptionCount) .. " future alts")
     end
 
     if lastUsefulIndex > selectedIndex then
@@ -1133,7 +1196,7 @@ local function scorePlannerGroup(group, selectedPhaseKey)
         else
             score = score + 5
         end
-        addPlannerReason(reasons, reasonSeen, "Useful through " .. (PHASE_DISPLAY[PHASE_ORDER[lastUsefulIndex]] or "future phase"))
+        addPlannerReason(reasons, reasonSeen, "Listed through " .. (PHASE_DISPLAY[PHASE_ORDER[lastUsefulIndex]] or "future phase"))
     end
 
     if score > 100 then
@@ -1142,11 +1205,13 @@ local function scorePlannerGroup(group, selectedPhaseKey)
 
     group.priority = score
     group.priorityTier = plannerTier(score)
+    group.recommendation_tier = plannerRecommendationTier(score)
     group.reasons = reasons
     group.hasCurrent = hasCurrent
     group.hasCurrentBis = hasCurrentBis
     group.lastUsefulPhase = PHASE_ORDER[lastUsefulIndex] or group.bestUse.phase
     group.lastUsefulLabel = PHASE_DISPLAY[group.lastUsefulPhase] or group.lastUsefulPhase
+    group.recommendation_summary = reasons[1] or recommendationSummary(group.bestUse)
 end
 
 function BigBiSList:GetPhaseDisplayName(phaseKey)
@@ -1312,15 +1377,25 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
         local disabledReason
 
         if itemId and bestUse then
-            overlay = self:GetPhaseShortName(bestUse.phase) .. " " .. rankShortLabel(bestUse)
+            overlay = bestUse.rank_group == "bis" and "BiS match" or "Listed alt"
             overlayKind = bestUse.rank_group or "option"
         elseif itemId then
-            overlay = "No match"
+            overlay = "Off-list"
             overlayKind = "missing"
         elseif slot.key == "OffHand" and ownedItems and ownedItems.equippedTwoHand then
             overlay = "2H equipped"
             overlayKind = "disabled"
             disabledReason = "Two-handed weapon equipped"
+        end
+
+        local displayRankLabel, displayRankKind = displayRankInfo(bestUse)
+        local recommendation = "Empty slot"
+        if itemId and bestUse then
+            recommendation = bestUse.rank_group == "bis" and "BiS match for selected spec" or "Listed alt for selected spec"
+        elseif itemId then
+            recommendation = "Off-list for selected spec"
+        elseif disabledReason then
+            recommendation = disabledReason
         end
 
         table.insert(rows, {
@@ -1342,6 +1417,9 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
             dataSlots = slot.slots,
             requirements = mergedRequirements(bestUse and bestUse.requirements, item and item.requirements),
             access_options = bestUse and bestUse.access_options or buildAccessOptions(item, nil, nil, { entityType = "item" }),
+            display_rank_label = itemId and displayRankLabel or "Empty",
+            display_rank_kind = itemId and displayRankKind or "missing",
+            recommendation_summary = recommendation,
         })
     end
 
@@ -1455,6 +1533,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         scorePlannerGroup(group, selectedPhaseKey)
         group.rank_group = group.bestUse and group.bestUse.rank_group or "option"
         group.rank_label = group.bestUse and group.bestUse.rank_label or "Option"
+        group.display_rank_label = group.priorityTier or "Priority"
+        group.display_rank_kind = group.recommendation_tier or "only_if_easy"
         group.sides = group.bestUse and group.bestUse.sides or group.sides
         group.reputations = group.bestUse and group.bestUse.reputations or group.reputations
         group.requirements = group.bestUse and group.bestUse.requirements or group.requirements
@@ -1528,7 +1608,7 @@ function BigBiSList:GetAvailableFilterSourceTypes(className, specName, phaseKey,
     local seen = {}
     local scopedFilters = cloneFiltersForSourceTypeOptions(filters)
 
-    if tabName == "Planner" then
+    if tabName == "Planner" or tabName == "Upgrades" then
         for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
             addSourceTypeFromRow(sourceTypes, seen, row)
         end
@@ -1560,7 +1640,7 @@ function BigBiSList:GetAvailableFilterZones(className, specName, phaseKey, tabNa
     local seen = {}
     local scopedFilters = cloneFiltersForZoneOptions(filters)
 
-    if tabName == "Planner" then
+    if tabName == "Planner" or tabName == "Upgrades" then
         for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
             addZonesFromRow(zones, seen, row)
         end
@@ -1591,7 +1671,7 @@ function BigBiSList:GetAvailableFilterReputations(className, specName, phaseKey,
     local seen = {}
     local scopedFilters = cloneFiltersForReputationOptions(filters)
 
-    if tabName == "Planner" then
+    if tabName == "Planner" or tabName == "Upgrades" then
         for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
             addReputationsFromRow(reputations, seen, row)
         end
@@ -1714,20 +1794,8 @@ local function tooltipGroupKey(use)
 end
 
 local function tooltipRankShortLabel(use)
-    local label = use and use.rank_label or ""
-    local normalized = lower(label)
-
-    if string.find(normalized, "pvp", 1, true) then
-        return "PvP"
-    elseif normalized == "best" or string.find(normalized, "^best") then
-        return "Best"
-    elseif string.find(normalized, "bis", 1, true) then
-        return "BiS"
-    elseif string.find(normalized, "alt", 1, true) then
-        return "Alt"
-    elseif string.find(normalized, "option", 1, true) or string.find(normalized, "optional", 1, true) or string.find(normalized, "viable", 1, true) then
-        return "Opt"
-    elseif label and label ~= "" then
+    local label = use and use.display_rank_label or ""
+    if label ~= "" then
         return label
     end
 

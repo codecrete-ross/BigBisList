@@ -6,10 +6,19 @@ BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
 local UI = {}
 BigBiSList.UI = UI
 
-local TAB_NAMES = { "Phase", "Gear", "Planner", "Enhance", "Wishlist", "Settings" }
-local MIN_WIDTH = 920
+local TAB_NAMES = { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist", "Settings" }
+local TAB_NAME_ALIASES = {
+    Phase = "By Slot",
+    Gear = "Equipped",
+    Planner = "Upgrades",
+    Enhancements = "Enhance",
+}
+local TAB_DISPLAY_LABELS = {
+    Enhance = "Enhancements",
+}
+local MIN_WIDTH = 1020
 local MIN_HEIGHT = 560
-local DEFAULT_WIDTH = 1040
+local DEFAULT_WIDTH = 1160
 local DEFAULT_HEIGHT = 660
 local LEFT_RAIL_WIDTH = 220
 local LEFT_RAIL_INSET = 18
@@ -20,9 +29,20 @@ local LEFT_SLOT_BUTTON_WIDTH = 88
 local LEFT_SLOT_GAP = 8
 local LEFT_SLOT_ROW_HEIGHT = 24
 local DETAILS_WIDTH = 270
-local ROW_HEIGHT = 42
+local ROW_HEIGHT = 58
 local GEAR_ROW_HEIGHT = 50
 local RESIZE_SCREEN_MARGIN = 0
+local COLUMN_HEADER_HEIGHT = 22
+local COLUMN_GAP = 8
+local RANK_COLUMN_WIDTH = 96
+local HAVE_COLUMN_WIDTH = 96
+local GET_COLUMN_WIDTH = 122
+local WHY_COLUMN_MIN_WIDTH = 112
+local WHY_COLUMN_MAX_WIDTH = 150
+local WHY_COLUMN_THRESHOLD = 590
+local ROW_HORIZONTAL_PADDING = 8
+local ROW_VERTICAL_PADDING = 8
+local ROW_ICON_SIZE = 30
 
 local OWNERSHIP_LABELS = {
     equipped = "Equipped",
@@ -41,10 +61,30 @@ local OWNERSHIP_COLORS = {
 local ACCESS_LABELS = {
     ready = "Ready",
     ready_alternate = "Ready via alternate source",
-    needs_rep = "Needs rep",
-    needs_profession = "Needs profession",
-    needs_recipe = "Needs recipe",
-    check_prereq = "Check prereq",
+    needs_rep = "Need rep",
+    needs_profession = "Need profession",
+    needs_recipe = "Need recipe",
+    check_prereq = "Check",
+    unknown = "Unknown",
+}
+
+local ACCESS_BADGE_LABELS = {
+    ready = "Ready",
+    ready_alternate = "Alt ready",
+    needs_rep = "Need rep",
+    needs_profession = "Need profession",
+    needs_recipe = "Need recipe",
+    check_prereq = "Check",
+    unknown = "Unknown",
+}
+
+local ACCESS_DETAIL_LABELS = {
+    ready = "Farmable",
+    ready_alternate = "Farmable through alternate source",
+    needs_rep = "Rep gated",
+    needs_profession = "Profession gated",
+    needs_recipe = "Recipe gated",
+    check_prereq = "Check requirements",
     unknown = "Unknown",
 }
 
@@ -91,13 +131,13 @@ local QUALITY_COLORS = {
 }
 
 local RANK_FILTER_LABELS = {
-    all = "All",
+    all = "All tags",
     bis = "BiS only",
-    ranked = "Ranked only",
-    situational = "Situational",
+    ranked = "Alts only",
+    situational = "Sidegrades",
     pvp = "PvP only",
-    unrealistic = "Unrealistic",
-    option = "Options only",
+    unrealistic = "Hard Farms",
+    option = "Nice-to-have",
 }
 local RANK_FILTER_ORDER = { "all", "bis", "ranked", "situational", "pvp", "unrealistic", "option" }
 
@@ -119,12 +159,34 @@ local BOE_FILTER_LABELS = {
 local BOE_FILTER_ORDER = { "all", "boe", "not_boe" }
 
 local LONGEVITY_FILTER_LABELS = {
-    all = "All longevity",
-    current = "Useful now",
+    all = "All usefulness",
+    current = "Current",
     future = "Future value",
-    long = "Long-lived",
+    long = "Long-term",
 }
 local LONGEVITY_FILTER_ORDER = { "all", "current", "future", "long" }
+
+local RANK_COLORS = {
+    best = { 0.18, 0.15, 0.06, 0.96, 0.92, 0.76, 0.28, 1 },
+    ranked = { 0.10, 0.18, 0.30, 0.96, 0.46, 0.68, 0.98, 1 },
+    situational = { 0.18, 0.12, 0.28, 0.96, 0.76, 0.56, 0.98, 1 },
+    pvp = { 0.12, 0.18, 0.30, 0.96, 0.56, 0.72, 1.00, 1 },
+    hard = { 0.28, 0.12, 0.12, 0.96, 0.94, 0.48, 0.48, 1 },
+    backup = { 0.14, 0.14, 0.16, 0.96, 0.58, 0.58, 0.64, 1 },
+    chase_first = { 0.16, 0.26, 0.14, 0.96, 0.54, 0.92, 0.46, 1 },
+    strong_targets = { 0.11, 0.22, 0.34, 0.96, 0.48, 0.72, 0.96, 1 },
+    useful_backups = { 0.24, 0.18, 0.08, 0.96, 0.92, 0.72, 0.34, 1 },
+    only_if_easy = { 0.14, 0.14, 0.16, 0.96, 0.58, 0.58, 0.64, 1 },
+    missing = { 0.12, 0.12, 0.14, 0.92, 0.34, 0.34, 0.38, 1 },
+    enhance = { 0.10, 0.18, 0.24, 0.96, 0.54, 0.82, 0.88, 1 },
+}
+
+local PLANNER_TIER_SECTIONS = {
+    { key = "chase_first", title = "BiS Now" },
+    { key = "strong_targets", title = "Future BiS" },
+    { key = "useful_backups", title = "Alt / Sidegrade" },
+    { key = "only_if_easy", title = "Nice-to-have" },
+}
 
 local function clamp(value, minValue, maxValue)
     if value < minValue then
@@ -152,10 +214,29 @@ local function listContains(list, value)
     return false
 end
 
+local function normalizeTabName(tabName)
+    return TAB_NAME_ALIASES[tabName] or tabName
+end
+
 local function safeSetText(fontString, text)
     if fontString then
         fontString:SetText(text or "")
     end
+end
+
+local function appendText(parts, text)
+    text = trim(text)
+    if text ~= "" then
+        table.insert(parts, text)
+    end
+end
+
+local function joinText(parts, separator)
+    local cleaned = {}
+    for _, text in ipairs(parts or {}) do
+        appendText(cleaned, text)
+    end
+    return table.concat(cleaned, separator or " - ")
 end
 
 local function classColor(className)
@@ -172,6 +253,116 @@ local function itemQualityColor(item)
         return color[1], color[2], color[3]
     end
     return 0.9, 0.9, 0.9
+end
+
+local function displayRankInfo(data, mode)
+    if data and data.display_rank_label then
+        return data.display_rank_label, data.display_rank_kind or "backup"
+    end
+
+    if mode == "enhance" then
+        return "Enhancement", "enhance"
+    elseif mode == "wishlist" and data and data.priorityTier then
+        return data.priorityTier, data.recommendation_tier or "only_if_easy"
+    elseif not data then
+        return "Nice-to-have", "backup"
+    end
+
+    local rank = tonumber(data.rank)
+    if data.rank_group == "bis" then
+        return "BiS", "best"
+    elseif data.rank_group == "ranked" then
+        return "Alt", "ranked"
+    elseif data.rank_group == "situational" then
+        return "Sidegrade", "situational"
+    elseif data.rank_group == "pvp" then
+        return "PvP", "pvp"
+    elseif data.rank_group == "unrealistic" then
+        return "Hard Farm", "hard"
+    elseif rank and rank > 1 then
+        return "Alt", "ranked"
+    end
+
+    return "Nice-to-have", "backup"
+end
+
+local function rankMeaning(data, mode)
+    local label, kind = displayRankInfo(data, mode)
+    if kind == "best" then
+        return label .. ": best-in-slot item for this slot and phase."
+    elseif kind == "ranked" then
+        return label .. ": listed alternative below BiS."
+    elseif kind == "situational" then
+        return label .. ": useful for a specific fight, role, or gearing setup."
+    elseif kind == "pvp" then
+        return label .. ": PvP-sourced or PvP-focused item."
+    elseif kind == "hard" then
+        return label .. ": strong item with unusually difficult access."
+    elseif kind == "chase_first" then
+        return label .. ": highest-priority farmable upgrade."
+    elseif kind == "strong_targets" then
+        return label .. ": farmable now with later BiS value."
+    elseif kind == "useful_backups" then
+        return label .. ": worthwhile alt or sidegrade pickup."
+    elseif kind == "enhance" then
+        return label .. ": gem, enchant, or consumable recommendation."
+    elseif kind == "missing" then
+        return label .. ": no equipped item or no matching recommendation."
+    end
+
+    return label .. ": optional pickup when better targets are not available."
+end
+
+local function contentWidth(parent, fallback)
+    local width = parent and parent.GetWidth and parent:GetWidth()
+    if not width or width <= 1 then
+        width = fallback or 560
+    end
+    return math.max(260, width - 4)
+end
+
+local function rowColumnLayout(width)
+    local usable = math.max(260, width - (ROW_HORIZONTAL_PADDING * 2))
+    local showWhy = usable >= WHY_COLUMN_THRESHOLD
+    local whyWidth = 0
+
+    if showWhy then
+        whyWidth = clamp(math.floor(usable * 0.22), WHY_COLUMN_MIN_WIDTH, WHY_COLUMN_MAX_WIDTH)
+    end
+
+    local fixedWidth = RANK_COLUMN_WIDTH + HAVE_COLUMN_WIDTH + GET_COLUMN_WIDTH + (COLUMN_GAP * 3)
+    if showWhy then
+        fixedWidth = fixedWidth + whyWidth + COLUMN_GAP
+    end
+
+    local itemWidth = usable - fixedWidth
+    if showWhy and itemWidth < 190 then
+        showWhy = false
+        whyWidth = 0
+        fixedWidth = RANK_COLUMN_WIDTH + HAVE_COLUMN_WIDTH + GET_COLUMN_WIDTH + (COLUMN_GAP * 3)
+        itemWidth = usable - fixedWidth
+    end
+
+    itemWidth = math.max(130, itemWidth)
+
+    local x = ROW_HORIZONTAL_PADDING
+    local layout = {
+        showWhy = showWhy,
+        rank = { x = x, width = RANK_COLUMN_WIDTH },
+    }
+    x = x + RANK_COLUMN_WIDTH + COLUMN_GAP
+    layout.item = { x = x, width = itemWidth }
+    x = x + itemWidth + COLUMN_GAP
+
+    if showWhy then
+        layout.why = { x = x, width = whyWidth }
+        x = x + whyWidth + COLUMN_GAP
+    end
+
+    layout.have = { x = x, width = HAVE_COLUMN_WIDTH }
+    x = x + HAVE_COLUMN_WIDTH + COLUMN_GAP
+    layout.get = { x = x, width = GET_COLUMN_WIDTH }
+    return layout
 end
 
 local function getContainerNumSlotsSafe(bag)
@@ -232,6 +423,10 @@ local function accessStateLabel(state)
     return ACCESS_LABELS[state or "unknown"] or ACCESS_LABELS.unknown
 end
 
+local function accessDetailLabel(state)
+    return ACCESS_DETAIL_LABELS[state or "unknown"] or ACCESS_DETAIL_LABELS.unknown
+end
+
 local function rankFilterLabel(rankGroup)
     return RANK_FILTER_LABELS[rankGroup or "all"] or tostring(rankGroup or "All")
 end
@@ -245,7 +440,7 @@ local function boeFilterLabel(boe)
 end
 
 local function longevityFilterLabel(longevity)
-    return LONGEVITY_FILTER_LABELS[longevity or "all"] or tostring(longevity or "All longevity")
+    return LONGEVITY_FILTER_LABELS[longevity or "all"] or tostring(longevity or "All usefulness")
 end
 
 local function requirementSummary(requirement)
@@ -544,7 +739,7 @@ function UI:ValidateSelection()
     local className = selection.class
     local specName = selection.spec
     local phaseKey = selection.phase
-    local tabName = selection.tab
+    local tabName = normalizeTabName(selection.tab)
 
     if not index.specsByClass[className] then
         className = index.classNames[1]
@@ -567,7 +762,7 @@ function UI:ValidateSelection()
     end
 
     if not listContains(TAB_NAMES, tabName) then
-        tabName = "Phase"
+        tabName = "Upgrades"
     end
 
     BigBiSList:SetSelection(className, specName, phaseKey, tabName)
@@ -802,22 +997,22 @@ function UI:GetAccessBlockingReason(evaluation)
     end
 
     if evaluation.status == "ready" then
-        return "Character prerequisites appear satisfied. Drops, vendors, auctions, groups, and services are not guaranteed."
+        return "Farmable now. Drops, vendors, auctions, groups, and services are not guaranteed."
     elseif evaluation.blockingRequirement then
-        return accessStateLabel(evaluation.status) .. " - " .. requirementSummary(evaluation.blockingRequirement)
+        return accessDetailLabel(evaluation.status) .. " - " .. requirementSummary(evaluation.blockingRequirement)
     elseif evaluation.checkRequirement then
-        return "Check prereq - " .. requirementSummary(evaluation.checkRequirement)
+        return "Check requirements - " .. requirementSummary(evaluation.checkRequirement)
     elseif evaluation.unknownRequirement then
         return "Unknown - " .. requirementSummary(evaluation.unknownRequirement)
     end
 
-    return accessStateLabel(evaluation.status)
+    return accessDetailLabel(evaluation.status)
 end
 
 function UI:FormatRequirements(data)
     local requirements = data and data.requirements
     if not requirements or #requirements == 0 then
-        return "No known prerequisites."
+        return "No known character requirements."
     end
 
     local lines = {}
@@ -834,7 +1029,7 @@ function UI:FormatAccessOptionRequirements(optionEvaluation)
     local option = optionEvaluation and optionEvaluation.option
     local requirements = option and option.requirements
     if not requirements or #requirements == 0 then
-        return "No known character prerequisites."
+        return "No known character requirements."
     end
 
     local lines = {}
@@ -849,14 +1044,17 @@ end
 
 function UI:FormatAccessOptions(accessEvaluation)
     local lines = {}
+    local seen = {}
     for _, optionEvaluation in ipairs(accessEvaluation and accessEvaluation.options or {}) do
-        local option = optionEvaluation.option or {}
-        table.insert(lines, accessStateLabel(optionEvaluation.status) .. " - " .. (option.label or "Source"))
-        table.insert(lines, self:FormatAccessOptionRequirements(optionEvaluation))
+        local text = trim(self:FormatAccessOptionRequirements(optionEvaluation))
+        if text ~= "" and not seen[text] then
+            seen[text] = true
+            table.insert(lines, text)
+        end
     end
 
     if #lines == 0 then
-        return "No alternate source paths are known."
+        return "No known character requirements."
     end
 
     return table.concat(lines, "\n")
@@ -1208,7 +1406,7 @@ function UI:SetPhase(phaseKey)
 end
 
 function UI:SetTab(tabName)
-    BigBiSList:SetSelection(nil, nil, nil, tabName)
+    BigBiSList:SetSelection(nil, nil, nil, normalizeTabName(tabName))
     self:ValidateSourceTypeFilter()
     self:ValidateZoneFilter()
     self:ValidateReputationFilter()
@@ -1490,21 +1688,12 @@ end
 function UI:CreateOwnershipBadge(parent, state)
     local widgets = BigBiSList.Widgets
     local color = OWNERSHIP_COLORS[state] or OWNERSHIP_COLORS.missing
-    local badge = widgets:CreatePanel(nil, parent, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
-    badge:SetSize(70, 18)
+    local badge = widgets:CreateStatusBadge(parent, "Have: " .. ownershipStateLabel(state), HAVE_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
     badge:EnableMouse(true)
-
-    local label = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    label:SetPoint("LEFT", badge, "LEFT", 4, 0)
-    label:SetPoint("RIGHT", badge, "RIGHT", -4, 0)
-    label:SetJustifyH("CENTER")
-    label:SetWordWrap(false)
-    label:SetText(ownershipStateLabel(state))
-    badge.label = label
 
     badge:SetScript("OnEnter", function(selfBadge)
         GameTooltip:SetOwner(selfBadge, "ANCHOR_RIGHT")
-        GameTooltip:AddLine("Ownership", 1, 0.82, 0.28)
+        GameTooltip:AddLine("Have", 1, 0.82, 0.28)
         GameTooltip:AddLine(ownershipStateLabel(state), 0.86, 0.86, 0.86)
         if state == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
             GameTooltip:AddLine("Bank cache: " .. self.currentOwned.bankUpdatedAt, 0.62, 0.62, 0.66)
@@ -1521,34 +1710,25 @@ end
 function UI:CreateAccessBadge(parent, state, data)
     local widgets = BigBiSList.Widgets
     local color = ACCESS_COLORS[state] or ACCESS_COLORS.unknown
-    local badge = widgets:CreatePanel(nil, parent, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
-    badge:SetSize(state == "ready_alternate" and 132 or 86, 18)
+    local badge = widgets:CreateStatusBadge(parent, "Get: " .. (ACCESS_BADGE_LABELS[state] or ACCESS_BADGE_LABELS.unknown), GET_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
     badge:EnableMouse(true)
-
-    local label = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    label:SetPoint("LEFT", badge, "LEFT", 4, 0)
-    label:SetPoint("RIGHT", badge, "RIGHT", -4, 0)
-    label:SetJustifyH("CENTER")
-    label:SetWordWrap(false)
-    label:SetText(accessStateLabel(state))
-    badge.label = label
 
     badge:SetScript("OnEnter", function(selfBadge)
         local evaluation = UI:GetAccessEvaluation(data)
         local optionEvaluation = evaluation.optionEvaluation
         local option = optionEvaluation and optionEvaluation.option
         GameTooltip:SetOwner(selfBadge, "ANCHOR_RIGHT")
-        GameTooltip:AddLine("Prereq", 1, 0.82, 0.28)
+        GameTooltip:AddLine("Can get", 1, 0.82, 0.28)
         GameTooltip:AddLine(accessStateLabel(evaluation.status), 0.86, 0.86, 0.86)
         if option then
-            GameTooltip:AddLine("Best path: " .. (option.label or "Source"), 0.62, 0.78, 0.94, true)
+            GameTooltip:AddLine("How to get: " .. (option.label or "Source"), 0.62, 0.78, 0.94, true)
             GameTooltip:AddLine(UI:GetAccessBlockingReason(optionEvaluation), 0.62, 0.62, 0.66, true)
         elseif data and data.requirements and #data.requirements > 0 then
             for _, requirement in ipairs(data.requirements) do
                 GameTooltip:AddLine(requirementSummary(requirement), 0.62, 0.62, 0.66, true)
             end
         else
-            GameTooltip:AddLine("No known character prerequisites.", 0.62, 0.62, 0.66, true)
+            GameTooltip:AddLine("No known character requirements.", 0.62, 0.62, 0.66, true)
         end
         GameTooltip:Show()
     end)
@@ -1559,10 +1739,105 @@ function UI:CreateAccessBadge(parent, state, data)
     return badge
 end
 
+function UI:CreateRankBadge(parent, labelText, kind, data, mode)
+    local widgets = BigBiSList.Widgets
+    local color = RANK_COLORS[kind] or RANK_COLORS.backup
+    local badge = widgets:CreateStatusBadge(parent, labelText, RANK_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
+    badge:EnableMouse(true)
+
+    badge:SetScript("OnEnter", function(selfBadge)
+        GameTooltip:SetOwner(selfBadge, "ANCHOR_RIGHT")
+        GameTooltip:AddLine("Tag", 1, 0.82, 0.28)
+        GameTooltip:AddLine(rankMeaning(data, mode), 0.86, 0.86, 0.86, true)
+        GameTooltip:Show()
+    end)
+    badge:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+
+    return badge
+end
+
+function UI:GetRowRecommendationText(data, mode)
+    if data and data.recommendation_summary and data.recommendation_summary ~= "" then
+        return data.recommendation_summary
+    end
+
+    if mode == "planner" then
+        return table.concat(data and data.reasons or {}, ", ")
+    elseif mode == "enhance" then
+        return data and data.detail or "Enhancement"
+    elseif mode == "wishlist" then
+        return data and data.detail or "Saved item"
+    elseif data and data.rank_label then
+        return displayRankInfo(data, mode)
+    end
+
+    return "Nice-to-have"
+end
+
+function UI:GetRowSubline(data, mode, includeWhy)
+    local parts = {}
+
+    if includeWhy then
+        appendText(parts, self:GetRowRecommendationText(data, mode))
+    end
+
+    if mode == "planner" then
+        appendText(parts, data and data.slot)
+        appendText(parts, data and data.source_summary)
+    elseif mode == "enhance" then
+        appendText(parts, data and data.detail)
+        appendText(parts, data and data.source_summary)
+    elseif mode == "wishlist" then
+        appendText(parts, data and data.detail)
+        appendText(parts, data and data.source_summary)
+    else
+        appendText(parts, data and data.source_type_label)
+        appendText(parts, data and data.source_summary)
+    end
+
+    return joinText(parts, " - ")
+end
+
+function UI:CreateListColumnHeader(parent, yOffset)
+    local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 560)
+    local layout = rowColumnLayout(width)
+    local header = CreateFrame("Frame", nil, parent)
+    header:SetHeight(COLUMN_HEADER_HEIGHT)
+    header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
+    header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
+
+    local labels = {
+        { text = "Tag", column = layout.rank },
+        { text = layout.showWhy and "Item" or "Item / Why", column = layout.item },
+        { text = "Have", column = layout.have },
+        { text = "Get", column = layout.get },
+    }
+    if layout.showWhy then
+        table.insert(labels, 3, { text = "Why", column = layout.why })
+    end
+
+    for _, entry in ipairs(labels) do
+        local label = header:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        label:SetPoint("TOPLEFT", header, "TOPLEFT", entry.column.x, -2)
+        label:SetWidth(entry.column.width)
+        local justify = (entry.text == "Have" or entry.text == "Get") and "CENTER" or "LEFT"
+        label:SetJustifyH(justify)
+        label:SetWordWrap(false)
+        label:SetTextColor(0.62, 0.62, 0.66, 1)
+        label:SetText(entry.text)
+    end
+
+    return header, COLUMN_HEADER_HEIGHT
+end
+
 function UI:CreateDataRow(parent, yOffset, data, mode)
     local widgets = BigBiSList.Widgets
     local entityType = data.entity_type or (data.spell_id and "spell") or "item"
     local entityId = data.entity_id or data.spell_id or data.item_id
+    local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 560)
+    local layout = rowColumnLayout(width)
     local row = widgets:CreateItemRow(parent, ROW_HEIGHT)
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     row:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
@@ -1572,42 +1847,45 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     row.detailData = data
     row.detailMode = mode
 
+    local rankLabel, rankKind = displayRankInfo(data, mode)
+    local rankBadge = self:CreateRankBadge(row, rankLabel, rankKind, data, mode)
+    rankBadge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.rank.x, -ROW_VERTICAL_PADDING)
+
     local iconButton = widgets:CreateIconButton(row, 30, function(_, buttonName)
         if buttonName == "RightButton" then
             self:RefreshDetails(entityId, data, mode)
         end
     end)
-    iconButton:SetPoint("LEFT", row, "LEFT", 8, 0)
+    iconButton:SetPoint("TOPLEFT", row, "TOPLEFT", layout.item.x, -ROW_VERTICAL_PADDING)
 
-    local nameText = row:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    local nameText = widgets:CreateWrappedLabel(row, "", "GameFontNormal")
     nameText:SetPoint("TOPLEFT", iconButton, "TOPRIGHT", 8, -2)
-    nameText:SetPoint("RIGHT", row, "RIGHT", -252, 0)
+    nameText:SetWidth(math.max(90, layout.item.width - ROW_ICON_SIZE - 8))
     nameText:SetJustifyH("LEFT")
-    nameText:SetWordWrap(false)
 
-    local detailText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    local detailText = widgets:CreateWrappedLabel(row, "", "GameFontNormalSmall")
     detailText:SetPoint("TOPLEFT", nameText, "BOTTOMLEFT", 0, -3)
-    detailText:SetPoint("RIGHT", row, "RIGHT", -252, 0)
+    detailText:SetWidth(math.max(90, layout.item.width - ROW_ICON_SIZE - 8))
     detailText:SetJustifyH("LEFT")
-    detailText:SetWordWrap(false)
     detailText:SetTextColor(0.68, 0.68, 0.72, 1)
+
+    local whyText
+    if layout.showWhy then
+        whyText = widgets:CreateWrappedLabel(row, "", "GameFontNormalSmall")
+        whyText:SetPoint("TOPLEFT", row, "TOPLEFT", layout.why.x, -ROW_VERTICAL_PADDING)
+        whyText:SetWidth(layout.why.width)
+        whyText:SetTextColor(0.76, 0.76, 0.80, 1)
+    end
 
     if data.item_id or data.item_ids then
         local ownershipState = self:GetOwnershipState(data.item_id, data.item_ids)
         local ownershipBadge = self:CreateOwnershipBadge(row, ownershipState)
-        ownershipBadge:SetPoint("RIGHT", row, "RIGHT", -170, 0)
+        ownershipBadge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.have.x, -ROW_VERTICAL_PADDING)
     end
 
     local accessState = self:GetAccessStatus(data)
     local accessBadge = self:CreateAccessBadge(row, accessState, data)
-    accessBadge:SetPoint("RIGHT", row, "RIGHT", -8, 7)
-
-    local sourceText = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    sourceText:SetPoint("RIGHT", row, "RIGHT", -8, -9)
-    sourceText:SetWidth(158)
-    sourceText:SetJustifyH("RIGHT")
-    sourceText:SetWordWrap(false)
-    sourceText:SetTextColor(0.54, 0.54, 0.58, 1)
+    accessBadge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.get.x, -ROW_VERTICAL_PADDING)
 
     local item = data.item or (data.item_id and BigBiSList:GetItemData(data.item_id))
     if entityType == "spell" then
@@ -1616,19 +1894,15 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
         self:SetItemButton(iconButton, data.item_id, nameText, data.name, item and item.quality, data, mode)
     end
 
-    if mode == "planner" then
-        safeSetText(detailText, data.slot .. " - " .. data.priorityTier .. " - " .. table.concat(data.reasons or {}, ", "))
-        safeSetText(sourceText, tostring(data.priority or 0) .. "/100 - " .. (data.source_summary or ""))
-    elseif mode == "enhance" then
-        safeSetText(detailText, data.detail or "")
-        safeSetText(sourceText, data.source_summary or "")
-    elseif mode == "wishlist" then
-        safeSetText(detailText, data.detail or "")
-        safeSetText(sourceText, data.source_summary or "")
-    else
-        safeSetText(detailText, (data.rank_label or "Option") .. " - " .. (data.source_type_label or "Source"))
-        safeSetText(sourceText, data.source_summary or "")
+    safeSetText(detailText, self:GetRowSubline(data, mode, not layout.showWhy))
+    if whyText then
+        safeSetText(whyText, self:GetRowRecommendationText(data, mode))
     end
+
+    local itemTextHeight = widgets:MeasureTextHeight(nameText, 14) + 3 + widgets:MeasureTextHeight(detailText, 12)
+    local whyHeight = whyText and widgets:MeasureTextHeight(whyText, 14) or 0
+    local rowHeight = math.max(ROW_HEIGHT, ROW_ICON_SIZE + (ROW_VERTICAL_PADDING * 2), itemTextHeight + (ROW_VERTICAL_PADDING * 2), whyHeight + (ROW_VERTICAL_PADDING * 2))
+    row:SetHeight(rowHeight)
 
     row:SetScript("OnMouseUp", function(_, buttonName)
         if buttonName == "LeftButton" then
@@ -1644,7 +1918,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
         end
     end)
 
-    return row, ROW_HEIGHT
+    return row, rowHeight
 end
 
 function UI:RenderEmpty(message)
@@ -1672,7 +1946,7 @@ function UI:RenderPhaseTab()
 
     local groups = BigBiSList:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
     if #groups == 0 then
-        self:RenderEmpty("No matching BiS rows. Clear filters or choose another phase.")
+        self:RenderEmpty("No matching slot rows. Clear filters or choose another phase.")
         return
     end
 
@@ -1680,6 +1954,8 @@ function UI:RenderPhaseTab()
     for _, group in ipairs(groups) do
         local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, group.slot, yOffset)
         yOffset = yOffset - headerHeight
+        local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset)
+        yOffset = yOffset - columnHeaderHeight
 
         for _, item in ipairs(group.items) do
             local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, item, "phase")
@@ -1700,17 +1976,36 @@ function UI:RenderPlannerTab()
 
     local rows = BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
     if #rows == 0 then
-        self:RenderEmpty("No planner rows match the current filters.")
+        self:RenderEmpty("No upgrade rows match the current filters.")
         return
     end
 
-    local title = "Priority planner for " .. BigBiSList:GetPhaseDisplayName(selection.phase)
-    local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, title, -2)
-    local yOffset = -2 - headerHeight
-
+    local rowsByTier = {}
+    for _, section in ipairs(PLANNER_TIER_SECTIONS) do
+        rowsByTier[section.key] = {}
+    end
     for _, rowData in ipairs(rows) do
-        local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, rowData, "planner")
-        yOffset = yOffset - rowHeight - 4
+        local tier = rowData.recommendation_tier or "only_if_easy"
+        rowsByTier[tier] = rowsByTier[tier] or {}
+        table.insert(rowsByTier[tier], rowData)
+    end
+
+    local yOffset = -2
+    for _, section in ipairs(PLANNER_TIER_SECTIONS) do
+        local sectionRows = rowsByTier[section.key] or {}
+        if #sectionRows > 0 then
+            local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, section.title, yOffset)
+            yOffset = yOffset - headerHeight
+            local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset)
+            yOffset = yOffset - columnHeaderHeight
+
+            for _, rowData in ipairs(sectionRows) do
+                local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, rowData, "planner")
+                yOffset = yOffset - rowHeight - 4
+            end
+
+            yOffset = yOffset - 6
+        end
     end
 
     self:SetContentHeight(yOffset)
@@ -1721,8 +2016,10 @@ function UI:CreateGearOverlay(parent, text, kind)
     local color = OWNERSHIP_COLORS.missing
     if kind == "bis" then
         color = { 0.16, 0.14, 0.07, 0.96, 0.88, 0.72, 0.24, 1 }
-    elseif kind == "situational" or kind == "option" then
+    elseif kind == "ranked" or kind == "situational" or kind == "option" or kind == "pvp" then
         color = { 0.11, 0.23, 0.38, 0.96, 0.45, 0.68, 0.98, 1 }
+    elseif kind == "unrealistic" or kind == "missing" then
+        color = { 0.22, 0.12, 0.12, 0.96, 0.92, 0.48, 0.48, 1 }
     elseif kind == "empty" or kind == "disabled" then
         color = { 0.12, 0.12, 0.14, 0.92, 0.34, 0.34, 0.38, 1 }
     end
@@ -1786,7 +2083,7 @@ function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
         local item = rowData.item or BigBiSList:GetItemData(rowData.item_id)
         self:SetItemButton(iconButton, rowData.item_id, nameText, rowData.name, item and item.quality, rowData, "gear")
         local detail = rowData.bestUse
-            and (BigBiSList:GetPhaseDisplayName(rowData.bestUse.phase) .. " - " .. (rowData.bestUse.rank_label or "Option") .. " - " .. rowData.bestUse.slot)
+            and (BigBiSList:GetPhaseDisplayName(rowData.bestUse.phase) .. " - " .. displayRankInfo(rowData.bestUse) .. " - " .. rowData.bestUse.slot)
             or "No BiS match for selected spec"
         detailText:SetText(detail)
     else
@@ -1858,6 +2155,8 @@ function UI:RenderEnhanceTab()
             rendered = true
             local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, section.title, yOffset)
             yOffset = yOffset - headerHeight
+            local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset)
+            yOffset = yOffset - columnHeaderHeight
             for _, rowData in ipairs(section.rows) do
                 local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, rowData, "enhance")
                 yOffset = yOffset - rowHeight - 4
@@ -1888,30 +2187,49 @@ function UI:RenderWishlistTab()
 
     local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, "Wishlist", yOffset)
     yOffset = yOffset - headerHeight
+    local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset)
+    yOffset = yOffset - columnHeaderHeight
 
-    local ids = {}
-    for key in pairs(wishlist) do
-        table.insert(ids, tonumber(key) or key)
+    local selection = self:GetSelection()
+    local plannerByItem = {}
+    for _, plannerRow in ipairs(BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, {})) do
+        local current = plannerByItem[plannerRow.item_id]
+        if not current or (plannerRow.priority or 0) > (current.priority or 0) then
+            plannerByItem[plannerRow.item_id] = plannerRow
+        end
     end
-    table.sort(ids, function(a, b)
-        local itemA = index.itemsById[tonumber(a)]
-        local itemB = index.itemsById[tonumber(b)]
-        return lower(itemA and itemA.name or a) < lower(itemB and itemB.name or b)
-    end)
 
-    for _, itemId in ipairs(ids) do
+    local rows = {}
+    for key in pairs(wishlist) do
+        local itemId = tonumber(key) or key
         local item = index.itemsById[tonumber(itemId)]
         local uses = index.usesByItemId[tonumber(itemId)] or {}
         local bestUse = uses[1]
-        local data = {
+        local plannerContext = plannerByItem[tonumber(itemId)]
+        table.insert(rows, {
             item_id = tonumber(itemId),
             item = item,
             name = item and item.name or ("Item " .. tostring(itemId)),
             detail = bestUse and (bestUse.class .. " " .. bestUse.spec .. " - " .. bestUse.slot) or "Saved item",
             source_summary = item and item.source_summary or "",
             requirements = item and item.requirements,
-            access_options = bestUse and bestUse.access_options,
-        }
+            access_options = (plannerContext and plannerContext.access_options) or (bestUse and bestUse.access_options),
+            priority = plannerContext and plannerContext.priority or 0,
+            priorityTier = plannerContext and plannerContext.priorityTier,
+            recommendation_tier = plannerContext and plannerContext.recommendation_tier,
+            recommendation_summary = plannerContext and plannerContext.recommendation_summary,
+            display_rank_label = plannerContext and plannerContext.display_rank_label,
+            display_rank_kind = plannerContext and plannerContext.display_rank_kind,
+        })
+    end
+    table.sort(rows, function(a, b)
+        if (a.priority or 0) ~= (b.priority or 0) then
+            return (a.priority or 0) > (b.priority or 0)
+        end
+        return lower(a.name) < lower(b.name)
+    end)
+
+    for _, data in ipairs(rows) do
         local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, data, "wishlist")
         yOffset = yOffset - rowHeight - 4
     end
@@ -2260,7 +2578,8 @@ function UI:BuildPhaseUseText(itemId)
         end
 
         if bestUse then
-            table.insert(parts, BigBiSList:GetPhaseDisplayName(phaseKey) .. " " .. (bestUse.rank_label or "Option") .. " " .. bestUse.slot)
+            local tagLabel = displayRankInfo(bestUse)
+            table.insert(parts, BigBiSList:GetPhaseDisplayName(phaseKey) .. " " .. tagLabel .. " " .. bestUse.slot)
         end
     end
 
@@ -2308,74 +2627,86 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local anchor = self:CreateDetailsTitle(content, titleText, r, g, b)
     local contentHeight = anchor.contentHeight or 32
 
+    local recommendationLines = {}
+    appendText(recommendationLines, self:GetRowRecommendationText(detailData or plannerContext, detailMode))
     if detailData and detailData.slot then
         local detailPhase = detailData.phase or (detailData.bestUse and detailData.bestUse.phase)
-        local detailRank = detailData.rank_label or (detailData.bestUse and detailData.bestUse.rank_label)
         local selectedPhase = detailPhase and BigBiSList:GetPhaseDisplayName(detailPhase) or BigBiSList:GetPhaseDisplayName(self:GetSelection().phase)
-        local summary = selectedPhase .. " - " .. detailData.slot
-        if detailRank then
-            summary = summary .. " - " .. detailRank
-        end
-        anchor = self:CreateDetailsText(content, anchor, "Selected Row", summary, 0.82, 0.86, 0.92)
-        contentHeight = contentHeight + anchor.contentHeight
+        appendText(recommendationLines, selectedPhase .. " - " .. detailData.slot)
     end
 
+    local ownershipText
     if detailItemId then
         local ownershipState = self:GetOwnershipState(detailItemId, detailData and detailData.item_ids)
-        local ownershipText = ownershipStateLabel(ownershipState)
+        ownershipText = ownershipStateLabel(ownershipState)
         if ownershipState == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
             ownershipText = ownershipText .. " - bank cache " .. self.currentOwned.bankUpdatedAt
         elseif ownershipState == "missing" and self.currentOwned and not self.currentOwned.bankScanned then
             ownershipText = ownershipText .. " - open your bank once to include banked items"
         end
-        anchor = self:CreateDetailsText(content, anchor, "Ownership", ownershipText, 0.82, 0.86, 0.92)
-        contentHeight = contentHeight + anchor.contentHeight
+        appendText(recommendationLines, "Have: " .. ownershipText)
     end
 
     local accessData = detailData or item or {}
     local requirementData = (accessData and accessData.requirements and #accessData.requirements > 0) and accessData or item
     local accessEvaluation = self:GetAccessEvaluation(accessData)
-    anchor = self:CreateDetailsText(content, anchor, "Prereq", accessStateLabel(accessEvaluation.status), 0.82, 0.86, 0.92)
+    appendText(recommendationLines, "Get: " .. accessStateLabel(accessEvaluation.status))
+    anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
+    contentHeight = contentHeight + anchor.contentHeight
+
+    anchor = self:CreateDetailsText(content, anchor, "Tag meaning", rankMeaning(detailData or plannerContext, detailMode), 0.76, 0.76, 0.80)
     contentHeight = contentHeight + anchor.contentHeight
 
     local optionEvaluation = accessEvaluation.optionEvaluation
     local option = optionEvaluation and optionEvaluation.option
     local bestPathText
     if option then
-        bestPathText = accessStateLabel(accessEvaluation.status) .. " - " .. (option.label or "Source")
-            .. "\n" .. self:GetAccessBlockingReason(optionEvaluation)
+        bestPathText = option.label or "Source"
+        if optionEvaluation and optionEvaluation.status ~= "ready" then
+            bestPathText = bestPathText .. "\n" .. self:GetAccessBlockingReason(optionEvaluation)
+        end
     else
         bestPathText = self:GetAccessBlockingReason(optionEvaluation)
     end
-    anchor = self:CreateDetailsText(content, anchor, "Best access path", bestPathText, 0.76, 0.76, 0.80)
+    anchor = self:CreateDetailsText(content, anchor, "How to get", bestPathText, 0.76, 0.76, 0.80)
     contentHeight = contentHeight + anchor.contentHeight
 
-    if accessEvaluation.options and #accessEvaluation.options > 0 then
-        anchor = self:CreateDetailsText(content, anchor, "Other ways to acquire", self:FormatAccessOptions(accessEvaluation), 0.76, 0.76, 0.80)
-        contentHeight = contentHeight + anchor.contentHeight
+    local prerequisitesText
+    if optionEvaluation then
+        prerequisitesText = self:FormatAccessOptionRequirements(optionEvaluation)
+    elseif accessEvaluation.options and #accessEvaluation.options > 0 then
+        prerequisitesText = self:FormatAccessOptions(accessEvaluation)
     elseif requirementData and requirementData.requirements and #requirementData.requirements > 0 then
-        anchor = self:CreateDetailsText(content, anchor, "Requirements", self:FormatRequirements(requirementData), 0.76, 0.76, 0.80)
-        contentHeight = contentHeight + anchor.contentHeight
+        prerequisitesText = self:FormatRequirements(requirementData)
+    else
+        prerequisitesText = "No known character requirements."
     end
+    anchor = self:CreateDetailsText(content, anchor, "Requirements", prerequisitesText, 0.76, 0.76, 0.80)
+    contentHeight = contentHeight + anchor.contentHeight
 
+    local timelineLines = {}
     if plannerContext then
         local score = tostring(plannerContext.priority or 0) .. "/100"
         local tier = plannerContext.priorityTier or "Priority"
-        anchor = self:CreateDetailsText(content, anchor, "Priority", tier .. " - " .. score, 0.64, 0.78, 0.94)
-        contentHeight = contentHeight + anchor.contentHeight
-
-        local reasons = plannerContext.reasons and table.concat(plannerContext.reasons, "\n") or "No planner explanation available."
-        anchor = self:CreateDetailsText(content, anchor, "Why It Matters", reasons, 0.76, 0.76, 0.80)
-        contentHeight = contentHeight + anchor.contentHeight
-
+        appendText(timelineLines, tier .. " - " .. score)
+        appendText(timelineLines, plannerContext.reasons and table.concat(plannerContext.reasons, "\n") or "No planner explanation available.")
         if plannerContext.lastUsefulLabel then
-            anchor = self:CreateDetailsText(content, anchor, "Longevity", "Useful through " .. plannerContext.lastUsefulLabel, 0.76, 0.76, 0.80)
-            contentHeight = contentHeight + anchor.contentHeight
+            appendText(timelineLines, "Listed through " .. plannerContext.lastUsefulLabel)
         end
     end
 
+    local availabilityPhase = (detailData and detailData.acquisition_phase)
+        or (plannerContext and plannerContext.acquisition_phase)
+        or (item and item.acquisition_phase)
+    if availabilityPhase then
+        appendText(timelineLines, "Available in " .. BigBiSList:GetPhaseDisplayName(availabilityPhase))
+    end
+
     if detailItemId then
-        anchor = self:CreateDetailsText(content, anchor, "Current Spec Timeline", self:BuildPhaseUseText(detailItemId), 0.64, 0.78, 0.94)
+        appendText(timelineLines, self:BuildPhaseUseText(detailItemId))
+    end
+    if #timelineLines > 0 then
+        anchor = self:CreateDetailsText(content, anchor, "Phase value", table.concat(timelineLines, "\n"), 0.64, 0.78, 0.94)
         contentHeight = contentHeight + anchor.contentHeight
     end
 
@@ -2386,7 +2717,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     if not sourceSummary or sourceSummary == "" then
         sourceSummary = "No source data"
     end
-    anchor = self:CreateDetailsText(content, anchor, "Source", sourceSummary, 0.76, 0.76, 0.80)
+    anchor = self:CreateDetailsText(content, anchor, "Source notes", sourceSummary, 0.76, 0.76, 0.80)
     contentHeight = contentHeight + anchor.contentHeight
 
     if not detailItemId then
@@ -2475,8 +2806,9 @@ function UI:RefreshControls()
         button:SetSelected(phaseKey == selection.phase)
     end
 
+    local selectedTab = normalizeTabName(selection.tab)
     for tabName, button in pairs(self.tabButtons or {}) do
-        button:SetSelected(tabName == selection.tab)
+        button:SetSelected(tabName == selectedTab)
     end
 
     for slotName, button in pairs(self.slotButtons or {}) do
@@ -2500,10 +2832,10 @@ function UI:Refresh()
     BigBiSList.Widgets:ClearChildren(self.contentChild)
     self.contentChild:SetHeight(1)
 
-    local tabName = self:GetSelection().tab
-    if tabName == "Gear" then
+    local tabName = normalizeTabName(self:GetSelection().tab)
+    if tabName == "Equipped" then
         self:RenderGearTab()
-    elseif tabName == "Planner" then
+    elseif tabName == "Upgrades" then
         self:RenderPlannerTab()
     elseif tabName == "Enhance" then
         self:RenderEnhanceTab()
@@ -2511,8 +2843,10 @@ function UI:Refresh()
         self:RenderWishlistTab()
     elseif tabName == "Settings" then
         self:RenderSettingsTab()
-    else
+    elseif tabName == "By Slot" then
         self:RenderPhaseTab()
+    else
+        self:RenderPlannerTab()
     end
 
     self:RefreshDetails(self.selectedItemId, self.selectedItemData, self.selectedItemMode)
@@ -2597,7 +2931,7 @@ function UI:CreateTabBar(frame)
     self.tabButtons = {}
     local previous
     for _, tabName in ipairs(TAB_NAMES) do
-        local button = widgets:CreateTextButton(tabBar, tabName, 86, 24, function()
+        local button = widgets:CreateTextButton(tabBar, TAB_DISPLAY_LABELS[tabName] or tabName, 100, 24, function()
             self:SetTab(tabName)
         end)
         if previous then
@@ -2698,7 +3032,7 @@ function UI:CreateLeftRail(body)
 
     self.rankDropdown = widgets:CreateDropdown("BigBiSListRankDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()
-            return "Rank: " .. rankFilterLabel(self:GetFilters().rankGroup)
+            return "Tag: " .. rankFilterLabel(self:GetFilters().rankGroup)
         end,
         function() return self:GetRankDropdownItems() end,
         function(value) self:SetFilter("rankGroup", value) end)
@@ -2722,7 +3056,7 @@ function UI:CreateLeftRail(body)
 
     self.longevityDropdown = widgets:CreateDropdown("BigBiSListLongevityDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()
-            return "Longevity: " .. longevityFilterLabel(self:GetFilters().longevity)
+            return "Usefulness: " .. longevityFilterLabel(self:GetFilters().longevity)
         end,
         function() return self:GetLongevityDropdownItems() end,
         function(value) self:SetFilter("longevity", value) end)

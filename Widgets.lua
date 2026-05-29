@@ -44,6 +44,37 @@ function Widgets:CreateLabel(parent, text, template)
     return label
 end
 
+function Widgets:CreateWrappedLabel(parent, text, template)
+    local label = parent:CreateFontString(nil, "OVERLAY", template or "GameFontNormalSmall")
+    label:SetText(text or "")
+    label:SetJustifyH("LEFT")
+    label:SetWordWrap(true)
+    return label
+end
+
+function Widgets:MeasureTextHeight(label, minimum)
+    local height = minimum or 0
+    if label and label.GetStringHeight then
+        height = math.max(height, label:GetStringHeight() or 0)
+    end
+    return height
+end
+
+function Widgets:CreateStatusBadge(parent, text, width, height, bg, border)
+    local badge = self:CreatePanel(nil, parent, bg, border)
+    badge:SetSize(width or 78, height or 18)
+
+    local label = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    label:SetPoint("LEFT", badge, "LEFT", 4, 0)
+    label:SetPoint("RIGHT", badge, "RIGHT", -4, 0)
+    label:SetJustifyH("CENTER")
+    label:SetWordWrap(false)
+    label:SetText(text or "")
+    badge.label = label
+
+    return badge
+end
+
 function Widgets:CreateTextButton(parent, text, width, height, onClick)
     local button = self:CreatePanel(nil, parent, { 0.10, 0.10, 0.12, 0.95 }, { 0.26, 0.26, 0.30, 1 })
     button:SetSize(width or 80, height or 24)

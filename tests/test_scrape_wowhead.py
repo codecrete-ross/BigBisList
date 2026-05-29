@@ -353,6 +353,59 @@ class WowheadScraperParserTests(unittest.TestCase):
         )
         self.assertEqual(requirements[0]["reputation"], "The Scryers")
 
+        requirements = scraper.extract_requirements_from_text(
+            "Greater Inscription of Vengeance Item Level 70 Requires Level 70 Requires The Aldor - Exalted Use: Permanently adds attack power.",
+            source_url,
+            "equip_or_use",
+            "wowhead_item",
+        )
+        self.assertEqual(requirements[0]["type"], "reputation")
+        self.assertEqual(requirements[0]["reputation"], "The Aldor")
+        self.assertEqual(requirements[0]["standing"], "Exalted")
+        self.assertEqual(requirements[0]["standing_rank"], 8)
+        self.assertNotIn("faction_choice", {requirement["type"] for requirement in requirements})
+
+        requirements = scraper.extract_requirements_from_text(
+            "Requires The Scryers - Revered Equip: Improves spell hit rating.",
+            source_url,
+            "equip_or_use",
+            "wowhead_item",
+        )
+        self.assertEqual(requirements[0]["type"], "reputation")
+        self.assertEqual(requirements[0]["reputation"], "The Scryers")
+        self.assertEqual(requirements[0]["standing"], "Revered")
+        self.assertNotIn("faction_choice", {requirement["type"] for requirement in requirements})
+
+        requirements = scraper.extract_requirements_from_text(
+            "Formula: Enchant Chest - Exceptional Stats Requires Enchanting (345) Requires Honor Hold - Revered Use: Teaches you.",
+            source_url,
+            "equip_or_use",
+            "wowhead_item",
+        )
+        self.assertIn(
+            {
+                "type": "reputation",
+                "scope": "equip_or_use",
+                "source_url": source_url,
+                "raw_text": "Formula: Enchant Chest - Exceptional Stats Requires Enchanting (345) Requires Honor Hold - Revered Use: Teaches you.",
+                "confidence": "wowhead_item",
+                "reputation": "Honor Hold",
+                "standing": "Revered",
+                "standing_rank": 7,
+            },
+            requirements,
+        )
+        self.assertNotIn("Enchanting", [requirement.get("reputation") for requirement in requirements])
+
+        requirements = scraper.extract_requirements_from_text(
+            "Requires Level 70 Requires Shattered Sun Offensive - Exalted Equip: Your spells have a chance to call on the power of the Arcane if you're exalted with the Scryers, or the Light if you're exalted with the Aldor.",
+            source_url,
+            "equip_or_use",
+            "wowhead_item",
+        )
+        self.assertEqual([requirement["reputation"] for requirement in requirements if requirement["type"] == "reputation"], ["Shattered Sun Offensive"])
+        self.assertNotIn("faction_choice", {requirement["type"] for requirement in requirements})
+
     def test_row_requirements_normalize_committed_snapshot_reputation_aliases(self):
         requirements = scraper.row_requirements(
             {
@@ -371,6 +424,25 @@ class WowheadScraperParserTests(unittest.TestCase):
             "https://www.wowhead.com/tbc/guide/example",
         )
         self.assertEqual([requirement["reputation"] for requirement in requirements], ["The Mag'har", "Kurenai"])
+
+    def test_snapshot_requirements_reparse_stale_faction_choice_standing(self):
+        requirements = scraper.snapshot_requirements(
+            {
+                "normalized_requirements": [
+                    {
+                        "type": "faction_choice",
+                        "choices": ["The Aldor"],
+                        "raw_text": "Greater Inscription of Vengeance Item Level 70 Requires Level 70 Requires The Aldor - Exalted Use: Permanently adds attack power.",
+                        "scope": "equip_or_use",
+                        "source_url": "https://www.wowhead.com/tbc/item=28888/greater-inscription-of-vengeance",
+                        "confidence": "wowhead_item",
+                    }
+                ]
+            }
+        )
+        self.assertEqual(requirements[0]["type"], "reputation")
+        self.assertEqual(requirements[0]["reputation"], "The Aldor")
+        self.assertEqual(requirements[0]["standing_rank"], 8)
 
     def test_row_requirements_reparse_stale_unknown_text(self):
         requirements = scraper.row_requirements(
@@ -486,6 +558,8 @@ class WowheadScraperParserTests(unittest.TestCase):
             "parsed_source_text",
         )
         self.assertIn("faction_choice", {requirement["type"] for requirement in requirements})
+        choice = next(requirement for requirement in requirements if requirement["type"] == "faction_choice")
+        self.assertEqual(choice["choices"], ["The Aldor"])
 
         requirements = scraper.extract_requirements_from_text(
             "Profession: Engineering - BoP only",

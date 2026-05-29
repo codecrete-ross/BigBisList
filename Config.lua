@@ -20,7 +20,18 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 5
+local DEFAULTS_VERSION = 6
+
+local TAB_NAME_ALIASES = {
+    Phase = "By Slot",
+    Gear = "Equipped",
+    Planner = "Upgrades",
+    Enhancements = "Enhance",
+}
+
+local function normalizeTabName(tabName)
+    return TAB_NAME_ALIASES[tabName] or tabName
+end
 
 BigBiSList.defaults = {
     profile = {
@@ -33,7 +44,7 @@ BigBiSList.defaults = {
             relativePoint = "CENTER",
             x = 0,
             y = 0,
-            width = 1040,
+            width = 1160,
             height = 660,
             scale = 1,
             locked = false,
@@ -51,12 +62,12 @@ BigBiSList.defaults = {
         selectedClass = "Druid",
         selectedSpec = "Feral dps",
         selectedPhase = "PR",
-        selectedTab = "Phase",
+        selectedTab = "Upgrades",
         selection = {
             class = "Druid",
             spec = "Feral dps",
             phase = "PR",
-            tab = "Phase",
+            tab = "Upgrades",
         },
         filters = {
             search = "",
@@ -109,6 +120,9 @@ local function migrateSelection(char)
     if char.selection.tab == nil and char.selectedTab ~= nil then
         char.selection.tab = char.selectedTab
     end
+
+    char.selection.tab = normalizeTabName(char.selection.tab)
+    char.selectedTab = normalizeTabName(char.selectedTab)
 end
 
 local function migrateLegacyDefaults(db, previousVersion)
@@ -121,6 +135,11 @@ local function migrateLegacyDefaults(db, previousVersion)
         char.selection.phase = "PR"
         char.selectedPhase = "PR"
     end
+
+    if char.selection then
+        char.selection.tab = normalizeTabName(char.selection.tab)
+    end
+    char.selectedTab = normalizeTabName(char.selectedTab)
 end
 
 local function migrateMinimapSettings(db)
@@ -235,8 +254,8 @@ function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
         BigBiSListDB.char.selectedPhase = phaseKey
     end
     if tabName then
-        selection.tab = tabName
-        BigBiSListDB.char.selectedTab = tabName
+        selection.tab = normalizeTabName(tabName)
+        BigBiSListDB.char.selectedTab = selection.tab
     end
 end
 

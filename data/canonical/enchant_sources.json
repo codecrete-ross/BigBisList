@@ -14,6 +14,16 @@
       "requirements": [
         {
           "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Weapon - Agility Phase 1 Item Level 58 Binds when picked up Requires Enchanting (290) Requires Timbermaw Hold - Honored Use: Teaches you how to permanently enchant a weapon to increase your agility by 15. Permanently enchant a melee weapon to grant +15 Agility. Sell Price: 75 This enchanting formula is used for the Enchanting profession. It is sold by Meilosh. In the Enchanting Formulae category. An item from Classic World of Warcraft.",
+          "reputation": "Timbermaw Hold",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=19445",
+          "standing": "Honored",
+          "standing_rank": 6,
+          "type": "reputation"
+        },
+        {
+          "confidence": "wowhead_item",
           "profession": "Enchanting",
           "raw_text": "Formula: Enchant Weapon - Agility Phase 1 Item Level 58 Binds when picked up Requires Enchanting (290) Requires Timbermaw Hold - Honored Use: Teaches you how to permanently enchant a weapon to increase your agility by 15. Permanently enchant a melee weapon to grant +15 Agility. Sell Price: 75 This enchanting formula is used for the Enchanting profession. It is sold by Meilosh. In the Enchanting Formulae category. An item from Classic World of Warcraft.",
           "scope": "equip_or_use",
@@ -45,7 +55,8 @@
         "entity_name": "Presence of Might",
         "quest_id": 8184,
         "source_url": "https://www.wowhead.com/tbc/item=19782/presence-of-might",
-        "type": "quest"
+        "type": "quest",
+        "zone": "Zul'Gurub"
       },
       "source_summary": "Quest: Presence of Might",
       "source_url": "https://www.wowhead.com/tbc/item=19782/presence-of-might",
@@ -56,7 +67,8 @@
           "entity_name": "Presence of Might",
           "quest_id": 8184,
           "source_url": "https://www.wowhead.com/tbc/item=19782/presence-of-might",
-          "type": "quest"
+          "type": "quest",
+          "zone": "Zul'Gurub"
         }
       ],
       "type": "item"
@@ -72,7 +84,8 @@
         "entity_name": "Emperor Vek'nilash",
         "out_of": 24,
         "source_url": "https://www.wowhead.com/tbc/item=20726",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
       },
       "requirements": [
         {
@@ -85,7 +98,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Emperor Vek'nilash 8.3%",
+      "source_summary": "Drop: Emperor Vek'nilash (Ahn'Qiraj) 8.3%",
       "source_url": "https://www.wowhead.com/tbc/item=20726",
       "sources": [
         {
@@ -96,7 +109,8 @@
           "entity_name": "Emperor Vek'nilash",
           "out_of": 24,
           "source_url": "https://www.wowhead.com/tbc/item=20726",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         }
       ],
       "type": "item"
@@ -112,7 +126,8 @@
         "entity_name": "Viscidus",
         "out_of": 9689,
         "source_url": "https://www.wowhead.com/tbc/item=20731",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
       },
       "requirements": [
         {
@@ -125,7 +140,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Viscidus 1.5% +14",
+      "source_summary": "Drop: Viscidus (Ahn'Qiraj) 1.5% +14",
       "source_url": "https://www.wowhead.com/tbc/item=20731",
       "sources": [
         {
@@ -136,7 +151,8 @@
           "entity_name": "The Prophet Skeram",
           "out_of": 14443,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -146,7 +162,8 @@
           "entity_name": "Viscidus",
           "out_of": 9689,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -156,7 +173,8 @@
           "entity_name": "Ossirian the Unscarred",
           "out_of": 10369,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -166,7 +184,8 @@
           "entity_name": "Moam",
           "out_of": 8872,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -176,7 +195,8 @@
           "entity_name": "General Rajaxx",
           "out_of": 10850,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -186,7 +206,8 @@
           "entity_name": "Kurinnaxx",
           "out_of": 11687,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -196,7 +217,8 @@
           "entity_name": "Ayamiss the Hunter",
           "out_of": 10124,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -206,7 +228,8 @@
           "entity_name": "Buru the Gorger",
           "out_of": 9117,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -216,7 +239,8 @@
           "entity_name": "Princess Huhuran",
           "out_of": 16653,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -226,7 +250,8 @@
           "entity_name": "Fankriss the Unyielding",
           "out_of": 17158,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -236,7 +261,8 @@
           "entity_name": "Lord Kri",
           "out_of": 2881,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -246,7 +272,8 @@
           "entity_name": "Battleguard Sartura",
           "out_of": 16713,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -256,7 +283,8 @@
           "entity_name": "Ouro",
           "out_of": 4948,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -266,7 +294,8 @@
           "entity_name": "Princess Yauj",
           "out_of": 1326,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -276,7 +305,8 @@
           "entity_name": "Vem",
           "out_of": 10456,
           "source_url": "https://www.wowhead.com/tbc/item=20731",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         }
       ],
       "type": "item"
@@ -292,7 +322,8 @@
         "entity_name": "Emperor Vek'lor",
         "out_of": 16,
         "source_url": "https://www.wowhead.com/tbc/item=20735",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
       },
       "requirements": [
         {
@@ -305,7 +336,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Emperor Vek'lor 12.5%",
+      "source_summary": "Drop: Emperor Vek'lor (Ahn'Qiraj) 12.5%",
       "source_url": "https://www.wowhead.com/tbc/item=20735",
       "sources": [
         {
@@ -316,7 +347,8 @@
           "entity_name": "Emperor Vek'lor",
           "out_of": 16,
           "source_url": "https://www.wowhead.com/tbc/item=20735",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         }
       ],
       "type": "item"
@@ -332,7 +364,8 @@
         "entity_name": "Fankriss the Unyielding",
         "out_of": 17158,
         "source_url": "https://www.wowhead.com/tbc/item=20736",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
       },
       "requirements": [
         {
@@ -345,7 +378,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Fankriss the Unyielding 1.4% +14",
+      "source_summary": "Drop: Fankriss the Unyielding (Ahn'Qiraj) 1.4% +14",
       "source_url": "https://www.wowhead.com/tbc/item=20736",
       "sources": [
         {
@@ -356,7 +389,8 @@
           "entity_name": "The Prophet Skeram",
           "out_of": 14443,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -366,7 +400,8 @@
           "entity_name": "Viscidus",
           "out_of": 9689,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -376,7 +411,8 @@
           "entity_name": "Ossirian the Unscarred",
           "out_of": 10369,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -386,7 +422,8 @@
           "entity_name": "Moam",
           "out_of": 8872,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -396,7 +433,8 @@
           "entity_name": "General Rajaxx",
           "out_of": 10850,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -406,7 +444,8 @@
           "entity_name": "Kurinnaxx",
           "out_of": 11687,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -416,7 +455,8 @@
           "entity_name": "Ayamiss the Hunter",
           "out_of": 10124,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -426,7 +466,8 @@
           "entity_name": "Buru the Gorger",
           "out_of": 9117,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ruins of Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -436,7 +477,8 @@
           "entity_name": "Princess Huhuran",
           "out_of": 16653,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -446,7 +488,8 @@
           "entity_name": "Fankriss the Unyielding",
           "out_of": 17158,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -456,7 +499,8 @@
           "entity_name": "Lord Kri",
           "out_of": 2881,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -466,7 +510,8 @@
           "entity_name": "Battleguard Sartura",
           "out_of": 16713,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -476,7 +521,8 @@
           "entity_name": "Ouro",
           "out_of": 4948,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -486,7 +532,8 @@
           "entity_name": "Princess Yauj",
           "out_of": 1326,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         },
         {
           "confidence": "wowhead_item",
@@ -496,7 +543,8 @@
           "entity_name": "Vem",
           "out_of": 10456,
           "source_url": "https://www.wowhead.com/tbc/item=20736",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
         }
       ],
       "type": "item"
@@ -510,9 +558,20 @@
         "entity_name": "Logistics Officer Ulrike",
         "source_url": "https://www.wowhead.com/tbc/item=22531",
         "type": "vendor",
-        "vendor_id": 17657
+        "vendor_id": 17657,
+        "zone": "Hellfire Peninsula"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Bracer - Superior Healing Phase 1 Item Level 65 Binds when picked up Requires Enchanting (325) Requires Honor Hold - Friendly Use: Teaches you how to permanently enchant a bracer to increase the effect of healing spells by up to 30 and damage spells by up to 10. Permanently enchants bracers to increase the effect of your healing spells by up to 30 and your damage spells by up to 10. Requires a level 35 or higher item. Sell Price: 1 50 This enchanting formula is used for the Enchanting profession. It is sold by Logistics Officer Ulrike. In the Enchanting Formulae category. An item.",
+          "reputation": "Honor Hold",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=22531",
+          "standing": "Friendly",
+          "standing_rank": 5,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -523,7 +582,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Vendor: Logistics Officer Ulrike",
+      "source_summary": "Vendor: Logistics Officer Ulrike (Hellfire Peninsula)",
       "source_url": "https://www.wowhead.com/tbc/item=22531",
       "sources": [
         {
@@ -532,7 +591,8 @@
           "entity_name": "Logistics Officer Ulrike",
           "source_url": "https://www.wowhead.com/tbc/item=22531",
           "type": "vendor",
-          "vendor_id": 17657
+          "vendor_id": 17657,
+          "zone": "Hellfire Peninsula"
         }
       ],
       "type": "item"
@@ -548,7 +608,8 @@
         "entity_name": "Coilfang Oracle",
         "out_of": 832,
         "source_url": "https://www.wowhead.com/tbc/item=22533",
-        "type": "drop"
+        "type": "drop",
+        "zone": "The Steamvault"
       },
       "requirements": [
         {
@@ -561,7 +622,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Coilfang Oracle 2.3%",
+      "source_summary": "Drop: Coilfang Oracle (The Steamvault) 2.3%",
       "source_url": "https://www.wowhead.com/tbc/item=22533",
       "sources": [
         {
@@ -572,7 +633,8 @@
           "entity_name": "Coilfang Oracle",
           "out_of": 832,
           "source_url": "https://www.wowhead.com/tbc/item=22533",
-          "type": "drop"
+          "type": "drop",
+          "zone": "The Steamvault"
         }
       ],
       "type": "item"
@@ -634,6 +696,16 @@
       "requirements": [
         {
           "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Ring - Spellpower Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Requires Keepers of Time - Honored Use: Teaches you how to permanently enchant a ring to increase spell damage and healing by up to 12. Permanently enchant a ring to increase spell damage and healing by up to 12. Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Alurmi. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "Keepers of Time",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=22536/formula-enchant-ring-spellpower",
+          "standing": "Honored",
+          "standing_rank": 6,
+          "type": "reputation"
+        },
+        {
+          "confidence": "wowhead_item",
           "profession": "Enchanting",
           "raw_text": "Formula: Enchant Ring - Spellpower Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Requires Keepers of Time - Honored Use: Teaches you how to permanently enchant a ring to increase spell damage and healing by up to 12. Permanently enchant a ring to increase spell damage and healing by up to 12. Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Alurmi. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
           "scope": "equip_or_use",
@@ -672,6 +744,16 @@
       "requirements": [
         {
           "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Ring - Healing Power Phase 1 Item Level 74 Binds when picked up Requires Enchanting (370) Requires The Sha'tar - Revered Use: Teaches you how to permanently enchant a ring to increase healing spell effects by up to 20 and damage spell effects by up to 7. Permanently enchant a ring to increase healing spells by up to 20 and damage spells by up to 7. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "The Sha'tar",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=22537",
+          "standing": "Revered",
+          "standing_rank": 7,
+          "type": "reputation"
+        },
+        {
+          "confidence": "wowhead_item",
           "profession": "Enchanting",
           "raw_text": "Formula: Enchant Ring - Healing Power Phase 1 Item Level 74 Binds when picked up Requires Enchanting (370) Requires The Sha'tar - Revered Use: Teaches you how to permanently enchant a ring to increase healing spell effects by up to 20 and damage spell effects by up to 7. Permanently enchant a ring to increase healing spells by up to 20 and damage spells by up to 7. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
           "scope": "equip_or_use",
@@ -708,6 +790,16 @@
         "zone": "Shattrath City"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Ring - Stats Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Requires Lower City - Honored Use: Teaches you how to permanently enchant a ring to increase all stats by 4. Permanently enchant a ring to increase all stats by 4. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item. Sell Price: 5 This enchanting formula is used for the Enchanting profession. It is sold by Nakodu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "Lower City",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=22538",
+          "standing": "Honored",
+          "standing_rank": 6,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -780,7 +872,8 @@
         "entity_name": "Ethereal Priest",
         "out_of": 937,
         "source_url": "https://www.wowhead.com/tbc/item=22543",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Mana-Tombs"
       },
       "requirements": [
         {
@@ -793,7 +886,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Ethereal Priest 3.0%",
+      "source_summary": "Drop: Ethereal Priest (Mana-Tombs) 3.0%",
       "source_url": "https://www.wowhead.com/tbc/item=22543",
       "sources": [
         {
@@ -804,7 +897,8 @@
           "entity_name": "Ethereal Priest",
           "out_of": 937,
           "source_url": "https://www.wowhead.com/tbc/item=22543",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Mana-Tombs"
         }
       ],
       "type": "item"
@@ -820,7 +914,8 @@
         "entity_name": "Raging Skeleton",
         "out_of": 402,
         "source_url": "https://www.wowhead.com/tbc/item=22544",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Auchenai Crypts"
       },
       "requirements": [
         {
@@ -833,7 +928,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Raging Skeleton 3.7%",
+      "source_summary": "Drop: Raging Skeleton (Auchenai Crypts) 3.7%",
       "source_url": "https://www.wowhead.com/tbc/item=22544",
       "sources": [
         {
@@ -844,7 +939,8 @@
           "entity_name": "Raging Skeleton",
           "out_of": 402,
           "source_url": "https://www.wowhead.com/tbc/item=22544",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Auchenai Crypts"
         }
       ],
       "type": "item"
@@ -858,9 +954,20 @@
         "entity_name": "Logistics Officer Ulrike",
         "source_url": "https://www.wowhead.com/tbc/item=22547",
         "type": "vendor",
-        "vendor_id": 17657
+        "vendor_id": 17657,
+        "zone": "Hellfire Peninsula"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Chest - Exceptional Stats Phase 1 Item Level 69 Binds when picked up Requires Enchanting (345) Requires Honor Hold - Revered Use: Teaches you how to permanently enchant chest armor to increase all stats by 6. Permanently enchant a piece of chest armor to add 6 to all stats. Requires a level 35 or higher item. Sell Price: 1 50 Formula: Enchant Chest - Exceptional Stats can be used by Enchanters to learn Exceptional Stats at 345 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+          "reputation": "Honor Hold",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=22547",
+          "standing": "Revered",
+          "standing_rank": 7,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -871,7 +978,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Vendor: Logistics Officer Ulrike",
+      "source_summary": "Vendor: Logistics Officer Ulrike (Hellfire Peninsula)",
       "source_url": "https://www.wowhead.com/tbc/item=22547",
       "sources": [
         {
@@ -880,7 +987,8 @@
           "entity_name": "Logistics Officer Ulrike",
           "source_url": "https://www.wowhead.com/tbc/item=22547",
           "type": "vendor",
-          "vendor_id": 17657
+          "vendor_id": 17657,
+          "zone": "Hellfire Peninsula"
         }
       ],
       "type": "item"
@@ -896,7 +1004,8 @@
         "entity_name": "Torgos",
         "out_of": 160,
         "source_url": "https://www.wowhead.com/tbc/item=22548",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Terokkar Forest"
       },
       "requirements": [
         {
@@ -909,7 +1018,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Torgos 1.2% +31",
+      "source_summary": "Drop: Torgos (Terokkar Forest) 1.2% +31",
       "source_url": "https://www.wowhead.com/tbc/item=22548",
       "sources": [
         {
@@ -997,7 +1106,8 @@
           "entity_name": "Shattered Hand Warhound",
           "out_of": 80704,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Hellfire Ramparts"
         },
         {
           "confidence": "wowhead_item",
@@ -1007,7 +1117,8 @@
           "entity_name": "Creeping Ooze",
           "out_of": 462,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "The Shattered Halls"
         },
         {
           "confidence": "wowhead_item",
@@ -1017,7 +1128,8 @@
           "entity_name": "Shattered Hand Houndmaster",
           "out_of": 7835,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "The Shattered Halls"
         },
         {
           "confidence": "wowhead_item",
@@ -1027,7 +1139,8 @@
           "entity_name": "Shattered Hand Assassin",
           "out_of": 13425,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "The Shattered Halls"
         },
         {
           "confidence": "wowhead_item",
@@ -1037,7 +1150,8 @@
           "entity_name": "Coilfang Siren",
           "out_of": 43590,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "The Steamvault"
         },
         {
           "confidence": "wowhead_item",
@@ -1057,7 +1171,8 @@
           "entity_name": "Nexus Stalker",
           "out_of": 17465,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Mana-Tombs"
         },
         {
           "confidence": "wowhead_item",
@@ -1067,7 +1182,8 @@
           "entity_name": "Ethereal Priest",
           "out_of": 28712,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Mana-Tombs"
         },
         {
           "confidence": "wowhead_item",
@@ -1077,7 +1193,8 @@
           "entity_name": "Sethekk Ravenguard",
           "out_of": 11160,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Sethekk Halls"
         },
         {
           "confidence": "wowhead_item",
@@ -1087,7 +1204,8 @@
           "entity_name": "Sethekk Prophet",
           "out_of": 19237,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Sethekk Halls"
         },
         {
           "confidence": "wowhead_item",
@@ -1097,7 +1215,8 @@
           "entity_name": "Time-Lost Controller",
           "out_of": 14581,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Sethekk Halls"
         },
         {
           "confidence": "wowhead_item",
@@ -1107,7 +1226,8 @@
           "entity_name": "Darkweaver Syth",
           "out_of": 1322,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Sethekk Halls"
         },
         {
           "confidence": "wowhead_item",
@@ -1117,7 +1237,8 @@
           "entity_name": "Unliving Soldier",
           "out_of": 9893,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Auchenai Crypts"
         },
         {
           "confidence": "wowhead_item",
@@ -1127,7 +1248,8 @@
           "entity_name": "Torgos",
           "out_of": 160,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Terokkar Forest"
         },
         {
           "confidence": "wowhead_item",
@@ -1137,7 +1259,8 @@
           "entity_name": "Cabal Ritualist",
           "out_of": 72640,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Shadow Labyrinth"
         },
         {
           "confidence": "wowhead_item",
@@ -1202,7 +1325,8 @@
           "entity_name": "Incandescent Fel Spark",
           "out_of": 40136,
           "source_url": "https://www.wowhead.com/tbc/item=22548",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Hellfire Peninsula"
         },
         {
           "confidence": "wowhead_item",
@@ -1357,7 +1481,8 @@
         "entity_name": "Eredar Deathbringer",
         "out_of": 78,
         "source_url": "https://www.wowhead.com/tbc/item=22556",
-        "type": "drop"
+        "type": "drop",
+        "zone": "The Arcatraz"
       },
       "requirements": [
         {
@@ -1370,7 +1495,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Eredar Deathbringer 9.0%",
+      "source_summary": "Drop: Eredar Deathbringer (The Arcatraz) 9.0%",
       "source_url": "https://www.wowhead.com/tbc/item=22556",
       "sources": [
         {
@@ -1381,7 +1506,8 @@
           "entity_name": "Eredar Deathbringer",
           "out_of": 78,
           "source_url": "https://www.wowhead.com/tbc/item=22556",
-          "type": "drop"
+          "type": "drop",
+          "zone": "The Arcatraz"
         }
       ],
       "type": "item"
@@ -1523,9 +1649,10 @@
         "entity_name": "Sapphiron",
         "out_of": 68,
         "source_url": "https://www.wowhead.com/tbc/item=23548/might-of-the-scourge",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Naxxramas"
       },
-      "source_summary": "Drop: Sapphiron 48.5%",
+      "source_summary": "Drop: Sapphiron (Naxxramas) 48.5%",
       "source_url": "https://www.wowhead.com/tbc/item=23548/might-of-the-scourge",
       "sources": [
         {
@@ -1536,7 +1663,8 @@
           "entity_name": "Sapphiron",
           "out_of": 68,
           "source_url": "https://www.wowhead.com/tbc/item=23548/might-of-the-scourge",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Naxxramas"
         }
       ],
       "type": "item"
@@ -1664,9 +1792,20 @@
         "entity_name": "Quartermaster Urgronn",
         "source_url": "https://www.wowhead.com/tbc/item=24000",
         "type": "vendor",
-        "vendor_id": 17585
+        "vendor_id": 17585,
+        "zone": "Hellfire Peninsula"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Bracer - Superior Healing Phase 1 Item Level 65 Binds when picked up Requires Enchanting (325) Requires Thrallmar - Friendly Use: Teaches you how to permanently enchant a bracer to increase the effect of healing spells by up to 30 and damage spells by up to 10. Permanently enchants bracers to increase the effect of your healing spells by up to 30 and your damage spells by up to 10. Requires a level 35 or higher item. Sell Price: 1 50 This enchanting formula is used for the Enchanting profession. It is sold by Quartermaster Urgronn. In the Enchanting Formulae category. An item.",
+          "reputation": "Thrallmar",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=24000",
+          "standing": "Friendly",
+          "standing_rank": 5,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -1677,7 +1816,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Vendor: Quartermaster Urgronn",
+      "source_summary": "Vendor: Quartermaster Urgronn (Hellfire Peninsula)",
       "source_url": "https://www.wowhead.com/tbc/item=24000",
       "sources": [
         {
@@ -1686,7 +1825,8 @@
           "entity_name": "Quartermaster Urgronn",
           "source_url": "https://www.wowhead.com/tbc/item=24000",
           "type": "vendor",
-          "vendor_id": 17585
+          "vendor_id": 17585,
+          "zone": "Hellfire Peninsula"
         }
       ],
       "type": "item"
@@ -1700,9 +1840,20 @@
         "entity_name": "Quartermaster Urgronn",
         "source_url": "https://www.wowhead.com/tbc/item=24003",
         "type": "vendor",
-        "vendor_id": 17585
+        "vendor_id": 17585,
+        "zone": "Hellfire Peninsula"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Chest - Exceptional Stats Phase 1 Item Level 69 Binds when picked up Requires Enchanting (345) Requires Thrallmar - Revered Use: Teaches you how to permanently enchant chest armor to increase all stats by 6. Permanently enchant a piece of chest armor to add 6 to all stats. Requires a level 35 or higher item. Sell Price: 1 50 Formula: Enchant Chest - Exceptional Stats can be used by Enchanters to learn Exceptional Stats at 345 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+          "reputation": "Thrallmar",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=24003",
+          "standing": "Revered",
+          "standing_rank": 7,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -1713,7 +1864,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Vendor: Quartermaster Urgronn",
+      "source_summary": "Vendor: Quartermaster Urgronn (Hellfire Peninsula)",
       "source_url": "https://www.wowhead.com/tbc/item=24003",
       "sources": [
         {
@@ -1722,7 +1873,8 @@
           "entity_name": "Quartermaster Urgronn",
           "source_url": "https://www.wowhead.com/tbc/item=24003",
           "type": "vendor",
-          "vendor_id": 17585
+          "vendor_id": 17585,
+          "zone": "Hellfire Peninsula"
         }
       ],
       "type": "item"
@@ -1850,9 +2002,20 @@
         "entity_name": "Fedryen Swiftspear",
         "source_url": "https://www.wowhead.com/tbc/item=28271",
         "type": "vendor",
-        "vendor_id": 17904
+        "vendor_id": 17904,
+        "zone": "Zangarmarsh"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Gloves - Spell Strike Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Requires Cenarion Expedition - Revered Use: Teaches you how to permanently enchant gloves to grant 15 spell hit rating. Permanently enchant gloves to grant 15 spell hit rating. Requires a level 35 or higher item. Sell Price: 2 This enchanting formula is used for the Enchanting profession. It is sold by Fedryen Swiftspear. In the Enchanting Formulae category. An item.",
+          "reputation": "Cenarion Expedition",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=28271",
+          "standing": "Revered",
+          "standing_rank": 7,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -1863,7 +2026,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Vendor: Fedryen Swiftspear",
+      "source_summary": "Vendor: Fedryen Swiftspear (Zangarmarsh)",
       "source_url": "https://www.wowhead.com/tbc/item=28271",
       "sources": [
         {
@@ -1872,7 +2035,8 @@
           "entity_name": "Fedryen Swiftspear",
           "source_url": "https://www.wowhead.com/tbc/item=28271",
           "type": "vendor",
-          "vendor_id": 17904
+          "vendor_id": 17904,
+          "zone": "Zangarmarsh"
         }
       ],
       "type": "item"
@@ -1890,6 +2054,16 @@
         "zone": "Caverns of Time"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Gloves - Major Spellpower Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Requires Keepers of Time - Honored Use: Teaches you how to permanently enchant gloves to increase spell damage and healing by up to 20. Permanently enchant gloves to increase damage and healing by up to 20. Requires a level 35 or higher item. Sell Price: 2 This enchanting formula is used for the Enchanting profession. It is sold by Alurmi. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "Keepers of Time",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=28272",
+          "standing": "Honored",
+          "standing_rank": 6,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -1930,6 +2104,16 @@
       "requirements": [
         {
           "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Gloves - Major Healing Phase 1 Item Level 70 Binds when picked up Requires Enchanting (350) Requires The Sha'tar - Honored Use: Teaches you how to permanently enchant gloves to increase Healing by 35 and Spell Damage by 12. Permanently enchant gloves to increase Healing by 35 and Spell Damage by 12. Requires a level 35 or higher item. Sell Price: 1 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "The Sha'tar",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=28273",
+          "standing": "Honored",
+          "standing_rank": 6,
+          "type": "reputation"
+        },
+        {
+          "confidence": "wowhead_item",
           "profession": "Enchanting",
           "raw_text": "Formula: Enchant Gloves - Major Healing Phase 1 Item Level 70 Binds when picked up Requires Enchanting (350) Requires The Sha'tar - Honored Use: Teaches you how to permanently enchant gloves to increase Healing by 35 and Spell Damage by 12. Permanently enchant gloves to increase Healing by 35 and Spell Damage by 12. Requires a level 35 or higher item. Sell Price: 1 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
           "scope": "equip_or_use",
@@ -1966,6 +2150,16 @@
         "zone": "Netherstorm"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Cloak - Spell Penetration Phase 1 Item Level 65 Binds when picked up Requires Enchanting (325) Requires The Consortium - Friendly Use: Teaches you how to permanently enchant a cloak to give 20 Spell Penetration. Permanently enchant a cloak to increase Spell Penetration by 20. Requires a level 35 or higher item. Sell Price: 1 This enchanting formula is used for the Enchanting profession. It is sold by NPCs. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "The Consortium",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=28274",
+          "standing": "Friendly",
+          "standing_rank": 5,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -2083,6 +2277,16 @@
       "requirements": [
         {
           "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Weapon - Major Healing Phase 1 Item Level 70 Binds when picked up Requires Enchanting (350) Requires The Sha'tar - Revered Use: Teaches you how to permanently enchant a melee weapon to increase healing by 81 and spell damage by 27. Permanently enchant a Melee Weapon to add +81 Healing and +27 Spell Damage. Requires a level 35 or higher item. Sell Price: 1 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "The Sha'tar",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=28281",
+          "standing": "Revered",
+          "standing_rank": 7,
+          "type": "reputation"
+        },
+        {
+          "confidence": "wowhead_item",
           "profession": "Enchanting",
           "raw_text": "Formula: Enchant Weapon - Major Healing Phase 1 Item Level 70 Binds when picked up Requires Enchanting (350) Requires The Sha'tar - Revered Use: Teaches you how to permanently enchant a melee weapon to increase healing by 81 and spell damage by 27. Permanently enchant a Melee Weapon to add +81 Healing and +27 Spell Damage. Requires a level 35 or higher item. Sell Price: 1 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
           "scope": "equip_or_use",
@@ -2165,14 +2369,14 @@
       },
       "requirements": [
         {
-          "choices": [
-            "The Aldor"
-          ],
           "confidence": "wowhead_item",
           "raw_text": "Greater Inscription of Discipline Item Level 70 Binds when picked up Requires Level 70 Requires The Aldor - Exalted Use: Permanently adds up to 18 spell damage and healing and 10 spell critical strike rating to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot. It is sold by Inscriber Saalyn. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+          "reputation": "The Aldor",
           "scope": "equip_or_use",
           "source_url": "https://www.wowhead.com/tbc/item=28886/greater-inscription-of-discipline",
-          "type": "faction_choice"
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
         }
       ],
       "source_summary": "Vendor: Inscriber Saalyn (8 Item 29735)",
@@ -2218,14 +2422,14 @@
       },
       "requirements": [
         {
-          "choices": [
-            "The Aldor"
-          ],
           "confidence": "wowhead_item",
           "raw_text": "Greater Inscription of Faith Item Level 70 Binds when picked up Requires Level 70 Requires The Aldor - Exalted Use: Permanently adds up to 33 healing and 11 spell damage and 4 mana per 5 sec. to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot. It is sold by Inscriber Saalyn. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+          "reputation": "The Aldor",
           "scope": "equip_or_use",
           "source_url": "https://www.wowhead.com/tbc/item=28887/greater-inscription-of-faith",
-          "type": "faction_choice"
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
         }
       ],
       "source_summary": "Vendor: Inscriber Saalyn (8 Item 29735)",
@@ -2271,14 +2475,14 @@
       },
       "requirements": [
         {
-          "choices": [
-            "The Aldor"
-          ],
           "confidence": "wowhead_item",
           "raw_text": "Greater Inscription of Vengeance Item Level 70 Binds when picked up Requires Level 70 Requires The Aldor - Exalted Use: Permanently adds 30 attack power and 10 critical strike rating to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot. It is sold by Inscriber Saalyn. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+          "reputation": "The Aldor",
           "scope": "equip_or_use",
           "source_url": "https://www.wowhead.com/tbc/item=28888/greater-inscription-of-vengeance",
-          "type": "faction_choice"
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
         }
       ],
       "source_summary": "Vendor: Inscriber Saalyn (8 Item 29735)",
@@ -2324,14 +2528,14 @@
       },
       "requirements": [
         {
-          "choices": [
-            "The Scryers"
-          ],
           "confidence": "wowhead_item",
           "raw_text": "Greater Inscription of the Orb Item Level 70 Binds when picked up Requires Level 70 Requires The Scryers - Exalted Use: Permanently adds 15 spell critical strike rating and up to 12 spell damage to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot. It is sold by Inscriber Veredis. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+          "reputation": "The Scryers",
           "scope": "equip_or_use",
           "source_url": "https://www.wowhead.com/tbc/item=28909/greater-inscription-of-the-orb",
-          "type": "faction_choice"
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
         }
       ],
       "source_summary": "Vendor: Inscriber Veredis (8 Item 29736)",
@@ -2377,14 +2581,14 @@
       },
       "requirements": [
         {
-          "choices": [
-            "The Scryers"
-          ],
           "confidence": "wowhead_item",
           "raw_text": "Greater Inscription of the Knight Item Level 70 Binds when picked up Requires Level 70 Requires The Scryers - Exalted Use: Permanently adds 15 defense rating and 10 dodge rating to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot. It is sold by Inscriber Veredis. In the Item Enhancements (Permanent) category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+          "reputation": "The Scryers",
           "scope": "equip_or_use",
           "source_url": "https://www.wowhead.com/tbc/item=28911/greater-inscription-of-the-knight",
-          "type": "faction_choice"
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
         }
       ],
       "source_summary": "Vendor: Inscriber Veredis (8 Item 29736)",
@@ -2445,9 +2649,10 @@
         "entity_name": "Quartermaster Urgronn",
         "source_url": "https://www.wowhead.com/tbc/item=29190/glyph-of-renewal",
         "type": "vendor",
-        "vendor_id": 17585
+        "vendor_id": 17585,
+        "zone": "Hellfire Peninsula"
       },
-      "source_summary": "Vendor: Quartermaster Urgronn",
+      "source_summary": "Vendor: Quartermaster Urgronn (Hellfire Peninsula)",
       "source_url": "https://www.wowhead.com/tbc/item=29190/glyph-of-renewal",
       "sources": [
         {
@@ -2456,7 +2661,8 @@
           "entity_name": "Quartermaster Urgronn",
           "source_url": "https://www.wowhead.com/tbc/item=29190/glyph-of-renewal",
           "type": "vendor",
-          "vendor_id": 17585
+          "vendor_id": 17585,
+          "zone": "Hellfire Peninsula"
         }
       ],
       "type": "item"
@@ -2497,9 +2703,10 @@
         "entity_name": "Fedryen Swiftspear",
         "source_url": "https://www.wowhead.com/tbc/item=29192/glyph-of-ferocity",
         "type": "vendor",
-        "vendor_id": 17904
+        "vendor_id": 17904,
+        "zone": "Zangarmarsh"
       },
-      "source_summary": "Vendor: Fedryen Swiftspear",
+      "source_summary": "Vendor: Fedryen Swiftspear (Zangarmarsh)",
       "source_url": "https://www.wowhead.com/tbc/item=29192/glyph-of-ferocity",
       "sources": [
         {
@@ -2508,7 +2715,8 @@
           "entity_name": "Fedryen Swiftspear",
           "source_url": "https://www.wowhead.com/tbc/item=29192/glyph-of-ferocity",
           "type": "vendor",
-          "vendor_id": 17904
+          "vendor_id": 17904,
+          "zone": "Zangarmarsh"
         }
       ],
       "type": "item"
@@ -2642,6 +2850,16 @@
       "requirements": [
         {
           "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Cloak - Dodge Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Lower City - Exalted Use: Teaches you how to permanently enchant a cloak to give 12 dodge rating. Permanently enchant a cloak to give 12 dodge rating. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Nakodu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "Lower City",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=33148",
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
+        },
+        {
+          "confidence": "wowhead_item",
           "profession": "Enchanting",
           "raw_text": "Formula: Enchant Cloak - Dodge Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Lower City - Exalted Use: Teaches you how to permanently enchant a cloak to give 12 dodge rating. Permanently enchant a cloak to give 12 dodge rating. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Nakodu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
           "scope": "equip_or_use",
@@ -2674,9 +2892,20 @@
         "entity_name": "Logistics Officer Ulrike",
         "source_url": "https://www.wowhead.com/tbc/item=33150",
         "type": "vendor",
-        "vendor_id": 17657
+        "vendor_id": 17657,
+        "zone": "Hellfire Peninsula"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Cloak - Subtlety Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Honor Hold - Exalted Use: Teaches you how to permanently enchant a cloak to reduce how threatening the wearer is to monsters by 2%. Permanently enchant a cloak to decrease threat caused by the wearer by 2%. Sell Price: 2 50 Formula: Enchant Cloak - Subtlety can be used by Enchanters to learn Subtlety at 300 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+          "reputation": "Honor Hold",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=33150",
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -2687,7 +2916,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Vendor: Logistics Officer Ulrike",
+      "source_summary": "Vendor: Logistics Officer Ulrike (Hellfire Peninsula)",
       "source_url": "https://www.wowhead.com/tbc/item=33150",
       "sources": [
         {
@@ -2696,7 +2925,8 @@
           "entity_name": "Logistics Officer Ulrike",
           "source_url": "https://www.wowhead.com/tbc/item=33150",
           "type": "vendor",
-          "vendor_id": 17657
+          "vendor_id": 17657,
+          "zone": "Hellfire Peninsula"
         }
       ],
       "type": "item"
@@ -2710,9 +2940,20 @@
         "entity_name": "Quartermaster Urgronn",
         "source_url": "https://www.wowhead.com/tbc/item=33151",
         "type": "vendor",
-        "vendor_id": 17585
+        "vendor_id": 17585,
+        "zone": "Hellfire Peninsula"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Cloak - Subtlety Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Thrallmar - Exalted Use: Teaches you how to permanently enchant a cloak to reduce how threatening the wearer is to monsters by 2%. Permanently enchant a cloak to decrease threat caused by the wearer by 2%. Sell Price: 2 50 Formula: Enchant Cloak - Subtlety can be used by Enchanters to learn Subtlety at 300 Enchanting skill. This enchanting formula is used for the Enchanting profession.",
+          "reputation": "Thrallmar",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=33151",
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -2723,7 +2964,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Vendor: Quartermaster Urgronn",
+      "source_summary": "Vendor: Quartermaster Urgronn (Hellfire Peninsula)",
       "source_url": "https://www.wowhead.com/tbc/item=33151",
       "sources": [
         {
@@ -2732,7 +2973,8 @@
           "entity_name": "Quartermaster Urgronn",
           "source_url": "https://www.wowhead.com/tbc/item=33151",
           "type": "vendor",
-          "vendor_id": 17585
+          "vendor_id": 17585,
+          "zone": "Hellfire Peninsula"
         }
       ],
       "type": "item"
@@ -2750,6 +2992,16 @@
         "zone": "Caverns of Time"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Gloves - Superior Agility Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Keepers of Time - Exalted Use: Teaches you how to permanently enchant gloves to increase Agility by 15. Permanently enchant gloves to increase agility by 15. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Alurmi. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "Keepers of Time",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=33152",
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",
@@ -2790,6 +3042,16 @@
       "requirements": [
         {
           "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Gloves - Threat Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires The Sha'tar - Exalted Use: Teaches you how to permanently enchant gloves to increase the threat that the wearer generates against monsters. Permanently enchant gloves to increase threat from all attacks and spells by 2%. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "The Sha'tar",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=33153",
+          "standing": "Exalted",
+          "standing_rank": 8,
+          "type": "reputation"
+        },
+        {
+          "confidence": "wowhead_item",
           "profession": "Enchanting",
           "raw_text": "Formula: Enchant Gloves - Threat Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires The Sha'tar - Exalted Use: Teaches you how to permanently enchant gloves to increase the threat that the wearer generates against monsters. Permanently enchant gloves to increase threat from all attacks and spells by 2%. Sell Price: 2 50 This enchanting formula is used for the Enchanting profession. It is sold by Almaador. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
           "scope": "equip_or_use",
@@ -2824,7 +3086,8 @@
         "entity_name": "Kael'thas Sunstrider",
         "out_of": 217,
         "source_url": "https://www.wowhead.com/tbc/item=35297",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Magisters' Terrace"
       },
       "requirements": [
         {
@@ -2837,7 +3100,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Kael'thas Sunstrider 0.9%",
+      "source_summary": "Drop: Kael'thas Sunstrider (Magisters' Terrace) 0.9%",
       "source_url": "https://www.wowhead.com/tbc/item=35297",
       "sources": [
         {
@@ -2848,7 +3111,8 @@
           "entity_name": "Kael'thas Sunstrider",
           "out_of": 217,
           "source_url": "https://www.wowhead.com/tbc/item=35297",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Magisters' Terrace"
         }
       ],
       "type": "item"
@@ -2864,7 +3128,8 @@
         "entity_name": "Kael'thas Sunstrider",
         "out_of": 217,
         "source_url": "https://www.wowhead.com/tbc/item=35299",
-        "type": "drop"
+        "type": "drop",
+        "zone": "Magisters' Terrace"
       },
       "requirements": [
         {
@@ -2877,7 +3142,7 @@
           "type": "profession"
         }
       ],
-      "source_summary": "Drop: Kael'thas Sunstrider 0.9%",
+      "source_summary": "Drop: Kael'thas Sunstrider (Magisters' Terrace) 0.9%",
       "source_url": "https://www.wowhead.com/tbc/item=35299",
       "sources": [
         {
@@ -2888,7 +3153,8 @@
           "entity_name": "Kael'thas Sunstrider",
           "out_of": 217,
           "source_url": "https://www.wowhead.com/tbc/item=35299",
-          "type": "drop"
+          "type": "drop",
+          "zone": "Magisters' Terrace"
         }
       ],
       "type": "item"
@@ -2906,6 +3172,16 @@
         "zone": "Caverns of Time"
       },
       "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "raw_text": "Formula: Enchant Ring - Stats Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Requires The Scale of the Sands - Revered Use: Teaches you how to permanently enchant a ring to increase all stats by 4. Permanently enchant a ring to increase all stats by 4. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item. Sell Price: 5 This enchanting formula is used for the Enchanting profession. It is sold by Andormu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+          "reputation": "The Scale of the Sands",
+          "scope": "equip_or_use",
+          "source_url": "https://www.wowhead.com/tbc/item=186683",
+          "standing": "Revered",
+          "standing_rank": 7,
+          "type": "reputation"
+        },
         {
           "confidence": "wowhead_item",
           "profession": "Enchanting",

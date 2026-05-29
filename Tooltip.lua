@@ -118,8 +118,9 @@ local function lineForTooltipMatch(match)
     end
 
     local right = BigBiSList:GetPhaseDisplayName(match.phase)
-    if match.rank_label and match.rank_label ~= "" then
-        right = right .. " " .. match.rank_label
+    local tagLabel = match.display_rank_label or match.rank_label
+    if tagLabel and tagLabel ~= "" then
+        right = right .. " " .. tagLabel
     end
 
     return left, right

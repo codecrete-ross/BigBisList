@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import tools.scrape_wowhead as scraper
 from tools.project import canonical_json
 from tools.scrape_wowhead import build_audit
-from tools.sources import derive_primary_source, phase_rank, summarize_sources
+from tools.sources import derive_acquisition_phase, derive_primary_source, phase_rank, summarize_sources
 
 
 class StructuredSourceTests(unittest.TestCase):
@@ -64,6 +64,50 @@ class StructuredSourceTests(unittest.TestCase):
         )
         self.assertEqual(primary["entity_id"], 17257)
         self.assertEqual(primary["zone"], "Magtheridon's Lair")
+
+    def test_acquisition_phase_ignores_weak_ambiguous_drop_when_raid_drop_exists(self):
+        weak_shadowmoon_row = {
+            "type": "drop",
+            "entity_id": 21867,
+            "entity_name": "Teron Gorefiend",
+            "zone": "Shadowmoon Valley",
+            "count": -1,
+            "out_of": 0,
+            "confidence": "fixture",
+        }
+        concrete_bt_row = {
+            "type": "drop",
+            "entity_id": 22871,
+            "entity_name": "Teron Gorefiend",
+            "zone": "Black Temple",
+            "count": 565,
+            "out_of": 3861,
+            "drop_percent": 14.63,
+            "confidence": "fixture",
+        }
+        self.assertEqual(derive_acquisition_phase([weak_shadowmoon_row, concrete_bt_row]), "T6")
+
+        for zone, phase in [
+            ("Tempest Keep", "T5"),
+            ("Hyjal Summit", "T6"),
+            ("Zul'Aman", "ZA"),
+            ("Sunwell Plateau", "SWP"),
+        ]:
+            self.assertEqual(
+                derive_acquisition_phase([weak_shadowmoon_row, {**concrete_bt_row, "zone": zone}]),
+                phase,
+            )
+
+    def test_acquisition_phase_keeps_legitimate_early_sources(self):
+        self.assertEqual(
+            derive_acquisition_phase(
+                [
+                    {"type": "pvp", "entity_name": "Arena Vendor", "confidence": "fixture"},
+                    {"type": "drop", "entity_name": "Illidan Stormrage", "zone": "Black Temple", "confidence": "fixture"},
+                ]
+            ),
+            "PR",
+        )
 
     def test_no_synthetic_unknown_zone_in_item_sources(self):
         violations = []
@@ -138,6 +182,11 @@ class StructuredSourceTests(unittest.TestCase):
         tier = self.items[31037]
         self.assertEqual(tier["primary_source"]["type"], "token_turnin")
         self.assertEqual(tier["acquisition_phase"], "T6")
+
+        self.assertEqual(self.items[32323]["name"], "Shadowmoon Destroyer's Drape")
+        self.assertEqual(self.items[32323]["acquisition_phase"], "T6")
+        self.assertEqual(self.items[32324]["name"], "Insidious Bands")
+        self.assertEqual(self.items[32324]["acquisition_phase"], "T6")
 
         zulaman = self.items[33214]
         self.assertEqual(zulaman["primary_source"]["zone"], "Zul'Aman")

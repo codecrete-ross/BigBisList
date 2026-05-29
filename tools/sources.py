@@ -50,12 +50,8 @@ def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
     source_type = source.get("type")
 
     if source_type == "token_turnin":
-        token_phases = [
-            derive_source_acquisition_phase(token_source)
-            for token_source in source.get("token_sources", [])
-            if isinstance(token_source, dict)
-        ]
-        return min(token_phases, key=phase_rank) if token_phases else "PR"
+        token_sources = [token_source for token_source in source.get("token_sources", []) if isinstance(token_source, dict)]
+        return derive_acquisition_phase(token_sources) if token_sources else "PR"
 
     if source_type == "drop":
         return RAID_ZONE_PHASE.get(str(source.get("zone") or ""), "PR")
@@ -72,10 +68,34 @@ def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
     return "PR"
 
 
+def _is_concrete_raid_drop(source: dict[str, Any]) -> bool:
+    return source.get("type") == "drop" and str(source.get("zone") or "") in RAID_ZONE_PHASE
+
+
+def _is_weak_ambiguous_drop(source: dict[str, Any]) -> bool:
+    if source.get("type") != "drop" or _is_concrete_raid_drop(source):
+        return False
+
+    count = source.get("count")
+    out_of = source.get("out_of")
+    if isinstance(count, (int, float)) and isinstance(out_of, (int, float)):
+        return count < 0 or out_of <= 0
+
+    return source.get("drop_percent") is None
+
+
+def _sources_for_acquisition_phase(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if not any(_is_concrete_raid_drop(source) for source in sources):
+        return sources
+
+    filtered = [source for source in sources if not _is_weak_ambiguous_drop(source)]
+    return filtered or sources
+
+
 def derive_acquisition_phase(sources: list[dict[str, Any]]) -> str:
     if not sources:
         return "PR"
-    return min((derive_source_acquisition_phase(source) for source in sources), key=phase_rank)
+    return min((derive_source_acquisition_phase(source) for source in _sources_for_acquisition_phase(sources)), key=phase_rank)
 
 
 def _source_data_quality_rank(source: dict[str, Any]) -> int:

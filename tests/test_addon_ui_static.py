@@ -35,8 +35,9 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 5",
+            "local DEFAULTS_VERSION = 6",
             "window = {",
+            "width = 1160",
             "minimap = {",
             "hide = false",
             "minimapPos = 225",
@@ -45,13 +46,16 @@ class AddonUIStaticTests(unittest.TestCase):
             "specFiltersInitialized = false",
             "selection = {",
             'selectedPhase = "PR"',
+            'selectedTab = "Upgrades"',
             'phase = "PR"',
+            'tab = "Upgrades"',
             "filters = {",
             'reputation = "all"',
             "bankCache = {",
             "wishlist = {}",
             "ignoredItems = {}",
             "migrateLegacyDefaults",
+            "normalizeTabName",
             "migrateMinimapSettings",
             "ensureTooltipSpecFilters",
             "EnsureTooltipSpecFilters",
@@ -93,7 +97,12 @@ class AddonUIStaticTests(unittest.TestCase):
         ui = self.read_lua("UI.lua")
         data_index = self.read_lua("DataIndex.lua")
 
-        self.assertIn('{ "Phase", "Gear", "Planner", "Enhance", "Wishlist", "Settings" }', ui)
+        self.assertIn('{ "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist", "Settings" }', ui)
+        self.assertIn('Phase = "By Slot"', ui)
+        self.assertIn('Gear = "Equipped"', ui)
+        self.assertIn('Planner = "Upgrades"', ui)
+        self.assertIn('Enhancements = "Enhance"', ui)
+        self.assertIn('Enhance = "Enhancements"', ui)
         self.assertIn("function UI:RenderGearTab()", ui)
         self.assertIn("function UI:CreateGearSlotRow", ui)
         self.assertIn('label = "Finger 1"', data_index)
@@ -127,16 +136,56 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "CreateAccessBadge",
             "ACCESS_LABELS",
+            "ACCESS_BADGE_LABELS",
             "GetAccessStatus",
             "EvaluateRequirement",
             "BuildAccessState",
             "Requirements",
-            "Prereq",
+            "Can get",
         ]:
             self.assertIn(token, ui)
         self.assertIn("CreateOwnershipBadge", ui)
         self.assertLess(ui.index("CreateOwnershipBadge"), ui.index("CreateAccessBadge"))
         self.assertIn("requirements = mergedRequirements", data_index)
+
+    def test_rows_use_clear_columns_and_wrapped_text(self):
+        ui = self.read_lua("UI.lua")
+        widgets = self.read_lua("Widgets.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            "CreateListColumnHeader",
+            '"Tag"',
+            '"Item"',
+            '"Why"',
+            '"Have"',
+            '"Get"',
+            "rowColumnLayout",
+            "WHY_COLUMN_THRESHOLD",
+            "CreateRankBadge",
+            '"Have: " .. ownershipStateLabel',
+            '"Get: " ..',
+            "GetRowRecommendationText",
+            "GetRowSubline",
+            "MeasureTextHeight",
+            "row:SetHeight(rowHeight)",
+        ]:
+            self.assertIn(token, ui)
+        for token in [
+            "CreateWrappedLabel",
+            "CreateStatusBadge",
+            "MeasureTextHeight",
+            "label:SetWordWrap(true)",
+        ]:
+            self.assertIn(token, widgets)
+        for token in [
+            "display_rank_label",
+            "display_rank_kind",
+            "recommendation_tier",
+            "recommendation_summary",
+            "plannerRecommendationTier",
+        ]:
+            self.assertIn(token, data_index)
 
     def test_source_aware_access_options_are_indexed(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -340,7 +389,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "group.phase_summary = buildTooltipGroupSummary(group)",
             "tooltip_grouped = true",
             'return "Alt"',
-            'return "Opt"',
+            'return "Nice-to-have"',
         ]:
             self.assertIn(token, data_index)
 
@@ -425,12 +474,49 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "local RANK_FILTER_LABELS",
             'bis = "BiS only"',
-            'option = "Options only"',
+            'ranked = "Alts only"',
+            'situational = "Sidegrades"',
+            'option = "Nice-to-have"',
             "rankFilterLabel(self:GetFilters().rankGroup)",
-            '"Rank: " .. rankFilterLabel',
+            '"Tag: " .. rankFilterLabel',
+            '"Usefulness: " .. longevityFilterLabel',
         ]:
             self.assertIn(token, ui)
         self.assertNotIn('filters.rankGroup == "all" and "All" or filters.rankGroup', ui)
+        self.assertNotIn('"Rank: " .. rankFilterLabel', ui)
+        self.assertNotIn('"Longevity: " .. longevityFilterLabel', ui)
+
+    def test_player_facing_recommendation_terms_are_tbc_friendly(self):
+        runtime_text = self.read_lua("UI.lua") + self.read_lua("DataIndex.lua") + self.read_lua("Tooltip.lua")
+        for token in [
+            '"Best"',
+            '"Ranked"',
+            '"Situational"',
+            '"Hard"',
+            '"Backup"',
+            '"Core"',
+            '"High"',
+            '"Useful"',
+            '"Opportunistic"',
+            '"Listed option"',
+            '"No list match"',
+            '"Rank meaning"',
+            '"Prerequisites"',
+            '"Timeline"',
+        ]:
+            self.assertNotIn(token, runtime_text)
+        for token in [
+            '"BiS"',
+            '"Alt"',
+            '"Sidegrade"',
+            '"Hard Farm"',
+            '"Nice-to-have"',
+            '"Tag"',
+            '"Tag meaning"',
+            '"Phase value"',
+            '"Source notes"',
+        ]:
+            self.assertIn(token, runtime_text)
 
     def test_scalar_filters_use_dropdowns_not_cycle_buttons(self):
         ui = self.read_lua("UI.lua")
@@ -475,19 +561,27 @@ class AddonUIStaticTests(unittest.TestCase):
 
     def test_details_drawer_lists_access_paths(self):
         ui = self.read_lua("UI.lua")
+        details_body = ui.split("function UI:RefreshDetails", 1)[1].split("function UI:RefreshControls", 1)[0]
         for token in [
             "GetAccessBlockingReason",
             "FormatAccessOptionRequirements",
             "FormatAccessOptions",
-            "Best access path",
-            "Other ways to acquire",
-            "Ownership",
-            "Prereq",
         ]:
             self.assertIn(token, ui)
-        self.assertLess(ui.index('"Ownership"'), ui.index('"Prereq"'))
-        self.assertLess(ui.index('"Prereq"'), ui.index('"Best access path"'))
-        self.assertLess(ui.index('"Best access path"'), ui.index('"Other ways to acquire"'))
+        for token in [
+            "Recommendation",
+            "Tag meaning",
+            "How to get",
+            "Requirements",
+            "Phase value",
+            "Source notes",
+        ]:
+            self.assertIn(token, details_body)
+        self.assertLess(details_body.index('"Recommendation"'), details_body.index('"Tag meaning"'))
+        self.assertLess(details_body.index('"Tag meaning"'), details_body.index('"How to get"'))
+        self.assertLess(details_body.index('"How to get"'), details_body.index('"Requirements"'))
+        self.assertLess(details_body.index('"Requirements"'), details_body.index('"Phase value"'))
+        self.assertLess(details_body.index('"Phase value"'), details_body.index('"Source notes", sourceSummary'))
 
     def test_enhance_spell_rows_are_not_rendered_as_items(self):
         ui = self.read_lua("UI.lua")
