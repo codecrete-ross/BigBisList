@@ -48,6 +48,7 @@ local OWNERSHIP_LABELS = {
     equipped = "Equipped",
     bag = "Bags",
     bank = "Bank",
+    service = "Service",
     missing = "Missing",
 }
 
@@ -55,6 +56,7 @@ local OWNERSHIP_COLORS = {
     equipped = { 0.16, 0.38, 0.18, 0.96, 0.46, 0.95, 0.48, 1 },
     bag = { 0.11, 0.23, 0.38, 0.96, 0.45, 0.68, 0.98, 1 },
     bank = { 0.28, 0.21, 0.10, 0.96, 0.96, 0.72, 0.34, 1 },
+    service = { 0.23, 0.18, 0.36, 0.96, 0.74, 0.60, 0.98, 1 },
     missing = { 0.22, 0.12, 0.12, 0.96, 0.92, 0.48, 0.48, 1 },
 }
 
@@ -321,7 +323,11 @@ local function contentWidth(parent, fallback)
     return math.max(260, width - 4)
 end
 
-local function rowColumnLayout(width)
+local function rowColumnLayout(width, showRank)
+    if showRank == nil then
+        showRank = true
+    end
+
     local usable = math.max(260, width - (ROW_HORIZONTAL_PADDING * 2))
     local showWhy = usable >= WHY_COLUMN_THRESHOLD
     local whyWidth = 0
@@ -330,16 +336,26 @@ local function rowColumnLayout(width)
         whyWidth = clamp(math.floor(usable * 0.22), WHY_COLUMN_MIN_WIDTH, WHY_COLUMN_MAX_WIDTH)
     end
 
-    local fixedWidth = RANK_COLUMN_WIDTH + HAVE_COLUMN_WIDTH + GET_COLUMN_WIDTH + (COLUMN_GAP * 3)
-    if showWhy then
-        fixedWidth = fixedWidth + whyWidth + COLUMN_GAP
+    local function fixedWidthFor(includeWhy)
+        local columnCount = 3
+        local fixedWidth = HAVE_COLUMN_WIDTH + GET_COLUMN_WIDTH
+        if showRank then
+            columnCount = columnCount + 1
+            fixedWidth = fixedWidth + RANK_COLUMN_WIDTH
+        end
+        if includeWhy then
+            columnCount = columnCount + 1
+            fixedWidth = fixedWidth + whyWidth
+        end
+        return fixedWidth + (COLUMN_GAP * math.max(0, columnCount - 1))
     end
 
+    local fixedWidth = fixedWidthFor(showWhy)
     local itemWidth = usable - fixedWidth
     if showWhy and itemWidth < 190 then
         showWhy = false
         whyWidth = 0
-        fixedWidth = RANK_COLUMN_WIDTH + HAVE_COLUMN_WIDTH + GET_COLUMN_WIDTH + (COLUMN_GAP * 3)
+        fixedWidth = fixedWidthFor(false)
         itemWidth = usable - fixedWidth
     end
 
@@ -348,9 +364,14 @@ local function rowColumnLayout(width)
     local x = ROW_HORIZONTAL_PADDING
     local layout = {
         showWhy = showWhy,
-        rank = { x = x, width = RANK_COLUMN_WIDTH },
+        showRank = showRank,
     }
-    x = x + RANK_COLUMN_WIDTH + COLUMN_GAP
+
+    if showRank then
+        layout.rank = { x = x, width = RANK_COLUMN_WIDTH }
+        x = x + RANK_COLUMN_WIDTH + COLUMN_GAP
+    end
+
     layout.item = { x = x, width = itemWidth }
     x = x + itemWidth + COLUMN_GAP
 
@@ -1685,16 +1706,33 @@ function UI:GetOwnershipState(itemId, itemIds)
     return bestState or "missing"
 end
 
-function UI:CreateOwnershipBadge(parent, state)
+function UI:GetRowOwnershipState(data)
+    if not data then
+        return nil
+    end
+    if data.ownership_state then
+        return data.ownership_state
+    end
+    if data.item_id or data.item_ids then
+        return self:GetOwnershipState(data.item_id, data.item_ids)
+    end
+    return nil
+end
+
+function UI:CreateOwnershipBadge(parent, state, data)
     local widgets = BigBiSList.Widgets
     local color = OWNERSHIP_COLORS[state] or OWNERSHIP_COLORS.missing
-    local badge = widgets:CreateStatusBadge(parent, "Have: " .. ownershipStateLabel(state), HAVE_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
+    local label = data and data.ownership_label or ownershipStateLabel(state)
+    local badge = widgets:CreateStatusBadge(parent, label, HAVE_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
     badge:EnableMouse(true)
 
     badge:SetScript("OnEnter", function(selfBadge)
         GameTooltip:SetOwner(selfBadge, "ANCHOR_RIGHT")
         GameTooltip:AddLine("Have", 1, 0.82, 0.28)
-        GameTooltip:AddLine(ownershipStateLabel(state), 0.86, 0.86, 0.86)
+        GameTooltip:AddLine(label, 0.86, 0.86, 0.86)
+        if data and data.ownership_detail and data.ownership_detail ~= "" then
+            GameTooltip:AddLine(data.ownership_detail, 0.62, 0.62, 0.66, true)
+        end
         if state == "bank" and self.currentOwned and self.currentOwned.bankUpdatedAt and self.currentOwned.bankUpdatedAt ~= "" then
             GameTooltip:AddLine("Bank cache: " .. self.currentOwned.bankUpdatedAt, 0.62, 0.62, 0.66)
         end
@@ -1710,7 +1748,7 @@ end
 function UI:CreateAccessBadge(parent, state, data)
     local widgets = BigBiSList.Widgets
     local color = ACCESS_COLORS[state] or ACCESS_COLORS.unknown
-    local badge = widgets:CreateStatusBadge(parent, "Get: " .. (ACCESS_BADGE_LABELS[state] or ACCESS_BADGE_LABELS.unknown), GET_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
+    local badge = widgets:CreateStatusBadge(parent, ACCESS_BADGE_LABELS[state] or ACCESS_BADGE_LABELS.unknown, GET_COLUMN_WIDTH, 18, { color[1], color[2], color[3], color[4] }, { color[5], color[6], color[7], color[8] })
     badge:EnableMouse(true)
 
     badge:SetScript("OnEnter", function(selfBadge)
@@ -1800,22 +1838,25 @@ function UI:GetRowSubline(data, mode, includeWhy)
     return joinText(parts, " - ")
 end
 
-function UI:CreateListColumnHeader(parent, yOffset)
+function UI:CreateListColumnHeader(parent, yOffset, mode)
     local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 560)
-    local layout = rowColumnLayout(width)
+    local layout = rowColumnLayout(width, mode ~= "enhance")
     local header = CreateFrame("Frame", nil, parent)
     header:SetHeight(COLUMN_HEADER_HEIGHT)
     header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
 
     local labels = {
-        { text = "Tag", column = layout.rank },
         { text = layout.showWhy and "Item" or "Item / Why", column = layout.item },
         { text = "Have", column = layout.have },
         { text = "Get", column = layout.get },
     }
+    if layout.showRank then
+        table.insert(labels, 1, { text = "Tag", column = layout.rank })
+    end
     if layout.showWhy then
-        table.insert(labels, 3, { text = "Why", column = layout.why })
+        local whyIndex = layout.showRank and 3 or 2
+        table.insert(labels, whyIndex, { text = "Why", column = layout.why })
     end
 
     for _, entry in ipairs(labels) do
@@ -1837,7 +1878,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     local entityType = data.entity_type or (data.spell_id and "spell") or "item"
     local entityId = data.entity_id or data.spell_id or data.item_id
     local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 560)
-    local layout = rowColumnLayout(width)
+    local layout = rowColumnLayout(width, mode ~= "enhance")
     local row = widgets:CreateItemRow(parent, ROW_HEIGHT)
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     row:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
@@ -1847,9 +1888,11 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     row.detailData = data
     row.detailMode = mode
 
-    local rankLabel, rankKind = displayRankInfo(data, mode)
-    local rankBadge = self:CreateRankBadge(row, rankLabel, rankKind, data, mode)
-    rankBadge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.rank.x, -ROW_VERTICAL_PADDING)
+    if layout.showRank then
+        local rankLabel, rankKind = displayRankInfo(data, mode)
+        local rankBadge = self:CreateRankBadge(row, rankLabel, rankKind, data, mode)
+        rankBadge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.rank.x, -ROW_VERTICAL_PADDING)
+    end
 
     local iconButton = widgets:CreateIconButton(row, 30, function(_, buttonName)
         if buttonName == "RightButton" then
@@ -1877,9 +1920,9 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
         whyText:SetTextColor(0.76, 0.76, 0.80, 1)
     end
 
-    if data.item_id or data.item_ids then
-        local ownershipState = self:GetOwnershipState(data.item_id, data.item_ids)
-        local ownershipBadge = self:CreateOwnershipBadge(row, ownershipState)
+    local ownershipState = self:GetRowOwnershipState(data)
+    if ownershipState then
+        local ownershipBadge = self:CreateOwnershipBadge(row, ownershipState, data)
         ownershipBadge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.have.x, -ROW_VERTICAL_PADDING)
     end
 
@@ -1954,7 +1997,7 @@ function UI:RenderPhaseTab()
     for _, group in ipairs(groups) do
         local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, group.slot, yOffset)
         yOffset = yOffset - headerHeight
-        local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset)
+        local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset, "phase")
         yOffset = yOffset - columnHeaderHeight
 
         for _, item in ipairs(group.items) do
@@ -1996,7 +2039,7 @@ function UI:RenderPlannerTab()
         if #sectionRows > 0 then
             local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, section.title, yOffset)
             yOffset = yOffset - headerHeight
-            local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset)
+            local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset, "planner")
             yOffset = yOffset - columnHeaderHeight
 
             for _, rowData in ipairs(sectionRows) do
@@ -2155,7 +2198,7 @@ function UI:RenderEnhanceTab()
             rendered = true
             local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, section.title, yOffset)
             yOffset = yOffset - headerHeight
-            local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset)
+            local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset, "enhance")
             yOffset = yOffset - columnHeaderHeight
             for _, rowData in ipairs(section.rows) do
                 local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, rowData, "enhance")
@@ -2166,7 +2209,7 @@ function UI:RenderEnhanceTab()
     end
 
     if not rendered then
-        self:RenderEmpty("No gems, enchants, or consumables are available for this selection yet.")
+        self:RenderEmpty("No gems, enchants, or consumables found for this class, spec, and phase.")
         return
     end
 
@@ -2187,7 +2230,7 @@ function UI:RenderWishlistTab()
 
     local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, "Wishlist", yOffset)
     yOffset = yOffset - headerHeight
-    local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset)
+    local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset, "wishlist")
     yOffset = yOffset - columnHeaderHeight
 
     local selection = self:GetSelection()
@@ -2645,6 +2688,12 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             ownershipText = ownershipText .. " - open your bank once to include banked items"
         end
         appendText(recommendationLines, "Have: " .. ownershipText)
+    elseif detailData and detailData.ownership_state then
+        ownershipText = detailData.ownership_label or ownershipStateLabel(detailData.ownership_state)
+        if detailData.ownership_detail and detailData.ownership_detail ~= "" then
+            ownershipText = ownershipText .. " - " .. detailData.ownership_detail
+        end
+        appendText(recommendationLines, "Have: " .. ownershipText)
     end
 
     local accessData = detailData or item or {}
@@ -2654,8 +2703,10 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
     contentHeight = contentHeight + anchor.contentHeight
 
-    anchor = self:CreateDetailsText(content, anchor, "Tag meaning", rankMeaning(detailData or plannerContext, detailMode), 0.76, 0.76, 0.80)
-    contentHeight = contentHeight + anchor.contentHeight
+    if detailMode ~= "enhance" then
+        anchor = self:CreateDetailsText(content, anchor, "Tag meaning", rankMeaning(detailData or plannerContext, detailMode), 0.76, 0.76, 0.80)
+        contentHeight = contentHeight + anchor.contentHeight
+    end
 
     local optionEvaluation = accessEvaluation.optionEvaluation
     local option = optionEvaluation and optionEvaluation.option

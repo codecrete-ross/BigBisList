@@ -163,8 +163,9 @@ class AddonUIStaticTests(unittest.TestCase):
             "rowColumnLayout",
             "WHY_COLUMN_THRESHOLD",
             "CreateRankBadge",
-            '"Have: " .. ownershipStateLabel',
-            '"Get: " ..',
+            "GetRowOwnershipState",
+            "data and data.ownership_label",
+            "ACCESS_BADGE_LABELS[state]",
             "GetRowRecommendationText",
             "GetRowSubline",
             "MeasureTextHeight",
@@ -186,6 +187,24 @@ class AddonUIStaticTests(unittest.TestCase):
             "plannerRecommendationTier",
         ]:
             self.assertIn(token, data_index)
+
+        ownership_badge_body = ui.split("function UI:CreateOwnershipBadge", 1)[1].split("function UI:CreateAccessBadge", 1)[0]
+        access_badge_body = ui.split("function UI:CreateAccessBadge", 1)[1].split("function UI:CreateRankBadge", 1)[0]
+        self.assertNotIn('"Have: "', ownership_badge_body)
+        self.assertNotIn('"Get: "', access_badge_body)
+
+    def test_enhance_rows_omit_redundant_tag_column(self):
+        ui = self.read_lua("UI.lua")
+
+        for token in [
+            'rowColumnLayout(width, mode ~= "enhance")',
+            "showRank = showRank",
+            "if layout.showRank then",
+            'CreateListColumnHeader(self.contentChild, yOffset, "enhance")',
+            'if detailMode ~= "enhance" then',
+        ]:
+            self.assertIn(token, ui)
+        self.assertIn('table.insert(labels, 1, { text = "Tag", column = layout.rank })', ui)
 
     def test_source_aware_access_options_are_indexed(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -214,6 +233,9 @@ class AddonUIStaticTests(unittest.TestCase):
             "buildConsumableAccessOptions",
             "consumableDisplayName",
             "consumableDetailLabel",
+            "consumableRecommendationSummary",
+            "Choose one",
+            "Bring for raid",
         ]:
             self.assertIn(token, data_index)
         self.assertLess(
@@ -224,6 +246,26 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("function UI:GetOwnershipState(itemId, itemIds)", ui)
         self.assertIn("for _, candidateItemId in ipairs(itemIds or {})", ui)
         self.assertIn("self:GetOwnershipState(data.item_id, data.item_ids)", ui)
+
+    def test_enhancement_rows_use_actionable_copy(self):
+        data_index = self.read_lua("DataIndex.lua")
+        ui = self.read_lua("UI.lua")
+
+        for token in [
+            "GEM_SOCKET_LABELS",
+            "gemDetailLabel",
+            "enchantDetailLabel",
+            "enchantRecommendationSummary",
+            'recommendation_summary = "Socket this gem"',
+            "recommendation_summary = enchantRecommendationSummary(enchant)",
+            "recommendation_summary = consumableRecommendationSummary",
+            'ownership_state = "service"',
+            'ownership_label = "Service"',
+            "find an enchanter",
+        ]:
+            self.assertIn(token, data_index)
+        self.assertIn('service = "Service"', ui)
+        self.assertIn("No gems, enchants, or consumables found for this class, spec, and phase.", ui)
 
     def test_trade_paths_are_explicit_access_options(self):
         data_index = self.read_lua("DataIndex.lua")

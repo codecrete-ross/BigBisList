@@ -112,6 +112,16 @@ local CONSUMABLE_CATEGORY_LABELS = {
     utility = "Utility",
 }
 
+local GEM_SOCKET_LABELS = {
+    red = "Red gem",
+    yellow = "Yellow gem",
+    blue = "Blue gem",
+    orange = "Orange gem",
+    purple = "Purple gem",
+    green = "Green gem",
+    prismatic = "Prismatic gem",
+}
+
 local RANK_GROUP_ORDER = {
     bis = 1,
     ranked = 2,
@@ -820,6 +830,39 @@ local function consumableDetailLabel(consumable, itemIndex)
         category = consumable.item_categories[itemIndex] or category
     end
     return consumableCategoryLabel(category)
+end
+
+local function gemDetailLabel(gem)
+    if gem and gem.meta then
+        return "Meta gem"
+    end
+    local socketCategory = lower(gem and gem.socket_category)
+    return GEM_SOCKET_LABELS[socketCategory] or "Gem"
+end
+
+local function enchantDetailLabel(enchant)
+    if enchant and enchant.slot and enchant.slot ~= "" then
+        return enchant.slot .. " enchant"
+    end
+    return "Enchant"
+end
+
+local function enchantRecommendationSummary(enchant)
+    if enchant and enchant.slot and enchant.slot ~= "" then
+        return "Apply to " .. enchant.slot
+    end
+    return "Apply this enchant"
+end
+
+local function consumableRecommendationSummary(consumable, grouped, itemIndex)
+    local detail = consumableDetailLabel(consumable, itemIndex)
+    if grouped then
+        return "Choose one " .. lower(detail)
+    end
+    if consumable and consumable.category == "flask" then
+        return "Use one flask"
+    end
+    return "Bring for raid"
 end
 
 local function consumableCanGroupAlternatives(consumable, itemIds)
@@ -1705,10 +1748,11 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 item_id = gem.id,
                 item = item,
                 name = gem.name,
-                detail = (gem.socket_category or "gem") .. (gem.meta and " meta" or ""),
+                detail = gemDetailLabel(gem),
                 source_summary = gem.source_summary or "",
                 requirements = mergedRequirements(gem.requirements, item and item.requirements),
                 access_options = buildAccessOptions(item, sourceData, gem.requirements, { entityType = "item" }),
+                recommendation_summary = "Socket this gem",
             })
         end
     end
@@ -1720,13 +1764,17 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 entity_type = entityType,
                 entity_id = enchant.id,
                 name = enchant.name,
-                detail = enchant.slot or "Enchant",
+                detail = enchantDetailLabel(enchant),
                 source_summary = enchant.source_summary or "",
                 slot = enchant.slot,
+                recommendation_summary = enchantRecommendationSummary(enchant),
             }
 
             if entityType == "spell" then
                 row.spell_id = enchant.id
+                row.ownership_state = "service"
+                row.ownership_label = "Service"
+                row.ownership_detail = "Not an inventory item; find an enchanter or use your own profession."
             else
                 row.item_id = enchant.id
                 row.item = index.itemsById[enchant.id]
@@ -1760,6 +1808,7 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                     detail = consumableDetailLabel(consumable),
                     source_summary = consumableSourceSummary(consumable, itemIds),
                     access_options = buildConsumableAccessOptions(index, itemIds),
+                    recommendation_summary = consumableRecommendationSummary(consumable, true),
                 })
             else
                 for itemIndex, itemId in ipairs(itemIds) do
@@ -1774,6 +1823,7 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                         source_summary = consumableSourceSummary(consumable, { itemId }),
                         requirements = mergedRequirements(consumable.requirements, item and item.requirements),
                         access_options = buildAccessOptions(item, nil, consumable.requirements, { entityType = "item" }),
+                        recommendation_summary = consumableRecommendationSummary(consumable, false, itemIndex),
                     })
                 end
             end
