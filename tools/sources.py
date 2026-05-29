@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import re
 from typing import Any
 
 PHASE_ORDER = ["PR", "T4", "T5", "T6", "ZA", "SWP"]
@@ -17,6 +18,45 @@ RAID_ZONE_PHASE = {
     "Zul'Aman": "ZA",
     "Sunwell Plateau": "SWP",
 }
+
+CLASSIC_RAID_ZONES = {
+    "Molten Core",
+    "Blackwing Lair",
+    "Zul'Gurub",
+    "Ruins of Ahn'Qiraj",
+    "Ahn'Qiraj",
+    "Naxxramas",
+}
+
+TBC_DUNGEON_ZONES = {
+    "Hellfire Ramparts",
+    "The Blood Furnace",
+    "The Shattered Halls",
+    "The Slave Pens",
+    "The Underbog",
+    "The Steamvault",
+    "Mana-Tombs",
+    "Auchenai Crypts",
+    "Sethekk Halls",
+    "Shadow Labyrinth",
+    "Old Hillsbrad Foothills",
+    "The Black Morass",
+    "The Botanica",
+    "The Mechanar",
+    "The Arcatraz",
+    "Magisters' Terrace",
+}
+
+CLASSIC_DUNGEON_ZONES = {
+    "Blackrock Depths",
+    "Blackrock Spire",
+    "Dire Maul",
+    "Scholomance",
+    "Stratholme",
+}
+
+RAID_ZONES = frozenset(set(RAID_ZONE_PHASE) | CLASSIC_RAID_ZONES)
+DUNGEON_ZONES = frozenset(TBC_DUNGEON_ZONES | CLASSIC_DUNGEON_ZONES)
 
 ZONE_PHASE = {
     **RAID_ZONE_PHASE,
@@ -46,20 +86,122 @@ SOURCE_TYPE_PRIORITY = {
     "unknown": 99,
 }
 
+SOURCE_FILTER_KEYS_BY_CONTENT_TYPE = {
+    "raid": "raid_drop",
+    "heroic_dungeon": "heroic_dungeon_drop",
+    "dungeon": "dungeon_drop",
+    "other": "other_drop",
+}
+
 
 def phase_rank(phase: str | None) -> int:
     return PHASE_INDEX.get(str(phase or "PR"), 999)
 
 
+def normalize_source_zone(zone: str | None) -> tuple[str | None, str | None]:
+    if not isinstance(zone, str):
+        return None, None
+
+    normalized = zone.strip()
+    match = re.match(r"^heroic\s+(.+)$", normalized, flags=re.IGNORECASE)
+    if match:
+        return match.group(1).strip(), "heroic"
+
+    return normalized or None, None
+
+
+def source_text_has_heroic(text: str | None) -> bool:
+    return isinstance(text, str) and bool(re.search(r"\bheroic\b", text, flags=re.IGNORECASE))
+
+
+def source_difficulty(source: dict[str, Any]) -> str | None:
+    if source.get("difficulty") == "heroic":
+        return "heroic"
+
+    _, zone_difficulty = normalize_source_zone(source.get("zone"))
+    if zone_difficulty == "heroic":
+        return "heroic"
+
+    if source_text_has_heroic(source.get("raw_source_text")):
+        return "heroic"
+
+    return None
+
+
+def source_content_type(source: dict[str, Any]) -> str | None:
+    source_type = source.get("type")
+
+    if source_type == "token_turnin":
+        token_sources = [token_source for token_source in source.get("token_sources", []) if isinstance(token_source, dict)]
+        if not token_sources:
+            return None
+        return source_content_type(derive_primary_source(token_sources))
+
+    if source_type != "drop":
+        return None
+
+    if source.get("world_drop"):
+        return "other"
+
+    zone, _ = normalize_source_zone(source.get("zone"))
+    if zone in RAID_ZONES:
+        return "raid"
+    if zone in DUNGEON_ZONES:
+        return "heroic_dungeon" if source_difficulty(source) == "heroic" else "dungeon"
+    return "other"
+
+
+def source_filter_key(source: dict[str, Any]) -> str:
+    content_type = source_content_type(source)
+    if content_type:
+        return SOURCE_FILTER_KEYS_BY_CONTENT_TYPE.get(content_type, "other_drop")
+    return str(source.get("type") or "unknown")
+
+
+def classify_source(source: dict[str, Any]) -> dict[str, Any]:
+    classified = deepcopy(source)
+
+    zone, zone_difficulty = normalize_source_zone(classified.get("zone"))
+    if zone:
+        classified["zone"] = zone
+
+    difficulty = classified.get("difficulty") or zone_difficulty
+    if classified.get("type") == "drop" and (difficulty == "heroic" or source_text_has_heroic(classified.get("raw_source_text"))):
+        classified["difficulty"] = "heroic"
+
+    if isinstance(classified.get("token_sources"), list):
+        classified["token_sources"] = [
+            classify_source(token_source) if isinstance(token_source, dict) else token_source
+            for token_source in classified["token_sources"]
+        ]
+
+    if isinstance(classified.get("recipe_sources"), list):
+        classified["recipe_sources"] = [
+            classify_source(recipe_source) if isinstance(recipe_source, dict) else recipe_source
+            for recipe_source in classified["recipe_sources"]
+        ]
+
+    content_type = source_content_type(classified)
+    if content_type:
+        classified["content_type"] = content_type
+
+    return classified
+
+
+def classify_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [classify_source(source) for source in sources]
+
+
 def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
     source_type = source.get("type")
+    zone, _ = normalize_source_zone(source.get("zone"))
 
     if source_type == "token_turnin":
         token_sources = [token_source for token_source in source.get("token_sources", []) if isinstance(token_source, dict)]
         return derive_acquisition_phase(token_sources) if token_sources else "PR"
 
     if source_type == "drop":
-        return ZONE_PHASE.get(str(source.get("zone") or ""), "PR")
+        return ZONE_PHASE.get(str(zone or ""), "PR")
 
     if source_type == "quest":
         quest_id = source.get("quest_id")
@@ -71,19 +213,20 @@ def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
         recipe_sources = [recipe_source for recipe_source in source.get("recipe_sources", []) if isinstance(recipe_source, dict)]
         if recipe_sources:
             return derive_acquisition_phase(recipe_sources)
-        return ZONE_PHASE.get(str(source.get("zone") or ""), "PR")
+        return ZONE_PHASE.get(str(zone or ""), "PR")
 
-    if source_type == "vendor" and source.get("zone") in ZONE_PHASE:
-        return ZONE_PHASE[str(source.get("zone"))]
+    if source_type == "vendor" and zone in ZONE_PHASE:
+        return ZONE_PHASE[str(zone)]
 
-    if source_type == "vendor" and source.get("zone") == "Black Temple":
+    if source_type == "vendor" and zone == "Black Temple":
         return "T6"
 
     return "PR"
 
 
 def _is_concrete_raid_drop(source: dict[str, Any]) -> bool:
-    return source.get("type") == "drop" and str(source.get("zone") or "") in RAID_ZONE_PHASE
+    zone, _ = normalize_source_zone(source.get("zone"))
+    return source.get("type") == "drop" and zone in RAID_ZONE_PHASE
 
 
 def _is_weak_ambiguous_drop(source: dict[str, Any]) -> bool:

@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 7
+local DEFAULTS_VERSION = 8
 
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -239,6 +239,24 @@ local function migrateTooltipSpecFilterDefaults(db, previousVersion)
     end
 end
 
+local function migrateSplitDropSourceFilter(db, previousVersion)
+    if previousVersion ~= nil and previousVersion >= 8 then
+        return
+    end
+
+    local filters = db.char and db.char.filters
+    if type(filters) ~= "table" then
+        return
+    end
+
+    if filters.sourceType == "drop" then
+        filters.sourceType = "all"
+    end
+    if type(filters.sourceTypes) == "table" then
+        filters.sourceTypes.drop = nil
+    end
+end
+
 local function ensureTooltipSpecFilters(db)
     local profile = db.profile or {}
     local tooltips = profile.tooltips or {}
@@ -348,6 +366,7 @@ function BigBiSList:EnsureDatabase()
     migrateSelection(BigBiSListDB.char)
     migrateLegacyDefaults(BigBiSListDB, previousVersion)
     migrateTooltipSpecFilterDefaults(BigBiSListDB, previousVersion)
+    migrateSplitDropSourceFilter(BigBiSListDB, previousVersion)
     ensureTooltipSpecFilters(BigBiSListDB)
 
     BigBiSListDB.char.selectedClass = BigBiSListDB.char.selection.class

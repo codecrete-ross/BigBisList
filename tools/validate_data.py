@@ -162,6 +162,10 @@ def validate() -> ValidationResult:
             for source in sources:
                 source_type = source.get("type")
                 _require(source_type in {"drop", "quest", "vendor", "crafted", "pvp", "token_turnin", "world_drop", "unknown"}, errors, f"Item {item_id} has invalid source type: {source_type}")
+                if source.get("content_type") is not None:
+                    _require(source.get("content_type") in {"raid", "heroic_dungeon", "dungeon", "other"}, errors, f"Item {item_id} has invalid source content_type: {source.get('content_type')}")
+                if source.get("difficulty") is not None:
+                    _require(source.get("difficulty") in {"heroic"}, errors, f"Item {item_id} has invalid source difficulty: {source.get('difficulty')}")
                 _require(bool(source.get("confidence")), errors, f"Item {item_id} source is missing confidence")
                 validate_requirements(f"Item {item_id} source {source_type}", source.get("requirements"), errors)
                 source_url = source.get("source_url")
@@ -183,6 +187,10 @@ def validate() -> ValidationResult:
                         _require(bool(token_source.get("token_name")), errors, f"Item {item_id} token source needs token_name")
                         _require(isinstance(token_source.get("token_count"), int) and token_source.get("token_count") > 0, errors, f"Item {item_id} token source needs token_count")
                         _require(bool(token_source.get("entity_name")) or token_source.get("world_drop") is True, errors, f"Item {item_id} token source needs entity_name or world_drop")
+                        if token_source.get("content_type") is not None:
+                            _require(token_source.get("content_type") in {"raid", "heroic_dungeon", "dungeon", "other"}, errors, f"Item {item_id} token source has invalid content_type: {token_source.get('content_type')}")
+                        if token_source.get("difficulty") is not None:
+                            _require(token_source.get("difficulty") in {"heroic"}, errors, f"Item {item_id} token source has invalid difficulty: {token_source.get('difficulty')}")
                         token_source_url = token_source.get("source_url")
                         if token_source_url:
                             _require(str(token_source_url).startswith("https://www.wowhead.com/tbc/"), errors, f"Item {item_id} token source URL must be a Wowhead TBC URL")

@@ -24,7 +24,15 @@ if __package__ is None or __package__ == "":
 from tools.manifest_coverage import build_manifest_coverage
 from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES, canonical_json, write_text
 from tools.reputations import normalize_reputation_names
-from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
+from tools.sources import (
+    classify_source,
+    classify_sources,
+    derive_acquisition_phase,
+    derive_primary_source,
+    normalize_source_zone,
+    source_text_has_heroic,
+    summarize_sources,
+)
 from tools.validate_data import validate
 
 PARSER_VERSION = "wowhead-scraper-0.8.0"
@@ -1207,7 +1215,7 @@ def recipe_sources_from_taught_by_items(rows: list[dict[str, Any]], source_url: 
     if any(source.get("zone") for source in sources):
         sources = [source for source in sources if source.get("zone")]
 
-    return sources
+    return classify_sources(sources)
 
 
 def add_recipe_sources_to_crafted_sources(
@@ -1322,7 +1330,7 @@ def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) ->
     if len(sources) > 8 and all(source.get("type") == "drop" for source in sources):
         max_drop = max((float(source.get("drop_percent") or 0) for source in sources), default=0)
         if max_drop < 1:
-            return [
+            return classify_sources([
                 {
                     "type": "world_drop",
                     "entity_name": "World Drop",
@@ -1330,7 +1338,7 @@ def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) ->
                     "source_url": url,
                     "confidence": "wowhead_item",
                 }
-            ]
+            ])
 
     sources = add_recipe_sources_to_crafted_sources(
         sources,
@@ -1340,7 +1348,7 @@ def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) ->
     for source in sources:
         attach_requirements_to_source(source, url, requirement_scope_for_source(source), "wowhead_item")
 
-    return sources
+    return classify_sources(sources)
 
 
 def parse_quality_from_description(description: str) -> str:
@@ -1544,7 +1552,7 @@ def normalize_spell_sources(url: str, tables: dict[str, list[dict[str, Any]]]) -
         confidence = "wowhead_spell_recipe" if source.get("type") == "trainer" or source.get("required_skill") else "wowhead_spell_recipe"
         attach_requirements_to_source(source, url, requirement_scope_for_source(source), confidence)
 
-    return sources
+    return classify_sources(sources)
 
 
 def parse_spell_html(url: str, html: str) -> dict[str, Any]:
@@ -3010,7 +3018,7 @@ def attach_token_turnins_to_sources(
             resolved["confidence"] = f"{source.get('confidence', 'wowhead_item')}+token"
         resolved_sources.append(resolved)
 
-    return resolved_sources
+    return classify_sources(resolved_sources)
 
 
 def guide_item_refs(snapshots: list[dict[str, Any]]) -> dict[int, dict[str, Any]]:
@@ -3052,6 +3060,54 @@ def guide_item_source_hints(snapshots: list[dict[str, Any]]) -> dict[int, list[d
                     }
                 )
     return hints
+
+
+def source_hint_matches_source(source: dict[str, Any], hint: dict[str, Any]) -> bool:
+    if source.get("type") != "drop" or not source_text_has_heroic(hint.get("source_text")):
+        return False
+
+    source_text = clean_text(str(hint.get("source_text") or ""))
+    source_text_lower = source_text.lower()
+
+    entity_id = source.get("entity_id")
+    if isinstance(entity_id, int):
+        for link in hint.get("source_links", []):
+            if isinstance(link, dict) and entity_id_from_href(str(link.get("href") or ""), "npc") == entity_id:
+                return True
+
+    entity_name = source.get("entity_name")
+    if isinstance(entity_name, str) and entity_name and entity_name.lower() in source_text_lower:
+        return True
+
+    _, hint_zone = source_name_and_zone_from_text(source_text, r"^(drop|zone drop):")
+    hint_zone, _ = normalize_source_zone(hint_zone)
+    source_zone, _ = normalize_source_zone(source.get("zone"))
+    return bool(hint_zone and source_zone and hint_zone == source_zone)
+
+
+def heroic_zone_from_hint(hint: dict[str, Any]) -> str | None:
+    source_text = clean_text(str(hint.get("source_text") or ""))
+    _, zone = source_name_and_zone_from_text(source_text, r"^(drop|zone drop):")
+    zone, _ = normalize_source_zone(zone)
+    return zone
+
+
+def apply_source_hints_to_sources(sources: list[dict[str, Any]], hints: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if not hints:
+        return sources
+
+    enriched_sources: list[dict[str, Any]] = []
+    for source in sources:
+        enriched = deepcopy(source)
+        heroic_hint = next((hint for hint in hints if source_hint_matches_source(source, hint)), None)
+        if heroic_hint:
+            enriched["difficulty"] = "heroic"
+            if not enriched.get("zone"):
+                zone = heroic_zone_from_hint(heroic_hint)
+                if zone:
+                    enriched["zone"] = zone
+        enriched_sources.append(enriched)
+    return enriched_sources
 
 
 def snapshot_requirements(snapshot: dict[str, Any] | None) -> list[dict[str, Any]]:
@@ -3225,7 +3281,7 @@ def guide_fallback_source(hint: dict[str, Any]) -> dict[str, Any]:
     def with_requirements(parsed_source: dict[str, Any]) -> dict[str, Any]:
         if requirements:
             parsed_source["requirements"] = requirements
-        return parsed_source
+        return classify_source(parsed_source)
 
     if "world drop" in lowered:
         return with_requirements({
@@ -3480,9 +3536,11 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
         current = existing_items.get(item_id, {})
         ref = item_refs.get(item_id, {})
         snapshot = item_snapshots.get(item_id)
+        source_hints = item_source_hints.get(item_id, [])
         raw_sources = snapshot.get("normalized_sources") if snapshot else current.get("sources", [])
         if not raw_sources:
-            raw_sources = guide_fallback_sources(item_source_hints.get(item_id, []))
+            raw_sources = guide_fallback_sources(source_hints)
+        raw_sources = apply_source_hints_to_sources(raw_sources, source_hints)
         if snapshot:
             raw_sources = add_recipe_sources_to_crafted_sources(
                 deepcopy(raw_sources),
@@ -3507,7 +3565,7 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
         }
         if current.get("requirements"):
             item["requirements"] = deepcopy(current["requirements"])
-        requirements = item_requirements_for_import(item_id, item, snapshot, sources, item_source_hints.get(item_id, []))
+        requirements = item_requirements_for_import(item_id, item, snapshot, sources, source_hints)
         if requirements:
             item["requirements"] = requirements
         else:

@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 7",
+            "local DEFAULTS_VERSION = 8",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -557,6 +557,13 @@ class AddonUIStaticTests(unittest.TestCase):
             'scopedFilters.sourceType = "all"',
             "scopedFilters.sourceTypes = nil",
             "addSourceTypeFromRow",
+            "source_filter_key",
+            "SOURCE_FILTER_BY_CONTENT_TYPE",
+            "raid_drop",
+            "heroic_dungeon_drop",
+            "dungeon_drop",
+            "other_drop",
+            "row.source_filter_key ~= filters.sourceType",
         ]:
             self.assertIn(token, data_index)
         for token in [
@@ -568,6 +575,16 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, ui)
         source_dropdown_body = ui.split("function UI:GetSourceDropdownItems()", 1)[1].split("function UI:GetZoneDropdownItems()", 1)[0]
         self.assertNotIn("BigBiSList:GetDataIndex().sourceTypes", source_dropdown_body)
+
+    def test_legacy_drop_source_filter_is_reset(self):
+        config = self.read_lua("Config.lua")
+        for token in [
+            "migrateSplitDropSourceFilter",
+            'filters.sourceType == "drop"',
+            'filters.sourceType = "all"',
+            "filters.sourceTypes.drop = nil",
+        ]:
+            self.assertIn(token, config)
 
     def test_availability_filters_include_runtime_filter_payloads(self):
         ui = self.read_lua("UI.lua")

@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import tools.scrape_wowhead as scraper
 from tools.project import canonical_json
 from tools.scrape_wowhead import build_audit
-from tools.sources import derive_acquisition_phase, derive_primary_source, phase_rank, summarize_sources
+from tools.sources import classify_source, derive_acquisition_phase, derive_primary_source, phase_rank, source_filter_key, summarize_sources
 
 
 class StructuredSourceTests(unittest.TestCase):
@@ -108,6 +108,26 @@ class StructuredSourceTests(unittest.TestCase):
             ),
             "PR",
         )
+
+    def test_drop_content_type_classifies_farmability(self):
+        karazhan = classify_source({"type": "drop", "entity_name": "Moroes", "zone": "Karazhan", "confidence": "fixture"})
+        black_temple = classify_source({"type": "drop", "entity_name": "Illidan Stormrage", "zone": "Black Temple", "confidence": "fixture"})
+        dungeon = classify_source({"type": "drop", "entity_name": "Warp Splinter", "zone": "The Botanica", "confidence": "fixture"})
+        heroic = classify_source({"type": "drop", "entity_name": "Warp Splinter", "zone": "Heroic The Botanica", "confidence": "fixture"})
+        outdoor = classify_source({"type": "drop", "entity_name": "Bash'ir Spell-Thief", "zone": "Blade's Edge Mountains", "confidence": "fixture"})
+
+        self.assertEqual(karazhan["content_type"], "raid")
+        self.assertEqual(source_filter_key(karazhan), "raid_drop")
+        self.assertEqual(black_temple["content_type"], "raid")
+        self.assertEqual(source_filter_key(black_temple), "raid_drop")
+        self.assertEqual(dungeon["content_type"], "dungeon")
+        self.assertEqual(source_filter_key(dungeon), "dungeon_drop")
+        self.assertEqual(heroic["zone"], "The Botanica")
+        self.assertEqual(heroic["difficulty"], "heroic")
+        self.assertEqual(heroic["content_type"], "heroic_dungeon")
+        self.assertEqual(source_filter_key(heroic), "heroic_dungeon_drop")
+        self.assertEqual(outdoor["content_type"], "other")
+        self.assertEqual(source_filter_key(outdoor), "other_drop")
 
     def test_crafted_recipe_sources_drive_acquisition_phase(self):
         self.assertEqual(

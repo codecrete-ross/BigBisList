@@ -32,6 +32,33 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(row["rank_label"], "BiS")
         self.assertEqual(row["source_links"][0]["href"], "https://www.wowhead.com/tbc/npc=15687/moroes")
 
+    def test_heroic_guide_source_text_enriches_drop_source_difficulty(self):
+        guide = parse_guide_html(
+            "https://www.wowhead.com/tbc/guide/example",
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best in Slot Back Armor for Arms Warrior in TBC Classic Phase 1</h3>
+            <table>
+              <tr><td>Optional</td><td><a href="/tbc/item=28371/netherfury-cape">Netherfury Cape</a></td><td>Drop: <a href="/tbc/npc=17977/warp-splinter">Warp Splinter</a> (Heroic The Botanica)</td></tr>
+            </table>
+            </body></html>
+            """,
+        )
+        source = {
+            "type": "drop",
+            "entity_id": 17977,
+            "entity_name": "Warp Splinter",
+            "zone": "The Botanica",
+            "confidence": "fixture",
+        }
+        hints = scraper.guide_item_source_hints([guide])[28371]
+        enriched = scraper.apply_source_hints_to_sources([source], hints)
+        classified = scraper.classify_source(enriched[0])
+
+        self.assertEqual(classified["zone"], "The Botanica")
+        self.assertEqual(classified["difficulty"], "heroic")
+        self.assertEqual(classified["content_type"], "heroic_dungeon")
+
     def test_guide_parser_does_not_import_nested_table_rows_under_parent_slot(self):
         html = """
         <html><head><title>Guide</title></head><body>

@@ -75,6 +75,10 @@ local PHASE_SHORT_DISPLAY = {
 local SOURCE_TYPE_LABELS = {
     all = "All sources",
     drop = "Drops",
+    raid_drop = "Raid drops",
+    heroic_dungeon_drop = "Heroic dungeon drops",
+    dungeon_drop = "Dungeon drops",
+    other_drop = "Other drops",
     quest = "Quests",
     vendor = "Vendors",
     crafted = "Crafted",
@@ -84,6 +88,29 @@ local SOURCE_TYPE_LABELS = {
     taught_by_item = "Formulae",
     world_drop = "World drops",
     unknown = "Unknown",
+}
+
+local SOURCE_FILTER_ORDER = {
+    raid_drop = 1,
+    heroic_dungeon_drop = 2,
+    dungeon_drop = 3,
+    other_drop = 4,
+    quest = 10,
+    vendor = 11,
+    crafted = 12,
+    trade = 13,
+    pvp = 14,
+    token_turnin = 15,
+    taught_by_item = 16,
+    world_drop = 17,
+    unknown = 99,
+}
+
+local SOURCE_FILTER_BY_CONTENT_TYPE = {
+    raid = "raid_drop",
+    heroic_dungeon = "heroic_dungeon_drop",
+    dungeon = "dungeon_drop",
+    other = "other_drop",
 }
 
 local SOURCE_TYPE_PREFIXES = {
@@ -731,6 +758,53 @@ local function getSourceType(item)
     return "unknown"
 end
 
+local function betterSourceFilterKey(candidate, current)
+    if not current then
+        return candidate
+    end
+
+    local candidateOrder = SOURCE_FILTER_ORDER[candidate] or 50
+    local currentOrder = SOURCE_FILTER_ORDER[current] or 50
+    if candidateOrder < currentOrder then
+        return candidate
+    end
+    return current
+end
+
+local function sourceFilterKey(source)
+    if type(source) ~= "table" then
+        return "unknown"
+    end
+
+    local sourceType = source.type or "unknown"
+    if sourceType == "token_turnin" then
+        local selected
+        for _, tokenSource in ipairs(source.token_sources or {}) do
+            selected = betterSourceFilterKey(sourceFilterKey(tokenSource), selected)
+        end
+        return selected or sourceType
+    end
+
+    if sourceType == "drop" then
+        return SOURCE_FILTER_BY_CONTENT_TYPE[source.content_type] or "other_drop"
+    end
+
+    return sourceType
+end
+
+local function getSourceFilterKey(item)
+    return sourceFilterKey(getPrimarySource(item))
+end
+
+local function sortSourceFilterKeys(a, b)
+    local aOrder = SOURCE_FILTER_ORDER[a] or 50
+    local bOrder = SOURCE_FILTER_ORDER[b] or 50
+    if aOrder ~= bOrder then
+        return aOrder < bOrder
+    end
+    return tostring(a) < tostring(b)
+end
+
 local function getSourceZone(item)
     local source = getPrimarySource(item)
     if source and source.zone and source.zone ~= "" then
@@ -1049,6 +1123,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     local itemId = itemEntry.item_id
     local item = index.itemsById[itemId]
     local sourceType = getSourceType(item)
+    local sourceFilter = getSourceFilterKey(item)
     local zone = getSourceZone(item)
     local zones = getSourceZones(item)
     local sides = getSourceSides(item)
@@ -1074,6 +1149,8 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         source_summary = item and item.source_summary or "",
         source_type = sourceType,
         source_type_label = SOURCE_TYPE_LABELS[sourceType] or sourceType,
+        source_filter_key = sourceFilter,
+        source_filter_label = SOURCE_TYPE_LABELS[sourceFilter] or sourceFilter,
         acquisition_phase = acquisitionPhase,
         acquisitionPhaseIndex = phaseIndex(acquisitionPhase),
         zone = zone,
@@ -1194,10 +1271,10 @@ local function includeByFilter(row, filters)
         return false
     end
 
-    if filters.sourceType and filters.sourceType ~= "all" and row.source_type ~= filters.sourceType then
+    if filters.sourceType and filters.sourceType ~= "all" and row.source_filter_key ~= filters.sourceType then
         return false
     end
-    if tableHasAnyEnabled(filters.sourceTypes) and not filters.sourceTypes[row.source_type] then
+    if tableHasAnyEnabled(filters.sourceTypes) and not filters.sourceTypes[row.source_filter_key] then
         return false
     end
 
@@ -1428,7 +1505,7 @@ function BigBiSList:GetDataIndex()
 
     for _, item in ipairs(data.items or {}) do
         index.itemsById[item.id] = item
-        addUnique(index.sourceTypes, sourceSeen, getSourceType(item))
+        addUnique(index.sourceTypes, sourceSeen, getSourceFilterKey(item))
         for _, zone in ipairs(getSourceZones(item)) do
             addUnique(index.zones, zoneSeen, zone)
         end
@@ -1444,7 +1521,7 @@ function BigBiSList:GetDataIndex()
         table.insert(index.enhancement.enchantSourcesByKey[key], sourceData)
     end
 
-    table.sort(index.sourceTypes)
+    table.sort(index.sourceTypes, sortSourceFilterKeys)
     table.sort(index.zones)
 
     for _, classData in ipairs(index.classes) do
@@ -1647,6 +1724,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
                         source_summary = use.source_summary,
                         source_type = use.source_type,
                         source_type_label = use.source_type_label,
+                        source_filter_key = use.source_filter_key,
+                        source_filter_label = use.source_filter_label,
                         acquisition_phase = use.acquisition_phase,
                         acquisitionPhaseIndex = use.acquisitionPhaseIndex,
                         zone = use.zone,
@@ -1755,7 +1834,7 @@ local function addSourceTypeFromRow(sourceTypes, seen, row)
         return
     end
 
-    addUnique(sourceTypes, seen, row.source_type)
+    addUnique(sourceTypes, seen, row.source_filter_key or row.source_type)
 end
 
 function BigBiSList:GetAvailableFilterSourceTypes(className, specName, phaseKey, tabName, filters)
@@ -1775,7 +1854,7 @@ function BigBiSList:GetAvailableFilterSourceTypes(className, specName, phaseKey,
         end
     end
 
-    table.sort(sourceTypes)
+    table.sort(sourceTypes, sortSourceFilterKeys)
     return sourceTypes
 end
 
