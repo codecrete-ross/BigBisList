@@ -3,6 +3,18 @@ local addonName = ...
 BigBiSList = BigBiSList or {}
 BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
 
+local PLAYER_CLASS_NAMES = {
+    DRUID = "Druid",
+    HUNTER = "Hunter",
+    MAGE = "Mage",
+    PALADIN = "Paladin",
+    PRIEST = "Priest",
+    ROGUE = "Rogue",
+    SHAMAN = "Shaman",
+    WARLOCK = "Warlock",
+    WARRIOR = "Warrior",
+}
+
 local function itemIdFromLink(link)
     if not link then
         return nil
@@ -96,6 +108,93 @@ local function reportTooltipError(err)
     end
 end
 
+local function playerClassFromToken(classToken)
+    return classToken and PLAYER_CLASS_NAMES[classToken] or nil
+end
+
+local function detectPlayerClass()
+    if UnitClassBase then
+        local ok, classToken = pcall(UnitClassBase, "player")
+        if ok then
+            local className = playerClassFromToken(classToken)
+            if className then
+                return className
+            end
+        end
+    end
+
+    if UnitClass then
+        local ok, _, classToken = pcall(UnitClass, "player")
+        if ok then
+            return playerClassFromToken(classToken)
+        end
+    end
+
+    return nil
+end
+
+local function exactSpecNameForClass(className, specName)
+    if not className or not specName then
+        return nil
+    end
+
+    local specs = BigBiSList:GetDataIndex().specsByClass[className] or {}
+    for _, spec in ipairs(specs) do
+        if spec.name == specName then
+            return spec.name
+        end
+    end
+
+    return nil
+end
+
+local function detectPlayerSpec(className)
+    if not className or not GetNumTalentTabs or not GetTalentTabInfo then
+        return nil
+    end
+
+    local ok, tabCount = pcall(GetNumTalentTabs)
+    if not ok or type(tabCount) ~= "number" then
+        return nil
+    end
+
+    local selectedTabName
+    local selectedPoints = 0
+    local selectedTie = false
+    for tabIndex = 1, tabCount do
+        local tabOk, first, second, third, fourth, fifth = pcall(GetTalentTabInfo, tabIndex)
+        local tabName = type(first) == "string" and first or second
+        local pointsSpent = type(third) == "number" and third or fifth
+        if tabOk and type(tabName) == "string" and type(pointsSpent) == "number" then
+            if pointsSpent > selectedPoints then
+                selectedTabName = tabName
+                selectedPoints = pointsSpent
+                selectedTie = false
+            elseif pointsSpent > 0 and pointsSpent == selectedPoints then
+                selectedTie = true
+            end
+        end
+    end
+
+    if selectedTie then
+        return nil
+    end
+
+    return exactSpecNameForClass(className, selectedTabName)
+end
+
+local function getTooltipPriorityContext()
+    local playerClass = detectPlayerClass()
+    if not playerClass then
+        return nil
+    end
+
+    return {
+        playerClass = playerClass,
+        playerSpec = detectPlayerSpec(playerClass),
+    }
+end
+
 local function addTooltipInfoSafely(tooltip, tooltipData)
     if not shouldAnnotateTooltip(tooltip) then
         return
@@ -146,11 +245,12 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     local selection = BigBiSListDB.char.selection or {}
     local selectedSpecFirst = settings.selectedSpecFirst ~= false
     local specFilters = settings.specFilters
-    local rawMatches = self:GetTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters)
+    local priorityContext = getTooltipPriorityContext()
+    local rawMatches = self:GetTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext)
     if #rawMatches == 0 then
         return
     end
-    local groupedMatches = self:GetGroupedTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters)
+    local groupedMatches = self:GetGroupedTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext)
 
     local showRaw = settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown()
     local matches = showRaw and rawMatches or groupedMatches
@@ -163,6 +263,8 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         tostring(showRaw),
         tostring(selection.class),
         tostring(selection.spec),
+        tostring(priorityContext and priorityContext.playerClass),
+        tostring(priorityContext and priorityContext.playerSpec),
         self:GetTooltipSpecFilterKey(specFilters),
     }, ":")
     if tooltip.__bigBisListRenderKey == renderKey then

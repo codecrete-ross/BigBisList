@@ -2110,9 +2110,11 @@ local function tooltipSpecEnabled(specFilters, className, specName)
     return classFilters[specName] == true
 end
 
-function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)
+function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
     local uses = self:GetDataIndex().usesByItemId[itemId] or {}
     local matches = {}
+    local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil
+    local playerSpec = type(priorityContext) == "table" and priorityContext.playerSpec or nil
     selectedSpecFirst = selectedSpecFirst ~= false
 
     for _, use in ipairs(uses) do
@@ -2122,6 +2124,21 @@ function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selec
     end
 
     table.sort(matches, function(a, b)
+        if playerClass then
+            local aPlayerClass = a.class == playerClass and 1 or 0
+            local bPlayerClass = b.class == playerClass and 1 or 0
+            if aPlayerClass ~= bPlayerClass then
+                return aPlayerClass > bPlayerClass
+            end
+
+            if playerSpec then
+                local aPlayerSpec = (a.class == playerClass and a.spec == playerSpec) and 1 or 0
+                local bPlayerSpec = (b.class == playerClass and b.spec == playerSpec) and 1 or 0
+                if aPlayerSpec ~= bPlayerSpec then
+                    return aPlayerSpec > bPlayerSpec
+                end
+            end
+        end
         if selectedSpecFirst then
             local aSelected = (a.class == selectedClass and a.spec == selectedSpec) and 1 or 0
             local bSelected = (b.class == selectedClass and b.spec == selectedSpec) and 1 or 0
@@ -2144,8 +2161,8 @@ function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selec
     return matches
 end
 
-function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)
-    local rawMatches = self:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)
+function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
+    local rawMatches = self:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
     local groups = {}
     local groupedMatches = {}
 

@@ -438,25 +438,43 @@ class AddonUIStaticTests(unittest.TestCase):
             "pcall(BigBiSList.AddTooltipInfo",
             "reportTooltipError",
             "pcall(handler, err)",
+            "UnitClassBase",
+            "pcall(UnitClassBase, \"player\")",
+            "pcall(UnitClass, \"player\")",
+            "GetNumTalentTabs",
+            "GetTalentTabInfo",
+            "pcall(GetTalentTabInfo, tabIndex)",
+            "exactSpecNameForClass",
+            "return exactSpecNameForClass(className, selectedTabName)",
             "settings.selectedSpecFirst ~= false",
             "settings.compact and 4 or 8",
             "settings.showAllOnAlt and IsAltKeyDown",
             "local specFilters = settings.specFilters",
+            "local priorityContext = getTooltipPriorityContext()",
             "rawMatches = self:GetTooltipMatches",
             "groupedMatches = self:GetGroupedTooltipMatches",
             "showRaw = settings.showAllOnAlt and IsAltKeyDown",
             "matches = showRaw and rawMatches or groupedMatches",
             "rawDiffersFromGrouped",
+            "tostring(priorityContext and priorityContext.playerClass)",
+            "tostring(priorityContext and priorityContext.playerSpec)",
             "self:GetTooltipSpecFilterKey(specFilters)",
         ]:
             self.assertIn(token, tooltip)
-        self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)", data_index)
-        self.assertIn("function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters)", data_index)
+        self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)", data_index)
+        self.assertIn("function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)", data_index)
+        self.assertIn('local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil', data_index)
+        self.assertIn('local playerSpec = type(priorityContext) == "table" and priorityContext.playerSpec or nil', data_index)
+        self.assertIn("local aPlayerClass = a.class == playerClass and 1 or 0", data_index)
+        self.assertIn("local aPlayerSpec = (a.class == playerClass and a.spec == playerSpec) and 1 or 0", data_index)
+        self.assertIn("self:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)", data_index)
         self.assertIn("selectedSpecFirst = selectedSpecFirst ~= false", data_index)
         self.assertIn("tooltipSpecEnabled(specFilters, use.class, use.spec)", data_index)
 
         body = data_index.split("function BigBiSList:GetTooltipMatches", 1)[1].split("function BigBiSList:GetGroupedTooltipMatches", 1)[0]
         self.assertLess(body.index("tooltipSpecEnabled"), body.index("table.sort(matches"))
+        self.assertLess(body.index("aPlayerClass"), body.index("aSelected"))
+        self.assertLess(body.index("aPlayerSpec"), body.index("aSelected"))
         self.assertLess(body.index("selectedSpecFirst = selectedSpecFirst ~= false"), body.index("table.sort(matches"))
 
     def test_tooltip_spec_filter_settings_are_rendered(self):
