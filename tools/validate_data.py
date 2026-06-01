@@ -218,6 +218,7 @@ def validate() -> ValidationResult:
                     _require(isinstance(cost.get("amount"), int) and cost.get("amount") >= 0, errors, f"Item {item_id} source cost needs a non-negative amount")
                     _require(bool(cost.get("name")), errors, f"Item {item_id} source cost needs a name")
 
+    seen_bis_entries: set[tuple[str, str, str, str, int, str, str]] = set()
     for list_row in bis_doc.get("lists", []):
         class_name = list_row.get("class")
         spec_name = list_row.get("spec")
@@ -240,6 +241,17 @@ def validate() -> ValidationResult:
             item_context = (item_id, str(entry.get("context")))
             _require(item_context not in seen_item_contexts, errors, f"Duplicate BiS item/context in {class_name}/{spec_name}/{phase}/{slot}: {item_id}/{entry.get('context')}")
             seen_item_contexts.add(item_context)
+            entry_signature = (
+                str(class_name),
+                str(spec_name),
+                str(phase),
+                str(slot),
+                int(item_id) if isinstance(item_id, int) else 0,
+                str(entry.get("context")),
+                json.dumps(entry, sort_keys=True),
+            )
+            _require(entry_signature not in seen_bis_entries, errors, f"Duplicate BiS item/context across rows in {class_name}/{spec_name}/{phase}/{slot}: {item_id}/{entry.get('context')}")
+            seen_bis_entries.add(entry_signature)
 
     for gem in gems_doc.get("gems", []):
         class_name = gem.get("class")

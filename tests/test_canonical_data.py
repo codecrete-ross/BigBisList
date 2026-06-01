@@ -1,3 +1,4 @@
+import json
 import unittest
 
 from tools.project import canonical_json
@@ -43,6 +44,26 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertIn(28034, all_rank_ids)
         self.assertIn(29383, bis_rank_ids)
         self.assertNotIn(28034, bis_rank_ids)
+
+    def test_bis_lists_do_not_repeat_identical_item_rows(self):
+        seen = set()
+        duplicates = []
+        for row in canonical_json("bis_lists")["lists"]:
+            for entry in row["items"]:
+                signature = (
+                    row["class"],
+                    row["spec"],
+                    row["phase"],
+                    row["slot"],
+                    entry["item_id"],
+                    entry["context"],
+                    json.dumps(entry, sort_keys=True),
+                )
+                if signature in seen:
+                    duplicates.append(f"{row['class']}/{row['spec']}/{row['phase']}/{row['slot']} {entry['item_id']}/{entry['context']}")
+                seen.add(signature)
+
+        self.assertEqual(duplicates, [])
 
     def test_feral_dps_consumable_checklist_semantics(self):
         rows = [

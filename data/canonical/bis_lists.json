@@ -4898,12 +4898,6 @@
       "class": "Hunter",
       "items": [
         {
-          "context": "option",
-          "item_id": 34197,
-          "rank_group": "option",
-          "rank_label": "Good Alternative"
-        },
-        {
           "context": "standard",
           "item_id": 33737,
           "rank_group": "option",
@@ -13910,12 +13904,6 @@
     {
       "class": "Hunter",
       "items": [
-        {
-          "context": "option",
-          "item_id": 34197,
-          "rank_group": "option",
-          "rank_label": "Good Alternative"
-        },
         {
           "context": "standard",
           "item_id": 33737,
@@ -41400,22 +41388,6 @@
       "items": [
         {
           "context": "option",
-          "item_id": 30046,
-          "rank_group": "option",
-          "rank_label": "Optional",
-          "requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Leatherworking",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-za-phase-4-best-in-slot-gear-burning-crusade",
-              "type": "profession"
-            }
-          ]
-        },
-        {
-          "context": "option",
           "item_id": 28750,
           "rank_group": "option",
           "rank_label": "Optional"
@@ -46596,33 +46568,6 @@
       ],
       "phase": "T4",
       "slot": "Off Hand",
-      "source_url": "https://www.wowhead.com/tbc/guide/marksmanship-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-      "spec": "Marksmanship"
-    },
-    {
-      "class": "Hunter",
-      "items": [
-        {
-          "context": "option",
-          "item_id": 29121,
-          "rank_group": "option",
-          "rank_label": "Optional MH / OH",
-          "requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium",
-              "reputation": "The Consortium",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/marksmanship-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "standing": "Exalted",
-              "standing_rank": 8,
-              "type": "reputation"
-            }
-          ]
-        }
-      ],
-      "phase": "T4",
-      "slot": "Dual Wield",
       "source_url": "https://www.wowhead.com/tbc/guide/marksmanship-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
       "spec": "Marksmanship"
     },
@@ -59719,33 +59664,6 @@
       ],
       "phase": "T4",
       "slot": "Off Hand",
-      "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-      "spec": "Survival"
-    },
-    {
-      "class": "Hunter",
-      "items": [
-        {
-          "context": "option",
-          "item_id": 29121,
-          "rank_group": "option",
-          "rank_label": "Optional MH / OH",
-          "requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium",
-              "reputation": "The Consortium",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "standing": "Exalted",
-              "standing_rank": 8,
-              "type": "reputation"
-            }
-          ]
-        }
-      ],
-      "phase": "T4",
-      "slot": "Dual Wield",
       "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
       "spec": "Survival"
     },
@@ -141238,12 +141156,6 @@
       "class": "Hunter",
       "items": [
         {
-          "context": "option",
-          "item_id": 34197,
-          "rank_group": "option",
-          "rank_label": "Good Alternative"
-        },
-        {
           "context": "standard",
           "item_id": 33737,
           "rank_group": "option",
@@ -143566,22 +143478,6 @@
     {
       "class": "Hunter",
       "items": [
-        {
-          "context": "option",
-          "item_id": 30046,
-          "rank_group": "option",
-          "rank_label": "Optional",
-          "requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Leatherworking",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
-            }
-          ]
-        },
         {
           "context": "option",
           "item_id": 28750,
@@ -146105,33 +146001,6 @@
       ],
       "phase": "PR",
       "slot": "Off Hand",
-      "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
-      "spec": "Survival"
-    },
-    {
-      "class": "Hunter",
-      "items": [
-        {
-          "context": "option",
-          "item_id": 29121,
-          "rank_group": "option",
-          "rank_label": "Optional MH / OH",
-          "requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium",
-              "reputation": "The Consortium",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
-              "standing": "Exalted",
-              "standing_rank": 8,
-              "type": "reputation"
-            }
-          ]
-        }
-      ],
-      "phase": "PR",
-      "slot": "Dual Wield",
       "source_url": "https://www.wowhead.com/tbc/guide/classes/hunter/survival/dps-bis-gear-pve-pre-raid",
       "spec": "Survival"
     },

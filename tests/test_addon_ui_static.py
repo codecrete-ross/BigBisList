@@ -516,8 +516,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "local priorityContext = getTooltipPriorityContext()",
             "rawMatches = self:GetTooltipMatches",
             "groupedMatches = self:GetGroupedTooltipMatches",
-            "showRaw = settings.showAllOnAlt and IsAltKeyDown",
-            "matches = showRaw and rawMatches or groupedMatches",
+            "showExpanded = settings.showAllOnAlt and IsAltKeyDown",
+            "matches = groupedMatches",
             "rawDiffersFromGrouped",
             "tostring(priorityContext and priorityContext.playerClass)",
             "tostring(priorityContext and priorityContext.playerSpec)",
@@ -525,7 +525,7 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, tooltip)
         self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)", data_index)
-        self.assertIn("function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)", data_index)
+        self.assertIn("function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext, expanded)", data_index)
         self.assertIn('local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil', data_index)
         self.assertIn('local playerSpec = type(priorityContext) == "table" and priorityContext.playerSpec or nil', data_index)
         self.assertIn("local aPlayerClass = a.class == playerClass and 1 or 0", data_index)
@@ -574,13 +574,19 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "TOOLTIP_SUMMARY_CHUNK_LIMIT = 3",
             "tooltipGroupKey",
+            "tooltipSlotGroup",
+            "tooltipUseDedupeKey",
             "tooltipRankShortLabel",
             "tooltipPhaseSummary",
+            "tooltipPhaseRangeSummary",
+            "buildTooltipPhaseSegments",
             "buildTooltipGroupSummary",
-            "group.phase_summary = buildTooltipGroupSummary(group)",
+            "buildTooltipGroupSlotLabel",
+            "buildTooltipGroupSummary(group, expanded)",
             "tooltip_grouped = true",
             'return "Alt"',
             'return "Nice-to-have"',
+            'return "Main/Off Hand"',
         ]:
             self.assertIn(token, data_index)
 

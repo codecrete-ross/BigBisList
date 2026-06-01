@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.5.0 - 2026-06-01
+
+### Added
+
+- Quest starter provenance for BiS-relevant quest rewards gated by raid drops,
+  including starter item aliases for tooltip matching.
+- Acquisition-phase and source-filter handling for quest rewards that depend on
+  starter item drops.
+- Validation coverage for quest starter source evidence and duplicate BiS rows.
+
+### Changed
+
+- Tooltip summaries now deduplicate equivalent matches, group weapon slots more
+  cleanly, and collapse consecutive phase ranges where the rank is unchanged.
+- ALT tooltip expansion now shows the full grouped summary instead of switching
+  back to raw repeated rows.
+
+### Data Quality
+
+- Added reviewed quest starter overrides for Ancient Petrified Leaf, Heart of
+  Hakkar, Eye of C'Thun, The Phylactery of Kel'Thuzad, Magtheridon's Head, and
+  Verdant Sphere reward chains.
+- Removed duplicate Hunter BiS entries that repeated identical item/context
+  rows across weapon and waist slots.
+- Refreshed generated Lua from the audited canonical data set.
+
 ## 0.2.0 - 2026-05-28
 
 ### Added

@@ -2105,11 +2105,48 @@ end
 
 local TOOLTIP_SUMMARY_CHUNK_LIMIT = 3
 
+local function tooltipSlotGroup(use)
+    local slot = use and use.slot or ""
+    if slot == "Main Hand" or slot == "Off Hand" or slot == "Dual Wield" then
+        return "Weapon"
+    end
+
+    return slot
+end
+
+local function addTooltipGroupSlot(group, slot)
+    if not slot or slot == "" then
+        return
+    end
+
+    group.slot_seen = group.slot_seen or {}
+    group.slots = group.slots or {}
+    if not group.slot_seen[slot] then
+        group.slot_seen[slot] = true
+        table.insert(group.slots, slot)
+    end
+end
+
+local function buildTooltipGroupSlotLabel(group)
+    local seen = group and group.slot_seen or {}
+    if seen["Main Hand"] or seen["Off Hand"] or seen["Dual Wield"] then
+        if seen["Dual Wield"] or (seen["Main Hand"] and seen["Off Hand"]) then
+            return "Main/Off Hand"
+        end
+        if seen["Main Hand"] then
+            return "Main Hand"
+        end
+        return "Off Hand"
+    end
+
+    return (group and group.slots and group.slots[1]) or (group and group.slot) or ""
+end
+
 local function tooltipGroupKey(use)
     return table.concat({
         tostring(use.class or ""),
         tostring(use.spec or ""),
-        tostring(use.slot or ""),
+        tostring(tooltipSlotGroup(use)),
     }, "|")
 end
 
@@ -2127,7 +2164,28 @@ local function tooltipPhaseSummary(use)
     return phase .. " " .. tooltipRankShortLabel(use)
 end
 
-local function buildTooltipGroupSummary(group)
+local function tooltipUseDedupeKey(itemId, use)
+    return table.concat({
+        tostring(itemId or use.item_id or ""),
+        tostring(use.item_id or ""),
+        tostring(use.class or ""),
+        tostring(use.spec or ""),
+        tostring(use.phase or ""),
+        tostring(tooltipSlotGroup(use)),
+        tostring(tooltipRankShortLabel(use)),
+    }, "|")
+end
+
+local function tooltipPhaseRangeSummary(segment)
+    local startLabel = PHASE_SHORT_DISPLAY[segment.startPhase] or PHASE_DISPLAY[segment.startPhase] or tostring(segment.startPhase or "")
+    local endLabel = PHASE_SHORT_DISPLAY[segment.endPhase] or PHASE_DISPLAY[segment.endPhase] or tostring(segment.endPhase or "")
+    if segment.startPhase ~= segment.endPhase then
+        startLabel = startLabel .. "-" .. endLabel
+    end
+    return startLabel .. " " .. segment.rankLabel
+end
+
+local function buildTooltipPhaseSegments(group)
     local uses = {}
     local seen = {}
     for _, use in ipairs(group.uses or {}) do
@@ -2140,16 +2198,47 @@ local function buildTooltipGroupSummary(group)
         return sortUses(a, b)
     end)
 
-    local parts = {}
+    local entries = {}
     for _, use in ipairs(uses) do
-        local part = tooltipPhaseSummary(use)
-        if not seen[part] then
-            seen[part] = true
-            table.insert(parts, part)
+        local rankLabel = tooltipRankShortLabel(use)
+        local key = tostring(use.phase or "") .. "|" .. rankLabel
+        if not seen[key] then
+            seen[key] = true
+            table.insert(entries, {
+                phase = use.phase,
+                phaseIndex = use.phaseIndex or phaseIndex(use.phase),
+                rankLabel = rankLabel,
+            })
         end
     end
 
-    if #parts > TOOLTIP_SUMMARY_CHUNK_LIMIT then
+    local segments = {}
+    for _, entry in ipairs(entries) do
+        local previous = segments[#segments]
+        if previous and previous.rankLabel == entry.rankLabel and entry.phaseIndex == previous.endIndex + 1 then
+            previous.endPhase = entry.phase
+            previous.endIndex = entry.phaseIndex
+        else
+            table.insert(segments, {
+                startPhase = entry.phase,
+                endPhase = entry.phase,
+                startIndex = entry.phaseIndex,
+                endIndex = entry.phaseIndex,
+                rankLabel = entry.rankLabel,
+            })
+        end
+    end
+
+    return segments
+end
+
+local function buildTooltipGroupSummary(group, expanded)
+    local parts = {}
+    for _, segment in ipairs(buildTooltipPhaseSegments(group)) do
+        table.insert(parts, tooltipPhaseRangeSummary(segment))
+    end
+
+    if not expanded and #parts > TOOLTIP_SUMMARY_CHUNK_LIMIT then
         local remaining = #parts - TOOLTIP_SUMMARY_CHUNK_LIMIT
         while #parts > TOOLTIP_SUMMARY_CHUNK_LIMIT do
             table.remove(parts)
@@ -2176,13 +2265,18 @@ end
 function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
     local uses = self:GetDataIndex().tooltipUsesByItemId[itemId] or {}
     local matches = {}
+    local seenMatches = {}
     local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil
     local playerSpec = type(priorityContext) == "table" and priorityContext.playerSpec or nil
     selectedSpecFirst = selectedSpecFirst ~= false
 
     for _, use in ipairs(uses) do
         if tooltipSpecEnabled(specFilters, use.class, use.spec) then
-            table.insert(matches, use)
+            local key = tooltipUseDedupeKey(itemId, use)
+            if not seenMatches[key] then
+                seenMatches[key] = true
+                table.insert(matches, use)
+            end
         end
     end
 
@@ -2224,7 +2318,7 @@ function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selec
     return matches
 end
 
-function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
+function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext, expanded)
     local rawMatches = self:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
     local groups = {}
     local groupedMatches = {}
@@ -2237,17 +2331,22 @@ function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec
                 class = use.class,
                 spec = use.spec,
                 slot = use.slot,
+                slots = {},
+                slot_seen = {},
                 uses = {},
                 tooltip_grouped = true,
             }
             groups[key] = group
             table.insert(groupedMatches, group)
         end
+        addTooltipGroupSlot(group, use.slot)
         table.insert(group.uses, use)
     end
 
     for _, group in ipairs(groupedMatches) do
-        group.phase_summary = buildTooltipGroupSummary(group)
+        group.slot = buildTooltipGroupSlotLabel(group)
+        group.phase_summary = buildTooltipGroupSummary(group, expanded)
+        group.slot_seen = nil
     end
 
     return groupedMatches

@@ -250,17 +250,17 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if #rawMatches == 0 then
         return
     end
-    local groupedMatches = self:GetGroupedTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext)
 
-    local showRaw = settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown()
-    local matches = showRaw and rawMatches or groupedMatches
-    local maxRows = showRaw and #matches or (settings.compact and 4 or 8)
+    local showExpanded = settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown()
+    local groupedMatches = self:GetGroupedTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext, showExpanded)
+    local matches = groupedMatches
+    local maxRows = showExpanded and #matches or (settings.compact and 4 or 8)
     local renderKey = table.concat({
         tostring(itemId),
         tostring(settings.compact),
         tostring(settings.selectedSpecFirst),
         tostring(settings.showAllOnAlt),
-        tostring(showRaw),
+        tostring(showExpanded),
         tostring(selection.class),
         tostring(selection.spec),
         tostring(priorityContext and priorityContext.playerClass),
@@ -288,7 +288,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
 
     local rawDiffersFromGrouped = #rawMatches ~= #groupedMatches
     local hasHiddenRows = #matches > maxRows
-    if not showRaw and settings.showAllOnAlt and (rawDiffersFromGrouped or hasHiddenRows) then
+    if not showExpanded and settings.showAllOnAlt and (rawDiffersFromGrouped or hasHiddenRows) then
         tooltip:AddLine("Hold ALT to show all Big BiS List matches", 0.62, 0.62, 0.66)
     end
 end
