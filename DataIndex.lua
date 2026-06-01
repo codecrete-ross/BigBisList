@@ -785,7 +785,15 @@ local function sourceFilterKey(source)
         return selected or sourceType
     end
 
-    if sourceType == "drop" then
+    if sourceType == "quest" and source.quest_starter_sources then
+        local selected
+        for _, starterSource in ipairs(source.quest_starter_sources or {}) do
+            selected = betterSourceFilterKey(sourceFilterKey(starterSource), selected)
+        end
+        return selected or sourceType
+    end
+
+    if sourceType == "drop" or source.content_type then
         return SOURCE_FILTER_BY_CONTENT_TYPE[source.content_type] or "other_drop"
     end
 
@@ -831,6 +839,12 @@ local function addZonesFromSource(zones, seen, source, includeDropZone)
     if source.type == "token_turnin" then
         for _, tokenSource in ipairs(source.token_sources or {}) do
             addSourceZone(zones, seen, tokenSource.zone)
+        end
+    end
+
+    if source.type == "quest" then
+        for _, starterSource in ipairs(source.quest_starter_sources or {}) do
+            addSourceZone(zones, seen, starterSource.zone)
         end
     end
 end
@@ -1117,6 +1131,30 @@ end
 
 local function enhancementSourceKey(entityType, entityId)
     return tostring(entityType or "item") .. ":" .. tostring(entityId or "")
+end
+
+local function addTooltipUseForItem(index, itemId, use)
+    if not itemId then
+        return
+    end
+
+    index.tooltipUsesByItemId[itemId] = index.tooltipUsesByItemId[itemId] or {}
+    table.insert(index.tooltipUsesByItemId[itemId], use)
+end
+
+local function addTooltipUseAliases(index, use)
+    addTooltipUseForItem(index, use.item_id, use)
+
+    local seenStarterIds = {}
+    for _, source in ipairs((use.item and use.item.sources) or {}) do
+        for _, starterSource in ipairs(source.quest_starter_sources or {}) do
+            local starterItemId = tonumber(starterSource.quest_starter_item_id)
+            if starterItemId and not seenStarterIds[starterItemId] then
+                seenStarterIds[starterItemId] = true
+                addTooltipUseForItem(index, starterItemId, use)
+            end
+        end
+    end
 end
 
 local function buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
@@ -1491,6 +1529,7 @@ function BigBiSList:GetDataIndex()
         zones = {},
         lists = {},
         usesByItemId = {},
+        tooltipUsesByItemId = {},
         enhancement = {
             gems = data.gems or {},
             gemSourcesById = {},
@@ -1555,6 +1594,7 @@ function BigBiSList:GetDataIndex()
                             local use = buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
                             index.usesByItemId[use.item_id] = index.usesByItemId[use.item_id] or {}
                             table.insert(index.usesByItemId[use.item_id], use)
+                            addTooltipUseAliases(index, use)
                         end
                     end
                 end
@@ -1562,7 +1602,7 @@ function BigBiSList:GetDataIndex()
         end
     end
 
-    for _, uses in pairs(index.usesByItemId) do
+    local function sortUseList(uses)
         table.sort(uses, function(a, b)
             if a.class ~= b.class then
                 return a.class < b.class
@@ -1575,6 +1615,14 @@ function BigBiSList:GetDataIndex()
             end
             return sortUses(a, b)
         end)
+    end
+
+    for _, uses in pairs(index.usesByItemId) do
+        sortUseList(uses)
+    end
+
+    for _, uses in pairs(index.tooltipUsesByItemId) do
+        sortUseList(uses)
     end
 
     self.dataIndex = index
@@ -2126,7 +2174,7 @@ local function tooltipSpecEnabled(specFilters, className, specName)
 end
 
 function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
-    local uses = self:GetDataIndex().usesByItemId[itemId] or {}
+    local uses = self:GetDataIndex().tooltipUsesByItemId[itemId] or {}
     local matches = {}
     local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil
     local playerSpec = type(priorityContext) == "table" and priorityContext.playerSpec or nil

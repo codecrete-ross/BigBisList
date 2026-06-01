@@ -180,6 +180,22 @@ def validate() -> ValidationResult:
                     _require(bool(source.get("entity_name")), errors, f"Item {item_id} quest source needs entity_name")
                     if source.get("quest_id") is not None:
                         _require(isinstance(source.get("quest_id"), int), errors, f"Item {item_id} quest source quest_id must be an integer")
+                    for starter_source in source.get("quest_starter_sources", []):
+                        _require(starter_source.get("type") == "drop", errors, f"Item {item_id} quest starter source must be a drop")
+                        _require(isinstance(starter_source.get("quest_starter_item_id"), int) and starter_source.get("quest_starter_item_id") > 0, errors, f"Item {item_id} quest starter source needs quest_starter_item_id")
+                        _require(bool(starter_source.get("quest_starter_name")), errors, f"Item {item_id} quest starter source needs quest_starter_name")
+                        _require(starter_source.get("quest_starter_relationship") in {"direct_starter", "quest_chain_gate"}, errors, f"Item {item_id} quest starter source has invalid relationship: {starter_source.get('quest_starter_relationship')}")
+                        _require(bool(starter_source.get("entity_name")) or starter_source.get("world_drop") is True, errors, f"Item {item_id} quest starter source needs entity_name or world_drop")
+                        if starter_source.get("content_type") is not None:
+                            _require(starter_source.get("content_type") in {"raid", "heroic_dungeon", "dungeon", "other"}, errors, f"Item {item_id} quest starter source has invalid content_type: {starter_source.get('content_type')}")
+                        if starter_source.get("difficulty") is not None:
+                            _require(starter_source.get("difficulty") in {"heroic"}, errors, f"Item {item_id} quest starter source has invalid difficulty: {starter_source.get('difficulty')}")
+                        starter_source_url = starter_source.get("source_url")
+                        if starter_source_url:
+                            _require(str(starter_source_url).startswith("https://www.wowhead.com/tbc/"), errors, f"Item {item_id} quest starter source URL must be a Wowhead TBC URL")
+                        starter_snapshot_url = starter_source.get("quest_starter_source_url")
+                        if starter_snapshot_url:
+                            _require(str(starter_snapshot_url).startswith("https://www.wowhead.com/tbc/"), errors, f"Item {item_id} quest starter snapshot URL must be a Wowhead TBC URL")
                 if source_type == "token_turnin":
                     _require(bool(source.get("entity_name")), errors, f"Item {item_id} token_turnin source needs turn-in entity_name")
                     _require(isinstance(source.get("token_sources"), list) and bool(source.get("token_sources")), errors, f"Item {item_id} token_turnin source needs token_sources")

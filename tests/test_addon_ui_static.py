@@ -411,6 +411,22 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertLess(data_index.index("getSourceZones"), data_index.index("includeByFilter"))
         self.assertLess(data_index.index("rowMatchesZoneFilter"), data_index.index("includeByFilter"))
 
+    def test_quest_starter_sources_feed_filters_search_and_tooltip_aliases(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "quest_starter_sources",
+            "quest_starter_item_id",
+            "addTooltipUseAliases",
+            "addTooltipUseForItem",
+            "tooltipUsesByItemId",
+            'sourceType == "quest"',
+            "starterSource in ipairs(source.quest_starter_sources or {})",
+            "self:GetDataIndex().tooltipUsesByItemId[itemId]",
+        ]:
+            self.assertIn(token, data_index)
+        self.assertLess(data_index.index("addTooltipUseAliases"), data_index.index("function BigBiSList:GetTooltipMatches"))
+        self.assertLess(data_index.index("tooltipUsesByItemId"), data_index.index("function BigBiSList:GetTooltipMatches"))
+
     def test_planner_filters_future_acquisition_phases(self):
         data_index = self.read_lua("DataIndex.lua")
         for token in [

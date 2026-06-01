@@ -75,6 +75,27 @@
             ]
           }
         },
+        "quest_starter_sources": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              { "$ref": "#/$defs/source" },
+              {
+                "type": "object",
+                "required": ["quest_starter_item_id", "quest_starter_name", "quest_starter_relationship", "quest_starter_source_url"],
+                "properties": {
+                  "quest_starter_item_id": { "type": "integer" },
+                  "quest_starter_name": { "type": "string" },
+                  "quest_starter_relationship": {
+                    "type": "string",
+                    "enum": ["direct_starter", "quest_chain_gate"]
+                  },
+                  "quest_starter_source_url": { "type": "string" }
+                }
+              }
+            ]
+          }
+        },
         "costs": {
           "type": "array",
           "items": {

@@ -1768,6 +1768,24 @@ def discover_related_source_urls(snapshots: list[dict[str, Any]]) -> list[str]:
     return sorted(urls)
 
 
+def reviewed_quest_starter_item_urls() -> list[str]:
+    urls: set[str] = set()
+    for override in reviewed_overrides():
+        if override.get("type") != "quest_starter":
+            continue
+        data = override.get("data") if isinstance(override.get("data"), dict) else {}
+        for item_id in data.get("starter_item_ids") or []:
+            if isinstance(item_id, int) and item_id > 0:
+                urls.add(item_url_for_id(item_id))
+        for starter_item in data.get("starter_items") or []:
+            if not isinstance(starter_item, dict):
+                continue
+            item_id = starter_item.get("id")
+            if isinstance(item_id, int) and item_id > 0:
+                urls.add(starter_item.get("wowhead_url") or item_url_for_id(item_id))
+    return sorted(urls)
+
+
 def command_fetch(args: argparse.Namespace) -> int:
     output_dir = args.output_dir
     cache_dir = output_dir / "html_cache"
@@ -1800,6 +1818,7 @@ def command_fetch(args: argparse.Namespace) -> int:
                 set(
                     discover_entity_urls(snapshots)
                     + (canonical_item_urls() if include_canonical_items else [])
+                    + reviewed_quest_starter_item_urls()
                     + discover_token_item_urls(snapshots)
                     + discover_related_source_urls(snapshots)
                 )
@@ -3412,6 +3431,142 @@ def reviewed_spell_alias_urls() -> dict[int, list[str]]:
     return aliases
 
 
+def reviewed_quest_starter_overrides() -> list[dict[str, Any]]:
+    return [
+        override
+        for override in reviewed_overrides()
+        if override.get("type") == "quest_starter" and isinstance(override.get("data"), dict)
+    ]
+
+
+def reviewed_quest_starter_items() -> dict[int, dict[str, Any]]:
+    starter_items: dict[int, dict[str, Any]] = {}
+    for override in reviewed_quest_starter_overrides():
+        for starter_item in (override.get("data") or {}).get("starter_items") or []:
+            if not isinstance(starter_item, dict):
+                continue
+            item_id = starter_item.get("id")
+            if isinstance(item_id, int) and item_id > 0:
+                starter_items[item_id] = deepcopy(starter_item)
+    return starter_items
+
+
+def reviewed_quest_starter_item_ids() -> set[int]:
+    item_ids: set[int] = set()
+    for override in reviewed_quest_starter_overrides():
+        data = override.get("data") or {}
+        for item_id in data.get("starter_item_ids") or []:
+            if isinstance(item_id, int) and item_id > 0:
+                item_ids.add(item_id)
+        for starter_item in data.get("starter_items") or []:
+            if not isinstance(starter_item, dict):
+                continue
+            item_id = starter_item.get("id")
+            if isinstance(item_id, int) and item_id > 0:
+                item_ids.add(item_id)
+    return item_ids
+
+
+def reviewed_quest_starter_overrides_for_item(item_id: int) -> list[dict[str, Any]]:
+    matches: list[dict[str, Any]] = []
+    for override in reviewed_quest_starter_overrides():
+        reward_item_ids = (override.get("data") or {}).get("reward_item_ids") or []
+        if item_id in reward_item_ids:
+            matches.append(override)
+    return matches
+
+
+def quest_starter_item_data(
+    starter_item_id: int,
+    item_snapshots: dict[int, dict[str, Any]],
+    existing_items: dict[int, dict[str, Any]],
+    starter_item_overrides: dict[int, dict[str, Any]],
+) -> dict[str, Any] | None:
+    snapshot = item_snapshots.get(starter_item_id)
+    if snapshot:
+        return {
+            "id": starter_item_id,
+            "name": snapshot.get("name") or f"Item {starter_item_id}",
+            "wowhead_url": snapshot.get("url") or item_url_for_id(starter_item_id),
+            "sources": snapshot.get("normalized_sources", []),
+        }
+
+    if starter_item_id in existing_items:
+        return existing_items[starter_item_id]
+
+    if starter_item_id in starter_item_overrides:
+        return starter_item_overrides[starter_item_id]
+
+    return None
+
+
+def quest_starter_sources_for_override(
+    override: dict[str, Any],
+    item_snapshots: dict[int, dict[str, Any]],
+    existing_items: dict[int, dict[str, Any]],
+    starter_item_overrides: dict[int, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    data = override.get("data") or {}
+    relationship = data.get("relationship") or "direct_starter"
+    starter_sources: list[dict[str, Any]] = []
+
+    for starter_item_id in data.get("starter_item_ids") or []:
+        if not isinstance(starter_item_id, int) or starter_item_id <= 0:
+            continue
+
+        starter_item = quest_starter_item_data(starter_item_id, item_snapshots, existing_items, starter_item_overrides)
+        if not starter_item:
+            continue
+
+        raw_sources = [source for source in starter_item.get("sources", []) if isinstance(source, dict)]
+        if not raw_sources:
+            continue
+
+        primary_starter_source = derive_primary_source(classify_sources(deepcopy(raw_sources)))
+        if primary_starter_source.get("type") != "drop":
+            continue
+
+        enriched = deepcopy(primary_starter_source)
+        enriched["quest_starter_item_id"] = starter_item_id
+        enriched["quest_starter_name"] = starter_item.get("name") or f"Item {starter_item_id}"
+        enriched["quest_starter_relationship"] = relationship
+        enriched["quest_starter_source_url"] = starter_item.get("wowhead_url") or item_url_for_id(starter_item_id)
+        starter_sources.append(enriched)
+
+    return classify_sources(starter_sources)
+
+
+def attach_quest_starters_to_sources(
+    item_id: int,
+    sources: list[dict[str, Any]],
+    item_snapshots: dict[int, dict[str, Any]],
+    existing_items: dict[int, dict[str, Any]],
+    starter_item_overrides: dict[int, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    overrides = reviewed_quest_starter_overrides_for_item(item_id)
+    if not overrides:
+        return sources
+
+    enriched_sources: list[dict[str, Any]] = []
+    for source in sources:
+        enriched = deepcopy(source)
+        if enriched.get("type") == "quest":
+            matching_starter_sources: list[dict[str, Any]] = []
+            for override in overrides:
+                quest_ids = (override.get("data") or {}).get("quest_ids") or []
+                if quest_ids and enriched.get("quest_id") not in quest_ids:
+                    continue
+                matching_starter_sources.extend(
+                    quest_starter_sources_for_override(override, item_snapshots, existing_items, starter_item_overrides)
+                )
+            if matching_starter_sources:
+                enriched["quest_starter_sources"] = matching_starter_sources
+                enriched["confidence"] = f"{enriched.get('confidence', 'wowhead_item')}+quest_starter"
+        enriched_sources.append(enriched)
+
+    return classify_sources(enriched_sources)
+
+
 def target_matches(row: dict[str, Any], target: dict[str, Any]) -> bool:
     return all(row.get(key) == value for key, value in target.items())
 
@@ -3435,7 +3590,8 @@ def bis_item_matches_target(item: dict[str, Any], target: dict[str, Any]) -> boo
 
 def refresh_item_derived_fields(item: dict[str, Any]) -> dict[str, Any]:
     refreshed = deepcopy(item)
-    sources = refreshed.get("sources", [])
+    sources = classify_sources(refreshed.get("sources", []))
+    refreshed["sources"] = sources
     refreshed["primary_source"] = derive_primary_source(sources)
     refreshed["source_summary"] = summarize_sources(sources)
     refreshed["acquisition_phase"] = derive_acquisition_phase(sources)
@@ -3529,11 +3685,21 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
     item_snapshots = {snapshot.get("item_id"): snapshot for snapshot in snapshots if snapshot.get("page_type") == "item"}
     item_refs = guide_item_refs(snapshots)
     item_source_hints = guide_item_source_hints(snapshots)
-    item_ids = sorted(set(existing_items) | set(item_refs))
+    starter_item_overrides = reviewed_quest_starter_items()
+    base_item_ids = set(existing_items) | set(item_refs)
+    starter_item_ids: set[int] = set()
+    for override in reviewed_quest_starter_overrides():
+        data = override.get("data") or {}
+        if not any(item_id in base_item_ids for item_id in data.get("reward_item_ids") or []):
+            continue
+        for item_id in data.get("starter_item_ids") or []:
+            if item_id in existing_items or item_id in item_snapshots or item_id in starter_item_overrides:
+                starter_item_ids.add(item_id)
+    item_ids = sorted(base_item_ids | starter_item_ids)
 
     items: list[dict[str, Any]] = []
     for item_id in item_ids:
-        current = existing_items.get(item_id, {})
+        current = existing_items.get(item_id, {}) or starter_item_overrides.get(item_id, {})
         ref = item_refs.get(item_id, {})
         snapshot = item_snapshots.get(item_id)
         source_hints = item_source_hints.get(item_id, [])
@@ -3550,6 +3716,13 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
                 ),
             )
         sources = attach_token_turnins_to_sources(raw_sources, item_snapshots)
+        sources = attach_quest_starters_to_sources(
+            item_id,
+            sources,
+            item_snapshots,
+            existing_items,
+            starter_item_overrides,
+        )
         item = {
             "id": item_id,
             "name": snapshot.get("name") if snapshot and snapshot.get("name") else current.get("name") or ref.get("name") or f"Item {item_id}",

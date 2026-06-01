@@ -1330,6 +1330,236 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(source["token_sources"][0]["entity_name"], "Archimonde")
         self.assertEqual(item["source_summary"], "Token: Helm of the Forgotten Protector - Archimonde (Hyjal Summit) 55.6%")
 
+    def test_import_items_attaches_reviewed_quest_starter_sources(self):
+        reward_url = "https://www.wowhead.com/tbc/item=28791/ring-of-the-recalcitrant"
+        starter_url = "https://www.wowhead.com/tbc/item=32385/magtheridons-head"
+        reward_html = """
+        <html><head>
+        <title>Ring of the Recalcitrant - Item - TBC Classic</title>
+        <meta name="description" content="This epic ring goes in the Finger slot. It is a quest reward.">
+        </head><body>
+        <script>
+        new Listview({ id: 'reward-from-q', data: [{"id":11002,"name":"The Fall of Magtheridon","category":3483,"side":1}], });
+        </script>
+        </body></html>
+        """
+        starter_html = """
+        <html><head>
+        <title>Magtheridon's Head - Item - TBC Classic</title>
+        <meta name="description" content="Magtheridon's Head is a quest item needed for The Fall of Magtheridon.">
+        </head><body>
+        <script>
+        new Listview({ id: 'dropped-by', data: [{"id":17257,"name":"Magtheridon","location":[3836],"count":461,"outof":1000}], });
+        </script>
+        </body></html>
+        """
+        guide_snapshot = parse_guide_html(
+            "https://www.wowhead.com/tbc/guide/synthetic-mag",
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best in Slot Rings</h3>
+            <table><tr><td>BiS</td><td><a href="/tbc/item=28791/ring-of-the-recalcitrant">Ring of the Recalcitrant</a></td><td>Quest</td></tr></table>
+            </body></html>
+            """,
+        )
+        reward_snapshot = parse_item_html(reward_url, reward_html)
+        starter_snapshot = parse_item_html(starter_url, starter_html)
+        original = scraper.canonical_json
+
+        def fake_canonical_json(name):
+            if name == "items":
+                return {"items": []}
+            if name == "overrides":
+                return {
+                    "overrides": [
+                        {
+                            "id": "quest-starter-mag",
+                            "type": "quest_starter",
+                            "target": {"quest_id": 11002},
+                            "reason": "fixture",
+                            "reviewer": "tester",
+                            "reviewed_at": "2026-05-29",
+                            "source_url": starter_url,
+                            "data": {
+                                "quest_ids": [11002],
+                                "relationship": "direct_starter",
+                                "reward_item_ids": [28791],
+                                "starter_item_ids": [32385],
+                            },
+                        }
+                    ]
+                }
+            return original(name)
+
+        scraper.canonical_json = fake_canonical_json
+        try:
+            item = scraper.import_items_from_snapshots([guide_snapshot, reward_snapshot, starter_snapshot])["items"][0]
+        finally:
+            scraper.canonical_json = original
+
+        source = item["primary_source"]
+        starter_source = source["quest_starter_sources"][0]
+        self.assertEqual(item["acquisition_phase"], "T4")
+        self.assertEqual(source["content_type"], "raid")
+        self.assertEqual(starter_source["quest_starter_item_id"], 32385)
+        self.assertEqual(starter_source["entity_name"], "Magtheridon")
+        self.assertEqual(item["source_summary"], "Quest: The Fall of Magtheridon via Magtheridon's Head - Magtheridon (Magtheridon's Lair) 46.1%")
+
+    def test_import_items_can_seed_missing_reviewed_quest_starter_item(self):
+        reward_url = "https://www.wowhead.com/tbc/item=21709/ring-of-the-fallen-god"
+        starter_url = "https://www.wowhead.com/tbc/item=21221/eye-of-cthun"
+        original = scraper.canonical_json
+
+        def fake_canonical_json(name):
+            if name == "items":
+                return {
+                    "items": [
+                        {
+                            "id": 21709,
+                            "name": "Ring of the Fallen God",
+                            "quality": "epic",
+                            "binding": "bind_on_pickup",
+                            "boe": False,
+                            "wowhead_url": reward_url,
+                            "sources": [
+                                {
+                                    "type": "quest",
+                                    "entity_name": "The Savior of Kalimdor",
+                                    "quest_id": 8802,
+                                    "source_url": reward_url,
+                                    "confidence": "fixture",
+                                }
+                            ],
+                        }
+                    ]
+                }
+            if name == "overrides":
+                return {
+                    "overrides": [
+                        {
+                            "id": "quest-starter-eye",
+                            "type": "quest_starter",
+                            "target": {"quest_id": 8802},
+                            "reason": "fixture",
+                            "reviewer": "tester",
+                            "reviewed_at": "2026-05-29",
+                            "source_url": starter_url,
+                            "data": {
+                                "quest_ids": [8802],
+                                "relationship": "direct_starter",
+                                "reward_item_ids": [21709],
+                                "starter_item_ids": [21221],
+                                "starter_items": [
+                                    {
+                                        "id": 21221,
+                                        "name": "Eye of C'Thun",
+                                        "quality": "epic",
+                                        "binding": "bind_on_pickup",
+                                        "boe": False,
+                                        "wowhead_url": starter_url,
+                                        "sources": [
+                                            {
+                                                "type": "drop",
+                                                "entity_name": "C'Thun",
+                                                "zone": "Ahn'Qiraj",
+                                                "source_url": starter_url,
+                                                "confidence": "fixture",
+                                            }
+                                        ],
+                                    }
+                                ],
+                            },
+                        }
+                    ]
+                }
+            return original(name)
+
+        scraper.canonical_json = fake_canonical_json
+        try:
+            imported = {item["id"]: item for item in scraper.import_items_from_snapshots([])["items"]}
+        finally:
+            scraper.canonical_json = original
+
+        self.assertIn(21221, imported)
+        self.assertEqual(imported[21221]["source_summary"], "Drop: C'Thun (Ahn'Qiraj)")
+        self.assertEqual(imported[21709]["sources"][0]["quest_starter_sources"][0]["quest_starter_item_id"], 21221)
+
+    def test_import_items_requires_quest_starter_drop_evidence(self):
+        reward_url = "https://www.wowhead.com/tbc/item=21709/ring-of-the-fallen-god"
+        starter_url = "https://www.wowhead.com/tbc/item=21221/eye-of-cthun"
+        original = scraper.canonical_json
+
+        def fake_canonical_json(name):
+            if name == "items":
+                return {
+                    "items": [
+                        {
+                            "id": 21709,
+                            "name": "Ring of the Fallen God",
+                            "quality": "epic",
+                            "binding": "bind_on_pickup",
+                            "boe": False,
+                            "wowhead_url": reward_url,
+                            "sources": [
+                                {
+                                    "type": "quest",
+                                    "entity_name": "The Savior of Kalimdor",
+                                    "quest_id": 8802,
+                                    "source_url": reward_url,
+                                    "confidence": "fixture",
+                                }
+                            ],
+                        }
+                    ]
+                }
+            if name == "overrides":
+                return {
+                    "overrides": [
+                        {
+                            "id": "quest-starter-eye",
+                            "type": "quest_starter",
+                            "target": {"quest_id": 8802},
+                            "reason": "fixture",
+                            "reviewer": "tester",
+                            "reviewed_at": "2026-05-29",
+                            "source_url": starter_url,
+                            "data": {
+                                "quest_ids": [8802],
+                                "relationship": "direct_starter",
+                                "reward_item_ids": [21709],
+                                "starter_item_ids": [21221],
+                                "starter_items": [
+                                    {
+                                        "id": 21221,
+                                        "name": "Eye of C'Thun",
+                                        "quality": "epic",
+                                        "binding": "bind_on_pickup",
+                                        "boe": False,
+                                        "wowhead_url": starter_url,
+                                        "sources": [
+                                            {
+                                                "type": "vendor",
+                                                "entity_name": "Not a Drop",
+                                                "source_url": starter_url,
+                                                "confidence": "fixture",
+                                            }
+                                        ],
+                                    }
+                                ],
+                            },
+                        }
+                    ]
+                }
+            return original(name)
+
+        scraper.canonical_json = fake_canonical_json
+        try:
+            imported = {item["id"]: item for item in scraper.import_items_from_snapshots([])["items"]}
+        finally:
+            scraper.canonical_json = original
+
+        self.assertNotIn("quest_starter_sources", imported[21709]["sources"][0])
+
     def test_import_items_applies_reviewed_source_gap_override_last(self):
         url = "https://www.wowhead.com/tbc/item=99999/source-gap"
         item_html = """

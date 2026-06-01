@@ -272,6 +272,37 @@ class StructuredSourceTests(unittest.TestCase):
         self.assertEqual(self.items[31461]["acquisition_phase"], "PR")
         self.assertEqual(self.items[29290]["acquisition_phase"], "T4")
 
+    def test_raid_quest_starter_rewards_use_starter_acquisition_sources(self):
+        cases = {
+            18714: {"phase": "PR", "starter_ids": {18703}, "starter_name": "Ancient Petrified Leaf"},
+            19950: {"phase": "PR", "starter_ids": {19802}, "starter_name": "Heart of Hakkar"},
+            21709: {"phase": "PR", "starter_ids": {21221}, "starter_name": "Eye of C'Thun"},
+            21712: {"phase": "PR", "starter_ids": {21221}, "starter_name": "Eye of C'Thun"},
+            23206: {"phase": "PR", "starter_ids": {22520}, "starter_name": "The Phylactery of Kel'Thuzad"},
+            23207: {"phase": "PR", "starter_ids": {22520}, "starter_name": "The Phylactery of Kel'Thuzad"},
+            28790: {"phase": "T4", "starter_ids": {32385, 32386}, "starter_name": "Magtheridon's Head"},
+            28791: {"phase": "T4", "starter_ids": {32385, 32386}, "starter_name": "Magtheridon's Head"},
+            28792: {"phase": "T4", "starter_ids": {32385, 32386}, "starter_name": "Magtheridon's Head"},
+            28793: {"phase": "T4", "starter_ids": {32385, 32386}, "starter_name": "Magtheridon's Head"},
+            30007: {"phase": "T5", "starter_ids": {32405}, "starter_name": "Verdant Sphere"},
+            30015: {"phase": "T5", "starter_ids": {32405}, "starter_name": "Verdant Sphere"},
+            30017: {"phase": "T5", "starter_ids": {32405}, "starter_name": "Verdant Sphere"},
+            30018: {"phase": "T5", "starter_ids": {32405}, "starter_name": "Verdant Sphere"},
+        }
+
+        self.assertIn(21221, self.items)
+        for item_id, expected in cases.items():
+            item = self.items[item_id]
+            starter_sources = [
+                starter_source
+                for source in item["sources"]
+                for starter_source in source.get("quest_starter_sources", [])
+            ]
+            self.assertEqual(item["acquisition_phase"], expected["phase"], item["name"])
+            self.assertEqual(source_filter_key(item["primary_source"]), "raid_drop", item["name"])
+            self.assertEqual({source["quest_starter_item_id"] for source in starter_sources}, expected["starter_ids"], item["name"])
+            self.assertIn(expected["starter_name"], item["source_summary"])
+
     def test_bis_rows_do_not_reference_future_acquisitions(self):
         violations = []
         for row in canonical_json("bis_lists")["lists"]:
@@ -355,6 +386,30 @@ class StructuredSourceTests(unittest.TestCase):
                 ]
             ),
             "Token: Helm of the Forgotten Protector - Archimonde (Hyjal Summit) 55.6%",
+        )
+        self.assertEqual(
+            summarize_sources(
+                [
+                    {
+                        "type": "quest",
+                        "entity_name": "The Fall of Magtheridon",
+                        "quest_starter_sources": [
+                            {
+                                "type": "drop",
+                                "entity_name": "Magtheridon",
+                                "zone": "Magtheridon's Lair",
+                                "drop_percent": 46.09,
+                                "quest_starter_item_id": 32385,
+                                "quest_starter_name": "Magtheridon's Head",
+                                "quest_starter_relationship": "direct_starter",
+                                "confidence": "fixture",
+                            }
+                        ],
+                        "confidence": "fixture",
+                    }
+                ]
+            ),
+            "Quest: The Fall of Magtheridon via Magtheridon's Head - Magtheridon (Magtheridon's Lair) 46.1%",
         )
 
     def test_scrape_audit_passes_seed_structured_data(self):

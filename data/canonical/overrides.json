@@ -55,6 +55,175 @@
       "source_url": "https://www.wowhead.com/tbc/item=28568/idol-of-the-avian-heart"
     },
     {
+      "id": "quest-starter-ancient-petrified-leaf",
+      "type": "quest_starter",
+      "target": {
+        "quest_id": 7634
+      },
+      "reason": "Ancient Sinew Wrapped Lamina is a BiS-relevant hunter quest reward gated by the Molten Core Ancient Petrified Leaf chain.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-29",
+      "source_url": "https://www.wowhead.com/tbc/item=18703/ancient-petrified-leaf",
+      "data": {
+        "quest_ids": [
+          7634
+        ],
+        "relationship": "quest_chain_gate",
+        "reward_item_ids": [
+          18714
+        ],
+        "starter_item_ids": [
+          18703
+        ]
+      }
+    },
+    {
+      "id": "quest-starter-heart-of-hakkar",
+      "type": "quest_starter",
+      "target": {
+        "quest_id": 8183
+      },
+      "reason": "Zandalarian Hero Charm is a BiS-relevant quest reward gated by the Heart of Hakkar raid drop.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-29",
+      "source_url": "https://www.wowhead.com/tbc/item=19802/heart-of-hakkar",
+      "data": {
+        "quest_ids": [
+          8183
+        ],
+        "relationship": "direct_starter",
+        "reward_item_ids": [
+          19950
+        ],
+        "starter_item_ids": [
+          19802
+        ]
+      }
+    },
+    {
+      "id": "quest-starter-eye-of-cthun",
+      "type": "quest_starter",
+      "target": {
+        "quest_id": 8802
+      },
+      "reason": "The Fallen God rewards are BiS-relevant quest rewards gated by the Eye of C'Thun raid drop; the starter item snapshot is not currently committed.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-29",
+      "source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+      "data": {
+        "quest_ids": [
+          8802
+        ],
+        "relationship": "direct_starter",
+        "reward_item_ids": [
+          21709,
+          21712
+        ],
+        "starter_item_ids": [
+          21221
+        ],
+        "starter_items": [
+          {
+            "binding": "bind_on_pickup",
+            "boe": false,
+            "id": 21221,
+            "name": "Eye of C'Thun",
+            "quality": "epic",
+            "sources": [
+              {
+                "confidence": "reviewed_override",
+                "content_type": "raid",
+                "entity_id": 15727,
+                "entity_name": "C'Thun",
+                "source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+                "type": "drop",
+                "zone": "Ahn'Qiraj"
+              }
+            ],
+            "wowhead_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quest-starter-kelthuzad-phylactery",
+      "type": "quest_starter",
+      "target": {
+        "quest_id": 9120
+      },
+      "reason": "Mark of the Champion rewards are BiS-relevant quest rewards gated by The Phylactery of Kel'Thuzad raid drop.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-29",
+      "source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+      "data": {
+        "quest_ids": [
+          9120
+        ],
+        "relationship": "direct_starter",
+        "reward_item_ids": [
+          23206,
+          23207
+        ],
+        "starter_item_ids": [
+          22520
+        ]
+      }
+    },
+    {
+      "id": "quest-starter-magtheridons-head",
+      "type": "quest_starter",
+      "target": {
+        "quest_id": 11002
+      },
+      "reason": "The Fall of Magtheridon rings are BiS-relevant quest rewards gated by the Magtheridon's Head raid drop.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-29",
+      "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+      "data": {
+        "quest_ids": [
+          11002,
+          11003
+        ],
+        "relationship": "direct_starter",
+        "reward_item_ids": [
+          28790,
+          28791,
+          28792,
+          28793
+        ],
+        "starter_item_ids": [
+          32385,
+          32386
+        ]
+      }
+    },
+    {
+      "id": "quest-starter-verdant-sphere",
+      "type": "quest_starter",
+      "target": {
+        "quest_id": 11007
+      },
+      "reason": "The Kael'thas and the Verdant Sphere necklaces are BiS-relevant quest rewards gated by the Verdant Sphere raid drop.",
+      "reviewer": "codecrete",
+      "reviewed_at": "2026-05-29",
+      "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+      "data": {
+        "quest_ids": [
+          11007
+        ],
+        "relationship": "direct_starter",
+        "reward_item_ids": [
+          30007,
+          30015,
+          30017,
+          30018
+        ],
+        "starter_item_ids": [
+          32405
+        ]
+      }
+    },
+    {
       "id": "spell-46500-source-alias",
       "type": "spell_alias",
       "target": {

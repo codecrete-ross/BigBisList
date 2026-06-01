@@ -636,21 +636,59 @@
       "inventory_slot": null,
       "name": "Ancient Sinew Wrapped Lamina",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 7634,
         "entity_name": "Ancient Sinew Wrapped Lamina",
         "quest_id": 7634,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 1,
+            "drop_percent": 100.0,
+            "entity_id": 179703,
+            "entity_name": "Cache of the Firelord",
+            "out_of": 1,
+            "quest_starter_item_id": 18703,
+            "quest_starter_name": "Ancient Petrified Leaf",
+            "quest_starter_relationship": "quest_chain_gate",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=18703/ancient-petrified-leaf",
+            "source_url": "https://www.wowhead.com/tbc/item=18703/ancient-petrified-leaf",
+            "type": "drop",
+            "zone": "Molten Core"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=18714/ancient-sinew-wrapped-lamina",
         "type": "quest"
       },
       "quality": "unknown",
-      "source_summary": "Quest: Ancient Sinew Wrapped Lamina",
+      "source_summary": "Quest: Ancient Sinew Wrapped Lamina via Ancient Petrified Leaf - Cache of the Firelord (Molten Core) 100.0%",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 7634,
           "entity_name": "Ancient Sinew Wrapped Lamina",
           "quest_id": 7634,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 1,
+              "drop_percent": 100.0,
+              "entity_id": 179703,
+              "entity_name": "Cache of the Firelord",
+              "out_of": 1,
+              "quest_starter_item_id": 18703,
+              "quest_starter_name": "Ancient Petrified Leaf",
+              "quest_starter_relationship": "quest_chain_gate",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=18703/ancient-petrified-leaf",
+              "source_url": "https://www.wowhead.com/tbc/item=18703/ancient-petrified-leaf",
+              "type": "drop",
+              "zone": "Molten Core"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=18714/ancient-sinew-wrapped-lamina",
           "type": "quest"
         }
@@ -1975,22 +2013,60 @@
       "inventory_slot": "Trinket",
       "name": "Zandalarian Hero Charm",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 8183,
         "entity_name": "The Heart of Hakkar",
         "quest_id": 8183,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 2,
+            "drop_percent": 66.67,
+            "entity_id": 14834,
+            "entity_name": "Hakkar",
+            "out_of": 3,
+            "quest_starter_item_id": 19802,
+            "quest_starter_name": "Heart of Hakkar",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=19802/heart-of-hakkar",
+            "source_url": "https://www.wowhead.com/tbc/item=19802/heart-of-hakkar",
+            "type": "drop",
+            "zone": "Zul'Gurub"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=19950/zandalarian-hero-charm",
         "type": "quest",
         "zone": "Zul'Gurub"
       },
       "quality": "epic",
-      "source_summary": "Quest: The Heart of Hakkar",
+      "source_summary": "Quest: The Heart of Hakkar via Heart of Hakkar - Hakkar (Zul'Gurub) 66.7%",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 8183,
           "entity_name": "The Heart of Hakkar",
           "quest_id": 8183,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 2,
+              "drop_percent": 66.67,
+              "entity_id": 14834,
+              "entity_name": "Hakkar",
+              "out_of": 3,
+              "quest_starter_item_id": 19802,
+              "quest_starter_name": "Heart of Hakkar",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=19802/heart-of-hakkar",
+              "source_url": "https://www.wowhead.com/tbc/item=19802/heart-of-hakkar",
+              "type": "drop",
+              "zone": "Zul'Gurub"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=19950/zandalarian-hero-charm",
           "type": "quest",
           "zone": "Zul'Gurub"
@@ -2389,6 +2465,37 @@
         }
       ],
       "wowhead_url": "https://www.wowhead.com/tbc/item=21186/rockfury-bracers"
+    },
+    {
+      "acquisition_phase": "PR",
+      "binding": "bind_on_pickup",
+      "boe": false,
+      "id": 21221,
+      "inventory_slot": null,
+      "name": "Eye of C'Thun",
+      "primary_source": {
+        "confidence": "reviewed_override",
+        "content_type": "raid",
+        "entity_id": 15727,
+        "entity_name": "C'Thun",
+        "source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
+      },
+      "quality": "epic",
+      "source_summary": "Drop: C'Thun (Ahn'Qiraj)",
+      "sources": [
+        {
+          "confidence": "reviewed_override",
+          "content_type": "raid",
+          "entity_id": 15727,
+          "entity_name": "C'Thun",
+          "source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+          "type": "drop",
+          "zone": "Ahn'Qiraj"
+        }
+      ],
+      "wowhead_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun"
     },
     {
       "acquisition_phase": "PR",
@@ -2916,22 +3023,54 @@
       "inventory_slot": "Ring",
       "name": "Ring of the Fallen God",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 8802,
         "entity_name": "The Savior of Kalimdor",
         "quest_id": 8802,
+        "quest_starter_sources": [
+          {
+            "confidence": "reviewed_override",
+            "content_type": "raid",
+            "entity_id": 15727,
+            "entity_name": "C'Thun",
+            "quest_starter_item_id": 21221,
+            "quest_starter_name": "Eye of C'Thun",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+            "source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+            "type": "drop",
+            "zone": "Ahn'Qiraj"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=21709/ring-of-the-fallen-god",
         "type": "quest",
         "zone": "Ahn'Qiraj"
       },
       "quality": "epic",
-      "source_summary": "Quest: The Savior of Kalimdor",
+      "source_summary": "Quest: The Savior of Kalimdor via Eye of C'Thun - C'Thun (Ahn'Qiraj)",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 8802,
           "entity_name": "The Savior of Kalimdor",
           "quest_id": 8802,
+          "quest_starter_sources": [
+            {
+              "confidence": "reviewed_override",
+              "content_type": "raid",
+              "entity_id": 15727,
+              "entity_name": "C'Thun",
+              "quest_starter_item_id": 21221,
+              "quest_starter_name": "Eye of C'Thun",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+              "source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+              "type": "drop",
+              "zone": "Ahn'Qiraj"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=21709/ring-of-the-fallen-god",
           "type": "quest",
           "zone": "Ahn'Qiraj"
@@ -2947,22 +3086,54 @@
       "inventory_slot": "Neck",
       "name": "Amulet of the Fallen God",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 8802,
         "entity_name": "The Savior of Kalimdor",
         "quest_id": 8802,
+        "quest_starter_sources": [
+          {
+            "confidence": "reviewed_override",
+            "content_type": "raid",
+            "entity_id": 15727,
+            "entity_name": "C'Thun",
+            "quest_starter_item_id": 21221,
+            "quest_starter_name": "Eye of C'Thun",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+            "source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+            "type": "drop",
+            "zone": "Ahn'Qiraj"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=21712/amulet-of-the-fallen-god",
         "type": "quest",
         "zone": "Ahn'Qiraj"
       },
       "quality": "epic",
-      "source_summary": "Quest: The Savior of Kalimdor",
+      "source_summary": "Quest: The Savior of Kalimdor via Eye of C'Thun - C'Thun (Ahn'Qiraj)",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 8802,
           "entity_name": "The Savior of Kalimdor",
           "quest_id": 8802,
+          "quest_starter_sources": [
+            {
+              "confidence": "reviewed_override",
+              "content_type": "raid",
+              "entity_id": 15727,
+              "entity_name": "C'Thun",
+              "quest_starter_item_id": 21221,
+              "quest_starter_name": "Eye of C'Thun",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+              "source_url": "https://www.wowhead.com/tbc/item=21221/eye-of-cthun",
+              "type": "drop",
+              "zone": "Ahn'Qiraj"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=21712/amulet-of-the-fallen-god",
           "type": "quest",
           "zone": "Ahn'Qiraj"
@@ -10944,22 +11115,60 @@
       "inventory_slot": "Trinket",
       "name": "Mark of the Champion",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 9120,
         "entity_name": "The Fall of Kel'Thuzad",
         "quest_id": 9120,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 183,
+            "drop_percent": 96.83,
+            "entity_id": 15990,
+            "entity_name": "Kel'Thuzad",
+            "out_of": 189,
+            "quest_starter_item_id": 22520,
+            "quest_starter_name": "The Phylactery of Kel'Thuzad",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+            "source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+            "type": "drop",
+            "zone": "Naxxramas"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=23206/mark-of-the-champion",
         "type": "quest",
         "zone": "Naxxramas"
       },
       "quality": "epic",
-      "source_summary": "Quest: The Fall of Kel'Thuzad",
+      "source_summary": "Quest: The Fall of Kel'Thuzad via The Phylactery of Kel'Thuzad - Kel'Thuzad (Naxxramas) 96.8%",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 9120,
           "entity_name": "The Fall of Kel'Thuzad",
           "quest_id": 9120,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 183,
+              "drop_percent": 96.83,
+              "entity_id": 15990,
+              "entity_name": "Kel'Thuzad",
+              "out_of": 189,
+              "quest_starter_item_id": 22520,
+              "quest_starter_name": "The Phylactery of Kel'Thuzad",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+              "source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+              "type": "drop",
+              "zone": "Naxxramas"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=23206/mark-of-the-champion",
           "type": "quest",
           "zone": "Naxxramas"
@@ -10975,22 +11184,60 @@
       "inventory_slot": "Trinket",
       "name": "Mark of the Champion",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 9120,
         "entity_name": "The Fall of Kel'Thuzad",
         "quest_id": 9120,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 183,
+            "drop_percent": 96.83,
+            "entity_id": 15990,
+            "entity_name": "Kel'Thuzad",
+            "out_of": 189,
+            "quest_starter_item_id": 22520,
+            "quest_starter_name": "The Phylactery of Kel'Thuzad",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+            "source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+            "type": "drop",
+            "zone": "Naxxramas"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=23207/mark-of-the-champion",
         "type": "quest",
         "zone": "Naxxramas"
       },
       "quality": "epic",
-      "source_summary": "Quest: The Fall of Kel'Thuzad",
+      "source_summary": "Quest: The Fall of Kel'Thuzad via The Phylactery of Kel'Thuzad - Kel'Thuzad (Naxxramas) 96.8%",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 9120,
           "entity_name": "The Fall of Kel'Thuzad",
           "quest_id": 9120,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 183,
+              "drop_percent": 96.83,
+              "entity_id": 15990,
+              "entity_name": "Kel'Thuzad",
+              "out_of": 189,
+              "quest_starter_item_id": 22520,
+              "quest_starter_name": "The Phylactery of Kel'Thuzad",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+              "source_url": "https://www.wowhead.com/tbc/item=22520/the-phylactery-of-kelthuzad",
+              "type": "drop",
+              "zone": "Naxxramas"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=23207/mark-of-the-champion",
           "type": "quest",
           "zone": "Naxxramas"
@@ -112444,40 +112691,145 @@
       "wowhead_url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon"
     },
     {
-      "acquisition_phase": "PR",
+      "acquisition_phase": "T4",
       "binding": "bind_on_pickup",
       "boe": false,
       "id": 28790,
       "inventory_slot": "Ring",
       "name": "Naaru Lightwarden's Band",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 11002,
         "entity_name": "The Fall of Magtheridon",
         "quest_id": 11002,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 4977,
+            "drop_percent": 46.09,
+            "entity_id": 17257,
+            "entity_name": "Magtheridon",
+            "out_of": 10798,
+            "quest_starter_item_id": 32385,
+            "quest_starter_name": "Magtheridon's Head",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+            "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+            "type": "drop",
+            "zone": "Magtheridon's Lair"
+          },
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 4427,
+            "drop_percent": 41.0,
+            "entity_id": 17257,
+            "entity_name": "Magtheridon",
+            "out_of": 10798,
+            "quest_starter_item_id": 32386,
+            "quest_starter_name": "Magtheridon's Head",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+            "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+            "type": "drop",
+            "zone": "Magtheridon's Lair"
+          }
+        ],
         "side": "Alliance",
         "source_url": "https://www.wowhead.com/tbc/item=28790/naaru-lightwardens-band",
         "type": "quest",
         "zone": "Hellfire Peninsula"
       },
       "quality": "epic",
-      "source_summary": "Quest: The Fall of Magtheridon +1",
+      "source_summary": "Quest: The Fall of Magtheridon via Magtheridon's Head - Magtheridon (Magtheridon's Lair) 46.1% +1",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11002,
           "entity_name": "The Fall of Magtheridon",
           "quest_id": 11002,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4977,
+              "drop_percent": 46.09,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32385,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            },
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4427,
+              "drop_percent": 41.0,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32386,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            }
+          ],
           "side": "Alliance",
           "source_url": "https://www.wowhead.com/tbc/item=28790/naaru-lightwardens-band",
           "type": "quest",
           "zone": "Hellfire Peninsula"
         },
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11003,
           "entity_name": "The Fall of Magtheridon",
           "quest_id": 11003,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4977,
+              "drop_percent": 46.09,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32385,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            },
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4427,
+              "drop_percent": 41.0,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32386,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            }
+          ],
           "side": "Horde",
           "source_url": "https://www.wowhead.com/tbc/item=28790/naaru-lightwardens-band",
           "type": "quest",
@@ -112487,40 +112839,145 @@
       "wowhead_url": "https://www.wowhead.com/tbc/item=28790/naaru-lightwardens-band"
     },
     {
-      "acquisition_phase": "PR",
+      "acquisition_phase": "T4",
       "binding": "bind_on_pickup",
       "boe": false,
       "id": 28791,
       "inventory_slot": "Ring",
       "name": "Ring of the Recalcitrant",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 11002,
         "entity_name": "The Fall of Magtheridon",
         "quest_id": 11002,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 4977,
+            "drop_percent": 46.09,
+            "entity_id": 17257,
+            "entity_name": "Magtheridon",
+            "out_of": 10798,
+            "quest_starter_item_id": 32385,
+            "quest_starter_name": "Magtheridon's Head",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+            "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+            "type": "drop",
+            "zone": "Magtheridon's Lair"
+          },
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 4427,
+            "drop_percent": 41.0,
+            "entity_id": 17257,
+            "entity_name": "Magtheridon",
+            "out_of": 10798,
+            "quest_starter_item_id": 32386,
+            "quest_starter_name": "Magtheridon's Head",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+            "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+            "type": "drop",
+            "zone": "Magtheridon's Lair"
+          }
+        ],
         "side": "Alliance",
         "source_url": "https://www.wowhead.com/tbc/item=28791/ring-of-the-recalcitrant",
         "type": "quest",
         "zone": "Hellfire Peninsula"
       },
       "quality": "epic",
-      "source_summary": "Quest: The Fall of Magtheridon +1",
+      "source_summary": "Quest: The Fall of Magtheridon via Magtheridon's Head - Magtheridon (Magtheridon's Lair) 46.1% +1",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11002,
           "entity_name": "The Fall of Magtheridon",
           "quest_id": 11002,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4977,
+              "drop_percent": 46.09,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32385,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            },
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4427,
+              "drop_percent": 41.0,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32386,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            }
+          ],
           "side": "Alliance",
           "source_url": "https://www.wowhead.com/tbc/item=28791/ring-of-the-recalcitrant",
           "type": "quest",
           "zone": "Hellfire Peninsula"
         },
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11003,
           "entity_name": "The Fall of Magtheridon",
           "quest_id": 11003,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4977,
+              "drop_percent": 46.09,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32385,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            },
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4427,
+              "drop_percent": 41.0,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32386,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            }
+          ],
           "side": "Horde",
           "source_url": "https://www.wowhead.com/tbc/item=28791/ring-of-the-recalcitrant",
           "type": "quest",
@@ -112530,40 +112987,145 @@
       "wowhead_url": "https://www.wowhead.com/tbc/item=28791/ring-of-the-recalcitrant"
     },
     {
-      "acquisition_phase": "PR",
+      "acquisition_phase": "T4",
       "binding": "bind_on_pickup",
       "boe": false,
       "id": 28792,
       "inventory_slot": "Ring",
       "name": "A'dal's Signet of Defense",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 11002,
         "entity_name": "The Fall of Magtheridon",
         "quest_id": 11002,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 4977,
+            "drop_percent": 46.09,
+            "entity_id": 17257,
+            "entity_name": "Magtheridon",
+            "out_of": 10798,
+            "quest_starter_item_id": 32385,
+            "quest_starter_name": "Magtheridon's Head",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+            "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+            "type": "drop",
+            "zone": "Magtheridon's Lair"
+          },
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 4427,
+            "drop_percent": 41.0,
+            "entity_id": 17257,
+            "entity_name": "Magtheridon",
+            "out_of": 10798,
+            "quest_starter_item_id": 32386,
+            "quest_starter_name": "Magtheridon's Head",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+            "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+            "type": "drop",
+            "zone": "Magtheridon's Lair"
+          }
+        ],
         "side": "Alliance",
         "source_url": "https://www.wowhead.com/tbc/item=28792/adals-signet-of-defense",
         "type": "quest",
         "zone": "Hellfire Peninsula"
       },
       "quality": "epic",
-      "source_summary": "Quest: The Fall of Magtheridon +1",
+      "source_summary": "Quest: The Fall of Magtheridon via Magtheridon's Head - Magtheridon (Magtheridon's Lair) 46.1% +1",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11002,
           "entity_name": "The Fall of Magtheridon",
           "quest_id": 11002,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4977,
+              "drop_percent": 46.09,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32385,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            },
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4427,
+              "drop_percent": 41.0,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32386,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            }
+          ],
           "side": "Alliance",
           "source_url": "https://www.wowhead.com/tbc/item=28792/adals-signet-of-defense",
           "type": "quest",
           "zone": "Hellfire Peninsula"
         },
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11003,
           "entity_name": "The Fall of Magtheridon",
           "quest_id": 11003,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4977,
+              "drop_percent": 46.09,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32385,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            },
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4427,
+              "drop_percent": 41.0,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32386,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            }
+          ],
           "side": "Horde",
           "source_url": "https://www.wowhead.com/tbc/item=28792/adals-signet-of-defense",
           "type": "quest",
@@ -112573,40 +113135,145 @@
       "wowhead_url": "https://www.wowhead.com/tbc/item=28792/adals-signet-of-defense"
     },
     {
-      "acquisition_phase": "PR",
+      "acquisition_phase": "T4",
       "binding": "bind_on_pickup",
       "boe": false,
       "id": 28793,
       "inventory_slot": "Ring",
       "name": "Band of Crimson Fury",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 11002,
         "entity_name": "The Fall of Magtheridon",
         "quest_id": 11002,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 4977,
+            "drop_percent": 46.09,
+            "entity_id": 17257,
+            "entity_name": "Magtheridon",
+            "out_of": 10798,
+            "quest_starter_item_id": 32385,
+            "quest_starter_name": "Magtheridon's Head",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+            "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+            "type": "drop",
+            "zone": "Magtheridon's Lair"
+          },
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 4427,
+            "drop_percent": 41.0,
+            "entity_id": 17257,
+            "entity_name": "Magtheridon",
+            "out_of": 10798,
+            "quest_starter_item_id": 32386,
+            "quest_starter_name": "Magtheridon's Head",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+            "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+            "type": "drop",
+            "zone": "Magtheridon's Lair"
+          }
+        ],
         "side": "Alliance",
         "source_url": "https://www.wowhead.com/tbc/item=28793/band-of-crimson-fury",
         "type": "quest",
         "zone": "Hellfire Peninsula"
       },
       "quality": "unknown",
-      "source_summary": "Quest: The Fall of Magtheridon +1",
+      "source_summary": "Quest: The Fall of Magtheridon via Magtheridon's Head - Magtheridon (Magtheridon's Lair) 46.1% +1",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11002,
           "entity_name": "The Fall of Magtheridon",
           "quest_id": 11002,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4977,
+              "drop_percent": 46.09,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32385,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            },
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4427,
+              "drop_percent": 41.0,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32386,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            }
+          ],
           "side": "Alliance",
           "source_url": "https://www.wowhead.com/tbc/item=28793/band-of-crimson-fury",
           "type": "quest",
           "zone": "Hellfire Peninsula"
         },
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11003,
           "entity_name": "The Fall of Magtheridon",
           "quest_id": 11003,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4977,
+              "drop_percent": 46.09,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32385,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32385/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            },
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 4427,
+              "drop_percent": 41.0,
+              "entity_id": 17257,
+              "entity_name": "Magtheridon",
+              "out_of": 10798,
+              "quest_starter_item_id": 32386,
+              "quest_starter_name": "Magtheridon's Head",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "source_url": "https://www.wowhead.com/tbc/item=32386/magtheridons-head",
+              "type": "drop",
+              "zone": "Magtheridon's Lair"
+            }
+          ],
           "side": "Horde",
           "source_url": "https://www.wowhead.com/tbc/item=28793/band-of-crimson-fury",
           "type": "quest",
@@ -143100,22 +143767,60 @@
       "inventory_slot": "Neck",
       "name": "The Darkener's Grasp",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 11007,
         "entity_name": "Kael'thas and the Verdant Sphere",
         "quest_id": 11007,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 6203,
+            "drop_percent": 91.53,
+            "entity_id": 19622,
+            "entity_name": "Kael'thas Sunstrider",
+            "out_of": 6777,
+            "quest_starter_item_id": 32405,
+            "quest_starter_name": "Verdant Sphere",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+            "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+            "type": "drop",
+            "zone": "Tempest Keep"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=30007/the-darkeners-grasp",
         "type": "quest",
         "zone": "Tempest Keep"
       },
       "quality": "epic",
-      "source_summary": "Quest: Kael'thas and the Verdant Sphere",
+      "source_summary": "Quest: Kael'thas and the Verdant Sphere via Verdant Sphere - Kael'thas Sunstrider (Tempest Keep) 91.5%",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11007,
           "entity_name": "Kael'thas and the Verdant Sphere",
           "quest_id": 11007,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 6203,
+              "drop_percent": 91.53,
+              "entity_id": 19622,
+              "entity_name": "Kael'thas Sunstrider",
+              "out_of": 6777,
+              "quest_starter_item_id": 32405,
+              "quest_starter_name": "Verdant Sphere",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "type": "drop",
+              "zone": "Tempest Keep"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=30007/the-darkeners-grasp",
           "type": "quest",
           "zone": "Tempest Keep"
@@ -143199,22 +143904,60 @@
       "inventory_slot": "Neck",
       "name": "The Sun King's Talisman",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 11007,
         "entity_name": "Kael'thas and the Verdant Sphere",
         "quest_id": 11007,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 6203,
+            "drop_percent": 91.53,
+            "entity_id": 19622,
+            "entity_name": "Kael'thas Sunstrider",
+            "out_of": 6777,
+            "quest_starter_item_id": 32405,
+            "quest_starter_name": "Verdant Sphere",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+            "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+            "type": "drop",
+            "zone": "Tempest Keep"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=30015/the-sun-kings-talisman",
         "type": "quest",
         "zone": "Tempest Keep"
       },
       "quality": "epic",
-      "source_summary": "Quest: Kael'thas and the Verdant Sphere",
+      "source_summary": "Quest: Kael'thas and the Verdant Sphere via Verdant Sphere - Kael'thas Sunstrider (Tempest Keep) 91.5%",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11007,
           "entity_name": "Kael'thas and the Verdant Sphere",
           "quest_id": 11007,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 6203,
+              "drop_percent": 91.53,
+              "entity_id": 19622,
+              "entity_name": "Kael'thas Sunstrider",
+              "out_of": 6777,
+              "quest_starter_item_id": 32405,
+              "quest_starter_name": "Verdant Sphere",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "type": "drop",
+              "zone": "Tempest Keep"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=30015/the-sun-kings-talisman",
           "type": "quest",
           "zone": "Tempest Keep"
@@ -143230,22 +143973,60 @@
       "inventory_slot": "Neck",
       "name": "Telonicus's Pendant of Mayhem",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 11007,
         "entity_name": "Kael'thas and the Verdant Sphere",
         "quest_id": 11007,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 6203,
+            "drop_percent": 91.53,
+            "entity_id": 19622,
+            "entity_name": "Kael'thas Sunstrider",
+            "out_of": 6777,
+            "quest_starter_item_id": 32405,
+            "quest_starter_name": "Verdant Sphere",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+            "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+            "type": "drop",
+            "zone": "Tempest Keep"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
         "type": "quest",
         "zone": "Tempest Keep"
       },
       "quality": "epic",
-      "source_summary": "Quest: Kael'thas and the Verdant Sphere",
+      "source_summary": "Quest: Kael'thas and the Verdant Sphere via Verdant Sphere - Kael'thas Sunstrider (Tempest Keep) 91.5%",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11007,
           "entity_name": "Kael'thas and the Verdant Sphere",
           "quest_id": 11007,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 6203,
+              "drop_percent": 91.53,
+              "entity_id": 19622,
+              "entity_name": "Kael'thas Sunstrider",
+              "out_of": 6777,
+              "quest_starter_item_id": 32405,
+              "quest_starter_name": "Verdant Sphere",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "type": "drop",
+              "zone": "Tempest Keep"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
           "type": "quest",
           "zone": "Tempest Keep"
@@ -143261,22 +144042,60 @@
       "inventory_slot": "Neck",
       "name": "Lord Sanguinar's Claim",
       "primary_source": {
-        "confidence": "wowhead_item",
+        "confidence": "wowhead_item+quest_starter",
+        "content_type": "raid",
         "entity_id": 11007,
         "entity_name": "Kael'thas and the Verdant Sphere",
         "quest_id": 11007,
+        "quest_starter_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "raid",
+            "count": 6203,
+            "drop_percent": 91.53,
+            "entity_id": 19622,
+            "entity_name": "Kael'thas Sunstrider",
+            "out_of": 6777,
+            "quest_starter_item_id": 32405,
+            "quest_starter_name": "Verdant Sphere",
+            "quest_starter_relationship": "direct_starter",
+            "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+            "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+            "type": "drop",
+            "zone": "Tempest Keep"
+          }
+        ],
         "source_url": "https://www.wowhead.com/tbc/item=30018/lord-sanguinars-claim",
         "type": "quest",
         "zone": "Tempest Keep"
       },
       "quality": "epic",
-      "source_summary": "Quest: Kael'thas and the Verdant Sphere",
+      "source_summary": "Quest: Kael'thas and the Verdant Sphere via Verdant Sphere - Kael'thas Sunstrider (Tempest Keep) 91.5%",
       "sources": [
         {
-          "confidence": "wowhead_item",
+          "confidence": "wowhead_item+quest_starter",
+          "content_type": "raid",
           "entity_id": 11007,
           "entity_name": "Kael'thas and the Verdant Sphere",
           "quest_id": 11007,
+          "quest_starter_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "raid",
+              "count": 6203,
+              "drop_percent": 91.53,
+              "entity_id": 19622,
+              "entity_name": "Kael'thas Sunstrider",
+              "out_of": 6777,
+              "quest_starter_item_id": 32405,
+              "quest_starter_name": "Verdant Sphere",
+              "quest_starter_relationship": "direct_starter",
+              "quest_starter_source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "source_url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "type": "drop",
+              "zone": "Tempest Keep"
+            }
+          ],
           "source_url": "https://www.wowhead.com/tbc/item=30018/lord-sanguinars-claim",
           "type": "quest",
           "zone": "Tempest Keep"

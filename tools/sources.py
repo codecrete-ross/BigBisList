@@ -137,6 +137,16 @@ def source_content_type(source: dict[str, Any]) -> str | None:
             return None
         return source_content_type(derive_primary_source(token_sources))
 
+    if source_type == "quest":
+        quest_starter_sources = [
+            starter_source
+            for starter_source in source.get("quest_starter_sources", [])
+            if isinstance(starter_source, dict)
+        ]
+        if not quest_starter_sources:
+            return None
+        return source_content_type(derive_primary_source(quest_starter_sources))
+
     if source_type != "drop":
         return None
 
@@ -175,6 +185,12 @@ def classify_source(source: dict[str, Any]) -> dict[str, Any]:
             for token_source in classified["token_sources"]
         ]
 
+    if isinstance(classified.get("quest_starter_sources"), list):
+        classified["quest_starter_sources"] = [
+            classify_source(starter_source) if isinstance(starter_source, dict) else starter_source
+            for starter_source in classified["quest_starter_sources"]
+        ]
+
     if isinstance(classified.get("recipe_sources"), list):
         classified["recipe_sources"] = [
             classify_source(recipe_source) if isinstance(recipe_source, dict) else recipe_source
@@ -204,6 +220,13 @@ def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
         return ZONE_PHASE.get(str(zone or ""), "PR")
 
     if source_type == "quest":
+        quest_starter_sources = [
+            starter_source
+            for starter_source in source.get("quest_starter_sources", [])
+            if isinstance(starter_source, dict)
+        ]
+        if quest_starter_sources:
+            return derive_acquisition_phase(quest_starter_sources)
         quest_id = source.get("quest_id")
         if isinstance(quest_id, int):
             return RAID_QUEST_PHASE_BY_ID.get(quest_id, "PR")
@@ -352,7 +375,26 @@ def compact_source(source: dict[str, Any]) -> str:
         return text
 
     if source_type == "quest":
-        return f"Quest: {entity}"
+        text = f"Quest: {entity}"
+        quest_starter_sources = [
+            starter_source
+            for starter_source in source.get("quest_starter_sources", [])
+            if isinstance(starter_source, dict)
+        ]
+        if quest_starter_sources:
+            starter_source = derive_primary_source(quest_starter_sources)
+            starter_name = starter_source.get("quest_starter_name") or starter_source.get("starter_name")
+            starter_entity = starter_source.get("entity_name")
+            starter_zone = starter_source.get("zone")
+            if starter_name:
+                text += f" via {starter_name}"
+            if starter_entity:
+                text += f" - {starter_entity}"
+                if starter_zone:
+                    text += f" ({starter_zone})"
+                if isinstance(starter_source.get("drop_percent"), (int, float)):
+                    text += f" {float(starter_source['drop_percent']):.1f}%"
+        return text
 
     if source_type == "vendor":
         text = f"Vendor: {entity}"
