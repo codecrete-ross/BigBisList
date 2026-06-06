@@ -314,6 +314,11 @@ class AddonUIStaticTests(unittest.TestCase):
             "source.requirements",
             "access_options = buildAccessOptions",
             "zone = source.zone",
+            "source_filter_key = filterKey",
+            "source_filter_keys = sourceFilters",
+            "source_summary = sourceOptionSummary",
+            "zones = sourceOptionZones(source)",
+            "rowHasAccessOptionMatchingFilterContext",
             "gemSourcesById",
             "enchantSourcesByKey",
             "enchantEffectsByKey",
@@ -421,6 +426,7 @@ class AddonUIStaticTests(unittest.TestCase):
 
     def test_token_turnin_raid_zones_feed_zone_filters(self):
         data_index = self.read_lua("DataIndex.lua")
+        ui = self.read_lua("UI.lua")
         for token in [
             "getSourceZones",
             "addZonesFromSource",
@@ -431,10 +437,19 @@ class AddonUIStaticTests(unittest.TestCase):
             "rowMatchesAnySelectedZone",
             "zones = getSourceZones(item)",
             "zones = use.zones",
+            "optionMatchesSourceContext",
+            "optionMatchesSourceFilter",
+            "optionMatchesZoneFilter",
+            "accessOptionIsPhaseAvailable",
+            "sourceOptionFilterKey",
         ]:
             self.assertIn(token, data_index)
         self.assertLess(data_index.index("getSourceZones"), data_index.index("includeByFilter"))
         self.assertLess(data_index.index("rowMatchesZoneFilter"), data_index.index("includeByFilter"))
+        self.assertIn("optionMatchesActiveSourceContext", ui)
+        self.assertIn("context_matched = contextMatched", ui)
+        self.assertIn("function UI:GetContextSourceSummary", ui)
+        self.assertIn("self:GetContextSourceSummary(data)", ui)
 
     def test_quest_starter_sources_feed_filters_search_and_tooltip_aliases(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -631,6 +646,8 @@ class AddonUIStaticTests(unittest.TestCase):
             'scopedFilters.zone = "all"',
             "scopedFilters.zones = nil",
             "addZonesFromRow",
+            "sourceZoneIsPhaseAvailable",
+            "getSourceZones(row.item, selectedPhaseIndex)",
         ]:
             self.assertIn(token, data_index)
         self.assertNotIn('table.insert(zones, "Unknown")', data_index)
@@ -656,6 +673,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'scopedFilters.reputation = "all"',
             "addReputationsFromRow",
             "rowMatchesReputationFilter",
+            "accessOptionIsPhaseAvailable(option, selectedPhaseIndex)",
         ]:
             self.assertIn(token, data_index)
         for token in [
@@ -682,7 +700,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "heroic_dungeon_drop",
             "dungeon_drop",
             "other_drop",
-            "row.source_filter_key ~= filters.sourceType",
+            "getSourceFilterKeys(row.item, selectedPhaseIndex)",
+            "rowMatchesSourceFilter(row, filters.sourceType, selectedPhaseIndex)",
         ]:
             self.assertIn(token, data_index)
         for token in [
@@ -694,6 +713,30 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, ui)
         source_dropdown_body = ui.split("function UI:GetSourceDropdownItems()", 1)[1].split("function UI:GetZoneDropdownItems()", 1)[0]
         self.assertNotIn("BigBiSList:GetDataIndex().sourceTypes", source_dropdown_body)
+
+    def test_filter_options_are_phase_aware(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "RAID_ZONE_PHASE",
+            "ZONE_PHASE",
+            "[\"Isle of Quel'Danas\"] = \"SWP\"",
+            "RAID_QUEST_PHASE_BY_ID",
+            "deriveSourceAcquisitionPhase",
+            "sourcesForAcquisitionPhase",
+            "isWeakAmbiguousDrop",
+            "sourceIsPhaseAvailable",
+            "sourceZoneIsPhaseAvailable",
+            "source.token_sources",
+            "source.quest_starter_sources",
+            "source.recipe_sources",
+            "acquisition_phase = acquisitionPhase",
+            "includeByFilter(use, filters, selectedIndex)",
+            "includeByFilter(group, filters, selectedIndex)",
+            "local selectedIndex = phaseIndex(phaseKey)",
+        ]:
+            self.assertIn(token, data_index)
+        self.assertLess(data_index.index("deriveSourceAcquisitionPhase"), data_index.index("function BigBiSList:GetPhaseRows"))
+        self.assertLess(data_index.index("sourceZoneIsPhaseAvailable"), data_index.index("addZonesFromRow"))
 
     def test_legacy_drop_source_filter_is_reset(self):
         config = self.read_lua("Config.lua")

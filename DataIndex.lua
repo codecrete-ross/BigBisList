@@ -113,6 +113,43 @@ local SOURCE_FILTER_BY_CONTENT_TYPE = {
     other = "other_drop",
 }
 
+local RAID_ZONE_PHASE = {
+    Karazhan = "T4",
+    ["Gruul's Lair"] = "T4",
+    ["Magtheridon's Lair"] = "T4",
+    ["Serpentshrine Cavern"] = "T5",
+    ["Tempest Keep"] = "T5",
+    ["Hyjal Summit"] = "T6",
+    ["Black Temple"] = "T6",
+    ["Zul'Aman"] = "ZA",
+    ["Sunwell Plateau"] = "SWP",
+}
+
+local ZONE_PHASE = {
+    Karazhan = "T4",
+    ["Gruul's Lair"] = "T4",
+    ["Magtheridon's Lair"] = "T4",
+    ["Serpentshrine Cavern"] = "T5",
+    ["Tempest Keep"] = "T5",
+    ["Hyjal Summit"] = "T6",
+    ["Black Temple"] = "T6",
+    ["Zul'Aman"] = "ZA",
+    ["Sunwell Plateau"] = "SWP",
+    ["Isle of Quel'Danas"] = "SWP",
+}
+
+local RAID_QUEST_PHASE_BY_ID = {
+    [10725] = "T4",
+    [10726] = "T4",
+    [10727] = "T4",
+    [10728] = "T4",
+    [11031] = "T4",
+    [11032] = "T4",
+    [11033] = "T4",
+    [11034] = "T4",
+    [11007] = "T5",
+}
+
 local SOURCE_TYPE_PREFIXES = {
     drop = "Drop",
     quest = "Quest",
@@ -195,6 +232,145 @@ local function addUnique(list, seen, value)
     seen[value] = true
     table.insert(list, value)
 end
+
+local function phaseIndex(phaseKey)
+    for index, key in ipairs(PHASE_ORDER) do
+        if key == phaseKey then
+            return index
+        end
+    end
+    return 999
+end
+
+local function earlierPhaseKey(a, b)
+    if not a then
+        return b
+    elseif not b then
+        return a
+    elseif phaseIndex(a) <= phaseIndex(b) then
+        return a
+    end
+    return b
+end
+
+local deriveSourceAcquisitionPhase
+
+local function isConcreteRaidDrop(source)
+    return type(source) == "table" and source.type == "drop" and RAID_ZONE_PHASE[source.zone] ~= nil
+end
+
+local function isWeakAmbiguousDrop(source)
+    if type(source) ~= "table" or source.type ~= "drop" or isConcreteRaidDrop(source) then
+        return false
+    end
+
+    local count = source.count
+    local outOf = source.out_of
+    if type(count) == "number" and type(outOf) == "number" then
+        return count < 0 or outOf <= 0
+    end
+
+    return source.drop_percent == nil
+end
+
+local function sourcesForAcquisitionPhase(sources)
+    if type(sources) ~= "table" then
+        return {}
+    end
+
+    local hasConcreteRaidDrop = false
+    for _, source in ipairs(sources) do
+        if isConcreteRaidDrop(source) then
+            hasConcreteRaidDrop = true
+            break
+        end
+    end
+
+    if not hasConcreteRaidDrop then
+        return sources
+    end
+
+    local filtered = {}
+    for _, source in ipairs(sources) do
+        if type(source) == "table" and not isWeakAmbiguousDrop(source) then
+            table.insert(filtered, source)
+        end
+    end
+
+    if #filtered > 0 then
+        return filtered
+    end
+    return sources
+end
+
+local function deriveSourcesAcquisitionPhase(sources)
+    local selected
+    for _, source in ipairs(sourcesForAcquisitionPhase(sources)) do
+        if type(source) == "table" then
+            selected = earlierPhaseKey(selected, deriveSourceAcquisitionPhase(source))
+        end
+    end
+    return selected or "PR"
+end
+
+deriveSourceAcquisitionPhase = function(source)
+    if type(source) ~= "table" then
+        return "PR"
+    end
+
+    local sourceType = source.type
+    local zonePhase = ZONE_PHASE[source.zone]
+
+    if sourceType == "token_turnin" then
+        return deriveSourcesAcquisitionPhase(source.token_sources)
+    elseif sourceType == "drop" then
+        return zonePhase or "PR"
+    elseif sourceType == "quest" then
+        if type(source.quest_starter_sources) == "table" and #source.quest_starter_sources > 0 then
+            return deriveSourcesAcquisitionPhase(source.quest_starter_sources)
+        elseif type(source.quest_id) == "number" then
+            return RAID_QUEST_PHASE_BY_ID[source.quest_id] or "PR"
+        end
+        return "PR"
+    elseif sourceType == "crafted" then
+        if type(source.recipe_sources) == "table" and #source.recipe_sources > 0 then
+            return deriveSourcesAcquisitionPhase(source.recipe_sources)
+        end
+        return zonePhase or "PR"
+    elseif sourceType == "vendor" and zonePhase then
+        return zonePhase
+    end
+
+    return "PR"
+end
+
+local function sourceZoneIsPhaseAvailable(zone, selectedPhaseIndex)
+    if not selectedPhaseIndex then
+        return true
+    end
+    return phaseIndex(ZONE_PHASE[zone] or "PR") <= selectedPhaseIndex
+end
+
+local function sourceIsPhaseAvailable(source, selectedPhaseIndex)
+    if not selectedPhaseIndex then
+        return true
+    elseif type(source) ~= "table" then
+        return false
+    elseif phaseIndex(deriveSourceAcquisitionPhase(source)) > selectedPhaseIndex then
+        return false
+    elseif source.zone and not sourceZoneIsPhaseAvailable(source.zone, selectedPhaseIndex) then
+        return false
+    end
+    return true
+end
+
+local function addSourceZone(zones, seen, zone, selectedPhaseIndex)
+    if zone and zone ~= "" and sourceZoneIsPhaseAvailable(zone, selectedPhaseIndex) then
+        addUnique(zones, seen, zone)
+    end
+end
+
+local sourceFilterKey
 
 local function addReputationsFromRequirement(reputations, seen, requirement)
     if type(requirement) ~= "table" then
@@ -409,6 +585,106 @@ local function sourceLabel(source, fallbackLabel)
     return prefix
 end
 
+local function formatDropPercent(source)
+    local percent = tonumber(source and source.drop_percent)
+    if not percent then
+        return nil
+    end
+    return string.format("%.1f%%", percent)
+end
+
+local function sourceDropSummary(source)
+    if type(source) ~= "table" then
+        return nil
+    end
+
+    local text = source.entity_name
+    if source.zone and source.zone ~= "" then
+        text = text and (text .. " (" .. source.zone .. ")") or source.zone
+    end
+
+    local percent = formatDropPercent(source)
+    if percent then
+        text = text and (text .. " " .. percent) or percent
+    end
+
+    return text
+end
+
+local function tokenCostName(source)
+    for _, cost in ipairs(source and source.costs or {}) do
+        if cost.item_id and cost.name and cost.name ~= "" then
+            return cost.name
+        end
+    end
+
+    local tokenSource = source and source.token_sources and source.token_sources[1]
+    return tokenSource and tokenSource.token_name
+end
+
+local function sourceOptionSummary(source, fallbackLabel)
+    local sourceType = source and source.type or "unknown"
+
+    if sourceType == "token_turnin" then
+        local text = "Token"
+        local tokenName = tokenCostName(source)
+        if tokenName and tokenName ~= "" then
+            text = text .. ": " .. tokenName
+        elseif fallbackLabel and fallbackLabel ~= "" then
+            text = text .. ": " .. fallbackLabel
+        end
+
+        local tokenSources = source and source.token_sources or {}
+        local firstTokenSource = tokenSources[1]
+        local tokenSummary = sourceDropSummary(firstTokenSource)
+        if tokenSummary and tokenSummary ~= "" then
+            text = text .. " - " .. tokenSummary
+        elseif source.entity_name and source.entity_name ~= "" then
+            text = text .. " - Turn in: " .. source.entity_name
+        end
+        if #tokenSources > 1 then
+            text = text .. " +" .. tostring(#tokenSources - 1)
+        end
+        return text
+    elseif sourceType == "drop" or sourceType == "world_drop" then
+        local dropSummary = sourceDropSummary(source)
+        if dropSummary and dropSummary ~= "" then
+            return (SOURCE_TYPE_PREFIXES[sourceType] or "Drop") .. ": " .. dropSummary
+        end
+    end
+
+    return sourceLabel(source, fallbackLabel)
+end
+
+local function sourceOptionZones(source)
+    local zones = {}
+    local seen = {}
+
+    if type(source) ~= "table" then
+        return zones
+    end
+
+    addSourceZone(zones, seen, source.zone)
+    if source.type == "token_turnin" then
+        for _, tokenSource in ipairs(source.token_sources or {}) do
+            addSourceZone(zones, seen, tokenSource.zone)
+        end
+    elseif source.type == "quest" then
+        for _, starterSource in ipairs(source.quest_starter_sources or {}) do
+            addSourceZone(zones, seen, starterSource.zone)
+        end
+    end
+
+    return zones
+end
+
+local function sourceOptionFilterKey(source)
+    if sourceFilterKey then
+        return sourceFilterKey(source)
+    end
+    return source and source.type or "unknown"
+end
+
 local function addSourceInput(inputs, seen, source, isPrimary, fallbackLabel)
     if type(source) ~= "table" then
         return nil
@@ -552,12 +828,20 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
     for _, input in ipairs(inputs) do
         local source = input.source
         local requirements = mergedRequirements(globalRequirements, source.requirements, input.extraRequirements)
+        local filterKey = sourceOptionFilterKey(source)
+        local acquisitionPhase = deriveSourceAcquisitionPhase(source)
         table.insert(accessOptions, {
             label = sourceLabel(source, input.fallbackLabel),
             source_type = source.type or "unknown",
+            source_filter_key = filterKey,
+            source_filter_label = SOURCE_TYPE_LABELS[filterKey] or filterKey,
+            source_summary = sourceOptionSummary(source, input.fallbackLabel),
             zone = source.zone,
+            zones = sourceOptionZones(source),
             source_url = source.source_url or (item and item.wowhead_url),
             side = source.side,
+            acquisition_phase = acquisitionPhase,
+            acquisitionPhaseIndex = phaseIndex(acquisitionPhase),
             requirements = requirements,
             reputations = reputationsFromRequirements(requirements),
             is_primary = input.isPrimary or false,
@@ -567,10 +851,16 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
 
     if shouldAddTradeOption(item, inputs, options) then
         local requirements = mergedRequirements(globalRequirements)
+        local acquisitionPhase = item and item.acquisition_phase or "PR"
         table.insert(accessOptions, {
             label = options.tradeLabel or "Trade/Auction House",
             source_type = "trade",
+            source_filter_key = "trade",
+            source_filter_label = SOURCE_TYPE_LABELS.trade,
+            source_summary = options.tradeLabel or "Trade/Auction House",
             source_url = item and item.wowhead_url or (sourceRecords[1] and sourceRecords[1].source_url),
+            acquisition_phase = acquisitionPhase,
+            acquisitionPhaseIndex = phaseIndex(acquisitionPhase),
             requirements = requirements,
             reputations = reputationsFromRequirements(requirements),
             is_primary = false,
@@ -579,15 +869,6 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
     end
 
     return accessOptions
-end
-
-local function phaseIndex(phaseKey)
-    for index, key in ipairs(PHASE_ORDER) do
-        if key == phaseKey then
-            return index
-        end
-    end
-    return 999
 end
 
 local function slotIndex(slotName)
@@ -771,7 +1052,7 @@ local function betterSourceFilterKey(candidate, current)
     return current
 end
 
-local function sourceFilterKey(source)
+sourceFilterKey = function(source)
     if type(source) ~= "table" then
         return "unknown"
     end
@@ -804,6 +1085,26 @@ local function getSourceFilterKey(item)
     return sourceFilterKey(getPrimarySource(item))
 end
 
+local function addSourceFilterKey(sourceFilterKeys, seen, source, selectedPhaseIndex)
+    if type(source) == "table" and sourceIsPhaseAvailable(source, selectedPhaseIndex) then
+        addUnique(sourceFilterKeys, seen, sourceFilterKey(source))
+    end
+end
+
+local function getSourceFilterKeys(item, selectedPhaseIndex)
+    local sourceFilterKeys = {}
+    local seen = {}
+
+    if item then
+        addSourceFilterKey(sourceFilterKeys, seen, item.primary_source, selectedPhaseIndex)
+        for _, source in ipairs(item.sources or {}) do
+            addSourceFilterKey(sourceFilterKeys, seen, source, selectedPhaseIndex)
+        end
+    end
+
+    return sourceFilterKeys
+end
+
 local function sortSourceFilterKeys(a, b)
     local aOrder = SOURCE_FILTER_ORDER[a] or 50
     local bOrder = SOURCE_FILTER_ORDER[b] or 50
@@ -821,46 +1122,66 @@ local function getSourceZone(item)
     return nil
 end
 
-local function addSourceZone(zones, seen, zone)
-    if zone and zone ~= "" then
-        addUnique(zones, seen, zone)
-    end
-end
-
-local function addZonesFromSource(zones, seen, source, includeDropZone)
-    if type(source) ~= "table" then
+local function addZonesFromSource(zones, seen, source, includeDropZone, selectedPhaseIndex)
+    if type(source) ~= "table" or not sourceIsPhaseAvailable(source, selectedPhaseIndex) then
         return
     end
 
     if source.type ~= "drop" or includeDropZone then
-        addSourceZone(zones, seen, source.zone)
+        addSourceZone(zones, seen, source.zone, selectedPhaseIndex)
     end
 
     if source.type == "token_turnin" then
         for _, tokenSource in ipairs(source.token_sources or {}) do
-            addSourceZone(zones, seen, tokenSource.zone)
+            addZonesFromSource(zones, seen, tokenSource, true, selectedPhaseIndex)
         end
     end
 
     if source.type == "quest" then
         for _, starterSource in ipairs(source.quest_starter_sources or {}) do
-            addSourceZone(zones, seen, starterSource.zone)
+            addZonesFromSource(zones, seen, starterSource, true, selectedPhaseIndex)
         end
     end
 end
 
-local function getSourceZones(item)
+local function getSourceZones(item, selectedPhaseIndex)
     local zones = {}
     local seen = {}
 
     if item then
-        addZonesFromSource(zones, seen, item.primary_source, true)
+        addZonesFromSource(zones, seen, item.primary_source, true, selectedPhaseIndex)
         for _, source in ipairs(item.sources or {}) do
-            addZonesFromSource(zones, seen, source, false)
+            addZonesFromSource(zones, seen, source, false, selectedPhaseIndex)
         end
     end
 
     return zones
+end
+
+local function sourceHasZone(source, zone, includeDropZone, selectedPhaseIndex)
+    if type(source) ~= "table" or not sourceIsPhaseAvailable(source, selectedPhaseIndex) then
+        return false
+    end
+
+    if (source.type ~= "drop" or includeDropZone) and source.zone == zone and sourceZoneIsPhaseAvailable(zone, selectedPhaseIndex) then
+        return true
+    end
+
+    if source.type == "token_turnin" then
+        for _, tokenSource in ipairs(source.token_sources or {}) do
+            if sourceHasZone(tokenSource, zone, true, selectedPhaseIndex) then
+                return true
+            end
+        end
+    elseif source.type == "quest" then
+        for _, starterSource in ipairs(source.quest_starter_sources or {}) do
+            if sourceHasZone(starterSource, zone, true, selectedPhaseIndex) then
+                return true
+            end
+        end
+    end
+
+    return false
 end
 
 local function addSourceSide(sides, seen, side)
@@ -1162,6 +1483,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     local item = index.itemsById[itemId]
     local sourceType = getSourceType(item)
     local sourceFilter = getSourceFilterKey(item)
+    local sourceFilters = getSourceFilterKeys(item)
     local zone = getSourceZone(item)
     local zones = getSourceZones(item)
     local sides = getSourceSides(item)
@@ -1189,6 +1511,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         source_type_label = SOURCE_TYPE_LABELS[sourceType] or sourceType,
         source_filter_key = sourceFilter,
         source_filter_label = SOURCE_TYPE_LABELS[sourceFilter] or sourceFilter,
+        source_filter_keys = sourceFilters,
         acquisition_phase = acquisitionPhase,
         acquisitionPhaseIndex = phaseIndex(acquisitionPhase),
         zone = zone,
@@ -1208,17 +1531,29 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     return row
 end
 
-local function rowHasZone(row, zone)
+local function rowHasZone(row, zone, selectedPhaseIndex)
     if not row or not zone or zone == "" then
         return false
     end
 
-    if row.zone == zone then
+    if row.item then
+        if sourceHasZone(row.item.primary_source, zone, true, selectedPhaseIndex) then
+            return true
+        end
+        for _, source in ipairs(row.item.sources or {}) do
+            if sourceHasZone(source, zone, false, selectedPhaseIndex) then
+                return true
+            end
+        end
+        return false
+    end
+
+    if row.zone == zone and sourceZoneIsPhaseAvailable(zone, selectedPhaseIndex) then
         return true
     end
 
     for _, rowZone in ipairs(row.zones or {}) do
-        if rowZone == zone then
+        if rowZone == zone and sourceZoneIsPhaseAvailable(rowZone, selectedPhaseIndex) then
             return true
         end
     end
@@ -1226,20 +1561,20 @@ local function rowHasZone(row, zone)
     return false
 end
 
-local function rowMatchesZoneFilter(row, zone)
+local function rowMatchesZoneFilter(row, zone, selectedPhaseIndex)
     if not zone or zone == "all" then
         return true
     end
-    return rowHasZone(row, zone)
+    return rowHasZone(row, zone, selectedPhaseIndex)
 end
 
-local function rowMatchesAnySelectedZone(row, selectedZones)
+local function rowMatchesAnySelectedZone(row, selectedZones, selectedPhaseIndex)
     if not tableHasAnyEnabled(selectedZones) then
         return true
     end
 
     for zone, selected in pairs(selectedZones or {}) do
-        if selected and rowHasZone(row, zone) then
+        if selected and rowHasZone(row, zone, selectedPhaseIndex) then
             return true
         end
     end
@@ -1247,9 +1582,186 @@ local function rowMatchesAnySelectedZone(row, selectedZones)
     return false
 end
 
-local function rowHasReputation(row, reputation)
+local function rowHasSourceFilterKey(row, sourceType, selectedPhaseIndex)
+    if not row or not sourceType or sourceType == "" then
+        return false
+    end
+
+    local sourceFilterKeys = row.item and getSourceFilterKeys(row.item, selectedPhaseIndex) or row.source_filter_keys
+    for _, rowSourceType in ipairs(sourceFilterKeys or {}) do
+        if rowSourceType == sourceType then
+            return true
+        end
+    end
+
+    if (not sourceFilterKeys or #sourceFilterKeys == 0)
+        and (row.source_filter_key == sourceType or row.source_type == sourceType)
+        and (row.acquisitionPhaseIndex or 999) <= (selectedPhaseIndex or 999) then
+        return true
+    end
+
+    return false
+end
+
+local function rowMatchesSourceFilter(row, sourceType, selectedPhaseIndex)
+    if not sourceType or sourceType == "all" then
+        return true
+    end
+    return rowHasSourceFilterKey(row, sourceType, selectedPhaseIndex)
+end
+
+local function rowMatchesAnySelectedSourceType(row, selectedSourceTypes, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedSourceTypes) then
+        return true
+    end
+
+    for sourceType, selected in pairs(selectedSourceTypes or {}) do
+        if selected and rowHasSourceFilterKey(row, sourceType, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    if type(option) ~= "table" then
+        return false
+    elseif not selectedPhaseIndex then
+        return true
+    elseif (option.acquisitionPhaseIndex or phaseIndex(option.acquisition_phase or "PR")) > selectedPhaseIndex then
+        return false
+    elseif option.zone and not sourceZoneIsPhaseAvailable(option.zone, selectedPhaseIndex) then
+        return false
+    end
+    return true
+end
+
+local function optionHasZone(option, zone, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) or not zone or zone == "" then
+        return false
+    end
+
+    if option.zone == zone and sourceZoneIsPhaseAvailable(zone, selectedPhaseIndex) then
+        return true
+    end
+
+    for _, optionZone in ipairs(option.zones or {}) do
+        if optionZone == zone and sourceZoneIsPhaseAvailable(optionZone, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function optionMatchesZoneFilter(option, zone, selectedPhaseIndex)
+    if not zone or zone == "all" then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+    return optionHasZone(option, zone, selectedPhaseIndex)
+end
+
+local function optionMatchesAnySelectedZone(option, selectedZones, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedZones) then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+
+    for zone, selected in pairs(selectedZones or {}) do
+        if selected and optionHasZone(option, zone, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function optionMatchesSourceFilter(option, sourceType, selectedPhaseIndex)
+    if not sourceType or sourceType == "all" then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+
+    return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+        and (option.source_filter_key == sourceType or option.source_type == sourceType)
+end
+
+local function optionMatchesAnySelectedSourceType(option, selectedSourceTypes, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedSourceTypes) then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+
+    for sourceType, selected in pairs(selectedSourceTypes or {}) do
+        if selected and optionMatchesSourceFilter(option, sourceType, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function hasActiveSourceContextFilter(filters)
+    return (filters and filters.sourceType and filters.sourceType ~= "all")
+        or tableHasAnyEnabled(filters and filters.sourceTypes)
+        or (filters and filters.zone and filters.zone ~= "all")
+        or tableHasAnyEnabled(filters and filters.zones)
+end
+
+local function optionMatchesSourceContext(option, filters, selectedPhaseIndex)
+    return optionMatchesSourceFilter(option, filters and filters.sourceType, selectedPhaseIndex)
+        and optionMatchesAnySelectedSourceType(option, filters and filters.sourceTypes, selectedPhaseIndex)
+        and optionMatchesZoneFilter(option, filters and filters.zone, selectedPhaseIndex)
+        and optionMatchesAnySelectedZone(option, filters and filters.zones, selectedPhaseIndex)
+end
+
+local function rowHasAccessOptionMatchingFilterContext(row, filters, selectedPhaseIndex)
+    if not hasActiveSourceContextFilter(filters) then
+        return true
+    end
+
+    for _, option in ipairs(row and row.access_options or {}) do
+        if optionMatchesSourceContext(option, filters, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function requirementsHaveReputation(requirements, reputation)
+    for _, requirement in ipairs(requirements or {}) do
+        if type(requirement) == "table" and requirement.type == "reputation" and requirement.reputation == reputation then
+            return true
+        elseif type(requirement) == "table" and requirement.type == "faction_choice" then
+            for _, choice in ipairs(requirement.choices or {}) do
+                if choice == reputation then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
+local function rowHasReputation(row, reputation, selectedPhaseIndex)
     if not row or not reputation or reputation == "" then
         return false
+    end
+
+    local hasAccessOptions = false
+    for _, option in ipairs(row.access_options or {}) do
+        hasAccessOptions = true
+        if accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+            and requirementsHaveReputation(option.requirements, reputation) then
+            return true
+        end
+    end
+
+    if hasAccessOptions then
+        return false
+    end
+
+    if requirementsHaveReputation(row.requirements, reputation) then
+        return true
     end
 
     for _, rowReputation in ipairs(row.reputations or {}) do
@@ -1261,11 +1773,11 @@ local function rowHasReputation(row, reputation)
     return false
 end
 
-local function rowMatchesReputationFilter(row, reputation)
+local function rowMatchesReputationFilter(row, reputation, selectedPhaseIndex)
     if not reputation or reputation == "all" then
         return true
     end
-    return rowHasReputation(row, reputation)
+    return rowHasReputation(row, reputation, selectedPhaseIndex)
 end
 
 local function rowMatchesFactionFilter(row, faction)
@@ -1288,7 +1800,7 @@ local function rowMatchesFactionFilter(row, faction)
     return not hasSide
 end
 
-local function includeByFilter(row, filters)
+local function includeByFilter(row, filters, selectedPhaseIndex)
     filters = filters or {}
 
     if filters.hideIgnored and filters.ignoredItems and filters.ignoredItems[tostring(row.item_id)] then
@@ -1309,21 +1821,22 @@ local function includeByFilter(row, filters)
         return false
     end
 
-    if filters.sourceType and filters.sourceType ~= "all" and row.source_filter_key ~= filters.sourceType then
+    if not rowMatchesSourceFilter(row, filters.sourceType, selectedPhaseIndex) then
         return false
     end
-    if tableHasAnyEnabled(filters.sourceTypes) and not filters.sourceTypes[row.source_filter_key] then
+    if not rowMatchesAnySelectedSourceType(row, filters.sourceTypes, selectedPhaseIndex) then
         return false
     end
-
-    if not rowMatchesZoneFilter(row, filters.zone) then
+    if not rowMatchesZoneFilter(row, filters.zone, selectedPhaseIndex) then
         return false
     end
-    if not rowMatchesAnySelectedZone(row, filters.zones) then
+    if not rowMatchesAnySelectedZone(row, filters.zones, selectedPhaseIndex) then
         return false
     end
-
-    if not rowMatchesReputationFilter(row, filters.reputation) then
+    if hasActiveSourceContextFilter(filters) and not rowHasAccessOptionMatchingFilterContext(row, filters, selectedPhaseIndex) then
+        return false
+    end
+    if not rowMatchesReputationFilter(row, filters.reputation, selectedPhaseIndex) then
         return false
     end
 
@@ -1595,7 +2108,9 @@ function BigBiSList:GetDataIndex()
 
     for _, item in ipairs(data.items or {}) do
         index.itemsById[item.id] = item
-        addUnique(index.sourceTypes, sourceSeen, getSourceFilterKey(item))
+        for _, sourceFilter in ipairs(getSourceFilterKeys(item)) do
+            addUnique(index.sourceTypes, sourceSeen, sourceFilter)
+        end
         for _, zone in ipairs(getSourceZones(item)) do
             addUnique(index.zones, zoneSeen, zone)
         end
@@ -1784,7 +2299,7 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
             if itemEntry.item_id then
                 local use = buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
                 local key = tostring(use.item_id) .. ":" .. tostring(use.rank_group) .. ":" .. tostring(use.context)
-                if use.acquisitionPhaseIndex <= selectedIndex and not seenBySlot[slotName][key] and includeByFilter(use, filters) then
+                if use.acquisitionPhaseIndex <= selectedIndex and not seenBySlot[slotName][key] and includeByFilter(use, filters, selectedIndex) then
                     seenBySlot[slotName][key] = true
                     table.insert(grouped[slotName].items, use)
                 end
@@ -1831,6 +2346,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
                         source_type_label = use.source_type_label,
                         source_filter_key = use.source_filter_key,
                         source_filter_label = use.source_filter_label,
+                        source_filter_keys = use.source_filter_keys,
                         acquisition_phase = use.acquisition_phase,
                         acquisitionPhaseIndex = use.acquisitionPhaseIndex,
                         zone = use.zone,
@@ -1879,7 +2395,7 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         group.requirements = group.bestUse and group.bestUse.requirements or group.requirements
         group.access_options = group.bestUse and group.bestUse.access_options or group.access_options
 
-        if group.priority > 0 and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters) then
+        if group.priority > 0 and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters, selectedIndex) then
             if filters and filters.longevity == "current" and not group.hasCurrent then
                 -- excluded below
             elseif filters and filters.longevity == "future" and group.lastUsefulPhase == selectedPhaseKey then
@@ -1934,27 +2450,53 @@ local function cloneFiltersForSourceTypeOptions(filters)
     return scopedFilters
 end
 
-local function addSourceTypeFromRow(sourceTypes, seen, row)
+local function addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then
+        return
+    end
+
+    addUnique(sourceTypes, seen, option.source_filter_key or option.source_type)
+end
+
+local function addSourceTypeFromRow(sourceTypes, seen, row, filters, selectedPhaseIndex)
     if type(row) ~= "table" then
         return
     end
 
-    addUnique(sourceTypes, seen, row.source_filter_key or row.source_type)
+    if ((filters and filters.zone and filters.zone ~= "all") or tableHasAnyEnabled(filters and filters.zones))
+        and row.access_options then
+        for _, option in ipairs(row.access_options or {}) do
+            if optionMatchesZoneFilter(option, filters and filters.zone, selectedPhaseIndex)
+                and optionMatchesAnySelectedZone(option, filters and filters.zones, selectedPhaseIndex) then
+                addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
+            end
+        end
+        return
+    end
+
+    local sourceFilterKeys = row.item and getSourceFilterKeys(row.item, selectedPhaseIndex) or row.source_filter_keys
+    for _, sourceType in ipairs(sourceFilterKeys or {}) do
+        addUnique(sourceTypes, seen, sourceType)
+    end
+    if not sourceFilterKeys or #sourceFilterKeys == 0 then
+        addUnique(sourceTypes, seen, row.source_filter_key or row.source_type)
+    end
 end
 
 function BigBiSList:GetAvailableFilterSourceTypes(className, specName, phaseKey, tabName, filters)
     local sourceTypes = {}
     local seen = {}
     local scopedFilters = cloneFiltersForSourceTypeOptions(filters)
+    local selectedIndex = phaseIndex(phaseKey)
 
     if tabName == "Planner" or tabName == "Upgrades" then
         for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
-            addSourceTypeFromRow(sourceTypes, seen, row)
+            addSourceTypeFromRow(sourceTypes, seen, row, scopedFilters, selectedIndex)
         end
     else
         for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
             for _, row in ipairs(group.items or {}) do
-                addSourceTypeFromRow(sourceTypes, seen, row)
+                addSourceTypeFromRow(sourceTypes, seen, row, scopedFilters, selectedIndex)
             end
         end
     end
@@ -1963,14 +2505,42 @@ function BigBiSList:GetAvailableFilterSourceTypes(className, specName, phaseKey,
     return sourceTypes
 end
 
-local function addZonesFromRow(zones, seen, row)
+local function addZonesFromOption(zones, seen, option, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then
+        return
+    end
+
+    addSourceZone(zones, seen, option.zone, selectedPhaseIndex)
+    for _, zone in ipairs(option.zones or {}) do
+        addSourceZone(zones, seen, zone, selectedPhaseIndex)
+    end
+end
+
+local function addZonesFromRow(zones, seen, row, filters, selectedPhaseIndex)
     if type(row) ~= "table" then
         return
     end
 
-    addSourceZone(zones, seen, row.zone)
-    for _, zone in ipairs(row.zones or {}) do
-        addSourceZone(zones, seen, zone)
+    if ((filters and filters.sourceType and filters.sourceType ~= "all") or tableHasAnyEnabled(filters and filters.sourceTypes))
+        and row.access_options then
+        for _, option in ipairs(row.access_options or {}) do
+            if optionMatchesSourceFilter(option, filters and filters.sourceType, selectedPhaseIndex)
+                and optionMatchesAnySelectedSourceType(option, filters and filters.sourceTypes, selectedPhaseIndex) then
+                addZonesFromOption(zones, seen, option, selectedPhaseIndex)
+            end
+        end
+        return
+    end
+
+    if row.item then
+        for _, zone in ipairs(getSourceZones(row.item, selectedPhaseIndex)) do
+            addSourceZone(zones, seen, zone, selectedPhaseIndex)
+        end
+    else
+        addSourceZone(zones, seen, row.zone, selectedPhaseIndex)
+        for _, zone in ipairs(row.zones or {}) do
+            addSourceZone(zones, seen, zone, selectedPhaseIndex)
+        end
     end
 end
 
@@ -1978,15 +2548,16 @@ function BigBiSList:GetAvailableFilterZones(className, specName, phaseKey, tabNa
     local zones = {}
     local seen = {}
     local scopedFilters = cloneFiltersForZoneOptions(filters)
+    local selectedIndex = phaseIndex(phaseKey)
 
     if tabName == "Planner" or tabName == "Upgrades" then
         for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
-            addZonesFromRow(zones, seen, row)
+            addZonesFromRow(zones, seen, row, scopedFilters, selectedIndex)
         end
     else
         for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
             for _, row in ipairs(group.items or {}) do
-                addZonesFromRow(zones, seen, row)
+                addZonesFromRow(zones, seen, row, scopedFilters, selectedIndex)
             end
         end
     end
@@ -1995,13 +2566,29 @@ function BigBiSList:GetAvailableFilterZones(className, specName, phaseKey, tabNa
     return zones
 end
 
-local function addReputationsFromRow(reputations, seen, row)
+local function addReputationsFromRow(reputations, seen, row, selectedPhaseIndex)
     if type(row) ~= "table" then
         return
     end
 
-    for _, reputation in ipairs(row.reputations or {}) do
-        addUnique(reputations, seen, reputation)
+    local hasAccessOptions = false
+    for _, option in ipairs(row.access_options or {}) do
+        hasAccessOptions = true
+        if accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then
+            addReputationsFromRequirements(reputations, seen, option.requirements)
+        end
+    end
+
+    if hasAccessOptions then
+        return
+    end
+
+    if row.requirements then
+        addReputationsFromRequirements(reputations, seen, row.requirements)
+    else
+        for _, reputation in ipairs(row.reputations or {}) do
+            addUnique(reputations, seen, reputation)
+        end
     end
 end
 
@@ -2009,15 +2596,16 @@ function BigBiSList:GetAvailableFilterReputations(className, specName, phaseKey,
     local reputations = {}
     local seen = {}
     local scopedFilters = cloneFiltersForReputationOptions(filters)
+    local selectedIndex = phaseIndex(phaseKey)
 
     if tabName == "Planner" or tabName == "Upgrades" then
         for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
-            addReputationsFromRow(reputations, seen, row)
+            addReputationsFromRow(reputations, seen, row, selectedIndex)
         end
     else
         for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
             for _, row in ipairs(group.items or {}) do
-                addReputationsFromRow(reputations, seen, row)
+                addReputationsFromRow(reputations, seen, row, selectedIndex)
             end
         end
     end
