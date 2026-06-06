@@ -224,7 +224,7 @@ local function migrateTooltipSpecFilterDefaults(db, previousVersion)
         return
     end
 
-    if not BigBiSList.GetDataIndex then
+    if not BigBiSList.GetClassSpecIndex then
         return
     end
 
@@ -234,7 +234,7 @@ local function migrateTooltipSpecFilterDefaults(db, previousVersion)
         return
     end
 
-    local index = BigBiSList:GetDataIndex()
+    local index = BigBiSList:GetClassSpecIndex()
     if tooltipSpecFiltersMatchLegacyDruidDefault(tooltips, index) then
         enableAllTooltipSpecFilters(tooltips, index)
     end
@@ -267,11 +267,11 @@ local function ensureTooltipSpecFilters(db)
         tooltips.specFilters = {}
     end
 
-    if not BigBiSList.GetDataIndex then
+    if not BigBiSList.GetClassSpecIndex then
         return tooltips.specFilters
     end
 
-    local index = BigBiSList:GetDataIndex()
+    local index = BigBiSList:GetClassSpecIndex()
     local firstInitialization = tooltips.specFiltersInitialized ~= true
 
     for _, classData in ipairs(index.classes or {}) do
@@ -307,12 +307,12 @@ function BigBiSList:GetTooltipSpecFilterKey(specFilters)
         return "all"
     end
 
-    if not self.GetDataIndex then
+    if not self.GetClassSpecIndex then
         return ""
     end
 
     local parts = {}
-    local index = self:GetDataIndex()
+    local index = self:GetClassSpecIndex()
     for _, classData in ipairs(index.classes or {}) do
         local className = classData.name
         local classFilters = className and specFilters[className] or nil

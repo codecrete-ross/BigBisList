@@ -14,9 +14,9 @@ function BigBiSList:GetDataSummary()
     local classes = data.classes or {}
     local phases = data.phases or {}
     local items = data.items or {}
-    local listCount = 0
+    local listCount = data.meta and data.meta.slot_list_count or 0
 
-    if data.bis_lists then
+    if listCount == 0 and data.bis_lists then
         for _, classData in ipairs(data.bis_lists) do
             for _, specData in ipairs(classData.specs or {}) do
                 for _, phaseData in ipairs(specData.phases or {}) do

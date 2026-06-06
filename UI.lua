@@ -947,6 +947,15 @@ local function phaseExists(phaseKey)
     return false
 end
 
+local function phaseIndex(phaseKey)
+    for index, key in ipairs(BigBiSList:GetPhaseOrder()) do
+        if key == phaseKey then
+            return index
+        end
+    end
+    return 999
+end
+
 local function phaseLabelList(phases)
     local labels = {}
     for _, phaseKey in ipairs(BigBiSList:GetPhaseOrder()) do
@@ -968,7 +977,7 @@ end
 function UI:ValidateSelection()
     BigBiSList:EnsureDatabase()
 
-    local index = BigBiSList:GetDataIndex()
+    local index = BigBiSList:GetClassSpecIndex()
     local char = BigBiSList:GetCharacterDB()
     local selection = char.selection
     local className = selection.class
@@ -1212,6 +1221,64 @@ local function optionMatchesPlayerSide(option, accessState)
     return not playerSide or not optionSide or optionSide == playerSide
 end
 
+local function optionHasZone(option, zone)
+    if not option or not zone or zone == "" then
+        return false
+    end
+
+    if option.zone == zone then
+        return true
+    end
+
+    for _, optionZone in ipairs(option.zones or {}) do
+        if optionZone == zone then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function optionMatchesSourceFilter(option, sourceType)
+    if not sourceType or sourceType == "all" then
+        return true
+    end
+
+    return option
+        and (option.source_filter_key == sourceType or option.source_type == sourceType)
+end
+
+local function optionMatchesZoneFilter(option, zone)
+    if not zone or zone == "all" then
+        return true
+    end
+
+    return optionHasZone(option, zone)
+end
+
+local function optionIsPhaseAvailable(option, selectedPhaseIndex)
+    if not selectedPhaseIndex then
+        return true
+    end
+    return (option and (option.acquisitionPhaseIndex or phaseIndex(option.acquisition_phase or "PR")) or 999) <= selectedPhaseIndex
+end
+
+local function optionMatchesActiveSourceContext(option, filters, selectedPhaseIndex)
+    if not filters then
+        return false
+    end
+
+    local hasSourceFilter = filters.sourceType and filters.sourceType ~= "all"
+    local hasZoneFilter = filters.zone and filters.zone ~= "all"
+    if not hasSourceFilter and not hasZoneFilter then
+        return false
+    end
+
+    return optionIsPhaseAvailable(option, selectedPhaseIndex)
+        and optionMatchesSourceFilter(option, filters.sourceType)
+        and optionMatchesZoneFilter(option, filters.zone)
+end
+
 function UI:EvaluateAccessOption(option, accessState)
     local evaluation = self:EvaluateRequirementList(option and option.requirements, accessState)
     evaluation.option = option
@@ -1220,6 +1287,8 @@ end
 
 function UI:GetAccessEvaluation(data)
     local accessState = self.currentAccess or self:BuildAccessState()
+    local filters = self:GetFilters()
+    local selectedPhaseIndex = phaseIndex((self:GetSelection() or {}).phase)
     local options = data and data.access_options
 
     if options and #options > 0 then
@@ -1227,6 +1296,7 @@ function UI:GetAccessEvaluation(data)
         local primaryEvaluation
         local firstEvaluation
         local firstReadyEvaluation
+        local contextEvaluation
 
         for _, option in ipairs(options) do
             if optionMatchesPlayerSide(option, accessState) then
@@ -1240,13 +1310,27 @@ function UI:GetAccessEvaluation(data)
                 if evaluation.status == "ready" and not firstReadyEvaluation then
                     firstReadyEvaluation = evaluation
                 end
+                if optionMatchesActiveSourceContext(option, filters, selectedPhaseIndex) then
+                    if not contextEvaluation
+                        or (evaluation.status == "ready" and contextEvaluation.status ~= "ready") then
+                        contextEvaluation = evaluation
+                    end
+                end
             end
         end
 
         local selectedEvaluation = primaryEvaluation or firstEvaluation
         local status = selectedEvaluation and selectedEvaluation.status or "unknown"
+        local contextMatched = false
 
-        if primaryEvaluation and primaryEvaluation.status == "ready" then
+        if contextEvaluation then
+            selectedEvaluation = contextEvaluation
+            status = contextEvaluation.status
+            if status == "ready" and contextEvaluation.option and not contextEvaluation.option.is_primary then
+                status = "ready_alternate"
+            end
+            contextMatched = true
+        elseif primaryEvaluation and primaryEvaluation.status == "ready" then
             selectedEvaluation = primaryEvaluation
             status = "ready"
         elseif firstReadyEvaluation then
@@ -1258,6 +1342,7 @@ function UI:GetAccessEvaluation(data)
             status = status,
             optionEvaluation = selectedEvaluation,
             options = optionEvaluations,
+            context_matched = contextMatched,
         }
     end
 
@@ -1289,6 +1374,31 @@ function UI:GetAccessHelpText(evaluation, data)
     end
 
     return self:GetAccessBlockingReason(evaluation)
+end
+
+function UI:GetAccessOptionDisplayText(option)
+    if not option then
+        return nil
+    end
+
+    if option.source_summary and option.source_summary ~= "" then
+        return option.source_summary
+    end
+    return option.label
+end
+
+function UI:GetContextSourceSummary(data)
+    local evaluation = self:GetAccessEvaluation(data)
+    if evaluation and evaluation.context_matched then
+        local optionEvaluation = evaluation.optionEvaluation
+        local option = optionEvaluation and optionEvaluation.option
+        local summary = self:GetAccessOptionDisplayText(option)
+        if summary and summary ~= "" then
+            return summary
+        end
+    end
+
+    return data and data.source_summary
 end
 
 function UI:GetAccessBlockingReason(evaluation)
@@ -1582,7 +1692,7 @@ end
 function UI:GetClassDropdownItems()
     local selection = self:GetSelection()
     local items = {}
-    for _, className in ipairs(BigBiSList:GetDataIndex().classNames) do
+    for _, className in ipairs(BigBiSList:GetClassSpecIndex().classNames) do
         table.insert(items, {
             value = className,
             text = className,
@@ -1594,7 +1704,7 @@ end
 
 function UI:GetSpecDropdownItems()
     local selection = self:GetSelection()
-    local specs = BigBiSList:GetDataIndex().specsByClass[selection.class] or {}
+    local specs = BigBiSList:GetClassSpecIndex().specsByClass[selection.class] or {}
     local items = {}
     for _, spec in ipairs(specs) do
         table.insert(items, {
@@ -2208,7 +2318,10 @@ function UI:CreateAccessBadge(parent, state, data)
         GameTooltip:AddLine("Can get", 1, 0.82, 0.28)
         GameTooltip:AddLine(accessStateLabel(evaluation.status), 0.86, 0.86, 0.86)
         if option then
-            GameTooltip:AddLine("How to get: " .. (option.label or "Source"), 0.62, 0.78, 0.94, true)
+            GameTooltip:AddLine("How to get: " .. (UI:GetAccessOptionDisplayText(option) or "Source"), 0.62, 0.78, 0.94, true)
+            if option.label and option.source_summary and option.label ~= option.source_summary then
+                GameTooltip:AddLine(option.label, 0.62, 0.62, 0.66, true)
+            end
             GameTooltip:AddLine(UI:GetAccessHelpText(optionEvaluation, data), 0.62, 0.62, 0.66, true)
         elseif data and data.ready_access_detail and evaluation.status == "ready" then
             GameTooltip:AddLine(data.ready_access_detail, 0.62, 0.62, 0.66, true)
@@ -2274,16 +2387,16 @@ function UI:GetRowSubline(data, mode, includeWhy)
 
     if mode == "planner" then
         appendText(parts, data and data.slot)
-        appendText(parts, data and data.source_summary)
+        appendText(parts, self:GetContextSourceSummary(data))
     elseif mode == "enhance" then
         appendText(parts, data and data.detail)
-        appendText(parts, data and data.source_summary)
+        appendText(parts, self:GetContextSourceSummary(data))
     elseif mode == "wishlist" then
         appendText(parts, data and data.detail)
-        appendText(parts, data and data.source_summary)
+        appendText(parts, self:GetContextSourceSummary(data))
     else
         appendText(parts, data and data.source_type_label)
-        appendText(parts, data and data.source_summary)
+        appendText(parts, self:GetContextSourceSummary(data))
     end
 
     return joinText(parts, " - ")
@@ -2697,7 +2810,7 @@ function UI:RenderWishlistTab()
     for key in pairs(wishlist) do
         local itemId = tonumber(key) or key
         local item = index.itemsById[tonumber(itemId)]
-        local uses = index.usesByItemId[tonumber(itemId)] or {}
+        local uses = BigBiSList:GetItemUses(tonumber(itemId))
         local bestUse = uses[1]
         local plannerContext = plannerByItem[tonumber(itemId)]
         table.insert(rows, {
@@ -2767,7 +2880,7 @@ end
 
 function UI:SetTooltipClassSpecFilters(className, enabled)
     local filters = BigBiSList:EnsureTooltipSpecFilters()
-    local specs = BigBiSList:GetDataIndex().specsByClass[className] or {}
+    local specs = BigBiSList:GetClassSpecIndex().specsByClass[className] or {}
     if not filters or not className then
         return
     end
@@ -2786,7 +2899,7 @@ function UI:SetAllTooltipSpecFilters(enabled)
         return
     end
 
-    for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {}) do
+    for _, classData in ipairs(BigBiSList:GetClassSpecIndex().classes or {}) do
         if classData.name then
             self:SetTooltipClassSpecFilters(classData.name, enabled)
         end
@@ -2807,13 +2920,13 @@ function UI:GetTooltipSpecSelectionCount(className)
 
     if className then
         local classFilters = filters[className]
-        for _, spec in ipairs(BigBiSList:GetDataIndex().specsByClass[className] or {}) do
+        for _, spec in ipairs(BigBiSList:GetClassSpecIndex().specsByClass[className] or {}) do
             if spec.name then
                 countSpec(spec.name, classFilters)
             end
         end
     else
-        for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {}) do
+        for _, classData in ipairs(BigBiSList:GetClassSpecIndex().classes or {}) do
             local currentClassName = classData.name
             local classFilters = currentClassName and filters[currentClassName] or nil
             for _, spec in ipairs(classData.specs or {}) do
@@ -2963,7 +3076,7 @@ function UI:RenderSettingsTab()
     yOffset = yOffset - tooltipSpecsHeaderHeight
 
     local specFilters = profile.tooltips.specFilters or {}
-    for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {}) do
+    for _, classData in ipairs(BigBiSList:GetClassSpecIndex().classes or {}) do
         local className = classData.name
         if className then
             local currentClassName = className
@@ -3058,7 +3171,7 @@ end
 
 function UI:BuildPhaseUseText(itemId)
     local selection = self:GetSelection()
-    local uses = BigBiSList:GetDataIndex().usesByItemId[itemId] or {}
+    local uses = BigBiSList:GetItemUses(itemId)
     local parts = {}
 
     for _, phaseKey in ipairs(BigBiSList:GetPhaseOrder()) do
@@ -3172,7 +3285,10 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local option = optionEvaluation and optionEvaluation.option
     local bestPathText
     if option then
-        bestPathText = option.label or "Source"
+        bestPathText = self:GetAccessOptionDisplayText(option) or option.label or "Source"
+        if option.label and option.source_summary and option.label ~= option.source_summary then
+            bestPathText = bestPathText .. "\n" .. option.label
+        end
         if optionEvaluation and (optionEvaluation.status ~= "ready" or (accessData and accessData.ready_access_detail and accessData.ready_access_detail ~= "")) then
             bestPathText = bestPathText .. "\n" .. self:GetAccessHelpText(optionEvaluation, accessData)
         end
@@ -3223,7 +3339,10 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         contentHeight = contentHeight + anchor.contentHeight
     end
 
-    local sourceSummary = detailData and detailData.source_summary
+    local sourceSummary = self:GetContextSourceSummary(accessData)
+    if not sourceSummary or sourceSummary == "" then
+        sourceSummary = detailData and detailData.source_summary
+    end
     if not sourceSummary or sourceSummary == "" then
         sourceSummary = item and item.source_summary
     end

@@ -13,6 +13,328 @@ from tools.validate_data import validate
 
 OUTPUT_PATH = ADDON_DIR / "Data.lua"
 
+SOURCE_FILTER_BY_CONTENT_TYPE = {
+    "raid": "raid_drop",
+    "heroic_dungeon": "heroic_dungeon_drop",
+    "dungeon": "dungeon_drop",
+    "other": "other_drop",
+}
+
+SOURCE_FILTER_ORDER = {
+    "raid_drop": 1,
+    "heroic_dungeon_drop": 2,
+    "dungeon_drop": 3,
+    "other_drop": 4,
+    "quest": 10,
+    "vendor": 11,
+    "crafted": 12,
+    "trade": 13,
+    "pvp": 14,
+    "token_turnin": 15,
+    "taught_by_item": 16,
+    "world_drop": 17,
+    "unknown": 99,
+}
+
+ITEM_SCHEMA = [
+    "id",
+    "name",
+    "quality",
+    "binding",
+    "boe",
+    "inventory_slot",
+    "source_summary",
+    "wowhead_url",
+    "acquisition_phase",
+    "primary_source",
+    "sources",
+    "requirements",
+]
+
+SOURCE_SCHEMA = [
+    "type",
+    "entity_id",
+    "entity_name",
+    "source_url",
+    "zone",
+    "content_type",
+    "confidence",
+    "count",
+    "out_of",
+    "drop_percent",
+    "vendor_id",
+    "costs",
+    "token_sources",
+    "quest_id",
+    "spell_id",
+    "profession",
+    "requirements",
+    "difficulty",
+    "recipe_sources",
+    "side",
+    "world_drop",
+    "item_id",
+    "quest_starter_sources",
+    "raw_source_text",
+    "token_count",
+    "token_item_id",
+    "token_name",
+    "token_source_url",
+    "quest_starter_item_id",
+    "quest_starter_name",
+    "quest_starter_relationship",
+    "quest_starter_source_url",
+]
+
+REQUIREMENT_SCHEMA = [
+    "type",
+    "scope",
+    "raw_text",
+    "confidence",
+    "source_url",
+    "profession",
+    "reputation",
+    "standing",
+    "standing_rank",
+    "skill",
+    "spell_id",
+    "spell_name",
+    "specialization",
+    "choices",
+]
+
+COST_SCHEMA = ["amount", "name", "currency_id", "item_id"]
+
+USE_SCHEMA = [
+    "class",
+    "spec",
+    "phase",
+    "slot",
+    "source_url",
+    "item_id",
+    "rank",
+    "rank_label",
+    "rank_group",
+    "context",
+    "note",
+    "requirements",
+]
+
+GEM_SCHEMA = [
+    "class",
+    "spec",
+    "phase",
+    "id",
+    "name",
+    "context",
+    "meta",
+    "socket_category",
+    "socket_color",
+    "source_summary",
+    "source_url",
+    "quality",
+]
+
+ENCHANT_SCHEMA = [
+    "class",
+    "spec",
+    "phase",
+    "id",
+    "name",
+    "type",
+    "slot",
+    "context",
+    "source_summary",
+    "source_url",
+    "requirements",
+    "taught_by",
+    "formula_item_ids",
+    "source_spell_id",
+]
+
+CONSUMABLE_SCHEMA = [
+    "class",
+    "spec",
+    "phase",
+    "category",
+    "category_label",
+    "items",
+    "item_names",
+    "item_categories",
+    "relationship",
+    "source_summaries",
+    "source_url",
+    "text",
+    "requirements",
+]
+
+SOURCE_RECORD_SCHEMA = [
+    "id",
+    "name",
+    "type",
+    "source_summary",
+    "source_url",
+    "primary_source",
+    "sources",
+    "requirements",
+]
+
+ENCHANT_EFFECT_SCHEMA = [
+    "id",
+    "type",
+    "name",
+    "slot",
+    "source_spell_id",
+    "effect_ids",
+    "source_url",
+]
+
+
+SCHEMAS = {
+    "item": ITEM_SCHEMA,
+    "source": SOURCE_SCHEMA,
+    "requirement": REQUIREMENT_SCHEMA,
+    "cost": COST_SCHEMA,
+    "use": USE_SCHEMA,
+    "gem": GEM_SCHEMA,
+    "enchant": ENCHANT_SCHEMA,
+    "consumable": CONSUMABLE_SCHEMA,
+    "source_record": SOURCE_RECORD_SCHEMA,
+    "enchant_effect": ENCHANT_EFFECT_SCHEMA,
+}
+
+
+def compact_list(values: list[dict], schema_name: str) -> list[list]:
+    return [compact_record(value, schema_name) for value in values]
+
+
+def compact_source(source: dict | None) -> list | None:
+    if not source:
+        return None
+    return compact_record(source, "source")
+
+
+def compact_requirements(requirements: list[dict] | None) -> list[list] | None:
+    if not requirements:
+        return None
+    return compact_list(requirements, "requirement")
+
+
+def compact_value(schema_name: str, key: str, value):
+    if schema_name in {"item", "source_record"}:
+        if key == "primary_source":
+            return compact_source(value)
+        if key == "sources":
+            return compact_list(value, "source") if value else None
+        if key == "requirements":
+            return compact_requirements(value)
+
+    if schema_name == "source":
+        if key in {"token_sources", "quest_starter_sources", "recipe_sources"}:
+            return compact_list(value, "source") if value else None
+        if key == "requirements":
+            return compact_requirements(value)
+        if key == "costs":
+            return compact_list(value, "cost") if value else None
+
+    if schema_name in {"use", "enchant", "consumable"} and key == "requirements":
+        return compact_requirements(value)
+
+    return value
+
+
+def compact_record(record: dict, schema_name: str) -> list:
+    schema = SCHEMAS[schema_name]
+    compacted = [
+        compact_value(schema_name, key, record[key]) if key in record else None
+        for key in schema
+    ]
+    while compacted and compacted[-1] is None:
+        compacted.pop()
+    return compacted
+
+
+def source_filter_key(item: dict) -> str:
+    source = item.get("primary_source") or next(iter(item.get("sources") or []), None)
+    if not source:
+        return "unknown"
+
+    source_type = source.get("type") or "unknown"
+    content_type = source.get("content_type")
+    if source_type == "drop" or content_type:
+        return SOURCE_FILTER_BY_CONTENT_TYPE.get(content_type, "other_drop")
+    return source_type
+
+
+def add_zone(zones: set[str], zone: str | None) -> None:
+    if zone:
+        zones.add(zone)
+
+
+def add_zones_from_source(zones: set[str], source: dict | None, include_drop_zone: bool) -> None:
+    if not source:
+        return
+    if source.get("type") != "drop" or include_drop_zone:
+        add_zone(zones, source.get("zone"))
+    if source.get("type") == "token_turnin":
+        for token_source in source.get("token_sources") or []:
+            add_zone(zones, token_source.get("zone"))
+    if source.get("type") == "quest":
+        for starter_source in source.get("quest_starter_sources") or []:
+            add_zone(zones, starter_source.get("zone"))
+
+
+def item_zones(item: dict) -> set[str]:
+    zones: set[str] = set()
+    add_zones_from_source(zones, item.get("primary_source"), True)
+    for source in item.get("sources") or []:
+        add_zones_from_source(zones, source, False)
+    return zones
+
+
+def source_filter_sort_key(value: str) -> tuple[int, str]:
+    return SOURCE_FILTER_ORDER.get(value, 50), value
+
+
+def build_runtime_lookups(items: list[dict]) -> dict:
+    source_types = sorted({source_filter_key(item) for item in items}, key=source_filter_sort_key)
+    zones = sorted({zone for item in items for zone in item_zones(item)})
+    tooltip_aliases = []
+
+    for item in items:
+        aliases = []
+        seen = set()
+        for source in item.get("sources") or []:
+            for starter_source in source.get("quest_starter_sources") or []:
+                starter_id = starter_source.get("quest_starter_item_id")
+                if starter_id and starter_id not in seen:
+                    seen.add(starter_id)
+                    aliases.append(starter_id)
+        if aliases:
+            tooltip_aliases.append([item["id"], aliases])
+
+    return {
+        "source_types": source_types,
+        "zones": zones,
+        "tooltip_aliases": tooltip_aliases,
+    }
+
+
+def build_uses(bis_lists: list[dict]) -> list[list]:
+    uses = []
+    for row in bis_lists:
+        for item in row["items"]:
+            use = {
+                "class": row["class"],
+                "spec": row["spec"],
+                "phase": row["phase"],
+                "slot": row["slot"],
+                "source_url": row["source_url"],
+                **item,
+            }
+            uses.append(compact_record(use, "use"))
+    return uses
+
 
 def build_data() -> dict:
     classes = canonical_json("classes")["classes"]
@@ -25,60 +347,38 @@ def build_data() -> dict:
     enchant_sources = canonical_json("enchant_sources")["enchant_sources"]
     enchant_effects = canonical_json("enchant_effects")["enchant_effects"]
     consumables = canonical_json("consumables")["consumables"]
-    leveling = canonical_json("leveling")["leveling"]
-    credits = canonical_json("credits")["credits"]
     overrides = canonical_json("overrides")["overrides"]
     manifest = canonical_json("scrape_manifest")
-
-    grouped_lists: list[dict] = []
-    class_index: dict[str, dict] = {}
-
-    for class_data in classes:
-        grouped_class = {"class": class_data["name"], "specs": []}
-        grouped_lists.append(grouped_class)
-        class_index[class_data["name"]] = grouped_class
-
-    for row in bis_lists:
-        grouped_class = class_index[row["class"]]
-        spec_data = next((spec for spec in grouped_class["specs"] if spec["spec"] == row["spec"]), None)
-        if spec_data is None:
-            spec_data = {"spec": row["spec"], "phases": []}
-            grouped_class["specs"].append(spec_data)
-
-        phase_data = next((phase for phase in spec_data["phases"] if phase["phase"] == row["phase"]), None)
-        if phase_data is None:
-            phase_data = {"phase": row["phase"], "slots": []}
-            spec_data["phases"].append(phase_data)
-
-        phase_data["slots"].append(
-            {
-                "slot": row["slot"],
-                "source_url": row["source_url"],
-                "items": row["items"],
-            }
-        )
+    lookups = build_runtime_lookups(items)
 
     return {
+        "format": 2,
+        "schemas": SCHEMAS,
         "meta": {
             "addon": "Big BiS List",
             "data_version": "seed-0.1.0",
             "parser_version": manifest["parser_version"],
-            "coverage": canonical_json("bis_lists")["coverage"],
+            "item_count": len(items),
+            "slot_list_count": len(bis_lists),
+            "use_count": sum(len(row["items"]) for row in bis_lists),
+            "gem_count": len(gems),
+            "enchant_count": len(enchants),
+            "consumable_count": len(consumables),
             "override_count": len(overrides),
         },
         "classes": classes,
         "phases": phases,
-        "items": items,
-        "bis_lists": grouped_lists,
-        "gems": gems,
-        "gem_sources": gem_sources,
-        "enchants": enchants,
-        "enchant_sources": enchant_sources,
-        "enchant_effects": enchant_effects,
-        "consumables": consumables,
-        "leveling": leveling,
-        "overrides": overrides,
-        "credits": credits,
+        "items": compact_list(items, "item"),
+        "uses": build_uses(bis_lists),
+        "gems": compact_list(gems, "gem"),
+        "gem_sources": compact_list(gem_sources, "source_record"),
+        "enchants": compact_list(enchants, "enchant"),
+        "enchant_sources": compact_list(enchant_sources, "source_record"),
+        "enchant_effects": compact_list(enchant_effects, "enchant_effect"),
+        "consumables": compact_list(consumables, "consumable"),
+        "source_types": lookups["source_types"],
+        "zones": lookups["zones"],
+        "tooltip_aliases": lookups["tooltip_aliases"],
     }
 
 

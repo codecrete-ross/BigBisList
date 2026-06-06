@@ -233,6 +233,123 @@ local function addUnique(list, seen, value)
     table.insert(list, value)
 end
 
+local function schemaPositions(schemas, schemaName)
+    local positions = {}
+    local schema = schemas and schemas[schemaName] or nil
+    for index, key in ipairs(schema or {}) do
+        positions[key] = index
+    end
+    return positions
+end
+
+local function compactField(index, schemaName, record, key)
+    if not index or not index.compact or type(record) ~= "table" then
+        return record and record[key] or nil
+    end
+
+    local positions = index.schemaPositions and index.schemaPositions[schemaName]
+    local position = positions and positions[key]
+    return position and record[position] or nil
+end
+
+local inflateCompactRecord
+local inflateCompactList
+
+local function inflateCompactField(index, schemaName, key, value)
+    if not index or not index.compact then
+        return value
+    end
+
+    if schemaName == "item" or schemaName == "source_record" then
+        if key == "primary_source" then
+            return inflateCompactRecord(index, "source", value)
+        elseif key == "sources" then
+            return inflateCompactList(index, "source", value)
+        elseif key == "requirements" then
+            return inflateCompactList(index, "requirement", value)
+        end
+    elseif schemaName == "source" then
+        if key == "token_sources" or key == "quest_starter_sources" or key == "recipe_sources" then
+            return inflateCompactList(index, "source", value)
+        elseif key == "requirements" then
+            return inflateCompactList(index, "requirement", value)
+        elseif key == "costs" then
+            return inflateCompactList(index, "cost", value)
+        end
+    elseif (schemaName == "use" or schemaName == "enchant" or schemaName == "consumable") and key == "requirements" then
+        return inflateCompactList(index, "requirement", value)
+    end
+
+    return value
+end
+
+inflateCompactRecord = function(index, schemaName, record)
+    if not index or not index.compact or type(record) ~= "table" then
+        return record
+    end
+
+    local schema = index.schemas and index.schemas[schemaName] or nil
+    local result = {}
+    for position, key in ipairs(schema or {}) do
+        local value = record[position]
+        if value ~= nil then
+            result[key] = inflateCompactField(index, schemaName, key, value)
+        end
+    end
+    return result
+end
+
+inflateCompactList = function(index, schemaName, records)
+    if type(records) ~= "table" then
+        return nil
+    end
+
+    local result = {}
+    for _, record in ipairs(records) do
+        table.insert(result, inflateCompactRecord(index, schemaName, record))
+    end
+    return result
+end
+
+local function inflateUseRef(index, useRef)
+    return inflateCompactRecord(index, "use", useRef)
+end
+
+local function getIndexedItem(index, itemId)
+    itemId = tonumber(itemId)
+    if not itemId then
+        return nil
+    end
+
+    if not index or not index.compact then
+        return index and index.itemsById and index.itemsById[itemId] or nil
+    end
+
+    index.itemCache = index.itemCache or {}
+    if index.itemCache[itemId] == nil then
+        index.itemCache[itemId] = inflateCompactRecord(index, "item", index.itemRecordsById[itemId])
+    end
+    return index.itemCache[itemId]
+end
+
+local function addUseRef(bucket, key, useRef)
+    if not key then
+        return
+    end
+    bucket[key] = bucket[key] or {}
+    table.insert(bucket[key], useRef)
+end
+
+local function ensureNestedUseBucket(root, className, specName, phaseKey)
+    root[className] = root[className] or {}
+    root[className][specName] = root[className][specName] or {}
+    if not phaseKey then
+        return root[className][specName]
+    end
+    root[className][specName][phaseKey] = root[className][specName][phaseKey] or {}
+    return root[className][specName][phaseKey]
+end
+
 local function phaseIndex(phaseKey)
     for index, key in ipairs(PHASE_ORDER) do
         if key == phaseKey then
@@ -1454,33 +1571,25 @@ local function enhancementSourceKey(entityType, entityId)
     return tostring(entityType or "item") .. ":" .. tostring(entityId or "")
 end
 
-local function addTooltipUseForItem(index, itemId, use)
-    if not itemId then
-        return
-    end
-
-    index.tooltipUsesByItemId[itemId] = index.tooltipUsesByItemId[itemId] or {}
-    table.insert(index.tooltipUsesByItemId[itemId], use)
-end
-
-local function addTooltipUseAliases(index, use)
-    addTooltipUseForItem(index, use.item_id, use)
-
-    local seenStarterIds = {}
-    for _, source in ipairs((use.item and use.item.sources) or {}) do
-        for _, starterSource in ipairs(source.quest_starter_sources or {}) do
-            local starterItemId = tonumber(starterSource.quest_starter_item_id)
-            if starterItemId and not seenStarterIds[starterItemId] then
-                seenStarterIds[starterItemId] = true
-                addTooltipUseForItem(index, starterItemId, use)
-            end
-        end
-    end
-end
-
 local function buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
-    local itemId = itemEntry.item_id
-    local item = index.itemsById[itemId]
+    local useEntry = itemEntry
+    local slotName
+    local sourceUrl
+
+    if not useEntry then
+        useEntry = inflateUseRef(index, className)
+        className = useEntry and useEntry["class"]
+        specName = useEntry and useEntry.spec
+        phaseKey = useEntry and useEntry.phase
+        slotName = useEntry and useEntry.slot
+        sourceUrl = useEntry and useEntry.source_url
+    else
+        slotName = slotEntry and slotEntry.slot
+        sourceUrl = slotEntry and slotEntry.source_url
+    end
+
+    local itemId = useEntry and useEntry.item_id
+    local item = getIndexedItem(index, itemId)
     local sourceType = getSourceType(item)
     local sourceFilter = getSourceFilterKey(item)
     local sourceFilters = getSourceFilterKeys(item)
@@ -1488,24 +1597,24 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     local zones = getSourceZones(item)
     local sides = getSourceSides(item)
     local acquisitionPhase = getAcquisitionPhase(item)
-    local requirements = mergedRequirements(item and item.requirements, itemEntry.requirements)
-    local accessOptions = buildAccessOptions(item, nil, itemEntry.requirements, { entityType = "item" })
+    local requirements = mergedRequirements(item and item.requirements, useEntry and useEntry.requirements)
+    local accessOptions = buildAccessOptions(item, nil, useEntry and useEntry.requirements, { entityType = "item" })
 
     local row = {
         class = className,
         spec = specName,
         phase = phaseKey,
         phaseIndex = phaseIndex(phaseKey),
-        slot = slotEntry.slot,
+        slot = slotName,
         item_id = itemId,
         item = item,
         name = getItemName(itemId, item),
-        rank = itemEntry.rank,
-        rank_label = itemEntry.rank_label or "Option",
-        rank_group = itemEntry.rank_group or "option",
-        context = itemEntry.context or "standard",
-        note = itemEntry.note,
-        source_url = slotEntry.source_url,
+        rank = useEntry and useEntry.rank,
+        rank_label = (useEntry and useEntry.rank_label) or "Option",
+        rank_group = (useEntry and useEntry.rank_group) or "option",
+        context = (useEntry and useEntry.context) or "standard",
+        note = useEntry and useEntry.note,
+        source_url = sourceUrl,
         source_summary = item and item.source_summary or "",
         source_type = sourceType,
         source_type_label = SOURCE_TYPE_LABELS[sourceType] or sourceType,
@@ -2075,24 +2184,75 @@ function BigBiSList:GetSourceTypeLabels()
     return SOURCE_TYPE_LABELS
 end
 
+function BigBiSList:GetClassSpecIndex()
+    if self.classSpecIndex then
+        return self.classSpecIndex
+    end
+
+    local data = BigBiSListData or {}
+    local index = {
+        classes = data.classes or {},
+        classNames = {},
+        specsByClass = {},
+    }
+
+    for _, classData in ipairs(index.classes) do
+        if classData.name then
+            table.insert(index.classNames, classData.name)
+            index.specsByClass[classData.name] = classData.specs or {}
+        end
+    end
+
+    self.classSpecIndex = index
+    return index
+end
+
+local function sortUseList(uses)
+    table.sort(uses, function(a, b)
+        if a.class ~= b.class then
+            return a.class < b.class
+        end
+        if a.spec ~= b.spec then
+            return a.spec < b.spec
+        end
+        if a.phaseIndex ~= b.phaseIndex then
+            return a.phaseIndex < b.phaseIndex
+        end
+        return sortUses(a, b)
+    end)
+end
+
 function BigBiSList:GetDataIndex()
     if self.dataIndex then
         return self.dataIndex
     end
 
     local data = BigBiSListData or {}
+    local compact = data.format == 2
+    local classSpecIndex = self:GetClassSpecIndex()
     local index = {
+        compact = compact,
+        schemas = data.schemas or {},
+        schemaPositions = {},
+        itemRecordsById = {},
+        itemCache = {},
+        itemUseCache = {},
+        tooltipUseCache = {},
         itemsById = {},
-        classes = data.classes or {},
-        classNames = {},
-        specsByClass = {},
+        classes = classSpecIndex.classes,
+        classNames = classSpecIndex.classNames,
+        specsByClass = classSpecIndex.specsByClass,
         phaseOrder = PHASE_ORDER,
         phaseDisplay = PHASE_DISPLAY,
-        sourceTypes = {},
-        zones = {},
+        sourceTypes = compact and (data.source_types or {}) or {},
+        zones = compact and (data.zones or {}) or {},
         lists = {},
         usesByItemId = {},
         tooltipUsesByItemId = {},
+        useRefsByItemId = {},
+        tooltipUseRefsByItemId = {},
+        useRefsByClassSpec = {},
+        useRefsByClassSpecPhase = {},
         enhancement = {
             gems = data.gems or {},
             gemSourcesById = {},
@@ -2103,91 +2263,147 @@ function BigBiSList:GetDataIndex()
         },
     }
 
-    local sourceSeen = {}
-    local zoneSeen = {}
+    for schemaName in pairs(index.schemas) do
+        index.schemaPositions[schemaName] = schemaPositions(index.schemas, schemaName)
+    end
 
-    for _, item in ipairs(data.items or {}) do
-        index.itemsById[item.id] = item
-        for _, sourceFilter in ipairs(getSourceFilterKeys(item)) do
-            addUnique(index.sourceTypes, sourceSeen, sourceFilter)
+    if compact then
+        for _, itemRecord in ipairs(data.items or {}) do
+            local itemId = compactField(index, "item", itemRecord, "id")
+            if itemId then
+                index.itemRecordsById[itemId] = itemRecord
+            end
         end
-        for _, zone in ipairs(getSourceZones(item)) do
-            addUnique(index.zones, zoneSeen, zone)
+
+        index.itemsById = setmetatable({}, {
+            __index = function(_, itemId)
+                return getIndexedItem(index, itemId)
+            end,
+        })
+
+        index.usesByItemId = setmetatable({}, {
+            __index = function(_, itemId)
+                return BigBiSList:GetItemUses(itemId)
+            end,
+        })
+
+        index.tooltipUsesByItemId = setmetatable({}, {
+            __index = function(_, itemId)
+                return BigBiSList:GetTooltipUses(itemId)
+            end,
+        })
+
+        local tooltipAliasesByItemId = {}
+        for _, aliasRecord in ipairs(data.tooltip_aliases or {}) do
+            tooltipAliasesByItemId[aliasRecord[1]] = aliasRecord[2]
         end
-    end
 
-    for _, sourceData in ipairs(data.gem_sources or {}) do
-        index.enhancement.gemSourcesById[sourceData.id] = sourceData
-    end
+        for _, useRef in ipairs(data.uses or {}) do
+            local itemId = compactField(index, "use", useRef, "item_id")
+            local className = compactField(index, "use", useRef, "class")
+            local specName = compactField(index, "use", useRef, "spec")
+            local phaseKey = compactField(index, "use", useRef, "phase")
 
-    for _, sourceData in ipairs(data.enchant_sources or {}) do
-        local key = enhancementSourceKey(sourceData.type or "item", sourceData.id)
-        index.enhancement.enchantSourcesByKey[key] = index.enhancement.enchantSourcesByKey[key] or {}
-        table.insert(index.enhancement.enchantSourcesByKey[key], sourceData)
-    end
+            addUseRef(index.useRefsByItemId, itemId, useRef)
+            addUseRef(index.tooltipUseRefsByItemId, itemId, useRef)
+            for _, aliasItemId in ipairs(tooltipAliasesByItemId[itemId] or {}) do
+                addUseRef(index.tooltipUseRefsByItemId, aliasItemId, useRef)
+            end
 
-    for _, effectData in ipairs(data.enchant_effects or {}) do
-        local key = enhancementSourceKey(effectData.type or "item", effectData.id)
-        index.enhancement.enchantEffectsByKey[key] = effectData
-    end
+            table.insert(ensureNestedUseBucket(index.useRefsByClassSpec, className, specName), useRef)
+            table.insert(ensureNestedUseBucket(index.useRefsByClassSpecPhase, className, specName, phaseKey), useRef)
+        end
 
-    table.sort(index.sourceTypes, sortSourceFilterKeys)
-    table.sort(index.zones)
+        for _, sourceData in ipairs(data.gem_sources or {}) do
+            index.enhancement.gemSourcesById[compactField(index, "source_record", sourceData, "id")] = sourceData
+        end
 
-    for _, classData in ipairs(index.classes) do
-        table.insert(index.classNames, classData.name)
-        index.specsByClass[classData.name] = classData.specs or {}
-    end
+        for _, sourceData in ipairs(data.enchant_sources or {}) do
+            local key = enhancementSourceKey(compactField(index, "source_record", sourceData, "type") or "item", compactField(index, "source_record", sourceData, "id"))
+            index.enhancement.enchantSourcesByKey[key] = index.enhancement.enchantSourcesByKey[key] or {}
+            table.insert(index.enhancement.enchantSourcesByKey[key], sourceData)
+        end
 
-    for _, classData in ipairs(data.bis_lists or {}) do
-        local className = classData["class"]
-        local classLists = ensurePath(index.lists, className)
+        for _, effectData in ipairs(data.enchant_effects or {}) do
+            local key = enhancementSourceKey(compactField(index, "enchant_effect", effectData, "type") or "item", compactField(index, "enchant_effect", effectData, "id"))
+            index.enhancement.enchantEffectsByKey[key] = effectData
+        end
+    else
+        local sourceSeen = {}
+        local zoneSeen = {}
 
-        for _, specData in ipairs(classData.specs or {}) do
-            local specName = specData.spec
-            local specLists = ensurePath(classLists, specName)
+        for _, item in ipairs(data.items or {}) do
+            index.itemsById[item.id] = item
+            for _, sourceFilter in ipairs(getSourceFilterKeys(item)) do
+                addUnique(index.sourceTypes, sourceSeen, sourceFilter)
+            end
+            for _, zone in ipairs(getSourceZones(item)) do
+                addUnique(index.zones, zoneSeen, zone)
+            end
+        end
 
-            for _, phaseData in ipairs(specData.phases or {}) do
-                local phaseKey = phaseData.phase
-                specLists[phaseKey] = specLists[phaseKey] or {}
+        for _, sourceData in ipairs(data.gem_sources or {}) do
+            index.enhancement.gemSourcesById[sourceData.id] = sourceData
+        end
 
-                for _, slotEntry in ipairs(phaseData.slots or {}) do
-                    table.insert(specLists[phaseKey], slotEntry)
+        for _, sourceData in ipairs(data.enchant_sources or {}) do
+            local key = enhancementSourceKey(sourceData.type or "item", sourceData.id)
+            index.enhancement.enchantSourcesByKey[key] = index.enhancement.enchantSourcesByKey[key] or {}
+            table.insert(index.enhancement.enchantSourcesByKey[key], sourceData)
+        end
 
-                    for _, itemEntry in ipairs(slotEntry.items or {}) do
-                        if itemEntry.item_id then
-                            local use = buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
-                            index.usesByItemId[use.item_id] = index.usesByItemId[use.item_id] or {}
-                            table.insert(index.usesByItemId[use.item_id], use)
-                            addTooltipUseAliases(index, use)
+        for _, effectData in ipairs(data.enchant_effects or {}) do
+            local key = enhancementSourceKey(effectData.type or "item", effectData.id)
+            index.enhancement.enchantEffectsByKey[key] = effectData
+        end
+
+        table.sort(index.sourceTypes, sortSourceFilterKeys)
+        table.sort(index.zones)
+
+        for _, classData in ipairs(data.bis_lists or {}) do
+            local className = classData["class"]
+            local classLists = ensurePath(index.lists, className)
+
+            for _, specData in ipairs(classData.specs or {}) do
+                local specName = specData.spec
+                local specLists = ensurePath(classLists, specName)
+
+                for _, phaseData in ipairs(specData.phases or {}) do
+                    local phaseKey = phaseData.phase
+                    specLists[phaseKey] = specLists[phaseKey] or {}
+
+                    for _, slotEntry in ipairs(phaseData.slots or {}) do
+                        table.insert(specLists[phaseKey], slotEntry)
+
+                        for _, itemEntry in ipairs(slotEntry.items or {}) do
+                            if itemEntry.item_id then
+                                local use = buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
+                                addUseRef(index.useRefsByItemId, use.item_id, use)
+                                addUseRef(index.tooltipUseRefsByItemId, use.item_id, use)
+                                for _, source in ipairs((use.item and use.item.sources) or {}) do
+                                    for _, starterSource in ipairs(source.quest_starter_sources or {}) do
+                                        addUseRef(index.tooltipUseRefsByItemId, tonumber(starterSource.quest_starter_item_id), use)
+                                    end
+                                end
+                                table.insert(ensureNestedUseBucket(index.useRefsByClassSpec, className, specName), use)
+                                table.insert(ensureNestedUseBucket(index.useRefsByClassSpecPhase, className, specName, phaseKey), use)
+                            end
                         end
                     end
                 end
             end
         end
-    end
 
-    local function sortUseList(uses)
-        table.sort(uses, function(a, b)
-            if a.class ~= b.class then
-                return a.class < b.class
-            end
-            if a.spec ~= b.spec then
-                return a.spec < b.spec
-            end
-            if a.phaseIndex ~= b.phaseIndex then
-                return a.phaseIndex < b.phaseIndex
-            end
-            return sortUses(a, b)
-        end)
-    end
-
-    for _, uses in pairs(index.usesByItemId) do
-        sortUseList(uses)
-    end
-
-    for _, uses in pairs(index.tooltipUsesByItemId) do
-        sortUseList(uses)
+        index.usesByItemId = setmetatable({}, {
+            __index = function(_, itemId)
+                return BigBiSList:GetItemUses(itemId)
+            end,
+        })
+        index.tooltipUsesByItemId = setmetatable({}, {
+            __index = function(_, itemId)
+                return BigBiSList:GetTooltipUses(itemId)
+            end,
+        })
     end
 
     self.dataIndex = index
@@ -2195,11 +2411,51 @@ function BigBiSList:GetDataIndex()
 end
 
 function BigBiSList:GetItemData(itemId)
-    return self:GetDataIndex().itemsById[itemId]
+    return getIndexedItem(self:GetDataIndex(), itemId)
+end
+
+function BigBiSList:GetItemUses(itemId)
+    itemId = tonumber(itemId)
+    if not itemId then
+        return {}
+    end
+
+    local index = self:GetDataIndex()
+    if index.itemUseCache[itemId] then
+        return index.itemUseCache[itemId]
+    end
+
+    local uses = {}
+    for _, useRef in ipairs(index.useRefsByItemId[itemId] or {}) do
+        table.insert(uses, buildUse(index, useRef))
+    end
+    sortUseList(uses)
+    index.itemUseCache[itemId] = uses
+    return uses
+end
+
+function BigBiSList:GetTooltipUses(itemId)
+    itemId = tonumber(itemId)
+    if not itemId then
+        return {}
+    end
+
+    local index = self:GetDataIndex()
+    if index.tooltipUseCache[itemId] then
+        return index.tooltipUseCache[itemId]
+    end
+
+    local uses = {}
+    for _, useRef in ipairs(index.tooltipUseRefsByItemId[itemId] or {}) do
+        table.insert(uses, buildUse(index, useRef))
+    end
+    sortUseList(uses)
+    index.tooltipUseCache[itemId] = uses
+    return uses
 end
 
 function BigBiSList:GetItemBestUseForSpec(itemId, className, specName, preferredPhaseKey, allowedSlots)
-    local uses = self:GetDataIndex().usesByItemId[itemId] or {}
+    local uses = self:GetItemUses(itemId)
     local bestUse
 
     for _, use in ipairs(uses) do
@@ -2279,31 +2535,27 @@ end
 
 function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
     local index = self:GetDataIndex()
-    local phaseLists = index.lists[className]
-        and index.lists[className][specName]
-        and index.lists[className][specName][phaseKey]
+    local useRefs = index.useRefsByClassSpecPhase[className]
+        and index.useRefsByClassSpecPhase[className][specName]
+        and index.useRefsByClassSpecPhase[className][specName][phaseKey]
     local grouped = {}
     local seenBySlot = {}
     local selectedIndex = phaseIndex(phaseKey)
 
-    if not phaseLists then
+    if not useRefs then
         return {}
     end
 
-    for _, slotEntry in ipairs(phaseLists) do
-        local slotName = slotEntry.slot
+    for _, useRef in ipairs(useRefs) do
+        local use = buildUse(index, useRef)
+        local slotName = use.slot
         grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
         seenBySlot[slotName] = seenBySlot[slotName] or {}
 
-        for _, itemEntry in ipairs(slotEntry.items or {}) do
-            if itemEntry.item_id then
-                local use = buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
-                local key = tostring(use.item_id) .. ":" .. tostring(use.rank_group) .. ":" .. tostring(use.context)
-                if use.acquisitionPhaseIndex <= selectedIndex and not seenBySlot[slotName][key] and includeByFilter(use, filters, selectedIndex) then
-                    seenBySlot[slotName][key] = true
-                    table.insert(grouped[slotName].items, use)
-                end
-            end
+        local key = tostring(use.item_id) .. ":" .. tostring(use.rank_group) .. ":" .. tostring(use.context)
+        if use.acquisitionPhaseIndex <= selectedIndex and not seenBySlot[slotName][key] and includeByFilter(use, filters, selectedIndex) then
+            seenBySlot[slotName][key] = true
+            table.insert(grouped[slotName].items, use)
         end
     end
 
@@ -2329,50 +2581,51 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
     local index = self:GetDataIndex()
     local groups = {}
     local selectedIndex = phaseIndex(selectedPhaseKey)
+    local useRefs = index.useRefsByClassSpec[className]
+        and index.useRefsByClassSpec[className][specName]
+        or {}
 
-    for itemId, uses in pairs(index.usesByItemId) do
-        for _, use in ipairs(uses) do
-            if use.class == className and use.spec == specName then
-                local groupKey = tostring(itemId) .. ":" .. use.slot
-                local group = groups[groupKey]
-                if not group then
-                    group = {
-                        item_id = itemId,
-                        item = use.item,
-                        name = use.name,
-                        slot = use.slot,
-                        source_summary = use.source_summary,
-                        source_type = use.source_type,
-                        source_type_label = use.source_type_label,
-                        source_filter_key = use.source_filter_key,
-                        source_filter_label = use.source_filter_label,
-                        source_filter_keys = use.source_filter_keys,
-                        acquisition_phase = use.acquisition_phase,
-                        acquisitionPhaseIndex = use.acquisitionPhaseIndex,
-                        zone = use.zone,
-                        zones = use.zones,
-                        binding = use.binding,
-                        boe = use.boe,
-                        side = use.side,
-                        sides = use.sides,
-                        reputations = use.reputations,
-                        requirements = use.requirements,
-                        access_options = use.access_options,
-                        uses = {},
-                        phases = {},
-                        bestUse = use,
-                    }
-                    groups[groupKey] = group
-                end
+    for _, useRef in ipairs(useRefs) do
+        local use = buildUse(index, useRef)
+        local itemId = use.item_id
+        local groupKey = tostring(itemId) .. ":" .. use.slot
+        local group = groups[groupKey]
+        if not group then
+            group = {
+                item_id = itemId,
+                item = use.item,
+                name = use.name,
+                slot = use.slot,
+                source_summary = use.source_summary,
+                source_type = use.source_type,
+                source_type_label = use.source_type_label,
+                source_filter_key = use.source_filter_key,
+                source_filter_label = use.source_filter_label,
+                source_filter_keys = use.source_filter_keys,
+                acquisition_phase = use.acquisition_phase,
+                acquisitionPhaseIndex = use.acquisitionPhaseIndex,
+                zone = use.zone,
+                zones = use.zones,
+                binding = use.binding,
+                boe = use.boe,
+                side = use.side,
+                sides = use.sides,
+                reputations = use.reputations,
+                requirements = use.requirements,
+                access_options = use.access_options,
+                uses = {},
+                phases = {},
+                bestUse = use,
+            }
+            groups[groupKey] = group
+        end
 
-                table.insert(group.uses, use)
-                group.phases[use.phase] = group.phases[use.phase] or {}
-                table.insert(group.phases[use.phase], use)
+        table.insert(group.uses, use)
+        group.phases[use.phase] = group.phases[use.phase] or {}
+        table.insert(group.phases[use.phase], use)
 
-                if sortUses(use, group.bestUse) then
-                    group.bestUse = use
-                end
-            end
+        if sortUses(use, group.bestUse) then
+            group.bestUse = use
         end
     end
 
@@ -2622,10 +2875,11 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
         { title = "Consumables", rows = {} },
     }
 
-    for _, gem in ipairs(index.enhancement.gems or {}) do
+    for _, gemRecord in ipairs(index.enhancement.gems or {}) do
+        local gem = inflateCompactRecord(index, "gem", gemRecord)
         if gem["class"] == className and gem.spec == specName and gem.phase == phaseKey then
-            local item = index.itemsById[gem.id]
-            local sourceData = index.enhancement.gemSourcesById[gem.id]
+            local item = getIndexedItem(index, gem.id)
+            local sourceData = inflateCompactRecord(index, "source_record", index.enhancement.gemSourcesById[gem.id])
             local accessOptions = buildAccessOptions(item, sourceData, gem.requirements, { entityType = "item" })
             local row = {
                 entity_type = "item",
@@ -2646,10 +2900,12 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
         end
     end
 
-    for _, enchant in ipairs(index.enhancement.enchants or {}) do
+    for _, enchantRecord in ipairs(index.enhancement.enchants or {}) do
+        local enchant = inflateCompactRecord(index, "enchant", enchantRecord)
         if enchant["class"] == className and enchant.spec == specName and enchant.phase == phaseKey then
             local entityType = enchant.type or "item"
-            local effectData = index.enhancement.enchantEffectsByKey[enhancementSourceKey(entityType, enchant.id)]
+            local sourceKey = enhancementSourceKey(entityType, enchant.id)
+            local effectData = inflateCompactRecord(index, "enchant_effect", index.enhancement.enchantEffectsByKey[sourceKey])
             local row = {
                 entity_type = entityType,
                 entity_id = enchant.id,
@@ -2671,11 +2927,11 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 row.ownership_detail = "Spell enchant; find an enchanter or use your own profession."
             else
                 row.item_id = enchant.id
-                row.item = index.itemsById[enchant.id]
+                row.item = getIndexedItem(index, enchant.id)
             end
 
             row.requirements = mergedRequirements(enchant.requirements, row.item and row.item.requirements)
-            row.access_options = buildAccessOptions(row.item, index.enhancement.enchantSourcesByKey[enhancementSourceKey(entityType, enchant.id)], enchant.requirements, {
+            row.access_options = buildAccessOptions(row.item, inflateCompactList(index, "source_record", index.enhancement.enchantSourcesByKey[sourceKey]), enchant.requirements, {
                 entityType = entityType,
                 forceSourceScopedEquip = entityType == "spell",
                 alwaysTradeOption = entityType == "spell",
@@ -2691,12 +2947,13 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
         end
     end
 
-    for _, consumable in ipairs(index.enhancement.consumables or {}) do
+    for _, consumableRecord in ipairs(index.enhancement.consumables or {}) do
+        local consumable = inflateCompactRecord(index, "consumable", consumableRecord)
         if consumable["class"] == className and consumable.spec == specName and consumable.phase == phaseKey then
             local itemIds = consumable.items or {}
             if consumableCanGroupAlternatives(consumable, itemIds) then
                 local primaryItemId = itemIds[1]
-                local primaryItem = index.itemsById[primaryItemId]
+                local primaryItem = getIndexedItem(index, primaryItemId)
                 local sourceSummary = consumableSourceSummary(consumable, itemIds)
                 local accessOptions = buildConsumableAccessOptions(index, itemIds)
                 local row = {
@@ -2716,7 +2973,7 @@ function BigBiSList:GetEnhancementRows(className, specName, phaseKey)
                 table.insert(sections[3].rows, row)
             else
                 for itemIndex, itemId in ipairs(itemIds) do
-                    local item = index.itemsById[itemId]
+                    local item = getIndexedItem(index, itemId)
                     local sourceSummary = consumableSourceSummary(consumable, { itemId })
                     local accessOptions = buildAccessOptions(item, nil, consumable.requirements, { entityType = "item" })
                     local row = {
@@ -2902,7 +3159,7 @@ local function tooltipSpecEnabled(specFilters, className, specName)
 end
 
 function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
-    local uses = self:GetDataIndex().tooltipUsesByItemId[itemId] or {}
+    local uses = self:GetTooltipUses(itemId)
     local matches = {}
     local seenMatches = {}
     local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil

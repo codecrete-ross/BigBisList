@@ -456,16 +456,16 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "quest_starter_sources",
             "quest_starter_item_id",
-            "addTooltipUseAliases",
-            "addTooltipUseForItem",
-            "tooltipUsesByItemId",
+            "data.tooltip_aliases",
+            "tooltipUseRefsByItemId",
+            "GetTooltipUses",
             'sourceType == "quest"',
             "starterSource in ipairs(source.quest_starter_sources or {})",
-            "self:GetDataIndex().tooltipUsesByItemId[itemId]",
+            "local uses = self:GetTooltipUses(itemId)",
         ]:
             self.assertIn(token, data_index)
-        self.assertLess(data_index.index("addTooltipUseAliases"), data_index.index("function BigBiSList:GetTooltipMatches"))
-        self.assertLess(data_index.index("tooltipUsesByItemId"), data_index.index("function BigBiSList:GetTooltipMatches"))
+        self.assertLess(data_index.index("tooltipUseRefsByItemId"), data_index.index("function BigBiSList:GetTooltipMatches"))
+        self.assertLess(data_index.index("function BigBiSList:GetTooltipUses"), data_index.index("function BigBiSList:GetTooltipMatches"))
 
     def test_planner_filters_future_acquisition_phases(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -608,7 +608,7 @@ class AddonUIStaticTests(unittest.TestCase):
             '"None"',
             "BigBiSList:EnsureTooltipSpecFilters()",
             "profile.tooltips.specFilters",
-            "for _, classData in ipairs(BigBiSList:GetDataIndex().classes or {})",
+            "for _, classData in ipairs(BigBiSList:GetClassSpecIndex().classes or {})",
             "self:CreateSettingToggle(self.contentChild, yOffset, currentSpecName",
             "end, 14)",
         ]:

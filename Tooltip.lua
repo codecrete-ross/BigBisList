@@ -138,7 +138,7 @@ local function exactSpecNameForClass(className, specName)
         return nil
     end
 
-    local specs = BigBiSList:GetDataIndex().specsByClass[className] or {}
+    local specs = BigBiSList:GetClassSpecIndex().specsByClass[className] or {}
     for _, spec in ipairs(specs) do
         if spec.name == specName then
             return spec.name
