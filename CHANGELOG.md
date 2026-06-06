@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.6.0 - 2026-06-06
+
+### Added
+
+- Current-phase awareness so phase-based views can distinguish the active
+  content phase from future phases.
+- Character-specific current addon state, allowing per-character selections and
+  runtime state to remain independent.
+
+### Changed
+
+- Validation now checks canonical phase current-state metadata.
+- Refreshed generated Lua for the current phase metadata update.
+
 ## 0.5.0 - 2026-06-01
 
 ### Added
