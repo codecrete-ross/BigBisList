@@ -42,6 +42,16 @@ from CurseForge packaging.
 Do not use live network scraping for routine code changes. Prefer existing
 committed snapshots unless a data-refresh task explicitly requires new fetches.
 
+## Release Workflow
+
+- Follow `docs/internal/release-process.md` for version-bump decisions, release
+  prep, tagging, and publishing.
+- Use plain numeric tags such as `0.6.0`; do not prefix release tags with `v`.
+- Update `CHANGELOG.md`, release-specific README references, and the fallback
+  version in `Config.lua` before tagging.
+- Keep `BigBiSList.toc` using `@project-version@` unless packaging requirements
+  explicitly change.
+
 ## Lua Workflow
 
 - `Config.lua` owns addon metadata, saved-variable defaults, and migrations.

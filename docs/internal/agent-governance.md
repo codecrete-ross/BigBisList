@@ -33,6 +33,8 @@ automation agents, not addon users.
   tooling, then regenerate.
 - For release packaging, update `.pkgmeta`, `.toc`, and release docs only when
   the task is explicitly about packaging or release preparation.
+- For release preparation, follow `docs/internal/release-process.md` for version
+  selection, required checks, tagging, and publishing.
 - For internal governance, use `AGENTS.md` for concise rules and
   `docs/internal` for deeper policy. Keep `CLAUDE.md` as a pointer only.
 
