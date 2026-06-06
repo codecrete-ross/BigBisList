@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 9",
+            "local DEFAULTS_VERSION = 10",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -678,7 +678,7 @@ class AddonUIStaticTests(unittest.TestCase):
         availability_body = ui.split("function UI:GetAvailabilityFilters()", 1)[1].split("function UI:GetAvailableSourceTypeValues()", 1)[0]
         for token in [
             "filters.ownedItems = self.currentOwned or self:BuildOwnedItems()",
-            "filters.ignoredItems = BigBiSListDB.char.ignoredItems",
+            "filters.ignoredItems = char.ignoredItems",
             "filters.hideIgnored = true",
         ]:
             self.assertIn(token, availability_body)

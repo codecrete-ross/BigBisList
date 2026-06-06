@@ -242,7 +242,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         return
     end
 
-    local selection = BigBiSListDB.char.selection or {}
+    local selection = self:GetCharacterDB().selection or {}
     local selectedSpecFirst = settings.selectedSpecFirst ~= false
     local specFilters = settings.specFilters
     local priorityContext = getTooltipPriorityContext()

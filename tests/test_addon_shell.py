@@ -36,6 +36,7 @@ class AddonShellTests(unittest.TestCase):
         toc_text = (ADDON_DIR / "BigBiSList.toc").read_text(encoding="utf-8")
         self.assertIn("## Title: Big BiS List", toc_text)
         self.assertIn("## SavedVariables: BigBiSListDB", toc_text)
+        self.assertIn("## SavedVariablesPerCharacter: BigBiSListCharDB", toc_text)
         self.assertNotIn("BISTBCDB", toc_text)
 
         for path in ADDON_DIR.glob("*.lua"):

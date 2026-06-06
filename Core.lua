@@ -37,7 +37,7 @@ end
 function BigBiSList:RunSmokeTest()
     self:EnsureDatabase()
     printLine("Smoke test passed. Saved variable BigBiSListDB is initialized.")
-    local selection = BigBiSListDB.char.selection
+    local selection = self:GetCharacterDB().selection
     printLine("Current selection: " .. selection.class .. " / " .. selection.spec .. " / " .. self:GetPhaseDisplayName(selection.phase) .. ".")
 end
 

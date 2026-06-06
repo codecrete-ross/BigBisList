@@ -958,20 +958,18 @@ local function phaseLabelList(phases)
 end
 
 function UI:GetSelection()
-    BigBiSList:EnsureDatabase()
-    return BigBiSListDB.char.selection
+    return BigBiSList:GetCharacterDB().selection
 end
 
 function UI:GetFilters()
-    BigBiSList:EnsureDatabase()
-    return BigBiSListDB.char.filters
+    return BigBiSList:GetCharacterDB().filters
 end
 
 function UI:ValidateSelection()
     BigBiSList:EnsureDatabase()
 
     local index = BigBiSList:GetDataIndex()
-    local selection = BigBiSListDB.char.selection
+    local selection = BigBiSList:GetCharacterDB().selection
     local className = selection.class
     local specName = selection.spec
     local phaseKey = selection.phase
@@ -1005,14 +1003,14 @@ function UI:ValidateSelection()
 end
 
 function UI:BuildOwnedItems()
-    BigBiSList:EnsureDatabase()
+    local char = BigBiSList:GetCharacterDB()
 
     local owned = {
         equippedSlots = {},
         enhancementItems = {},
-        bankScanned = BigBiSListDB.char.bankCache and BigBiSListDB.char.bankCache.scanned or false,
-        bankUpdatedAt = BigBiSListDB.char.bankCache and BigBiSListDB.char.bankCache.updatedAt or "",
-        bankLinkCount = BigBiSListDB.char.bankCache and BigBiSListDB.char.bankCache.links and #BigBiSListDB.char.bankCache.links or 0,
+        bankScanned = char.bankCache and char.bankCache.scanned or false,
+        bankUpdatedAt = char.bankCache and char.bankCache.updatedAt or "",
+        bankLinkCount = char.bankCache and char.bankCache.links and #char.bankCache.links or 0,
     }
 
     local function addEnhancedItem(itemLink, state, locationLabel, slotDefinition)
@@ -1072,7 +1070,7 @@ function UI:BuildOwnedItems()
         end
     end
 
-    local bankCache = BigBiSListDB.char.bankCache
+    local bankCache = char.bankCache
     if bankCache and bankCache.items then
         for itemIdText in pairs(bankCache.items) do
             local itemId = tonumber(itemIdText)
@@ -1354,9 +1352,9 @@ function UI:FormatAccessOptions(accessEvaluation)
 end
 
 function UI:ScanBankItems()
-    BigBiSList:EnsureDatabase()
+    local char = BigBiSList:GetCharacterDB()
 
-    local cache = BigBiSListDB.char.bankCache
+    local cache = char.bankCache
     cache.items = {}
     cache.links = {}
 
@@ -1391,10 +1389,11 @@ function UI:GetAvailabilityFilters()
     for key, value in pairs(self:GetFilters() or {}) do
         filters[key] = value
     end
+    local char = BigBiSList:GetCharacterDB()
     local accessState = self.currentAccess or self:BuildAccessState()
     filters.faction = accessState and accessState.playerSide or "all"
     filters.ownedItems = self.currentOwned or self:BuildOwnedItems()
-    filters.ignoredItems = BigBiSListDB.char.ignoredItems
+    filters.ignoredItems = char.ignoredItems
     filters.hideIgnored = true
     return filters
 end
@@ -1479,6 +1478,7 @@ end
 
 function UI:BuildFilterPayload()
     local filters = self:GetFilters()
+    local char = BigBiSList:GetCharacterDB()
     self.currentAccess = self:BuildAccessState()
     self.currentOwned = self:BuildOwnedItems()
     self:ValidateSourceTypeFilter()
@@ -1497,7 +1497,7 @@ function UI:BuildFilterPayload()
         longevity = filters.longevity,
         slots = filters.slots,
         ownedItems = self.currentOwned,
-        ignoredItems = BigBiSListDB.char.ignoredItems,
+        ignoredItems = char.ignoredItems,
         hideIgnored = true,
     }
 end
@@ -1752,26 +1752,22 @@ function UI:ClearFilters()
 end
 
 function UI:AddWishlist(itemId)
-    BigBiSList:EnsureDatabase()
-    BigBiSListDB.char.wishlist[tostring(itemId)] = true
+    BigBiSList:GetCharacterDB().wishlist[tostring(itemId)] = true
     self:RefreshDetails(itemId)
 end
 
 function UI:RemoveWishlist(itemId)
-    BigBiSList:EnsureDatabase()
-    BigBiSListDB.char.wishlist[tostring(itemId)] = nil
+    BigBiSList:GetCharacterDB().wishlist[tostring(itemId)] = nil
     self:Refresh()
 end
 
 function UI:IgnoreItem(itemId)
-    BigBiSList:EnsureDatabase()
-    BigBiSListDB.char.ignoredItems[tostring(itemId)] = true
+    BigBiSList:GetCharacterDB().ignoredItems[tostring(itemId)] = true
     self:Refresh()
 end
 
 function UI:UnignoreItem(itemId)
-    BigBiSList:EnsureDatabase()
-    BigBiSListDB.char.ignoredItems[tostring(itemId)] = nil
+    BigBiSList:GetCharacterDB().ignoredItems[tostring(itemId)] = nil
     self:Refresh()
 end
 
@@ -2399,7 +2395,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
         elseif buttonName == "RightButton" then
             if not data.item_id then
                 self:RefreshDetails(entityId, data, mode)
-            elseif BigBiSListDB.char.wishlist[tostring(data.item_id)] then
+            elseif BigBiSList:GetCharacterDB().wishlist[tostring(data.item_id)] then
                 self:RemoveWishlist(data.item_id)
             else
                 self:AddWishlist(data.item_id)
@@ -2665,7 +2661,7 @@ end
 function UI:RenderWishlistTab()
     local widgets = BigBiSList.Widgets
     local index = BigBiSList:GetDataIndex()
-    local wishlist = BigBiSListDB.char.wishlist or {}
+    local wishlist = BigBiSList:GetCharacterDB().wishlist or {}
     self.currentOwned = self:BuildOwnedItems()
     local yOffset = -2
 
@@ -3236,14 +3232,15 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
 
     local wishlistKey = tostring(detailItemId)
-    local isWishlisted = BigBiSListDB.char.wishlist[wishlistKey]
+    local char = BigBiSList:GetCharacterDB()
+    local isWishlisted = char.wishlist[wishlistKey]
     local actionRow = CreateFrame("Frame", nil, content)
     actionRow:SetHeight(24)
     actionRow:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -14)
     actionRow:SetPoint("RIGHT", content, "RIGHT", -8, 0)
 
     local wishlistButton = widgets:CreateTextButton(actionRow, isWishlisted and "Remove wishlist" or "Add wishlist", 132, 24, function()
-        if BigBiSListDB.char.wishlist[wishlistKey] then
+        if char.wishlist[wishlistKey] then
             self:RemoveWishlist(detailItemId)
         else
             self:AddWishlist(detailItemId)
@@ -3252,9 +3249,9 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end)
     wishlistButton:SetPoint("LEFT", actionRow, "LEFT", 0, 0)
 
-    local ignored = BigBiSListDB.char.ignoredItems[wishlistKey]
+    local ignored = char.ignoredItems[wishlistKey]
     local ignoreButton = widgets:CreateTextButton(actionRow, ignored and "Unignore" or "Ignore", 78, 24, function()
-        if BigBiSListDB.char.ignoredItems[wishlistKey] then
+        if char.ignoredItems[wishlistKey] then
             self:UnignoreItem(detailItemId)
         else
             self:IgnoreItem(detailItemId)

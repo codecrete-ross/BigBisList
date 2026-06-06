@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 9
+local DEFAULTS_VERSION = 10
 
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -126,12 +126,11 @@ local function migrateSelection(char)
     char.selectedTab = normalizeTabName(char.selectedTab)
 end
 
-local function migrateLegacyDefaults(db, previousVersion)
+local function migrateLegacyDefaults(char, previousVersion)
     if previousVersion ~= nil then
         return
     end
 
-    local char = db.char
     if char.selection and char.selection.phase == "SWP" and char.selectedPhase == "SWP" then
         char.selection.phase = "PR"
         char.selectedPhase = "PR"
@@ -240,12 +239,12 @@ local function migrateTooltipSpecFilterDefaults(db, previousVersion)
     end
 end
 
-local function migrateSplitDropSourceFilter(db, previousVersion)
+local function migrateSplitDropSourceFilter(char, previousVersion)
     if previousVersion ~= nil and previousVersion >= 8 then
         return
     end
 
-    local filters = db.char and db.char.filters
+    local filters = char and char.filters
     if type(filters) ~= "table" then
         return
     end
@@ -329,52 +328,61 @@ end
 
 function BigBiSList:GetSelection()
     self:EnsureDatabase()
-    return BigBiSListDB.char.selection
+    return BigBiSListCharDB.selection
 end
 
 function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
     self:EnsureDatabase()
 
-    local selection = BigBiSListDB.char.selection
+    local selection = BigBiSListCharDB.selection
     if className then
         selection.class = className
-        BigBiSListDB.char.selectedClass = className
+        BigBiSListCharDB.selectedClass = className
     end
     if specName then
         selection.spec = specName
-        BigBiSListDB.char.selectedSpec = specName
+        BigBiSListCharDB.selectedSpec = specName
     end
     if phaseKey then
         selection.phase = phaseKey
-        BigBiSListDB.char.selectedPhase = phaseKey
+        BigBiSListCharDB.selectedPhase = phaseKey
     end
     if tabName then
         selection.tab = normalizeTabName(tabName)
-        BigBiSListDB.char.selectedTab = selection.tab
+        BigBiSListCharDB.selectedTab = selection.tab
     end
+end
+
+function BigBiSList:GetCharacterDB()
+    self:EnsureDatabase()
+    return BigBiSListCharDB
 end
 
 function BigBiSList:EnsureDatabase()
     BigBiSListDB = BigBiSListDB or {}
     BigBiSListDB.profile = BigBiSListDB.profile or {}
-    BigBiSListDB.char = BigBiSListDB.char or {}
+    BigBiSListDB.char = nil
+    BigBiSListCharDB = BigBiSListCharDB or {}
 
-    local previousVersion = BigBiSListDB.profile.defaultsVersion
+    local profilePreviousVersion = BigBiSListDB.profile.defaultsVersion
+    local charPreviousVersion = BigBiSListCharDB.defaultsVersion
 
-    migrateSelection(BigBiSListDB.char)
+    migrateSelection(BigBiSListCharDB)
     migrateMinimapSettings(BigBiSListDB)
-    applyDefaults(BigBiSListDB, self.defaults)
-    migrateSelection(BigBiSListDB.char)
-    migrateLegacyDefaults(BigBiSListDB, previousVersion)
-    migrateTooltipSpecFilterDefaults(BigBiSListDB, previousVersion)
-    migrateSplitDropSourceFilter(BigBiSListDB, previousVersion)
+    applyDefaults(BigBiSListDB.profile, self.defaults.profile)
+    applyDefaults(BigBiSListCharDB, self.defaults.char)
+    migrateSelection(BigBiSListCharDB)
+    migrateLegacyDefaults(BigBiSListCharDB, charPreviousVersion)
+    migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
+    migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
     ensureTooltipSpecFilters(BigBiSListDB)
 
-    BigBiSListDB.char.selectedClass = BigBiSListDB.char.selection.class
-    BigBiSListDB.char.selectedSpec = BigBiSListDB.char.selection.spec
-    BigBiSListDB.char.selectedPhase = BigBiSListDB.char.selection.phase
-    BigBiSListDB.char.selectedTab = BigBiSListDB.char.selection.tab
+    BigBiSListCharDB.selectedClass = BigBiSListCharDB.selection.class
+    BigBiSListCharDB.selectedSpec = BigBiSListCharDB.selection.spec
+    BigBiSListCharDB.selectedPhase = BigBiSListCharDB.selection.phase
+    BigBiSListCharDB.selectedTab = BigBiSListCharDB.selection.tab
     BigBiSListDB.profile.defaultsVersion = DEFAULTS_VERSION
+    BigBiSListCharDB.defaultsVersion = DEFAULTS_VERSION
 
     return BigBiSListDB
 end
