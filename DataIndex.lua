@@ -1508,6 +1508,56 @@ function BigBiSList:GetPhaseShortName(phaseKey)
     return PHASE_SHORT_DISPLAY[phaseKey] or self:GetPhaseDisplayName(phaseKey)
 end
 
+local function currentServerTimestamp()
+    if GetServerTime then
+        local ok, timestamp = pcall(GetServerTime)
+        if ok and type(timestamp) == "number" then
+            return timestamp
+        end
+    end
+
+    if time then
+        local ok, timestamp = pcall(time)
+        if ok and type(timestamp) == "number" then
+            return timestamp
+        end
+    end
+
+    return nil
+end
+
+local function getPhaseStartEpoch(phaseKey)
+    local data = BigBiSListData or {}
+    for _, phase in ipairs(data.phases or {}) do
+        if phase.key == phaseKey and type(phase.starts_at_epoch) == "number" then
+            return phase.starts_at_epoch
+        end
+    end
+
+    if phaseKey == "PR" then
+        return 0
+    end
+
+    return nil
+end
+
+function BigBiSList:GetCurrentPhaseKey(nowEpoch)
+    local timestamp = tonumber(nowEpoch) or currentServerTimestamp()
+    local currentPhase = "PR"
+    if not timestamp then
+        return currentPhase
+    end
+
+    for _, phaseKey in ipairs(PHASE_ORDER) do
+        local startsAt = getPhaseStartEpoch(phaseKey)
+        if startsAt and startsAt <= timestamp then
+            currentPhase = phaseKey
+        end
+    end
+
+    return currentPhase
+end
+
 function BigBiSList:GetSourceTypeLabels()
     return SOURCE_TYPE_LABELS
 end
@@ -1719,6 +1769,7 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
         and index.lists[className][specName][phaseKey]
     local grouped = {}
     local seenBySlot = {}
+    local selectedIndex = phaseIndex(phaseKey)
 
     if not phaseLists then
         return {}
@@ -1733,7 +1784,7 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
             if itemEntry.item_id then
                 local use = buildUse(index, className, specName, phaseKey, slotEntry, itemEntry)
                 local key = tostring(use.item_id) .. ":" .. tostring(use.rank_group) .. ":" .. tostring(use.context)
-                if not seenBySlot[slotName][key] and includeByFilter(use, filters) then
+                if use.acquisitionPhaseIndex <= selectedIndex and not seenBySlot[slotName][key] and includeByFilter(use, filters) then
                     seenBySlot[slotName][key] = true
                     table.insert(grouped[slotName].items, use)
                 end

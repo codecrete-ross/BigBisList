@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 
 if __package__ is None or __package__ == "":
@@ -35,6 +37,8 @@ REQUIREMENT_SCOPES = {
     "source_access",
 }
 
+PHASE_START_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
+
 REQUIREMENT_CONFIDENCES = {
     "wowhead_item",
     "wowhead_spell_recipe",
@@ -53,6 +57,14 @@ class ValidationResult:
 def _require(condition: bool, errors: list[str], message: str) -> None:
     if not condition:
         errors.append(message)
+
+
+def phase_start_epoch_from_utc(value: str) -> int | None:
+    try:
+        parsed = datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ")
+    except ValueError:
+        return None
+    return int(parsed.replace(tzinfo=timezone.utc).timestamp())
 
 
 def validate_requirements(label: str, requirements: object, errors: list[str], required: bool = False) -> None:
@@ -138,6 +150,25 @@ def validate() -> ValidationResult:
 
     phase_keys = [phase.get("key") for phase in phases_doc.get("phases", [])]
     _require(phase_keys == PHASE_KEYS, errors, f"Expected phases {PHASE_KEYS}, found {phase_keys}")
+    previous_phase_start_epoch: int | None = None
+    for phase in phases_doc.get("phases", []):
+        key = phase.get("key")
+        starts_at = phase.get("starts_at")
+        starts_at_epoch = phase.get("starts_at_epoch")
+        if starts_at is not None:
+            _require(isinstance(starts_at, str) and bool(PHASE_START_RE.match(starts_at)), errors, f"Phase {key} starts_at must be a UTC timestamp like 2026-05-14T22:00:00Z")
+            parsed_epoch = phase_start_epoch_from_utc(starts_at) if isinstance(starts_at, str) else None
+            _require(parsed_epoch is not None, errors, f"Phase {key} starts_at must be a valid UTC timestamp")
+            _require(isinstance(starts_at_epoch, int) and starts_at_epoch >= 0, errors, f"Phase {key} starts_at_epoch must be a non-negative integer when starts_at is set")
+            if isinstance(starts_at_epoch, int) and parsed_epoch is not None:
+                _require(starts_at_epoch == parsed_epoch, errors, f"Phase {key} starts_at_epoch must match starts_at")
+        elif starts_at_epoch is not None:
+            _require(isinstance(starts_at_epoch, int) and starts_at_epoch >= 0, errors, f"Phase {key} starts_at_epoch must be a non-negative integer")
+
+        if isinstance(starts_at_epoch, int):
+            if previous_phase_start_epoch is not None:
+                _require(starts_at_epoch > previous_phase_start_epoch, errors, f"Phase {key} starts_at_epoch must be after the previous scheduled phase")
+            previous_phase_start_epoch = starts_at_epoch
 
     item_ids: set[int] = set()
     for item in items_doc.get("items", []):

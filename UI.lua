@@ -969,11 +969,13 @@ function UI:ValidateSelection()
     BigBiSList:EnsureDatabase()
 
     local index = BigBiSList:GetDataIndex()
-    local selection = BigBiSList:GetCharacterDB().selection
+    local char = BigBiSList:GetCharacterDB()
+    local selection = char.selection
     local className = selection.class
     local specName = selection.spec
     local phaseKey = selection.phase
     local tabName = normalizeTabName(selection.tab)
+    local detectedPhase = BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey() or nil
 
     if not index.specsByClass[className] then
         className = index.classNames[1]
@@ -991,9 +993,16 @@ function UI:ValidateSelection()
         specName = firstSpecName(specs)
     end
 
-    if not phaseExists(phaseKey) then
-        phaseKey = "PR"
+    if not phaseExists(detectedPhase) then
+        detectedPhase = "PR"
     end
+
+    if not phaseExists(phaseKey) then
+        phaseKey = detectedPhase
+    elseif phaseKey == char.lastDetectedPhase and detectedPhase ~= char.lastDetectedPhase then
+        phaseKey = detectedPhase
+    end
+    char.lastDetectedPhase = detectedPhase
 
     if not listContains(TAB_NAMES, tabName) then
         tabName = "Upgrades"

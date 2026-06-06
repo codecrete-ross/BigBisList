@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 10",
+            "local DEFAULTS_VERSION = 11",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -46,6 +46,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "specFiltersInitialized = false",
             "selection = {",
             'selectedPhase = "PR"',
+            'lastDetectedPhase = "PR"',
             'selectedTab = "Upgrades"',
             'phase = "PR"',
             'tab = "Upgrades"',
@@ -70,6 +71,30 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, config)
         self.assertNotIn("local selectedClass = db.char and db.char.selection and db.char.selection.class", config)
         self.assertNotIn("firstInitialization and className == selectedClass or false", config)
+
+    def test_current_phase_detection_defaults_stale_selections(self):
+        data_index = self.read_lua("DataIndex.lua")
+        ui = self.read_lua("UI.lua")
+
+        for token in [
+            "function BigBiSList:GetCurrentPhaseKey(nowEpoch)",
+            "currentServerTimestamp",
+            "pcall(GetServerTime)",
+            "pcall(time)",
+            "getPhaseStartEpoch",
+            "starts_at_epoch",
+            "currentPhase = phaseKey",
+        ]:
+            self.assertIn(token, data_index)
+
+        validate_body = ui.split("function UI:ValidateSelection", 1)[1].split("function UI:BuildOwnedItems", 1)[0]
+        for token in [
+            "local detectedPhase = BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey() or nil",
+            "phaseKey == char.lastDetectedPhase",
+            "phaseKey = detectedPhase",
+            "char.lastDetectedPhase = detectedPhase",
+        ]:
+            self.assertIn(token, validate_body)
 
     def test_public_ui_methods_exist(self):
         ui = self.read_lua("UI.lua")
@@ -438,6 +463,13 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, data_index)
         self.assertLess(data_index.index("scorePlannerGroup"), data_index.index("group.acquisitionPhaseIndex <= selectedIndex"))
+
+    def test_phase_rows_filter_future_acquisition_phases(self):
+        data_index = self.read_lua("DataIndex.lua")
+        body = data_index.split("function BigBiSList:GetPhaseRows", 1)[1].split("function BigBiSList:GetPlannerRows", 1)[0]
+        self.assertIn("local selectedIndex = phaseIndex(phaseKey)", body)
+        self.assertIn("use.acquisitionPhaseIndex <= selectedIndex", body)
+        self.assertLess(body.index("local selectedIndex = phaseIndex(phaseKey)"), body.index("use.acquisitionPhaseIndex <= selectedIndex"))
 
     def test_source_aware_access_status_prefers_ready_options(self):
         ui = self.read_lua("UI.lua")

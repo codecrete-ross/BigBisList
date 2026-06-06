@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 10
+local DEFAULTS_VERSION = 11
 
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -62,6 +62,7 @@ BigBiSList.defaults = {
         selectedClass = "Druid",
         selectedSpec = "Feral dps",
         selectedPhase = "PR",
+        lastDetectedPhase = "PR",
         selectedTab = "Upgrades",
         selection = {
             class = "Druid",

@@ -15,6 +15,18 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertEqual(result.summary["enchant_effects"], 65)
         self.assertEqual(result.summary["coverage"], "scraped_snapshot")
 
+    def test_phase_schedule_metadata_tracks_current_anniversary_phase(self):
+        phases = {phase["key"]: phase for phase in canonical_json("phases")["phases"]}
+
+        self.assertEqual(phases["PR"]["starts_at_epoch"], 0)
+        self.assertEqual(phases["T4"]["starts_at"], "2026-02-19T23:00:00Z")
+        self.assertEqual(phases["T4"]["starts_at_epoch"], 1771542000)
+        self.assertEqual(phases["T5"]["starts_at"], "2026-05-14T22:00:00Z")
+        self.assertEqual(phases["T5"]["starts_at_epoch"], 1778796000)
+        for phase_key in ["T6", "ZA", "SWP"]:
+            self.assertNotIn("starts_at", phases[phase_key])
+            self.assertNotIn("starts_at_epoch", phases[phase_key])
+
     def test_feral_dps_phase_2_trinket_regressions(self):
         trinkets = []
         for row in canonical_json("bis_lists")["lists"]:
