@@ -195,6 +195,9 @@ local RANK_GROUP_ORDER = {
     option = 6,
 }
 
+local ITEM_META_CACHE_LIMIT = 900
+local ROW_ACCESS_CACHE_LIMIT = 900
+
 BigBiSList.phaseOrder = PHASE_ORDER
 BigBiSList.phaseDisplay = PHASE_DISPLAY
 BigBiSList.slotOrder = SLOT_ORDER
@@ -524,6 +527,28 @@ local function rowReputations(requirements, accessOptions)
     end
     table.sort(reputations)
     return reputations
+end
+
+local function rowReputationsWithMeta(metaReputations, requirements)
+    local reputations = {}
+    local seen = {}
+    for _, reputation in ipairs(metaReputations or {}) do
+        addUnique(reputations, seen, reputation)
+    end
+    addReputationsFromRequirements(reputations, seen, requirements)
+    table.sort(reputations)
+    return reputations
+end
+
+local function putBoundedCache(cache, order, key, value, limit)
+    if not cache[key] then
+        table.insert(order, key)
+        if #order > limit then
+            cache[table.remove(order, 1)] = nil
+        end
+    end
+    cache[key] = value
+    return value
 end
 
 local function sortedKeys(values)
@@ -988,6 +1013,86 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
     return accessOptions
 end
 
+local function requirementsCacheKey(requirements)
+    local keys = {}
+    for _, requirement in ipairs(requirements or {}) do
+        table.insert(keys, requirementKey(requirement))
+    end
+    table.sort(keys)
+    return table.concat(keys, "||")
+end
+
+local function sourceRecordsCacheKey(sourceRecords)
+    local keys = {}
+    for _, record in ipairs(normalizeSourceRecords(sourceRecords)) do
+        if type(record) == "table" then
+            table.insert(keys, tostring(record.id or "record") .. ":" .. tostring(record.source_url or ""))
+            if record.primary_source then
+                table.insert(keys, sourceIdentity(record.primary_source) or "")
+            end
+            for _, source in ipairs(record.sources or {}) do
+                table.insert(keys, sourceIdentity(source) or "")
+            end
+        end
+    end
+    table.sort(keys)
+    return table.concat(keys, "||")
+end
+
+local function accessOptionsCacheKey(row, item, sourceRecords, rowRequirements, options)
+    if row and row._access_cache_key then
+        return row._access_cache_key
+    end
+
+    options = options or {}
+    return table.concat({
+        tostring((row and row.item_id) or (item and (item.id or item.item_id)) or ""),
+        sourceRecordsCacheKey(sourceRecords),
+        requirementsCacheKey(rowRequirements),
+        tostring(options.entityType or "item"),
+        tostring(options.forceSourceScopedEquip or false),
+        tostring(options.alwaysTradeOption or false),
+        tostring(options.tradeLabel or ""),
+    }, "|")
+end
+
+local function buildRowAccessOptions(index, row)
+    if type(row) ~= "table" then
+        return nil
+    elseif row.access_options then
+        return row.access_options
+    elseif row.bestUse then
+        row.access_options = buildRowAccessOptions(index, row.bestUse)
+        return row.access_options
+    end
+
+    local context = row._access_context or {}
+    local item = context.item or row.item or (row.item_id and getIndexedItem(index, row.item_id))
+    if not item and not context.sourceRecords then
+        return nil
+    end
+
+    index.rowAccessCache = index.rowAccessCache or {}
+    index.rowAccessCacheOrder = index.rowAccessCacheOrder or {}
+
+    local sourceRecords = context.sourceRecords
+    local requirements = context.requirements
+    local options = context.options or { entityType = row.entity_type or "item" }
+    local key = accessOptionsCacheKey(row, item, sourceRecords, requirements, options)
+    local cached = index.rowAccessCache[key]
+    if cached then
+        row.access_options = cached
+        return cached
+    end
+
+    local accessOptions = buildAccessOptions(item, sourceRecords, requirements, options)
+    if accessOptions then
+        putBoundedCache(index.rowAccessCache, index.rowAccessCacheOrder, key, accessOptions, ROW_ACCESS_CACHE_LIMIT)
+    end
+    row.access_options = accessOptions
+    return accessOptions
+end
+
 local function slotIndex(slotName)
     for index, name in ipairs(SLOT_ORDER) do
         if name == slotName then
@@ -1340,7 +1445,104 @@ local function getSourceSide(item)
     return nil
 end
 
-local function getItemName(itemId, item)
+local getItemName
+
+local function addReputationsFromSource(reputations, seen, source)
+    if type(source) ~= "table" then
+        return
+    end
+
+    addReputationsFromRequirements(reputations, seen, source.requirements)
+
+    if source.type == "token_turnin" then
+        for _, tokenSource in ipairs(source.token_sources or {}) do
+            addReputationsFromSource(reputations, seen, tokenSource)
+        end
+    elseif source.type == "quest" then
+        for _, starterSource in ipairs(source.quest_starter_sources or {}) do
+            addReputationsFromSource(reputations, seen, starterSource)
+        end
+    elseif source.type == "crafted" then
+        for _, recipeSource in ipairs(source.recipe_sources or {}) do
+            addReputationsFromSource(reputations, seen, recipeSource)
+        end
+    end
+end
+
+local function itemReputations(item)
+    local reputations = {}
+    local seen = {}
+    addReputationsFromRequirements(reputations, seen, item and item.requirements)
+    if item then
+        addReputationsFromSource(reputations, seen, item.primary_source)
+        for _, source in ipairs(item.sources or {}) do
+            addReputationsFromSource(reputations, seen, source)
+        end
+    end
+    table.sort(reputations)
+    return reputations
+end
+
+local function buildItemMeta(index, itemId, item)
+    local sourceType = getSourceType(item)
+    local sourceFilter = getSourceFilterKey(item)
+    local acquisitionPhase = getAcquisitionPhase(item)
+    return {
+        item_id = itemId,
+        item = item,
+        name = getItemName(itemId, item),
+        source_summary = item and item.source_summary or "",
+        source_type = sourceType,
+        source_type_label = SOURCE_TYPE_LABELS[sourceType] or sourceType,
+        source_filter_key = sourceFilter,
+        source_filter_label = SOURCE_TYPE_LABELS[sourceFilter] or sourceFilter,
+        source_filter_keys = getSourceFilterKeys(item),
+        acquisition_phase = acquisitionPhase,
+        acquisitionPhaseIndex = phaseIndex(acquisitionPhase),
+        zone = getSourceZone(item),
+        zones = getSourceZones(item),
+        side = getSourceSide(item),
+        sides = getSourceSides(item),
+        binding = item and item.binding or "unknown",
+        boe = item and item.boe,
+        quality = item and item.quality,
+        requirements = item and item.requirements,
+        reputations = itemReputations(item),
+        phase = {},
+    }
+end
+
+local function getItemMetaFromIndex(index, itemId, item)
+    itemId = tonumber(itemId)
+    if not index or not itemId then
+        return nil
+    end
+
+    index.itemMetaCache = index.itemMetaCache or {}
+    index.itemMetaCacheOrder = index.itemMetaCacheOrder or {}
+    local cached = index.itemMetaCache[itemId]
+    if cached then
+        return cached
+    end
+
+    item = item or getIndexedItem(index, itemId)
+    return putBoundedCache(index.itemMetaCache, index.itemMetaCacheOrder, itemId, buildItemMeta(index, itemId, item), ITEM_META_CACHE_LIMIT)
+end
+
+local function getItemPhaseMeta(index, itemId, item, selectedPhaseIndex)
+    local meta = getItemMetaFromIndex(index, itemId, item)
+    if not meta or not selectedPhaseIndex then
+        return meta
+    end
+
+    meta.phase[selectedPhaseIndex] = meta.phase[selectedPhaseIndex] or {
+        source_filter_keys = getSourceFilterKeys(meta.item, selectedPhaseIndex),
+        zones = getSourceZones(meta.item, selectedPhaseIndex),
+    }
+    return meta.phase[selectedPhaseIndex]
+end
+
+getItemName = function(itemId, item)
     if item and item.name and item.name ~= "" then
         return item.name
     end
@@ -1590,15 +1792,8 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
 
     local itemId = useEntry and useEntry.item_id
     local item = getIndexedItem(index, itemId)
-    local sourceType = getSourceType(item)
-    local sourceFilter = getSourceFilterKey(item)
-    local sourceFilters = getSourceFilterKeys(item)
-    local zone = getSourceZone(item)
-    local zones = getSourceZones(item)
-    local sides = getSourceSides(item)
-    local acquisitionPhase = getAcquisitionPhase(item)
+    local meta = getItemMetaFromIndex(index, itemId, item) or {}
     local requirements = mergedRequirements(item and item.requirements, useEntry and useEntry.requirements)
-    local accessOptions = buildAccessOptions(item, nil, useEntry and useEntry.requirements, { entityType = "item" })
 
     local row = {
         class = className,
@@ -1615,24 +1810,28 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         context = (useEntry and useEntry.context) or "standard",
         note = useEntry and useEntry.note,
         source_url = sourceUrl,
-        source_summary = item and item.source_summary or "",
-        source_type = sourceType,
-        source_type_label = SOURCE_TYPE_LABELS[sourceType] or sourceType,
-        source_filter_key = sourceFilter,
-        source_filter_label = SOURCE_TYPE_LABELS[sourceFilter] or sourceFilter,
-        source_filter_keys = sourceFilters,
-        acquisition_phase = acquisitionPhase,
-        acquisitionPhaseIndex = phaseIndex(acquisitionPhase),
-        zone = zone,
-        zones = zones,
-        side = getSourceSide(item),
-        sides = sides,
-        binding = item and item.binding or "unknown",
-        boe = item and item.boe,
-        quality = item and item.quality,
+        source_summary = meta.source_summary or "",
+        source_type = meta.source_type or "unknown",
+        source_type_label = meta.source_type_label or SOURCE_TYPE_LABELS.unknown,
+        source_filter_key = meta.source_filter_key or "unknown",
+        source_filter_label = meta.source_filter_label or SOURCE_TYPE_LABELS.unknown,
+        source_filter_keys = meta.source_filter_keys or {},
+        acquisition_phase = meta.acquisition_phase or "PR",
+        acquisitionPhaseIndex = meta.acquisitionPhaseIndex or phaseIndex("PR"),
+        zone = meta.zone,
+        zones = meta.zones or {},
+        side = meta.side,
+        sides = meta.sides or {},
+        binding = meta.binding or "unknown",
+        boe = meta.boe,
+        quality = meta.quality,
         requirements = requirements,
-        access_options = accessOptions,
-        reputations = rowReputations(requirements, accessOptions),
+        reputations = rowReputationsWithMeta(meta.reputations, requirements),
+        _access_context = {
+            item = item,
+            requirements = useEntry and useEntry.requirements,
+            options = { entityType = "item" },
+        },
     }
 
     row.display_rank_label, row.display_rank_kind = displayRankInfo(row)
@@ -1696,7 +1895,8 @@ local function rowHasSourceFilterKey(row, sourceType, selectedPhaseIndex)
         return false
     end
 
-    local sourceFilterKeys = row.item and getSourceFilterKeys(row.item, selectedPhaseIndex) or row.source_filter_keys
+    local phaseMeta = row.item and getItemPhaseMeta(BigBiSList:GetDataIndex(), row.item_id, row.item, selectedPhaseIndex) or nil
+    local sourceFilterKeys = phaseMeta and phaseMeta.source_filter_keys or row.source_filter_keys
     for _, rowSourceType in ipairs(sourceFilterKeys or {}) do
         if rowSourceType == sourceType then
             return true
@@ -1827,7 +2027,7 @@ local function rowHasAccessOptionMatchingFilterContext(row, filters, selectedPha
         return true
     end
 
-    for _, option in ipairs(row and row.access_options or {}) do
+    for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
         if optionMatchesSourceContext(option, filters, selectedPhaseIndex) then
             return true
         end
@@ -1853,19 +2053,6 @@ end
 
 local function rowHasReputation(row, reputation, selectedPhaseIndex)
     if not row or not reputation or reputation == "" then
-        return false
-    end
-
-    local hasAccessOptions = false
-    for _, option in ipairs(row.access_options or {}) do
-        hasAccessOptions = true
-        if accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
-            and requirementsHaveReputation(option.requirements, reputation) then
-            return true
-        end
-    end
-
-    if hasAccessOptions then
         return false
     end
 
@@ -2236,6 +2423,10 @@ function BigBiSList:GetDataIndex()
         schemaPositions = {},
         itemRecordsById = {},
         itemCache = {},
+        itemMetaCache = {},
+        itemMetaCacheOrder = {},
+        rowAccessCache = {},
+        rowAccessCacheOrder = {},
         itemUseCache = {},
         tooltipUseCache = {},
         itemsById = {},
@@ -2414,6 +2605,15 @@ function BigBiSList:GetItemData(itemId)
     return getIndexedItem(self:GetDataIndex(), itemId)
 end
 
+function BigBiSList:GetItemMeta(itemId)
+    local index = self:GetDataIndex()
+    return getItemMetaFromIndex(index, itemId)
+end
+
+function BigBiSList:GetRowAccessOptions(row)
+    return buildRowAccessOptions(self:GetDataIndex(), row)
+end
+
 function BigBiSList:GetItemUses(itemId)
     itemId = tonumber(itemId)
     if not itemId then
@@ -2523,7 +2723,10 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
             column = slot.column,
             dataSlots = slot.slots,
             requirements = mergedRequirements(bestUse and bestUse.requirements, item and item.requirements),
-            access_options = bestUse and bestUse.access_options or buildAccessOptions(item, nil, nil, { entityType = "item" }),
+            _access_context = bestUse and nil or {
+                item = item,
+                options = { entityType = "item" },
+            },
             display_rank_label = itemId and displayRankLabel or "Empty",
             display_rank_kind = itemId and displayRankKind or "missing",
             recommendation_summary = recommendation,
@@ -2612,7 +2815,6 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
                 sides = use.sides,
                 reputations = use.reputations,
                 requirements = use.requirements,
-                access_options = use.access_options,
                 uses = {},
                 phases = {},
                 bestUse = use,
@@ -2646,7 +2848,6 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         group.sides = group.bestUse and group.bestUse.sides or group.sides
         group.reputations = group.bestUse and group.bestUse.reputations or group.reputations
         group.requirements = group.bestUse and group.bestUse.requirements or group.requirements
-        group.access_options = group.bestUse and group.bestUse.access_options or group.access_options
 
         if group.priority > 0 and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters, selectedIndex) then
             if filters and filters.longevity == "current" and not group.hasCurrent then
@@ -2716,9 +2917,8 @@ local function addSourceTypeFromRow(sourceTypes, seen, row, filters, selectedPha
         return
     end
 
-    if ((filters and filters.zone and filters.zone ~= "all") or tableHasAnyEnabled(filters and filters.zones))
-        and row.access_options then
-        for _, option in ipairs(row.access_options or {}) do
+    if (filters and filters.zone and filters.zone ~= "all") or tableHasAnyEnabled(filters and filters.zones) then
+        for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
             if optionMatchesZoneFilter(option, filters and filters.zone, selectedPhaseIndex)
                 and optionMatchesAnySelectedZone(option, filters and filters.zones, selectedPhaseIndex) then
                 addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
@@ -2727,35 +2927,14 @@ local function addSourceTypeFromRow(sourceTypes, seen, row, filters, selectedPha
         return
     end
 
-    local sourceFilterKeys = row.item and getSourceFilterKeys(row.item, selectedPhaseIndex) or row.source_filter_keys
+    local phaseMeta = row.item and getItemPhaseMeta(BigBiSList:GetDataIndex(), row.item_id, row.item, selectedPhaseIndex) or nil
+    local sourceFilterKeys = phaseMeta and phaseMeta.source_filter_keys or row.source_filter_keys
     for _, sourceType in ipairs(sourceFilterKeys or {}) do
         addUnique(sourceTypes, seen, sourceType)
     end
     if not sourceFilterKeys or #sourceFilterKeys == 0 then
         addUnique(sourceTypes, seen, row.source_filter_key or row.source_type)
     end
-end
-
-function BigBiSList:GetAvailableFilterSourceTypes(className, specName, phaseKey, tabName, filters)
-    local sourceTypes = {}
-    local seen = {}
-    local scopedFilters = cloneFiltersForSourceTypeOptions(filters)
-    local selectedIndex = phaseIndex(phaseKey)
-
-    if tabName == "Planner" or tabName == "Upgrades" then
-        for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
-            addSourceTypeFromRow(sourceTypes, seen, row, scopedFilters, selectedIndex)
-        end
-    else
-        for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
-            for _, row in ipairs(group.items or {}) do
-                addSourceTypeFromRow(sourceTypes, seen, row, scopedFilters, selectedIndex)
-            end
-        end
-    end
-
-    table.sort(sourceTypes, sortSourceFilterKeys)
-    return sourceTypes
 end
 
 local function addZonesFromOption(zones, seen, option, selectedPhaseIndex)
@@ -2774,9 +2953,8 @@ local function addZonesFromRow(zones, seen, row, filters, selectedPhaseIndex)
         return
     end
 
-    if ((filters and filters.sourceType and filters.sourceType ~= "all") or tableHasAnyEnabled(filters and filters.sourceTypes))
-        and row.access_options then
-        for _, option in ipairs(row.access_options or {}) do
+    if (filters and filters.sourceType and filters.sourceType ~= "all") or tableHasAnyEnabled(filters and filters.sourceTypes) then
+        for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
             if optionMatchesSourceFilter(option, filters and filters.sourceType, selectedPhaseIndex)
                 and optionMatchesAnySelectedSourceType(option, filters and filters.sourceTypes, selectedPhaseIndex) then
                 addZonesFromOption(zones, seen, option, selectedPhaseIndex)
@@ -2786,7 +2964,8 @@ local function addZonesFromRow(zones, seen, row, filters, selectedPhaseIndex)
     end
 
     if row.item then
-        for _, zone in ipairs(getSourceZones(row.item, selectedPhaseIndex)) do
+        local phaseMeta = getItemPhaseMeta(BigBiSList:GetDataIndex(), row.item_id, row.item, selectedPhaseIndex)
+        for _, zone in ipairs((phaseMeta and phaseMeta.zones) or getSourceZones(row.item, selectedPhaseIndex)) do
             addSourceZone(zones, seen, zone, selectedPhaseIndex)
         end
     else
@@ -2797,74 +2976,91 @@ local function addZonesFromRow(zones, seen, row, filters, selectedPhaseIndex)
     end
 end
 
-function BigBiSList:GetAvailableFilterZones(className, specName, phaseKey, tabName, filters)
-    local zones = {}
-    local seen = {}
-    local scopedFilters = cloneFiltersForZoneOptions(filters)
-    local selectedIndex = phaseIndex(phaseKey)
-
-    if tabName == "Planner" or tabName == "Upgrades" then
-        for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
-            addZonesFromRow(zones, seen, row, scopedFilters, selectedIndex)
-        end
-    else
-        for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
-            for _, row in ipairs(group.items or {}) do
-                addZonesFromRow(zones, seen, row, scopedFilters, selectedIndex)
-            end
-        end
-    end
-
-    table.sort(zones)
-    return zones
-end
-
 local function addReputationsFromRow(reputations, seen, row, selectedPhaseIndex)
     if type(row) ~= "table" then
         return
     end
 
-    local hasAccessOptions = false
-    for _, option in ipairs(row.access_options or {}) do
-        hasAccessOptions = true
-        if accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then
-            addReputationsFromRequirements(reputations, seen, option.requirements)
-        end
-    end
-
-    if hasAccessOptions then
-        return
-    end
-
     if row.requirements then
         addReputationsFromRequirements(reputations, seen, row.requirements)
-    else
-        for _, reputation in ipairs(row.reputations or {}) do
-            addUnique(reputations, seen, reputation)
-        end
+    end
+    for _, reputation in ipairs(row.reputations or {}) do
+        addUnique(reputations, seen, reputation)
     end
 end
 
-function BigBiSList:GetAvailableFilterReputations(className, specName, phaseKey, tabName, filters)
-    local reputations = {}
-    local seen = {}
-    local scopedFilters = cloneFiltersForReputationOptions(filters)
-    local selectedIndex = phaseIndex(phaseKey)
+local function cloneFiltersForAvailabilityRows(filters)
+    local scopedFilters = {}
+    for key, value in pairs(filters or {}) do
+        scopedFilters[key] = value
+    end
+    scopedFilters.sourceType = "all"
+    scopedFilters.sourceTypes = nil
+    scopedFilters.zone = "all"
+    scopedFilters.zones = nil
+    scopedFilters.reputation = "all"
+    return scopedFilters
+end
 
+local function collectAvailabilityRows(addon, className, specName, phaseKey, tabName, filters)
+    local rows = {}
     if tabName == "Planner" or tabName == "Upgrades" then
-        for _, row in ipairs(self:GetPlannerRows(className, specName, phaseKey, scopedFilters)) do
-            addReputationsFromRow(reputations, seen, row, selectedIndex)
+        return addon:GetPlannerRows(className, specName, phaseKey, filters)
+    end
+
+    for _, group in ipairs(addon:GetPhaseRows(className, specName, phaseKey, filters)) do
+        for _, row in ipairs(group.items or {}) do
+            table.insert(rows, row)
         end
-    else
-        for _, group in ipairs(self:GetPhaseRows(className, specName, phaseKey, scopedFilters)) do
-            for _, row in ipairs(group.items or {}) do
-                addReputationsFromRow(reputations, seen, row, selectedIndex)
-            end
+    end
+    return rows
+end
+
+function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters)
+    local selectedIndex = phaseIndex(phaseKey)
+    local sourceTypes = {}
+    local sourceSeen = {}
+    local zones = {}
+    local zoneSeen = {}
+    local reputations = {}
+    local reputationSeen = {}
+    local sourceScopedFilters = cloneFiltersForSourceTypeOptions(filters)
+    local zoneScopedFilters = cloneFiltersForZoneOptions(filters)
+    local reputationScopedFilters = cloneFiltersForReputationOptions(filters)
+    local rows = collectAvailabilityRows(self, className, specName, phaseKey, tabName, cloneFiltersForAvailabilityRows(filters))
+
+    for _, row in ipairs(rows) do
+        if includeByFilter(row, sourceScopedFilters, selectedIndex) then
+            addSourceTypeFromRow(sourceTypes, sourceSeen, row, sourceScopedFilters, selectedIndex)
+        end
+        if includeByFilter(row, zoneScopedFilters, selectedIndex) then
+            addZonesFromRow(zones, zoneSeen, row, zoneScopedFilters, selectedIndex)
+        end
+        if includeByFilter(row, reputationScopedFilters, selectedIndex) then
+            addReputationsFromRow(reputations, reputationSeen, row, selectedIndex)
         end
     end
 
+    table.sort(sourceTypes, sortSourceFilterKeys)
+    table.sort(zones)
     table.sort(reputations)
-    return reputations
+    return {
+        sourceTypes = sourceTypes,
+        zones = zones,
+        reputations = reputations,
+    }
+end
+
+function BigBiSList:GetAvailableFilterSourceTypes(className, specName, phaseKey, tabName, filters)
+    return self:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters).sourceTypes
+end
+
+function BigBiSList:GetAvailableFilterZones(className, specName, phaseKey, tabName, filters)
+    return self:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters).zones
+end
+
+function BigBiSList:GetAvailableFilterReputations(className, specName, phaseKey, tabName, filters)
+    return self:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters).reputations
 end
 
 function BigBiSList:GetEnhancementRows(className, specName, phaseKey)

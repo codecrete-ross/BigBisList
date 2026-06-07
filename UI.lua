@@ -43,6 +43,10 @@ local WHY_COLUMN_THRESHOLD = 590
 local ROW_HORIZONTAL_PADDING = 8
 local ROW_VERTICAL_PADDING = 8
 local ROW_ICON_SIZE = 30
+local LIST_ROW_HEIGHT = 74
+local LIST_ROW_GAP = 4
+local LIST_SECTION_GAP = 6
+local LIST_OVERSCAN_ROWS = 6
 
 local OWNERSHIP_LABELS = {
     equipped = "Equipped",
@@ -1289,7 +1293,7 @@ function UI:GetAccessEvaluation(data)
     local accessState = self.currentAccess or self:BuildAccessState()
     local filters = self:GetFilters()
     local selectedPhaseIndex = phaseIndex((self:GetSelection() or {}).phase)
-    local options = data and data.access_options
+    local options = data and BigBiSList:GetRowAccessOptions(data)
 
     if options and #options > 0 then
         local optionEvaluations = {}
@@ -1503,6 +1507,20 @@ function UI:ScanBankItems()
     cache.updatedAt = date and date("%Y-%m-%d %H:%M") or "this session"
 end
 
+function UI:ClearTransientCaches(releaseRender)
+    if releaseRender and self.ReleaseRenderFrames then
+        self:ReleaseRenderFrames()
+    end
+    self.currentAccess = nil
+    self.currentOwned = nil
+    self.currentFilterPayload = nil
+    self.currentAvailabilitySnapshot = nil
+    if releaseRender then
+        self.renderModel = nil
+        self.renderRangeKey = nil
+    end
+end
+
 function UI:GetAvailabilityFilters()
     local filters = {}
     for key, value in pairs(self:GetFilters() or {}) do
@@ -1517,22 +1535,27 @@ function UI:GetAvailabilityFilters()
     return filters
 end
 
-function UI:GetAvailableSourceTypeValues()
+function UI:GetFilterAvailabilitySnapshot()
+    if self.currentAvailabilitySnapshot then
+        return self.currentAvailabilitySnapshot
+    end
+
     local selection = self:GetSelection()
     local filters = self:GetAvailabilityFilters()
-    return BigBiSList:GetAvailableFilterSourceTypes(selection.class, selection.spec, selection.phase, selection.tab, filters)
+    self.currentAvailabilitySnapshot = BigBiSList:GetFilterAvailabilitySnapshot(selection.class, selection.spec, selection.phase, selection.tab, filters)
+    return self.currentAvailabilitySnapshot
+end
+
+function UI:GetAvailableSourceTypeValues()
+    return self:GetFilterAvailabilitySnapshot().sourceTypes or {}
 end
 
 function UI:GetAvailableZoneValues()
-    local selection = self:GetSelection()
-    local filters = self:GetAvailabilityFilters()
-    return BigBiSList:GetAvailableFilterZones(selection.class, selection.spec, selection.phase, selection.tab, filters)
+    return self:GetFilterAvailabilitySnapshot().zones or {}
 end
 
 function UI:GetAvailableReputationValues()
-    local selection = self:GetSelection()
-    local filters = self:GetAvailabilityFilters()
-    return BigBiSList:GetAvailableFilterReputations(selection.class, selection.spec, selection.phase, selection.tab, filters)
+    return self:GetFilterAvailabilitySnapshot().reputations or {}
 end
 
 function UI:IsSourceTypeValueAvailable(sourceType)
@@ -1552,7 +1575,10 @@ function UI:ValidateSourceTypeFilter()
     local filters = self:GetFilters()
     if filters.sourceType and filters.sourceType ~= "all" and not self:IsSourceTypeValueAvailable(filters.sourceType) then
         filters.sourceType = "all"
+        self.currentAvailabilitySnapshot = nil
+        return true
     end
+    return false
 end
 
 function UI:IsZoneValueAvailable(zone)
@@ -1572,7 +1598,10 @@ function UI:ValidateZoneFilter()
     local filters = self:GetFilters()
     if filters.zone and filters.zone ~= "all" and not self:IsZoneValueAvailable(filters.zone) then
         filters.zone = "all"
+        self.currentAvailabilitySnapshot = nil
+        return true
     end
+    return false
 end
 
 function UI:IsReputationValueAvailable(reputation)
@@ -1592,18 +1621,21 @@ function UI:ValidateReputationFilter()
     local filters = self:GetFilters()
     if filters.reputation and filters.reputation ~= "all" and not self:IsReputationValueAvailable(filters.reputation) then
         filters.reputation = "all"
+        self.currentAvailabilitySnapshot = nil
+        return true
     end
+    return false
 end
 
 function UI:BuildFilterPayload()
     local filters = self:GetFilters()
     local char = BigBiSList:GetCharacterDB()
-    self.currentAccess = self:BuildAccessState()
-    self.currentOwned = self:BuildOwnedItems()
+    self.currentAccess = self.currentAccess or self:BuildAccessState()
+    self.currentOwned = self.currentOwned or self:BuildOwnedItems()
     self:ValidateSourceTypeFilter()
     self:ValidateZoneFilter()
     self:ValidateReputationFilter()
-    return {
+    self.currentFilterPayload = {
         search = filters.search,
         sourceType = filters.sourceType,
         zone = filters.zone,
@@ -1619,6 +1651,7 @@ function UI:BuildFilterPayload()
         ignoredItems = char.ignoredItems,
         hideIgnored = true,
     }
+    return self.currentFilterPayload
 end
 
 function UI:SaveWindow()
@@ -1718,7 +1751,6 @@ end
 
 function UI:GetSourceDropdownItems()
     local filters = self:GetFilters()
-    self:ValidateSourceTypeFilter()
     local labels = BigBiSList:GetSourceTypeLabels()
     local items = {
         { value = "all", text = labels.all, checked = filters.sourceType == "all" },
@@ -1735,7 +1767,6 @@ end
 
 function UI:GetZoneDropdownItems()
     local filters = self:GetFilters()
-    self:ValidateZoneFilter()
     local items = {
         { value = "all", text = "All zones", checked = filters.zone == "all" },
     }
@@ -1751,7 +1782,6 @@ end
 
 function UI:GetReputationDropdownItems()
     local filters = self:GetFilters()
-    self:ValidateReputationFilter()
     local items = {
         { value = "all", text = "All reps", checked = filters.reputation == "all" },
     }
@@ -1801,51 +1831,41 @@ function UI:SetClass(className)
     local index = BigBiSList:GetDataIndex()
     local specs = index.specsByClass[className] or {}
     BigBiSList:SetSelection(className, firstSpecName(specs), nil, nil)
-    self:ValidateZoneFilter()
-    self:ValidateReputationFilter()
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:SetSpec(specName)
     BigBiSList:SetSelection(nil, specName, nil, nil)
-    self:ValidateSourceTypeFilter()
-    self:ValidateZoneFilter()
-    self:ValidateReputationFilter()
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:SetPhase(phaseKey)
     BigBiSList:SetSelection(nil, nil, phaseKey, nil)
-    self:ValidateSourceTypeFilter()
-    self:ValidateZoneFilter()
-    self:ValidateReputationFilter()
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:SetTab(tabName)
     BigBiSList:SetSelection(nil, nil, nil, normalizeTabName(tabName))
-    self:ValidateSourceTypeFilter()
-    self:ValidateZoneFilter()
-    self:ValidateReputationFilter()
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:SetFilter(key, value)
     local filters = self:GetFilters()
     filters[key] = value
-    if key == "sourceType" or key == "zone" or key == "reputation" then
-        self:ValidateSourceTypeFilter()
-        self:ValidateZoneFilter()
-        self:ValidateReputationFilter()
-    end
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:ToggleSlot(slotName)
     local filters = self:GetFilters()
     filters.slots = filters.slots or {}
     filters.slots[slotName] = not filters.slots[slotName] or nil
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:ClearFilters()
@@ -1867,27 +1887,33 @@ function UI:ClearFilters()
         self.searchBox:ClearFocus()
     end
 
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:AddWishlist(itemId)
     BigBiSList:GetCharacterDB().wishlist[tostring(itemId)] = true
+    self:ClearTransientCaches()
     self:RefreshDetails(itemId)
+    self:ScheduleRefresh()
 end
 
 function UI:RemoveWishlist(itemId)
     BigBiSList:GetCharacterDB().wishlist[tostring(itemId)] = nil
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:IgnoreItem(itemId)
     BigBiSList:GetCharacterDB().ignoredItems[tostring(itemId)] = true
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:UnignoreItem(itemId)
     BigBiSList:GetCharacterDB().ignoredItems[tostring(itemId)] = nil
-    self:Refresh()
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
 end
 
 function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQuality, detailData, detailMode)
@@ -2402,10 +2428,14 @@ function UI:GetRowSubline(data, mode, includeWhy)
     return joinText(parts, " - ")
 end
 
-function UI:CreateListColumnHeader(parent, yOffset, mode)
+function UI:CreateListColumnHeader(parent, yOffset, mode, header)
     local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 560)
     local layout = rowColumnLayout(width, mode ~= "enhance")
-    local header = CreateFrame("Frame", nil, parent)
+    header = header or CreateFrame("Frame", nil, parent)
+    BigBiSList.Widgets:ClearChildren(header)
+    header:SetParent(parent)
+    header:Show()
+    header:ClearAllPoints()
     header:SetHeight(COLUMN_HEADER_HEIGHT)
     header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
@@ -2437,13 +2467,20 @@ function UI:CreateListColumnHeader(parent, yOffset, mode)
     return header, COLUMN_HEADER_HEIGHT
 end
 
-function UI:CreateDataRow(parent, yOffset, data, mode)
+function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     local widgets = BigBiSList.Widgets
     local entityType = data.entity_type or (data.spell_id and "spell") or "item"
     local entityId = data.entity_id or data.spell_id or data.item_id
     local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 560)
     local layout = rowColumnLayout(width, mode ~= "enhance")
-    local row = widgets:CreateItemRow(parent, ROW_HEIGHT)
+    row = row or widgets:CreateItemRow(parent, fixedHeight or ROW_HEIGHT)
+    if row:GetParent() ~= parent then
+        row:SetParent(parent)
+    end
+    BigBiSList.Widgets:ClearChildren(row)
+    row:Show()
+    row:ClearAllPoints()
+    row:EnableMouse(true)
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     row:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
     row.itemId = data.item_id
@@ -2509,6 +2546,9 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     local itemTextHeight = widgets:MeasureTextHeight(nameText, 14) + 3 + widgets:MeasureTextHeight(detailText, 12)
     local whyHeight = whyText and widgets:MeasureTextHeight(whyText, 14) or 0
     local rowHeight = math.max(ROW_HEIGHT, ROW_ICON_SIZE + (ROW_VERTICAL_PADDING * 2), itemTextHeight + (ROW_VERTICAL_PADDING * 2), whyHeight + (ROW_VERTICAL_PADDING * 2))
+    if fixedHeight then
+        rowHeight = fixedHeight
+    end
     row:SetHeight(rowHeight)
 
     row:SetScript("OnMouseUp", function(_, buttonName)
@@ -2526,6 +2566,154 @@ function UI:CreateDataRow(parent, yOffset, data, mode)
     end)
 
     return row, rowHeight
+end
+
+function UI:CreateVirtualSectionHeader(parent, yOffset, text, header)
+    header = header or CreateFrame("Frame", nil, parent)
+    BigBiSList.Widgets:ClearChildren(header)
+    header:SetParent(parent)
+    header:Show()
+    header:ClearAllPoints()
+    header:SetHeight(34)
+    header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
+    header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
+
+    local line = header:CreateTexture(nil, "ARTWORK")
+    line:SetColorTexture(0.55, 0.55, 0.58, 0.45)
+    line:SetHeight(1)
+    line:SetPoint("BOTTOMLEFT", header, "BOTTOMLEFT", 0, 6)
+    line:SetPoint("BOTTOMRIGHT", header, "BOTTOMRIGHT", 0, 6)
+
+    local label = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    label:SetPoint("TOPLEFT", header, "TOPLEFT", 8, -2)
+    label:SetTextColor(1, 0.82, 0.28, 1)
+    label:SetText(text)
+
+    return header, 34
+end
+
+function UI:GetRenderPool(kind)
+    self.renderPools = self.renderPools or {}
+    self.renderPools[kind] = self.renderPools[kind] or {}
+    return self.renderPools[kind]
+end
+
+function UI:AcquireRenderFrame(kind)
+    local pool = self:GetRenderPool(kind)
+    return table.remove(pool)
+end
+
+function UI:TrackRenderFrame(kind, frame)
+    if not frame then
+        return
+    end
+    self.activeRenderFrames = self.activeRenderFrames or {}
+    frame.__bigBisListRenderKind = kind
+    table.insert(self.activeRenderFrames, frame)
+end
+
+function UI:ReleaseRenderFrames()
+    for _, frame in ipairs(self.activeRenderFrames or {}) do
+        frame:Hide()
+        frame:ClearAllPoints()
+        frame:SetParent(nil)
+        table.insert(self:GetRenderPool(frame.__bigBisListRenderKind or "row"), frame)
+    end
+    self.activeRenderFrames = {}
+    self.renderRangeKey = nil
+end
+
+function UI:NewListRenderModel()
+    return {
+        entries = {},
+        cursor = 2,
+    }
+end
+
+function UI:AddListRenderEntry(model, entry)
+    entry.top = model.cursor
+    entry.height = entry.height or 1
+    entry.bottom = entry.top + entry.height
+    table.insert(model.entries, entry)
+    model.cursor = entry.bottom
+end
+
+function UI:AddListSection(model, title, mode)
+    self:AddListRenderEntry(model, {
+        kind = "section",
+        title = title,
+        height = 34,
+    })
+    self:AddListRenderEntry(model, {
+        kind = "columns",
+        mode = mode,
+        height = COLUMN_HEADER_HEIGHT,
+    })
+end
+
+function UI:AddListRow(model, data, mode)
+    self:AddListRenderEntry(model, {
+        kind = "row",
+        data = data,
+        mode = mode,
+        height = LIST_ROW_HEIGHT + LIST_ROW_GAP,
+        rowHeight = LIST_ROW_HEIGHT,
+    })
+end
+
+function UI:AddListGap(model, height)
+    self:AddListRenderEntry(model, {
+        kind = "gap",
+        height = height or LIST_SECTION_GAP,
+    })
+end
+
+function UI:RenderListModel(model)
+    self:ReleaseRenderFrames()
+    self.renderModel = model
+    self:SetContentHeight(-(model.cursor + 30))
+    self:UpdateVirtualList(true)
+end
+
+function UI:UpdateVirtualList(force)
+    local model = self.renderModel
+    local scroll = self.contentScroll
+    local child = self.contentChild
+    if not model or not scroll or not child then
+        return
+    end
+
+    local scrollTop = scroll:GetVerticalScroll() or 0
+    local viewportHeight = scroll:GetHeight() or 1
+    local overscan = LIST_OVERSCAN_ROWS * (LIST_ROW_HEIGHT + LIST_ROW_GAP)
+    local rowSpan = LIST_ROW_HEIGHT + LIST_ROW_GAP
+    local rangeKey = tostring(math.floor(scrollTop / rowSpan)) .. ":" .. tostring(math.floor((scrollTop + viewportHeight) / rowSpan)) .. ":" .. tostring(#model.entries)
+    if not force and self.renderRangeKey == rangeKey then
+        return
+    end
+
+    self:ReleaseRenderFrames()
+    self.renderRangeKey = rangeKey
+
+    local minTop = math.max(0, scrollTop - overscan)
+    local maxBottom = scrollTop + viewportHeight + overscan
+    for _, entry in ipairs(model.entries) do
+        if entry.kind ~= "gap" and entry.bottom >= minTop and entry.top <= maxBottom then
+            if entry.kind == "row" then
+                local frame = self:AcquireRenderFrame("row")
+                frame = self:CreateDataRow(child, -entry.top, entry.data, entry.mode, frame, entry.rowHeight)
+                self:TrackRenderFrame("row", frame)
+            elseif entry.kind == "section" then
+                local frame = self:AcquireRenderFrame("section")
+                frame = self:CreateVirtualSectionHeader(child, -entry.top, entry.title, frame)
+                self:TrackRenderFrame("section", frame)
+            elseif entry.kind == "columns" then
+                local frame = self:AcquireRenderFrame("columns")
+                frame = self:CreateListColumnHeader(child, -entry.top, entry.mode, frame)
+                self:TrackRenderFrame("columns", frame)
+            end
+        end
+    end
 end
 
 function UI:RenderEmpty(message)
@@ -2546,9 +2734,8 @@ function UI:SetContentHeight(yOffset)
 end
 
 function UI:RenderPhaseTab()
-    local widgets = BigBiSList.Widgets
     local selection = self:GetSelection()
-    local filters = self:BuildFilterPayload()
+    local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
 
     local groups = BigBiSList:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
@@ -2557,28 +2744,21 @@ function UI:RenderPhaseTab()
         return
     end
 
-    local yOffset = -2
+    local model = self:NewListRenderModel()
     for _, group in ipairs(groups) do
-        local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, group.slot, yOffset)
-        yOffset = yOffset - headerHeight
-        local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset, "phase")
-        yOffset = yOffset - columnHeaderHeight
-
+        self:AddListSection(model, group.slot, "phase")
         for _, item in ipairs(group.items) do
-            local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, item, "phase")
-            yOffset = yOffset - rowHeight - 4
+            self:AddListRow(model, item, "phase")
         end
-
-        yOffset = yOffset - 6
+        self:AddListGap(model)
     end
 
-    self:SetContentHeight(yOffset)
+    self:RenderListModel(model)
 end
 
 function UI:RenderPlannerTab()
-    local widgets = BigBiSList.Widgets
     local selection = self:GetSelection()
-    local filters = self:BuildFilterPayload()
+    local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
 
     local rows = BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
@@ -2597,25 +2777,19 @@ function UI:RenderPlannerTab()
         table.insert(rowsByTier[tier], rowData)
     end
 
-    local yOffset = -2
+    local model = self:NewListRenderModel()
     for _, section in ipairs(PLANNER_TIER_SECTIONS) do
         local sectionRows = rowsByTier[section.key] or {}
         if #sectionRows > 0 then
-            local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, section.title, yOffset)
-            yOffset = yOffset - headerHeight
-            local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset, "planner")
-            yOffset = yOffset - columnHeaderHeight
-
+            self:AddListSection(model, section.title, "planner")
             for _, rowData in ipairs(sectionRows) do
-                local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, rowData, "planner")
-                yOffset = yOffset - rowHeight - 4
+                self:AddListRow(model, rowData, "planner")
             end
-
-            yOffset = yOffset - 6
+            self:AddListGap(model)
         end
     end
 
-    self:SetContentHeight(yOffset)
+    self:RenderListModel(model)
 end
 
 function UI:CreateGearOverlay(parent, text, kind)
@@ -2712,7 +2886,7 @@ end
 function UI:RenderGearTab()
     local widgets = BigBiSList.Widgets
     local selection = self:GetSelection()
-    local filters = self:BuildFilterPayload()
+    local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
 
     local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, "Current Gear", -2)
@@ -2750,25 +2924,20 @@ function UI:RenderGearTab()
 end
 
 function UI:RenderEnhanceTab()
-    local widgets = BigBiSList.Widgets
     local selection = self:GetSelection()
     local sections = BigBiSList:GetEnhancementRows(selection.class, selection.spec, selection.phase)
-    self.currentOwned = self:BuildOwnedItems()
-    local yOffset = -2
+    self.currentOwned = self.currentOwned or self:BuildOwnedItems()
     local rendered = false
+    local model = self:NewListRenderModel()
 
     for _, section in ipairs(sections) do
         if #section.rows > 0 then
             rendered = true
-            local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, section.title, yOffset)
-            yOffset = yOffset - headerHeight
-            local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset, "enhance")
-            yOffset = yOffset - columnHeaderHeight
+            self:AddListSection(model, section.title, "enhance")
             for _, rowData in ipairs(section.rows) do
-                local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, rowData, "enhance")
-                yOffset = yOffset - rowHeight - 4
+                self:AddListRow(model, rowData, "enhance")
             end
-            yOffset = yOffset - 6
+            self:AddListGap(model)
         end
     end
 
@@ -2777,25 +2946,21 @@ function UI:RenderEnhanceTab()
         return
     end
 
-    self:SetContentHeight(yOffset)
+    self:RenderListModel(model)
 end
 
 function UI:RenderWishlistTab()
-    local widgets = BigBiSList.Widgets
     local index = BigBiSList:GetDataIndex()
     local wishlist = BigBiSList:GetCharacterDB().wishlist or {}
-    self.currentOwned = self:BuildOwnedItems()
-    local yOffset = -2
+    self.currentOwned = self.currentOwned or self:BuildOwnedItems()
 
     if tableCount(wishlist) == 0 then
         self:RenderEmpty("No wishlist items yet. Right-click an item row or use the detail drawer to add one.")
         return
     end
 
-    local header, headerHeight = widgets:CreateSectionHeader(self.contentChild, "Wishlist", yOffset)
-    yOffset = yOffset - headerHeight
-    local _, columnHeaderHeight = self:CreateListColumnHeader(self.contentChild, yOffset, "wishlist")
-    yOffset = yOffset - columnHeaderHeight
+    local model = self:NewListRenderModel()
+    self:AddListSection(model, "Wishlist", "wishlist")
 
     local selection = self:GetSelection()
     local plannerByItem = {}
@@ -2820,7 +2985,11 @@ function UI:RenderWishlistTab()
             detail = bestUse and (bestUse.class .. " " .. bestUse.spec .. " - " .. bestUse.slot) or "Saved item",
             source_summary = item and item.source_summary or "",
             requirements = item and item.requirements,
-            access_options = (plannerContext and plannerContext.access_options) or (bestUse and bestUse.access_options),
+            bestUse = (plannerContext and plannerContext.bestUse) or bestUse,
+            _access_context = ((plannerContext and plannerContext.bestUse) or bestUse) and nil or {
+                item = item,
+                options = { entityType = "item" },
+            },
             priority = plannerContext and plannerContext.priority or 0,
             priorityTier = plannerContext and plannerContext.priorityTier,
             recommendation_tier = plannerContext and plannerContext.recommendation_tier,
@@ -2837,11 +3006,10 @@ function UI:RenderWishlistTab()
     end)
 
     for _, data in ipairs(rows) do
-        local row, rowHeight = self:CreateDataRow(self.contentChild, yOffset, data, "wishlist")
-        yOffset = yOffset - rowHeight - 4
+        self:AddListRow(model, data, "wishlist")
     end
 
-    self:SetContentHeight(yOffset)
+    self:RenderListModel(model)
 end
 
 function UI:CreateSettingToggle(parent, yOffset, labelText, getValue, setValue, leftInset)
@@ -2991,10 +3159,12 @@ function UI:CreateSettingsClassHeader(parent, yOffset, className)
     local selected, total = self:GetTooltipSpecSelectionCount(className)
     return self:CreateSettingsActionHeader(parent, yOffset, className, tostring(selected) .. "/" .. tostring(total), function()
         self:SetTooltipClassSpecFilters(className, true)
-        self:Refresh()
+        self:ClearTransientCaches()
+        self:ScheduleRefresh()
     end, function()
         self:SetTooltipClassSpecFilters(className, false)
-        self:Refresh()
+        self:ClearTransientCaches()
+        self:ScheduleRefresh()
     end)
 end
 
@@ -3002,10 +3172,12 @@ function UI:CreateTooltipSpecsHeader(parent, yOffset)
     local selected, total = self:GetTooltipSpecSelectionCount()
     return self:CreateSettingsActionHeader(parent, yOffset, "Specs in Tooltips", tostring(selected) .. "/" .. tostring(total) .. " selected", function()
         self:SetAllTooltipSpecFilters(true)
-        self:Refresh()
+        self:ClearTransientCaches()
+        self:ScheduleRefresh()
     end, function()
         self:SetAllTooltipSpecFilters(false)
-        self:Refresh()
+        self:ClearTransientCaches()
+        self:ScheduleRefresh()
     end)
 end
 
@@ -3373,7 +3545,6 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         else
             self:AddWishlist(detailItemId)
         end
-        self:Refresh()
     end)
     wishlistButton:SetPoint("LEFT", actionRow, "LEFT", 0, 0)
 
@@ -3450,17 +3621,38 @@ function UI:RefreshControls()
 
 end
 
+function UI:ScheduleRefresh(delay)
+    if not self.frame then
+        return
+    end
+    if self.refreshScheduled then
+        return
+    end
+
+    self.refreshScheduled = true
+    local function refreshNow()
+        self.refreshScheduled = false
+        if self.frame and self.frame:IsShown() then
+            self:Refresh()
+        end
+    end
+
+    if C_Timer and C_Timer.After then
+        C_Timer.After(delay or 0, refreshNow)
+    else
+        refreshNow()
+    end
+end
+
 function UI:Refresh()
     if not self.frame then
         return
     end
 
     self:ValidateSelection()
-    self:ValidateZoneFilter()
-    self:ValidateReputationFilter()
+    self:ClearTransientCaches(true)
+    local filters = self:BuildFilterPayload()
     self:RefreshControls()
-    self.currentOwned = self:BuildOwnedItems()
-    self.currentAccess = self:BuildAccessState()
 
     BigBiSList.Widgets:ClearChildren(self.contentChild)
     self.contentChild:SetHeight(1)
@@ -3621,14 +3813,16 @@ function UI:CreateLeftRail(body)
     self.searchBox:SetScript("OnTextChanged", function(editBox, isUserInput)
         if isUserInput then
             self:GetFilters().search = trim(editBox:GetText())
-            self:Refresh()
+            self:ClearTransientCaches()
+            self:ScheduleRefresh(0.12)
         end
     end)
     self.searchBox:SetScript("OnEscapePressed", function(editBox)
         if editBox:GetText() ~= "" then
             editBox:SetText("")
             self:GetFilters().search = ""
-            self:Refresh()
+            self:ClearTransientCaches()
+            self:ScheduleRefresh()
         end
         editBox:ClearFocus()
     end)
@@ -3768,6 +3962,16 @@ function UI:CreateBody(frame)
     self.contentScroll, self.contentChild = widgets:CreateScrollFrame("BigBiSListContentScroll", contentPanel)
     self.contentScroll:SetPoint("TOPLEFT", contentPanel, "TOPLEFT", 8, -8)
     self.contentScroll:SetPoint("BOTTOMRIGHT", contentPanel, "BOTTOMRIGHT", -28, 8)
+    self.contentScroll:SetScript("OnVerticalScroll", function()
+        self:UpdateVirtualList()
+    end)
+    self.contentScroll:SetScript("OnSizeChanged", function(scroll, width)
+        self.contentChild:SetWidth(width)
+        if self.frame and self.frame:IsShown() then
+            self:ClearTransientCaches()
+            self:ScheduleRefresh()
+        end
+    end)
 
     self.body = body
 end
@@ -3800,7 +4004,8 @@ function UI:CreateStatusBar(frame)
     resize:SetScript("OnMouseUp", function()
         frame:StopMovingOrSizing()
         self:SaveWindow()
-        self:Refresh()
+        self:ClearTransientCaches()
+        self:ScheduleRefresh()
     end)
 end
 
@@ -3830,12 +4035,12 @@ function UI:CreateMainFrame()
 
     frame:SetScript("OnHide", function()
         self:SaveWindow()
+        self:ClearTransientCaches(true)
     end)
     frame:SetScript("OnShow", function()
         self:ApplyResizeBounds()
     end)
 
-    self:Refresh()
     return frame
 end
 
@@ -3846,12 +4051,13 @@ function UI:Open()
 
     self:ApplyResizeBounds()
     self.frame:Show()
-    self:Refresh()
+    self:ScheduleRefresh()
 end
 
 function UI:Close()
     if self.frame then
         self:SaveWindow()
+        self:ClearTransientCaches(true)
         self.frame:Hide()
     end
 end
@@ -3874,7 +4080,8 @@ end
 
 function BigBiSList:RefreshUI()
     if self.UI and self.UI.frame and self.UI.frame:IsShown() then
-        self.UI:Refresh()
+        self.UI:ClearTransientCaches()
+        self.UI:ScheduleRefresh()
     end
 end
 

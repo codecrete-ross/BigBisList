@@ -101,9 +101,34 @@ class AddonUIStaticTests(unittest.TestCase):
         data_index = self.read_lua("DataIndex.lua")
         for method in ["OpenMainFrame", "CloseMainFrame", "ToggleMainFrame", "RefreshUI"]:
             self.assertIn(f"function BigBiSList:{method}()", ui)
-        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
+        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetFilterAvailabilitySnapshot", "GetItemMeta", "GetRowAccessOptions", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
             self.assertIn(f"function BigBiSList:{method}", data_index)
         self.assertIn("function BigBiSList:SetSelection", self.read_lua("Config.lua"))
+
+    def test_ensure_database_does_not_trigger_full_indexing(self):
+        config = self.read_lua("Config.lua")
+        ensure_body = config.split("function BigBiSList:EnsureDatabase()", 1)[1].split("function", 1)[0]
+        self.assertNotIn("GetDataIndex", ensure_body)
+
+        core = self.read_lua("Core.lua")
+        addon_loaded_body = core.split('frame:SetScript("OnEvent"', 1)[1].split("SLASH_BIGBISLIST1", 1)[0]
+        self.assertIn("BigBiSList:EnsureDatabase()", addon_loaded_body)
+        self.assertNotIn("GetDataIndex", addon_loaded_body)
+
+    def test_plain_lua_timing_smoke_output_exists(self):
+        core = self.read_lua("Core.lua")
+        for token in [
+            "function BigBiSList:RunTimingSmokeTest(selection)",
+            "clockMilliseconds",
+            "debugprofilestop",
+            "os.clock",
+            'timeSmokeStep("GetDataIndex"',
+            'timeSmokeStep("planner rows"',
+            'timeSmokeStep("phase rows"',
+            'timeSmokeStep("filter availability"',
+            'timeSmokeStep("repeated cached calls"',
+        ]:
+            self.assertIn(token, core)
 
     def test_slot_filters_are_equipment_facing(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -299,7 +324,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'rowColumnLayout(width, mode ~= "enhance")',
             "showRank = showRank",
             "if layout.showRank then",
-            'CreateListColumnHeader(self.contentChild, yOffset, "enhance")',
+            'self:AddListSection(model, section.title, "enhance")',
             'if detailMode ~= "enhance" then',
         ]:
             self.assertIn(token, ui)
@@ -312,10 +337,11 @@ class AddonUIStaticTests(unittest.TestCase):
             "splitRequirements",
             "sourceMatchesRequirement",
             "source.requirements",
-            "access_options = buildAccessOptions",
+            "function BigBiSList:GetRowAccessOptions(row)",
+            "buildRowAccessOptions",
             "zone = source.zone",
             "source_filter_key = filterKey",
-            "source_filter_keys = sourceFilters",
+            "source_filter_keys = meta.source_filter_keys",
             "source_summary = sourceOptionSummary",
             "zones = sourceOptionZones(source)",
             "rowHasAccessOptionMatchingFilterContext",
@@ -327,6 +353,77 @@ class AddonUIStaticTests(unittest.TestCase):
             "forceSourceScopedEquip = entityType == \"spell\"",
         ]:
             self.assertIn(token, data_index)
+
+    def test_planner_phase_access_options_are_lazy(self):
+        data_index = self.read_lua("DataIndex.lua")
+        build_use_body = data_index.split("local function buildUse", 1)[1].split("local function rowHasZone", 1)[0]
+
+        self.assertIn("_access_context", build_use_body)
+        self.assertIn("getItemMetaFromIndex", build_use_body)
+        self.assertNotIn("buildAccessOptions", build_use_body)
+        self.assertNotIn("access_options =", build_use_body)
+        self.assertIn("rowAccessCache", data_index)
+        self.assertIn("function BigBiSList:GetRowAccessOptions(row)", data_index)
+
+    def test_item_metadata_cache_feeds_lightweight_rows(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "ITEM_META_CACHE_LIMIT",
+            "itemMetaCache",
+            "function BigBiSList:GetItemMeta(itemId)",
+            "buildItemMeta",
+            "itemReputations",
+            "rowReputationsWithMeta",
+            "getItemPhaseMeta",
+        ]:
+            self.assertIn(token, data_index)
+
+    def test_filter_availability_uses_one_snapshot(self):
+        data_index = self.read_lua("DataIndex.lua")
+        ui = self.read_lua("UI.lua")
+
+        snapshot_body = data_index.split("function BigBiSList:GetFilterAvailabilitySnapshot", 1)[1].split("function BigBiSList:GetAvailableFilterSourceTypes", 1)[0]
+        self.assertEqual(snapshot_body.count("collectAvailabilityRows"), 1)
+        self.assertIn("cloneFiltersForAvailabilityRows", snapshot_body)
+        self.assertIn("addSourceTypeFromRow", snapshot_body)
+        self.assertIn("addZonesFromRow", snapshot_body)
+        self.assertIn("addReputationsFromRow", snapshot_body)
+
+        self.assertIn("function UI:GetFilterAvailabilitySnapshot()", ui)
+        self.assertIn("self.currentAvailabilitySnapshot", ui)
+        self.assertIn("BigBiSList:GetFilterAvailabilitySnapshot", ui)
+        build_filter_body = ui.split("function UI:BuildFilterPayload()", 1)[1].split("function UI:SaveWindow", 1)[0]
+        self.assertNotIn("GetPlannerRows", build_filter_body)
+        self.assertNotIn("GetPhaseRows", build_filter_body)
+
+    def test_first_open_schedules_one_refresh_after_frame_creation(self):
+        ui = self.read_lua("UI.lua")
+        create_body = ui.split("function UI:CreateMainFrame()", 1)[1].split("function UI:Open()", 1)[0]
+        open_body = ui.split("function UI:Open()", 1)[1].split("function UI:Close()", 1)[0]
+
+        self.assertNotIn("self:Refresh()", create_body)
+        self.assertIn("self:ScheduleRefresh()", open_body)
+        self.assertEqual(open_body.count("self:ScheduleRefresh()"), 1)
+
+    def test_ui_refreshes_are_scheduled_and_virtualized(self):
+        ui = self.read_lua("UI.lua")
+        for token in [
+            "function UI:ScheduleRefresh(delay)",
+            "C_Timer.After",
+            "self:ScheduleRefresh(0.12)",
+            "function UI:RenderListModel(model)",
+            "function UI:UpdateVirtualList(force)",
+            "function UI:ReleaseRenderFrames()",
+            "LIST_OVERSCAN_ROWS",
+            "self.renderPools",
+            "self:AddListRow(model",
+            "self:RenderListModel(model)",
+        ]:
+            self.assertIn(token, ui)
+
+        for setter in ["SetClass", "SetSpec", "SetPhase", "SetTab", "SetFilter", "ToggleSlot", "ClearFilters"]:
+            body = ui.split(f"function UI:{setter}", 1)[1].split("function UI:", 1)[0]
+            self.assertIn("self:ScheduleRefresh()", body)
 
     def test_enhance_consumable_alternatives_are_grouped(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -494,12 +591,12 @@ class AddonUIStaticTests(unittest.TestCase):
             "EvaluateRequirementList",
             "EvaluateAccessOption",
             "GetAccessEvaluation",
-            "data and data.access_options",
+            "BigBiSList:GetRowAccessOptions(data)",
             "firstReadyEvaluation",
             "local flatEvaluation = self:EvaluateRequirementList",
         ]:
             self.assertIn(token, ui)
-        self.assertLess(ui.index("data and data.access_options"), ui.index("local flatEvaluation = self:EvaluateRequirementList"))
+        self.assertLess(ui.index("BigBiSList:GetRowAccessOptions(data)"), ui.index("local flatEvaluation = self:EvaluateRequirementList"))
 
     def test_typed_parsed_requirements_are_actionable(self):
         ui = self.read_lua("UI.lua")
@@ -647,7 +744,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "scopedFilters.zones = nil",
             "addZonesFromRow",
             "sourceZoneIsPhaseAvailable",
-            "getSourceZones(row.item, selectedPhaseIndex)",
+            "getItemPhaseMeta",
         ]:
             self.assertIn(token, data_index)
         self.assertNotIn('table.insert(zones, "Unknown")', data_index)
@@ -673,7 +770,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'scopedFilters.reputation = "all"',
             "addReputationsFromRow",
             "rowMatchesReputationFilter",
-            "accessOptionIsPhaseAvailable(option, selectedPhaseIndex)",
+            "rowReputationsWithMeta",
         ]:
             self.assertIn(token, data_index)
         for token in [
@@ -700,7 +797,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "heroic_dungeon_drop",
             "dungeon_drop",
             "other_drop",
-            "getSourceFilterKeys(row.item, selectedPhaseIndex)",
+            "getItemPhaseMeta",
             "rowMatchesSourceFilter(row, filters.sourceType, selectedPhaseIndex)",
         ]:
             self.assertIn(token, data_index)

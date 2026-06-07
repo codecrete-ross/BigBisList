@@ -9,6 +9,30 @@ local function printLine(message)
     end
 end
 
+local function clockMilliseconds()
+    if debugprofilestop then
+        return debugprofilestop()
+    elseif os and os.clock then
+        return os.clock() * 1000
+    end
+    return nil
+end
+
+local function timingLabel(startMs)
+    local nowMs = clockMilliseconds()
+    if startMs and nowMs then
+        return string.format("%.1f ms", nowMs - startMs)
+    end
+    return "completed"
+end
+
+local function timeSmokeStep(label, callback)
+    local startMs = clockMilliseconds()
+    local result = callback()
+    printLine("Timing " .. label .. ": " .. timingLabel(startMs) .. ".")
+    return result
+end
+
 function BigBiSList:GetDataSummary()
     local data = BigBiSListData or {}
     local classes = data.classes or {}
@@ -39,6 +63,47 @@ function BigBiSList:RunSmokeTest()
     printLine("Smoke test passed. Saved variable BigBiSListDB is initialized.")
     local selection = self:GetCharacterDB().selection
     printLine("Current selection: " .. selection.class .. " / " .. selection.spec .. " / " .. self:GetPhaseDisplayName(selection.phase) .. ".")
+    self:RunTimingSmokeTest(selection)
+end
+
+function BigBiSList:RunTimingSmokeTest(selection)
+    selection = selection or self:GetCharacterDB().selection
+    local filters = {
+        sourceType = "all",
+        zone = "all",
+        reputation = "all",
+        rankGroup = "all",
+        ownedState = "all",
+        binding = "all",
+        boe = "all",
+        faction = "all",
+        longevity = "all",
+        slots = {},
+        ownedItems = {},
+        ignoredItems = {},
+        hideIgnored = true,
+    }
+
+    timeSmokeStep("GetDataIndex", function()
+        return self:GetDataIndex()
+    end)
+    timeSmokeStep("planner rows", function()
+        return self:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
+    end)
+    timeSmokeStep("phase rows", function()
+        return self:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
+    end)
+    timeSmokeStep("filter availability", function()
+        return self:GetFilterAvailabilitySnapshot(selection.class, selection.spec, selection.phase, selection.tab, filters)
+    end)
+    timeSmokeStep("repeated cached calls", function()
+        for _ = 1, 3 do
+            self:GetDataIndex()
+            self:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
+            self:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
+            self:GetFilterAvailabilitySnapshot(selection.class, selection.spec, selection.phase, selection.tab, filters)
+        end
+    end)
 end
 
 local function handleSlashCommand(input)
