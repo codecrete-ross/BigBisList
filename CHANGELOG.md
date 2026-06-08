@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.7.0 - 2026-06-08
+
+### Added
+
+- Phase-aware source filtering so source, zone, reputation, and related filters
+  reflect the selected content phase more accurately.
+- Runtime data compaction and lazy rendering paths to reduce addon memory use
+  and avoid building unused UI rows.
+- Player class and spec detection for first-run default selection when the
+  saved character selection is still on the built-in fallback.
+
+### Fixed
+
+- PvP-primary items can retain raid token turn-in alternate source evidence for
+  acquisition summaries and validation coverage.
+
 ## 0.6.0 - 2026-06-06
 
 ### Added
