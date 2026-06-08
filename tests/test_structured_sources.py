@@ -272,6 +272,27 @@ class StructuredSourceTests(unittest.TestCase):
         self.assertEqual(self.items[31461]["acquisition_phase"], "PR")
         self.assertEqual(self.items[29290]["acquisition_phase"], "T4")
 
+    def test_pvp_primary_items_can_keep_raid_token_alternate_sources(self):
+        item = self.items[28129]
+        self.assertEqual(item["name"], "Gladiator's Dragonhide Spaulders")
+        self.assertEqual(item["primary_source"]["type"], "pvp")
+        self.assertTrue(item["source_summary"].startswith("PvP: "))
+
+        token_sources = [
+            source
+            for source in item["sources"]
+            if source.get("type") == "token_turnin"
+        ]
+        self.assertGreaterEqual(len(token_sources), 1)
+        self.assertIn(
+            "Gruul's Lair",
+            {
+                token_source.get("zone")
+                for source in token_sources
+                for token_source in source.get("token_sources", [])
+            },
+        )
+
     def test_raid_quest_starter_rewards_use_starter_acquisition_sources(self):
         cases = {
             18714: {"phase": "PR", "starter_ids": {18703}, "starter_name": "Ancient Petrified Leaf"},
