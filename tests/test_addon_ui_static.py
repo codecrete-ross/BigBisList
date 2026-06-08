@@ -96,6 +96,43 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, validate_body)
 
+    def test_player_selection_detection_defaults_saved_selection(self):
+        config = self.read_lua("Config.lua")
+        for token in [
+            'local DEFAULT_SELECTED_CLASS = "Druid"',
+            'local DEFAULT_SELECTED_SPEC = "Feral dps"',
+            "local PLAYER_CLASS_NAMES = {",
+            "DRUID = DEFAULT_SELECTED_CLASS",
+            'HUNTER = "Hunter"',
+            "function BigBiSList:DetectPlayerClass()",
+            'pcall(UnitClassBase, "player")',
+            'pcall(UnitClass, "player")',
+            "function BigBiSList:DetectPlayerSpec(className)",
+            "pcall(GetNumTalentTabs)",
+            "pcall(GetTalentTabInfo, tabIndex)",
+            "specNameForClass(className, selectedTabName)",
+            "function BigBiSList:GetDetectedPlayerSelection()",
+            "firstSpecNameForClass(className)",
+            "local function selectionUsesBuiltInDefault(char)",
+            "selection.class or (char and char.selectedClass)",
+            "selection.spec or (char and char.selectedSpec)",
+            "selectedClass == DEFAULT_SELECTED_CLASS",
+            "selectedSpec == DEFAULT_SELECTED_SPEC",
+            "local function applyDetectedDefaultSelection(char)",
+            "char.selection.class = detected.class",
+            "char.selection.spec = detected.spec",
+            "selectedClass = DEFAULT_SELECTED_CLASS",
+            "selectedSpec = DEFAULT_SELECTED_SPEC",
+            "class = DEFAULT_SELECTED_CLASS",
+            "spec = DEFAULT_SELECTED_SPEC",
+        ]:
+            self.assertIn(token, config)
+
+        ensure_body = config.split("function BigBiSList:EnsureDatabase()", 1)[1].split("return BigBiSListDB", 1)[0]
+        self.assertIn("applyDetectedDefaultSelection(BigBiSListCharDB)", ensure_body)
+        self.assertLess(ensure_body.index("migrateSplitDropSourceFilter"), ensure_body.index("applyDetectedDefaultSelection"))
+        self.assertLess(ensure_body.index("applyDetectedDefaultSelection"), ensure_body.index("BigBiSListCharDB.selectedClass"))
+
     def test_public_ui_methods_exist(self):
         ui = self.read_lua("UI.lua")
         data_index = self.read_lua("DataIndex.lua")
@@ -645,14 +682,9 @@ class AddonUIStaticTests(unittest.TestCase):
             "pcall(BigBiSList.AddTooltipInfo",
             "reportTooltipError",
             "pcall(handler, err)",
-            "UnitClassBase",
-            "pcall(UnitClassBase, \"player\")",
-            "pcall(UnitClass, \"player\")",
-            "GetNumTalentTabs",
-            "GetTalentTabInfo",
-            "pcall(GetTalentTabInfo, tabIndex)",
-            "exactSpecNameForClass",
-            "return exactSpecNameForClass(className, selectedTabName)",
+            "not BigBiSList.DetectPlayerClass",
+            "BigBiSList:DetectPlayerClass()",
+            "BigBiSList:DetectPlayerSpec(playerClass)",
             "settings.selectedSpecFirst ~= false",
             "settings.compact and 4 or 8",
             "settings.showAllOnAlt and IsAltKeyDown",
@@ -668,6 +700,9 @@ class AddonUIStaticTests(unittest.TestCase):
             "self:GetTooltipSpecFilterKey(specFilters)",
         ]:
             self.assertIn(token, tooltip)
+        self.assertNotIn("local PLAYER_CLASS_NAMES", tooltip)
+        self.assertNotIn("pcall(UnitClassBase", tooltip)
+        self.assertNotIn("pcall(GetTalentTabInfo", tooltip)
         self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)", data_index)
         self.assertIn("function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext, expanded)", data_index)
         self.assertIn('local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil', data_index)

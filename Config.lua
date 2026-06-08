@@ -21,6 +21,20 @@ end
 BigBiSList.version = version
 
 local DEFAULTS_VERSION = 11
+local DEFAULT_SELECTED_CLASS = "Druid"
+local DEFAULT_SELECTED_SPEC = "Feral dps"
+
+local PLAYER_CLASS_NAMES = {
+    DRUID = DEFAULT_SELECTED_CLASS,
+    HUNTER = "Hunter",
+    MAGE = "Mage",
+    PALADIN = "Paladin",
+    PRIEST = "Priest",
+    ROGUE = "Rogue",
+    SHAMAN = "Shaman",
+    WARLOCK = "Warlock",
+    WARRIOR = "Warrior",
+}
 
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -59,14 +73,14 @@ BigBiSList.defaults = {
         },
     },
     char = {
-        selectedClass = "Druid",
-        selectedSpec = "Feral dps",
+        selectedClass = DEFAULT_SELECTED_CLASS,
+        selectedSpec = DEFAULT_SELECTED_SPEC,
         selectedPhase = "PR",
         lastDetectedPhase = "PR",
         selectedTab = "Upgrades",
         selection = {
-            class = "Druid",
-            spec = "Feral dps",
+            class = DEFAULT_SELECTED_CLASS,
+            spec = DEFAULT_SELECTED_SPEC,
             phase = "PR",
             tab = "Upgrades",
         },
@@ -258,6 +272,151 @@ local function migrateSplitDropSourceFilter(char, previousVersion)
     end
 end
 
+local function playerClassFromToken(classToken)
+    if type(classToken) ~= "string" then
+        return nil
+    end
+
+    return PLAYER_CLASS_NAMES[classToken] or PLAYER_CLASS_NAMES[string.upper(classToken)]
+end
+
+local function normalizedSpecName(specName)
+    if type(specName) ~= "string" then
+        return nil
+    end
+
+    return string.lower(specName)
+end
+
+local function specsForClass(className)
+    if not className or not BigBiSList.GetClassSpecIndex then
+        return {}
+    end
+
+    return BigBiSList:GetClassSpecIndex().specsByClass[className] or {}
+end
+
+local function firstSpecNameForClass(className)
+    local specs = specsForClass(className)
+    if specs[1] then
+        return specs[1].name
+    end
+
+    return nil
+end
+
+local function specNameForClass(className, specName)
+    local normalized = normalizedSpecName(specName)
+    if not normalized then
+        return nil
+    end
+
+    for _, spec in ipairs(specsForClass(className)) do
+        if normalizedSpecName(spec.name) == normalized then
+            return spec.name
+        end
+    end
+
+    return nil
+end
+
+function BigBiSList:DetectPlayerClass()
+    if UnitClassBase then
+        local ok, first, second = pcall(UnitClassBase, "player")
+        if ok then
+            local className = playerClassFromToken(first) or playerClassFromToken(second)
+            if className then
+                return className
+            end
+        end
+    end
+
+    if UnitClass then
+        local ok, _, classToken = pcall(UnitClass, "player")
+        if ok then
+            return playerClassFromToken(classToken)
+        end
+    end
+
+    return nil
+end
+
+function BigBiSList:DetectPlayerSpec(className)
+    if not className or not GetNumTalentTabs or not GetTalentTabInfo then
+        return nil
+    end
+
+    local ok, tabCount = pcall(GetNumTalentTabs)
+    if not ok or type(tabCount) ~= "number" then
+        return nil
+    end
+
+    local selectedTabName
+    local selectedPoints = 0
+    local selectedTie = false
+    for tabIndex = 1, tabCount do
+        local tabOk, first, second, third, fourth, fifth = pcall(GetTalentTabInfo, tabIndex)
+        local tabName = type(first) == "string" and first or second
+        local pointsSpent = type(third) == "number" and third or fifth
+        if tabOk and type(tabName) == "string" and type(pointsSpent) == "number" then
+            if pointsSpent > selectedPoints then
+                selectedTabName = tabName
+                selectedPoints = pointsSpent
+                selectedTie = false
+            elseif pointsSpent > 0 and pointsSpent == selectedPoints then
+                selectedTie = true
+            end
+        end
+    end
+
+    if selectedTie then
+        return nil
+    end
+
+    return specNameForClass(className, selectedTabName)
+end
+
+function BigBiSList:GetDetectedPlayerSelection()
+    local className = self:DetectPlayerClass()
+    if not className then
+        return nil
+    end
+
+    return {
+        class = className,
+        spec = self:DetectPlayerSpec(className) or firstSpecNameForClass(className),
+    }
+end
+
+local function selectionUsesBuiltInDefault(char)
+    local selection = char and char.selection or {}
+    local selectedClass = selection.class or (char and char.selectedClass)
+    local selectedSpec = selection.spec or (char and char.selectedSpec)
+
+    return (selectedClass == nil or selectedClass == DEFAULT_SELECTED_CLASS)
+        and (selectedSpec == nil or selectedSpec == DEFAULT_SELECTED_SPEC)
+end
+
+local function applyDetectedDefaultSelection(char)
+    if not char or not selectionUsesBuiltInDefault(char) then
+        return
+    end
+
+    local detected = BigBiSList:GetDetectedPlayerSelection()
+    if not detected or not detected.class then
+        return
+    end
+
+    char.selection = char.selection or {}
+    char.selection.class = detected.class
+    char.selectedClass = detected.class
+
+    if detected.spec then
+        char.selection.spec = detected.spec
+        char.selectedSpec = detected.spec
+    end
+end
+
 local function ensureTooltipSpecFilters(db)
     local profile = db.profile or {}
     local tooltips = profile.tooltips or {}
@@ -376,6 +535,7 @@ function BigBiSList:EnsureDatabase()
     migrateLegacyDefaults(BigBiSListCharDB, charPreviousVersion)
     migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
+    applyDetectedDefaultSelection(BigBiSListCharDB)
     ensureTooltipSpecFilters(BigBiSListDB)
 
     BigBiSListCharDB.selectedClass = BigBiSListCharDB.selection.class
