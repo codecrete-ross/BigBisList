@@ -36,6 +36,12 @@ local PLAYER_CLASS_NAMES = {
     WARRIOR = "Warrior",
 }
 
+local SPEC_NAME_ALIASES = {
+    Druid = {
+        ["feral combat"] = DEFAULT_SELECTED_SPEC,
+    },
+}
+
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
     Gear = "Equipped",
@@ -100,7 +106,6 @@ BigBiSList.defaults = {
             rankGroups = {},
             ownedState = "all",
             upgradeMode = "actual",
-            includeOwnedUpgrades = false,
             binding = "all",
             boe = "all",
             faction = "all",
@@ -362,6 +367,15 @@ local function specNameForClass(className, specName)
         end
     end
 
+    local alias = SPEC_NAME_ALIASES[className] and SPEC_NAME_ALIASES[className][normalized]
+    if alias then
+        for _, spec in ipairs(specsForClass(className)) do
+            if spec.name == alias then
+                return spec.name
+            end
+        end
+    end
+
     return nil
 end
 
@@ -442,8 +456,24 @@ local function selectionUsesBuiltInDefault(char)
         and (selectedSpec == nil or selectedSpec == DEFAULT_SELECTED_SPEC)
 end
 
-local function applyDetectedDefaultSelection(char)
-    if not char or not selectionUsesBuiltInDefault(char) then
+local function hasSavedClassSpecSelection(char)
+    if type(char) ~= "table" then
+        return false
+    end
+
+    if char.selectedClass ~= nil or char.selectedSpec ~= nil then
+        return true
+    end
+
+    return type(char.selection) == "table"
+        and (char.selection.class ~= nil or char.selection.spec ~= nil)
+end
+
+local function applyDetectedDefaultSelection(char, previousVersion, hadSavedClassSpecSelection)
+    if previousVersion ~= nil
+        or hadSavedClassSpecSelection
+        or not char
+        or not selectionUsesBuiltInDefault(char) then
         return
     end
 
@@ -571,6 +601,7 @@ function BigBiSList:EnsureDatabase()
 
     local profilePreviousVersion = BigBiSListDB.profile.defaultsVersion
     local charPreviousVersion = BigBiSListCharDB.defaultsVersion
+    local hadSavedClassSpecSelection = hasSavedClassSpecSelection(BigBiSListCharDB)
 
     migrateSelection(BigBiSListCharDB)
     migrateMinimapSettings(BigBiSListDB)
@@ -581,7 +612,7 @@ function BigBiSList:EnsureDatabase()
     migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
     migrateFacetedFilters(BigBiSListCharDB, charPreviousVersion)
-    applyDetectedDefaultSelection(BigBiSListCharDB)
+    applyDetectedDefaultSelection(BigBiSListCharDB, charPreviousVersion, hadSavedClassSpecSelection)
     ensureTooltipSpecFilters(BigBiSListDB)
 
     BigBiSListCharDB.selectedClass = BigBiSListCharDB.selection.class

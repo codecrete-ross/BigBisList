@@ -61,7 +61,6 @@ class AddonUIStaticTests(unittest.TestCase):
             "reputations = {}",
             "rankGroups = {}",
             'upgradeMode = "actual"',
-            "includeOwnedUpgrades = false",
             "bankCache = {",
             "links = {}",
             "wishlist = {}",
@@ -122,6 +121,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "pcall(GetNumTalentTabs)",
             "pcall(GetTalentTabInfo, tabIndex)",
             "specNameForClass(className, selectedTabName)",
+            "local SPEC_NAME_ALIASES = {",
+            '["feral combat"] = DEFAULT_SELECTED_SPEC',
             "function BigBiSList:GetDetectedPlayerSelection()",
             "firstSpecNameForClass(className)",
             "local function selectionUsesBuiltInDefault(char)",
@@ -129,7 +130,10 @@ class AddonUIStaticTests(unittest.TestCase):
             "selection.spec or (char and char.selectedSpec)",
             "selectedClass == DEFAULT_SELECTED_CLASS",
             "selectedSpec == DEFAULT_SELECTED_SPEC",
-            "local function applyDetectedDefaultSelection(char)",
+            "local function hasSavedClassSpecSelection(char)",
+            "local function applyDetectedDefaultSelection(char, previousVersion, hadSavedClassSpecSelection)",
+            "previousVersion ~= nil",
+            "or hadSavedClassSpecSelection",
             "char.selection.class = detected.class",
             "char.selection.spec = detected.spec",
             "selectedClass = DEFAULT_SELECTED_CLASS",
@@ -140,9 +144,11 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, config)
 
         ensure_body = config.split("function BigBiSList:EnsureDatabase()", 1)[1].split("return BigBiSListDB", 1)[0]
-        self.assertIn("applyDetectedDefaultSelection(BigBiSListCharDB)", ensure_body)
+        self.assertIn("local hadSavedClassSpecSelection = hasSavedClassSpecSelection(BigBiSListCharDB)", ensure_body)
+        self.assertIn("applyDetectedDefaultSelection(BigBiSListCharDB, charPreviousVersion, hadSavedClassSpecSelection)", ensure_body)
         self.assertLess(ensure_body.index("migrateSplitDropSourceFilter"), ensure_body.index("applyDetectedDefaultSelection"))
         self.assertLess(ensure_body.index("applyDetectedDefaultSelection"), ensure_body.index("BigBiSListCharDB.selectedClass"))
+        self.assertNotIn("applyDetectedDefaultSelection(BigBiSListCharDB)\n", ensure_body)
 
     def test_public_ui_methods_exist(self):
         ui = self.read_lua("UI.lua")
@@ -1103,22 +1109,23 @@ class AddonUIStaticTests(unittest.TestCase):
 
         for token in [
             'upgradeMode = "actual"',
-            "includeOwnedUpgrades = false",
             "BigBiSListUpgradeModeDropdown",
-            "BigBiSListOwnedUpgradeDropdown",
             "GetUpgradeModeDropdownItems",
-            "GetOwnedUpgradeDropdownItems",
             'return "Targets: " .. upgradeModeLabel',
-            'return "Owned upgrades: " .. ownedUpgradeLabel',
-            'self:SetFilter("includeOwnedUpgrades", value == "shown")',
             "upgradeMode = filters.upgradeMode",
-            "includeOwnedUpgrades = filters.includeOwnedUpgrades == true",
             'filters.upgradeMode = "actual"',
-            "filters.includeOwnedUpgrades = false",
             "upgradeComparisonText",
             "GameTooltip:AddLine(upgradeText",
         ]:
             self.assertIn(token, config + ui)
+
+        for token in [
+            "includeOwnedUpgrades",
+            "BigBiSListOwnedUpgradeDropdown",
+            "GetOwnedUpgradeDropdownItems",
+            "ownedUpgradeLabel",
+        ]:
+            self.assertNotIn(token, config + ui)
 
         for token in [
             "local function isStrictUpgradeUse",
@@ -1136,7 +1143,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'ownedState == "bag" or ownedState == "bank"',
             "upgradeComparisonContext(baselines.equippedBySlot, candidateUse)",
             "upgradeComparisonContext(baselines.ownedBySlot, candidateUse)",
-            "filters.includeOwnedUpgrades and group.upgrade_state == \"owned_upgrade\"",
+            "group.upgrade_state == \"owned_upgrade\"",
             "plannerGroupMatchesUpgradeMode(group, filters)",
         ]:
             self.assertIn(token, data_index)

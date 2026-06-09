@@ -290,12 +290,6 @@ local UPGRADE_MODE_LABELS = {
 }
 local UPGRADE_MODE_ORDER = { "actual", "all" }
 
-local OWNED_UPGRADE_LABELS = {
-    hidden = "Hidden",
-    shown = "Shown",
-}
-local OWNED_UPGRADE_ORDER = { "hidden", "shown" }
-
 local COST_FILTER_LABELS = {
     badge_justice = "Badge of Justice",
     arena_points = "Arena Points",
@@ -821,10 +815,6 @@ end
 
 local function upgradeModeLabel(upgradeMode)
     return UPGRADE_MODE_LABELS[upgradeMode or "actual"] or tostring(upgradeMode or "Actual upgrades")
-end
-
-local function ownedUpgradeLabel(includeOwnedUpgrades)
-    return includeOwnedUpgrades and OWNED_UPGRADE_LABELS.shown or OWNED_UPGRADE_LABELS.hidden
 end
 
 local function upgradeComparisonText(data)
@@ -1978,7 +1968,6 @@ function UI:BuildFilterPayload()
         rankGroups = filters.rankGroups,
         ownedState = filters.ownedState,
         upgradeMode = filters.upgradeMode,
-        includeOwnedUpgrades = filters.includeOwnedUpgrades == true,
         binding = filters.binding,
         boe = filters.boe,
         faction = self.currentAccess and self.currentAccess.playerSide or "all",
@@ -2211,12 +2200,6 @@ function UI:GetUpgradeModeDropdownItems()
     return filterDropdownItems(UPGRADE_MODE_ORDER, UPGRADE_MODE_LABELS, filters.upgradeMode or "actual")
 end
 
-function UI:GetOwnedUpgradeDropdownItems()
-    local filters = self:GetFilters()
-    local selectedValue = filters.includeOwnedUpgrades and "shown" or "hidden"
-    return filterDropdownItems(OWNED_UPGRADE_ORDER, OWNED_UPGRADE_LABELS, selectedValue)
-end
-
 function UI:GetBoeDropdownItems()
     local filters = self:GetFilters()
     return filterDropdownItems(BOE_FILTER_ORDER, BOE_FILTER_LABELS, filters.boe or "all")
@@ -2325,7 +2308,6 @@ function UI:ClearFilters()
     filters.rankGroups = {}
     filters.ownedState = "all"
     filters.upgradeMode = "actual"
-    filters.includeOwnedUpgrades = false
     filters.binding = "all"
     filters.boe = "all"
     filters.faction = "all"
@@ -3143,9 +3125,6 @@ function UI:GetActiveFilterChips()
     end
     if filters.upgradeMode and filters.upgradeMode ~= "actual" then
         table.insert(chips, { label = "Targets: " .. upgradeModeLabel(filters.upgradeMode), clear = function() self:SetFilter("upgradeMode", "actual") end })
-    end
-    if filters.includeOwnedUpgrades then
-        table.insert(chips, { label = "Owned upgrades: Shown", clear = function() self:SetFilter("includeOwnedUpgrades", false) end })
     end
     if filters.boe and filters.boe ~= "all" then
         table.insert(chips, { label = "BoE: " .. boeFilterLabel(filters.boe), clear = function() self:SetFilter("boe", "all") end })
@@ -4224,9 +4203,6 @@ function UI:RefreshControls()
     if self.upgradeModeDropdown then
         self.upgradeModeDropdown:Refresh()
     end
-    if self.ownedUpgradeDropdown then
-        self.ownedUpgradeDropdown:Refresh()
-    end
     if self.ownedDropdown then
         self.ownedDropdown:Refresh()
     end
@@ -4490,21 +4466,13 @@ function UI:CreateLeftRail(body)
         function(value) self:SetFilter("upgradeMode", value) end)
     self.upgradeModeDropdown:SetPoint("TOPLEFT", goalsHeader, "BOTTOMLEFT", LEFT_DROPDOWN_X - LEFT_RAIL_INSET, -6)
 
-    self.ownedUpgradeDropdown = widgets:CreateDropdown("BigBiSListOwnedUpgradeDropdown", rail, LEFT_DROPDOWN_WIDTH,
-        function()
-            return "Owned upgrades: " .. ownedUpgradeLabel(self:GetFilters().includeOwnedUpgrades)
-        end,
-        function() return self:GetOwnedUpgradeDropdownItems() end,
-        function(value) self:SetFilter("includeOwnedUpgrades", value == "shown") end)
-    self.ownedUpgradeDropdown:SetPoint("TOPLEFT", self.upgradeModeDropdown, "BOTTOMLEFT", 0, -4)
-
     self.ownedDropdown = widgets:CreateDropdown("BigBiSListOwnedDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()
             return "Owned: " .. ownedFilterLabel(self:GetFilters().ownedState)
         end,
         function() return self:GetOwnedDropdownItems() end,
         function(value) self:SetFilter("ownedState", value) end)
-    self.ownedDropdown:SetPoint("TOPLEFT", self.ownedUpgradeDropdown, "BOTTOMLEFT", 0, -4)
+    self.ownedDropdown:SetPoint("TOPLEFT", self.upgradeModeDropdown, "BOTTOMLEFT", 0, -4)
 
     self.rankDropdown = widgets:CreateDropdown("BigBiSListRankDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()

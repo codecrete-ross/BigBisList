@@ -3331,7 +3331,7 @@ local function plannerGroupMatchesUpgradeMode(group, filters)
         return true
     elseif group.upgrade_state == "missing_upgrade" then
         return true
-    elseif filters.includeOwnedUpgrades and group.upgrade_state == "owned_upgrade" then
+    elseif group.upgrade_state == "owned_upgrade" then
         return true
     end
     return false
