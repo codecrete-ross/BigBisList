@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.8.0 - 2026-06-09
+
+### Added
+
+- Multi-select filter facets for source context, including cost, vendor, zone,
+  and reputation criteria where source data supports them.
+- Actual-upgrade filtering on the upgrades tab so planner targets can focus on
+  items that improve over equipped or already owned slot baselines.
+
+### Fixed
+
+- BiS variant classification and display labels now preserve top-choice
+  variants such as threat, mitigation, raid DPS, and personal DPS while keeping
+  alternatives classified separately.
+- Updated generated data for the reviewed BiS variant corrections.
+
 ## 0.7.0 - 2026-06-08
 
 ### Added
