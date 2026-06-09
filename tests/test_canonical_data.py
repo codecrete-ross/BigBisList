@@ -1,4 +1,5 @@
 import json
+import re
 import unittest
 
 from tools.project import canonical_json
@@ -56,6 +57,54 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertIn(28034, all_rank_ids)
         self.assertIn(29383, bis_rank_ids)
         self.assertNotIn(28034, bis_rank_ids)
+
+    def test_feral_tank_phase_2_weapon_bis_variants(self):
+        weapons = []
+        for row in canonical_json("bis_lists")["lists"]:
+            if (
+                row["class"] == "Druid"
+                and row["spec"] == "Feral tank"
+                and row["phase"] == "T5"
+                and row["slot"] == "Two Hand"
+            ):
+                weapons.extend(row["items"])
+
+        by_item_id = {entry["item_id"]: entry for entry in weapons}
+
+        self.assertEqual(by_item_id[30021]["rank_group"], "bis")
+        self.assertEqual(by_item_id[30021]["rank_label"], "Best mit skewed")
+        self.assertEqual(by_item_id[30021]["context"], "mitigation")
+        self.assertEqual(by_item_id[30021]["rank"], 1)
+        self.assertEqual(by_item_id[32014]["rank_group"], "bis")
+        self.assertEqual(by_item_id[32014]["rank_label"], "Best threat skewed")
+        self.assertEqual(by_item_id[32014]["context"], "threat")
+        self.assertEqual(by_item_id[32014]["rank"], 2)
+
+    def test_top_choice_rank_labels_are_bis_variants(self):
+        def is_top_choice_label(label):
+            lowered = " ".join(str(label or "").lower().split())
+            if "pvp" in lowered and not re.search(r"\bnon[-\s]?pvp\b", lowered):
+                return False
+            if "unrealistic" in lowered:
+                return False
+            if re.search(r"\b(option|optional|alternative|viable)\b", lowered):
+                return False
+            if lowered.startswith("best until") or re.search(r"\bbest\s+until\b|\buntil\s+t(?:ier)?\s*\d*\b", lowered):
+                return False
+            if re.search(r"\b(?:near|second|2nd|close)\s+best\b|\bclose\s+second\b", lowered):
+                return False
+            return bool(re.search(r"\b(best|bis)\b", lowered))
+
+        mismatches = []
+        for row in canonical_json("bis_lists")["lists"]:
+            for entry in row["items"]:
+                if is_top_choice_label(entry.get("rank_label")) and entry.get("rank_group") != "bis":
+                    mismatches.append(
+                        f"{row['class']}/{row['spec']}/{row['phase']}/{row['slot']} "
+                        f"{entry['item_id']} {entry.get('rank_label')} -> {entry.get('rank_group')}"
+                    )
+
+        self.assertEqual(mismatches, [])
 
     def test_bis_lists_do_not_repeat_identical_item_rows(self):
         seen = set()

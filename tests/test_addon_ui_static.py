@@ -293,6 +293,9 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "display_rank_label",
             "display_rank_kind",
+            "bisVariantLabel",
+            'return variant and ("BiS: " .. variant) or "BiS", "best"',
+            'return tostring(use.rank_label) .. " for " .. phaseLabel',
             "recommendation_tier",
             "recommendation_summary",
             "plannerRecommendationTier",
@@ -595,6 +598,37 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("context_matched = contextMatched", ui)
         self.assertIn("function UI:GetContextSourceSummary", ui)
         self.assertIn("self:GetContextSourceSummary(data)", ui)
+
+    def test_bis_variant_labels_feed_badges_details_and_tooltips(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+        tooltip = self.read_lua("Tooltip.lua")
+
+        for token in [
+            "bisVariantLabel",
+            'return "Threat"',
+            'return "Mit"',
+            'return "Hit"',
+            'return "Raid"',
+            'return "Personal"',
+            'data.rank_label ~= label',
+            '" source recommendation."',
+        ]:
+            self.assertIn(token, ui)
+
+        for token in [
+            "bisVariantLabel",
+            'return "Threat"',
+            'return "Mit"',
+            'return "Hit"',
+            'return "Raid"',
+            'return "Personal"',
+            'rankShortLabel(use)',
+            "tooltipRankShortLabel",
+        ]:
+            self.assertIn(token, data_index)
+
+        self.assertIn("match.display_rank_label or match.rank_label", tooltip)
 
     def test_quest_starter_sources_feed_filters_search_and_tooltip_aliases(self):
         data_index = self.read_lua("DataIndex.lua")

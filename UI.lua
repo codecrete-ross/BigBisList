@@ -345,6 +345,76 @@ local function trim(value)
     return tostring(value or ""):gsub("^%s+", ""):gsub("%s+$", "")
 end
 
+local function rankLabelIsGeneric(label)
+    local normalized = lower(trim(label))
+    return normalized == "" or normalized == "bis" or normalized == "best" or normalized == "best in slot"
+end
+
+local function bisVariantLabel(data)
+    if not data or data.rank_group ~= "bis" then
+        return nil
+    end
+
+    local label = lower(data.rank_label)
+    if rankLabelIsGeneric(label) then
+        return nil
+    elseif label:find("personal", 1, true) then
+        return "Personal"
+    elseif label:find("raid", 1, true) or label:find("group performance", 1, true) then
+        return "Raid"
+    elseif label:find("threat", 1, true) then
+        return "Threat"
+    elseif label:find("mitigation", 1, true) or label:find("mit skewed", 1, true) then
+        return "Mit"
+    elseif label:find("hit", 1, true) or label:find("6%", 1, true) or label:find("9%", 1, true) then
+        return "Hit"
+    elseif label:find("overall", 1, true) then
+        return "Overall"
+    elseif label:find("balanced", 1, true) then
+        return "Balanced"
+    elseif label:find("avoidance", 1, true) then
+        return "Avoid"
+    elseif label:find("defense", 1, true) or label:find("defensive", 1, true) then
+        return "Defense"
+    elseif label:find("stamina", 1, true) then
+        return "Stam"
+    elseif label:find("survivability", 1, true) then
+        return "Survival"
+    elseif label:find("main hand", 1, true) or string.find(label, "%f[%w]mh%f[%W]") then
+        return "MH"
+    elseif label:find("off hand", 1, true) or label:find("offhand", 1, true) or string.find(label, "%f[%w]oh%f[%W]") then
+        return "OH"
+    elseif label:find("dagger", 1, true) then
+        return "Dagger"
+    elseif label:find("crafted", 1, true) or label:find("crafting", 1, true) then
+        return "Crafted"
+    elseif label:find("haste", 1, true) then
+        return "Haste"
+    elseif label:find("set", 1, true) or string.find(label, "%d+p") then
+        return "Set"
+    elseif label:find("world boss", 1, true) then
+        return "World"
+    elseif label:find("pve", 1, true) then
+        return "PvE"
+    elseif label:find("aldor", 1, true) then
+        return "Aldor"
+    elseif label:find("scryer", 1, true) then
+        return "Scryer"
+    elseif label:find("alliance", 1, true) then
+        return "Alliance"
+    elseif label:find("horde", 1, true) then
+        return "Horde"
+    elseif label:find("demon", 1, true) or label:find("undead", 1, true) then
+        return "Demons"
+    elseif label:find("brutallus", 1, true) then
+        return "Brutallus"
+    elseif label:find("block", 1, true) then
+        return "Block"
+    end
+
+    return nil
+end
+
 local function listContains(list, value)
     for _, item in ipairs(list or {}) do
         if item == value then
@@ -450,7 +520,8 @@ local function displayRankInfo(data, mode)
 
     local rank = tonumber(data.rank)
     if data.rank_group == "bis" then
-        return "BiS", "best"
+        local variant = bisVariantLabel(data)
+        return variant and ("BiS: " .. variant) or "BiS", "best"
     elseif data.rank_group == "ranked" then
         return "Alt", "ranked"
     elseif data.rank_group == "situational" then
@@ -469,6 +540,9 @@ end
 local function rankMeaning(data, mode)
     local label, kind = displayRankInfo(data, mode)
     if kind == "best" then
+        if data and data.rank_label and not rankLabelIsGeneric(data.rank_label) and data.rank_label ~= label then
+            return label .. ": " .. data.rank_label .. " source recommendation."
+        end
         return label .. ": best-in-slot item for this slot and phase."
     elseif kind == "ranked" then
         return label .. ": listed alternative below BiS."

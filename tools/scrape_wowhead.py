@@ -1899,18 +1899,18 @@ def command_reprocess(args: argparse.Namespace) -> int:
 
 def rank_group_from_label(label: str) -> str:
     lowered = clean_text(label).lower()
-    if "pvp" in lowered:
+    if "pvp" in lowered and not re.search(r"\bnon[-\s]?pvp\b", lowered):
         return "pvp"
     if "unrealistic" in lowered:
         return "unrealistic"
-    if "bis" in lowered and "(" in lowered:
+    if lowered.startswith("best until") or re.search(r"\bbest\s+until\b|\buntil\s+t(?:ier)?\s*\d*\b", lowered):
         return "situational"
-    if lowered == "bis" or lowered == "best" or re.search(r"\bbis\b", lowered):
-        return "bis"
-    if lowered.startswith("best until") or "until tier" in lowered or "until t" in lowered:
-        return "situational"
-    if "option" in lowered or "alternative" in lowered or "viable" in lowered:
+    if re.search(r"\b(?:option|optional|alternative|viable)\b", lowered):
         return "option"
+    if re.search(r"\b(?:near|second|2nd|close)\s+best\b|\bclose\s+second\b", lowered):
+        return "ranked" if re.search(r"\d", lowered) else "option"
+    if re.search(r"\b(?:bis|best)\b", lowered):
+        return "bis"
     if re.search(r"\d", lowered):
         return "ranked"
     return "option"
@@ -1918,10 +1918,13 @@ def rank_group_from_label(label: str) -> str:
 
 def normalize_rank_group_value(rank_group: str | None, rank_label: str | None = None) -> str:
     if rank_group == "situational_bis":
-        return "situational"
+        return rank_group_from_label(rank_label or "BiS")
+    label_group = rank_group_from_label(rank_label or "")
+    if label_group == "bis" and rank_group in {"ranked", "situational", "option"}:
+        return "bis"
     if rank_group in {"bis", "ranked", "situational", "pvp", "unrealistic", "option"}:
         return rank_group
-    return rank_group_from_label(rank_label or "")
+    return label_group
 
 
 def context_from_rank_label(label: str) -> str:
@@ -1940,11 +1943,35 @@ def context_from_rank_label(label: str) -> str:
         return "world_boss"
     if "expensive" in lowered:
         return "expensive"
+    if "mitigation" in lowered or "mit skewed" in lowered:
+        return "mitigation"
+    if "avoidance" in lowered:
+        return "avoidance"
+    if "defense" in lowered or "defensive" in lowered:
+        return "defense"
+    if "stamina" in lowered:
+        return "stamina"
+    if "hit" in lowered or re.search(r"\b[69]%", lowered):
+        return "hit"
+    if "balanced" in lowered:
+        return "balanced"
+    if "overall" in lowered:
+        return "overall"
+    if "survivability" in lowered:
+        return "survivability"
+    if "main hand" in lowered or re.search(r"\bmh\b", lowered):
+        return "main_hand"
+    if "off hand" in lowered or "offhand" in lowered or re.search(r"\boh\b", lowered):
+        return "off_hand"
+    if "dagger" in lowered:
+        return "dagger"
+    if "set" in lowered or re.search(r"\b[246]p", lowered):
+        return "set_bonus"
     if "unrealistic" in lowered and ("alternative" in lowered or "option" in lowered or "viable" in lowered):
         return "unrealistic_option"
     if "unrealistic" in lowered:
         return "unrealistic"
-    if "pvp" in lowered:
+    if "pvp" in lowered and not re.search(r"\bnon[-\s]?pvp\b", lowered):
         return "pvp"
     if "option" in lowered or "alternative" in lowered or "viable" in lowered:
         return "option"
@@ -1954,7 +1981,7 @@ def context_from_rank_label(label: str) -> str:
 GENERIC_BIS_LABELS = {"option", "optional", "alternative", "viable"}
 
 
-def bis_item_entry_preference_key(entry: dict[str, Any]) -> tuple[int, int, int, int, str]:
+def bis_item_entry_preference_key(entry: dict[str, Any]) -> tuple[int, int, int, int, int, str]:
     label = str(entry.get("rank_label") or "")
     normalized_label = clean_text(label).lower()
     rank_group = normalize_rank_group_value(str(entry.get("rank_group") or ""), label)
@@ -1974,6 +2001,7 @@ def bis_item_entry_preference_key(entry: dict[str, Any]) -> tuple[int, int, int,
         best_label_penalty,
         generic_label_penalty,
         empty_label_penalty,
+        int(entry.get("rank") or 999),
         normalized_label,
     )
 
@@ -1983,6 +2011,26 @@ def merge_bis_item_entries(preferred: dict[str, Any], discarded: dict[str, Any])
     if "requirements" not in merged and discarded.get("requirements"):
         merged["requirements"] = discarded["requirements"]
     return merged
+
+
+def copy_imported_bis_ranks(replacement: dict[str, Any], imported: dict[str, Any] | None) -> dict[str, Any]:
+    if not imported:
+        return replacement
+
+    imported_by_id: dict[int, list[dict[str, Any]]] = {}
+    for item in imported.get("items", []):
+        if isinstance(item.get("item_id"), int):
+            imported_by_id.setdefault(item["item_id"], []).append(item)
+
+    for item in replacement.get("items", []):
+        if item.get("rank") is not None:
+            continue
+        candidates = imported_by_id.get(item.get("item_id"), [])
+        imported_item = next((candidate for candidate in candidates if candidate.get("rank_label") == item.get("rank_label")), None)
+        imported_item = imported_item or (candidates[0] if candidates else None)
+        if imported_item and imported_item.get("rank") is not None:
+            item["rank"] = imported_item["rank"]
+    return replacement
 
 
 def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
@@ -2002,7 +2050,7 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                 if table.get("data_family") not in (None, "bis_lists", "unknown"):
                     continue
                 items_by_phase_slot: dict[tuple[str, str], dict[int, dict[str, Any]]] = {}
-                for row in table.get("rows", []):
+                for rank_index, row in enumerate(table.get("rows", []), start=1):
                     item_id = row.get("item_id")
                     phase = phase_from_row(source_meta, table, row)
                     if not item_id or not phase:
@@ -2015,6 +2063,7 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                     phase_slot = (phase, slot)
                     item_entry = {
                         "item_id": item_id,
+                        "rank": rank_index,
                         "rank_label": rank_label,
                         "rank_group": rank_group_from_label(rank_label),
                         "context": context,
@@ -2046,7 +2095,7 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                             "phase": phase,
                             "slot": slot,
                             "source_url": snapshot["url"],
-                            "items": list(items_by_id.values()),
+                            "items": sorted(items_by_id.values(), key=lambda item: int(item.get("rank") or 999)),
                         }
                     )
 
@@ -3641,6 +3690,8 @@ def apply_bis_overrides(imported_bis_lists: dict[str, Any]) -> dict[str, Any]:
         replacement = next((deepcopy(row) for row in existing_rows if target_matches(row, target)), None)
         if not replacement:
             continue
+        imported_row = next((row for row in rows if target_matches(row, target)), None)
+        replacement = copy_imported_bis_ranks(replacement, imported_row)
 
         replaced = False
         for index, row in enumerate(rows):

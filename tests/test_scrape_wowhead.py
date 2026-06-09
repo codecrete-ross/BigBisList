@@ -163,9 +163,48 @@ class WowheadScraperParserTests(unittest.TestCase):
 
     def test_rank_normalization_preserves_wowhead_best_as_top_rank(self):
         self.assertEqual(scraper.rank_group_from_label("Best"), "bis")
+        self.assertEqual(scraper.rank_group_from_label("Best Threat"), "bis")
+        self.assertEqual(scraper.rank_group_from_label("Best Mitigation"), "bis")
+        self.assertEqual(scraper.rank_group_from_label("Best in slot"), "bis")
+        self.assertEqual(scraper.rank_group_from_label("Best 6%"), "bis")
+        self.assertEqual(scraper.rank_group_from_label("BiS (Raid DPS)"), "bis")
         self.assertEqual(scraper.rank_group_from_label("Best Until Tier 5"), "situational")
+        self.assertEqual(scraper.rank_group_from_label("Near Best"), "option")
+        self.assertEqual(scraper.rank_group_from_label("Best Alternative"), "option")
+        self.assertEqual(scraper.rank_group_from_label("Best (Unrealistic)"), "unrealistic")
         self.assertEqual(scraper.rank_group_from_label("PvP"), "pvp")
-        self.assertEqual(scraper.normalize_rank_group_value("situational_bis", "BiS (Group Performance)"), "situational")
+        self.assertEqual(scraper.rank_group_from_label("Best Non PvP"), "bis")
+        self.assertEqual(scraper.normalize_rank_group_value("situational_bis", "BiS (Group Performance)"), "bis")
+
+    def test_bis_import_keeps_source_row_order_as_rank(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-best-variants"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best in Slot Two-Hand Weapons for Feral Druid in TBC Classic Phase 2</h3>
+            <table>
+              <tr><td>Best Mitigation</td><td><a href="/tbc/item=30021/wildfury-greatstaff">Wildfury Greatstaff</a></td><td>Drop</td></tr>
+              <tr><td>Best Threat</td><td><a href="/tbc/item=32014/merciless-gladiators-maul">Merciless Gladiator's Maul</a></td><td>Vendor</td></tr>
+            </table>
+            </body></html>
+            """,
+        )
+        source = {"id": "synthetic", "url": guide_url, "data_family": "bis_lists", "class": "Druid", "spec": "Feral tank", "phase": "T5"}
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            row = scraper.import_bis_lists_from_snapshots([guide_snapshot])["lists"][0]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        by_item_id = {item["item_id"]: item for item in row["items"]}
+        self.assertEqual(by_item_id[30021]["rank_group"], "bis")
+        self.assertEqual(by_item_id[30021]["context"], "mitigation")
+        self.assertEqual(by_item_id[30021]["rank"], 1)
+        self.assertEqual(by_item_id[32014]["rank_group"], "bis")
+        self.assertEqual(by_item_id[32014]["context"], "threat")
+        self.assertEqual(by_item_id[32014]["rank"], 2)
 
     def test_requirement_audit_ignores_leveling_rotation_verbs(self):
         self.assertFalse(scraper.requirement_looks_like_text("Renew may be used, but require reapplying Shadowform before pulling."))
