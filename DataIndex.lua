@@ -1374,6 +1374,50 @@ local function isBetterGearUse(candidate, current, preferredPhaseKey)
     return sortUses(candidate, current)
 end
 
+local function isStrictUpgradeUse(candidate, current, preferredPhaseKey)
+    if not candidate then
+        return false
+    elseif not current then
+        return true
+    elseif candidate.item_id and current.item_id and candidate.item_id == current.item_id then
+        return false
+    end
+
+    local candidatePreferred = candidate.phase == preferredPhaseKey
+    local currentPreferred = current.phase == preferredPhaseKey
+    if candidatePreferred ~= currentPreferred then
+        return candidatePreferred
+    end
+
+    local candidateRank = RANK_GROUP_ORDER[candidate.rank_group] or 50
+    local currentRank = RANK_GROUP_ORDER[current.rank_group] or 50
+    if candidateRank ~= currentRank then
+        return candidateRank < currentRank
+    end
+
+    local candidateNumericRank = tonumber(candidate.rank) or 999
+    local currentNumericRank = tonumber(current.rank) or 999
+    if candidateNumericRank ~= currentNumericRank then
+        return candidateNumericRank < currentNumericRank
+    end
+
+    local preferredIndex = phaseIndex(preferredPhaseKey)
+    local candidateFuture = candidate.phaseIndex >= preferredIndex
+    local currentFuture = current.phaseIndex >= preferredIndex
+    if candidateFuture ~= currentFuture then
+        return candidateFuture
+    end
+
+    if candidate.phaseIndex ~= current.phaseIndex then
+        if candidateFuture then
+            return candidate.phaseIndex < current.phaseIndex
+        end
+        return candidate.phaseIndex > current.phaseIndex
+    end
+
+    return false
+end
+
 local function ensurePath(root, key)
     root[key] = root[key] or {}
     return root[key]
@@ -3064,6 +3108,156 @@ function BigBiSList:GetItemBestUseForSpec(itemId, className, specName, preferred
     return bestUse
 end
 
+local function upgradeSlotCapacity(slotName)
+    if slotName == "Ring" or slotName == "Trinket" then
+        return 2
+    end
+    return 1
+end
+
+local function addOwnedUseContext(contextsBySlot, use, state)
+    if not use or not use.slot then
+        return
+    end
+
+    contextsBySlot[use.slot] = contextsBySlot[use.slot] or {}
+    table.insert(contextsBySlot[use.slot], {
+        use = use,
+        item_id = use.item_id,
+        name = use.name,
+        state = state,
+        slot = use.slot,
+        rank_label = use.rank_label,
+        rank_group = use.rank_group,
+    })
+end
+
+local function addOwnedItemToUpgradeBaseline(addon, contextsBySlot, itemId, state, className, specName, preferredPhaseKey)
+    itemId = tonumber(itemId)
+    if not itemId or type(state) ~= "string" then
+        return
+    end
+
+    local bestBySlot = {}
+    for _, use in ipairs(addon:GetItemUses(itemId)) do
+        if use.class == className
+            and use.spec == specName
+            and isBetterGearUse(use, bestBySlot[use.slot], preferredPhaseKey) then
+            bestBySlot[use.slot] = use
+        end
+    end
+
+    for _, use in pairs(bestBySlot) do
+        addOwnedUseContext(contextsBySlot, use, state)
+    end
+end
+
+local function sortUpgradeBaseline(contextsBySlot, preferredPhaseKey)
+    for _, contexts in pairs(contextsBySlot or {}) do
+        table.sort(contexts, function(a, b)
+            return isBetterGearUse(a.use, b.use, preferredPhaseKey)
+        end)
+    end
+end
+
+local function buildUpgradeBaselines(addon, className, specName, preferredPhaseKey, ownedItems)
+    local baselines = {
+        ownedBySlot = {},
+        equippedBySlot = {},
+    }
+
+    for itemId, state in pairs(ownedItems or {}) do
+        if type(state) == "string" then
+            addOwnedItemToUpgradeBaseline(addon, baselines.ownedBySlot, itemId, state, className, specName, preferredPhaseKey)
+            if state == "equipped" then
+                addOwnedItemToUpgradeBaseline(addon, baselines.equippedBySlot, itemId, state, className, specName, preferredPhaseKey)
+            end
+        end
+    end
+
+    sortUpgradeBaseline(baselines.ownedBySlot, preferredPhaseKey)
+    sortUpgradeBaseline(baselines.equippedBySlot, preferredPhaseKey)
+    return baselines
+end
+
+local function bestPlannerUseForUpgrade(group, preferredPhaseKey)
+    local bestUse
+    for _, use in ipairs(group and group.uses or {}) do
+        if isBetterGearUse(use, bestUse, preferredPhaseKey) then
+            bestUse = use
+        end
+    end
+    return bestUse or (group and group.bestUse)
+end
+
+local function upgradeComparisonContext(contextsBySlot, use)
+    if not use then
+        return nil
+    end
+
+    local contexts = contextsBySlot and contextsBySlot[use.slot] or nil
+    local capacity = upgradeSlotCapacity(use.slot)
+    if not contexts or #contexts < capacity then
+        return nil
+    end
+    return contexts[capacity]
+end
+
+local function applyPlannerUpgradeMetadata(group, state, candidateUse, comparedContext)
+    group.upgrade_state = state
+    group.upgrade_candidate_rank_label = candidateUse and candidateUse.rank_label or nil
+    group.upgrade_candidate_display_rank_label = candidateUse and rankShortLabel(candidateUse) or nil
+    group.upgrade_candidate_phase = candidateUse and candidateUse.phase or nil
+    group.upgrade_compared_slot = candidateUse and candidateUse.slot or group.slot
+    group.upgrade_compared_empty = comparedContext == nil
+    group.upgrade_compared_item_id = comparedContext and comparedContext.item_id or nil
+    group.upgrade_compared_name = comparedContext and comparedContext.name or nil
+    group.upgrade_compared_state = comparedContext and comparedContext.state or nil
+    group.upgrade_compared_rank_label = comparedContext and comparedContext.rank_label or nil
+    group.upgrade_compared_rank_group = comparedContext and comparedContext.rank_group or nil
+end
+
+local function annotatePlannerUpgradeGroup(group, filters, baselines, selectedPhaseKey)
+    local candidateUse = bestPlannerUseForUpgrade(group, selectedPhaseKey)
+    local ownedState = filters and filters.ownedItems and filters.ownedItems[group.item_id]
+    local comparedContext
+
+    if not candidateUse or ownedState == "equipped" then
+        applyPlannerUpgradeMetadata(group, "not_upgrade", candidateUse, nil)
+        return
+    elseif ownedState == "bag" or ownedState == "bank" then
+        comparedContext = upgradeComparisonContext(baselines.equippedBySlot, candidateUse)
+        if isStrictUpgradeUse(candidateUse, comparedContext and comparedContext.use, selectedPhaseKey) then
+            applyPlannerUpgradeMetadata(group, "owned_upgrade", candidateUse, comparedContext)
+            return
+        end
+        applyPlannerUpgradeMetadata(group, "not_upgrade", candidateUse, comparedContext)
+        return
+    elseif ownedState then
+        applyPlannerUpgradeMetadata(group, "not_upgrade", candidateUse, nil)
+        return
+    end
+
+    comparedContext = upgradeComparisonContext(baselines.ownedBySlot, candidateUse)
+    if isStrictUpgradeUse(candidateUse, comparedContext and comparedContext.use, selectedPhaseKey) then
+        applyPlannerUpgradeMetadata(group, "missing_upgrade", candidateUse, comparedContext)
+        return
+    end
+
+    applyPlannerUpgradeMetadata(group, "not_upgrade", candidateUse, comparedContext)
+end
+
+local function plannerGroupMatchesUpgradeMode(group, filters)
+    if not filters or filters.upgradeMode ~= "actual" then
+        return true
+    elseif group.upgrade_state == "missing_upgrade" then
+        return true
+    elseif filters.includeOwnedUpgrades and group.upgrade_state == "owned_upgrade" then
+        return true
+    end
+    return false
+end
+
 function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems)
     local rows = {}
     local equippedSlots = ownedItems and ownedItems.equippedSlots or {}
@@ -3178,6 +3372,9 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
     local index = self:GetDataIndex()
     local groups = {}
     local selectedIndex = phaseIndex(selectedPhaseKey)
+    local upgradeBaselines = filters and filters.upgradeMode == "actual"
+        and buildUpgradeBaselines(self, className, specName, selectedPhaseKey, filters.ownedItems)
+        or nil
     local useRefs = index.useRefsByClassSpec[className]
         and index.useRefsByClassSpec[className][specName]
         or {}
@@ -3243,7 +3440,11 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
         group.reputations = group.bestUse and group.bestUse.reputations or group.reputations
         group.requirements = group.bestUse and group.bestUse.requirements or group.requirements
 
-        if group.priority > 0 and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters, selectedIndex) then
+        if upgradeBaselines then
+            annotatePlannerUpgradeGroup(group, filters, upgradeBaselines, selectedPhaseKey)
+        end
+
+        if group.priority > 0 and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters, selectedIndex) and plannerGroupMatchesUpgradeMode(group, filters) then
             if filters and filters.longevity == "current" and not group.hasCurrent then
                 -- excluded below
             elseif filters and filters.longevity == "future" and group.lastUsefulPhase == selectedPhaseKey then

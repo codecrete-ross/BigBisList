@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 12
+local DEFAULTS_VERSION = 13
 local DEFAULT_SELECTED_CLASS = "Druid"
 local DEFAULT_SELECTED_SPEC = "Feral dps"
 
@@ -99,6 +99,8 @@ BigBiSList.defaults = {
             rankGroup = "all",
             rankGroups = {},
             ownedState = "all",
+            upgradeMode = "actual",
+            includeOwnedUpgrades = false,
             binding = "all",
             boe = "all",
             faction = "all",

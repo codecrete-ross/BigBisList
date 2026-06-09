@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 12",
+            "local DEFAULTS_VERSION = 13",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -60,6 +60,8 @@ class AddonUIStaticTests(unittest.TestCase):
             'reputation = "all"',
             "reputations = {}",
             "rankGroups = {}",
+            'upgradeMode = "actual"',
+            "includeOwnedUpgrades = false",
             "bankCache = {",
             "links = {}",
             "wishlist = {}",
@@ -1059,6 +1061,56 @@ class AddonUIStaticTests(unittest.TestCase):
             "if score > 100 then",
         ]:
             self.assertIn(snippet, data_index)
+
+    def test_upgrades_tab_defaults_to_actual_upgrade_filtering(self):
+        config = self.read_lua("Config.lua")
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            'upgradeMode = "actual"',
+            "includeOwnedUpgrades = false",
+            "BigBiSListUpgradeModeDropdown",
+            "BigBiSListOwnedUpgradeDropdown",
+            "GetUpgradeModeDropdownItems",
+            "GetOwnedUpgradeDropdownItems",
+            'return "Targets: " .. upgradeModeLabel',
+            'return "Owned upgrades: " .. ownedUpgradeLabel',
+            'self:SetFilter("includeOwnedUpgrades", value == "shown")',
+            "upgradeMode = filters.upgradeMode",
+            "includeOwnedUpgrades = filters.includeOwnedUpgrades == true",
+            'filters.upgradeMode = "actual"',
+            "filters.includeOwnedUpgrades = false",
+            "upgradeComparisonText",
+            "GameTooltip:AddLine(upgradeText",
+        ]:
+            self.assertIn(token, config + ui)
+
+        for token in [
+            "local function isStrictUpgradeUse",
+            "candidate.item_id == current.item_id",
+            "local function upgradeSlotCapacity",
+            'slotName == "Ring" or slotName == "Trinket"',
+            "ownedBySlot = {}",
+            "equippedBySlot = {}",
+            "buildUpgradeBaselines(self, className, specName, selectedPhaseKey, filters.ownedItems)",
+            "group.upgrade_state = state",
+            '"missing_upgrade"',
+            '"owned_upgrade"',
+            '"not_upgrade"',
+            'ownedState == "equipped"',
+            'ownedState == "bag" or ownedState == "bank"',
+            "upgradeComparisonContext(baselines.equippedBySlot, candidateUse)",
+            "upgradeComparisonContext(baselines.ownedBySlot, candidateUse)",
+            "filters.includeOwnedUpgrades and group.upgrade_state == \"owned_upgrade\"",
+            "plannerGroupMatchesUpgradeMode(group, filters)",
+        ]:
+            self.assertIn(token, data_index)
+
+        planner_body = data_index.split("function BigBiSList:GetPlannerRows", 1)[1].split("local function cloneFiltersForZoneOptions", 1)[0]
+        self.assertLess(planner_body.index("annotatePlannerUpgradeGroup"), planner_body.index("plannerGroupMatchesUpgradeMode"))
+        self.assertIn('filters and filters.upgradeMode == "actual"', planner_body)
+        self.assertIn("and plannerGroupMatchesUpgradeMode(group, filters)", planner_body)
 
     def test_esc_closable_frame_is_registered(self):
         ui = self.read_lua("UI.lua")
