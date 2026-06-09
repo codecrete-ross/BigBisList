@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 11",
+            "local DEFAULTS_VERSION = 12",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -51,7 +51,15 @@ class AddonUIStaticTests(unittest.TestCase):
             'phase = "PR"',
             'tab = "Upgrades"',
             "filters = {",
+            "sourceTypes = {}",
+            "zones = {}",
+            'cost = "all"',
+            "costs = {}",
+            'vendor = "all"',
+            "vendors = {}",
             'reputation = "all"',
+            "reputations = {}",
+            "rankGroups = {}",
             "bankCache = {",
             "links = {}",
             "wishlist = {}",
@@ -59,6 +67,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "migrateLegacyDefaults",
             "normalizeTabName",
             "migrateMinimapSettings",
+            "migrateFacetedFilters",
             "ensureTooltipSpecFilters",
             "EnsureTooltipSpecFilters",
             "GetTooltipSpecFilterKey",
@@ -138,7 +147,7 @@ class AddonUIStaticTests(unittest.TestCase):
         data_index = self.read_lua("DataIndex.lua")
         for method in ["OpenMainFrame", "CloseMainFrame", "ToggleMainFrame", "RefreshUI"]:
             self.assertIn(f"function BigBiSList:{method}()", ui)
-        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetFilterAvailabilitySnapshot", "GetItemMeta", "GetRowAccessOptions", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
+        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetAvailableFilterCosts", "GetAvailableFilterVendors", "GetFilterAvailabilitySnapshot", "GetItemMeta", "GetRowAccessOptions", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
             self.assertIn(f"function BigBiSList:{method}", data_index)
         self.assertIn("function BigBiSList:SetSelection", self.read_lua("Config.lua"))
 
@@ -788,7 +797,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "GetAvailableZoneValues",
             "ValidateZoneFilter",
             "IsZoneValueAvailable",
-            "for _, zone in ipairs(self:GetAvailableZoneValues())",
+            "GetFacetDropdownItems(self:GetAvailableZoneValues()",
+            'ToggleFacetFilter("zones", value, "zone")',
         ]:
             self.assertIn(token, ui)
         self.assertNotIn("BigBiSList:GetDataIndex().zones", ui)
@@ -840,7 +850,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "GetAvailableSourceTypeValues",
             "ValidateSourceTypeFilter",
             "IsSourceTypeValueAvailable",
-            "for _, sourceType in ipairs(self:GetAvailableSourceTypeValues())",
+            "GetFacetDropdownItems(self:GetAvailableSourceTypeValues()",
+            'ToggleFacetFilter("sourceTypes", value, "sourceType")',
         ]:
             self.assertIn(token, ui)
         source_dropdown_body = ui.split("function UI:GetSourceDropdownItems()", 1)[1].split("function UI:GetZoneDropdownItems()", 1)[0]
@@ -898,8 +909,8 @@ class AddonUIStaticTests(unittest.TestCase):
             'ranked = "Alts only"',
             'situational = "Sidegrades"',
             'option = "Nice-to-have"',
-            "rankFilterLabel(self:GetFilters().rankGroup)",
-            '"Tag: " .. rankFilterLabel',
+            "GetRankDropdownText",
+            'GetFacetDropdownText("All tags", "Tags", self:GetFilters().rankGroups, RANK_FILTER_LABELS)',
             '"Usefulness: " .. longevityFilterLabel',
         ]:
             self.assertIn(token, ui)

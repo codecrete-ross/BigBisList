@@ -284,6 +284,16 @@ local LONGEVITY_FILTER_LABELS = {
 }
 local LONGEVITY_FILTER_ORDER = { "all", "current", "future", "long" }
 
+local COST_FILTER_LABELS = {
+    badge_justice = "Badge of Justice",
+    arena_points = "Arena Points",
+    honor_points = "Honor Points",
+    battleground_marks = "Battleground Marks",
+    tier_tokens = "Tier Tokens",
+    sunmote = "Sunmote",
+    other_turnins = "Other turn-ins",
+}
+
 local RANK_COLORS = {
     best = { 0.18, 0.15, 0.06, 0.96, 0.92, 0.76, 0.28, 1 },
     ranked = { 0.10, 0.18, 0.30, 0.96, 0.46, 0.68, 0.98, 1 },
@@ -330,6 +340,46 @@ local function listContains(list, value)
         end
     end
     return false
+end
+
+local function tableHasAnyEnabled(values)
+    if type(values) ~= "table" then
+        return false
+    end
+
+    for _, selected in pairs(values) do
+        if selected then
+            return true
+        end
+    end
+    return false
+end
+
+local function selectedValuesCount(values)
+    local count = 0
+    if type(values) ~= "table" then
+        return count
+    end
+
+    for _, selected in pairs(values) do
+        if selected then
+            count = count + 1
+        end
+    end
+    return count
+end
+
+local function firstSelectedValue(values)
+    if type(values) ~= "table" then
+        return nil
+    end
+
+    for value, selected in pairs(values) do
+        if selected then
+            return value
+        end
+    end
+    return nil
 end
 
 local function normalizeTabName(tabName)
@@ -1252,12 +1302,131 @@ local function optionMatchesSourceFilter(option, sourceType)
         and (option.source_filter_key == sourceType or option.source_type == sourceType)
 end
 
+local function optionMatchesAnySelectedSourceType(option, selectedSourceTypes)
+    if not tableHasAnyEnabled(selectedSourceTypes) then
+        return true
+    end
+
+    for sourceType, selected in pairs(selectedSourceTypes or {}) do
+        if selected and optionMatchesSourceFilter(option, sourceType) then
+            return true
+        end
+    end
+    return false
+end
+
 local function optionMatchesZoneFilter(option, zone)
     if not zone or zone == "all" then
         return true
     end
 
     return optionHasZone(option, zone)
+end
+
+local function optionMatchesAnySelectedZone(option, selectedZones)
+    if not tableHasAnyEnabled(selectedZones) then
+        return true
+    end
+
+    for zone, selected in pairs(selectedZones or {}) do
+        if selected and optionHasZone(option, zone) then
+            return true
+        end
+    end
+    return false
+end
+
+local function optionHasCost(option, costKey)
+    if not option or not costKey or costKey == "" then
+        return false
+    end
+
+    for _, optionCostKey in ipairs(option.cost_keys or {}) do
+        if optionCostKey == costKey then
+            return true
+        end
+    end
+    return false
+end
+
+local function optionMatchesCostFilter(option, costKey)
+    if not costKey or costKey == "all" then
+        return true
+    end
+    return optionHasCost(option, costKey)
+end
+
+local function optionMatchesAnySelectedCost(option, selectedCosts)
+    if not tableHasAnyEnabled(selectedCosts) then
+        return true
+    end
+
+    for costKey, selected in pairs(selectedCosts or {}) do
+        if selected and optionHasCost(option, costKey) then
+            return true
+        end
+    end
+    return false
+end
+
+local function optionHasVendor(option, vendorKey)
+    if not option or not vendorKey or vendorKey == "" then
+        return false
+    end
+    return option.vendor_key == vendorKey
+end
+
+local function optionMatchesVendorFilter(option, vendorKey)
+    if not vendorKey or vendorKey == "all" then
+        return true
+    end
+    return optionHasVendor(option, vendorKey)
+end
+
+local function optionMatchesAnySelectedVendor(option, selectedVendors)
+    if not tableHasAnyEnabled(selectedVendors) then
+        return true
+    end
+
+    for vendorKey, selected in pairs(selectedVendors or {}) do
+        if selected and optionHasVendor(option, vendorKey) then
+            return true
+        end
+    end
+    return false
+end
+
+local function optionHasReputation(option, reputation)
+    if not option or not reputation or reputation == "" then
+        return false
+    end
+
+    for _, optionReputation in ipairs(option.reputations or {}) do
+        if optionReputation == reputation then
+            return true
+        end
+    end
+    return false
+end
+
+local function optionMatchesReputationFilter(option, reputation)
+    if not reputation or reputation == "all" then
+        return true
+    end
+    return optionHasReputation(option, reputation)
+end
+
+local function optionMatchesAnySelectedReputation(option, selectedReputations)
+    if not tableHasAnyEnabled(selectedReputations) then
+        return true
+    end
+
+    for reputation, selected in pairs(selectedReputations or {}) do
+        if selected and optionHasReputation(option, reputation) then
+            return true
+        end
+    end
+    return false
 end
 
 local function optionIsPhaseAvailable(option, selectedPhaseIndex)
@@ -1273,14 +1442,30 @@ local function optionMatchesActiveSourceContext(option, filters, selectedPhaseIn
     end
 
     local hasSourceFilter = filters.sourceType and filters.sourceType ~= "all"
+        or tableHasAnyEnabled(filters.sourceTypes)
     local hasZoneFilter = filters.zone and filters.zone ~= "all"
-    if not hasSourceFilter and not hasZoneFilter then
+        or tableHasAnyEnabled(filters.zones)
+    local hasCostFilter = filters.cost and filters.cost ~= "all"
+        or tableHasAnyEnabled(filters.costs)
+    local hasVendorFilter = filters.vendor and filters.vendor ~= "all"
+        or tableHasAnyEnabled(filters.vendors)
+    local hasReputationFilter = filters.reputation and filters.reputation ~= "all"
+        or tableHasAnyEnabled(filters.reputations)
+    if not hasSourceFilter and not hasZoneFilter and not hasCostFilter and not hasVendorFilter and not hasReputationFilter then
         return false
     end
 
     return optionIsPhaseAvailable(option, selectedPhaseIndex)
         and optionMatchesSourceFilter(option, filters.sourceType)
+        and optionMatchesAnySelectedSourceType(option, filters.sourceTypes)
         and optionMatchesZoneFilter(option, filters.zone)
+        and optionMatchesAnySelectedZone(option, filters.zones)
+        and optionMatchesCostFilter(option, filters.cost)
+        and optionMatchesAnySelectedCost(option, filters.costs)
+        and optionMatchesVendorFilter(option, filters.vendor)
+        and optionMatchesAnySelectedVendor(option, filters.vendors)
+        and optionMatchesReputationFilter(option, filters.reputation)
+        and optionMatchesAnySelectedReputation(option, filters.reputations)
 end
 
 function UI:EvaluateAccessOption(option, accessState)
@@ -1554,6 +1739,29 @@ function UI:GetAvailableZoneValues()
     return self:GetFilterAvailabilitySnapshot().zones or {}
 end
 
+function UI:GetAvailableCostValues()
+    return self:GetFilterAvailabilitySnapshot().costs or {}
+end
+
+function UI:GetAvailableCostLabels()
+    local labels = {}
+    for key, label in pairs(COST_FILTER_LABELS) do
+        labels[key] = label
+    end
+    for key, label in pairs(self:GetFilterAvailabilitySnapshot().costLabels or {}) do
+        labels[key] = label
+    end
+    return labels
+end
+
+function UI:GetAvailableVendorValues()
+    return self:GetFilterAvailabilitySnapshot().vendors or {}
+end
+
+function UI:GetAvailableVendorLabels()
+    return self:GetFilterAvailabilitySnapshot().vendorLabels or {}
+end
+
 function UI:GetAvailableReputationValues()
     return self:GetFilterAvailabilitySnapshot().reputations or {}
 end
@@ -1638,9 +1846,17 @@ function UI:BuildFilterPayload()
     self.currentFilterPayload = {
         search = filters.search,
         sourceType = filters.sourceType,
+        sourceTypes = filters.sourceTypes,
         zone = filters.zone,
+        zones = filters.zones,
+        cost = filters.cost,
+        costs = filters.costs,
+        vendor = filters.vendor,
+        vendors = filters.vendors,
         reputation = filters.reputation,
+        reputations = filters.reputations,
         rankGroup = filters.rankGroup,
+        rankGroups = filters.rankGroups,
         ownedState = filters.ownedState,
         binding = filters.binding,
         boe = filters.boe,
@@ -1749,50 +1965,92 @@ function UI:GetSpecDropdownItems()
     return items
 end
 
-function UI:GetSourceDropdownItems()
-    local filters = self:GetFilters()
-    local labels = BigBiSList:GetSourceTypeLabels()
-    local items = {
-        { value = "all", text = labels.all, checked = filters.sourceType == "all" },
-    }
-    for _, sourceType in ipairs(self:GetAvailableSourceTypeValues()) do
+function UI:GetFacetDropdownItems(values, labels, selectedValues, clearText, emptyText)
+    local items = {}
+    if tableHasAnyEnabled(selectedValues) then
         table.insert(items, {
-            value = sourceType,
-            text = labels[sourceType] or sourceType,
-            checked = filters.sourceType == sourceType,
+            value = "__clear",
+            text = clearText or "Clear",
+            notCheckable = true,
+        })
+    end
+
+    if #(values or {}) == 0 then
+        table.insert(items, {
+            value = "__empty",
+            text = emptyText or "No options",
+            disabled = true,
+            notCheckable = true,
+        })
+        return items
+    end
+
+    for _, value in ipairs(values or {}) do
+        table.insert(items, {
+            value = value,
+            text = labels[value] or value,
+            checked = type(selectedValues) == "table" and selectedValues[value] == true,
+            isNotRadio = true,
+            keepShownOnClick = true,
         })
     end
     return items
+end
+
+function UI:GetFacetDropdownText(allLabel, prefix, selectedValues, labels)
+    local count = selectedValuesCount(selectedValues)
+    if count == 0 then
+        return allLabel
+    elseif count == 1 then
+        local value = firstSelectedValue(selectedValues)
+        return prefix .. ": " .. (labels[value] or value)
+    end
+    return prefix .. ": " .. tostring(count)
+end
+
+function UI:GetSourceDropdownItems()
+    local filters = self:GetFilters()
+    return self:GetFacetDropdownItems(self:GetAvailableSourceTypeValues(), BigBiSList:GetSourceTypeLabels(), filters.sourceTypes, "Clear sources", "No source options")
+end
+
+function UI:GetSourceDropdownText()
+    return self:GetFacetDropdownText("All sources", "Sources", self:GetFilters().sourceTypes, BigBiSList:GetSourceTypeLabels())
 end
 
 function UI:GetZoneDropdownItems()
     local filters = self:GetFilters()
-    local items = {
-        { value = "all", text = "All zones", checked = filters.zone == "all" },
-    }
-    for _, zone in ipairs(self:GetAvailableZoneValues()) do
-        table.insert(items, {
-            value = zone,
-            text = zone,
-            checked = filters.zone == zone,
-        })
-    end
-    return items
+    return self:GetFacetDropdownItems(self:GetAvailableZoneValues(), {}, filters.zones, "Clear zones", "No zone options")
+end
+
+function UI:GetZoneDropdownText()
+    return self:GetFacetDropdownText("All zones", "Zones", self:GetFilters().zones, {})
+end
+
+function UI:GetCostDropdownItems()
+    local filters = self:GetFilters()
+    return self:GetFacetDropdownItems(self:GetAvailableCostValues(), self:GetAvailableCostLabels(), filters.costs, "Clear costs", "No cost options")
+end
+
+function UI:GetCostDropdownText()
+    return self:GetFacetDropdownText("All costs", "Costs", self:GetFilters().costs, self:GetAvailableCostLabels())
+end
+
+function UI:GetVendorDropdownItems()
+    local filters = self:GetFilters()
+    return self:GetFacetDropdownItems(self:GetAvailableVendorValues(), self:GetAvailableVendorLabels(), filters.vendors, "Clear vendors", "No vendor options")
+end
+
+function UI:GetVendorDropdownText()
+    return self:GetFacetDropdownText("All vendors", "Vendors", self:GetFilters().vendors, self:GetAvailableVendorLabels())
 end
 
 function UI:GetReputationDropdownItems()
     local filters = self:GetFilters()
-    local items = {
-        { value = "all", text = "All reps", checked = filters.reputation == "all" },
-    }
-    for _, reputation in ipairs(self:GetAvailableReputationValues()) do
-        table.insert(items, {
-            value = reputation,
-            text = reputation,
-            checked = filters.reputation == reputation,
-        })
-    end
-    return items
+    return self:GetFacetDropdownItems(self:GetAvailableReputationValues(), {}, filters.reputations, "Clear reps", "No rep options")
+end
+
+function UI:GetReputationDropdownText()
+    return self:GetFacetDropdownText("All reps", "Reps", self:GetFilters().reputations, {})
 end
 
 local function filterDropdownItems(values, labels, selectedValue)
@@ -1809,7 +2067,17 @@ end
 
 function UI:GetRankDropdownItems()
     local filters = self:GetFilters()
-    return filterDropdownItems(RANK_FILTER_ORDER, RANK_FILTER_LABELS, filters.rankGroup or "all")
+    local values = {}
+    for _, value in ipairs(RANK_FILTER_ORDER) do
+        if value ~= "all" then
+            table.insert(values, value)
+        end
+    end
+    return self:GetFacetDropdownItems(values, RANK_FILTER_LABELS, filters.rankGroups, "Clear tags", "No tag options")
+end
+
+function UI:GetRankDropdownText()
+    return self:GetFacetDropdownText("All tags", "Tags", self:GetFilters().rankGroups, RANK_FILTER_LABELS)
 end
 
 function UI:GetOwnedDropdownItems()
@@ -1860,6 +2128,46 @@ function UI:SetFilter(key, value)
     self:ScheduleRefresh()
 end
 
+function UI:ToggleFacetFilter(tableKey, value, scalarKey)
+    if value == "__empty" then
+        return
+    elseif value == "__clear" then
+        self:ClearFacetFilter(tableKey, scalarKey)
+        return
+    end
+
+    local filters = self:GetFilters()
+    filters[tableKey] = type(filters[tableKey]) == "table" and filters[tableKey] or {}
+    filters[tableKey][value] = not filters[tableKey][value] or nil
+    if scalarKey then
+        filters[scalarKey] = "all"
+    end
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
+end
+
+function UI:ClearFacetFilter(tableKey, scalarKey)
+    local filters = self:GetFilters()
+    filters[tableKey] = {}
+    if scalarKey then
+        filters[scalarKey] = "all"
+    end
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
+end
+
+function UI:ClearFacetValue(tableKey, value, scalarKey)
+    local filters = self:GetFilters()
+    if type(filters[tableKey]) == "table" then
+        filters[tableKey][value] = nil
+    end
+    if scalarKey then
+        filters[scalarKey] = "all"
+    end
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
+end
+
 function UI:ToggleSlot(slotName)
     local filters = self:GetFilters()
     filters.slots = filters.slots or {}
@@ -1872,9 +2180,17 @@ function UI:ClearFilters()
     local filters = self:GetFilters()
     filters.search = ""
     filters.sourceType = "all"
+    filters.sourceTypes = {}
     filters.zone = "all"
+    filters.zones = {}
+    filters.cost = "all"
+    filters.costs = {}
+    filters.vendor = "all"
+    filters.vendors = {}
     filters.reputation = "all"
+    filters.reputations = {}
     filters.rankGroup = "all"
+    filters.rankGroups = {}
     filters.ownedState = "all"
     filters.binding = "all"
     filters.boe = "all"
@@ -2623,6 +2939,126 @@ function UI:ReleaseRenderFrames()
     self.renderRangeKey = nil
 end
 
+local function selectedFacetKeys(values, labels)
+    local result = {}
+    for value, selected in pairs(values or {}) do
+        if selected then
+            table.insert(result, value)
+        end
+    end
+    table.sort(result, function(a, b)
+        local aLabel = labels and labels[a] or a
+        local bLabel = labels and labels[b] or b
+        if aLabel ~= bLabel then
+            return aLabel < bLabel
+        end
+        return tostring(a) < tostring(b)
+    end)
+    return result
+end
+
+local function estimatedChipWidth(label)
+    return clamp((string.len(tostring(label or "")) * 6) + 24, 72, 178)
+end
+
+function UI:AddFacetChips(chips, tableKey, scalarKey, prefix, labels)
+    for _, value in ipairs(selectedFacetKeys(self:GetFilters()[tableKey], labels)) do
+        local label = labels[value] or value
+        table.insert(chips, {
+            label = prefix .. ": " .. label,
+            clear = function()
+                self:ClearFacetValue(tableKey, value, scalarKey)
+            end,
+        })
+    end
+end
+
+function UI:GetSlotFilterLabels()
+    local labels = {}
+    for _, slotFilter in ipairs(BigBiSList:GetDisplaySlotFilters()) do
+        labels[slotFilter.key] = slotFilter.label
+    end
+    return labels
+end
+
+function UI:GetActiveFilterChips()
+    local filters = self:GetFilters()
+    local chips = {}
+
+    if filters.search and filters.search ~= "" then
+        table.insert(chips, {
+            label = "Search: " .. filters.search,
+            clear = function()
+                filters.search = ""
+                if self.searchBox then
+                    self.searchBox:SetText("")
+                    self.searchBox:ClearFocus()
+                end
+                self:ClearTransientCaches()
+                self:ScheduleRefresh()
+            end,
+        })
+    end
+
+    if filters.ownedState and filters.ownedState ~= "all" then
+        table.insert(chips, { label = "Owned: " .. ownedFilterLabel(filters.ownedState), clear = function() self:SetFilter("ownedState", "all") end })
+    end
+    if filters.boe and filters.boe ~= "all" then
+        table.insert(chips, { label = "BoE: " .. boeFilterLabel(filters.boe), clear = function() self:SetFilter("boe", "all") end })
+    end
+    if filters.longevity and filters.longevity ~= "all" then
+        table.insert(chips, { label = "Usefulness: " .. longevityFilterLabel(filters.longevity), clear = function() self:SetFilter("longevity", "all") end })
+    end
+    if filters.binding and filters.binding ~= "all" then
+        table.insert(chips, { label = "Binding: " .. tostring(filters.binding), clear = function() self:SetFilter("binding", "all") end })
+    end
+
+    self:AddFacetChips(chips, "rankGroups", "rankGroup", "Tag", RANK_FILTER_LABELS)
+    self:AddFacetChips(chips, "sourceTypes", "sourceType", "Source", BigBiSList:GetSourceTypeLabels())
+    self:AddFacetChips(chips, "costs", "cost", "Cost", self:GetAvailableCostLabels())
+    self:AddFacetChips(chips, "vendors", "vendor", "Vendor", self:GetAvailableVendorLabels())
+    self:AddFacetChips(chips, "zones", "zone", "Zone", {})
+    self:AddFacetChips(chips, "reputations", "reputation", "Rep", {})
+    self:AddFacetChips(chips, "slots", nil, "Slot", self:GetSlotFilterLabels())
+
+    return chips
+end
+
+function UI:ActiveFilterBarHeight(chips)
+    if #(chips or {}) == 0 then
+        return 0
+    end
+
+    local width = contentWidth(self.contentChild, self.contentScroll and self.contentScroll:GetWidth() or 560)
+    local lineWidth = math.max(160, width - 100)
+    local rows = 1
+    local xOffset = 0
+    for _, chip in ipairs(chips) do
+        local chipWidth = estimatedChipWidth(chip.label)
+        if xOffset > 0 and xOffset + chipWidth > lineWidth then
+            rows = rows + 1
+            xOffset = 0
+        end
+        xOffset = xOffset + chipWidth + 6
+    end
+    return 30 + (rows * 24)
+end
+
+function UI:AddActiveFilterBar(model)
+    local chips = self:GetActiveFilterChips()
+    local height = self:ActiveFilterBarHeight(chips)
+    if height <= 0 then
+        return
+    end
+
+    self:AddListRenderEntry(model, {
+        kind = "filters",
+        chips = chips,
+        height = height,
+    })
+    self:AddListGap(model, 4)
+end
+
 function UI:NewListRenderModel()
     return {
         entries = {},
@@ -2668,6 +3104,49 @@ function UI:AddListGap(model, height)
     })
 end
 
+function UI:CreateActiveFilterBar(parent, yOffset, chips, height, frame)
+    local widgets = BigBiSList.Widgets
+    frame = frame or CreateFrame("Frame", nil, parent)
+    BigBiSList.Widgets:ClearChildren(frame)
+    frame:SetParent(parent)
+    frame:Show()
+    frame:ClearAllPoints()
+    frame:SetHeight(height or 54)
+    frame:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
+    frame:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
+
+    local label = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    label:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -2)
+    label:SetTextColor(0.72, 0.72, 0.76, 1)
+    label:SetText("Active filters")
+
+    local clearButton = widgets:CreateTextButton(frame, "Clear all", 76, 20, function()
+        self:ClearFilters()
+    end)
+    clearButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, 0)
+
+    local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 560)
+    local lineWidth = math.max(160, width - 100)
+    local xOffset = 8
+    local y = -26
+    for _, chip in ipairs(chips or {}) do
+        local chipWidth = estimatedChipWidth(chip.label)
+        if xOffset > 8 and xOffset + chipWidth > lineWidth then
+            xOffset = 8
+            y = y - 24
+        end
+        local button = widgets:CreateTextButton(frame, chip.label, chipWidth, 20, function()
+            if chip.clear then
+                chip.clear()
+            end
+        end)
+        button:SetPoint("TOPLEFT", frame, "TOPLEFT", xOffset, y)
+        xOffset = xOffset + chipWidth + 6
+    end
+
+    return frame
+end
+
 function UI:RenderListModel(model)
     self:ReleaseRenderFrames()
     self.renderModel = model
@@ -2711,6 +3190,10 @@ function UI:UpdateVirtualList(force)
                 local frame = self:AcquireRenderFrame("columns")
                 frame = self:CreateListColumnHeader(child, -entry.top, entry.mode, frame)
                 self:TrackRenderFrame("columns", frame)
+            elseif entry.kind == "filters" then
+                local frame = self:AcquireRenderFrame("filters")
+                frame = self:CreateActiveFilterBar(child, -entry.top, entry.chips, entry.height, frame)
+                self:TrackRenderFrame("filters", frame)
             end
         end
     end
@@ -2745,6 +3228,7 @@ function UI:RenderPhaseTab()
     end
 
     local model = self:NewListRenderModel()
+    self:AddActiveFilterBar(model)
     for _, group in ipairs(groups) do
         self:AddListSection(model, group.slot, "phase")
         for _, item in ipairs(group.items) do
@@ -2778,6 +3262,7 @@ function UI:RenderPlannerTab()
     end
 
     local model = self:NewListRenderModel()
+    self:AddActiveFilterBar(model)
     for _, section in ipairs(PLANNER_TIER_SECTIONS) do
         local sectionRows = rowsByTier[section.key] or {}
         if #sectionRows > 0 then
@@ -3579,6 +4064,12 @@ function UI:RefreshControls()
     if self.zoneDropdown then
         self.zoneDropdown:Refresh()
     end
+    if self.costDropdown then
+        self.costDropdown:Refresh()
+    end
+    if self.vendorDropdown then
+        self.vendorDropdown:Refresh()
+    end
     if self.reputationDropdown then
         self.reputationDropdown:Refresh()
     end
@@ -3782,11 +4273,16 @@ function UI:CreateLeftRail(body)
     header:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_RAIL_INSET, -10)
     header:SetText("Filters")
 
+    local characterHeader = rail:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    characterHeader:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 0, -12)
+    characterHeader:SetTextColor(0.68, 0.68, 0.72, 1)
+    characterHeader:SetText("Character")
+
     self.classDropdown = widgets:CreateDropdown("BigBiSListClassDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function() return self:GetSelection().class or "Class" end,
         function() return self:GetClassDropdownItems() end,
         function(value) self:SetClass(value) end)
-    self.classDropdown:SetPoint("TOPLEFT", rail, "TOPLEFT", LEFT_DROPDOWN_X, -42)
+    self.classDropdown:SetPoint("TOPLEFT", characterHeader, "BOTTOMLEFT", LEFT_DROPDOWN_X - LEFT_RAIL_INSET, -6)
 
     self.specDropdown = widgets:CreateDropdown("BigBiSListSpecDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function() return self:GetSelection().spec or "Spec" end,
@@ -3830,40 +4326,10 @@ function UI:CreateLeftRail(body)
         editBox:ClearFocus()
     end)
 
-    self.sourceDropdown = widgets:CreateDropdown("BigBiSListSourceDropdown", rail, LEFT_DROPDOWN_WIDTH,
-        function()
-            local value = self:GetFilters().sourceType or "all"
-            return (BigBiSList:GetSourceTypeLabels()[value] or value)
-        end,
-        function() return self:GetSourceDropdownItems() end,
-        function(value) self:SetFilter("sourceType", value) end)
-    self.sourceDropdown:SetPoint("TOPLEFT", searchFrame, "BOTTOMLEFT", LEFT_DROPDOWN_X - LEFT_RAIL_INSET, -10)
-
-    self.zoneDropdown = widgets:CreateDropdown("BigBiSListZoneDropdown", rail, LEFT_DROPDOWN_WIDTH,
-        function()
-            local value = self:GetFilters().zone or "all"
-            return value == "all" and "All zones" or value
-        end,
-        function() return self:GetZoneDropdownItems() end,
-        function(value) self:SetFilter("zone", value) end)
-    self.zoneDropdown:SetPoint("TOPLEFT", self.sourceDropdown, "BOTTOMLEFT", 0, -4)
-
-    self.reputationDropdown = widgets:CreateDropdown("BigBiSListReputationDropdown", rail, LEFT_DROPDOWN_WIDTH,
-        function()
-            local value = self:GetFilters().reputation or "all"
-            return value == "all" and "All reps" or value
-        end,
-        function() return self:GetReputationDropdownItems() end,
-        function(value) self:SetFilter("reputation", value) end)
-    self.reputationDropdown:SetPoint("TOPLEFT", self.zoneDropdown, "BOTTOMLEFT", 0, -4)
-
-    self.rankDropdown = widgets:CreateDropdown("BigBiSListRankDropdown", rail, LEFT_DROPDOWN_WIDTH,
-        function()
-            return "Tag: " .. rankFilterLabel(self:GetFilters().rankGroup)
-        end,
-        function() return self:GetRankDropdownItems() end,
-        function(value) self:SetFilter("rankGroup", value) end)
-    self.rankDropdown:SetPoint("TOPLEFT", self.reputationDropdown, "BOTTOMLEFT", 0, -8)
+    local goalsHeader = rail:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    goalsHeader:SetPoint("TOPLEFT", searchFrame, "BOTTOMLEFT", 0, -12)
+    goalsHeader:SetTextColor(0.68, 0.68, 0.72, 1)
+    goalsHeader:SetText("Goals")
 
     self.ownedDropdown = widgets:CreateDropdown("BigBiSListOwnedDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()
@@ -3871,15 +4337,15 @@ function UI:CreateLeftRail(body)
         end,
         function() return self:GetOwnedDropdownItems() end,
         function(value) self:SetFilter("ownedState", value) end)
-    self.ownedDropdown:SetPoint("TOPLEFT", self.rankDropdown, "BOTTOMLEFT", 0, -4)
+    self.ownedDropdown:SetPoint("TOPLEFT", goalsHeader, "BOTTOMLEFT", LEFT_DROPDOWN_X - LEFT_RAIL_INSET, -6)
 
-    self.boeDropdown = widgets:CreateDropdown("BigBiSListBoeDropdown", rail, LEFT_DROPDOWN_WIDTH,
+    self.rankDropdown = widgets:CreateDropdown("BigBiSListRankDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()
-            return "BoE: " .. boeFilterLabel(self:GetFilters().boe)
+            return self:GetRankDropdownText()
         end,
-        function() return self:GetBoeDropdownItems() end,
-        function(value) self:SetFilter("boe", value) end)
-    self.boeDropdown:SetPoint("TOPLEFT", self.ownedDropdown, "BOTTOMLEFT", 0, -4)
+        function() return self:GetRankDropdownItems() end,
+        function(value) self:ToggleFacetFilter("rankGroups", value, "rankGroup") end)
+    self.rankDropdown:SetPoint("TOPLEFT", self.ownedDropdown, "BOTTOMLEFT", 0, -4)
 
     self.longevityDropdown = widgets:CreateDropdown("BigBiSListLongevityDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()
@@ -3887,10 +4353,63 @@ function UI:CreateLeftRail(body)
         end,
         function() return self:GetLongevityDropdownItems() end,
         function(value) self:SetFilter("longevity", value) end)
-    self.longevityDropdown:SetPoint("TOPLEFT", self.boeDropdown, "BOTTOMLEFT", 0, -4)
+    self.longevityDropdown:SetPoint("TOPLEFT", self.rankDropdown, "BOTTOMLEFT", 0, -4)
+
+    self.boeDropdown = widgets:CreateDropdown("BigBiSListBoeDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return "BoE: " .. boeFilterLabel(self:GetFilters().boe)
+        end,
+        function() return self:GetBoeDropdownItems() end,
+        function(value) self:SetFilter("boe", value) end)
+    self.boeDropdown:SetPoint("TOPLEFT", self.longevityDropdown, "BOTTOMLEFT", 0, -4)
+
+    local acquisitionHeader = rail:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    acquisitionHeader:SetPoint("TOPLEFT", self.boeDropdown, "BOTTOMLEFT", LEFT_RAIL_INSET - LEFT_DROPDOWN_X, -12)
+    acquisitionHeader:SetTextColor(0.68, 0.68, 0.72, 1)
+    acquisitionHeader:SetText("How to get")
+
+    self.sourceDropdown = widgets:CreateDropdown("BigBiSListSourceDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return self:GetSourceDropdownText()
+        end,
+        function() return self:GetSourceDropdownItems() end,
+        function(value) self:ToggleFacetFilter("sourceTypes", value, "sourceType") end)
+    self.sourceDropdown:SetPoint("TOPLEFT", acquisitionHeader, "BOTTOMLEFT", LEFT_DROPDOWN_X - LEFT_RAIL_INSET, -6)
+
+    self.costDropdown = widgets:CreateDropdown("BigBiSListCostDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return self:GetCostDropdownText()
+        end,
+        function() return self:GetCostDropdownItems() end,
+        function(value) self:ToggleFacetFilter("costs", value, "cost") end)
+    self.costDropdown:SetPoint("TOPLEFT", self.sourceDropdown, "BOTTOMLEFT", 0, -4)
+
+    self.vendorDropdown = widgets:CreateDropdown("BigBiSListVendorDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return self:GetVendorDropdownText()
+        end,
+        function() return self:GetVendorDropdownItems() end,
+        function(value) self:ToggleFacetFilter("vendors", value, "vendor") end)
+    self.vendorDropdown:SetPoint("TOPLEFT", self.costDropdown, "BOTTOMLEFT", 0, -4)
+
+    self.zoneDropdown = widgets:CreateDropdown("BigBiSListZoneDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return self:GetZoneDropdownText()
+        end,
+        function() return self:GetZoneDropdownItems() end,
+        function(value) self:ToggleFacetFilter("zones", value, "zone") end)
+    self.zoneDropdown:SetPoint("TOPLEFT", self.vendorDropdown, "BOTTOMLEFT", 0, -4)
+
+    self.reputationDropdown = widgets:CreateDropdown("BigBiSListReputationDropdown", rail, LEFT_DROPDOWN_WIDTH,
+        function()
+            return self:GetReputationDropdownText()
+        end,
+        function() return self:GetReputationDropdownItems() end,
+        function(value) self:ToggleFacetFilter("reputations", value, "reputation") end)
+    self.reputationDropdown:SetPoint("TOPLEFT", self.zoneDropdown, "BOTTOMLEFT", 0, -4)
 
     local slotHeader = rail:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    slotHeader:SetPoint("TOPLEFT", self.longevityDropdown, "BOTTOMLEFT", LEFT_RAIL_INSET - LEFT_DROPDOWN_X, -16)
+    slotHeader:SetPoint("TOPLEFT", self.reputationDropdown, "BOTTOMLEFT", LEFT_RAIL_INSET - LEFT_DROPDOWN_X, -14)
     slotHeader:SetTextColor(0.68, 0.68, 0.72, 1)
     slotHeader:SetText("Slots")
 

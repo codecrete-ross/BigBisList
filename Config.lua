@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 11
+local DEFAULTS_VERSION = 12
 local DEFAULT_SELECTED_CLASS = "Druid"
 local DEFAULT_SELECTED_SPEC = "Feral dps"
 
@@ -87,9 +87,17 @@ BigBiSList.defaults = {
         filters = {
             search = "",
             sourceType = "all",
+            sourceTypes = {},
             zone = "all",
+            zones = {},
+            cost = "all",
+            costs = {},
+            vendor = "all",
+            vendors = {},
             reputation = "all",
+            reputations = {},
             rankGroup = "all",
+            rankGroups = {},
             ownedState = "all",
             binding = "all",
             boe = "all",
@@ -270,6 +278,41 @@ local function migrateSplitDropSourceFilter(char, previousVersion)
     if type(filters.sourceTypes) == "table" then
         filters.sourceTypes.drop = nil
     end
+end
+
+local function ensureFacetTable(filters, tableKey)
+    if type(filters[tableKey]) ~= "table" then
+        filters[tableKey] = {}
+    end
+    return filters[tableKey]
+end
+
+local function migrateScalarFacetFilter(filters, scalarKey, tableKey)
+    local selectedValue = filters[scalarKey]
+    local selectedValues = ensureFacetTable(filters, tableKey)
+
+    if selectedValue ~= nil and selectedValue ~= "all" and selectedValue ~= "" then
+        selectedValues[selectedValue] = true
+    end
+    filters[scalarKey] = "all"
+end
+
+local function migrateFacetedFilters(char, previousVersion)
+    if previousVersion ~= nil and previousVersion >= 12 then
+        return
+    end
+
+    local filters = char and char.filters
+    if type(filters) ~= "table" then
+        return
+    end
+
+    migrateScalarFacetFilter(filters, "sourceType", "sourceTypes")
+    migrateScalarFacetFilter(filters, "zone", "zones")
+    migrateScalarFacetFilter(filters, "cost", "costs")
+    migrateScalarFacetFilter(filters, "vendor", "vendors")
+    migrateScalarFacetFilter(filters, "reputation", "reputations")
+    migrateScalarFacetFilter(filters, "rankGroup", "rankGroups")
 end
 
 local function playerClassFromToken(classToken)
@@ -535,6 +578,7 @@ function BigBiSList:EnsureDatabase()
     migrateLegacyDefaults(BigBiSListCharDB, charPreviousVersion)
     migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
+    migrateFacetedFilters(BigBiSListCharDB, charPreviousVersion)
     applyDetectedDefaultSelection(BigBiSListCharDB)
     ensureTooltipSpecFilters(BigBiSListDB)
 

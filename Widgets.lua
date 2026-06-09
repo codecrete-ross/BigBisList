@@ -171,9 +171,13 @@ function Widgets:CreateDropdown(name, parent, width, getText, getItems, onSelect
             info.text = item.text
             info.value = item.value
             info.checked = item.checked
+            info.isNotRadio = item.isNotRadio
+            info.keepShownOnClick = item.keepShownOnClick
+            info.notCheckable = item.notCheckable
+            info.disabled = item.disabled
             info.func = function()
                 if onSelect then
-                    onSelect(item.value)
+                    onSelect(item.value, item)
                 end
                 refresh()
             end

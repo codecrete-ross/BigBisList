@@ -106,6 +106,33 @@ local SOURCE_FILTER_ORDER = {
     unknown = 99,
 }
 
+local FILTER_FACETS = {
+    COST_FILTER_LABELS = {
+        badge_justice = "Badge of Justice",
+        arena_points = "Arena Points",
+        honor_points = "Honor Points",
+        battleground_marks = "Battleground Marks",
+        tier_tokens = "Tier Tokens",
+        sunmote = "Sunmote",
+        other_turnins = "Other turn-ins",
+    },
+    COST_FILTER_ORDER = {
+        badge_justice = 1,
+        arena_points = 2,
+        honor_points = 3,
+        battleground_marks = 4,
+        tier_tokens = 5,
+        sunmote = 6,
+        other_turnins = 20,
+    },
+    BATTLEGROUND_MARK_ITEM_IDS = {
+        [20558] = true,
+        [20559] = true,
+        [20560] = true,
+        [29024] = true,
+    },
+}
+
 local SOURCE_FILTER_BY_CONTENT_TYPE = {
     raid = "raid_drop",
     heroic_dungeon = "heroic_dungeon_drop",
@@ -753,6 +780,105 @@ local function sourceDropSummary(source)
     return text
 end
 
+function FILTER_FACETS.formatSourceCosts(source)
+    local parts = {}
+    for _, cost in ipairs(source and source.costs or {}) do
+        local amount = cost.amount
+        local name = cost.name
+        if amount ~= nil and name and name ~= "" then
+            table.insert(parts, tostring(amount) .. " " .. name)
+        elseif name and name ~= "" then
+            table.insert(parts, name)
+        elseif amount ~= nil then
+            table.insert(parts, tostring(amount))
+        end
+    end
+    return table.concat(parts, ", ")
+end
+
+function FILTER_FACETS.costFilterKey(cost)
+    if type(cost) ~= "table" then
+        return nil
+    end
+
+    local name = lower(cost.name)
+    local currencyId = tonumber(cost.currency_id)
+    local itemId = tonumber(cost.item_id)
+
+    if currencyId == 29434 or name == "badge of justice" then
+        return "badge_justice"
+    elseif currencyId == 1900 or name == "arena points" then
+        return "arena_points"
+    elseif currencyId == 1901 or name == "honor points" then
+        return "honor_points"
+    elseif itemId == 34664 or name == "sunmote" then
+        return "sunmote"
+    elseif FILTER_FACETS.BATTLEGROUND_MARK_ITEM_IDS[itemId] or string.find(name, "mark of honor", 1, true) then
+        return "battleground_marks"
+    elseif itemId and (
+        string.find(name, "fallen", 1, true)
+        or string.find(name, "vanquished", 1, true)
+        or string.find(name, "forgotten", 1, true)
+    ) then
+        return "tier_tokens"
+    elseif itemId or name ~= "" then
+        return "other_turnins"
+    end
+
+    return nil
+end
+
+function FILTER_FACETS.sourceCostKeys(source)
+    local keys = {}
+    local seen = {}
+    for _, cost in ipairs(source and source.costs or {}) do
+        addUnique(keys, seen, FILTER_FACETS.costFilterKey(cost))
+    end
+    table.sort(keys, function(a, b)
+        local aOrder = FILTER_FACETS.COST_FILTER_ORDER[a] or 50
+        local bOrder = FILTER_FACETS.COST_FILTER_ORDER[b] or 50
+        if aOrder ~= bOrder then
+            return aOrder < bOrder
+        end
+        return tostring(a) < tostring(b)
+    end)
+    return keys
+end
+
+function FILTER_FACETS.costLabelsForKeys(keys)
+    local labels = {}
+    for _, key in ipairs(keys or {}) do
+        table.insert(labels, FILTER_FACETS.COST_FILTER_LABELS[key] or key)
+    end
+    return labels
+end
+
+function FILTER_FACETS.sourceVendorLabel(source)
+    local sourceType = source and source.type
+    if sourceType ~= "vendor" and sourceType ~= "pvp" and sourceType ~= "token_turnin" then
+        return nil
+    end
+
+    local name = source.entity_name
+    if name and name ~= "" then
+        return name
+    end
+    return nil
+end
+
+function FILTER_FACETS.sourceVendorKey(source)
+    local label = FILTER_FACETS.sourceVendorLabel(source)
+    if not label then
+        return nil
+    end
+
+    local vendorId = source.vendor_id or source.entity_id
+    if vendorId then
+        return tostring(vendorId)
+    end
+    return lower(label)
+end
+
 local function tokenCostName(source)
     for _, cost in ipairs(source and source.costs or {}) do
         if cost.item_id and cost.name and cost.name ~= "" then
@@ -793,6 +919,13 @@ local function sourceOptionSummary(source, fallbackLabel)
         if dropSummary and dropSummary ~= "" then
             return (SOURCE_TYPE_PREFIXES[sourceType] or "Drop") .. ": " .. dropSummary
         end
+    elseif sourceType == "vendor" or sourceType == "pvp" then
+        local text = sourceLabel(source, fallbackLabel)
+        local costs = FILTER_FACETS.formatSourceCosts(source)
+        if costs ~= "" then
+            text = text .. " (" .. costs .. ")"
+        end
+        return text
     end
 
     return sourceLabel(source, fallbackLabel)
@@ -972,12 +1105,18 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
         local requirements = mergedRequirements(globalRequirements, source.requirements, input.extraRequirements)
         local filterKey = sourceOptionFilterKey(source)
         local acquisitionPhase = deriveSourceAcquisitionPhase(source)
+        local costKeys = FILTER_FACETS.sourceCostKeys(source)
         table.insert(accessOptions, {
             label = sourceLabel(source, input.fallbackLabel),
             source_type = source.type or "unknown",
             source_filter_key = filterKey,
             source_filter_label = SOURCE_TYPE_LABELS[filterKey] or filterKey,
             source_summary = sourceOptionSummary(source, input.fallbackLabel),
+            cost_keys = costKeys,
+            cost_labels = FILTER_FACETS.costLabelsForKeys(costKeys),
+            cost_summary = FILTER_FACETS.formatSourceCosts(source),
+            vendor_key = FILTER_FACETS.sourceVendorKey(source),
+            vendor_label = FILTER_FACETS.sourceVendorLabel(source),
             zone = source.zone,
             zones = sourceOptionZones(source),
             source_url = source.source_url or (item and item.wowhead_url),
@@ -1330,6 +1469,15 @@ end
 local function sortSourceFilterKeys(a, b)
     local aOrder = SOURCE_FILTER_ORDER[a] or 50
     local bOrder = SOURCE_FILTER_ORDER[b] or 50
+    if aOrder ~= bOrder then
+        return aOrder < bOrder
+    end
+    return tostring(a) < tostring(b)
+end
+
+function FILTER_FACETS.sortCostFilterKeys(a, b)
+    local aOrder = FILTER_FACETS.COST_FILTER_ORDER[a] or 50
+    local bOrder = FILTER_FACETS.COST_FILTER_ORDER[b] or 50
     if aOrder ~= bOrder then
         return aOrder < bOrder
     end
@@ -2008,11 +2156,121 @@ local function optionMatchesAnySelectedSourceType(option, selectedSourceTypes, s
     return false
 end
 
+local requirementsHaveReputation
+
+function FILTER_FACETS.optionHasCost(option, costKey, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) or not costKey or costKey == "" then
+        return false
+    end
+
+    for _, optionCostKey in ipairs(option.cost_keys or {}) do
+        if optionCostKey == costKey then
+            return true
+        end
+    end
+
+    return false
+end
+
+function FILTER_FACETS.optionMatchesCostFilter(option, costKey, selectedPhaseIndex)
+    if not costKey or costKey == "all" then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+    return FILTER_FACETS.optionHasCost(option, costKey, selectedPhaseIndex)
+end
+
+function FILTER_FACETS.optionMatchesAnySelectedCost(option, selectedCosts, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedCosts) then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+
+    for costKey, selected in pairs(selectedCosts or {}) do
+        if selected and FILTER_FACETS.optionHasCost(option, costKey, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+function FILTER_FACETS.optionHasVendor(option, vendorKey, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) or not vendorKey or vendorKey == "" then
+        return false
+    end
+    return option.vendor_key == vendorKey
+end
+
+function FILTER_FACETS.optionMatchesVendorFilter(option, vendorKey, selectedPhaseIndex)
+    if not vendorKey or vendorKey == "all" then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+    return FILTER_FACETS.optionHasVendor(option, vendorKey, selectedPhaseIndex)
+end
+
+function FILTER_FACETS.optionMatchesAnySelectedVendor(option, selectedVendors, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedVendors) then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+
+    for vendorKey, selected in pairs(selectedVendors or {}) do
+        if selected and FILTER_FACETS.optionHasVendor(option, vendorKey, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+function FILTER_FACETS.optionHasReputation(option, reputation, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) or not reputation or reputation == "" then
+        return false
+    end
+
+    if requirementsHaveReputation(option.requirements, reputation) then
+        return true
+    end
+
+    for _, optionReputation in ipairs(option.reputations or {}) do
+        if optionReputation == reputation then
+            return true
+        end
+    end
+
+    return false
+end
+
+function FILTER_FACETS.optionMatchesReputationFilter(option, reputation, selectedPhaseIndex)
+    if not reputation or reputation == "all" then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+    return FILTER_FACETS.optionHasReputation(option, reputation, selectedPhaseIndex)
+end
+
+function FILTER_FACETS.optionMatchesAnySelectedReputation(option, selectedReputations, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedReputations) then
+        return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+    end
+
+    for reputation, selected in pairs(selectedReputations or {}) do
+        if selected and FILTER_FACETS.optionHasReputation(option, reputation, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
 local function hasActiveSourceContextFilter(filters)
     return (filters and filters.sourceType and filters.sourceType ~= "all")
         or tableHasAnyEnabled(filters and filters.sourceTypes)
         or (filters and filters.zone and filters.zone ~= "all")
         or tableHasAnyEnabled(filters and filters.zones)
+        or (filters and filters.cost and filters.cost ~= "all")
+        or tableHasAnyEnabled(filters and filters.costs)
+        or (filters and filters.vendor and filters.vendor ~= "all")
+        or tableHasAnyEnabled(filters and filters.vendors)
+        or (filters and filters.reputation and filters.reputation ~= "all")
+        or tableHasAnyEnabled(filters and filters.reputations)
 end
 
 local function optionMatchesSourceContext(option, filters, selectedPhaseIndex)
@@ -2020,6 +2278,12 @@ local function optionMatchesSourceContext(option, filters, selectedPhaseIndex)
         and optionMatchesAnySelectedSourceType(option, filters and filters.sourceTypes, selectedPhaseIndex)
         and optionMatchesZoneFilter(option, filters and filters.zone, selectedPhaseIndex)
         and optionMatchesAnySelectedZone(option, filters and filters.zones, selectedPhaseIndex)
+        and FILTER_FACETS.optionMatchesCostFilter(option, filters and filters.cost, selectedPhaseIndex)
+        and FILTER_FACETS.optionMatchesAnySelectedCost(option, filters and filters.costs, selectedPhaseIndex)
+        and FILTER_FACETS.optionMatchesVendorFilter(option, filters and filters.vendor, selectedPhaseIndex)
+        and FILTER_FACETS.optionMatchesAnySelectedVendor(option, filters and filters.vendors, selectedPhaseIndex)
+        and FILTER_FACETS.optionMatchesReputationFilter(option, filters and filters.reputation, selectedPhaseIndex)
+        and FILTER_FACETS.optionMatchesAnySelectedReputation(option, filters and filters.reputations, selectedPhaseIndex)
 end
 
 local function rowHasAccessOptionMatchingFilterContext(row, filters, selectedPhaseIndex)
@@ -2036,7 +2300,7 @@ local function rowHasAccessOptionMatchingFilterContext(row, filters, selectedPha
     return false
 end
 
-local function requirementsHaveReputation(requirements, reputation)
+requirementsHaveReputation = function(requirements, reputation)
     for _, requirement in ipairs(requirements or {}) do
         if type(requirement) == "table" and requirement.type == "reputation" and requirement.reputation == reputation then
             return true
@@ -2076,6 +2340,90 @@ local function rowMatchesReputationFilter(row, reputation, selectedPhaseIndex)
     return rowHasReputation(row, reputation, selectedPhaseIndex)
 end
 
+function FILTER_FACETS.rowMatchesAnySelectedReputation(row, selectedReputations, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedReputations) then
+        return true
+    end
+
+    for reputation, selected in pairs(selectedReputations or {}) do
+        if selected and rowHasReputation(row, reputation, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+function FILTER_FACETS.rowHasCost(row, costKey, selectedPhaseIndex)
+    if not row or not costKey or costKey == "" then
+        return false
+    end
+
+    for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
+        if FILTER_FACETS.optionHasCost(option, costKey, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+function FILTER_FACETS.rowMatchesCostFilter(row, costKey, selectedPhaseIndex)
+    if not costKey or costKey == "all" then
+        return true
+    end
+    return FILTER_FACETS.rowHasCost(row, costKey, selectedPhaseIndex)
+end
+
+function FILTER_FACETS.rowMatchesAnySelectedCost(row, selectedCosts, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedCosts) then
+        return true
+    end
+
+    for costKey, selected in pairs(selectedCosts or {}) do
+        if selected and FILTER_FACETS.rowHasCost(row, costKey, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+function FILTER_FACETS.rowHasVendor(row, vendorKey, selectedPhaseIndex)
+    if not row or not vendorKey or vendorKey == "" then
+        return false
+    end
+
+    for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
+        if FILTER_FACETS.optionHasVendor(option, vendorKey, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
+function FILTER_FACETS.rowMatchesVendorFilter(row, vendorKey, selectedPhaseIndex)
+    if not vendorKey or vendorKey == "all" then
+        return true
+    end
+    return FILTER_FACETS.rowHasVendor(row, vendorKey, selectedPhaseIndex)
+end
+
+function FILTER_FACETS.rowMatchesAnySelectedVendor(row, selectedVendors, selectedPhaseIndex)
+    if not tableHasAnyEnabled(selectedVendors) then
+        return true
+    end
+
+    for vendorKey, selected in pairs(selectedVendors or {}) do
+        if selected and FILTER_FACETS.rowHasVendor(row, vendorKey, selectedPhaseIndex) then
+            return true
+        end
+    end
+
+    return false
+end
+
 local function rowMatchesFactionFilter(row, faction)
     if not faction or faction == "all" then
         return true
@@ -2096,6 +2444,36 @@ local function rowMatchesFactionFilter(row, faction)
     return not hasSide
 end
 
+function FILTER_FACETS.rowAccessOptionsContainText(row, search)
+    if not search or search == "" then
+        return true
+    end
+
+    for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
+        if containsText(option.label, search)
+            or containsText(option.source_summary, search)
+            or containsText(option.source_filter_label, search)
+            or containsText(option.cost_summary, search)
+            or containsText(option.vendor_label, search) then
+            return true
+        end
+
+        for _, costLabel in ipairs(option.cost_labels or {}) do
+            if containsText(costLabel, search) then
+                return true
+            end
+        end
+
+        for _, reputation in ipairs(option.reputations or {}) do
+            if containsText(reputation, search) then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
 local function includeByFilter(row, filters, selectedPhaseIndex)
     filters = filters or {}
 
@@ -2108,6 +2486,7 @@ local function includeByFilter(row, filters, selectedPhaseIndex)
             or containsText(row.slot, filters.search)
             or containsText(row.source_summary, filters.search)
             or containsText(row.rank_label, filters.search)
+            or FILTER_FACETS.rowAccessOptionsContainText(row, filters.search)
         if not found then
             return false
         end
@@ -2129,10 +2508,25 @@ local function includeByFilter(row, filters, selectedPhaseIndex)
     if not rowMatchesAnySelectedZone(row, filters.zones, selectedPhaseIndex) then
         return false
     end
+    if not FILTER_FACETS.rowMatchesCostFilter(row, filters.cost, selectedPhaseIndex) then
+        return false
+    end
+    if not FILTER_FACETS.rowMatchesAnySelectedCost(row, filters.costs, selectedPhaseIndex) then
+        return false
+    end
+    if not FILTER_FACETS.rowMatchesVendorFilter(row, filters.vendor, selectedPhaseIndex) then
+        return false
+    end
+    if not FILTER_FACETS.rowMatchesAnySelectedVendor(row, filters.vendors, selectedPhaseIndex) then
+        return false
+    end
     if hasActiveSourceContextFilter(filters) and not rowHasAccessOptionMatchingFilterContext(row, filters, selectedPhaseIndex) then
         return false
     end
     if not rowMatchesReputationFilter(row, filters.reputation, selectedPhaseIndex) then
+        return false
+    end
+    if not FILTER_FACETS.rowMatchesAnySelectedReputation(row, filters.reputations, selectedPhaseIndex) then
         return false
     end
 
@@ -2891,6 +3285,7 @@ local function cloneFiltersForReputationOptions(filters)
         scopedFilters[key] = value
     end
     scopedFilters.reputation = "all"
+    scopedFilters.reputations = nil
     return scopedFilters
 end
 
@@ -2904,7 +3299,27 @@ local function cloneFiltersForSourceTypeOptions(filters)
     return scopedFilters
 end
 
-local function addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
+function FILTER_FACETS.cloneFiltersForCostOptions(filters)
+    local scopedFilters = {}
+    for key, value in pairs(filters or {}) do
+        scopedFilters[key] = value
+    end
+    scopedFilters.cost = "all"
+    scopedFilters.costs = nil
+    return scopedFilters
+end
+
+function FILTER_FACETS.cloneFiltersForVendorOptions(filters)
+    local scopedFilters = {}
+    for key, value in pairs(filters or {}) do
+        scopedFilters[key] = value
+    end
+    scopedFilters.vendor = "all"
+    scopedFilters.vendors = nil
+    return scopedFilters
+end
+
+function FILTER_FACETS.addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
     if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then
         return
     end
@@ -2912,18 +3327,30 @@ local function addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseI
     addUnique(sourceTypes, seen, option.source_filter_key or option.source_type)
 end
 
+function FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, callback)
+    if type(row) ~= "table" then
+        return false
+    end
+
+    local matched = false
+    for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
+        if optionMatchesSourceContext(option, filters, selectedPhaseIndex) then
+            callback(option)
+            matched = true
+        end
+    end
+    return matched
+end
+
 local function addSourceTypeFromRow(sourceTypes, seen, row, filters, selectedPhaseIndex)
     if type(row) ~= "table" then
         return
     end
 
-    if (filters and filters.zone and filters.zone ~= "all") or tableHasAnyEnabled(filters and filters.zones) then
-        for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
-            if optionMatchesZoneFilter(option, filters and filters.zone, selectedPhaseIndex)
-                and optionMatchesAnySelectedZone(option, filters and filters.zones, selectedPhaseIndex) then
-                addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
-            end
-        end
+    if hasActiveSourceContextFilter(filters) then
+        FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option)
+            FILTER_FACETS.addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
+        end)
         return
     end
 
@@ -2953,13 +3380,10 @@ local function addZonesFromRow(zones, seen, row, filters, selectedPhaseIndex)
         return
     end
 
-    if (filters and filters.sourceType and filters.sourceType ~= "all") or tableHasAnyEnabled(filters and filters.sourceTypes) then
-        for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
-            if optionMatchesSourceFilter(option, filters and filters.sourceType, selectedPhaseIndex)
-                and optionMatchesAnySelectedSourceType(option, filters and filters.sourceTypes, selectedPhaseIndex) then
-                addZonesFromOption(zones, seen, option, selectedPhaseIndex)
-            end
-        end
+    if hasActiveSourceContextFilter(filters) then
+        FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option)
+            addZonesFromOption(zones, seen, option, selectedPhaseIndex)
+        end)
         return
     end
 
@@ -2976,8 +3400,66 @@ local function addZonesFromRow(zones, seen, row, filters, selectedPhaseIndex)
     end
 end
 
-local function addReputationsFromRow(reputations, seen, row, selectedPhaseIndex)
+function FILTER_FACETS.addCostFromOption(costs, labels, seen, option, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then
+        return
+    end
+
+    for _, costKey in ipairs(option.cost_keys or {}) do
+        addUnique(costs, seen, costKey)
+        labels[costKey] = FILTER_FACETS.COST_FILTER_LABELS[costKey] or costKey
+    end
+end
+
+function FILTER_FACETS.addCostsFromRow(costs, labels, seen, row, filters, selectedPhaseIndex)
     if type(row) ~= "table" then
+        return
+    end
+
+    FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option)
+        FILTER_FACETS.addCostFromOption(costs, labels, seen, option, selectedPhaseIndex)
+    end)
+end
+
+function FILTER_FACETS.addVendorFromOption(vendors, labels, seen, option, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) or not option.vendor_key then
+        return
+    end
+
+    addUnique(vendors, seen, option.vendor_key)
+    labels[option.vendor_key] = option.vendor_label or option.vendor_key
+end
+
+function FILTER_FACETS.addVendorsFromRow(vendors, labels, seen, row, filters, selectedPhaseIndex)
+    if type(row) ~= "table" then
+        return
+    end
+
+    FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option)
+        FILTER_FACETS.addVendorFromOption(vendors, labels, seen, option, selectedPhaseIndex)
+    end)
+end
+
+function FILTER_FACETS.addReputationsFromOption(reputations, seen, option, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then
+        return
+    end
+
+    addReputationsFromRequirements(reputations, seen, option.requirements)
+    for _, reputation in ipairs(option.reputations or {}) do
+        addUnique(reputations, seen, reputation)
+    end
+end
+
+local function addReputationsFromRow(reputations, seen, row, filters, selectedPhaseIndex)
+    if type(row) ~= "table" then
+        return
+    end
+
+    if hasActiveSourceContextFilter(filters) then
+        FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option)
+            FILTER_FACETS.addReputationsFromOption(reputations, seen, option, selectedPhaseIndex)
+        end)
         return
     end
 
@@ -2998,7 +3480,12 @@ local function cloneFiltersForAvailabilityRows(filters)
     scopedFilters.sourceTypes = nil
     scopedFilters.zone = "all"
     scopedFilters.zones = nil
+    scopedFilters.cost = "all"
+    scopedFilters.costs = nil
+    scopedFilters.vendor = "all"
+    scopedFilters.vendors = nil
     scopedFilters.reputation = "all"
+    scopedFilters.reputations = nil
     return scopedFilters
 end
 
@@ -3022,10 +3509,18 @@ function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey,
     local sourceSeen = {}
     local zones = {}
     local zoneSeen = {}
+    local costs = {}
+    local costSeen = {}
+    local costLabels = {}
+    local vendors = {}
+    local vendorSeen = {}
+    local vendorLabels = {}
     local reputations = {}
     local reputationSeen = {}
     local sourceScopedFilters = cloneFiltersForSourceTypeOptions(filters)
     local zoneScopedFilters = cloneFiltersForZoneOptions(filters)
+    local costScopedFilters = FILTER_FACETS.cloneFiltersForCostOptions(filters)
+    local vendorScopedFilters = FILTER_FACETS.cloneFiltersForVendorOptions(filters)
     local reputationScopedFilters = cloneFiltersForReputationOptions(filters)
     local rows = collectAvailabilityRows(self, className, specName, phaseKey, tabName, cloneFiltersForAvailabilityRows(filters))
 
@@ -3036,17 +3531,36 @@ function BigBiSList:GetFilterAvailabilitySnapshot(className, specName, phaseKey,
         if includeByFilter(row, zoneScopedFilters, selectedIndex) then
             addZonesFromRow(zones, zoneSeen, row, zoneScopedFilters, selectedIndex)
         end
+        if includeByFilter(row, costScopedFilters, selectedIndex) then
+            FILTER_FACETS.addCostsFromRow(costs, costLabels, costSeen, row, costScopedFilters, selectedIndex)
+        end
+        if includeByFilter(row, vendorScopedFilters, selectedIndex) then
+            FILTER_FACETS.addVendorsFromRow(vendors, vendorLabels, vendorSeen, row, vendorScopedFilters, selectedIndex)
+        end
         if includeByFilter(row, reputationScopedFilters, selectedIndex) then
-            addReputationsFromRow(reputations, reputationSeen, row, selectedIndex)
+            addReputationsFromRow(reputations, reputationSeen, row, reputationScopedFilters, selectedIndex)
         end
     end
 
     table.sort(sourceTypes, sortSourceFilterKeys)
     table.sort(zones)
+    table.sort(costs, FILTER_FACETS.sortCostFilterKeys)
+    table.sort(vendors, function(a, b)
+        local aLabel = vendorLabels[a] or a
+        local bLabel = vendorLabels[b] or b
+        if aLabel ~= bLabel then
+            return aLabel < bLabel
+        end
+        return tostring(a) < tostring(b)
+    end)
     table.sort(reputations)
     return {
         sourceTypes = sourceTypes,
         zones = zones,
+        costs = costs,
+        costLabels = costLabels,
+        vendors = vendors,
+        vendorLabels = vendorLabels,
         reputations = reputations,
     }
 end
@@ -3057,6 +3571,14 @@ end
 
 function BigBiSList:GetAvailableFilterZones(className, specName, phaseKey, tabName, filters)
     return self:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters).zones
+end
+
+function BigBiSList:GetAvailableFilterCosts(className, specName, phaseKey, tabName, filters)
+    return self:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters).costs
+end
+
+function BigBiSList:GetAvailableFilterVendors(className, specName, phaseKey, tabName, filters)
+    return self:GetFilterAvailabilitySnapshot(className, specName, phaseKey, tabName, filters).vendors
 end
 
 function BigBiSList:GetAvailableFilterReputations(className, specName, phaseKey, tabName, filters)
