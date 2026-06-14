@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.1 - 2026-06-14
+
+### Fixed
+
+- Restored eager rendering for the loaded item list so scrolling no longer
+  rebuilds visible rows and hitches during item-list navigation.
+
 ## 0.9.0 - 2026-06-14
 
 ### Changed

@@ -90,7 +90,7 @@ After the checks pass, commit the release prep changes, push the commit to
 `main`, push the tag, and create the GitHub release with the GitHub CLI:
 
 ```powershell
-$version = "0.9.0"
+$version = "0.9.1"
 git add CHANGELOG.md Config.lua README.md
 git commit -m "Prepare $version release"
 git tag $version
