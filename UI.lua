@@ -46,7 +46,6 @@ local ROW_ICON_SIZE = 30
 local LIST_ROW_HEIGHT = 74
 local LIST_ROW_GAP = 4
 local LIST_SECTION_GAP = 6
-local LIST_OVERSCAN_ROWS = 6
 
 local OWNERSHIP_LABELS = {
     equipped = "Equipped",
@@ -1811,7 +1810,6 @@ function UI:ClearTransientCaches(releaseRender)
     self.currentAvailabilitySnapshot = nil
     if releaseRender then
         self.renderModel = nil
-        self.renderRangeKey = nil
     end
 end
 
@@ -3058,7 +3056,6 @@ function UI:ReleaseRenderFrames()
         table.insert(self:GetRenderPool(frame.__bigBisListRenderKind or "row"), frame)
     end
     self.activeRenderFrames = {}
-    self.renderRangeKey = nil
 end
 
 local function selectedFacetKeys(values, labels)
@@ -3276,52 +3273,35 @@ function UI:RenderListModel(model)
     self:ReleaseRenderFrames()
     self.renderModel = model
     self:SetContentHeight(-(model.cursor + 30))
-    self:UpdateVirtualList(true)
+    local child = self.contentChild
+    if not child then
+        return
+    end
+
+    for _, entry in ipairs(model.entries) do
+        if entry.kind == "row" then
+            local frame = self:AcquireRenderFrame("row")
+            frame = self:CreateDataRow(child, -entry.top, entry.data, entry.mode, frame, entry.rowHeight)
+            self:TrackRenderFrame("row", frame)
+        elseif entry.kind == "section" then
+            local frame = self:AcquireRenderFrame("section")
+            frame = self:CreateVirtualSectionHeader(child, -entry.top, entry.title, frame)
+            self:TrackRenderFrame("section", frame)
+        elseif entry.kind == "columns" then
+            local frame = self:AcquireRenderFrame("columns")
+            frame = self:CreateListColumnHeader(child, -entry.top, entry.mode, frame)
+            self:TrackRenderFrame("columns", frame)
+        elseif entry.kind == "filters" then
+            local frame = self:AcquireRenderFrame("filters")
+            frame = self:CreateActiveFilterBar(child, -entry.top, entry.chips, entry.height, frame)
+            self:TrackRenderFrame("filters", frame)
+        end
+    end
 end
 
 function UI:UpdateVirtualList(force)
-    local model = self.renderModel
-    local scroll = self.contentScroll
-    local child = self.contentChild
-    if not model or not scroll or not child then
-        return
-    end
-
-    local scrollTop = scroll:GetVerticalScroll() or 0
-    local viewportHeight = scroll:GetHeight() or 1
-    local overscan = LIST_OVERSCAN_ROWS * (LIST_ROW_HEIGHT + LIST_ROW_GAP)
-    local rowSpan = LIST_ROW_HEIGHT + LIST_ROW_GAP
-    local rangeKey = tostring(math.floor(scrollTop / rowSpan)) .. ":" .. tostring(math.floor((scrollTop + viewportHeight) / rowSpan)) .. ":" .. tostring(#model.entries)
-    if not force and self.renderRangeKey == rangeKey then
-        return
-    end
-
-    self:ReleaseRenderFrames()
-    self.renderRangeKey = rangeKey
-
-    local minTop = math.max(0, scrollTop - overscan)
-    local maxBottom = scrollTop + viewportHeight + overscan
-    for _, entry in ipairs(model.entries) do
-        if entry.kind ~= "gap" and entry.bottom >= minTop and entry.top <= maxBottom then
-            if entry.kind == "row" then
-                local frame = self:AcquireRenderFrame("row")
-                frame = self:CreateDataRow(child, -entry.top, entry.data, entry.mode, frame, entry.rowHeight)
-                self:TrackRenderFrame("row", frame)
-            elseif entry.kind == "section" then
-                local frame = self:AcquireRenderFrame("section")
-                frame = self:CreateVirtualSectionHeader(child, -entry.top, entry.title, frame)
-                self:TrackRenderFrame("section", frame)
-            elseif entry.kind == "columns" then
-                local frame = self:AcquireRenderFrame("columns")
-                frame = self:CreateListColumnHeader(child, -entry.top, entry.mode, frame)
-                self:TrackRenderFrame("columns", frame)
-            elseif entry.kind == "filters" then
-                local frame = self:AcquireRenderFrame("filters")
-                frame = self:CreateActiveFilterBar(child, -entry.top, entry.chips, entry.height, frame)
-                self:TrackRenderFrame("filters", frame)
-            end
-        end
-    end
+    -- Rows are rendered eagerly when the view refreshes. Scrolling should only
+    -- move the scroll child, not rebuild item rows.
 end
 
 function UI:RenderEmpty(message)
@@ -4618,9 +4598,6 @@ function UI:CreateBody(frame)
     self.contentScroll, self.contentChild = widgets:CreateScrollFrame("BigBiSListContentScroll", contentPanel)
     self.contentScroll:SetPoint("TOPLEFT", contentPanel, "TOPLEFT", 8, -8)
     self.contentScroll:SetPoint("BOTTOMRIGHT", contentPanel, "BOTTOMRIGHT", -28, 8)
-    self.contentScroll:SetScript("OnVerticalScroll", function()
-        self:UpdateVirtualList()
-    end)
     self.contentScroll:SetScript("OnSizeChanged", function(scroll, width)
         self.contentChild:SetWidth(width)
         if self.frame and self.frame:IsShown() then

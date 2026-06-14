@@ -508,21 +508,34 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("self:ScheduleRefresh()", open_body)
         self.assertEqual(open_body.count("self:ScheduleRefresh()"), 1)
 
-    def test_ui_refreshes_are_scheduled_and_virtualized(self):
+    def test_ui_refreshes_are_scheduled_and_eager_rendered(self):
         ui = self.read_lua("UI.lua")
         for token in [
             "function UI:ScheduleRefresh(delay)",
             "C_Timer.After",
             "self:ScheduleRefresh(0.12)",
             "function UI:RenderListModel(model)",
-            "function UI:UpdateVirtualList(force)",
             "function UI:ReleaseRenderFrames()",
-            "LIST_OVERSCAN_ROWS",
             "self.renderPools",
             "self:AddListRow(model",
             "self:RenderListModel(model)",
         ]:
             self.assertIn(token, ui)
+
+        render_body = ui.split("function UI:RenderListModel(model)", 1)[1].split("function UI:UpdateVirtualList", 1)[0]
+        self.assertIn("for _, entry in ipairs(model.entries) do", render_body)
+        self.assertIn("self:CreateDataRow(child, -entry.top, entry.data, entry.mode, frame, entry.rowHeight)", render_body)
+        self.assertIn("self:CreateVirtualSectionHeader(child, -entry.top, entry.title, frame)", render_body)
+        self.assertIn("self:CreateListColumnHeader(child, -entry.top, entry.mode, frame)", render_body)
+        self.assertIn("self:CreateActiveFilterBar(child, -entry.top, entry.chips, entry.height, frame)", render_body)
+
+        update_body = ui.split("function UI:UpdateVirtualList", 1)[1].split("function UI:RenderEmpty", 1)[0]
+        self.assertNotIn("CreateDataRow", update_body)
+        self.assertNotIn("ReleaseRenderFrames", update_body)
+
+        create_body = ui.split("function UI:CreateBody(frame)", 1)[1].split("function UI:CreateStatusBar", 1)[0]
+        self.assertNotIn("OnVerticalScroll", create_body)
+        self.assertNotIn("UpdateVirtualList", create_body)
 
         for setter in ["SetClass", "SetSpec", "SetPhase", "SetTab", "SetFilter", "ToggleSlot", "ClearFilters"]:
             body = ui.split(f"function UI:{setter}", 1)[1].split("function UI:", 1)[0]
