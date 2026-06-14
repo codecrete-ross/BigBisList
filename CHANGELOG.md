@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.9.0 - 2026-06-14
+
+### Changed
+
+- Class and spec selection now re-detects from the current character on
+  addon load and reload while preserving other saved filters.
+- Talent retry events now allow spec detection to update after login when
+  talent data becomes available.
+
+### Fixed
+
+- Druid Feral Combat talent detection now maps to the Feral dps list instead
+  of falling back to another Druid spec.
+- Owned-upgrade filtering now follows the actual-upgrade planner mode without
+  a separate owned-upgrade toggle.
+
 ## 0.8.0 - 2026-06-09
 
 ### Added
