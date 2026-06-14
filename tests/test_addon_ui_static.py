@@ -106,7 +106,7 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, validate_body)
 
-    def test_player_selection_detection_defaults_saved_selection(self):
+    def test_player_selection_detection_is_load_time_context(self):
         config = self.read_lua("Config.lua")
         for token in [
             'local DEFAULT_SELECTED_CLASS = "Druid"',
@@ -124,31 +124,77 @@ class AddonUIStaticTests(unittest.TestCase):
             "local SPEC_NAME_ALIASES = {",
             '["feral combat"] = DEFAULT_SELECTED_SPEC',
             "function BigBiSList:GetDetectedPlayerSelection()",
+            "local detectedSpec = self:DetectPlayerSpec(className)",
             "firstSpecNameForClass(className)",
-            "local function selectionUsesBuiltInDefault(char)",
-            "selection.class or (char and char.selectedClass)",
-            "selection.spec or (char and char.selectedSpec)",
-            "selectedClass == DEFAULT_SELECTED_CLASS",
-            "selectedSpec == DEFAULT_SELECTED_SPEC",
-            "local function hasSavedClassSpecSelection(char)",
-            "local function applyDetectedDefaultSelection(char, previousVersion, hadSavedClassSpecSelection)",
-            "previousVersion ~= nil",
-            "or hadSavedClassSpecSelection",
+            "specDetected = detectedSpec ~= nil",
+            "local function syncSelectionAliases(char)",
+            "local function applyDetectedPlayerSelection(char)",
+            "BigBiSList.classSpecAutoSelectionActive == false",
             "char.selection.class = detected.class",
             "char.selection.spec = detected.spec",
+            "return changed",
+            "function BigBiSList:MarkClassSpecSelectionManual()",
+            "self.classSpecAutoSelectionActive = false",
+            "function BigBiSList:ResetClassSpecAutoSelection()",
+            "self.classSpecAutoSelectionActive = true",
+            "function BigBiSList:ApplyDetectedPlayerSelection()",
+            "applyDetectedPlayerSelection(BigBiSListCharDB)",
+            "syncSelectionAliases(BigBiSListCharDB)",
+            "BigBiSListCharDB.manualClassSpecSelection = nil",
             "selectedClass = DEFAULT_SELECTED_CLASS",
             "selectedSpec = DEFAULT_SELECTED_SPEC",
             "class = DEFAULT_SELECTED_CLASS",
             "spec = DEFAULT_SELECTED_SPEC",
         ]:
             self.assertIn(token, config)
+        self.assertNotIn("selectionUsesBuiltInDefault", config)
+        self.assertNotIn("hasSavedClassSpecSelection", config)
+        self.assertNotIn("hadSavedClassSpecSelection", config)
+
+        defaults_body = config.split("BigBiSList.defaults = {", 1)[1].split("local function applyDefaults", 1)[0]
+        self.assertNotIn("manualClassSpecSelection", defaults_body)
 
         ensure_body = config.split("function BigBiSList:EnsureDatabase()", 1)[1].split("return BigBiSListDB", 1)[0]
-        self.assertIn("local hadSavedClassSpecSelection = hasSavedClassSpecSelection(BigBiSListCharDB)", ensure_body)
-        self.assertIn("applyDetectedDefaultSelection(BigBiSListCharDB, charPreviousVersion, hadSavedClassSpecSelection)", ensure_body)
-        self.assertLess(ensure_body.index("migrateSplitDropSourceFilter"), ensure_body.index("applyDetectedDefaultSelection"))
-        self.assertLess(ensure_body.index("applyDetectedDefaultSelection"), ensure_body.index("BigBiSListCharDB.selectedClass"))
-        self.assertNotIn("applyDetectedDefaultSelection(BigBiSListCharDB)\n", ensure_body)
+        self.assertIn("syncSelectionAliases(BigBiSListCharDB)", ensure_body)
+        self.assertIn("BigBiSListCharDB.manualClassSpecSelection = nil", ensure_body)
+        self.assertNotIn("applyDetectedPlayerSelection", ensure_body)
+
+        apply_body = config.split("function BigBiSList:ApplyDetectedPlayerSelection()", 1)[1].split("function BigBiSList:ApplyDetectedDefaultSelection", 1)[0]
+        self.assertIn("self:EnsureDatabase()", apply_body)
+        self.assertIn("applyDetectedPlayerSelection(BigBiSListCharDB)", apply_body)
+        self.assertIn("syncSelectionAliases(BigBiSListCharDB)", apply_body)
+        self.assertIn("return changed", apply_body)
+        self.assertIn("return self:ApplyDetectedPlayerSelection()", config)
+
+    def test_manual_class_spec_dropdown_selection_stops_auto_detection(self):
+        ui = self.read_lua("UI.lua")
+        set_class_body = ui.split("function UI:SetClass(className)", 1)[1].split("function UI:SetSpec", 1)[0]
+        set_spec_body = ui.split("function UI:SetSpec(specName)", 1)[1].split("function UI:SetPhase", 1)[0]
+
+        self.assertIn("BigBiSList:MarkClassSpecSelectionManual()", set_class_body)
+        self.assertIn("BigBiSList:MarkClassSpecSelectionManual()", set_spec_body)
+        self.assertLess(set_class_body.index("BigBiSList:MarkClassSpecSelectionManual()"), set_class_body.index("BigBiSList:SetSelection"))
+        self.assertLess(set_spec_body.index("BigBiSList:MarkClassSpecSelectionManual()"), set_spec_body.index("BigBiSList:SetSelection"))
+
+    def test_core_retries_player_selection_detection_after_login(self):
+        core = self.read_lua("Core.lua")
+        for token in [
+            "local function retryDetectedPlayerSelection()",
+            "not addonInitialized",
+            "BigBiSList.ApplyDetectedPlayerSelection",
+            "BigBiSList:ApplyDetectedPlayerSelection()",
+            "BigBiSList:RefreshUI()",
+            'frame:RegisterEvent("PLAYER_LOGIN")',
+            'frame:RegisterEvent("PLAYER_ENTERING_WORLD")',
+            'frame:RegisterEvent("PLAYER_TALENT_UPDATE")',
+            'frame:RegisterEvent("CHARACTER_POINTS_CHANGED")',
+            'or event == "PLAYER_TALENT_UPDATE"',
+            'or event == "CHARACTER_POINTS_CHANGED"',
+            "BigBiSList:ResetClassSpecAutoSelection()",
+            "addonInitialized = true",
+            "retryDetectedPlayerSelection()",
+        ]:
+            self.assertIn(token, core)
 
     def test_public_ui_methods_exist(self):
         ui = self.read_lua("UI.lua")

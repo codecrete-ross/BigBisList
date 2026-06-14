@@ -441,48 +441,36 @@ function BigBiSList:GetDetectedPlayerSelection()
         return nil
     end
 
+    local detectedSpec = self:DetectPlayerSpec(className)
+
     return {
         class = className,
-        spec = self:DetectPlayerSpec(className) or firstSpecNameForClass(className),
+        spec = detectedSpec or firstSpecNameForClass(className),
+        specDetected = detectedSpec ~= nil,
     }
 end
 
-local function selectionUsesBuiltInDefault(char)
-    local selection = char and char.selection or {}
-    local selectedClass = selection.class or (char and char.selectedClass)
-    local selectedSpec = selection.spec or (char and char.selectedSpec)
-
-    return (selectedClass == nil or selectedClass == DEFAULT_SELECTED_CLASS)
-        and (selectedSpec == nil or selectedSpec == DEFAULT_SELECTED_SPEC)
+local function syncSelectionAliases(char)
+    char.selectedClass = char.selection.class
+    char.selectedSpec = char.selection.spec
+    char.selectedPhase = char.selection.phase
+    char.selectedTab = char.selection.tab
 end
 
-local function hasSavedClassSpecSelection(char)
-    if type(char) ~= "table" then
+local function applyDetectedPlayerSelection(char)
+    if not char or BigBiSList.classSpecAutoSelectionActive == false then
         return false
-    end
-
-    if char.selectedClass ~= nil or char.selectedSpec ~= nil then
-        return true
-    end
-
-    return type(char.selection) == "table"
-        and (char.selection.class ~= nil or char.selection.spec ~= nil)
-end
-
-local function applyDetectedDefaultSelection(char, previousVersion, hadSavedClassSpecSelection)
-    if previousVersion ~= nil
-        or hadSavedClassSpecSelection
-        or not char
-        or not selectionUsesBuiltInDefault(char) then
-        return
     end
 
     local detected = BigBiSList:GetDetectedPlayerSelection()
     if not detected or not detected.class then
-        return
+        return false
     end
 
     char.selection = char.selection or {}
+    local changed = char.selection.class ~= detected.class
+        or (detected.spec ~= nil and char.selection.spec ~= detected.spec)
+
     char.selection.class = detected.class
     char.selectedClass = detected.class
 
@@ -490,6 +478,8 @@ local function applyDetectedDefaultSelection(char, previousVersion, hadSavedClas
         char.selection.spec = detected.spec
         char.selectedSpec = detected.spec
     end
+
+    return changed
 end
 
 local function ensureTooltipSpecFilters(db)
@@ -561,6 +551,29 @@ function BigBiSList:GetTooltipSpecFilterKey(specFilters)
     return table.concat(parts, ";")
 end
 
+function BigBiSList:MarkClassSpecSelectionManual()
+    self.classSpecAutoSelectionActive = false
+end
+
+function BigBiSList:ResetClassSpecAutoSelection()
+    self.classSpecAutoSelectionActive = true
+end
+
+function BigBiSList:ApplyDetectedPlayerSelection()
+    self:EnsureDatabase()
+
+    local changed = applyDetectedPlayerSelection(BigBiSListCharDB)
+    if changed then
+        syncSelectionAliases(BigBiSListCharDB)
+    end
+
+    return changed
+end
+
+function BigBiSList:ApplyDetectedDefaultSelection()
+    return self:ApplyDetectedPlayerSelection()
+end
+
 function BigBiSList:GetSelection()
     self:EnsureDatabase()
     return BigBiSListCharDB.selection
@@ -601,7 +614,6 @@ function BigBiSList:EnsureDatabase()
 
     local profilePreviousVersion = BigBiSListDB.profile.defaultsVersion
     local charPreviousVersion = BigBiSListCharDB.defaultsVersion
-    local hadSavedClassSpecSelection = hasSavedClassSpecSelection(BigBiSListCharDB)
 
     migrateSelection(BigBiSListCharDB)
     migrateMinimapSettings(BigBiSListDB)
@@ -612,13 +624,10 @@ function BigBiSList:EnsureDatabase()
     migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
     migrateFacetedFilters(BigBiSListCharDB, charPreviousVersion)
-    applyDetectedDefaultSelection(BigBiSListCharDB, charPreviousVersion, hadSavedClassSpecSelection)
+    BigBiSListCharDB.manualClassSpecSelection = nil
     ensureTooltipSpecFilters(BigBiSListDB)
 
-    BigBiSListCharDB.selectedClass = BigBiSListCharDB.selection.class
-    BigBiSListCharDB.selectedSpec = BigBiSListCharDB.selection.spec
-    BigBiSListCharDB.selectedPhase = BigBiSListCharDB.selection.phase
-    BigBiSListCharDB.selectedTab = BigBiSListCharDB.selection.tab
+    syncSelectionAliases(BigBiSListCharDB)
     BigBiSListDB.profile.defaultsVersion = DEFAULTS_VERSION
     BigBiSListCharDB.defaultsVersion = DEFAULTS_VERSION
 

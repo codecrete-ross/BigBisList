@@ -128,17 +128,44 @@ local function handleSlashCommand(input)
     BigBiSList:ToggleMainFrame()
 end
 
+local addonInitialized = false
+
+local function retryDetectedPlayerSelection()
+    if not addonInitialized or not BigBiSList.ApplyDetectedPlayerSelection then
+        return
+    end
+
+    if BigBiSList:ApplyDetectedPlayerSelection() then
+        BigBiSList:RefreshUI()
+    end
+end
+
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("PLAYER_TALENT_UPDATE")
+frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
 frame:SetScript("OnEvent", function(_, event, loadedAddon)
+    if event == "PLAYER_LOGIN"
+        or event == "PLAYER_ENTERING_WORLD"
+        or event == "PLAYER_TALENT_UPDATE"
+        or event == "CHARACTER_POINTS_CHANGED" then
+        retryDetectedPlayerSelection()
+        return
+    end
+
     if event ~= "ADDON_LOADED" or loadedAddon ~= BigBiSList.addonName then
         return
     end
 
     BigBiSList:EnsureDatabase()
+    BigBiSList:ResetClassSpecAutoSelection()
     BigBiSList:InitUIEvents()
     BigBiSList:InitTooltip()
     BigBiSList:InitMinimapButton()
+    addonInitialized = true
+    retryDetectedPlayerSelection()
     printLine("loaded. Use /bbl or /bigbis.")
 end)
 

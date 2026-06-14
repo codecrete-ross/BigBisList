@@ -2211,6 +2211,7 @@ function UI:GetLongevityDropdownItems()
 end
 
 function UI:SetClass(className)
+    BigBiSList:MarkClassSpecSelectionManual()
     local index = BigBiSList:GetDataIndex()
     local specs = index.specsByClass[className] or {}
     BigBiSList:SetSelection(className, firstSpecName(specs), nil, nil)
@@ -2219,6 +2220,7 @@ function UI:SetClass(className)
 end
 
 function UI:SetSpec(specName)
+    BigBiSList:MarkClassSpecSelectionManual()
     BigBiSList:SetSelection(nil, specName, nil, nil)
     self:ClearTransientCaches()
     self:ScheduleRefresh()
