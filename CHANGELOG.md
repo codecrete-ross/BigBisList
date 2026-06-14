@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.10.0 - 2026-06-14
+
+### Added
+
+- Leveling gear recommendations from audited Wowhead leveling guide snapshots,
+  with a dedicated Leveling phase view, level filtering, source notes,
+  ownership state, wishlist actions, and detail-drawer context.
+- Canonical `leveling_gear` data generation and validation, including item
+  references, level bounds, source URLs, duplicate checks, and class/spec
+  coverage.
+
+### Changed
+
+- Leveling mode now uses compact arrow and numeric level controls clamped to
+  levels 1-70.
+
 ## 0.9.1 - 2026-06-14
 
 ### Fixed

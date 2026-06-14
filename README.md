@@ -5,8 +5,8 @@ Warcraft. It shows phase-based BiS lists, acquisition details, gem/enchant and
 consumable recommendations, item tooltip matches, ownership state, and a simple
 priority planner.
 
-This repository is prepared for the `0.9.0` release. This addon targets TBC
-Anniversary only. The `0.9.0` package uses WoW interface `20505`, matching the
+This repository is prepared for the `0.10.0` release. This addon targets TBC
+Anniversary only. The `0.10.0` package uses WoW interface `20505`, matching the
 local `wow_anniversary` 2.5.5 client, and is not intended for Retail, Classic
 Era, Cataclysm Classic, Mists Classic, or other WoW releases.
 
@@ -30,6 +30,7 @@ test.
 ## Features
 
 - Phase-based TBC Anniversary BiS lists from Pre-Raid through Sunwell.
+- Leveling mode with guide-backed gear pickups and level controls.
 - Class, spec, phase, slot, source, zone, reputation, rank, ownership, BoE, and
   longevity filters.
 - Gear view for currently equipped slots.
@@ -45,7 +46,7 @@ test.
 
 ## Data Scope
 
-The `0.9.0` release ships with generated data from audited local Wowhead TBC
+The `0.10.0` release ships with generated data from audited local Wowhead TBC
 snapshots plus curated overrides where source data needed correction.
 
 Current generated data includes:
@@ -54,11 +55,12 @@ Current generated data includes:
 - 28 specs
 - 6 phases
 - 4,549 BiS slot lists
-- 2,383 item records
+- 2,513 item records
 - 666 gem rows
 - 1,776 enchant rows
 - 1,518 consumable rows
 - 1,337 leveling rows
+- 464 leveling gear recommendations
 
 The data pipeline validates manifest coverage, source requirements, duplicate
 rows, slot compatibility, rank groups, and generated Lua consistency before
@@ -72,7 +74,7 @@ release.
 - Planner priority is heuristic; it is not a simulator and does not replace
   class-specific stat weights.
 - Bank ownership only includes banked items after the character opens the bank.
-- No profile import/export is included in `0.9.0`.
+- No profile import/export is included in `0.10.0`.
 
 ## Release Checks
 
@@ -90,7 +92,7 @@ After the checks pass, commit the release prep changes, push the commit to
 `main`, push the tag, and create the GitHub release with the GitHub CLI:
 
 ```powershell
-$version = "0.9.1"
+$version = "0.10.0"
 git add CHANGELOG.md Config.lua README.md
 git commit -m "Prepare $version release"
 git tag $version
