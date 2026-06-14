@@ -1026,6 +1026,7 @@ class WowheadScraperParserTests(unittest.TestCase):
             "gems": {"gems": []},
             "items": {"items": []},
             "leveling": {"leveling": []},
+            "leveling_gear": {"leveling_gear": []},
             "overrides": {"overrides": []},
             "scrape_manifest": {
                 "sources": [
@@ -1121,6 +1122,53 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(rows[0]["text"], "Level 61: Train Wrath (Rank 9)")
         self.assertNotIn("phase", rows[0])
         self.assertEqual(rows[0]["entities"][0]["name"], "Wrath")
+
+    def test_leveling_gear_imports_multi_item_rows_and_level_ranges(self):
+        guide_url = "https://www.wowhead.com/tbc/guide/synthetic-leveling-gear"
+        guide_snapshot = parse_guide_html(
+            guide_url,
+            """
+            <html><head><title>Guide</title></head><body>
+            <h3>Best Leveling Weapons and Gear for Arcane Mage DPS in TBC Classic</h3>
+            <table>
+              <tr><td>18</td><td><a href="/tbc/item=6505/crescent-staff">Crescent Staff</a> / <a href="/tbc/item=2042/staff-of-westfall">Staff of Westfall</a></td><td>Dungeon / Quest</td></tr>
+              <tr><td>59-60</td><td><a href="/tbc/item=31075/evokers-mark-of-the-redemption">Evoker's Mark of the Redemption</a></td><td>Quest in Shadowmoon Valley</td></tr>
+            </table>
+            </body></html>
+            """,
+        )
+        crescent_staff = parse_item_html(
+            "https://www.wowhead.com/tbc/item=6505/crescent-staff",
+            '<html><head><title>Crescent Staff - Item - TBC Classic</title><meta name="description" content="This uncommon staff goes in the &quot;Two-Hand&quot; slot."></head><body></body></html>',
+        )
+        westfall_staff = parse_item_html(
+            "https://www.wowhead.com/tbc/item=2042/staff-of-westfall",
+            '<html><head><title>Staff of Westfall - Item - TBC Classic</title><meta name="description" content="This rare staff goes in the &quot;Two-Hand&quot; slot."></head><body></body></html>',
+        )
+        ring = parse_item_html(
+            "https://www.wowhead.com/tbc/item=31075/evokers-mark-of-the-redemption",
+            '<html><head><title>Evoker Ring - Item - TBC Classic</title><meta name="description" content="This rare ring goes in the &quot;Finger&quot; slot."></head><body></body></html>',
+        )
+        source = {"id": "synthetic-leveling-gear", "url": guide_url, "data_family": "leveling", "class": "Mage", "spec": "Arcane", "phases": "*"}
+        original = scraper.manifest_sources_by_url
+        scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
+        try:
+            rows = scraper.import_leveling_gear_from_snapshots(
+                [guide_snapshot, crescent_staff, westfall_staff, ring],
+                fallback_to_canonical=False,
+            )["leveling_gear"]
+        finally:
+            scraper.manifest_sources_by_url = original
+
+        by_item = {row["item_id"]: row for row in rows}
+        self.assertEqual(set(by_item), {6505, 2042, 31075})
+        self.assertEqual(by_item[6505]["level_min"], 18)
+        self.assertEqual(by_item[6505]["level_max"], 70)
+        self.assertEqual(by_item[6505]["slot"], "Two Hand")
+        self.assertEqual(by_item[2042]["source_note"], "Dungeon / Quest")
+        self.assertEqual(by_item[31075]["level_min"], 59)
+        self.assertEqual(by_item[31075]["level_max"], 60)
+        self.assertEqual(by_item[31075]["slot"], "Ring")
 
     def test_consumables_import_uses_section_lists_without_tables(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-consumables"

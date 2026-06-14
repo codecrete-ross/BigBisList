@@ -50,6 +50,7 @@ CANONICAL_FILES = {
     "enchant_effects": "enchant_effects.json",
     "consumables": "consumables.json",
     "leveling": "leveling.json",
+    "leveling_gear": "leveling_gear.json",
     "credits": "credits.json",
     "overrides": "overrides.json",
     "scrape_manifest": "scrape_manifest.json",

@@ -437,6 +437,9 @@ def element_with_resolved_link_text(element: Any, entity_names: dict[str, dict[i
 
 
 def level_range_from_text(text: str) -> str | None:
+    match = re.fullmatch(r"\s*(\d{1,2})\s*", text)
+    if match:
+        return str(int(match.group(1)))
     match = re.search(r"\b(?:levels?\s*)?(\d{1,2})\s*[-–]\s*(\d{1,2})\b", text, flags=re.IGNORECASE)
     if match:
         return f"{int(match.group(1))}-{int(match.group(2))}"
@@ -444,6 +447,29 @@ def level_range_from_text(text: str) -> str | None:
     if match:
         return str(int(match.group(1)))
     return None
+
+
+def level_bounds_from_range(value: str | None) -> tuple[int | None, int | None, bool]:
+    if not value:
+        return None, None, False
+    match = re.fullmatch(r"\s*(\d{1,2})\s*[-–]\s*(\d{1,2})\s*", str(value))
+    if match:
+        level_min = max(1, min(70, int(match.group(1))))
+        level_max = max(1, min(70, int(match.group(2))))
+        if level_max < level_min:
+            level_min, level_max = level_max, level_min
+        return level_min, level_max, True
+    match = re.fullmatch(r"\s*(\d{1,2})\s*", str(value))
+    if match:
+        level = max(1, min(70, int(match.group(1))))
+        return level, None, False
+    return None, None, False
+
+
+def leveling_level_label(level_min: int, level_max: int | None) -> str:
+    if level_max and level_max > level_min:
+        return f"Recommended from {level_min}-{level_max}"
+    return f"Recommended at {level_min}"
 
 
 def canonical_standing(value: str | None) -> str | None:
@@ -937,6 +963,8 @@ def parse_guide_html(url: str, html: str) -> dict[str, Any]:
                 "source_links": source_links_from_element(source_cell),
             }
             level_range = level_range_from_text(" ".join(row["cells"]))
+            if not level_range and row["cells"]:
+                level_range = level_range_from_text(str(row["cells"][0]))
             if level_range:
                 row["level_range"] = level_range
             if primary_item:
@@ -2190,7 +2218,7 @@ def bis_slot_from_inventory_slot(inventory_slot: str | None) -> str | None:
     inv_slot = canonical_inventory_slot(inventory_slot)
     if inv_slot in {"Head", "Neck", "Shoulder", "Back", "Chest", "Wrist", "Hands", "Waist", "Legs", "Feet", "Trinket", "Ammo", "Quiver", "Ranged", "Off Hand", "Two Hand"}:
         return inv_slot
-    if inv_slot == "Finger":
+    if inv_slot in {"Finger", "Ring"}:
         return "Ring"
     if inv_slot in {"One Hand", "Main Hand"}:
         return "Main Hand"
@@ -2989,6 +3017,168 @@ def import_leveling_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
     return {"leveling": rows}
 
 
+LEVELING_GEAR_HEADING_RE = re.compile(
+    r"\b(?:best\s+leveling|leveling\s+(?:weapons?|gear)|weapons?|gear|equipment)\b",
+    flags=re.IGNORECASE,
+)
+
+
+def table_matches_leveling_gear(table: dict[str, Any]) -> bool:
+    heading = str(table.get("heading") or "")
+    if not LEVELING_GEAR_HEADING_RE.search(heading):
+        return False
+    return any(row_item_ids(row) for row in table.get("rows", []))
+
+
+def leveling_gear_category_label(table: dict[str, Any]) -> str:
+    heading = clean_text(str(table.get("heading") or ""))
+    lowered = heading.lower()
+    if "damage-focused" in lowered or "damage focused" in lowered:
+        return "Damage-focused"
+    if "healing-focused" in lowered or "healing focused" in lowered:
+        return "Healing-focused"
+    if "tanking" in lowered or "tank" in lowered:
+        return "Tank pick"
+    return "Recommended"
+
+
+def row_item_entities(row: dict[str, Any]) -> list[dict[str, Any]]:
+    entities: list[dict[str, Any]] = []
+    seen: set[int] = set()
+    for entity in row.get("entities", []):
+        if entity.get("type") != "item" or not isinstance(entity.get("id"), int):
+            continue
+        item_id = int(entity["id"])
+        if item_id in seen:
+            continue
+        seen.add(item_id)
+        entities.append(entity)
+    return entities
+
+
+def infer_leveling_gear_ranges(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[tuple[str, str, str, str, str], list[dict[str, Any]]] = {}
+    for row in rows:
+        key = (
+            str(row.get("class") or ""),
+            str(row.get("spec") or ""),
+            str(row.get("section") or ""),
+            str(row.get("slot") or ""),
+            str(row.get("category_label") or ""),
+        )
+        grouped.setdefault(key, []).append(row)
+
+    for group_rows in grouped.values():
+        starts = sorted({int(row["level_min"]) for row in group_rows if isinstance(row.get("level_min"), int)})
+        for row in group_rows:
+            level_min = int(row["level_min"])
+            if not row.pop("_explicit_level_max", False):
+                next_start = next((start for start in starts if start > level_min), None)
+                row["level_max"] = max(level_min, min(70, (next_start - 1) if next_start else 70))
+            else:
+                row["level_max"] = max(level_min, min(70, int(row.get("level_max") or level_min)))
+            row["level_label"] = leveling_level_label(level_min, int(row["level_max"]))
+
+    return rows
+
+
+def import_leveling_gear_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
+    rows: list[dict[str, Any]] = []
+    seen: set[tuple[str, str, int, int, str, int, str, str]] = set()
+    item_snapshots = item_snapshots_by_id(snapshots)
+
+    for snapshot in snapshots:
+        if snapshot.get("page_type") != "guide":
+            continue
+        for source_meta in manifest_sources_for_snapshot(snapshot, "leveling"):
+            class_name = source_meta.get("class")
+            spec_name = source_meta.get("spec")
+            if not class_name or not spec_name:
+                continue
+
+            for table in snapshot.get("tables", []):
+                if not table_matches_leveling_gear(table):
+                    continue
+                section = str(table.get("heading") or "Leveling Gear")
+                category_label = leveling_gear_category_label(table)
+                for row_index, row in enumerate(table.get("rows", []), start=1):
+                    cells = row.get("cells", [])
+                    level_range = row.get("level_range") or level_range_from_text(" ".join(str(cell) for cell in cells))
+                    if not level_range and cells:
+                        level_range = level_range_from_text(str(cells[0]))
+                    level_min, level_max, explicit_level_max = level_bounds_from_range(level_range)
+                    if not level_min:
+                        continue
+                    source_note = clean_text(str(row.get("source_text") or ""))
+                    for entity_index, entity in enumerate(row_item_entities(row), start=1):
+                        item_id = int(entity["id"])
+                        item_snapshot = item_snapshots.get(item_id)
+                        item_row = deepcopy(row)
+                        item_row["item_id"] = item_id
+                        item_row["item_name"] = entity.get("name") or row.get("item_name")
+                        slot = bis_slot_from_row(table, item_row, item_snapshot)
+                        if not slot:
+                            slot = bis_slot_from_inventory_slot(item_inventory_slot(item_snapshot))
+                        if not slot:
+                            continue
+
+                        key = (
+                            str(class_name),
+                            str(spec_name),
+                            int(level_min),
+                            int(level_max or 0),
+                            slot,
+                            item_id,
+                            section,
+                            source_note,
+                        )
+                        if key in seen:
+                            continue
+                        seen.add(key)
+
+                        requirements = row_requirements(row, snapshot["url"])
+                        requirements.extend(snapshot_requirements(item_snapshot))
+                        requirements = normalize_tradeable_crafted_profession_requirements(
+                            requirements,
+                            None,
+                            item_snapshot,
+                            (item_snapshot or {}).get("normalized_sources", []),
+                        )
+                        leveling_row: dict[str, Any] = {
+                            "class": class_name,
+                            "spec": spec_name,
+                            "level_min": level_min,
+                            "level_max": level_max or level_min,
+                            "_explicit_level_max": explicit_level_max,
+                            "level_label": leveling_level_label(level_min, level_max or level_min),
+                            "slot": slot,
+                            "item_id": item_id,
+                            "rank": (row_index * 10) + entity_index,
+                            "category_label": category_label,
+                            "section": section,
+                            "source_note": source_note,
+                            "source_url": snapshot["url"],
+                        }
+                        if requirements:
+                            leveling_row["requirements"] = requirements
+                        rows.append(leveling_row)
+
+    if not rows and fallback_to_canonical:
+        return canonical_json("leveling_gear")
+    rows = infer_leveling_gear_ranges(rows)
+    rows.sort(
+        key=lambda row: (
+            str(row["class"]),
+            str(row["spec"]),
+            int(row["level_min"]),
+            str(row["slot"]),
+            int(row["rank"]),
+            int(row["item_id"]),
+        )
+    )
+    return {"leveling_gear": rows}
+
+
 def import_entity_sources_from_snapshots(
     snapshots: list[dict[str, Any]],
     rows: list[dict[str, Any]],
@@ -3096,14 +3286,18 @@ def guide_item_refs(snapshots: list[dict[str, Any]]) -> dict[int, dict[str, Any]
             continue
         for table in snapshot.get("tables", []):
             for row in table.get("rows", []):
-                item_id = row.get("item_id")
-                if not isinstance(item_id, int) or item_id <= 0:
-                    continue
-                refs[item_id] = {
-                    "id": item_id,
-                    "name": row.get("item_name") or row.get("entity_name") or f"Item {item_id}",
-                    "wowhead_url": row.get("item_url") or item_url_for_id(item_id),
+                entities_by_id = {
+                    entity.get("id"): entity
+                    for entity in row.get("entities", [])
+                    if entity.get("type") == "item" and isinstance(entity.get("id"), int)
                 }
+                for item_id in row_item_ids(row):
+                    entity = entities_by_id.get(item_id, {})
+                    refs[item_id] = {
+                        "id": item_id,
+                        "name": entity.get("name") or row.get("item_name") or row.get("entity_name") or f"Item {item_id}",
+                        "wowhead_url": entity.get("url") or row.get("item_url") or item_url_for_id(item_id),
+                    }
     return refs
 
 
@@ -3114,19 +3308,20 @@ def guide_item_source_hints(snapshots: list[dict[str, Any]]) -> dict[int, list[d
             continue
         for table in snapshot.get("tables", []):
             for row in table.get("rows", []):
-                item_id = row.get("item_id")
-                if not isinstance(item_id, int) or item_id <= 0:
+                item_ids = row_item_ids(row)
+                if not item_ids:
                     continue
                 source_text = clean_text(str(row.get("source_text") or ""))
                 if not source_text:
                     continue
-                hints.setdefault(item_id, []).append(
-                    {
-                        "source_text": source_text,
-                        "source_links": row.get("source_links", []),
-                        "source_url": snapshot["url"],
-                    }
-                )
+                for item_id in item_ids:
+                    hints.setdefault(item_id, []).append(
+                        {
+                            "source_text": source_text,
+                            "source_links": row.get("source_links", []),
+                            "source_url": snapshot["url"],
+                        }
+                    )
     return hints
 
 
@@ -3808,6 +4003,7 @@ IMPORT_OUTPUT_FILES = {
     "enchant_sources.json": "enchant_sources",
     "consumables.json": "consumables",
     "leveling.json": "leveling",
+    "leveling_gear.json": "leveling_gear",
 }
 
 IMPORT_FILES_BY_FAMILY = {
@@ -3815,7 +4011,7 @@ IMPORT_FILES_BY_FAMILY = {
     "gems": ["items.json", "gems.json", "gem_sources.json"],
     "enchants": ["items.json", "enchants.json", "enchant_sources.json"],
     "consumables": ["items.json", "consumables.json"],
-    "leveling": ["leveling.json"],
+    "leveling": ["items.json", "leveling.json", "leveling_gear.json"],
 }
 
 
@@ -3836,6 +4032,7 @@ def import_dry_run_counts(output_docs: dict[str, dict[str, Any]], family: str | 
         "gems": len(counted_docs["gems.json"]["gems"]),
         "items": len(counted_docs["items.json"]["items"]),
         "leveling": len(counted_docs["leveling.json"]["leveling"]),
+        "leveling_gear": len(counted_docs["leveling_gear.json"]["leveling_gear"]),
     }
     if family:
         counts["family"] = family
@@ -3852,6 +4049,7 @@ def command_import(args: argparse.Namespace) -> int:
     imported_enchant_sources = import_entity_sources_from_snapshots(snapshots, imported_enchants["enchants"], "enchant_sources")
     imported_consumables = import_consumables_from_snapshots(snapshots)
     imported_leveling = import_leveling_from_snapshots(snapshots)
+    imported_leveling_gear = import_leveling_gear_from_snapshots(snapshots)
 
     output_docs = {
         "items.json": imported_items,
@@ -3862,6 +4060,7 @@ def command_import(args: argparse.Namespace) -> int:
         "enchant_sources.json": imported_enchant_sources,
         "consumables.json": imported_consumables,
         "leveling.json": imported_leveling,
+        "leveling_gear.json": imported_leveling_gear,
     }
 
     if args.dry_run:

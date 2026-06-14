@@ -6,6 +6,7 @@ BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
 local UI = {}
 BigBiSList.UI = UI
 
+local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"
 local TAB_NAMES = { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist", "Settings" }
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -312,6 +313,7 @@ local RANK_COLORS = {
     only_if_easy = { 0.14, 0.14, 0.16, 0.96, 0.58, 0.58, 0.64, 1 },
     missing = { 0.12, 0.12, 0.14, 0.92, 0.34, 0.34, 0.38, 1 },
     enhance = { 0.10, 0.18, 0.24, 0.96, 0.54, 0.82, 0.88, 1 },
+    leveling = { 0.11, 0.22, 0.20, 0.96, 0.46, 0.86, 0.76, 1 },
 }
 
 local PLANNER_TIER_SECTIONS = {
@@ -503,7 +505,9 @@ local function displayRankInfo(data, mode)
         return data.display_rank_label, data.display_rank_kind or "backup"
     end
 
-    if mode == "enhance" then
+    if mode == "leveling" then
+        return data and data.level_label or "Recommended", "leveling"
+    elseif mode == "enhance" then
         return "Enhancement", "enhance"
     elseif mode == "wishlist" and data and data.priorityTier then
         return data.priorityTier, data.recommendation_tier or "only_if_easy"
@@ -553,6 +557,8 @@ local function rankMeaning(data, mode)
         return label .. ": worthwhile alt or sidegrade pickup."
     elseif kind == "enhance" then
         return label .. ": gem, enchant, or consumable recommendation."
+    elseif kind == "leveling" then
+        return label .. ": guide-backed leveling recommendation."
     elseif kind == "missing" then
         return label .. ": no equipped item or no matching recommendation."
     end
@@ -1101,12 +1107,19 @@ local function firstSpecName(specs)
 end
 
 local function phaseExists(phaseKey)
+    if phaseKey == LEVELING_PHASE_KEY then
+        return true
+    end
     for _, key in ipairs(BigBiSList:GetPhaseOrder()) do
         if key == phaseKey then
             return true
         end
     end
     return false
+end
+
+local function isLevelingPhase(phaseKey)
+    return phaseKey == LEVELING_PHASE_KEY
 end
 
 local function phaseIndex(phaseKey)
@@ -1170,10 +1183,13 @@ function UI:ValidateSelection()
 
     if not phaseExists(phaseKey) then
         phaseKey = detectedPhase
-    elseif phaseKey == char.lastDetectedPhase and detectedPhase ~= char.lastDetectedPhase then
+    elseif not isLevelingPhase(phaseKey) and phaseKey == char.lastDetectedPhase and detectedPhase ~= char.lastDetectedPhase then
         phaseKey = detectedPhase
     end
     char.lastDetectedPhase = detectedPhase
+    if BigBiSList.ApplyDetectedPlayerLevel then
+        BigBiSList:ApplyDetectedPlayerLevel()
+    end
 
     if not listContains(TAB_NAMES, tabName) then
         tabName = "Upgrades"
@@ -1821,6 +1837,7 @@ function UI:GetAvailabilityFilters()
     local char = BigBiSList:GetCharacterDB()
     local accessState = self.currentAccess or self:BuildAccessState()
     filters.faction = accessState and accessState.playerSide or "all"
+    filters.level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
     filters.ownedItems = self.currentOwned or self:BuildOwnedItems()
     filters.ignoredItems = char.ignoredItems
     filters.hideIgnored = true
@@ -1970,6 +1987,7 @@ function UI:BuildFilterPayload()
         boe = filters.boe,
         faction = self.currentAccess and self.currentAccess.playerSide or "all",
         longevity = filters.longevity,
+        level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70,
         slots = filters.slots,
         ownedItems = self.currentOwned,
         ignoredItems = char.ignoredItems,
@@ -2226,6 +2244,14 @@ end
 
 function UI:SetPhase(phaseKey)
     BigBiSList:SetSelection(nil, nil, phaseKey, nil)
+    self:ClearTransientCaches()
+    self:ScheduleRefresh()
+end
+
+function UI:SetLevelingLevel(level)
+    if BigBiSList.SetSelectedLevelingLevel then
+        BigBiSList:SetSelectedLevelingLevel(level, true)
+    end
     self:ClearTransientCaches()
     self:ScheduleRefresh()
 end
@@ -2829,6 +2855,8 @@ function UI:GetRowRecommendationText(data, mode)
 
     if mode == "planner" then
         return table.concat(data and data.reasons or {}, ", ")
+    elseif mode == "leveling" then
+        return data and (data.level_label or data.level_value_text) or "Leveling recommendation"
     elseif mode == "enhance" then
         return data and data.detail or "Enhancement"
     elseif mode == "wishlist" then
@@ -2849,6 +2877,10 @@ function UI:GetRowSubline(data, mode, includeWhy)
 
     if mode == "planner" then
         appendText(parts, data and data.slot)
+        appendText(parts, self:GetContextSourceSummary(data))
+    elseif mode == "leveling" then
+        appendText(parts, data and data.slot)
+        appendText(parts, data and data.source_note)
         appendText(parts, self:GetContextSourceSummary(data))
     elseif mode == "enhance" then
         appendText(parts, data and data.detail)
@@ -3321,7 +3353,37 @@ function UI:SetContentHeight(yOffset)
     self.contentChild:SetHeight(math.max(math.abs(yOffset) + 32, minimum + 1))
 end
 
+function UI:RenderLevelingTab()
+    local selection = self:GetSelection()
+    local filters = self.currentFilterPayload or self:BuildFilterPayload()
+    self.currentOwned = filters.ownedItems
+    local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or filters.level or 70
+
+    local groups = BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)
+    if #groups == 0 then
+        self:RenderEmpty("No guide-backed leveling picks at this level. Move the slider higher or clear filters.")
+        return
+    end
+
+    local model = self:NewListRenderModel()
+    self:AddActiveFilterBar(model)
+    for _, group in ipairs(groups) do
+        self:AddListSection(model, group.slot .. " - available by level " .. tostring(level), "leveling")
+        for _, item in ipairs(group.items) do
+            self:AddListRow(model, item, "leveling")
+        end
+        self:AddListGap(model)
+    end
+
+    self:RenderListModel(model)
+end
+
 function UI:RenderPhaseTab()
+    if isLevelingPhase((self:GetSelection() or {}).phase) then
+        self:RenderLevelingTab()
+        return
+    end
+
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
@@ -3346,6 +3408,11 @@ function UI:RenderPhaseTab()
 end
 
 function UI:RenderPlannerTab()
+    if isLevelingPhase((self:GetSelection() or {}).phase) then
+        self:RenderLevelingTab()
+        return
+    end
+
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
@@ -3514,6 +3581,11 @@ function UI:RenderGearTab()
 end
 
 function UI:RenderEnhanceTab()
+    if isLevelingPhase((self:GetSelection() or {}).phase) then
+        self:RenderEmpty("Enhancements are endgame-focused. Switch to an endgame phase to view gems, enchants, and consumables.")
+        return
+    end
+
     local selection = self:GetSelection()
     local sections = BigBiSList:GetEnhancementRows(selection.class, selection.spec, selection.phase)
     self.currentOwned = self.currentOwned or self:BuildOwnedItems()
@@ -3554,10 +3626,22 @@ function UI:RenderWishlistTab()
 
     local selection = self:GetSelection()
     local plannerByItem = {}
-    for _, plannerRow in ipairs(BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, {})) do
-        local current = plannerByItem[plannerRow.item_id]
-        if not current or (plannerRow.priority or 0) > (current.priority or 0) then
-            plannerByItem[plannerRow.item_id] = plannerRow
+    if isLevelingPhase(selection.phase) then
+        local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
+        for _, group in ipairs(BigBiSList:GetLevelingRows(selection.class, selection.spec, level, {})) do
+            for _, levelingRow in ipairs(group.items or {}) do
+                local current = plannerByItem[levelingRow.item_id]
+                if not current or (levelingRow.level_min or 0) > (current.level_min or 0) then
+                    plannerByItem[levelingRow.item_id] = levelingRow
+                end
+            end
+        end
+    else
+        for _, plannerRow in ipairs(BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, {})) do
+            local current = plannerByItem[plannerRow.item_id]
+            if not current or (plannerRow.priority or 0) > (current.priority or 0) then
+                plannerByItem[plannerRow.item_id] = plannerRow
+            end
         end
     end
 
@@ -3572,7 +3656,9 @@ function UI:RenderWishlistTab()
             item_id = tonumber(itemId),
             item = item,
             name = item and item.name or ("Item " .. tostring(itemId)),
-            detail = bestUse and (bestUse.class .. " " .. bestUse.spec .. " - " .. bestUse.slot) or "Saved item",
+            detail = (plannerContext and plannerContext.level_value_text)
+                or (bestUse and (bestUse.class .. " " .. bestUse.spec .. " - " .. bestUse.slot))
+                or "Saved item",
             source_summary = item and item.source_summary or "",
             requirements = item and item.requirements,
             bestUse = (plannerContext and plannerContext.bestUse) or bestUse,
@@ -4039,7 +4125,14 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
     contentHeight = contentHeight + anchor.contentHeight
 
-    if detailMode ~= "enhance" then
+    if detailMode == "leveling" and detailData then
+        local levelingLines = {}
+        appendText(levelingLines, detailData.level_value_text)
+        appendText(levelingLines, detailData.section)
+        appendText(levelingLines, detailData.source_note)
+        anchor = self:CreateDetailsText(content, anchor, "Leveling value", table.concat(levelingLines, "\n"), 0.64, 0.86, 0.78)
+        contentHeight = contentHeight + anchor.contentHeight
+    elseif detailMode ~= "enhance" then
         anchor = self:CreateDetailsText(content, anchor, "Tag meaning", rankMeaning(detailData or plannerContext, detailMode), 0.76, 0.76, 0.80)
         contentHeight = contentHeight + anchor.contentHeight
     end
@@ -4087,15 +4180,17 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         end
     end
 
-    local availabilityPhase = (detailData and detailData.acquisition_phase)
-        or (plannerContext and plannerContext.acquisition_phase)
-        or (item and item.acquisition_phase)
-    if availabilityPhase then
-        appendText(timelineLines, "Available in " .. BigBiSList:GetPhaseDisplayName(availabilityPhase))
-    end
+    if detailMode ~= "leveling" then
+        local availabilityPhase = (detailData and detailData.acquisition_phase)
+            or (plannerContext and plannerContext.acquisition_phase)
+            or (item and item.acquisition_phase)
+        if availabilityPhase then
+            appendText(timelineLines, "Available in " .. BigBiSList:GetPhaseDisplayName(availabilityPhase))
+        end
 
-    if detailItemId then
-        appendText(timelineLines, self:BuildPhaseUseText(detailItemId))
+        if detailItemId then
+            appendText(timelineLines, self:BuildPhaseUseText(detailItemId))
+        end
     end
     if #timelineLines > 0 then
         anchor = self:CreateDetailsText(content, anchor, "Phase value", table.concat(timelineLines, "\n"), 0.64, 0.78, 0.94)
@@ -4205,6 +4300,24 @@ function UI:RefreshControls()
 
     safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - " .. BigBiSList:GetPhaseDisplayName(selection.phase))
     safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / " .. BigBiSList:GetPhaseDisplayName(selection.phase))
+    if isLevelingPhase(selection.phase) then
+        local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
+        safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - Leveling " .. tostring(level))
+        safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / Leveling level " .. tostring(level))
+        if self.levelSliderContainer then
+            self.levelSliderContainer:Show()
+        end
+        safeSetText(self.levelSliderLabel, "Level " .. tostring(level))
+        if self.levelSlider then
+            self.levelSliderUpdating = true
+            self.levelSlider:SetValue(level)
+            self.levelSliderUpdating = false
+        end
+    else
+        if self.levelSliderContainer then
+            self.levelSliderContainer:Hide()
+        end
+    end
 
     for phaseKey, button in pairs(self.phaseButtons or {}) do
         button:SetSelected(phaseKey == selection.phase)
@@ -4342,6 +4455,55 @@ function UI:CreatePhaseBar(frame)
         self.phaseButtons[phaseKey] = button
         previous = button
     end
+
+    local levelingButton = widgets:CreateTextButton(phaseBar, BigBiSList:GetPhaseDisplayName(LEVELING_PHASE_KEY), 96, 24, function()
+        self:SetPhase(LEVELING_PHASE_KEY)
+    end)
+    if previous then
+        levelingButton:SetPoint("LEFT", previous, "RIGHT", 6, 0)
+    else
+        levelingButton:SetPoint("LEFT", phaseBar, "LEFT", 0, 0)
+    end
+    self.phaseButtons[LEVELING_PHASE_KEY] = levelingButton
+    previous = levelingButton
+
+    local levelControl = CreateFrame("Frame", nil, phaseBar)
+    levelControl:SetSize(250, 28)
+    levelControl:SetPoint("LEFT", previous, "RIGHT", 12, 0)
+
+    local levelLabel = levelControl:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    levelLabel:SetPoint("LEFT", levelControl, "LEFT", 0, 0)
+    levelLabel:SetWidth(60)
+    levelLabel:SetJustifyH("LEFT")
+    levelLabel:SetTextColor(0.68, 0.68, 0.72, 1)
+
+    local levelSlider = CreateFrame("Slider", "BigBiSListLevelSlider", levelControl, "OptionsSliderTemplate")
+    levelSlider:SetPoint("LEFT", levelLabel, "RIGHT", 4, 0)
+    levelSlider:SetWidth(170)
+    levelSlider:SetMinMaxValues(1, 70)
+    levelSlider:SetValueStep(1)
+    if levelSlider.SetObeyStepOnDrag then
+        levelSlider:SetObeyStepOnDrag(true)
+    end
+    if _G.BigBiSListLevelSliderLow then
+        _G.BigBiSListLevelSliderLow:SetText("1")
+    end
+    if _G.BigBiSListLevelSliderHigh then
+        _G.BigBiSListLevelSliderHigh:SetText("70")
+    end
+    if _G.BigBiSListLevelSliderText then
+        _G.BigBiSListLevelSliderText:SetText("")
+    end
+    levelSlider:SetScript("OnValueChanged", function(_, value)
+        if self.levelSliderUpdating then
+            return
+        end
+        self:SetLevelingLevel(math.floor((tonumber(value) or 1) + 0.5))
+    end)
+
+    self.levelSliderContainer = levelControl
+    self.levelSliderLabel = levelLabel
+    self.levelSlider = levelSlider
 
     self.phaseBar = phaseBar
 end

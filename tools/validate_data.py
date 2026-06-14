@@ -124,6 +124,7 @@ def validate() -> ValidationResult:
     enchant_effects_doc = canonical_json("enchant_effects")
     consumables_doc = canonical_json("consumables")
     leveling_doc = canonical_json("leveling")
+    leveling_gear_doc = canonical_json("leveling_gear")
     manifest_doc = canonical_json("scrape_manifest")
     overrides_doc = canonical_json("overrides")
 
@@ -374,6 +375,44 @@ def validate() -> ValidationResult:
         _require(bool(leveling.get("text")), errors, "Leveling row needs text")
         _require(str(leveling.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Leveling row {leveling.get('section')} needs a Wowhead source URL")
 
+    leveling_gear_specs: set[tuple[str, str]] = set()
+    seen_leveling_gear: set[tuple[str, str, int, int, str, int, str]] = set()
+    for row in leveling_gear_doc.get("leveling_gear", []):
+        class_name = row.get("class")
+        spec_name = row.get("spec")
+        item_id = row.get("item_id")
+        level_min = row.get("level_min")
+        level_max = row.get("level_max")
+        slot = row.get("slot")
+        _require(class_name in class_names, errors, f"Unknown class in leveling gear row: {class_name}")
+        _require(spec_name in specs_by_class.get(class_name, set()), errors, f"Unknown spec in leveling gear row: {class_name}/{spec_name}")
+        if class_name in class_names and spec_name in specs_by_class.get(class_name, set()):
+            leveling_gear_specs.add((str(class_name), str(spec_name)))
+        _require(isinstance(level_min, int) and 1 <= level_min <= 70, errors, f"Leveling gear row has invalid level_min: {level_min}")
+        _require(isinstance(level_max, int) and isinstance(level_min, int) and level_min <= level_max <= 70, errors, f"Leveling gear row has invalid level_max: {level_max}")
+        _require(bool(row.get("level_label")), errors, f"Leveling gear item {item_id} needs level_label")
+        _require(slot in SLOT_NAMES, errors, f"Unknown leveling gear slot: {slot}")
+        _require(item_id in item_ids, errors, f"Leveling gear references unknown item id: {item_id}")
+        _require(isinstance(row.get("rank"), int) and row.get("rank") > 0, errors, f"Leveling gear item {item_id} needs positive rank")
+        _require(bool(row.get("category_label")), errors, f"Leveling gear item {item_id} needs category_label")
+        _require(bool(row.get("section")), errors, f"Leveling gear item {item_id} needs section")
+        _require("source_note" in row and isinstance(row.get("source_note"), str), errors, f"Leveling gear item {item_id} needs source_note")
+        _require(str(row.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Leveling gear item {item_id} needs a Wowhead source URL")
+        validate_requirements(f"Leveling gear item {item_id}", row.get("requirements"), errors)
+        if isinstance(level_min, int) and isinstance(level_max, int) and isinstance(item_id, int):
+            signature = (str(class_name), str(spec_name), int(level_min), int(level_max), str(slot), int(item_id), str(row.get("source_url")))
+            _require(signature not in seen_leveling_gear, errors, f"Duplicate leveling gear row: {signature}")
+            seen_leveling_gear.add(signature)
+
+    if leveling_gear_doc.get("leveling_gear"):
+        expected_leveling_specs = {
+            (class_name, spec_name)
+            for class_name, spec_names in specs_by_class.items()
+            for spec_name in spec_names
+        }
+        missing_leveling_specs = sorted(expected_leveling_specs - leveling_gear_specs)
+        _require(not missing_leveling_specs, errors, f"Leveling gear missing class/spec rows: {missing_leveling_specs}")
+
     for source_doc_name, source_doc, rows_key in [
         ("gem_sources", gem_sources_doc, "gem_sources"),
         ("enchant_sources", enchant_sources_doc, "enchant_sources"),
@@ -431,6 +470,7 @@ def validate() -> ValidationResult:
         "gem_sources": len(gem_sources_doc.get("gem_sources", [])),
         "gems": len(gems_doc.get("gems", [])),
         "leveling": len(leveling_doc.get("leveling", [])),
+        "leveling_gear": len(leveling_gear_doc.get("leveling_gear", [])),
         "overrides": len(overrides_doc.get("overrides", [])),
         "coverage": str(bis_doc.get("coverage", "")),
     }

@@ -168,6 +168,22 @@ CONSUMABLE_SCHEMA = [
     "requirements",
 ]
 
+LEVELING_GEAR_SCHEMA = [
+    "class",
+    "spec",
+    "level_min",
+    "level_max",
+    "level_label",
+    "slot",
+    "item_id",
+    "rank",
+    "category_label",
+    "section",
+    "source_note",
+    "source_url",
+    "requirements",
+]
+
 SOURCE_RECORD_SCHEMA = [
     "id",
     "name",
@@ -199,6 +215,7 @@ SCHEMAS = {
     "gem": GEM_SCHEMA,
     "enchant": ENCHANT_SCHEMA,
     "consumable": CONSUMABLE_SCHEMA,
+    "leveling_gear": LEVELING_GEAR_SCHEMA,
     "source_record": SOURCE_RECORD_SCHEMA,
     "enchant_effect": ENCHANT_EFFECT_SCHEMA,
 }
@@ -237,7 +254,7 @@ def compact_value(schema_name: str, key: str, value):
         if key == "costs":
             return compact_list(value, "cost") if value else None
 
-    if schema_name in {"use", "enchant", "consumable"} and key == "requirements":
+    if schema_name in {"use", "enchant", "consumable", "leveling_gear"} and key == "requirements":
         return compact_requirements(value)
 
     return value
@@ -347,6 +364,7 @@ def build_data() -> dict:
     enchant_sources = canonical_json("enchant_sources")["enchant_sources"]
     enchant_effects = canonical_json("enchant_effects")["enchant_effects"]
     consumables = canonical_json("consumables")["consumables"]
+    leveling_gear = canonical_json("leveling_gear")["leveling_gear"]
     overrides = canonical_json("overrides")["overrides"]
     manifest = canonical_json("scrape_manifest")
     lookups = build_runtime_lookups(items)
@@ -364,6 +382,7 @@ def build_data() -> dict:
             "gem_count": len(gems),
             "enchant_count": len(enchants),
             "consumable_count": len(consumables),
+            "leveling_gear_count": len(leveling_gear),
             "override_count": len(overrides),
         },
         "classes": classes,
@@ -376,6 +395,7 @@ def build_data() -> dict:
         "enchant_sources": compact_list(enchant_sources, "source_record"),
         "enchant_effects": compact_list(enchant_effects, "enchant_effect"),
         "consumables": compact_list(consumables, "consumable"),
+        "leveling_gear": compact_list(leveling_gear, "leveling_gear"),
         "source_types": lookups["source_types"],
         "zones": lookups["zones"],
         "tooltip_aliases": lookups["tooltip_aliases"],

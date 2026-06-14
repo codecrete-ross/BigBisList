@@ -3,8 +3,10 @@ local addonName = ...
 BigBiSList = BigBiSList or {}
 BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
 
+local LEVELING_PHASE_KEY = "LEVELING"
 local PHASE_ORDER = { "PR", "T4", "T5", "T6", "ZA", "SWP" }
 local PHASE_DISPLAY = {
+    LEVELING = "Leveling",
     PR = "Pre-Raid",
     T4 = "Phase 1",
     T5 = "Phase 2",
@@ -64,6 +66,7 @@ local EQUIPMENT_SLOTS = {
 }
 
 local PHASE_SHORT_DISPLAY = {
+    LEVELING = "Leveling",
     PR = "Pre",
     T4 = "P1",
     T5 = "P2",
@@ -226,6 +229,7 @@ local ITEM_META_CACHE_LIMIT = 900
 local ROW_ACCESS_CACHE_LIMIT = 900
 
 BigBiSList.phaseOrder = PHASE_ORDER
+BigBiSList.levelingPhaseKey = LEVELING_PHASE_KEY
 BigBiSList.phaseDisplay = PHASE_DISPLAY
 BigBiSList.slotOrder = SLOT_ORDER
 BigBiSList.displaySlotFilters = DISPLAY_SLOT_FILTERS
@@ -310,7 +314,7 @@ local function inflateCompactField(index, schemaName, key, value)
         elseif key == "costs" then
             return inflateCompactList(index, "cost", value)
         end
-    elseif (schemaName == "use" or schemaName == "enchant" or schemaName == "consumable") and key == "requirements" then
+    elseif (schemaName == "use" or schemaName == "enchant" or schemaName == "consumable" or schemaName == "leveling_gear") and key == "requirements" then
         return inflateCompactList(index, "requirement", value)
     end
 
@@ -2110,6 +2114,85 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
     return row
 end
 
+local function levelingValueText(row)
+    if not row then
+        return "No leveling recommendation available."
+    end
+
+    local specName = row.spec or "this spec"
+    local levelMin = tonumber(row.level_min) or 1
+    local levelMax = tonumber(row.level_max) or levelMin
+    if levelMax > levelMin then
+        return "Recommended for " .. specName .. " from level " .. tostring(levelMin) .. " to " .. tostring(levelMax)
+    end
+    return "Recommended for " .. specName .. " at level " .. tostring(levelMin)
+end
+
+local function buildLevelingGearRow(index, levelingGearRef)
+    local entry = inflateCompactRecord(index, "leveling_gear", levelingGearRef)
+    if not entry then
+        return nil
+    end
+
+    local itemId = entry.item_id
+    local item = getIndexedItem(index, itemId)
+    local meta = getItemMetaFromIndex(index, itemId, item) or {}
+    local requirements = mergedRequirements(item and item.requirements, entry.requirements)
+    local levelMin = tonumber(entry.level_min) or 1
+    local levelMax = tonumber(entry.level_max) or levelMin
+    local levelLabel = entry.level_label or (levelMax > levelMin and ("Recommended from " .. tostring(levelMin) .. "-" .. tostring(levelMax)) or ("Recommended at " .. tostring(levelMin)))
+
+    local row = {
+        class = entry.class,
+        spec = entry.spec,
+        phase = LEVELING_PHASE_KEY,
+        phaseIndex = phaseIndex(LEVELING_PHASE_KEY),
+        leveling = true,
+        level_min = levelMin,
+        level_max = levelMax,
+        level_label = levelLabel,
+        level_value_text = levelingValueText(entry),
+        slot = entry.slot,
+        item_id = itemId,
+        item = item,
+        name = getItemName(itemId, item),
+        rank = entry.rank,
+        rank_label = entry.category_label or "Recommended",
+        rank_group = "option",
+        category_label = entry.category_label or "Recommended",
+        section = entry.section,
+        source_note = entry.source_note,
+        source_url = entry.source_url,
+        source_summary = meta.source_summary or "",
+        source_type = meta.source_type or "unknown",
+        source_type_label = meta.source_type_label or SOURCE_TYPE_LABELS.unknown,
+        source_filter_key = meta.source_filter_key or "unknown",
+        source_filter_label = meta.source_filter_label or SOURCE_TYPE_LABELS.unknown,
+        source_filter_keys = meta.source_filter_keys or {},
+        acquisition_phase = meta.acquisition_phase or "PR",
+        acquisitionPhaseIndex = meta.acquisitionPhaseIndex or phaseIndex("PR"),
+        zone = meta.zone,
+        zones = meta.zones or {},
+        side = meta.side,
+        sides = meta.sides or {},
+        binding = meta.binding or "unknown",
+        boe = meta.boe,
+        quality = meta.quality,
+        requirements = requirements,
+        reputations = rowReputationsWithMeta(meta.reputations, requirements),
+        display_rank_label = levelLabel,
+        display_rank_kind = "leveling",
+        recommendation_summary = levelLabel,
+        _access_context = {
+            item = item,
+            requirements = entry.requirements,
+            options = { entityType = "item" },
+        },
+    }
+
+    return row
+end
+
 local function rowHasZone(row, zone, selectedPhaseIndex)
     if not row or not zone or zone == "" then
         return false
@@ -2961,6 +3044,7 @@ function BigBiSList:GetDataIndex()
         tooltipUseRefsByItemId = {},
         useRefsByClassSpec = {},
         useRefsByClassSpecPhase = {},
+        levelingGearRefsByClassSpec = {},
         enhancement = {
             gems = data.gems or {},
             gemSourcesById = {},
@@ -3020,6 +3104,12 @@ function BigBiSList:GetDataIndex()
 
             table.insert(ensureNestedUseBucket(index.useRefsByClassSpec, className, specName), useRef)
             table.insert(ensureNestedUseBucket(index.useRefsByClassSpecPhase, className, specName, phaseKey), useRef)
+        end
+
+        for _, levelingGearRef in ipairs(data.leveling_gear or {}) do
+            local className = compactField(index, "leveling_gear", levelingGearRef, "class")
+            local specName = compactField(index, "leveling_gear", levelingGearRef, "spec")
+            table.insert(ensureNestedUseBucket(index.levelingGearRefsByClassSpec, className, specName), levelingGearRef)
         end
 
         for _, sourceData in ipairs(data.gem_sources or {}) do
@@ -3100,6 +3190,10 @@ function BigBiSList:GetDataIndex()
                     end
                 end
             end
+        end
+
+        for _, levelingGear in ipairs(data.leveling_gear or {}) do
+            table.insert(ensureNestedUseBucket(index.levelingGearRefsByClassSpec, levelingGear["class"], levelingGear.spec), levelingGear)
         end
 
         index.usesByItemId = setmetatable({}, {
@@ -3447,6 +3541,67 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
     return rows
 end
 
+function BigBiSList:GetLevelingRows(className, specName, level, filters)
+    local index = self:GetDataIndex()
+    local selectedLevel = tonumber(level) or (filters and tonumber(filters.level)) or 70
+    selectedLevel = math.max(1, math.min(70, math.floor(selectedLevel)))
+    local levelingRefs = index.levelingGearRefsByClassSpec[className]
+        and index.levelingGearRefsByClassSpec[className][specName]
+        or {}
+    local grouped = {}
+    local seenBySlot = {}
+
+    for _, levelingRef in ipairs(levelingRefs) do
+        local row = buildLevelingGearRow(index, levelingRef)
+        if row and row.level_min <= selectedLevel and includeByFilter(row, filters, phaseIndex(LEVELING_PHASE_KEY)) then
+            local slotName = row.slot
+            grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
+            seenBySlot[slotName] = seenBySlot[slotName] or {}
+
+            local key = tostring(row.item_id) .. ":" .. tostring(row.level_min) .. ":" .. tostring(row.level_max) .. ":" .. tostring(row.source_note or "")
+            if not seenBySlot[slotName][key] then
+                seenBySlot[slotName][key] = true
+                table.insert(grouped[slotName].items, row)
+            end
+        end
+    end
+
+    local function sortLevelingRows(a, b)
+        local aActive = (a.level_max or 70) >= selectedLevel
+        local bActive = (b.level_max or 70) >= selectedLevel
+        if aActive ~= bActive then
+            return aActive
+        end
+        if (a.level_min or 0) ~= (b.level_min or 0) then
+            return (a.level_min or 0) > (b.level_min or 0)
+        end
+        if (a.level_max or 0) ~= (b.level_max or 0) then
+            return (a.level_max or 0) > (b.level_max or 0)
+        end
+        if (a.rank or 999) ~= (b.rank or 999) then
+            return (a.rank or 999) < (b.rank or 999)
+        end
+        return lower(a.name) < lower(b.name)
+    end
+
+    local rows = {}
+    for _, slotName in ipairs(SLOT_ORDER) do
+        if grouped[slotName] and #grouped[slotName].items > 0 then
+            table.sort(grouped[slotName].items, sortLevelingRows)
+            table.insert(rows, grouped[slotName])
+        end
+    end
+
+    for _, slotName in ipairs(sortedKeys(grouped)) do
+        if slotIndex(slotName) == 999 and #grouped[slotName].items > 0 then
+            table.sort(grouped[slotName].items, sortLevelingRows)
+            table.insert(rows, grouped[slotName])
+        end
+    end
+
+    return rows
+end
+
 function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filters)
     local index = self:GetDataIndex()
     local groups = {}
@@ -3771,6 +3926,14 @@ end
 
 local function collectAvailabilityRows(addon, className, specName, phaseKey, tabName, filters)
     local rows = {}
+    if phaseKey == LEVELING_PHASE_KEY then
+        for _, group in ipairs(addon:GetLevelingRows(className, specName, filters and filters.level, filters)) do
+            for _, row in ipairs(group.items or {}) do
+                table.insert(rows, row)
+            end
+        end
+        return rows
+    end
     if tabName == "Planner" or tabName == "Upgrades" then
         return addon:GetPlannerRows(className, specName, phaseKey, filters)
     end

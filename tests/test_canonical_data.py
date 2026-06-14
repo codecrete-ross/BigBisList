@@ -154,7 +154,7 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertEqual(unknown_source_items, [])
 
     def iter_requirements(self):
-        for family in ["items", "gems", "gem_sources", "enchants", "enchant_sources", "consumables"]:
+        for family in ["items", "gems", "gem_sources", "enchants", "enchant_sources", "consumables", "leveling_gear"]:
             doc = canonical_json(family)
             stack = [doc]
             while stack:
@@ -197,3 +197,15 @@ class CanonicalDataTests(unittest.TestCase):
         }
         for raw, expected in cases.items():
             self.assertEqual(normalize_reputation_names(raw), expected)
+
+    def test_leveling_gear_has_recommendations_for_every_spec(self):
+        rows = canonical_json("leveling_gear")["leveling_gear"]
+        class_specs = {
+            (class_data["name"], spec["name"])
+            for class_data in canonical_json("classes")["classes"]
+            for spec in class_data["specs"]
+        }
+        row_specs = {(row["class"], row["spec"]) for row in rows}
+        self.assertEqual(row_specs, class_specs)
+        self.assertTrue(all(1 <= row["level_min"] <= row["level_max"] <= 70 for row in rows))
+        self.assertTrue(all(row["level_label"].startswith("Recommended ") for row in rows))

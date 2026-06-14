@@ -20,6 +20,7 @@ class GeneratorTests(unittest.TestCase):
         self.assertIn('["enchants"] = {', rendered)
         self.assertIn('["enchant_effects"] = {', rendered)
         self.assertIn('["consumables"] = {', rendered)
+        self.assertIn('["leveling_gear"] = {', rendered)
         self.assertIn('["uses"] = {', rendered)
         self.assertIn('["tooltip_aliases"] = {', rendered)
         self.assertNotIn('["bis_lists"] = {', rendered)
@@ -35,6 +36,7 @@ class GeneratorTests(unittest.TestCase):
         canonical_gems = canonical_json("gems")["gems"]
         canonical_enchants = canonical_json("enchants")["enchants"]
         canonical_consumables = canonical_json("consumables")["consumables"]
+        canonical_leveling_gear = canonical_json("leveling_gear")["leveling_gear"]
         starter_alias_count = 0
 
         for item in canonical_items:
@@ -54,6 +56,8 @@ class GeneratorTests(unittest.TestCase):
         self.assertEqual(len(data["gems"]), len(canonical_gems))
         self.assertEqual(len(data["enchants"]), len(canonical_enchants))
         self.assertEqual(len(data["consumables"]), len(canonical_consumables))
+        self.assertEqual(len(data["leveling_gear"]), len(canonical_leveling_gear))
+        self.assertEqual(data["meta"]["leveling_gear_count"], len(canonical_leveling_gear))
         self.assertEqual(sum(len(row[1]) for row in data["tooltip_aliases"]), starter_alias_count)
 
     def test_data_lua_is_current_after_generation(self):

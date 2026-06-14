@@ -87,20 +87,31 @@ function BigBiSList:RunTimingSmokeTest(selection)
     timeSmokeStep("GetDataIndex", function()
         return self:GetDataIndex()
     end)
-    timeSmokeStep("planner rows", function()
-        return self:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
-    end)
-    timeSmokeStep("phase rows", function()
-        return self:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
-    end)
+    if selection.phase == self.levelingPhaseKey then
+        filters.level = self.GetSelectedLevelingLevel and self:GetSelectedLevelingLevel() or 70
+        timeSmokeStep("leveling rows", function()
+            return self:GetLevelingRows(selection.class, selection.spec, filters.level, filters)
+        end)
+    else
+        timeSmokeStep("planner rows", function()
+            return self:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
+        end)
+        timeSmokeStep("phase rows", function()
+            return self:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
+        end)
+    end
     timeSmokeStep("filter availability", function()
         return self:GetFilterAvailabilitySnapshot(selection.class, selection.spec, selection.phase, selection.tab, filters)
     end)
     timeSmokeStep("repeated cached calls", function()
         for _ = 1, 3 do
             self:GetDataIndex()
-            self:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
-            self:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
+            if selection.phase == self.levelingPhaseKey then
+                self:GetLevelingRows(selection.class, selection.spec, filters.level, filters)
+            else
+                self:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
+                self:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
+            end
             self:GetFilterAvailabilitySnapshot(selection.class, selection.spec, selection.phase, selection.tab, filters)
         end
     end)
@@ -135,7 +146,12 @@ local function retryDetectedPlayerSelection()
         return
     end
 
-    if BigBiSList:ApplyDetectedPlayerSelection() then
+    local changed = BigBiSList:ApplyDetectedPlayerSelection()
+    if BigBiSList.ApplyDetectedPlayerLevel and BigBiSList:ApplyDetectedPlayerLevel() then
+        changed = true
+    end
+
+    if changed then
         BigBiSList:RefreshUI()
     end
 end
@@ -146,11 +162,13 @@ frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:RegisterEvent("PLAYER_TALENT_UPDATE")
 frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
+frame:RegisterEvent("PLAYER_LEVEL_UP")
 frame:SetScript("OnEvent", function(_, event, loadedAddon)
     if event == "PLAYER_LOGIN"
         or event == "PLAYER_ENTERING_WORLD"
         or event == "PLAYER_TALENT_UPDATE"
-        or event == "CHARACTER_POINTS_CHANGED" then
+        or event == "CHARACTER_POINTS_CHANGED"
+        or event == "PLAYER_LEVEL_UP" then
         retryDetectedPlayerSelection()
         return
     end

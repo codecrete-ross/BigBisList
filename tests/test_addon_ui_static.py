@@ -35,7 +35,7 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 13",
+            "local DEFAULTS_VERSION = 14",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -50,6 +50,10 @@ class AddonUIStaticTests(unittest.TestCase):
             'selectedTab = "Upgrades"',
             'phase = "PR"',
             'tab = "Upgrades"',
+            "leveling = {",
+            "selectedLevel = 70",
+            "lastDetectedLevel = 0",
+            "manualLevel = false",
             "filters = {",
             "sourceTypes = {}",
             "zones = {}",
@@ -176,6 +180,35 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertLess(set_class_body.index("BigBiSList:MarkClassSpecSelectionManual()"), set_class_body.index("BigBiSList:SetSelection"))
         self.assertLess(set_spec_body.index("BigBiSList:MarkClassSpecSelectionManual()"), set_spec_body.index("BigBiSList:SetSelection"))
 
+    def test_leveling_level_defaults_to_player_level_and_persists_manual_slider(self):
+        config = self.read_lua("Config.lua")
+        ui = self.read_lua("UI.lua")
+        core = self.read_lua("Core.lua")
+
+        for token in [
+            "function BigBiSList:GetDetectedPlayerLevel()",
+            'pcall(UnitLevel, "player")',
+            "function BigBiSList:ApplyDetectedPlayerLevel()",
+            "char.leveling.manualLevel ~= true",
+            "function BigBiSList:GetSelectedLevelingLevel()",
+            "function BigBiSList:SetSelectedLevelingLevel(level, manual)",
+            "BigBiSListCharDB.leveling.manualLevel = true",
+        ]:
+            self.assertIn(token, config)
+
+        for token in [
+            'local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"',
+            "CreateFrame(\"Slider\", \"BigBiSListLevelSlider\"",
+            "self.levelSliderContainer:Show()",
+            "self.levelSliderContainer:Hide()",
+            "self:SetLevelingLevel(math.floor((tonumber(value) or 1) + 0.5))",
+            "BigBiSList:SetSelectedLevelingLevel(level, true)",
+        ]:
+            self.assertIn(token, ui)
+
+        self.assertIn('frame:RegisterEvent("PLAYER_LEVEL_UP")', core)
+        self.assertIn("BigBiSList:ApplyDetectedPlayerLevel()", core)
+
     def test_core_retries_player_selection_detection_after_login(self):
         core = self.read_lua("Core.lua")
         for token in [
@@ -201,9 +234,35 @@ class AddonUIStaticTests(unittest.TestCase):
         data_index = self.read_lua("DataIndex.lua")
         for method in ["OpenMainFrame", "CloseMainFrame", "ToggleMainFrame", "RefreshUI"]:
             self.assertIn(f"function BigBiSList:{method}()", ui)
-        for method in ["GetDataIndex", "GetPhaseRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetAvailableFilterCosts", "GetAvailableFilterVendors", "GetFilterAvailabilitySnapshot", "GetItemMeta", "GetRowAccessOptions", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
+        for method in ["GetDataIndex", "GetPhaseRows", "GetLevelingRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetAvailableFilterCosts", "GetAvailableFilterVendors", "GetFilterAvailabilitySnapshot", "GetItemMeta", "GetRowAccessOptions", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
             self.assertIn(f"function BigBiSList:{method}", data_index)
         self.assertIn("function BigBiSList:SetSelection", self.read_lua("Config.lua"))
+
+    def test_leveling_phase_is_special_selector_with_leveling_rows(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            'local LEVELING_PHASE_KEY = "LEVELING"',
+            "BigBiSList.levelingPhaseKey = LEVELING_PHASE_KEY",
+            "function BigBiSList:GetLevelingRows",
+            "index.levelingGearRefsByClassSpec",
+            'phaseKey == LEVELING_PHASE_KEY',
+        ]:
+            self.assertIn(token, data_index)
+
+        for token in [
+            "function UI:RenderLevelingTab()",
+            "BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)",
+            '"No guide-backed leveling picks at this level. Move the slider higher or clear filters."',
+            "group.slot .. \" - available by level \" .. tostring(level)",
+            "if isLevelingPhase((self:GetSelection() or {}).phase) then",
+            '"Enhancements are endgame-focused. Switch to an endgame phase to view gems, enchants, and consumables."',
+            "levelingButton",
+            "self.phaseButtons[LEVELING_PHASE_KEY]",
+            '"Leveling value"',
+        ]:
+            self.assertIn(token, ui)
 
     def test_ensure_database_does_not_trigger_full_indexing(self):
         config = self.read_lua("Config.lua")

@@ -20,7 +20,7 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 13
+local DEFAULTS_VERSION = 14
 local DEFAULT_SELECTED_CLASS = "Druid"
 local DEFAULT_SELECTED_SPEC = "Feral dps"
 
@@ -89,6 +89,11 @@ BigBiSList.defaults = {
             spec = DEFAULT_SELECTED_SPEC,
             phase = "PR",
             tab = "Upgrades",
+        },
+        leveling = {
+            selectedLevel = 70,
+            lastDetectedLevel = 0,
+            manualLevel = false,
         },
         filters = {
             search = "",
@@ -448,6 +453,73 @@ function BigBiSList:GetDetectedPlayerSelection()
         spec = detectedSpec or firstSpecNameForClass(className),
         specDetected = detectedSpec ~= nil,
     }
+end
+
+local function clampLevel(value)
+    local level = tonumber(value)
+    if not level then
+        return nil
+    end
+    level = math.floor(level)
+    if level < 1 then
+        return 1
+    elseif level > 70 then
+        return 70
+    end
+    return level
+end
+
+function BigBiSList:GetDetectedPlayerLevel()
+    if UnitLevel then
+        local ok, level = pcall(UnitLevel, "player")
+        if ok then
+            return clampLevel(level)
+        end
+    end
+    return nil
+end
+
+function BigBiSList:ApplyDetectedPlayerLevel()
+    self:EnsureDatabase()
+
+    local char = BigBiSListCharDB
+    char.leveling = char.leveling or {}
+    local detectedLevel = self:GetDetectedPlayerLevel()
+    if not detectedLevel then
+        detectedLevel = clampLevel(char.leveling.selectedLevel) or 70
+    end
+
+    local selectedLevel = clampLevel(char.leveling.selectedLevel)
+    local changed = false
+    if char.leveling.manualLevel ~= true and selectedLevel ~= detectedLevel then
+        char.leveling.selectedLevel = detectedLevel
+        changed = true
+    elseif not selectedLevel then
+        char.leveling.selectedLevel = detectedLevel
+        changed = true
+    end
+
+    if char.leveling.lastDetectedLevel ~= detectedLevel then
+        char.leveling.lastDetectedLevel = detectedLevel
+        changed = true
+    end
+
+    return changed
+end
+
+function BigBiSList:GetSelectedLevelingLevel()
+    self:EnsureDatabase()
+    self:ApplyDetectedPlayerLevel()
+    return clampLevel(BigBiSListCharDB.leveling and BigBiSListCharDB.leveling.selectedLevel) or 70
+end
+
+function BigBiSList:SetSelectedLevelingLevel(level, manual)
+    self:EnsureDatabase()
+    BigBiSListCharDB.leveling = BigBiSListCharDB.leveling or {}
+    BigBiSListCharDB.leveling.selectedLevel = clampLevel(level) or 70
+    if manual then
+        BigBiSListCharDB.leveling.manualLevel = true
+    end
 end
 
 local function syncSelectionAliases(char)
