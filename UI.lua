@@ -3361,7 +3361,7 @@ function UI:RenderLevelingTab()
 
     local groups = BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)
     if #groups == 0 then
-        self:RenderEmpty("No guide-backed leveling picks at this level. Move the slider higher or clear filters.")
+        self:RenderEmpty("No guide-backed leveling picks at this level. Raise the level or clear filters.")
         return
     end
 
@@ -4304,18 +4304,16 @@ function UI:RefreshControls()
         local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
         safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - Leveling " .. tostring(level))
         safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / Leveling level " .. tostring(level))
-        if self.levelSliderContainer then
-            self.levelSliderContainer:Show()
+        if self.levelControlContainer then
+            self.levelControlContainer:Show()
         end
-        safeSetText(self.levelSliderLabel, "Level " .. tostring(level))
-        if self.levelSlider then
-            self.levelSliderUpdating = true
-            self.levelSlider:SetValue(level)
-            self.levelSliderUpdating = false
+        safeSetText(self.levelControlLabel, "Level " .. tostring(level))
+        if self.levelInput and (not self.levelInput.HasFocus or not self.levelInput:HasFocus()) then
+            self.levelInput:SetText(tostring(level))
         end
     else
-        if self.levelSliderContainer then
-            self.levelSliderContainer:Hide()
+        if self.levelControlContainer then
+            self.levelControlContainer:Hide()
         end
     end
 
@@ -4468,42 +4466,82 @@ function UI:CreatePhaseBar(frame)
     previous = levelingButton
 
     local levelControl = CreateFrame("Frame", nil, phaseBar)
-    levelControl:SetSize(250, 28)
+    levelControl:SetSize(138, 28)
     levelControl:SetPoint("LEFT", previous, "RIGHT", 12, 0)
 
     local levelLabel = levelControl:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     levelLabel:SetPoint("LEFT", levelControl, "LEFT", 0, 0)
-    levelLabel:SetWidth(60)
+    levelLabel:SetWidth(52)
     levelLabel:SetJustifyH("LEFT")
     levelLabel:SetTextColor(0.68, 0.68, 0.72, 1)
 
-    local levelSlider = CreateFrame("Slider", "BigBiSListLevelSlider", levelControl, "OptionsSliderTemplate")
-    levelSlider:SetPoint("LEFT", levelLabel, "RIGHT", 4, 0)
-    levelSlider:SetWidth(170)
-    levelSlider:SetMinMaxValues(1, 70)
-    levelSlider:SetValueStep(1)
-    if levelSlider.SetObeyStepOnDrag then
-        levelSlider:SetObeyStepOnDrag(true)
+    local function currentLevel()
+        return BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
     end
-    if _G.BigBiSListLevelSliderLow then
-        _G.BigBiSListLevelSliderLow:SetText("1")
+
+    local function setClampedLevel(level)
+        self:SetLevelingLevel(clamp(math.floor((tonumber(level) or currentLevel()) + 0.5), 1, 70))
     end
-    if _G.BigBiSListLevelSliderHigh then
-        _G.BigBiSListLevelSliderHigh:SetText("70")
-    end
-    if _G.BigBiSListLevelSliderText then
-        _G.BigBiSListLevelSliderText:SetText("")
-    end
-    levelSlider:SetScript("OnValueChanged", function(_, value)
-        if self.levelSliderUpdating then
-            return
+
+    local function commitLevelInput(editBox)
+        local value = tonumber(editBox:GetText())
+        local selectedLevel = currentLevel()
+        if value then
+            local level = clamp(math.floor(value + 0.5), 1, 70)
+            if level ~= selectedLevel then
+                self:SetLevelingLevel(level)
+            else
+                editBox:SetText(tostring(level))
+            end
+        else
+            editBox:SetText(tostring(selectedLevel))
         end
-        self:SetLevelingLevel(math.floor((tonumber(value) or 1) + 0.5))
+    end
+
+    local levelDown = widgets:CreateTextButton(levelControl, "<", 20, 22, function()
+        setClampedLevel(currentLevel() - 1)
+    end)
+    levelDown:SetPoint("LEFT", levelLabel, "RIGHT", 2, 0)
+
+    local levelInputFrame = widgets:CreatePanel(nil, levelControl, { 0.030, 0.040, 0.040, 0.95 }, { 0.42, 0.42, 0.48, 1 })
+    levelInputFrame:SetSize(34, 22)
+    levelInputFrame:SetPoint("LEFT", levelDown, "RIGHT", 3, 0)
+
+    local levelInput = CreateFrame("EditBox", "BigBiSListLevelInput", levelInputFrame)
+    levelInput:SetPoint("LEFT", levelInputFrame, "LEFT", 4, 0)
+    levelInput:SetPoint("RIGHT", levelInputFrame, "RIGHT", -4, 0)
+    levelInput:SetHeight(18)
+    levelInput:SetAutoFocus(false)
+    levelInput:SetMaxLetters(2)
+    if levelInput.SetNumeric then
+        levelInput:SetNumeric(true)
+    end
+    levelInput:SetJustifyH("CENTER")
+    levelInput:SetFontObject("GameFontHighlightSmall")
+    levelInput:SetScript("OnEditFocusGained", function(editBox)
+        editBox:HighlightText()
+    end)
+    levelInput:SetScript("OnEditFocusLost", function(editBox)
+        editBox:HighlightText(0, 0)
+        commitLevelInput(editBox)
+    end)
+    levelInput:SetScript("OnEnterPressed", function(editBox)
+        commitLevelInput(editBox)
+        editBox:ClearFocus()
+    end)
+    levelInput:SetScript("OnEscapePressed", function(editBox)
+        editBox:SetText(tostring(currentLevel()))
+        editBox:ClearFocus()
     end)
 
-    self.levelSliderContainer = levelControl
-    self.levelSliderLabel = levelLabel
-    self.levelSlider = levelSlider
+    local levelUp = widgets:CreateTextButton(levelControl, ">", 20, 22, function()
+        setClampedLevel(currentLevel() + 1)
+    end)
+    levelUp:SetPoint("LEFT", levelInputFrame, "RIGHT", 3, 0)
+
+    self.levelControlContainer = levelControl
+    self.levelControlLabel = levelLabel
+    self.levelInput = levelInput
 
     self.phaseBar = phaseBar
 end

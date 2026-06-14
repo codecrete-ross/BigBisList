@@ -180,7 +180,7 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertLess(set_class_body.index("BigBiSList:MarkClassSpecSelectionManual()"), set_class_body.index("BigBiSList:SetSelection"))
         self.assertLess(set_spec_body.index("BigBiSList:MarkClassSpecSelectionManual()"), set_spec_body.index("BigBiSList:SetSelection"))
 
-    def test_leveling_level_defaults_to_player_level_and_persists_manual_slider(self):
+    def test_leveling_level_defaults_to_player_level_and_persists_manual_controls(self):
         config = self.read_lua("Config.lua")
         ui = self.read_lua("UI.lua")
         core = self.read_lua("Core.lua")
@@ -198,13 +198,24 @@ class AddonUIStaticTests(unittest.TestCase):
 
         for token in [
             'local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"',
-            "CreateFrame(\"Slider\", \"BigBiSListLevelSlider\"",
-            "self.levelSliderContainer:Show()",
-            "self.levelSliderContainer:Hide()",
-            "self:SetLevelingLevel(math.floor((tonumber(value) or 1) + 0.5))",
+            "CreateFrame(\"EditBox\", \"BigBiSListLevelInput\"",
+            "widgets:CreateTextButton(levelControl, \"<\"",
+            "widgets:CreateTextButton(levelControl, \">\"",
+            "local function setClampedLevel(level)",
+            "clamp(math.floor((tonumber(level) or currentLevel()) + 0.5), 1, 70)",
+            "levelInput:SetNumeric(true)",
+            "commitLevelInput(editBox)",
+            "levelInput:SetScript(\"OnEnterPressed\"",
+            "levelInput:SetScript(\"OnEscapePressed\"",
+            "self.levelInput:SetText(tostring(level))",
+            "self.levelControlContainer:Show()",
+            "self.levelControlContainer:Hide()",
             "BigBiSList:SetSelectedLevelingLevel(level, true)",
         ]:
             self.assertIn(token, ui)
+
+        self.assertNotIn("BigBiSListLevelSlider", ui)
+        self.assertNotIn("CreateFrame(\"Slider\"", ui)
 
         self.assertIn('frame:RegisterEvent("PLAYER_LEVEL_UP")', core)
         self.assertIn("BigBiSList:ApplyDetectedPlayerLevel()", core)
@@ -254,7 +265,7 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "function UI:RenderLevelingTab()",
             "BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)",
-            '"No guide-backed leveling picks at this level. Move the slider higher or clear filters."',
+            '"No guide-backed leveling picks at this level. Raise the level or clear filters."',
             "group.slot .. \" - available by level \" .. tostring(level)",
             "if isLevelingPhase((self:GetSelection() or {}).phase) then",
             '"Enhancements are endgame-focused. Switch to an endgame phase to view gems, enchants, and consumables."',
