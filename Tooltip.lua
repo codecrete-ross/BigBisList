@@ -3,6 +3,8 @@ local addonName = ...
 BigBiSList = BigBiSList or {}
 BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
 
+local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"
+
 local function itemIdFromLink(link)
     if not link then
         return nil
@@ -134,8 +136,11 @@ local function lineForTooltipMatch(match)
     end
 
     local right = BigBiSList:GetPhaseDisplayName(match.phase)
+    if match.leveling then
+        right = match.tooltip_level_label or match.level_label or "Leveling"
+    end
     local tagLabel = match.display_rank_label or match.rank_label
-    if tagLabel and tagLabel ~= "" then
+    if not match.leveling and tagLabel and tagLabel ~= "" then
         right = right .. " " .. tagLabel
     end
 
@@ -160,16 +165,22 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     end
 
     local selection = self:GetCharacterDB().selection or {}
+    local levelingMode = selection.phase == LEVELING_PHASE_KEY
+    local selectedLevel = levelingMode and self.GetSelectedLevelingLevel and self:GetSelectedLevelingLevel() or nil
     local selectedSpecFirst = settings.selectedSpecFirst ~= false
     local specFilters = settings.specFilters
     local priorityContext = getTooltipPriorityContext()
-    local rawMatches = self:GetTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext)
+    local rawMatches = levelingMode
+        and self:GetLevelingTooltipMatches(itemId, selection.class, selection.spec, selectedLevel, selectedSpecFirst, specFilters, priorityContext)
+        or self:GetTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext)
     if #rawMatches == 0 then
         return
     end
 
     local showExpanded = settings.showAllOnAlt and IsAltKeyDown and IsAltKeyDown()
-    local groupedMatches = self:GetGroupedTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext, showExpanded)
+    local groupedMatches = levelingMode
+        and self:GetGroupedLevelingTooltipMatches(itemId, selection.class, selection.spec, selectedLevel, selectedSpecFirst, specFilters, priorityContext, showExpanded)
+        or self:GetGroupedTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext, showExpanded)
     local matches = groupedMatches
     local maxRows = showExpanded and #matches or (settings.compact and 4 or 8)
     local renderKey = table.concat({
@@ -180,6 +191,8 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         tostring(showExpanded),
         tostring(selection.class),
         tostring(selection.spec),
+        tostring(selection.phase),
+        tostring(selectedLevel),
         tostring(priorityContext and priorityContext.playerClass),
         tostring(priorityContext and priorityContext.playerSpec),
         self:GetTooltipSpecFilterKey(specFilters),

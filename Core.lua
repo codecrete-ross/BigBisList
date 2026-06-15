@@ -39,6 +39,7 @@ function BigBiSList:GetDataSummary()
     local phases = data.phases or {}
     local items = data.items or {}
     local listCount = data.meta and data.meta.slot_list_count or 0
+    local levelingGearCount = data.meta and data.meta.leveling_gear_count or #(data.leveling_gear or {})
 
     if listCount == 0 and data.bis_lists then
         for _, classData in ipairs(data.bis_lists) do
@@ -50,7 +51,7 @@ function BigBiSList:GetDataSummary()
         end
     end
 
-    return string.format("%d classes, %d phases, %d items, %d slot lists", #classes, #phases, #items, listCount)
+    return string.format("%d classes, %d phases, %d items, %d slot lists, %d leveling gear recommendations", #classes, #phases, #items, listCount, levelingGearCount)
 end
 
 function BigBiSList:ShowStatus()

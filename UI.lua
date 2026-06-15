@@ -258,6 +258,14 @@ local RANK_FILTER_LABELS = {
     option = "Nice-to-have",
 }
 local RANK_FILTER_ORDER = { "all", "bis", "ranked", "situational", "pvp", "unrealistic", "option" }
+local LEVELING_RANK_FILTER_LABELS = {
+    all = "All tags",
+    leveling_recommended = "Recommended",
+    leveling_tank_pick = "Tank pick",
+    leveling_damage_focused = "Damage-focused",
+    leveling_healing_focused = "Healing-focused",
+}
+local LEVELING_RANK_FILTER_ORDER = { "all", "leveling_recommended", "leveling_tank_pick", "leveling_damage_focused", "leveling_healing_focused" }
 
 local OWNED_FILTER_LABELS = {
     all = "All ownership",
@@ -2179,6 +2187,15 @@ function UI:GetReputationDropdownText()
     return self:GetFacetDropdownText("All reps", "Reps", self:GetFilters().reputations, {})
 end
 
+function UI:GetRankFilterValuesAndLabels()
+    if isLevelingPhase((self:GetSelection() or {}).phase) then
+        return LEVELING_RANK_FILTER_ORDER, LEVELING_RANK_FILTER_LABELS
+    end
+    return RANK_FILTER_ORDER, RANK_FILTER_LABELS
+end
+
+local selectedFacetKeys
+
 local function filterDropdownItems(values, labels, selectedValue)
     local items = {}
     for _, value in ipairs(values) do
@@ -2193,17 +2210,33 @@ end
 
 function UI:GetRankDropdownItems()
     local filters = self:GetFilters()
+    local order, labels = self:GetRankFilterValuesAndLabels()
     local values = {}
-    for _, value in ipairs(RANK_FILTER_ORDER) do
+    for _, value in ipairs(order) do
         if value ~= "all" then
             table.insert(values, value)
         end
     end
-    return self:GetFacetDropdownItems(values, RANK_FILTER_LABELS, filters.rankGroups, "Clear tags", "No tag options")
+    return self:GetFacetDropdownItems(values, labels, filters.rankGroups, "Clear tags", "No tag options")
 end
 
 function UI:GetRankDropdownText()
-    return self:GetFacetDropdownText("All tags", "Tags", self:GetFilters().rankGroups, RANK_FILTER_LABELS)
+    local _, labels = self:GetRankFilterValuesAndLabels()
+    if isLevelingPhase((self:GetSelection() or {}).phase) then
+        local selectedLabels = {}
+        for _, value in ipairs(selectedFacetKeys(self:GetFilters().rankGroups, labels)) do
+            if labels[value] then
+                table.insert(selectedLabels, labels[value])
+            end
+        end
+        if #selectedLabels == 0 then
+            return "All tags"
+        elseif #selectedLabels == 1 then
+            return "Tags: " .. selectedLabels[1]
+        end
+        return "Tags: " .. tostring(#selectedLabels)
+    end
+    return self:GetFacetDropdownText("All tags", "Tags", self:GetFilters().rankGroups, labels)
 end
 
 function UI:GetOwnedDropdownItems()
@@ -3090,7 +3123,7 @@ function UI:ReleaseRenderFrames()
     self.activeRenderFrames = {}
 end
 
-local function selectedFacetKeys(values, labels)
+selectedFacetKeys = function(values, labels)
     local result = {}
     for value, selected in pairs(values or {}) do
         if selected then
@@ -3112,15 +3145,19 @@ local function estimatedChipWidth(label)
     return clamp((string.len(tostring(label or "")) * 6) + 24, 72, 178)
 end
 
-function UI:AddFacetChips(chips, tableKey, scalarKey, prefix, labels)
+function UI:AddFacetChips(chips, tableKey, scalarKey, prefix, labels, strictLabels)
     for _, value in ipairs(selectedFacetKeys(self:GetFilters()[tableKey], labels)) do
-        local label = labels[value] or value
-        table.insert(chips, {
-            label = prefix .. ": " .. label,
-            clear = function()
-                self:ClearFacetValue(tableKey, value, scalarKey)
-            end,
-        })
+        if strictLabels and not labels[value] then
+            -- Ignore tag selections from another phase mode.
+        else
+            local label = labels[value] or value
+            table.insert(chips, {
+                label = prefix .. ": " .. label,
+                clear = function()
+                    self:ClearFacetValue(tableKey, value, scalarKey)
+                end,
+            })
+        end
     end
 end
 
@@ -3154,20 +3191,22 @@ function UI:GetActiveFilterChips()
     if filters.ownedState and filters.ownedState ~= "all" then
         table.insert(chips, { label = "Owned: " .. ownedFilterLabel(filters.ownedState), clear = function() self:SetFilter("ownedState", "all") end })
     end
-    if filters.upgradeMode and filters.upgradeMode ~= "actual" then
+    local levelingMode = isLevelingPhase((self:GetSelection() or {}).phase)
+    if not levelingMode and filters.upgradeMode and filters.upgradeMode ~= "actual" then
         table.insert(chips, { label = "Targets: " .. upgradeModeLabel(filters.upgradeMode), clear = function() self:SetFilter("upgradeMode", "actual") end })
     end
     if filters.boe and filters.boe ~= "all" then
         table.insert(chips, { label = "BoE: " .. boeFilterLabel(filters.boe), clear = function() self:SetFilter("boe", "all") end })
     end
-    if filters.longevity and filters.longevity ~= "all" then
+    if not levelingMode and filters.longevity and filters.longevity ~= "all" then
         table.insert(chips, { label = "Usefulness: " .. longevityFilterLabel(filters.longevity), clear = function() self:SetFilter("longevity", "all") end })
     end
     if filters.binding and filters.binding ~= "all" then
         table.insert(chips, { label = "Binding: " .. tostring(filters.binding), clear = function() self:SetFilter("binding", "all") end })
     end
 
-    self:AddFacetChips(chips, "rankGroups", "rankGroup", "Tag", RANK_FILTER_LABELS)
+    local _, rankLabels = self:GetRankFilterValuesAndLabels()
+    self:AddFacetChips(chips, "rankGroups", "rankGroup", "Tag", rankLabels, levelingMode)
     self:AddFacetChips(chips, "sourceTypes", "sourceType", "Source", BigBiSList:GetSourceTypeLabels())
     self:AddFacetChips(chips, "costs", "cost", "Cost", self:GetAvailableCostLabels())
     self:AddFacetChips(chips, "vendors", "vendor", "Vendor", self:GetAvailableVendorLabels())
@@ -3361,14 +3400,14 @@ function UI:RenderLevelingTab()
 
     local groups = BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)
     if #groups == 0 then
-        self:RenderEmpty("No guide-backed leveling picks at this level. Raise the level or clear filters.")
+        self:RenderEmpty("No guide-backed leveling picks for this level. Change the level or clear filters.")
         return
     end
 
     local model = self:NewListRenderModel()
     self:AddActiveFilterBar(model)
     for _, group in ipairs(groups) do
-        self:AddListSection(model, group.slot .. " - available by level " .. tostring(level), "leveling")
+        self:AddListSection(model, group.slot .. " - recommended for level " .. tostring(level), "leveling")
         for _, item in ipairs(group.items) do
             self:AddListRow(model, item, "leveling")
         end
@@ -3456,6 +3495,8 @@ function UI:CreateGearOverlay(parent, text, kind)
         color = { 0.16, 0.14, 0.07, 0.96, 0.88, 0.72, 0.24, 1 }
     elseif kind == "ranked" or kind == "situational" or kind == "option" or kind == "pvp" then
         color = { 0.11, 0.23, 0.38, 0.96, 0.45, 0.68, 0.98, 1 }
+    elseif kind == "leveling" then
+        color = { 0.11, 0.22, 0.20, 0.96, 0.46, 0.86, 0.76, 1 }
     elseif kind == "unrealistic" or kind == "missing" then
         color = { 0.22, 0.12, 0.12, 0.96, 0.92, 0.48, 0.48, 1 }
     elseif kind == "empty" or kind == "disabled" then
@@ -3484,7 +3525,7 @@ function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", xOffset, yOffset)
     row.itemId = rowData.item_id
     row.detailData = rowData
-    row.detailMode = "gear"
+    row.detailMode = rowData.leveling and "leveling" or "gear"
 
     local slotLabel = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     slotLabel:SetPoint("TOPLEFT", row, "TOPLEFT", 8, -4)
@@ -3499,7 +3540,7 @@ function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
 
     local iconButton = widgets:CreateIconButton(row, 30, function()
         if rowData.item_id then
-            self:RefreshDetails(rowData.item_id, rowData, "gear")
+            self:RefreshDetails(rowData.item_id, rowData, row.detailMode)
         end
     end)
     iconButton:SetPoint("TOPLEFT", slotLabel, "BOTTOMLEFT", 0, -2)
@@ -3519,8 +3560,10 @@ function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
 
     if rowData.item_id then
         local item = rowData.item or BigBiSList:GetItemData(rowData.item_id)
-        self:SetItemButton(iconButton, rowData.item_id, nameText, rowData.name, item and item.quality, rowData, "gear")
-        local detail = rowData.bestUse
+        self:SetItemButton(iconButton, rowData.item_id, nameText, rowData.name, item and item.quality, rowData, row.detailMode)
+        local detail = rowData.bestUse and rowData.bestUse.leveling
+            and ((rowData.bestUse.level_label or rowData.bestUse.level_value_text or "Leveling recommendation") .. " - " .. rowData.bestUse.slot)
+            or rowData.bestUse
             and (BigBiSList:GetPhaseDisplayName(rowData.bestUse.phase) .. " - " .. displayRankInfo(rowData.bestUse) .. " - " .. rowData.bestUse.slot)
             or "No BiS match for selected spec"
         detailText:SetText(detail)
@@ -3533,7 +3576,7 @@ function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
 
     row:SetScript("OnMouseUp", function(_, buttonName)
         if buttonName == "LeftButton" and rowData.item_id then
-            self:RefreshDetails(rowData.item_id, rowData, "gear")
+            self:RefreshDetails(rowData.item_id, rowData, row.detailMode)
         end
     end)
 
@@ -3556,7 +3599,7 @@ function UI:RenderGearTab()
     local leftY = startY
     local rightY = startY
 
-    local rows = BigBiSList:GetEquippedGearRows(selection.class, selection.spec, selection.phase, self.currentOwned)
+    local rows = BigBiSList:GetEquippedGearRows(selection.class, selection.spec, selection.phase, self.currentOwned, filters.level)
     for _, rowData in ipairs(rows) do
         if twoColumns and rowData.column == "right" then
             self:CreateGearSlotRow(self.contentChild, rowData, columnWidth + columnGap, rightY, columnWidth)
@@ -3652,26 +3695,40 @@ function UI:RenderWishlistTab()
         local uses = BigBiSList:GetItemUses(tonumber(itemId))
         local bestUse = uses[1]
         local plannerContext = plannerByItem[tonumber(itemId)]
+        local levelingContext = plannerContext
+        if isLevelingPhase(selection.phase) and not levelingContext and BigBiSList.GetItemNextLevelingUseForSpec then
+            local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
+            levelingContext = BigBiSList:GetItemNextLevelingUseForSpec(tonumber(itemId), selection.class, selection.spec, level)
+        end
+        local context = levelingContext or plannerContext
         table.insert(rows, {
             item_id = tonumber(itemId),
             item = item,
             name = item and item.name or ("Item " .. tostring(itemId)),
-            detail = (plannerContext and plannerContext.level_value_text)
+            detail = (context and context.level_value_text)
                 or (bestUse and (bestUse.class .. " " .. bestUse.spec .. " - " .. bestUse.slot))
                 or "Saved item",
-            source_summary = item and item.source_summary or "",
-            requirements = item and item.requirements,
-            bestUse = (plannerContext and plannerContext.bestUse) or bestUse,
-            _access_context = ((plannerContext and plannerContext.bestUse) or bestUse) and nil or {
+            source_summary = (context and context.source_summary) or (item and item.source_summary) or "",
+            requirements = (context and context.requirements) or (item and item.requirements),
+            bestUse = (context and context.bestUse) or bestUse,
+            leveling = context and context.leveling or nil,
+            level_min = context and context.level_min or nil,
+            level_max = context and context.level_max or nil,
+            level_label = context and context.level_label or nil,
+            level_value_text = context and context.level_value_text or nil,
+            category_label = context and context.category_label or nil,
+            section = context and context.section or nil,
+            source_note = context and context.source_note or nil,
+            _access_context = (context and context._access_context) or (((context and context.bestUse) or bestUse) and nil or {
                 item = item,
                 options = { entityType = "item" },
-            },
-            priority = plannerContext and plannerContext.priority or 0,
-            priorityTier = plannerContext and plannerContext.priorityTier,
-            recommendation_tier = plannerContext and plannerContext.recommendation_tier,
-            recommendation_summary = plannerContext and plannerContext.recommendation_summary,
-            display_rank_label = plannerContext and plannerContext.display_rank_label,
-            display_rank_kind = plannerContext and plannerContext.display_rank_kind,
+            }),
+            priority = context and context.priority or 0,
+            priorityTier = context and context.priorityTier,
+            recommendation_tier = context and context.recommendation_tier,
+            recommendation_summary = context and context.recommendation_summary,
+            display_rank_label = context and context.display_rank_label,
+            display_rank_kind = context and context.display_rank_kind,
         })
     end
     table.sort(rows, function(a, b)
@@ -4125,7 +4182,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
     contentHeight = contentHeight + anchor.contentHeight
 
-    if detailMode == "leveling" and detailData then
+    if (detailMode == "leveling" or (detailData and detailData.leveling)) and detailData then
         local levelingLines = {}
         appendText(levelingLines, detailData.level_value_text)
         appendText(levelingLines, detailData.section)
@@ -4293,6 +4350,39 @@ function UI:RefreshControls()
         self.searchBox:SetText(filters.search or "")
     end
 
+    local levelingMode = isLevelingPhase(selection.phase)
+    if levelingMode then
+        if self.upgradeModeDropdown then
+            self.upgradeModeDropdown:Hide()
+        end
+        if self.ownedDropdown and self.goalsHeader then
+            self.ownedDropdown:ClearAllPoints()
+            self.ownedDropdown:SetPoint("TOPLEFT", self.goalsHeader, "BOTTOMLEFT", LEFT_DROPDOWN_X - LEFT_RAIL_INSET, -6)
+        end
+        if self.longevityDropdown then
+            self.longevityDropdown:Hide()
+        end
+        if self.boeDropdown and self.rankDropdown then
+            self.boeDropdown:ClearAllPoints()
+            self.boeDropdown:SetPoint("TOPLEFT", self.rankDropdown, "BOTTOMLEFT", 0, -4)
+        end
+    else
+        if self.upgradeModeDropdown then
+            self.upgradeModeDropdown:Show()
+        end
+        if self.ownedDropdown and self.upgradeModeDropdown then
+            self.ownedDropdown:ClearAllPoints()
+            self.ownedDropdown:SetPoint("TOPLEFT", self.upgradeModeDropdown, "BOTTOMLEFT", 0, -4)
+        end
+        if self.longevityDropdown then
+            self.longevityDropdown:Show()
+        end
+        if self.boeDropdown and self.longevityDropdown then
+            self.boeDropdown:ClearAllPoints()
+            self.boeDropdown:SetPoint("TOPLEFT", self.longevityDropdown, "BOTTOMLEFT", 0, -4)
+        end
+    end
+
     local r, g, b = classColor(selection.class)
     if self.accentBar then
         self.accentBar:SetColorTexture(r, g, b, 0.92)
@@ -4300,7 +4390,7 @@ function UI:RefreshControls()
 
     safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - " .. BigBiSList:GetPhaseDisplayName(selection.phase))
     safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / " .. BigBiSList:GetPhaseDisplayName(selection.phase))
-    if isLevelingPhase(selection.phase) then
+    if levelingMode then
         local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
         safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - Leveling " .. tostring(level))
         safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / Leveling level " .. tostring(level))
@@ -4639,6 +4729,7 @@ function UI:CreateLeftRail(body)
     goalsHeader:SetPoint("TOPLEFT", searchFrame, "BOTTOMLEFT", 0, -12)
     goalsHeader:SetTextColor(0.68, 0.68, 0.72, 1)
     goalsHeader:SetText("Goals")
+    self.goalsHeader = goalsHeader
 
     self.upgradeModeDropdown = widgets:CreateDropdown("BigBiSListUpgradeModeDropdown", rail, LEFT_DROPDOWN_WIDTH,
         function()

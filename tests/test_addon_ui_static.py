@@ -245,7 +245,7 @@ class AddonUIStaticTests(unittest.TestCase):
         data_index = self.read_lua("DataIndex.lua")
         for method in ["OpenMainFrame", "CloseMainFrame", "ToggleMainFrame", "RefreshUI"]:
             self.assertIn(f"function BigBiSList:{method}()", ui)
-        for method in ["GetDataIndex", "GetPhaseRows", "GetLevelingRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetAvailableFilterCosts", "GetAvailableFilterVendors", "GetFilterAvailabilitySnapshot", "GetItemMeta", "GetRowAccessOptions", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetEquippedGearRows"]:
+        for method in ["GetDataIndex", "GetPhaseRows", "GetLevelingRows", "GetPlannerRows", "GetAvailableFilterSourceTypes", "GetAvailableFilterCosts", "GetAvailableFilterVendors", "GetFilterAvailabilitySnapshot", "GetItemMeta", "GetRowAccessOptions", "GetDisplaySlotFilters", "GetItemBestUseForSpec", "GetItemBestLevelingUseForSpec", "GetItemNextLevelingUseForSpec", "GetLevelingTooltipMatches", "GetGroupedLevelingTooltipMatches", "GetEquippedGearRows"]:
             self.assertIn(f"function BigBiSList:{method}", data_index)
         self.assertIn("function BigBiSList:SetSelection", self.read_lua("Config.lua"))
 
@@ -258,6 +258,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "BigBiSList.levelingPhaseKey = LEVELING_PHASE_KEY",
             "function BigBiSList:GetLevelingRows",
             "index.levelingGearRefsByClassSpec",
+            "index.levelingGearRefsByItemId",
+            "return levelMin <= selectedLevel and selectedLevel <= levelMax",
             'phaseKey == LEVELING_PHASE_KEY',
         ]:
             self.assertIn(token, data_index)
@@ -265,8 +267,8 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "function UI:RenderLevelingTab()",
             "BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)",
-            '"No guide-backed leveling picks at this level. Raise the level or clear filters."',
-            "group.slot .. \" - available by level \" .. tostring(level)",
+            '"No guide-backed leveling picks for this level. Change the level or clear filters."',
+            "group.slot .. \" - recommended for level \" .. tostring(level)",
             "if isLevelingPhase((self:GetSelection() or {}).phase) then",
             '"Enhancements are endgame-focused. Switch to an endgame phase to view gems, enchants, and consumables."',
             "levelingButton",
@@ -274,6 +276,28 @@ class AddonUIStaticTests(unittest.TestCase):
             '"Leveling value"',
         ]:
             self.assertIn(token, ui)
+
+    def test_leveling_wishlist_uses_current_or_future_leveling_context(self):
+        ui = self.read_lua("UI.lua")
+        body = ui.split("function UI:RenderWishlistTab()", 1)[1].split("function UI:CreateSettingToggle", 1)[0]
+        for token in [
+            "BigBiSList:GetLevelingRows(selection.class, selection.spec, level, {})",
+            "BigBiSList.GetItemNextLevelingUseForSpec",
+            "BigBiSList:GetItemNextLevelingUseForSpec(tonumber(itemId), selection.class, selection.spec, level)",
+            "local context = levelingContext or plannerContext",
+            "detail = (context and context.level_value_text)",
+            "level_label = context and context.level_label or nil",
+            "source_note = context and context.source_note or nil",
+        ]:
+            self.assertIn(token, body)
+
+    def test_status_summary_reports_leveling_gear_count(self):
+        core = self.read_lua("Core.lua")
+        for token in [
+            "local levelingGearCount = data.meta and data.meta.leveling_gear_count or #(data.leveling_gear or {})",
+            '"%d classes, %d phases, %d items, %d slot lists, %d leveling gear recommendations"',
+        ]:
+            self.assertIn(token, core)
 
     def test_ensure_database_does_not_trigger_full_indexing(self):
         config = self.read_lua("Config.lua")
@@ -848,6 +872,27 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertNotIn('iconButton:SetPoint("BOTTOMLEFT"', body)
         self.assertLess(body.index("slotLabel:SetPoint"), body.index("iconButton:SetPoint"))
 
+    def test_leveling_equipped_uses_leveling_recommendations(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            "function BigBiSList:GetItemBestLevelingUseForSpec",
+            "self:GetItemBestLevelingUseForSpec(itemId, className, specName, selectedLevel, slot.slots)",
+            "overlay = (bestUse.category_label and bestUse.category_label ~= \"Recommended\") and bestUse.category_label or \"Leveling pick\"",
+            "level_value_text = bestUse and bestUse.level_value_text or nil",
+            "display_rank_kind = itemId and displayRankKind or \"missing\"",
+        ]:
+            self.assertIn(token, data_index)
+
+        for token in [
+            "BigBiSList:GetEquippedGearRows(selection.class, selection.spec, selection.phase, self.currentOwned, filters.level)",
+            "row.detailMode = rowData.leveling and \"leveling\" or \"gear\"",
+            "rowData.bestUse and rowData.bestUse.leveling",
+            "self:RefreshDetails(rowData.item_id, rowData, row.detailMode)",
+        ]:
+            self.assertIn(token, ui)
+
     def test_tooltip_settings_drive_rendering(self):
         tooltip = self.read_lua("Tooltip.lua")
         data_index = self.read_lua("DataIndex.lua")
@@ -870,11 +915,16 @@ class AddonUIStaticTests(unittest.TestCase):
             "settings.showAllOnAlt and IsAltKeyDown",
             "local specFilters = settings.specFilters",
             "local priorityContext = getTooltipPriorityContext()",
-            "rawMatches = self:GetTooltipMatches",
-            "groupedMatches = self:GetGroupedTooltipMatches",
+            "local levelingMode = selection.phase == LEVELING_PHASE_KEY",
+            "self:GetLevelingTooltipMatches",
+            "self:GetGroupedLevelingTooltipMatches",
+            "self:GetTooltipMatches",
+            "self:GetGroupedTooltipMatches",
             "showExpanded = settings.showAllOnAlt and IsAltKeyDown",
             "matches = groupedMatches",
             "rawDiffersFromGrouped",
+            "tostring(selection.phase)",
+            "tostring(selectedLevel)",
             "tostring(priorityContext and priorityContext.playerClass)",
             "tostring(priorityContext and priorityContext.playerSpec)",
             "self:GetTooltipSpecFilterKey(specFilters)",
@@ -883,6 +933,10 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertNotIn("local PLAYER_CLASS_NAMES", tooltip)
         self.assertNotIn("pcall(UnitClassBase", tooltip)
         self.assertNotIn("pcall(GetTalentTabInfo", tooltip)
+        self.assertIn("function BigBiSList:GetLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext)", data_index)
+        self.assertIn("function BigBiSList:GetGroupedLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext, expanded)", data_index)
+        self.assertIn("use.tooltip_level_label or use.level_label or \"Leveling\"", data_index)
+        self.assertIn("if group and group.leveling then", data_index)
         self.assertIn("function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)", data_index)
         self.assertIn("function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext, expanded)", data_index)
         self.assertIn('local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil', data_index)
@@ -1076,18 +1130,53 @@ class AddonUIStaticTests(unittest.TestCase):
         ui = self.read_lua("UI.lua")
         for token in [
             "local RANK_FILTER_LABELS",
+            "local LEVELING_RANK_FILTER_LABELS",
             'bis = "BiS only"',
             'ranked = "Alts only"',
             'situational = "Sidegrades"',
             'option = "Nice-to-have"',
+            'leveling_recommended = "Recommended"',
+            'leveling_tank_pick = "Tank pick"',
+            'leveling_damage_focused = "Damage-focused"',
+            'leveling_healing_focused = "Healing-focused"',
             "GetRankDropdownText",
-            'GetFacetDropdownText("All tags", "Tags", self:GetFilters().rankGroups, RANK_FILTER_LABELS)',
+            "function UI:GetRankFilterValuesAndLabels()",
             '"Usefulness: " .. longevityFilterLabel',
         ]:
             self.assertIn(token, ui)
         self.assertNotIn('filters.rankGroup == "all" and "All" or filters.rankGroup', ui)
         self.assertNotIn('"Rank: " .. rankFilterLabel', ui)
         self.assertNotIn('"Longevity: " .. longevityFilterLabel', ui)
+
+    def test_leveling_rank_dropdown_helper_is_forward_declared(self):
+        ui = self.read_lua("UI.lua")
+        self.assertLess(ui.index("local selectedFacetKeys"), ui.index("function UI:GetRankDropdownText()"))
+        self.assertGreater(ui.index("selectedFacetKeys = function"), ui.index("function UI:GetRankDropdownText()"))
+
+    def test_leveling_filters_search_and_hidden_controls_are_mode_aware(self):
+        ui = self.read_lua("UI.lua")
+        data_index = self.read_lua("DataIndex.lua")
+
+        for token in [
+            "containsText(row.source_note, filters.search)",
+            "containsText(row.section, filters.search)",
+            "containsText(row.level_label, filters.search)",
+            "containsText(row.level_value_text, filters.search)",
+            "containsText(row.category_label, filters.search)",
+            "LEVELING_HELPERS.isCategoryKey(filters.rankGroup)",
+            "LEVELING_HELPERS.isCategoryKey(key)",
+        ]:
+            self.assertIn(token, data_index)
+
+        for token in [
+            "self.upgradeModeDropdown:Hide()",
+            "self.longevityDropdown:Hide()",
+            "self.ownedDropdown:SetPoint(\"TOPLEFT\", self.goalsHeader, \"BOTTOMLEFT\"",
+            "self.boeDropdown:SetPoint(\"TOPLEFT\", self.rankDropdown, \"BOTTOMLEFT\"",
+            "if strictLabels and not labels[value]",
+            "self:AddFacetChips(chips, \"rankGroups\", \"rankGroup\", \"Tag\", rankLabels, levelingMode)",
+        ]:
+            self.assertIn(token, ui)
 
     def test_player_facing_recommendation_terms_are_tbc_friendly(self):
         runtime_text = self.read_lua("UI.lua") + self.read_lua("DataIndex.lua") + self.read_lua("Tooltip.lua")

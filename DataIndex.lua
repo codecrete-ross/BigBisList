@@ -1260,6 +1260,20 @@ local function slotListContains(slots, slotName)
     return false
 end
 
+local LEVELING_HELPERS = {}
+
+function LEVELING_HELPERS.categoryKey(label)
+    local key = lower(label or "Recommended"):gsub("[^%w]+", "_"):gsub("^_+", ""):gsub("_+$", "")
+    if key == "" then
+        key = "recommended"
+    end
+    return "leveling_" .. key
+end
+
+function LEVELING_HELPERS.isCategoryKey(key)
+    return type(key) == "string" and string.sub(key, 1, 9) == "leveling_"
+end
+
 local function slotMatchesDisplayFilter(filterKey, rowSlot)
     local slots = DISPLAY_SLOT_FILTER_MAP[filterKey]
     if slots then
@@ -1374,6 +1388,8 @@ end
 local function displayRankInfo(use)
     if not use then
         return "No match", "missing"
+    elseif use.display_rank_label then
+        return use.display_rank_label, use.display_rank_kind or "backup"
     end
 
     local rank = tonumber(use.rank)
@@ -2141,6 +2157,8 @@ local function buildLevelingGearRow(index, levelingGearRef)
     local levelMin = tonumber(entry.level_min) or 1
     local levelMax = tonumber(entry.level_max) or levelMin
     local levelLabel = entry.level_label or (levelMax > levelMin and ("Recommended from " .. tostring(levelMin) .. "-" .. tostring(levelMax)) or ("Recommended at " .. tostring(levelMin)))
+    local categoryLabel = entry.category_label or "Recommended"
+    local tooltipLevelLabel = levelMax > levelMin and ("Leveling " .. tostring(levelMin) .. "-" .. tostring(levelMax)) or ("Leveling " .. tostring(levelMin))
 
     local row = {
         class = entry.class,
@@ -2157,9 +2175,11 @@ local function buildLevelingGearRow(index, levelingGearRef)
         item = item,
         name = getItemName(itemId, item),
         rank = entry.rank,
-        rank_label = entry.category_label or "Recommended",
+        rank_label = categoryLabel,
         rank_group = "option",
-        category_label = entry.category_label or "Recommended",
+        category_label = categoryLabel,
+        leveling_category_key = LEVELING_HELPERS.categoryKey(categoryLabel),
+        tooltip_level_label = tooltipLevelLabel,
         section = entry.section,
         source_note = entry.source_note,
         source_url = entry.source_url,
@@ -2191,6 +2211,47 @@ local function buildLevelingGearRow(index, levelingGearRef)
     }
 
     return row
+end
+
+function LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
+    if not row then
+        return false
+    end
+
+    local levelMin = tonumber(row.level_min) or 1
+    local levelMax = tonumber(row.level_max) or levelMin
+    return levelMin <= selectedLevel and selectedLevel <= levelMax
+end
+
+function LEVELING_HELPERS.sortForLevel(a, b, selectedLevel)
+    local aActive = (a.level_max or 70) >= selectedLevel
+    local bActive = (b.level_max or 70) >= selectedLevel
+    if aActive ~= bActive then
+        return aActive
+    end
+    if (a.level_min or 0) ~= (b.level_min or 0) then
+        return (a.level_min or 0) > (b.level_min or 0)
+    end
+    if (a.level_max or 0) ~= (b.level_max or 0) then
+        return (a.level_max or 0) > (b.level_max or 0)
+    end
+    if (a.rank or 999) ~= (b.rank or 999) then
+        return (a.rank or 999) < (b.rank or 999)
+    end
+    return lower(a.name) < lower(b.name)
+end
+
+function LEVELING_HELPERS.sortByNextLevel(a, b)
+    if (a.level_min or 0) ~= (b.level_min or 0) then
+        return (a.level_min or 0) < (b.level_min or 0)
+    end
+    if (a.level_max or 0) ~= (b.level_max or 0) then
+        return (a.level_max or 0) < (b.level_max or 0)
+    end
+    if (a.rank or 999) ~= (b.rank or 999) then
+        return (a.rank or 999) < (b.rank or 999)
+    end
+    return lower(a.name) < lower(b.name)
 end
 
 local function rowHasZone(row, zone, selectedPhaseIndex)
@@ -2692,6 +2753,11 @@ local function includeByFilter(row, filters, selectedPhaseIndex)
             or containsText(row.slot, filters.search)
             or containsText(row.source_summary, filters.search)
             or containsText(row.rank_label, filters.search)
+            or containsText(row.source_note, filters.search)
+            or containsText(row.section, filters.search)
+            or containsText(row.level_label, filters.search)
+            or containsText(row.level_value_text, filters.search)
+            or containsText(row.category_label, filters.search)
             or FILTER_FACETS.rowAccessOptionsContainText(row, filters.search)
         if not found then
             return false
@@ -2736,11 +2802,33 @@ local function includeByFilter(row, filters, selectedPhaseIndex)
         return false
     end
 
-    if filters.rankGroup and filters.rankGroup ~= "all" and row.rank_group ~= filters.rankGroup then
-        return false
-    end
-    if tableHasAnyEnabled(filters.rankGroups) and not filters.rankGroups[row.rank_group] then
-        return false
+    if row.leveling then
+        local categoryKey = row.leveling_category_key or LEVELING_HELPERS.categoryKey(row.category_label)
+        if LEVELING_HELPERS.isCategoryKey(filters.rankGroup) and categoryKey ~= filters.rankGroup then
+            return false
+        end
+        if tableHasAnyEnabled(filters.rankGroups) then
+            local hasLevelingCategory = false
+            local matchesLevelingCategory = false
+            for key, selected in pairs(filters.rankGroups or {}) do
+                if selected and LEVELING_HELPERS.isCategoryKey(key) then
+                    hasLevelingCategory = true
+                    if key == categoryKey then
+                        matchesLevelingCategory = true
+                    end
+                end
+            end
+            if hasLevelingCategory and not matchesLevelingCategory then
+                return false
+            end
+        end
+    else
+        if filters.rankGroup and filters.rankGroup ~= "all" and row.rank_group ~= filters.rankGroup then
+            return false
+        end
+        if tableHasAnyEnabled(filters.rankGroups) and not filters.rankGroups[row.rank_group] then
+            return false
+        end
     end
 
     local owned = filters.ownedItems and filters.ownedItems[row.item_id]
@@ -3028,6 +3116,7 @@ function BigBiSList:GetDataIndex()
         rowAccessCache = {},
         rowAccessCacheOrder = {},
         itemUseCache = {},
+        levelingGearCache = {},
         tooltipUseCache = {},
         itemsById = {},
         classes = classSpecIndex.classes,
@@ -3044,6 +3133,7 @@ function BigBiSList:GetDataIndex()
         tooltipUseRefsByItemId = {},
         useRefsByClassSpec = {},
         useRefsByClassSpecPhase = {},
+        levelingGearRefsByItemId = {},
         levelingGearRefsByClassSpec = {},
         enhancement = {
             gems = data.gems or {},
@@ -3107,8 +3197,10 @@ function BigBiSList:GetDataIndex()
         end
 
         for _, levelingGearRef in ipairs(data.leveling_gear or {}) do
+            local itemId = compactField(index, "leveling_gear", levelingGearRef, "item_id")
             local className = compactField(index, "leveling_gear", levelingGearRef, "class")
             local specName = compactField(index, "leveling_gear", levelingGearRef, "spec")
+            addUseRef(index.levelingGearRefsByItemId, itemId, levelingGearRef)
             table.insert(ensureNestedUseBucket(index.levelingGearRefsByClassSpec, className, specName), levelingGearRef)
         end
 
@@ -3193,6 +3285,7 @@ function BigBiSList:GetDataIndex()
         end
 
         for _, levelingGear in ipairs(data.leveling_gear or {}) do
+            addUseRef(index.levelingGearRefsByItemId, levelingGear.item_id, levelingGear)
             table.insert(ensureNestedUseBucket(index.levelingGearRefsByClassSpec, levelingGear["class"], levelingGear.spec), levelingGear)
         end
 
@@ -3265,6 +3358,29 @@ function BigBiSList:GetTooltipUses(itemId)
     return uses
 end
 
+function BigBiSList:GetItemLevelingUses(itemId)
+    itemId = tonumber(itemId)
+    if not itemId then
+        return {}
+    end
+
+    local index = self:GetDataIndex()
+    if index.levelingGearCache[itemId] then
+        return index.levelingGearCache[itemId]
+    end
+
+    local rows = {}
+    for _, levelingRef in ipairs(index.levelingGearRefsByItemId[itemId] or {}) do
+        local row = buildLevelingGearRow(index, levelingRef)
+        if row then
+            table.insert(rows, row)
+        end
+    end
+    table.sort(rows, LEVELING_HELPERS.sortByNextLevel)
+    index.levelingGearCache[itemId] = rows
+    return rows
+end
+
 function BigBiSList:GetItemBestUseForSpec(itemId, className, specName, preferredPhaseKey, allowedSlots)
     local uses = self:GetItemUses(itemId)
     local bestUse
@@ -3279,6 +3395,42 @@ function BigBiSList:GetItemBestUseForSpec(itemId, className, specName, preferred
     end
 
     return bestUse
+end
+
+function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, level, allowedSlots)
+    local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    local matches = {}
+
+    for _, row in ipairs(self:GetItemLevelingUses(itemId)) do
+        if row.class == className
+            and row.spec == specName
+            and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
+            and (not allowedSlots or slotListContains(allowedSlots, row.slot)) then
+            table.insert(matches, row)
+        end
+    end
+
+    table.sort(matches, function(a, b)
+        return LEVELING_HELPERS.sortForLevel(a, b, selectedLevel)
+    end)
+    return matches[1]
+end
+
+function BigBiSList:GetItemNextLevelingUseForSpec(itemId, className, specName, level, allowedSlots)
+    local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    local matches = {}
+
+    for _, row in ipairs(self:GetItemLevelingUses(itemId)) do
+        if row.class == className
+            and row.spec == specName
+            and (tonumber(row.level_min) or 1) > selectedLevel
+            and (not allowedSlots or slotListContains(allowedSlots, row.slot)) then
+            table.insert(matches, row)
+        end
+    end
+
+    table.sort(matches, LEVELING_HELPERS.sortByNextLevel)
+    return matches[1]
 end
 
 local function upgradeSlotCapacity(slotName)
@@ -3431,20 +3583,27 @@ local function plannerGroupMatchesUpgradeMode(group, filters)
     return false
 end
 
-function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems)
+function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems, level)
     local rows = {}
     local equippedSlots = ownedItems and ownedItems.equippedSlots or {}
+    local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    local levelingMode = phaseKey == LEVELING_PHASE_KEY
 
     for _, slot in ipairs(EQUIPMENT_SLOTS) do
         local equipped = equippedSlots[slot.key]
         local itemId = equipped and equipped.item_id
         local item = itemId and self:GetItemData(itemId) or nil
-        local bestUse = itemId and self:GetItemBestUseForSpec(itemId, className, specName, phaseKey, slot.slots) or nil
+        local bestUse = itemId and (levelingMode
+            and self:GetItemBestLevelingUseForSpec(itemId, className, specName, selectedLevel, slot.slots)
+            or self:GetItemBestUseForSpec(itemId, className, specName, phaseKey, slot.slots)) or nil
         local overlay = "Empty"
         local overlayKind = "empty"
         local disabledReason
 
-        if itemId and bestUse then
+        if itemId and bestUse and levelingMode then
+            overlay = (bestUse.category_label and bestUse.category_label ~= "Recommended") and bestUse.category_label or "Leveling pick"
+            overlayKind = "leveling"
+        elseif itemId and bestUse then
             overlay = bestUse.rank_group == "bis" and "BiS match" or "Listed alt"
             overlayKind = bestUse.rank_group or "option"
         elseif itemId then
@@ -3458,7 +3617,9 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
 
         local displayRankLabel, displayRankKind = displayRankInfo(bestUse)
         local recommendation = "Empty slot"
-        if itemId and bestUse then
+        if itemId and bestUse and levelingMode then
+            recommendation = bestUse.level_label or bestUse.level_value_text or "Leveling recommendation"
+        elseif itemId and bestUse then
             recommendation = bestUse.rank_group == "bis" and "BiS match for selected spec" or "Listed alt for selected spec"
         elseif itemId then
             recommendation = "Off-list for selected spec"
@@ -3475,6 +3636,15 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
             name = item and item.name or (itemId and ("Item " .. tostring(itemId)) or "Empty"),
             source_summary = item and item.source_summary or "",
             bestUse = bestUse,
+            leveling = bestUse and bestUse.leveling or nil,
+            level_min = bestUse and bestUse.level_min or nil,
+            level_max = bestUse and bestUse.level_max or nil,
+            level_label = bestUse and bestUse.level_label or nil,
+            level_value_text = bestUse and bestUse.level_value_text or nil,
+            category_label = bestUse and bestUse.category_label or nil,
+            leveling_category_key = bestUse and bestUse.leveling_category_key or nil,
+            section = bestUse and bestUse.section or nil,
+            source_note = bestUse and bestUse.source_note or nil,
             phase = bestUse and bestUse.phase or nil,
             rank_label = bestUse and bestUse.rank_label or nil,
             rank_group = bestUse and bestUse.rank_group or nil,
@@ -3484,10 +3654,10 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
             column = slot.column,
             dataSlots = slot.slots,
             requirements = mergedRequirements(bestUse and bestUse.requirements, item and item.requirements),
-            _access_context = bestUse and nil or {
+            _access_context = (levelingMode and bestUse and bestUse._access_context) or (bestUse and nil or {
                 item = item,
                 options = { entityType = "item" },
-            },
+            }),
             display_rank_label = itemId and displayRankLabel or "Empty",
             display_rank_kind = itemId and displayRankKind or "missing",
             recommendation_summary = recommendation,
@@ -3553,7 +3723,7 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
 
     for _, levelingRef in ipairs(levelingRefs) do
         local row = buildLevelingGearRow(index, levelingRef)
-        if row and row.level_min <= selectedLevel and includeByFilter(row, filters, phaseIndex(LEVELING_PHASE_KEY)) then
+        if row and LEVELING_HELPERS.isAvailableAt(row, selectedLevel) and includeByFilter(row, filters, phaseIndex(LEVELING_PHASE_KEY)) then
             local slotName = row.slot
             grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
             seenBySlot[slotName] = seenBySlot[slotName] or {}
@@ -3566,35 +3736,21 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
         end
     end
 
-    local function sortLevelingRows(a, b)
-        local aActive = (a.level_max or 70) >= selectedLevel
-        local bActive = (b.level_max or 70) >= selectedLevel
-        if aActive ~= bActive then
-            return aActive
-        end
-        if (a.level_min or 0) ~= (b.level_min or 0) then
-            return (a.level_min or 0) > (b.level_min or 0)
-        end
-        if (a.level_max or 0) ~= (b.level_max or 0) then
-            return (a.level_max or 0) > (b.level_max or 0)
-        end
-        if (a.rank or 999) ~= (b.rank or 999) then
-            return (a.rank or 999) < (b.rank or 999)
-        end
-        return lower(a.name) < lower(b.name)
-    end
-
     local rows = {}
     for _, slotName in ipairs(SLOT_ORDER) do
         if grouped[slotName] and #grouped[slotName].items > 0 then
-            table.sort(grouped[slotName].items, sortLevelingRows)
+            table.sort(grouped[slotName].items, function(a, b)
+                return LEVELING_HELPERS.sortForLevel(a, b, selectedLevel)
+            end)
             table.insert(rows, grouped[slotName])
         end
     end
 
     for _, slotName in ipairs(sortedKeys(grouped)) do
         if slotIndex(slotName) == 999 and #grouped[slotName].items > 0 then
-            table.sort(grouped[slotName].items, sortLevelingRows)
+            table.sort(grouped[slotName].items, function(a, b)
+                return LEVELING_HELPERS.sortForLevel(a, b, selectedLevel)
+            end)
             table.insert(rows, grouped[slotName])
         end
     end
@@ -4217,6 +4373,10 @@ local function tooltipRankShortLabel(use)
 end
 
 local function tooltipPhaseSummary(use)
+    if use and use.leveling then
+        return use.tooltip_level_label or use.level_label or "Leveling"
+    end
+
     local phase = PHASE_SHORT_DISPLAY[use.phase] or PHASE_DISPLAY[use.phase] or tostring(use.phase or "")
     return phase .. " " .. tooltipRankShortLabel(use)
 end
@@ -4230,7 +4390,44 @@ local function tooltipUseDedupeKey(itemId, use)
         tostring(use.phase or ""),
         tostring(tooltipSlotGroup(use)),
         tostring(tooltipRankShortLabel(use)),
+        tostring(use.level_min or ""),
+        tostring(use.level_max or ""),
     }, "|")
+end
+
+function LEVELING_HELPERS.tooltipSummary(use)
+    if not use then
+        return "Leveling"
+    end
+    return use.tooltip_level_label or tooltipPhaseSummary(use)
+end
+
+function LEVELING_HELPERS.buildTooltipGroupSummary(group, expanded)
+    local uses = {}
+    local seen = {}
+    for _, use in ipairs(group.uses or {}) do
+        table.insert(uses, use)
+    end
+    table.sort(uses, LEVELING_HELPERS.sortByNextLevel)
+
+    local parts = {}
+    for _, use in ipairs(uses) do
+        local label = LEVELING_HELPERS.tooltipSummary(use)
+        if not seen[label] then
+            seen[label] = true
+            table.insert(parts, label)
+        end
+    end
+
+    if not expanded and #parts > TOOLTIP_SUMMARY_CHUNK_LIMIT then
+        local remaining = #parts - TOOLTIP_SUMMARY_CHUNK_LIMIT
+        while #parts > TOOLTIP_SUMMARY_CHUNK_LIMIT do
+            table.remove(parts)
+        end
+        table.insert(parts, "+" .. tostring(remaining))
+    end
+
+    return table.concat(parts, ", ")
 end
 
 local function tooltipPhaseRangeSummary(segment)
@@ -4290,6 +4487,10 @@ local function buildTooltipPhaseSegments(group)
 end
 
 local function buildTooltipGroupSummary(group, expanded)
+    if group and group.leveling then
+        return LEVELING_HELPERS.buildTooltipGroupSummary(group, expanded)
+    end
+
     local parts = {}
     for _, segment in ipairs(buildTooltipPhaseSegments(group)) do
         table.insert(parts, tooltipPhaseRangeSummary(segment))
@@ -4317,6 +4518,62 @@ local function tooltipSpecEnabled(specFilters, className, specName)
     end
 
     return classFilters[specName] == true
+end
+
+function BigBiSList:GetLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext)
+    local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    local matches = {}
+    local seenMatches = {}
+    local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil
+    local playerSpec = type(priorityContext) == "table" and priorityContext.playerSpec or nil
+    selectedSpecFirst = selectedSpecFirst ~= false
+
+    for _, use in ipairs(self:GetItemLevelingUses(itemId)) do
+        if LEVELING_HELPERS.isAvailableAt(use, selectedLevel) and tooltipSpecEnabled(specFilters, use.class, use.spec) then
+            local key = tooltipUseDedupeKey(itemId, use)
+            if not seenMatches[key] then
+                seenMatches[key] = true
+                table.insert(matches, use)
+            end
+        end
+    end
+
+    table.sort(matches, function(a, b)
+        if playerClass then
+            local aPlayerClass = a.class == playerClass and 1 or 0
+            local bPlayerClass = b.class == playerClass and 1 or 0
+            if aPlayerClass ~= bPlayerClass then
+                return aPlayerClass > bPlayerClass
+            end
+
+            if playerSpec then
+                local aPlayerSpec = (a.class == playerClass and a.spec == playerSpec) and 1 or 0
+                local bPlayerSpec = (b.class == playerClass and b.spec == playerSpec) and 1 or 0
+                if aPlayerSpec ~= bPlayerSpec then
+                    return aPlayerSpec > bPlayerSpec
+                end
+            end
+        end
+        if selectedSpecFirst then
+            local aSelected = (a.class == selectedClass and a.spec == selectedSpec) and 1 or 0
+            local bSelected = (b.class == selectedClass and b.spec == selectedSpec) and 1 or 0
+            if aSelected ~= bSelected then
+                return aSelected > bSelected
+            end
+        end
+        if a.class ~= b.class then
+            return a.class < b.class
+        end
+        if a.spec ~= b.spec then
+            return a.spec < b.spec
+        end
+        if slotIndex(a.slot) ~= slotIndex(b.slot) then
+            return slotIndex(a.slot) < slotIndex(b.slot)
+        end
+        return LEVELING_HELPERS.sortForLevel(a, b, selectedLevel)
+    end)
+
+    return matches
 end
 
 function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext)
@@ -4373,6 +4630,41 @@ function BigBiSList:GetTooltipMatches(itemId, selectedClass, selectedSpec, selec
     end)
 
     return matches
+end
+
+function BigBiSList:GetGroupedLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext, expanded)
+    local rawMatches = self:GetLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext)
+    local groups = {}
+    local groupedMatches = {}
+
+    for _, use in ipairs(rawMatches) do
+        local key = tooltipGroupKey(use)
+        local group = groups[key]
+        if not group then
+            group = {
+                class = use.class,
+                spec = use.spec,
+                slot = use.slot,
+                slots = {},
+                slot_seen = {},
+                uses = {},
+                leveling = true,
+                tooltip_grouped = true,
+            }
+            groups[key] = group
+            table.insert(groupedMatches, group)
+        end
+        addTooltipGroupSlot(group, use.slot)
+        table.insert(group.uses, use)
+    end
+
+    for _, group in ipairs(groupedMatches) do
+        group.slot = buildTooltipGroupSlotLabel(group)
+        group.phase_summary = buildTooltipGroupSummary(group, expanded)
+        group.slot_seen = nil
+    end
+
+    return groupedMatches
 end
 
 function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec, selectedSpecFirst, specFilters, priorityContext, expanded)
