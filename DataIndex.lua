@@ -1262,6 +1262,56 @@ end
 
 local LEVELING_HELPERS = {}
 
+local LEVELING_REASON_TAG_LABELS = {
+    best_overall = "Best Overall",
+    best_survival = "Best Survival",
+    best_hit = "Best Hit",
+    best_easy_source = "Best Easy Source",
+    boe = "BoE",
+    dungeon = "Dungeon",
+    easy_source = "Easy Source",
+    hit = "Hit",
+    survival = "Survival",
+    near_equivalent = "Near Equivalent",
+    suffix_winner = "Best Random Suffix",
+    contextual_racial = "Racial Utility",
+    draenei_hit_adjusted = "Draenei Hit Adjusted",
+    draenei_spell_hit_adjusted = "Draenei Spell Hit Adjusted",
+    dwarf_gun_bonus = "Dwarf Gun Bonus",
+    gnome_intellect_bonus = "Gnome Intellect Bonus",
+    human_mace_bonus = "Human Mace Bonus",
+    human_spirit_bonus = "Human Spirit Bonus",
+    human_sword_bonus = "Human Sword Bonus",
+    night_elf_dodge_bonus = "Night Elf Dodge Bonus",
+    orc_axe_bonus = "Orc Axe Bonus",
+    tauren_health_bonus = "Tauren Health Bonus",
+    troll_bow_bonus = "Troll Bow Bonus",
+    troll_throwing_bonus = "Troll Throwing Bonus",
+}
+
+local function titleCaseToken(token)
+    return (token:gsub("^%l", string.upper))
+end
+
+local function levelingReasonTagLabel(tag)
+    tag = trim(tag or "")
+    if tag == "" then
+        return ""
+    end
+
+    local mapped = LEVELING_REASON_TAG_LABELS[tag]
+    if mapped then
+        return mapped
+    end
+
+    local race = tag:match("^best_for_(.+)$")
+    if race then
+        return "Best for " .. race:gsub("_", " "):gsub("%S+", titleCaseToken)
+    end
+
+    return tag:gsub("_", " "):gsub("%S+", titleCaseToken)
+end
+
 function LEVELING_HELPERS.categoryKey(label)
     local key = lower(label or "Recommended"):gsub("[^%w]+", "_"):gsub("^_+", ""):gsub("_+$", "")
     if key == "" then
@@ -2270,7 +2320,7 @@ local function buildLevelingRecommendationRow(index, recommendationRef)
     local tooltipLevelLabel = levelMax > levelMin and ("Leveling " .. tostring(levelMin) .. "-" .. tostring(levelMax)) or ("Leveling " .. tostring(levelMin))
     local recommendationSummary = entry.source_summary or meta.source_summary or ""
     if primaryTag and primaryTag ~= "" then
-        recommendationSummary = primaryTag:gsub("_", " ")
+        recommendationSummary = levelingReasonTagLabel(primaryTag)
     elseif recommendationSummary == "" then
         recommendationSummary = levelLabel
     end

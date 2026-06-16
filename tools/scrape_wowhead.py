@@ -1556,7 +1556,7 @@ WEAPON_SUBTYPES = [
     "Wand",
 ]
 
-ARMOR_TYPES = ["Cloth", "Leather", "Mail", "Plate", "Shield"]
+ARMOR_TYPES = ["Cloth", "Leather", "Mail", "Plate"]
 
 
 def item_tooltip_lines(item_id: int | None, html: str) -> list[str]:
@@ -1578,6 +1578,122 @@ def add_stat(stats: dict[str, float], key: str, value: int | float) -> None:
     stats[key] = round(float(stats.get(key, 0)) + float(value), 4)
 
 
+def subtract_stat(stats: dict[str, float], key: str, value: int | float) -> None:
+    current = stats.get(key)
+    if not isinstance(current, (int, float)):
+        return
+    value = float(value)
+    if current + 0.0001 < value:
+        return
+    remaining = round(float(current) - value, 4)
+    if remaining <= 0:
+        stats.pop(key, None)
+    else:
+        stats[key] = remaining
+
+
+EFFECT_SEGMENT_RE = re.compile(
+    r"\b(Equip:|Use:|Chance on hit:)\s*(.*?)(?=\s+(?:Equip:|Use:|Chance on hit:|[A-Z][A-Za-z' -]+\s+\(\d+/\d+\)|Sell Price:|Dropped by:|Sold by:|This\s+(?:poor|common|uncommon|green|rare|blue|epic)|Added in)|$)",
+    flags=re.IGNORECASE,
+)
+
+
+def effect_segments_from_text(text: str) -> list[str]:
+    segments: list[str] = []
+    for match in EFFECT_SEGMENT_RE.finditer(clean_text(text or "")):
+        marker = match.group(1).strip()
+        body = clean_text(match.group(2))
+        segment = clean_text(f"{marker} {body}")
+        if segment and segment not in segments:
+            segments.append(segment)
+    return segments
+
+
+def merge_effect_source_text(flat_text: str, fallback_text: str) -> str:
+    flat_text = clean_text(flat_text or "")
+    fallback_text = clean_text(fallback_text or "")
+    if not flat_text:
+        return fallback_text
+    if not fallback_text:
+        return flat_text
+
+    seen = {segment.lower() for segment in effect_segments_from_text(flat_text)}
+    extras = [
+        segment
+        for segment in effect_segments_from_text(fallback_text)
+        if segment.lower() not in seen
+    ]
+    if not extras:
+        return flat_text
+    return clean_text(f"{flat_text} {' '.join(extras)}")
+
+
+def effect_kind(effect_text: str) -> str:
+    lowered = effect_text.lower()
+    if lowered.startswith("use:"):
+        return "use"
+    if lowered.startswith("chance on hit:"):
+        return "proc"
+    if "forms only" in lowered:
+        return "form_only"
+    if re.search(r"\bwhen fighting\b", lowered):
+        return "target_specific"
+    if re.search(r"\bfor \d+ sec\b", lowered) or "cooldown" in lowered:
+        return "temporary"
+    if re.search(r"\b(chance|when struck|your attacks|successful hit|on hit)\b", lowered):
+        return "proc"
+    return "passive"
+
+
+def stats_from_effect_text(effect_text: str) -> dict[str, float]:
+    stats: dict[str, float] = {}
+    for pattern, key in EQUIP_STAT_PATTERNS:
+        for match in re.finditer(pattern, effect_text, flags=re.IGNORECASE):
+            add_stat(stats, key, int(match.group(1)))
+    return stats
+
+
+def classified_effect_stats(text: str) -> list[dict[str, Any]]:
+    effects: list[dict[str, Any]] = []
+    for segment in effect_segments_from_text(text):
+        stats = stats_from_effect_text(segment)
+        kind = effect_kind(segment)
+        if kind == "passive" and not stats:
+            continue
+        effect: dict[str, Any] = {
+            "type": kind,
+            "raw_text": segment,
+        }
+        if stats:
+            effect["stats"] = stats
+        effects.append(effect)
+    return effects
+
+
+def apply_effect_stat_classification(stats: dict[str, float], text: str, *, add_passive: bool = True) -> list[dict[str, Any]]:
+    effects = classified_effect_stats(text)
+    applied_passive_stats: set[tuple[tuple[str, float], ...]] = set()
+    for effect in effects:
+        if effect.get("type") == "passive":
+            if add_passive:
+                passive_signature = tuple(
+                    sorted(
+                        (str(key), float(value))
+                        for key, value in (effect.get("stats") or {}).items()
+                        if isinstance(value, (int, float))
+                    )
+                )
+                if passive_signature in applied_passive_stats:
+                    continue
+                applied_passive_stats.add(passive_signature)
+                for key, value in (effect.get("stats") or {}).items():
+                    add_stat(stats, key, value)
+            continue
+        for key, value in (effect.get("stats") or {}).items():
+            subtract_stat(stats, key, value)
+    return effects
+
+
 def parse_socket_bonus(text: str) -> dict[str, float]:
     match = re.search(r"Socket Bonus:\s*\+?(\d+)\s+([A-Za-z ]+)", text, flags=re.IGNORECASE)
     if not match:
@@ -1590,7 +1706,7 @@ def parse_socket_bonus(text: str) -> dict[str, float]:
     return {key: float(match.group(1))}
 
 
-def parse_tooltip_stats(lines: list[str]) -> dict[str, Any]:
+def parse_tooltip_stats(lines: list[str], fallback_text: str = "") -> dict[str, Any]:
     stats: dict[str, float] = {}
     sockets: list[str] = []
     socket_bonus: dict[str, float] = {}
@@ -1608,7 +1724,8 @@ def parse_tooltip_stats(lines: list[str]) -> dict[str, Any]:
     weapon_subtype: str | None = None
     armor_type: str | None = None
 
-    flat_text = " ".join(lines)
+    flat_text = clean_text(" ".join(lines))
+    effect_source_text = merge_effect_source_text(flat_text, fallback_text)
     match = re.search(r"\bRequires\s+Level\s+(\d{1,2})\b", flat_text, flags=re.IGNORECASE)
     if match:
         required_level = int(match.group(1))
@@ -1621,7 +1738,6 @@ def parse_tooltip_stats(lines: list[str]) -> dict[str, Any]:
         weapon_max_damage = int(damage_match.group(2))
         weapon_speed = float(damage_match.group(3))
 
-    matched_equip_stat_keys: set[str] = set()
     for line in lines:
         item_level_match = re.search(r"\bItem\s+Level\s+(\d+)\b", line, flags=re.IGNORECASE)
         if item_level_match:
@@ -1645,12 +1761,6 @@ def parse_tooltip_stats(lines: list[str]) -> dict[str, Any]:
             stat_match = re.fullmatch(rf"\+(\d+)\s+{re.escape(stat_name)}", line, flags=re.IGNORECASE)
             if stat_match:
                 add_stat(stats, key, int(stat_match.group(1)))
-
-        for pattern, key in EQUIP_STAT_PATTERNS:
-            stat_match = re.search(pattern, line, flags=re.IGNORECASE)
-            if stat_match:
-                add_stat(stats, key, int(stat_match.group(1)))
-                matched_equip_stat_keys.add(key)
 
         socket_match = re.fullmatch(r"(Meta|Red|Yellow|Blue|Prismatic)\s+Socket", line, flags=re.IGNORECASE)
         if socket_match:
@@ -1683,16 +1793,21 @@ def parse_tooltip_stats(lines: list[str]) -> dict[str, Any]:
         elif any(subtype and subtype.lower() in lowered for subtype in ["bow", "crossbow", "gun", "thrown", "wand"]):
             weapon_type = "Ranged"
 
-        for candidate in ARMOR_TYPES:
-            if re.search(rf"\b{candidate.lower()}\b", lowered):
-                armor_type = candidate
+        armor_type_match = re.search(
+            r"\b(?:Head|Shoulder|Chest|Wrist|Hands|Waist|Legs|Feet)\s+(Cloth|Leather|Mail|Plate)\b|\b(Cloth|Leather|Mail|Plate)\s+\d+\s+Armor\b",
+            line,
+            flags=re.IGNORECASE,
+        )
+        if armor_type_match:
+            armor_type = (armor_type_match.group(1) or armor_type_match.group(2)).title()
+        if re.search(r"\bOff[- ]Hand\s+Shield\b", line, flags=re.IGNORECASE):
+            armor_type = "Shield"
 
-    for pattern, key in EQUIP_STAT_PATTERNS:
-        if key in matched_equip_stat_keys:
-            continue
-        stat_match = re.search(pattern, flat_text, flags=re.IGNORECASE)
-        if stat_match:
-            add_stat(stats, key, int(stat_match.group(1)))
+    effect_stats = apply_effect_stat_classification(stats, effect_source_text)
+    full_effect_texts = [effect["raw_text"] for effect in effect_stats if effect.get("raw_text")]
+    if full_effect_texts:
+        equip_effects = [effect for effect in full_effect_texts if effect.startswith("Equip:") or effect.startswith("Chance on hit:")]
+        use_effects = [effect for effect in full_effect_texts if effect.startswith("Use:")]
 
     return {
         "required_level": required_level,
@@ -1711,11 +1826,12 @@ def parse_tooltip_stats(lines: list[str]) -> dict[str, Any]:
         "restrictions": restrictions,
         "equip_effects": equip_effects,
         "use_effects": use_effects,
+        "effect_stats": effect_stats,
     }
 
 
 def parse_item_stats(url: str, item_id: int | None, name: str, description: str, tooltip_lines: list[str], inventory_slot: str | None, quality: str, binding: str, boe: bool | None, sources: list[dict[str, Any]]) -> dict[str, Any]:
-    parsed = parse_tooltip_stats(tooltip_lines)
+    parsed = parse_tooltip_stats(tooltip_lines, description)
     description_level = re.search(r"\bitem level of (\d+)\b", description, flags=re.IGNORECASE)
     if parsed["item_level"] is None and description_level:
         parsed["item_level"] = int(description_level.group(1))
@@ -1747,6 +1863,7 @@ def parse_item_stats(url: str, item_id: int | None, name: str, description: str,
         "restrictions": parsed["restrictions"],
         "equip_effects": parsed["equip_effects"],
         "use_effects": parsed["use_effects"],
+        "effect_stats": parsed["effect_stats"],
         "source_summary": summarize_sources(sources) if sources else "",
         "primary_source": derive_primary_source(sources) if sources else None,
         "sources": sources,
@@ -1754,6 +1871,27 @@ def parse_item_stats(url: str, item_id: int | None, name: str, description: str,
         "wowhead_url": url,
         "parse_confidence": "tooltip" if tooltip_lines else "description_only",
     }
+    return {key: value for key, value in row.items() if value not in (None, [], {})}
+
+
+def sanitize_item_stats_effects(row: dict[str, Any], text: str) -> dict[str, Any]:
+    if not text:
+        return row
+    stats = deepcopy(row.get("stats") if isinstance(row.get("stats"), dict) else {})
+    effects = apply_effect_stat_classification(stats, text, add_passive=False)
+    if effects:
+        row["stats"] = stats
+        row["effect_stats"] = effects
+        row["equip_effects"] = [
+            effect["raw_text"]
+            for effect in effects
+            if str(effect.get("raw_text") or "").startswith("Equip:") or str(effect.get("raw_text") or "").startswith("Chance on hit:")
+        ]
+        row["use_effects"] = [
+            effect["raw_text"]
+            for effect in effects
+            if str(effect.get("raw_text") or "").startswith("Use:")
+        ]
     return {key: value for key, value in row.items() if value not in (None, [], {})}
 
 
@@ -4760,7 +4898,7 @@ def item_stats_from_snapshot(snapshot: dict[str, Any]) -> dict[str, Any] | None:
         return None
     stats = snapshot.get("item_stats")
     if isinstance(stats, dict) and stats.get("id"):
-        return deepcopy(stats)
+        return sanitize_item_stats_effects(deepcopy(stats), str(snapshot.get("description") or ""))
 
     sources = snapshot.get("normalized_sources") or []
     row = {
@@ -4790,7 +4928,7 @@ def item_stats_from_snapshot(snapshot: dict[str, Any]) -> dict[str, Any] | None:
     required_level_match = re.search(r"\brequires level (\d{1,2})\b", description, flags=re.IGNORECASE)
     if required_level_match:
         row["required_level"] = int(required_level_match.group(1))
-    return {key: value for key, value in row.items() if value not in (None, [], {})}
+    return sanitize_item_stats_effects({key: value for key, value in row.items() if value not in (None, [], {})}, description)
 
 
 def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:

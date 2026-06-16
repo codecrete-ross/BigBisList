@@ -352,6 +352,98 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(stats["weapon_speed"], 3.4)
         self.assertEqual(stats["stats"]["crit_rating"], 29)
 
+    def test_item_parser_classifies_form_only_effect_stats(self):
+        html = """
+        <html><head>
+        <title>Blessed Qiraji War Hammer - Item - TBC Classic</title>
+        <meta name="description" content="Blessed Qiraji War Hammer Phase 1 Item Level 79 Binds when picked up One-Hand Mace 89 - 166 Damage Speed 2.10 (60.71 damage per second) 70 Armor +10 Strength +12 Stamina Durability 105 / 105 Requires Level 60 Equip: Increases attack power by 337 in Cat, Bear, Dire Bear, and Moonkin forms only. Equip: Increases defense rating by 12.">
+        </head><body>
+        <script>
+        g_items[21268].tooltip_enus = "<table><tr><td><b class=\\"q4\\">Blessed Qiraji War Hammer</b><br>Binds when picked up<br>One-Hand Mace<br>89 - 166 Damage Speed 2.10<br>(60.71 damage per second)<br>70 Armor<br>+10 Strength<br>+12 Stamina<br>Requires Level 60<br>Equip: Increases attack power by 337 in Cat, Bear, Dire Bear, and Moonkin forms only.<br>Equip: Increases defense rating by 12.</td></tr></table>";
+        </script>
+        </body></html>
+        """
+        snapshot = parse_item_html("https://www.wowhead.com/tbc/item=21268/blessed-qiraji-war-hammer", html)
+        stats = snapshot["item_stats"]
+        effects = stats["effect_stats"]
+
+        self.assertNotIn("attack_power", stats["stats"])
+        self.assertEqual(stats["stats"]["defense_rating"], 12)
+        self.assertIn(
+            {"type": "form_only", "raw_text": "Equip: Increases attack power by 337 in Cat, Bear, Dire Bear, and Moonkin forms only.", "stats": {"attack_power": 337.0}},
+            effects,
+        )
+        self.assertIn(
+            {"type": "passive", "raw_text": "Equip: Increases defense rating by 12.", "stats": {"defense_rating": 12.0}},
+            effects,
+        )
+
+    def test_item_parser_does_not_score_use_or_target_specific_effects_as_passive(self):
+        cloudkeeper_html = """
+        <html><head>
+        <title>Cloudkeeper Legplates - Item - TBC Classic</title>
+        <meta name="description" content="Cloudkeeper Legplates Phase 1 Item Level 62 Binds when equipped Legs Plate 705 Armor +20 Strength +20 Agility +20 Stamina Requires Level 57 Use: Increases attack power by 100 for 30 sec. (15 Min Cooldown)">
+        </head><body>
+        <script>
+        g_items[14554].tooltip_enus = "<table><tr><td><b class=\\"q4\\">Cloudkeeper Legplates</b><br>Binds when equipped<br>Legs Plate<br>705 Armor<br>+20 Strength<br>+20 Agility<br>+20 Stamina<br>Requires Level 57<br>Use: Increases attack power by 100 for 30 sec. (15 Min Cooldown)</td></tr></table>";
+        </script>
+        </body></html>
+        """
+        felbane_html = """
+        <html><head>
+        <title>Enchanted Azsharite Felbane Sword - Item - TBC Classic</title>
+        <meta name="description" content="Enchanted Azsharite Felbane Sword Phase 1 Item Level 60 Binds when picked up One-Hand Sword 50 - 93 Damage Speed 2.00 (35.75 damage per second) Equip: Increases attack power by 33 when fighting Demons.">
+        </head><body>
+        <script>
+        g_items[10696].tooltip_enus = "<table><tr><td><b class=\\"q3\\">Enchanted Azsharite Felbane Sword</b><br>Binds when picked up<br>One-Hand Sword<br>50 - 93 Damage Speed 2.00<br>(35.75 damage per second)<br>Equip: Increases attack power by 33 when fighting Demons.</td></tr></table>";
+        </script>
+        </body></html>
+        """
+
+        cloudkeeper = parse_item_html("https://www.wowhead.com/tbc/item=14554/cloudkeeper-legplates", cloudkeeper_html)["item_stats"]
+        felbane = parse_item_html("https://www.wowhead.com/tbc/item=10696/enchanted-azsharite-felbane-sword", felbane_html)["item_stats"]
+
+        self.assertNotIn("attack_power", cloudkeeper["stats"])
+        self.assertIn(
+            {"type": "use", "raw_text": "Use: Increases attack power by 100 for 30 sec. (15 Min Cooldown)", "stats": {"attack_power": 100.0}},
+            cloudkeeper["effect_stats"],
+        )
+        self.assertNotIn("attack_power", felbane.get("stats", {}))
+        self.assertIn(
+            {"type": "target_specific", "raw_text": "Equip: Increases attack power by 33 when fighting Demons.", "stats": {"attack_power": 33.0}},
+            felbane["effect_stats"],
+        )
+
+    def test_item_parser_only_sets_shield_armor_for_actual_off_hand_shields(self):
+        trinket_html = """
+        <html><head>
+        <title>Fixture Shield Trinket - Item - TBC Classic</title>
+        <meta name="description" content="This rare trinket has an item level of 60. The face is shaped like a shield.">
+        </head><body>
+        <script>
+        g_items[99902].tooltip_enus = "<table><tr><td><b class=\\"q3\\">Fixture Shield Trinket</b><br>Binds when picked up<br>Trinket<br>Equip: Increases defense rating by 10.</td></tr></table>";
+        </script>
+        </body></html>
+        """
+        shield_html = """
+        <html><head>
+        <title>Fixture Buckler - Item - TBC Classic</title>
+        <meta name="description" content="This rare shield has an item level of 60.">
+        </head><body>
+        <script>
+        g_items[99903].tooltip_enus = "<table><tr><td><b class=\\"q3\\">Fixture Buckler</b><br>Binds when picked up<br>Off Hand Shield<br>1000 Armor<br>Requires Level 55</td></tr></table>";
+        </script>
+        </body></html>
+        """
+
+        trinket = parse_item_html("https://www.wowhead.com/tbc/item=99902/fixture-shield-trinket", trinket_html)["item_stats"]
+        shield = parse_item_html("https://www.wowhead.com/tbc/item=99903/fixture-buckler", shield_html)["item_stats"]
+
+        self.assertEqual(trinket["slot"], "Trinket")
+        self.assertNotIn("armor_type", trinket)
+        self.assertEqual(shield["slot"], "Off Hand")
+        self.assertEqual(shield["armor_type"], "Shield")
+
     def test_item_list_parser_discovers_listview_and_linked_items(self):
         html = """
         <html><head><title>Items</title></head><body>

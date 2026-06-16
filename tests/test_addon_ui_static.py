@@ -1210,6 +1210,20 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, runtime_text)
 
+    def test_leveling_recommendation_tags_are_cased_for_display(self):
+        data_index = self.read_lua("DataIndex.lua")
+        for token in [
+            "local function levelingReasonTagLabel(tag)",
+            'best_overall = "Best Overall"',
+            'best_easy_source = "Best Easy Source"',
+            'human_sword_bonus = "Human Sword Bonus"',
+            'night_elf_dodge_bonus = "Night Elf Dodge Bonus"',
+            'return "Best for " .. race:gsub("_", " "):gsub("%S+", titleCaseToken)',
+            "recommendationSummary = levelingReasonTagLabel(primaryTag)",
+        ]:
+            self.assertIn(token, data_index)
+        self.assertNotIn('recommendationSummary = primaryTag:gsub("_", " ")', data_index)
+
     def test_scalar_filters_use_dropdowns_not_cycle_buttons(self):
         ui = self.read_lua("UI.lua")
         for token in [
