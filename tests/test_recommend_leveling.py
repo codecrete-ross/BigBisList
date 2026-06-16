@@ -4,6 +4,7 @@ import unittest
 from tools.project import canonical_json
 from tools.recommend_leveling import (
     build_recommendation_documents,
+    candidate_score,
     compact_adjacent_recommendation_ranges,
     recommendation_rows_for,
     racial_score_bonus,
@@ -55,6 +56,63 @@ class LevelingRecommendationTests(unittest.TestCase):
             canonical_json("racial_modifiers"),
             canonical_json("scoring_profiles"),
         )
+
+    def fixture_one_hand_weapon(self, item_id=990001, stats=None):
+        return {
+            "id": item_id,
+            "name": "Fixture One-Hand Mace",
+            "required_level": 1,
+            "slot": "One Hand",
+            "weapon_type": "One Hand",
+            "weapon_subtype": "Mace",
+            "dps": 20,
+            "stats": stats or {"strength": 20},
+            "source_bucket": "quest",
+            "source_summary": "Quest: Fixture",
+            "wowhead_url": f"https://www.wowhead.com/tbc/item={item_id}/fixture-one-hand-mace",
+        }
+
+    def fixture_two_hand_weapon(self, item_id=990002, subtype="Mace", stats=None):
+        return {
+            "id": item_id,
+            "name": "Fixture Two-Hand Weapon",
+            "required_level": 1,
+            "slot": "Two Hand",
+            "weapon_type": "Two Hand",
+            "weapon_subtype": subtype,
+            "dps": 30,
+            "stats": stats or {"strength": 20},
+            "source_bucket": "quest",
+            "source_summary": "Quest: Fixture",
+            "wowhead_url": f"https://www.wowhead.com/tbc/item={item_id}/fixture-two-hand-weapon",
+        }
+
+    def fixture_offhand(self, item_id=990003):
+        return {
+            "id": item_id,
+            "name": "Fixture Held Off-hand",
+            "required_level": 1,
+            "slot": "Off Hand",
+            "weapon_type": "One Hand",
+            "stats": {"intellect": 20, "spell_power": 20},
+            "source_bucket": "quest",
+            "source_summary": "Quest: Fixture",
+            "wowhead_url": f"https://www.wowhead.com/tbc/item={item_id}/fixture-held-offhand",
+        }
+
+    def fixture_shield(self, item_id=990004):
+        return {
+            "id": item_id,
+            "name": "Fixture Shield",
+            "required_level": 1,
+            "slot": "Off Hand",
+            "armor_type": "Shield",
+            "armor": 500,
+            "stats": {"stamina": 20, "defense_rating": 20},
+            "source_bucket": "quest",
+            "source_summary": "Quest: Fixture",
+            "wowhead_url": f"https://www.wowhead.com/tbc/item={item_id}/fixture-shield",
+        }
 
     def test_human_ret_paladin_level_64_considers_and_tags_shaarde(self):
         item_stats, item_variants, racials, profiles = self.docs()
@@ -200,6 +258,269 @@ class LevelingRecommendationTests(unittest.TestCase):
 
         self.assertNotIn(999103, {row["item_id"] for row in rows})
         self.assertNotIn(999103, {row["item_id"] for row in audit})
+
+    def test_ret_paladin_best_overall_ignores_one_hand_form_only_mace(self):
+        item_stats, item_variants, racials, profiles = self.docs()
+        item_stats = {
+            "item_stats": [
+                {
+                    "id": 21268,
+                    "name": "Blessed Qiraji War Hammer",
+                    "required_level": 60,
+                    "item_level": 79,
+                    "quality": "epic",
+                    "binding": "bind_on_pickup",
+                    "boe": False,
+                    "slot": "One Hand",
+                    "weapon_type": "One Hand",
+                    "weapon_subtype": "Mace",
+                    "dps": 60.71,
+                    "armor": 70,
+                    "stats": {"strength": 10, "stamina": 12, "defense_rating": 12},
+                    "effect_stats": [
+                        {
+                            "type": "form_only",
+                            "stats": {"attack_power": 337},
+                            "raw_text": "Equip: Increases attack power by 337 in Cat, Bear, Dire Bear, and Moonkin forms only.",
+                        }
+                    ],
+                    "source_bucket": "quest",
+                    "source_summary": "Quest: Imperial Qiraji Regalia",
+                    "wowhead_url": "https://www.wowhead.com/tbc/item=21268/blessed-qiraji-war-hammer",
+                }
+            ]
+        }
+
+        rows, audit = recommendation_rows_for(
+            item_stats,
+            item_variants,
+            racials,
+            profiles,
+            class_name="Paladin",
+            spec_name="Retribution",
+            race="Human",
+            level=64,
+            slot="Main Hand",
+            context="best_overall",
+        )
+
+        self.assertEqual(rows, [])
+        self.assertNotIn(21268, {row["item_id"] for row in audit})
+
+    def test_two_hand_physical_specs_reject_one_hand_best_overall_main_hand(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        one_hand = self.fixture_one_hand_weapon(stats={"strength": 999})
+
+        for class_name, spec_name, race in [("Paladin", "Retribution", "Human"), ("Warrior", "Arms", "Human")]:
+            with self.subTest(class_name=class_name, spec_name=spec_name):
+                self.assertIsNone(candidate_score(one_hand, class_name, spec_name, race, 64, "Main Hand", "best_overall", profiles, racials))
+
+    def test_dual_wield_specs_reject_two_hand_best_overall_after_dual_wield_level(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        one_hand = self.fixture_one_hand_weapon()
+        two_hand = self.fixture_two_hand_weapon(subtype="Mace")
+
+        for class_name, spec_name, race, level in [
+            ("Warrior", "Fury", "Human", 64),
+            ("Rogue", "Combat", "Human", 64),
+            ("Shaman", "Enhancement", "Orc", 64),
+        ]:
+            with self.subTest(class_name=class_name, spec_name=spec_name):
+                self.assertIsNotNone(candidate_score(one_hand, class_name, spec_name, race, level, "Main Hand", "best_overall", profiles, racials))
+                self.assertIsNotNone(candidate_score(one_hand, class_name, spec_name, race, level, "Off Hand", "best_overall", profiles, racials))
+                self.assertIsNone(candidate_score(two_hand, class_name, spec_name, race, level, "Two Hand", "best_overall", profiles, racials))
+
+    def test_enhancement_before_dual_wield_level_keeps_two_hand_and_no_one_hand_offhand(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        one_hand = self.fixture_one_hand_weapon()
+        two_hand = self.fixture_two_hand_weapon(subtype="Mace")
+
+        self.assertIsNone(candidate_score(one_hand, "Shaman", "Enhancement", "Orc", 39, "Off Hand", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(two_hand, "Shaman", "Enhancement", "Orc", 39, "Two Hand", "best_overall", profiles, racials))
+
+    def test_protection_specs_require_one_hand_main_hand_and_shield_offhand(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        one_hand = self.fixture_one_hand_weapon()
+        two_hand = self.fixture_two_hand_weapon(subtype="Mace")
+        offhand = self.fixture_offhand()
+        shield = self.fixture_shield()
+
+        for class_name, spec_name in [("Paladin", "Protection"), ("Warrior", "Protection")]:
+            with self.subTest(class_name=class_name, spec_name=spec_name):
+                self.assertIsNotNone(candidate_score(one_hand, class_name, spec_name, "Human", 64, "Main Hand", "best_overall", profiles, racials))
+                self.assertIsNone(candidate_score(two_hand, class_name, spec_name, "Human", 64, "Two Hand", "best_overall", profiles, racials))
+                self.assertIsNone(candidate_score(offhand, class_name, spec_name, "Human", 64, "Off Hand", "best_overall", profiles, racials))
+                self.assertIsNotNone(candidate_score(shield, class_name, spec_name, "Human", 64, "Off Hand", "best_overall", profiles, racials))
+
+    def test_feral_druid_allows_one_hand_feral_weapon_main_hand_not_offhand(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        feral_mace = self.fixture_one_hand_weapon(
+            21268,
+            stats={"strength": 10, "stamina": 12, "defense_rating": 12},
+        )
+        feral_mace["effect_stats"] = [{"type": "form_only", "stats": {"attack_power": 337}}]
+
+        main_hand = candidate_score(feral_mace, "Druid", "Feral dps", "*", 64, "Main Hand", "best_overall", profiles, racials)
+        off_hand = candidate_score(feral_mace, "Druid", "Feral dps", "*", 64, "Off Hand", "best_overall", profiles, racials)
+
+        self.assertIsNotNone(main_hand)
+        self.assertEqual(main_hand["stats"]["attack_power"], 337)
+        self.assertIsNone(off_hand)
+
+    def test_caster_and_healer_weapon_styles_still_allow_staff_one_hand_and_offhand(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        staff = self.fixture_two_hand_weapon(subtype="Staff", stats={"intellect": 20, "spell_power": 20})
+        dagger = {
+            **self.fixture_one_hand_weapon(stats={"intellect": 20, "spell_power": 20}),
+            "weapon_subtype": "Dagger",
+        }
+        offhand = self.fixture_offhand()
+        shield = self.fixture_shield()
+
+        self.assertIsNotNone(candidate_score(staff, "Priest", "Shadow", "Human", 64, "Two Hand", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(dagger, "Priest", "Shadow", "Human", 64, "Main Hand", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(offhand, "Priest", "Shadow", "Human", 64, "Off Hand", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(shield, "Shaman", "Restoration", "Orc", 64, "Off Hand", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(dagger, "Priest", "Shadow", "Human", 64, "Off Hand", "best_overall", profiles, racials))
+
+    def test_generated_recommendation_documents_do_not_emit_one_hand_slot(self):
+        _item_stats, item_variants, racials, profiles = self.docs()
+        profiles = deepcopy(profiles)
+        profiles["runtime_contexts"] = ["best_overall"]
+        profiles["spec_roles"] = {"Rogue/Combat": "physical_dps", "Paladin/Retribution": "physical_dps", "Druid/Feral dps": "physical_dps"}
+        item_stats = {
+            "item_stats": [
+                self.fixture_one_hand_weapon(21268, stats={"strength": 10}),
+                self.fixture_two_hand_weapon(990010, subtype="Mace"),
+            ]
+        }
+
+        documents = build_recommendation_documents(item_stats, item_variants, racials, profiles)
+        rows = documents["leveling_recommendations"]
+
+        self.assertNotIn("One Hand", {row["slot"] for row in rows})
+        self.assertNotIn(21268, {row["item_id"] for row in rows if row["class"] == "Paladin" and row["spec"] == "Retribution"})
+        self.assertNotIn(21268, {row["item_id"] for row in rows if row["class"] == "Druid" and row["spec"] == "Feral dps" and row["slot"] == "Off Hand"})
+
+    def test_form_only_attack_power_scores_only_for_feral_druids(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        mace = {
+            "id": 21268,
+            "name": "Blessed Qiraji War Hammer",
+            "required_level": 60,
+            "slot": "One Hand",
+            "weapon_type": "One Hand",
+            "weapon_subtype": "Mace",
+            "dps": 60.71,
+            "stats": {"strength": 10, "stamina": 12, "defense_rating": 12},
+            "effect_stats": [
+                {
+                    "type": "form_only",
+                    "stats": {"attack_power": 337},
+                    "raw_text": "Equip: Increases attack power by 337 in Cat, Bear, Dire Bear, and Moonkin forms only.",
+                }
+            ],
+            "source_bucket": "quest",
+        }
+
+        paladin = candidate_score(
+            mace,
+            "Paladin",
+            "Retribution",
+            "Human",
+            64,
+            "Main Hand",
+            "hit",
+            profiles,
+            racials,
+        )
+        druid = candidate_score(
+            mace,
+            "Druid",
+            "Feral dps",
+            "*",
+            64,
+            "Main Hand",
+            "best_overall",
+            profiles,
+            racials,
+        )
+
+        self.assertIsNotNone(paladin)
+        self.assertNotIn("attack_power", paladin["stats"])
+        self.assertIn("dps", paladin["stats"])
+        self.assertIsNotNone(druid)
+        self.assertEqual(druid["stats"]["attack_power"], 337)
+        self.assertNotIn("dps", druid["stats"])
+
+    def test_off_hand_one_hand_weapons_require_dual_wield_access(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        offhand_mace = {
+            "id": 999105,
+            "name": "Fixture Offhand Mace",
+            "required_level": 1,
+            "slot": "One Hand",
+            "weapon_type": "One Hand",
+            "weapon_subtype": "Mace",
+            "dps": 20,
+            "stats": {"strength": 10},
+            "source_bucket": "quest",
+        }
+
+        self.assertIsNone(candidate_score(offhand_mace, "Paladin", "Retribution", "Human", 64, "Off Hand", "hit", profiles, racials))
+        self.assertIsNone(candidate_score(offhand_mace, "Rogue", "Combat", "Human", 9, "Off Hand", "hit", profiles, racials))
+        self.assertIsNotNone(candidate_score(offhand_mace, "Rogue", "Combat", "Human", 10, "Off Hand", "hit", profiles, racials))
+        self.assertIsNone(candidate_score(offhand_mace, "Shaman", "Enhancement", "Orc", 39, "Off Hand", "hit", profiles, racials))
+        self.assertIsNotNone(candidate_score(offhand_mace, "Shaman", "Enhancement", "Orc", 40, "Off Hand", "hit", profiles, racials))
+        self.assertIsNone(candidate_score(offhand_mace, "Shaman", "Elemental", "Orc", 70, "Off Hand", "hit", profiles, racials))
+
+    def test_armor_recommendations_respect_class_and_level_proficiencies(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        plate_chest = {
+            "id": 999106,
+            "name": "Fixture Plate Chest",
+            "required_level": 1,
+            "slot": "Chest",
+            "armor_type": "Plate",
+            "armor": 500,
+            "stats": {"strength": 20, "stamina": 20},
+            "source_bucket": "quest",
+        }
+
+        self.assertIsNone(candidate_score(plate_chest, "Druid", "Feral dps", "*", 60, "Chest", "hit", profiles, racials))
+        self.assertIsNone(candidate_score(plate_chest, "Paladin", "Retribution", "Human", 39, "Chest", "hit", profiles, racials))
+        self.assertIsNotNone(candidate_score(plate_chest, "Paladin", "Retribution", "Human", 40, "Chest", "hit", profiles, racials))
+
+    def test_expertise_rating_and_hunter_ranged_attack_power_are_scored(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        expertise_ring = {
+            "id": 999107,
+            "name": "Fixture Expertise Ring",
+            "required_level": 1,
+            "slot": "Ring",
+            "stats": {"expertise_rating": 3.94},
+            "source_bucket": "quest",
+        }
+        hunter_bow = {
+            "id": 999108,
+            "name": "Fixture Hunter Bow",
+            "required_level": 1,
+            "slot": "Ranged",
+            "weapon_type": "Ranged",
+            "weapon_subtype": "Bow",
+            "stats": {"ranged_attack_power": 20},
+            "source_bucket": "quest",
+        }
+
+        expertise = candidate_score(expertise_ring, "Paladin", "Retribution", "Human", 64, "Ring", "hit", profiles, racials)
+        hunter = candidate_score(hunter_bow, "Hunter", "Marksmanship", "Dwarf", 64, "Ranged", "hit", profiles, racials)
+
+        self.assertIsNotNone(expertise)
+        self.assertAlmostEqual(expertise["stats"]["expertise"], 1.0)
+        self.assertGreater(expertise["score"], 0)
+        self.assertIsNotNone(hunter)
+        self.assertEqual(hunter["stats"]["attack_power"], 20)
+        self.assertGreater(hunter["score"], 0)
 
     def test_pre_70_leveling_recommendations_ignore_raid_drops(self):
         item_stats, item_variants, racials, profiles = self.docs()

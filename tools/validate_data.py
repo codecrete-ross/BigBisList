@@ -531,7 +531,7 @@ def validate() -> ValidationResult:
         _require(race in TBC_RACES or race == "*", errors, f"Leveling recommendation has invalid race: {race}")
         _require(isinstance(level_min, int) and 1 <= level_min <= 70, errors, f"Leveling recommendation has invalid level_min: {level_min}")
         _require(isinstance(level_max, int) and isinstance(level_min, int) and level_min <= level_max <= 70, errors, f"Leveling recommendation has invalid level_max: {level_max}")
-        _require(slot in SLOT_NAMES or slot == "One Hand", errors, f"Unknown leveling recommendation slot: {slot}")
+        _require(slot in SLOT_NAMES, errors, f"Unknown leveling recommendation slot: {slot}")
         _require(isinstance(item_id, int) and item_id > 0, errors, f"Leveling recommendation has invalid item_id: {item_id}")
         _require(item_id in item_stat_ids, errors, f"Leveling recommendation references item without item_stats: {item_id}")
         _require(isinstance(row.get("rank"), int) and row.get("rank") > 0, errors, f"Leveling recommendation item {item_id} needs positive rank")

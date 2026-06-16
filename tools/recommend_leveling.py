@@ -56,6 +56,42 @@ CLASS_WEAPON_SUBTYPES = {
     "Warrior": {"Axe", "Bow", "Crossbow", "Dagger", "Fist Weapon", "Gun", "Mace", "Polearm", "Staff", "Sword", "Thrown"},
 }
 
+CLASS_ARMOR_PROFICIENCIES = {
+    "Druid": {1: {"Cloth", "Leather"}},
+    "Hunter": {1: {"Cloth", "Leather"}, 40: {"Cloth", "Leather", "Mail"}},
+    "Mage": {1: {"Cloth"}},
+    "Paladin": {1: {"Cloth", "Leather", "Mail", "Shield"}, 40: {"Cloth", "Leather", "Mail", "Plate", "Shield"}},
+    "Priest": {1: {"Cloth"}},
+    "Rogue": {1: {"Cloth", "Leather"}},
+    "Shaman": {1: {"Cloth", "Leather", "Shield"}, 40: {"Cloth", "Leather", "Mail", "Shield"}},
+    "Warlock": {1: {"Cloth"}},
+    "Warrior": {1: {"Cloth", "Leather", "Mail", "Shield"}, 40: {"Cloth", "Leather", "Mail", "Plate", "Shield"}},
+}
+
+DUAL_WIELD_LEVEL = {
+    "Hunter": 20,
+    "Rogue": 10,
+    "Warrior": 20,
+}
+
+WEAPON_RECOMMENDATION_SLOTS = {"Main Hand", "Off Hand", "Two Hand", "One Hand", "Ranged", "Dual Wield"}
+
+SPEC_WEAPON_STYLE_POLICIES = {
+    ("Paladin", "Retribution"): "two_hand_best_overall",
+    ("Warrior", "Arms"): "two_hand_best_overall",
+    ("Warrior", "Fury"): "dual_wield_after_access",
+    ("Rogue", "Assassination"): "dual_wield_after_access",
+    ("Rogue", "Combat"): "dual_wield_after_access",
+    ("Rogue", "Subtlety"): "dual_wield_after_access",
+    ("Shaman", "Enhancement"): "dual_wield_after_access",
+    ("Paladin", "Protection"): "shield_tank",
+    ("Warrior", "Protection"): "shield_tank",
+    ("Druid", "Feral dps"): "feral",
+    ("Druid", "Feral tank"): "feral",
+}
+
+EXPERTISE_RATING_PER_EXPERTISE = 3.94
+
 
 def now_utc() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -117,7 +153,7 @@ def slot_matches(item_slot: str | None, requested_slot: str | None) -> bool:
         return True
     if item_slot == "One Hand" and requested_slot in {"Main Hand", "Off Hand", "Dual Wield"}:
         return True
-    if item_slot == "Two Hand" and requested_slot in {"Main Hand", "Two Hand"}:
+    if item_slot == "Two Hand" and requested_slot == "Two Hand":
         return True
     return False
 
@@ -196,6 +232,127 @@ def class_can_use_item(item: dict[str, Any], class_name: str) -> bool:
     return str(subtype) in allowed
 
 
+def class_armor_allowed(class_name: str, level: int) -> set[str]:
+    tiers = CLASS_ARMOR_PROFICIENCIES.get(class_name, {1: set()})
+    allowed: set[str] = set()
+    for required_level, armor_types in tiers.items():
+        if level >= required_level:
+            allowed = set(armor_types)
+    return allowed
+
+
+def class_can_dual_wield(class_name: str, spec_name: str, level: int) -> bool:
+    if class_name == "Shaman":
+        return spec_name == "Enhancement" and level >= 40
+    required_level = DUAL_WIELD_LEVEL.get(class_name)
+    return required_level is not None and level >= required_level
+
+
+def class_can_use_armor(item: dict[str, Any], class_name: str, level: int) -> bool:
+    armor_type = item.get("armor_type")
+    if not armor_type:
+        return True
+    if armor_type == "Shield" and normalized_slot(item.get("slot")) != "Off Hand":
+        return False
+    return str(armor_type) in class_armor_allowed(class_name, level)
+
+
+def slot_is_legal_for_class(item: dict[str, Any], class_name: str, spec_name: str, level: int, requested_slot: str) -> bool:
+    item_slot = normalized_slot(item.get("slot"))
+    requested_slot = normalized_slot(requested_slot)
+    if requested_slot == "Off Hand" and item_slot == "One Hand":
+        return class_can_dual_wield(class_name, spec_name, level)
+    if requested_slot == "Off Hand" and item.get("armor_type") == "Shield":
+        return "Shield" in class_armor_allowed(class_name, level)
+    return True
+
+
+def item_weapon_style(item: dict[str, Any]) -> str:
+    item_slot = normalized_slot(item.get("slot"))
+    weapon_type = normalized_slot(item.get("weapon_type"))
+    if item_slot == "Off Hand" and not item.get("weapon_subtype"):
+        return ""
+    if weapon_type in {"One Hand", "Two Hand", "Ranged"}:
+        return weapon_type
+    if weapon_type == "Main Hand":
+        return "One Hand"
+    if item_slot in {"One Hand", "Main Hand"} and item.get("weapon_subtype"):
+        return "One Hand"
+    if item_slot == "Off Hand" and item.get("weapon_subtype") and item.get("armor_type") != "Shield":
+        return "One Hand"
+    if item_slot in {"Two Hand", "Ranged"}:
+        return item_slot
+    return ""
+
+
+def weapon_style_allowed(
+    item: dict[str, Any],
+    class_name: str,
+    spec_name: str,
+    role: str,
+    level: int,
+    requested_slot: str,
+    context: str,
+) -> bool:
+    requested_slot = normalized_slot(requested_slot)
+    if requested_slot not in WEAPON_RECOMMENDATION_SLOTS:
+        return True
+
+    item_slot = normalized_slot(item.get("slot"))
+    style = item_weapon_style(item)
+    is_weapon = bool(style)
+    is_shield = item.get("armor_type") == "Shield"
+    can_dual_wield = class_can_dual_wield(class_name, spec_name, level)
+    policy = SPEC_WEAPON_STYLE_POLICIES.get((class_name, spec_name))
+
+    if requested_slot == "Ranged":
+        return style == "Ranged" or item_slot == "Ranged"
+    if style == "Ranged":
+        return False
+
+    if requested_slot == "Off Hand" and is_weapon:
+        if style != "One Hand" or not can_dual_wield:
+            return False
+
+    if policy == "shield_tank":
+        if requested_slot == "Off Hand":
+            return is_shield
+        if requested_slot == "Two Hand":
+            return False
+        if requested_slot in {"Main Hand", "One Hand", "Dual Wield"}:
+            return is_weapon and style == "One Hand"
+
+    if policy == "feral":
+        if requested_slot == "Off Hand" and is_weapon:
+            return False
+        return True
+
+    if context == "best_overall" and role == "physical_dps":
+        if policy == "two_hand_best_overall":
+            if requested_slot == "Off Hand":
+                return False
+            if requested_slot in {"Main Hand", "One Hand", "Dual Wield"} and style == "One Hand":
+                return False
+        elif policy == "dual_wield_after_access" and can_dual_wield:
+            if requested_slot == "Two Hand" or style == "Two Hand":
+                return False
+            if requested_slot == "Off Hand":
+                return is_weapon and style == "One Hand"
+            if requested_slot in {"Main Hand", "One Hand", "Dual Wield"} and is_weapon:
+                return style == "One Hand"
+
+    return True
+
+
+def recommendation_slots_for_item(item: dict[str, Any]) -> list[str]:
+    slot = normalized_slot(item.get("slot"))
+    if not slot:
+        return []
+    if slot == "One Hand":
+        return ["Main Hand", "Off Hand"]
+    return [slot]
+
+
 def leveling_source_allowed(item: dict[str, Any], level: int) -> bool:
     if level < 70 and source_bucket(item) == "raid_drop":
         return False
@@ -230,6 +387,25 @@ def merged_stats(item: dict[str, Any]) -> dict[str, float]:
     sockets = item.get("sockets")
     if isinstance(sockets, list) and sockets:
         stats["socket"] = float(len(sockets))
+    return stats
+
+
+def effective_stats(item: dict[str, Any], class_name: str, spec_name: str, role: str, requested_slot: str) -> dict[str, float]:
+    stats = merged_stats(item)
+    expertise_rating = stats.get("expertise_rating")
+    if isinstance(expertise_rating, (int, float)):
+        stats["expertise"] = stats.get("expertise", 0.0) + (float(expertise_rating) / EXPERTISE_RATING_PER_EXPERTISE)
+    ranged_attack_power = stats.get("ranged_attack_power")
+    if class_name == "Hunter" and normalized_slot(requested_slot) == "Ranged" and isinstance(ranged_attack_power, (int, float)):
+        stats["attack_power"] = stats.get("attack_power", 0.0) + float(ranged_attack_power)
+    if class_name == "Druid" and spec_name.lower().startswith("feral"):
+        stats.pop("dps", None)
+        for effect in item.get("effect_stats", []) or []:
+            if not isinstance(effect, dict) or effect.get("type") != "form_only":
+                continue
+            for key, value in (effect.get("stats") or {}).items():
+                if isinstance(value, (int, float)):
+                    stats[str(key)] = float(stats.get(str(key), 0.0)) + float(value)
     return stats
 
 
@@ -299,11 +475,18 @@ def candidate_score(
         return None
     if not class_can_use_item(item, class_name):
         return None
+    if not class_can_use_armor(item, class_name, level):
+        return None
+    if not slot_is_legal_for_class(item, class_name, spec_name, level, slot):
+        return None
     if not leveling_source_allowed(item, level):
         return None
 
     role, weights = profile_weights(scoring_profiles, class_name, spec_name, level, context)
-    stats = merged_stats(item)
+    if not weapon_style_allowed(item, class_name, spec_name, role, level, slot, context):
+        return None
+
+    stats = effective_stats(item, class_name, spec_name, role, slot)
     score = sum(stats.get(stat, 0.0) * weight for stat, weight in weights.items())
     racial_bonus, racial_tags = racial_score_bonus(item, race, role, weights, racial_modifiers)
     source_bonus, source_tags = context_source_bonus(item, context)
@@ -566,7 +749,7 @@ def build_recommendation_documents(
 ) -> dict[str, Any]:
     item_stats = item_stats_doc.get("item_stats", [])
     items = materialized_items(item_stats, item_variants_doc.get("item_variants", []))
-    slots = sorted({normalized_slot(item.get("slot")) for item in item_stats if normalized_slot(item.get("slot"))})
+    slots = sorted({slot for item in item_stats for slot in recommendation_slots_for_item(item)})
     items_by_slot = {
         slot: [item for item in items if slot_matches(item.get("slot"), slot)]
         for slot in slots
