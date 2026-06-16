@@ -1,12 +1,12 @@
 {
   "contexts": ["best_overall", "hit", "survival", "easy_source", "boe", "dungeon"],
   "runtime_contexts": ["best_overall"],
-  "level_bands": ["1-19", "20-39", "40-57", "58-70"],
+  "level_bands": ["1-19", "20-39", "40-57", "58-69"],
   "profiles": [
     {
       "class": "Paladin",
       "context": "best_overall",
-      "level_band": "58-70",
+      "level_band": "58-69",
       "role": "physical_dps",
       "spec": "Retribution",
       "weights": {

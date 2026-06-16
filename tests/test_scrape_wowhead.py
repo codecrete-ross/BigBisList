@@ -1663,6 +1663,8 @@ class WowheadScraperParserTests(unittest.TestCase):
             <table>
               <tr><td>18</td><td><a href="/tbc/item=6505/crescent-staff">Crescent Staff</a> / <a href="/tbc/item=2042/staff-of-westfall">Staff of Westfall</a></td><td>Dungeon / Quest</td></tr>
               <tr><td>59-60</td><td><a href="/tbc/item=31075/evokers-mark-of-the-redemption">Evoker's Mark of the Redemption</a></td><td>Quest in Shadowmoon Valley</td></tr>
+              <tr><td>68-70</td><td><a href="/tbc/item=31062/torn-heart-axe-of-battle">Torn-heart Axe of Battle</a></td><td>Quest in Shadowmoon Valley</td></tr>
+              <tr><td>70</td><td><a href="/tbc/item=30316/devastation">Devastation</a></td><td>Temporary raid weapon</td></tr>
             </table>
             </body></html>
             """,
@@ -1679,26 +1681,38 @@ class WowheadScraperParserTests(unittest.TestCase):
             "https://www.wowhead.com/tbc/item=31075/evokers-mark-of-the-redemption",
             '<html><head><title>Evoker Ring - Item - TBC Classic</title><meta name="description" content="This rare ring goes in the &quot;Finger&quot; slot."></head><body></body></html>',
         )
+        axe = parse_item_html(
+            "https://www.wowhead.com/tbc/item=31062/torn-heart-axe-of-battle",
+            '<html><head><title>Torn-heart Axe - Item - TBC Classic</title><meta name="description" content="This rare axe goes in the &quot;Two-Hand&quot; slot."></head><body></body></html>',
+        )
+        devastation = parse_item_html(
+            "https://www.wowhead.com/tbc/item=30316/devastation",
+            '<html><head><title>Devastation - Item - TBC Classic</title><meta name="description" content="This legendary axe goes in the &quot;Two-Hand&quot; slot."></head><body></body></html>',
+        )
         source = {"id": "synthetic-leveling-gear", "url": guide_url, "data_family": "leveling", "class": "Mage", "spec": "Arcane", "phases": "*"}
         original = scraper.manifest_sources_by_url
         scraper.manifest_sources_by_url = lambda: {guide_url: [source]}
         try:
             rows = scraper.import_leveling_gear_from_snapshots(
-                [guide_snapshot, crescent_staff, westfall_staff, ring],
+                [guide_snapshot, crescent_staff, westfall_staff, ring, axe, devastation],
                 fallback_to_canonical=False,
             )["leveling_gear"]
         finally:
             scraper.manifest_sources_by_url = original
 
         by_item = {row["item_id"]: row for row in rows}
-        self.assertEqual(set(by_item), {6505, 2042, 31075})
+        self.assertEqual(set(by_item), {6505, 2042, 31075, 31062})
         self.assertEqual(by_item[6505]["level_min"], 18)
-        self.assertEqual(by_item[6505]["level_max"], 70)
+        self.assertEqual(by_item[6505]["level_max"], 67)
         self.assertEqual(by_item[6505]["slot"], "Two Hand")
         self.assertEqual(by_item[2042]["source_note"], "Dungeon / Quest")
         self.assertEqual(by_item[31075]["level_min"], 59)
         self.assertEqual(by_item[31075]["level_max"], 60)
         self.assertEqual(by_item[31075]["slot"], "Ring")
+        self.assertEqual(by_item[31062]["level_min"], 68)
+        self.assertEqual(by_item[31062]["level_max"], 69)
+        self.assertEqual(by_item[31062]["level_label"], "Recommended from 68-69")
+        self.assertNotIn(30316, by_item)
 
     def test_consumables_import_uses_section_lists_without_tables(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-consumables"
@@ -2370,3 +2384,31 @@ class WowheadScraperParserTests(unittest.TestCase):
             ("profession", "self_craft", "Jewelcrafting"),
             {(requirement["type"], requirement["scope"], requirement.get("profession")) for requirement in bis_item.get("requirements", [])},
         )
+
+    def test_recommendation_audit_cli_suppresses_warning_details_by_default(self):
+        original = scraper.build_recommendation_audit
+        scraper.build_recommendation_audit = lambda: {
+            "ok": True,
+            "errors": [],
+            "warnings": ["first warning", "second warning"],
+            "summary": {"warnings": 2},
+        }
+        try:
+            default_stdout = io.StringIO()
+            with contextlib.redirect_stdout(default_stdout):
+                result = scraper.command_recommendation_audit(SimpleNamespace(verbose=False, max_warnings=1))
+            default_output = json.loads(default_stdout.getvalue())
+
+            verbose_stdout = io.StringIO()
+            with contextlib.redirect_stdout(verbose_stdout):
+                verbose_result = scraper.command_recommendation_audit(SimpleNamespace(verbose=True, max_warnings=0))
+            verbose_output = json.loads(verbose_stdout.getvalue())
+        finally:
+            scraper.build_recommendation_audit = original
+
+        self.assertEqual(result, 0)
+        self.assertEqual(verbose_result, 0)
+        self.assertEqual(default_output["warnings"], [])
+        self.assertEqual(default_output["warning_samples"], ["first warning"])
+        self.assertIn("warnings omitted", default_output["warning_detail"])
+        self.assertEqual(verbose_output["warnings"], ["first warning", "second warning"])

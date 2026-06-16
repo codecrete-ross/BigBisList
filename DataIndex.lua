@@ -239,6 +239,12 @@ local function lower(value)
     return string.lower(tostring(value or ""))
 end
 
+local function clampLevelingLevel(level)
+    local maxLevel = BigBiSList.maxLevelingLevel or 69
+    local numeric = tonumber(level) or maxLevel
+    return math.max(1, math.min(maxLevel, math.floor(numeric)))
+end
+
 local function trim(value)
     return tostring(value or ""):gsub("^%s+", ""):gsub("%s+$", "")
 end
@@ -1340,8 +1346,8 @@ local RACE_TOKEN_NAMES = {
 local function raceMatches(rowRace, selectedRace)
     if not rowRace or rowRace == "" or rowRace == "*" then
         return true
-    elseif not selectedRace or selectedRace == "" then
-        return true
+    elseif not selectedRace or selectedRace == "" or selectedRace == "*" then
+        return false
     end
     return rowRace == selectedRace
 end
@@ -2411,8 +2417,9 @@ function LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
 end
 
 function LEVELING_HELPERS.sortForLevel(a, b, selectedLevel)
-    local aActive = (a.level_max or 70) >= selectedLevel
-    local bActive = (b.level_max or 70) >= selectedLevel
+    local maxLevel = BigBiSList.maxLevelingLevel or 69
+    local aActive = (a.level_max or maxLevel) >= selectedLevel
+    local bActive = (b.level_max or maxLevel) >= selectedLevel
     if aActive ~= bActive then
         return aActive
     end
@@ -3718,7 +3725,7 @@ function BigBiSList:GetItemBestUseForSpec(itemId, className, specName, preferred
 end
 
 function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, level, allowedSlots, race)
-    local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    local selectedLevel = clampLevelingLevel(level)
     race = race or self:GetPlayerRaceName()
     local bestUse
 
@@ -3738,7 +3745,7 @@ function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, l
 end
 
 function BigBiSList:GetItemNextLevelingUseForSpec(itemId, className, specName, level, allowedSlots, race)
-    local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    local selectedLevel = clampLevelingLevel(level)
     race = race or self:GetPlayerRaceName()
     local matches = {}
 
@@ -3909,7 +3916,7 @@ end
 function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems, level)
     local rows = {}
     local equippedSlots = ownedItems and ownedItems.equippedSlots or {}
-    local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    local selectedLevel = clampLevelingLevel(level)
     local levelingMode = phaseKey == LEVELING_PHASE_KEY
 
     for _, slot in ipairs(EQUIPMENT_SLOTS) do
@@ -4036,8 +4043,7 @@ end
 
 function BigBiSList:GetLevelingRows(className, specName, level, filters)
     local index = self:GetDataIndex()
-    local selectedLevel = tonumber(level) or (filters and tonumber(filters.level)) or 70
-    selectedLevel = math.max(1, math.min(70, math.floor(selectedLevel)))
+    local selectedLevel = clampLevelingLevel(tonumber(level) or (filters and tonumber(filters.level)))
     local selectedRace = (filters and filters.race) or self:GetPlayerRaceName()
     local levelingRefs = index.levelingGearRefsByClassSpec[className]
         and index.levelingGearRefsByClassSpec[className][specName]
@@ -4875,7 +4881,7 @@ local function tooltipSpecEnabled(specFilters, className, specName)
 end
 
 function BigBiSList:GetLevelingTooltipMatches(itemId, selectedClass, selectedSpec, level, selectedSpecFirst, specFilters, priorityContext)
-    local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    local selectedLevel = clampLevelingLevel(level)
     local matches = {}
     local seenMatches = {}
     local playerClass = type(priorityContext) == "table" and priorityContext.playerClass or nil

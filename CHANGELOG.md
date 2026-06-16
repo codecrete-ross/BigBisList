@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.11.0 - 2026-06-17
+
+### Added
+
+- Computed leveling recommendations backed by the audited item stat corpus,
+  with race-aware scoring and fallback item names and quality for rows outside
+  the canonical item list.
+
+### Changed
+
+- Leveling recommendations now suppress invalid projectile and relic rows while
+  preserving valid ammo for ranged-weapon classes and hunter quiver support.
+- Leveling recommendations now cap at level 69 so level-70 raid and endgame
+  items stay out of the leveling view.
+- `/bbl status` now reports both guide-backed leveling rows and computed
+  leveling recommendations.
+- Recommendation audit output is concise by default, with full warning detail
+  available through `--verbose`.
+
+### Fixed
+
+- Recommendation-only detail titles now use fallback item quality.
+- Unknown race filtering now matches generic leveling recommendations without
+  also matching race-specific overrides.
+
 ## 0.10.0 - 2026-06-14
 
 ### Added

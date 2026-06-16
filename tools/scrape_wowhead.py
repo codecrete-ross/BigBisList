@@ -39,6 +39,7 @@ from tools.validate_data import validate
 
 PARSER_VERSION = "wowhead-scraper-0.9.0"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 BigBiSListScraper/0.4"
+MAX_LEVELING_LEVEL = 69
 
 CURRENCY_NAMES = {
     1900: "Arena Points",
@@ -463,14 +464,21 @@ def level_bounds_from_range(value: str | None) -> tuple[int | None, int | None, 
         return None, None, False
     match = re.fullmatch(r"\s*(\d{1,2})\s*[-–]\s*(\d{1,2})\s*", str(value))
     if match:
-        level_min = max(1, min(70, int(match.group(1))))
-        level_max = max(1, min(70, int(match.group(2))))
+        level_min = int(match.group(1))
+        level_max = int(match.group(2))
         if level_max < level_min:
             level_min, level_max = level_max, level_min
+        level_min = max(1, level_min)
+        level_max = min(MAX_LEVELING_LEVEL, level_max)
+        if level_max < level_min:
+            return None, None, True
         return level_min, level_max, True
     match = re.fullmatch(r"\s*(\d{1,2})\s*", str(value))
     if match:
-        level = max(1, min(70, int(match.group(1))))
+        level = int(match.group(1))
+        if level > MAX_LEVELING_LEVEL:
+            return None, None, False
+        level = max(1, level)
         return level, None, False
     return None, None, False
 
@@ -3970,9 +3978,9 @@ def infer_leveling_gear_ranges(rows: list[dict[str, Any]]) -> list[dict[str, Any
             level_min = int(row["level_min"])
             if not row.pop("_explicit_level_max", False):
                 next_start = next((start for start in starts if start > level_min), None)
-                row["level_max"] = max(level_min, min(70, (next_start - 1) if next_start else 70))
+                row["level_max"] = max(level_min, min(MAX_LEVELING_LEVEL, (next_start - 1) if next_start else MAX_LEVELING_LEVEL))
             else:
-                row["level_max"] = max(level_min, min(70, int(row.get("level_max") or level_min)))
+                row["level_max"] = max(level_min, min(MAX_LEVELING_LEVEL, int(row.get("level_max") or level_min)))
             row["level_label"] = leveling_level_label(level_min, int(row["level_max"]))
 
     return rows
@@ -4963,7 +4971,7 @@ def import_item_variants_from_snapshots(snapshots: list[dict[str, Any]]) -> dict
 
 
 def item_corpus_report(item_stats_doc: dict[str, Any]) -> dict[str, Any]:
-    by_level_band = {"no_required_level": 0, "1-19": 0, "20-39": 0, "40-57": 0, "58-70": 0, "above_70": 0}
+    by_level_band = {"no_required_level": 0, "1-19": 0, "20-39": 0, "40-57": 0, "58-69": 0, "70": 0, "above_70": 0}
     by_slot: dict[str, int] = {}
     by_quality: dict[str, int] = {}
     by_source_type: dict[str, int] = {}
@@ -4980,8 +4988,10 @@ def item_corpus_report(item_stats_doc: dict[str, Any]) -> dict[str, Any]:
             by_level_band["20-39"] += 1
         elif isinstance(required_level, int) and required_level <= 57:
             by_level_band["40-57"] += 1
-        elif isinstance(required_level, int) and required_level <= 70:
-            by_level_band["58-70"] += 1
+        elif isinstance(required_level, int) and required_level <= MAX_LEVELING_LEVEL:
+            by_level_band["58-69"] += 1
+        elif required_level == 70:
+            by_level_band["70"] += 1
         else:
             by_level_band["above_70"] += 1
 
@@ -5148,7 +5158,16 @@ def command_suffix_audit(args: argparse.Namespace) -> int:
 
 def command_recommendation_audit(args: argparse.Namespace) -> int:
     audit = build_recommendation_audit()
-    print(json.dumps(audit, indent=2, sort_keys=True))
+    output = audit
+    warnings = audit.get("warnings", [])
+    if warnings and not getattr(args, "verbose", False):
+        output = dict(audit)
+        output["warnings"] = []
+        output["warning_detail"] = f"{len(warnings)} warnings omitted; pass --verbose to include them."
+        max_warnings = max(0, int(getattr(args, "max_warnings", 0) or 0))
+        if max_warnings:
+            output["warning_samples"] = warnings[:max_warnings]
+    print(json.dumps(output, indent=2, sort_keys=True))
     return 0 if audit["ok"] else 1
 
 
@@ -6161,6 +6180,8 @@ def build_parser() -> argparse.ArgumentParser:
     suffix_audit_parser.set_defaults(func=command_suffix_audit)
 
     recommendation_audit_parser = subparsers.add_parser("recommendation-audit", help="Audit generated leveling recommendations against guide rows and source evidence.")
+    recommendation_audit_parser.add_argument("--verbose", action="store_true", help="Include every warning in the JSON output.")
+    recommendation_audit_parser.add_argument("--max-warnings", type=int, default=0, help="Show this many warning samples without --verbose.")
     recommendation_audit_parser.set_defaults(func=command_recommendation_audit)
 
     coverage_parser = subparsers.add_parser("coverage", help="Report offline manifest coverage without fetching.")

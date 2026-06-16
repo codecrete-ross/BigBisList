@@ -114,6 +114,30 @@ class LevelingRecommendationTests(unittest.TestCase):
             "wowhead_url": f"https://www.wowhead.com/tbc/item={item_id}/fixture-shield",
         }
 
+    def fixture_ammo(self, item_id=990005, slot="Ammo"):
+        return {
+            "id": item_id,
+            "name": f"Fixture {slot}",
+            "required_level": 1,
+            "slot": slot,
+            "stats": {"agility": 1},
+            "source_bucket": "vendor",
+            "source_summary": "Vendor: Fixture",
+            "wowhead_url": f"https://www.wowhead.com/tbc/item={item_id}/fixture-ammo",
+        }
+
+    def fixture_relic(self, name, item_id=990006):
+        return {
+            "id": item_id,
+            "name": name,
+            "required_level": 1,
+            "slot": "Relic",
+            "stats": {"stamina": 1},
+            "source_bucket": "quest",
+            "source_summary": "Quest: Fixture",
+            "wowhead_url": f"https://www.wowhead.com/tbc/item={item_id}/fixture-relic",
+        }
+
     def test_human_ret_paladin_level_64_considers_and_tags_shaarde(self):
         item_stats, item_variants, racials, profiles = self.docs()
 
@@ -153,6 +177,41 @@ class LevelingRecommendationTests(unittest.TestCase):
         self.assertTrue(rows)
         self.assertTrue(any(row["level_min"] == 64 and "human_sword_bonus" in row["reason_tags"] for row in rows))
 
+    def test_generated_documents_do_not_emit_level_70_recommendations(self):
+        item_stats, item_variants, racials, profiles = self.docs()
+        profiles = deepcopy(profiles)
+        profiles["runtime_contexts"] = ["best_overall"]
+        profiles["spec_roles"] = {"Paladin/Retribution": "physical_dps"}
+        item_stats = deepcopy(item_stats)
+        item_stats["item_stats"].append(
+            {
+                "id": 30316,
+                "name": "Devastation",
+                "required_level": 70,
+                "item_level": 175,
+                "quality": "legendary",
+                "binding": "bind_on_pickup",
+                "boe": False,
+                "slot": "Two Hand",
+                "weapon_type": "Two Hand",
+                "weapon_subtype": "Axe",
+                "dps": 500,
+                "stats": {"strength": 500},
+                "source_bucket": "raid_drop",
+                "source_summary": "Drop: Devastation (Tempest Keep)",
+                "wowhead_url": "https://www.wowhead.com/tbc/item=30316/devastation",
+            }
+        )
+
+        documents = build_recommendation_documents(item_stats, item_variants, racials, profiles)
+        rows = documents["leveling_recommendations"]
+        audit_rows = documents["recommendation_audit"]["rows"]
+
+        self.assertTrue(rows)
+        self.assertTrue(all(row["level_max"] <= 69 for row in rows))
+        self.assertNotIn(30316, {row["item_id"] for row in rows})
+        self.assertNotIn(30316, {row["item_id"] for row in audit_rows})
+
     def test_generated_documents_keep_racial_tag_when_selection_matches_baseline(self):
         item_stats, _item_variants, racials, profiles = self.docs()
         profiles = deepcopy(profiles)
@@ -180,7 +239,7 @@ class LevelingRecommendationTests(unittest.TestCase):
             "race": "Human",
             "level_min": 64,
             "level_max": 64,
-            "level_band": "58-70",
+            "level_band": "58-69",
             "slot": "Two Hand",
             "item_id": 999101,
             "variant_id": None,
@@ -383,6 +442,41 @@ class LevelingRecommendationTests(unittest.TestCase):
         self.assertIsNotNone(candidate_score(shield, "Shaman", "Restoration", "Orc", 64, "Off Hand", "best_overall", profiles, racials))
         self.assertIsNone(candidate_score(dagger, "Priest", "Shadow", "Human", 64, "Off Hand", "best_overall", profiles, racials))
 
+    def test_ammo_recommendations_require_ranged_ammo_class_access(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        ammo = self.fixture_ammo()
+
+        self.assertIsNotNone(candidate_score(ammo, "Hunter", "Beast mastery", "Dwarf", 20, "Ammo", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(ammo, "Rogue", "Combat", "Human", 20, "Ammo", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(ammo, "Warrior", "Arms", "Human", 20, "Ammo", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(ammo, "Mage", "Fire", "Gnome", 20, "Ammo", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(ammo, "Paladin", "Retribution", "Human", 20, "Ammo", "best_overall", profiles, racials))
+
+    def test_quiver_recommendations_are_hunter_only(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        quiver = self.fixture_ammo(slot="Quiver")
+
+        self.assertIsNotNone(candidate_score(quiver, "Hunter", "Marksmanship", "Dwarf", 20, "Quiver", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(quiver, "Rogue", "Combat", "Human", 20, "Quiver", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(quiver, "Warrior", "Arms", "Human", 20, "Quiver", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(quiver, "Mage", "Fire", "Gnome", 20, "Quiver", "best_overall", profiles, racials))
+
+    def test_relic_recommendations_require_class_relic_type(self):
+        _item_stats, _item_variants, racials, profiles = self.docs()
+        idol = self.fixture_relic("Fixture Idol of the Wild", 990006)
+        libram = self.fixture_relic("Fixture Libram of Justice", 990007)
+        tome = self.fixture_relic("Fixture Tome of the Lightbringer", 990008)
+        totem = self.fixture_relic("Fixture Totem of Storms", 990009)
+        ambiguous = self.fixture_relic("Fixture Relic Hunter Belt", 990010)
+
+        self.assertIsNotNone(candidate_score(idol, "Druid", "Feral dps", "*", 64, "Relic", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(idol, "Paladin", "Retribution", "Human", 64, "Relic", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(libram, "Paladin", "Retribution", "Human", 64, "Relic", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(tome, "Paladin", "Protection", "Human", 64, "Relic", "best_overall", profiles, racials))
+        self.assertIsNotNone(candidate_score(totem, "Shaman", "Enhancement", "Orc", 64, "Relic", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(totem, "Druid", "Balance", "*", 64, "Relic", "best_overall", profiles, racials))
+        self.assertIsNone(candidate_score(ambiguous, "Druid", "Balance", "*", 64, "Relic", "best_overall", profiles, racials))
+
     def test_generated_recommendation_documents_do_not_emit_one_hand_slot(self):
         _item_stats, item_variants, racials, profiles = self.docs()
         profiles = deepcopy(profiles)
@@ -401,6 +495,35 @@ class LevelingRecommendationTests(unittest.TestCase):
         self.assertNotIn("One Hand", {row["slot"] for row in rows})
         self.assertNotIn(21268, {row["item_id"] for row in rows if row["class"] == "Paladin" and row["spec"] == "Retribution"})
         self.assertNotIn(21268, {row["item_id"] for row in rows if row["class"] == "Druid" and row["spec"] == "Feral dps" and row["slot"] == "Off Hand"})
+
+    def test_generated_documents_keep_ammo_for_ranged_classes_only(self):
+        _item_stats, item_variants, racials, profiles = self.docs()
+        profiles = deepcopy(profiles)
+        profiles["runtime_contexts"] = ["best_overall"]
+        profiles["spec_roles"] = {
+            "Hunter/Beast mastery": "physical_dps",
+            "Rogue/Combat": "physical_dps",
+            "Warrior/Arms": "physical_dps",
+            "Mage/Fire": "caster_dps",
+        }
+        item_stats = {
+            "item_stats": [
+                self.fixture_ammo(990011),
+                {
+                    **self.fixture_two_hand_weapon(990012, subtype="Staff", stats={"intellect": 20, "spell_power": 20}),
+                    "required_level": 1,
+                },
+            ]
+        }
+
+        documents = build_recommendation_documents(item_stats, item_variants, racials, profiles)
+        ammo_classes = {
+            row["class"]
+            for row in documents["leveling_recommendations"]
+            if row["slot"] == "Ammo"
+        }
+
+        self.assertEqual(ammo_classes, {"Hunter", "Rogue", "Warrior"})
 
     def test_form_only_attack_power_scores_only_for_feral_druids(self):
         _item_stats, _item_variants, racials, profiles = self.docs()
@@ -561,6 +684,47 @@ class LevelingRecommendationTests(unittest.TestCase):
         self.assertEqual(rows[0]["item_id"], 999101)
         self.assertNotIn(999104, {row["item_id"] for row in rows})
         self.assertNotIn(999104, {row["item_id"] for row in audit})
+
+    def test_level_70_requests_are_clamped_and_do_not_emit_devastation(self):
+        item_stats, item_variants, racials, profiles = self.docs()
+        item_stats = deepcopy(item_stats)
+        item_stats["item_stats"].append(
+            {
+                "id": 30316,
+                "name": "Devastation",
+                "required_level": 70,
+                "item_level": 175,
+                "quality": "legendary",
+                "binding": "bind_on_pickup",
+                "boe": False,
+                "slot": "Two Hand",
+                "weapon_type": "Two Hand",
+                "weapon_subtype": "Axe",
+                "dps": 500,
+                "stats": {"strength": 500},
+                "source_bucket": "raid_drop",
+                "source_summary": "Drop: Devastation (Tempest Keep)",
+                "wowhead_url": "https://www.wowhead.com/tbc/item=30316/devastation",
+            }
+        )
+
+        rows, audit = recommendation_rows_for(
+            item_stats,
+            item_variants,
+            racials,
+            profiles,
+            class_name="Paladin",
+            spec_name="Retribution",
+            race="Human",
+            level=70,
+            slot="Two Hand",
+            context="best_overall",
+        )
+
+        self.assertTrue(rows)
+        self.assertLessEqual(max(row["level_max"] for row in rows), 69)
+        self.assertNotIn(30316, {row["item_id"] for row in rows})
+        self.assertNotIn(30316, {row["item_id"] for row in audit})
 
     def test_random_suffix_variants_are_scored_as_distinct_candidates(self):
         item_stats, _item_variants, racials, profiles = self.docs()

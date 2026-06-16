@@ -26,8 +26,12 @@ class GeneratorTests(unittest.TestCase):
         self.assertIn('["uses"] = {', rendered)
         self.assertIn('["tooltip_aliases"] = {', rendered)
         self.assertNotIn('["bis_lists"] = {', rendered)
+        self.assertNotIn('["item_stats"] = {', rendered)
+        self.assertNotIn('["item_variants"] = {', rendered)
         self.assertNotIn('["leveling"] = {', rendered)
         self.assertNotIn('["recommendation_audit"] = {', rendered)
+        self.assertNotIn('["racial_modifiers"] = {', rendered)
+        self.assertNotIn('["scoring_profiles"] = {', rendered)
         self.assertNotIn('["overrides"] = {', rendered)
         self.assertNotIn('["credits"] = {', rendered)
         self.assertNotIn("BISTBC", rendered)
@@ -87,10 +91,8 @@ class GeneratorTests(unittest.TestCase):
 
         self.assertEqual(fallbacks[31701][positions["name"]], "Saboteur's Axe")
         self.assertEqual(fallbacks[31701][positions["quality"]], "uncommon")
-        self.assertEqual(fallbacks[30394][positions["name"]], "Sunfury Blade")
-        self.assertEqual(fallbacks[30394][positions["quality"]], "uncommon")
-        self.assertEqual(fallbacks[30789][positions["name"]], "Illidari-Bane Claymore")
-        self.assertEqual(fallbacks[30789][positions["quality"]], "rare")
+        self.assertEqual(fallbacks[29914][positions["name"]], "Hellfire Skiver")
+        self.assertEqual(fallbacks[29914][positions["quality"]], "uncommon")
         self.assertNotIn(25762, fallbacks)
 
     def test_data_lua_is_current_after_generation(self):

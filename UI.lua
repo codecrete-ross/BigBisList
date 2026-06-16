@@ -7,6 +7,7 @@ local UI = {}
 BigBiSList.UI = UI
 
 local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"
+local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel or 69
 local TAB_NAMES = { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist", "Settings" }
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -1845,7 +1846,7 @@ function UI:GetAvailabilityFilters()
     local char = BigBiSList:GetCharacterDB()
     local accessState = self.currentAccess or self:BuildAccessState()
     filters.faction = accessState and accessState.playerSide or "all"
-    filters.level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
+    filters.level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
     filters.ownedItems = self.currentOwned or self:BuildOwnedItems()
     filters.ignoredItems = char.ignoredItems
     filters.hideIgnored = true
@@ -1995,7 +1996,7 @@ function UI:BuildFilterPayload()
         boe = filters.boe,
         faction = self.currentAccess and self.currentAccess.playerSide or "all",
         longevity = filters.longevity,
-        level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70,
+        level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL,
         slots = filters.slots,
         ownedItems = self.currentOwned,
         ignoredItems = char.ignoredItems,
@@ -3396,7 +3397,7 @@ function UI:RenderLevelingTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
-    local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or filters.level or 70
+    local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or filters.level or MAX_LEVELING_LEVEL
 
     local groups = BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)
     if #groups == 0 then
@@ -3670,7 +3671,7 @@ function UI:RenderWishlistTab()
     local selection = self:GetSelection()
     local plannerByItem = {}
     if isLevelingPhase(selection.phase) then
-        local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
+        local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
         for _, group in ipairs(BigBiSList:GetLevelingRows(selection.class, selection.spec, level, {})) do
             for _, levelingRow in ipairs(group.items or {}) do
                 local current = plannerByItem[levelingRow.item_id]
@@ -3697,7 +3698,7 @@ function UI:RenderWishlistTab()
         local plannerContext = plannerByItem[tonumber(itemId)]
         local levelingContext = plannerContext
         if isLevelingPhase(selection.phase) and not levelingContext and BigBiSList.GetItemNextLevelingUseForSpec then
-            local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
+            local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
             levelingContext = BigBiSList:GetItemNextLevelingUseForSpec(tonumber(itemId), selection.class, selection.spec, level)
         end
         local context = levelingContext or plannerContext
@@ -4131,7 +4132,8 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local item = detailItemId and index.itemsById[detailItemId] or nil
     local plannerContext = detailItemId and (detailData and detailData.priority and detailData or self:FindPlannerContext(detailItemId, detailData)) or nil
 
-    local r, g, b = itemQualityColor(item)
+    local titleQualityItem = item or (detailData and detailData.quality and { quality = detailData.quality }) or nil
+    local r, g, b = itemQualityColor(titleQualityItem)
     if entityType == "spell" then
         r, g, b = 1, 0.82, 0.28
     end
@@ -4391,7 +4393,7 @@ function UI:RefreshControls()
     safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - " .. BigBiSList:GetPhaseDisplayName(selection.phase))
     safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / " .. BigBiSList:GetPhaseDisplayName(selection.phase))
     if levelingMode then
-        local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
+        local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
         safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - Leveling " .. tostring(level))
         safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / Leveling level " .. tostring(level))
         if self.levelControlContainer then
@@ -4566,18 +4568,18 @@ function UI:CreatePhaseBar(frame)
     levelLabel:SetTextColor(0.68, 0.68, 0.72, 1)
 
     local function currentLevel()
-        return BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or 70
+        return BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
     end
 
     local function setClampedLevel(level)
-        self:SetLevelingLevel(clamp(math.floor((tonumber(level) or currentLevel()) + 0.5), 1, 70))
+        self:SetLevelingLevel(clamp(math.floor((tonumber(level) or currentLevel()) + 0.5), 1, MAX_LEVELING_LEVEL))
     end
 
     local function commitLevelInput(editBox)
         local value = tonumber(editBox:GetText())
         local selectedLevel = currentLevel()
         if value then
-            local level = clamp(math.floor(value + 0.5), 1, 70)
+            local level = clamp(math.floor(value + 0.5), 1, MAX_LEVELING_LEVEL)
             if level ~= selectedLevel then
                 self:SetLevelingLevel(level)
             else

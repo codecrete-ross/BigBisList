@@ -40,6 +40,7 @@ function BigBiSList:GetDataSummary()
     local items = data.items or {}
     local listCount = data.meta and data.meta.slot_list_count or 0
     local levelingGearCount = data.meta and data.meta.leveling_gear_count or #(data.leveling_gear or {})
+    local levelingRecommendationCount = data.meta and data.meta.leveling_recommendation_count or #(data.leveling_recommendations or {})
 
     if listCount == 0 and data.bis_lists then
         for _, classData in ipairs(data.bis_lists) do
@@ -51,7 +52,7 @@ function BigBiSList:GetDataSummary()
         end
     end
 
-    return string.format("%d classes, %d phases, %d items, %d slot lists, %d leveling gear recommendations", #classes, #phases, #items, listCount, levelingGearCount)
+    return string.format("%d classes, %d phases, %d items, %d slot lists, %d guide leveling rows, %d computed leveling recommendations", #classes, #phases, #items, listCount, levelingGearCount, levelingRecommendationCount)
 end
 
 function BigBiSList:ShowStatus()
@@ -89,7 +90,7 @@ function BigBiSList:RunTimingSmokeTest(selection)
         return self:GetDataIndex()
     end)
     if selection.phase == self.levelingPhaseKey then
-        filters.level = self.GetSelectedLevelingLevel and self:GetSelectedLevelingLevel() or 70
+        filters.level = self.GetSelectedLevelingLevel and self:GetSelectedLevelingLevel() or (self.maxLevelingLevel or 69)
         timeSmokeStep("leveling rows", function()
             return self:GetLevelingRows(selection.class, selection.spec, filters.level, filters)
         end)

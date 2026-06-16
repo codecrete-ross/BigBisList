@@ -58,7 +58,9 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_saved_variable_defaults_cover_ui_state(self):
         config = self.read_lua("Config.lua")
         for token in [
-            "local DEFAULTS_VERSION = 14",
+            "BigBiSList.maxLevelingLevel = 69",
+            "local DEFAULTS_VERSION = 15",
+            "local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel",
             "window = {",
             "width = 1160",
             "minimap = {",
@@ -74,7 +76,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'phase = "PR"',
             'tab = "Upgrades"',
             "leveling = {",
-            "selectedLevel = 70",
+            "selectedLevel = MAX_LEVELING_LEVEL",
             "lastDetectedLevel = 0",
             "manualLevel = false",
             "filters = {",
@@ -96,6 +98,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "normalizeTabName",
             "migrateMinimapSettings",
             "migrateFacetedFilters",
+            "migrateLevelingLevel",
             "ensureTooltipSpecFilters",
             "EnsureTooltipSpecFilters",
             "GetTooltipSpecFilterKey",
@@ -215,6 +218,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "char.leveling.manualLevel ~= true",
             "function BigBiSList:GetSelectedLevelingLevel()",
             "function BigBiSList:SetSelectedLevelingLevel(level, manual)",
+            "return MAX_LEVELING_LEVEL",
+            "migrateLevelingLevel(BigBiSListCharDB)",
             "BigBiSListCharDB.leveling.manualLevel = true",
         ]:
             self.assertIn(token, config)
@@ -225,7 +230,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "widgets:CreateTextButton(levelControl, \"<\"",
             "widgets:CreateTextButton(levelControl, \">\"",
             "local function setClampedLevel(level)",
-            "clamp(math.floor((tonumber(level) or currentLevel()) + 0.5), 1, 70)",
+            "local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel or 69",
+            "clamp(math.floor((tonumber(level) or currentLevel()) + 0.5), 1, MAX_LEVELING_LEVEL)",
             "levelInput:SetNumeric(true)",
             "commitLevelInput(editBox)",
             "levelInput:SetScript(\"OnEnterPressed\"",
@@ -278,8 +284,10 @@ class AddonUIStaticTests(unittest.TestCase):
 
         for token in [
             'local LEVELING_PHASE_KEY = "LEVELING"',
+            "local maxLevel = BigBiSList.maxLevelingLevel or 69",
             "BigBiSList.levelingPhaseKey = LEVELING_PHASE_KEY",
             "function BigBiSList:GetLevelingRows",
+            "local function clampLevelingLevel(level)",
             "index.levelingGearRefsByClassSpec",
             "index.levelingGearRefsByItemId",
             "return levelMin <= selectedLevel and selectedLevel <= levelMax",
@@ -314,11 +322,12 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(token, body)
 
-    def test_status_summary_reports_leveling_gear_count(self):
+    def test_status_summary_reports_leveling_recommendation_counts(self):
         core = self.read_lua("Core.lua")
         for token in [
             "local levelingGearCount = data.meta and data.meta.leveling_gear_count or #(data.leveling_gear or {})",
-            '"%d classes, %d phases, %d items, %d slot lists, %d leveling gear recommendations"',
+            "local levelingRecommendationCount = data.meta and data.meta.leveling_recommendation_count or #(data.leveling_recommendations or {})",
+            '"%d classes, %d phases, %d items, %d slot lists, %d guide leveling rows, %d computed leveling recommendations"',
         ]:
             self.assertIn(token, core)
 
@@ -605,6 +614,8 @@ class AddonUIStaticTests(unittest.TestCase):
 
         self.assertIn("data.quality or (item and item.quality)", ui)
         self.assertIn("rowData.quality or (item and item.quality)", ui)
+        self.assertIn("local titleQualityItem = item or (detailData and detailData.quality and { quality = detailData.quality }) or nil", ui)
+        self.assertIn("local r, g, b = itemQualityColor(titleQualityItem)", ui)
 
     def test_filter_availability_uses_one_snapshot(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -939,6 +950,14 @@ class AddonUIStaticTests(unittest.TestCase):
 
         self.assertNotIn("tostring(row.level_min) .. \":\" .. tostring(row.level_max)", leveling_body)
         self.assertNotIn("tostring(row.source_note or \"\")", leveling_body)
+
+    def test_unknown_race_matches_only_generic_leveling_recommendations(self):
+        data_index = self.read_lua("DataIndex.lua")
+        race_body = data_index.split("local function raceMatches", 1)[1].split("local function levelingRecommendationGroupKey", 1)[0]
+
+        self.assertIn('rowRace == "*" then', race_body)
+        self.assertIn('elseif not selectedRace or selectedRace == "" or selectedRace == "*" then', race_body)
+        self.assertIn("return false", race_body)
 
     def test_tooltip_settings_drive_rendering(self):
         tooltip = self.read_lua("Tooltip.lua")

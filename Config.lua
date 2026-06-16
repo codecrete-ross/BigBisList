@@ -3,6 +3,7 @@ local addonName = ...
 BigBiSList = BigBiSList or {}
 BigBiSList.addonName = addonName or "BigBiSList"
 BigBiSList.displayName = "Big BiS List"
+BigBiSList.maxLevelingLevel = 69
 
 local function addonMetadata(field)
     if C_AddOns and C_AddOns.GetAddOnMetadata then
@@ -16,13 +17,14 @@ end
 
 local version = addonMetadata("Version")
 if version == nil or version == "" or version == "@project-version@" then
-    version = "0.10.0"
+    version = "0.11.0"
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 14
+local DEFAULTS_VERSION = 15
 local DEFAULT_SELECTED_CLASS = "Druid"
 local DEFAULT_SELECTED_SPEC = "Feral dps"
+local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel
 
 local PLAYER_CLASS_NAMES = {
     DRUID = DEFAULT_SELECTED_CLASS,
@@ -91,7 +93,7 @@ BigBiSList.defaults = {
             tab = "Upgrades",
         },
         leveling = {
-            selectedLevel = 70,
+            selectedLevel = MAX_LEVELING_LEVEL,
             lastDetectedLevel = 0,
             manualLevel = false,
         },
@@ -327,6 +329,21 @@ local function migrateFacetedFilters(char, previousVersion)
     migrateScalarFacetFilter(filters, "rankGroup", "rankGroups")
 end
 
+local clampLevel
+
+local function migrateLevelingLevel(char)
+    if type(char.leveling) ~= "table" then
+        return
+    end
+
+    if char.leveling.selectedLevel ~= nil then
+        char.leveling.selectedLevel = clampLevel(char.leveling.selectedLevel) or MAX_LEVELING_LEVEL
+    end
+    if char.leveling.lastDetectedLevel ~= nil then
+        char.leveling.lastDetectedLevel = clampLevel(char.leveling.lastDetectedLevel) or 0
+    end
+end
+
 local function playerClassFromToken(classToken)
     if type(classToken) ~= "string" then
         return nil
@@ -455,7 +472,7 @@ function BigBiSList:GetDetectedPlayerSelection()
     }
 end
 
-local function clampLevel(value)
+function clampLevel(value)
     local level = tonumber(value)
     if not level then
         return nil
@@ -463,8 +480,8 @@ local function clampLevel(value)
     level = math.floor(level)
     if level < 1 then
         return 1
-    elseif level > 70 then
-        return 70
+    elseif level > MAX_LEVELING_LEVEL then
+        return MAX_LEVELING_LEVEL
     end
     return level
 end
@@ -486,7 +503,7 @@ function BigBiSList:ApplyDetectedPlayerLevel()
     char.leveling = char.leveling or {}
     local detectedLevel = self:GetDetectedPlayerLevel()
     if not detectedLevel then
-        detectedLevel = clampLevel(char.leveling.selectedLevel) or 70
+        detectedLevel = clampLevel(char.leveling.selectedLevel) or MAX_LEVELING_LEVEL
     end
 
     local selectedLevel = clampLevel(char.leveling.selectedLevel)
@@ -510,13 +527,13 @@ end
 function BigBiSList:GetSelectedLevelingLevel()
     self:EnsureDatabase()
     self:ApplyDetectedPlayerLevel()
-    return clampLevel(BigBiSListCharDB.leveling and BigBiSListCharDB.leveling.selectedLevel) or 70
+    return clampLevel(BigBiSListCharDB.leveling and BigBiSListCharDB.leveling.selectedLevel) or MAX_LEVELING_LEVEL
 end
 
 function BigBiSList:SetSelectedLevelingLevel(level, manual)
     self:EnsureDatabase()
     BigBiSListCharDB.leveling = BigBiSListCharDB.leveling or {}
-    BigBiSListCharDB.leveling.selectedLevel = clampLevel(level) or 70
+    BigBiSListCharDB.leveling.selectedLevel = clampLevel(level) or MAX_LEVELING_LEVEL
     if manual then
         BigBiSListCharDB.leveling.manualLevel = true
     end
@@ -696,6 +713,7 @@ function BigBiSList:EnsureDatabase()
     migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
     migrateFacetedFilters(BigBiSListCharDB, charPreviousVersion)
+    migrateLevelingLevel(BigBiSListCharDB)
     BigBiSListCharDB.manualClassSpecSelection = nil
     ensureTooltipSpecFilters(BigBiSListDB)
 

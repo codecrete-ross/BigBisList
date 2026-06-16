@@ -207,5 +207,12 @@ class CanonicalDataTests(unittest.TestCase):
         }
         row_specs = {(row["class"], row["spec"]) for row in rows}
         self.assertEqual(row_specs, class_specs)
-        self.assertTrue(all(1 <= row["level_min"] <= row["level_max"] <= 70 for row in rows))
+        self.assertTrue(all(1 <= row["level_min"] <= row["level_max"] <= 69 for row in rows))
         self.assertTrue(all(row["level_label"].startswith("Recommended ") for row in rows))
+
+    def test_leveling_recommendations_do_not_exceed_leveling_cap(self):
+        rows = canonical_json("leveling_recommendations")["leveling_recommendations"]
+
+        self.assertTrue(rows)
+        self.assertTrue(all(1 <= row["level_min"] <= row["level_max"] <= 69 for row in rows))
+        self.assertNotIn("58-70", {row["level_band"] for row in rows})

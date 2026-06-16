@@ -5,11 +5,13 @@ from datetime import datetime, timezone
 from typing import Any
 
 
+MAX_LEVELING_LEVEL = 69
+
 LEVEL_BANDS: list[tuple[str, int, int]] = [
     ("1-19", 1, 19),
     ("20-39", 20, 39),
     ("40-57", 40, 57),
-    ("58-70", 58, 70),
+    ("58-69", 58, MAX_LEVELING_LEVEL),
 ]
 
 TBC_RACES = [
@@ -36,8 +38,9 @@ RACE_TAG_PREFIXES = {
     "Troll": ("troll_",),
 }
 
-DEFAULT_CONTEXTS = ["best_overall", "hit", "survival", "easy_source", "boe", "dungeon"]
-
+# Runtime recommendations intentionally ship only the contexts named in
+# scoring_profiles.runtime_contexts. Other scoring hooks stay here so future
+# contexts can be enabled by data, not code shape.
 SOURCE_BUCKET_MODIFIERS = {
     "best_overall": {},
     "hit": {"hit_rating": 0.5, "spell_hit_rating": 0.5, "hit_percent": 8.0, "spell_hit_percent": 8.0},
@@ -54,6 +57,24 @@ CLASS_WEAPON_SUBTYPES = {
     "Shaman": {"Axe", "Dagger", "Fist Weapon", "Mace", "Staff"},
     "Warlock": {"Dagger", "Staff", "Sword", "Wand"},
     "Warrior": {"Axe", "Bow", "Crossbow", "Dagger", "Fist Weapon", "Gun", "Mace", "Polearm", "Staff", "Sword", "Thrown"},
+}
+
+CLASS_RANGED_AMMO_SUBTYPES = {
+    "Hunter": {"Bow", "Crossbow", "Gun"},
+    "Rogue": {"Bow", "Crossbow", "Gun"},
+    "Warrior": {"Bow", "Crossbow", "Gun"},
+}
+
+CLASS_RELIC_ARMOR_TYPES = {
+    "Druid": {"Idol"},
+    "Paladin": {"Libram"},
+    "Shaman": {"Totem"},
+}
+
+RELIC_TYPE_TOKENS = {
+    "Idol": ("idol",),
+    "Libram": ("libram", "book", "tome"),
+    "Totem": ("totem",),
 }
 
 CLASS_ARMOR_PROFICIENCIES = {
@@ -98,18 +119,18 @@ def now_utc() -> str:
 
 
 def level_band_for_level(level: int) -> str:
-    level = max(1, min(70, int(level)))
+    level = max(1, min(MAX_LEVELING_LEVEL, int(level)))
     for band, minimum, maximum in LEVEL_BANDS:
         if minimum <= level <= maximum:
             return band
-    return "58-70"
+    return "58-69"
 
 
 def level_bounds_for_band(level_band: str) -> tuple[int, int]:
     for band, minimum, maximum in LEVEL_BANDS:
         if band == level_band:
             return minimum, maximum
-    return 1, 70
+    return 1, MAX_LEVELING_LEVEL
 
 
 def recommendation_levels_for_band(item_stats: list[dict[str, Any]], level_band: str) -> list[int]:
@@ -230,6 +251,34 @@ def class_can_use_item(item: dict[str, Any], class_name: str) -> bool:
     if not allowed:
         return True
     return str(subtype) in allowed
+
+
+def relic_type_for_item(item: dict[str, Any]) -> str | None:
+    if normalized_slot(item.get("slot")) != "Relic":
+        return None
+    name = str(item.get("name") or "").lower()
+    for relic_type, tokens in RELIC_TYPE_TOKENS.items():
+        if any(token in name for token in tokens):
+            return relic_type
+    return None
+
+
+def class_can_use_ammo(class_name: str) -> bool:
+    ammo_subtypes = CLASS_RANGED_AMMO_SUBTYPES.get(class_name, set())
+    weapon_subtypes = CLASS_WEAPON_SUBTYPES.get(class_name, set())
+    return bool(ammo_subtypes & weapon_subtypes)
+
+
+def class_can_use_equipment_slot(item: dict[str, Any], class_name: str) -> bool:
+    slot = normalized_slot(item.get("slot"))
+    if slot == "Ammo":
+        return class_can_use_ammo(class_name)
+    if slot == "Quiver":
+        return class_name == "Hunter"
+    if slot == "Relic":
+        relic_type = relic_type_for_item(item)
+        return relic_type in CLASS_RELIC_ARMOR_TYPES.get(class_name, set())
+    return True
 
 
 def class_armor_allowed(class_name: str, level: int) -> set[str]:
@@ -354,7 +403,7 @@ def recommendation_slots_for_item(item: dict[str, Any]) -> list[str]:
 
 
 def leveling_source_allowed(item: dict[str, Any], level: int) -> bool:
-    if level < 70 and source_bucket(item) == "raid_drop":
+    if level <= MAX_LEVELING_LEVEL and source_bucket(item) == "raid_drop":
         return False
     return True
 
@@ -467,9 +516,12 @@ def candidate_score(
     scoring_profiles: dict[str, Any],
     racial_modifiers: dict[str, Any],
 ) -> dict[str, Any] | None:
+    level = max(1, min(MAX_LEVELING_LEVEL, int(level)))
     if not item_available_at(item, level):
         return None
     if not slot_matches(item.get("slot"), slot):
+        return None
+    if not class_can_use_equipment_slot(item, class_name):
         return None
     if not restrictions_allow(item, class_name, race):
         return None
@@ -590,6 +642,7 @@ def recommendation_rows_for_items(
     slot: str,
     context: str = "best_overall",
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    level = max(1, min(MAX_LEVELING_LEVEL, int(level)))
     candidates = []
     audit_rows = []
     for item in items:
@@ -770,6 +823,7 @@ def build_recommendation_documents(
                     item
                     for item in items_by_slot[slot]
                     if class_can_use_item(item, class_name)
+                    and class_can_use_equipment_slot(item, class_name)
                 ]
                 for context in contexts:
                     for index, checkpoint_level in enumerate(checkpoint_levels):

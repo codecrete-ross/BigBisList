@@ -60,7 +60,8 @@ TBC_RACES = {
 }
 
 RACIAL_MODIFIER_TYPES = {"numeric", "contextual", "audit_only"}
-LEVEL_BANDS = {"1-19", "20-39", "40-57", "58-70"}
+MAX_LEVELING_LEVEL = 69
+LEVEL_BANDS = {"1-19", "20-39", "40-57", "58-69"}
 
 
 @dataclass
@@ -410,8 +411,8 @@ def validate() -> ValidationResult:
         _require(spec_name in specs_by_class.get(class_name, set()), errors, f"Unknown spec in leveling gear row: {class_name}/{spec_name}")
         if class_name in class_names and spec_name in specs_by_class.get(class_name, set()):
             leveling_gear_specs.add((str(class_name), str(spec_name)))
-        _require(isinstance(level_min, int) and 1 <= level_min <= 70, errors, f"Leveling gear row has invalid level_min: {level_min}")
-        _require(isinstance(level_max, int) and isinstance(level_min, int) and level_min <= level_max <= 70, errors, f"Leveling gear row has invalid level_max: {level_max}")
+        _require(isinstance(level_min, int) and 1 <= level_min <= MAX_LEVELING_LEVEL, errors, f"Leveling gear row has invalid level_min: {level_min}")
+        _require(isinstance(level_max, int) and isinstance(level_min, int) and level_min <= level_max <= MAX_LEVELING_LEVEL, errors, f"Leveling gear row has invalid level_max: {level_max}")
         _require(bool(row.get("level_label")), errors, f"Leveling gear item {item_id} needs level_label")
         _require(slot in SLOT_NAMES, errors, f"Unknown leveling gear slot: {slot}")
         _require(item_id in item_ids, errors, f"Leveling gear references unknown item id: {item_id}")
@@ -529,8 +530,8 @@ def validate() -> ValidationResult:
         _require(class_name in class_names, errors, f"Unknown class in leveling recommendation: {class_name}")
         _require(spec_name in specs_by_class.get(class_name, set()), errors, f"Unknown spec in leveling recommendation: {class_name}/{spec_name}")
         _require(race in TBC_RACES or race == "*", errors, f"Leveling recommendation has invalid race: {race}")
-        _require(isinstance(level_min, int) and 1 <= level_min <= 70, errors, f"Leveling recommendation has invalid level_min: {level_min}")
-        _require(isinstance(level_max, int) and isinstance(level_min, int) and level_min <= level_max <= 70, errors, f"Leveling recommendation has invalid level_max: {level_max}")
+        _require(isinstance(level_min, int) and 1 <= level_min <= MAX_LEVELING_LEVEL, errors, f"Leveling recommendation has invalid level_min: {level_min}")
+        _require(isinstance(level_max, int) and isinstance(level_min, int) and level_min <= level_max <= MAX_LEVELING_LEVEL, errors, f"Leveling recommendation has invalid level_max: {level_max}")
         _require(slot in SLOT_NAMES, errors, f"Unknown leveling recommendation slot: {slot}")
         _require(isinstance(item_id, int) and item_id > 0, errors, f"Leveling recommendation has invalid item_id: {item_id}")
         _require(item_id in item_stat_ids, errors, f"Leveling recommendation references item without item_stats: {item_id}")
