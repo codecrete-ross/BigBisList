@@ -1,0 +1,207 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Justicar Shoulderguards is 1 out of the 5 pieces of gear that make up the Justicar Armor item set for Protection Paladins. This epic plate armor of item level 120 goes in the \"Shoulder\" slot.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Shoulder",
+  "item_id": 29070,
+  "item_stats": {
+    "armor": 1133,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Increases defense rating by",
+      "Equip: Increases your shield block rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29070,
+    "item_level": 120,
+    "name": "Justicar Shoulderguards",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 29763,
+          "name": "Item 29763"
+        }
+      ],
+      "entity_id": 20613,
+      "entity_name": "Arodis Sunblade",
+      "source_url": "https://www.wowhead.com/tbc/item=29070",
+      "type": "vendor",
+      "vendor_id": 20613,
+      "zone": "Shattrath City"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Shoulder",
+    "socket_bonus": {
+      "stamina": 4.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "Vendor: Arodis Sunblade (1 Item 29763) +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 29763,
+            "name": "Item 29763"
+          }
+        ],
+        "entity_id": 20613,
+        "entity_name": "Arodis Sunblade",
+        "source_url": "https://www.wowhead.com/tbc/item=29070",
+        "type": "vendor",
+        "vendor_id": 20613,
+        "zone": "Shattrath City"
+      },
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 29763,
+            "name": "Item 29763"
+          }
+        ],
+        "entity_id": 20616,
+        "entity_name": "Asuur",
+        "source_url": "https://www.wowhead.com/tbc/item=29070",
+        "type": "vendor",
+        "vendor_id": 20616,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "defense_rating": 15.0,
+      "intellect": 14.0,
+      "spell_power": 26.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29070"
+  },
+  "name": "Justicar Shoulderguards",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 29763,
+          "name": "Item 29763"
+        }
+      ],
+      "entity_id": 20613,
+      "entity_name": "Arodis Sunblade",
+      "source_url": "https://www.wowhead.com/tbc/item=29070",
+      "type": "vendor",
+      "vendor_id": 20613,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 29763,
+          "name": "Item 29763"
+        }
+      ],
+      "entity_id": 20616,
+      "entity_name": "Asuur",
+      "source_url": "https://www.wowhead.com/tbc/item=29070",
+      "type": "vendor",
+      "vendor_id": 20616,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29763,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 20613,
+        "location": [
+          3703
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Arodis Sunblade",
+        "popularity": 8,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Artifacts",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29763,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 20616,
+        "location": [
+          3703
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Asuur",
+        "popularity": 14,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Artifacts",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29070"
+}

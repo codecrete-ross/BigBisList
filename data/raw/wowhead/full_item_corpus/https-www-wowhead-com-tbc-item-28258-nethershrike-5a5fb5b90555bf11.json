@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nethershrike Phase 1 Item Level 115 Binds when picked up Thrown Thrown 82 - 124 Damage Speed 1.60 (64.38 damage per second) +15 Stamina Durability 240 / 240 Requires Level 70 Equip: Improves critical strike rating by 16. Sell Price: 4 39 88",
+  "fetched_at": "2026-06-15T20:25:09+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 28258,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 64.38,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 28258,
+    "item_level": 115,
+    "name": "Nethershrike",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 16.0,
+      "stamina": 15.0
+    },
+    "weapon_max_damage": 124,
+    "weapon_min_damage": 82,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Thrown",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28258/nethershrike"
+  },
+  "name": "Nethershrike",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28258/nethershrike"
+}

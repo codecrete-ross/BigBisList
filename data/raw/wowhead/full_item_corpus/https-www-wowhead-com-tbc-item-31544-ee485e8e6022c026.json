@@ -1,0 +1,186 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Clefthoof Hide Leggings is one of the rewards from the quest Showdown/Showdown in Blade's Edge Mountains. This blue leather armor of item level 109 goes in the \"Legs\" slot.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 31544,
+  "item_stats": {
+    "armor": 243,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Increases your expertise rating by"
+    ],
+    "id": 31544,
+    "item_level": 109,
+    "name": "Clefthoof Hide Leggings",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10742,
+      "entity_name": "Showdown",
+      "quest_id": 10742,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31544",
+      "type": "quest",
+      "zone": "Blade's Edge Mountains"
+    },
+    "quality": "rare",
+    "slot": "Legs",
+    "source_summary": "Quest: Showdown +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10742,
+        "entity_name": "Showdown",
+        "quest_id": 10742,
+        "side": "Horde",
+        "source_url": "https://www.wowhead.com/tbc/item=31544",
+        "type": "quest",
+        "zone": "Blade's Edge Mountains"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10806,
+        "entity_name": "Showdown",
+        "quest_id": 10806,
+        "side": "Alliance",
+        "source_url": "https://www.wowhead.com/tbc/item=31544",
+        "type": "quest",
+        "zone": "Blade's Edge Mountains"
+      }
+    ],
+    "stats": {
+      "agility": 30.0,
+      "expertise_rating": 18.0,
+      "hit_rating": 17.0,
+      "stamina": 24.0,
+      "strength": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31544"
+  },
+  "name": "Clefthoof Hide Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10742,
+      "entity_name": "Showdown",
+      "quest_id": 10742,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31544",
+      "type": "quest",
+      "zone": "Blade's Edge Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10806,
+      "entity_name": "Showdown",
+      "quest_id": 10806,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=31544",
+      "type": "quest",
+      "zone": "Blade's Edge Mountains"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3522,
+        "category2": 8,
+        "id": 10742,
+        "itemchoices": [
+          [
+            31546,
+            1
+          ],
+          [
+            31544,
+            1
+          ],
+          [
+            31545,
+            1
+          ],
+          [
+            31547,
+            1
+          ],
+          [
+            31549,
+            1
+          ],
+          [
+            31548,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Showdown",
+        "popularity": 20,
+        "reqlevel": 65,
+        "side": 2,
+        "type": 1,
+        "xp": 19000
+      },
+      {
+        "category": 3522,
+        "category2": 8,
+        "id": 10806,
+        "itemchoices": [
+          [
+            31546,
+            1
+          ],
+          [
+            31544,
+            1
+          ],
+          [
+            31545,
+            1
+          ],
+          [
+            31547,
+            1
+          ],
+          [
+            31549,
+            1
+          ],
+          [
+            31548,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Showdown",
+        "popularity": 16,
+        "reqlevel": 65,
+        "side": 1,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31544"
+}

@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Thorium Rifle Phase 1 Item Level 52 Binds when equipped Ranged Gun 55 - 102 Damage Speed 2.50 (31.40 damage per second) Durability 65 / 65 Requires Level 47 Equip: Increases ranged attack power by 17. Sell Price: 1 97 39",
+  "fetched_at": "2026-06-15T20:19:11+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 15995,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 31.4,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 15995,
+    "item_level": 52,
+    "name": "Thorium Rifle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 47,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "ranged_attack_power": 17.0
+    },
+    "weapon_max_damage": 102,
+    "weapon_min_damage": 55,
+    "weapon_speed": 2.5,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=15995/thorium-rifle"
+  },
+  "name": "Thorium Rifle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=15995/thorium-rifle"
+}

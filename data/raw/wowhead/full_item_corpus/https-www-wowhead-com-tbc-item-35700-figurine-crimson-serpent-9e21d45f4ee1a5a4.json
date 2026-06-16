@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Figurine - Crimson Serpent Phase 5 Item Level 125 Binds when picked up Unique Trinket +49 Stamina +33 Intellect Requires Level 70 Requires Jewelcrafting (375) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (2 Min Cooldown) Sell Price: 1 50",
+  "fetched_at": "2026-06-15T20:28:09+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 35700,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 35700,
+    "item_level": 125,
+    "name": "Figurine - Crimson Serpent",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "intellect": 33.0,
+      "spell_power": 150.0,
+      "stamina": 49.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35700/figurine-crimson-serpent"
+  },
+  "name": "Figurine - Crimson Serpent",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Crimson Serpent Phase 5 Item Level 125 Binds when picked up Unique Trinket +49 Stamina +33 Intellect Requires Level 70 Requires Jewelcrafting (375) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (2 Min Cooldown) Sell Price: 1 50",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=35700/figurine-crimson-serpent",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35700/figurine-crimson-serpent"
+}

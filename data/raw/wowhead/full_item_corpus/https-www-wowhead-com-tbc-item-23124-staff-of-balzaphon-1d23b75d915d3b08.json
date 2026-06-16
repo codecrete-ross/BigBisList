@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of Balzaphon Phase 1 Item Level 60 Binds when picked up Two-Hand Staff 160 - 241 Damage Speed 3.90 (51.41 damage per second) +8 Stamina +10 Intellect +7 Spirit Durability 100 / 100 Requires Level 55 Equip: Increases damage and healing done by magical spells and effects by up to 29. Equip: Increases your spell critical strike rating by 14. Sell Price: 6 10 95 Dropped by: Balzaphon Drop Chance: 29.04%",
+  "fetched_at": "2026-06-15T20:23:10+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 23124,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 51.41,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 23124,
+    "item_level": 60,
+    "name": "Staff of Balzaphon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_crit_rating": 14.0,
+      "spell_power": 29.0,
+      "spirit": 7.0,
+      "stamina": 8.0
+    },
+    "weapon_max_damage": 241,
+    "weapon_min_damage": 160,
+    "weapon_speed": 3.9,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23124/staff-of-balzaphon"
+  },
+  "name": "Staff of Balzaphon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23124/staff-of-balzaphon"
+}

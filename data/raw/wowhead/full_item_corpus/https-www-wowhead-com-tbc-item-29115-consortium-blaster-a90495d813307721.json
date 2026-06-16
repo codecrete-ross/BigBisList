@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Consortium Blaster Phase 1 Item Level 115 Binds when picked up Unique Ranged Gun 111 - 207 Damage Speed 2.40 (66.25 damage per second) +15 Stamina Durability 75 / 75 Requires Level 70 Requires The Consortium - Revered Equip: Improves critical strike rating by 7. Equip: Increases attack power by 28. Sell Price: 6 88 12",
+  "fetched_at": "2026-06-15T20:25:33+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 29115,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 66.25,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 29115,
+    "item_level": 115,
+    "name": "Consortium Blaster",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "crit_rating": 7.0,
+      "stamina": 15.0
+    },
+    "weapon_max_damage": 207,
+    "weapon_min_damage": 111,
+    "weapon_speed": 2.4,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29115/consortium-blaster"
+  },
+  "name": "Consortium Blaster",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Consortium Blaster Phase 1 Item Level 115 Binds when picked up Unique Ranged Gun 111 - 207 Damage Speed 2.40 (66.25 damage per second) +15 Stamina Durability 75 / 75 Requires Level 70 Requires The Consortium - Revered Equip: Improves critical strike rating by 7. Equip: Increases attack power by 28. Sell Price: 6 88 12",
+      "reputation": "The Consortium",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29115/consortium-blaster",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29115/consortium-blaster"
+}

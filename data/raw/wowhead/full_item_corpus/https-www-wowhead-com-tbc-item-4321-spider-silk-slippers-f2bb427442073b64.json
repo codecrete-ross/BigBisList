@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Spider Silk Slippers Phase 1 Item Level 28 Binds when equipped Feet Cloth 29 Armor +7 Spirit Durability 35 / 35 Requires Level 23 Equip: Increases damage and healing done by magical spells and effects by up to 4. Sell Price: 11 20",
+  "fetched_at": "2026-06-15T20:28:24+00:00",
+  "inventory_slot": null,
+  "item_id": 4321,
+  "item_stats": {
+    "armor": 29,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 4321,
+    "item_level": 28,
+    "name": "Spider Silk Slippers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 23,
+    "source_summary": "",
+    "stats": {
+      "spell_power": 4.0,
+      "spirit": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=4321/spider-silk-slippers"
+  },
+  "name": "Spider Silk Slippers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=4321/spider-silk-slippers"
+}

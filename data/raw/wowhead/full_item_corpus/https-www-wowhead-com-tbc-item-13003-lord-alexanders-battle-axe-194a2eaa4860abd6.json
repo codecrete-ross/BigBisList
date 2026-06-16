@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Lord Alexander's Battle Axe Phase 1 Item Level 56 Binds when equipped Two-Hand Axe 123 - 185 Damage Speed 3.20 (48.13 damage per second) +16 Strength +17 Agility +16 Stamina Durability 100 / 100 Requires Level 51 Sell Price: 4 96 40",
+  "fetched_at": "2026-06-15T20:17:43+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 13003,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 48.13,
+    "id": 13003,
+    "item_level": 56,
+    "name": "Lord Alexander's Battle Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 17.0,
+      "stamina": 16.0,
+      "strength": 16.0
+    },
+    "weapon_max_damage": 185,
+    "weapon_min_damage": 123,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=13003/lord-alexanders-battle-axe"
+  },
+  "name": "Lord Alexander's Battle Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13003/lord-alexanders-battle-axe"
+}

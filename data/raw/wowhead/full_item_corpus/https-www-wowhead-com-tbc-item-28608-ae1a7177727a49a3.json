@@ -1,0 +1,147 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 115 goes in the \"Feet\" slot. It is looted from Nightbane. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:27+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 28608,
+  "item_stats": {
+    "armor": 997,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 28608,
+    "item_level": 115,
+    "name": "Ironstriders of Urgency",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 208,
+      "drop_percent": 14.87,
+      "entity_id": 17225,
+      "entity_name": "Nightbane",
+      "out_of": 1399,
+      "source_url": "https://www.wowhead.com/tbc/item=28608",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Feet",
+    "socket_bonus": {
+      "strength": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "Drop: Nightbane (Karazhan) 14.9%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 208,
+        "drop_percent": 14.87,
+        "entity_id": 17225,
+        "entity_name": "Nightbane",
+        "out_of": 1399,
+        "source_url": "https://www.wowhead.com/tbc/item=28608",
+        "type": "drop",
+        "zone": "Karazhan"
+      }
+    ],
+    "stats": {
+      "agility": 20.0,
+      "stamina": 28.0,
+      "strength": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28608"
+  },
+  "name": "Ironstriders of Urgency",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 208,
+      "drop_percent": 14.87,
+      "entity_id": 17225,
+      "entity_name": "Nightbane",
+      "out_of": 1399,
+      "source_url": "https://www.wowhead.com/tbc/item=28608",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 208,
+        "id": 17225,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2035,
+                "outof": 12670
+              }
+            },
+            "4": {
+              "0": {
+                "count": 280,
+                "outof": 1884
+              }
+            },
+            "5": {
+              "0": {
+                "count": 208,
+                "outof": 1399
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2035,
+            "outof": 12670
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nightbane",
+        "outof": 1399,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28608"
+}

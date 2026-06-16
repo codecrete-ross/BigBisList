@@ -1,0 +1,136 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue idol of item level 112 goes in the \"Relic\" slot. It is looted from Ambassador Hellmaw. In the Idols category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:26+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 27886,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 27886,
+    "item_level": 112,
+    "name": "Idol of the Emerald Queen",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 124,
+      "drop_percent": 14.99,
+      "entity_id": 18731,
+      "entity_name": "Ambassador Hellmaw",
+      "out_of": 827,
+      "source_url": "https://www.wowhead.com/tbc/item=27886",
+      "type": "drop",
+      "zone": "Shadow Labyrinth"
+    },
+    "quality": "rare",
+    "required_level": 68,
+    "slot": "Relic",
+    "source_summary": "Drop: Ambassador Hellmaw (Shadow Labyrinth) 15.0%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 124,
+        "drop_percent": 14.99,
+        "entity_id": 18731,
+        "entity_name": "Ambassador Hellmaw",
+        "out_of": 827,
+        "source_url": "https://www.wowhead.com/tbc/item=27886",
+        "type": "drop",
+        "zone": "Shadow Labyrinth"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27886"
+  },
+  "name": "Idol of the Emerald Queen",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 124,
+      "drop_percent": 14.99,
+      "entity_id": 18731,
+      "entity_name": "Ambassador Hellmaw",
+      "out_of": 827,
+      "source_url": "https://www.wowhead.com/tbc/item=27886",
+      "type": "drop",
+      "zone": "Shadow Labyrinth"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 124,
+        "id": 18731,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4144,
+                "outof": 28948
+              }
+            },
+            "4": {
+              "0": {
+                "count": 178,
+                "outof": 1250
+              }
+            },
+            "5": {
+              "0": {
+                "count": 124,
+                "outof": 827
+              }
+            }
+          }
+        },
+        "location": [
+          3789
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 4144,
+            "outof": 28948
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ambassador Hellmaw",
+        "outof": 827,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27886"
+}

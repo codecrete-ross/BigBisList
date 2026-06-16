@@ -1,0 +1,122 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue ring of item level 109 goes in the \"Finger\" slot. It is a quest reward from Deathblow to the Legion. In the Rings category. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 30860,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 30860,
+    "item_level": 109,
+    "name": "Kaylaan's Signet",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10409,
+      "entity_name": "Deathblow to the Legion",
+      "quest_id": 10409,
+      "source_url": "https://www.wowhead.com/tbc/item=30860",
+      "type": "quest",
+      "zone": "Netherstorm"
+    },
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "Quest: Deathblow to the Legion",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10409,
+        "entity_name": "Deathblow to the Legion",
+        "quest_id": 10409,
+        "source_url": "https://www.wowhead.com/tbc/item=30860",
+        "type": "quest",
+        "zone": "Netherstorm"
+      }
+    ],
+    "stats": {
+      "agility": 15.0,
+      "attack_power": 50.0,
+      "hit_rating": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30860"
+  },
+  "name": "Kaylaan's Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10409,
+      "entity_name": "Deathblow to the Legion",
+      "quest_id": 10409,
+      "source_url": "https://www.wowhead.com/tbc/item=30860",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10409,
+        "itemchoices": [
+          [
+            30368,
+            1
+          ],
+          [
+            30369,
+            1
+          ],
+          [
+            30370,
+            1
+          ],
+          [
+            30371,
+            1
+          ],
+          [
+            30860,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Deathblow to the Legion",
+        "popularity": 32,
+        "reprewards": [
+          [
+            932,
+            1000
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30860"
+}

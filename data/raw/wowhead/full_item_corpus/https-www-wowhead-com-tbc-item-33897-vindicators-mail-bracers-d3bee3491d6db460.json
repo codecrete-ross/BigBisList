@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vindicator's Mail Bracers Phase 3 Item Level 141 Binds when picked up Wrist Mail 432 Armor +29 Stamina +17 Intellect Yellow Socket Socket Bonus: +2 Resilience Rating Durability 50 / 50 Classes: Hunter , Shaman Requires Level 70 Equip: Improves spell critical strike rating by 21. Equip: Improves your resilience rating by 15. Equip: Increases damage and healing done by magical spells and effects by up to 27.",
+  "fetched_at": "2026-06-15T20:27:37+00:00",
+  "inventory_slot": null,
+  "item_id": 33897,
+  "item_stats": {
+    "armor": 432,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 33897,
+    "item_level": 141,
+    "name": "Vindicator's Mail Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "resilience_rating": 15.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 27.0,
+      "stamina": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33897/vindicators-mail-bracers"
+  },
+  "name": "Vindicator's Mail Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33897/vindicators-mail-bracers"
+}

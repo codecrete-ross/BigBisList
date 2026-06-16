@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Eye of Nerub Phase 1 Item Level 83 Binds when picked up Two-Hand Polearm 251 - 378 Damage Speed 3.70 (85.00 damage per second) +30 Agility +22 Stamina Durability 120 / 120 Requires Level 60 Equip: Improves hit rating by 16. Equip: Increases attack power by 60. Sell Price: 11 37 47",
+  "fetched_at": "2026-06-15T20:23:08+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 23039,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 85.0,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 23039,
+    "item_level": 83,
+    "name": "The Eye of Nerub",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 60.0,
+      "hit_rating": 16.0,
+      "stamina": 22.0
+    },
+    "weapon_max_damage": 378,
+    "weapon_min_damage": 251,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Polearm",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23039/the-eye-of-nerub"
+  },
+  "name": "The Eye of Nerub",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23039/the-eye-of-nerub"
+}

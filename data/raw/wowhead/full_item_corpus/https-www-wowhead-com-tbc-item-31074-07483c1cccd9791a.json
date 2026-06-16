@@ -1,0 +1,119 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue amulet of item level 109 goes in the \"Neck\" slot. It is a quest reward from The Cipher of Damnation. In the Amulets category. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Neck",
+  "item_id": 31074,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 31074,
+    "item_level": 109,
+    "name": "Amulet of the Torn-heart",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10588,
+      "entity_name": "The Cipher of Damnation",
+      "quest_id": 10588,
+      "source_url": "https://www.wowhead.com/tbc/item=31074",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    "quality": "rare",
+    "slot": "Neck",
+    "source_summary": "Quest: The Cipher of Damnation",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10588,
+        "entity_name": "The Cipher of Damnation",
+        "quest_id": 10588,
+        "source_url": "https://www.wowhead.com/tbc/item=31074",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      }
+    ],
+    "stats": {
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31074"
+  },
+  "name": "Amulet of the Torn-heart",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10588,
+      "entity_name": "The Cipher of Damnation",
+      "quest_id": 10588,
+      "source_url": "https://www.wowhead.com/tbc/item=31074",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10588,
+        "itemchoices": [
+          [
+            31036,
+            1
+          ],
+          [
+            31038,
+            1
+          ],
+          [
+            31062,
+            1
+          ],
+          [
+            31071,
+            1
+          ],
+          [
+            31072,
+            1
+          ],
+          [
+            31073,
+            1
+          ]
+        ],
+        "itemrewards": [
+          [
+            31074,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "The Cipher of Damnation",
+        "popularity": 15,
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31074"
+}

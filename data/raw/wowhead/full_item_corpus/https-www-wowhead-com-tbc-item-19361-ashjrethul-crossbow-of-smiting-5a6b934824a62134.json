@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ashjre'thul, Crossbow of Smiting Phase 1 Item Level 77 Binds when picked up Ranged Crossbow 149 - 225 Damage Speed 3.40 (55.00 damage per second) +7 Stamina Durability 90 / 90 Requires Level 60 Equip: Increases ranged attack power by 36. Sell Price: 6 2 30",
+  "fetched_at": "2026-06-15T20:21:54+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 19361,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 55.0,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 19361,
+    "item_level": 77,
+    "name": "Ashjre'thul, Crossbow of Smiting",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "ranged_attack_power": 36.0,
+      "stamina": 7.0
+    },
+    "weapon_max_damage": 225,
+    "weapon_min_damage": 149,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Crossbow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19361/ashjrethul-crossbow-of-smiting"
+  },
+  "name": "Ashjre'thul, Crossbow of Smiting",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19361/ashjrethul-crossbow-of-smiting"
+}

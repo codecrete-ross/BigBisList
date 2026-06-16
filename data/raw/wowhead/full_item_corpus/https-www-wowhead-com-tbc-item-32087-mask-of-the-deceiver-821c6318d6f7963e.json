@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mask of the Deceiver Phase 1 Item Level 110 Binds when picked up Head Leather 283 Armor +32 Agility +36 Stamina Yellow Socket Meta Socket Socket Bonus: +4 Agility Durability 70 / 70 Requires Level 70 Equip: Improves hit rating by 16. Equip: Increases attack power by 64.",
+  "fetched_at": "2026-06-15T20:27:06+00:00",
+  "inventory_slot": null,
+  "item_id": 32087,
+  "item_stats": {
+    "armor": 283,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 32087,
+    "item_level": 110,
+    "name": "Mask of the Deceiver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "agility": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "meta"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 32.0,
+      "attack_power": 64.0,
+      "hit_rating": 16.0,
+      "stamina": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32087/mask-of-the-deceiver"
+  },
+  "name": "Mask of the Deceiver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32087/mask-of-the-deceiver"
+}

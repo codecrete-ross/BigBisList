@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Bonegrinder Phase 1 Item Level 123 Binds when picked up Two-Hand Mace 341 - 513 Damage Speed 3.60 (118.61 damage per second) +32 Strength +48 Stamina Durability 120 / 120 Requires Level 70 Equip: Improves hit rating by 20. Equip: Improves critical strike rating by 35. Equip: Improves your resilience rating by 28.",
+  "fetched_at": "2026-06-15T20:25:10+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 28299,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 118.61,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 28299,
+    "item_level": 123,
+    "name": "Gladiator's Bonegrinder",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 35.0,
+      "hit_rating": 20.0,
+      "resilience_rating": 28.0,
+      "stamina": 48.0,
+      "strength": 32.0
+    },
+    "weapon_max_damage": 513,
+    "weapon_min_damage": 341,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28299/gladiators-bonegrinder"
+  },
+  "name": "Gladiator's Bonegrinder",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28299/gladiators-bonegrinder"
+}

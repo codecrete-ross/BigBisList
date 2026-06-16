@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "High Warlord's Mail Armor Phase 1 Item Level 115 Binds when picked up Chest Mail 652 Armor +42 Stamina +14 Intellect Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 120 / 120 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 18. Equip: Improves your resilience rating by 18. Equip: Restores 5 mana per 5 sec. Equip: Increases damage and healing done by magical spells and effects by up to 16. Oathbound's Mail Battlegear (0/5) Seer's Mail Armor Seer's Mail Gauntlets Seer's Mail Helm Seer's Mail Leggings Seer's Mail Spaulders (2) Set : +35 Resilience Rating. (4) Set : Improves your chance to get a critical strike with all Shock spells by 2%.",
+  "fetched_at": "2026-06-15T20:25:25+00:00",
+  "inventory_slot": null,
+  "item_id": 28846,
+  "item_stats": {
+    "armor": 652,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 28846,
+    "item_level": 115,
+    "name": "High Warlord's Mail Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "mp5": 5.0,
+      "resilience_rating": 18.0,
+      "spell_crit_rating": 18.0,
+      "spell_power": 16.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28846/high-warlords-mail-armor"
+  },
+  "name": "High Warlord's Mail Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28846/high-warlords-mail-armor"
+}

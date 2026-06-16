@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Arcanite Dragonling Phase 1 Item Level 60 Binds when equipped Unique-Equipped Trinket Requires Level 50 Requires Engineering (300) Use: Activates your Arcanite Dragonling to fight for you for 1 min. (20 Min Cooldown) Sell Price: 4",
+  "fetched_at": "2026-06-15T20:19:12+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 16022,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 16022,
+    "item_level": 60,
+    "name": "Arcanite Dragonling",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=16022/arcanite-dragonling"
+  },
+  "name": "Arcanite Dragonling",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Arcanite Dragonling Phase 1 Item Level 60 Binds when equipped Unique-Equipped Trinket Requires Level 50 Requires Engineering (300) Use: Activates your Arcanite Dragonling to fight for you for 1 min. (20 Min Cooldown) Sell Price: 4",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=16022/arcanite-dragonling",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=16022/arcanite-dragonling"
+}

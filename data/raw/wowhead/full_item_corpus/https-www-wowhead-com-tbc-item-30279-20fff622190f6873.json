@@ -1,0 +1,113 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green gun has an item level of 111. It is a quest reward from Declawing Doomclaw. In the Guns category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:32+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 30279,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 56.82,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30279,
+    "item_level": 111,
+    "name": "Mama's Insurance",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10235,
+      "entity_name": "Declawing Doomclaw",
+      "quest_id": 10235,
+      "source_url": "https://www.wowhead.com/tbc/item=30279",
+      "type": "quest",
+      "zone": "Netherstorm"
+    },
+    "quality": "uncommon",
+    "slot": "Ranged",
+    "source_summary": "Quest: Declawing Doomclaw",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10235,
+        "entity_name": "Declawing Doomclaw",
+        "quest_id": 10235,
+        "source_url": "https://www.wowhead.com/tbc/item=30279",
+        "type": "quest",
+        "zone": "Netherstorm"
+      }
+    ],
+    "stats": {
+      "agility": 10.0,
+      "attack_power": 32.0,
+      "crit_rating": 6.0
+    },
+    "weapon_max_damage": 163,
+    "weapon_min_damage": 87,
+    "weapon_speed": 2.2,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30279"
+  },
+  "name": "Mama's Insurance",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10235,
+      "entity_name": "Declawing Doomclaw",
+      "quest_id": 10235,
+      "source_url": "https://www.wowhead.com/tbc/item=30279",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10235,
+        "itemchoices": [
+          [
+            30279,
+            1
+          ],
+          [
+            30278,
+            1
+          ],
+          [
+            30277,
+            1
+          ]
+        ],
+        "level": 69,
+        "money": 41000,
+        "name": "Declawing Doomclaw",
+        "popularity": 15,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 12300
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30279"
+}

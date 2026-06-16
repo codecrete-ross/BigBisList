@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Marshal's Mail Leggings Phase 1 Item Level 71 Binds when picked up Unique Legs Mail 452 Armor +23 Stamina +23 Intellect Durability 105 / 105 Classes: Shaman Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 27. Equip: Increases your spell critical strike rating by 14. Equip: Increases your critical strike rating by 14. Field Marshal's Earthshaker (0/6) Marshal's Mail Leggings Marshal's Mail Boots Field Marshal's Mail Spaulders Field Marshal's Mail Armor Marshal's Mail Gauntlets Field Marshal's Mail Helm (2) Set : +20 Stamina. (3) Set : Improves your chance to get a critical strike with all Shock spells by 2%. (6) Set : Increases attack power by 40.",
+  "fetched_at": "2026-06-15T20:25:44+00:00",
+  "inventory_slot": null,
+  "item_id": 29608,
+  "item_stats": {
+    "armor": 452,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29608,
+    "item_level": 71,
+    "name": "Marshal's Mail Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "attack_power": 40.0,
+      "crit_rating": 14.0,
+      "intellect": 23.0,
+      "spell_crit_rating": 14.0,
+      "spell_power": 27.0,
+      "stamina": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29608/marshals-mail-leggings"
+  },
+  "name": "Marshal's Mail Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29608/marshals-mail-leggings"
+}

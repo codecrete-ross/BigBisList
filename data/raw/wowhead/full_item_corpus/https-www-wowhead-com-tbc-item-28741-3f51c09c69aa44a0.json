@@ -1,0 +1,153 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 115 goes in the \"Legs\" slot. It is looted from Netherspite. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:28+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 28741,
+  "item_stats": {
+    "armor": 319,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 28741,
+    "item_level": 115,
+    "name": "Skulker's Greaves",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 204,
+      "drop_percent": 17.04,
+      "entity_id": 15689,
+      "entity_name": "Netherspite",
+      "out_of": 1197,
+      "source_url": "https://www.wowhead.com/tbc/item=28741",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Legs",
+    "socket_bonus": {
+      "dodge_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "blue"
+    ],
+    "source_summary": "Drop: Netherspite (Karazhan) 17.0%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 204,
+        "drop_percent": 17.04,
+        "entity_id": 15689,
+        "entity_name": "Netherspite",
+        "out_of": 1197,
+        "source_url": "https://www.wowhead.com/tbc/item=28741",
+        "type": "drop",
+        "zone": "Karazhan"
+      }
+    ],
+    "stats": {
+      "agility": 32.0,
+      "attack_power": 64.0,
+      "hit_rating": 28.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28741"
+  },
+  "name": "Skulker's Greaves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 204,
+      "drop_percent": 17.04,
+      "entity_id": 15689,
+      "entity_name": "Netherspite",
+      "out_of": 1197,
+      "source_url": "https://www.wowhead.com/tbc/item=28741",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 204,
+        "id": 15689,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1925,
+                "outof": 12460
+              }
+            },
+            "4": {
+              "0": {
+                "count": 265,
+                "outof": 1612
+              }
+            },
+            "5": {
+              "0": {
+                "count": 204,
+                "outof": 1197
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1925,
+            "outof": 12460
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Netherspite",
+        "outof": 1197,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28741"
+}

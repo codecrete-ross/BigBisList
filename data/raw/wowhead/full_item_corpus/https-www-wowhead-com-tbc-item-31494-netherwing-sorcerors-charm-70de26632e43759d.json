@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Netherwing Sorceror's Charm Phase 1 Item Level 108 Binds when picked up Held In Off-hand +15 Intellect Equip: Improves spell critical strike rating by 15. Equip: Increases damage and healing done by magical spells and effects by up to 18. Equip: Restores 6 mana per 5 sec. Sell Price: 4 15 55",
+  "fetched_at": "2026-06-15T20:26:51+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 31494,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 31494,
+    "item_level": 108,
+    "name": "Netherwing Sorceror's Charm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "mp5": 6.0,
+      "spell_crit_rating": 15.0,
+      "spell_power": 18.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31494/netherwing-sorcerors-charm"
+  },
+  "name": "Netherwing Sorceror's Charm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31494/netherwing-sorcerors-charm"
+}

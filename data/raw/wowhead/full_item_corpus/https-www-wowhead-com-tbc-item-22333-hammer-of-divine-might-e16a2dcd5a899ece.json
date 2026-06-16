@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hammer of Divine Might Phase 1 Item Level 62 Binds when picked up Two-Hand Mace 89 - 134 Damage Speed 2.10 (53.10 damage per second) +13 Stamina +15 Intellect Durability 100 / 100 Requires Level 57 Equip: Increases damage and healing done by magical spells and effects by up to 27. Sell Price: 6 28 3 Dropped by: Kormok Drop Chance: 32.38%",
+  "fetched_at": "2026-06-15T20:22:53+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 22333,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 53.1,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 22333,
+    "item_level": 62,
+    "name": "Hammer of Divine Might",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_power": 27.0,
+      "stamina": 13.0
+    },
+    "weapon_max_damage": 134,
+    "weapon_min_damage": 89,
+    "weapon_speed": 2.1,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22333/hammer-of-divine-might"
+  },
+  "name": "Hammer of Divine Might",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22333/hammer-of-divine-might"
+}

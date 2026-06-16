@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Crystalhide Handwraps Phase 2 Item Level 105 Binds when equipped Hands Mail 465 Armor +11 Agility +27 Intellect Red Socket Red Socket Socket Bonus: +3 Intellect Durability 50 / 50 Requires Level 70 Equip: Increases attack power by 56. Sell Price: 3 11 65",
+  "fetched_at": "2026-06-15T20:27:15+00:00",
+  "inventory_slot": null,
+  "item_id": 32656,
+  "item_stats": {
+    "armor": 465,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 32656,
+    "item_level": 105,
+    "name": "Crystalhide Handwraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "intellect": 3.0
+    },
+    "sockets": [
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "attack_power": 56.0,
+      "intellect": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32656/crystalhide-handwraps"
+  },
+  "name": "Crystalhide Handwraps",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32656/crystalhide-handwraps"
+}

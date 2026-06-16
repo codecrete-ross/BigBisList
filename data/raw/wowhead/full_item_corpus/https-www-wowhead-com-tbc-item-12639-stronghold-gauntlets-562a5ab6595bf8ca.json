@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Stronghold Gauntlets Phase 1 Item Level 62 Binds when equipped Hands Plate 504 Armor +12 Stamina Durability 55 / 55 Requires Level 57 Equip: Disarm duration reduced by 50%. Equip: Increases your parry rating by 20. Equip: Increases your critical strike rating by 14. Sell Price: 2 50 61",
+  "fetched_at": "2026-06-15T20:17:39+00:00",
+  "inventory_slot": null,
+  "item_id": 12639,
+  "item_stats": {
+    "armor": 504,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 12639,
+    "item_level": 62,
+    "name": "Stronghold Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 57,
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 14.0,
+      "parry_rating": 20.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=12639/stronghold-gauntlets"
+  },
+  "name": "Stronghold Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=12639/stronghold-gauntlets"
+}

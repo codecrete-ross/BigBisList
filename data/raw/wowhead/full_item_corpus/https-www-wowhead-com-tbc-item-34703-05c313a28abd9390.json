@@ -1,0 +1,148 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed sword has an item level of 115. It is looted from Vexallus. In the One-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:35+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 34703,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 71.73,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 34703,
+    "item_level": 115,
+    "name": "Latro's Dancing Blade",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": -1,
+      "drop_percent": -0.5,
+      "entity_id": 24744,
+      "entity_name": "Vexallus",
+      "out_of": 200,
+      "source_url": "https://www.wowhead.com/tbc/item=34703",
+      "type": "drop",
+      "zone": "Magisters' Terrace"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "Drop: Vexallus (Magisters' Terrace) -0.5%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": -1,
+        "drop_percent": -0.5,
+        "entity_id": 24744,
+        "entity_name": "Vexallus",
+        "out_of": 200,
+        "source_url": "https://www.wowhead.com/tbc/item=34703",
+        "type": "drop",
+        "zone": "Magisters' Terrace"
+      }
+    ],
+    "stats": {
+      "attack_power": 58.0,
+      "stamina": 21.0
+    },
+    "weapon_max_damage": 243,
+    "weapon_min_damage": 130,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34703"
+  },
+  "name": "Latro's Dancing Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": -1,
+      "drop_percent": -0.5,
+      "entity_id": 24744,
+      "entity_name": "Vexallus",
+      "out_of": 200,
+      "source_url": "https://www.wowhead.com/tbc/item=34703",
+      "type": "drop",
+      "zone": "Magisters' Terrace"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": -1,
+        "id": 24744,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 200,
+                "percentOverride": 18.7
+              }
+            },
+            "4": {
+              "0": {
+                "count": 16,
+                "outof": 200
+              }
+            },
+            "5": {
+              "0": {
+                "count": 695,
+                "outof": 11202
+              }
+            }
+          }
+        },
+        "location": [
+          4131
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 200,
+            "percentOverride": 18.7
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vexallus",
+        "outof": 200,
+        "pctstack": null,
+        "percentOverride": 18.7,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34703"
+}

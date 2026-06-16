@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gnomish Harm Prevention Belt Phase 1 Item Level 43 Binds when equipped Waist Leather 66 Armor +6 Stamina Durability 30 / 30 Requires Engineering (215) Use: A shield of force protects you from the next 500 damage done over the next 10 min. WARNING: Force Field may overload when struck temporarily removing the wearer from this dimension. (Proc chance: 5%) (1 Hour Cooldown) Sell Price: 33 17",
+  "fetched_at": "2026-06-15T20:17:18+00:00",
+  "inventory_slot": null,
+  "item_id": 10721,
+  "item_stats": {
+    "armor": 66,
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10721,
+    "item_level": 43,
+    "name": "Gnomish Harm Prevention Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "stamina": 6.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10721/gnomish-harm-prevention-belt"
+  },
+  "name": "Gnomish Harm Prevention Belt",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Harm Prevention Belt Phase 1 Item Level 43 Binds when equipped Waist Leather 66 Armor +6 Stamina Durability 30 / 30 Requires Engineering (215) Use: A shield of force protects you from the next 500 damage done over the next 10 min. WARNING: Force Field may overload when struck temporarily removing the wearer from this dimension. (Proc chance: 5%) (1 Hour Cooldown) Sell Price: 33 17",
+      "scope": "equip_or_use",
+      "skill": 215,
+      "source_url": "https://www.wowhead.com/tbc/item=10721/gnomish-harm-prevention-belt",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10721/gnomish-harm-prevention-belt"
+}

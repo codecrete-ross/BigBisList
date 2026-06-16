@@ -1,0 +1,39 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Butcher's Apron Phase 1 Item Level 58 Binds when picked up Back 41 Armor +7 Stamina Requires Level 53 Equip: Improves critical strike rating by 16. Sell Price: 1 32 32",
+  "fetched_at": "2026-06-15T20:17:38+00:00",
+  "inventory_slot": null,
+  "item_id": 12608,
+  "item_stats": {
+    "armor": 41,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 12608,
+    "item_level": 58,
+    "name": "Butcher's Apron",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 16.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=12608/butchers-apron"
+  },
+  "name": "Butcher's Apron",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=12608/butchers-apron"
+}

@@ -1,0 +1,123 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue one-handed sword has an item level of 115. It is sold by Alurmi. In the One-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 29185,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.11,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip:"
+    ],
+    "id": 29185,
+    "item_level": 115,
+    "name": "Continuum Blade",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 21643,
+      "entity_name": "Alurmi",
+      "source_url": "https://www.wowhead.com/tbc/item=29185",
+      "type": "vendor",
+      "vendor_id": 21643,
+      "zone": "Caverns of Time"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "Vendor: Alurmi (Caverns of Time)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 21643,
+        "entity_name": "Alurmi",
+        "source_url": "https://www.wowhead.com/tbc/item=29185",
+        "type": "vendor",
+        "vendor_id": 21643,
+        "zone": "Caverns of Time"
+      }
+    ],
+    "stats": {
+      "intellect": 11.0,
+      "spell_hit_rating": 8.0,
+      "spell_power": 121.0,
+      "stamina": 30.0
+    },
+    "weapon_max_damage": 113,
+    "weapon_min_damage": 35,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29185"
+  },
+  "name": "Continuum Blade",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Continuum Blade Phase 1 Item Level 115 Binds when picked up Unique Main Hand Sword 35 - 113 Damage Speed 1.80 (41.11 damage per second) +30 Stamina +11 Intellect Durability 90 / 90 Requires Level 70 Requires Keepers of Time - Revered Equip: Improves spell hit rating by 8. Equip: Increases damage and healing done by magical spells and effects by up to 121. Sell Price: 8 84 68 This blue one-handed sword has an item level of 115. It is sold by Alurmi. In the One-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+      "reputation": "Keepers of Time",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29185",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21643,
+      "entity_name": "Alurmi",
+      "source_url": "https://www.wowhead.com/tbc/item=29185",
+      "type": "vendor",
+      "vendor_id": 21643,
+      "zone": "Caverns of Time"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            375992
+          ]
+        ],
+        "id": 21643,
+        "location": [
+          440
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Alurmi",
+        "popularity": 18,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keepers of Time Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29185"
+}

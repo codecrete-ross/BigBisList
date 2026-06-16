@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wyrmhide Spaulders Phase 1 Item Level 115 Binds when picked up Shoulder Leather 249 Armor +33 Stamina +16 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 60 / 60 Classes: Druid Requires Level 70 Requires Cenarion Expedition - Honored Equip: Improves your resilience rating by 17. Equip: Increases damage and healing done by magical spells and effects by up to 14. Equip: Restores 2 mana per 5 sec. Oathbound's Wyrmhide Battlegear (0/5) Wyrmhide Gloves Wyrmhide Helm Wyrmhide Legguards Wyrmhide Robe Wyrmhide Spaulders (2) Set : +35 Resilience Rating. (4) Set : Your Wrath casts have a chance to reduce the cast time on your next Starfire by 1.5 sec. (Proc chance: 15%, 15s cooldown) Sell Price: 3 33 27",
+  "fetched_at": "2026-06-15T20:28:05+00:00",
+  "inventory_slot": null,
+  "item_id": 35374,
+  "item_stats": {
+    "armor": 249,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 35374,
+    "item_level": 115,
+    "name": "Wyrmhide Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 16.0,
+      "mp5": 2.0,
+      "resilience_rating": 17.0,
+      "spell_power": 14.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35374/wyrmhide-spaulders"
+  },
+  "name": "Wyrmhide Spaulders",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Wyrmhide Spaulders Phase 1 Item Level 115 Binds when picked up Shoulder Leather 249 Armor +33 Stamina +16 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 60 / 60 Classes: Druid Requires Level 70 Requires Cenarion Expedition - Honored Equip: Improves your resilience rating by 17. Equip: Increases damage and healing done by magical spells and effects by up to 14. Equip: Restores 2 mana per 5 sec. Oathbound's Wyrmhide Battlegear (0/5) Wyrmhide Gloves Wyrmhide Helm Wyrmhide Legguards Wyrmhide Robe Wyrmhide Spaulders (2) Set : +35 Resilience Rating. (4) Set : Your Wrath casts have a chance to reduce the cast time on your next Starfire by 1.5 sec. (Proc chance: 15%, 15s cooldown) Sell Price: 3 33 27",
+      "reputation": "Cenarion Expedition",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35374/wyrmhide-spaulders",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35374/wyrmhide-spaulders"
+}

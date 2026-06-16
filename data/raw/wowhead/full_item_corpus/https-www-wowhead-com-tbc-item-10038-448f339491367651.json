@@ -1,0 +1,196 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 49 goes in the \"Shoulder\" slot. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:21+00:00",
+  "inventory_slot": "Shoulder",
+  "item_id": 10038,
+  "item_stats": {
+    "armor": 48,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10038,
+    "item_level": 49,
+    "name": "Stormcloth Shoulders",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12087,
+      "entity_name": "Stormcloth Shoulders",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10322,
+          "entity_name": "Pattern: Stormcloth Shoulders",
+          "item_id": 10322,
+          "source_url": "https://www.wowhead.com/tbc/item=10038",
+          "type": "unknown"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10038",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10038",
+      "spell_id": 12087,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 44,
+    "slot": "Shoulder",
+    "source_summary": "Crafted: Stormcloth Shoulders",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12087,
+        "entity_name": "Stormcloth Shoulders",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 10322,
+            "entity_name": "Pattern: Stormcloth Shoulders",
+            "item_id": 10322,
+            "source_url": "https://www.wowhead.com/tbc/item=10038",
+            "type": "unknown"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10038",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10038",
+        "spell_id": 12087,
+        "type": "crafted"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10038"
+  },
+  "name": "Stormcloth Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12087,
+      "entity_name": "Stormcloth Shoulders",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10322,
+          "entity_name": "Pattern: Stormcloth Shoulders",
+          "item_id": 10322,
+          "source_url": "https://www.wowhead.com/tbc/item=10038",
+          "type": "unknown"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10038",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10038",
+      "spell_id": 12087,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          10038,
+          1,
+          1
+        ],
+        "id": 12087,
+        "level": 0,
+        "name": "Stormcloth Shoulders",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            5
+          ],
+          [
+            7079,
+            6
+          ],
+          [
+            8343,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 10322,
+        "level": 49,
+        "name": "Pattern: Stormcloth Shoulders",
+        "popularity": 3,
+        "quality": 2,
+        "skill": 245,
+        "slot": 0,
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 10322,
+      "level": 49,
+      "name": "Pattern: Stormcloth Shoulders",
+      "popularity": 3,
+      "quality": 2,
+      "skill": 245,
+      "slot": 0,
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10038"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grand Marshal's Satin Mantle Phase 1 Item Level 115 Binds when picked up Shoulder Cloth 117 Armor +33 Stamina +17 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 50 / 50 Classes: Priest Requires Level 70 Equip: Improves your resilience rating by 17. Equip: Increases damage and healing done by magical spells and effects by up to 15. Oathbound's Satin Battlegear (0/5) Satin Gloves Satin Hood Satin Leggings Satin Mantle Satin Robe (2) Set : +35 Resilience Rating. (4) Set : Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.",
+  "fetched_at": "2026-06-15T20:25:22+00:00",
+  "inventory_slot": null,
+  "item_id": 28707,
+  "item_stats": {
+    "armor": 117,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 28707,
+    "item_level": 115,
+    "name": "Grand Marshal's Satin Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "resilience_rating": 17.0,
+      "spell_power": 15.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28707/grand-marshals-satin-mantle"
+  },
+  "name": "Grand Marshal's Satin Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28707/grand-marshals-satin-mantle"
+}

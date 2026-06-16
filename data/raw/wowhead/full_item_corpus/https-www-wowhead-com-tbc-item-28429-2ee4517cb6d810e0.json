@@ -1,0 +1,157 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic two-handed sword has an item level of 123. It is crafted. In the Two-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:27+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 28429,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 118.61,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 28429,
+    "item_level": 123,
+    "name": "Lionheart Champion",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 34540,
+      "entity_name": "Lionheart Champion",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28429",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28429",
+      "spell_id": 34540,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "Crafted: Lionheart Champion",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 34540,
+        "entity_name": "Lionheart Champion",
+        "profession": "Blacksmithing",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Blacksmithing",
+            "raw_text": "Blacksmithing",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=28429",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=28429",
+        "spell_id": 34540,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "agility": 44.0,
+      "strength": 49.0
+    },
+    "weapon_max_damage": 513,
+    "weapon_min_damage": 341,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28429"
+  },
+  "name": "Lionheart Champion",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 34540,
+      "entity_name": "Lionheart Champion",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28429",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28429",
+      "spell_id": 34540,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28429,
+          1,
+          1
+        ],
+        "id": 34540,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Lionheart Champion",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 4,
+        "reagents": [
+          [
+            28428,
+            1
+          ],
+          [
+            23572,
+            8
+          ],
+          [
+            23571,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17039,
+        "trainingcost": 250000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28429"
+}

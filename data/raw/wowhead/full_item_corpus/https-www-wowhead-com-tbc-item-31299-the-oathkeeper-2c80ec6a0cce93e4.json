@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "The Oathkeeper Phase 1 Item Level 115 Binds when equipped Two-Hand Mace 252 - 420 Damage Speed 3.60 (93.33 damage per second) +35 Strength +24 Stamina +32 Intellect Durability 100 / 100 Requires Level 68 Equip: Improves hit rating by 26. Sell Price: 10 53 51",
+  "fetched_at": "2026-06-15T20:26:45+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 31299,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 93.33,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 31299,
+    "item_level": 115,
+    "name": "The Oathkeeper",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 26.0,
+      "intellect": 32.0,
+      "stamina": 24.0,
+      "strength": 35.0
+    },
+    "weapon_max_damage": 420,
+    "weapon_min_damage": 252,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31299/the-oathkeeper"
+  },
+  "name": "The Oathkeeper",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31299/the-oathkeeper"
+}

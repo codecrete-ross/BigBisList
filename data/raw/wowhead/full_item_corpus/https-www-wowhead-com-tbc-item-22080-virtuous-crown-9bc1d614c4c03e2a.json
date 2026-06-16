@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Virtuous Crown Phase 1 Item Level 60 Binds when picked up Head Cloth 86 Armor +16 Stamina +17 Intellect +16 Spirit Durability 60 / 60 Equip: Increases damage and healing done by magical spells and effects by up to 11. Equip: Restores 6 mana per 5 sec. Equip: Increases your spell critical strike rating by 14. Vestments of the Virtuous (0/8) Virtuous Belt Virtuous Bracers Virtuous Crown Virtuous Gloves Virtuous Mantle Virtuous Robe Virtuous Sandals Virtuous Skirt (2) Set : +8 All Resistances. (4) Set : When struck in combat has a chance of shielding the wearer in a protective shield which will absorb 350 damage. (Proc chance: 2%) (6) Set : Increases damage and healing done by magical spells and effects by up to 23. (8) Set : +200 Armor. Sell Price: 2 5 5",
+  "fetched_at": "2026-06-15T20:22:48+00:00",
+  "inventory_slot": null,
+  "item_id": 22080,
+  "item_stats": {
+    "armor": 86,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 22080,
+    "item_level": 60,
+    "name": "Virtuous Crown",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "mp5": 6.0,
+      "spell_crit_rating": 14.0,
+      "spell_power": 34.0,
+      "spirit": 16.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22080/virtuous-crown"
+  },
+  "name": "Virtuous Crown",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22080/virtuous-crown"
+}

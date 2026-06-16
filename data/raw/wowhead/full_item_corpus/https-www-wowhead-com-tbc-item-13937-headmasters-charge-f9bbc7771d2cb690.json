@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Headmaster's Charge Phase 1 Item Level 62 Binds when picked up Two-Hand Staff 135 - 204 Damage Speed 2.90 (58.45 damage per second) +30 Stamina +20 Spirit Durability 120 / 120 Requires Level 57 Use: Gives 20 additional intellect to party members within 30 yards. (10 Min Cooldown) Sell Price: 8 11 29",
+  "fetched_at": "2026-06-15T20:18:10+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 13937,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 58.45,
+    "id": 13937,
+    "item_level": 62,
+    "name": "Headmaster's Charge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 57,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "spirit": 20.0,
+      "stamina": 30.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "weapon_max_damage": 204,
+    "weapon_min_damage": 135,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=13937/headmasters-charge"
+  },
+  "name": "Headmaster's Charge",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13937/headmasters-charge"
+}

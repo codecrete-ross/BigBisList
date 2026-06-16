@@ -1,0 +1,130 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 128 goes in the \"Trinket\" slot. It is sold by Brave Stonehide. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:35+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 37865,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 37865,
+    "item_level": 128,
+    "name": "Medallion of the Horde",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 40000,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12793,
+      "entity_name": "Brave Stonehide",
+      "source_url": "https://www.wowhead.com/tbc/item=37865",
+      "type": "pvp",
+      "vendor_id": 12793
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "PvP: Brave Stonehide (40000 Honor Points)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 40000,
+            "currency_id": 1901,
+            "name": "Honor Points"
+          }
+        ],
+        "entity_id": 12793,
+        "entity_name": "Brave Stonehide",
+        "source_url": "https://www.wowhead.com/tbc/item=37865",
+        "type": "pvp",
+        "vendor_id": 12793
+      }
+    ],
+    "stats": {
+      "resilience_rating": 45.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=37865"
+  },
+  "name": "Medallion of the Horde",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 40000,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12793,
+      "entity_name": "Brave Stonehide",
+      "source_url": "https://www.wowhead.com/tbc/item=37865",
+      "type": "pvp",
+      "vendor_id": 12793
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                40000
+              ]
+            ],
+            []
+          ]
+        ],
+        "id": 12793,
+        "location": [
+          1637
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Brave Stonehide",
+        "popularity": 6,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Officer Accessories Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=37865"
+}

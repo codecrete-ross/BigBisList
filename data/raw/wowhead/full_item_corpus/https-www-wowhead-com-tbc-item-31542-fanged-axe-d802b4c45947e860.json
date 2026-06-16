@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fanged Axe Phase 1 Item Level 108 Binds when picked up Two-Hand Axe 192 - 289 Damage Speed 3.20 (75.16 damage per second) +39 Stamina Durability 85 / 85 Equip: Improves critical strike rating by 26. Equip: Increases attack power by 52. Sell Price: 9 6 33",
+  "fetched_at": "2026-06-15T20:26:52+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 31542,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 75.16,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 31542,
+    "item_level": 108,
+    "name": "Fanged Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 52.0,
+      "crit_rating": 26.0,
+      "stamina": 39.0
+    },
+    "weapon_max_damage": 289,
+    "weapon_min_damage": 192,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31542/fanged-axe"
+  },
+  "name": "Fanged Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31542/fanged-axe"
+}

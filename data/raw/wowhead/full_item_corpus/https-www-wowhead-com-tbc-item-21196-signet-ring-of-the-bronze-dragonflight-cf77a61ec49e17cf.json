@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet Ring of the Bronze Dragonflight Phase 1 Item Level 60 Binds when picked up Unique Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +10 Strength +18 Stamina Requires Level 60 Requires Brood of Nozdormu - Neutral Equip: Increases defense rating by 8. \"The Path of the Protector\"",
+  "fetched_at": "2026-06-15T20:22:31+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 21196,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 21196,
+    "item_level": 60,
+    "name": "Signet Ring of the Bronze Dragonflight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 8.0,
+      "stamina": 18.0,
+      "strength": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21196/signet-ring-of-the-bronze-dragonflight"
+  },
+  "name": "Signet Ring of the Bronze Dragonflight",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Signet Ring of the Bronze Dragonflight Phase 1 Item Level 60 Binds when picked up Unique Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +10 Strength +18 Stamina Requires Level 60 Requires Brood of Nozdormu - Neutral Equip: Increases defense rating by 8. \"The Path of the Protector\"",
+      "reputation": "Brood of Nozdormu",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21196/signet-ring-of-the-bronze-dragonflight",
+      "standing": "Neutral",
+      "standing_rank": 4,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21196/signet-ring-of-the-bronze-dragonflight"
+}

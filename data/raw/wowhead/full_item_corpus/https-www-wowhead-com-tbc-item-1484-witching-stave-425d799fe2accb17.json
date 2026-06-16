@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Witching Stave Phase 1 Item Level 22 Binds when equipped Two-Hand Staff 55 - 83 Damage Speed 3.60 (19.17 damage per second) +8 Intellect Durability 80 / 80 Requires Level 17 Equip: Increases damage done by Shadow spells and effects by up to 11. Sell Price: 29 22",
+  "fetched_at": "2026-06-15T20:18:36+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 1484,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 19.17,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 1484,
+    "item_level": 22,
+    "name": "Witching Stave",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0
+    },
+    "weapon_max_damage": 83,
+    "weapon_min_damage": 55,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=1484/witching-stave"
+  },
+  "name": "Witching Stave",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=1484/witching-stave"
+}

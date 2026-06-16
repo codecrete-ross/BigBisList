@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blade of Savagery Phase 3 Item Level 141 Binds when picked up One-Hand Sword 98 - 183 Damage Speed 1.40 (100.36 damage per second) +19 Stamina Durability 105 / 105 Requires Level 70 Equip: Improves hit rating by 15. Equip: Improves critical strike rating by 22. Equip: Increases attack power by 44. Sell Price: 14 59 25",
+  "fetched_at": "2026-06-15T20:27:11+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 32369,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 100.36,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 32369,
+    "item_level": 141,
+    "name": "Blade of Savagery",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 44.0,
+      "crit_rating": 22.0,
+      "hit_rating": 15.0,
+      "stamina": 19.0
+    },
+    "weapon_max_damage": 183,
+    "weapon_min_damage": 98,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32369/blade-of-savagery"
+  },
+  "name": "Blade of Savagery",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32369/blade-of-savagery"
+}

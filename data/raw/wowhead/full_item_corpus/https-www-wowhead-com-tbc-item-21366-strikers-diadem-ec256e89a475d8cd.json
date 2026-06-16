@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Striker's Diadem Phase 1 Item Level 81 Binds when picked up Head Mail 475 Armor +20 Agility +26 Stamina +18 Intellect +10 Spirit Durability 85 / 85 Classes: Hunter Requires Level 60 Equip: Increases your critical strike rating by 14. Equip: Increases damage and healing done by magical spells and effects by up to 12. Equip: Increases attack power by 38. Striker's Garb (0/5) Striker's Diadem Striker's Footguards Striker's Hauberk Striker's Leggings Striker's Pauldrons (3) Set : Reduces the cost of your Arcane Shots by 10%. (Proc chance: 20%) (5) Set : Reduces the cooldown of your Rapid Fire ability by 2 minutes. (Proc chance: 20%) Sell Price: 4 3 64",
+  "fetched_at": "2026-06-15T20:22:34+00:00",
+  "inventory_slot": null,
+  "item_id": 21366,
+  "item_stats": {
+    "armor": 475,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 21366,
+    "item_level": 81,
+    "name": "Striker's Diadem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "agility": 20.0,
+      "attack_power": 38.0,
+      "crit_rating": 14.0,
+      "intellect": 18.0,
+      "spell_power": 12.0,
+      "spirit": 10.0,
+      "stamina": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21366/strikers-diadem"
+  },
+  "name": "Striker's Diadem",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21366/strikers-diadem"
+}

@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Breastplate of Kings Phase 1 Item Level 107 Binds when picked up Chest Plate 1353 Armor +31 Strength +46 Stamina Blue Socket Yellow Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Armorsmith Equip: Improves hit rating by 20. Equip: Improves critical strike rating by 31. Sell Price: 7 62 35",
+  "fetched_at": "2026-06-15T20:25:15+00:00",
+  "inventory_slot": null,
+  "item_id": 28483,
+  "item_stats": {
+    "armor": 1353,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 28483,
+    "item_level": 107,
+    "name": "Breastplate of Kings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "blue",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 31.0,
+      "hit_rating": 20.0,
+      "stamina": 46.0,
+      "strength": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28483/breastplate-of-kings"
+  },
+  "name": "Breastplate of Kings",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Breastplate of Kings Phase 1 Item Level 107 Binds when picked up Chest Plate 1353 Armor +31 Strength +46 Stamina Blue Socket Yellow Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Armorsmith Equip: Improves hit rating by 20. Equip: Improves critical strike rating by 31. Sell Price: 7 62 35",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28483/breastplate-of-kings",
+      "specialization": "Armorsmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28483/breastplate-of-kings"
+}

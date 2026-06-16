@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Valanos' Longbow Phase 1 Item Level 115 Binds when equipped Ranged Bow 130 - 242 Damage Speed 2.80 (66.43 damage per second) +10 Intellect Durability 75 / 75 Requires Level 70 Equip: Improves critical strike rating by 10. Equip: Increases attack power by 22. Sell Price: 6 41 80",
+  "fetched_at": "2026-06-15T20:26:45+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 31303,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 66.43,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 31303,
+    "item_level": 115,
+    "name": "Valanos' Longbow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 22.0,
+      "crit_rating": 10.0,
+      "intellect": 10.0
+    },
+    "weapon_max_damage": 242,
+    "weapon_min_damage": 130,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow"
+  },
+  "name": "Valanos' Longbow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31303/valanos-longbow"
+}

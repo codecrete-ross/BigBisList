@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ogre Vanquisher's Belt Phase 1 Item Level 102 Binds when picked up Waist Cloth 71 Armor +10 Stamina +6 Spirit Durability 25 / 25 Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 18. Sell Price: 1 35 80",
+  "fetched_at": "2026-06-15T20:26:48+00:00",
+  "inventory_slot": null,
+  "item_id": 31425,
+  "item_stats": {
+    "armor": 71,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 31425,
+    "item_level": 102,
+    "name": "Ogre Vanquisher's Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 26.0,
+      "spell_power": 18.0,
+      "spirit": 6.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31425/ogre-vanquishers-belt"
+  },
+  "name": "Ogre Vanquisher's Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31425/ogre-vanquishers-belt"
+}

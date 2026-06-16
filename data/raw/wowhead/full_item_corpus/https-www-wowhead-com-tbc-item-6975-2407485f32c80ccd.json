@@ -1,0 +1,107 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue two-handed axe has an item level of 40. Requires Warrior. It is a quest reward from Whirlwind Weapon. In the Two-Handed Axes category.",
+  "fetched_at": "2026-06-15T18:31:35+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 6975,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 35.56,
+    "id": 6975,
+    "item_level": 40,
+    "name": "Whirlwind Axe",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 1792,
+      "entity_name": "Whirlwind Weapon",
+      "quest_id": 1792,
+      "source_url": "https://www.wowhead.com/tbc/item=6975",
+      "type": "quest"
+    },
+    "quality": "rare",
+    "slot": "Two Hand",
+    "source_summary": "Quest: Whirlwind Weapon",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 1792,
+        "entity_name": "Whirlwind Weapon",
+        "quest_id": 1792,
+        "source_url": "https://www.wowhead.com/tbc/item=6975",
+        "type": "quest"
+      }
+    ],
+    "stats": {
+      "stamina": 14.0,
+      "strength": 15.0
+    },
+    "weapon_max_damage": 154,
+    "weapon_min_damage": 102,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=6975"
+  },
+  "name": "Whirlwind Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 1792,
+      "entity_name": "Whirlwind Weapon",
+      "quest_id": 1792,
+      "source_url": "https://www.wowhead.com/tbc/item=6975",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": -81,
+        "category2": 4,
+        "classs": 1,
+        "id": 1792,
+        "itemchoices": [
+          [
+            6975,
+            1
+          ],
+          [
+            6977,
+            1
+          ],
+          [
+            6976,
+            1
+          ]
+        ],
+        "level": 40,
+        "name": "Whirlwind Weapon",
+        "popularity": 13,
+        "reqclass": 1,
+        "reqlevel": 30,
+        "side": 3,
+        "wflags": 16,
+        "xp": 5450
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6975"
+}

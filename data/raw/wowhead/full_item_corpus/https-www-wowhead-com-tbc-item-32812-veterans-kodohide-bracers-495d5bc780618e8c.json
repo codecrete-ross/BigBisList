@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Veteran's Kodohide Bracers Phase 2 Item Level 126 Binds when picked up Wrist Leather 216 Armor +25 Stamina +18 Intellect Red Socket Socket Bonus: +2 Resilience Rating Durability 40 / 40 Classes: Rogue , Druid Requires Level 70 Equip: Improves your resilience rating by 18. Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects. Equip: Restores 6 mana per 5 sec.",
+  "fetched_at": "2026-06-15T20:27:17+00:00",
+  "inventory_slot": null,
+  "item_id": 32812,
+  "item_stats": {
+    "armor": 216,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 32812,
+    "item_level": 126,
+    "name": "Veteran's Kodohide Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 31.0,
+      "intellect": 18.0,
+      "mp5": 6.0,
+      "resilience_rating": 18.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32812/veterans-kodohide-bracers"
+  },
+  "name": "Veteran's Kodohide Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32812/veterans-kodohide-bracers"
+}

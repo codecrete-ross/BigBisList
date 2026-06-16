@@ -1,0 +1,199 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 44 goes in the \"Legs\" slot. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:50:52+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 10010,
+  "item_stats": {
+    "armor": 51,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10010,
+    "item_level": 44,
+    "name": "Stormcloth Pants",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12062,
+      "entity_name": "Stormcloth Pants",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10303,
+          "entity_name": "Pattern: Stormcloth Pants",
+          "item_id": 10303,
+          "source_url": "https://www.wowhead.com/tbc/item=10010",
+          "type": "unknown"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10010",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10010",
+      "spell_id": 12062,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 39,
+    "slot": "Legs",
+    "source_summary": "Crafted: Stormcloth Pants",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12062,
+        "entity_name": "Stormcloth Pants",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 10303,
+            "entity_name": "Pattern: Stormcloth Pants",
+            "item_id": 10303,
+            "source_url": "https://www.wowhead.com/tbc/item=10010",
+            "type": "unknown"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10010",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10010",
+        "spell_id": 12062,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "spirit": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10010"
+  },
+  "name": "Stormcloth Pants",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12062,
+      "entity_name": "Stormcloth Pants",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10303,
+          "entity_name": "Pattern: Stormcloth Pants",
+          "item_id": 10303,
+          "source_url": "https://www.wowhead.com/tbc/item=10010",
+          "type": "unknown"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10010",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10010",
+      "spell_id": 12062,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          10010,
+          1,
+          1
+        ],
+        "id": 12062,
+        "level": 0,
+        "name": "Stormcloth Pants",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            4
+          ],
+          [
+            7079,
+            2
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 10303,
+        "level": 44,
+        "name": "Pattern: Stormcloth Pants",
+        "popularity": 3,
+        "quality": 2,
+        "skill": 220,
+        "slot": 0,
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 10303,
+      "level": 44,
+      "name": "Pattern: Stormcloth Pants",
+      "popularity": 3,
+      "quality": 2,
+      "skill": 220,
+      "slot": 0,
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10010"
+}

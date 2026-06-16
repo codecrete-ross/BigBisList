@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Resilient Boots Phase 1 Item Level 31 Binds when equipped Feet Cloth 30 Armor +8 Spirit Durability 35 / 35 Requires Level 26 Equip: Increases damage and healing done by magical spells and effects by up to 2. Sell Price: 14 65",
+  "fetched_at": "2026-06-15T20:18:23+00:00",
+  "inventory_slot": null,
+  "item_id": 14399,
+  "item_stats": {
+    "armor": 30,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 14399,
+    "item_level": 31,
+    "name": "Resilient Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 26,
+    "source_summary": "",
+    "stats": {
+      "spell_power": 2.0,
+      "spirit": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=14399/resilient-boots"
+  },
+  "name": "Resilient Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=14399/resilient-boots"
+}

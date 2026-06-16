@@ -1,0 +1,190 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue leather armor of item level 109 goes in the \"Chest\" slot. It is a quest reward. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Chest",
+  "item_id": 30933,
+  "item_stats": {
+    "armor": 278,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 30933,
+    "item_level": 109,
+    "name": "Hauberk of Karabor",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10651,
+      "entity_name": "Varedis Must Be Stopped",
+      "quest_id": 10651,
+      "source_url": "https://www.wowhead.com/tbc/item=30933",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    "quality": "rare",
+    "slot": "Chest",
+    "source_summary": "Quest: Varedis Must Be Stopped +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10651,
+        "entity_name": "Varedis Must Be Stopped",
+        "quest_id": 10651,
+        "source_url": "https://www.wowhead.com/tbc/item=30933",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10692,
+        "entity_name": "Varedis Must Be Stopped",
+        "quest_id": 10692,
+        "source_url": "https://www.wowhead.com/tbc/item=30933",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      }
+    ],
+    "stats": {
+      "agility": 25.0,
+      "attack_power": 90.0,
+      "hit_rating": 12.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30933"
+  },
+  "name": "Hauberk of Karabor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10651,
+      "entity_name": "Varedis Must Be Stopped",
+      "quest_id": 10651,
+      "source_url": "https://www.wowhead.com/tbc/item=30933",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10692,
+      "entity_name": "Varedis Must Be Stopped",
+      "quest_id": 10692,
+      "source_url": "https://www.wowhead.com/tbc/item=30933",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10651,
+        "itemchoices": [
+          [
+            31013,
+            1
+          ],
+          [
+            30933,
+            1
+          ],
+          [
+            31010,
+            1
+          ],
+          [
+            31002,
+            1
+          ],
+          [
+            30948,
+            1
+          ],
+          [
+            31009,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Varedis Must Be Stopped",
+        "popularity": 5,
+        "reprewards": [
+          [
+            932,
+            1000
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10692,
+        "itemchoices": [
+          [
+            31013,
+            1
+          ],
+          [
+            30933,
+            1
+          ],
+          [
+            31010,
+            1
+          ],
+          [
+            31002,
+            1
+          ],
+          [
+            30948,
+            1
+          ],
+          [
+            31009,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Varedis Must Be Stopped",
+        "popularity": 5,
+        "reprewards": [
+          [
+            934,
+            1000
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30933"
+}

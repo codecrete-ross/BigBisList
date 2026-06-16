@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Terokk's Might Item Level 105 Binds when equipped Back 89 Armor +16 Agility +18 Stamina Requires Level 70 Equip: Increases attack power by 56. Sell Price: 3 8 8",
+  "fetched_at": "2026-06-15T20:27:14+00:00",
+  "inventory_slot": null,
+  "item_id": 32540,
+  "item_stats": {
+    "armor": 89,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 32540,
+    "item_level": 105,
+    "name": "Terokk's Might",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 16.0,
+      "attack_power": 56.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32540/terokks-might"
+  },
+  "name": "Terokk's Might",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32540/terokks-might"
+}

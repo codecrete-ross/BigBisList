@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Veil of Eclipse Phase 1 Item Level 83 Binds when picked up Back 72 Armor +10 Stamina +10 Intellect Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 28. Equip: Increases your spell penetration by 10. Sell Price: 2 71 10",
+  "fetched_at": "2026-06-15T20:23:07+00:00",
+  "inventory_slot": null,
+  "item_id": 23017,
+  "item_stats": {
+    "armor": 72,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 23017,
+    "item_level": 83,
+    "name": "Veil of Eclipse",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 28.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23017/veil-of-eclipse"
+  },
+  "name": "Veil of Eclipse",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23017/veil-of-eclipse"
+}

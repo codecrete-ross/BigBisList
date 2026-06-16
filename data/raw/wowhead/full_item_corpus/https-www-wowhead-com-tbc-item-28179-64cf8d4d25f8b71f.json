@@ -1,0 +1,126 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 115 goes in the \"Feet\" slot. It is a quest reward from Into the Heart of the Labyrinth. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:26+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 28179,
+  "item_stats": {
+    "armor": 107,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 28179,
+    "item_level": 115,
+    "name": "Shattrath Jumpers",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10095,
+      "entity_name": "Into the Heart of the Labyrinth",
+      "quest_id": 10095,
+      "source_url": "https://www.wowhead.com/tbc/item=28179",
+      "type": "quest",
+      "zone": "Auchindoun"
+    },
+    "quality": "rare",
+    "slot": "Feet",
+    "socket_bonus": {
+      "intellect": 3.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "Quest: Into the Heart of the Labyrinth",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10095,
+        "entity_name": "Into the Heart of the Labyrinth",
+        "quest_id": 10095,
+        "source_url": "https://www.wowhead.com/tbc/item=28179",
+        "type": "quest",
+        "zone": "Auchindoun"
+      }
+    ],
+    "stats": {
+      "intellect": 17.0,
+      "spell_power": 29.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28179"
+  },
+  "name": "Shattrath Jumpers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10095,
+      "entity_name": "Into the Heart of the Labyrinth",
+      "quest_id": 10095,
+      "source_url": "https://www.wowhead.com/tbc/item=28179",
+      "type": "quest",
+      "zone": "Auchindoun"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3688,
+        "category2": 8,
+        "id": 10095,
+        "itemchoices": [
+          [
+            28179,
+            1
+          ],
+          [
+            28178,
+            1
+          ],
+          [
+            28177,
+            1
+          ],
+          [
+            28176,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Into the Heart of the Labyrinth",
+        "popularity": 7,
+        "reprewards": [
+          [
+            1011,
+            500
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28179"
+}

@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Headpiece Phase 2 Item Level 133 Binds when picked up Head Mail 759 Armor +35 Stamina +28 Intellect Meta Socket Yellow Socket Socket Bonus: +4 Spell Hit Rating Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Improves spell hit rating by 18. Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 54. Equip: Restores 7 mana per 5 sec. Cataclysm Regalia (0/5) Cataclysm Chestpiece Cataclysm Handgrips Cataclysm Headpiece Cataclysm Leggings Cataclysm Shoulderpads (2) Set : Each time you cast an offensive spell, there is a chance your next Lesser Healing Wave will cost 380 less mana. (Proc chance: 7%) (4) Set : Your Lightning Bolt critical strikes have a chance to grant you 120 mana. (Proc chance: 25%)",
+  "fetched_at": "2026-06-15T20:25:55+00:00",
+  "inventory_slot": null,
+  "item_id": 30171,
+  "item_stats": {
+    "armor": 759,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 30171,
+    "item_level": 133,
+    "name": "Cataclysm Headpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_hit_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "mp5": 7.0,
+      "spell_crit_rating": 26.0,
+      "spell_hit_rating": 18.0,
+      "spell_power": 54.0,
+      "stamina": 35.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30171/cataclysm-headpiece"
+  },
+  "name": "Cataclysm Headpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30171/cataclysm-headpiece"
+}

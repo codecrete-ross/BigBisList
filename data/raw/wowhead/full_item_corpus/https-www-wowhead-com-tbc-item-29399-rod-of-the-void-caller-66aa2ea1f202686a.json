@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rod of the Void Caller Phase 1 Item Level 93 Binds when picked up Two-Hand Staff 121 - 193 Damage Speed 2.80 (56.07 damage per second) +48 Stamina +13 Intellect Durability 85 / 85 Equip: Improves spell critical strike rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 30. Sell Price: 7 27 96",
+  "fetched_at": "2026-06-15T20:25:41+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 29399,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 56.07,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 29399,
+    "item_level": 93,
+    "name": "Rod of the Void Caller",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_crit_rating": 18.0,
+      "spell_power": 30.0,
+      "stamina": 48.0
+    },
+    "weapon_max_damage": 193,
+    "weapon_min_damage": 121,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29399/rod-of-the-void-caller"
+  },
+  "name": "Rod of the Void Caller",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29399/rod-of-the-void-caller"
+}

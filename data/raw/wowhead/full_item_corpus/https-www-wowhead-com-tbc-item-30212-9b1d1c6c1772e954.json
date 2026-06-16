@@ -1,0 +1,198 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 133 goes in the \"Head\" slot. Requires Warlock. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:32+00:00",
+  "inventory_slot": "Head",
+  "item_id": 30212,
+  "item_stats": {
+    "armor": 181,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30212,
+    "item_level": 133,
+    "name": "Hood of the Corruptor",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 30244,
+          "name": "Item 30244"
+        }
+      ],
+      "entity_id": 21906,
+      "entity_name": "Kelara",
+      "source_url": "https://www.wowhead.com/tbc/item=30212",
+      "type": "vendor",
+      "vendor_id": 21906,
+      "zone": "Shattrath City"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Head",
+    "sockets": [
+      "meta",
+      "blue"
+    ],
+    "source_summary": "Vendor: Kelara (1 Item 30244) +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 30244,
+            "name": "Item 30244"
+          }
+        ],
+        "entity_id": 21905,
+        "entity_name": "Veynna Dawnstar",
+        "source_url": "https://www.wowhead.com/tbc/item=30212",
+        "type": "vendor",
+        "vendor_id": 21905,
+        "zone": "Shattrath City"
+      },
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 30244,
+            "name": "Item 30244"
+          }
+        ],
+        "entity_id": 21906,
+        "entity_name": "Kelara",
+        "source_url": "https://www.wowhead.com/tbc/item=30212",
+        "type": "vendor",
+        "vendor_id": 21906,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "intellect": 33.0,
+      "spell_crit_rating": 31.0,
+      "spell_power": 55.0,
+      "stamina": 57.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30212"
+  },
+  "name": "Hood of the Corruptor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 30244,
+          "name": "Item 30244"
+        }
+      ],
+      "entity_id": 21905,
+      "entity_name": "Veynna Dawnstar",
+      "source_url": "https://www.wowhead.com/tbc/item=30212",
+      "type": "vendor",
+      "vendor_id": 21905,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 30244,
+          "name": "Item 30244"
+        }
+      ],
+      "entity_id": 21906,
+      "entity_name": "Kelara",
+      "source_url": "https://www.wowhead.com/tbc/item=30212",
+      "type": "vendor",
+      "vendor_id": 21906,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                30244,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 21905,
+        "location": [
+          3703
+        ],
+        "name": "Veynna Dawnstar",
+        "popularity": 26,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Heirlooms",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                30244,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 21906,
+        "location": [
+          3703
+        ],
+        "name": "Kelara",
+        "popularity": 21,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Heirlooms",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30212"
+}

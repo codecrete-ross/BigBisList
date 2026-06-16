@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Guardian Blade Phase 1 Item Level 26 Binds when equipped Two-Hand Sword 50 - 76 Damage Speed 2.90 (21.72 damage per second) 40 Armor Durability 95 / 95 Requires Level 21 Equip: Increases defense rating by 13. Sell Price: 45 16",
+  "fetched_at": "2026-06-15T20:17:44+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 13041,
+  "item_stats": {
+    "armor": 40,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 21.72,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 13041,
+    "item_level": 26,
+    "name": "Guardian Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 21,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 13.0
+    },
+    "weapon_max_damage": 76,
+    "weapon_min_damage": 50,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=13041/guardian-blade"
+  },
+  "name": "Guardian Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13041/guardian-blade"
+}

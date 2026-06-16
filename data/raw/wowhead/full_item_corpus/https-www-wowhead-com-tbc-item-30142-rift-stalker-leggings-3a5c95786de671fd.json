@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rift Stalker Leggings Phase 2 Item Level 133 Binds when picked up Legs Mail 817 Armor +40 Agility +39 Stamina +26 Intellect Red Socket Socket Bonus: +2 Critical Strike Rating Durability 105 / 105 Classes: Hunter Requires Level 70 Equip: Improves hit rating by 18. Equip: Increases attack power by 92. Equip: Restores 7 mana per 5 sec. Rift Stalker Armor (0/5) Rift Stalker Hauberk Rift Stalker Gauntlets Rift Stalker Helm Rift Stalker Leggings Rift Stalker Mantle (2) Set : Causes your pet to be healed for 15% of the damage you deal. (4) Set : Your Steady Shot ability has 5% increased critical strike chance.",
+  "fetched_at": "2026-06-15T20:25:53+00:00",
+  "inventory_slot": null,
+  "item_id": 30142,
+  "item_stats": {
+    "armor": 817,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 30142,
+    "item_level": 133,
+    "name": "Rift Stalker Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 40.0,
+      "attack_power": 92.0,
+      "hit_rating": 18.0,
+      "intellect": 26.0,
+      "mp5": 7.0,
+      "stamina": 39.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30142/rift-stalker-leggings"
+  },
+  "name": "Rift Stalker Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30142/rift-stalker-leggings"
+}

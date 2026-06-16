@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Sun Eater Phase 1 Item Level 105 Binds when picked up Unique One-Hand Sword 93 - 174 Damage Speed 1.60 (83.44 damage per second) +22 Stamina Durability 105 / 105 Requires Level 70 Equip: Increases defense rating by 13. Equip: Increases your dodge rating by 19. \"Forged in the heart of a dying star, this ethereal blade is feared across the cosmos.\" Sell Price: 11 30 45",
+  "fetched_at": "2026-06-15T20:25:40+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 29362,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 83.44,
+    "equip_effects": [
+      "Equip: Increases defense rating by",
+      "Equip: Increases your dodge rating by"
+    ],
+    "id": 29362,
+    "item_level": 105,
+    "name": "The Sun Eater",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 13.0,
+      "dodge_rating": 19.0,
+      "stamina": 22.0
+    },
+    "weapon_max_damage": 174,
+    "weapon_min_damage": 93,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29362/the-sun-eater"
+  },
+  "name": "The Sun Eater",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29362/the-sun-eater"
+}

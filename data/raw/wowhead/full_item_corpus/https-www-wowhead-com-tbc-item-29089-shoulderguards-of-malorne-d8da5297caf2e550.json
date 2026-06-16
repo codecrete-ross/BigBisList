@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shoulderguards of Malorne Phase 1 Item Level 120 Binds when picked up Shoulder Leather 284 Armor +19 Stamina +23 Intellect +19 Spirit Blue Socket Blue Socket Socket Bonus: +3 Spirit Durability 70 / 70 Classes: Druid Requires Level 70 Equip: Increases healing done by up to 68 and damage done by up to 23 for all magical spells and effects. Equip: Restores 5 mana per 5 sec. Malorne Raiment (0/5) Chestguard of Malorne Crown of Malorne Handguards of Malorne Legguards of Malorne Shoulderguards of Malorne (2) Set : Your helpful spells have a chance to restore up to 120 mana. (Proc chance: 5%) (4) Set : Reduces the cooldown on your Nature's Swiftness ability by 24 sec.",
+  "fetched_at": "2026-06-15T20:25:32+00:00",
+  "inventory_slot": null,
+  "item_id": 29089,
+  "item_stats": {
+    "armor": 284,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29089,
+    "item_level": 120,
+    "name": "Shoulderguards of Malorne",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spirit": 3.0
+    },
+    "sockets": [
+      "blue",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 68.0,
+      "intellect": 23.0,
+      "mp5": 5.0,
+      "spirit": 19.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29089/shoulderguards-of-malorne"
+  },
+  "name": "Shoulderguards of Malorne",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29089/shoulderguards-of-malorne"
+}

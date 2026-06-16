@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Time-Shifted Dagger Phase 1 Item Level 103 Binds when picked up Main Hand Dagger 38 - 103 Damage Speed 1.70 (41.47 damage per second) +15 Stamina +15 Intellect Durability 65 / 65 Requires Level 66 Equip: Improves spell critical strike rating by 13. Equip: Increases damage and healing done by magical spells and effects by up to 85. Sell Price: 7 82 96",
+  "fetched_at": "2026-06-15T20:24:49+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 27431,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.47,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 27431,
+    "item_level": 103,
+    "name": "Time-Shifted Dagger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 66,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_crit_rating": 13.0,
+      "spell_power": 85.0,
+      "stamina": 15.0
+    },
+    "weapon_max_damage": 103,
+    "weapon_min_damage": 38,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27431/time-shifted-dagger"
+  },
+  "name": "Time-Shifted Dagger",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27431/time-shifted-dagger"
+}

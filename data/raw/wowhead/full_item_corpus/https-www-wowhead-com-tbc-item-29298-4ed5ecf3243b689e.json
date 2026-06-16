@@ -1,0 +1,104 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 128 goes in the \"Finger\" slot. It is a quest reward from Champion's Pledge. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 29298,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 29298,
+    "item_level": 128,
+    "name": "Band of Eternity",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10462,
+      "entity_name": "Champion's Pledge",
+      "quest_id": 10462,
+      "source_url": "https://www.wowhead.com/tbc/item=29298",
+      "type": "quest",
+      "zone": "Caverns of Time"
+    },
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "Quest: Champion's Pledge",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10462,
+        "entity_name": "Champion's Pledge",
+        "quest_id": 10462,
+        "source_url": "https://www.wowhead.com/tbc/item=29298",
+        "type": "quest",
+        "zone": "Caverns of Time"
+      }
+    ],
+    "stats": {
+      "agility": 25.0,
+      "attack_power": 50.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29298"
+  },
+  "name": "Band of Eternity",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10462,
+      "entity_name": "Champion's Pledge",
+      "quest_id": 10462,
+      "source_url": "https://www.wowhead.com/tbc/item=29298",
+      "type": "quest",
+      "zone": "Caverns of Time"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1941,
+        "category2": 2,
+        "id": 10462,
+        "itemrewards": [
+          [
+            29298,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Champion's Pledge",
+        "popularity": 6,
+        "reprewards": [
+          [
+            990,
+            250
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 16,
+        "xp": 12650
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29298"
+}

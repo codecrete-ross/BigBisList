@@ -299,6 +299,444 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(snapshot["binding"], "bind_on_pickup")
         self.assertFalse(snapshot["boe"])
 
+    def test_item_parser_extracts_item_corpus_stats(self):
+        html = """
+        <html><head>
+        <title>Fixture Sword - Item - TBC Classic</title>
+        <meta name="description" content="This blue two-handed sword has an item level of 100. In the Two-Handed Swords category.">
+        </head><body>
+        <script>
+        g_items[99901].tooltip_enus = "<table><tr><td><b class=\\"q3\\">Fixture Sword</b><br>Binds when equipped<br>Two-Hand Sword<br>189 - 284 Damage Speed 3.60<br>(65.7 damage per second)<br>+24 Strength<br>+18 Stamina<br>Requires Level 64<br>Classes: Paladin, Warrior<br>Red Socket<br>Blue Socket<br>Socket Bonus: +4 Strength<br>Equip: Increases your critical strike rating by 19.</td></tr></table>";
+        new Listview({ id: 'dropped-by', data: [{"id":123,"name":"Fixture Boss","location":[3518],"count":10,"outof":100}], });
+        </script>
+        </body></html>
+        """
+        snapshot = parse_item_html("https://www.wowhead.com/tbc/item=99901/fixture-sword", html)
+        stats = snapshot["item_stats"]
+
+        self.assertEqual(stats["required_level"], 64)
+        self.assertEqual(stats["item_level"], 100)
+        self.assertEqual(stats["slot"], "Two Hand")
+        self.assertEqual(stats["weapon_type"], "Two Hand")
+        self.assertEqual(stats["weapon_subtype"], "Sword")
+        self.assertEqual(stats["weapon_speed"], 3.6)
+        self.assertEqual(stats["weapon_min_damage"], 189)
+        self.assertEqual(stats["weapon_max_damage"], 284)
+        self.assertEqual(stats["dps"], 65.7)
+        self.assertEqual(stats["stats"]["strength"], 24)
+        self.assertEqual(stats["stats"]["stamina"], 18)
+        self.assertEqual(stats["stats"]["crit_rating"], 19)
+        self.assertEqual(stats["sockets"], ["red", "blue"])
+        self.assertEqual(stats["socket_bonus"]["strength"], 4)
+        self.assertEqual(stats["restrictions"]["classes"], ["Paladin", "Warrior"])
+        self.assertEqual(stats["primary_source"]["type"], "drop")
+
+    def test_item_parser_handles_split_wowhead_tooltip_fields(self):
+        html = """
+        <html><head>
+        <title>Shaarde the Greater - Item - TBC Classic</title>
+        <meta name="description" content="This blue two-handed sword has an item level of 97.">
+        </head><body>
+        <script>
+        g_items[25944].tooltip_enus = "<table><tr><td><span>Item Level <!--ilvl-->97</span><br>Binds when picked up<table width=\\"100%\\"><tr><td>Two-Hand</td><th>Sword</th></tr></table><table width=\\"100%\\"><tr><td><span><!--dmg-->205 - 309 Damage</span></td><th>Speed <!--spd-->3.40</th></tr></table>(75.59 damage per second)<br><span>+34 Strength</span><br><span>+33 Stamina</span></td></tr></table><table><tr><td>Requires Level <!--rlvl-->64<br><span>Equip: Improves critical strike rating by <!--rtg32-->29.</span></td></tr></table>";
+        </script>
+        </body></html>
+        """
+        snapshot = parse_item_html("https://www.wowhead.com/tbc/item=25944/shaarde-the-greater", html)
+        stats = snapshot["item_stats"]
+
+        self.assertEqual(stats["required_level"], 64)
+        self.assertEqual(stats["item_level"], 97)
+        self.assertEqual(stats["weapon_min_damage"], 205)
+        self.assertEqual(stats["weapon_max_damage"], 309)
+        self.assertEqual(stats["weapon_speed"], 3.4)
+        self.assertEqual(stats["stats"]["crit_rating"], 29)
+
+    def test_item_list_parser_discovers_listview_and_linked_items(self):
+        html = """
+        <html><head><title>Items</title></head><body>
+        <script>
+        new Listview({ id: 'items', data: [{"id":30311,"name":"Warp Slicer","level":100,"reqlevel":64}], });
+        </script>
+        <a href="/tbc/item=31331/fixture-link">Fixture Link</a>
+        </body></html>
+        """
+        snapshot = scraper.parse_item_list_html("https://www.wowhead.com/tbc/items", html)
+        refs = {ref["id"]: ref for ref in snapshot["item_refs"]}
+
+        self.assertEqual(snapshot["page_type"], "item_list")
+        self.assertIn(30311, refs)
+        self.assertIn(31331, refs)
+        self.assertEqual(refs[30311]["required_level"], 64)
+        self.assertIn("https://www.wowhead.com/tbc/item=30311/warp-slicer", scraper.discover_item_urls([snapshot]))
+
+    def test_item_list_parser_discovers_variable_backed_listview_rows(self):
+        html = """
+        <html><head><title>Items</title></head><body>
+        <script>
+        var listviewitems = [{"id":30311,"name":"Warp Slicer","level":100,"reqlevel":64,firstseenpatch: 0,popularity:42}];
+        new Listview({template: 'item', id: 'items', data: listviewitems});
+        new Listview({template: 'generic-model', id: 'itemsgallery', data: WH.cOr([], listviewitems)});
+        </script>
+        </body></html>
+        """
+        snapshot = scraper.parse_item_list_html("https://www.wowhead.com/tbc/items", html)
+        refs = {ref["id"]: ref for ref in snapshot["item_refs"]}
+
+        self.assertEqual(snapshot["summary"]["listviews"], ["items", "itemsgallery"])
+        self.assertEqual(refs[30311]["name"], "Warp Slicer")
+        self.assertEqual(refs[30311]["required_level"], 64)
+
+    def test_item_list_parser_uses_wowhead_apostrophe_slugs(self):
+        html = """
+        <html><head><title>Items</title></head><body>
+        <script>
+        var listviewitems = [{"id":10142,"name":"High Councillor's Mantle","level":65,"reqlevel":60,"slot":3}];
+        new Listview({template: 'item', id: 'items', data: listviewitems});
+        </script>
+        </body></html>
+        """
+
+        snapshot = scraper.parse_item_list_html("https://www.wowhead.com/tbc/items=4.1?filter=sl=3", html)
+
+        self.assertEqual(snapshot["item_refs"][0]["url"], "https://www.wowhead.com/tbc/item=10142/high-councillors-mantle")
+
+    def test_item_corpus_discovery_filters_non_equipment_and_high_level_rows(self):
+        snapshot = {
+            "page_type": "item_list",
+            "item_refs": [
+                {"id": 30311, "url": "https://www.wowhead.com/tbc/item=30311", "slot": 13, "required_level": 64},
+                {"id": 1206, "url": "https://www.wowhead.com/tbc/item=1206", "slot": 0, "required_level": None},
+                {"id": 34334, "url": "https://www.wowhead.com/tbc/item=34334", "slot": 15, "required_level": 70},
+                {"id": 99999, "url": "https://www.wowhead.com/tbc/item=99999", "slot": 17, "required_level": 71},
+                {"id": 88801, "url": "https://www.wowhead.com/tbc/item=88801", "slot": 12, "level": 141, "required_level": None},
+                {"id": 88802, "url": "https://www.wowhead.com/tbc/item=88802", "slot": 12, "level": 20, "required_level": None},
+            ],
+        }
+
+        self.assertEqual(
+            scraper.discover_item_corpus_urls([snapshot]),
+            [
+                "https://www.wowhead.com/tbc/item=30311",
+                "https://www.wowhead.com/tbc/item=34334",
+                "https://www.wowhead.com/tbc/item=88802",
+            ],
+        )
+
+    def test_item_list_parser_records_truncated_listview_metadata(self):
+        html = """
+        <html><head><title>Items</title></head><body>
+        <script>
+        var listviewitems = [{"id":30311,"name":"Warp Slicer","level":100,"reqlevel":64,"slot":13}];
+        new Listview({template: 'item', id: 'items', note: "2,741 items found (1,000 displayed) - Try filtering your results", _truncated: 1, data: listviewitems});
+        </script>
+        </body></html>
+        """
+
+        snapshot = scraper.parse_item_list_html("https://www.wowhead.com/tbc/items=4.1", html)
+
+        self.assertTrue(snapshot["summary"]["truncated"])
+        self.assertEqual(snapshot["summary"]["total_items"], 2741)
+        self.assertEqual(snapshot["summary"]["displayed_items"], 1000)
+
+    def test_authoritative_item_corpus_discovery_includes_shaarde_without_seed(self):
+        category_url = "https://www.wowhead.com/tbc/items/weapons/two-handed-swords"
+        original_canonical_json = scraper.canonical_json
+        scraper.canonical_json = lambda name: {
+            "sources": [
+                {
+                    "id": "item-corpus",
+                    "url": "https://www.wowhead.com/tbc/items",
+                    "url_policy": "bootstrap_only",
+                    "data_family": "item_corpus",
+                    "discovery_urls": [category_url],
+                }
+            ]
+        } if name == "scrape_manifest" else original_canonical_json(name)
+        try:
+            snapshot = {
+                "url": category_url,
+                "page_type": "item_list",
+                "item_refs": [
+                    {"id": 25944, "url": "https://www.wowhead.com/tbc/item=25944", "slot": 17, "level": 97, "required_level": 64},
+                ],
+            }
+
+            self.assertEqual(scraper.item_corpus_manifest_item_ids(), set())
+            self.assertEqual(
+                scraper.discover_item_corpus_urls([snapshot], authoritative_only=True),
+                ["https://www.wowhead.com/tbc/item=25944"],
+            )
+        finally:
+            scraper.canonical_json = original_canonical_json
+
+    def test_item_stats_import_uses_item_list_metadata_as_fallback(self):
+        list_snapshot = scraper.parse_item_list_html(
+            "https://www.wowhead.com/tbc/items=4.1?filter=sl=6",
+            """
+            <html><head><title>Items</title></head><body><script>
+            var listviewitems = [{"id":21846,"name":"Spellfire Belt","level":105,"reqlevel":70,"quality":4,"slot":6}];
+            new Listview({ id: 'items', data: listviewitems });
+            </script></body></html>
+            """,
+        )
+        item_snapshot = scraper.parse_item_html(
+            "https://www.wowhead.com/tbc/item=21846",
+            """
+            <html><head><title>Spellfire Belt - Item - TBC Classic</title>
+            <meta name="description" content="Spellfire Belt is a Cloth belt crafted by Tailors.">
+            </head><body><script>
+            g_items[21846].tooltip_enus = "<table><tr><td><b>Spellfire Belt</b><br>Waist<br>100 Armor<br>+18 Intellect</td></tr></table>";
+            </script></body></html>
+            """,
+        )
+        row = scraper.import_item_stats_from_snapshots([list_snapshot, item_snapshot])["item_stats"][0]
+
+        self.assertEqual(row["required_level"], 70)
+        self.assertEqual(row["item_level"], 105)
+        self.assertEqual(row["quality"], "epic")
+        self.assertEqual(row["slot"], "Waist")
+
+    def test_item_stats_import_keeps_manifest_seed_items(self):
+        original_canonical_json = scraper.canonical_json
+        scraper.canonical_json = lambda name: {
+            "sources": [
+                {
+                    "url": "https://www.wowhead.com/tbc/items",
+                    "data_family": "item_corpus",
+                    "seed_urls": ["https://www.wowhead.com/tbc/item=25944/shaarde-the-greater"],
+                }
+            ]
+        } if name == "scrape_manifest" else original_canonical_json(name)
+        try:
+            list_snapshot = scraper.parse_item_list_html(
+                "https://www.wowhead.com/tbc/items",
+                """
+                <html><head><title>Items</title></head><body><script>
+                var listviewitems = [{"id":21846,"name":"Spellfire Belt","level":105,"reqlevel":70,"quality":4,"slot":6}];
+                new Listview({ id: 'items', data: listviewitems });
+                </script></body></html>
+                """,
+            )
+            seed_snapshot = scraper.parse_item_html(
+                "https://www.wowhead.com/tbc/item=25944/shaarde-the-greater",
+                """
+                <html><head><title>Shaarde the Greater - Item - TBC Classic</title>
+                <meta name="description" content="This blue two-handed weapon has an item level of 97.">
+                </head><body><script>
+                g_items[25944].tooltip_enus = "<table><tr><td><b class=\\"q3\\">Shaarde the Greater</b><br>Binds when picked up<br>Two-Hand Sword<br>188 - 283 Damage Speed 3.40<br>(69.3 damage per second)<br>Requires Level 64</td></tr></table>";
+                </script></body></html>
+                """,
+            )
+            listed_snapshot = scraper.parse_item_html(
+                "https://www.wowhead.com/tbc/item=21846/spellfire-belt",
+                """
+                <html><head><title>Spellfire Belt - Item - TBC Classic</title></head><body><script>
+                g_items[21846].tooltip_enus = "<table><tr><td><b>Spellfire Belt</b><br>Waist<br>+18 Intellect</td></tr></table>";
+                </script></body></html>
+                """,
+            )
+            unlisted_snapshot = scraper.parse_item_html(
+                "https://www.wowhead.com/tbc/item=99902/unlisted",
+                """
+                <html><head><title>Unlisted - Item - TBC Classic</title></head><body><script>
+                g_items[99902].tooltip_enus = "<table><tr><td><b>Unlisted</b><br>Waist<br>+1 Strength</td></tr></table>";
+                </script></body></html>
+                """,
+            )
+            item_ids = {
+                row["id"]
+                for row in scraper.import_item_stats_from_snapshots([list_snapshot, seed_snapshot, listed_snapshot, unlisted_snapshot])["item_stats"]
+            }
+
+            self.assertEqual(scraper.item_corpus_manifest_item_ids(), {25944})
+            self.assertEqual(set(scraper.manifest_urls("item_corpus")), {
+                "https://www.wowhead.com/tbc/items",
+                "https://www.wowhead.com/tbc/item=25944/shaarde-the-greater",
+            })
+            self.assertEqual(item_ids, {21846, 25944})
+        finally:
+            scraper.canonical_json = original_canonical_json
+
+    def test_item_corpus_audit_requires_manifest_seed_item_snapshots(self):
+        original_canonical_json = scraper.canonical_json
+        scraper.canonical_json = lambda name: {
+            "sources": [
+                {
+                    "url": "https://www.wowhead.com/tbc/items",
+                    "data_family": "item_corpus",
+                    "seed_urls": ["https://www.wowhead.com/tbc/item=25944/shaarde-the-greater"],
+                }
+            ]
+        } if name == "scrape_manifest" else original_canonical_json(name)
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                input_dir = Path(tmp)
+                list_snapshot = scraper.parse_item_list_html(
+                    "https://www.wowhead.com/tbc/items",
+                    """
+                    <html><head><title>Items</title></head><body><script>
+                    var listviewitems = [{"id":21846,"name":"Spellfire Belt","level":105,"reqlevel":70,"quality":4,"slot":6}];
+                    new Listview({ id: 'items', data: listviewitems });
+                    </script></body></html>
+                    """,
+                )
+                (input_dir / "items.json").write_text(json.dumps(list_snapshot), encoding="utf-8")
+
+                audit = scraper.build_item_corpus_audit(input_dir)
+
+            self.assertFalse(audit["ok"])
+            self.assertIn(
+                "Missing item page snapshot for corpus item 25944: https://www.wowhead.com/tbc/item=25944",
+                audit["errors"],
+            )
+        finally:
+            scraper.canonical_json = original_canonical_json
+
+    def test_item_corpus_audit_rejects_truncated_authoritative_lists(self):
+        category_url = "https://www.wowhead.com/tbc/items=4.1?filter=sl=6"
+        original_canonical_json = scraper.canonical_json
+        scraper.canonical_json = lambda name: {
+            "sources": [
+                {
+                    "id": "item-corpus",
+                    "url": "https://www.wowhead.com/tbc/items",
+                    "url_policy": "bootstrap_only",
+                    "data_family": "item_corpus",
+                    "discovery_urls": [category_url],
+                }
+            ]
+        } if name == "scrape_manifest" else original_canonical_json(name)
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                input_dir = Path(tmp)
+                snapshot = {
+                    "parser_version": scraper.PARSER_VERSION,
+                    "url": category_url,
+                    "page_type": "item_list",
+                    "item_refs": [
+                        {"id": item_id, "url": f"https://www.wowhead.com/tbc/item={item_id}", "slot": 6, "level": 10, "required_level": 5}
+                        for item_id in range(1, 1001)
+                    ],
+                    "summary": {"truncated": True, "displayed_items": 1000, "total_items": 2741},
+                }
+                (input_dir / "items.json").write_text(json.dumps(snapshot), encoding="utf-8")
+
+                audit = scraper.build_item_corpus_audit(input_dir)
+
+            self.assertFalse(audit["ok"])
+            self.assertTrue(any("Truncated item list snapshot" in error for error in audit["errors"]))
+        finally:
+            scraper.canonical_json = original_canonical_json
+
+    def test_bootstrap_item_list_cannot_satisfy_item_corpus_audit(self):
+        original_canonical_json = scraper.canonical_json
+        scraper.canonical_json = lambda name: {
+            "sources": [
+                {
+                    "id": "item-corpus",
+                    "url": "https://www.wowhead.com/tbc/items",
+                    "url_policy": "bootstrap_only",
+                    "data_family": "item_corpus",
+                }
+            ]
+        } if name == "scrape_manifest" else original_canonical_json(name)
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                input_dir = Path(tmp)
+                list_snapshot = {
+                    "parser_version": scraper.PARSER_VERSION,
+                    "url": "https://www.wowhead.com/tbc/items",
+                    "page_type": "item_list",
+                    "item_refs": [
+                        {"id": 25944, "url": "https://www.wowhead.com/tbc/item=25944", "slot": 17, "level": 97, "required_level": 64}
+                    ],
+                    "summary": {"truncated": True, "displayed_items": 1000, "total_items": 12000},
+                }
+                (input_dir / "items.json").write_text(json.dumps(list_snapshot), encoding="utf-8")
+
+                audit = scraper.build_item_corpus_audit(input_dir)
+
+            self.assertFalse(audit["ok"])
+            self.assertIn("No authoritative item list snapshots found for item corpus", audit["errors"])
+        finally:
+            scraper.canonical_json = original_canonical_json
+
+    def test_missing_only_item_corpus_fetch_uses_existing_list_snapshots(self):
+        category_url = "https://www.wowhead.com/tbc/items/weapons/two-handed-swords"
+        missing_url = "https://www.wowhead.com/tbc/item=25944"
+        existing_url = "https://www.wowhead.com/tbc/item=30311"
+        original_canonical_json = scraper.canonical_json
+        original_fetch_url = scraper.fetch_url
+        scraper.canonical_json = lambda name: {
+            "sources": [
+                {
+                    "id": "item-corpus",
+                    "url": "https://www.wowhead.com/tbc/items",
+                    "url_policy": "bootstrap_only",
+                    "data_family": "item_corpus",
+                    "discovery_urls": [category_url],
+                }
+            ]
+        } if name == "scrape_manifest" else original_canonical_json(name)
+        fetched: list[str] = []
+        scraper.fetch_url = lambda url, cache_dir, retries=3, delay=0.75: fetched.append(url) or """
+            <html><head><title>Shaarde the Greater - Item - TBC Classic</title></head><body><script>
+            g_items[25944].tooltip_enus = "<table><tr><td><b>Shaarde the Greater</b><br>Two-Hand Sword<br>Requires Level 64</td></tr></table>";
+            </script></body></html>
+        """
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                input_dir = Path(tmp)
+                list_snapshot = {
+                    "parser_version": scraper.PARSER_VERSION,
+                    "url": category_url,
+                    "page_type": "item_list",
+                    "item_refs": [
+                        {"id": 25944, "url": missing_url, "slot": 17, "level": 97, "required_level": 64},
+                        {"id": 30311, "url": existing_url, "slot": 13, "level": 100, "required_level": 64},
+                    ],
+                    "summary": {"truncated": False},
+                }
+                bootstrap_snapshot = {
+                    "parser_version": scraper.PARSER_VERSION,
+                    "url": "https://www.wowhead.com/tbc/items",
+                    "page_type": "item_list",
+                    "item_refs": [],
+                    "summary": {"truncated": True},
+                }
+                existing_snapshot = parse_item_html(
+                    existing_url,
+                    """
+                    <html><head><title>Warp Slicer - Item - TBC Classic</title></head><body><script>
+                    g_items[30311].tooltip_enus = "<table><tr><td><b>Warp Slicer</b><br>Main Hand Sword<br>Requires Level 64</td></tr></table>";
+                    </script></body></html>
+                    """,
+                )
+                (input_dir / "items.json").write_text(json.dumps(list_snapshot), encoding="utf-8")
+                (input_dir / "bootstrap.json").write_text(json.dumps(bootstrap_snapshot), encoding="utf-8")
+                (input_dir / "existing.json").write_text(json.dumps(existing_snapshot), encoding="utf-8")
+
+                result = scraper.command_fetch(
+                    SimpleNamespace(
+                        output_dir=input_dir,
+                        family="item_corpus",
+                        url=None,
+                        no_discover=False,
+                        missing_only=True,
+                        limit=1,
+                        workers=1,
+                        retries=1,
+                        delay=0,
+                    )
+                )
+
+            self.assertEqual(result, 0)
+            self.assertEqual(fetched, [missing_url])
+        finally:
+            scraper.fetch_url = original_fetch_url
+            scraper.canonical_json = original_canonical_json
+
     def test_guide_parser_classifies_non_gear_tables_and_entities(self):
         html = """
         <html><head><title>Guide</title></head><body>

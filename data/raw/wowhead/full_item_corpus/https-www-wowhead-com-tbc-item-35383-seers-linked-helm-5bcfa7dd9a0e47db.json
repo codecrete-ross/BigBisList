@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Seer's Linked Helm Phase 1 Item Level 115 Binds when picked up Head Mail 530 Armor +20 Strength +30 Stamina Meta Socket Red Socket Socket Bonus: +4 Resilience Rating Durability 70 / 70 Classes: Shaman Requires Level 70 Requires Thrallmar - Honored Equip: Improves critical strike rating by 24. Equip: Improves your resilience rating by 24. Oathbound's Linked Battlegear (0/5) Seer's Linked Armor Seer's Linked Gauntlets Seer's Linked Helm Seer's Linked Leggings Seer's Linked Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Stormstrike ability by 1 sec. Sell Price: 3 83 85",
+  "fetched_at": "2026-06-15T20:28:06+00:00",
+  "inventory_slot": null,
+  "item_id": 35383,
+  "item_stats": {
+    "armor": 530,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 35383,
+    "item_level": 115,
+    "name": "Seer's Linked Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 24.0,
+      "resilience_rating": 24.0,
+      "stamina": 30.0,
+      "strength": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35383/seers-linked-helm"
+  },
+  "name": "Seer's Linked Helm",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Seer's Linked Helm Phase 1 Item Level 115 Binds when picked up Head Mail 530 Armor +20 Strength +30 Stamina Meta Socket Red Socket Socket Bonus: +4 Resilience Rating Durability 70 / 70 Classes: Shaman Requires Level 70 Requires Thrallmar - Honored Equip: Improves critical strike rating by 24. Equip: Improves your resilience rating by 24. Oathbound's Linked Battlegear (0/5) Seer's Linked Armor Seer's Linked Gauntlets Seer's Linked Helm Seer's Linked Leggings Seer's Linked Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Stormstrike ability by 1 sec. Sell Price: 3 83 85",
+      "reputation": "Thrallmar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35383/seers-linked-helm",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35383/seers-linked-helm"
+}

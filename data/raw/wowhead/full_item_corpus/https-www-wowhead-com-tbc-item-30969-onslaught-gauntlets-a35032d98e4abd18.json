@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Onslaught Gauntlets Phase 3 Item Level 146 Binds when picked up Hands Plate 1141 Armor +41 Strength +30 Agility +49 Stamina Red Socket Socket Bonus: +2 Critical Strike Rating Durability 55 / 55 Classes: Warrior Requires Level 70 Equip: Your attacks ignore 91 of your opponent's armor. Onslaught Battlegear (0/8) Onslaught Battle-Helm Onslaught Breastplate Onslaught Gauntlets Onslaught Greaves Onslaught Shoulderblades Onslaught Belt Onslaught Bracers Onslaught Treads (2) Set : Reduces the rage cost of your Execute ability by 3. (4) Set : Increases the damage of your Mortal Strike and Bloodthirst abilities by 5%.",
+  "fetched_at": "2026-06-15T20:26:10+00:00",
+  "inventory_slot": null,
+  "item_id": 30969,
+  "item_stats": {
+    "armor": 1141,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 30969,
+    "item_level": 146,
+    "name": "Onslaught Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "stamina": 49.0,
+      "strength": 41.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30969/onslaught-gauntlets"
+  },
+  "name": "Onslaught Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30969/onslaught-gauntlets"
+}

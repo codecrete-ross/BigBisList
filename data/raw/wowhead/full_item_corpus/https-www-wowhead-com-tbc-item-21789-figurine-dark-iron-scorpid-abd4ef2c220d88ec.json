@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Figurine - Dark Iron Scorpid Phase 1 Item Level 60 Binds when picked up Unique Trinket +9 Agility Requires Level 55 Requires Jewelcrafting (300) Use: Every swing poisons your foe for 15 damage every second for 20 sec. (5 Min Cooldown) Sell Price: 1 50",
+  "fetched_at": "2026-06-15T20:22:44+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 21789,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 21789,
+    "item_level": 60,
+    "name": "Figurine - Dark Iron Scorpid",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "agility": 9.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21789/figurine-dark-iron-scorpid"
+  },
+  "name": "Figurine - Dark Iron Scorpid",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Dark Iron Scorpid Phase 1 Item Level 60 Binds when picked up Unique Trinket +9 Agility Requires Level 55 Requires Jewelcrafting (300) Use: Every swing poisons your foe for 15 damage every second for 20 sec. (5 Min Cooldown) Sell Price: 1 50",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=21789/figurine-dark-iron-scorpid",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21789/figurine-dark-iron-scorpid"
+}

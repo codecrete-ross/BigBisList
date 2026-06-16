@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Guile of Khoraazi Phase 1 Item Level 100 Binds when picked up Unique One-Hand Dagger 104 - 156 Damage Speed 1.60 (81.25 damage per second) +19 Agility Durability 75 / 75 Requires Level 70 Requires The Consortium - Exalted Equip: Increases attack power by 38. Sell Price: 39 90 34",
+  "fetched_at": "2026-06-15T20:25:33+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 29121,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 81.25,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 29121,
+    "item_level": 100,
+    "name": "Guile of Khoraazi",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 19.0,
+      "attack_power": 38.0
+    },
+    "weapon_max_damage": 156,
+    "weapon_min_damage": 104,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29121/guile-of-khoraazi"
+  },
+  "name": "Guile of Khoraazi",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Guile of Khoraazi Phase 1 Item Level 100 Binds when picked up Unique One-Hand Dagger 104 - 156 Damage Speed 1.60 (81.25 damage per second) +19 Agility Durability 75 / 75 Requires Level 70 Requires The Consortium - Exalted Equip: Increases attack power by 38. Sell Price: 39 90 34",
+      "reputation": "The Consortium",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29121/guile-of-khoraazi",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29121/guile-of-khoraazi"
+}

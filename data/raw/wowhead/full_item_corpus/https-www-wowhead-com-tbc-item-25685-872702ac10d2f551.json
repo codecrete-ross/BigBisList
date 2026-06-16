@@ -1,0 +1,238 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Fel Leather Gloves is a Leather gloves crafted by Leatherworkers with a skill of 350. This blue leather armor of item level 106 goes in the \"Hands\" slot.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Hands",
+  "item_id": 25685,
+  "item_stats": {
+    "armor": 169,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 25685,
+    "item_level": 106,
+    "name": "Fel Leather Gloves",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 32490,
+      "entity_name": "Fel Leather Gloves",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 25732,
+          "entity_name": "Pattern: Fel Leather Gloves",
+          "item_id": 25732,
+          "source_url": "https://www.wowhead.com/tbc/item=25685",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=25685",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=25685",
+      "spell_id": 32490,
+      "type": "crafted"
+    },
+    "quality": "rare",
+    "required_level": 67,
+    "slot": "Hands",
+    "sockets": [
+      "yellow",
+      "red"
+    ],
+    "source_summary": "Crafted: Fel Leather Gloves",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 32490,
+        "entity_name": "Fel Leather Gloves",
+        "profession": "Leatherworking",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 25732,
+            "entity_name": "Pattern: Fel Leather Gloves",
+            "item_id": 25732,
+            "source_url": "https://www.wowhead.com/tbc/item=25685",
+            "type": "vendor"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Leatherworking",
+            "raw_text": "Leatherworking",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=25685",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=25685",
+        "spell_id": 32490,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "attack_power": 36.0,
+      "crit_rating": 24.0,
+      "dodge_rating": 20.0,
+      "hit_rating": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25685"
+  },
+  "name": "Fel Leather Gloves",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Fel Leather Gloves Phase 1 Item Level 106 Binds when equipped Hands Leather 169 Armor Yellow Socket Red Socket Socket Bonus: +6 Attack Power Durability 35 / 35 Requires Level 67 Equip: Improves hit rating by 17. Equip: Improves critical strike rating by 24. Equip: Increases attack power by 36. Fel Skin (0/3) Requires Leatherworking (350) Fel Leather Gloves Fel Leather Boots Fel Leather Leggings (3) Set : Increases your dodge rating by 20. Sell Price: 2 7 71 Fel Leather Gloves is a Leather gloves crafted by Leatherworkers with a skill of 350. This blue leather armor of item level 106 goes in the \"Hands\" slot.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25685",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 32490,
+      "entity_name": "Fel Leather Gloves",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 25732,
+          "entity_name": "Pattern: Fel Leather Gloves",
+          "item_id": 25732,
+          "source_url": "https://www.wowhead.com/tbc/item=25685",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=25685",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=25685",
+      "spell_id": 32490,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          340,
+          350,
+          360,
+          370
+        ],
+        "creates": [
+          25685,
+          1,
+          1
+        ],
+        "id": 32490,
+        "learnedat": 340,
+        "level": 0,
+        "name": "Fel Leather Gloves",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            23793,
+            6
+          ],
+          [
+            25707,
+            6
+          ],
+          [
+            22456,
+            6
+          ],
+          [
+            14341,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 25732,
+        "level": 68,
+        "name": "Pattern: Fel Leather Gloves",
+        "popularity": 5,
+        "quality": 3,
+        "skill": 340,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 1
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 25732,
+      "level": 68,
+      "name": "Pattern: Fel Leather Gloves",
+      "popularity": 5,
+      "quality": 3,
+      "skill": 340,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25685"
+}

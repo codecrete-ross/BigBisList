@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Ornamented Chestguard Phase 3 Item Level 146 Binds when picked up Chest Plate 1825 Armor +58 Stamina +37 Intellect Red Socket Red Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 165 / 165 Classes: Paladin Requires Level 70 Equip: Improves spell critical strike rating by 36. Equip: Improves your resilience rating by 28. Equip: Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects. Gladiator's Redemption (0/5) Gladiator's Ornamented Chestguard Gladiator's Ornamented Gloves Gladiator's Ornamented Headcover Gladiator's Ornamented Legplates Gladiator's Ornamented Spaulders (2) Set : +35 Resilience Rating. (4) Set : Increases the healing from your Holy Shock spell by 30%.",
+  "fetched_at": "2026-06-15T20:27:33+00:00",
+  "inventory_slot": null,
+  "item_id": 33722,
+  "item_stats": {
+    "armor": 1825,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 33722,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Ornamented Chestguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 55.0,
+      "intellect": 37.0,
+      "resilience_rating": 28.0,
+      "spell_crit_rating": 36.0,
+      "stamina": 58.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33722/vengeful-gladiators-ornamented-chestguard"
+  },
+  "name": "Vengeful Gladiator's Ornamented Chestguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33722/vengeful-gladiators-ornamented-chestguard"
+}

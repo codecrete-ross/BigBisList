@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Blackguard Phase 1 Item Level 70 Binds when equipped One-Hand Sword 65 - 121 Damage Speed 1.80 (51.67 damage per second) +9 Stamina Durability 105 / 105 Requires Level 60 Equip: Increases your parry rating by 20. Sell Price: 7 19 93",
+  "fetched_at": "2026-06-15T20:21:52+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 19168,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 51.67,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 19168,
+    "item_level": 70,
+    "name": "Blackguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "parry_rating": 20.0,
+      "stamina": 9.0
+    },
+    "weapon_max_damage": 121,
+    "weapon_min_damage": 65,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19168/blackguard"
+  },
+  "name": "Blackguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19168/blackguard"
+}

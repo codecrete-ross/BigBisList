@@ -1,0 +1,233 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Eternium Runed Blade is a Dagger that can be crafted from Blacksmiths at a skill of 365. This is a World Drop pattern. This epic dagger has an item level of 105.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 23554,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 41.76,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 23554,
+    "item_level": 105,
+    "name": "Eternium Runed Blade",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 29698,
+      "entity_name": "Eternium Runed Blade",
+      "profession": "Blacksmithing",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 23635,
+          "entity_name": "Plans: Eternium Runed Blade",
+          "item_id": 23635,
+          "source_url": "https://www.wowhead.com/tbc/item=23554",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23554",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23554",
+      "spell_id": 29698,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "Crafted: Eternium Runed Blade",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 29698,
+        "entity_name": "Eternium Runed Blade",
+        "profession": "Blacksmithing",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 23635,
+            "entity_name": "Plans: Eternium Runed Blade",
+            "item_id": 23635,
+            "source_url": "https://www.wowhead.com/tbc/item=23554",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Blacksmithing",
+            "raw_text": "Blacksmithing",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=23554",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=23554",
+        "spell_id": 29698,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 19.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 168.0
+    },
+    "weapon_max_damage": 114,
+    "weapon_min_damage": 28,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23554"
+  },
+  "name": "Eternium Runed Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 29698,
+      "entity_name": "Eternium Runed Blade",
+      "profession": "Blacksmithing",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 23635,
+          "entity_name": "Plans: Eternium Runed Blade",
+          "item_id": 23635,
+          "source_url": "https://www.wowhead.com/tbc/item=23554",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23554",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23554",
+      "spell_id": 29698,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          23554,
+          1,
+          1
+        ],
+        "id": 29698,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Eternium Runed Blade",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            23449,
+            10
+          ],
+          [
+            23573,
+            4
+          ],
+          [
+            23447,
+            10
+          ],
+          [
+            23571,
+            8
+          ],
+          [
+            23572,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23635,
+        "level": 73,
+        "name": "Plans: Eternium Runed Blade",
+        "popularity": 4,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23635,
+      "level": 73,
+      "name": "Plans: Eternium Runed Blade",
+      "popularity": 4,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23554"
+}

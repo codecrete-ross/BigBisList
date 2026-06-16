@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warden's Hauberk Phase 1 Item Level 91 Binds when picked up Chest Leather 238 Armor +39 Agility +30 Stamina Red Socket Red Socket Red Socket Socket Bonus: +4 Hit Rating Durability 100 / 100 Requires Level 62 Requires Cenarion Expedition - Honored Sell Price: 3 62 30",
+  "fetched_at": "2026-06-15T20:24:41+00:00",
+  "inventory_slot": null,
+  "item_id": 25838,
+  "item_stats": {
+    "armor": 238,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 25838,
+    "item_level": 91,
+    "name": "Warden's Hauberk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 62,
+    "socket_bonus": {
+      "hit_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 39.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25838/wardens-hauberk"
+  },
+  "name": "Warden's Hauberk",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Warden's Hauberk Phase 1 Item Level 91 Binds when picked up Chest Leather 238 Armor +39 Agility +30 Stamina Red Socket Red Socket Red Socket Socket Bonus: +4 Hit Rating Durability 100 / 100 Requires Level 62 Requires Cenarion Expedition - Honored Sell Price: 3 62 30",
+      "reputation": "Cenarion Expedition",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=25838/wardens-hauberk",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25838/wardens-hauberk"
+}

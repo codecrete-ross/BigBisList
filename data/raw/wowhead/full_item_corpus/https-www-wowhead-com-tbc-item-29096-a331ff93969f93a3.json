@@ -1,0 +1,202 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Breastplate of Malorne is 1 out of the 5 pieces of gear that make up the Malorne Harness item set for Feral Druids. This epic leather armor of item level 120 goes in the \"Chest\" slot.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Chest",
+  "item_id": 29096,
+  "item_stats": {
+    "armor": 659,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 29096,
+    "item_level": 120,
+    "name": "Breastplate of Malorne",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 29753,
+          "name": "Item 29753"
+        }
+      ],
+      "entity_id": 20613,
+      "entity_name": "Arodis Sunblade",
+      "source_url": "https://www.wowhead.com/tbc/item=29096",
+      "type": "vendor",
+      "vendor_id": 20613,
+      "zone": "Shattrath City"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Chest",
+    "socket_bonus": {
+      "hit_rating": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "blue",
+      "red"
+    ],
+    "source_summary": "Vendor: Arodis Sunblade (1 Item 29753) +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 29753,
+            "name": "Item 29753"
+          }
+        ],
+        "entity_id": 20613,
+        "entity_name": "Arodis Sunblade",
+        "source_url": "https://www.wowhead.com/tbc/item=29096",
+        "type": "vendor",
+        "vendor_id": 20613,
+        "zone": "Shattrath City"
+      },
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 29753,
+            "name": "Item 29753"
+          }
+        ],
+        "entity_id": 20616,
+        "entity_name": "Asuur",
+        "source_url": "https://www.wowhead.com/tbc/item=29096",
+        "type": "vendor",
+        "vendor_id": 20616,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "agility": 34.0,
+      "intellect": 13.0,
+      "stamina": 36.0,
+      "strength": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29096"
+  },
+  "name": "Breastplate of Malorne",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 29753,
+          "name": "Item 29753"
+        }
+      ],
+      "entity_id": 20613,
+      "entity_name": "Arodis Sunblade",
+      "source_url": "https://www.wowhead.com/tbc/item=29096",
+      "type": "vendor",
+      "vendor_id": 20613,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 29753,
+          "name": "Item 29753"
+        }
+      ],
+      "entity_id": 20616,
+      "entity_name": "Asuur",
+      "source_url": "https://www.wowhead.com/tbc/item=29096",
+      "type": "vendor",
+      "vendor_id": 20616,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29753,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 20613,
+        "location": [
+          3703
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Arodis Sunblade",
+        "popularity": 8,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Artifacts",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29753,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 20616,
+        "location": [
+          3703
+        ],
+        "maxlevel": 64,
+        "minlevel": 64,
+        "name": "Asuur",
+        "popularity": 14,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Artifacts",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29096"
+}

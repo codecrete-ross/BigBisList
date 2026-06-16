@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Spitfire Gauntlets Phase 1 Item Level 62 Binds when equipped Hands Mail 228 Armor +12 Agility +12 Intellect Durability 40 / 40 Requires Level 57 Equip: Restores 5 mana per 5 sec. Equip: Increases damage and healing done by magical spells and effects by up to 11. Sell Price: 1 59 24",
+  "fetched_at": "2026-06-15T20:22:18+00:00",
+  "inventory_slot": null,
+  "item_id": 20480,
+  "item_stats": {
+    "armor": 228,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 20480,
+    "item_level": 62,
+    "name": "Spitfire Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "source_summary": "",
+    "stats": {
+      "agility": 12.0,
+      "intellect": 12.0,
+      "mp5": 5.0,
+      "spell_power": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20480/spitfire-gauntlets"
+  },
+  "name": "Spitfire Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20480/spitfire-gauntlets"
+}

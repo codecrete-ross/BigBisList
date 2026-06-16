@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Treant's Bane Phase 1 Item Level 63 Binds when picked up Two-Hand Axe 161 - 243 Damage Speed 3.40 (59.41 damage per second) +25 Strength +15 Stamina Durability 120 / 120 Requires Level 58 Equip: Increases your critical strike rating by 28. Sell Price: 87 7",
+  "fetched_at": "2026-06-15T20:19:50+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 18538,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 59.41,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 18538,
+    "item_level": 63,
+    "name": "Treant's Bane",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 58,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 28.0,
+      "stamina": 15.0,
+      "strength": 25.0
+    },
+    "weapon_max_damage": 243,
+    "weapon_min_damage": 161,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18538/treants-bane"
+  },
+  "name": "Treant's Bane",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18538/treants-bane"
+}

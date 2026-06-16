@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hardened Stone Shard Phase 1 Item Level 91 Binds when picked up Unique One-Hand Dagger 79 - 120 Damage Speed 1.80 (55.28 damage per second) +16 Stamina Durability 65 / 65 Requires Level 62 Requires Sporeggar - Revered Equip: Improves hit rating by 12. Equip: Increases attack power by 22.",
+  "fetched_at": "2026-06-15T20:25:34+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 29150,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 55.28,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 29150,
+    "item_level": 91,
+    "name": "Hardened Stone Shard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 62,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 22.0,
+      "hit_rating": 12.0,
+      "stamina": 16.0
+    },
+    "weapon_max_damage": 120,
+    "weapon_min_damage": 79,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29150/hardened-stone-shard"
+  },
+  "name": "Hardened Stone Shard",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Hardened Stone Shard Phase 1 Item Level 91 Binds when picked up Unique One-Hand Dagger 79 - 120 Damage Speed 1.80 (55.28 damage per second) +16 Stamina Durability 65 / 65 Requires Level 62 Requires Sporeggar - Revered Equip: Improves hit rating by 12. Equip: Increases attack power by 22.",
+      "reputation": "Sporeggar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29150/hardened-stone-shard",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29150/hardened-stone-shard"
+}

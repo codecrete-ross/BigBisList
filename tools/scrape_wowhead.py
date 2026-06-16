@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from copy import deepcopy
 import hashlib
 import json
@@ -23,6 +24,7 @@ if __package__ is None or __package__ == "":
 
 from tools.manifest_coverage import build_manifest_coverage
 from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES, canonical_json, write_text
+from tools.recommend_leveling import build_recommendation_documents
 from tools.reputations import normalize_reputation_names
 from tools.sources import (
     classify_source,
@@ -35,8 +37,8 @@ from tools.sources import (
 )
 from tools.validate_data import validate
 
-PARSER_VERSION = "wowhead-scraper-0.8.0"
-USER_AGENT = "BigBiSListScraper/0.4 (+https://github.com/codecrete-dev/BigBisList)"
+PARSER_VERSION = "wowhead-scraper-0.9.0"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 BigBiSListScraper/0.4"
 
 CURRENCY_NAMES = {
     1900: "Arena Points",
@@ -250,6 +252,11 @@ def absolute_tbc_url(href: str) -> str:
     return href
 
 
+def wowhead_slug(value: str | None) -> str:
+    normalized = re.sub(r"['\u2019]", "", str(value or "").lower())
+    return re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")
+
+
 def page_type_for_url(url: str) -> str:
     if "/guide/" in url:
         return "guide"
@@ -257,6 +264,8 @@ def page_type_for_url(url: str) -> str:
         return "item"
     if "/spell=" in url:
         return "spell"
+    if "/items" in url:
+        return "item_list"
     return "unknown"
 
 
@@ -1057,6 +1066,43 @@ def extract_balanced_json_object(text: str, start: int) -> str | None:
     return None
 
 
+def load_wowhead_json_array(array_text: str) -> list[Any] | None:
+    try:
+        data = json.loads(array_text)
+    except json.JSONDecodeError:
+        normalized = re.sub(r",\s*([}\]])", r"\1", array_text)
+        normalized = re.sub(r"([{\[,]\s*)([A-Za-z_][A-Za-z0-9_]*)\s*:", r'\1"\2":', normalized)
+        normalized = re.sub(r"\bundefined\b", "null", normalized)
+        try:
+            data = json.loads(normalized)
+        except json.JSONDecodeError:
+            return None
+    return data if isinstance(data, list) else None
+
+
+def extract_javascript_array_variable(html: str, variable_name: str) -> list[Any] | None:
+    variable_pattern = re.escape(variable_name)
+    for match in re.finditer(rf"(?:var\s+)?{variable_pattern}\s*=\s*", html):
+        array_text = extract_balanced_json_array(html, match.end())
+        if not array_text:
+            continue
+        data = load_wowhead_json_array(array_text)
+        if data is not None:
+            return data
+    return None
+
+
+def listview_data_variable_name(object_text: str, data_start: int) -> str | None:
+    expression = object_text[data_start : data_start + 200]
+    direct = re.match(r"\s*([A-Za-z_$][A-Za-z0-9_$]*)\b", expression)
+    if direct and direct.group(1) not in {"WH", "null", "true", "false"}:
+        return direct.group(1)
+    wrapped = re.match(r"\s*WH\.cOr\(\s*\[\]\s*,\s*([A-Za-z_$][A-Za-z0-9_$]*)\b", expression)
+    if wrapped:
+        return wrapped.group(1)
+    return None
+
+
 def extract_listview_data(html: str, listview_id: str) -> list[dict[str, Any]]:
     id_match = re.search(rf"id:\s*['\"]{re.escape(listview_id)}['\"]", html)
     if not id_match:
@@ -1067,11 +1113,28 @@ def extract_listview_data(html: str, listview_id: str) -> list[dict[str, Any]]:
     array_text = extract_balanced_json_array(html, id_match.end() + data_match.end())
     if not array_text:
         return []
-    try:
-        data = json.loads(array_text)
-    except json.JSONDecodeError:
-        return []
+    data = load_wowhead_json_array(array_text)
     return data if isinstance(data, list) else []
+
+
+def extract_all_listview_data(html: str) -> dict[str, list[dict[str, Any]]]:
+    views: dict[str, list[dict[str, Any]]] = {}
+    for match in re.finditer(r"new\s+Listview\s*\(", html):
+        object_text = extract_balanced_json_object(html, match.end())
+        if not object_text:
+            continue
+        id_match = re.search(r"\bid\s*:\s*['\"]([^'\"]+)['\"]", object_text)
+        data_match = re.search(r"\bdata\s*:\s*", object_text)
+        if not id_match or not data_match:
+            continue
+        array_text = extract_balanced_json_array(object_text, data_match.end())
+        data = load_wowhead_json_array(array_text) if array_text else None
+        if data is None:
+            variable_name = listview_data_variable_name(object_text, data_match.end())
+            data = extract_javascript_array_variable(html, variable_name) if variable_name else None
+        if isinstance(data, list):
+            views[id_match.group(1)] = data
+    return views
 
 
 def extract_gatherer_names(html: str) -> dict[str, dict[int, str]]:
@@ -1450,6 +1513,250 @@ def canonical_inventory_slot(value: str | None) -> str | None:
     return aliases.get(normalized, value.strip())
 
 
+BASE_STAT_ALIASES = {
+    "Strength": "strength",
+    "Agility": "agility",
+    "Stamina": "stamina",
+    "Intellect": "intellect",
+    "Spirit": "spirit",
+}
+
+EQUIP_STAT_PATTERNS = [
+    (r"\b(?:increases|improves) (?:your )?attack power by (\d+)\b", "attack_power"),
+    (r"\bincreases ranged attack power by (\d+)\b", "ranged_attack_power"),
+    (r"\b(?:increases|improves) (?:your )?hit rating by (\d+)\b", "hit_rating"),
+    (r"\b(?:increases|improves) (?:your )?spell hit rating by (\d+)\b", "spell_hit_rating"),
+    (r"\b(?:increases|improves) (?:your )?critical strike rating by (\d+)\b", "crit_rating"),
+    (r"\b(?:increases|improves) (?:your )?spell critical strike rating by (\d+)\b", "spell_crit_rating"),
+    (r"\b(?:increases|improves) (?:your )?haste rating by (\d+)\b", "haste_rating"),
+    (r"\b(?:increases|improves) (?:your )?resilience rating by (\d+)\b", "resilience_rating"),
+    (r"\b(?:increases|improves) (?:your )?defense rating by (\d+)\b", "defense_rating"),
+    (r"\b(?:increases|improves) (?:your )?dodge rating by (\d+)\b", "dodge_rating"),
+    (r"\b(?:increases|improves) (?:your )?parry rating by (\d+)\b", "parry_rating"),
+    (r"\b(?:increases|improves) (?:your )?block rating by (\d+)\b", "block_rating"),
+    (r"\b(?:increases|improves) (?:your )?expertise rating by (\d+)\b", "expertise_rating"),
+    (r"\bincreases healing done by (?:magical spells and effects )?up to (\d+)\b", "healing_power"),
+    (r"\bincreases damage and healing done by magical spells and effects by up to (\d+)\b", "spell_power"),
+    (r"\bincreases damage done by (?:magical )?spells and effects by up to (\d+)\b", "spell_damage"),
+    (r"\brestores (\d+) mana per 5 sec", "mp5"),
+]
+
+WEAPON_SUBTYPES = [
+    "Axe",
+    "Bow",
+    "Crossbow",
+    "Dagger",
+    "Fist Weapon",
+    "Gun",
+    "Mace",
+    "Polearm",
+    "Staff",
+    "Sword",
+    "Thrown",
+    "Wand",
+]
+
+ARMOR_TYPES = ["Cloth", "Leather", "Mail", "Plate", "Shield"]
+
+
+def item_tooltip_lines(item_id: int | None, html: str) -> list[str]:
+    tooltip_html = item_tooltip_html(item_id, html)
+    if not tooltip_html:
+        return []
+    soup = make_soup(tooltip_html)
+    return [clean_text(line) for line in soup.get_text("\n", strip=True).splitlines() if clean_text(line)]
+
+
+def tooltip_html_lines(tooltip_html: str) -> list[str]:
+    if not tooltip_html:
+        return []
+    soup = make_soup(tooltip_html)
+    return [clean_text(line) for line in soup.get_text("\n", strip=True).splitlines() if clean_text(line)]
+
+
+def add_stat(stats: dict[str, float], key: str, value: int | float) -> None:
+    stats[key] = round(float(stats.get(key, 0)) + float(value), 4)
+
+
+def parse_socket_bonus(text: str) -> dict[str, float]:
+    match = re.search(r"Socket Bonus:\s*\+?(\d+)\s+([A-Za-z ]+)", text, flags=re.IGNORECASE)
+    if not match:
+        return {}
+    stat_name = match.group(2).strip()
+    key = BASE_STAT_ALIASES.get(stat_name)
+    if not key:
+        normalized = re.sub(r"[^a-z0-9]+", "_", stat_name.lower()).strip("_")
+        key = normalized or "unknown"
+    return {key: float(match.group(1))}
+
+
+def parse_tooltip_stats(lines: list[str]) -> dict[str, Any]:
+    stats: dict[str, float] = {}
+    sockets: list[str] = []
+    socket_bonus: dict[str, float] = {}
+    restrictions: dict[str, list[str]] = {}
+    equip_effects: list[str] = []
+    use_effects: list[str] = []
+    required_level: int | None = None
+    item_level: int | None = None
+    armor: int | None = None
+    weapon_speed: float | None = None
+    weapon_min_damage: int | None = None
+    weapon_max_damage: int | None = None
+    dps: float | None = None
+    weapon_type: str | None = None
+    weapon_subtype: str | None = None
+    armor_type: str | None = None
+
+    flat_text = " ".join(lines)
+    match = re.search(r"\bRequires\s+Level\s+(\d{1,2})\b", flat_text, flags=re.IGNORECASE)
+    if match:
+        required_level = int(match.group(1))
+    match = re.search(r"\bItem\s+Level\s+(\d+)\b", flat_text, flags=re.IGNORECASE)
+    if match:
+        item_level = int(match.group(1))
+    damage_match = re.search(r"(\d+)\s*-\s*(\d+)\s+Damage\s+Speed\s+([\d.]+)", flat_text, flags=re.IGNORECASE)
+    if damage_match:
+        weapon_min_damage = int(damage_match.group(1))
+        weapon_max_damage = int(damage_match.group(2))
+        weapon_speed = float(damage_match.group(3))
+
+    matched_equip_stat_keys: set[str] = set()
+    for line in lines:
+        item_level_match = re.search(r"\bItem\s+Level\s+(\d+)\b", line, flags=re.IGNORECASE)
+        if item_level_match:
+            item_level = int(item_level_match.group(1))
+
+        damage_match = re.search(r"(\d+)\s*-\s*(\d+)\s+Damage\s+Speed\s+([\d.]+)", line, flags=re.IGNORECASE)
+        if damage_match:
+            weapon_min_damage = int(damage_match.group(1))
+            weapon_max_damage = int(damage_match.group(2))
+            weapon_speed = float(damage_match.group(3))
+
+        dps_match = re.search(r"\(([\d.]+)\s+damage per second\)", line, flags=re.IGNORECASE)
+        if dps_match:
+            dps = float(dps_match.group(1))
+
+        armor_match = re.fullmatch(r"(\d+)\s+Armor", line, flags=re.IGNORECASE)
+        if armor_match:
+            armor = int(armor_match.group(1))
+
+        for stat_name, key in BASE_STAT_ALIASES.items():
+            stat_match = re.fullmatch(rf"\+(\d+)\s+{re.escape(stat_name)}", line, flags=re.IGNORECASE)
+            if stat_match:
+                add_stat(stats, key, int(stat_match.group(1)))
+
+        for pattern, key in EQUIP_STAT_PATTERNS:
+            stat_match = re.search(pattern, line, flags=re.IGNORECASE)
+            if stat_match:
+                add_stat(stats, key, int(stat_match.group(1)))
+                matched_equip_stat_keys.add(key)
+
+        socket_match = re.fullmatch(r"(Meta|Red|Yellow|Blue|Prismatic)\s+Socket", line, flags=re.IGNORECASE)
+        if socket_match:
+            sockets.append(socket_match.group(1).lower())
+
+        if line.lower().startswith("socket bonus:"):
+            socket_bonus.update(parse_socket_bonus(line))
+
+        if line.startswith("Equip:"):
+            equip_effects.append(line)
+        elif line.startswith("Use:"):
+            use_effects.append(line)
+
+        classes_match = re.search(r"\bClasses:\s*(.+)$", line)
+        if classes_match:
+            restrictions["classes"] = [clean_text(value) for value in re.split(r",|/", classes_match.group(1)) if clean_text(value)]
+        races_match = re.search(r"\bRaces:\s*(.+)$", line)
+        if races_match:
+            restrictions["races"] = [clean_text(value) for value in re.split(r",|/", races_match.group(1)) if clean_text(value)]
+
+        lowered = line.lower()
+        for subtype in WEAPON_SUBTYPES:
+            if re.search(rf"\b{re.escape(subtype.lower())}\b", lowered):
+                weapon_subtype = subtype
+                break
+        if re.search(r"\btwo[- ]hand", lowered):
+            weapon_type = "Two Hand"
+        elif re.search(r"\bone[- ]hand|\bmain hand|\boff hand|\boff-hand", lowered):
+            weapon_type = "One Hand"
+        elif any(subtype and subtype.lower() in lowered for subtype in ["bow", "crossbow", "gun", "thrown", "wand"]):
+            weapon_type = "Ranged"
+
+        for candidate in ARMOR_TYPES:
+            if re.search(rf"\b{candidate.lower()}\b", lowered):
+                armor_type = candidate
+
+    for pattern, key in EQUIP_STAT_PATTERNS:
+        if key in matched_equip_stat_keys:
+            continue
+        stat_match = re.search(pattern, flat_text, flags=re.IGNORECASE)
+        if stat_match:
+            add_stat(stats, key, int(stat_match.group(1)))
+
+    return {
+        "required_level": required_level,
+        "item_level": item_level,
+        "weapon_type": weapon_type,
+        "weapon_subtype": weapon_subtype,
+        "weapon_speed": weapon_speed,
+        "weapon_min_damage": weapon_min_damage,
+        "weapon_max_damage": weapon_max_damage,
+        "dps": dps,
+        "armor": armor,
+        "armor_type": armor_type,
+        "stats": stats,
+        "sockets": sockets,
+        "socket_bonus": socket_bonus,
+        "restrictions": restrictions,
+        "equip_effects": equip_effects,
+        "use_effects": use_effects,
+    }
+
+
+def parse_item_stats(url: str, item_id: int | None, name: str, description: str, tooltip_lines: list[str], inventory_slot: str | None, quality: str, binding: str, boe: bool | None, sources: list[dict[str, Any]]) -> dict[str, Any]:
+    parsed = parse_tooltip_stats(tooltip_lines)
+    description_level = re.search(r"\bitem level of (\d+)\b", description, flags=re.IGNORECASE)
+    if parsed["item_level"] is None and description_level:
+        parsed["item_level"] = int(description_level.group(1))
+    if parsed["required_level"] is None:
+        req_match = re.search(r"\brequires level (\d{1,2})\b", description, flags=re.IGNORECASE)
+        if req_match:
+            parsed["required_level"] = int(req_match.group(1))
+
+    row = {
+        "id": item_id,
+        "name": name,
+        "required_level": parsed["required_level"],
+        "item_level": parsed["item_level"],
+        "quality": quality,
+        "binding": binding,
+        "boe": boe,
+        "slot": canonical_inventory_slot(inventory_slot),
+        "armor_type": parsed["armor_type"],
+        "weapon_type": parsed["weapon_type"],
+        "weapon_subtype": parsed["weapon_subtype"],
+        "weapon_speed": parsed["weapon_speed"],
+        "weapon_min_damage": parsed["weapon_min_damage"],
+        "weapon_max_damage": parsed["weapon_max_damage"],
+        "dps": parsed["dps"],
+        "armor": parsed["armor"],
+        "stats": parsed["stats"],
+        "sockets": parsed["sockets"],
+        "socket_bonus": parsed["socket_bonus"],
+        "restrictions": parsed["restrictions"],
+        "equip_effects": parsed["equip_effects"],
+        "use_effects": parsed["use_effects"],
+        "source_summary": summarize_sources(sources) if sources else "",
+        "primary_source": derive_primary_source(sources) if sources else None,
+        "sources": sources,
+        "phase": derive_acquisition_phase(sources) if sources else "PR",
+        "wowhead_url": url,
+        "parse_confidence": "tooltip" if tooltip_lines else "description_only",
+    }
+    return {key: value for key, value in row.items() if value not in (None, [], {})}
+
+
 def parse_item_html(url: str, html: str) -> dict[str, Any]:
     soup = make_soup(html)
     title = element_text(soup.title) if soup.title else ""
@@ -1458,6 +1765,7 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
     description = meta.get("content", "") if meta else ""
     item_id = item_id_from_href(url)
     tooltip_text = item_tooltip_text(item_id, html)
+    tooltip_lines = item_tooltip_lines(item_id, html)
     inventory_slot = parse_inventory_slot_from_text(f"{tooltip_text} {description}", name)
     binding, boe = parse_binding_from_text(tooltip_text or description)
     listview_ids = [
@@ -1473,6 +1781,7 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
     ]
     related_tables = {listview_id: extract_listview_data(html, listview_id) for listview_id in listview_ids}
     sources = normalize_item_sources(url, related_tables)
+    item_stats = parse_item_stats(url, item_id, name, description, tooltip_lines, inventory_slot, parse_quality_from_description(description), binding, boe, sources)
     normalized_requirements = extract_requirements_from_text(
         f"{tooltip_text} {description}",
         url,
@@ -1496,8 +1805,50 @@ def parse_item_html(url: str, html: str) -> dict[str, Any]:
         "related_tables": related_tables,
         "normalized_sources": sources,
         "normalized_requirements": normalized_requirements,
+        "item_stats": item_stats,
         "taught_by_items": related_tables.get("taught-by-item", []),
         "teaches_spell_ids": item_teaches_spell_ids(item_id, name, html),
+    }
+
+
+def parse_item_tooltip_endpoint(url: str, payload_text: str) -> dict[str, Any]:
+    payload = json.loads(payload_text)
+    item_id = item_id_from_href(url)
+    name = str(payload.get("name") or f"Item {item_id or ''}").strip()
+    tooltip_html = str(payload.get("tooltip") or "")
+    tooltip_lines = tooltip_html_lines(tooltip_html)
+    tooltip_text = element_text(make_soup(tooltip_html)) if tooltip_html else ""
+    inventory_slot = parse_inventory_slot_from_text(tooltip_text, name)
+    binding, boe = parse_binding_from_text(tooltip_text)
+    quality = item_listview_quality_name(payload.get("quality")) or "unknown"
+    item_stats = parse_item_stats(url, item_id, name, "", tooltip_lines, inventory_slot, quality, binding, boe, [])
+    item_stats["parse_confidence"] = "tooltip_endpoint"
+    normalized_requirements = extract_requirements_from_text(
+        tooltip_text,
+        url,
+        "equip_or_use",
+        "wowhead_item",
+        include_unknown=False,
+    )
+
+    return {
+        "parser_version": PARSER_VERSION,
+        "url": url,
+        "fetched_at": now_utc(),
+        "page_type": "item",
+        "item_id": item_id,
+        "name": name,
+        "quality": quality,
+        "inventory_slot": canonical_inventory_slot(inventory_slot),
+        "binding": binding,
+        "boe": boe,
+        "description": clean_text(tooltip_text),
+        "related_tables": {},
+        "normalized_sources": [],
+        "normalized_requirements": normalized_requirements,
+        "item_stats": item_stats,
+        "taught_by_items": [],
+        "teaches_spell_ids": [],
     }
 
 
@@ -1615,6 +1966,67 @@ def parse_spell_html(url: str, html: str) -> dict[str, Any]:
     }
 
 
+def parse_item_list_html(url: str, html: str) -> dict[str, Any]:
+    soup = make_soup(html)
+    title = element_text(soup.title) if soup.title else ""
+    listviews = extract_all_listview_data(html)
+    discovered: dict[int, dict[str, Any]] = {}
+    truncated = bool(re.search(r"_truncated\s*:\s*1", html))
+    note_match = re.search(r"note:\s*\"([\d,]+)\s+items found \(([\d,]+)\s+displayed\)", html)
+    total_items = int(note_match.group(1).replace(",", "")) if note_match else None
+    displayed_items = int(note_match.group(2).replace(",", "")) if note_match else None
+
+    for listview_id, rows in listviews.items():
+        for row in rows:
+            item_id = row.get("id")
+            if not isinstance(item_id, int) or item_id <= 0:
+                continue
+            name = row.get("name") or discovered.get(item_id, {}).get("name") or f"Item {item_id}"
+            discovered[item_id] = {
+                "id": item_id,
+                "name": name,
+                "url": item_url_for_row(item_id, str(name)),
+                "listview_id": listview_id,
+                "level": row.get("level"),
+                "required_level": row.get("reqlevel"),
+                "quality": row.get("quality"),
+                "slot": row.get("slot"),
+            }
+            for optional_key in ["source", "sourcemore", "commondrop", "cost", "classs", "subclass"]:
+                if row.get(optional_key) not in (None, "", []):
+                    discovered[item_id][optional_key] = deepcopy(row[optional_key])
+
+    for link in soup.find_all("a", href=True):
+        item_id = item_id_from_href(link["href"])
+        if not item_id:
+            continue
+        discovered.setdefault(
+            item_id,
+            {
+                "id": item_id,
+                "name": element_text(link) or f"Item {item_id}",
+                "url": absolute_tbc_url(link["href"]) if "/tbc/item=" in link["href"] else item_url_for_row(item_id, element_text(link)),
+                "listview_id": "link",
+            },
+        )
+
+    return {
+        "parser_version": PARSER_VERSION,
+        "url": url,
+        "fetched_at": now_utc(),
+        "page_type": "item_list",
+        "title": title,
+        "item_refs": [discovered[item_id] for item_id in sorted(discovered)],
+        "summary": {
+            "item_refs": len(discovered),
+            "listviews": sorted(listviews),
+            "truncated": truncated,
+            "total_items": total_items,
+            "displayed_items": displayed_items,
+        },
+    }
+
+
 def normalize_html(url: str, html: str) -> dict[str, Any]:
     page_type = page_type_for_url(url)
     if page_type == "guide":
@@ -1623,6 +2035,8 @@ def normalize_html(url: str, html: str) -> dict[str, Any]:
         return parse_item_html(url, html)
     if page_type == "spell":
         return parse_spell_html(url, html)
+    if page_type == "item_list":
+        return parse_item_list_html(url, html)
     return {
         "parser_version": PARSER_VERSION,
         "url": url,
@@ -1640,7 +2054,15 @@ def fetch_url(url: str, cache_dir: Path, retries: int = 3, delay: float = 0.75) 
     last_error: Exception | None = None
     for attempt in range(retries):
         try:
-            request = Request(url, headers={"User-Agent": USER_AGENT})
+            request = Request(
+                url,
+                headers={
+                    "User-Agent": USER_AGENT,
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.9",
+                    "Referer": "https://www.wowhead.com/tbc/items",
+                },
+            )
             with urlopen(request, timeout=30) as response:
                 html = response.read().decode("utf-8", errors="replace")
             write_text(cache_path, html)
@@ -1660,24 +2082,73 @@ def write_snapshot(snapshot: dict[str, Any], output_dir: Path) -> Path:
     return output_path
 
 
+def fetch_normalized_snapshot(
+    url: str,
+    cache_dir: Path,
+    output_dir: Path,
+    *,
+    retries: int,
+    delay: float,
+) -> dict[str, Any]:
+    try:
+        html = fetch_url(url, cache_dir, retries=retries, delay=delay)
+        snapshot = normalize_html(url, html)
+    except RuntimeError as exc:
+        item_id = item_id_from_href(url)
+        if not item_id or "HTTP Error 403" not in str(exc):
+            raise
+        tooltip_url = f"https://nether.wowhead.com/tbc/tooltip/item/{item_id}"
+        payload_text = fetch_url(tooltip_url, cache_dir, retries=retries, delay=delay)
+        snapshot = parse_item_tooltip_endpoint(url, payload_text)
+    write_snapshot(snapshot, output_dir)
+    return snapshot
+
+
 def manifest_urls(data_family: str | None = None) -> list[str]:
     manifest = canonical_json("scrape_manifest")
     urls: set[str] = set()
     for source in manifest.get("sources", []):
-        if not source.get("url"):
-            continue
         if data_family and data_family not in source_families(source):
             continue
-        urls.add(source["url"])
+        for url in manifest_source_urls(source):
+            urls.add(url)
     return sorted(urls)
+
+
+def manifest_source_urls(source: dict[str, Any]) -> list[str]:
+    urls: list[str] = []
+    if source.get("url"):
+        urls.append(str(source["url"]))
+    for url in source.get("discovery_urls") or []:
+        if isinstance(url, str) and url:
+            urls.append(url)
+    for url in source.get("seed_urls") or []:
+        if isinstance(url, str) and url:
+            urls.append(url)
+    return urls
+
+
+def item_corpus_manifest_item_ids() -> set[int]:
+    item_ids: set[int] = set()
+    manifest = canonical_json("scrape_manifest")
+    for source in manifest.get("sources", []):
+        if "item_corpus" not in source_families(source):
+            continue
+        for url in source.get("seed_urls") or []:
+            if not isinstance(url, str):
+                continue
+            item_id = item_id_from_href(url)
+            if item_id:
+                item_ids.add(item_id)
+    return item_ids
 
 
 def manifest_sources_by_url() -> dict[str, list[dict[str, Any]]]:
     manifest = canonical_json("scrape_manifest")
     sources_by_url: dict[str, list[dict[str, Any]]] = {}
     for source in manifest.get("sources", []):
-        if source.get("url"):
-            sources_by_url.setdefault(source["url"], []).append(source)
+        for url in manifest_source_urls(source):
+            sources_by_url.setdefault(url, []).append(source)
     return sources_by_url
 
 
@@ -1714,6 +2185,11 @@ def item_url_for_id(item_id: int) -> str:
     return f"https://www.wowhead.com/tbc/item={item_id}"
 
 
+def item_url_for_row(item_id: int, name: str | None = None) -> str:
+    slug = wowhead_slug(name)
+    return f"{item_url_for_id(item_id)}/{slug}" if slug else item_url_for_id(item_id)
+
+
 def spell_url_for_id(spell_id: int) -> str:
     return f"https://www.wowhead.com/tbc/spell={spell_id}"
 
@@ -1721,6 +2197,11 @@ def spell_url_for_id(spell_id: int) -> str:
 def discover_entity_urls(snapshots: list[dict[str, Any]], entity_type: str | None = None) -> list[str]:
     urls: set[str] = set()
     for snapshot in snapshots:
+        if snapshot.get("page_type") == "item_list" and entity_type in {None, "item"}:
+            for ref in snapshot.get("item_refs", []):
+                if ref.get("url"):
+                    urls.add(ref["url"])
+            continue
         if snapshot.get("page_type") != "guide":
             continue
         for table in snapshot.get("tables", []):
@@ -1742,6 +2223,221 @@ def discover_entity_urls(snapshots: list[dict[str, Any]], entity_type: str | Non
 
 def discover_item_urls(snapshots: list[dict[str, Any]]) -> list[str]:
     return discover_entity_urls(snapshots, "item")
+
+
+ITEM_CORPUS_LISTVIEW_SLOTS = {1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 28}
+ITEM_LISTVIEW_QUALITY_NAMES = {
+    0: "poor",
+    1: "common",
+    2: "uncommon",
+    3: "rare",
+    4: "epic",
+    5: "legendary",
+    6: "artifact",
+}
+ITEM_LISTVIEW_SLOT_NAMES = {
+    1: "Head",
+    2: "Neck",
+    3: "Shoulder",
+    5: "Chest",
+    6: "Waist",
+    7: "Legs",
+    8: "Feet",
+    9: "Wrist",
+    10: "Hands",
+    11: "Ring",
+    12: "Trinket",
+    13: "One Hand",
+    14: "Off Hand",
+    15: "Ranged",
+    16: "Back",
+    17: "Two Hand",
+    21: "Main Hand",
+    22: "Off Hand",
+    23: "Off Hand",
+    24: "Ammo",
+    25: "Ranged",
+    26: "Ranged",
+    28: "Relic",
+}
+
+
+def item_corpus_authoritative_urls() -> set[str]:
+    urls: set[str] = set()
+    manifest = canonical_json("scrape_manifest")
+    for source in manifest.get("sources", []):
+        if "item_corpus" not in source_families(source):
+            continue
+        if source.get("url") and source.get("url_policy") != "bootstrap_only":
+            urls.add(str(source["url"]))
+        for url in source.get("discovery_urls") or []:
+            if isinstance(url, str) and url:
+                urls.add(url)
+        for url in source.get("authoritative_urls") or []:
+            if isinstance(url, str) and url:
+                urls.add(url)
+    return urls
+
+
+def item_corpus_snapshot_is_authoritative(snapshot: dict[str, Any]) -> bool:
+    if snapshot.get("page_type") != "item_list":
+        return False
+    return str(snapshot.get("url") or "") in item_corpus_authoritative_urls()
+
+
+def item_corpus_ref_is_in_scope(ref: dict[str, Any]) -> bool:
+    try:
+        slot = int(ref.get("slot") or 0)
+    except (TypeError, ValueError):
+        slot = 0
+    if slot not in ITEM_CORPUS_LISTVIEW_SLOTS:
+        return False
+    required_level = ref.get("required_level")
+    if required_level in (None, ""):
+        try:
+            item_level = int(ref.get("level") or 0)
+        except (TypeError, ValueError):
+            return False
+        return 1 <= item_level <= 70
+    try:
+        return int(required_level) <= 70
+    except (TypeError, ValueError):
+        return False
+
+
+def discover_item_corpus_urls(snapshots: list[dict[str, Any]], *, authoritative_only: bool = False) -> list[str]:
+    urls: set[str] = set()
+    for snapshot in snapshots:
+        if snapshot.get("page_type") != "item_list":
+            continue
+        if authoritative_only and not item_corpus_snapshot_is_authoritative(snapshot):
+            continue
+        for ref in snapshot.get("item_refs", []):
+            if item_corpus_ref_is_in_scope(ref) and ref.get("url"):
+                urls.add(ref["url"])
+    return sorted(urls)
+
+
+def item_listview_quality_name(value: Any) -> str | None:
+    try:
+        return ITEM_LISTVIEW_QUALITY_NAMES.get(int(value))
+    except (TypeError, ValueError):
+        return None
+
+
+def item_listview_slot_name(value: Any) -> str | None:
+    try:
+        return ITEM_LISTVIEW_SLOT_NAMES.get(int(value))
+    except (TypeError, ValueError):
+        return None
+
+
+def item_list_source_type(ref: dict[str, Any]) -> str:
+    source_kinds = ref.get("source")
+    if isinstance(source_kinds, list):
+        if 5 in source_kinds:
+            return "vendor"
+        if 4 in source_kinds:
+            return "quest"
+        if 3 in source_kinds:
+            return "pvp"
+        if 1 in source_kinds:
+            return "crafted"
+        if 2 in source_kinds:
+            return "world_drop" if ref.get("commondrop") and not ref.get("sourcemore") else "drop"
+    return "unknown"
+
+
+def item_list_sources_from_ref(ref: dict[str, Any]) -> list[dict[str, Any]]:
+    source_type = item_list_source_type(ref)
+    source_rows = ref.get("sourcemore") if isinstance(ref.get("sourcemore"), list) else []
+    if not source_rows:
+        source_rows = [{}]
+
+    sources: list[dict[str, Any]] = []
+    seen: set[tuple[Any, ...]] = set()
+    for source_row in source_rows:
+        if not isinstance(source_row, dict):
+            continue
+        row_for_zone = {"sourcemore": [source_row]}
+        source = {
+            "type": source_type,
+            "entity_id": source_row.get("ti") or source_row.get("id"),
+            "entity_name": source_row.get("n") or source_row.get("name"),
+            "zone": first_zone_name(row_for_zone),
+            "source_url": ref.get("url"),
+            "confidence": "wowhead_item_list",
+        }
+        if source_type == "world_drop":
+            source["world_drop"] = True
+        cleaned = {key: value for key, value in source.items() if value not in (None, "", [])}
+        key = (cleaned.get("type"), cleaned.get("entity_id"), cleaned.get("entity_name"), cleaned.get("zone"))
+        if key in seen:
+            continue
+        seen.add(key)
+        sources.append(cleaned)
+
+    return classify_sources(sources)
+
+
+def item_list_metadata_by_id(snapshots: list[dict[str, Any]], *, authoritative_only: bool = False) -> dict[int, dict[str, Any]]:
+    metadata: dict[int, dict[str, Any]] = {}
+    for snapshot in snapshots:
+        if snapshot.get("page_type") != "item_list":
+            continue
+        if authoritative_only and not item_corpus_snapshot_is_authoritative(snapshot):
+            continue
+        for ref in snapshot.get("item_refs", []):
+            if not item_corpus_ref_is_in_scope(ref):
+                continue
+            item_id = ref.get("id")
+            if not isinstance(item_id, int) or item_id <= 0:
+                continue
+            current = metadata.setdefault(item_id, {})
+            for target_key, source_key in [("required_level", "required_level"), ("item_level", "level")]:
+                value = ref.get(source_key)
+                if isinstance(value, int):
+                    current[target_key] = value
+            quality = item_listview_quality_name(ref.get("quality"))
+            if quality:
+                current["quality"] = quality
+            slot = item_listview_slot_name(ref.get("slot"))
+            if slot:
+                current["slot"] = slot
+            if ref.get("name"):
+                current["name"] = ref["name"]
+            if ref.get("url"):
+                current["wowhead_url"] = ref["url"]
+            sources = item_list_sources_from_ref(ref)
+            if sources:
+                current["sources"] = sources
+                current["primary_source"] = derive_primary_source(sources)
+                current["source_summary"] = summarize_sources(sources)
+    return metadata
+
+
+def apply_item_list_metadata(row: dict[str, Any], metadata: dict[str, Any] | None) -> dict[str, Any]:
+    if not metadata:
+        return row
+    enriched = deepcopy(row)
+    for key in ["required_level", "item_level", "slot"]:
+        if enriched.get(key) in (None, "", []):
+            value = metadata.get(key)
+            if value not in (None, "", []):
+                enriched[key] = value
+    if enriched.get("quality") in (None, "", "unknown"):
+        quality = metadata.get("quality")
+        if quality:
+            enriched["quality"] = quality
+    if not enriched.get("sources") and metadata.get("sources"):
+        enriched["sources"] = deepcopy(metadata["sources"])
+    if not enriched.get("primary_source") and metadata.get("primary_source"):
+        enriched["primary_source"] = deepcopy(metadata["primary_source"])
+    if not enriched.get("source_summary") and metadata.get("source_summary"):
+        enriched["source_summary"] = metadata["source_summary"]
+    if enriched.get("phase") in (None, "", "PR") and enriched.get("sources"):
+        enriched["phase"] = derive_acquisition_phase(enriched["sources"])
+    return enriched
 
 
 def item_cost_ids_from_sources(sources: list[dict[str, Any]]) -> set[int]:
@@ -1816,43 +2512,105 @@ def reviewed_quest_starter_item_urls() -> list[str]:
 
 def command_fetch(args: argparse.Namespace) -> int:
     output_dir = args.output_dir
+    if args.family == "item_corpus" and output_dir == RAW_WOWHEAD_DIR:
+        output_dir = RAW_WOWHEAD_DIR / "full_item_corpus"
     cache_dir = output_dir / "html_cache"
     urls = sorted(set(args.url or manifest_urls(args.family)))
     seen_urls: set[str] = set()
-    snapshots: list[dict[str, Any]] = []
+    existing_snapshots = load_snapshots(output_dir) if output_dir.is_dir() else []
+    existing_snapshot_urls = {str(snapshot.get("url") or "") for snapshot in existing_snapshots}
+    existing_item_ids = {
+        int(snapshot["item_id"])
+        for snapshot in existing_snapshots
+        if snapshot.get("page_type") == "item" and isinstance(snapshot.get("item_id"), int)
+    }
+    snapshots: list[dict[str, Any]] = list(existing_snapshots) if args.family == "item_corpus" else []
     queue = list(urls)
     seed_urls = set(urls)
     include_canonical_items = args.family in {None, "bis_lists"} and not args.url
+    fetched = 0
+
+    if args.family == "item_corpus" and not args.no_discover:
+        queue.extend(sorted(set(discover_item_corpus_urls(snapshots, authoritative_only=True)) - set(queue)))
+
+    def should_skip_url(url: str) -> bool:
+        url_item_id = item_id_from_href(url)
+        return bool(args.missing_only and (url in existing_snapshot_urls or (url_item_id is not None and url_item_id in existing_item_ids)))
+
+    def remember_snapshot(snapshot: dict[str, Any], fallback_url: str) -> None:
+        snapshots.append(snapshot)
+        existing_snapshot_urls.add(str(snapshot.get("url") or fallback_url))
+        if snapshot.get("page_type") == "item" and isinstance(snapshot.get("item_id"), int):
+            existing_item_ids.add(int(snapshot["item_id"]))
+
+    if args.workers > 1 and args.family == "item_corpus":
+        pending_urls: list[str] = []
+        while queue and (args.limit is None or len(pending_urls) < args.limit):
+            url = queue.pop(0)
+            if url in seen_urls:
+                continue
+            seen_urls.add(url)
+            if should_skip_url(url):
+                continue
+            pending_urls.append(url)
+
+        with ThreadPoolExecutor(max_workers=args.workers) as executor:
+            futures = {
+                executor.submit(
+                    fetch_normalized_snapshot,
+                    url,
+                    cache_dir,
+                    output_dir,
+                    retries=args.retries,
+                    delay=args.delay,
+                ): url
+                for url in pending_urls
+            }
+            for future in as_completed(futures):
+                url = futures[future]
+                try:
+                    snapshot = future.result()
+                except RuntimeError as exc:
+                    if url in seed_urls:
+                        raise
+                    print(f"warning: skipped optional discovered URL {url}: {exc}", file=sys.stderr)
+                    continue
+                remember_snapshot(snapshot, url)
+                print(f"snapshot {snapshot['page_type']}: {url}")
+        return 0
 
     while queue:
         url = queue.pop(0)
         if url in seen_urls:
             continue
         seen_urls.add(url)
+        if should_skip_url(url):
+            continue
+        if args.limit is not None and fetched >= args.limit:
+            break
         try:
-            html = fetch_url(url, cache_dir, retries=args.retries, delay=args.delay)
+            snapshot = fetch_normalized_snapshot(url, cache_dir, output_dir, retries=args.retries, delay=args.delay)
         except RuntimeError as exc:
             if url in seed_urls:
                 raise
             print(f"warning: skipped optional discovered URL {url}: {exc}", file=sys.stderr)
             continue
-        snapshot = normalize_html(url, html)
-        write_snapshot(snapshot, output_dir)
-        snapshots.append(snapshot)
+        remember_snapshot(snapshot, url)
+        fetched += 1
         print(f"snapshot {snapshot['page_type']}: {url}")
 
         if not args.no_discover:
-            discovered = sorted(
-                set(
+            if args.family == "item_corpus":
+                discovery_urls = discover_item_corpus_urls(snapshots, authoritative_only=True)
+            else:
+                discovery_urls = (
                     discover_entity_urls(snapshots)
                     + (canonical_item_urls() if include_canonical_items else [])
                     + reviewed_quest_starter_item_urls()
                     + discover_token_item_urls(snapshots)
                     + discover_related_source_urls(snapshots)
                 )
-                - seen_urls
-                - set(queue)
-            )
+            discovered = sorted(set(discovery_urls) - seen_urls - set(queue))
             queue.extend(discovered)
 
     return 0
@@ -3994,6 +4752,268 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
     return apply_item_overrides({"items": items})
 
 
+def item_stats_from_snapshot(snapshot: dict[str, Any]) -> dict[str, Any] | None:
+    if snapshot.get("page_type") != "item":
+        return None
+    item_id = snapshot.get("item_id")
+    if not isinstance(item_id, int) or item_id <= 0:
+        return None
+    stats = snapshot.get("item_stats")
+    if isinstance(stats, dict) and stats.get("id"):
+        return deepcopy(stats)
+
+    sources = snapshot.get("normalized_sources") or []
+    row = {
+        "id": item_id,
+        "name": snapshot.get("name") or f"Item {item_id}",
+        "required_level": None,
+        "item_level": None,
+        "quality": snapshot.get("quality", "unknown"),
+        "binding": snapshot.get("binding", "unknown"),
+        "boe": snapshot.get("boe"),
+        "slot": item_inventory_slot(snapshot),
+        "stats": {},
+        "sockets": [],
+        "socket_bonus": {},
+        "restrictions": {},
+        "source_summary": summarize_sources(sources) if sources else "",
+        "primary_source": derive_primary_source(sources) if sources else None,
+        "sources": sources,
+        "phase": derive_acquisition_phase(sources) if sources else "PR",
+        "wowhead_url": snapshot.get("url") or item_url_for_id(item_id),
+        "parse_confidence": "legacy_snapshot",
+    }
+    description = str(snapshot.get("description") or "")
+    item_level_match = re.search(r"\bitem level of (\d+)\b", description, flags=re.IGNORECASE)
+    if item_level_match:
+        row["item_level"] = int(item_level_match.group(1))
+    required_level_match = re.search(r"\brequires level (\d{1,2})\b", description, flags=re.IGNORECASE)
+    if required_level_match:
+        row["required_level"] = int(required_level_match.group(1))
+    return {key: value for key, value in row.items() if value not in (None, [], {})}
+
+
+def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
+    rows: dict[int, dict[str, Any]] = {}
+    list_metadata = item_list_metadata_by_id(snapshots, authoritative_only=True)
+    restrict_to_list = bool(list_metadata)
+    allowed_item_ids = set(list_metadata)
+    if restrict_to_list:
+        allowed_item_ids.update(item_corpus_manifest_item_ids())
+    for snapshot in snapshots:
+        row = item_stats_from_snapshot(snapshot)
+        if not row:
+            continue
+        item_id = int(row["id"])
+        if restrict_to_list and item_id not in allowed_item_ids:
+            continue
+        row = apply_item_list_metadata(row, list_metadata.get(int(row["id"])))
+        rows[item_id] = row
+    return {"item_stats": [rows[item_id] for item_id in sorted(rows)]}
+
+
+def import_item_variants_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
+    variants: dict[tuple[int, int], dict[str, Any]] = {}
+    for snapshot in snapshots:
+        for variant in snapshot.get("item_variants", []) or []:
+            item_id = variant.get("item_id")
+            suffix_id = variant.get("random_suffix_id")
+            if not isinstance(item_id, int) or not isinstance(suffix_id, int):
+                continue
+            variants[(item_id, suffix_id)] = deepcopy(variant)
+    return {"item_variants": [variants[key] for key in sorted(variants)]}
+
+
+def item_corpus_report(item_stats_doc: dict[str, Any]) -> dict[str, Any]:
+    by_level_band = {"no_required_level": 0, "1-19": 0, "20-39": 0, "40-57": 0, "58-70": 0, "above_70": 0}
+    by_slot: dict[str, int] = {}
+    by_quality: dict[str, int] = {}
+    by_source_type: dict[str, int] = {}
+    parse_confidence: dict[str, int] = {}
+    complete = 0
+
+    for item in item_stats_doc.get("item_stats", []):
+        required_level = item.get("required_level")
+        if required_level is None:
+            by_level_band["no_required_level"] += 1
+        elif isinstance(required_level, int) and required_level <= 19:
+            by_level_band["1-19"] += 1
+        elif isinstance(required_level, int) and required_level <= 39:
+            by_level_band["20-39"] += 1
+        elif isinstance(required_level, int) and required_level <= 57:
+            by_level_band["40-57"] += 1
+        elif isinstance(required_level, int) and required_level <= 70:
+            by_level_band["58-70"] += 1
+        else:
+            by_level_band["above_70"] += 1
+
+        by_slot[str(item.get("slot") or "unknown")] = by_slot.get(str(item.get("slot") or "unknown"), 0) + 1
+        by_quality[str(item.get("quality") or "unknown")] = by_quality.get(str(item.get("quality") or "unknown"), 0) + 1
+        source_type = str((item.get("primary_source") or {}).get("type") or "unknown") if isinstance(item.get("primary_source"), dict) else "unknown"
+        by_source_type[source_type] = by_source_type.get(source_type, 0) + 1
+        confidence = str(item.get("parse_confidence") or "unknown")
+        parse_confidence[confidence] = parse_confidence.get(confidence, 0) + 1
+        if item.get("slot") and (item.get("stats") or item.get("dps") or item.get("armor") or item.get("sockets")):
+            complete += 1
+
+    return {
+        "items": len(item_stats_doc.get("item_stats", [])),
+        "complete": complete,
+        "by_level_band": by_level_band,
+        "by_slot": dict(sorted(by_slot.items())),
+        "by_quality": dict(sorted(by_quality.items())),
+        "by_source_type": dict(sorted(by_source_type.items())),
+        "parse_confidence": dict(sorted(parse_confidence.items())),
+    }
+
+
+def build_item_corpus_audit(input_dir: Path) -> dict[str, Any]:
+    snapshots = load_snapshots(input_dir)
+    item_stats_doc = import_item_stats_from_snapshots(snapshots)
+    errors: list[str] = []
+    warnings: list[str] = []
+    authoritative_list_snapshots = [snapshot for snapshot in snapshots if item_corpus_snapshot_is_authoritative(snapshot)]
+    authoritative_urls = item_corpus_authoritative_urls()
+    fetched_authoritative_urls = {str(snapshot.get("url") or "") for snapshot in authoritative_list_snapshots}
+    for url in sorted(authoritative_urls - fetched_authoritative_urls):
+        errors.append(f"Missing authoritative item list snapshot: {url}")
+    if not authoritative_list_snapshots:
+        errors.append("No authoritative item list snapshots found for item corpus")
+    for snapshot in authoritative_list_snapshots:
+        summary = snapshot.get("summary") if isinstance(snapshot.get("summary"), dict) else {}
+        if len(snapshot.get("item_refs", [])) == 1000 or summary.get("truncated"):
+            total = summary.get("total_items")
+            displayed = summary.get("displayed_items") or len(snapshot.get("item_refs", []))
+            suffix = f" ({displayed} displayed of {total} total)" if total else ""
+            errors.append(f"Truncated item list snapshot for corpus source: {snapshot.get('url')}{suffix}")
+    item_list_ids = {
+        int(ref["id"])
+        for snapshot in authoritative_list_snapshots
+        for ref in snapshot.get("item_refs", [])
+        if isinstance(ref.get("id"), int) and item_corpus_ref_is_in_scope(ref)
+    }
+    seed_item_ids = item_corpus_manifest_item_ids()
+    expected_item_ids = item_list_ids | seed_item_ids
+    item_snapshot_ids = {
+        int(snapshot["item_id"])
+        for snapshot in snapshots
+        if snapshot.get("page_type") == "item" and isinstance(snapshot.get("item_id"), int)
+    }
+
+    for item_id in sorted(expected_item_ids - item_snapshot_ids):
+        errors.append(f"Missing item page snapshot for corpus item {item_id}: {item_url_for_id(item_id)}")
+    for item in item_stats_doc.get("item_stats", []):
+        label = f"{item.get('id')} {item.get('name')}"
+        if not item.get("slot"):
+            errors.append(f"Unsupported or missing slot for item corpus row: {label}")
+        required_level = item.get("required_level")
+        if required_level is not None and (not isinstance(required_level, int) or required_level < 1 or required_level > 70):
+            errors.append(f"Invalid required level for item corpus row: {label}")
+        if not item.get("source_summary"):
+            warnings.append(f"Missing source summary for item corpus row: {label}")
+        if not (item.get("stats") or item.get("dps") or item.get("armor") or item.get("sockets")):
+            warnings.append(f"Missing tooltip stats for item corpus row: {label}")
+
+    return {
+        "ok": not errors,
+        "errors": errors,
+        "warnings": warnings,
+        "summary": item_corpus_report(item_stats_doc),
+    }
+
+
+def build_suffix_audit(input_dir: Path) -> dict[str, Any]:
+    variants = import_item_variants_from_snapshots(load_snapshots(input_dir)).get("item_variants", [])
+    errors: list[str] = []
+    seen: set[tuple[int, int]] = set()
+    for variant in variants:
+        item_id = variant.get("item_id")
+        suffix_id = variant.get("random_suffix_id")
+        key = (int(item_id) if isinstance(item_id, int) else 0, int(suffix_id) if isinstance(suffix_id, int) else 0)
+        if key in seen:
+            errors.append(f"Duplicate suffix variant: {key}")
+        seen.add(key)
+        if not variant.get("suffix_name"):
+            errors.append(f"Missing suffix name for variant: {key}")
+        if not variant.get("stats") and not variant.get("stat_delta"):
+            errors.append(f"Missing suffix stats for variant: {key}")
+        if not str(variant.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"):
+            errors.append(f"Missing suffix evidence URL for variant: {key}")
+    return {
+        "ok": not errors,
+        "errors": errors,
+        "warnings": [],
+        "summary": {"variants": len(variants)},
+    }
+
+
+def build_recommendation_audit() -> dict[str, Any]:
+    recommendations = canonical_json("leveling_recommendations").get("leveling_recommendations", [])
+    item_stats_ids = {item.get("id") for item in canonical_json("item_stats").get("item_stats", [])}
+    guide_rows = canonical_json("leveling_gear").get("leveling_gear", [])
+    guide_keys = {
+        (row.get("class"), row.get("spec"), row.get("slot"), row.get("item_id"))
+        for row in guide_rows
+    }
+    errors: list[str] = []
+    warnings: list[str] = []
+    warning_seen: set[str] = set()
+
+    def add_warning(message: str) -> None:
+        if message in warning_seen:
+            return
+        warning_seen.add(message)
+        warnings.append(message)
+
+    for row in recommendations:
+        item_id = row.get("item_id")
+        label = f"{row.get('class')}/{row.get('spec')}/{row.get('race')}/{row.get('slot')} {item_id}"
+        if item_id not in item_stats_ids:
+            errors.append(f"Recommendation references item without stat corpus row: {label}")
+        if not str(row.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"):
+            errors.append(f"Recommendation lacks source evidence: {label}")
+        guide_key = (row.get("class"), row.get("spec"), row.get("slot"), item_id)
+        if guide_key not in guide_keys and (row.get("rank") == 1 or float(row.get("score_delta_pct") or 999) <= 5):
+            add_warning(f"Strong computed candidate absent from guide rows: {label}")
+        if any(tag for tag in row.get("reason_tags", []) if "racial" in str(tag) or str(tag).startswith(("human_", "orc_", "draenei_", "dwarf_", "troll_"))):
+            add_warning(f"Race-specific recommendation disagreement candidate: {label}")
+
+    return {
+        "ok": not errors,
+        "errors": errors,
+        "warnings": warnings,
+        "summary": {
+            "recommendations": len(recommendations),
+            "guide_rows": len(guide_rows),
+            "warnings": len(warnings),
+        },
+    }
+
+
+def command_item_corpus_report(args: argparse.Namespace) -> int:
+    item_stats_doc = import_item_stats_from_snapshots(load_snapshots(args.input_dir))
+    print(json.dumps(item_corpus_report(item_stats_doc), indent=2, sort_keys=True))
+    return 0
+
+
+def command_item_corpus_audit(args: argparse.Namespace) -> int:
+    audit = build_item_corpus_audit(args.input_dir)
+    print(json.dumps(audit, indent=2, sort_keys=True))
+    return 0 if audit["ok"] else 1
+
+
+def command_suffix_audit(args: argparse.Namespace) -> int:
+    audit = build_suffix_audit(args.input_dir)
+    print(json.dumps(audit, indent=2, sort_keys=True))
+    return 0 if audit["ok"] else 1
+
+
+def command_recommendation_audit(args: argparse.Namespace) -> int:
+    audit = build_recommendation_audit()
+    print(json.dumps(audit, indent=2, sort_keys=True))
+    return 0 if audit["ok"] else 1
+
+
 IMPORT_OUTPUT_FILES = {
     "items.json": "items",
     "bis_lists.json": "bis_lists",
@@ -4004,6 +5024,10 @@ IMPORT_OUTPUT_FILES = {
     "consumables.json": "consumables",
     "leveling.json": "leveling",
     "leveling_gear.json": "leveling_gear",
+    "item_stats.json": "item_stats",
+    "item_variants.json": "item_variants",
+    "leveling_recommendations.json": "leveling_recommendations",
+    "recommendation_audit.json": "recommendation_audit",
 }
 
 IMPORT_FILES_BY_FAMILY = {
@@ -4012,14 +5036,21 @@ IMPORT_FILES_BY_FAMILY = {
     "enchants": ["items.json", "enchants.json", "enchant_sources.json"],
     "consumables": ["items.json", "consumables.json"],
     "leveling": ["items.json", "leveling.json", "leveling_gear.json"],
+    "item_corpus": ["item_stats.json", "item_variants.json", "leveling_recommendations.json", "recommendation_audit.json"],
 }
 
 
 def import_dry_run_counts(output_docs: dict[str, dict[str, Any]], family: str | None) -> dict[str, Any]:
     file_names = IMPORT_FILES_BY_FAMILY.get(family, list(output_docs))
+    default_docs = {
+        "item_stats": {"item_stats": []},
+        "item_variants": {"item_variants": []},
+        "leveling_recommendations": {"leveling_recommendations": []},
+        "recommendation_audit": {"recommendation_audit": {"rows": [], "summary": {}}},
+    }
     counted_docs = {}
     for file_name, canonical_name in IMPORT_OUTPUT_FILES.items():
-        counted_docs[file_name] = output_docs[file_name] if file_name in file_names else canonical_json(canonical_name)
+        counted_docs[file_name] = output_docs[file_name] if file_name in file_names else canonical_doc_or_default(canonical_name, default_docs.get(canonical_name, {}))
 
     bis_lists_doc = counted_docs["bis_lists.json"]
     counts = {
@@ -4033,13 +5064,25 @@ def import_dry_run_counts(output_docs: dict[str, dict[str, Any]], family: str | 
         "items": len(counted_docs["items.json"]["items"]),
         "leveling": len(counted_docs["leveling.json"]["leveling"]),
         "leveling_gear": len(counted_docs["leveling_gear.json"]["leveling_gear"]),
+        "item_stats": len(counted_docs["item_stats.json"]["item_stats"]),
+        "item_variants": len(counted_docs["item_variants.json"]["item_variants"]),
+        "leveling_recommendations": len(counted_docs["leveling_recommendations.json"]["leveling_recommendations"]),
     }
     if family:
         counts["family"] = family
     return counts
 
 
+def canonical_doc_or_default(name: str, default: dict[str, Any]) -> dict[str, Any]:
+    try:
+        return canonical_json(name)
+    except (KeyError, FileNotFoundError):
+        return deepcopy(default)
+
+
 def command_import(args: argparse.Namespace) -> int:
+    if args.family == "item_corpus" and args.input_dir == RAW_WOWHEAD_DIR:
+        args.input_dir = RAW_WOWHEAD_DIR / "full_item_corpus"
     snapshots = load_snapshots(args.input_dir)
     imported_items = import_items_from_snapshots(snapshots)
     imported_bis_lists = apply_bis_overrides(import_bis_lists_from_snapshots(snapshots))
@@ -4050,6 +5093,20 @@ def command_import(args: argparse.Namespace) -> int:
     imported_consumables = import_consumables_from_snapshots(snapshots)
     imported_leveling = import_leveling_from_snapshots(snapshots)
     imported_leveling_gear = import_leveling_gear_from_snapshots(snapshots)
+    imported_item_stats = import_item_stats_from_snapshots(snapshots)
+    imported_item_variants = import_item_variants_from_snapshots(snapshots)
+    if args.family in {None, "item_corpus"}:
+        imported_recommendations = build_recommendation_documents(
+            imported_item_stats,
+            imported_item_variants,
+            canonical_json("racial_modifiers"),
+            canonical_json("scoring_profiles"),
+        )
+        imported_leveling_recommendations = {"leveling_recommendations": imported_recommendations["leveling_recommendations"]}
+        imported_recommendation_audit = {"recommendation_audit": imported_recommendations["recommendation_audit"]}
+    else:
+        imported_leveling_recommendations = canonical_doc_or_default("leveling_recommendations", {"leveling_recommendations": []})
+        imported_recommendation_audit = canonical_doc_or_default("recommendation_audit", {"recommendation_audit": {"rows": [], "summary": {}}})
 
     output_docs = {
         "items.json": imported_items,
@@ -4061,6 +5118,10 @@ def command_import(args: argparse.Namespace) -> int:
         "consumables.json": imported_consumables,
         "leveling.json": imported_leveling,
         "leveling_gear.json": imported_leveling_gear,
+        "item_stats.json": imported_item_stats,
+        "item_variants.json": imported_item_variants,
+        "leveling_recommendations.json": imported_leveling_recommendations,
+        "recommendation_audit.json": imported_recommendation_audit,
     }
 
     if args.dry_run:
@@ -4087,8 +5148,8 @@ def manifest_urls_for_family(data_family: str) -> set[str]:
             source_families = set(families)
         else:
             source_families = {source.get("data_family")}
-        if data_family in source_families and source.get("url"):
-            urls.add(source["url"])
+        if data_family in source_families:
+            urls.update(manifest_source_urls(source))
     return urls
 
 
@@ -4913,16 +5974,19 @@ def build_parser() -> argparse.ArgumentParser:
 
     fetch_parser = subparsers.add_parser("fetch", help="Fetch URLs from the manifest and write normalized snapshots.")
     fetch_parser.add_argument("--url", action="append", help="Specific Wowhead TBC URL to fetch instead of the manifest.")
-    fetch_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases"])
+    fetch_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases", "item_corpus"])
     fetch_parser.add_argument("--output-dir", type=Path, default=RAW_WOWHEAD_DIR)
     fetch_parser.add_argument("--no-discover", action="store_true", help="Do not fetch item pages discovered from guide snapshots.")
+    fetch_parser.add_argument("--missing-only", action="store_true", help="Skip URLs that already have normalized snapshots in the output directory.")
+    fetch_parser.add_argument("--limit", type=int, help="Maximum number of snapshots to fetch or reprocess in this run.")
+    fetch_parser.add_argument("--workers", type=int, default=1, help="Parallel fetch workers for item_corpus batches.")
     fetch_parser.add_argument("--retries", type=int, default=3)
     fetch_parser.add_argument("--delay", type=float, default=0.75)
     fetch_parser.set_defaults(func=command_fetch)
 
     import_parser = subparsers.add_parser("import", help="Import canonical data from normalized snapshots.")
     import_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
-    import_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling"])
+    import_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "item_corpus"])
     import_parser.add_argument("--dry-run", action="store_true")
     import_parser.set_defaults(func=command_import)
 
@@ -4946,8 +6010,23 @@ def build_parser() -> argparse.ArgumentParser:
     snapshot_audit_parser.add_argument("--guide-only", action="store_true", help="Only require guide snapshots and parsable guide rows.")
     snapshot_audit_parser.set_defaults(func=command_snapshot_audit)
 
+    item_corpus_report_parser = subparsers.add_parser("item-corpus-report", help="Summarize parsed item corpus stats without writing canonical data.")
+    item_corpus_report_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR / "full_item_corpus")
+    item_corpus_report_parser.set_defaults(func=command_item_corpus_report)
+
+    item_corpus_audit_parser = subparsers.add_parser("item-corpus-audit", help="Audit item corpus snapshots and parse completeness.")
+    item_corpus_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR / "full_item_corpus")
+    item_corpus_audit_parser.set_defaults(func=command_item_corpus_audit)
+
+    suffix_audit_parser = subparsers.add_parser("suffix-audit", help="Audit random suffix item variants.")
+    suffix_audit_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR / "full_item_corpus")
+    suffix_audit_parser.set_defaults(func=command_suffix_audit)
+
+    recommendation_audit_parser = subparsers.add_parser("recommendation-audit", help="Audit generated leveling recommendations against guide rows and source evidence.")
+    recommendation_audit_parser.set_defaults(func=command_recommendation_audit)
+
     coverage_parser = subparsers.add_parser("coverage", help="Report offline manifest coverage without fetching.")
-    coverage_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases"])
+    coverage_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "classes", "phases", "item_corpus"])
     coverage_parser.add_argument("--summary", action="store_true", help="Omit the full missing-unit list.")
     coverage_parser.add_argument("--strict", action="store_true", help="Fail if the manifest does not cover every expected unit.")
     coverage_parser.set_defaults(func=command_coverage)

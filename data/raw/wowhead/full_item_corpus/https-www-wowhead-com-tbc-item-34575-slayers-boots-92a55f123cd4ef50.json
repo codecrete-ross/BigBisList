@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Slayer's Boots Phase 5 Item Level 154 Binds when picked up Feet Leather 332 Armor +30 Agility +24 Stamina Red Socket Socket Bonus: +2 Hit Rating Durability 60 / 60 Classes: Rogue Requires Level 70 Equip: Improves hit rating by 28. Equip: Improves critical strike rating by 16. Equip: Increases your expertise rating by 24. Equip: Increases attack power by 86. Slayer's Armor (0/8) Slayer's Chestguard Slayer's Handguards Slayer's Helm Slayer's Legguards Slayer's Shoulderpads Slayer's Boots Slayer's Bracers Slayer's Belt (2) Set : Increases the haste from your Slice and Dice ability by 5%. (4) Set : Increases the damage dealt by your Backstab, Sinister Strike, Mutilate, and Hemorrhage abilities by 6%.",
+  "fetched_at": "2026-06-15T20:27:49+00:00",
+  "inventory_slot": null,
+  "item_id": 34575,
+  "item_stats": {
+    "armor": 332,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip: Increases your expertise rating by",
+      "Equip:"
+    ],
+    "id": 34575,
+    "item_level": 154,
+    "name": "Slayer's Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "hit_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 86.0,
+      "crit_rating": 16.0,
+      "expertise_rating": 24.0,
+      "hit_rating": 28.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34575/slayers-boots"
+  },
+  "name": "Slayer's Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34575/slayers-boots"
+}

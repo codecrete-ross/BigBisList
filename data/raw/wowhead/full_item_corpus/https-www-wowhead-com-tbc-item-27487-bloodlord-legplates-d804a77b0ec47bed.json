@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bloodlord Legplates Phase 1 Item Level 115 Binds when picked up Legs Plate 1019 Armor +38 Strength +27 Stamina Red Socket Yellow Socket Blue Socket Socket Bonus: +6 Stamina Durability 100 / 100 Requires Level 70 Equip: Improves critical strike rating by 11. Sell Price: 6 12 50",
+  "fetched_at": "2026-06-15T20:24:51+00:00",
+  "inventory_slot": null,
+  "item_id": 27487,
+  "item_stats": {
+    "armor": 1019,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 27487,
+    "item_level": 115,
+    "name": "Bloodlord Legplates",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 6.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 11.0,
+      "stamina": 27.0,
+      "strength": 38.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27487/bloodlord-legplates"
+  },
+  "name": "Bloodlord Legplates",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27487/bloodlord-legplates"
+}

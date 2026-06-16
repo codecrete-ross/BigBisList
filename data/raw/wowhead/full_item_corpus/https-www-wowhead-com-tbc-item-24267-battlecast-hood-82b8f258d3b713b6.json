@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Battlecast Hood Phase 1 Item Level 105 Binds when equipped Head Cloth 145 Armor +43 Stamina +28 Intellect Red Socket Blue Socket Socket Bonus: +3 Spell Critical Strike Rating Durability 60 / 60 Requires Level 70 Equip: Increases damage and healing done by magical spells and effects by up to 43. Battlecast Garb (0/2) Requires Tailoring (375) Battlecast Hood Battlecast Pants (2) Set : Increases the chance spell pushback and spell interrupt will be resisted by 5%. Sell Price: 3 10 6",
+  "fetched_at": "2026-06-15T20:23:27+00:00",
+  "inventory_slot": null,
+  "item_id": 24267,
+  "item_stats": {
+    "armor": 145,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 24267,
+    "item_level": 105,
+    "name": "Battlecast Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "spell_power": 43.0,
+      "stamina": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24267/battlecast-hood"
+  },
+  "name": "Battlecast Hood",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Battlecast Hood Phase 1 Item Level 105 Binds when equipped Head Cloth 145 Armor +43 Stamina +28 Intellect Red Socket Blue Socket Socket Bonus: +3 Spell Critical Strike Rating Durability 60 / 60 Requires Level 70 Equip: Increases damage and healing done by magical spells and effects by up to 43. Battlecast Garb (0/2) Requires Tailoring (375) Battlecast Hood Battlecast Pants (2) Set : Increases the chance spell pushback and spell interrupt will be resisted by 5%. Sell Price: 3 10 6",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=24267/battlecast-hood",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24267/battlecast-hood"
+}

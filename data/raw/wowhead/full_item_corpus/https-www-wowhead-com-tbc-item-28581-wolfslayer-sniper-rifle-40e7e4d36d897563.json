@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wolfslayer Sniper Rifle Phase 1 Item Level 115 Binds when picked up Ranged Gun 149 - 278 Damage Speed 2.70 (79.07 damage per second) +15 Agility Durability 90 / 90 Requires Level 70 Equip: Increases attack power by 32. Sell Price: 8 88 20",
+  "fetched_at": "2026-06-15T20:25:18+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 28581,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 79.07,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 28581,
+    "item_level": 115,
+    "name": "Wolfslayer Sniper Rifle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "attack_power": 32.0
+    },
+    "weapon_max_damage": 278,
+    "weapon_min_damage": 149,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28581/wolfslayer-sniper-rifle"
+  },
+  "name": "Wolfslayer Sniper Rifle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28581/wolfslayer-sniper-rifle"
+}

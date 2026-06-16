@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shattered Sun Pendant of Restoration Phase 5 Item Level 115 Binds when picked up Neck +19 Stamina Requires Level 70 Requires Shattered Sun Offensive - Exalted Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects. Equip: Restores 7 mana per 5 sec. Equip: Your heals have a chance to call on the power of the Arcane if you're exalted with the Scryers, or the Light if you're exalted with the Aldor. (Proc chance: 15%, 45s cooldown) Sell Price: 5 81 88",
+  "fetched_at": "2026-06-15T20:27:51+00:00",
+  "inventory_slot": null,
+  "item_id": 34677,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 34677,
+    "item_level": 115,
+    "name": "Shattered Sun Pendant of Restoration",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 70.0,
+      "mp5": 7.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34677/shattered-sun-pendant-of-restoration"
+  },
+  "name": "Shattered Sun Pendant of Restoration",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Shattered Sun Pendant of Restoration Phase 5 Item Level 115 Binds when picked up Neck +19 Stamina Requires Level 70 Requires Shattered Sun Offensive - Exalted Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects. Equip: Restores 7 mana per 5 sec. Equip: Your heals have a chance to call on the power of the Arcane if you're exalted with the Scryers, or the Light if you're exalted with the Aldor. (Proc chance: 15%, 45s cooldown) Sell Price: 5 81 88",
+      "reputation": "Shattered Sun Offensive",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=34677/shattered-sun-pendant-of-restoration",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34677/shattered-sun-pendant-of-restoration"
+}

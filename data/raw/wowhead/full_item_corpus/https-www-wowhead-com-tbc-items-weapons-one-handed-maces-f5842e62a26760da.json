@@ -1,0 +1,6680 @@
+{
+  "fetched_at": "2026-06-15T20:16:37+00:00",
+  "item_refs": [
+    {
+      "classs": 2,
+      "id": 36,
+      "level": 2,
+      "listview_id": "items",
+      "name": "Worn Mace",
+      "quality": 1,
+      "required_level": null,
+      "slot": 21,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=36/worn-mace"
+    },
+    {
+      "classs": 2,
+      "id": 766,
+      "level": 7,
+      "listview_id": "items",
+      "name": "Flanged Mace",
+      "quality": 1,
+      "required_level": 2,
+      "slot": 21,
+      "source": [
+        2,
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=766/flanged-mace"
+    },
+    {
+      "classs": 2,
+      "id": 781,
+      "level": 9,
+      "listview_id": "items",
+      "name": "Stone Gnoll Hammer",
+      "quality": 1,
+      "required_level": 4,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=781/stone-gnoll-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 789,
+      "level": 22,
+      "listview_id": "items",
+      "name": "Stout Battlehammer",
+      "quality": 2,
+      "required_level": 17,
+      "slot": 21,
+      "source": [
+        2,
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=789/stout-battlehammer"
+    },
+    {
+      "classs": 2,
+      "id": 810,
+      "level": 54,
+      "listview_id": "items",
+      "name": "Hammer of the Northern Wind",
+      "quality": 4,
+      "required_level": 49,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "icon": "inv_box_03",
+          "n": "Emerald Encrusted Chest",
+          "q": 2,
+          "t": 3,
+          "ti": 10752
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=810/hammer-of-the-northern-wind"
+    },
+    {
+      "classs": 2,
+      "id": 827,
+      "level": 17,
+      "listview_id": "items",
+      "name": "Wicked Blackjack",
+      "quality": 2,
+      "required_level": 12,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 40
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=827/wicked-blackjack"
+    },
+    {
+      "classs": 2,
+      "id": 852,
+      "level": 14,
+      "listview_id": "items",
+      "name": "Mace",
+      "quality": 1,
+      "required_level": 9,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=852/mace"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 865,
+      "level": 31,
+      "listview_id": "items",
+      "name": "Leaden Mace",
+      "quality": 2,
+      "required_level": 26,
+      "slot": 13,
+      "source": [
+        2,
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=865/leaden-mace"
+    },
+    {
+      "classs": 2,
+      "id": 868,
+      "level": 43,
+      "listview_id": "items",
+      "name": "Ardent Custodian",
+      "quality": 4,
+      "required_level": 38,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=868/ardent-custodian"
+    },
+    {
+      "classs": 2,
+      "id": 920,
+      "level": 25,
+      "listview_id": "items",
+      "name": "Wicked Spiked Mace",
+      "quality": 2,
+      "required_level": 20,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 10
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=920/wicked-spiked-mace"
+    },
+    {
+      "classs": 2,
+      "id": 925,
+      "level": 25,
+      "listview_id": "items",
+      "name": "Flail",
+      "quality": 1,
+      "required_level": 20,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=925/flail"
+    },
+    {
+      "classs": 2,
+      "id": 936,
+      "level": 38,
+      "listview_id": "items",
+      "name": "Midnight Mace",
+      "quality": 3,
+      "required_level": 33,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=936/midnight-mace"
+    },
+    {
+      "classs": 2,
+      "id": 1009,
+      "level": 13,
+      "listview_id": "items",
+      "name": "Compact Hammer",
+      "quality": 2,
+      "required_level": 8,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 1,
+          "c2": 0,
+          "n": "A Pilot's Revenge",
+          "t": 5,
+          "ti": 417
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1009/compact-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 1158,
+      "level": 10,
+      "listview_id": "items",
+      "name": "Solid Metal Club",
+      "quality": 1,
+      "required_level": 7,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 12,
+          "c2": 0,
+          "n": "Bounty on Murlocs",
+          "t": 5,
+          "ti": 46
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1158/solid-metal-club"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 1207,
+      "level": 39,
+      "listview_id": "items",
+      "name": "Murphstar",
+      "quality": 2,
+      "required_level": 34,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1207/murphstar"
+    },
+    {
+      "classs": 2,
+      "id": 1214,
+      "level": 17,
+      "listview_id": "items",
+      "name": "Gnoll Punisher",
+      "quality": 2,
+      "required_level": 12,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 44
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1214/gnoll-punisher"
+    },
+    {
+      "classs": 2,
+      "id": 1296,
+      "level": 21,
+      "listview_id": "items",
+      "name": "Blackrock Mace",
+      "quality": 2,
+      "required_level": 16,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 44
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1296/blackrock-mace"
+    },
+    {
+      "classs": 2,
+      "id": 1382,
+      "level": 5,
+      "listview_id": "items",
+      "name": "Rock Mace",
+      "quality": 1,
+      "required_level": 1,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 215,
+          "c2": 1,
+          "n": "Rite of Strength",
+          "t": 5,
+          "ti": 757
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1382/rock-mace"
+    },
+    {
+      "classs": 2,
+      "id": 1389,
+      "level": 7,
+      "listview_id": "items",
+      "name": "Kobold Mining Mallet",
+      "quality": 1,
+      "required_level": 2,
+      "slot": 21,
+      "source": [
+        2,
+        21
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1389/kobold-mining-mallet"
+    },
+    {
+      "classs": 2,
+      "id": 1394,
+      "level": 15,
+      "listview_id": "items",
+      "name": "Driftwood Club",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Murloc Warrior",
+          "t": 1,
+          "ti": 171,
+          "z": 40
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1394/driftwood-club"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 1415,
+      "level": 9,
+      "listview_id": "items",
+      "name": "Carpenter's Mallet",
+      "quality": 0,
+      "required_level": 4,
+      "slot": 21,
+      "source": [
+        2,
+        19,
+        21
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1415/carpenters-mallet"
+    },
+    {
+      "classs": 2,
+      "id": 1440,
+      "level": 19,
+      "listview_id": "items",
+      "name": "Gnoll Skull Basher",
+      "quality": 2,
+      "required_level": 14,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Redridge Basher",
+          "t": 1,
+          "ti": 446,
+          "z": 44
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1440/gnoll-skull-basher"
+    },
+    {
+      "classs": 2,
+      "id": 1457,
+      "level": 22,
+      "listview_id": "items",
+      "name": "Shadowhide Mace",
+      "quality": 2,
+      "required_level": 17,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Shadowhide Gnoll",
+          "t": 1,
+          "ti": 433,
+          "z": 44
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1457/shadowhide-mace"
+    },
+    {
+      "classs": 2,
+      "id": 1480,
+      "level": 17,
+      "listview_id": "items",
+      "name": "Fist of the People's Militia",
+      "quality": 2,
+      "required_level": 9,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 40,
+          "c2": 0,
+          "n": "The People's Militia",
+          "t": 5,
+          "ti": 14
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1480/fist-of-the-peoples-militia"
+    },
+    {
+      "classs": 2,
+      "id": 1483,
+      "level": 21,
+      "listview_id": "items",
+      "name": "Face Smasher",
+      "quality": 3,
+      "required_level": 16,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1483/face-smasher"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 1510,
+      "level": 12,
+      "listview_id": "items",
+      "name": "Heavy Hammer",
+      "quality": 0,
+      "required_level": 7,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1510/heavy-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 1608,
+      "level": 47,
+      "listview_id": "items",
+      "name": "Skullcrusher Mace",
+      "quality": 2,
+      "required_level": 42,
+      "slot": 13,
+      "source": [
+        2,
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1608/skullcrusher-mace"
+    },
+    {
+      "classs": 2,
+      "id": 1721,
+      "level": 54,
+      "listview_id": "items",
+      "name": "Viking Warhammer",
+      "quality": 3,
+      "required_level": 49,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1721/viking-warhammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 1815,
+      "level": 17,
+      "listview_id": "items",
+      "name": "Ornamental Mace",
+      "quality": 0,
+      "required_level": 12,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1815/ornamental-mace"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 1823,
+      "level": 22,
+      "listview_id": "items",
+      "name": "Bludgeoning Cudgel",
+      "quality": 0,
+      "required_level": 17,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1823/bludgeoning-cudgel"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 1825,
+      "level": 28,
+      "listview_id": "items",
+      "name": "Bulky Bludgeon",
+      "quality": 0,
+      "required_level": 23,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1825/bulky-bludgeon"
+    },
+    {
+      "classs": 2,
+      "id": 1913,
+      "level": 10,
+      "listview_id": "items",
+      "name": "Studded Blackjack",
+      "quality": 1,
+      "required_level": 5,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Narg the Taskmaster",
+          "t": 1,
+          "ti": 79,
+          "z": 12
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1913/studded-blackjack"
+    },
+    {
+      "classs": 2,
+      "id": 1926,
+      "level": 15,
+      "listview_id": "items",
+      "name": "Weighted Sap",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Defias Digger",
+          "t": 1,
+          "ti": 824,
+          "z": 40
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1926/weighted-sap"
+    },
+    {
+      "classs": 2,
+      "id": 1938,
+      "level": 22,
+      "listview_id": "items",
+      "name": "Block Mallet",
+      "quality": 2,
+      "required_level": 17,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Boss Galgosh",
+          "t": 1,
+          "ti": 1398,
+          "z": 38
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1938/block-mallet"
+    },
+    {
+      "classs": 2,
+      "id": 1958,
+      "level": 17,
+      "listview_id": "items",
+      "name": "Petrified Shinbone",
+      "quality": 2,
+      "required_level": 12,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Undead Dynamiter",
+          "t": 1,
+          "ti": 625
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=1958/petrified-shinbone"
+    },
+    {
+      "classs": 2,
+      "id": 2028,
+      "level": 21,
+      "listview_id": "items",
+      "name": "Hammer",
+      "quality": 1,
+      "required_level": 16,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2028/hammer"
+    },
+    {
+      "classs": 2,
+      "id": 2048,
+      "level": 5,
+      "listview_id": "items",
+      "name": "Anvilmar Hammer",
+      "quality": 1,
+      "required_level": 1,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 1,
+          "c2": 0,
+          "n": "The Troll Cave",
+          "t": 5,
+          "ti": 182
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2048/anvilmar-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 2055,
+      "level": 4,
+      "listview_id": "items",
+      "name": "Small Wooden Hammer",
+      "quality": 1,
+      "required_level": null,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 2056,
+      "level": 10,
+      "listview_id": "items",
+      "name": "The Velvet Hammer",
+      "quality": 0,
+      "required_level": 5,
+      "slot": 21,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2056/the-velvet-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 2064,
+      "level": 11,
+      "listview_id": "items",
+      "name": "Trogg Club",
+      "quality": 1,
+      "required_level": 6,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Rockjaw Backbreaker",
+          "t": 1,
+          "ti": 1118,
+          "z": 1
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2064/trogg-club"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 2075,
+      "level": 12,
+      "listview_id": "items",
+      "name": "Priest's Mace",
+      "quality": 2,
+      "required_level": 7,
+      "slot": 21,
+      "source": [
+        2,
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2075/priests-mace"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 2079,
+      "level": 17,
+      "listview_id": "items",
+      "name": "Sergeant's Warhammer",
+      "quality": 2,
+      "required_level": 12,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2079/sergeants-warhammer"
+    },
+    {
+      "classs": 2,
+      "id": 2130,
+      "level": 3,
+      "listview_id": "items",
+      "name": "Club",
+      "quality": 1,
+      "required_level": null,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2130/club"
+    },
+    {
+      "classs": 2,
+      "id": 2194,
+      "level": 25,
+      "listview_id": "items",
+      "name": "Diamond Hammer",
+      "quality": 3,
+      "required_level": 20,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2194/diamond-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 2243,
+      "level": 62,
+      "listview_id": "items",
+      "name": "Hand of Edward the Odd",
+      "quality": 4,
+      "required_level": 57,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2243/hand-of-edward-the-odd"
+    },
+    {
+      "classs": 2,
+      "id": 2256,
+      "level": 24,
+      "listview_id": "items",
+      "name": "Skeletal Club",
+      "quality": 3,
+      "required_level": 19,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2256/skeletal-club"
+    },
+    {
+      "classs": 2,
+      "id": 2259,
+      "level": 8,
+      "listview_id": "items",
+      "name": "Frostmane Club",
+      "quality": 1,
+      "required_level": 3,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2259/frostmane-club"
+    },
+    {
+      "classs": 2,
+      "id": 2267,
+      "level": 15,
+      "listview_id": "items",
+      "name": "Stonesplinter Mace",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Stonesplinter Shaman",
+          "t": 1,
+          "ti": 1197,
+          "z": 38
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2267/stonesplinter-mace"
+    },
+    {
+      "classs": 2,
+      "id": 2485,
+      "level": 3,
+      "listview_id": "items",
+      "name": "Splintered Board",
+      "quality": 1,
+      "required_level": null,
+      "slot": 21,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2485/splintered-board"
+    },
+    {
+      "classs": 2,
+      "id": 2492,
+      "level": 7,
+      "listview_id": "items",
+      "name": "Cudgel",
+      "quality": 1,
+      "required_level": 2,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2492/cudgel"
+    },
+    {
+      "classs": 2,
+      "id": 2500,
+      "level": 7,
+      "listview_id": "items",
+      "name": "Light Hammer",
+      "quality": 1,
+      "required_level": 2,
+      "slot": 21,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2500/light-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 2524,
+      "level": 34,
+      "listview_id": "items",
+      "name": "Truncheon",
+      "quality": 1,
+      "required_level": 29,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2524/truncheon"
+    },
+    {
+      "classs": 2,
+      "id": 2532,
+      "level": 46,
+      "listview_id": "items",
+      "name": "Morning Star",
+      "quality": 1,
+      "required_level": 41,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2532/morning-star"
+    },
+    {
+      "classs": 2,
+      "id": 2816,
+      "level": 33,
+      "listview_id": "items",
+      "name": "Death Speaker Scepter",
+      "quality": 3,
+      "required_level": 27,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Death Speaker Jargba",
+          "t": 1,
+          "ti": 4428,
+          "z": 491
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2816/death-speaker-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 2821,
+      "level": 18,
+      "listview_id": "items",
+      "name": "Mo'grosh Masher",
+      "quality": 2,
+      "required_level": 13,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 38
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2821/mogrosh-masher"
+    },
+    {
+      "classs": 2,
+      "id": 2844,
+      "level": 9,
+      "listview_id": "items",
+      "name": "Copper Mace",
+      "quality": 1,
+      "required_level": 4,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_01",
+          "n": "Copper Mace",
+          "s": 164,
+          "t": 6,
+          "ti": 2737
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2844/copper-mace"
+    },
+    {
+      "classs": 2,
+      "id": 2848,
+      "level": 22,
+      "listview_id": "items",
+      "name": "Bronze Mace",
+      "quality": 1,
+      "required_level": 17,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_08",
+          "n": "Bronze Mace",
+          "s": 164,
+          "t": 6,
+          "ti": 2740
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=2848/bronze-mace"
+    },
+    {
+      "classs": 2,
+      "id": 3223,
+      "level": 11,
+      "listview_id": "items",
+      "name": "Frostmane Scepter",
+      "quality": 2,
+      "required_level": 6,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Great Father Arctikus",
+          "t": 1,
+          "ti": 1260,
+          "z": 1
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3223/frostmane-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 3262,
+      "level": 3,
+      "listview_id": "items",
+      "name": "Putrid Wooden Hammer",
+      "quality": 1,
+      "required_level": null,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3262/putrid-wooden-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 3269,
+      "level": 5,
+      "listview_id": "items",
+      "name": "Forsaken Maul",
+      "quality": 1,
+      "required_level": 2,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 85,
+          "c2": 0,
+          "n": "The Scarlet Crusade",
+          "t": 5,
+          "ti": 381
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3269/forsaken-maul"
+    },
+    {
+      "classs": 2,
+      "id": 3294,
+      "level": 3,
+      "listview_id": "items",
+      "name": "Deadman Club",
+      "quality": 1,
+      "required_level": null,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Karrel Grayves",
+          "t": 1,
+          "ti": 1918,
+          "z": 85
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3294/deadman-club"
+    },
+    {
+      "classs": 2,
+      "id": 3329,
+      "level": 11,
+      "listview_id": "items",
+      "name": "Spiked Wooden Plank",
+      "quality": 1,
+      "required_level": 6,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Maggot Eye",
+          "t": 1,
+          "ti": 1753,
+          "z": 85
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3329/spiked-wooden-plank"
+    },
+    {
+      "classs": 2,
+      "id": 3414,
+      "level": 27,
+      "listview_id": "items",
+      "name": "Crested Scepter",
+      "quality": 3,
+      "required_level": 22,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "z": 719
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3414/crested-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 3491,
+      "level": 25,
+      "listview_id": "items",
+      "name": "Heavy Bronze Mace",
+      "quality": 2,
+      "required_level": 20,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_08",
+          "n": "Heavy Bronze Mace",
+          "s": 164,
+          "t": 6,
+          "ti": 3296
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3491/heavy-bronze-mace"
+    },
+    {
+      "classs": 2,
+      "id": 3492,
+      "level": 30,
+      "listview_id": "items",
+      "name": "Mighty Iron Hammer",
+      "quality": 2,
+      "required_level": 25,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_04",
+          "n": "Mighty Iron Hammer",
+          "s": 164,
+          "t": 6,
+          "ti": 3297
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3492/mighty-iron-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 3570,
+      "level": 16,
+      "listview_id": "items",
+      "name": "Bonegrinding Pestle",
+      "quality": 2,
+      "required_level": 9,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 130,
+          "c2": 0,
+          "n": "Arugal's Folly",
+          "t": 5,
+          "ti": 99
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3570/bonegrinding-pestle"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 3787,
+      "level": 40,
+      "listview_id": "items",
+      "name": "Stone Club",
+      "quality": 0,
+      "required_level": 35,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=3787/stone-club"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 4021,
+      "level": 46,
+      "listview_id": "items",
+      "name": "Blunting Mace",
+      "quality": 0,
+      "required_level": 41,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4021/blunting-mace"
+    },
+    {
+      "classs": 2,
+      "id": 4090,
+      "level": 46,
+      "listview_id": "items",
+      "name": "Mug O' Hurt",
+      "quality": 3,
+      "required_level": 41,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4090/mug-o-hurt"
+    },
+    {
+      "classs": 2,
+      "id": 4122,
+      "level": 37,
+      "listview_id": "items",
+      "name": "Bookmaker's Scepter",
+      "quality": 2,
+      "required_level": 30,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 33,
+          "c2": 0,
+          "n": "The Hidden Key",
+          "t": 5,
+          "ti": 328
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4122/bookmakers-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 4303,
+      "level": 12,
+      "listview_id": "items",
+      "name": "Cranial Thumper",
+      "quality": 2,
+      "required_level": 7,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Deeb",
+          "t": 1,
+          "ti": 1911,
+          "z": 85
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4303/cranial-thumper"
+    },
+    {
+      "classs": 2,
+      "id": 4439,
+      "level": 22,
+      "listview_id": "items",
+      "name": "Bruiser Club",
+      "quality": 2,
+      "required_level": 17,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Rot Hide Bruiser",
+          "t": 1,
+          "ti": 1944,
+          "z": 130
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4439/bruiser-club"
+    },
+    {
+      "classs": 2,
+      "id": 4511,
+      "level": 40,
+      "listview_id": "items",
+      "name": "Black Water Hammer",
+      "quality": 2,
+      "required_level": 35,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 45,
+          "c2": 0,
+          "n": "Deep Sea Salvage",
+          "t": 5,
+          "ti": 662
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4511/black-water-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 4563,
+      "level": 9,
+      "listview_id": "items",
+      "name": "Billy Club",
+      "quality": 1,
+      "required_level": 4,
+      "slot": 21,
+      "source": [
+        2,
+        16,
+        21
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4563/billy-club"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 4569,
+      "level": 14,
+      "listview_id": "items",
+      "name": "Staunch Hammer",
+      "quality": 2,
+      "required_level": 9,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4569/staunch-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 4924,
+      "level": 5,
+      "listview_id": "items",
+      "name": "Primitive Club",
+      "quality": 1,
+      "required_level": 2,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 14,
+          "c2": 1,
+          "n": "Vile Familiars",
+          "t": 5,
+          "ti": 792
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4924/primitive-club"
+    },
+    {
+      "classs": 2,
+      "id": 4948,
+      "level": 11,
+      "listview_id": "items",
+      "name": "Stinging Mace",
+      "quality": 2,
+      "required_level": 4,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 14,
+          "c2": 1,
+          "n": "Skull Rock",
+          "t": 5,
+          "ti": 827
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4948/stinging-mace"
+    },
+    {
+      "classs": 2,
+      "id": 4971,
+      "level": 12,
+      "listview_id": "items",
+      "name": "Skorn's Hammer",
+      "quality": 2,
+      "required_level": 6,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 215,
+          "c2": 1,
+          "n": "The Demon Scarred Cloak",
+          "t": 5,
+          "ti": 770
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4971/skorns-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 4978,
+      "level": 36,
+      "listview_id": "items",
+      "name": "Ryedol's Hammer",
+      "quality": 2,
+      "required_level": 35,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3,
+          "c2": 0,
+          "n": "A Dwarf and His Tools",
+          "t": 5,
+          "ti": 719
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=4978/ryedols-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 5197,
+      "level": 21,
+      "listview_id": "items",
+      "name": "Cookie's Tenderizer",
+      "quality": 3,
+      "required_level": 16,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Cookie",
+          "t": 1,
+          "ti": 645,
+          "z": 1581
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=5197/cookies-tenderizer"
+    },
+    {
+      "classs": 2,
+      "id": 5256,
+      "level": 35,
+      "listview_id": "items",
+      "name": "Kovork's Rattle",
+      "quality": 2,
+      "required_level": 30,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Kovork",
+          "t": 1,
+          "ti": 2603,
+          "z": 45
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=5256/kovorks-rattle"
+    },
+    {
+      "classs": 2,
+      "id": 5324,
+      "level": 16,
+      "listview_id": "items",
+      "name": "Engineer's Hammer",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 17,
+          "c2": 1,
+          "n": "Samophlange",
+          "t": 5,
+          "ti": 902
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=5324/engineers-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 5541,
+      "level": 28,
+      "listview_id": "items",
+      "name": "Iridescent Hammer",
+      "quality": 2,
+      "required_level": 23,
+      "slot": 13,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_05",
+          "n": "Iridescent Hammer",
+          "s": 164,
+          "t": 6,
+          "ti": 6518
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=5541/iridescent-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 5580,
+      "level": 5,
+      "listview_id": "items",
+      "name": "Militia Hammer",
+      "quality": 1,
+      "required_level": 2,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 12,
+          "c2": 0,
+          "n": "Brotherhood of Thieves",
+          "t": 5,
+          "ti": 18
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=5580/militia-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 5587,
+      "level": 13,
+      "listview_id": "items",
+      "name": "Thornroot Club",
+      "quality": 2,
+      "required_level": 4,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 141,
+          "c2": 1,
+          "n": "Ursal the Mauler",
+          "t": 5,
+          "ti": 486
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=5587/thornroot-club"
+    },
+    {
+      "classs": 2,
+      "id": 5757,
+      "level": 20,
+      "listview_id": "items",
+      "name": "Hardwood Cudgel",
+      "quality": 2,
+      "required_level": 12,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 148,
+          "c2": 1,
+          "n": "Mathystra Relics",
+          "t": 5,
+          "ti": 951
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=5757/hardwood-cudgel"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 6196,
+      "level": 34,
+      "listview_id": "items",
+      "name": "Noboru's Cudgel",
+      "quality": 0,
+      "required_level": 29,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Noboru the Cudgel",
+          "t": 1,
+          "ti": 5477,
+          "z": 8
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6196/noborus-cudgel"
+    },
+    {
+      "classs": 2,
+      "id": 6323,
+      "level": 25,
+      "listview_id": "items",
+      "name": "Baron's Scepter",
+      "quality": 3,
+      "required_level": 20,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Baron Silverlaine",
+          "t": 1,
+          "ti": 3887,
+          "z": 209
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6323/barons-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 6360,
+      "level": 25,
+      "listview_id": "items",
+      "name": "Steelscale Crushfish",
+      "quality": 2,
+      "required_level": 20,
+      "slot": 13,
+      "source": [
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6360/steelscale-crushfish"
+    },
+    {
+      "classs": 2,
+      "id": 6472,
+      "level": 24,
+      "listview_id": "items",
+      "name": "Stinging Viper",
+      "quality": 3,
+      "required_level": 19,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Lord Pythas",
+          "t": 1,
+          "ti": 3670,
+          "z": 718
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6472/stinging-viper"
+    },
+    {
+      "classs": 2,
+      "id": 6651,
+      "level": 12,
+      "listview_id": "items",
+      "name": "Broken Wine Bottle",
+      "quality": 1,
+      "required_level": 7,
+      "slot": 13,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6651/broken-wine-bottle"
+    },
+    {
+      "classs": 2,
+      "id": 6804,
+      "level": 34,
+      "listview_id": "items",
+      "name": "Windstorm Hammer",
+      "quality": 3,
+      "required_level": 25,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 400,
+          "c2": 1,
+          "n": "Final Passage",
+          "t": 5,
+          "ti": 1394
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6804/windstorm-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 6968,
+      "level": 15,
+      "listview_id": "items",
+      "name": "Elunite Hammer",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": -81,
+          "c2": 4,
+          "n": "Weapons of Elunite",
+          "t": 5,
+          "ti": 1693
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6968/elunite-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 6982,
+      "level": 15,
+      "listview_id": "items",
+      "name": "Umbral Mace",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": -81,
+          "c2": 4,
+          "n": "Grey Iron Weapons",
+          "t": 5,
+          "ti": 1682
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6982/umbral-mace"
+    },
+    {
+      "classs": 2,
+      "id": 6983,
+      "level": 15,
+      "listview_id": "items",
+      "name": "Haggard's Hammer",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": -81,
+          "c2": 4,
+          "n": "Dead-tooth Jack",
+          "t": 5,
+          "ti": 1667
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=6983/haggards-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 7117,
+      "level": 15,
+      "listview_id": "items",
+      "name": "Heirloom Hammer",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": -81,
+          "c2": 4,
+          "n": "Heirloom Weapon",
+          "t": 5,
+          "ti": 1822
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7117/heirloom-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 7328,
+      "level": 15,
+      "listview_id": "items",
+      "name": "Thun'grim's Mace",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": -81,
+          "c2": 4,
+          "n": "Forged Steel",
+          "t": 5,
+          "ti": 1503
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7328/thungrims-mace"
+    },
+    {
+      "classs": 2,
+      "id": 7687,
+      "level": 35,
+      "listview_id": "items",
+      "name": "Ironspine's Fist",
+      "quality": 3,
+      "required_level": 30,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Ironspine",
+          "t": 1,
+          "ti": 6489,
+          "z": 796
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7687/ironspines-fist"
+    },
+    {
+      "classs": 2,
+      "id": 7721,
+      "level": 44,
+      "listview_id": "items",
+      "name": "Hand of Righteousness",
+      "quality": 3,
+      "required_level": 39,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "High Inquisitor Whitemane",
+          "t": 1,
+          "ti": 3977,
+          "z": 796
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7721/hand-of-righteousness"
+    },
+    {
+      "classs": 2,
+      "id": 7736,
+      "level": 39,
+      "listview_id": "items",
+      "name": "Fight Club",
+      "quality": 3,
+      "required_level": 34,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "z": 796
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7736/fight-club"
+    },
+    {
+      "classs": 2,
+      "id": 7752,
+      "level": 33,
+      "listview_id": "items",
+      "name": "Dreamslayer",
+      "quality": 3,
+      "required_level": 28,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7752/dreamslayer"
+    },
+    {
+      "classs": 2,
+      "id": 7945,
+      "level": 46,
+      "listview_id": "items",
+      "name": "Big Black Mace",
+      "quality": 2,
+      "required_level": 41,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_15",
+          "n": "Big Black Mace",
+          "s": 164,
+          "t": 6,
+          "ti": 10001
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7945/big-black-mace"
+    },
+    {
+      "classs": 2,
+      "id": 7946,
+      "level": 49,
+      "listview_id": "items",
+      "name": "Runed Mithril Hammer",
+      "quality": 2,
+      "required_level": 44,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_17",
+          "n": "Runed Mithril Hammer",
+          "s": 164,
+          "t": 6,
+          "ti": 10009
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7946/runed-mithril-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 7954,
+      "level": 47,
+      "listview_id": "items",
+      "name": "The Shatterer",
+      "quality": 3,
+      "required_level": 42,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_18",
+          "n": "The Shatterer",
+          "s": 164,
+          "t": 6,
+          "ti": 10003
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=7954/the-shatterer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 8194,
+      "level": 43,
+      "listview_id": "items",
+      "name": "Goblin Nutcracker",
+      "quality": 2,
+      "required_level": 38,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=8194/goblin-nutcracker"
+    },
+    {
+      "classs": 2,
+      "id": 8708,
+      "level": 50,
+      "listview_id": "items",
+      "name": "Hammer of Expertise",
+      "quality": 4,
+      "required_level": 40,
+      "slot": 13,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=8708/hammer-of-expertise"
+    },
+    {
+      "classs": 2,
+      "id": 9359,
+      "level": 45,
+      "listview_id": "items",
+      "name": "Southsea Lamp",
+      "quality": 3,
+      "required_level": 40,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 440
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9359/southsea-lamp"
+    },
+    {
+      "classs": 2,
+      "id": 9386,
+      "level": 36,
+      "listview_id": "items",
+      "name": "Excavator's Brand",
+      "quality": 3,
+      "required_level": 31,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9386/excavators-brand"
+    },
+    {
+      "classs": 2,
+      "id": 9419,
+      "level": 46,
+      "listview_id": "items",
+      "name": "Galgann's Firehammer",
+      "quality": 3,
+      "required_level": 40,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Galgann Firehammer",
+          "t": 1,
+          "ti": 7291,
+          "z": 1337
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9419/galganns-firehammer"
+    },
+    {
+      "classs": 2,
+      "id": 9427,
+      "level": 42,
+      "listview_id": "items",
+      "name": "Stonevault Bonebreaker",
+      "quality": 3,
+      "required_level": 37,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "z": 1337
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9427/stonevault-bonebreaker"
+    },
+    {
+      "classs": 2,
+      "id": 9457,
+      "level": 35,
+      "listview_id": "items",
+      "name": "Royal Diplomatic Scepter",
+      "quality": 3,
+      "required_level": 30,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Dark Iron Ambassador",
+          "t": 1,
+          "ti": 6228,
+          "z": 721
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9457/royal-diplomatic-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 9488,
+      "level": 28,
+      "listview_id": "items",
+      "name": "Oscillating Power Hammer",
+      "quality": 3,
+      "required_level": 23,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "z": 721
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9488/oscillating-power-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 9639,
+      "level": 48,
+      "listview_id": "items",
+      "name": "The Hand of Antu'sul",
+      "quality": 3,
+      "required_level": 43,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Antu'sul",
+          "t": 1,
+          "ti": 8127,
+          "z": 1176
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9639/the-hand-of-antusul"
+    },
+    {
+      "classs": 2,
+      "id": 9651,
+      "level": 53,
+      "listview_id": "items",
+      "name": "Gryphon Rider's Stormhammer",
+      "quality": 3,
+      "required_level": 40,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 47,
+          "c2": 0,
+          "n": "Saving Sharpbeak",
+          "t": 5,
+          "ti": 2994
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9651/gryphon-riders-stormhammer"
+    },
+    {
+      "classs": 2,
+      "id": 9686,
+      "level": 51,
+      "listview_id": "items",
+      "name": "Spirit of the Faerie Dragon",
+      "quality": 3,
+      "required_level": 40,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 357,
+          "c2": 1,
+          "n": "Weapons of Spirit",
+          "t": 5,
+          "ti": 3129
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=9686/spirit-of-the-faerie-dragon"
+    },
+    {
+      "classs": 2,
+      "id": 10544,
+      "level": 5,
+      "listview_id": "items",
+      "name": "Thistlewood Maul",
+      "quality": 1,
+      "required_level": 3,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 141,
+          "c2": 1,
+          "n": "Webwood Venom",
+          "t": 5,
+          "ti": 916
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=10544/thistlewood-maul"
+    },
+    {
+      "classs": 2,
+      "id": 10571,
+      "level": 37,
+      "listview_id": "items",
+      "name": "Ebony Boneclub",
+      "quality": 3,
+      "required_level": 32,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=10571/ebony-boneclub"
+    },
+    {
+      "classs": 2,
+      "id": 10804,
+      "level": 54,
+      "listview_id": "items",
+      "name": "Fist of the Damned",
+      "quality": 3,
+      "required_level": 49,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Ogom the Wretched",
+          "t": 1,
+          "ti": 5711,
+          "z": 1477
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=10804/fist-of-the-damned"
+    },
+    {
+      "classs": 2,
+      "id": 10838,
+      "level": 54,
+      "listview_id": "items",
+      "name": "Might of Hakkar",
+      "quality": 3,
+      "required_level": 49,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "z": 1477
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=10838/might-of-hakkar"
+    },
+    {
+      "classs": 2,
+      "id": 11120,
+      "level": 55,
+      "listview_id": "items",
+      "name": "Belgrom's Hammer",
+      "quality": 2,
+      "required_level": 44,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 1637,
+          "c2": 1,
+          "n": "Betrayed",
+          "t": 5,
+          "ti": 3507
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=11120/belgroms-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 11411,
+      "level": 28,
+      "listview_id": "items",
+      "name": "Large Bear Bone",
+      "quality": 0,
+      "required_level": 23,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=11411/large-bear-bone"
+    },
+    {
+      "classs": 2,
+      "id": 11684,
+      "level": 60,
+      "listview_id": "items",
+      "name": "Ironfoe",
+      "quality": 4,
+      "required_level": 55,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Emperor Dagran Thaurissan",
+          "t": 1,
+          "ti": 9019,
+          "z": 1584
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=11684/ironfoe"
+    },
+    {
+      "classs": 2,
+      "id": 11805,
+      "level": 56,
+      "listview_id": "items",
+      "name": "Rubidium Hammer",
+      "quality": 3,
+      "required_level": 51,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Bael'Gar",
+          "t": 1,
+          "ti": 9016,
+          "z": 1584
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=11805/rubidium-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 11906,
+      "level": 55,
+      "listview_id": "items",
+      "name": "Beastsmasher",
+      "quality": 2,
+      "required_level": 50,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 490,
+          "c2": 1,
+          "n": "The Mighty U'cha",
+          "t": 5,
+          "ti": 4301
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=11906/beastsmasher"
+    },
+    {
+      "classs": 2,
+      "id": 11923,
+      "level": 57,
+      "listview_id": "items",
+      "name": "The Hammer of Grace",
+      "quality": 3,
+      "required_level": 52,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Chest of The Seven",
+          "t": 2,
+          "ti": 169243,
+          "z": 1584
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=11923/the-hammer-of-grace"
+    },
+    {
+      "classs": 2,
+      "id": 11964,
+      "level": 55,
+      "listview_id": "items",
+      "name": "Swiftstrike Cudgel",
+      "quality": 2,
+      "required_level": 50,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "z": 1584
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=11964/swiftstrike-cudgel"
+    },
+    {
+      "classs": 2,
+      "id": 12781,
+      "level": 57,
+      "listview_id": "items",
+      "name": "Serenity",
+      "quality": 3,
+      "required_level": 52,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_02",
+          "n": "Serenity",
+          "s": 164,
+          "t": 6,
+          "ti": 16983
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=12781/serenity"
+    },
+    {
+      "classs": 2,
+      "id": 12792,
+      "level": 58,
+      "listview_id": "items",
+      "name": "Volcanic Hammer",
+      "quality": 2,
+      "required_level": 53,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_06",
+          "n": "Volcanic Hammer",
+          "s": 164,
+          "t": 6,
+          "ti": 16984
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=12792/volcanic-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 12794,
+      "level": 63,
+      "listview_id": "items",
+      "name": "Masterwork Stormhammer",
+      "quality": 3,
+      "required_level": 57,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_04",
+          "n": "Masterwork Stormhammer",
+          "s": 164,
+          "t": 6,
+          "ti": 16993
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=12794/masterwork-stormhammer"
+    },
+    {
+      "classs": 2,
+      "id": 13006,
+      "level": 62,
+      "listview_id": "items",
+      "name": "Mass of McGowan",
+      "quality": 3,
+      "required_level": 57,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13006/mass-of-mcgowan"
+    },
+    {
+      "classs": 2,
+      "id": 13024,
+      "level": 29,
+      "listview_id": "items",
+      "name": "Beazel's Basher",
+      "quality": 3,
+      "required_level": 24,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13024/beazels-basher"
+    },
+    {
+      "classs": 2,
+      "id": 13025,
+      "level": 37,
+      "listview_id": "items",
+      "name": "Deadwood Sledge",
+      "quality": 3,
+      "required_level": 32,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13025/deadwood-sledge"
+    },
+    {
+      "classs": 2,
+      "id": 13026,
+      "level": 45,
+      "listview_id": "items",
+      "name": "Heaven's Light",
+      "quality": 3,
+      "required_level": 40,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "z": 1337
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13026/heavens-light"
+    },
+    {
+      "classs": 2,
+      "id": 13027,
+      "level": 53,
+      "listview_id": "items",
+      "name": "Bonesnapper",
+      "quality": 3,
+      "required_level": 48,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13027/bonesnapper"
+    },
+    {
+      "classs": 2,
+      "id": 13028,
+      "level": 61,
+      "listview_id": "items",
+      "name": "Bludstone Hammer",
+      "quality": 3,
+      "required_level": 56,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13028/bludstone-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 13048,
+      "level": 31,
+      "listview_id": "items",
+      "name": "Looming Gavel",
+      "quality": 3,
+      "required_level": 26,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13048/looming-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 13183,
+      "level": 60,
+      "listview_id": "items",
+      "name": "Venomspitter",
+      "quality": 3,
+      "required_level": 55,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Mother Smolderweb",
+          "t": 1,
+          "ti": 10596,
+          "z": 1583
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13183/venomspitter"
+    },
+    {
+      "classs": 2,
+      "id": 13204,
+      "level": 60,
+      "listview_id": "items",
+      "name": "Bashguuder",
+      "quality": 3,
+      "required_level": 55,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Ghok Bashguud",
+          "t": 1,
+          "ti": 9718,
+          "z": 1583
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13204/bashguuder"
+    },
+    {
+      "classs": 2,
+      "id": 13349,
+      "level": 63,
+      "listview_id": "items",
+      "name": "Scepter of the Unholy",
+      "quality": 3,
+      "required_level": 58,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Baron Rivendare",
+          "t": 1,
+          "ti": 10440,
+          "z": 2017
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13349/scepter-of-the-unholy"
+    },
+    {
+      "classs": 2,
+      "id": 13401,
+      "level": 61,
+      "listview_id": "items",
+      "name": "The Cruel Hand of Timmy",
+      "quality": 3,
+      "required_level": 56,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Timmy the Cruel",
+          "t": 1,
+          "ti": 10808,
+          "z": 2017
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13401/the-cruel-hand-of-timmy"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 13820,
+      "level": 54,
+      "listview_id": "items",
+      "name": "Clout Mace",
+      "quality": 0,
+      "required_level": 49,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=13820/clout-mace"
+    },
+    {
+      "classs": 2,
+      "id": 14487,
+      "level": 62,
+      "listview_id": "items",
+      "name": "Bonechill Hammer",
+      "quality": 3,
+      "required_level": 57,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Ras Frostwhisper",
+          "t": 1,
+          "ti": 10508,
+          "z": 2057
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=14487/bonechill-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 15222,
+      "level": 19,
+      "listview_id": "items",
+      "name": "Barbed Club",
+      "quality": 2,
+      "required_level": 14,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15222/barbed-club"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 15223,
+      "level": 24,
+      "listview_id": "items",
+      "name": "Jagged Star",
+      "quality": 2,
+      "required_level": 19,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15223/jagged-star"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 15224,
+      "level": 25,
+      "listview_id": "items",
+      "name": "Battlesmasher",
+      "quality": 2,
+      "required_level": 20,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15224/battlesmasher"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 15225,
+      "level": 33,
+      "listview_id": "items",
+      "name": "Sequoia Hammer",
+      "quality": 2,
+      "required_level": 28,
+      "slot": 21,
+      "source": [
+        2,
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15225/sequoia-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 15226,
+      "level": 37,
+      "listview_id": "items",
+      "name": "Giant Club",
+      "quality": 2,
+      "required_level": 32,
+      "slot": 21,
+      "source": [
+        2,
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15226/giant-club"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 15227,
+      "level": 49,
+      "listview_id": "items",
+      "name": "Diamond-Tip Bludgeon",
+      "quality": 2,
+      "required_level": 44,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15227/diamond-tip-bludgeon"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 15228,
+      "level": 53,
+      "listview_id": "items",
+      "name": "Smashing Star",
+      "quality": 2,
+      "required_level": 48,
+      "slot": 13,
+      "source": [
+        2,
+        16
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15228/smashing-star"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 15229,
+      "level": 55,
+      "listview_id": "items",
+      "name": "Blesswind Hammer",
+      "quality": 2,
+      "required_level": 50,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15229/blesswind-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 15445,
+      "level": 18,
+      "listview_id": "items",
+      "name": "Hammer of Orgrimmar",
+      "quality": 2,
+      "required_level": 9,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 1637,
+          "c2": 1,
+          "n": "Hidden Enemies",
+          "t": 5,
+          "ti": 5730
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15445/hammer-of-orgrimmar"
+    },
+    {
+      "classs": 2,
+      "id": 15863,
+      "level": 54,
+      "listview_id": "items",
+      "name": "Grave Scepter",
+      "quality": 2,
+      "required_level": 50,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 618,
+          "c2": 1,
+          "n": "Return to Tinkee",
+          "t": 5,
+          "ti": 4810
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=15863/grave-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 16769,
+      "level": 52,
+      "listview_id": "items",
+      "name": "Furbolg Medicine Totem",
+      "quality": 2,
+      "required_level": 47,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Gorn One Eye",
+          "t": 1,
+          "ti": 11555,
+          "z": 361
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=16769/furbolg-medicine-totem"
+    },
+    {
+      "classs": 2,
+      "id": 16792,
+      "level": 37,
+      "listview_id": "items",
+      "name": "Giant Club",
+      "quality": 2,
+      "required_level": 32,
+      "slot": 21,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=16792/giant-club"
+    },
+    {
+      "classs": 2,
+      "id": 17003,
+      "level": 61,
+      "listview_id": "items",
+      "name": "Skullstone Hammer",
+      "quality": 2,
+      "required_level": 56,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 139,
+          "c2": 0,
+          "n": "The Corpulent One",
+          "t": 5,
+          "ti": 6136
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=17003/skullstone-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 17039,
+      "level": 36,
+      "listview_id": "items",
+      "name": "Skullbreaker",
+      "quality": 2,
+      "required_level": 28,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 722,
+          "c2": 2,
+          "n": "An Unholy Alliance",
+          "t": 5,
+          "ti": 6521
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=17039/skullbreaker"
+    },
+    {
+      "classs": 2,
+      "id": 17055,
+      "level": 50,
+      "listview_id": "items",
+      "name": "Changuk Smasher",
+      "quality": 3,
+      "required_level": 45,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Omgorn the Lost",
+          "t": 1,
+          "ti": 8201,
+          "z": 440
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=17055/changuk-smasher"
+    },
+    {
+      "classs": 2,
+      "id": 17105,
+      "level": 69,
+      "listview_id": "items",
+      "name": "Aurastone Hammer",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Garr",
+          "t": 1,
+          "ti": 12057,
+          "z": 2717
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=17105/aurastone-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 17112,
+      "level": 66,
+      "listview_id": "items",
+      "name": "Empyrean Demolisher",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=17112/empyrean-demolisher"
+    },
+    {
+      "classs": 2,
+      "id": 17733,
+      "level": 53,
+      "listview_id": "items",
+      "name": "Fist of Stone",
+      "quality": 3,
+      "required_level": 48,
+      "slot": 13,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=17733/fist-of-stone"
+    },
+    {
+      "classs": 2,
+      "id": 17943,
+      "level": 53,
+      "listview_id": "items",
+      "name": "Fist of Stone",
+      "quality": 3,
+      "required_level": 48,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Landslide",
+          "t": 1,
+          "ti": 12203,
+          "z": 2100
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=17943/fist-of-stone"
+    },
+    {
+      "classs": 2,
+      "id": 18044,
+      "level": 57,
+      "listview_id": "items",
+      "name": "Hurley's Tankard",
+      "quality": 3,
+      "required_level": 52,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Hurley Blackbreath",
+          "t": 1,
+          "ti": 9537,
+          "z": 1584
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=18044/hurleys-tankard"
+    },
+    {
+      "classs": 2,
+      "id": 18048,
+      "level": 60,
+      "listview_id": "items",
+      "name": "Mastersmith's Hammer",
+      "quality": 3,
+      "required_level": 55,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Goraluk Anvilcrack",
+          "t": 1,
+          "ti": 10899,
+          "z": 1583
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=18048/mastersmiths-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 18321,
+      "level": 59,
+      "listview_id": "items",
+      "name": "Energetic Rod",
+      "quality": 3,
+      "required_level": 54,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Alzzin the Wildshaper",
+          "t": 1,
+          "ti": 11492,
+          "z": 2557
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=18321/energetic-rod"
+    },
+    {
+      "classs": 2,
+      "id": 18376,
+      "level": 62,
+      "listview_id": "items",
+      "name": "Timeworn Mace",
+      "quality": 3,
+      "required_level": 57,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Prince Tortheldrin",
+          "t": 1,
+          "ti": 11486,
+          "z": 2557
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=18376/timeworn-mace"
+    },
+    {
+      "classs": 2,
+      "id": 18671,
+      "level": 59,
+      "listview_id": "items",
+      "name": "Baron Charr's Sceptre",
+      "quality": 3,
+      "required_level": 54,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Baron Charr",
+          "t": 1,
+          "ti": 14461,
+          "z": 490
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=18671/baron-charrs-sceptre"
+    },
+    {
+      "classs": 2,
+      "id": 18683,
+      "level": 61,
+      "listview_id": "items",
+      "name": "Hammer of the Vesper",
+      "quality": 3,
+      "required_level": 56,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "z": 2057
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=18683/hammer-of-the-vesper"
+    },
+    {
+      "classs": 2,
+      "id": 18865,
+      "level": 78,
+      "listview_id": "items",
+      "name": "Grand Marshal's Punisher",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Lieutenant Jackspring",
+          "t": 1,
+          "ti": 12784,
+          "z": 1519
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=18865/grand-marshals-punisher"
+    },
+    {
+      "classs": 2,
+      "id": 18866,
+      "level": 78,
+      "listview_id": "items",
+      "name": "High Warlord's Bludgeon",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Stone Guard Zarg",
+          "t": 1,
+          "ti": 12794,
+          "z": 1637
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=18866/high-warlords-bludgeon"
+    },
+    {
+      "classs": 2,
+      "id": 19104,
+      "level": 65,
+      "listview_id": "items",
+      "name": "Stormstrike Hammer",
+      "quality": 3,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        3
+      ],
+      "sourcemore": [
+        {
+          "p": 2
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19104/stormstrike-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 19170,
+      "level": 70,
+      "listview_id": "items",
+      "name": "Ebon Hand",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_19",
+          "n": "Ebon Hand",
+          "s": 164,
+          "t": 6,
+          "ti": 23650
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19170/ebon-hand"
+    },
+    {
+      "classs": 2,
+      "id": 19292,
+      "level": 34,
+      "listview_id": "items",
+      "name": "Last Month's Mutton",
+      "quality": 1,
+      "required_level": 29,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": -364,
+          "c2": 9,
+          "n": "10 Tickets - Last Month's Mutton",
+          "t": 5,
+          "ti": 7935
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19292/last-months-mutton"
+    },
+    {
+      "classs": 2,
+      "id": 19293,
+      "level": 55,
+      "listview_id": "items",
+      "name": "Last Year's Mutton",
+      "quality": 1,
+      "required_level": 50,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": -364,
+          "c2": 9,
+          "n": "50 Tickets - Last Year's Mutton",
+          "t": 5,
+          "ti": 7936
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19293/last-years-mutton"
+    },
+    {
+      "classs": 2,
+      "id": 19335,
+      "level": 73,
+      "listview_id": "items",
+      "name": "Spineshatter",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Razorgore the Untamed",
+          "t": 1,
+          "ti": 12435,
+          "z": 2677
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19335/spineshatter"
+    },
+    {
+      "classs": 2,
+      "id": 19360,
+      "level": 81,
+      "listview_id": "items",
+      "name": "Lok'amir il Romathis",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Nefarian",
+          "t": 1,
+          "ti": 11583,
+          "z": 2677
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19360/lokamir-il-romathis"
+    },
+    {
+      "classs": 2,
+      "id": 19808,
+      "level": 45,
+      "listview_id": "items",
+      "name": "Rockhide Strongfish",
+      "quality": 2,
+      "required_level": 40,
+      "slot": 13,
+      "source": [
+        16
+      ],
+      "sourcemore": [
+        {
+          "n": "Stranglethorn Vale",
+          "t": 7,
+          "ti": 33
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19808/rockhide-strongfish"
+    },
+    {
+      "classs": 2,
+      "id": 19890,
+      "level": 66,
+      "listview_id": "items",
+      "name": "Jin'do's Hexxer",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Jin'do the Hexxer",
+          "t": 1,
+          "ti": 11380,
+          "z": 1977
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19890/jindos-hexxer"
+    },
+    {
+      "classs": 2,
+      "id": 19908,
+      "level": 65,
+      "listview_id": "items",
+      "name": "Sceptre of Smiting",
+      "quality": 3,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 1977
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19908/sceptre-of-smiting"
+    },
+    {
+      "classs": 2,
+      "id": 19961,
+      "level": 68,
+      "listview_id": "items",
+      "name": "Gri'lek's Grinder",
+      "quality": 3,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Gri'lek",
+          "t": 1,
+          "ti": 15082,
+          "z": 1977
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=19961/grileks-grinder"
+    },
+    {
+      "classs": 2,
+      "id": 20580,
+      "level": 71,
+      "listview_id": "items",
+      "name": "Hammer of Bestial Fury",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=20580/hammer-of-bestial-fury"
+    },
+    {
+      "classs": 2,
+      "id": 20648,
+      "level": 63,
+      "listview_id": "items",
+      "name": "Cold Forged Hammer",
+      "quality": 3,
+      "required_level": 51,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "z": 2597
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=20648/cold-forged-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 20666,
+      "level": 62,
+      "listview_id": "items",
+      "name": "Hardened Steel Warhammer",
+      "quality": 3,
+      "required_level": 57,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "The Duke of Cynders",
+          "t": 1,
+          "ti": 15206,
+          "z": 1377
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=20666/hardened-steel-warhammer"
+    },
+    {
+      "classs": 2,
+      "id": 20840,
+      "level": 5,
+      "listview_id": "items",
+      "name": "Sunstrider Mace",
+      "quality": 1,
+      "required_level": 1,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3430,
+          "c2": 0,
+          "n": "Aggression",
+          "t": 5,
+          "ti": 8334
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=20840/sunstrider-mace"
+    },
+    {
+      "classs": 2,
+      "id": 20851,
+      "level": 4,
+      "listview_id": "items",
+      "name": "Arcane Forged Mace",
+      "quality": 1,
+      "required_level": null,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Raelis Dawnstar",
+          "t": 1,
+          "ti": 15289,
+          "z": 3430
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=20851/arcane-forged-mace"
+    },
+    {
+      "classs": 2,
+      "id": 20981,
+      "level": 2,
+      "listview_id": "items",
+      "name": "Neophyte's Mace",
+      "quality": 1,
+      "required_level": null,
+      "slot": 21,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=20981/neophytes-mace"
+    },
+    {
+      "classs": 2,
+      "id": 21268,
+      "level": 79,
+      "listview_id": "items",
+      "name": "Blessed Qiraji War Hammer",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3428,
+          "c2": 3,
+          "n": "Imperial Qiraji Regalia",
+          "t": 5,
+          "ti": 8790
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=21268/blessed-qiraji-war-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 21398,
+      "level": 70,
+      "listview_id": "items",
+      "name": "Hammer of the Gathering Storm",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3428,
+          "c2": 3,
+          "n": "Hammer of the Gathering Storm",
+          "t": 5,
+          "ti": 8706
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=21398/hammer-of-the-gathering-storm"
+    },
+    {
+      "classs": 2,
+      "id": 21407,
+      "level": 70,
+      "listview_id": "items",
+      "name": "Mace of Unending Life",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3428,
+          "c2": 3,
+          "n": "Mace of Unending Life",
+          "t": 5,
+          "ti": 8708
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=21407/mace-of-unending-life"
+    },
+    {
+      "classs": 2,
+      "id": 21410,
+      "level": 70,
+      "listview_id": "items",
+      "name": "Gavel of Infinite Wisdom",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3428,
+          "c2": 3,
+          "n": "Gavel of Infinite Wisdom",
+          "t": 5,
+          "ti": 8705
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=21410/gavel-of-infinite-wisdom"
+    },
+    {
+      "classs": 2,
+      "id": 21466,
+      "level": 69,
+      "listview_id": "items",
+      "name": "Stinger of Ayamiss",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Ayamiss the Hunter",
+          "t": 1,
+          "ti": 15369,
+          "z": 3429
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=21466/stinger-of-ayamiss"
+    },
+    {
+      "classs": 2,
+      "id": 21715,
+      "level": 72,
+      "listview_id": "items",
+      "name": "Sand Polished Hammer",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Ossirian the Unscarred",
+          "t": 1,
+          "ti": 15339,
+          "z": 3429
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=21715/sand-polished-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 21837,
+      "level": 71,
+      "listview_id": "items",
+      "name": "Anubisath Warhammer",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 3428
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=21837/anubisath-warhammer"
+    },
+    {
+      "classs": 2,
+      "id": 21839,
+      "level": 84,
+      "listview_id": "items",
+      "name": "Scepter of the False Prophet",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "C'Thun",
+          "t": 1,
+          "ti": 15727,
+          "z": 3428
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=21839/scepter-of-the-false-prophet"
+    },
+    {
+      "classs": 2,
+      "id": 22315,
+      "level": 61,
+      "listview_id": "items",
+      "name": "Hammer of Revitalization",
+      "quality": 3,
+      "required_level": 56,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Isalien",
+          "t": 1,
+          "ti": 16097,
+          "z": 2557
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22315/hammer-of-revitalization"
+    },
+    {
+      "classs": 2,
+      "id": 22322,
+      "level": 61,
+      "listview_id": "items",
+      "name": "The Jaw Breaker",
+      "quality": 3,
+      "required_level": 56,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Mor Grayhoof",
+          "t": 1,
+          "ti": 16080,
+          "z": 1583
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22322/the-jaw-breaker"
+    },
+    {
+      "classs": 2,
+      "id": 22380,
+      "level": 65,
+      "listview_id": "items",
+      "name": "Simone's Cultivating Hammer",
+      "quality": 3,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 1377,
+          "c2": 1,
+          "n": "The Perfect Poison",
+          "t": 5,
+          "ti": 9023
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22380/simones-cultivating-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 22384,
+      "level": 63,
+      "listview_id": "items",
+      "name": "Persuader",
+      "quality": 4,
+      "required_level": 58,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_08",
+          "n": "Persuader",
+          "s": 164,
+          "t": 6,
+          "ti": 27830
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22384/persuader"
+    },
+    {
+      "classs": 2,
+      "id": 22713,
+      "level": 68,
+      "listview_id": "items",
+      "name": "Zulian Scepter of Rites",
+      "quality": 3,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 1977
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22713/zulian-scepter-of-rites"
+    },
+    {
+      "classs": 2,
+      "id": 22808,
+      "level": 83,
+      "listview_id": "items",
+      "name": "The Castigator",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Thaddius",
+          "t": 1,
+          "ti": 15928,
+          "z": 3456
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22808/the-castigator"
+    },
+    {
+      "classs": 2,
+      "id": 22942,
+      "level": 81,
+      "listview_id": "items",
+      "name": "The Widow's Embrace",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Grand Widow Faerlina",
+          "t": 1,
+          "ti": 15953,
+          "z": 3456
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22942/the-widows-embrace"
+    },
+    {
+      "classs": 2,
+      "id": 22956,
+      "level": 7,
+      "listview_id": "items",
+      "name": "Rusty Mace",
+      "quality": 1,
+      "required_level": 5,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3430,
+          "c2": 0,
+          "n": "Lost Armaments",
+          "t": 5,
+          "ti": 8480
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22956/rusty-mace"
+    },
+    {
+      "classs": 2,
+      "id": 22988,
+      "level": 83,
+      "listview_id": "items",
+      "name": "The End of Dreams",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Grobbulus",
+          "t": 1,
+          "ti": 15931,
+          "z": 3456
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=22988/the-end-of-dreams"
+    },
+    {
+      "classs": 2,
+      "id": 23056,
+      "level": 89,
+      "listview_id": "items",
+      "name": "Hammer of the Twisting Nether",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Kel'Thuzad",
+          "t": 1,
+          "ti": 15990,
+          "z": 3456
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23056/hammer-of-the-twisting-nether"
+    },
+    {
+      "classs": 2,
+      "id": 23221,
+      "level": 83,
+      "listview_id": "items",
+      "name": "Misplaced Servo Arm",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 3456
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23221/misplaced-servo-arm"
+    },
+    {
+      "classs": 2,
+      "id": 23392,
+      "level": 5,
+      "listview_id": "items",
+      "name": "Exodar Maul",
+      "quality": 1,
+      "required_level": 2,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3524,
+          "c2": 1,
+          "n": "Blood Elf Spy",
+          "t": 5,
+          "ti": 9311
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23392/exodar-maul"
+    },
+    {
+      "classs": 2,
+      "id": 23454,
+      "level": 78,
+      "listview_id": "items",
+      "name": "Grand Marshal's Warhammer",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Lieutenant Jackspring",
+          "t": 1,
+          "ti": 12784,
+          "z": 1519
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23454/grand-marshals-warhammer"
+    },
+    {
+      "classs": 2,
+      "id": 23459,
+      "level": 78,
+      "listview_id": "items",
+      "name": "High Warlord's Battle Mace",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23459/high-warlords-battle-mace"
+    },
+    {
+      "classs": 2,
+      "id": 23464,
+      "level": 78,
+      "listview_id": "items",
+      "name": "High Warlord's Battle Mace",
+      "quality": 4,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Stone Guard Zarg",
+          "t": 1,
+          "ti": 12794,
+          "z": 1637
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23464/high-warlords-battle-mace"
+    },
+    {
+      "classs": 2,
+      "id": 23498,
+      "level": 96,
+      "listview_id": "items",
+      "name": "Fel Iron Hammer",
+      "quality": 2,
+      "required_level": 62,
+      "slot": 13,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_06",
+          "n": "Fel Iron Hammer",
+          "s": 164,
+          "t": 6,
+          "ti": 29558
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23498/fel-iron-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 23544,
+      "level": 105,
+      "listview_id": "items",
+      "name": "Runic Hammer",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_09",
+          "n": "Runic Hammer",
+          "s": 164,
+          "t": 6,
+          "ti": 29696
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23544/runic-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 23556,
+      "level": 105,
+      "listview_id": "items",
+      "name": "Hand of Eternity",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_16",
+          "n": "Hand of Eternity",
+          "s": 164,
+          "t": 6,
+          "ti": 29700
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=23556/hand-of-eternity"
+    },
+    {
+      "classs": 2,
+      "id": 24343,
+      "level": 13,
+      "listview_id": "items",
+      "name": "The Thumper",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3525,
+          "c2": 1,
+          "n": "Saving Princess Stillpine",
+          "t": 5,
+          "ti": 9667
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=24343/the-thumper"
+    },
+    {
+      "classs": 2,
+      "id": 24351,
+      "level": 20,
+      "listview_id": "items",
+      "name": "Mace of the Hand",
+      "quality": 2,
+      "required_level": 18,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3525,
+          "c2": 1,
+          "n": "Ending Their World",
+          "t": 5,
+          "ti": 9759
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=24351/mace-of-the-hand"
+    },
+    {
+      "classs": 2,
+      "id": 24378,
+      "level": 91,
+      "listview_id": "items",
+      "name": "Coilfang Hammer of Renewal",
+      "quality": 3,
+      "required_level": 62,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Rokmar the Crackler",
+          "t": 1,
+          "ti": 17991,
+          "z": 3717
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=24378/coilfang-hammer-of-renewal"
+    },
+    {
+      "classs": 2,
+      "id": 24384,
+      "level": 88,
+      "listview_id": "items",
+      "name": "Diamond-Core Sledgemace",
+      "quality": 3,
+      "required_level": 61,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "The Maker",
+          "t": 1,
+          "ti": 17381,
+          "z": 3713
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=24384/diamond-core-sledgemace"
+    },
+    {
+      "classs": 2,
+      "id": 24431,
+      "level": 10,
+      "listview_id": "items",
+      "name": "McWeaksauce's Meat Tenderizer",
+      "quality": 1,
+      "required_level": 5,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3524,
+          "c2": 1,
+          "n": "Show Gnomercy",
+          "t": 5,
+          "ti": 9537
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=24431/mcweaksauces-meat-tenderizer"
+    },
+    {
+      "classs": 2,
+      "id": 25114,
+      "level": 81,
+      "listview_id": "items",
+      "name": "Doomsayer's Mace",
+      "quality": 2,
+      "required_level": 57,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25114/doomsayers-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25115,
+      "level": 84,
+      "listview_id": "items",
+      "name": "Riversong Mace",
+      "quality": 2,
+      "required_level": 58,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25115/riversong-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25116,
+      "level": 87,
+      "listview_id": "items",
+      "name": "Pneumatic War Hammer",
+      "quality": 2,
+      "required_level": 59,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25116/pneumatic-war-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 25117,
+      "level": 90,
+      "listview_id": "items",
+      "name": "Flanged Battle Mace",
+      "quality": 2,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25117/flanged-battle-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25118,
+      "level": 93,
+      "listview_id": "items",
+      "name": "Battle Star",
+      "quality": 2,
+      "required_level": 61,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25118/battle-star"
+    },
+    {
+      "classs": 2,
+      "id": 25119,
+      "level": 96,
+      "listview_id": "items",
+      "name": "Silvermoon War-Mace",
+      "quality": 2,
+      "required_level": 62,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25119/silvermoon-war-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25120,
+      "level": 99,
+      "listview_id": "items",
+      "name": "Rockshard Club",
+      "quality": 2,
+      "required_level": 63,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25120/rockshard-club"
+    },
+    {
+      "classs": 2,
+      "id": 25121,
+      "level": 102,
+      "listview_id": "items",
+      "name": "Dreaded Mace",
+      "quality": 2,
+      "required_level": 64,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25121/dreaded-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25122,
+      "level": 105,
+      "listview_id": "items",
+      "name": "Khorium Plated Bludgeon",
+      "quality": 2,
+      "required_level": 65,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25122/khorium-plated-bludgeon"
+    },
+    {
+      "classs": 2,
+      "id": 25123,
+      "level": 108,
+      "listview_id": "items",
+      "name": "Boneshredder Mace",
+      "quality": 2,
+      "required_level": 66,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25123/boneshredder-mace"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25124,
+      "level": 111,
+      "listview_id": "items",
+      "name": "Footman Mace",
+      "quality": 2,
+      "required_level": 67,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25124/footman-mace"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25125,
+      "level": 114,
+      "listview_id": "items",
+      "name": "Retro-Spike Club",
+      "quality": 2,
+      "required_level": 68,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25125/retro-spike-club"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25126,
+      "level": 117,
+      "listview_id": "items",
+      "name": "Anvilmar Hammer",
+      "quality": 2,
+      "required_level": 69,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25126/anvilmar-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25127,
+      "level": 120,
+      "listview_id": "items",
+      "name": "Knight's War Hammer",
+      "quality": 2,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25127/knights-war-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 25310,
+      "level": 81,
+      "listview_id": "items",
+      "name": "Naaru Lightmace",
+      "quality": 2,
+      "required_level": 57,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25310/naaru-lightmace"
+    },
+    {
+      "classs": 2,
+      "id": 25311,
+      "level": 84,
+      "listview_id": "items",
+      "name": "Revitalizing Hammer",
+      "quality": 2,
+      "required_level": 58,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25311/revitalizing-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 25312,
+      "level": 87,
+      "listview_id": "items",
+      "name": "Glorious Scepter",
+      "quality": 2,
+      "required_level": 59,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25312/glorious-scepter"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25313,
+      "level": 90,
+      "listview_id": "items",
+      "name": "Cold-Iron Scepter",
+      "quality": 2,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25313/cold-iron-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 25314,
+      "level": 93,
+      "listview_id": "items",
+      "name": "Ceremonial Hammer",
+      "quality": 2,
+      "required_level": 61,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25314/ceremonial-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 25315,
+      "level": 96,
+      "listview_id": "items",
+      "name": "Restorative Mace",
+      "quality": 2,
+      "required_level": 62,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25315/restorative-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25316,
+      "level": 99,
+      "listview_id": "items",
+      "name": "Spirit-Clad Mace",
+      "quality": 2,
+      "required_level": 63,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25316/spirit-clad-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25317,
+      "level": 102,
+      "listview_id": "items",
+      "name": "Lesser Sledgemace",
+      "quality": 2,
+      "required_level": 64,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25317/lesser-sledgemace"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25318,
+      "level": 105,
+      "listview_id": "items",
+      "name": "Ancestral Hammer",
+      "quality": 2,
+      "required_level": 65,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25318/ancestral-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25319,
+      "level": 108,
+      "listview_id": "items",
+      "name": "Tranquility Mace",
+      "quality": 2,
+      "required_level": 66,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25319/tranquility-mace"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25320,
+      "level": 111,
+      "listview_id": "items",
+      "name": "Queen's Insignia",
+      "quality": 2,
+      "required_level": 67,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25320/queens-insignia"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25321,
+      "level": 114,
+      "listview_id": "items",
+      "name": "Divine Hammer",
+      "quality": 2,
+      "required_level": 68,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25321/divine-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25322,
+      "level": 117,
+      "listview_id": "items",
+      "name": "Lordly Scepter",
+      "quality": 2,
+      "required_level": 69,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25322/lordly-scepter"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25323,
+      "level": 120,
+      "listview_id": "items",
+      "name": "Ascendant's Scepter",
+      "quality": 2,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25323/ascendants-scepter"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 25401,
+      "level": 69,
+      "listview_id": "items",
+      "name": "Corroded Mace",
+      "quality": 0,
+      "required_level": 64,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25401/corroded-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25492,
+      "level": 93,
+      "listview_id": "items",
+      "name": "Earthcaller's Mace",
+      "quality": 2,
+      "required_level": 60,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3483,
+          "c2": 8,
+          "n": "Administering the Salve",
+          "t": 5,
+          "ti": 9447
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25492/earthcallers-mace"
+    },
+    {
+      "classs": 2,
+      "id": 25519,
+      "level": 93,
+      "listview_id": "items",
+      "name": "Warden's Hammer",
+      "quality": 2,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3521,
+          "c2": 8,
+          "n": "Escape from Umbrafen",
+          "t": 5,
+          "ti": 9752
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25519/wardens-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 25536,
+      "level": 94,
+      "listview_id": "items",
+      "name": "Sporeggar Smasher",
+      "quality": 3,
+      "required_level": 63,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3521,
+          "c2": 8,
+          "n": "Fhwoor Smash!",
+          "t": 5,
+          "ti": 9729
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25536/sporeggar-smasher"
+    },
+    {
+      "classs": 2,
+      "id": 25759,
+      "level": 103,
+      "listview_id": "items",
+      "name": "Mogor's Anointing Club",
+      "quality": 3,
+      "required_level": 65,
+      "slot": 21,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3518,
+          "c2": 8,
+          "n": "The Ring of Blood: The Final Challenge",
+          "t": 5,
+          "ti": 9977
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25759/mogors-anointing-club"
+    },
+    {
+      "classs": 2,
+      "id": 25773,
+      "level": 100,
+      "listview_id": "items",
+      "name": "Hungering Bone Cudgel",
+      "quality": 3,
+      "required_level": 66,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "z": 3518
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25773/hungering-bone-cudgel"
+    },
+    {
+      "classs": 2,
+      "id": 25836,
+      "level": 91,
+      "listview_id": "items",
+      "name": "Preserver's Cudgel",
+      "quality": 3,
+      "required_level": 62,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Fedryen Swiftspear",
+          "t": 1,
+          "ti": 17904,
+          "z": 3521
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=25836/preservers-cudgel"
+    },
+    {
+      "classs": 2,
+      "id": 26049,
+      "level": 11,
+      "listview_id": "items",
+      "name": "Old Elekk Prod",
+      "quality": 2,
+      "required_level": 8,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3525,
+          "c2": 1,
+          "n": "Alien Predators",
+          "t": 5,
+          "ti": 9634
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=26049/old-elekk-prod"
+    },
+    {
+      "classs": 2,
+      "id": 26050,
+      "level": 16,
+      "listview_id": "items",
+      "name": "Fist of Argus",
+      "quality": 2,
+      "required_level": 10,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3525,
+          "c2": 1,
+          "n": "Blood Watch",
+          "t": 5,
+          "ti": 9694
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=26050/fist-of-argus"
+    },
+    {
+      "classs": 2,
+      "id": 27426,
+      "level": 103,
+      "listview_id": "items",
+      "name": "Northshire Battlemace",
+      "quality": 3,
+      "required_level": 66,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Captain Skarloc",
+          "t": 1,
+          "ti": 17862,
+          "z": 2367
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=27426/northshire-battlemace"
+    },
+    {
+      "classs": 2,
+      "id": 27476,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Truncheon of Five Hells",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Omor the Unscarred",
+          "t": 1,
+          "ti": 17308,
+          "z": 3562
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=27476/truncheon-of-five-hells"
+    },
+    {
+      "classs": 2,
+      "id": 27538,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Lightsworn Hammer",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Warchief Kargath Bladefist",
+          "t": 1,
+          "ti": 16808,
+          "z": 3714
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=27538/lightsworn-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 27741,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Bleeding Hollow Warhammer",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Quagmirran",
+          "t": 1,
+          "ti": 17942,
+          "z": 3717
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=27741/bleeding-hollow-warhammer"
+    },
+    {
+      "classs": 2,
+      "id": 27876,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Will of the Fallen Exarch",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Avatar of the Martyred",
+          "t": 1,
+          "ti": 18478,
+          "z": 3790
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=27876/will-of-the-fallen-exarch"
+    },
+    {
+      "classs": 2,
+      "id": 27901,
+      "level": 112,
+      "listview_id": "items",
+      "name": "Blackout Truncheon",
+      "quality": 3,
+      "required_level": 68,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Grandmaster Vorpil",
+          "t": 1,
+          "ti": 18732,
+          "z": 3789
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=27901/blackout-truncheon"
+    },
+    {
+      "classs": 2,
+      "id": 27937,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Sky Breaker",
+      "quality": 3,
+      "required_level": 68,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Avatar of the Martyred",
+          "t": 1,
+          "ti": 18478,
+          "z": 3790
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=27937/sky-breaker"
+    },
+    {
+      "classs": 2,
+      "id": 27980,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Terokk's Nightmace",
+      "quality": 3,
+      "required_level": 68,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Talon King Ikiss",
+          "t": 1,
+          "ti": 18473,
+          "z": 3791
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=27980/terokks-nightmace"
+    },
+    {
+      "classs": 2,
+      "id": 28210,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Bloodskull Destroyer",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Lieutenant Drake",
+          "t": 1,
+          "ti": 17848,
+          "z": 2367
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28210/bloodskull-destroyer"
+    },
+    {
+      "classs": 2,
+      "id": 28216,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Dathrohan's Ceremonial Hammer",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Captain Skarloc",
+          "t": 1,
+          "ti": 17862,
+          "z": 2367
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28216/dathrohans-ceremonial-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 28257,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Hammer of the Penitent",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Mechano-Lord Capacitus",
+          "t": 1,
+          "ti": 19219,
+          "z": 3849
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28257/hammer-of-the-penitent"
+    },
+    {
+      "classs": 2,
+      "id": 28302,
+      "level": 123,
+      "listview_id": "items",
+      "name": "Gladiator's Bonecracker",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 22,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28302/gladiators-bonecracker"
+    },
+    {
+      "classs": 2,
+      "id": 28305,
+      "level": 123,
+      "listview_id": "items",
+      "name": "Gladiator's Pummeler",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28305/gladiators-pummeler"
+    },
+    {
+      "classs": 2,
+      "id": 28437,
+      "level": 107,
+      "listview_id": "items",
+      "name": "Drakefist Hammer",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_37",
+          "n": "Drakefist Hammer",
+          "s": 164,
+          "t": 6,
+          "ti": 34545
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28437/drakefist-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 28438,
+      "level": 123,
+      "listview_id": "items",
+      "name": "Dragonmaw",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_38",
+          "n": "Dragonmaw",
+          "s": 164,
+          "t": 6,
+          "ti": 34546
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28438/dragonmaw"
+    },
+    {
+      "classs": 2,
+      "id": 28439,
+      "level": 136,
+      "listview_id": "items",
+      "name": "Dragonstrike",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_mace_39",
+          "n": "Dragonstrike",
+          "s": 164,
+          "t": 6,
+          "ti": 36262
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28439/dragonstrike"
+    },
+    {
+      "classs": 2,
+      "id": 28522,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Shard of the Virtuous",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 1,
+          "n": "Maiden of Virtue",
+          "t": 1,
+          "ti": 16457,
+          "z": 3457
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28522/shard-of-the-virtuous"
+    },
+    {
+      "classs": 2,
+      "id": 28657,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Fool's Bane",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 1,
+          "n": "Terestian Illhoof",
+          "t": 1,
+          "ti": 15688,
+          "z": 3457
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28657/fools-bane"
+    },
+    {
+      "classs": 2,
+      "id": 28771,
+      "level": 125,
+      "listview_id": "items",
+      "name": "Light's Justice",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 1,
+          "n": "Prince Malchezaar",
+          "t": 1,
+          "ti": 15690,
+          "z": 3457
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28771/lights-justice"
+    },
+    {
+      "classs": 2,
+      "id": 28924,
+      "level": 115,
+      "listview_id": "items",
+      "name": "High Warlord's Bonecracker",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        3
+      ],
+      "sourcemore": [
+        {
+          "p": 2
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28924/high-warlords-bonecracker"
+    },
+    {
+      "classs": 2,
+      "id": 28925,
+      "level": 115,
+      "listview_id": "items",
+      "name": "High Warlord's Pummeler",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        3
+      ],
+      "sourcemore": [
+        {
+          "p": 2
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28925/high-warlords-pummeler"
+    },
+    {
+      "classs": 2,
+      "id": 28950,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Grand Marshal's Bonecracker",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        3
+      ],
+      "sourcemore": [
+        {
+          "p": 2
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28950/grand-marshals-bonecracker"
+    },
+    {
+      "classs": 2,
+      "id": 28951,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Grand Marshal's Pummeler",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        3
+      ],
+      "sourcemore": [
+        {
+          "p": 2
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=28951/grand-marshals-pummeler"
+    },
+    {
+      "classs": 2,
+      "id": 29175,
+      "level": 100,
+      "listview_id": "items",
+      "name": "Gavel of Pure Light",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Almaador",
+          "t": 1,
+          "ti": 21432,
+          "z": 3703
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=29175/gavel-of-pure-light"
+    },
+    {
+      "classs": 2,
+      "id": 29353,
+      "level": 105,
+      "listview_id": "items",
+      "name": "Shockwave Truncheon",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Murmur",
+          "t": 1,
+          "ti": 18708,
+          "z": 3789
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=29353/shockwave-truncheon"
+    },
+    {
+      "classs": 2,
+      "id": 29787,
+      "level": 111,
+      "listview_id": "items",
+      "name": "Master Smith's Hammer",
+      "quality": 2,
+      "required_level": 67,
+      "slot": 13,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": 3523,
+          "c2": 8,
+          "n": "Master Smith Rhonsus",
+          "t": 5,
+          "ti": 10332
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=29787/master-smiths-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 29996,
+      "level": 141,
+      "listview_id": "items",
+      "name": "Rod of the Sun King",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 2,
+          "n": "Kael'thas Sunstrider",
+          "t": 1,
+          "ti": 19622,
+          "z": 3845
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=29996/rod-of-the-sun-king"
+    },
+    {
+      "classs": 2,
+      "id": 30058,
+      "level": 134,
+      "listview_id": "items",
+      "name": "Mallet of the Tides",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 2,
+          "n": "The Lurker Below",
+          "t": 1,
+          "ti": 21217,
+          "z": 3607
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=30058/mallet-of-the-tides"
+    },
+    {
+      "classs": 2,
+      "id": 30073,
+      "level": 52,
+      "listview_id": "items",
+      "name": "Light Emberforged Hammer",
+      "quality": 3,
+      "required_level": 47,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_21",
+          "n": "Light Emberforged Hammer",
+          "s": 164,
+          "t": 6,
+          "ti": 36128
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=30073/light-emberforged-hammer"
+    },
+    {
+      "classs": 2,
+      "id": 30089,
+      "level": 100,
+      "listview_id": "items",
+      "name": "Lavaforged Warhammer",
+      "quality": 3,
+      "required_level": 65,
+      "slot": 21,
+      "source": [
+        1
+      ],
+      "sourcemore": [
+        {
+          "c": 11,
+          "icon": "inv_hammer_17",
+          "n": "Lavaforged Warhammer",
+          "s": 164,
+          "t": 6,
+          "ti": 36136
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=30089/lavaforged-warhammer"
+    },
+    {
+      "classs": 2,
+      "id": 30108,
+      "level": 141,
+      "listview_id": "items",
+      "name": "Lightfathom Scepter",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 2,
+          "n": "Lady Vashj",
+          "t": 1,
+          "ti": 21212,
+          "z": 3607
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=30108/lightfathom-scepter"
+    },
+    {
+      "classs": 2,
+      "id": 30317,
+      "level": 175,
+      "listview_id": "items",
+      "name": "Cosmic Infuser",
+      "quality": 5,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Cosmic Infuser",
+          "t": 1,
+          "ti": 21270,
+          "z": 3845
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=30317/cosmic-infuser"
+    },
+    {
+      "classs": 2,
+      "id": 30754,
+      "level": 71,
+      "listview_id": "items",
+      "name": "Ancient Bone Mace",
+      "quality": 1,
+      "required_level": 60,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=30754/ancient-bone-mace"
+    },
+    {
+      "classs": 2,
+      "id": 30832,
+      "level": 100,
+      "listview_id": "items",
+      "name": "Gavel of Unearthed Secrets",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Nakodu",
+          "t": 1,
+          "ti": 21655,
+          "z": 3703
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=30832/gavel-of-unearthed-secrets"
+    },
+    {
+      "classs": 2,
+      "id": 30918,
+      "level": 141,
+      "listview_id": "items",
+      "name": "Hammer of Atonement",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 2,
+          "n": "Kaz'rogal",
+          "t": 1,
+          "ti": 17888,
+          "z": 3606
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=30918/hammer-of-atonement"
+    },
+    {
+      "classs": 2,
+      "id": 31139,
+      "level": 88,
+      "listview_id": "items",
+      "name": "Fist of Reckoning",
+      "quality": 3,
+      "required_level": 61,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=31139/fist-of-reckoning"
+    },
+    {
+      "classs": 2,
+      "id": 31269,
+      "level": 18,
+      "listview_id": "items",
+      "name": "Ghoul Hammer",
+      "quality": 2,
+      "required_level": 13,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Dr. Whitherlimb",
+          "t": 1,
+          "ti": 22062,
+          "z": 3433
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=31269/ghoul-hammer"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 31304,
+      "level": 115,
+      "listview_id": "items",
+      "name": "The Essence Focuser",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=31304/the-essence-focuser"
+    },
+    {
+      "classs": 2,
+      "id": 31342,
+      "level": 100,
+      "listview_id": "items",
+      "name": "The Ancient Scepter of Sue-Min",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=31342/the-ancient-scepter-of-sue-min"
+    },
+    {
+      "classs": 2,
+      "id": 31958,
+      "level": 136,
+      "listview_id": "items",
+      "name": "Merciless Gladiator's Bonecracker",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 22,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=31958/merciless-gladiators-bonecracker"
+    },
+    {
+      "classs": 2,
+      "id": 32026,
+      "level": 136,
+      "listview_id": "items",
+      "name": "Merciless Gladiator's Pummeler",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32026/merciless-gladiators-pummeler"
+    },
+    {
+      "classs": 2,
+      "id": 32262,
+      "level": 141,
+      "listview_id": "items",
+      "name": "Syphon of the Nathrezim",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 2,
+          "n": "Supremus",
+          "t": 1,
+          "ti": 22898,
+          "z": 3959
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32262/syphon-of-the-nathrezim"
+    },
+    {
+      "classs": 2,
+      "id": 32450,
+      "level": 123,
+      "listview_id": "items",
+      "name": "Gladiator's Gavel",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32450/gladiators-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 32451,
+      "level": 123,
+      "listview_id": "items",
+      "name": "Gladiator's Salvation",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32451/gladiators-salvation"
+    },
+    {
+      "classs": 2,
+      "id": 32500,
+      "level": 151,
+      "listview_id": "items",
+      "name": "Crystal Spire of Karabor",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Illidan Stormrage",
+          "t": 1,
+          "ti": 22917,
+          "z": 3959
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32500/crystal-spire-of-karabor"
+    },
+    {
+      "classs": 2,
+      "id": 32536,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Terokk's Gavel",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Terokk",
+          "t": 1,
+          "ti": 21838,
+          "z": 3519
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32536/terokks-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 32537,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Terokk's Gavel",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "dd": -1,
+          "n": "Terokk",
+          "t": 1,
+          "ti": 21838,
+          "z": 3519
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32537/terokks-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 32661,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Apexis Crystal Mace",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 13,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32661/apexis-crystal-mace"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 32943,
+      "level": 141,
+      "listview_id": "items",
+      "name": "Swiftsteel Bludgeon",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "z": 3959
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32943/swiftsteel-bludgeon"
+    },
+    {
+      "classs": 2,
+      "id": 32950,
+      "level": 100,
+      "listview_id": "items",
+      "name": "Unusually Slow Mace",
+      "quality": 3,
+      "required_level": null,
+      "slot": 13,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32950/unusually-slow-mace"
+    },
+    {
+      "classs": 2,
+      "id": 32963,
+      "level": 136,
+      "listview_id": "items",
+      "name": "Merciless Gladiator's Gavel",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32963/merciless-gladiators-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 32964,
+      "level": 136,
+      "listview_id": "items",
+      "name": "Merciless Gladiator's Salvation",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=32964/merciless-gladiators-salvation"
+    },
+    {
+      "classs": 2,
+      "id": 33283,
+      "level": 132,
+      "listview_id": "items",
+      "name": "Amani Punisher",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 1,
+          "n": "Akil'zon",
+          "t": 1,
+          "ti": 23574,
+          "z": 3805
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=33283/amani-punisher"
+    },
+    {
+      "classs": 2,
+      "id": 33468,
+      "level": 138,
+      "listview_id": "items",
+      "name": "Dark Blessing",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 1,
+          "n": "Zul'jin",
+          "t": 1,
+          "ti": 23863,
+          "z": 3805
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=33468/dark-blessing"
+    },
+    {
+      "classs": 2,
+      "id": 33662,
+      "level": 146,
+      "listview_id": "items",
+      "name": "Vengeful Gladiator's Bonecracker",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 22,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=33662/vengeful-gladiators-bonecracker"
+    },
+    {
+      "classs": 2,
+      "id": 33687,
+      "level": 146,
+      "listview_id": "items",
+      "name": "Vengeful Gladiator's Gavel",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=33687/vengeful-gladiators-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 33733,
+      "level": 146,
+      "listview_id": "items",
+      "name": "Vengeful Gladiator's Pummeler",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=33733/vengeful-gladiators-pummeler"
+    },
+    {
+      "classs": 2,
+      "id": 33743,
+      "level": 146,
+      "listview_id": "items",
+      "name": "Vengeful Gladiator's Salvation",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=33743/vengeful-gladiators-salvation"
+    },
+    {
+      "classs": 2,
+      "id": 34009,
+      "level": 141,
+      "listview_id": "items",
+      "name": "Hammer of Judgement",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
+    },
+    {
+      "classs": 2,
+      "id": 34176,
+      "level": 154,
+      "listview_id": "items",
+      "name": "Reign of Misery",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Brutallus",
+          "t": 1,
+          "ti": 24882,
+          "z": 4075
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34176/reign-of-misery"
+    },
+    {
+      "classs": 2,
+      "id": 34199,
+      "level": 154,
+      "listview_id": "items",
+      "name": "Archon's Gavel",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 2,
+          "n": "Grand Warlock Alythess",
+          "t": 1,
+          "ti": 25166,
+          "z": 4075
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34199/archons-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 34335,
+      "level": 164,
+      "listview_id": "items",
+      "name": "Hammer of Sanctification",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": 2,
+          "n": "Kil'jaeden",
+          "t": 1,
+          "ti": 25315,
+          "z": 4075
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34335/hammer-of-sanctification"
+    },
+    {
+      "classs": 2,
+      "id": 34611,
+      "level": 125,
+      "listview_id": "items",
+      "name": "Cudgel of Consecration",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Kael'thas Sunstrider",
+          "t": 1,
+          "ti": 24664,
+          "z": 4131
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34611/cudgel-of-consecration"
+    },
+    {
+      "classs": 2,
+      "id": 34670,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Seeker's Gavel",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Eldara Dawnrunner",
+          "t": 1,
+          "ti": 25032,
+          "z": 4080
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34670/seekers-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 34671,
+      "level": 115,
+      "listview_id": "items",
+      "name": "K'iru's Presage",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Eldara Dawnrunner",
+          "t": 1,
+          "ti": 25032,
+          "z": 4080
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34671/kirus-presage"
+    },
+    {
+      "classs": 2,
+      "id": 34790,
+      "level": 115,
+      "listview_id": "items",
+      "name": "Battle-mace of the High Priestess",
+      "quality": 3,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "dd": -1,
+          "n": "Priestess Delrissa",
+          "t": 1,
+          "ti": 24560,
+          "z": 4131
+        }
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34790/battle-mace-of-the-high-priestess"
+    },
+    {
+      "classs": 2,
+      "id": 34896,
+      "level": 146,
+      "listview_id": "items",
+      "name": "Gavel of Naaru Blessings",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34896/gavel-of-naaru-blessings"
+    },
+    {
+      "classs": 2,
+      "id": 34988,
+      "level": 154,
+      "listview_id": "items",
+      "name": "Brutal Gladiator's Bonecracker",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 22,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=34988/brutal-gladiators-bonecracker"
+    },
+    {
+      "classs": 2,
+      "id": 35014,
+      "level": 154,
+      "listview_id": "items",
+      "name": "Brutal Gladiator's Gavel",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=35014/brutal-gladiators-gavel"
+    },
+    {
+      "classs": 2,
+      "id": 35071,
+      "level": 154,
+      "listview_id": "items",
+      "name": "Brutal Gladiator's Pummeler",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 13,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=35071/brutal-gladiators-pummeler"
+    },
+    {
+      "classs": 2,
+      "id": 35082,
+      "level": 154,
+      "listview_id": "items",
+      "name": "Brutal Gladiator's Salvation",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "source": [
+        5
+      ],
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=35082/brutal-gladiators-salvation"
+    },
+    {
+      "classs": 2,
+      "id": 37740,
+      "level": 154,
+      "listview_id": "items",
+      "name": "Brutal Gladiator's Swift Judgement",
+      "quality": 4,
+      "required_level": 70,
+      "slot": 21,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=37740/brutal-gladiators-swift-judgement"
+    },
+    {
+      "classs": 2,
+      "id": 186062,
+      "level": 52,
+      "listview_id": "items",
+      "name": "Communal Smasher",
+      "quality": 2,
+      "required_level": 58,
+      "slot": 13,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=186062/communal-smasher"
+    },
+    {
+      "classs": 2,
+      "commondrop": true,
+      "id": 190325,
+      "level": 1,
+      "listview_id": "items",
+      "name": "Monster - Incubus Whip Mace1H",
+      "quality": 0,
+      "required_level": null,
+      "slot": 13,
+      "subclass": 4,
+      "url": "https://www.wowhead.com/tbc/item=190325/monster-incubus-whip-mace1h"
+    }
+  ],
+  "page_type": "item_list",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "summary": {
+    "displayed_items": null,
+    "item_refs": 327,
+    "listviews": [
+      "items",
+      "itemsgallery"
+    ],
+    "total_items": null,
+    "truncated": false
+  },
+  "title": "TBC One-Handed Maces - TBC Classic",
+  "url": "https://www.wowhead.com/tbc/items/weapons/one-handed-maces"
+}

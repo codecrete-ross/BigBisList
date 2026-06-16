@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Earthforged Leggings Phase 1 Item Level 52 Binds when picked up Legs Plate 479 Armor +16 Strength +10 Agility +24 Stamina Durability 100 / 100 Requires Level 47 Requires Armorsmith Equip: Increases defense rating by 10. Sell Price: 2 23 91",
+  "fetched_at": "2026-06-15T20:25:51+00:00",
+  "inventory_slot": null,
+  "item_id": 30069,
+  "item_stats": {
+    "armor": 479,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Increases defense rating by"
+    ],
+    "id": 30069,
+    "item_level": 52,
+    "name": "Earthforged Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "defense_rating": 10.0,
+      "stamina": 24.0,
+      "strength": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30069/earthforged-leggings"
+  },
+  "name": "Earthforged Leggings",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Earthforged Leggings Phase 1 Item Level 52 Binds when picked up Legs Plate 479 Armor +16 Strength +10 Agility +24 Stamina Durability 100 / 100 Requires Level 47 Requires Armorsmith Equip: Increases defense rating by 10. Sell Price: 2 23 91",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=30069/earthforged-leggings",
+      "specialization": "Armorsmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30069/earthforged-leggings"
+}

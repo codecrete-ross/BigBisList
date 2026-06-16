@@ -314,7 +314,7 @@ local function inflateCompactField(index, schemaName, key, value)
         elseif key == "costs" then
             return inflateCompactList(index, "cost", value)
         end
-    elseif (schemaName == "use" or schemaName == "enchant" or schemaName == "consumable" or schemaName == "leveling_gear") and key == "requirements" then
+    elseif (schemaName == "use" or schemaName == "enchant" or schemaName == "consumable" or schemaName == "leveling_gear" or schemaName == "leveling_recommendation") and key == "requirements" then
         return inflateCompactList(index, "requirement", value)
     end
 
@@ -1274,6 +1274,41 @@ function LEVELING_HELPERS.isCategoryKey(key)
     return type(key) == "string" and string.sub(key, 1, 9) == "leveling_"
 end
 
+local RACE_TOKEN_NAMES = {
+    BloodElf = "Blood Elf",
+    Draenei = "Draenei",
+    Dwarf = "Dwarf",
+    Gnome = "Gnome",
+    Human = "Human",
+    NightElf = "Night Elf",
+    Orc = "Orc",
+    Scourge = "Undead",
+    Tauren = "Tauren",
+    Troll = "Troll",
+}
+
+local function raceMatches(rowRace, selectedRace)
+    if not rowRace or rowRace == "" or rowRace == "*" then
+        return true
+    elseif not selectedRace or selectedRace == "" then
+        return true
+    end
+    return rowRace == selectedRace
+end
+
+local function levelingRecommendationGroupKey(row)
+    if type(row) ~= "table" then
+        return nil
+    end
+
+    return table.concat({
+        tostring(row.level_min or ""),
+        tostring(row.level_max or ""),
+        tostring(row.slot or ""),
+        tostring(row.context or ""),
+    }, ":")
+end
+
 local function slotMatchesDisplayFilter(filterKey, rowSlot)
     local slots = DISPLAY_SLOT_FILTER_MAP[filterKey]
     if slots then
@@ -2213,6 +2248,94 @@ local function buildLevelingGearRow(index, levelingGearRef)
     return row
 end
 
+local function buildLevelingRecommendationRow(index, recommendationRef)
+    local entry = inflateCompactRecord(index, "leveling_recommendation", recommendationRef)
+    if not entry then
+        return nil
+    end
+
+    local itemId = entry.item_id
+    local item = getIndexedItem(index, itemId)
+    local meta = getItemMetaFromIndex(index, itemId, item) or {}
+    local requirements = mergedRequirements(item and item.requirements, entry.requirements)
+    local levelMin = tonumber(entry.level_min) or 1
+    local levelMax = tonumber(entry.level_max) or levelMin
+    local levelLabel = levelMax > levelMin and ("Recommended from " .. tostring(levelMin) .. "-" .. tostring(levelMax)) or ("Recommended at " .. tostring(levelMin))
+    local reasonTags = entry.reason_tags or {}
+    local primaryTag = reasonTags[1]
+    local categoryLabel = primaryTag == "best_survival" and "Survival"
+        or primaryTag == "best_hit" and "Hit"
+        or primaryTag == "best_easy_source" and "Easy source"
+        or "Recommended"
+    local tooltipLevelLabel = levelMax > levelMin and ("Leveling " .. tostring(levelMin) .. "-" .. tostring(levelMax)) or ("Leveling " .. tostring(levelMin))
+    local recommendationSummary = entry.source_summary or meta.source_summary or ""
+    if primaryTag and primaryTag ~= "" then
+        recommendationSummary = primaryTag:gsub("_", " ")
+    elseif recommendationSummary == "" then
+        recommendationSummary = levelLabel
+    end
+
+    local row = {
+        class = entry.class,
+        spec = entry.spec,
+        race = entry.race,
+        phase = LEVELING_PHASE_KEY,
+        phaseIndex = phaseIndex(LEVELING_PHASE_KEY),
+        leveling = true,
+        computed_recommendation = true,
+        level_min = levelMin,
+        level_max = levelMax,
+        level_band = entry.level_band,
+        level_label = levelLabel,
+        level_value_text = levelingValueText(entry),
+        slot = entry.slot,
+        item_id = itemId,
+        variant_id = entry.variant_id,
+        item = item,
+        name = getItemName(itemId, item),
+        rank = entry.rank,
+        rank_label = categoryLabel,
+        rank_group = "option",
+        category_label = categoryLabel,
+        leveling_category_key = LEVELING_HELPERS.categoryKey(categoryLabel),
+        tooltip_level_label = tooltipLevelLabel,
+        section = "Leveling recommendations",
+        source_note = entry.source_summary or meta.source_summary or "",
+        source_url = entry.source_url,
+        source_summary = entry.source_summary or meta.source_summary or "",
+        source_type = meta.source_type or "unknown",
+        source_type_label = meta.source_type_label or SOURCE_TYPE_LABELS.unknown,
+        source_filter_key = entry.source_bucket or meta.source_filter_key or "unknown",
+        source_filter_label = SOURCE_TYPE_LABELS[entry.source_bucket or meta.source_filter_key or "unknown"] or SOURCE_TYPE_LABELS.unknown,
+        source_filter_keys = meta.source_filter_keys or {},
+        acquisition_phase = meta.acquisition_phase or "PR",
+        acquisitionPhaseIndex = meta.acquisitionPhaseIndex or phaseIndex("PR"),
+        zone = meta.zone,
+        zones = meta.zones or {},
+        side = meta.side,
+        sides = meta.sides or {},
+        binding = meta.binding or "unknown",
+        boe = meta.boe,
+        quality = meta.quality,
+        requirements = requirements,
+        reputations = rowReputationsWithMeta(meta.reputations, requirements),
+        context = entry.context,
+        score = entry.score,
+        score_delta_pct = entry.score_delta_pct,
+        reason_tags = reasonTags,
+        display_rank_label = levelLabel,
+        display_rank_kind = "leveling",
+        recommendation_summary = recommendationSummary,
+        _access_context = {
+            item = item,
+            requirements = entry.requirements,
+            options = { entityType = "item" },
+        },
+    }
+
+    return row
+end
+
 function LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
     if not row then
         return false
@@ -2997,6 +3120,16 @@ function BigBiSList:GetDisplaySlotFilters()
     return DISPLAY_SLOT_FILTERS
 end
 
+function BigBiSList:GetPlayerRaceName()
+    if UnitRace then
+        local ok, localizedName, raceToken = pcall(UnitRace, "player")
+        if ok then
+            return RACE_TOKEN_NAMES[raceToken] or localizedName
+        end
+    end
+    return nil
+end
+
 function BigBiSList:GetEquipmentSlotDefinitions()
     return EQUIPMENT_SLOTS
 end
@@ -3117,6 +3250,7 @@ function BigBiSList:GetDataIndex()
         rowAccessCacheOrder = {},
         itemUseCache = {},
         levelingGearCache = {},
+        levelingRecommendationCache = {},
         tooltipUseCache = {},
         itemsById = {},
         classes = classSpecIndex.classes,
@@ -3135,6 +3269,8 @@ function BigBiSList:GetDataIndex()
         useRefsByClassSpecPhase = {},
         levelingGearRefsByItemId = {},
         levelingGearRefsByClassSpec = {},
+        levelingRecommendationRefsByItemId = {},
+        levelingRecommendationRefsByClassSpec = {},
         enhancement = {
             gems = data.gems or {},
             gemSourcesById = {},
@@ -3202,6 +3338,14 @@ function BigBiSList:GetDataIndex()
             local specName = compactField(index, "leveling_gear", levelingGearRef, "spec")
             addUseRef(index.levelingGearRefsByItemId, itemId, levelingGearRef)
             table.insert(ensureNestedUseBucket(index.levelingGearRefsByClassSpec, className, specName), levelingGearRef)
+        end
+
+        for _, recommendationRef in ipairs(data.leveling_recommendations or {}) do
+            local itemId = compactField(index, "leveling_recommendation", recommendationRef, "item_id")
+            local className = compactField(index, "leveling_recommendation", recommendationRef, "class")
+            local specName = compactField(index, "leveling_recommendation", recommendationRef, "spec")
+            addUseRef(index.levelingRecommendationRefsByItemId, itemId, recommendationRef)
+            table.insert(ensureNestedUseBucket(index.levelingRecommendationRefsByClassSpec, className, specName), recommendationRef)
         end
 
         for _, sourceData in ipairs(data.gem_sources or {}) do
@@ -3287,6 +3431,11 @@ function BigBiSList:GetDataIndex()
         for _, levelingGear in ipairs(data.leveling_gear or {}) do
             addUseRef(index.levelingGearRefsByItemId, levelingGear.item_id, levelingGear)
             table.insert(ensureNestedUseBucket(index.levelingGearRefsByClassSpec, levelingGear["class"], levelingGear.spec), levelingGear)
+        end
+
+        for _, recommendation in ipairs(data.leveling_recommendations or {}) do
+            addUseRef(index.levelingRecommendationRefsByItemId, recommendation.item_id, recommendation)
+            table.insert(ensureNestedUseBucket(index.levelingRecommendationRefsByClassSpec, recommendation["class"], recommendation.spec), recommendation)
         end
 
         index.usesByItemId = setmetatable({}, {
@@ -3376,8 +3525,38 @@ function BigBiSList:GetItemLevelingUses(itemId)
             table.insert(rows, row)
         end
     end
+    for _, recommendationRef in ipairs(index.levelingRecommendationRefsByItemId[itemId] or {}) do
+        local row = buildLevelingRecommendationRow(index, recommendationRef)
+        if row then
+            table.insert(rows, row)
+        end
+    end
     table.sort(rows, LEVELING_HELPERS.sortByNextLevel)
     index.levelingGearCache[itemId] = rows
+    return rows
+end
+
+function BigBiSList:GetItemLevelingRecommendationUses(itemId, race)
+    itemId = tonumber(itemId)
+    if not itemId then
+        return {}
+    end
+
+    local cacheKey = tostring(itemId) .. ":" .. tostring(race or "")
+    local index = self:GetDataIndex()
+    if index.levelingRecommendationCache[cacheKey] then
+        return index.levelingRecommendationCache[cacheKey]
+    end
+
+    local rows = {}
+    for _, recommendationRef in ipairs(index.levelingRecommendationRefsByItemId[itemId] or {}) do
+        local row = buildLevelingRecommendationRow(index, recommendationRef)
+        if row and raceMatches(row.race, race) then
+            table.insert(rows, row)
+        end
+    end
+    table.sort(rows, LEVELING_HELPERS.sortByNextLevel)
+    index.levelingRecommendationCache[cacheKey] = rows
     return rows
 end
 
@@ -3397,13 +3576,15 @@ function BigBiSList:GetItemBestUseForSpec(itemId, className, specName, preferred
     return bestUse
 end
 
-function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, level, allowedSlots)
+function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, level, allowedSlots, race)
     local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    race = race or self:GetPlayerRaceName()
     local matches = {}
 
     for _, row in ipairs(self:GetItemLevelingUses(itemId)) do
         if row.class == className
             and row.spec == specName
+            and raceMatches(row.race, race)
             and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
             and (not allowedSlots or slotListContains(allowedSlots, row.slot)) then
             table.insert(matches, row)
@@ -3416,13 +3597,15 @@ function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, l
     return matches[1]
 end
 
-function BigBiSList:GetItemNextLevelingUseForSpec(itemId, className, specName, level, allowedSlots)
+function BigBiSList:GetItemNextLevelingUseForSpec(itemId, className, specName, level, allowedSlots, race)
     local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
+    race = race or self:GetPlayerRaceName()
     local matches = {}
 
     for _, row in ipairs(self:GetItemLevelingUses(itemId)) do
         if row.class == className
             and row.spec == specName
+            and raceMatches(row.race, race)
             and (tonumber(row.level_min) or 1) > selectedLevel
             and (not allowedSlots or slotListContains(allowedSlots, row.slot)) then
             table.insert(matches, row)
@@ -3715,11 +3898,65 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
     local index = self:GetDataIndex()
     local selectedLevel = tonumber(level) or (filters and tonumber(filters.level)) or 70
     selectedLevel = math.max(1, math.min(70, math.floor(selectedLevel)))
+    local selectedRace = (filters and filters.race) or self:GetPlayerRaceName()
     local levelingRefs = index.levelingGearRefsByClassSpec[className]
         and index.levelingGearRefsByClassSpec[className][specName]
         or {}
+    local recommendationRefs = index.levelingRecommendationRefsByClassSpec[className]
+        and index.levelingRecommendationRefsByClassSpec[className][specName]
+        or {}
     local grouped = {}
     local seenBySlot = {}
+    local raceOverrideGroups = {}
+
+    if selectedRace and selectedRace ~= "" then
+        for _, recommendationRef in ipairs(recommendationRefs) do
+            local row = buildLevelingRecommendationRow(index, recommendationRef)
+            if row
+                and row.race == selectedRace
+                and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
+                and includeByFilter(row, filters, phaseIndex(LEVELING_PHASE_KEY)) then
+                local groupKey = levelingRecommendationGroupKey(row)
+                if groupKey then
+                    raceOverrideGroups[groupKey] = true
+                end
+            end
+        end
+    end
+
+    for _, recommendationRef in ipairs(recommendationRefs) do
+        local row = buildLevelingRecommendationRow(index, recommendationRef)
+        local includeRecommendation = row
+            and raceMatches(row.race, selectedRace)
+            and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
+            and includeByFilter(row, filters, phaseIndex(LEVELING_PHASE_KEY))
+
+        if includeRecommendation then
+            local groupKey = levelingRecommendationGroupKey(row)
+            if row.race == "*" and groupKey and raceOverrideGroups[groupKey] then
+                includeRecommendation = false
+            end
+        end
+
+        if includeRecommendation then
+            local slotName = row.slot
+            grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
+            seenBySlot[slotName] = seenBySlot[slotName] or {}
+
+            local key = table.concat({
+                tostring(row.item_id),
+                tostring(row.level_min),
+                tostring(row.level_max),
+                tostring(row.race or "*"),
+                tostring(row.context or ""),
+                tostring(row.variant_id or ""),
+            }, ":")
+            if not seenBySlot[slotName][key] then
+                seenBySlot[slotName][key] = true
+                table.insert(grouped[slotName].items, row)
+            end
+        end
+    end
 
     for _, levelingRef in ipairs(levelingRefs) do
         local row = buildLevelingGearRow(index, levelingRef)

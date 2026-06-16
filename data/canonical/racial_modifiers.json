@@ -1,0 +1,188 @@
+{
+  "racial_modifiers": [
+    {
+      "applies": {
+        "weapon_subtypes": ["Sword"]
+      },
+      "id": "human_sword_specialization",
+      "modifier": {
+        "stat": "expertise",
+        "value": 5
+      },
+      "race": "Human",
+      "source_url": "https://www.wowhead.com/tbc/spell=20597/sword-specialization",
+      "tags": ["human_sword_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "weapon_subtypes": ["Mace"]
+      },
+      "id": "human_mace_specialization",
+      "modifier": {
+        "stat": "expertise",
+        "value": 5
+      },
+      "race": "Human",
+      "source_url": "https://www.wowhead.com/tbc/spell=20864/mace-specialization",
+      "tags": ["human_mace_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "weapon_subtypes": ["Axe"]
+      },
+      "id": "orc_axe_specialization",
+      "modifier": {
+        "stat": "expertise",
+        "value": 5
+      },
+      "race": "Orc",
+      "source_url": "https://www.wowhead.com/tbc/spell=20574/axe-specialization",
+      "tags": ["orc_axe_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "weapon_subtypes": ["Gun"]
+      },
+      "id": "dwarf_gun_specialization",
+      "modifier": {
+        "stat": "crit_percent",
+        "value": 1
+      },
+      "race": "Dwarf",
+      "source_url": "https://www.wowhead.com/tbc/spell=20595/gun-specialization",
+      "tags": ["dwarf_gun_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "weapon_subtypes": ["Bow"]
+      },
+      "id": "troll_bow_specialization",
+      "modifier": {
+        "stat": "crit_percent",
+        "value": 1
+      },
+      "race": "Troll",
+      "source_url": "https://www.wowhead.com/tbc/spell=26290/bow-specialization",
+      "tags": ["troll_bow_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "weapon_subtypes": ["Thrown"]
+      },
+      "id": "troll_throwing_specialization",
+      "modifier": {
+        "stat": "crit_percent",
+        "value": 1
+      },
+      "race": "Troll",
+      "source_url": "https://www.wowhead.com/tbc/spell=20558/throwing-specialization",
+      "tags": ["troll_throwing_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "roles": ["physical_dps", "tank"]
+      },
+      "id": "draenei_heroic_presence",
+      "modifier": {
+        "stat": "hit_percent",
+        "value": 1
+      },
+      "race": "Draenei",
+      "source_url": "https://www.wowhead.com/tbc/spell=6562/heroic-presence",
+      "tags": ["draenei_hit_adjusted"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "roles": ["caster_dps", "healer"]
+      },
+      "id": "draenei_inspiring_presence",
+      "modifier": {
+        "stat": "spell_hit_percent",
+        "value": 1
+      },
+      "race": "Draenei",
+      "source_url": "https://www.wowhead.com/tbc/spell=28878/inspiring-presence",
+      "tags": ["draenei_spell_hit_adjusted"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "stats": ["intellect"]
+      },
+      "id": "gnome_expansive_mind",
+      "modifier": {
+        "stat": "intellect_percent",
+        "value": 5
+      },
+      "race": "Gnome",
+      "source_url": "https://www.wowhead.com/tbc/spell=20591/expansive-mind",
+      "tags": ["gnome_intellect_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "stats": ["spirit"]
+      },
+      "id": "human_the_human_spirit",
+      "modifier": {
+        "stat": "spirit_percent",
+        "value": 10
+      },
+      "race": "Human",
+      "source_url": "https://www.wowhead.com/tbc/spell=20598/the-human-spirit",
+      "tags": ["human_spirit_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "stats": ["health"]
+      },
+      "id": "tauren_endurance",
+      "modifier": {
+        "stat": "health_percent",
+        "value": 5
+      },
+      "race": "Tauren",
+      "source_url": "https://www.wowhead.com/tbc/spell=20550/endurance",
+      "tags": ["tauren_health_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {
+        "stats": ["dodge"]
+      },
+      "id": "night_elf_quickness",
+      "modifier": {
+        "stat": "dodge_percent",
+        "value": 1
+      },
+      "race": "Night Elf",
+      "source_url": "https://www.wowhead.com/tbc/spell=20582/quickness",
+      "tags": ["night_elf_dodge_bonus"],
+      "type": "numeric"
+    },
+    {
+      "applies": {},
+      "id": "blood_elf_arcane_torrent",
+      "race": "Blood Elf",
+      "source_url": "https://www.wowhead.com/tbc/spell=28730/arcane-torrent",
+      "tags": ["contextual_racial"],
+      "type": "contextual"
+    },
+    {
+      "applies": {},
+      "id": "undead_will_of_the_forsaken",
+      "race": "Undead",
+      "source_url": "https://www.wowhead.com/tbc/spell=7744/will-of-the-forsaken",
+      "tags": ["contextual_racial"],
+      "type": "contextual"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue amulet of item level 114 goes in the \"Neck\" slot. It is crafted. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Neck",
+  "item_id": 24116,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 24116,
+    "item_level": 114,
+    "name": "Eye of the Night",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 31071,
+      "entity_name": "Eye of the Night",
+      "profession": "Jewelcrafting",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 24169,
+          "entity_name": "Design: Eye of the Night",
+          "item_id": 24169,
+          "source_url": "https://www.wowhead.com/tbc/item=24116",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24116",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24116",
+      "spell_id": 31071,
+      "type": "crafted"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Neck",
+    "source_summary": "Crafted: Eye of the Night",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 31071,
+        "entity_name": "Eye of the Night",
+        "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24169,
+            "entity_name": "Design: Eye of the Night",
+            "item_id": 24169,
+            "source_url": "https://www.wowhead.com/tbc/item=24116",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Jewelcrafting",
+            "raw_text": "Jewelcrafting",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=24116",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=24116",
+        "spell_id": 31071,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "spell_crit_rating": 26.0,
+      "spell_hit_rating": 16.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24116"
+  },
+  "name": "Eye of the Night",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31071,
+      "entity_name": "Eye of the Night",
+      "profession": "Jewelcrafting",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 24169,
+          "entity_name": "Design: Eye of the Night",
+          "item_id": 24169,
+          "source_url": "https://www.wowhead.com/tbc/item=24116",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24116",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24116",
+      "spell_id": 31071,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          24116,
+          1,
+          1
+        ],
+        "id": 31071,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Eye of the Night",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            23573,
+            2
+          ],
+          [
+            31079,
+            2
+          ],
+          [
+            23441,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24169,
+        "level": 72,
+        "name": "Design: Eye of the Night",
+        "popularity": 6,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24169,
+      "level": 72,
+      "name": "Design: Eye of the Night",
+      "popularity": 6,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24116"
+}

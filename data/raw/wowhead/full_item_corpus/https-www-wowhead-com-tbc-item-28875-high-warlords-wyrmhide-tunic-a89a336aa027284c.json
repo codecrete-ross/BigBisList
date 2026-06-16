@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "High Warlord's Wyrmhide Tunic Phase 1 Item Level 115 Binds when picked up Chest Leather 322 Armor +33 Stamina +17 Intellect Red Socket Red Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 100 / 100 Classes: Druid Requires Level 70 Equip: Improves your resilience rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 22. Equip: Restores 5 mana per 5 sec. Oathbound's Wyrmhide Battlegear (0/5) Wyrmhide Gloves Wyrmhide Helm Wyrmhide Legguards Wyrmhide Robe Wyrmhide Spaulders (2) Set : +35 Resilience Rating. (4) Set : Your Wrath casts have a chance to reduce the cast time on your next Starfire by 1.5 sec. (Proc chance: 15%, 15s cooldown)",
+  "fetched_at": "2026-06-15T20:25:26+00:00",
+  "inventory_slot": null,
+  "item_id": 28875,
+  "item_stats": {
+    "armor": 322,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 28875,
+    "item_level": 115,
+    "name": "High Warlord's Wyrmhide Tunic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "mp5": 5.0,
+      "resilience_rating": 18.0,
+      "spell_power": 22.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28875/high-warlords-wyrmhide-tunic"
+  },
+  "name": "High Warlord's Wyrmhide Tunic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28875/high-warlords-wyrmhide-tunic"
+}

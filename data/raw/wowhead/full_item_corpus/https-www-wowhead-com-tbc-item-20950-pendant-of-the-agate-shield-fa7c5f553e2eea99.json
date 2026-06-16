@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Pendant of the Agate Shield Item Level 31 Binds when equipped Neck +4 Strength +4 Stamina Requires Level 26 Equip: Increases defense rating by 6. Use: Gives 10 additional stamina to nearby party members for 30 min. 10 Charges Sell Price: 15 35",
+  "fetched_at": "2026-06-15T20:22:26+00:00",
+  "inventory_slot": null,
+  "item_id": 20950,
+  "item_stats": {
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 20950,
+    "item_level": 31,
+    "name": "Pendant of the Agate Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 26,
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 6.0,
+      "stamina": 4.0,
+      "strength": 4.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20950/pendant-of-the-agate-shield"
+  },
+  "name": "Pendant of the Agate Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20950/pendant-of-the-agate-shield"
+}

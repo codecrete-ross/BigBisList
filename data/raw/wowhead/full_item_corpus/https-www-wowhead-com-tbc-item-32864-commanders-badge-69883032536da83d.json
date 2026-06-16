@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Commander's Badge Phase 1 Item Level 109 Binds when picked up Unique-Equipped Trinket +45 Stamina Requires Netherwing - Revered Use: Calls forth a Netherwing Ally to fight at your side. (10 Min Cooldown)",
+  "fetched_at": "2026-06-15T20:27:18+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32864,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 32864,
+    "item_level": 109,
+    "name": "Commander's Badge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 45.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32864/commanders-badge"
+  },
+  "name": "Commander's Badge",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Commander's Badge Phase 1 Item Level 109 Binds when picked up Unique-Equipped Trinket +45 Stamina Requires Netherwing - Revered Use: Calls forth a Netherwing Ally to fight at your side. (10 Min Cooldown)",
+      "reputation": "Netherwing",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32864/commanders-badge",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32864/commanders-badge"
+}

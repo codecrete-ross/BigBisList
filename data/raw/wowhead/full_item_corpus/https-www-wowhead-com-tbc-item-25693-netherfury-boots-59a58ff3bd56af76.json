@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Netherfury Boots Phase 1 Item Level 100 Binds when equipped Feet Mail 392 Armor +36 Stamina Blue Socket Red Socket Socket Bonus: +3 Spell Critical Strike Rating Durability 60 / 60 Requires Level 69 Equip: Increases damage and healing done by magical spells and effects by up to 21. Equip: Restores 7 mana per 5 sec. Fury of the Nether (0/3) Requires Leatherworking (350) Netherfury Belt Netherfury Boots Netherfury Leggings (3) Set : +20 Intellect. Sell Price: 3 66 67",
+  "fetched_at": "2026-06-15T20:24:38+00:00",
+  "inventory_slot": null,
+  "item_id": 25693,
+  "item_stats": {
+    "armor": 392,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 25693,
+    "item_level": 100,
+    "name": "Netherfury Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 69,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "blue",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "mp5": 7.0,
+      "spell_power": 21.0,
+      "stamina": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25693/netherfury-boots"
+  },
+  "name": "Netherfury Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Netherfury Boots Phase 1 Item Level 100 Binds when equipped Feet Mail 392 Armor +36 Stamina Blue Socket Red Socket Socket Bonus: +3 Spell Critical Strike Rating Durability 60 / 60 Requires Level 69 Equip: Increases damage and healing done by magical spells and effects by up to 21. Equip: Restores 7 mana per 5 sec. Fury of the Nether (0/3) Requires Leatherworking (350) Netherfury Belt Netherfury Boots Netherfury Leggings (3) Set : +20 Intellect. Sell Price: 3 66 67",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25693/netherfury-boots",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25693/netherfury-boots"
+}

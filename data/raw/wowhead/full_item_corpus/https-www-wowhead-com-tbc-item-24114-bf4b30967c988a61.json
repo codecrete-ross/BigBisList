@@ -1,0 +1,216 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue amulet of item level 102 goes in the \"Neck\" slot. It is crafted. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Neck",
+  "item_id": 24114,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 24114,
+    "item_level": 102,
+    "name": "Braided Eternium Chain",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 31070,
+      "entity_name": "Braided Eternium Chain",
+      "profession": "Jewelcrafting",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 24168,
+          "entity_name": "Design: Braided Eternium Chain",
+          "item_id": 24168,
+          "source_url": "https://www.wowhead.com/tbc/item=24114",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24114",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24114",
+      "spell_id": 31070,
+      "type": "crafted"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Neck",
+    "source_summary": "Crafted: Braided Eternium Chain",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 31070,
+        "entity_name": "Braided Eternium Chain",
+        "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24168,
+            "entity_name": "Design: Braided Eternium Chain",
+            "item_id": 24168,
+            "source_url": "https://www.wowhead.com/tbc/item=24114",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Jewelcrafting",
+            "raw_text": "Jewelcrafting",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=24114",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=24114",
+        "spell_id": 31070,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "hit_rating": 21.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24114"
+  },
+  "name": "Braided Eternium Chain",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31070,
+      "entity_name": "Braided Eternium Chain",
+      "profession": "Jewelcrafting",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 24168,
+          "entity_name": "Design: Braided Eternium Chain",
+          "item_id": 24168,
+          "source_url": "https://www.wowhead.com/tbc/item=24114",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24114",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24114",
+      "spell_id": 31070,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          24114,
+          1,
+          1
+        ],
+        "id": 31070,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Braided Eternium Chain",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            23447,
+            2
+          ],
+          [
+            31079,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24168,
+        "level": 72,
+        "name": "Design: Braided Eternium Chain",
+        "popularity": 6,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24168,
+      "level": 72,
+      "name": "Design: Braided Eternium Chain",
+      "popularity": 6,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24114"
+}

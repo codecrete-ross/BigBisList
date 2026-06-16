@@ -1,0 +1,231 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloak of item level 115 goes in the \"Back\" slot. In the Cloaks category. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Back",
+  "item_id": 31942,
+  "item_stats": {
+    "armor": 78,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 31942,
+    "item_level": 115,
+    "name": "Deathwing Brood Cloak",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 40764,
+      "entity_name": "Stitch Scales",
+      "source_url": "https://www.wowhead.com/tbc/item=31942",
+      "spell_id": 40764,
+      "type": "crafted"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Back",
+    "source_summary": "Crafted: Stitch Scales +3",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 40764,
+        "entity_name": "Stitch Scales",
+        "source_url": "https://www.wowhead.com/tbc/item=31942",
+        "spell_id": 40764,
+        "type": "crafted"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 40765,
+        "entity_name": "Stitch Scales",
+        "source_url": "https://www.wowhead.com/tbc/item=31942",
+        "spell_id": 40765,
+        "type": "crafted"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 40766,
+        "entity_name": "Stitch Scales",
+        "source_url": "https://www.wowhead.com/tbc/item=31942",
+        "spell_id": 40766,
+        "type": "crafted"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 40767,
+        "entity_name": "Stitch Scales",
+        "source_url": "https://www.wowhead.com/tbc/item=31942",
+        "spell_id": 40767,
+        "type": "crafted"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31942"
+  },
+  "name": "Deathwing Brood Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 40764,
+      "entity_name": "Stitch Scales",
+      "source_url": "https://www.wowhead.com/tbc/item=31942",
+      "spell_id": 40764,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 40765,
+      "entity_name": "Stitch Scales",
+      "source_url": "https://www.wowhead.com/tbc/item=31942",
+      "spell_id": 40765,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 40766,
+      "entity_name": "Stitch Scales",
+      "source_url": "https://www.wowhead.com/tbc/item=31942",
+      "spell_id": 40766,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 40767,
+      "entity_name": "Stitch Scales",
+      "source_url": "https://www.wowhead.com/tbc/item=31942",
+      "spell_id": 40767,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": -26,
+        "creates": [
+          31942,
+          100,
+          100
+        ],
+        "id": 40764,
+        "level": 0,
+        "name": "Stitch Scales",
+        "popularity": 4,
+        "quality": 3,
+        "reagents": [
+          [
+            32683,
+            1
+          ],
+          [
+            32682,
+            1
+          ],
+          [
+            32681,
+            1
+          ]
+        ],
+        "schools": 1
+      },
+      {
+        "cat": -26,
+        "creates": [
+          31942,
+          100,
+          100
+        ],
+        "id": 40765,
+        "level": 0,
+        "name": "Stitch Scales",
+        "popularity": 7,
+        "quality": 3,
+        "reagents": [
+          [
+            32684,
+            1
+          ],
+          [
+            32682,
+            1
+          ],
+          [
+            32681,
+            1
+          ]
+        ],
+        "schools": 1
+      },
+      {
+        "cat": -26,
+        "creates": [
+          31942,
+          100,
+          100
+        ],
+        "id": 40766,
+        "level": 0,
+        "name": "Stitch Scales",
+        "popularity": 13,
+        "quality": 3,
+        "reagents": [
+          [
+            32684,
+            1
+          ],
+          [
+            32682,
+            1
+          ],
+          [
+            32683,
+            1
+          ]
+        ],
+        "schools": 1
+      },
+      {
+        "cat": -26,
+        "creates": [
+          31942,
+          100,
+          100
+        ],
+        "id": 40767,
+        "level": 0,
+        "name": "Stitch Scales",
+        "popularity": 5,
+        "quality": 3,
+        "reagents": [
+          [
+            32684,
+            1
+          ],
+          [
+            32681,
+            1
+          ],
+          [
+            32683,
+            1
+          ]
+        ],
+        "schools": 1
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31942"
+}

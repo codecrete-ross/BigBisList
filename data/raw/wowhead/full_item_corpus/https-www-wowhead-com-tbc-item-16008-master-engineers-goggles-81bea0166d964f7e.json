@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Master Engineer's Goggles Phase 1 Item Level 58 Binds when equipped Head Cloth 61 Armor +16 Stamina +17 Spirit Durability 45 / 45 Requires Engineering (280) Sell Price: 1 17 39",
+  "fetched_at": "2026-06-15T20:19:12+00:00",
+  "inventory_slot": null,
+  "item_id": 16008,
+  "item_stats": {
+    "armor": 61,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 16008,
+    "item_level": 58,
+    "name": "Master Engineer's Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "spirit": 17.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=16008/master-engineers-goggles"
+  },
+  "name": "Master Engineer's Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Master Engineer's Goggles Phase 1 Item Level 58 Binds when equipped Head Cloth 61 Armor +16 Stamina +17 Spirit Durability 45 / 45 Requires Engineering (280) Sell Price: 1 17 39",
+      "scope": "equip_or_use",
+      "skill": 280,
+      "source_url": "https://www.wowhead.com/tbc/item=16008/master-engineers-goggles",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=16008/master-engineers-goggles"
+}

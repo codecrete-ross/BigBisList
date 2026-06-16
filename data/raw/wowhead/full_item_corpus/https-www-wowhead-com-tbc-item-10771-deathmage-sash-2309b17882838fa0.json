@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deathmage Sash Phase 1 Item Level 41 Binds when picked up Waist Cloth 33 Armor +6 Stamina +10 Intellect Durability 30 / 30 Requires Level 36 Equip: Increases damage and healing done by magical spells and effects by up to 12. Sell Price: 29 10",
+  "fetched_at": "2026-06-15T20:17:19+00:00",
+  "inventory_slot": null,
+  "item_id": 10771,
+  "item_stats": {
+    "armor": 33,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10771,
+    "item_level": 41,
+    "name": "Deathmage Sash",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 36,
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 12.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10771/deathmage-sash"
+  },
+  "name": "Deathmage Sash",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10771/deathmage-sash"
+}

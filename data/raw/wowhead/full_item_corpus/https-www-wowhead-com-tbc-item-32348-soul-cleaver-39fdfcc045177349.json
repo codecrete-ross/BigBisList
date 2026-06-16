@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Soul Cleaver Phase 3 Item Level 141 Binds when picked up Two-Hand Axe 386 - 579 Damage Speed 3.70 (130.41 damage per second) +65 Strength +63 Stamina Durability 120 / 120 Requires Level 70 Equip: Your attacks ignore 315 of your opponent's armor. Sell Price: 18 17 70",
+  "fetched_at": "2026-06-15T20:27:10+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 32348,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 130.41,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 32348,
+    "item_level": 141,
+    "name": "Soul Cleaver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 63.0,
+      "strength": 65.0
+    },
+    "weapon_max_damage": 579,
+    "weapon_min_damage": 386,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver"
+  },
+  "name": "Soul Cleaver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver"
+}

@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stalker's Chain Spaulders Phase 1 Item Level 115 Binds when picked up Shoulder Mail 489 Armor +14 Agility +31 Stamina +4 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 70 / 70 Classes: Hunter Requires Level 70 Requires The Sha'tar - Honored Equip: Improves critical strike rating by 17. Equip: Improves your resilience rating by 16. Equip: Increases attack power by 22. Oathbound's Chain Battlegear (0/5) Stalker's Chain Armor Stalker's Chain Gauntlets Stalker's Chain Helm Stalker's Chain Leggings Stalker's Chain Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Concussive Shot by 1 sec. Sell Price: 3 81 18",
+  "fetched_at": "2026-06-15T20:28:05+00:00",
+  "inventory_slot": null,
+  "item_id": 35380,
+  "item_stats": {
+    "armor": 489,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 35380,
+    "item_level": 115,
+    "name": "Stalker's Chain Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 14.0,
+      "attack_power": 22.0,
+      "crit_rating": 17.0,
+      "intellect": 4.0,
+      "resilience_rating": 16.0,
+      "stamina": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35380/stalkers-chain-spaulders"
+  },
+  "name": "Stalker's Chain Spaulders",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Stalker's Chain Spaulders Phase 1 Item Level 115 Binds when picked up Shoulder Mail 489 Armor +14 Agility +31 Stamina +4 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 70 / 70 Classes: Hunter Requires Level 70 Requires The Sha'tar - Honored Equip: Improves critical strike rating by 17. Equip: Improves your resilience rating by 16. Equip: Increases attack power by 22. Oathbound's Chain Battlegear (0/5) Stalker's Chain Armor Stalker's Chain Gauntlets Stalker's Chain Helm Stalker's Chain Leggings Stalker's Chain Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Concussive Shot by 1 sec. Sell Price: 3 81 18",
+      "reputation": "The Sha'tar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35380/stalkers-chain-spaulders",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35380/stalkers-chain-spaulders"
+}

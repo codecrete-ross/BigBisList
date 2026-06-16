@@ -1,0 +1,112 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green one-handed mace has an item level of 13. It is a quest reward from A Pilot's Revenge. In the One-Handed Maces category. Always up to date.",
+  "fetched_at": "2026-06-15T19:52:29+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 1009,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 6.96,
+    "id": 1009,
+    "item_level": 13,
+    "name": "Compact Hammer",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 417,
+      "entity_name": "A Pilot's Revenge",
+      "quest_id": 417,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=1009",
+      "type": "quest"
+    },
+    "quality": "uncommon",
+    "slot": "Main Hand",
+    "source_summary": "Quest: A Pilot's Revenge",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 417,
+        "entity_name": "A Pilot's Revenge",
+        "quest_id": 417,
+        "side": "Alliance",
+        "source_url": "https://www.wowhead.com/tbc/item=1009",
+        "type": "quest"
+      }
+    ],
+    "stats": {
+      "stamina": 1.0
+    },
+    "weapon_max_damage": 21,
+    "weapon_min_damage": 11,
+    "weapon_speed": 2.3,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=1009"
+  },
+  "name": "Compact Hammer",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 417,
+      "entity_name": "A Pilot's Revenge",
+      "quest_id": 417,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=1009",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1,
+        "category2": 0,
+        "id": 417,
+        "itemchoices": [
+          [
+            2218,
+            1
+          ],
+          [
+            1009,
+            1
+          ]
+        ],
+        "level": 11,
+        "name": "A Pilot's Revenge",
+        "popularity": 6,
+        "reprewards": [
+          [
+            47,
+            150
+          ],
+          [
+            54,
+            150
+          ]
+        ],
+        "reqlevel": 8,
+        "side": 1,
+        "xp": 660
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=1009"
+}

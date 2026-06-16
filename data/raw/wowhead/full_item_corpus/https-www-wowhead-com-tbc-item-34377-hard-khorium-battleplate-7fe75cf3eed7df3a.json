@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hard Khorium Battleplate Phase 5 Item Level 159 Binds when picked up Chest Plate 1983 Armor +61 Strength +55 Stamina Red Socket Red Socket Red Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Blacksmithing (350) Equip: Improves critical strike rating by 41. Equip: Your attacks ignore 280 of your opponent's armor. Sell Price: 11 17 65",
+  "fetched_at": "2026-06-15T20:27:44+00:00",
+  "inventory_slot": null,
+  "item_id": 34377,
+  "item_stats": {
+    "armor": 1983,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 34377,
+    "item_level": 159,
+    "name": "Hard Khorium Battleplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 41.0,
+      "stamina": 55.0,
+      "strength": 61.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34377/hard-khorium-battleplate"
+  },
+  "name": "Hard Khorium Battleplate",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Hard Khorium Battleplate Phase 5 Item Level 159 Binds when picked up Chest Plate 1983 Armor +61 Strength +55 Stamina Red Socket Red Socket Red Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Blacksmithing (350) Equip: Improves critical strike rating by 41. Equip: Your attacks ignore 280 of your opponent's armor. Sell Price: 11 17 65",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34377/hard-khorium-battleplate",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34377/hard-khorium-battleplate"
+}

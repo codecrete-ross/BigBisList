@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Satyr's Bow Phase 1 Item Level 58 Binds when picked up Ranged Bow 64 - 119 Damage Speed 2.40 (38.13 damage per second) +3 Agility Durability 75 / 75 Requires Level 53 Equip: Increases your hit rating by 10. Sell Price: 3 29 88",
+  "fetched_at": "2026-06-15T20:19:43+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 18323,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 38.13,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 18323,
+    "item_level": 58,
+    "name": "Satyr's Bow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 3.0,
+      "hit_rating": 10.0
+    },
+    "weapon_max_damage": 119,
+    "weapon_min_damage": 64,
+    "weapon_speed": 2.4,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18323/satyrs-bow"
+  },
+  "name": "Satyr's Bow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18323/satyrs-bow"
+}

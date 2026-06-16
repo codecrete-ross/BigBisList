@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "High Warlord's Spellblade Phase 1 Item Level 115 Binds when picked up Main Hand Dagger 32 - 101 Damage Speed 1.60 (41.56 damage per second) +18 Stamina +13 Intellect Durability 65 / 65 Requires Level 70 Equip: Improves spell hit rating by 13. Equip: Improves your resilience rating by 13. Equip: Increases damage and healing done by magical spells and effects by up to 121.",
+  "fetched_at": "2026-06-15T20:25:27+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 28931,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.56,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 28931,
+    "item_level": 115,
+    "name": "High Warlord's Spellblade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "resilience_rating": 13.0,
+      "spell_hit_rating": 13.0,
+      "spell_power": 121.0,
+      "stamina": 18.0
+    },
+    "weapon_max_damage": 101,
+    "weapon_min_damage": 32,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28931/high-warlords-spellblade"
+  },
+  "name": "High Warlord's Spellblade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28931/high-warlords-spellblade"
+}

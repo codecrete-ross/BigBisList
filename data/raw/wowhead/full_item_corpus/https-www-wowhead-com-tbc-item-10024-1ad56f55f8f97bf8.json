@@ -1,0 +1,145 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 46 goes in the \"Head\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:03+00:00",
+  "inventory_slot": "Head",
+  "item_id": 10024,
+  "item_stats": {
+    "armor": 49,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10024,
+    "item_level": 46,
+    "name": "Black Mageweave Headband",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12072,
+      "entity_name": "Black Mageweave Headband",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10024",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10024",
+      "spell_id": 12072,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 41,
+    "slot": "Head",
+    "source_summary": "Crafted: Black Mageweave Headband",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12072,
+        "entity_name": "Black Mageweave Headband",
+        "profession": "Tailoring",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10024",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10024",
+        "spell_id": 12072,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 12.0,
+      "spirit": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10024"
+  },
+  "name": "Black Mageweave Headband",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12072,
+      "entity_name": "Black Mageweave Headband",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10024",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10024",
+      "spell_id": 12072,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          230,
+          245,
+          260,
+          275
+        ],
+        "creates": [
+          10024,
+          1,
+          1
+        ],
+        "id": 12072,
+        "learnedat": 230,
+        "level": 0,
+        "name": "Black Mageweave Headband",
+        "nskillup": 1,
+        "popularity": 10,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            3
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "trainingcost": 6000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10024"
+}

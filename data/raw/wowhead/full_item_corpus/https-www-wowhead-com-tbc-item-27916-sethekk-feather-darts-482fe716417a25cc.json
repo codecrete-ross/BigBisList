@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sethekk Feather-Darts Phase 1 Item Level 112 Binds when picked up Thrown Thrown 80 - 120 Damage Speed 1.60 (62.50 damage per second) +15 Agility Durability 240 / 240 Requires Level 68 Equip: Increases attack power by 22. Sell Price: 4 39 88",
+  "fetched_at": "2026-06-15T20:25:02+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 27916,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 62.5,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 27916,
+    "item_level": 112,
+    "name": "Sethekk Feather-Darts",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "attack_power": 22.0
+    },
+    "weapon_max_damage": 120,
+    "weapon_min_damage": 80,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Thrown",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27916/sethekk-feather-darts"
+  },
+  "name": "Sethekk Feather-Darts",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27916/sethekk-feather-darts"
+}

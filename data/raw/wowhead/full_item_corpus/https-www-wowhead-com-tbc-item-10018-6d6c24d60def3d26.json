@@ -1,0 +1,221 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 45 goes in the \"Hands\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:50:54+00:00",
+  "inventory_slot": "Hands",
+  "item_id": 10018,
+  "item_stats": {
+    "armor": 37,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10018,
+    "item_level": 45,
+    "name": "Red Mageweave Gloves",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12066,
+      "entity_name": "Red Mageweave Gloves",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 10312,
+          "entity_name": "Pattern: Red Mageweave Gloves",
+          "item_id": 10312,
+          "source_url": "https://www.wowhead.com/tbc/item=10018",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10018",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10018",
+      "spell_id": 12066,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 40,
+    "slot": "Hands",
+    "source_summary": "Crafted: Red Mageweave Gloves",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12066,
+        "entity_name": "Red Mageweave Gloves",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 10312,
+            "entity_name": "Pattern: Red Mageweave Gloves",
+            "item_id": 10312,
+            "source_url": "https://www.wowhead.com/tbc/item=10018",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10018",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10018",
+        "spell_id": 12066,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 10.0,
+      "spell_power": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10018"
+  },
+  "name": "Red Mageweave Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12066,
+      "entity_name": "Red Mageweave Gloves",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 10312,
+          "entity_name": "Pattern: Red Mageweave Gloves",
+          "item_id": 10312,
+          "source_url": "https://www.wowhead.com/tbc/item=10018",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10018",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10018",
+      "spell_id": 12066,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          225,
+          240,
+          255,
+          270
+        ],
+        "creates": [
+          10018,
+          1,
+          1
+        ],
+        "id": 12066,
+        "learnedat": 225,
+        "level": 0,
+        "name": "Red Mageweave Gloves",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            3
+          ],
+          [
+            2604,
+            2
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 10312,
+        "level": 45,
+        "name": "Pattern: Red Mageweave Gloves",
+        "popularity": 7,
+        "quality": 2,
+        "skill": 225,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 10312,
+      "level": 45,
+      "name": "Pattern: Red Mageweave Gloves",
+      "popularity": 7,
+      "quality": 2,
+      "skill": 225,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10018"
+}

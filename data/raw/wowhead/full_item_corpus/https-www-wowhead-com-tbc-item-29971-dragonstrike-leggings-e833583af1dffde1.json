@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dragonstrike Leggings Phase 1 Item Level 52 Binds when picked up Legs Mail 272 Armor +18 Stamina +11 Intellect Durability 90 / 90 Requires Level 45 Requires Dragonscale Leatherworking Equip: Improves critical strike rating by 12. Equip: Increases attack power by 24. Equip: Restores 4 mana per 5 sec. Sell Price: 1 88 39",
+  "fetched_at": "2026-06-15T20:25:49+00:00",
+  "inventory_slot": null,
+  "item_id": 29971,
+  "item_stats": {
+    "armor": 272,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29971,
+    "item_level": 52,
+    "name": "Dragonstrike Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 45,
+    "source_summary": "",
+    "stats": {
+      "attack_power": 24.0,
+      "crit_rating": 12.0,
+      "intellect": 11.0,
+      "mp5": 4.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29971/dragonstrike-leggings"
+  },
+  "name": "Dragonstrike Leggings",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Dragonstrike Leggings Phase 1 Item Level 52 Binds when picked up Legs Mail 272 Armor +18 Stamina +11 Intellect Durability 90 / 90 Requires Level 45 Requires Dragonscale Leatherworking Equip: Improves critical strike rating by 12. Equip: Increases attack power by 24. Equip: Restores 4 mana per 5 sec. Sell Price: 1 88 39",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29971/dragonstrike-leggings",
+      "specialization": "Dragonscale Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29971/dragonstrike-leggings"
+}

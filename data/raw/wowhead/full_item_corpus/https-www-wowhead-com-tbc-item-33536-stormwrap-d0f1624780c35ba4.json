@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stormwrap Phase 4 Item Level 128 Binds when picked up Waist Mail 506 Armor +21 Stamina +26 Intellect Yellow Socket Blue Socket Socket Bonus: +4 Spell Damage and Healing Durability 50 / 50 Requires Level 70 Equip: Improves spell hit rating by 13. Equip: Improves spell critical strike rating by 22. Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+  "fetched_at": "2026-06-15T20:27:29+00:00",
+  "inventory_slot": null,
+  "item_id": 33536,
+  "item_stats": {
+    "armor": 506,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 33536,
+    "item_level": 128,
+    "name": "Stormwrap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 26.0,
+      "spell_crit_rating": 22.0,
+      "spell_hit_rating": 13.0,
+      "spell_power": 34.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33536/stormwrap"
+  },
+  "name": "Stormwrap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33536/stormwrap"
+}

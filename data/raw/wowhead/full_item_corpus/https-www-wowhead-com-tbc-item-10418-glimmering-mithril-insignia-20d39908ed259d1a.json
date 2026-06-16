@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Glimmering Mithril Insignia Item Level 50 Binds when picked up Unique Trinket Requires Blacksmithing (225) Use: Increases armor by 50, all resistances by 10 and grants immunity to Fear for 30 sec. This device has a chance to be resisted when used by players over level 60. (20 Min Cooldown) \"Courage, Honor, and above all, Patience\" Sell Price: 1 64 64",
+  "fetched_at": "2026-06-15T20:17:15+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 10418,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 10418,
+    "item_level": 50,
+    "name": "Glimmering Mithril Insignia",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10418/glimmering-mithril-insignia"
+  },
+  "name": "Glimmering Mithril Insignia",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Glimmering Mithril Insignia Item Level 50 Binds when picked up Unique Trinket Requires Blacksmithing (225) Use: Increases armor by 50, all resistances by 10 and grants immunity to Fear for 30 sec. This device has a chance to be resisted when used by players over level 60. (20 Min Cooldown) \"Courage, Honor, and above all, Patience\" Sell Price: 1 64 64",
+      "scope": "equip_or_use",
+      "skill": 225,
+      "source_url": "https://www.wowhead.com/tbc/item=10418/glimmering-mithril-insignia",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10418/glimmering-mithril-insignia"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Merciless Gladiator's Mail Helm Phase 2 Item Level 136 Binds when picked up Head Mail 775 Armor +60 Stamina +19 Intellect Meta Socket Red Socket Socket Bonus: +4 Resilience Rating Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 22. Equip: Improves your resilience rating by 32. Equip: Increases damage and healing done by magical spells and effects by up to 43. Gladiator's Thunderfist (0/5) Gladiator's Mail Armor Gladiator's Mail Gauntlets Gladiator's Mail Helm Gladiator's Mail Leggings Gladiator's Mail Spaulders (2) Set : +35 Resilience Rating. (4) Set : Gives you a 50% chance to avoid interruption caused by damage while casting Lightning Bolt.",
+  "fetched_at": "2026-06-15T20:27:04+00:00",
+  "inventory_slot": null,
+  "item_id": 32011,
+  "item_stats": {
+    "armor": 775,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 32011,
+    "item_level": 136,
+    "name": "Merciless Gladiator's Mail Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 19.0,
+      "resilience_rating": 32.0,
+      "spell_crit_rating": 22.0,
+      "spell_power": 43.0,
+      "stamina": 60.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32011/merciless-gladiators-mail-helm"
+  },
+  "name": "Merciless Gladiator's Mail Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32011/merciless-gladiators-mail-helm"
+}

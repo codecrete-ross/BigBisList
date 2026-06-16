@@ -184,6 +184,27 @@ LEVELING_GEAR_SCHEMA = [
     "requirements",
 ]
 
+LEVELING_RECOMMENDATION_SCHEMA = [
+    "class",
+    "spec",
+    "race",
+    "level_min",
+    "level_max",
+    "level_band",
+    "slot",
+    "item_id",
+    "variant_id",
+    "rank",
+    "context",
+    "source_bucket",
+    "score",
+    "score_delta_pct",
+    "reason_tags",
+    "source_summary",
+    "source_url",
+    "requirements",
+]
+
 SOURCE_RECORD_SCHEMA = [
     "id",
     "name",
@@ -216,6 +237,7 @@ SCHEMAS = {
     "enchant": ENCHANT_SCHEMA,
     "consumable": CONSUMABLE_SCHEMA,
     "leveling_gear": LEVELING_GEAR_SCHEMA,
+    "leveling_recommendation": LEVELING_RECOMMENDATION_SCHEMA,
     "source_record": SOURCE_RECORD_SCHEMA,
     "enchant_effect": ENCHANT_EFFECT_SCHEMA,
 }
@@ -254,7 +276,7 @@ def compact_value(schema_name: str, key: str, value):
         if key == "costs":
             return compact_list(value, "cost") if value else None
 
-    if schema_name in {"use", "enchant", "consumable", "leveling_gear"} and key == "requirements":
+    if schema_name in {"use", "enchant", "consumable", "leveling_gear", "leveling_recommendation"} and key == "requirements":
         return compact_requirements(value)
 
     return value
@@ -365,6 +387,7 @@ def build_data() -> dict:
     enchant_effects = canonical_json("enchant_effects")["enchant_effects"]
     consumables = canonical_json("consumables")["consumables"]
     leveling_gear = canonical_json("leveling_gear")["leveling_gear"]
+    leveling_recommendations = canonical_json("leveling_recommendations")["leveling_recommendations"]
     overrides = canonical_json("overrides")["overrides"]
     manifest = canonical_json("scrape_manifest")
     lookups = build_runtime_lookups(items)
@@ -383,6 +406,7 @@ def build_data() -> dict:
             "enchant_count": len(enchants),
             "consumable_count": len(consumables),
             "leveling_gear_count": len(leveling_gear),
+            "leveling_recommendation_count": len(leveling_recommendations),
             "override_count": len(overrides),
         },
         "classes": classes,
@@ -396,6 +420,7 @@ def build_data() -> dict:
         "enchant_effects": compact_list(enchant_effects, "enchant_effect"),
         "consumables": compact_list(consumables, "consumable"),
         "leveling_gear": compact_list(leveling_gear, "leveling_gear"),
+        "leveling_recommendations": compact_list(leveling_recommendations, "leveling_recommendation"),
         "source_types": lookups["source_types"],
         "zones": lookups["zones"],
         "tooltip_aliases": lookups["tooltip_aliases"],

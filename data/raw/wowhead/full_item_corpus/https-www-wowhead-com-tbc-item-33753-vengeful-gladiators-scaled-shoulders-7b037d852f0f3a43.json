@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Scaled Shoulders Phase 3 Item Level 146 Binds when picked up Shoulder Plate 1369 Armor +33 Strength +39 Stamina +20 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 100 / 100 Classes: Paladin Requires Level 70 Equip: Improves critical strike rating by 26. Equip: Improves your resilience rating by 26. Gladiator's Vindication (0/5) Gladiator's Scaled Chestpiece Gladiator's Scaled Gauntlets Gladiator's Scaled Helm Gladiator's Scaled Legguards Gladiator's Scaled Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Hammer of Justice by 10 sec.",
+  "fetched_at": "2026-06-15T20:27:34+00:00",
+  "inventory_slot": null,
+  "item_id": 33753,
+  "item_stats": {
+    "armor": 1369,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 33753,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Scaled Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 26.0,
+      "intellect": 20.0,
+      "resilience_rating": 26.0,
+      "stamina": 39.0,
+      "strength": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33753/vengeful-gladiators-scaled-shoulders"
+  },
+  "name": "Vengeful Gladiator's Scaled Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33753/vengeful-gladiators-scaled-shoulders"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Seer's Ringmail Gloves Phase 1 Item Level 115 Binds when picked up Hands Mail 407 Armor +28 Stamina +18 Intellect Durability 40 / 40 Classes: Shaman Requires Level 70 Requires Honor Hold - Honored Equip: Improves spell critical strike rating by 14. Equip: Improves your resilience rating by 13. Equip: Improves the range of all Shock spells by 5 yards. Equip: Increases healing done by up to 46 and damage done by up to 16 for all magical spells and effects. Oathbound's Ringmail Battlegear (0/5) Seer's Ringmail Chestguard Seer's Ringmail Gloves Seer's Ringmail Headpiece Seer's Ringmail Legguards Seer's Ringmail Shoulderpads (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Nature's Swiftness ability by 24 sec. Sell Price: 2 53 2",
+  "fetched_at": "2026-06-15T20:28:07+00:00",
+  "inventory_slot": null,
+  "item_id": 35473,
+  "item_stats": {
+    "armor": 407,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 35473,
+    "item_level": 115,
+    "name": "Seer's Ringmail Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 46.0,
+      "intellect": 18.0,
+      "resilience_rating": 13.0,
+      "spell_crit_rating": 14.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35473/seers-ringmail-gloves"
+  },
+  "name": "Seer's Ringmail Gloves",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Seer's Ringmail Gloves Phase 1 Item Level 115 Binds when picked up Hands Mail 407 Armor +28 Stamina +18 Intellect Durability 40 / 40 Classes: Shaman Requires Level 70 Requires Honor Hold - Honored Equip: Improves spell critical strike rating by 14. Equip: Improves your resilience rating by 13. Equip: Improves the range of all Shock spells by 5 yards. Equip: Increases healing done by up to 46 and damage done by up to 16 for all magical spells and effects. Oathbound's Ringmail Battlegear (0/5) Seer's Ringmail Chestguard Seer's Ringmail Gloves Seer's Ringmail Headpiece Seer's Ringmail Legguards Seer's Ringmail Shoulderpads (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Nature's Swiftness ability by 24 sec. Sell Price: 2 53 2",
+      "reputation": "Honor Hold",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35473/seers-ringmail-gloves",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35473/seers-ringmail-gloves"
+}

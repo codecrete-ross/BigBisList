@@ -1,0 +1,160 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Wolfshead Helm is a Leather Helm crafted by Leatherworkers with a 225 skill level. This blue leather armor of item level 45 goes in the \"Head\" slot.",
+  "fetched_at": "2026-06-15T18:31:35+00:00",
+  "inventory_slot": "Head",
+  "item_id": 8345,
+  "item_stats": {
+    "armor": 109,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 8345,
+    "item_level": 45,
+    "name": "Wolfshead Helm",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10621,
+      "entity_name": "Wolfshead Helm",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=8345",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=8345",
+      "spell_id": 10621,
+      "type": "crafted"
+    },
+    "quality": "rare",
+    "required_level": 40,
+    "slot": "Head",
+    "source_summary": "Crafted: Wolfshead Helm",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10621,
+        "entity_name": "Wolfshead Helm",
+        "profession": "Leatherworking",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Leatherworking",
+            "raw_text": "Leatherworking",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=8345",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=8345",
+        "spell_id": 10621,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "spirit": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=8345"
+  },
+  "name": "Wolfshead Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10621,
+      "entity_name": "Wolfshead Helm",
+      "profession": "Leatherworking",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=8345",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=8345",
+      "spell_id": 10621,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          225,
+          245,
+          255,
+          265
+        ],
+        "creates": [
+          8345,
+          1,
+          1
+        ],
+        "id": 10621,
+        "learnedat": 225,
+        "level": 0,
+        "name": "Wolfshead Helm",
+        "nskillup": 1,
+        "popularity": 10,
+        "quality": 3,
+        "reagents": [
+          [
+            4304,
+            18
+          ],
+          [
+            8368,
+            2
+          ],
+          [
+            8146,
+            8
+          ],
+          [
+            8343,
+            4
+          ],
+          [
+            8172,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10660,
+        "trainingcost": 10000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=8345"
+}

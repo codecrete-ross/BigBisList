@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vortex Walking Boots Phase 2 Item Level 105 Binds when picked up Feet Plate 914 Armor +28 Strength +28 Stamina Yellow Socket Blue Socket Socket Bonus: +3 Strength Durability 75 / 75 Requires Level 70 Requires Ogri'la - Exalted Equip: Improves critical strike rating by 19. Sell Price: 5 52",
+  "fetched_at": "2026-06-15T20:27:15+00:00",
+  "inventory_slot": null,
+  "item_id": 32648,
+  "item_stats": {
+    "armor": 914,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 32648,
+    "item_level": 105,
+    "name": "Vortex Walking Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "strength": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 19.0,
+      "stamina": 28.0,
+      "strength": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32648/vortex-walking-boots"
+  },
+  "name": "Vortex Walking Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Vortex Walking Boots Phase 2 Item Level 105 Binds when picked up Feet Plate 914 Armor +28 Strength +28 Stamina Yellow Socket Blue Socket Socket Bonus: +3 Strength Durability 75 / 75 Requires Level 70 Requires Ogri'la - Exalted Equip: Improves critical strike rating by 19. Sell Price: 5 52",
+      "reputation": "Ogri'la",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32648/vortex-walking-boots",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32648/vortex-walking-boots"
+}

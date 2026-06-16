@@ -1,0 +1,202 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 125 goes in the \"Hands\" slot. It is looted from Magtheridon. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:28+00:00",
+  "inventory_slot": "Hands",
+  "item_id": 28780,
+  "item_stats": {
+    "armor": 132,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 28780,
+    "item_level": 125,
+    "name": "Soul-Eater's Handwraps",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1465,
+      "drop_percent": 13.57,
+      "entity_id": 17257,
+      "entity_name": "Magtheridon",
+      "out_of": 10798,
+      "source_url": "https://www.wowhead.com/tbc/item=28780",
+      "type": "drop",
+      "zone": "Magtheridon's Lair"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Hands",
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "Drop: Magtheridon (Magtheridon's Lair) 13.6% +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 1465,
+        "drop_percent": 13.57,
+        "entity_id": 17257,
+        "entity_name": "Magtheridon",
+        "out_of": 10798,
+        "source_url": "https://www.wowhead.com/tbc/item=28780",
+        "type": "drop",
+        "zone": "Magtheridon's Lair"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 21174,
+        "entity_name": "Magtheridon",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=28780",
+        "type": "drop"
+      }
+    ],
+    "stats": {
+      "intellect": 24.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 36.0,
+      "stamina": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28780"
+  },
+  "name": "Soul-Eater's Handwraps",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1465,
+      "drop_percent": 13.57,
+      "entity_id": 17257,
+      "entity_name": "Magtheridon",
+      "out_of": 10798,
+      "source_url": "https://www.wowhead.com/tbc/item=28780",
+      "type": "drop",
+      "zone": "Magtheridon's Lair"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 21174,
+      "entity_name": "Magtheridon",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=28780",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1465,
+        "id": 17257,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1465,
+                "outof": 10798
+              }
+            },
+            "4": {
+              "0": {
+                "count": 86,
+                "outof": 650
+              }
+            },
+            "5": {
+              "0": {
+                "count": 63,
+                "outof": 408
+              }
+            }
+          }
+        },
+        "location": [
+          3836
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1465,
+            "outof": 10798
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 10798,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21174,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 14.9
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 14.9
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 14.9,
+        "personal_loot": 0,
+        "popularity": 3,
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28780"
+}

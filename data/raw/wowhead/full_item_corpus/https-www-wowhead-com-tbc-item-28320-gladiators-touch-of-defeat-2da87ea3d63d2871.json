@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Touch of Defeat Phase 1 Item Level 123 Binds when picked up Ranged Wand 223 - 414 Fire Damage Speed 1.90 (167.63 damage per second) +15 Stamina +11 Intellect Durability 75 / 75 Requires Level 70 Equip: Improves your resilience rating by 12. Equip: Increases damage and healing done by magical spells and effects by up to 14.",
+  "fetched_at": "2026-06-15T20:25:11+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 28320,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 167.63,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 28320,
+    "item_level": 123,
+    "name": "Gladiator's Touch of Defeat",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "resilience_rating": 12.0,
+      "spell_power": 14.0,
+      "stamina": 15.0
+    },
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28320/gladiators-touch-of-defeat"
+  },
+  "name": "Gladiator's Touch of Defeat",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28320/gladiators-touch-of-defeat"
+}

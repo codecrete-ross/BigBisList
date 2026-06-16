@@ -1,0 +1,140 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 115 goes in the \"Trinket\" slot. It is looted from The Black Stalker. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:26+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 27896,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 27896,
+    "item_level": 115,
+    "name": "Alembic of Infernal Power",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 30,
+      "drop_percent": 5.64,
+      "entity_id": 17882,
+      "entity_name": "The Black Stalker",
+      "out_of": 532,
+      "source_url": "https://www.wowhead.com/tbc/item=27896",
+      "type": "drop",
+      "zone": "The Underbog"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "Drop: The Black Stalker (The Underbog) 5.6%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 30,
+        "drop_percent": 5.64,
+        "entity_id": 17882,
+        "entity_name": "The Black Stalker",
+        "out_of": 532,
+        "source_url": "https://www.wowhead.com/tbc/item=27896",
+        "type": "drop",
+        "zone": "The Underbog"
+      }
+    ],
+    "stats": {
+      "resilience_rating": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27896"
+  },
+  "name": "Alembic of Infernal Power",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 30,
+      "drop_percent": 5.64,
+      "entity_id": 17882,
+      "entity_name": "The Black Stalker",
+      "out_of": 532,
+      "source_url": "https://www.wowhead.com/tbc/item=27896",
+      "type": "drop",
+      "zone": "The Underbog"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 30,
+        "id": 17882,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 728,
+                "outof": 12213
+              }
+            },
+            "4": {
+              "0": {
+                "count": 64,
+                "outof": 846
+              }
+            },
+            "5": {
+              "0": {
+                "count": 30,
+                "outof": 532
+              }
+            }
+          }
+        },
+        "location": [
+          3716
+        ],
+        "maxlevel": 72,
+        "minlevel": 65,
+        "modes": {
+          "0": {
+            "count": 728,
+            "outof": 12213
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Black Stalker",
+        "outof": 532,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27896"
+}

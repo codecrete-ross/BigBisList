@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ancient Crystal Talisman Item Level 96 Binds when picked up Trinket Equip: Increases damage and healing done by magical spells and effects by up to 26. Use: Increases damage and healing done by magical spells and effects by up to 104 for 20 sec. (2 Min Cooldown) Sell Price: 70",
+  "fetched_at": "2026-06-15T20:24:36+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 25620,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 25620,
+    "item_level": 96,
+    "name": "Ancient Crystal Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 130.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25620/ancient-crystal-talisman"
+  },
+  "name": "Ancient Crystal Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25620/ancient-crystal-talisman"
+}

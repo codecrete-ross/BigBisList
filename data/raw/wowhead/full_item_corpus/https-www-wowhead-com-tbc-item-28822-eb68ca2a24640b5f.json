@@ -1,0 +1,143 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 125 goes in the \"Neck\" slot. It is looted from Gruul the Dragonkiller. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Neck",
+  "item_id": 28822,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 28822,
+    "item_level": 125,
+    "name": "Teeth of Gruul",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 264,
+      "drop_percent": 15.61,
+      "entity_id": 19044,
+      "entity_name": "Gruul the Dragonkiller",
+      "out_of": 1691,
+      "source_url": "https://www.wowhead.com/tbc/item=28822",
+      "type": "drop",
+      "zone": "Gruul's Lair"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Neck",
+    "source_summary": "Drop: Gruul the Dragonkiller (Gruul's Lair) 15.6%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 264,
+        "drop_percent": 15.61,
+        "entity_id": 19044,
+        "entity_name": "Gruul the Dragonkiller",
+        "out_of": 1691,
+        "source_url": "https://www.wowhead.com/tbc/item=28822",
+        "type": "drop",
+        "zone": "Gruul's Lair"
+      }
+    ],
+    "stats": {
+      "healing_power": 46.0,
+      "intellect": 21.0,
+      "mp5": 8.0,
+      "spirit": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28822"
+  },
+  "name": "Teeth of Gruul",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 264,
+      "drop_percent": 15.61,
+      "entity_id": 19044,
+      "entity_name": "Gruul the Dragonkiller",
+      "out_of": 1691,
+      "source_url": "https://www.wowhead.com/tbc/item=28822",
+      "type": "drop",
+      "zone": "Gruul's Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 264,
+        "id": 19044,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2734,
+                "outof": 17908
+              }
+            },
+            "4": {
+              "0": {
+                "count": 426,
+                "outof": 2908
+              }
+            },
+            "5": {
+              "0": {
+                "count": 264,
+                "outof": 1691
+              }
+            }
+          }
+        },
+        "location": [
+          3923
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2734,
+            "outof": 17908
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Gruul the Dragonkiller",
+        "outof": 1691,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28822"
+}

@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Merciless Gladiator's Mail Armor Phase 2 Item Level 136 Binds when picked up Chest Mail 954 Armor +48 Stamina +24 Intellect Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 140 / 140 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 25. Equip: Improves your resilience rating by 28. Equip: Restores 8 mana per 5 sec. Equip: Increases damage and healing done by magical spells and effects by up to 37. Gladiator's Thunderfist (0/5) Gladiator's Mail Armor Gladiator's Mail Gauntlets Gladiator's Mail Helm Gladiator's Mail Leggings Gladiator's Mail Spaulders (2) Set : +35 Resilience Rating. (4) Set : Gives you a 50% chance to avoid interruption caused by damage while casting Lightning Bolt.",
+  "fetched_at": "2026-06-15T20:27:03+00:00",
+  "inventory_slot": null,
+  "item_id": 32009,
+  "item_stats": {
+    "armor": 954,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 32009,
+    "item_level": 136,
+    "name": "Merciless Gladiator's Mail Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 24.0,
+      "mp5": 8.0,
+      "resilience_rating": 28.0,
+      "spell_crit_rating": 25.0,
+      "spell_power": 37.0,
+      "stamina": 48.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32009/merciless-gladiators-mail-armor"
+  },
+  "name": "Merciless Gladiator's Mail Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32009/merciless-gladiators-mail-armor"
+}

@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Batskin Belt Phase 1 Item Level 17 Binds when picked up Waist Leather 41 Armor +2 Agility Durability 20 / 20 Requires Level 12 Requires Tranquillien - Honored Equip: Increases attack power by 4. Sell Price: 2 43",
+  "fetched_at": "2026-06-15T20:25:06+00:00",
+  "inventory_slot": null,
+  "item_id": 28158,
+  "item_stats": {
+    "armor": 41,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 28158,
+    "item_level": 17,
+    "name": "Batskin Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 12,
+    "source_summary": "",
+    "stats": {
+      "agility": 2.0,
+      "attack_power": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28158/batskin-belt"
+  },
+  "name": "Batskin Belt",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Batskin Belt Phase 1 Item Level 17 Binds when picked up Waist Leather 41 Armor +2 Agility Durability 20 / 20 Requires Level 12 Requires Tranquillien - Honored Equip: Increases attack power by 4. Sell Price: 2 43",
+      "reputation": "Tranquillien",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28158/batskin-belt",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28158/batskin-belt"
+}

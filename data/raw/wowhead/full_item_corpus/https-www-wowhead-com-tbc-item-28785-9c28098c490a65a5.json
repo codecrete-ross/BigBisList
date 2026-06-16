@@ -1,0 +1,136 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 115 goes in the \"Trinket\" slot. It is looted from Terestian Illhoof. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:28+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28785,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 28785,
+    "item_level": 115,
+    "name": "The Lightning Capacitor",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 295,
+      "drop_percent": 16.12,
+      "entity_id": 15688,
+      "entity_name": "Terestian Illhoof",
+      "out_of": 1830,
+      "source_url": "https://www.wowhead.com/tbc/item=28785",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "Drop: Terestian Illhoof (Karazhan) 16.1%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 295,
+        "drop_percent": 16.12,
+        "entity_id": 15688,
+        "entity_name": "Terestian Illhoof",
+        "out_of": 1830,
+        "source_url": "https://www.wowhead.com/tbc/item=28785",
+        "type": "drop",
+        "zone": "Karazhan"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28785"
+  },
+  "name": "The Lightning Capacitor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 295,
+      "drop_percent": 16.12,
+      "entity_id": 15688,
+      "entity_name": "Terestian Illhoof",
+      "out_of": 1830,
+      "source_url": "https://www.wowhead.com/tbc/item=28785",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 295,
+        "id": 15688,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3494,
+                "outof": 21329
+              }
+            },
+            "4": {
+              "0": {
+                "count": 392,
+                "outof": 2454
+              }
+            },
+            "5": {
+              "0": {
+                "count": 295,
+                "outof": 1830
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3494,
+            "outof": 21329
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Terestian Illhoof",
+        "outof": 1830,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28785"
+}

@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hellreaver Phase 1 Item Level 85 Binds when picked up Two-Hand Polearm 187 - 281 Damage Speed 3.40 (68.82 damage per second) +30 Strength +27 Stamina Durability 100 / 100 Requires Level 60 Equip: Improves critical strike rating by 25. Sell Price: 8 11 99",
+  "fetched_at": "2026-06-15T20:23:23+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 24044,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 68.82,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 24044,
+    "item_level": 85,
+    "name": "Hellreaver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 25.0,
+      "stamina": 27.0,
+      "strength": 30.0
+    },
+    "weapon_max_damage": 281,
+    "weapon_min_damage": 187,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Polearm",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24044/hellreaver"
+  },
+  "name": "Hellreaver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24044/hellreaver"
+}

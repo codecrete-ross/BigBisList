@@ -1,0 +1,279 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This epic mail armor of item level 141 goes in the \"Wrist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Wrist",
+  "item_id": 32574,
+  "item_stats": {
+    "armor": 432,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves haste rating by",
+      "Equip:"
+    ],
+    "id": 32574,
+    "item_level": 141,
+    "name": "Bindings of Lightning Reflexes",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 41161,
+      "entity_name": "Bindings of Lightning Reflexes",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 32748,
+          "entity_name": "Pattern: Bindings of Lightning Reflexes",
+          "item_id": 32748,
+          "source_url": "https://www.wowhead.com/tbc/item=32574",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 35517,
+          "entity_name": "Pattern: Bindings of Lightning Reflexes",
+          "item_id": 35517,
+          "source_url": "https://www.wowhead.com/tbc/item=32574",
+          "type": "unknown"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32574",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32574",
+      "spell_id": 41161,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Wrist",
+    "source_summary": "Crafted: Bindings of Lightning Reflexes",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 41161,
+        "entity_name": "Bindings of Lightning Reflexes",
+        "profession": "Leatherworking",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 32748,
+            "entity_name": "Pattern: Bindings of Lightning Reflexes",
+            "item_id": 32748,
+            "source_url": "https://www.wowhead.com/tbc/item=32574",
+            "type": "drop"
+          },
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 35517,
+            "entity_name": "Pattern: Bindings of Lightning Reflexes",
+            "item_id": 35517,
+            "source_url": "https://www.wowhead.com/tbc/item=32574",
+            "type": "unknown"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Leatherworking",
+            "raw_text": "Leatherworking",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=32574",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=32574",
+        "spell_id": 41161,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "agility": 21.0,
+      "attack_power": 56.0,
+      "haste_rating": 27.0,
+      "intellect": 16.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32574"
+  },
+  "name": "Bindings of Lightning Reflexes",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 41161,
+      "entity_name": "Bindings of Lightning Reflexes",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 32748,
+          "entity_name": "Pattern: Bindings of Lightning Reflexes",
+          "item_id": 32748,
+          "source_url": "https://www.wowhead.com/tbc/item=32574",
+          "type": "drop"
+        },
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 35517,
+          "entity_name": "Pattern: Bindings of Lightning Reflexes",
+          "item_id": 35517,
+          "source_url": "https://www.wowhead.com/tbc/item=32574",
+          "type": "unknown"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32574",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32574",
+      "spell_id": 41161,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          32574,
+          1,
+          1
+        ],
+        "id": 41161,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Bindings of Lightning Reflexes",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            22451,
+            4
+          ],
+          [
+            21885,
+            4
+          ],
+          [
+            29547,
+            12
+          ],
+          [
+            32428,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 32748,
+        "level": 70,
+        "name": "Pattern: Bindings of Lightning Reflexes",
+        "popularity": 3,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      },
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 35517,
+        "level": 70,
+        "name": "Pattern: Bindings of Lightning Reflexes",
+        "popularity": 4,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "subclass": 1
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 32748,
+      "level": 70,
+      "name": "Pattern: Bindings of Lightning Reflexes",
+      "popularity": 3,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 1
+    },
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 35517,
+      "level": 70,
+      "name": "Pattern: Bindings of Lightning Reflexes",
+      "popularity": 4,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32574"
+}

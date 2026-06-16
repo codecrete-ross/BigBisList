@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shifting Sash of Midnight Phase 1 Item Level 85 Binds when picked up Waist Leather 127 Armor +15 Agility +19 Stamina Red Socket Red Socket Socket Bonus: +3 Dodge Rating Durability 35 / 35 Requires Level 60 Equip: Increases attack power by 28. Sell Price: 1 66 19",
+  "fetched_at": "2026-06-15T20:23:23+00:00",
+  "inventory_slot": null,
+  "item_id": 24063,
+  "item_stats": {
+    "armor": 127,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 24063,
+    "item_level": 85,
+    "name": "Shifting Sash of Midnight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "socket_bonus": {
+      "dodge_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "attack_power": 28.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24063/shifting-sash-of-midnight"
+  },
+  "name": "Shifting Sash of Midnight",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24063/shifting-sash-of-midnight"
+}

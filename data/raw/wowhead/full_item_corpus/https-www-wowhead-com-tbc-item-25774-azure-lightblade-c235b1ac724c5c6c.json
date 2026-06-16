@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Azure Lightblade Phase 1 Item Level 100 Binds when picked up Main Hand Dagger 44 - 81 Damage Speed 1.50 (41.67 damage per second) +18 Stamina +13 Intellect +12 Spirit Durability 65 / 65 Equip: Increases healing done by up to 143 and damage done by up to 48 for all magical spells and effects. Sell Price: 7 56 56",
+  "fetched_at": "2026-06-15T20:24:39+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 25774,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.67,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 25774,
+    "item_level": 100,
+    "name": "Azure Lightblade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 143.0,
+      "intellect": 13.0,
+      "spirit": 12.0,
+      "stamina": 18.0
+    },
+    "weapon_max_damage": 81,
+    "weapon_min_damage": 44,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25774/azure-lightblade"
+  },
+  "name": "Azure Lightblade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25774/azure-lightblade"
+}

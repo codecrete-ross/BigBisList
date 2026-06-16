@@ -1,0 +1,232 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloth armor of item level 112 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Head",
+  "item_id": 23762,
+  "item_stats": {
+    "armor": 124,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 23762,
+    "item_level": 112,
+    "name": "Ultra-Spectropic Detection Goggles",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 30318,
+      "entity_name": "Ultra-Spectropic Detection Goggles",
+      "profession": "Engineering",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 23805,
+          "entity_name": "Schematic: Ultra-Spectropic Detection Goggles",
+          "item_id": 23805,
+          "source_url": "https://www.wowhead.com/tbc/item=23762",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23762",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23762",
+      "spell_id": 30318,
+      "type": "crafted"
+    },
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "Crafted: Ultra-Spectropic Detection Goggles",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 30318,
+        "entity_name": "Ultra-Spectropic Detection Goggles",
+        "profession": "Engineering",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 23805,
+            "entity_name": "Schematic: Ultra-Spectropic Detection Goggles",
+            "item_id": 23805,
+            "source_url": "https://www.wowhead.com/tbc/item=23762",
+            "type": "vendor"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Engineering",
+            "raw_text": "Engineering",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=23762",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=23762",
+        "spell_id": 30318,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "spirit": 47.0,
+      "stamina": 48.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23762"
+  },
+  "name": "Ultra-Spectropic Detection Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Ultra-Spectropic Detection Goggles Phase 1 Item Level 112 Binds when equipped Head Cloth 124 Armor +48 Stamina +47 Spirit Durability 50 / 50 Requires Engineering (350) Equip: Shows the location of all nearby gas clouds on the minimap. Use: Allows you to look far into the distance. Sell Price: 2 53 24 This blue cloth armor of item level 112 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23762",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30318,
+      "entity_name": "Ultra-Spectropic Detection Goggles",
+      "profession": "Engineering",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 23805,
+          "entity_name": "Schematic: Ultra-Spectropic Detection Goggles",
+          "item_id": 23805,
+          "source_url": "https://www.wowhead.com/tbc/item=23762",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23762",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23762",
+      "spell_id": 30318,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          370,
+          380
+        ],
+        "creates": [
+          23762,
+          1,
+          1
+        ],
+        "id": 30318,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Ultra-Spectropic Detection Goggles",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 3,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            23449,
+            2
+          ],
+          [
+            23079,
+            2
+          ],
+          [
+            22448,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23805,
+        "level": 70,
+        "name": "Schematic: Ultra-Spectropic Detection Goggles",
+        "popularity": 12,
+        "quality": 1,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 3
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23805,
+      "level": 70,
+      "name": "Schematic: Ultra-Spectropic Detection Goggles",
+      "popularity": 12,
+      "quality": 1,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "subclass": 3
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23762"
+}

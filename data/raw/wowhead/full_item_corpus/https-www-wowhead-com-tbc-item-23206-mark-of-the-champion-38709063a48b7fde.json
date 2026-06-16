@@ -1,0 +1,37 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mark of the Champion Phase 1 Item Level 90 Binds when picked up Unique Trinket Equip: Increases attack power by 150 when fighting Undead and Demons. It also allows the acquisition of Scourgestones on behalf of the Argent Dawn.",
+  "fetched_at": "2026-06-15T20:23:11+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 23206,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 23206,
+    "item_level": 90,
+    "name": "Mark of the Champion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 150.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23206/mark-of-the-champion"
+  },
+  "name": "Mark of the Champion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23206/mark-of-the-champion"
+}

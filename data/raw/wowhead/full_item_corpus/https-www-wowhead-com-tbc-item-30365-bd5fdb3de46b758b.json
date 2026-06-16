@@ -1,0 +1,109 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue ring of item level 109 goes in the \"Finger\" slot. It is a quest reward from Shutting Down Manaforge Ara. In the Rings category. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:32+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 30365,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 30365,
+    "item_level": 109,
+    "name": "Overseer's Signet",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10323,
+      "entity_name": "Shutting Down Manaforge Ara",
+      "quest_id": 10323,
+      "source_url": "https://www.wowhead.com/tbc/item=30365",
+      "type": "quest",
+      "zone": "Netherstorm"
+    },
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "Quest: Shutting Down Manaforge Ara",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10323,
+        "entity_name": "Shutting Down Manaforge Ara",
+        "quest_id": 10323,
+        "source_url": "https://www.wowhead.com/tbc/item=30365",
+        "type": "quest",
+        "zone": "Netherstorm"
+      }
+    ],
+    "stats": {
+      "agility": 15.0,
+      "hit_rating": 10.0,
+      "strength": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30365"
+  },
+  "name": "Overseer's Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10323,
+      "entity_name": "Shutting Down Manaforge Ara",
+      "quest_id": 10323,
+      "source_url": "https://www.wowhead.com/tbc/item=30365",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10323,
+        "itemchoices": [
+          [
+            30377,
+            1
+          ],
+          [
+            30365,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "Shutting Down Manaforge Ara",
+        "popularity": 28,
+        "reprewards": [
+          [
+            932,
+            250
+          ]
+        ],
+        "reqlevel": 67,
+        "side": 3,
+        "type": 1,
+        "xp": 12650
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30365"
+}

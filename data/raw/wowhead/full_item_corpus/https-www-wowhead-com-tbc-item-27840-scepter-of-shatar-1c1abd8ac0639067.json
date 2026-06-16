@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Scepter of Sha'tar Phase 1 Item Level 115 Binds when picked up Two-Hand Mace 245 - 408 Damage Speed 3.50 (93.29 damage per second) +31 Strength +28 Stamina +26 Intellect Durability 100 / 100 Requires Level 70 Equip: Improves critical strike rating by 30. \"Stolen long ago by the Nexus-Kings, the Scepter embodies the righteous power of the Naaru.\" Sell Price: 10 69 35",
+  "fetched_at": "2026-06-15T20:24:59+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 27840,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 93.29,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 27840,
+    "item_level": 115,
+    "name": "Scepter of Sha'tar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 30.0,
+      "intellect": 26.0,
+      "stamina": 28.0,
+      "strength": 31.0
+    },
+    "weapon_max_damage": 408,
+    "weapon_min_damage": 245,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27840/scepter-of-shatar"
+  },
+  "name": "Scepter of Sha'tar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27840/scepter-of-shatar"
+}

@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Doomfinger Phase 1 Item Level 92 Binds when picked up Ranged Wand 146 - 271 Shadow Damage Speed 1.50 (139.00 damage per second) Durability 75 / 75 Requires Level 60 Equip: Increases your spell critical strike rating by 14. Equip: Increases damage and healing done by magical spells and effects by up to 16. Sell Price: 6 96 54",
+  "fetched_at": "2026-06-15T20:23:03+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 22821,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 139.0,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 22821,
+    "item_level": 92,
+    "name": "Doomfinger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 14.0,
+      "spell_power": 16.0
+    },
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22821/doomfinger"
+  },
+  "name": "Doomfinger",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22821/doomfinger"
+}

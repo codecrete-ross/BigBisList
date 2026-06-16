@@ -46,6 +46,22 @@ REQUIREMENT_CONFIDENCES = {
     "manual_review",
 }
 
+TBC_RACES = {
+    "Blood Elf",
+    "Draenei",
+    "Dwarf",
+    "Gnome",
+    "Human",
+    "Night Elf",
+    "Orc",
+    "Tauren",
+    "Troll",
+    "Undead",
+}
+
+RACIAL_MODIFIER_TYPES = {"numeric", "contextual", "audit_only"}
+LEVEL_BANDS = {"1-19", "20-39", "40-57", "58-70"}
+
 
 @dataclass
 class ValidationResult:
@@ -125,6 +141,12 @@ def validate() -> ValidationResult:
     consumables_doc = canonical_json("consumables")
     leveling_doc = canonical_json("leveling")
     leveling_gear_doc = canonical_json("leveling_gear")
+    item_stats_doc = canonical_json("item_stats")
+    item_variants_doc = canonical_json("item_variants")
+    racial_modifiers_doc = canonical_json("racial_modifiers")
+    scoring_profiles_doc = canonical_json("scoring_profiles")
+    leveling_recommendations_doc = canonical_json("leveling_recommendations")
+    recommendation_audit_doc = canonical_json("recommendation_audit")
     manifest_doc = canonical_json("scrape_manifest")
     overrides_doc = canonical_json("overrides")
 
@@ -413,6 +435,118 @@ def validate() -> ValidationResult:
         missing_leveling_specs = sorted(expected_leveling_specs - leveling_gear_specs)
         _require(not missing_leveling_specs, errors, f"Leveling gear missing class/spec rows: {missing_leveling_specs}")
 
+    item_stat_ids: set[int] = set()
+    for item in item_stats_doc.get("item_stats", []):
+        item_id = item.get("id")
+        _require(isinstance(item_id, int) and item_id > 0, errors, f"Item stat row has invalid id: {item_id}")
+        if isinstance(item_id, int):
+            _require(item_id not in item_stat_ids, errors, f"Duplicate item stat id: {item_id}")
+            item_stat_ids.add(item_id)
+        _require(bool(item.get("name")), errors, f"Item stat {item_id} needs name")
+        _require(str(item.get("wowhead_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Item stat {item_id} needs a Wowhead source URL")
+        required_level = item.get("required_level")
+        _require(required_level is None or (isinstance(required_level, int) and 1 <= required_level <= 70), errors, f"Item stat {item_id} has invalid required_level: {required_level}")
+        item_level = item.get("item_level")
+        _require(item_level is None or (isinstance(item_level, int) and item_level > 0), errors, f"Item stat {item_id} has invalid item_level: {item_level}")
+        slot = item.get("slot")
+        _require(slot is None or slot in SLOT_NAMES or slot == "One Hand", errors, f"Item stat {item_id} has invalid slot: {slot}")
+        stats = item.get("stats", {})
+        _require(isinstance(stats, dict), errors, f"Item stat {item_id} stats must be an object")
+        if isinstance(stats, dict):
+            for stat_name, stat_value in stats.items():
+                _require(isinstance(stat_name, str) and bool(stat_name), errors, f"Item stat {item_id} has blank stat name")
+                _require(isinstance(stat_value, (int, float)), errors, f"Item stat {item_id} {stat_name} must be numeric")
+        sockets = item.get("sockets", [])
+        _require(isinstance(sockets, list), errors, f"Item stat {item_id} sockets must be an array")
+        restrictions = item.get("restrictions", {})
+        _require(isinstance(restrictions, dict), errors, f"Item stat {item_id} restrictions must be an object")
+        source_summary = item.get("source_summary")
+        _require(source_summary is None or isinstance(source_summary, str), errors, f"Item stat {item_id} source_summary must be a string")
+
+    variant_keys: set[tuple[int, int]] = set()
+    for variant in item_variants_doc.get("item_variants", []):
+        item_id = variant.get("item_id")
+        suffix_id = variant.get("random_suffix_id")
+        key = (int(item_id) if isinstance(item_id, int) else 0, int(suffix_id) if isinstance(suffix_id, int) else 0)
+        _require(isinstance(item_id, int) and item_id > 0, errors, f"Item variant has invalid item_id: {item_id}")
+        _require(isinstance(suffix_id, int), errors, f"Item variant {item_id} has invalid random_suffix_id: {suffix_id}")
+        _require(key not in variant_keys, errors, f"Duplicate item variant: {key}")
+        variant_keys.add(key)
+        _require(bool(variant.get("suffix_name")), errors, f"Item variant {key} needs suffix_name")
+        _require(str(variant.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Item variant {key} needs a Wowhead source URL")
+
+    racial_ids: set[str] = set()
+    for modifier in racial_modifiers_doc.get("racial_modifiers", []):
+        modifier_id = modifier.get("id")
+        _require(isinstance(modifier_id, str) and bool(modifier_id), errors, "Racial modifier needs id")
+        if isinstance(modifier_id, str):
+            _require(modifier_id not in racial_ids, errors, f"Duplicate racial modifier id: {modifier_id}")
+            racial_ids.add(modifier_id)
+        _require(modifier.get("race") in TBC_RACES, errors, f"Racial modifier {modifier_id} has invalid race: {modifier.get('race')}")
+        _require(modifier.get("type") in RACIAL_MODIFIER_TYPES, errors, f"Racial modifier {modifier_id} has invalid type: {modifier.get('type')}")
+        _require(str(modifier.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Racial modifier {modifier_id} needs a Wowhead source URL")
+        if modifier.get("type") == "numeric":
+            numeric = modifier.get("modifier")
+            _require(isinstance(numeric, dict), errors, f"Numeric racial modifier {modifier_id} needs modifier object")
+            if isinstance(numeric, dict):
+                _require(bool(numeric.get("stat")), errors, f"Numeric racial modifier {modifier_id} needs stat")
+                _require(isinstance(numeric.get("value"), (int, float)), errors, f"Numeric racial modifier {modifier_id} needs numeric value")
+
+    role_defaults = scoring_profiles_doc.get("role_defaults", {})
+    _require(isinstance(role_defaults, dict) and bool(role_defaults), errors, "Scoring profiles need role_defaults")
+    for role, weights in (role_defaults or {}).items():
+        _require(isinstance(role, str) and bool(role), errors, "Scoring role name must be a string")
+        _require(isinstance(weights, dict) and bool(weights), errors, f"Scoring role {role} needs weights")
+        if isinstance(weights, dict):
+            for stat_name, stat_weight in weights.items():
+                _require(isinstance(stat_name, str) and bool(stat_name), errors, f"Scoring role {role} has blank stat")
+                _require(isinstance(stat_weight, (int, float)), errors, f"Scoring role {role}/{stat_name} weight must be numeric")
+    spec_roles = scoring_profiles_doc.get("spec_roles", {})
+    _require(isinstance(spec_roles, dict), errors, "Scoring profiles spec_roles must be an object")
+    for key, role in (spec_roles or {}).items():
+        class_name, _, spec_name = str(key).partition("/")
+        _require(class_name in class_names, errors, f"Scoring profile role key has unknown class: {key}")
+        _require(spec_name in specs_by_class.get(class_name, set()), errors, f"Scoring profile role key has unknown spec: {key}")
+        _require(role in role_defaults, errors, f"Scoring profile {key} has unknown role: {role}")
+    for profile in scoring_profiles_doc.get("profiles", []):
+        class_name = profile.get("class")
+        spec_name = profile.get("spec")
+        _require(class_name in class_names, errors, f"Scoring profile has unknown class: {class_name}")
+        _require(spec_name in specs_by_class.get(class_name, set()), errors, f"Scoring profile has unknown spec: {class_name}/{spec_name}")
+        _require(profile.get("level_band") in LEVEL_BANDS, errors, f"Scoring profile {class_name}/{spec_name} has invalid level_band: {profile.get('level_band')}")
+        _require(isinstance(profile.get("weights"), dict) and bool(profile.get("weights")), errors, f"Scoring profile {class_name}/{spec_name} needs weights")
+
+    seen_recommendations: set[tuple[str, str, str, int, int, str, int, str, str]] = set()
+    for row in leveling_recommendations_doc.get("leveling_recommendations", []):
+        class_name = row.get("class")
+        spec_name = row.get("spec")
+        race = row.get("race")
+        item_id = row.get("item_id")
+        level_min = row.get("level_min")
+        level_max = row.get("level_max")
+        slot = row.get("slot")
+        context = row.get("context")
+        _require(class_name in class_names, errors, f"Unknown class in leveling recommendation: {class_name}")
+        _require(spec_name in specs_by_class.get(class_name, set()), errors, f"Unknown spec in leveling recommendation: {class_name}/{spec_name}")
+        _require(race in TBC_RACES or race == "*", errors, f"Leveling recommendation has invalid race: {race}")
+        _require(isinstance(level_min, int) and 1 <= level_min <= 70, errors, f"Leveling recommendation has invalid level_min: {level_min}")
+        _require(isinstance(level_max, int) and isinstance(level_min, int) and level_min <= level_max <= 70, errors, f"Leveling recommendation has invalid level_max: {level_max}")
+        _require(slot in SLOT_NAMES or slot == "One Hand", errors, f"Unknown leveling recommendation slot: {slot}")
+        _require(isinstance(item_id, int) and item_id > 0, errors, f"Leveling recommendation has invalid item_id: {item_id}")
+        _require(item_id in item_stat_ids, errors, f"Leveling recommendation references item without item_stats: {item_id}")
+        _require(isinstance(row.get("rank"), int) and row.get("rank") > 0, errors, f"Leveling recommendation item {item_id} needs positive rank")
+        _require(isinstance(row.get("score"), (int, float)), errors, f"Leveling recommendation item {item_id} needs numeric score")
+        _require(bool(context), errors, f"Leveling recommendation item {item_id} needs context")
+        _require(isinstance(row.get("reason_tags"), list), errors, f"Leveling recommendation item {item_id} needs reason_tags array")
+        _require(str(row.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Leveling recommendation item {item_id} needs a Wowhead source URL")
+        validate_requirements(f"Leveling recommendation item {item_id}", row.get("requirements"), errors)
+        if isinstance(level_min, int) and isinstance(level_max, int) and isinstance(item_id, int):
+            signature = (str(class_name), str(spec_name), str(race), int(level_min), int(level_max), str(slot), int(item_id), str(context), str(row.get("variant_id") or ""))
+            _require(signature not in seen_recommendations, errors, f"Duplicate leveling recommendation row: {signature}")
+            seen_recommendations.add(signature)
+
+    _require(isinstance(recommendation_audit_doc.get("recommendation_audit"), dict), errors, "Recommendation audit must contain recommendation_audit object")
+
     for source_doc_name, source_doc, rows_key in [
         ("gem_sources", gem_sources_doc, "gem_sources"),
         ("enchant_sources", enchant_sources_doc, "enchant_sources"),
@@ -471,6 +605,11 @@ def validate() -> ValidationResult:
         "gems": len(gems_doc.get("gems", [])),
         "leveling": len(leveling_doc.get("leveling", [])),
         "leveling_gear": len(leveling_gear_doc.get("leveling_gear", [])),
+        "item_stats": len(item_stats_doc.get("item_stats", [])),
+        "item_variants": len(item_variants_doc.get("item_variants", [])),
+        "racial_modifiers": len(racial_modifiers_doc.get("racial_modifiers", [])),
+        "scoring_profiles": len(scoring_profiles_doc.get("profiles", [])),
+        "leveling_recommendations": len(leveling_recommendations_doc.get("leveling_recommendations", [])),
         "overrides": len(overrides_doc.get("overrides", [])),
         "coverage": str(bis_doc.get("coverage", "")),
     }

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sigil-Laced Boots Phase 1 Item Level 115 Binds when picked up Feet Cloth 107 Armor +24 Stamina +18 Intellect Red Socket Yellow Socket Socket Bonus: +3 Intellect Durability 40 / 40 Requires Level 70 Equip: Improves spell critical strike rating by 17. Equip: Increases damage and healing done by magical spells and effects by up to 20. Sell Price: 2 57 62",
+  "fetched_at": "2026-06-15T20:25:13+00:00",
+  "inventory_slot": null,
+  "item_id": 28406,
+  "item_stats": {
+    "armor": 107,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 28406,
+    "item_level": 115,
+    "name": "Sigil-Laced Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "intellect": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_crit_rating": 17.0,
+      "spell_power": 20.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28406/sigil-laced-boots"
+  },
+  "name": "Sigil-Laced Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28406/sigil-laced-boots"
+}

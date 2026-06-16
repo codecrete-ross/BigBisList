@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Apexis Cleaver Phase 2 Item Level 115 Binds when equipped Two-Hand Axe 268 - 403 Damage Speed 3.60 (93.19 damage per second) +46 Strength +39 Stamina Durability 100 / 100 Requires Level 70 Equip: Improves critical strike rating by 19. Sell Price: 11 14 98",
+  "fetched_at": "2026-06-15T20:27:15+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 32663,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 93.19,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 32663,
+    "item_level": 115,
+    "name": "Apexis Cleaver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 19.0,
+      "stamina": 39.0,
+      "strength": 46.0
+    },
+    "weapon_max_damage": 403,
+    "weapon_min_damage": 268,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32663/apexis-cleaver"
+  },
+  "name": "Apexis Cleaver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32663/apexis-cleaver"
+}

@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Noxious Shooter Phase 1 Item Level 51 Binds when picked up Ranged Wand 56 - 104 Nature Damage Speed 1.60 (50.00 damage per second) +7 Stamina Durability 65 / 65 Requires Level 46 Equip: Improves spell critical strike rating by 5. Sell Price: 2 25 20",
+  "fetched_at": "2026-06-15T20:19:38+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 17745,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 50.0,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by"
+    ],
+    "id": 17745,
+    "item_level": 51,
+    "name": "Noxious Shooter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 46,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 5.0,
+      "stamina": 7.0
+    },
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=17745/noxious-shooter"
+  },
+  "name": "Noxious Shooter",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=17745/noxious-shooter"
+}

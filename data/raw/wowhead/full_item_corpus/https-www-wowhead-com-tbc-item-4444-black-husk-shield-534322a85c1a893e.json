@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Black Husk Shield Phase 1 Item Level 24 Binds when equipped Off Hand Shield 478 Armor 9 Block +3 Stamina +4 Spirit Durability 75 / 75 Requires Level 19 Use: Attempts to cure 1 poison effect on the target, and 1 more poison effect every 2 seconds for 8 sec. (5 Min Cooldown) 5 Charges Sell Price: 14 90",
+  "fetched_at": "2026-06-15T20:28:26+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 4444,
+  "item_stats": {
+    "armor": 478,
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4444,
+    "item_level": 24,
+    "name": "Black Husk Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 19,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "spirit": 4.0,
+      "stamina": 3.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=4444/black-husk-shield"
+  },
+  "name": "Black Husk Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=4444/black-husk-shield"
+}

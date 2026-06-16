@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bastion of Stormwind Phase 1 Item Level 25 Binds when picked up Off Hand Shield 495 Armor 9 Block Durability 75 / 75 Classes: Paladin Equip: Increases defense rating by 5. Sell Price: 17 62",
+  "fetched_at": "2026-06-15T20:29:57+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 9607,
+  "item_stats": {
+    "armor": 495,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 9607,
+    "item_level": 25,
+    "name": "Bastion of Stormwind",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 5.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=9607/bastion-of-stormwind"
+  },
+  "name": "Bastion of Stormwind",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=9607/bastion-of-stormwind"
+}

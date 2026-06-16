@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rod of the Blazing Light Phase 5 Item Level 115 Binds when picked up Two-Hand Staff 143 - 290 Damage Speed 3.20 (67.66 damage per second) +36 Stamina +32 Intellect +41 Spirit Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Spirit Durability 120 / 120 Requires Level 70 Equip: Increases healing done by up to 348 and damage done by up to 116 for all magical spells and effects. Sell Price: 13 99 99",
+  "fetched_at": "2026-06-15T20:27:50+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 34608,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 67.66,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 34608,
+    "item_level": 115,
+    "name": "Rod of the Blazing Light",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "socket_bonus": {
+      "spirit": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 348.0,
+      "intellect": 32.0,
+      "spirit": 41.0,
+      "stamina": 36.0
+    },
+    "weapon_max_damage": 290,
+    "weapon_min_damage": 143,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34608/rod-of-the-blazing-light"
+  },
+  "name": "Rod of the Blazing Light",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34608/rod-of-the-blazing-light"
+}

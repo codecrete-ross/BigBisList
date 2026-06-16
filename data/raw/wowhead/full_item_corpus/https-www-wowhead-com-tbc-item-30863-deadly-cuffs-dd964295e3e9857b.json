@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deadly Cuffs Phase 3 Item Level 141 Binds when picked up Wrist Leather 194 Armor +28 Stamina Yellow Socket Socket Bonus: +3 Stamina Durability 40 / 40 Requires Level 70 Equip: Improves hit rating by 12. Equip: Improves critical strike rating by 28. Equip: Increases attack power by 58. Sell Price: 3 68 80",
+  "fetched_at": "2026-06-15T20:26:07+00:00",
+  "inventory_slot": null,
+  "item_id": 30863,
+  "item_stats": {
+    "armor": 194,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30863,
+    "item_level": 141,
+    "name": "Deadly Cuffs",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 58.0,
+      "crit_rating": 28.0,
+      "hit_rating": 12.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30863/deadly-cuffs"
+  },
+  "name": "Deadly Cuffs",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30863/deadly-cuffs"
+}

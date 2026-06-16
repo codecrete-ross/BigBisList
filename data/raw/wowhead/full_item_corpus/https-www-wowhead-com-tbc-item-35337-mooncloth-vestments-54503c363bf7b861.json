@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mooncloth Vestments Phase 1 Item Level 115 Binds when picked up Chest Cloth 156 Armor +39 Stamina +25 Intellect Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 80 / 80 Classes: Priest Requires Level 70 Requires Thrallmar - Honored Equip: Improves your resilience rating by 15. Equip: Increases healing done by up to 51 and damage done by up to 17 for all magical spells and effects. Oathbound's Mooncloth Battlegear (0/5) Mooncloth Cowl Mooncloth Legguards Mooncloth Mitts Mooncloth Shoulderpads Mooncloth Vestments (2) Set : +35 Resilience Rating. (4) Set : Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec. Sell Price: 3 59 43",
+  "fetched_at": "2026-06-15T20:28:04+00:00",
+  "inventory_slot": null,
+  "item_id": 35337,
+  "item_stats": {
+    "armor": 156,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 35337,
+    "item_level": 115,
+    "name": "Mooncloth Vestments",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 51.0,
+      "intellect": 25.0,
+      "resilience_rating": 15.0,
+      "stamina": 39.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35337/mooncloth-vestments"
+  },
+  "name": "Mooncloth Vestments",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Mooncloth Vestments Phase 1 Item Level 115 Binds when picked up Chest Cloth 156 Armor +39 Stamina +25 Intellect Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 80 / 80 Classes: Priest Requires Level 70 Requires Thrallmar - Honored Equip: Improves your resilience rating by 15. Equip: Increases healing done by up to 51 and damage done by up to 17 for all magical spells and effects. Oathbound's Mooncloth Battlegear (0/5) Mooncloth Cowl Mooncloth Legguards Mooncloth Mitts Mooncloth Shoulderpads Mooncloth Vestments (2) Set : +35 Resilience Rating. (4) Set : Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec. Sell Price: 3 59 43",
+      "reputation": "Thrallmar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35337/mooncloth-vestments",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35337/mooncloth-vestments"
+}

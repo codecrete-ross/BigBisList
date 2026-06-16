@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Charstone Dirk Phase 1 Item Level 54 Binds when picked up One-Hand Dagger 40 - 75 Damage Speed 1.60 (35.94 damage per second) +11 Intellect Durability 65 / 65 Requires Level 48 Equip: Restores 2 mana per 5 sec. Sell Price: 3 54 83",
+  "fetched_at": "2026-06-15T20:19:37+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 17710,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 35.94,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 17710,
+    "item_level": 54,
+    "name": "Charstone Dirk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 48,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "mp5": 2.0
+    },
+    "weapon_max_damage": 75,
+    "weapon_min_damage": 40,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=17710/charstone-dirk"
+  },
+  "name": "Charstone Dirk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=17710/charstone-dirk"
+}

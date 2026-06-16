@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Ranger Bow Phase 1 Item Level 25 Binds when equipped Ranged Bow 30 - 57 Damage Speed 2.70 (16.11 damage per second) +1 Agility Durability 65 / 65 Requires Level 20 Sell Price: 24 21",
+  "fetched_at": "2026-06-15T20:25:54+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 3021,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 16.11,
+    "id": 3021,
+    "item_level": 25,
+    "name": "Ranger Bow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 1.0
+    },
+    "weapon_max_damage": 57,
+    "weapon_min_damage": 30,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=3021/ranger-bow"
+  },
+  "name": "Ranger Bow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=3021/ranger-bow"
+}

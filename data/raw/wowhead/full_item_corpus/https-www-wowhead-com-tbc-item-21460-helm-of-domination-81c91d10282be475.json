@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Helm of Domination Phase 1 Item Level 72 Binds when picked up Head Plate 755 Armor +21 Strength +11 Agility +28 Stamina Durability 100 / 100 Requires Level 60 Equip: Increases your parry rating by 20. Equip: Increases defense rating by 10. Sell Price: 4 25 86",
+  "fetched_at": "2026-06-15T20:22:36+00:00",
+  "inventory_slot": null,
+  "item_id": 21460,
+  "item_stats": {
+    "armor": 755,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 21460,
+    "item_level": 72,
+    "name": "Helm of Domination",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "agility": 11.0,
+      "defense_rating": 10.0,
+      "parry_rating": 20.0,
+      "stamina": 28.0,
+      "strength": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21460/helm-of-domination"
+  },
+  "name": "Helm of Domination",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21460/helm-of-domination"
+}

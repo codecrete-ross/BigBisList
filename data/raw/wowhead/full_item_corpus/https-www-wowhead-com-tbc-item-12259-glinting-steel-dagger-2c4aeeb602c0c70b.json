@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Glinting Steel Dagger Phase 1 Item Level 36 Binds when equipped One-Hand Dagger 19 - 37 Damage Speed 1.50 (18.67 damage per second) Durability 55 / 55 Requires Level 31 Equip: Increases attack power by 12. Sell Price: 80 72",
+  "fetched_at": "2026-06-15T20:17:35+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 12259,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 18.67,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 12259,
+    "item_level": 36,
+    "name": "Glinting Steel Dagger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 31,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 12.0
+    },
+    "weapon_max_damage": 37,
+    "weapon_min_damage": 19,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=12259/glinting-steel-dagger"
+  },
+  "name": "Glinting Steel Dagger",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=12259/glinting-steel-dagger"
+}

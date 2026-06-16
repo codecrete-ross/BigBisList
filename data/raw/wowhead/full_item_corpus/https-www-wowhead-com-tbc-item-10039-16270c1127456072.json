@@ -1,0 +1,203 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 50 goes in the \"Feet\" slot. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:23+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 10039,
+  "item_stats": {
+    "armor": 45,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10039,
+    "item_level": 50,
+    "name": "Stormcloth Boots",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12090,
+      "entity_name": "Stormcloth Boots",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10324,
+          "entity_name": "Pattern: Stormcloth Boots",
+          "item_id": 10324,
+          "source_url": "https://www.wowhead.com/tbc/item=10039",
+          "type": "unknown"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10039",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10039",
+      "spell_id": 12090,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 45,
+    "slot": "Feet",
+    "source_summary": "Crafted: Stormcloth Boots",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12090,
+        "entity_name": "Stormcloth Boots",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 10324,
+            "entity_name": "Pattern: Stormcloth Boots",
+            "item_id": 10324,
+            "source_url": "https://www.wowhead.com/tbc/item=10039",
+            "type": "unknown"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10039",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10039",
+        "spell_id": 12090,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10039"
+  },
+  "name": "Stormcloth Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12090,
+      "entity_name": "Stormcloth Boots",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10324,
+          "entity_name": "Pattern: Stormcloth Boots",
+          "item_id": 10324,
+          "source_url": "https://www.wowhead.com/tbc/item=10039",
+          "type": "unknown"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10039",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10039",
+      "spell_id": 12090,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          10039,
+          1,
+          1
+        ],
+        "id": 12090,
+        "level": 0,
+        "name": "Stormcloth Boots",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            6
+          ],
+          [
+            7079,
+            6
+          ],
+          [
+            8343,
+            3
+          ],
+          [
+            4304,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 10324,
+        "level": 50,
+        "name": "Pattern: Stormcloth Boots",
+        "popularity": 3,
+        "quality": 2,
+        "skill": 250,
+        "slot": 0,
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 10324,
+      "level": 50,
+      "name": "Pattern: Stormcloth Boots",
+      "popularity": 3,
+      "quality": 2,
+      "skill": 250,
+      "slot": 0,
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10039"
+}

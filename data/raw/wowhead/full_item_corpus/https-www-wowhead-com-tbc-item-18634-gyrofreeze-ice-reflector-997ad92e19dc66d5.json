@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gyrofreeze Ice Reflector Phase 1 Item Level 52 Binds when equipped Trinket +15 Frost Resistance Requires Level 47 Requires Engineering (260) Use: Reflects Frost spells back at their caster for 5 sec. Chance to be resisted when used by players over level 60. (5 Min Cooldown) Sell Price: 1 25",
+  "fetched_at": "2026-06-15T20:19:55+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 18634,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 18634,
+    "item_level": 52,
+    "name": "Gyrofreeze Ice Reflector",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 47,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18634/gyrofreeze-ice-reflector"
+  },
+  "name": "Gyrofreeze Ice Reflector",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gyrofreeze Ice Reflector Phase 1 Item Level 52 Binds when equipped Trinket +15 Frost Resistance Requires Level 47 Requires Engineering (260) Use: Reflects Frost spells back at their caster for 5 sec. Chance to be resisted when used by players over level 60. (5 Min Cooldown) Sell Price: 1 25",
+      "scope": "equip_or_use",
+      "skill": 260,
+      "source_url": "https://www.wowhead.com/tbc/item=18634/gyrofreeze-ice-reflector",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18634/gyrofreeze-ice-reflector"
+}

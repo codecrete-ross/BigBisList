@@ -1,0 +1,157 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloth armor of item level 45 goes in the \"Hands\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:50:56+00:00",
+  "inventory_slot": "Hands",
+  "item_id": 10019,
+  "item_stats": {
+    "armor": 41,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10019,
+    "item_level": 45,
+    "name": "Dreamweave Gloves",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12067,
+      "entity_name": "Dreamweave Gloves",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10019",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10019",
+      "spell_id": 12067,
+      "type": "crafted"
+    },
+    "quality": "rare",
+    "required_level": 40,
+    "slot": "Hands",
+    "source_summary": "Crafted: Dreamweave Gloves",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12067,
+        "entity_name": "Dreamweave Gloves",
+        "profession": "Tailoring",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10019",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10019",
+        "spell_id": 12067,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 4.0,
+      "spell_power": 18.0,
+      "spirit": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10019"
+  },
+  "name": "Dreamweave Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12067,
+      "entity_name": "Dreamweave Gloves",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10019",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10019",
+      "spell_id": 12067,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          225,
+          240,
+          255,
+          270
+        ],
+        "creates": [
+          10019,
+          1,
+          1
+        ],
+        "id": 12067,
+        "learnedat": 225,
+        "level": 0,
+        "name": "Dreamweave Gloves",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 3,
+        "reagents": [
+          [
+            4339,
+            4
+          ],
+          [
+            8153,
+            4
+          ],
+          [
+            10286,
+            2
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "trainingcost": 5000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10019"
+}

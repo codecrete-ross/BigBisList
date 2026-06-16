@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rod of Corrosion Phase 1 Item Level 56 Binds when picked up Ranged Wand 50 - 93 Nature Damage Speed 1.30 (55.00 damage per second) Durability 65 / 65 Requires Level 50 Equip: Improves spell critical strike rating by 10. Sell Price: 2 89 89",
+  "fetched_at": "2026-06-15T20:17:21+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 10836,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 55.0,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by"
+    ],
+    "id": 10836,
+    "item_level": 56,
+    "name": "Rod of Corrosion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 50,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 10.0
+    },
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10836/rod-of-corrosion"
+  },
+  "name": "Rod of Corrosion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10836/rod-of-corrosion"
+}

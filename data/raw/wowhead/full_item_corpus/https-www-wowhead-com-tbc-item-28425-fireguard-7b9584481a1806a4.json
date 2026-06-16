@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fireguard Phase 1 Item Level 107 Binds when picked up One-Hand Sword 94 - 176 Damage Speed 1.60 (84.38 damage per second) +16 Agility +23 Stamina Durability 105 / 105 Requires Level 70 Requires Master Swordsmith Equip: Improves hit rating by 16. Sell Price: 10 68 42",
+  "fetched_at": "2026-06-15T20:25:14+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 28425,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 84.38,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 28425,
+    "item_level": 107,
+    "name": "Fireguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 16.0,
+      "hit_rating": 16.0,
+      "stamina": 23.0
+    },
+    "weapon_max_damage": 176,
+    "weapon_min_damage": 94,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28425/fireguard"
+  },
+  "name": "Fireguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28425/fireguard"
+}

@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Amulet of Flowing Life Phase 5 Item Level 159 Binds when picked up Neck +27 Stamina +19 Intellect Red Socket Socket Bonus: 1 Mana per 5 sec. Requires Level 70 Requires Jewelcrafting (350) Equip: Improves spell haste rating by 25. Equip: Increases healing done by up to 64 and damage done by up to 22 for all magical spells and effects. Equip: Restores 10 mana per 5 sec. Sell Price: 8 83 55",
+  "fetched_at": "2026-06-15T20:27:43+00:00",
+  "inventory_slot": null,
+  "item_id": 34360,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell haste rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 34360,
+    "item_level": 159,
+    "name": "Amulet of Flowing Life",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 64.0,
+      "intellect": 19.0,
+      "mp5": 10.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34360/amulet-of-flowing-life"
+  },
+  "name": "Amulet of Flowing Life",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Amulet of Flowing Life Phase 5 Item Level 159 Binds when picked up Neck +27 Stamina +19 Intellect Red Socket Socket Bonus: 1 Mana per 5 sec. Requires Level 70 Requires Jewelcrafting (350) Equip: Improves spell haste rating by 25. Equip: Increases healing done by up to 64 and damage done by up to 22 for all magical spells and effects. Equip: Restores 10 mana per 5 sec. Sell Price: 8 83 55",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34360/amulet-of-flowing-life",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34360/amulet-of-flowing-life"
+}

@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Force Reactive Disk Phase 1 Item Level 65 Binds when equipped Off Hand Shield 2916 Armor 58 Block +11 Stamina Durability 120 / 120 Requires Level 60 Requires Engineering (300) Equip: When the shield blocks it releases an electrical charge that damages all nearby enemies. This also has a chance of damaging the shield. (1s cooldown) Sell Price: 4 72 92",
+  "fetched_at": "2026-06-15T20:19:41+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 18168,
+  "item_stats": {
+    "armor": 2916,
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 18168,
+    "item_level": 65,
+    "name": "Force Reactive Disk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 11.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18168/force-reactive-disk"
+  },
+  "name": "Force Reactive Disk",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Force Reactive Disk Phase 1 Item Level 65 Binds when equipped Off Hand Shield 2916 Armor 58 Block +11 Stamina Durability 120 / 120 Requires Level 60 Requires Engineering (300) Equip: When the shield blocks it releases an electrical charge that damages all nearby enemies. This also has a chance of damaging the shield. (1s cooldown) Sell Price: 4 72 92",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=18168/force-reactive-disk",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18168/force-reactive-disk"
+}

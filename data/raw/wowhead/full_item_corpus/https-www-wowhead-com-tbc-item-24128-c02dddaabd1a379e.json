@@ -1,0 +1,249 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 115 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 24128,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 24128,
+    "item_level": 115,
+    "name": "Figurine - Nightseye Panther",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 31083,
+      "entity_name": "Figurine - Nightseye Panther",
+      "profession": "Jewelcrafting",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 24183,
+          "entity_name": "Design: Nightseye Panther",
+          "item_id": 24183,
+          "source_url": "https://www.wowhead.com/tbc/item=24128",
+          "type": "vendor",
+          "zone": "Zangarmarsh"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24128",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24128",
+      "spell_id": 31083,
+      "type": "crafted",
+      "zone": "Zangarmarsh"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "Crafted: Figurine - Nightseye Panther",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 31083,
+        "entity_name": "Figurine - Nightseye Panther",
+        "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 24183,
+            "entity_name": "Design: Nightseye Panther",
+            "item_id": 24183,
+            "source_url": "https://www.wowhead.com/tbc/item=24128",
+            "type": "vendor",
+            "zone": "Zangarmarsh"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Jewelcrafting",
+            "raw_text": "Jewelcrafting",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=24128",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=24128",
+        "spell_id": 31083,
+        "type": "crafted",
+        "zone": "Zangarmarsh"
+      }
+    ],
+    "stats": {
+      "attack_power": 374.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24128"
+  },
+  "name": "Figurine - Nightseye Panther",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Nightseye Panther Phase 1 Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Requires Jewelcrafting (350) Equip: Increases your effective stealth level by 1. Equip: Increases attack power by 54. Use: Increases attack power by 320 for 12 sec. (3 Min Cooldown) Sell Price: 1 50 This blue trinket of item level 115 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24128",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31083,
+      "entity_name": "Figurine - Nightseye Panther",
+      "profession": "Jewelcrafting",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 24183,
+          "entity_name": "Design: Nightseye Panther",
+          "item_id": 24183,
+          "source_url": "https://www.wowhead.com/tbc/item=24128",
+          "type": "vendor",
+          "zone": "Zangarmarsh"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24128",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24128",
+      "spell_id": 31083,
+      "type": "crafted",
+      "zone": "Zangarmarsh"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          370,
+          380,
+          390,
+          400
+        ],
+        "creates": [
+          24128,
+          1,
+          1
+        ],
+        "id": 31083,
+        "learnedat": 370,
+        "level": 0,
+        "name": "Figurine - Nightseye Panther",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 3,
+        "reagents": [
+          [
+            23573,
+            6
+          ],
+          [
+            23441,
+            2
+          ],
+          [
+            22456,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24183,
+        "level": 74,
+        "name": "Design: Nightseye Panther",
+        "popularity": 7,
+        "quality": 3,
+        "skill": 370,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Fedryen Swiftspear",
+            "t": 1,
+            "ti": 17904,
+            "z": 3521
+          }
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24183,
+      "level": 74,
+      "name": "Design: Nightseye Panther",
+      "popularity": 7,
+      "quality": 3,
+      "skill": 370,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Fedryen Swiftspear",
+          "t": 1,
+          "ti": 17904,
+          "z": 3521
+        }
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24128"
+}

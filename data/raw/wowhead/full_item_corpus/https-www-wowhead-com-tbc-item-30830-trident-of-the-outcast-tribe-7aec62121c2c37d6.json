@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Trident of the Outcast Tribe Phase 1 Item Level 100 Binds when picked up Two-Hand Polearm 270 - 406 Damage Speed 3.20 (105.63 damage per second) +37 Strength +54 Stamina Durability 120 / 120 Requires Level 70 Requires Lower City - Exalted Equip: Improves hit rating by 36. Sell Price: 50 10 16",
+  "fetched_at": "2026-06-15T20:26:06+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 30830,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 105.63,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 30830,
+    "item_level": 100,
+    "name": "Trident of the Outcast Tribe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 36.0,
+      "stamina": 54.0,
+      "strength": 37.0
+    },
+    "weapon_max_damage": 406,
+    "weapon_min_damage": 270,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Polearm",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30830/trident-of-the-outcast-tribe"
+  },
+  "name": "Trident of the Outcast Tribe",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Trident of the Outcast Tribe Phase 1 Item Level 100 Binds when picked up Two-Hand Polearm 270 - 406 Damage Speed 3.20 (105.63 damage per second) +37 Strength +54 Stamina Durability 120 / 120 Requires Level 70 Requires Lower City - Exalted Equip: Improves hit rating by 36. Sell Price: 50 10 16",
+      "reputation": "Lower City",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=30830/trident-of-the-outcast-tribe",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30830/trident-of-the-outcast-tribe"
+}

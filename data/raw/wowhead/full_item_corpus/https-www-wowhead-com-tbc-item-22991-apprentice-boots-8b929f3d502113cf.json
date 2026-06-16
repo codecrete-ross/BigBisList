@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Apprentice Boots Phase 1 Item Level 15 Binds when picked up Feet Cloth 19 Armor +1 Stamina +2 Intellect Durability 25 / 25 Requires Level 10 Requires Tranquillien - Friendly Sell Price: 2 8 Dropped by: Meshlok the Harvester Drop Chance: 5.09%",
+  "fetched_at": "2026-06-15T20:23:07+00:00",
+  "inventory_slot": null,
+  "item_id": 22991,
+  "item_stats": {
+    "armor": 19,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 22991,
+    "item_level": 15,
+    "name": "Apprentice Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 10,
+    "source_summary": "",
+    "stats": {
+      "intellect": 2.0,
+      "stamina": 1.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22991/apprentice-boots"
+  },
+  "name": "Apprentice Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Apprentice Boots Phase 1 Item Level 15 Binds when picked up Feet Cloth 19 Armor +1 Stamina +2 Intellect Durability 25 / 25 Requires Level 10 Requires Tranquillien - Friendly Sell Price: 2 8 Dropped by: Meshlok the Harvester Drop Chance: 5.09%",
+      "reputation": "Tranquillien",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=22991/apprentice-boots",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22991/apprentice-boots"
+}

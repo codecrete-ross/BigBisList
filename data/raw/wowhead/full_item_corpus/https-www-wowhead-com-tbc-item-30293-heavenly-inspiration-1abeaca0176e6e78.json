@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heavenly Inspiration Item Level 111 Binds when picked up Unique Trinket Use: Increases healing done by up to 238 and damage done by up to 79 for all magical spells and effects for 15 sec. (1 Min, 30 Sec Cooldown) Equip: Restores 10 mana per 5 sec. Sell Price: 2 16 12",
+  "fetched_at": "2026-06-15T20:25:57+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 30293,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 30293,
+    "item_level": 111,
+    "name": "Heavenly Inspiration",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 238.0,
+      "mp5": 10.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30293/heavenly-inspiration"
+  },
+  "name": "Heavenly Inspiration",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30293/heavenly-inspiration"
+}

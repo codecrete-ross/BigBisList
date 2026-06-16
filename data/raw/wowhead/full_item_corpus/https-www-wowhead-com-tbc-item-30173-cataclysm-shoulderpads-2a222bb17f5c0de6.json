@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Shoulderpads Phase 2 Item Level 133 Binds when picked up Shoulder Mail 700 Armor +26 Stamina +19 Intellect Blue Socket Yellow Socket Socket Bonus: +3 Spell Critical Strike Rating Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 41. Equip: Restores 6 mana per 5 sec. Cataclysm Regalia (0/5) Cataclysm Chestpiece Cataclysm Handgrips Cataclysm Headpiece Cataclysm Leggings Cataclysm Shoulderpads (2) Set : Each time you cast an offensive spell, there is a chance your next Lesser Healing Wave will cost 380 less mana. (Proc chance: 7%) (4) Set : Your Lightning Bolt critical strikes have a chance to grant you 120 mana. (Proc chance: 25%)",
+  "fetched_at": "2026-06-15T20:25:54+00:00",
+  "inventory_slot": null,
+  "item_id": 30173,
+  "item_stats": {
+    "armor": 700,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 30173,
+    "item_level": 133,
+    "name": "Cataclysm Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 19.0,
+      "mp5": 6.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 41.0,
+      "stamina": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30173/cataclysm-shoulderpads"
+  },
+  "name": "Cataclysm Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30173/cataclysm-shoulderpads"
+}

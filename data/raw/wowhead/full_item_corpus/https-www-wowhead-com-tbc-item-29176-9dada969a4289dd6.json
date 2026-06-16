@@ -1,0 +1,125 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic shield of item level 105 goes in the \"Off Hand\" slot. It is sold by Almaador. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 29176,
+  "item_stats": {
+    "armor": 4465,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Increases defense rating by",
+      "Equip:"
+    ],
+    "id": 29176,
+    "item_level": 105,
+    "name": "Crest of the Sha'tar",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 21432,
+      "entity_name": "Almaador",
+      "source_url": "https://www.wowhead.com/tbc/item=29176",
+      "type": "vendor",
+      "vendor_id": 21432,
+      "zone": "Shattrath City"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Off Hand",
+    "socket_bonus": {
+      "dodge_rating": 3.0
+    },
+    "sockets": [
+      "blue",
+      "blue"
+    ],
+    "source_summary": "Vendor: Almaador (Shattrath City)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 21432,
+        "entity_name": "Almaador",
+        "source_url": "https://www.wowhead.com/tbc/item=29176",
+        "type": "vendor",
+        "vendor_id": 21432,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "defense_rating": 13.0,
+      "stamina": 19.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29176"
+  },
+  "name": "Crest of the Sha'tar",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Crest of the Sha'tar Phase 1 Item Level 105 Binds when picked up Unique Off Hand Shield 4465 Armor 108 Block +19 Stamina Blue Socket Blue Socket Socket Bonus: +3 Dodge Rating Durability 120 / 120 Requires Level 70 Requires The Sha'tar - Exalted Equip: Increases defense rating by 13. Equip: Increases the block value of your shield by 24. Sell Price: 26 89 85 This epic shield of item level 105 goes in the \"Off Hand\" slot. It is sold by Almaador. In the Shields category. Added in World of Warcraft: The Burning Crusade.",
+      "reputation": "The Sha'tar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29176",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21432,
+      "entity_name": "Almaador",
+      "source_url": "https://www.wowhead.com/tbc/item=29176",
+      "type": "vendor",
+      "vendor_id": 21432,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            1143189
+          ]
+        ],
+        "id": 21432,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Almaador",
+        "popularity": 10,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Sha'tari Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29176"
+}

@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vial of the Sunwell Phase 5 Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Equip: Collects 100 Holy Energy from healing spells you cast. Cannot collect more than 2000 Holy Energy. Use: Release all accumulated Holy Energy to instantly heal current friendly target by the amount of Holy Energy accumulated. (2 Min Cooldown) Equip: Restores 15 mana per 5 sec. Sell Price: 7 20 39",
+  "fetched_at": "2026-06-15T20:27:47+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 34471,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 34471,
+    "item_level": 115,
+    "name": "Vial of the Sunwell",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "mp5": 15.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34471/vial-of-the-sunwell"
+  },
+  "name": "Vial of the Sunwell",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34471/vial-of-the-sunwell"
+}

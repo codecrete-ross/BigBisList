@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Bloodvine Leggings Phase 1 Item Level 65 Binds when equipped Legs Cloth 80 Armor +6 Intellect Durability 65 / 65 Requires Level 60 Equip: Increases your spell hit rating by 8. Equip: Increases damage and healing done by magical spells and effects by up to 37. Bloodvine Garb (0/3) Requires Tailoring (300) Bloodvine Vest Bloodvine Leggings Bloodvine Boots (3) Set : Increases your spell critical strike rating by 28. Sell Price: 2 10 65",
+  "fetched_at": "2026-06-15T20:22:02+00:00",
+  "inventory_slot": null,
+  "item_id": 19683,
+  "item_stats": {
+    "armor": 80,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 19683,
+    "item_level": 65,
+    "name": "Bloodvine Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0,
+      "spell_crit_rating": 28.0,
+      "spell_hit_rating": 8.0,
+      "spell_power": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19683/bloodvine-leggings"
+  },
+  "name": "Bloodvine Leggings",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Bloodvine Leggings Phase 1 Item Level 65 Binds when equipped Legs Cloth 80 Armor +6 Intellect Durability 65 / 65 Requires Level 60 Equip: Increases your spell hit rating by 8. Equip: Increases damage and healing done by magical spells and effects by up to 37. Bloodvine Garb (0/3) Requires Tailoring (300) Bloodvine Vest Bloodvine Leggings Bloodvine Boots (3) Set : Increases your spell critical strike rating by 28. Sell Price: 2 10 65",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=19683/bloodvine-leggings",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19683/bloodvine-leggings"
+}

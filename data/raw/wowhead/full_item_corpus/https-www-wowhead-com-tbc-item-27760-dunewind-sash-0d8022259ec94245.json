@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dunewind Sash Phase 1 Item Level 115 Binds when picked up Waist Leather 164 Armor +21 Agility +16 Stamina Red Socket Blue Socket Socket Bonus: +3 Agility Durability 35 / 35 Requires Level 70 Equip: Increases attack power by 50. Sell Price: 2 30 18",
+  "fetched_at": "2026-06-15T20:24:56+00:00",
+  "inventory_slot": null,
+  "item_id": 27760,
+  "item_stats": {
+    "armor": 164,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 27760,
+    "item_level": 115,
+    "name": "Dunewind Sash",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "agility": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 21.0,
+      "attack_power": 50.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27760/dunewind-sash"
+  },
+  "name": "Dunewind Sash",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27760/dunewind-sash"
+}

@@ -1,0 +1,150 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This legendary staff has an item level of 175. It is looted from Staff of Disintegration. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:32+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 30313,
+  "item_stats": {
+    "binding": "unknown",
+    "dps": 78.57,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 30313,
+    "item_level": 175,
+    "name": "Staff of Disintegration",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 571,
+      "drop_percent": 99.48,
+      "entity_id": 21274,
+      "entity_name": "Staff of Disintegration",
+      "out_of": 574,
+      "source_url": "https://www.wowhead.com/tbc/item=30313",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    },
+    "quality": "legendary",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "Drop: Staff of Disintegration (Tempest Keep) 99.5%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 571,
+        "drop_percent": 99.48,
+        "entity_id": 21274,
+        "entity_name": "Staff of Disintegration",
+        "out_of": 574,
+        "source_url": "https://www.wowhead.com/tbc/item=30313",
+        "type": "drop",
+        "zone": "Tempest Keep"
+      }
+    ],
+    "stats": {
+      "attack_power": 1459.0,
+      "intellect": 50.0,
+      "spell_crit_rating": 75.0,
+      "spell_power": 325.0,
+      "stamina": 75.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "weapon_max_damage": 309,
+    "weapon_min_damage": 131,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30313"
+  },
+  "name": "Staff of Disintegration",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 571,
+      "drop_percent": 99.48,
+      "entity_id": 21274,
+      "entity_name": "Staff of Disintegration",
+      "out_of": 574,
+      "source_url": "https://www.wowhead.com/tbc/item=30313",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "legendary",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 1,
+        "count": 571,
+        "id": 21274,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8987,
+                "outof": 9145
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1115,
+                "outof": 1131
+              }
+            },
+            "5": {
+              "0": {
+                "count": 571,
+                "outof": 574
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 8987,
+            "outof": 9145
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Staff of Disintegration",
+        "outof": 574,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30313"
+}

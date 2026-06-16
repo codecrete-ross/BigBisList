@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vibro Sword Phase 1 Item Level 105 Binds when picked up Main Hand Sword 34 - 82 Damage Speed 1.40 (41.43 damage per second) +11 Intellect Durability 75 / 75 Equip: Improves spell critical strike rating by 10. Equip: Increases damage and healing done by magical spells and effects by up to 59. Equip: Restores 4 mana per 5 sec. Sell Price: 7 4 30",
+  "fetched_at": "2026-06-15T20:26:49+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 31448,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.43,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 31448,
+    "item_level": 105,
+    "name": "Vibro Sword",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "mp5": 4.0,
+      "spell_crit_rating": 10.0,
+      "spell_power": 59.0
+    },
+    "weapon_max_damage": 82,
+    "weapon_min_damage": 34,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31448/vibro-sword"
+  },
+  "name": "Vibro Sword",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31448/vibro-sword"
+}

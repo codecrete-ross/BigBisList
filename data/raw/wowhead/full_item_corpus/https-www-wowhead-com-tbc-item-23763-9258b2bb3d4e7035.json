@@ -1,0 +1,258 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue leather armor of item level 112 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Head",
+  "item_id": 23763,
+  "item_stats": {
+    "armor": 232,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 23763,
+    "item_level": 112,
+    "name": "Hyper-Vision Goggles",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 30325,
+      "entity_name": "Hyper-Vision Goggles",
+      "profession": "Engineering",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 23806,
+          "entity_name": "Schematic: Hyper-Vision Goggles",
+          "item_id": 23806,
+          "source_url": "https://www.wowhead.com/tbc/item=23763",
+          "type": "drop",
+          "zone": "Shadowmoon Valley"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23763",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23763",
+      "spell_id": 30325,
+      "type": "crafted",
+      "zone": "Shadowmoon Valley"
+    },
+    "quality": "rare",
+    "slot": "Head",
+    "source_summary": "Crafted: Hyper-Vision Goggles",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 30325,
+        "entity_name": "Hyper-Vision Goggles",
+        "profession": "Engineering",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 23806,
+            "entity_name": "Schematic: Hyper-Vision Goggles",
+            "item_id": 23806,
+            "source_url": "https://www.wowhead.com/tbc/item=23763",
+            "type": "drop",
+            "zone": "Shadowmoon Valley"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Engineering",
+            "raw_text": "Engineering",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=23763",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=23763",
+        "spell_id": 30325,
+        "type": "crafted",
+        "zone": "Shadowmoon Valley"
+      }
+    ],
+    "stats": {
+      "attack_power": 84.0,
+      "hit_rating": 23.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23763"
+  },
+  "name": "Hyper-Vision Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Hyper-Vision Goggles Phase 1 Item Level 112 Binds when equipped Head Leather 232 Armor Durability 60 / 60 Requires Engineering (360) Equip: Improves hit rating by 23. Equip: Increases attack power by 84. Use: Increases your stealth detection for 15 sec. (2 Min Cooldown) Sell Price: 3 17 74 This blue leather armor of item level 112 goes in the \"Head\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=23763",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 30325,
+      "entity_name": "Hyper-Vision Goggles",
+      "profession": "Engineering",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 23806,
+          "entity_name": "Schematic: Hyper-Vision Goggles",
+          "item_id": 23806,
+          "source_url": "https://www.wowhead.com/tbc/item=23763",
+          "type": "drop",
+          "zone": "Shadowmoon Valley"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23763",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23763",
+      "spell_id": 30325,
+      "type": "crafted",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          360,
+          370,
+          380,
+          390
+        ],
+        "creates": [
+          23763,
+          1,
+          1
+        ],
+        "id": 30325,
+        "learnedat": 360,
+        "level": 0,
+        "name": "Hyper-Vision Goggles",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 3,
+        "reagents": [
+          [
+            23793,
+            4
+          ],
+          [
+            23449,
+            2
+          ],
+          [
+            23441,
+            2
+          ],
+          [
+            22449,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23806,
+        "level": 72,
+        "name": "Schematic: Hyper-Vision Goggles",
+        "popularity": 14,
+        "quality": 3,
+        "skill": 360,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Mo'arg Weaponsmith",
+            "t": 1,
+            "ti": 19755,
+            "z": 3520
+          }
+        ],
+        "subclass": 3
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23806,
+      "level": 72,
+      "name": "Schematic: Hyper-Vision Goggles",
+      "popularity": 14,
+      "quality": 3,
+      "skill": 360,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Mo'arg Weaponsmith",
+          "t": 1,
+          "ti": 19755,
+          "z": 3520
+        }
+      ],
+      "subclass": 3
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23763"
+}

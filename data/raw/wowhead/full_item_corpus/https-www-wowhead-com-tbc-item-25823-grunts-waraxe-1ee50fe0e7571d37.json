@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grunt's Waraxe Phase 1 Item Level 85 Binds when picked up One-Hand Axe 70 - 131 Damage Speed 1.90 (52.89 damage per second) +16 Stamina Durability 90 / 90 Requires Level 60 Requires Thrallmar - Honored Equip: Improves hit rating by 11. Equip: Increases attack power by 22. Sell Price: 6 94 63",
+  "fetched_at": "2026-06-15T20:24:41+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 25823,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 52.89,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 25823,
+    "item_level": 85,
+    "name": "Grunt's Waraxe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 22.0,
+      "hit_rating": 11.0,
+      "stamina": 16.0
+    },
+    "weapon_max_damage": 131,
+    "weapon_min_damage": 70,
+    "weapon_speed": 1.9,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25823/grunts-waraxe"
+  },
+  "name": "Grunt's Waraxe",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Grunt's Waraxe Phase 1 Item Level 85 Binds when picked up One-Hand Axe 70 - 131 Damage Speed 1.90 (52.89 damage per second) +16 Stamina Durability 90 / 90 Requires Level 60 Requires Thrallmar - Honored Equip: Improves hit rating by 11. Equip: Increases attack power by 22. Sell Price: 6 94 63",
+      "reputation": "Thrallmar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=25823/grunts-waraxe",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25823/grunts-waraxe"
+}

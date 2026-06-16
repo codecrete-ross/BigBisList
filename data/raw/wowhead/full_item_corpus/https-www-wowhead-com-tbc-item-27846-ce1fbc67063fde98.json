@@ -1,0 +1,154 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue fist weapon has an item level of 115. It is looted from Shirrak the Dead Watcher. In the Fist Weapons category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:26+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 27846,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 71.6,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 27846,
+    "item_level": 115,
+    "name": "Claw of the Watcher",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 28,
+      "drop_percent": 6.32,
+      "entity_id": 18371,
+      "entity_name": "Shirrak the Dead Watcher",
+      "out_of": 443,
+      "source_url": "https://www.wowhead.com/tbc/item=27846",
+      "type": "drop",
+      "zone": "Auchenai Crypts"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "blue",
+      "red"
+    ],
+    "source_summary": "Drop: Shirrak the Dead Watcher (Auchenai Crypts) 6.3%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 28,
+        "drop_percent": 6.32,
+        "entity_id": 18371,
+        "entity_name": "Shirrak the Dead Watcher",
+        "out_of": 443,
+        "source_url": "https://www.wowhead.com/tbc/item=27846",
+        "type": "drop",
+        "zone": "Auchenai Crypts"
+      }
+    ],
+    "stats": {
+      "attack_power": 24.0,
+      "crit_rating": 12.0
+    },
+    "weapon_max_damage": 233,
+    "weapon_min_damage": 125,
+    "weapon_speed": 2.5,
+    "weapon_subtype": "Fist Weapon",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27846"
+  },
+  "name": "Claw of the Watcher",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 28,
+      "drop_percent": 6.32,
+      "entity_id": 18371,
+      "entity_name": "Shirrak the Dead Watcher",
+      "out_of": 443,
+      "source_url": "https://www.wowhead.com/tbc/item=27846",
+      "type": "drop",
+      "zone": "Auchenai Crypts"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 28,
+        "id": 18371,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 762,
+                "outof": 12489
+              }
+            },
+            "4": {
+              "0": {
+                "count": 62,
+                "outof": 681
+              }
+            },
+            "5": {
+              "0": {
+                "count": 28,
+                "outof": 443
+              }
+            }
+          }
+        },
+        "location": [
+          3790
+        ],
+        "maxlevel": 71,
+        "minlevel": 66,
+        "modes": {
+          "0": {
+            "count": 762,
+            "outof": 12489
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Shirrak the Dead Watcher",
+        "outof": 443,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27846"
+}

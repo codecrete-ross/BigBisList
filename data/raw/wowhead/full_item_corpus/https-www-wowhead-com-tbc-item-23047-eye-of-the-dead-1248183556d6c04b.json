@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Eye of the Dead Phase 1 Item Level 90 Binds when picked up Unique-Equipped Trinket Requires Level 60 Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects. Use: Increases healing done by the next 5 spells by up to 450 and damage done by up to 150 for 30 sec. (750ms cooldown) (2 Min Cooldown) Sell Price: 9 11 60",
+  "fetched_at": "2026-06-15T20:23:08+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 23047,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 23047,
+    "item_level": 90,
+    "name": "Eye of the Dead",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 70.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23047/eye-of-the-dead"
+  },
+  "name": "Eye of the Dead",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23047/eye-of-the-dead"
+}

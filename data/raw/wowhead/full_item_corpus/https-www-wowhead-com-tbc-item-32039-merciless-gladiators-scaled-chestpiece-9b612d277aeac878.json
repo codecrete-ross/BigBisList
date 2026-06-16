@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Merciless Gladiator's Scaled Chestpiece Phase 2 Item Level 136 Binds when picked up Chest Plate 1704 Armor +45 Strength +54 Stamina +27 Intellect Red Socket Red Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Classes: Paladin Requires Level 70 Equip: Improves critical strike rating by 24. Equip: Improves your resilience rating by 24. Gladiator's Vindication (0/5) Gladiator's Scaled Chestpiece Gladiator's Scaled Gauntlets Gladiator's Scaled Helm Gladiator's Scaled Legguards Gladiator's Scaled Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Hammer of Justice by 10 sec.",
+  "fetched_at": "2026-06-15T20:27:05+00:00",
+  "inventory_slot": null,
+  "item_id": 32039,
+  "item_stats": {
+    "armor": 1704,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 32039,
+    "item_level": 136,
+    "name": "Merciless Gladiator's Scaled Chestpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 24.0,
+      "intellect": 27.0,
+      "resilience_rating": 24.0,
+      "stamina": 54.0,
+      "strength": 45.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32039/merciless-gladiators-scaled-chestpiece"
+  },
+  "name": "Merciless Gladiator's Scaled Chestpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32039/merciless-gladiators-scaled-chestpiece"
+}

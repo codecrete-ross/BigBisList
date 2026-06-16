@@ -1,0 +1,153 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic two-handed mace has an item level of 125. It is looted from High King Maulgar. In the Two-Handed Maces category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:28+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 28800,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 119.86,
+    "id": 28800,
+    "item_level": 125,
+    "name": "Hammer of the Naaru",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 262,
+      "drop_percent": 13.56,
+      "entity_id": 18831,
+      "entity_name": "High King Maulgar",
+      "out_of": 1932,
+      "source_url": "https://www.wowhead.com/tbc/item=28800",
+      "type": "drop",
+      "zone": "Gruul's Lair"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "socket_bonus": {
+      "intellect": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "blue"
+    ],
+    "source_summary": "Drop: High King Maulgar (Gruul's Lair) 13.6%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 262,
+        "drop_percent": 13.56,
+        "entity_id": 18831,
+        "entity_name": "High King Maulgar",
+        "out_of": 1932,
+        "source_url": "https://www.wowhead.com/tbc/item=28800",
+        "type": "drop",
+        "zone": "Gruul's Lair"
+      }
+    ],
+    "stats": {
+      "intellect": 37.0,
+      "stamina": 41.0,
+      "strength": 44.0
+    },
+    "weapon_max_damage": 518,
+    "weapon_min_damage": 345,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28800"
+  },
+  "name": "Hammer of the Naaru",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 262,
+      "drop_percent": 13.56,
+      "entity_id": 18831,
+      "entity_name": "High King Maulgar",
+      "out_of": 1932,
+      "source_url": "https://www.wowhead.com/tbc/item=28800",
+      "type": "drop",
+      "zone": "Gruul's Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 262,
+        "id": 18831,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2964,
+                "outof": 18894
+              }
+            },
+            "4": {
+              "0": {
+                "count": 458,
+                "outof": 3225
+              }
+            },
+            "5": {
+              "0": {
+                "count": 262,
+                "outof": 1932
+              }
+            }
+          }
+        },
+        "location": [
+          3923
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2964,
+            "outof": 18894
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "High King Maulgar",
+        "outof": 1932,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Ogres",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28800"
+}

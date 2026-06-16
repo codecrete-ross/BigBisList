@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Frostfire Robe Phase 1 Item Level 92 Binds when picked up Chest Cloth 158 Armor +21 Stamina +27 Intellect Durability 100 / 100 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 47. Equip: Increases your spell hit rating by 8. Equip: Increases your spell critical strike rating by 14. Equip: Increases your spell penetration by 15. Frostfire Regalia (0/9) Frostfire Belt Frostfire Bindings Frostfire Circlet Frostfire Gloves Frostfire Leggings Frostfire Robe Frostfire Sandals Frostfire Shoulderpads Frostfire Ring (2) Set : Reduces cooldown on your Evocation by 1 minute. (4) Set : Gives your Mage Armor a chance when struck by a harmful spell to increase resistance against that school of magic by 35 for 30 sec. (Proc chance: 20%) (6) Set : Your damage spells have a chance to cause your target to take up to 200 increased damage from subsequent spells. (Proc chance: 20%) (8) Set : Your damage spells have a chance to displace you, causing the next spell cast to generate no threat. (Proc chance: 15%) Sell Price: 4 1 43",
+  "fetched_at": "2026-06-15T20:22:57+00:00",
+  "inventory_slot": null,
+  "item_id": 22496,
+  "item_stats": {
+    "armor": 158,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 22496,
+    "item_level": 92,
+    "name": "Frostfire Robe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "spell_crit_rating": 14.0,
+      "spell_hit_rating": 8.0,
+      "spell_power": 47.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22496/frostfire-robe"
+  },
+  "name": "Frostfire Robe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22496/frostfire-robe"
+}

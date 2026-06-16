@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Highborne Crown Phase 1 Item Level 57 Binds when equipped Head Cloth 60 Armor +22 Intellect +6 Spirit Durability 45 / 45 Requires Level 52 Equip: Increases damage and healing done by magical spells and effects by up to 4. Sell Price: 1 1 25",
+  "fetched_at": "2026-06-15T20:18:25+00:00",
+  "inventory_slot": null,
+  "item_id": 14449,
+  "item_stats": {
+    "armor": 60,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 14449,
+    "item_level": 57,
+    "name": "Highborne Crown",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 52,
+    "source_summary": "",
+    "stats": {
+      "intellect": 22.0,
+      "spell_power": 4.0,
+      "spirit": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=14449/highborne-crown"
+  },
+  "name": "Highborne Crown",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=14449/highborne-crown"
+}

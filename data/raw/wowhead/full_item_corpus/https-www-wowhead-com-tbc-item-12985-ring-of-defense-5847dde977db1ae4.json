@@ -1,0 +1,39 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Ring of Defense Phase 1 Item Level 22 Binds when equipped Unique-Equipped Finger 20 Armor Requires Level 17 Equip: Increases defense rating by 6. Sell Price: 11 53",
+  "fetched_at": "2026-06-15T20:17:42+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 12985,
+  "item_stats": {
+    "armor": 20,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 12985,
+    "item_level": 22,
+    "name": "Ring of Defense",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=12985/ring-of-defense"
+  },
+  "name": "Ring of Defense",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=12985/ring-of-defense"
+}

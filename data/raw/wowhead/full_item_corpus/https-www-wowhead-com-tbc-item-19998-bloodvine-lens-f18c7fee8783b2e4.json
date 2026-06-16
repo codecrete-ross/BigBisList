@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Bloodvine Lens Phase 1 Item Level 65 Binds when equipped Head Leather 147 Armor +12 Stamina Durability 60 / 60 Requires Level 60 Requires Engineering (300) Equip: Increases your critical strike rating by 28. Equip: Slightly increases your stealth detection. Sell Price: 1 94 57",
+  "fetched_at": "2026-06-15T20:22:08+00:00",
+  "inventory_slot": null,
+  "item_id": 19998,
+  "item_stats": {
+    "armor": 147,
+    "armor_type": "Leather",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 19998,
+    "item_level": 65,
+    "name": "Bloodvine Lens",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 28.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19998/bloodvine-lens"
+  },
+  "name": "Bloodvine Lens",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Bloodvine Lens Phase 1 Item Level 65 Binds when equipped Head Leather 147 Armor +12 Stamina Durability 60 / 60 Requires Level 60 Requires Engineering (300) Equip: Increases your critical strike rating by 28. Equip: Slightly increases your stealth detection. Sell Price: 1 94 57",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=19998/bloodvine-lens",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19998/bloodvine-lens"
+}

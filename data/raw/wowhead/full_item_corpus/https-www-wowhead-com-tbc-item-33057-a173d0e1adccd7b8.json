@@ -1,0 +1,227 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 128 goes in the \"Finger\" slot. It is obtained through PvP. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 33057,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 33057,
+    "item_level": 128,
+    "name": "Veteran's Band of Triumph",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 12695,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 5,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 12793,
+      "entity_name": "Brave Stonehide",
+      "source_url": "https://www.wowhead.com/tbc/item=33057",
+      "type": "pvp",
+      "vendor_id": 12793
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "PvP: Brave Stonehide (12695 Honor Points, 5 Item 20560) +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 12695,
+            "currency_id": 1901,
+            "name": "Honor Points"
+          },
+          {
+            "amount": 5,
+            "item_id": 20560,
+            "name": "Item 20560"
+          }
+        ],
+        "entity_id": 12781,
+        "entity_name": "Master Sergeant Biggins",
+        "source_url": "https://www.wowhead.com/tbc/item=33057",
+        "type": "pvp",
+        "vendor_id": 12781
+      },
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 12695,
+            "currency_id": 1901,
+            "name": "Honor Points"
+          },
+          {
+            "amount": 5,
+            "item_id": 20560,
+            "name": "Item 20560"
+          }
+        ],
+        "entity_id": 12793,
+        "entity_name": "Brave Stonehide",
+        "source_url": "https://www.wowhead.com/tbc/item=33057",
+        "type": "pvp",
+        "vendor_id": 12793
+      }
+    ],
+    "stats": {
+      "attack_power": 42.0,
+      "crit_rating": 22.0,
+      "resilience_rating": 22.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33057"
+  },
+  "name": "Veteran's Band of Triumph",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 12695,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 5,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 12781,
+      "entity_name": "Master Sergeant Biggins",
+      "source_url": "https://www.wowhead.com/tbc/item=33057",
+      "type": "pvp",
+      "vendor_id": 12781
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 12695,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 5,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 12793,
+      "entity_name": "Brave Stonehide",
+      "source_url": "https://www.wowhead.com/tbc/item=33057",
+      "type": "pvp",
+      "vendor_id": 12793
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                12695
+              ]
+            ],
+            [
+              [
+                20560,
+                5
+              ]
+            ]
+          ]
+        ],
+        "id": 12781,
+        "location": [
+          1519
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Master Sergeant Biggins",
+        "popularity": 7,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Officer Accessories Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                12695
+              ]
+            ],
+            [
+              [
+                20560,
+                5
+              ]
+            ]
+          ]
+        ],
+        "id": 12793,
+        "location": [
+          1637
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Brave Stonehide",
+        "popularity": 6,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Officer Accessories Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33057"
+}

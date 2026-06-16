@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Mail Leggings Phase 1 Item Level 123 Binds when picked up Legs Mail 758 Armor +54 Stamina +25 Intellect Durability 105 / 105 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 22. Equip: Improves your resilience rating by 29. Equip: Increases damage and healing done by magical spells and effects by up to 42. Equip: Restores 6 mana per 5 sec. Gladiator's Thunderfist (0/5) Gladiator's Mail Armor Gladiator's Mail Gauntlets Gladiator's Mail Helm Gladiator's Mail Leggings Gladiator's Mail Spaulders (2) Set : +35 Resilience Rating. (4) Set : Gives you a 50% chance to avoid interruption caused by damage while casting Lightning Bolt.",
+  "fetched_at": "2026-06-15T20:24:51+00:00",
+  "inventory_slot": null,
+  "item_id": 27472,
+  "item_stats": {
+    "armor": 758,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 27472,
+    "item_level": 123,
+    "name": "Gladiator's Mail Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 25.0,
+      "mp5": 6.0,
+      "resilience_rating": 29.0,
+      "spell_crit_rating": 22.0,
+      "spell_power": 42.0,
+      "stamina": 54.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27472/gladiators-mail-leggings"
+  },
+  "name": "Gladiator's Mail Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27472/gladiators-mail-leggings"
+}

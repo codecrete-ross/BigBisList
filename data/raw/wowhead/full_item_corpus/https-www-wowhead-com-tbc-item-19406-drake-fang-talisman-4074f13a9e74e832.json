@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Drake Fang Talisman Phase 1 Item Level 75 Binds when picked up Unique-Equipped Trinket Requires Level 60 Equip: Increases attack power by 56. Equip: Increases your hit rating by 20. Equip: Increases your dodge rating by 12. Sell Price: 9 11 60",
+  "fetched_at": "2026-06-15T20:21:56+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 19406,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 19406,
+    "item_level": 75,
+    "name": "Drake Fang Talisman",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 56.0,
+      "dodge_rating": 12.0,
+      "hit_rating": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19406/drake-fang-talisman"
+  },
+  "name": "Drake Fang Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19406/drake-fang-talisman"
+}

@@ -1,0 +1,38 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Draenethyst Chaplet Item Level 87 Binds when picked up Neck Equip: Improves spell critical strike rating by 15. Equip: Increases damage and healing done by magical spells and effects by up to 16. Sell Price: 2 85 46",
+  "fetched_at": "2026-06-15T20:24:45+00:00",
+  "inventory_slot": null,
+  "item_id": 25989,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 25989,
+    "item_level": 87,
+    "name": "Draenethyst Chaplet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 15.0,
+      "spell_power": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25989/draenethyst-chaplet"
+  },
+  "name": "Draenethyst Chaplet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25989/draenethyst-chaplet"
+}

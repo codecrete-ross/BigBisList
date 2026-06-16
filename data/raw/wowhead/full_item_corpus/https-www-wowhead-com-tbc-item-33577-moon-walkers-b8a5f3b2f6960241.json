@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Moon-walkers Phase 3 Item Level 128 Binds when picked up Feet Leather 278 Armor +30 Stamina +28 Intellect Red Socket Red Socket Socket Bonus: +3 Spell Hit Rating Durability 60 / 60 Requires Level 70 Equip: Improves spell hit rating by 20. Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+  "fetched_at": "2026-06-15T20:27:29+00:00",
+  "inventory_slot": null,
+  "item_id": 33577,
+  "item_stats": {
+    "armor": 278,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip:"
+    ],
+    "id": 33577,
+    "item_level": 128,
+    "name": "Moon-walkers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_hit_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "spell_hit_rating": 20.0,
+      "spell_power": 34.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33577/moon-walkers"
+  },
+  "name": "Moon-walkers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33577/moon-walkers"
+}

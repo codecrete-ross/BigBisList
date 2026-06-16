@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Marshal's Wyrmhide Bracers Phase 1 Item Level 113 Binds when picked up Wrist Leather 187 Armor +22 Stamina +14 Intellect Red Socket Socket Bonus: +2 Resilience Rating Durability 40 / 40 Classes: Rogue , Druid Requires Level 70 Equip: Improves your resilience rating by 13. Equip: Increases damage and healing done by magical spells and effects by up to 12. Equip: Restores 4 mana per 5 sec.",
+  "fetched_at": "2026-06-15T20:25:29+00:00",
+  "inventory_slot": null,
+  "item_id": 29006,
+  "item_stats": {
+    "armor": 187,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29006,
+    "item_level": 113,
+    "name": "Marshal's Wyrmhide Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "mp5": 4.0,
+      "resilience_rating": 13.0,
+      "spell_power": 12.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29006/marshals-wyrmhide-bracers"
+  },
+  "name": "Marshal's Wyrmhide Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29006/marshals-wyrmhide-bracers"
+}

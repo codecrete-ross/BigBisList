@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bow-stitched Leggings Phase 3 Item Level 141 Binds when picked up Legs Mail 864 Armor +42 Agility +28 Stamina +28 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Critical Strike Rating Durability 105 / 105 Requires Level 70 Equip: Improves critical strike rating by 20. Equip: Increases attack power by 100. Sell Price: 8 75 55",
+  "fetched_at": "2026-06-15T20:26:08+00:00",
+  "inventory_slot": null,
+  "item_id": 30900,
+  "item_stats": {
+    "armor": 864,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30900,
+    "item_level": 141,
+    "name": "Bow-stitched Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 42.0,
+      "attack_power": 100.0,
+      "crit_rating": 20.0,
+      "intellect": 28.0,
+      "stamina": 28.0
+    },
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
+  },
+  "name": "Bow-stitched Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
+}

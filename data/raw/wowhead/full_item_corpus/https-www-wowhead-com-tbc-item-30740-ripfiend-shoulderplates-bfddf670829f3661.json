@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ripfiend Shoulderplates Phase 1 Item Level 120 Binds when picked up Shoulder Plate 1133 Armor +39 Strength Yellow Socket Yellow Socket Socket Bonus: +3 Strength Durability 100 / 100 Requires Level 70 Equip: Improves hit rating by 13. Equip: Improves critical strike rating by 22. Sell Price: 6 26 16",
+  "fetched_at": "2026-06-15T20:26:04+00:00",
+  "inventory_slot": null,
+  "item_id": 30740,
+  "item_stats": {
+    "armor": 1133,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 30740,
+    "item_level": 120,
+    "name": "Ripfiend Shoulderplates",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "strength": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 22.0,
+      "hit_rating": 13.0,
+      "strength": 39.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30740/ripfiend-shoulderplates"
+  },
+  "name": "Ripfiend Shoulderplates",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30740/ripfiend-shoulderplates"
+}

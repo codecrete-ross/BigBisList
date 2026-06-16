@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Fel Iron Hatchet Phase 1 Item Level 93 Binds when equipped One-Hand Axe 68 - 127 Damage Speed 2.00 (48.75 damage per second) +8 Strength Durability 75 / 75 Requires Level 61 Equip: Improves hit rating by 15. Sell Price: 5 81 64",
+  "fetched_at": "2026-06-15T20:23:18+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 23497,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 48.75,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 23497,
+    "item_level": 93,
+    "name": "Fel Iron Hatchet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 61,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 15.0,
+      "strength": 8.0
+    },
+    "weapon_max_damage": 127,
+    "weapon_min_damage": 68,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23497/fel-iron-hatchet"
+  },
+  "name": "Fel Iron Hatchet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23497/fel-iron-hatchet"
+}

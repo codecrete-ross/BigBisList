@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Terokkar Tablet of Vim Item Level 99 Binds when picked up Unique Trinket Equip: Improves spell hit rating by 22. Use: Increases spell damage by up to 84 and healing by up to 156 for 15 sec. (1 Min, 30 Sec Cooldown) Sell Price: 6 62 90",
+  "fetched_at": "2026-06-15T20:24:43+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 25936,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by"
+    ],
+    "id": 25936,
+    "item_level": 99,
+    "name": "Terokkar Tablet of Vim",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spell_hit_rating": 22.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25936/terokkar-tablet-of-vim"
+  },
+  "name": "Terokkar Tablet of Vim",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25936/terokkar-tablet-of-vim"
+}

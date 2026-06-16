@@ -1,0 +1,238 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This blue cloth armor of item level 112 goes in the \"Wrist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:24+00:00",
+  "inventory_slot": "Wrist",
+  "item_id": 21866,
+  "item_stats": {
+    "armor": 67,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 21866,
+    "item_level": 112,
+    "name": "Arcanoweave Bracers",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 26782,
+      "entity_name": "Arcanoweave Bracers",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "dungeon",
+          "entity_id": 21905,
+          "entity_name": "Pattern: Arcanoweave Bracers",
+          "item_id": 21905,
+          "source_url": "https://www.wowhead.com/tbc/item=21866",
+          "type": "drop",
+          "zone": "The Arcatraz"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21866",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21866",
+      "spell_id": 26782,
+      "type": "crafted",
+      "zone": "The Arcatraz"
+    },
+    "quality": "rare",
+    "required_level": 69,
+    "slot": "Wrist",
+    "source_summary": "Crafted: Arcanoweave Bracers",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 26782,
+        "entity_name": "Arcanoweave Bracers",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "dungeon",
+            "entity_id": 21905,
+            "entity_name": "Pattern: Arcanoweave Bracers",
+            "item_id": 21905,
+            "source_url": "https://www.wowhead.com/tbc/item=21866",
+            "type": "drop",
+            "zone": "The Arcatraz"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=21866",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=21866",
+        "spell_id": 26782,
+        "type": "crafted",
+        "zone": "The Arcatraz"
+      }
+    ],
+    "stats": {
+      "spell_hit_rating": 16.0,
+      "stamina": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21866"
+  },
+  "name": "Arcanoweave Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26782,
+      "entity_name": "Arcanoweave Bracers",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "dungeon",
+          "entity_id": 21905,
+          "entity_name": "Pattern: Arcanoweave Bracers",
+          "item_id": 21905,
+          "source_url": "https://www.wowhead.com/tbc/item=21866",
+          "type": "drop",
+          "zone": "The Arcatraz"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21866",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21866",
+      "spell_id": 26782,
+      "type": "crafted",
+      "zone": "The Arcatraz"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          365,
+          370
+        ],
+        "creates": [
+          21866,
+          1,
+          1
+        ],
+        "id": 26782,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Arcanoweave Bracers",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 3,
+        "reagents": [
+          [
+            21840,
+            6
+          ],
+          [
+            22445,
+            12
+          ],
+          [
+            14341,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21905,
+        "level": 70,
+        "name": "Pattern: Arcanoweave Bracers",
+        "popularity": 9,
+        "quality": 2,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "n": "Arcatraz Sentinel",
+            "t": 1,
+            "ti": 20869,
+            "z": 3848
+          }
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21905,
+      "level": 70,
+      "name": "Pattern: Arcanoweave Bracers",
+      "popularity": 9,
+      "quality": 2,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "n": "Arcatraz Sentinel",
+          "t": 1,
+          "ti": 20869,
+          "z": 3848
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21866"
+}

@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Citrine Pendant of Golden Healing Item Level 39 Binds when equipped Neck +3 Intellect Requires Level 34 Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects. Use: Restores 3 health to all nearby party members every 5 seconds for 30 min. 10 Charges Sell Price: 34 82",
+  "fetched_at": "2026-06-15T20:22:27+00:00",
+  "inventory_slot": null,
+  "item_id": 20967,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 20967,
+    "item_level": 39,
+    "name": "Citrine Pendant of Golden Healing",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 34,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 20.0,
+      "intellect": 3.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20967/citrine-pendant-of-golden-healing"
+  },
+  "name": "Citrine Pendant of Golden Healing",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20967/citrine-pendant-of-golden-healing"
+}

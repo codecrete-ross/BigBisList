@@ -1,0 +1,100 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green fishing pole has an item level of 60. It is a quest reward from Rather Be Fishin'. In the Fishing Poles category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:26+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 25978,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 46.5,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 25978,
+    "item_level": 60,
+    "name": "Seth's Graphite Fishing Pole",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10037,
+      "entity_name": "Rather Be Fishin'",
+      "quest_id": 10037,
+      "source_url": "https://www.wowhead.com/tbc/item=25978",
+      "type": "quest",
+      "zone": "Terokkar Forest"
+    },
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "Quest: Rather Be Fishin'",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10037,
+        "entity_name": "Rather Be Fishin'",
+        "quest_id": 10037,
+        "source_url": "https://www.wowhead.com/tbc/item=25978",
+        "type": "quest",
+        "zone": "Terokkar Forest"
+      }
+    ],
+    "stats": {
+      "stamina": 52.0
+    },
+    "weapon_max_damage": 168,
+    "weapon_min_damage": 111,
+    "weapon_speed": 3.0,
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25978"
+  },
+  "name": "Seth's Graphite Fishing Pole",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10037,
+      "entity_name": "Rather Be Fishin'",
+      "quest_id": 10037,
+      "source_url": "https://www.wowhead.com/tbc/item=25978",
+      "type": "quest",
+      "zone": "Terokkar Forest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3519,
+        "category2": 8,
+        "id": 10037,
+        "itemrewards": [
+          [
+            25978,
+            1
+          ]
+        ],
+        "level": 64,
+        "name": "Rather Be Fishin'",
+        "popularity": 25,
+        "reqlevel": 62,
+        "side": 3,
+        "xp": 10750
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25978"
+}

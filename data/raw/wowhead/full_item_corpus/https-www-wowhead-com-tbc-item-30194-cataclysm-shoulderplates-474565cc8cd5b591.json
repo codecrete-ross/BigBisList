@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Shoulderplates Phase 2 Item Level 133 Binds when picked up Shoulder Mail 700 Armor +30 Strength +37 Stamina +21 Intellect Blue Socket Yellow Socket Socket Bonus: +3 Critical Strike Rating Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Improves critical strike rating by 22. Equip: Restores 6 mana per 5 sec. Cataclysm Harness (0/5) Cataclysm Chestplate Cataclysm Gauntlets Cataclysm Helm Cataclysm Legplates Cataclysm Shoulderplates (2) Set : Your melee attacks have a chance to reduce the cast time of your next Lesser Healing Wave by 1.5 sec. (Proc chance: 2%) (4) Set : You gain 5% additional haste from your Flurry ability.",
+  "fetched_at": "2026-06-15T20:25:54+00:00",
+  "inventory_slot": null,
+  "item_id": 30194,
+  "item_stats": {
+    "armor": 700,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30194,
+    "item_level": 133,
+    "name": "Cataclysm Shoulderplates",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 22.0,
+      "intellect": 21.0,
+      "mp5": 6.0,
+      "stamina": 37.0,
+      "strength": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30194/cataclysm-shoulderplates"
+  },
+  "name": "Cataclysm Shoulderplates",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30194/cataclysm-shoulderplates"
+}

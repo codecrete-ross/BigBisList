@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blood-Guided Knife Phase 1 Item Level 96 Binds when picked up One-Hand Dagger 45 - 84 Damage Speed 1.30 (49.62 damage per second) +15 Stamina Durability 55 / 55 Equip: Improves hit rating by 10. Equip: Increases your expertise rating by 9. Sell Price: 6 49 48",
+  "fetched_at": "2026-06-15T20:24:42+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 25918,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 49.62,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Increases your expertise rating by"
+    ],
+    "id": 25918,
+    "item_level": 96,
+    "name": "Blood-Guided Knife",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "expertise_rating": 9.0,
+      "hit_rating": 10.0,
+      "stamina": 15.0
+    },
+    "weapon_max_damage": 84,
+    "weapon_min_damage": 45,
+    "weapon_speed": 1.3,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25918/blood-guided-knife"
+  },
+  "name": "Blood-Guided Knife",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25918/blood-guided-knife"
+}

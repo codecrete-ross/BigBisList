@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Spitfire Bracers Phase 1 Item Level 62 Binds when equipped Wrist Mail 160 Armor +9 Agility +9 Intellect Durability 40 / 40 Requires Level 57 Equip: Restores 4 mana per 5 sec. Equip: Increases damage and healing done by magical spells and effects by up to 8. Sell Price: 1 59 80",
+  "fetched_at": "2026-06-15T20:22:18+00:00",
+  "inventory_slot": null,
+  "item_id": 20481,
+  "item_stats": {
+    "armor": 160,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 20481,
+    "item_level": 62,
+    "name": "Spitfire Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 57,
+    "source_summary": "",
+    "stats": {
+      "agility": 9.0,
+      "intellect": 9.0,
+      "mp5": 4.0,
+      "spell_power": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20481/spitfire-bracers"
+  },
+  "name": "Spitfire Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20481/spitfire-bracers"
+}

@@ -1,0 +1,160 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 115 goes in the \"Trinket\" slot. It is sold by Jho'nass. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32654,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 32654,
+    "item_level": 115,
+    "name": "Crystalforged Trinket",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 32572,
+          "name": "Item 32572"
+        },
+        {
+          "amount": 50,
+          "item_id": 32569,
+          "name": "Item 32569"
+        }
+      ],
+      "entity_id": 23428,
+      "entity_name": "Jho'nass",
+      "source_url": "https://www.wowhead.com/tbc/item=32654",
+      "type": "vendor",
+      "vendor_id": 23428,
+      "zone": "Blade's Edge Mountains"
+    },
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "Vendor: Jho'nass (1 Item 32572, 50 Item 32569)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 32572,
+            "name": "Item 32572"
+          },
+          {
+            "amount": 50,
+            "item_id": 32569,
+            "name": "Item 32569"
+          }
+        ],
+        "entity_id": 23428,
+        "entity_name": "Jho'nass",
+        "source_url": "https://www.wowhead.com/tbc/item=32654",
+        "type": "vendor",
+        "vendor_id": 23428,
+        "zone": "Blade's Edge Mountains"
+      }
+    ],
+    "stats": {
+      "attack_power": 216.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32654"
+  },
+  "name": "Crystalforged Trinket",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Crystalforged Trinket Phase 2 Item Level 115 Binds when picked up Unique-Equipped Trinket Requires Ogri'la - Revered Use: Increases attack power by 216 for 10 sec. (1 Min Cooldown) Equip: +7 Weapon Damage. Sell Price: 1 95 50 This blue trinket of item level 115 goes in the \"Trinket\" slot. It is sold by Jho'nass. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "reputation": "Ogri'la",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32654",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 32572,
+          "name": "Item 32572"
+        },
+        {
+          "amount": 50,
+          "item_id": 32569,
+          "name": "Item 32569"
+        }
+      ],
+      "entity_id": 23428,
+      "entity_name": "Jho'nass",
+      "source_url": "https://www.wowhead.com/tbc/item=32654",
+      "type": "vendor",
+      "vendor_id": 23428,
+      "zone": "Blade's Edge Mountains"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                32572,
+                1
+              ],
+              [
+                32569,
+                50
+              ]
+            ]
+          ]
+        ],
+        "id": 23428,
+        "location": [
+          3522
+        ],
+        "name": "Jho'nass",
+        "popularity": 13,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Ogri'la Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32654"
+}

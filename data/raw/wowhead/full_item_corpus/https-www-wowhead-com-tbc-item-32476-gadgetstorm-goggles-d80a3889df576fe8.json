@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gadgetstorm Goggles Phase 2 Item Level 127 Binds when picked up Head Mail 726 Armor +28 Stamina Meta Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 85 / 85 Requires Level 62 Requires Engineering (350) Equip: Improves spell hit rating by 12. Equip: Improves spell critical strike rating by 40. Equip: Increases damage and healing done by magical spells and effects by up to 55. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 5 83 63",
+  "fetched_at": "2026-06-15T20:27:12+00:00",
+  "inventory_slot": null,
+  "item_id": 32476,
+  "item_stats": {
+    "armor": 726,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 32476,
+    "item_level": 127,
+    "name": "Gadgetstorm Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 62,
+    "sockets": [
+      "meta",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 40.0,
+      "spell_hit_rating": 12.0,
+      "spell_power": 55.0,
+      "stamina": 28.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32476/gadgetstorm-goggles"
+  },
+  "name": "Gadgetstorm Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gadgetstorm Goggles Phase 2 Item Level 127 Binds when picked up Head Mail 726 Armor +28 Stamina Meta Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 85 / 85 Requires Level 62 Requires Engineering (350) Equip: Improves spell hit rating by 12. Equip: Improves spell critical strike rating by 40. Equip: Increases damage and healing done by magical spells and effects by up to 55. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 5 83 63",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=32476/gadgetstorm-goggles",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32476/gadgetstorm-goggles"
+}

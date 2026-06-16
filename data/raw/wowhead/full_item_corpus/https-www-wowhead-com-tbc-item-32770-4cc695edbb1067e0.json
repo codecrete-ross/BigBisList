@@ -1,0 +1,112 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 105 goes in the \"Trinket\" slot. It is sold by Grella. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32770,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 32770,
+    "item_level": 105,
+    "name": "Skyguard Silver Cross",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 23367,
+      "entity_name": "Grella",
+      "source_url": "https://www.wowhead.com/tbc/item=32770",
+      "type": "vendor",
+      "vendor_id": 23367,
+      "zone": "Terokkar Forest"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "Vendor: Grella (Terokkar Forest)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 23367,
+        "entity_name": "Grella",
+        "source_url": "https://www.wowhead.com/tbc/item=32770",
+        "type": "vendor",
+        "vendor_id": 23367,
+        "zone": "Terokkar Forest"
+      }
+    ],
+    "stats": {
+      "crit_rating": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32770"
+  },
+  "name": "Skyguard Silver Cross",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Skyguard Silver Cross Phase 1 Item Level 105 Binds when picked up Unique Trinket Requires Level 70 Requires Sha'tari Skyguard - Exalted Equip: Improves critical strike rating by 34. Equip: 50% chance to increase your attack power by 140 for 30 sec when you kill a target that gives experience or honor. This effect cannot occur more than once every 10 seconds. (Proc chance: 50%, 10s cooldown) Sell Price: 1 3 7 This epic trinket of item level 105 goes in the \"Trinket\" slot. It is sold by Grella. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "reputation": "Sha'tari Skyguard",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32770",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 23367,
+      "entity_name": "Grella",
+      "source_url": "https://www.wowhead.com/tbc/item=32770",
+      "type": "vendor",
+      "vendor_id": 23367,
+      "zone": "Terokkar Forest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            35046
+          ]
+        ],
+        "id": 23367,
+        "location": [
+          3519
+        ],
+        "name": "Grella",
+        "popularity": 14,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Skyguard Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32770"
+}

@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tom's Legs B Item Level 120 Binds when picked up Legs Plate 1322 Armor +40 Strength +58 Stamina Durability 120 / 120 Classes: Warrior Requires Level 70 Equip: Improves hit rating by 19. Equip: Improves critical strike rating by 30.",
+  "fetched_at": "2026-06-15T20:27:12+00:00",
+  "inventory_slot": null,
+  "item_id": 32415,
+  "item_stats": {
+    "armor": 1322,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 32415,
+    "item_level": 120,
+    "name": "Tom's Legs B",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 30.0,
+      "hit_rating": 19.0,
+      "stamina": 58.0,
+      "strength": 40.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32415/toms-legs-b"
+  },
+  "name": "Tom's Legs B",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32415/toms-legs-b"
+}

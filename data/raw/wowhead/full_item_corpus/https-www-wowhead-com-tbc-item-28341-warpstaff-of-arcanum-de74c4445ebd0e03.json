@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warpstaff of Arcanum Phase 1 Item Level 115 Binds when picked up Two-Hand Staff 106 - 196 Damage Speed 2.40 (62.92 damage per second) +37 Stamina +38 Intellect Durability 100 / 100 Requires Level 70 Equip: Improves spell hit rating by 16. Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 121. Sell Price: 11 34 56",
+  "fetched_at": "2026-06-15T20:25:12+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 28341,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 62.92,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 28341,
+    "item_level": 115,
+    "name": "Warpstaff of Arcanum",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 38.0,
+      "spell_crit_rating": 26.0,
+      "spell_hit_rating": 16.0,
+      "spell_power": 121.0,
+      "stamina": 37.0
+    },
+    "weapon_max_damage": 196,
+    "weapon_min_damage": 106,
+    "weapon_speed": 2.4,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28341/warpstaff-of-arcanum"
+  },
+  "name": "Warpstaff of Arcanum",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28341/warpstaff-of-arcanum"
+}

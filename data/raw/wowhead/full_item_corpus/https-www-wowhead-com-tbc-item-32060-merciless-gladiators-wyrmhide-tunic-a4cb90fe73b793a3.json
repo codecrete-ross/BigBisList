@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Merciless Gladiator's Wyrmhide Tunic Phase 2 Item Level 136 Binds when picked up Chest Leather 470 Armor +48 Stamina +24 Intellect Red Socket Red Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 120 / 120 Classes: Druid Requires Level 70 Equip: Improves your resilience rating by 27. Equip: Increases damage and healing done by magical spells and effects by up to 49. Equip: Restores 6 mana per 5 sec. Gladiator's Wildhide (0/5) Gladiator's Wyrmhide Gloves Gladiator's Wyrmhide Helm Gladiator's Wyrmhide Legguards Gladiator's Wyrmhide Spaulders Gladiator's Wyrmhide Tunic (2) Set : +35 Resilience Rating. (4) Set : Your Wrath casts have a chance to reduce the cast time on your next Starfire by 1.5 sec. (Proc chance: 15%, 15s cooldown)",
+  "fetched_at": "2026-06-15T20:27:06+00:00",
+  "inventory_slot": null,
+  "item_id": 32060,
+  "item_stats": {
+    "armor": 470,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 32060,
+    "item_level": 136,
+    "name": "Merciless Gladiator's Wyrmhide Tunic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 24.0,
+      "mp5": 6.0,
+      "resilience_rating": 27.0,
+      "spell_power": 49.0,
+      "stamina": 48.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32060/merciless-gladiators-wyrmhide-tunic"
+  },
+  "name": "Merciless Gladiator's Wyrmhide Tunic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32060/merciless-gladiators-wyrmhide-tunic"
+}

@@ -1,0 +1,136 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue libram of item level 112 goes in the \"Relic\" slot. It is looted from Darkweaver Syth. In the Librams category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:26+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 27917,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 27917,
+    "item_level": 112,
+    "name": "Libram of the Eternal Rest",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 179,
+      "drop_percent": 13.54,
+      "entity_id": 18472,
+      "entity_name": "Darkweaver Syth",
+      "out_of": 1322,
+      "source_url": "https://www.wowhead.com/tbc/item=27917",
+      "type": "drop",
+      "zone": "Sethekk Halls"
+    },
+    "quality": "rare",
+    "required_level": 68,
+    "slot": "Relic",
+    "source_summary": "Drop: Darkweaver Syth (Sethekk Halls) 13.5%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 179,
+        "drop_percent": 13.54,
+        "entity_id": 18472,
+        "entity_name": "Darkweaver Syth",
+        "out_of": 1322,
+        "source_url": "https://www.wowhead.com/tbc/item=27917",
+        "type": "drop",
+        "zone": "Sethekk Halls"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27917"
+  },
+  "name": "Libram of the Eternal Rest",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 179,
+      "drop_percent": 13.54,
+      "entity_id": 18472,
+      "entity_name": "Darkweaver Syth",
+      "out_of": 1322,
+      "source_url": "https://www.wowhead.com/tbc/item=27917",
+      "type": "drop",
+      "zone": "Sethekk Halls"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 179,
+        "id": 18472,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2886,
+                "outof": 20709
+              }
+            },
+            "4": {
+              "0": {
+                "count": 220,
+                "outof": 1538
+              }
+            },
+            "5": {
+              "0": {
+                "count": 179,
+                "outof": 1322
+              }
+            }
+          }
+        },
+        "location": [
+          3791
+        ],
+        "maxlevel": 72,
+        "minlevel": 69,
+        "modes": {
+          "0": {
+            "count": 2886,
+            "outof": 20709
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Darkweaver Syth",
+        "outof": 1322,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27917"
+}

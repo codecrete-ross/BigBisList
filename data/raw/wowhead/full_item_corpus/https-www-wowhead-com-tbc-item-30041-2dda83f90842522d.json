@@ -1,0 +1,228 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 128 goes in the \"Feet\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 30041,
+  "item_stats": {
+    "armor": 474,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 30041,
+    "item_level": 128,
+    "name": "Boots of Natural Grace",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 36355,
+      "entity_name": "Boots of Natural Grace",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 30305,
+          "entity_name": "Pattern: Boots of Natural Grace",
+          "item_id": 30305,
+          "source_url": "https://www.wowhead.com/tbc/item=30041",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30041",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30041",
+      "spell_id": 36355,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Feet",
+    "source_summary": "Crafted: Boots of Natural Grace",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 36355,
+        "entity_name": "Boots of Natural Grace",
+        "profession": "Leatherworking",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 30305,
+            "entity_name": "Pattern: Boots of Natural Grace",
+            "item_id": 30305,
+            "source_url": "https://www.wowhead.com/tbc/item=30041",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Leatherworking",
+            "raw_text": "Leatherworking",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=30041",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=30041",
+        "spell_id": 36355,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "agility": 26.0,
+      "hit_rating": 14.0,
+      "intellect": 13.0,
+      "stamina": 37.0,
+      "strength": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30041"
+  },
+  "name": "Boots of Natural Grace",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36355,
+      "entity_name": "Boots of Natural Grace",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 30305,
+          "entity_name": "Pattern: Boots of Natural Grace",
+          "item_id": 30305,
+          "source_url": "https://www.wowhead.com/tbc/item=30041",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30041",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30041",
+      "spell_id": 36355,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          30041,
+          1,
+          1
+        ],
+        "id": 36355,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Boots of Natural Grace",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            23572,
+            2
+          ],
+          [
+            23793,
+            4
+          ],
+          [
+            21886,
+            12
+          ],
+          [
+            14341,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 30305,
+        "level": 75,
+        "name": "Pattern: Boots of Natural Grace",
+        "popularity": 16,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 30305,
+      "level": 75,
+      "name": "Pattern: Boots of Natural Grace",
+      "popularity": 16,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30041"
+}

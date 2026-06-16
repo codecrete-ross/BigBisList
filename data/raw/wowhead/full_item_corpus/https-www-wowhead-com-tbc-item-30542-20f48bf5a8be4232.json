@@ -1,0 +1,171 @@
+{
+  "binding": "bind_on_use",
+  "boe": null,
+  "description": "This green trinket of item level 65 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:32+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 30542,
+  "item_stats": {
+    "binding": "bind_on_use",
+    "id": 30542,
+    "item_level": 65,
+    "name": "Dimensional Ripper - Area 52",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 36954,
+      "entity_name": "Dimensional Ripper - Area 52",
+      "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30542",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30542",
+      "spell_id": 36954,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "Crafted: Dimensional Ripper - Area 52",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 36954,
+        "entity_name": "Dimensional Ripper - Area 52",
+        "profession": "Engineering",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Engineering",
+            "raw_text": "Engineering",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=30542",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=30542",
+        "spell_id": 36954,
+        "type": "crafted"
+      }
+    ],
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30542"
+  },
+  "name": "Dimensional Ripper - Area 52",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Dimensional Ripper - Area 52 Item Level 65 Binds when used Trinket Requires Engineering (350) Requires Goblin Engineer Use: Rips the dimensional walls asunder and transports you to Area 52 in Netherstorm. There are technical problems that sometimes occur, but that's what Goblin Engineering is all about! (4 Hrs Cooldown) Sell Price: 50 This green trinket of item level 65 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=30542",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Dimensional Ripper - Area 52 Item Level 65 Binds when used Trinket Requires Engineering (350) Requires Goblin Engineer Use: Rips the dimensional walls asunder and transports you to Area 52 in Netherstorm. There are technical problems that sometimes occur, but that's what Goblin Engineering is all about! (4 Hrs Cooldown) Sell Price: 50 This green trinket of item level 65 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=30542",
+      "specialization": "Goblin Engineer",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36954,
+      "entity_name": "Dimensional Ripper - Area 52",
+      "profession": "Engineering",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30542",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30542",
+      "spell_id": 36954,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          0,
+          350,
+          360,
+          370
+        ],
+        "creates": [
+          30542,
+          1,
+          1
+        ],
+        "id": 36954,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Dimensional Ripper - Area 52",
+        "nskillup": 1,
+        "popularity": 14,
+        "quality": 2,
+        "reagents": [
+          [
+            23784,
+            1
+          ],
+          [
+            21884,
+            2
+          ],
+          [
+            23826,
+            2
+          ],
+          [
+            23783,
+            4
+          ],
+          [
+            23786,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20222
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30542"
+}

@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Shadow Goggles Phase 1 Item Level 24 Binds when equipped Head Cloth 31 Armor +5 Intellect +6 Spirit Durability 40 / 40 Requires Engineering (120) Sell Price: 7 22",
+  "fetched_at": "2026-06-15T20:28:25+00:00",
+  "inventory_slot": null,
+  "item_id": 4373,
+  "item_stats": {
+    "armor": 31,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4373,
+    "item_level": 24,
+    "name": "Shadow Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "intellect": 5.0,
+      "spirit": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=4373/shadow-goggles"
+  },
+  "name": "Shadow Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Shadow Goggles Phase 1 Item Level 24 Binds when equipped Head Cloth 31 Armor +5 Intellect +6 Spirit Durability 40 / 40 Requires Engineering (120) Sell Price: 7 22",
+      "scope": "equip_or_use",
+      "skill": 120,
+      "source_url": "https://www.wowhead.com/tbc/item=4373/shadow-goggles",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=4373/shadow-goggles"
+}

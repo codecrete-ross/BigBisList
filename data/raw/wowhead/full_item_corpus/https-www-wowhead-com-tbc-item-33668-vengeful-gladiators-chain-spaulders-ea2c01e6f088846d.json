@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Chain Spaulders Phase 3 Item Level 146 Binds when picked up Shoulder Mail 766 Armor +35 Agility +49 Stamina +12 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 85 / 85 Classes: Hunter Requires Level 70 Equip: Improves critical strike rating by 16. Equip: Improves your resilience rating by 21. Equip: Increases attack power by 30. Gladiator's Pursuit (0/5) Gladiator's Chain Armor Gladiator's Chain Gauntlets Gladiator's Chain Helm Gladiator's Chain Leggings Gladiator's Chain Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Multi-Shot ability by 1 sec.",
+  "fetched_at": "2026-06-15T20:27:30+00:00",
+  "inventory_slot": null,
+  "item_id": 33668,
+  "item_stats": {
+    "armor": 766,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 33668,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Chain Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 35.0,
+      "attack_power": 30.0,
+      "crit_rating": 16.0,
+      "intellect": 12.0,
+      "resilience_rating": 21.0,
+      "stamina": 49.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33668/vengeful-gladiators-chain-spaulders"
+  },
+  "name": "Vengeful Gladiator's Chain Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33668/vengeful-gladiators-chain-spaulders"
+}

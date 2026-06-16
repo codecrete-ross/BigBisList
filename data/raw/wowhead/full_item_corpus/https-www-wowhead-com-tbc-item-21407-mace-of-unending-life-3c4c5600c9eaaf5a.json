@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mace of Unending Life Phase 1 Item Level 70 Binds when picked up Unique Main Hand Mace 67 - 149 Damage Speed 2.60 (41.54 damage per second) +9 Strength +7 Agility +10 Stamina +11 Intellect Durability 105 / 105 Classes: Druid Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 40. Equip: Increases attack power by 172 in Cat, Bear, Dire Bear, and Moonkin forms only. Symbols of Unending Life (0/3) Band of Unending Life Cloak of Unending Life Mace of Unending Life (3) Set : Your finishing moves now refund 30 energy on a Miss, Dodge, Block, or Parry.",
+  "fetched_at": "2026-06-15T20:22:35+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 21407,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.54,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 21407,
+    "item_level": 70,
+    "name": "Mace of Unending Life",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "attack_power": 172.0,
+      "intellect": 11.0,
+      "spell_power": 40.0,
+      "stamina": 10.0,
+      "strength": 9.0
+    },
+    "weapon_max_damage": 149,
+    "weapon_min_damage": 67,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21407/mace-of-unending-life"
+  },
+  "name": "Mace of Unending Life",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21407/mace-of-unending-life"
+}

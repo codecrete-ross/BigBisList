@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hyper-Magnified Moon Specs Phase 5 Item Level 159 Binds when picked up Head Leather 405 Armor +40 Stamina +37 Intellect Meta Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 70 / 70 Requires Level 70 Requires Engineering (350) Equip: Improves spell critical strike rating by 54. Equip: Increases damage and healing done by magical spells and effects by up to 64. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 5 85 64",
+  "fetched_at": "2026-06-15T20:28:03+00:00",
+  "inventory_slot": null,
+  "item_id": 35182,
+  "item_stats": {
+    "armor": 405,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 35182,
+    "item_level": 159,
+    "name": "Hyper-Magnified Moon Specs",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "meta",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 37.0,
+      "spell_crit_rating": 54.0,
+      "spell_power": 64.0,
+      "stamina": 40.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35182/hyper-magnified-moon-specs"
+  },
+  "name": "Hyper-Magnified Moon Specs",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Hyper-Magnified Moon Specs Phase 5 Item Level 159 Binds when picked up Head Leather 405 Armor +40 Stamina +37 Intellect Meta Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 70 / 70 Requires Level 70 Requires Engineering (350) Equip: Improves spell critical strike rating by 54. Equip: Increases damage and healing done by magical spells and effects by up to 64. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 5 85 64",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35182/hyper-magnified-moon-specs",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35182/hyper-magnified-moon-specs"
+}

@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of the Ruins Phase 1 Item Level 72 Binds when picked up Two-Hand Staff 152 - 247 Damage Speed 3.40 (58.68 damage per second) +24 Stamina +23 Intellect +14 Spirit Durability 120 / 120 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 60. Equip: Increases your spell critical strike rating by 14. Equip: Increases your spell hit rating by 8. Sell Price: 9 61 77 Dropped by: Ossirian the Unscarred Drop Chance: 12.86%",
+  "fetched_at": "2026-06-15T20:22:36+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 21452,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 58.68,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 21452,
+    "item_level": 72,
+    "name": "Staff of the Ruins",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 23.0,
+      "spell_crit_rating": 14.0,
+      "spell_hit_rating": 8.0,
+      "spell_power": 60.0,
+      "spirit": 14.0,
+      "stamina": 24.0
+    },
+    "weapon_max_damage": 247,
+    "weapon_min_damage": 152,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21452/staff-of-the-ruins"
+  },
+  "name": "Staff of the Ruins",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21452/staff-of-the-ruins"
+}

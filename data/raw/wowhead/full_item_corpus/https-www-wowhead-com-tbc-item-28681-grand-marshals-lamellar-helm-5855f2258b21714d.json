@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grand Marshal's Lamellar Helm Phase 1 Item Level 115 Binds when picked up Head Plate 946 Armor +44 Stamina +11 Intellect Meta Socket Red Socket Socket Bonus: +4 Resilience Rating Durability 80 / 80 Classes: Paladin Requires Level 70 Equip: Improves spell critical strike rating by 20. Equip: Improves your resilience rating by 20. Equip: Increases damage and healing done by magical spells and effects by up to 19. Oathbound's Scaled Battlegear (0/5) Crusader's Scaled Chestpiece Crusader's Scaled Gauntlets Crusader's Scaled Helm Crusader's Scaled Legguards Crusader's Scaled Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Hammer of Justice by 10 sec.",
+  "fetched_at": "2026-06-15T20:25:21+00:00",
+  "inventory_slot": null,
+  "item_id": 28681,
+  "item_stats": {
+    "armor": 946,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 28681,
+    "item_level": 115,
+    "name": "Grand Marshal's Lamellar Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "resilience_rating": 20.0,
+      "spell_crit_rating": 20.0,
+      "spell_power": 19.0,
+      "stamina": 44.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28681/grand-marshals-lamellar-helm"
+  },
+  "name": "Grand Marshal's Lamellar Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28681/grand-marshals-lamellar-helm"
+}

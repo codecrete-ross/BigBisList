@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skywitch Hat Phase 1 Item Level 99 Binds when picked up Head Cloth 100 Armor +30 Stamina +20 Intellect Durability 45 / 45 Equip: Improves spell hit rating by 20. Equip: Increases damage and healing done by magical spells and effects by up to 25. Sell Price: 1 99 74",
+  "fetched_at": "2026-06-15T20:26:59+00:00",
+  "inventory_slot": null,
+  "item_id": 31766,
+  "item_stats": {
+    "armor": 100,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip:"
+    ],
+    "id": 31766,
+    "item_level": 99,
+    "name": "Skywitch Hat",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "intellect": 20.0,
+      "spell_hit_rating": 20.0,
+      "spell_power": 25.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31766/skywitch-hat"
+  },
+  "name": "Skywitch Hat",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31766/skywitch-hat"
+}

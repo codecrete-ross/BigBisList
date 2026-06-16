@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Demontooth Shoulderpads Phase 5 Item Level 159 Binds when picked up Shoulder Leather 514 Armor +38 Strength +38 Agility +38 Stamina +19 Intellect Red Socket Blue Socket Socket Bonus: +3 Agility Durability 70 / 70 Requires Level 70 Equip: Improves critical strike rating by 20. Equip: Your attacks ignore 105 of your opponent's armor.",
+  "fetched_at": "2026-06-15T20:27:45+00:00",
+  "inventory_slot": null,
+  "item_id": 34392,
+  "item_stats": {
+    "armor": 514,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 34392,
+    "item_level": 159,
+    "name": "Demontooth Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "agility": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 38.0,
+      "crit_rating": 20.0,
+      "intellect": 19.0,
+      "stamina": 38.0,
+      "strength": 38.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34392/demontooth-shoulderpads"
+  },
+  "name": "Demontooth Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34392/demontooth-shoulderpads"
+}

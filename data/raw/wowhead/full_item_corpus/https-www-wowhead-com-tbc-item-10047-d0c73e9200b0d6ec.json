@@ -1,0 +1,140 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This white cloth armor of item level 15 goes in the \"Legs\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:37+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 10047,
+  "item_stats": {
+    "armor": 23,
+    "armor_type": "Cloth",
+    "binding": "unknown",
+    "id": 10047,
+    "item_level": 15,
+    "name": "Simple Kilt",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12046,
+      "entity_name": "Simple Kilt",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10047",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10047",
+      "spell_id": 12046,
+      "type": "crafted"
+    },
+    "quality": "common",
+    "required_level": 10,
+    "slot": "Legs",
+    "source_summary": "Crafted: Simple Kilt",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12046,
+        "entity_name": "Simple Kilt",
+        "profession": "Tailoring",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10047",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10047",
+        "spell_id": 12046,
+        "type": "crafted"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10047"
+  },
+  "name": "Simple Kilt",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12046,
+      "entity_name": "Simple Kilt",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10047",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10047",
+      "spell_id": 12046,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "common",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          75,
+          100,
+          117,
+          135
+        ],
+        "creates": [
+          10047,
+          1,
+          1
+        ],
+        "id": 12046,
+        "learnedat": 75,
+        "level": 0,
+        "name": "Simple Kilt",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 1,
+        "reagents": [
+          [
+            2996,
+            4
+          ],
+          [
+            2321,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "trainingcost": 300
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10047"
+}

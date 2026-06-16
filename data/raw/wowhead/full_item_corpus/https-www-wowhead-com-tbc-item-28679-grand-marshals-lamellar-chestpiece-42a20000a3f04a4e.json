@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grand Marshal's Lamellar Chestpiece Phase 1 Item Level 115 Binds when picked up Chest Plate 1164 Armor +48 Stamina +12 Intellect Red Socket Red Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 135 / 135 Classes: Paladin Requires Level 70 Equip: Improves spell critical strike rating by 21. Equip: Improves your resilience rating by 22. Equip: Increases damage and healing done by magical spells and effects by up to 9. Oathbound's Scaled Battlegear (0/5) Crusader's Scaled Chestpiece Crusader's Scaled Gauntlets Crusader's Scaled Helm Crusader's Scaled Legguards Crusader's Scaled Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Hammer of Justice by 10 sec.",
+  "fetched_at": "2026-06-15T20:25:20+00:00",
+  "inventory_slot": null,
+  "item_id": 28679,
+  "item_stats": {
+    "armor": 1164,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 28679,
+    "item_level": 115,
+    "name": "Grand Marshal's Lamellar Chestpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 12.0,
+      "resilience_rating": 22.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 9.0,
+      "stamina": 48.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28679/grand-marshals-lamellar-chestpiece"
+  },
+  "name": "Grand Marshal's Lamellar Chestpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28679/grand-marshals-lamellar-chestpiece"
+}

@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Green Lens Phase 1 Item Level 49 Binds when equipped Head Cloth 57 Armor <Random enchantment> +10 Stamina Durability 50 / 50 Requires Engineering (245) Sell Price: 77 70",
+  "fetched_at": "2026-06-15T20:17:15+00:00",
+  "inventory_slot": null,
+  "item_id": 10504,
+  "item_stats": {
+    "armor": 57,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10504,
+    "item_level": 49,
+    "name": "Green Lens",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "stats": {
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10504/green-lens"
+  },
+  "name": "Green Lens",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Green Lens Phase 1 Item Level 49 Binds when equipped Head Cloth 57 Armor <Random enchantment> +10 Stamina Durability 50 / 50 Requires Engineering (245) Sell Price: 77 70",
+      "scope": "equip_or_use",
+      "skill": 245,
+      "source_url": "https://www.wowhead.com/tbc/item=10504/green-lens",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10504/green-lens"
+}

@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cyclone Legguards Phase 1 Item Level 120 Binds when picked up Legs Mail 740 Armor +40 Stamina +40 Intellect Durability 105 / 105 Classes: Shaman Requires Level 70 Equip: Improves spell hit rating by 20. Equip: Increases damage and healing done by magical spells and effects by up to 49. Equip: Restores 8 mana per 5 sec. Cyclone Regalia (0/5) Cyclone Chestguard Cyclone Faceguard Cyclone Handguards Cyclone Legguards Cyclone Shoulderguards (2) Set : Your Wrath of Air Totem ability grants an additional 20 spell damage. (4) Set : Your offensive spell critical strikes have a chance to reduce the base mana cost of your next spell by 270. (Proc chance: 11%)",
+  "fetched_at": "2026-06-15T20:25:30+00:00",
+  "inventory_slot": null,
+  "item_id": 29036,
+  "item_stats": {
+    "armor": 740,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29036,
+    "item_level": 120,
+    "name": "Cyclone Legguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 40.0,
+      "mp5": 8.0,
+      "spell_hit_rating": 20.0,
+      "spell_power": 49.0,
+      "stamina": 40.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29036/cyclone-legguards"
+  },
+  "name": "Cyclone Legguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29036/cyclone-legguards"
+}

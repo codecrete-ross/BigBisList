@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Staff of Jordan Phase 1 Item Level 40 Binds when equipped Two-Hand Staff 119 - 180 Damage Speed 3.70 (40.41 damage per second) +11 Intellect +11 Spirit Durability 120 / 120 Requires Level 35 Equip: Increases damage and healing done by magical spells and effects by up to 26. Sell Price: 2 17 70",
+  "fetched_at": "2026-06-15T20:29:50+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 873,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 40.41,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 873,
+    "item_level": 40,
+    "name": "Staff of Jordan",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 35,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "spell_power": 26.0,
+      "spirit": 11.0
+    },
+    "weapon_max_damage": 180,
+    "weapon_min_damage": 119,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=873/staff-of-jordan"
+  },
+  "name": "Staff of Jordan",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=873/staff-of-jordan"
+}

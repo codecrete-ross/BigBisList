@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mag'har Bow Phase 1 Item Level 93 Binds when picked up Ranged Bow 95 - 177 Damage Speed 2.80 (48.57 damage per second) +9 Agility Durability 65 / 65 Equip: Increases attack power by 16. Sell Price: 4 56 71",
+  "fetched_at": "2026-06-15T20:24:33+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 25496,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 48.57,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 25496,
+    "item_level": 93,
+    "name": "Mag'har Bow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 9.0,
+      "attack_power": 16.0
+    },
+    "weapon_max_damage": 177,
+    "weapon_min_damage": 95,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25496/maghar-bow"
+  },
+  "name": "Mag'har Bow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25496/maghar-bow"
+}

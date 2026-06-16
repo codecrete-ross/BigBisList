@@ -1,0 +1,144 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 115 goes in the \"Finger\" slot. It is a quest reward. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 31746,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 31746,
+    "item_level": 115,
+    "name": "Phoenix-fire Band",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10888,
+      "entity_name": "Trial of the Naaru: Magtheridon",
+      "quest_id": 10888,
+      "source_url": "https://www.wowhead.com/tbc/item=31746",
+      "type": "quest",
+      "zone": "Magtheridon's Lair"
+    },
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "Quest: Trial of the Naaru: Magtheridon +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10888,
+        "entity_name": "Trial of the Naaru: Magtheridon",
+        "quest_id": 10888,
+        "source_url": "https://www.wowhead.com/tbc/item=31746",
+        "type": "quest",
+        "zone": "Magtheridon's Lair"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 13430,
+        "entity_name": "Trial of the Naaru: Magtheridon",
+        "quest_id": 13430,
+        "source_url": "https://www.wowhead.com/tbc/item=31746",
+        "type": "quest",
+        "zone": "Magtheridon's Lair"
+      }
+    ],
+    "stats": {
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31746"
+  },
+  "name": "Phoenix-fire Band",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10888,
+      "entity_name": "Trial of the Naaru: Magtheridon",
+      "quest_id": 10888,
+      "source_url": "https://www.wowhead.com/tbc/item=31746",
+      "type": "quest",
+      "zone": "Magtheridon's Lair"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13430,
+      "entity_name": "Trial of the Naaru: Magtheridon",
+      "quest_id": 13430,
+      "source_url": "https://www.wowhead.com/tbc/item=31746",
+      "type": "quest",
+      "zone": "Magtheridon's Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3836,
+        "category2": 3,
+        "id": 10888,
+        "itemrewards": [
+          [
+            31746,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Trial of the Naaru: Magtheridon",
+        "popularity": 7,
+        "reprewards": [
+          [
+            935,
+            500
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "type": 62,
+        "xp": 19000
+      },
+      {
+        "category": 3836,
+        "category2": 3,
+        "id": 13430,
+        "itemrewards": [
+          [
+            31746,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 315000,
+        "name": "Trial of the Naaru: Magtheridon",
+        "popularity": 9,
+        "reprewards": [
+          [
+            935,
+            500
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "type": 62,
+        "wflags": 128,
+        "xp": 6175
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31746"
+}

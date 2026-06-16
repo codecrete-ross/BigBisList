@@ -1,0 +1,130 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 128 goes in the \"Trinket\" slot. It is sold by Master Sergeant Biggins. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:35+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 37864,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 37864,
+    "item_level": 128,
+    "name": "Medallion of the Alliance",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 40000,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12781,
+      "entity_name": "Master Sergeant Biggins",
+      "source_url": "https://www.wowhead.com/tbc/item=37864",
+      "type": "pvp",
+      "vendor_id": 12781
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "PvP: Master Sergeant Biggins (40000 Honor Points)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 40000,
+            "currency_id": 1901,
+            "name": "Honor Points"
+          }
+        ],
+        "entity_id": 12781,
+        "entity_name": "Master Sergeant Biggins",
+        "source_url": "https://www.wowhead.com/tbc/item=37864",
+        "type": "pvp",
+        "vendor_id": 12781
+      }
+    ],
+    "stats": {
+      "resilience_rating": 45.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=37864"
+  },
+  "name": "Medallion of the Alliance",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 40000,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        }
+      ],
+      "entity_id": 12781,
+      "entity_name": "Master Sergeant Biggins",
+      "source_url": "https://www.wowhead.com/tbc/item=37864",
+      "type": "pvp",
+      "vendor_id": 12781
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                40000
+              ]
+            ],
+            []
+          ]
+        ],
+        "id": 12781,
+        "location": [
+          1519
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Master Sergeant Biggins",
+        "popularity": 7,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Officer Accessories Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=37864"
+}

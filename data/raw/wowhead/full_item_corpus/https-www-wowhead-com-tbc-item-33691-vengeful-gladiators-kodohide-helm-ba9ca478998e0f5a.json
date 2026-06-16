@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Kodohide Helm Phase 3 Item Level 146 Binds when picked up Head Leather 415 Armor +58 Stamina +39 Intellect Meta Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 70 / 70 Classes: Druid Requires Level 70 Equip: Improves your resilience rating by 29. Equip: Increases healing done by up to 90 and damage done by up to 30 for all magical spells and effects. Equip: Restores 8 mana per 5 sec. Gladiator's Refuge (0/5) Gladiator's Kodohide Gloves Gladiator's Kodohide Helm Gladiator's Kodohide Legguards Gladiator's Kodohide Spaulders Gladiator's Kodohide Tunic (2) Set : +35 Resilience Rating. (4) Set : The casting time on your Regrowth spell is reduced by 0.20 sec. (Proc chance: 15%, 15s cooldown)",
+  "fetched_at": "2026-06-15T20:27:31+00:00",
+  "inventory_slot": null,
+  "item_id": 33691,
+  "item_stats": {
+    "armor": 415,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 33691,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Kodohide Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 90.0,
+      "intellect": 39.0,
+      "mp5": 8.0,
+      "resilience_rating": 29.0,
+      "stamina": 58.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33691/vengeful-gladiators-kodohide-helm"
+  },
+  "name": "Vengeful Gladiator's Kodohide Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33691/vengeful-gladiators-kodohide-helm"
+}

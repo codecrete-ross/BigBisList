@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Felweave Raiment Phase 3 Item Level 146 Binds when picked up Chest Cloth 454 Armor +61 Stamina +15 Intellect Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 100 / 100 Classes: Warlock Requires Level 70 Equip: Improves spell critical strike rating by 33. Equip: Improves your resilience rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 39. Gladiator's Felshroud (0/5) Gladiator's Felweave Amice Gladiator's Felweave Cowl Gladiator's Felweave Handguards Gladiator's Felweave Raiment Gladiator's Felweave Trousers (2) Set : +35 Resilience Rating. (4) Set : Reduces the casting time of your Fear spell by 0.2 sec.",
+  "fetched_at": "2026-06-15T20:27:31+00:00",
+  "inventory_slot": null,
+  "item_id": 33685,
+  "item_stats": {
+    "armor": 454,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 33685,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Felweave Raiment",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "resilience_rating": 26.0,
+      "spell_crit_rating": 33.0,
+      "spell_power": 39.0,
+      "stamina": 61.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33685/vengeful-gladiators-felweave-raiment"
+  },
+  "name": "Vengeful Gladiator's Felweave Raiment",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33685/vengeful-gladiators-felweave-raiment"
+}

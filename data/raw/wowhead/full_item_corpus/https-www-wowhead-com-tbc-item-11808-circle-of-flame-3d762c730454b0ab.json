@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Circle of Flame Phase 1 Item Level 59 Binds when picked up Head Cloth 85 Armor +20 Stamina Durability 60 / 60 Requires Level 54 Use: Channels 75 health into mana every 1 sec for 10 sec. (5 Min Cooldown) Equip: Increases damage and healing done by magical spells and effects by up to 18. Sell Price: 1 92 92 Dropped by: Ambassador Flamelash Drop Chance: 0.38%",
+  "fetched_at": "2026-06-15T20:17:26+00:00",
+  "inventory_slot": null,
+  "item_id": 11808,
+  "item_stats": {
+    "armor": 85,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 11808,
+    "item_level": 59,
+    "name": "Circle of Flame",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 54,
+    "source_summary": "",
+    "stats": {
+      "spell_power": 18.0,
+      "stamina": 20.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=11808/circle-of-flame"
+  },
+  "name": "Circle of Flame",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=11808/circle-of-flame"
+}

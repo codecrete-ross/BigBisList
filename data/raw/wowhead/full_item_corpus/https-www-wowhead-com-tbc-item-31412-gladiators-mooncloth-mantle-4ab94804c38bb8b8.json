@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Mooncloth Mantle Phase 1 Item Level 123 Binds when picked up Shoulder Cloth 155 Armor +40 Stamina +22 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 60 / 60 Classes: Priest Requires Level 70 Equip: Improves your resilience rating by 24. Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects. Gladiator's Investiture (0/5) Gladiator's Mooncloth Gloves Gladiator's Mooncloth Hood Gladiator's Mooncloth Leggings Gladiator's Mooncloth Mantle Gladiator's Mooncloth Robe (2) Set : +35 Resilience Rating. (4) Set : Reduces the duration of the Weakened Soul effect caused by your Power Word: Shield by 2 sec.",
+  "fetched_at": "2026-06-15T20:26:47+00:00",
+  "inventory_slot": null,
+  "item_id": 31412,
+  "item_stats": {
+    "armor": 155,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 31412,
+    "item_level": 123,
+    "name": "Gladiator's Mooncloth Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 42.0,
+      "intellect": 22.0,
+      "resilience_rating": 24.0,
+      "stamina": 40.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31412/gladiators-mooncloth-mantle"
+  },
+  "name": "Gladiator's Mooncloth Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31412/gladiators-mooncloth-mantle"
+}

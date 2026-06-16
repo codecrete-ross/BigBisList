@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Heartseeking Crossbow Phase 1 Item Level 56 Binds when equipped Ranged Crossbow 91 - 137 Damage Speed 3.10 (36.77 damage per second) +9 Agility +4 Stamina Durability 75 / 75 Requires Level 51 Equip: Chance to strike your ranged target with a Shadow Bolt for 13 to 19 Shadow damage. Sell Price: 2 94 44",
+  "fetched_at": "2026-06-15T20:17:44+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 13040,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 36.77,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 13040,
+    "item_level": 56,
+    "name": "Heartseeking Crossbow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 51,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 9.0,
+      "stamina": 4.0
+    },
+    "weapon_max_damage": 137,
+    "weapon_min_damage": 91,
+    "weapon_speed": 3.1,
+    "weapon_subtype": "Crossbow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=13040/heartseeking-crossbow"
+  },
+  "name": "Heartseeking Crossbow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13040/heartseeking-crossbow"
+}

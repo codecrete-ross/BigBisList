@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hope Bearer Helm Phase 1 Item Level 100 Binds when picked up Head Plate 827 Armor +30 Strength +23 Agility +19 Stamina Red Socket Yellow Socket Blue Socket Socket Bonus: 2 mana per 5 sec. Durability 80 / 80 Requires Level 65 Equip: Improves hit rating by 13. Sell Price: 3 95 9",
+  "fetched_at": "2026-06-15T20:24:49+00:00",
+  "inventory_slot": null,
+  "item_id": 27408,
+  "item_stats": {
+    "armor": 827,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 27408,
+    "item_level": 100,
+    "name": "Hope Bearer Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 65,
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 23.0,
+      "hit_rating": 13.0,
+      "stamina": 19.0,
+      "strength": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27408/hope-bearer-helm"
+  },
+  "name": "Hope Bearer Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27408/hope-bearer-helm"
+}

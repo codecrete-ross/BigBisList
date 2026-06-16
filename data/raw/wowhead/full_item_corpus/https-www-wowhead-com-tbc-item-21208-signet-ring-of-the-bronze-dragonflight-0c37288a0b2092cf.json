@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Signet Ring of the Bronze Dragonflight Phase 1 Item Level 70 Binds when picked up Unique Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +8 Stamina +8 Intellect Requires Level 60 Requires Brood of Nozdormu - Honored Equip: Increases damage and healing done by magical spells and effects by up to 25. Equip: Restores 4 mana per 5 sec. \"The Path of the Invoker\"",
+  "fetched_at": "2026-06-15T20:22:31+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 21208,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 21208,
+    "item_level": 70,
+    "name": "Signet Ring of the Bronze Dragonflight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0,
+      "mp5": 4.0,
+      "spell_power": 25.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21208/signet-ring-of-the-bronze-dragonflight"
+  },
+  "name": "Signet Ring of the Bronze Dragonflight",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Signet Ring of the Bronze Dragonflight Phase 1 Item Level 70 Binds when picked up Unique Unique-Equipped: Signet Ring of the Bronze Dragonflight (1) Finger +8 Stamina +8 Intellect Requires Level 60 Requires Brood of Nozdormu - Honored Equip: Increases damage and healing done by magical spells and effects by up to 25. Equip: Restores 4 mana per 5 sec. \"The Path of the Invoker\"",
+      "reputation": "Brood of Nozdormu",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21208/signet-ring-of-the-bronze-dragonflight",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21208/signet-ring-of-the-bronze-dragonflight"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warmaul of Infused Light Phase 1 Item Level 115 Binds when picked up Two-Hand Mace 245 - 408 Damage Speed 3.50 (93.29 damage per second) +20 Strength +30 Stamina +28 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 100 / 100 Requires Level 70 Equip: Improves critical strike rating by 21. Sell Price: 11 1 90",
+  "fetched_at": "2026-06-15T20:25:13+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 28393,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 93.29,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 28393,
+    "item_level": 115,
+    "name": "Warmaul of Infused Light",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 21.0,
+      "intellect": 28.0,
+      "stamina": 30.0,
+      "strength": 20.0
+    },
+    "weapon_max_damage": 408,
+    "weapon_min_damage": 245,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28393/warmaul-of-infused-light"
+  },
+  "name": "Warmaul of Infused Light",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28393/warmaul-of-infused-light"
+}

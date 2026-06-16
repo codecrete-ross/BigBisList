@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hatebringer Phase 1 Item Level 94 Binds when picked up Two-Hand Mace 212 - 318 Damage Speed 3.60 (73.61 damage per second) +25 Strength +21 Stamina Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Strength Durability 100 / 100 Requires Level 63 Equip: Improves critical strike rating by 22. Sell Price: 9 4 74",
+  "fetched_at": "2026-06-15T20:23:31+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 24461,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 73.61,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 24461,
+    "item_level": 94,
+    "name": "Hatebringer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 63,
+    "slot": "Two Hand",
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 22.0,
+      "stamina": 21.0,
+      "strength": 29.0
+    },
+    "weapon_max_damage": 318,
+    "weapon_min_damage": 212,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24461/hatebringer"
+  },
+  "name": "Hatebringer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24461/hatebringer"
+}

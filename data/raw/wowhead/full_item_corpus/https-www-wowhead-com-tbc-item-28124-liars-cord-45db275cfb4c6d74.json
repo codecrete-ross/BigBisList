@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Liar's Cord Phase 1 Item Level 115 Binds when picked up Waist Leather 164 Armor +24 Stamina Red Socket Yellow Socket Socket Bonus: +3 Dodge Rating Durability 35 / 35 Requires Level 70 Equip: Improves critical strike rating by 18. Equip: Increases attack power by 34. Sell Price: 2 12 17",
+  "fetched_at": "2026-06-15T20:25:05+00:00",
+  "inventory_slot": null,
+  "item_id": 28124,
+  "item_stats": {
+    "armor": 164,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 28124,
+    "item_level": 115,
+    "name": "Liar's Cord",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "dodge_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 34.0,
+      "crit_rating": 18.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28124/liars-cord"
+  },
+  "name": "Liar's Cord",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28124/liars-cord"
+}

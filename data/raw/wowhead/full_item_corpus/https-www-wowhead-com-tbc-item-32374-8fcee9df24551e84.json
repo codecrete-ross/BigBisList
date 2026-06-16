@@ -1,0 +1,149 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic staff has an item level of 151. It is looted from Illidan Stormrage. In the Staves category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 32374,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 73.28,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves spell haste rating by",
+      "Equip:"
+    ],
+    "id": 32374,
+    "item_level": 151,
+    "name": "Zhar'doom, Greatstaff of the Devourer",
+    "parse_confidence": "tooltip",
+    "phase": "T6",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 412,
+      "drop_percent": 13.29,
+      "entity_id": 22917,
+      "entity_name": "Illidan Stormrage",
+      "out_of": 3101,
+      "source_url": "https://www.wowhead.com/tbc/item=32374",
+      "type": "drop",
+      "zone": "Black Temple"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "Drop: Illidan Stormrage (Black Temple) 13.3%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 412,
+        "drop_percent": 13.29,
+        "entity_id": 22917,
+        "entity_name": "Illidan Stormrage",
+        "out_of": 3101,
+        "source_url": "https://www.wowhead.com/tbc/item=32374",
+        "type": "drop",
+        "zone": "Black Temple"
+      }
+    ],
+    "stats": {
+      "intellect": 47.0,
+      "spell_crit_rating": 36.0,
+      "spell_power": 259.0,
+      "stamina": 70.0
+    },
+    "weapon_max_damage": 323,
+    "weapon_min_damage": 146,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32374"
+  },
+  "name": "Zhar'doom, Greatstaff of the Devourer",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 412,
+      "drop_percent": 13.29,
+      "entity_id": 22917,
+      "entity_name": "Illidan Stormrage",
+      "out_of": 3101,
+      "source_url": "https://www.wowhead.com/tbc/item=32374",
+      "type": "drop",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 412,
+        "id": 22917,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 412,
+                "outof": 3101
+              }
+            },
+            "4": {
+              "0": {
+                "count": 460,
+                "outof": 2981
+              }
+            },
+            "5": {
+              "0": {
+                "count": 553,
+                "outof": 3691
+              }
+            }
+          }
+        },
+        "location": [
+          3959
+        ],
+        "modes": {
+          "0": {
+            "count": 412,
+            "outof": 3101
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Illidan Stormrage",
+        "outof": 3101,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Betrayer",
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32374"
+}

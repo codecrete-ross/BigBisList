@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lavastone Hammer Phase 1 Item Level 58 Binds when picked up Two-Hand Mace 135 - 203 Damage Speed 3.40 (49.71 damage per second) +17 Strength +14 Stamina Durability 100 / 100 Requires Level 53 Equip: Improves critical strike rating by 17. Sell Price: 5 70 79",
+  "fetched_at": "2026-06-15T20:22:51+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 22208,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 49.71,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 22208,
+    "item_level": 58,
+    "name": "Lavastone Hammer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 53,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 17.0,
+      "stamina": 14.0,
+      "strength": 17.0
+    },
+    "weapon_max_damage": 203,
+    "weapon_min_damage": 135,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22208/lavastone-hammer"
+  },
+  "name": "Lavastone Hammer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22208/lavastone-hammer"
+}

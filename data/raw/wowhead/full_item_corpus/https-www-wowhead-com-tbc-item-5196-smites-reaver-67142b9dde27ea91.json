@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Smite's Reaver Phase 1 Item Level 22 Binds when picked up One-Hand Axe 19 - 36 Damage Speed 1.90 (14.47 damage per second) +2 Strength +3 Stamina Durability 70 / 70 Requires Level 17 Equip: Improves hit rating by 2. Sell Price: 21 96",
+  "fetched_at": "2026-06-15T20:28:36+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 5196,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 14.47,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 5196,
+    "item_level": 22,
+    "name": "Smite's Reaver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 17,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 2.0,
+      "stamina": 3.0,
+      "strength": 2.0
+    },
+    "weapon_max_damage": 36,
+    "weapon_min_damage": 19,
+    "weapon_speed": 1.9,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=5196/smites-reaver"
+  },
+  "name": "Smite's Reaver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=5196/smites-reaver"
+}

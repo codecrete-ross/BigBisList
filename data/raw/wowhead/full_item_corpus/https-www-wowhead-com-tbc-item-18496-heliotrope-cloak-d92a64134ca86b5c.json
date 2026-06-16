@@ -1,0 +1,39 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Heliotrope Cloak Phase 1 Item Level 60 Binds when picked up Back 43 Armor +10 Intellect Requires Level 55 Equip: Increases your spell critical strike rating by 14. Sell Price: 1 45 42",
+  "fetched_at": "2026-06-15T20:19:49+00:00",
+  "inventory_slot": null,
+  "item_id": 18496,
+  "item_stats": {
+    "armor": 43,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 18496,
+    "item_level": 60,
+    "name": "Heliotrope Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_crit_rating": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18496/heliotrope-cloak"
+  },
+  "name": "Heliotrope Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18496/heliotrope-cloak"
+}

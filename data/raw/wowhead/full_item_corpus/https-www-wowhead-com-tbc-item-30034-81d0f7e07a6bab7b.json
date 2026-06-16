@@ -1,0 +1,234 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This epic plate armor of item level 128 goes in the \"Waist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Waist",
+  "item_id": 30034,
+  "item_stats": {
+    "armor": 904,
+    "armor_type": "Shield",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Increases defense rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 30034,
+    "item_level": 128,
+    "name": "Belt of the Guardian",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 36389,
+      "entity_name": "Belt of the Guardian",
+      "profession": "Blacksmithing",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 30321,
+          "entity_name": "Plans: Belt of the Guardian",
+          "item_id": 30321,
+          "source_url": "https://www.wowhead.com/tbc/item=30034",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30034",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30034",
+      "spell_id": 36389,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Waist",
+    "socket_bonus": {
+      "stamina": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "Crafted: Belt of the Guardian",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 36389,
+        "entity_name": "Belt of the Guardian",
+        "profession": "Blacksmithing",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 30321,
+            "entity_name": "Plans: Belt of the Guardian",
+            "item_id": 30321,
+            "source_url": "https://www.wowhead.com/tbc/item=30034",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Blacksmithing",
+            "raw_text": "Blacksmithing",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=30034",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=30034",
+        "spell_id": 36389,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "defense_rating": 19.0,
+      "intellect": 13.0,
+      "spell_power": 21.0,
+      "stamina": 48.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30034"
+  },
+  "name": "Belt of the Guardian",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36389,
+      "entity_name": "Belt of the Guardian",
+      "profession": "Blacksmithing",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 30321,
+          "entity_name": "Plans: Belt of the Guardian",
+          "item_id": 30321,
+          "source_url": "https://www.wowhead.com/tbc/item=30034",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30034",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30034",
+      "spell_id": 36389,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          30034,
+          1,
+          1
+        ],
+        "id": 36389,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Belt of the Guardian",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            30183,
+            2
+          ],
+          [
+            23573,
+            5
+          ],
+          [
+            21885,
+            10
+          ],
+          [
+            22452,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 30321,
+        "level": 75,
+        "name": "Plans: Belt of the Guardian",
+        "popularity": 4,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 30321,
+      "level": 75,
+      "name": "Plans: Belt of the Guardian",
+      "popularity": 4,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30034"
+}

@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Marshal's Mail Boots Phase 1 Item Level 71 Binds when picked up Unique Feet Mail 355 Armor +18 Stamina +17 Intellect Durability 70 / 70 Classes: Shaman Requires Level 60 Equip: Increases the speed of your Ghost Wolf ability by 15%. Does not function for players higher than level 60. Equip: Increases damage and healing done by magical spells and effects by up to 20. Equip: Restores 5 mana per 5 sec. Field Marshal's Earthshaker (0/6) Marshal's Mail Leggings Marshal's Mail Boots Field Marshal's Mail Spaulders Field Marshal's Mail Armor Marshal's Mail Gauntlets Field Marshal's Mail Helm (2) Set : +20 Stamina. (3) Set : Improves your chance to get a critical strike with all Shock spells by 2%. (6) Set : Increases attack power by 40.",
+  "fetched_at": "2026-06-15T20:25:44+00:00",
+  "inventory_slot": null,
+  "item_id": 29606,
+  "item_stats": {
+    "armor": 355,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29606,
+    "item_level": 71,
+    "name": "Marshal's Mail Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "attack_power": 40.0,
+      "intellect": 17.0,
+      "mp5": 5.0,
+      "spell_power": 20.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29606/marshals-mail-boots"
+  },
+  "name": "Marshal's Mail Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29606/marshals-mail-boots"
+}

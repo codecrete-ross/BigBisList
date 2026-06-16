@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Don Rodrigo's Band Phase 1 Item Level 65 Binds when picked up Unique Finger +7 Stamina Requires Level 60 Equip: Increases your spell critical strike rating by 14. Equip: Increases your spell penetration by 20.",
+  "fetched_at": "2026-06-15T20:22:39+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 21563,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 21563,
+    "item_level": 65,
+    "name": "Don Rodrigo's Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 14.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21563/don-rodrigos-band"
+  },
+  "name": "Don Rodrigo's Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21563/don-rodrigos-band"
+}

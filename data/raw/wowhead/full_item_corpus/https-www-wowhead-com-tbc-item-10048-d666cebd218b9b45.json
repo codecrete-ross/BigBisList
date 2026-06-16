@@ -1,0 +1,221 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 24 goes in the \"Legs\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:37+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 10048,
+  "item_stats": {
+    "armor": 33,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10048,
+    "item_level": 24,
+    "name": "Colorful Kilt",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12047,
+      "entity_name": "Colorful Kilt",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 10316,
+          "entity_name": "Pattern: Colorful Kilt",
+          "item_id": 10316,
+          "source_url": "https://www.wowhead.com/tbc/item=10048",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10048",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10048",
+      "spell_id": 12047,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 14,
+    "slot": "Legs",
+    "source_summary": "Crafted: Colorful Kilt",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12047,
+        "entity_name": "Colorful Kilt",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 10316,
+            "entity_name": "Pattern: Colorful Kilt",
+            "item_id": 10316,
+            "source_url": "https://www.wowhead.com/tbc/item=10048",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10048",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10048",
+        "spell_id": 12047,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "spell_power": 6.0,
+      "spirit": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10048"
+  },
+  "name": "Colorful Kilt",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12047,
+      "entity_name": "Colorful Kilt",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 10316,
+          "entity_name": "Pattern: Colorful Kilt",
+          "item_id": 10316,
+          "source_url": "https://www.wowhead.com/tbc/item=10048",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10048",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10048",
+      "spell_id": 12047,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          120,
+          145,
+          162,
+          180
+        ],
+        "creates": [
+          10048,
+          1,
+          1
+        ],
+        "id": 12047,
+        "learnedat": 120,
+        "level": 0,
+        "name": "Colorful Kilt",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 2,
+        "reagents": [
+          [
+            2997,
+            5
+          ],
+          [
+            2604,
+            3
+          ],
+          [
+            2321,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 10316,
+        "level": 24,
+        "name": "Pattern: Colorful Kilt",
+        "popularity": 7,
+        "quality": 2,
+        "skill": 120,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 10316,
+      "level": 24,
+      "name": "Pattern: Colorful Kilt",
+      "popularity": 7,
+      "quality": 2,
+      "skill": 120,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10048"
+}

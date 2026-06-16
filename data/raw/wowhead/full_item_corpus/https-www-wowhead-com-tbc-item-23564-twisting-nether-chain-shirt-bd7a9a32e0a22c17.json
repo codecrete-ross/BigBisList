@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Twisting Nether Chain Shirt Phase 1 Item Level 127 Binds when picked up Chest Mail 893 Armor +48 Stamina +22 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Agility Durability 140 / 140 Requires Level 70 Requires Armorsmith Equip: Improves critical strike rating by 33. Equip: Increases attack power by 68. Equip: Restores 9 mana per 5 sec. Use: You are protected from all physical attacks for 6 sec, but cannot attack or use physical abilities. (30 Min Cooldown) Sell Price: 8 28",
+  "fetched_at": "2026-06-15T20:23:20+00:00",
+  "inventory_slot": null,
+  "item_id": 23564,
+  "item_stats": {
+    "armor": 893,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 23564,
+    "item_level": 127,
+    "name": "Twisting Nether Chain Shirt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 4.0,
+      "attack_power": 68.0,
+      "crit_rating": 33.0,
+      "intellect": 22.0,
+      "mp5": 9.0,
+      "stamina": 48.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23564/twisting-nether-chain-shirt"
+  },
+  "name": "Twisting Nether Chain Shirt",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Twisting Nether Chain Shirt Phase 1 Item Level 127 Binds when picked up Chest Mail 893 Armor +48 Stamina +22 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Agility Durability 140 / 140 Requires Level 70 Requires Armorsmith Equip: Improves critical strike rating by 33. Equip: Increases attack power by 68. Equip: Restores 9 mana per 5 sec. Use: You are protected from all physical attacks for 6 sec, but cannot attack or use physical abilities. (30 Min Cooldown) Sell Price: 8 28",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=23564/twisting-nether-chain-shirt",
+      "specialization": "Armorsmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23564/twisting-nether-chain-shirt"
+}

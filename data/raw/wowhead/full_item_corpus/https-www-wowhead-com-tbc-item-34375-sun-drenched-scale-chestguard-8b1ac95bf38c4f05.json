@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sun-Drenched Scale Chestguard Phase 5 Item Level 159 Binds when picked up Chest Mail 1110 Armor +48 Stamina +41 Intellect Red Socket Red Socket Red Socket Socket Bonus: 2 mana per 5 sec. Durability 140 / 140 Requires Level 70 Requires Leatherworking (350) Equip: Improves spell haste rating by 40. Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects. Equip: Restores 10 mana per 5 sec. Sell Price: 9 51 6",
+  "fetched_at": "2026-06-15T20:27:44+00:00",
+  "inventory_slot": null,
+  "item_id": 34375,
+  "item_stats": {
+    "armor": 1110,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell haste rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 34375,
+    "item_level": 159,
+    "name": "Sun-Drenched Scale Chestguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 134.0,
+      "intellect": 41.0,
+      "mp5": 10.0,
+      "stamina": 48.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34375/sun-drenched-scale-chestguard"
+  },
+  "name": "Sun-Drenched Scale Chestguard",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Sun-Drenched Scale Chestguard Phase 5 Item Level 159 Binds when picked up Chest Mail 1110 Armor +48 Stamina +41 Intellect Red Socket Red Socket Red Socket Socket Bonus: 2 mana per 5 sec. Durability 140 / 140 Requires Level 70 Requires Leatherworking (350) Equip: Improves spell haste rating by 40. Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects. Equip: Restores 10 mana per 5 sec. Sell Price: 9 51 6",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34375/sun-drenched-scale-chestguard",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34375/sun-drenched-scale-chestguard"
+}

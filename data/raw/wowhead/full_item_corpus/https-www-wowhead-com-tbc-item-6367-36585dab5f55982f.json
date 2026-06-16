@@ -1,0 +1,113 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This white fishing pole has an item level of 30. It is looted from Shellfish Trap. In the Fishing Poles category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-06-15T18:31:35+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 6367,
+  "item_stats": {
+    "binding": "unknown",
+    "dps": 19.0,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 6367,
+    "item_level": 30,
+    "name": "Big Iron Fishing Pole",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.39,
+      "entity_id": 176582,
+      "entity_name": "Shellfish Trap",
+      "out_of": 1015,
+      "source_url": "https://www.wowhead.com/tbc/item=6367",
+      "type": "drop"
+    },
+    "quality": "common",
+    "required_level": 25,
+    "slot": "Two Hand",
+    "source_summary": "Drop: Shellfish Trap 0.4%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 0.39,
+        "entity_id": 176582,
+        "entity_name": "Shellfish Trap",
+        "out_of": 1015,
+        "source_url": "https://www.wowhead.com/tbc/item=6367",
+        "type": "drop"
+      }
+    ],
+    "weapon_max_damage": 69,
+    "weapon_min_damage": 45,
+    "weapon_speed": 3.0,
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=6367"
+  },
+  "name": "Big Iron Fishing Pole",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.39,
+      "entity_id": 176582,
+      "entity_name": "Shellfish Trap",
+      "out_of": 1015,
+      "source_url": "https://www.wowhead.com/tbc/item=6367",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "common",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [
+      {
+        "count": 4,
+        "id": 176582,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1288,
+                "outof": 105613
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 1015
+              }
+            }
+          }
+        },
+        "location": [
+          405
+        ],
+        "name": "Shellfish Trap",
+        "outof": 1015,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6367"
+}

@@ -1,0 +1,221 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This epic plate armor of item level 105 goes in the \"Wrist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Wrist",
+  "item_id": 23538,
+  "item_stats": {
+    "armor": 581,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Increases defense rating by",
+      "Equip: Increases your dodge rating by"
+    ],
+    "id": 23538,
+    "item_level": 105,
+    "name": "Bracers of the Green Fortress",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 29671,
+      "entity_name": "Bracers of the Green Fortress",
+      "profession": "Blacksmithing",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 23627,
+          "entity_name": "Plans: Bracers of the Green Fortress",
+          "item_id": 23627,
+          "source_url": "https://www.wowhead.com/tbc/item=23538",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23538",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23538",
+      "spell_id": 29671,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Wrist",
+    "source_summary": "Crafted: Bracers of the Green Fortress",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 29671,
+        "entity_name": "Bracers of the Green Fortress",
+        "profession": "Blacksmithing",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 23627,
+            "entity_name": "Plans: Bracers of the Green Fortress",
+            "item_id": 23627,
+            "source_url": "https://www.wowhead.com/tbc/item=23538",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Blacksmithing",
+            "raw_text": "Blacksmithing",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=23538",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=23538",
+        "spell_id": 29671,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "defense_rating": 17.0,
+      "dodge_rating": 10.0,
+      "stamina": 39.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23538"
+  },
+  "name": "Bracers of the Green Fortress",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 29671,
+      "entity_name": "Bracers of the Green Fortress",
+      "profession": "Blacksmithing",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 23627,
+          "entity_name": "Plans: Bracers of the Green Fortress",
+          "item_id": 23627,
+          "source_url": "https://www.wowhead.com/tbc/item=23538",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=23538",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=23538",
+      "spell_id": 29671,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          385,
+          395
+        ],
+        "creates": [
+          23538,
+          1,
+          1
+        ],
+        "id": 29671,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Bracers of the Green Fortress",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            23573,
+            6
+          ],
+          [
+            21886,
+            20
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 23627,
+        "level": 73,
+        "name": "Plans: Bracers of the Green Fortress",
+        "popularity": 3,
+        "quality": 4,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 23627,
+      "level": 73,
+      "name": "Plans: Bracers of the Green Fortress",
+      "popularity": 3,
+      "quality": 4,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 4
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23538"
+}

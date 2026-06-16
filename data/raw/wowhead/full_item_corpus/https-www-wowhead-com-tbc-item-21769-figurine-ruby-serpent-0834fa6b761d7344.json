@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Figurine - Ruby Serpent Item Level 52 Binds when picked up Unique Trinket +4 Stamina +4 Intellect Requires Level 47 Requires Jewelcrafting (260) Use: Increases damage and healing done by magical spells and effects by up to 100 for 20 sec. (5 Min Cooldown) Sell Price: 15",
+  "fetched_at": "2026-06-15T20:22:44+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 21769,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 21769,
+    "item_level": 52,
+    "name": "Figurine - Ruby Serpent",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 47,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "intellect": 4.0,
+      "spell_power": 100.0,
+      "stamina": 4.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent"
+  },
+  "name": "Figurine - Ruby Serpent",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Ruby Serpent Item Level 52 Binds when picked up Unique Trinket +4 Stamina +4 Intellect Requires Level 47 Requires Jewelcrafting (260) Use: Increases damage and healing done by magical spells and effects by up to 100 for 20 sec. (5 Min Cooldown) Sell Price: 15",
+      "scope": "equip_or_use",
+      "skill": 260,
+      "source_url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21769/figurine-ruby-serpent"
+}

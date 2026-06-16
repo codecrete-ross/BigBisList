@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Helm of the Lifegiver Phase 1 Item Level 62 Binds when picked up Head Mail 370 Armor +14 Stamina +30 Intellect +9 Spirit Durability 85 / 85 Requires Level 57 Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects. Sell Price: 3 1 39",
+  "fetched_at": "2026-06-15T20:20:00+00:00",
+  "inventory_slot": null,
+  "item_id": 18870,
+  "item_stats": {
+    "armor": 370,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 18870,
+    "item_level": 62,
+    "name": "Helm of the Lifegiver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 57,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 42.0,
+      "intellect": 30.0,
+      "spirit": 9.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18870/helm-of-the-lifegiver"
+  },
+  "name": "Helm of the Lifegiver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18870/helm-of-the-lifegiver"
+}

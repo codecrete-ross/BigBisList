@@ -1,0 +1,233 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 49 goes in the \"Head\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:05+00:00",
+  "inventory_slot": "Head",
+  "item_id": 10025,
+  "item_stats": {
+    "armor": 52,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10025,
+    "item_level": 49,
+    "name": "Shadoweave Mask",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12086,
+      "entity_name": "Shadoweave Mask",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10463,
+          "entity_name": "Pattern: Shadoweave Mask",
+          "item_id": 10463,
+          "source_url": "https://www.wowhead.com/tbc/item=10025",
+          "type": "quest"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10025",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10025",
+      "spell_id": 12086,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 44,
+    "slot": "Head",
+    "source_summary": "Crafted: Shadoweave Mask",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12086,
+        "entity_name": "Shadoweave Mask",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 10463,
+            "entity_name": "Pattern: Shadoweave Mask",
+            "item_id": 10463,
+            "source_url": "https://www.wowhead.com/tbc/item=10025",
+            "type": "quest"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10025",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10025",
+        "spell_id": 12086,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10025"
+  },
+  "name": "Shadoweave Mask",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12086,
+      "entity_name": "Shadoweave Mask",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10463,
+          "entity_name": "Pattern: Shadoweave Mask",
+          "item_id": 10463,
+          "source_url": "https://www.wowhead.com/tbc/item=10025",
+          "type": "quest"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10025",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10025",
+      "spell_id": 12086,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          245,
+          260,
+          275,
+          290
+        ],
+        "creates": [
+          10025,
+          1,
+          1
+        ],
+        "id": 12086,
+        "learnedat": 245,
+        "level": 0,
+        "name": "Shadoweave Mask",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            2
+          ],
+          [
+            10285,
+            8
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          4
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 10463,
+        "level": 49,
+        "name": "Pattern: Shadoweave Mask",
+        "popularity": 16,
+        "quality": 2,
+        "skill": 245,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": -264,
+            "c2": 5,
+            "n": "The Undermarket",
+            "t": 5,
+            "ti": 3402
+          }
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 10463,
+      "level": 49,
+      "name": "Pattern: Shadoweave Mask",
+      "popularity": 16,
+      "quality": 2,
+      "skill": 245,
+      "slot": 0,
+      "source": [
+        4
+      ],
+      "sourcemore": [
+        {
+          "c": -264,
+          "c2": 5,
+          "n": "The Undermarket",
+          "t": 5,
+          "ti": 3402
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10025"
+}

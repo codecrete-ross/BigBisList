@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dragonhide Helm Phase 1 Item Level 115 Binds when picked up Head Leather 267 Armor +22 Strength +22 Agility +21 Stamina +15 Intellect Meta Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 60 / 60 Classes: Druid Requires Level 70 Requires Lower City - Honored Equip: Improves your resilience rating by 21. Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects. Oathbound's Dragonhide Battlegear (0/5) Dragonhide Gloves Dragonhide Helm Dragonhide Legguards Dragonhide Robe Dragonhide Spaulders (2) Set : +35 Resilience Rating. (4) Set : Increases your movement speed by 15% while in Bear Form, Cat Form, or Travel Form. Only active outdoors. Sell Price: 3 36 93",
+  "fetched_at": "2026-06-15T20:28:04+00:00",
+  "inventory_slot": null,
+  "item_id": 35357,
+  "item_stats": {
+    "armor": 267,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 35357,
+    "item_level": 115,
+    "name": "Dragonhide Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 22.0,
+      "healing_power": 31.0,
+      "intellect": 15.0,
+      "resilience_rating": 21.0,
+      "stamina": 21.0,
+      "strength": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35357/dragonhide-helm"
+  },
+  "name": "Dragonhide Helm",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Dragonhide Helm Phase 1 Item Level 115 Binds when picked up Head Leather 267 Armor +22 Strength +22 Agility +21 Stamina +15 Intellect Meta Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 60 / 60 Classes: Druid Requires Level 70 Requires Lower City - Honored Equip: Improves your resilience rating by 21. Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects. Oathbound's Dragonhide Battlegear (0/5) Dragonhide Gloves Dragonhide Helm Dragonhide Legguards Dragonhide Robe Dragonhide Spaulders (2) Set : +35 Resilience Rating. (4) Set : Increases your movement speed by 15% while in Bear Form, Cat Form, or Travel Form. Only active outdoors. Sell Price: 3 36 93",
+      "reputation": "Lower City",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35357/dragonhide-helm",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35357/dragonhide-helm"
+}

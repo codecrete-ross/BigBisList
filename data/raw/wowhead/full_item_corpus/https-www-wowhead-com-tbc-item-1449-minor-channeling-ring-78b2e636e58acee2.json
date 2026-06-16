@@ -1,0 +1,38 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Minor Channeling Ring Item Level 24 Binds when picked up Finger +2 Intellect Equip: Improves spell critical strike rating by 4. Sell Price: 18 75",
+  "fetched_at": "2026-06-15T20:18:25+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 1449,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by"
+    ],
+    "id": 1449,
+    "item_level": 24,
+    "name": "Minor Channeling Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 2.0,
+      "spell_crit_rating": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=1449/minor-channeling-ring"
+  },
+  "name": "Minor Channeling Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=1449/minor-channeling-ring"
+}

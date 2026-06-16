@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Earthfury Helmet Phase 1 Item Level 66 Binds when picked up Head Mail 392 Armor +24 Stamina +23 Intellect +13 Spirit +10 Fire Resistance Durability 85 / 85 Classes: Shaman Requires Level 60 Equip: Restores 6 mana per 5 sec. Equip: Increases healing done by up to 22 and damage done by up to 8 for all magical spells and effects. The Earthfury (0/8) Earthfury Belt Earthfury Boots Earthfury Bracers Earthfury Vestments Earthfury Epaulets Earthfury Gauntlets Earthfury Helmet Earthfury Legguards (3) Set : The radius of your totems that affect friendly targets is increased to 30 yd. (5) Set : After casting your Healing Wave or Lesser Healing Wave spell, gives you a 25% chance to gain Mana equal to 35% of the base cost of the spell. (Proc chance: 25%, 1s cooldown) (8) Set : Your Healing Wave will now jump to additional nearby targets. Each jump reduces the effectiveness of the heal by 80%, and the spell will jump to up to two additional targets. Sell Price: 3 16 32",
+  "fetched_at": "2026-06-15T20:19:25+00:00",
+  "inventory_slot": null,
+  "item_id": 16842,
+  "item_stats": {
+    "armor": 392,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 16842,
+    "item_level": 66,
+    "name": "Earthfury Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 22.0,
+      "intellect": 23.0,
+      "mp5": 6.0,
+      "spirit": 13.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=16842/earthfury-helmet"
+  },
+  "name": "Earthfury Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=16842/earthfury-helmet"
+}

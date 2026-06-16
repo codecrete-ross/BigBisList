@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cerulean Crystal Rod Phase 2 Item Level 115 Binds when picked up Ranged Wand 135 - 252 Shadow Damage Speed 1.50 (129.00 damage per second) +15 Stamina +11 Intellect Durability 65 / 65 Requires Level 70 Requires Ogri'la - Revered Equip: Increases damage and healing done by magical spells and effects by up to 12. Sell Price: 1 95 50",
+  "fetched_at": "2026-06-15T20:27:15+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 32650,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 129.0,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 32650,
+    "item_level": 115,
+    "name": "Cerulean Crystal Rod",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "spell_power": 12.0,
+      "stamina": 15.0
+    },
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32650/cerulean-crystal-rod"
+  },
+  "name": "Cerulean Crystal Rod",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Cerulean Crystal Rod Phase 2 Item Level 115 Binds when picked up Ranged Wand 135 - 252 Shadow Damage Speed 1.50 (129.00 damage per second) +15 Stamina +11 Intellect Durability 65 / 65 Requires Level 70 Requires Ogri'la - Revered Equip: Increases damage and healing done by magical spells and effects by up to 12. Sell Price: 1 95 50",
+      "reputation": "Ogri'la",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32650/cerulean-crystal-rod",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32650/cerulean-crystal-rod"
+}

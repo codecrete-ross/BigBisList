@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Nightwalker Armor Phase 1 Item Level 30 Binds when equipped Chest Cloth 43 Armor +4 Stamina Durability 70 / 70 Requires Level 25 Equip: Increases damage and healing done by magical spells and effects by up to 11. Sell Price: 18 6",
+  "fetched_at": "2026-06-15T20:22:53+00:00",
+  "inventory_slot": null,
+  "item_id": 2234,
+  "item_stats": {
+    "armor": 43,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 2234,
+    "item_level": 30,
+    "name": "Nightwalker Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 25,
+    "source_summary": "",
+    "stats": {
+      "spell_power": 11.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=2234/nightwalker-armor"
+  },
+  "name": "Nightwalker Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=2234/nightwalker-armor"
+}

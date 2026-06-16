@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Marshal's Silk Belt Phase 1 Item Level 123 Binds when picked up Waist Cloth 117 Armor +33 Stamina +23 Intellect Durability 35 / 35 Classes: Priest , Mage , Warlock Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Improves your resilience rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+  "fetched_at": "2026-06-15T20:25:29+00:00",
+  "inventory_slot": null,
+  "item_id": 29001,
+  "item_stats": {
+    "armor": 117,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 29001,
+    "item_level": 123,
+    "name": "Marshal's Silk Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 23.0,
+      "resilience_rating": 24.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 28.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29001/marshals-silk-belt"
+  },
+  "name": "Marshal's Silk Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29001/marshals-silk-belt"
+}

@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Stonecloth Vest Phase 1 Item Level 39 Binds when equipped Chest Cloth 52 Armor +2 Stamina +15 Spirit Durability 70 / 70 Requires Level 34 Equip: Increases damage and healing done by magical spells and effects by up to 2. Sell Price: 42 66",
+  "fetched_at": "2026-06-15T20:18:23+00:00",
+  "inventory_slot": null,
+  "item_id": 14407,
+  "item_stats": {
+    "armor": 52,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 14407,
+    "item_level": 39,
+    "name": "Stonecloth Vest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 34,
+    "source_summary": "",
+    "stats": {
+      "spell_power": 2.0,
+      "spirit": 15.0,
+      "stamina": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=14407/stonecloth-vest"
+  },
+  "name": "Stonecloth Vest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=14407/stonecloth-vest"
+}

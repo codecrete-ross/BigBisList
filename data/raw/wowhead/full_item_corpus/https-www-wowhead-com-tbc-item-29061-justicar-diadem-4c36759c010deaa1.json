@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Justicar Diadem Phase 1 Item Level 120 Binds when picked up Head Plate 1227 Armor +32 Stamina +33 Intellect Red Socket Meta Socket Socket Bonus: 2 mana per 5 sec. Durability 100 / 100 Classes: Paladin Requires Level 70 Equip: Improves spell critical strike rating by 28. Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects. Justicar Raiment (0/5) Justicar Chestpiece Justicar Diadem Justicar Gloves Justicar Leggings Justicar Pauldrons (2) Set : Increases the amount healed by your Judgement of Light by 20. (4) Set : Reduces the cooldown on your Divine Favor ability by 15 sec.",
+  "fetched_at": "2026-06-15T20:25:31+00:00",
+  "inventory_slot": null,
+  "item_id": 29061,
+  "item_stats": {
+    "armor": 1227,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 29061,
+    "item_level": 120,
+    "name": "Justicar Diadem",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "meta"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 75.0,
+      "intellect": 33.0,
+      "spell_crit_rating": 28.0,
+      "stamina": 32.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29061/justicar-diadem"
+  },
+  "name": "Justicar Diadem",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29061/justicar-diadem"
+}

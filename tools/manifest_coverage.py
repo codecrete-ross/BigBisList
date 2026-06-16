@@ -7,7 +7,7 @@ from typing import Any
 from tools.project import PHASE_KEYS, canonical_json
 
 MATRIX_FAMILIES = ["bis_lists", "gems", "enchants", "consumables", "leveling"]
-GLOBAL_FAMILIES = ["classes", "phases"]
+GLOBAL_FAMILIES = ["classes", "phases", "item_corpus"]
 STATIC_DATA_FAMILIES = MATRIX_FAMILIES + GLOBAL_FAMILIES
 
 

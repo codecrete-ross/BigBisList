@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blessed Qiraji Acolyte Staff Phase 1 Item Level 79 Binds when picked up Unique Two-Hand Staff 132 - 227 Damage Speed 3.00 (59.83 damage per second) +32 Stamina +33 Intellect Durability 120 / 120 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 76. Equip: Increases your spell hit rating by 16. Equip: Increases your spell critical strike rating by 14. \"The weapon is infused and reinforced with Elementium.\" Sell Price: 10 96 80",
+  "fetched_at": "2026-06-15T20:22:32+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 21273,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 59.83,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 21273,
+    "item_level": 79,
+    "name": "Blessed Qiraji Acolyte Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 33.0,
+      "spell_crit_rating": 14.0,
+      "spell_hit_rating": 16.0,
+      "spell_power": 76.0,
+      "stamina": 32.0
+    },
+    "weapon_max_damage": 227,
+    "weapon_min_damage": 132,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21273/blessed-qiraji-acolyte-staff"
+  },
+  "name": "Blessed Qiraji Acolyte Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21273/blessed-qiraji-acolyte-staff"
+}

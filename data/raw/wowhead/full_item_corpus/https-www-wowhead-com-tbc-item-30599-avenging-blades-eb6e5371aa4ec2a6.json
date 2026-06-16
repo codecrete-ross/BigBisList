@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Avenging Blades Phase 1 Item Level 108 Binds when picked up Unique Thrown Thrown 51 - 95 Damage Speed 1.40 (52.14 damage per second) Durability 200 / 200 Requires Level 66 Equip: Improves critical strike rating by 10. Equip: Increases attack power by 22. Sell Price: 55 35",
+  "fetched_at": "2026-06-15T20:26:02+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 30599,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 52.14,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30599,
+    "item_level": 108,
+    "name": "Avenging Blades",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 66,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 22.0,
+      "crit_rating": 10.0
+    },
+    "weapon_max_damage": 95,
+    "weapon_min_damage": 51,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Thrown",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30599/avenging-blades"
+  },
+  "name": "Avenging Blades",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30599/avenging-blades"
+}

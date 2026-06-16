@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hammer of Ji'zhi Phase 1 Item Level 73 Binds when picked up Two-Hand Mace 198 - 297 Damage Speed 3.50 (70.71 damage per second) +16 Strength +26 Stamina +22 Intellect Durability 120 / 120 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 30. Sell Price: 10 17 7",
+  "fetched_at": "2026-06-15T20:22:43+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 21703,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 70.71,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 21703,
+    "item_level": 73,
+    "name": "Hammer of Ji'zhi",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 22.0,
+      "spell_power": 30.0,
+      "stamina": 26.0,
+      "strength": 16.0
+    },
+    "weapon_max_damage": 297,
+    "weapon_min_damage": 198,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21703/hammer-of-jizhi"
+  },
+  "name": "Hammer of Ji'zhi",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21703/hammer-of-jizhi"
+}

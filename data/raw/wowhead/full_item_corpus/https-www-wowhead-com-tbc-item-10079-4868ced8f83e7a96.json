@@ -1,0 +1,4980 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloak of item level 48 goes in the \"Back\" slot. It is looted from Jade. In the Cloaks category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-06-15T19:52:11+00:00",
+  "inventory_slot": "Back",
+  "item_id": 10079,
+  "item_stats": {
+    "armor": 31,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10079,
+    "item_level": 48,
+    "name": "Lord's Cape",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 9,
+      "drop_percent": 4.62,
+      "entity_id": 1063,
+      "entity_name": "Jade",
+      "out_of": 195,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    "quality": "uncommon",
+    "required_level": 43,
+    "slot": "Back",
+    "source_summary": "Drop: Jade 4.6% +81",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 9,
+        "drop_percent": 4.62,
+        "entity_id": 1063,
+        "entity_name": "Jade",
+        "out_of": 195,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 2505,
+        "entity_name": "Saltwater Snapjaw",
+        "out_of": 113859,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.02,
+        "entity_id": 2641,
+        "entity_name": "Vilebranch Headhunter",
+        "out_of": 9495,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 7,
+        "drop_percent": 0.03,
+        "entity_id": 2642,
+        "entity_name": "Vilebranch Shadowcaster",
+        "out_of": 27383,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 12,
+        "drop_percent": 0.04,
+        "entity_id": 2643,
+        "entity_name": "Vilebranch Berserker",
+        "out_of": 32387,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 13,
+        "drop_percent": 0.06,
+        "entity_id": 2644,
+        "entity_name": "Vilebranch Hideskinner",
+        "out_of": 20838,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 17,
+        "drop_percent": 0.06,
+        "entity_id": 2645,
+        "entity_name": "Vilebranch Shadow Hunter",
+        "out_of": 27127,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 0.01,
+        "entity_id": 2646,
+        "entity_name": "Vilebranch Blood Drinker",
+        "out_of": 28541,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 2655,
+        "entity_name": "Green Sludge",
+        "out_of": 53682,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 7,
+        "drop_percent": 0.01,
+        "entity_id": 2656,
+        "entity_name": "Jade Ooze",
+        "out_of": 50757,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 5,
+        "drop_percent": 0.04,
+        "entity_id": 2694,
+        "entity_name": "Highvale Ranger",
+        "out_of": 13983,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.34,
+        "entity_id": 2752,
+        "entity_name": "Rumbler",
+        "out_of": 595,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 0.55,
+        "entity_id": 2754,
+        "entity_name": "Anathemus",
+        "out_of": 731,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 5,
+        "drop_percent": 0.01,
+        "entity_id": 2926,
+        "entity_name": "Silvermane Stalker",
+        "out_of": 89452,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 2928,
+        "entity_name": "Primitive Owlbeast",
+        "out_of": 33230,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 0.01,
+        "entity_id": 2929,
+        "entity_name": "Savage Owlbeast",
+        "out_of": 39348,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 4466,
+        "entity_name": "Vilebranch Scalper",
+        "out_of": 68872,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 0.01,
+        "entity_id": 4467,
+        "entity_name": "Vilebranch Soothsayer",
+        "out_of": 55923,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 6,
+        "drop_percent": 0.08,
+        "entity_id": 4468,
+        "entity_name": "Jade Sludge",
+        "out_of": 7626,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.04,
+        "entity_id": 5224,
+        "entity_name": "Murk Slitherer",
+        "out_of": 4821,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 8,
+        "drop_percent": 0.04,
+        "entity_id": 5226,
+        "entity_name": "Murk Worm",
+        "out_of": 21802,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.03,
+        "entity_id": 5228,
+        "entity_name": "Saturated Ooze",
+        "out_of": 9648,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.04,
+        "entity_id": 5235,
+        "entity_name": "Fungal Ooze",
+        "out_of": 4641,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.04,
+        "entity_id": 5243,
+        "entity_name": "Cursed Atal'ai",
+        "out_of": 5339,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 12,
+        "drop_percent": 0.1,
+        "entity_id": 5256,
+        "entity_name": "Atal'ai Warrior",
+        "out_of": 12480,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 9,
+        "drop_percent": 0.02,
+        "entity_id": 5259,
+        "entity_name": "Atal'ai Witch Doctor",
+        "out_of": 44434,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 17,
+        "drop_percent": 0.09,
+        "entity_id": 5267,
+        "entity_name": "Unliving Atal'ai",
+        "out_of": 19952,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.04,
+        "entity_id": 5269,
+        "entity_name": "Atal'ai Priest",
+        "out_of": 5237,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.03,
+        "entity_id": 5280,
+        "entity_name": "Nightmare Wyrmkin",
+        "out_of": 6477,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 9,
+        "drop_percent": 0.14,
+        "entity_id": 5283,
+        "entity_name": "Nightmare Wanderer",
+        "out_of": 6473,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.07,
+        "entity_id": 5291,
+        "entity_name": "Hakkari Frostwing",
+        "out_of": 4037,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 2.7,
+        "entity_id": 5347,
+        "entity_name": "Antilus the Soarer",
+        "out_of": 148,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 8,
+        "drop_percent": 1.47,
+        "entity_id": 5349,
+        "entity_name": "Arash-ethis",
+        "out_of": 543,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 1,
+        "drop_percent": 1.0,
+        "entity_id": 5400,
+        "entity_name": "Zekkis",
+        "out_of": 100,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.07,
+        "entity_id": 5708,
+        "entity_name": "Spawn of Hakkar",
+        "out_of": 4372,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 5840,
+        "entity_name": "Dark Iron Steamsmith",
+        "out_of": 30892,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 5843,
+        "entity_name": "Slave Worker",
+        "out_of": 39597,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 5850,
+        "entity_name": "Blazing Elemental",
+        "out_of": 23198,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 10,
+        "drop_percent": 0.01,
+        "entity_id": 5854,
+        "entity_name": "Heavy War Golem",
+        "out_of": 94555,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 5855,
+        "entity_name": "Magma Elemental",
+        "out_of": 61629,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 8,
+        "drop_percent": 0.01,
+        "entity_id": 5858,
+        "entity_name": "Greater Lava Spider",
+        "out_of": 105275,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 6,
+        "drop_percent": 0.06,
+        "entity_id": 5860,
+        "entity_name": "Twilight Dark Shaman",
+        "out_of": 9891,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 10,
+        "drop_percent": 0.06,
+        "entity_id": 5861,
+        "entity_name": "Twilight Fire Guard",
+        "out_of": 17840,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 11,
+        "drop_percent": 0.01,
+        "entity_id": 5982,
+        "entity_name": "Black Slayer",
+        "out_of": 164155,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 6,
+        "drop_percent": 0.01,
+        "entity_id": 5990,
+        "entity_name": "Redstone Basilisk",
+        "out_of": 76852,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 5,
+        "drop_percent": 0.01,
+        "entity_id": 5992,
+        "entity_name": "Ashmane Boar",
+        "out_of": 69432,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 48,
+        "drop_percent": 2.65,
+        "entity_id": 6118,
+        "entity_name": "Varo'then's Ghost",
+        "out_of": 1810,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 78,
+        "drop_percent": 0.33,
+        "entity_id": 7271,
+        "entity_name": "Witch Doctor Zum'rah",
+        "out_of": 23807,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 67,
+        "drop_percent": 0.1,
+        "entity_id": 7276,
+        "entity_name": "Zul'Farrak Dead Hero",
+        "out_of": 65102,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.03,
+        "entity_id": 7321,
+        "entity_name": "Stonevault Flameweaver",
+        "out_of": 7281,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 7,
+        "drop_percent": 1.33,
+        "entity_id": 8203,
+        "entity_name": "Kregg Keelhaul",
+        "out_of": 526,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop",
+        "zone": "Tanaris"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.67,
+        "entity_id": 8214,
+        "entity_name": "Jalinde Summerdrake",
+        "out_of": 447,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 8,
+        "drop_percent": 1.67,
+        "entity_id": 8216,
+        "entity_name": "Retherokk the Berserker",
+        "out_of": 480,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 1.61,
+        "entity_id": 8277,
+        "entity_name": "Rekk'tilac",
+        "out_of": 186,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 12,
+        "drop_percent": 2.03,
+        "entity_id": 8296,
+        "entity_name": "Mojo the Twisted",
+        "out_of": 590,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 6,
+        "drop_percent": 0.01,
+        "entity_id": 8311,
+        "entity_name": "Slime Maggot",
+        "out_of": 60386,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 5,
+        "drop_percent": 0.02,
+        "entity_id": 8318,
+        "entity_name": "Atal'ai Slave",
+        "out_of": 32944,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 5,
+        "drop_percent": 0.03,
+        "entity_id": 8319,
+        "entity_name": "Nightmare Whelp",
+        "out_of": 15881,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 9,
+        "drop_percent": 0.08,
+        "entity_id": 8384,
+        "entity_name": "Deep Lurker",
+        "out_of": 11672,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 0.01,
+        "entity_id": 8566,
+        "entity_name": "Dark Iron Lookout",
+        "out_of": 37680,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.05,
+        "entity_id": 8580,
+        "entity_name": "Atal'alarion",
+        "out_of": 4025,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 2.55,
+        "entity_id": 8660,
+        "entity_name": "The Evalcharr",
+        "out_of": 157,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 29,
+        "drop_percent": 0.05,
+        "entity_id": 8889,
+        "entity_name": "Anvilrage Overseer",
+        "out_of": 53946,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop",
+        "zone": "Blackrock Depths"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 27,
+        "drop_percent": 0.02,
+        "entity_id": 8890,
+        "entity_name": "Anvilrage Warden",
+        "out_of": 117531,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop",
+        "zone": "Blackrock Depths"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 18,
+        "drop_percent": 0.0,
+        "entity_id": 8921,
+        "entity_name": "Bloodhound",
+        "out_of": 378845,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop",
+        "zone": "Blackrock Depths"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 2,
+        "drop_percent": 0.02,
+        "entity_id": 10043,
+        "entity_name": "Ribbly's Crony",
+        "out_of": 9452,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop",
+        "zone": "Blackrock Depths"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.13,
+        "entity_id": 10081,
+        "entity_name": "Dustwraith",
+        "out_of": 1578,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 10,
+        "drop_percent": 0.28,
+        "entity_id": 10082,
+        "entity_name": "Zerillis",
+        "out_of": 3598,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 21,
+        "drop_percent": 0.05,
+        "entity_id": 12201,
+        "entity_name": "Princess Theradras",
+        "out_of": 42151,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 6,
+        "drop_percent": 4.38,
+        "entity_id": 14339,
+        "entity_name": "Death Howl",
+        "out_of": 137,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.61,
+        "entity_id": 14445,
+        "entity_name": "Lord Captain Wyrmak",
+        "out_of": 494,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 15469,
+        "entity_name": "Senior Sergeant T'kelah",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 15512,
+        "entity_name": "Apothecary Jezel",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 15529,
+        "entity_name": "Lady Callow",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 1,
+        "drop_percent": 0.25,
+        "entity_id": 153451,
+        "entity_name": "Solid Chest",
+        "out_of": 393,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 3,
+        "drop_percent": 0.26,
+        "entity_id": 160845,
+        "entity_name": "Dark Coffer",
+        "out_of": 1134,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop",
+        "zone": "Blackrock Depths"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 44,
+        "drop_percent": 0.73,
+        "entity_id": 21512,
+        "entity_name": "Contained in: Ahn'Qiraj War Effort Supplies",
+        "item_id": 21512,
+        "out_of": 6033,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 27,
+        "drop_percent": 0.41,
+        "entity_id": 4638,
+        "entity_name": "Contained in: Reinforced Steel Lockbox",
+        "item_id": 4638,
+        "out_of": 6592,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 22,
+        "drop_percent": 0.87,
+        "entity_id": 19035,
+        "entity_name": "Contained in: Lard's Special Picnic Basket",
+        "item_id": 19035,
+        "out_of": 2531,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 15,
+        "drop_percent": 0.05,
+        "entity_id": 21228,
+        "entity_name": "Contained in: Mithril Bound Trunk",
+        "item_id": 21228,
+        "out_of": 28937,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.09,
+        "entity_id": 9265,
+        "entity_name": "Contained in: Cuergo's Hidden Treasure",
+        "item_id": 9265,
+        "out_of": 2254,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 1,
+        "drop_percent": 0.15,
+        "entity_id": 10479,
+        "entity_name": "Contained in: Kovic's Trading Satchel",
+        "item_id": 10479,
+        "out_of": 657,
+        "source_url": "https://www.wowhead.com/tbc/item=10079",
+        "type": "drop"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10079"
+  },
+  "name": "Lord's Cape",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 9,
+      "drop_percent": 4.62,
+      "entity_id": 1063,
+      "entity_name": "Jade",
+      "out_of": 195,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 2505,
+      "entity_name": "Saltwater Snapjaw",
+      "out_of": 113859,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 2641,
+      "entity_name": "Vilebranch Headhunter",
+      "out_of": 9495,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 7,
+      "drop_percent": 0.03,
+      "entity_id": 2642,
+      "entity_name": "Vilebranch Shadowcaster",
+      "out_of": 27383,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 12,
+      "drop_percent": 0.04,
+      "entity_id": 2643,
+      "entity_name": "Vilebranch Berserker",
+      "out_of": 32387,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 13,
+      "drop_percent": 0.06,
+      "entity_id": 2644,
+      "entity_name": "Vilebranch Hideskinner",
+      "out_of": 20838,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 17,
+      "drop_percent": 0.06,
+      "entity_id": 2645,
+      "entity_name": "Vilebranch Shadow Hunter",
+      "out_of": 27127,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.01,
+      "entity_id": 2646,
+      "entity_name": "Vilebranch Blood Drinker",
+      "out_of": 28541,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 2655,
+      "entity_name": "Green Sludge",
+      "out_of": 53682,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 7,
+      "drop_percent": 0.01,
+      "entity_id": 2656,
+      "entity_name": "Jade Ooze",
+      "out_of": 50757,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 5,
+      "drop_percent": 0.04,
+      "entity_id": 2694,
+      "entity_name": "Highvale Ranger",
+      "out_of": 13983,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.34,
+      "entity_id": 2752,
+      "entity_name": "Rumbler",
+      "out_of": 595,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.55,
+      "entity_id": 2754,
+      "entity_name": "Anathemus",
+      "out_of": 731,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 5,
+      "drop_percent": 0.01,
+      "entity_id": 2926,
+      "entity_name": "Silvermane Stalker",
+      "out_of": 89452,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 2928,
+      "entity_name": "Primitive Owlbeast",
+      "out_of": 33230,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.01,
+      "entity_id": 2929,
+      "entity_name": "Savage Owlbeast",
+      "out_of": 39348,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 4466,
+      "entity_name": "Vilebranch Scalper",
+      "out_of": 68872,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.01,
+      "entity_id": 4467,
+      "entity_name": "Vilebranch Soothsayer",
+      "out_of": 55923,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 6,
+      "drop_percent": 0.08,
+      "entity_id": 4468,
+      "entity_name": "Jade Sludge",
+      "out_of": 7626,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 5224,
+      "entity_name": "Murk Slitherer",
+      "out_of": 4821,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 8,
+      "drop_percent": 0.04,
+      "entity_id": 5226,
+      "entity_name": "Murk Worm",
+      "out_of": 21802,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.03,
+      "entity_id": 5228,
+      "entity_name": "Saturated Ooze",
+      "out_of": 9648,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 5235,
+      "entity_name": "Fungal Ooze",
+      "out_of": 4641,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 5243,
+      "entity_name": "Cursed Atal'ai",
+      "out_of": 5339,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 12,
+      "drop_percent": 0.1,
+      "entity_id": 5256,
+      "entity_name": "Atal'ai Warrior",
+      "out_of": 12480,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 9,
+      "drop_percent": 0.02,
+      "entity_id": 5259,
+      "entity_name": "Atal'ai Witch Doctor",
+      "out_of": 44434,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 17,
+      "drop_percent": 0.09,
+      "entity_id": 5267,
+      "entity_name": "Unliving Atal'ai",
+      "out_of": 19952,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 5269,
+      "entity_name": "Atal'ai Priest",
+      "out_of": 5237,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.03,
+      "entity_id": 5280,
+      "entity_name": "Nightmare Wyrmkin",
+      "out_of": 6477,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 9,
+      "drop_percent": 0.14,
+      "entity_id": 5283,
+      "entity_name": "Nightmare Wanderer",
+      "out_of": 6473,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.07,
+      "entity_id": 5291,
+      "entity_name": "Hakkari Frostwing",
+      "out_of": 4037,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 2.7,
+      "entity_id": 5347,
+      "entity_name": "Antilus the Soarer",
+      "out_of": 148,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 8,
+      "drop_percent": 1.47,
+      "entity_id": 5349,
+      "entity_name": "Arash-ethis",
+      "out_of": 543,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1,
+      "drop_percent": 1.0,
+      "entity_id": 5400,
+      "entity_name": "Zekkis",
+      "out_of": 100,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.07,
+      "entity_id": 5708,
+      "entity_name": "Spawn of Hakkar",
+      "out_of": 4372,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 5840,
+      "entity_name": "Dark Iron Steamsmith",
+      "out_of": 30892,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 5843,
+      "entity_name": "Slave Worker",
+      "out_of": 39597,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 5850,
+      "entity_name": "Blazing Elemental",
+      "out_of": 23198,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 10,
+      "drop_percent": 0.01,
+      "entity_id": 5854,
+      "entity_name": "Heavy War Golem",
+      "out_of": 94555,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 5855,
+      "entity_name": "Magma Elemental",
+      "out_of": 61629,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 8,
+      "drop_percent": 0.01,
+      "entity_id": 5858,
+      "entity_name": "Greater Lava Spider",
+      "out_of": 105275,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 6,
+      "drop_percent": 0.06,
+      "entity_id": 5860,
+      "entity_name": "Twilight Dark Shaman",
+      "out_of": 9891,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 10,
+      "drop_percent": 0.06,
+      "entity_id": 5861,
+      "entity_name": "Twilight Fire Guard",
+      "out_of": 17840,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 11,
+      "drop_percent": 0.01,
+      "entity_id": 5982,
+      "entity_name": "Black Slayer",
+      "out_of": 164155,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 6,
+      "drop_percent": 0.01,
+      "entity_id": 5990,
+      "entity_name": "Redstone Basilisk",
+      "out_of": 76852,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 5,
+      "drop_percent": 0.01,
+      "entity_id": 5992,
+      "entity_name": "Ashmane Boar",
+      "out_of": 69432,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 48,
+      "drop_percent": 2.65,
+      "entity_id": 6118,
+      "entity_name": "Varo'then's Ghost",
+      "out_of": 1810,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 78,
+      "drop_percent": 0.33,
+      "entity_id": 7271,
+      "entity_name": "Witch Doctor Zum'rah",
+      "out_of": 23807,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 67,
+      "drop_percent": 0.1,
+      "entity_id": 7276,
+      "entity_name": "Zul'Farrak Dead Hero",
+      "out_of": 65102,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.03,
+      "entity_id": 7321,
+      "entity_name": "Stonevault Flameweaver",
+      "out_of": 7281,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 7,
+      "drop_percent": 1.33,
+      "entity_id": 8203,
+      "entity_name": "Kregg Keelhaul",
+      "out_of": 526,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop",
+      "zone": "Tanaris"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.67,
+      "entity_id": 8214,
+      "entity_name": "Jalinde Summerdrake",
+      "out_of": 447,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 8,
+      "drop_percent": 1.67,
+      "entity_id": 8216,
+      "entity_name": "Retherokk the Berserker",
+      "out_of": 480,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 1.61,
+      "entity_id": 8277,
+      "entity_name": "Rekk'tilac",
+      "out_of": 186,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 12,
+      "drop_percent": 2.03,
+      "entity_id": 8296,
+      "entity_name": "Mojo the Twisted",
+      "out_of": 590,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 6,
+      "drop_percent": 0.01,
+      "entity_id": 8311,
+      "entity_name": "Slime Maggot",
+      "out_of": 60386,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 5,
+      "drop_percent": 0.02,
+      "entity_id": 8318,
+      "entity_name": "Atal'ai Slave",
+      "out_of": 32944,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 5,
+      "drop_percent": 0.03,
+      "entity_id": 8319,
+      "entity_name": "Nightmare Whelp",
+      "out_of": 15881,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 9,
+      "drop_percent": 0.08,
+      "entity_id": 8384,
+      "entity_name": "Deep Lurker",
+      "out_of": 11672,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.01,
+      "entity_id": 8566,
+      "entity_name": "Dark Iron Lookout",
+      "out_of": 37680,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.05,
+      "entity_id": 8580,
+      "entity_name": "Atal'alarion",
+      "out_of": 4025,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 2.55,
+      "entity_id": 8660,
+      "entity_name": "The Evalcharr",
+      "out_of": 157,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 29,
+      "drop_percent": 0.05,
+      "entity_id": 8889,
+      "entity_name": "Anvilrage Overseer",
+      "out_of": 53946,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop",
+      "zone": "Blackrock Depths"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 27,
+      "drop_percent": 0.02,
+      "entity_id": 8890,
+      "entity_name": "Anvilrage Warden",
+      "out_of": 117531,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop",
+      "zone": "Blackrock Depths"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 18,
+      "drop_percent": 0.0,
+      "entity_id": 8921,
+      "entity_name": "Bloodhound",
+      "out_of": 378845,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop",
+      "zone": "Blackrock Depths"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 2,
+      "drop_percent": 0.02,
+      "entity_id": 10043,
+      "entity_name": "Ribbly's Crony",
+      "out_of": 9452,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop",
+      "zone": "Blackrock Depths"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.13,
+      "entity_id": 10081,
+      "entity_name": "Dustwraith",
+      "out_of": 1578,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 10,
+      "drop_percent": 0.28,
+      "entity_id": 10082,
+      "entity_name": "Zerillis",
+      "out_of": 3598,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 21,
+      "drop_percent": 0.05,
+      "entity_id": 12201,
+      "entity_name": "Princess Theradras",
+      "out_of": 42151,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 6,
+      "drop_percent": 4.38,
+      "entity_id": 14339,
+      "entity_name": "Death Howl",
+      "out_of": 137,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.61,
+      "entity_id": 14445,
+      "entity_name": "Lord Captain Wyrmak",
+      "out_of": 494,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 15469,
+      "entity_name": "Senior Sergeant T'kelah",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 15512,
+      "entity_name": "Apothecary Jezel",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 15529,
+      "entity_name": "Lady Callow",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1,
+      "drop_percent": 0.25,
+      "entity_id": 153451,
+      "entity_name": "Solid Chest",
+      "out_of": 393,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 3,
+      "drop_percent": 0.26,
+      "entity_id": 160845,
+      "entity_name": "Dark Coffer",
+      "out_of": 1134,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop",
+      "zone": "Blackrock Depths"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 44,
+      "drop_percent": 0.73,
+      "entity_id": 21512,
+      "entity_name": "Contained in: Ahn'Qiraj War Effort Supplies",
+      "item_id": 21512,
+      "out_of": 6033,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 27,
+      "drop_percent": 0.41,
+      "entity_id": 4638,
+      "entity_name": "Contained in: Reinforced Steel Lockbox",
+      "item_id": 4638,
+      "out_of": 6592,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 22,
+      "drop_percent": 0.87,
+      "entity_id": 19035,
+      "entity_name": "Contained in: Lard's Special Picnic Basket",
+      "item_id": 19035,
+      "out_of": 2531,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 15,
+      "drop_percent": 0.05,
+      "entity_id": 21228,
+      "entity_name": "Contained in: Mithril Bound Trunk",
+      "item_id": 21228,
+      "out_of": 28937,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.09,
+      "entity_id": 9265,
+      "entity_name": "Contained in: Cuergo's Hidden Treasure",
+      "item_id": 9265,
+      "out_of": 2254,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1,
+      "drop_percent": 0.15,
+      "entity_id": 10479,
+      "entity_name": "Contained in: Kovic's Trading Satchel",
+      "item_id": 10479,
+      "out_of": 657,
+      "source_url": "https://www.wowhead.com/tbc/item=10079",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "count": 44,
+        "flags2": 24580,
+        "id": 21512,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 44,
+                "outof": 6033
+              }
+            }
+          }
+        },
+        "level": 40,
+        "name": "Ahn'Qiraj War Effort Supplies",
+        "outof": 6033,
+        "pctstack": "",
+        "quality": 1,
+        "reqlevel": 40,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "subclass": 4
+      },
+      {
+        "classs": 15,
+        "commondrop": true,
+        "count": 27,
+        "flags2": 24580,
+        "id": 4638,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 27,
+                "outof": 6592
+              }
+            }
+          }
+        },
+        "level": 45,
+        "name": "Reinforced Steel Lockbox",
+        "outof": 6592,
+        "pctstack": "",
+        "quality": 2,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 4
+      },
+      {
+        "classs": 15,
+        "count": 22,
+        "flags2": 24580,
+        "id": 19035,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 22,
+                "outof": 2531
+              }
+            }
+          }
+        },
+        "level": 50,
+        "name": "Lard's Special Picnic Basket",
+        "outof": 2531,
+        "pctstack": "",
+        "quality": 2,
+        "reqlevel": 44,
+        "side": 2,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": 47,
+            "c2": 0,
+            "n": "Lard Lost His Lunch",
+            "t": 5,
+            "ti": 7840
+          }
+        ],
+        "subclass": 4
+      },
+      {
+        "classs": 15,
+        "count": 15,
+        "flags2": 24580,
+        "id": 21228,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 15,
+                "outof": 28937
+              }
+            }
+          }
+        },
+        "level": 45,
+        "name": "Mithril Bound Trunk",
+        "outof": 28937,
+        "pctstack": "",
+        "quality": 1,
+        "slot": 0,
+        "source": [
+          16
+        ],
+        "subclass": 4
+      },
+      {
+        "classs": 12,
+        "count": 2,
+        "flags2": 24580,
+        "id": 9265,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 2254
+              }
+            }
+          }
+        },
+        "level": 45,
+        "name": "Cuergo's Hidden Treasure",
+        "outof": 2254,
+        "pctstack": "",
+        "quality": 2,
+        "reqlevel": 40,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": -221,
+            "c2": -2,
+            "n": "Cuergo's Gold",
+            "t": 5,
+            "ti": 2882
+          }
+        ],
+        "subclass": 0
+      },
+      {
+        "classs": 15,
+        "count": 1,
+        "flags2": 24580,
+        "id": 10479,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 657
+              }
+            }
+          }
+        },
+        "level": 50,
+        "name": "Kovic's Trading Satchel",
+        "outof": 657,
+        "pctstack": "",
+        "quality": 2,
+        "reqlevel": 40,
+        "slot": 0,
+        "source": [
+          4
+        ],
+        "sourcemore": [
+          {
+            "c": -264,
+            "c2": 5,
+            "n": "The Undermarket",
+            "t": 5,
+            "ti": 3385
+          }
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 153451,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 21,
+                "outof": 35151
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 393
+              }
+            }
+          }
+        },
+        "location": [
+          47,
+          16,
+          4,
+          -1
+        ],
+        "name": "Solid Chest",
+        "outof": 393,
+        "pctstack": "",
+        "type": 3
+      },
+      {
+        "count": 3,
+        "id": 160845,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 1134
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "name": "Dark Coffer",
+        "outof": 1134,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 4,
+        "count": 9,
+        "id": 1063,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 9,
+                "outof": 195
+              }
+            }
+          }
+        },
+        "location": [
+          -3
+        ],
+        "maxlevel": 47,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 9,
+            "outof": 195
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jade",
+        "outof": 195,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "family": 21,
+        "id": 2505,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 113859
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 113859
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Saltwater Snapjaw",
+        "outof": 113859,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 20,
+        "react": [
+          0,
+          0
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 2641,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 9495
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 9495
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Headhunter",
+        "outof": 9495,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 14,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 7,
+        "id": 2642,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7,
+                "outof": 27383
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 7,
+            "outof": 27383
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Shadowcaster",
+        "outof": 27383,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 4,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 12,
+        "id": 2643,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 12,
+                "outof": 32387
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 12,
+            "outof": 32387
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Berserker",
+        "outof": 32387,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 13,
+        "id": 2644,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13,
+                "outof": 20838
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 13,
+            "outof": 20838
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Hideskinner",
+        "outof": 20838,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 17,
+        "id": 2645,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 17,
+                "outof": 27127
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 17,
+            "outof": 27127
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Shadow Hunter",
+        "outof": 27127,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 4,
+        "id": 2646,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 28541
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 28541
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Blood Drinker",
+        "outof": 28541,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 2655,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 53682
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 53682
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Green Sludge",
+        "outof": 53682,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "classification": 0,
+        "count": 7,
+        "id": 2656,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7,
+                "outof": 50757
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 7,
+            "outof": 50757
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jade Ooze",
+        "outof": 50757,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "classification": 0,
+        "count": 5,
+        "id": 2694,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5,
+                "outof": 13983
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 5,
+            "outof": 13983
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Highvale Ranger",
+        "outof": 13983,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 4,
+        "count": 2,
+        "id": 2752,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 595
+              }
+            }
+          }
+        },
+        "location": [
+          3
+        ],
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 595
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Rumbler",
+        "outof": 595,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      },
+      {
+        "classification": 2,
+        "count": 4,
+        "id": 2754,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 731
+              }
+            }
+          }
+        },
+        "location": [
+          3
+        ],
+        "maxlevel": 45,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 731
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anathemus",
+        "outof": 731,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      },
+      {
+        "classification": 0,
+        "count": 5,
+        "family": 1,
+        "id": 2926,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5,
+                "outof": 89452
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 5,
+            "outof": 89452
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Silvermane Stalker",
+        "outof": 89452,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 2928,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 33230
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 45,
+        "minlevel": 44,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 33230
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Primitive Owlbeast",
+        "outof": 33230,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 4,
+        "id": 2929,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 39348
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 39348
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Savage Owlbeast",
+        "outof": 39348,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 4466,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 68872
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 68872
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Scalper",
+        "outof": 68872,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 4,
+        "id": 4467,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 55923
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 55923
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Vilebranch Soothsayer",
+        "outof": 55923,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 6,
+        "id": 4468,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6,
+                "outof": 7626
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 6,
+            "outof": 7626
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jade Sludge",
+        "outof": 7626,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "family": 35,
+        "id": 5224,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 4821
+              }
+            }
+          }
+        },
+        "location": [
+          -3,
+          8
+        ],
+        "maxlevel": 46,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 4821
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Murk Slitherer",
+        "outof": 4821,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 1,
+        "count": 8,
+        "id": 5226,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8,
+                "outof": 21802
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 8,
+            "outof": 21802
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Murk Worm",
+        "outof": 21802,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "id": 5228,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 9648
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 9648
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Saturated Ooze",
+        "outof": 9648,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 5235,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 4641
+              }
+            }
+          }
+        },
+        "location": [
+          -3
+        ],
+        "maxlevel": 46,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 4641
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Fungal Ooze",
+        "outof": 4641,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 5243,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 5339
+              }
+            }
+          }
+        },
+        "location": [
+          -3
+        ],
+        "maxlevel": 46,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 5339
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Cursed Atal'ai",
+        "outof": 5339,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 12,
+        "id": 5256,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 12,
+                "outof": 12480
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 12,
+            "outof": 12480
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Atal'ai Warrior",
+        "outof": 12480,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 9,
+        "id": 5259,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 9,
+                "outof": 44434
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 9,
+            "outof": 44434
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Atal'ai Witch Doctor",
+        "outof": 44434,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 17,
+        "id": 5267,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 17,
+                "outof": 19952
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 17,
+            "outof": 19952
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Unliving Atal'ai",
+        "outof": 19952,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 5269,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 5237
+              }
+            }
+          }
+        },
+        "location": [
+          -3
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 5237
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Atal'ai Priest",
+        "outof": 5237,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 5280,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 6477
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 6477
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nightmare Wyrmkin",
+        "outof": 6477,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 1,
+        "count": 9,
+        "id": 5283,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 9,
+                "outof": 6473
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 9,
+            "outof": 6473
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nightmare Wanderer",
+        "outof": 6473,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 3,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "family": 27,
+        "id": 5291,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 4037
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 4037
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hakkari Frostwing",
+        "outof": 4037,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 4,
+        "count": 4,
+        "id": 5347,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 148
+              }
+            }
+          }
+        },
+        "location": [
+          357
+        ],
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 148
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Antilus the Soarer",
+        "outof": 148,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 4,
+        "count": 8,
+        "family": 27,
+        "id": 5349,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8,
+                "outof": 543
+              }
+            }
+          }
+        },
+        "location": [
+          357
+        ],
+        "modes": {
+          "0": {
+            "count": 8,
+            "outof": 543
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Arash-ethis",
+        "outof": 543,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 4,
+        "count": 1,
+        "id": 5400,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1,
+                "outof": 100
+              }
+            }
+          }
+        },
+        "maxlevel": 48,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 1,
+            "outof": 100
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zekkis",
+        "outof": 100,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "family": 27,
+        "id": 5708,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 4372
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 4372
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Spawn of Hakkar",
+        "outof": 4372,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 5840,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 30892
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 30892
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Dark Iron Steamsmith",
+        "outof": 30892,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 5843,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 39597
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 47,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 39597
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Slave Worker",
+        "outof": 39597,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 7,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 5850,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 23198
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 47,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 23198
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Blazing Elemental",
+        "outof": 23198,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      },
+      {
+        "classification": 0,
+        "count": 10,
+        "id": 5854,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 10,
+                "outof": 94555
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 49,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 10,
+            "outof": 94555
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Heavy War Golem",
+        "outof": 94555,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 9
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 5855,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 61629
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 48,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 61629
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magma Elemental",
+        "outof": 61629,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      },
+      {
+        "classification": 0,
+        "count": 8,
+        "family": 3,
+        "id": 5858,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8,
+                "outof": 105275
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 49,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 8,
+            "outof": 105275
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Greater Lava Spider",
+        "outof": 105275,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 7,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 6,
+        "id": 5860,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6,
+                "outof": 9891
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 44,
+        "minlevel": 43,
+        "modes": {
+          "0": {
+            "count": 6,
+            "outof": 9891
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Twilight Dark Shaman",
+        "outof": 9891,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 10,
+        "id": 5861,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 10,
+                "outof": 17840
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 46,
+        "minlevel": 44,
+        "modes": {
+          "0": {
+            "count": 10,
+            "outof": 17840
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Twilight Fire Guard",
+        "outof": 17840,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 11,
+        "family": 7,
+        "id": 5982,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 11,
+                "outof": 164155
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 11,
+            "outof": 164155
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Black Slayer",
+        "outof": 164155,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 6,
+        "id": 5990,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6,
+                "outof": 76852
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 6,
+            "outof": 76852
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Redstone Basilisk",
+        "outof": 76852,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 5,
+        "family": 5,
+        "id": 5992,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5,
+                "outof": 69432
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 5,
+            "outof": 69432
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ashmane Boar",
+        "outof": 69432,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 4,
+        "count": 48,
+        "id": 6118,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 48,
+                "outof": 1810
+              }
+            }
+          }
+        },
+        "location": [
+          16
+        ],
+        "modes": {
+          "0": {
+            "count": 48,
+            "outof": 1810
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Varo'then's Ghost",
+        "outof": 1810,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 4,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 78,
+        "id": 7271,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 78,
+                "outof": 23807
+              }
+            }
+          }
+        },
+        "location": [
+          1176
+        ],
+        "maxlevel": 46,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 78,
+            "outof": 23807
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Witch Doctor Zum'rah",
+        "outof": 23807,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 67,
+        "id": 7276,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 67,
+                "outof": 65102
+              }
+            }
+          }
+        },
+        "location": [
+          1176
+        ],
+        "maxlevel": 45,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 67,
+            "outof": 65102
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zul'Farrak Dead Hero",
+        "outof": 65102,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 10,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 7321,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 7281
+              }
+            }
+          }
+        },
+        "location": [
+          1337
+        ],
+        "maxlevel": 39,
+        "minlevel": 38,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 7281
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Stonevault Flameweaver",
+        "outof": 7281,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 4,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 4,
+        "count": 7,
+        "id": 8203,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7,
+                "outof": 526
+              }
+            }
+          }
+        },
+        "location": [
+          440
+        ],
+        "maxlevel": 47,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 7,
+            "outof": 526
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kregg Keelhaul",
+        "outof": 526,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 4,
+        "count": 3,
+        "id": 8214,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 447
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 447
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Jalinde Summerdrake",
+        "outof": 447,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          null,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 4,
+        "count": 8,
+        "id": 8216,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 8,
+                "outof": 480
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 19
+              }
+            }
+          }
+        },
+        "location": [
+          47
+        ],
+        "modes": {
+          "0": {
+            "count": 8,
+            "outof": 480
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Retherokk the Berserker",
+        "outof": 480,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 4,
+        "count": 3,
+        "family": 3,
+        "id": 8277,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 186
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 186
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Rekk'tilac",
+        "outof": 186,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 3,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 4,
+        "count": 12,
+        "id": 8296,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 12,
+                "outof": 590
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "modes": {
+          "0": {
+            "count": 12,
+            "outof": 590
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Mojo the Twisted",
+        "outof": 590,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 3,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 6,
+        "id": 8311,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6,
+                "outof": 60386
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 46,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 6,
+            "outof": 60386
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Slime Maggot",
+        "outof": 60386,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          0,
+          0
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 5,
+        "id": 8318,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5,
+                "outof": 32944
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 47,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 5,
+            "outof": 32944
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Atal'ai Slave",
+        "outof": 32944,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 5,
+        "id": 8319,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5,
+                "outof": 15881
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 5,
+            "outof": 15881
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Nightmare Whelp",
+        "outof": 15881,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 1,
+        "count": 9,
+        "id": 8384,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 9,
+                "outof": 11672
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 9,
+            "outof": 11672
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Deep Lurker",
+        "outof": 11672,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      },
+      {
+        "classification": 0,
+        "count": 4,
+        "id": 8566,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 37680
+              }
+            }
+          }
+        },
+        "location": [
+          51
+        ],
+        "maxlevel": 48,
+        "minlevel": 47,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 37680
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Dark Iron Lookout",
+        "outof": 37680,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 3,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 8580,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 4025
+              }
+            }
+          }
+        },
+        "location": [
+          1477
+        ],
+        "maxlevel": 49,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 4025
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Atal'alarion",
+        "outof": 4025,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 10,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Guardian of the Idol",
+        "type": 7
+      },
+      {
+        "classification": 4,
+        "count": 4,
+        "id": 8660,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 157
+              }
+            }
+          }
+        },
+        "location": [
+          16
+        ],
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 157
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Evalcharr",
+        "outof": 157,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 7,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 1,
+        "count": 29,
+        "id": 8889,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 29,
+                "outof": 53946
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 49,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 29,
+            "outof": 53946
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anvilrage Overseer",
+        "outof": 53946,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 27,
+        "id": 8890,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 27,
+                "outof": 117531
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 27,
+            "outof": 117531
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Anvilrage Warden",
+        "outof": 117531,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 18,
+        "id": 8921,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 18,
+                "outof": 378845
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 50,
+        "minlevel": 49,
+        "modes": {
+          "0": {
+            "count": 18,
+            "outof": 378845
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bloodhound",
+        "outof": 378845,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 3,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 10043,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 9452
+              }
+            }
+          }
+        },
+        "location": [
+          1584
+        ],
+        "maxlevel": 52,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 9452
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ribbly's Crony",
+        "outof": 9452,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 9,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 2,
+        "count": 2,
+        "id": 10081,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 1578
+              }
+            }
+          }
+        },
+        "location": [
+          1176
+        ],
+        "maxlevel": 46,
+        "minlevel": 46,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 1578
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Dustwraith",
+        "outof": 1578,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 3,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 2,
+        "count": 10,
+        "id": 10082,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 10,
+                "outof": 3598
+              }
+            }
+          }
+        },
+        "location": [
+          1176
+        ],
+        "maxlevel": 45,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 10,
+            "outof": 3598
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Zerillis",
+        "outof": 3598,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 21,
+        "id": 12201,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 21,
+                "outof": 42151
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 186
+              }
+            }
+          }
+        },
+        "location": [
+          2100
+        ],
+        "maxlevel": 48,
+        "minlevel": 48,
+        "modes": {
+          "0": {
+            "count": 21,
+            "outof": 42151
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Princess Theradras",
+        "outof": 42151,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 8,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 4
+      },
+      {
+        "classification": 4,
+        "count": 6,
+        "family": 1,
+        "id": 14339,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6,
+                "outof": 137
+              }
+            }
+          }
+        },
+        "location": [
+          361
+        ],
+        "modes": {
+          "0": {
+            "count": 6,
+            "outof": 137
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Death Howl",
+        "outof": 137,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 2,
+        "count": 3,
+        "id": 14445,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 494
+              }
+            }
+          }
+        },
+        "location": [
+          8
+        ],
+        "maxlevel": 45,
+        "minlevel": 45,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 494
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lord Captain Wyrmak",
+        "outof": 494,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "hasQuests": 1,
+        "id": 15469,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 1.1
+              }
+            }
+          }
+        },
+        "location": [
+          1637
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 1.1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Senior Sergeant T'kelah",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 1.1,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          null,
+          1
+        ],
+        "tag": "Mithril Bar Collector",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "hasQuests": 1,
+        "id": 15512,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 1.1
+              }
+            }
+          }
+        },
+        "location": [
+          1637
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 1.1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Apothecary Jezel",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 1.1,
+        "personal_loot": 0,
+        "popularity": 4,
+        "react": [
+          null,
+          1
+        ],
+        "tag": "Purple Lotus Collector",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": -1,
+        "hasQuests": 1,
+        "id": 15529,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 1
+              }
+            }
+          }
+        },
+        "location": [
+          1637
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 1
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lady Callow",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 1,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          null,
+          1
+        ],
+        "tag": "Mageweave Bandage Collector",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10079"
+}

@@ -1,0 +1,98 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green fishing pole has an item level of 50. It is a quest reward from Snapjaws, Mon!. In the Fishing Poles category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-06-15T18:31:24+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 19022,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 38.83,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 19022,
+    "item_level": 50,
+    "name": "Nat Pagle's Extreme Angler FC-5000",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 7815,
+      "entity_name": "Snapjaws, Mon!",
+      "quest_id": 7815,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=19022",
+      "type": "quest"
+    },
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "Quest: Snapjaws, Mon!",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 7815,
+        "entity_name": "Snapjaws, Mon!",
+        "quest_id": 7815,
+        "side": "Horde",
+        "source_url": "https://www.wowhead.com/tbc/item=19022",
+        "type": "quest"
+      }
+    ],
+    "weapon_max_damage": 140,
+    "weapon_min_damage": 93,
+    "weapon_speed": 3.0,
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19022"
+  },
+  "name": "Nat Pagle's Extreme Angler FC-5000",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 7815,
+      "entity_name": "Snapjaws, Mon!",
+      "quest_id": 7815,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=19022",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 47,
+        "category2": 0,
+        "id": 7815,
+        "itemrewards": [
+          [
+            19022,
+            1
+          ]
+        ],
+        "level": 50,
+        "money": 7500,
+        "name": "Snapjaws, Mon!",
+        "popularity": 7,
+        "reqlevel": 44,
+        "side": 2,
+        "xp": 6810
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19022"
+}

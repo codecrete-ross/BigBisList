@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spinal Reaper Phase 1 Item Level 76 Binds when picked up Two-Hand Axe 203 - 305 Damage Speed 3.40 (74.71 damage per second) Durability 120 / 120 Requires Level 60 Equip: Restores 150 mana or 20 rage when you kill a target that gives experience; this effect cannot occur more than once every 10 seconds. (10s cooldown) Equip: Increases attack power by 34. Sell Price: 10 3 75 Dropped by: Ragnaros Drop Chance: 2.56%",
+  "fetched_at": "2026-06-15T20:19:32+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 17104,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 74.71,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 17104,
+    "item_level": 76,
+    "name": "Spinal Reaper",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 34.0
+    },
+    "weapon_max_damage": 305,
+    "weapon_min_damage": 203,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=17104/spinal-reaper"
+  },
+  "name": "Spinal Reaper",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=17104/spinal-reaper"
+}

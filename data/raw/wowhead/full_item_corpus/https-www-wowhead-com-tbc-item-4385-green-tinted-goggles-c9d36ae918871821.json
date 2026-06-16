@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Green Tinted Goggles Phase 1 Item Level 30 Binds when equipped Head Cloth 35 Armor +8 Stamina +7 Spirit Durability 45 / 45 Requires Engineering (150) Sell Price: 14 10",
+  "fetched_at": "2026-06-15T20:28:25+00:00",
+  "inventory_slot": null,
+  "item_id": 4385,
+  "item_stats": {
+    "armor": 35,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 4385,
+    "item_level": 30,
+    "name": "Green Tinted Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "spirit": 7.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=4385/green-tinted-goggles"
+  },
+  "name": "Green Tinted Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Green Tinted Goggles Phase 1 Item Level 30 Binds when equipped Head Cloth 35 Armor +8 Stamina +7 Spirit Durability 45 / 45 Requires Engineering (150) Sell Price: 14 10",
+      "scope": "equip_or_use",
+      "skill": 150,
+      "source_url": "https://www.wowhead.com/tbc/item=4385/green-tinted-goggles",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=4385/green-tinted-goggles"
+}

@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Glyph of Deflection Phase 1 Item Level 90 Binds when picked up Unique-Equipped Trinket Requires Level 60 Equip: Increases your block rating by 12. Equip: Increases the block value of your shield by 23. Use: Increases the block value of your shield by 235 for 20 sec. (2 Min Cooldown) Sell Price: 9 11 60",
+  "fetched_at": "2026-06-15T20:23:08+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 23040,
+  "item_stats": {
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 23040,
+    "item_level": 90,
+    "name": "Glyph of Deflection",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "block_rating": 12.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23040/glyph-of-deflection"
+  },
+  "name": "Glyph of Deflection",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23040/glyph-of-deflection"
+}

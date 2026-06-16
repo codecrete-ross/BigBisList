@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lei of the Lifegiver Phase 1 Item Level 65 Binds when picked up Unique Held In Off-hand Requires Level 60 Equip: Increases healing done by up to 53 and damage done by up to 18 for all magical spells and effects. Equip: Restores 3 mana per 5 sec.",
+  "fetched_at": "2026-06-15T20:21:52+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 19312,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 19312,
+    "item_level": 65,
+    "name": "Lei of the Lifegiver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 53.0,
+      "mp5": 3.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19312/lei-of-the-lifegiver"
+  },
+  "name": "Lei of the Lifegiver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19312/lei-of-the-lifegiver"
+}

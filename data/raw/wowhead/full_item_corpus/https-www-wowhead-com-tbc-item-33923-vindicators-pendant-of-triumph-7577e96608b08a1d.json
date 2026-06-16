@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vindicator's Pendant of Triumph Phase 3 Item Level 141 Binds when picked up Unique Neck +35 Stamina Yellow Socket Socket Bonus: +3 Stamina Requires Level 70 Equip: Improves critical strike rating by 22. Equip: Improves your resilience rating by 18. Equip: Increases attack power by 50.",
+  "fetched_at": "2026-06-15T20:27:38+00:00",
+  "inventory_slot": null,
+  "item_id": 33923,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 33923,
+    "item_level": 141,
+    "name": "Vindicator's Pendant of Triumph",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 50.0,
+      "crit_rating": 22.0,
+      "resilience_rating": 18.0,
+      "stamina": 35.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33923/vindicators-pendant-of-triumph"
+  },
+  "name": "Vindicator's Pendant of Triumph",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33923/vindicators-pendant-of-triumph"
+}

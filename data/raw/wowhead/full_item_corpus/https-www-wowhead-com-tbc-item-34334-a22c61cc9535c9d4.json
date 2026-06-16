@@ -1,0 +1,147 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thori'dal, the Stars' Fury is a legendary bow of mysterious origins, infused with power from the Sunwell. This legendary bow has an item level of 164.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 34334,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 162.96,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:",
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 34334,
+    "item_level": 164,
+    "name": "Thori'dal, the Stars' Fury",
+    "parse_confidence": "tooltip",
+    "phase": "SWP",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": -1,
+      "drop_percent": -0.76,
+      "entity_id": 25315,
+      "entity_name": "Kil'jaeden",
+      "out_of": 132,
+      "source_url": "https://www.wowhead.com/tbc/item=34334",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    },
+    "quality": "legendary",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "Drop: Kil'jaeden (Sunwell Plateau) -0.8%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": -1,
+        "drop_percent": -0.76,
+        "entity_id": 25315,
+        "entity_name": "Kil'jaeden",
+        "out_of": 132,
+        "source_url": "https://www.wowhead.com/tbc/item=34334",
+        "type": "drop",
+        "zone": "Sunwell Plateau"
+      }
+    ],
+    "stats": {
+      "agility": 17.0,
+      "attack_power": 34.0,
+      "crit_rating": 16.0
+    },
+    "weapon_max_damage": 524,
+    "weapon_min_damage": 356,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34334"
+  },
+  "name": "Thori'dal, the Stars' Fury",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": -1,
+      "drop_percent": -0.76,
+      "entity_id": 25315,
+      "entity_name": "Kil'jaeden",
+      "out_of": 132,
+      "source_url": "https://www.wowhead.com/tbc/item=34334",
+      "type": "drop",
+      "zone": "Sunwell Plateau"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "legendary",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": -1,
+        "id": 25315,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 132,
+                "percentOverride": 15
+              }
+            },
+            "5": {
+              "0": {
+                "count": 18,
+                "outof": 132
+              }
+            }
+          }
+        },
+        "location": [
+          4075
+        ],
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 132,
+            "percentOverride": 15
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kil'jaeden",
+        "outof": 132,
+        "pctstack": null,
+        "percentOverride": 15,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "The Deceiver",
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34334"
+}

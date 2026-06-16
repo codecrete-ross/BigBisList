@@ -1,0 +1,144 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloak of item level 125 goes in the \"Back\" slot. It is looted from Prince Malchezaar. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:28+00:00",
+  "inventory_slot": "Back",
+  "item_id": 28765,
+  "item_stats": {
+    "armor": 105,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 28765,
+    "item_level": 125,
+    "name": "Stainless Cloak of the Pure Hearted",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 267,
+      "drop_percent": 14.65,
+      "entity_id": 15690,
+      "entity_name": "Prince Malchezaar",
+      "out_of": 1822,
+      "source_url": "https://www.wowhead.com/tbc/item=28765",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Back",
+    "source_summary": "Drop: Prince Malchezaar (Karazhan) 14.7%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 267,
+        "drop_percent": 14.65,
+        "entity_id": 15690,
+        "entity_name": "Prince Malchezaar",
+        "out_of": 1822,
+        "source_url": "https://www.wowhead.com/tbc/item=28765",
+        "type": "drop",
+        "zone": "Karazhan"
+      }
+    ],
+    "stats": {
+      "healing_power": 53.0,
+      "intellect": 23.0,
+      "mp5": 7.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28765"
+  },
+  "name": "Stainless Cloak of the Pure Hearted",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 267,
+      "drop_percent": 14.65,
+      "entity_id": 15690,
+      "entity_name": "Prince Malchezaar",
+      "out_of": 1822,
+      "source_url": "https://www.wowhead.com/tbc/item=28765",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 267,
+        "id": 15690,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3316,
+                "outof": 21169
+              }
+            },
+            "4": {
+              "0": {
+                "count": 379,
+                "outof": 2431
+              }
+            },
+            "5": {
+              "0": {
+                "count": 267,
+                "outof": 1822
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3316,
+            "outof": 21169
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Prince Malchezaar",
+        "outof": 1822,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28765"
+}

@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dark Augur's Wand Phase 1 Item Level 80 Binds when picked up Ranged Wand 86 - 161 Shadow Damage Speed 1.70 (72.65 damage per second) +6 Intellect Durability 55 / 55 Equip: Increases damage and healing done by magical spells and effects by up to 7. Equip: Restores 2 mana per 5 sec. Sell Price: 4 7 17",
+  "fetched_at": "2026-06-15T20:24:44+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 25973,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 72.65,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 25973,
+    "item_level": 80,
+    "name": "Dark Augur's Wand",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "intellect": 6.0,
+      "mp5": 2.0,
+      "spell_power": 7.0
+    },
+    "weapon_subtype": "Wand",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25973/dark-augurs-wand"
+  },
+  "name": "Dark Augur's Wand",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25973/dark-augurs-wand"
+}

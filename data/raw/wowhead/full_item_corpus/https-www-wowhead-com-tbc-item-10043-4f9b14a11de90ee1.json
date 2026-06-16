@@ -1,0 +1,105 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green cloth armor of item level 31 goes in the \"Legs\" slot. It is a quest reward from The Tower of Althalaxx. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-06-15T19:51:29+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 10043,
+  "item_stats": {
+    "armor": 38,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 10043,
+    "item_level": 31,
+    "name": "Pious Legwraps",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 981,
+      "entity_name": "The Tower of Althalaxx",
+      "quest_id": 981,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=10043",
+      "type": "quest"
+    },
+    "quality": "uncommon",
+    "slot": "Legs",
+    "source_summary": "Quest: The Tower of Althalaxx",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 981,
+        "entity_name": "The Tower of Althalaxx",
+        "quest_id": 981,
+        "side": "Alliance",
+        "source_url": "https://www.wowhead.com/tbc/item=10043",
+        "type": "quest"
+      }
+    ],
+    "stats": {
+      "spirit": 7.0,
+      "stamina": 8.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10043"
+  },
+  "name": "Pious Legwraps",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 981,
+      "entity_name": "The Tower of Althalaxx",
+      "quest_id": 981,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=10043",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 148,
+        "category2": 1,
+        "id": 981,
+        "itemchoices": [
+          [
+            10043,
+            1
+          ],
+          [
+            5614,
+            1
+          ]
+        ],
+        "level": 31,
+        "name": "The Tower of Althalaxx",
+        "popularity": 6,
+        "reprewards": [
+          [
+            69,
+            250
+          ]
+        ],
+        "reqlevel": 13,
+        "side": 1,
+        "xp": 2540
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10043"
+}

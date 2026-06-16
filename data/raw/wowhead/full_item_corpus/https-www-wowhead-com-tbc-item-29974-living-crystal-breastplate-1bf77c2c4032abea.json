@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Living Crystal Breastplate Phase 1 Item Level 100 Binds when picked up Chest Leather 255 Armor +25 Stamina +23 Intellect +17 Spirit Durability 100 / 100 Requires Level 65 Requires Tribal Leatherworking Equip: Increases damage and healing done by magical spells and effects by up to 29. Equip: Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects. Sell Price: 3 87 8",
+  "fetched_at": "2026-06-15T20:25:49+00:00",
+  "inventory_slot": null,
+  "item_id": 29974,
+  "item_stats": {
+    "armor": 255,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29974,
+    "item_level": 100,
+    "name": "Living Crystal Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 65,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 55.0,
+      "intellect": 23.0,
+      "spell_power": 29.0,
+      "spirit": 17.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29974/living-crystal-breastplate"
+  },
+  "name": "Living Crystal Breastplate",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Living Crystal Breastplate Phase 1 Item Level 100 Binds when picked up Chest Leather 255 Armor +25 Stamina +23 Intellect +17 Spirit Durability 100 / 100 Requires Level 65 Requires Tribal Leatherworking Equip: Increases damage and healing done by magical spells and effects by up to 29. Equip: Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects. Sell Price: 3 87 8",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29974/living-crystal-breastplate",
+      "specialization": "Tribal Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29974/living-crystal-breastplate"
+}

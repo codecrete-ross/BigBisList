@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Dreadweave Hood Phase 1 Item Level 123 Binds when picked up Head Cloth 168 Armor +60 Stamina +20 Intellect Meta Socket Red Socket Socket Bonus: +4 Resilience Rating Durability 60 / 60 Classes: Warlock Requires Level 70 Equip: Improves your resilience rating by 30. Equip: Increases damage and healing done by magical spells and effects by up to 32. Gladiator's Dreadgear (0/5) Gladiator's Dreadweave Gloves Gladiator's Dreadweave Hood Gladiator's Dreadweave Leggings Gladiator's Dreadweave Mantle Gladiator's Dreadweave Robe (2) Set : +35 Resilience Rating. (4) Set : Reduces the casting time of your Fear spell by 0.2 sec.",
+  "fetched_at": "2026-06-15T20:23:31+00:00",
+  "inventory_slot": null,
+  "item_id": 24553,
+  "item_stats": {
+    "armor": 168,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 24553,
+    "item_level": 123,
+    "name": "Gladiator's Dreadweave Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 20.0,
+      "resilience_rating": 30.0,
+      "spell_power": 32.0,
+      "stamina": 60.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24553/gladiators-dreadweave-hood"
+  },
+  "name": "Gladiator's Dreadweave Hood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24553/gladiators-dreadweave-hood"
+}

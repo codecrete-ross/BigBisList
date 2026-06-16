@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Adjudicator's Staff Phase 1 Item Level 108 Binds when picked up Two-Hand Staff 118 - 200 Damage Speed 2.70 (58.89 damage per second) +26 Intellect Durability 85 / 85 Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 64. Equip: Restores 10 mana per 5 sec. Sell Price: 8 22 87",
+  "fetched_at": "2026-06-15T20:26:52+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 31543,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 58.89,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 31543,
+    "item_level": 108,
+    "name": "Adjudicator's Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 26.0,
+      "mp5": 10.0,
+      "spell_crit_rating": 26.0,
+      "spell_power": 64.0
+    },
+    "weapon_max_damage": 200,
+    "weapon_min_damage": 118,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31543/adjudicators-staff"
+  },
+  "name": "Adjudicator's Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31543/adjudicators-staff"
+}

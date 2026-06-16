@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Exorcist's Scaled Helm Phase 1 Item Level 100 Binds when picked up Head Plate 827 Armor +29 Strength +30 Stamina +15 Intellect Meta Socket Socket Bonus: +3 Strength Durability 80 / 80 Requires Level 66 Equip: Improves critical strike rating by 18.",
+  "fetched_at": "2026-06-15T20:25:23+00:00",
+  "inventory_slot": null,
+  "item_id": 28761,
+  "item_stats": {
+    "armor": 827,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 28761,
+    "item_level": 100,
+    "name": "Exorcist's Scaled Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 66,
+    "socket_bonus": {
+      "strength": 3.0
+    },
+    "sockets": [
+      "meta"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 18.0,
+      "intellect": 15.0,
+      "stamina": 30.0,
+      "strength": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28761/exorcists-scaled-helm"
+  },
+  "name": "Exorcist's Scaled Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28761/exorcists-scaled-helm"
+}

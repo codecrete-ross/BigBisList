@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nordrassil Chestpiece Phase 2 Item Level 133 Binds when picked up Chest Leather 419 Armor +36 Stamina +32 Intellect +25 Spirit Blue Socket Blue Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 120 / 120 Classes: Druid Requires Level 70 Equip: Improves spell hit rating by 19. Equip: Improves spell critical strike rating by 17. Equip: Increases damage and healing done by magical spells and effects by up to 54. Nordrassil Regalia (0/5) Nordrassil Chestpiece Nordrassil Gauntlets Nordrassil Headpiece Nordrassil Wrath-Kilt Nordrassil Wrath-Mantle (2) Set : When you shift out of Moonkin Form, your next Regrowth spell costs 450 less mana. (4) Set : Increases your Starfire damage against targets afflicted with Moonfire or Insect Swarm by 10%.",
+  "fetched_at": "2026-06-15T20:25:55+00:00",
+  "inventory_slot": null,
+  "item_id": 30231,
+  "item_stats": {
+    "armor": 419,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30231,
+    "item_level": 133,
+    "name": "Nordrassil Chestpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "blue",
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 32.0,
+      "spell_crit_rating": 17.0,
+      "spell_hit_rating": 19.0,
+      "spell_power": 54.0,
+      "spirit": 25.0,
+      "stamina": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30231/nordrassil-chestpiece"
+  },
+  "name": "Nordrassil Chestpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30231/nordrassil-chestpiece"
+}

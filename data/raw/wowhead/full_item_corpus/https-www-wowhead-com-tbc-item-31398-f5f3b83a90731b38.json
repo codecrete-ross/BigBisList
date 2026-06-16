@@ -1,0 +1,230 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This epic ring of item level 100 goes in the \"Finger\" slot. It is crafted. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 31398,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 31398,
+    "item_level": 100,
+    "name": "The Frozen Eye",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 38503,
+      "entity_name": "The Frozen Eye",
+      "profession": "Jewelcrafting",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 31401,
+          "entity_name": "Design: The Frozen Eye",
+          "item_id": 31401,
+          "source_url": "https://www.wowhead.com/tbc/item=31398",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=31398",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=31398",
+      "spell_id": 38503,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "Crafted: The Frozen Eye",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 38503,
+        "entity_name": "The Frozen Eye",
+        "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 31401,
+            "entity_name": "Design: The Frozen Eye",
+            "item_id": 31401,
+            "source_url": "https://www.wowhead.com/tbc/item=31398",
+            "type": "vendor"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Jewelcrafting",
+            "raw_text": "Jewelcrafting",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=31398",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=31398",
+        "spell_id": 38503,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31398"
+  },
+  "name": "The Frozen Eye",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 38503,
+      "entity_name": "The Frozen Eye",
+      "profession": "Jewelcrafting",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 31401,
+          "entity_name": "Design: The Frozen Eye",
+          "item_id": 31401,
+          "source_url": "https://www.wowhead.com/tbc/item=31398",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Jewelcrafting",
+          "raw_text": "Jewelcrafting",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=31398",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=31398",
+      "spell_id": 38503,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          31398,
+          1,
+          1
+        ],
+        "id": 38503,
+        "learnedat": 375,
+        "level": 0,
+        "name": "The Frozen Eye",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            31079,
+            4
+          ],
+          [
+            23449,
+            2
+          ],
+          [
+            21885,
+            6
+          ],
+          [
+            21884,
+            6
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          755
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 31401,
+        "level": 75,
+        "name": "Design: The Frozen Eye",
+        "popularity": 3,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Apprentice Darius",
+            "t": 1,
+            "ti": 18255,
+            "z": 41
+          }
+        ],
+        "subclass": 10
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 31401,
+      "level": 75,
+      "name": "Design: The Frozen Eye",
+      "popularity": 3,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Apprentice Darius",
+          "t": 1,
+          "ti": 18255,
+          "z": 41
+        }
+      ],
+      "subclass": 10
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31398"
+}

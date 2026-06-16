@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Dreadweave Mantle Phase 1 Item Level 123 Binds when picked up Shoulder Cloth 155 Armor +42 Stamina +14 Intellect Blue Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 60 / 60 Classes: Warlock Requires Level 70 Equip: Improves spell hit rating by 12. Equip: Improves your resilience rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 32. Gladiator's Dreadgear (0/5) Gladiator's Dreadweave Gloves Gladiator's Dreadweave Hood Gladiator's Dreadweave Leggings Gladiator's Dreadweave Mantle Gladiator's Dreadweave Robe (2) Set : +35 Resilience Rating. (4) Set : Reduces the casting time of your Fear spell by 0.2 sec.",
+  "fetched_at": "2026-06-15T20:23:31+00:00",
+  "inventory_slot": null,
+  "item_id": 24554,
+  "item_stats": {
+    "armor": 155,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 24554,
+    "item_level": 123,
+    "name": "Gladiator's Dreadweave Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "resilience_rating": 21.0,
+      "spell_hit_rating": 12.0,
+      "spell_power": 32.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24554/gladiators-dreadweave-mantle"
+  },
+  "name": "Gladiator's Dreadweave Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24554/gladiators-dreadweave-mantle"
+}

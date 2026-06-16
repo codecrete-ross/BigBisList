@@ -1,0 +1,39 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Feyscale Cloak Phase 1 Item Level 20 Binds when picked up Back 19 Armor +4 Stamina Requires Level 15 Equip: Increases damage and healing done by magical spells and effects by up to 5. Sell Price: 5 11",
+  "fetched_at": "2026-06-15T20:29:22+00:00",
+  "inventory_slot": null,
+  "item_id": 6632,
+  "item_stats": {
+    "armor": 19,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 6632,
+    "item_level": 20,
+    "name": "Feyscale Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 15,
+    "source_summary": "",
+    "stats": {
+      "spell_power": 5.0,
+      "stamina": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=6632/feyscale-cloak"
+  },
+  "name": "Feyscale Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6632/feyscale-cloak"
+}

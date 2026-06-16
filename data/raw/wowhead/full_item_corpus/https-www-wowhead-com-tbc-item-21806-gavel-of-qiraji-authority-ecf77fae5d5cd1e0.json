@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gavel of Qiraji Authority Phase 1 Item Level 71 Binds when picked up Two-Hand Mace 108 - 162 Damage Speed 2.20 (61.36 damage per second) +15 Strength +15 Stamina +16 Intellect Durability 100 / 100 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 19. Equip: Restores 6 mana per 5 sec. Sell Price: 6 99 42",
+  "fetched_at": "2026-06-15T20:22:45+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 21806,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 61.36,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 21806,
+    "item_level": 71,
+    "name": "Gavel of Qiraji Authority",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 16.0,
+      "mp5": 6.0,
+      "spell_power": 19.0,
+      "stamina": 15.0,
+      "strength": 15.0
+    },
+    "weapon_max_damage": 162,
+    "weapon_min_damage": 108,
+    "weapon_speed": 2.2,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21806/gavel-of-qiraji-authority"
+  },
+  "name": "Gavel of Qiraji Authority",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21806/gavel-of-qiraji-authority"
+}

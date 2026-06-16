@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Talbuk Hide Spaulders Phase 1 Item Level 115 Binds when picked up Unique Shoulder Leather 219 Armor +20 Agility Durability 60 / 60 Requires Level 70 Requires The Mag'har - Revered Equip: Improves hit rating by 15. Equip: Increases attack power by 70. Sell Price: 3 34 26",
+  "fetched_at": "2026-06-15T20:25:34+00:00",
+  "inventory_slot": null,
+  "item_id": 29147,
+  "item_stats": {
+    "armor": 219,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 29147,
+    "item_level": 115,
+    "name": "Talbuk Hide Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 20.0,
+      "attack_power": 70.0,
+      "hit_rating": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29147/talbuk-hide-spaulders"
+  },
+  "name": "Talbuk Hide Spaulders",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Talbuk Hide Spaulders Phase 1 Item Level 115 Binds when picked up Unique Shoulder Leather 219 Armor +20 Agility Durability 60 / 60 Requires Level 70 Requires The Mag'har - Revered Equip: Improves hit rating by 15. Equip: Increases attack power by 70. Sell Price: 3 34 26",
+      "reputation": "The Mag'har",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29147/talbuk-hide-spaulders",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29147/talbuk-hide-spaulders"
+}

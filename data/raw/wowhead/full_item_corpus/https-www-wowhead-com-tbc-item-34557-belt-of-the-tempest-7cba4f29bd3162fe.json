@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Belt of the Tempest Phase 5 Item Level 154 Binds when picked up Waist Cloth 145 Armor +19 Stamina +29 Intellect +20 Spirit Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 35 / 35 Classes: Mage Requires Level 70 Equip: Improves spell hit rating by 14. Equip: Improves spell critical strike rating by 17. Equip: Improves spell haste rating by 29. Equip: Increases damage and healing done by magical spells and effects by up to 50. Tempest Regalia (0/8) Cowl of the Tempest Gloves of the Tempest Leggings of the Tempest Mantle of the Tempest Robes of the Tempest Boots of the Tempest Bracers of the Tempest Belt of the Tempest (2) Set : Increases the duration of your Evocation ability by 2 sec. (4) Set : Increases the damage of your Fireball, Frostbolt, and Arcane Missiles abilities by 5%.",
+  "fetched_at": "2026-06-15T20:27:48+00:00",
+  "inventory_slot": null,
+  "item_id": 34557,
+  "item_stats": {
+    "armor": 145,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves spell haste rating by",
+      "Equip:"
+    ],
+    "id": 34557,
+    "item_level": 154,
+    "name": "Belt of the Tempest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 29.0,
+      "spell_crit_rating": 17.0,
+      "spell_hit_rating": 14.0,
+      "spell_power": 50.0,
+      "spirit": 20.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34557/belt-of-the-tempest"
+  },
+  "name": "Belt of the Tempest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34557/belt-of-the-tempest"
+}

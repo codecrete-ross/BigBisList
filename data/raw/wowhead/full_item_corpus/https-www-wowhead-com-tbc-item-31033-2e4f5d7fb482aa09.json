@@ -1,0 +1,166 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue libram of item level 106 goes in the \"Relic\" slot. It is a quest reward. In the Librams category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 31033,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 31033,
+    "item_level": 106,
+    "name": "Libram of Righteous Power",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10744,
+      "entity_name": "News of Victory",
+      "quest_id": 10744,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=31033",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    "quality": "rare",
+    "slot": "Relic",
+    "source_summary": "Quest: News of Victory +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10744,
+        "entity_name": "News of Victory",
+        "quest_id": 10744,
+        "side": "Alliance",
+        "source_url": "https://www.wowhead.com/tbc/item=31033",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10745,
+        "entity_name": "News of Victory",
+        "quest_id": 10745,
+        "side": "Horde",
+        "source_url": "https://www.wowhead.com/tbc/item=31033",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31033"
+  },
+  "name": "Libram of Righteous Power",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10744,
+      "entity_name": "News of Victory",
+      "quest_id": 10744,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=31033",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10745,
+      "entity_name": "News of Victory",
+      "quest_id": 10745,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31033",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10744,
+        "itemchoices": [
+          [
+            30973,
+            1
+          ],
+          [
+            30924,
+            1
+          ],
+          [
+            31025,
+            1
+          ],
+          [
+            31033,
+            1
+          ],
+          [
+            31031,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "News of Victory",
+        "popularity": 7,
+        "reqlevel": 67,
+        "side": 1,
+        "xp": 15800
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10745,
+        "itemchoices": [
+          [
+            30973,
+            1
+          ],
+          [
+            30924,
+            1
+          ],
+          [
+            31025,
+            1
+          ],
+          [
+            31033,
+            1
+          ],
+          [
+            31031,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 44000,
+        "name": "News of Victory",
+        "popularity": 15,
+        "reqlevel": 67,
+        "side": 2,
+        "xp": 15800
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31033"
+}

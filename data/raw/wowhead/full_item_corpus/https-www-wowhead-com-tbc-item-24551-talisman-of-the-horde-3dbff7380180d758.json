@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Talisman of the Horde Item Level 90 Binds when picked up Unique Trinket Requires Level 70 Equip: Improves your resilience rating by 34. Use: Heal self for 877 to 969 damage. (2 Min Cooldown)",
+  "fetched_at": "2026-06-15T20:23:31+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 24551,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 24551,
+    "item_level": 90,
+    "name": "Talisman of the Horde",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "resilience_rating": 34.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24551/talisman-of-the-horde"
+  },
+  "name": "Talisman of the Horde",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24551/talisman-of-the-horde"
+}

@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Talisman of the Alliance Phase 1 Item Level 90 Binds when picked up Unique Trinket Requires Level 70 Equip: Improves your resilience rating by 34. Use: Heal self for 877 to 969 damage. (2 Min Cooldown)",
+  "fetched_at": "2026-06-15T20:24:41+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 25829,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 25829,
+    "item_level": 90,
+    "name": "Talisman of the Alliance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "resilience_rating": 34.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25829/talisman-of-the-alliance"
+  },
+  "name": "Talisman of the Alliance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25829/talisman-of-the-alliance"
+}

@@ -1,0 +1,195 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic off-hand frill of item level 125 goes in the \"Held In Off-hand\" slot. It is looted from Magtheridon. In the Off-hand Frills category.",
+  "fetched_at": "2026-06-15T18:31:28+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 28781,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 28781,
+    "item_level": 125,
+    "name": "Karaborian Talisman",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1550,
+      "drop_percent": 14.35,
+      "entity_id": 17257,
+      "entity_name": "Magtheridon",
+      "out_of": 10798,
+      "source_url": "https://www.wowhead.com/tbc/item=28781",
+      "type": "drop",
+      "zone": "Magtheridon's Lair"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Off Hand",
+    "source_summary": "Drop: Magtheridon (Magtheridon's Lair) 14.3% +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 1550,
+        "drop_percent": 14.35,
+        "entity_id": 17257,
+        "entity_name": "Magtheridon",
+        "out_of": 10798,
+        "source_url": "https://www.wowhead.com/tbc/item=28781",
+        "type": "drop",
+        "zone": "Magtheridon's Lair"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 21174,
+        "entity_name": "Magtheridon",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=28781",
+        "type": "drop"
+      }
+    ],
+    "stats": {
+      "intellect": 23.0,
+      "spell_power": 35.0,
+      "stamina": 23.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28781"
+  },
+  "name": "Karaborian Talisman",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1550,
+      "drop_percent": 14.35,
+      "entity_id": 17257,
+      "entity_name": "Magtheridon",
+      "out_of": 10798,
+      "source_url": "https://www.wowhead.com/tbc/item=28781",
+      "type": "drop",
+      "zone": "Magtheridon's Lair"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 21174,
+      "entity_name": "Magtheridon",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=28781",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1550,
+        "id": 17257,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1550,
+                "outof": 10798
+              }
+            },
+            "4": {
+              "0": {
+                "count": 88,
+                "outof": 650
+              }
+            },
+            "5": {
+              "0": {
+                "count": 69,
+                "outof": 408
+              }
+            }
+          }
+        },
+        "location": [
+          3836
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1550,
+            "outof": 10798
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 10798,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21174,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 12.8
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 12.8
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 12.8,
+        "personal_loot": 0,
+        "popularity": 3,
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28781"
+}

@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lightwarden's Band Phase 1 Item Level 115 Binds when picked up Unique Finger +18 Agility +27 Stamina Requires Level 70 Requires The Aldor - Revered Equip: Increases attack power by 38. Sell Price: 71 2",
+  "fetched_at": "2026-06-15T20:25:34+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 29128,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 29128,
+    "item_level": 115,
+    "name": "Lightwarden's Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "attack_power": 38.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29128/lightwardens-band"
+  },
+  "name": "Lightwarden's Band",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Lightwarden's Band Phase 1 Item Level 115 Binds when picked up Unique Finger +18 Agility +27 Stamina Requires Level 70 Requires The Aldor - Revered Equip: Increases attack power by 38. Sell Price: 71 2",
+      "reputation": "The Aldor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29128/lightwardens-band",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29128/lightwardens-band"
+}

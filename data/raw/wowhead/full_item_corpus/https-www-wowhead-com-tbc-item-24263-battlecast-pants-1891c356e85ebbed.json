@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Battlecast Pants Phase 1 Item Level 105 Binds when equipped Legs Cloth 156 Armor +42 Stamina +27 Intellect Red Socket Blue Socket Socket Bonus: +3 Spell Critical Strike Rating Durability 75 / 75 Requires Level 70 Equip: Increases damage and healing done by magical spells and effects by up to 46. Battlecast Garb (0/2) Requires Tailoring (375) Battlecast Hood Battlecast Pants (2) Set : Increases the chance spell pushback and spell interrupt will be resisted by 5%. Sell Price: 4 50 32",
+  "fetched_at": "2026-06-15T20:23:27+00:00",
+  "inventory_slot": null,
+  "item_id": 24263,
+  "item_stats": {
+    "armor": 156,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 24263,
+    "item_level": 105,
+    "name": "Battlecast Pants",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "spell_power": 46.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24263/battlecast-pants"
+  },
+  "name": "Battlecast Pants",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Battlecast Pants Phase 1 Item Level 105 Binds when equipped Legs Cloth 156 Armor +42 Stamina +27 Intellect Red Socket Blue Socket Socket Bonus: +3 Spell Critical Strike Rating Durability 75 / 75 Requires Level 70 Equip: Increases damage and healing done by magical spells and effects by up to 46. Battlecast Garb (0/2) Requires Tailoring (375) Battlecast Hood Battlecast Pants (2) Set : Increases the chance spell pushback and spell interrupt will be resisted by 5%. Sell Price: 4 50 32",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=24263/battlecast-pants",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24263/battlecast-pants"
+}

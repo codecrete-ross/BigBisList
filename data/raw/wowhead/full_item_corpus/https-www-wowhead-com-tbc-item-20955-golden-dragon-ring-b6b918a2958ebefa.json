@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Golden Dragon Ring Item Level 33 Binds when equipped Unique-Equipped Finger Requires Level 28 Equip: Increases attack power by 10. Equip: Increases defense rating by 4. Sell Price: 6 65",
+  "fetched_at": "2026-06-15T20:22:26+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 20955,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 20955,
+    "item_level": 33,
+    "name": "Golden Dragon Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 28,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 10.0,
+      "defense_rating": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20955/golden-dragon-ring"
+  },
+  "name": "Golden Dragon Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20955/golden-dragon-ring"
+}

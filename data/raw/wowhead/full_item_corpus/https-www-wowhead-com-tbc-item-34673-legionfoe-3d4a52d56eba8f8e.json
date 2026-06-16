@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Legionfoe Phase 5 Item Level 115 Binds when picked up Unique Two-Hand Axe 276 - 414 Damage Speed 3.70 (93.24 damage per second) +31 Strength +45 Stamina Durability 100 / 100 Requires Level 70 Requires Shattered Sun Offensive - Revered Equip: Improves critical strike rating by 26. Equip: Increases your expertise rating by 19. Sell Price: 10 98 93",
+  "fetched_at": "2026-06-15T20:27:51+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 34673,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 93.24,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Increases your expertise rating by"
+    ],
+    "id": 34673,
+    "item_level": 115,
+    "name": "Legionfoe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 26.0,
+      "expertise_rating": 19.0,
+      "stamina": 45.0,
+      "strength": 31.0
+    },
+    "weapon_max_damage": 414,
+    "weapon_min_damage": 276,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34673/legionfoe"
+  },
+  "name": "Legionfoe",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Legionfoe Phase 5 Item Level 115 Binds when picked up Unique Two-Hand Axe 276 - 414 Damage Speed 3.70 (93.24 damage per second) +31 Strength +45 Stamina Durability 100 / 100 Requires Level 70 Requires Shattered Sun Offensive - Revered Equip: Improves critical strike rating by 26. Equip: Increases your expertise rating by 19. Sell Price: 10 98 93",
+      "reputation": "Shattered Sun Offensive",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=34673/legionfoe",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34673/legionfoe"
+}

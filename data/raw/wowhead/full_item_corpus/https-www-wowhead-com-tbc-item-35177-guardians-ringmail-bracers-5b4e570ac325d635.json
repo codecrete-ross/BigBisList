@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Guardian's Ringmail Bracers Phase 5 Item Level 154 Binds when picked up Wrist Mail 471 Armor +33 Stamina +20 Intellect Yellow Socket Socket Bonus: +2 Resilience Rating Durability 50 / 50 Classes: Hunter , Shaman Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Improves your resilience rating by 15. Equip: Increases healing done by up to 57 and damage done by up to 19 for all magical spells and effects.",
+  "fetched_at": "2026-06-15T20:28:03+00:00",
+  "inventory_slot": null,
+  "item_id": 35177,
+  "item_stats": {
+    "armor": 471,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 35177,
+    "item_level": 154,
+    "name": "Guardian's Ringmail Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 57.0,
+      "intellect": 20.0,
+      "resilience_rating": 15.0,
+      "spell_crit_rating": 24.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35177/guardians-ringmail-bracers"
+  },
+  "name": "Guardian's Ringmail Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35177/guardians-ringmail-bracers"
+}

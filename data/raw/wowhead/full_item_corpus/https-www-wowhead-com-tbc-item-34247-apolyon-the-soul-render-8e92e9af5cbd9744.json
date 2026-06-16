@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Apolyon, the Soul-Render Phase 5 Item Level 164 Binds when picked up Two-Hand Sword 404 - 607 Damage Speed 3.40 (148.68 damage per second) +75 Stamina Red Socket Red Socket Red Socket Socket Bonus: +6 Stamina Durability 120 / 120 Requires Level 70 Equip: Improves critical strike rating by 42. Equip: Improves haste rating by 32. Equip: Increases attack power by 126. Sell Price: 20 77 10",
+  "fetched_at": "2026-06-15T20:27:42+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 34247,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 148.68,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves haste rating by",
+      "Equip:"
+    ],
+    "id": 34247,
+    "item_level": 164,
+    "name": "Apolyon, the Soul-Render",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "socket_bonus": {
+      "stamina": 6.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 126.0,
+      "crit_rating": 42.0,
+      "haste_rating": 32.0,
+      "stamina": 75.0
+    },
+    "weapon_max_damage": 607,
+    "weapon_min_damage": 404,
+    "weapon_speed": 3.4,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34247/apolyon-the-soul-render"
+  },
+  "name": "Apolyon, the Soul-Render",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34247/apolyon-the-soul-render"
+}

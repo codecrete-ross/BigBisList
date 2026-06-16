@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Fire Goggles Phase 1 Item Level 41 Binds when equipped Head Cloth 44 Armor +17 Fire Resistance Durability 45 / 45 Requires Engineering (205) Sell Price: 34 78",
+  "fetched_at": "2026-06-15T20:17:15+00:00",
+  "inventory_slot": null,
+  "item_id": 10500,
+  "item_stats": {
+    "armor": 44,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10500,
+    "item_level": 41,
+    "name": "Fire Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10500/fire-goggles"
+  },
+  "name": "Fire Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Fire Goggles Phase 1 Item Level 41 Binds when equipped Head Cloth 44 Armor +17 Fire Resistance Durability 45 / 45 Requires Engineering (205) Sell Price: 34 78",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/tbc/item=10500/fire-goggles",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10500/fire-goggles"
+}

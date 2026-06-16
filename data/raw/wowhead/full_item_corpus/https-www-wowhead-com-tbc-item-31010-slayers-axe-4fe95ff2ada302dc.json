@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Slayer's Axe Phase 1 Item Level 109 Binds when picked up Two-Hand Axe 223 - 336 Damage Speed 3.20 (87.34 damage per second) +51 Strength Durability 100 / 100 Equip: Improves critical strike rating by 21. Sell Price: 10 69 56",
+  "fetched_at": "2026-06-15T20:26:12+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 31010,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 87.34,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 31010,
+    "item_level": 109,
+    "name": "Slayer's Axe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 21.0,
+      "strength": 51.0
+    },
+    "weapon_max_damage": 336,
+    "weapon_min_damage": 223,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31010/slayers-axe"
+  },
+  "name": "Slayer's Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31010/slayers-axe"
+}

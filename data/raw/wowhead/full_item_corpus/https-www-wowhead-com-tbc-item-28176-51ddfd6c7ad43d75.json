@@ -1,0 +1,123 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Feet\" slot. It is a quest reward from Into the Heart of the Labyrinth. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:26+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 28176,
+  "item_stats": {
+    "armor": 800,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 28176,
+    "item_level": 115,
+    "name": "Sha'tari Wrought Greaves",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10095,
+      "entity_name": "Into the Heart of the Labyrinth",
+      "quest_id": 10095,
+      "source_url": "https://www.wowhead.com/tbc/item=28176",
+      "type": "quest",
+      "zone": "Auchindoun"
+    },
+    "quality": "rare",
+    "slot": "Feet",
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "Quest: Into the Heart of the Labyrinth",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10095,
+        "entity_name": "Into the Heart of the Labyrinth",
+        "quest_id": 10095,
+        "source_url": "https://www.wowhead.com/tbc/item=28176",
+        "type": "quest",
+        "zone": "Auchindoun"
+      }
+    ],
+    "stats": {
+      "agility": 21.0,
+      "stamina": 22.0,
+      "strength": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28176"
+  },
+  "name": "Sha'tari Wrought Greaves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10095,
+      "entity_name": "Into the Heart of the Labyrinth",
+      "quest_id": 10095,
+      "source_url": "https://www.wowhead.com/tbc/item=28176",
+      "type": "quest",
+      "zone": "Auchindoun"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3688,
+        "category2": 8,
+        "id": 10095,
+        "itemchoices": [
+          [
+            28179,
+            1
+          ],
+          [
+            28178,
+            1
+          ],
+          [
+            28177,
+            1
+          ],
+          [
+            28176,
+            1
+          ]
+        ],
+        "level": 70,
+        "money": 132000,
+        "name": "Into the Heart of the Labyrinth",
+        "popularity": 7,
+        "reprewards": [
+          [
+            1011,
+            500
+          ]
+        ],
+        "reqlevel": 68,
+        "side": 3,
+        "type": 81,
+        "xp": 25300
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28176"
+}

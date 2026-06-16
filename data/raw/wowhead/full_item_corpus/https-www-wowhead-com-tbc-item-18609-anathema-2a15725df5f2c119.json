@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Anathema Phase 1 Item Level 75 Binds when picked up Unique Two-Hand Staff 134 - 222 Damage Speed 3.00 (59.33 damage per second) +22 Stamina +31 Intellect +20 Shadow Resistance Durability 120 / 120 Classes: Priest Requires Level 60 Use: Calls forth Benediction. (30 Min Cooldown) Equip: Restores 7 mana per 5 sec. Equip: Increases damage done by Shadow spells and effects by up to 69.",
+  "fetched_at": "2026-06-15T20:19:54+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 18609,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 59.33,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 18609,
+    "item_level": 75,
+    "name": "Anathema",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 31.0,
+      "mp5": 7.0,
+      "stamina": 22.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "weapon_max_damage": 222,
+    "weapon_min_damage": 134,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18609/anathema"
+  },
+  "name": "Anathema",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18609/anathema"
+}

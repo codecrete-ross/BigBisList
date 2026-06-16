@@ -1,0 +1,183 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Magtheridon's Head is a quest item needed for The Fall of Magtheridon. In the Items category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T17:10:37+00:00",
+  "inventory_slot": null,
+  "item_id": 32385,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 32385,
+    "name": "Magtheridon's Head",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 4977,
+      "drop_percent": 46.09,
+      "entity_id": 17257,
+      "entity_name": "Magtheridon",
+      "out_of": 10798,
+      "source_url": "https://www.wowhead.com/tbc/item=32385",
+      "type": "drop",
+      "zone": "Magtheridon's Lair"
+    },
+    "quality": "unknown",
+    "source_summary": "Drop: Magtheridon (Magtheridon's Lair) 46.1% +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 4977,
+        "drop_percent": 46.09,
+        "entity_id": 17257,
+        "entity_name": "Magtheridon",
+        "out_of": 10798,
+        "source_url": "https://www.wowhead.com/tbc/item=32385",
+        "type": "drop",
+        "zone": "Magtheridon's Lair"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 21174,
+        "entity_name": "Magtheridon",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=32385",
+        "type": "drop"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32385"
+  },
+  "name": "Magtheridon's Head",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 4977,
+      "drop_percent": 46.09,
+      "entity_id": 17257,
+      "entity_name": "Magtheridon",
+      "out_of": 10798,
+      "source_url": "https://www.wowhead.com/tbc/item=32385",
+      "type": "drop",
+      "zone": "Magtheridon's Lair"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 21174,
+      "entity_name": "Magtheridon",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=32385",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 4977,
+        "id": 17257,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4977,
+                "outof": 10798
+              }
+            },
+            "4": {
+              "0": {
+                "count": 312,
+                "outof": 650
+              }
+            },
+            "5": {
+              "0": {
+                "count": 182,
+                "outof": 408
+              }
+            }
+          }
+        },
+        "location": [
+          3836
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 4977,
+            "outof": 10798
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 10798,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21174,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 49.5
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 49.5
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magtheridon",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 49.5,
+        "personal_loot": 0,
+        "popularity": 3,
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32385"
+}

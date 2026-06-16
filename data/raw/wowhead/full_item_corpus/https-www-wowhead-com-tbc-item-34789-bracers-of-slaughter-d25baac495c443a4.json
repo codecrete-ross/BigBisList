@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bracers of Slaughter Phase 5 Item Level 115 Binds when picked up Wrist Plate 509 Armor +19 Strength +15 Stamina Yellow Socket Socket Bonus: +2 Strength Durability 45 / 45 Requires Level 70 Equip: Improves critical strike rating by 18. Sell Price: 2 95 36",
+  "fetched_at": "2026-06-15T20:27:52+00:00",
+  "inventory_slot": null,
+  "item_id": 34789,
+  "item_stats": {
+    "armor": 509,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 34789,
+    "item_level": 115,
+    "name": "Bracers of Slaughter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "strength": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 18.0,
+      "stamina": 15.0,
+      "strength": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34789/bracers-of-slaughter"
+  },
+  "name": "Bracers of Slaughter",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34789/bracers-of-slaughter"
+}

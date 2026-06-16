@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Lesser Sledgemace Phase 1 Item Level 102 Binds when equipped Main Hand Mace 43 - 98 Damage Speed 1.70 (41.47 damage per second) <Random enchantment> Durability 75 / 75 Requires Level 64 Equip: Increases healing done by up to 94 and damage done by up to 32 for all magical spells and effects. Sell Price: 6 29 67",
+  "fetched_at": "2026-06-15T20:24:28+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 25317,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 41.47,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 25317,
+    "item_level": 102,
+    "name": "Lesser Sledgemace",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 64,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 94.0
+    },
+    "weapon_max_damage": 98,
+    "weapon_min_damage": 43,
+    "weapon_speed": 1.7,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25317/lesser-sledgemace"
+  },
+  "name": "Lesser Sledgemace",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25317/lesser-sledgemace"
+}

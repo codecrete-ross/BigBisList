@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lightbringer Gauntlets Phase 3 Item Level 146 Binds when picked up Hands Plate 1141 Armor +51 Strength +37 Stamina +25 Intellect Yellow Socket Socket Bonus: +2 Hit Rating Durability 55 / 55 Classes: Paladin Requires Level 70 Equip: Improves critical strike rating by 19. Lightbringer Battlegear (0/8) Lightbringer Breastplate Lightbringer Gauntlets Lightbringer Greaves Lightbringer Shoulderbraces Lightbringer War-Helm Lightbringer Boots Lightbringer Bands Lightbringer Girdle (2) Set : Your melee attacks have a chance to grant you 50 mana. (Proc chance: 20%) (4) Set : Increases the damage dealt by your Hammer of Wrath ability by 10%.",
+  "fetched_at": "2026-06-15T20:26:11+00:00",
+  "inventory_slot": null,
+  "item_id": 30982,
+  "item_stats": {
+    "armor": 1141,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 30982,
+    "item_level": 146,
+    "name": "Lightbringer Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "hit_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 19.0,
+      "intellect": 25.0,
+      "stamina": 37.0,
+      "strength": 51.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30982/lightbringer-gauntlets"
+  },
+  "name": "Lightbringer Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30982/lightbringer-gauntlets"
+}

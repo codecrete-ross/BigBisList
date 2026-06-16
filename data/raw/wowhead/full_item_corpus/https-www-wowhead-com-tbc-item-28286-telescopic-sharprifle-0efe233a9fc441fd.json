@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Telescopic Sharprifle Phase 1 Item Level 115 Binds when picked up Ranged Gun 139 - 259 Damage Speed 3.00 (66.33 damage per second) +13 Agility Durability 75 / 75 Requires Level 70 Equip: Increases attack power by 28. Sell Price: 6 75 65",
+  "fetched_at": "2026-06-15T20:25:10+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 28286,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 66.33,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 28286,
+    "item_level": 115,
+    "name": "Telescopic Sharprifle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 13.0,
+      "attack_power": 28.0
+    },
+    "weapon_max_damage": 259,
+    "weapon_min_damage": 139,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28286/telescopic-sharprifle"
+  },
+  "name": "Telescopic Sharprifle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28286/telescopic-sharprifle"
+}

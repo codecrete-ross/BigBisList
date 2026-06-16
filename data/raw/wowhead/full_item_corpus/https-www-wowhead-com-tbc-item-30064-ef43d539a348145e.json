@@ -1,0 +1,144 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 128 goes in the \"Waist\" slot. It is looted from The Lurker Below. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Waist",
+  "item_id": 30064,
+  "item_stats": {
+    "armor": 121,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip:"
+    ],
+    "id": 30064,
+    "item_level": 128,
+    "name": "Cord of Screaming Terrors",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 10,
+      "drop_percent": 23.26,
+      "entity_id": 21217,
+      "entity_name": "The Lurker Below",
+      "out_of": 43,
+      "source_url": "https://www.wowhead.com/tbc/item=30064",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Waist",
+    "socket_bonus": {
+      "stamina": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "Drop: The Lurker Below (Serpentshrine Cavern) 23.3%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 10,
+        "drop_percent": 23.26,
+        "entity_id": 21217,
+        "entity_name": "The Lurker Below",
+        "out_of": 43,
+        "source_url": "https://www.wowhead.com/tbc/item=30064",
+        "type": "drop",
+        "zone": "Serpentshrine Cavern"
+      }
+    ],
+    "stats": {
+      "intellect": 15.0,
+      "spell_hit_rating": 24.0,
+      "spell_power": 50.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30064"
+  },
+  "name": "Cord of Screaming Terrors",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 10,
+      "drop_percent": 23.26,
+      "entity_id": 21217,
+      "entity_name": "The Lurker Below",
+      "out_of": 43,
+      "source_url": "https://www.wowhead.com/tbc/item=30064",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 10,
+        "id": 21217,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 23,
+                "outof": 125
+              }
+            },
+            "4": {
+              "0": {
+                "count": 10,
+                "outof": 43
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 23,
+            "outof": 125
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Lurker Below",
+        "outof": 43,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30064"
+}

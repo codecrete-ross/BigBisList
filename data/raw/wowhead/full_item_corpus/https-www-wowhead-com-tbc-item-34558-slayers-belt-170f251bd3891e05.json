@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Slayer's Belt Phase 5 Item Level 154 Binds when picked up Waist Leather 272 Armor +29 Agility +21 Stamina Red Socket Socket Bonus: +2 Critical Strike Rating Durability 40 / 40 Classes: Rogue Requires Level 70 Equip: Improves hit rating by 30. Equip: Improves critical strike rating by 13. Equip: Improves haste rating by 27. Equip: Increases attack power by 86. Slayer's Armor (0/8) Slayer's Chestguard Slayer's Handguards Slayer's Helm Slayer's Legguards Slayer's Shoulderpads Slayer's Boots Slayer's Bracers Slayer's Belt (2) Set : Increases the haste from your Slice and Dice ability by 5%. (4) Set : Increases the damage dealt by your Backstab, Sinister Strike, Mutilate, and Hemorrhage abilities by 6%.",
+  "fetched_at": "2026-06-15T20:27:48+00:00",
+  "inventory_slot": null,
+  "item_id": 34558,
+  "item_stats": {
+    "armor": 272,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves haste rating by",
+      "Equip:"
+    ],
+    "id": 34558,
+    "item_level": 154,
+    "name": "Slayer's Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 29.0,
+      "attack_power": 86.0,
+      "crit_rating": 13.0,
+      "haste_rating": 27.0,
+      "hit_rating": 30.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34558/slayers-belt"
+  },
+  "name": "Slayer's Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34558/slayers-belt"
+}

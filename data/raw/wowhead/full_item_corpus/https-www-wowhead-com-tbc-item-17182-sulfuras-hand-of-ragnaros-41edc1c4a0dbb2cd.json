@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sulfuras, Hand of Ragnaros Item Level 80 Binds when picked up Unique Two-Hand Mace 223 - 372 Damage Speed 3.70 (80.41 damage per second) +12 Strength +12 Stamina +30 Fire Resistance Durability 145 / 145 Requires Level 60 Chance on hit: Hurls a fiery ball that causes 273 to 333 Fire damage and an additional 75 damage over 10 sec. Equip: Deals 5 Fire damage to anyone who strikes you with a melee attack. Sell Price: 16 4 2",
+  "fetched_at": "2026-06-15T20:19:32+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 17182,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 80.41,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 17182,
+    "item_level": 80,
+    "name": "Sulfuras, Hand of Ragnaros",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "legendary",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 12.0,
+      "strength": 12.0
+    },
+    "weapon_max_damage": 372,
+    "weapon_min_damage": 223,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=17182/sulfuras-hand-of-ragnaros"
+  },
+  "name": "Sulfuras, Hand of Ragnaros",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "legendary",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=17182/sulfuras-hand-of-ragnaros"
+}

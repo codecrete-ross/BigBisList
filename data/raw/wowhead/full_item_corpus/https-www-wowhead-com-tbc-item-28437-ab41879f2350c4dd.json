@@ -1,0 +1,167 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Drakefist Hammer is a one-handed Mace, Bind on Pick-up item crafted by Blacksmiths with 350 skill and Hammersmith specialization. This epic one-handed mace has an item level of 107.",
+  "fetched_at": "2026-06-15T18:31:27+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 28437,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 84.26,
+    "id": 28437,
+    "item_level": 107,
+    "name": "Drakefist Hammer",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 34545,
+      "entity_name": "Drakefist Hammer",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28437",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28437",
+      "spell_id": 34545,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "Crafted: Drakefist Hammer",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 34545,
+        "entity_name": "Drakefist Hammer",
+        "profession": "Blacksmithing",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Blacksmithing",
+            "raw_text": "Blacksmithing",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=28437",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=28437",
+        "spell_id": 34545,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "haste_rating": 212.0
+    },
+    "weapon_max_damage": 296,
+    "weapon_min_damage": 159,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28437"
+  },
+  "name": "Drakefist Hammer",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Drakefist Hammer Phase 1 Item Level 107 Binds when picked up Main Hand Mace 159 - 296 Damage Speed 2.70 (84.26 damage per second) Durability 105 / 105 Requires Level 70 Requires Master Hammersmith Chance on hit: Increases your haste rating by 212 for 10 sec. Sell Price: 11 46 Drakefist Hammer is a one-handed Mace, Bind on Pick-up item crafted by Blacksmiths with 350 skill and Hammersmith specialization. This epic one-handed mace has an item level of 107.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28437",
+      "specialization": "Master Hammersmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 34545,
+      "entity_name": "Drakefist Hammer",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28437",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28437",
+      "spell_id": 34545,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          370,
+          380
+        ],
+        "creates": [
+          28437,
+          1,
+          1
+        ],
+        "id": 34545,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Drakefist Hammer",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            21884,
+            20
+          ],
+          [
+            22452,
+            20
+          ],
+          [
+            23447,
+            12
+          ],
+          [
+            23449,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17040,
+        "trainingcost": 100000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28437"
+}

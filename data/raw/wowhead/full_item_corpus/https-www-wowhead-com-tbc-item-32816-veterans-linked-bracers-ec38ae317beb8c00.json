@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Veteran's Linked Bracers Phase 2 Item Level 126 Binds when picked up Wrist Mail 388 Armor +21 Strength +29 Stamina +11 Intellect Yellow Socket Socket Bonus: +2 Resilience Rating Durability 50 / 50 Classes: Hunter , Shaman Requires Level 70 Equip: Improves critical strike rating by 17. Equip: Improves your resilience rating by 12.",
+  "fetched_at": "2026-06-15T20:27:17+00:00",
+  "inventory_slot": null,
+  "item_id": 32816,
+  "item_stats": {
+    "armor": 388,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 32816,
+    "item_level": 126,
+    "name": "Veteran's Linked Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 17.0,
+      "intellect": 11.0,
+      "resilience_rating": 12.0,
+      "stamina": 29.0,
+      "strength": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32816/veterans-linked-bracers"
+  },
+  "name": "Veteran's Linked Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32816/veterans-linked-bracers"
+}

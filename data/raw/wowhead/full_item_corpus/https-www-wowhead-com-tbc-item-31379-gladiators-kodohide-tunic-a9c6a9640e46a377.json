@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Kodohide Tunic Phase 1 Item Level 123 Binds when picked up Chest Leather 429 Armor +42 Stamina +30 Intellect Red Socket Red Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 120 / 120 Classes: Druid Requires Level 70 Equip: Improves your resilience rating by 26. Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects. Equip: Restores 6 mana per 5 sec. Gladiator's Refuge (0/5) Gladiator's Kodohide Gloves Gladiator's Kodohide Helm Gladiator's Kodohide Legguards Gladiator's Kodohide Spaulders Gladiator's Kodohide Tunic (2) Set : +35 Resilience Rating. (4) Set : The casting time on your Regrowth spell is reduced by 0.20 sec. (Proc chance: 15%, 15s cooldown)",
+  "fetched_at": "2026-06-15T20:26:47+00:00",
+  "inventory_slot": null,
+  "item_id": 31379,
+  "item_stats": {
+    "armor": 429,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 31379,
+    "item_level": 123,
+    "name": "Gladiator's Kodohide Tunic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 75.0,
+      "intellect": 30.0,
+      "mp5": 6.0,
+      "resilience_rating": 26.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31379/gladiators-kodohide-tunic"
+  },
+  "name": "Gladiator's Kodohide Tunic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31379/gladiators-kodohide-tunic"
+}

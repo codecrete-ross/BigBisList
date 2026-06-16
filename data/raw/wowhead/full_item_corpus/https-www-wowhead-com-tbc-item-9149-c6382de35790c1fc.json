@@ -1,0 +1,250 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 45 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-06-15T18:31:35+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 9149,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 9149,
+    "item_level": 45,
+    "name": "Philosopher's Stone",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 11459,
+      "entity_name": "Philosopher's Stone",
+      "profession": "Alchemy",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 9303,
+          "entity_name": "Recipe: Philosopher's Stone",
+          "item_id": 9303,
+          "source_url": "https://www.wowhead.com/tbc/item=9149",
+          "type": "vendor",
+          "zone": "Tanaris"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=9149",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=9149",
+      "spell_id": 11459,
+      "type": "crafted",
+      "zone": "Tanaris"
+    },
+    "quality": "uncommon",
+    "required_level": 35,
+    "slot": "Trinket",
+    "source_summary": "Crafted: Philosopher's Stone",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 11459,
+        "entity_name": "Philosopher's Stone",
+        "profession": "Alchemy",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 9303,
+            "entity_name": "Recipe: Philosopher's Stone",
+            "item_id": 9303,
+            "source_url": "https://www.wowhead.com/tbc/item=9149",
+            "type": "vendor",
+            "zone": "Tanaris"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Alchemy",
+            "raw_text": "Alchemy",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=9149",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=9149",
+        "spell_id": 11459,
+        "type": "crafted",
+        "zone": "Tanaris"
+      }
+    ],
+    "stats": {
+      "agility": 5.0,
+      "intellect": 5.0,
+      "spirit": 5.0,
+      "stamina": 5.0,
+      "strength": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=9149"
+  },
+  "name": "Philosopher's Stone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Philosopher's Stone Item Level 45 Binds when picked up Unique-Equipped Trinket +5 Strength +5 Agility +5 Stamina +5 Intellect +5 Spirit Requires Level 35 Requires Alchemy (200) \"Required for Alchemical Transmutation.\" Sell Price: 2 50 This green trinket of item level 45 goes in the \"Trinket\" slot. It is crafted. In the Trinkets category. Added in Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 200,
+      "source_url": "https://www.wowhead.com/tbc/item=9149",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11459,
+      "entity_name": "Philosopher's Stone",
+      "profession": "Alchemy",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 9303,
+          "entity_name": "Recipe: Philosopher's Stone",
+          "item_id": 9303,
+          "source_url": "https://www.wowhead.com/tbc/item=9149",
+          "type": "vendor",
+          "zone": "Tanaris"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Alchemy",
+          "raw_text": "Alchemy",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=9149",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=9149",
+      "spell_id": 11459,
+      "type": "crafted",
+      "zone": "Tanaris"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          225,
+          240,
+          260,
+          280
+        ],
+        "creates": [
+          9149,
+          1,
+          1
+        ],
+        "id": 11459,
+        "learnedat": 225,
+        "level": 0,
+        "name": "Philosopher's Stone",
+        "nskillup": 1,
+        "popularity": 9,
+        "quality": 2,
+        "reagents": [
+          [
+            3575,
+            4
+          ],
+          [
+            9262,
+            1
+          ],
+          [
+            8831,
+            4
+          ],
+          [
+            4625,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 9303,
+        "level": 45,
+        "name": "Recipe: Philosopher's Stone",
+        "popularity": 30,
+        "quality": 1,
+        "skill": 225,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Alchemist Pestlezugg",
+            "t": 1,
+            "ti": 5594,
+            "z": 440
+          }
+        ],
+        "subclass": 6
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 9303,
+      "level": 45,
+      "name": "Recipe: Philosopher's Stone",
+      "popularity": 30,
+      "quality": 1,
+      "skill": 225,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Alchemist Pestlezugg",
+          "t": 1,
+          "ti": 5594,
+          "z": 440
+        }
+      ],
+      "subclass": 6
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=9149"
+}

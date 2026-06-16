@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Onslaught Breastplate Phase 3 Item Level 146 Binds when picked up Chest Plate 1825 Armor +53 Strength +34 Agility +54 Stamina Red Socket Blue Socket Blue Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Classes: Warrior Requires Level 70 Equip: Improves hit rating by 16. Equip: Your attacks ignore 126 of your opponent's armor. Onslaught Battlegear (0/8) Onslaught Battle-Helm Onslaught Breastplate Onslaught Gauntlets Onslaught Greaves Onslaught Shoulderblades Onslaught Belt Onslaught Bracers Onslaught Treads (2) Set : Reduces the rage cost of your Execute ability by 3. (4) Set : Increases the damage of your Mortal Strike and Bloodthirst abilities by 5%.",
+  "fetched_at": "2026-06-15T20:26:11+00:00",
+  "inventory_slot": null,
+  "item_id": 30975,
+  "item_stats": {
+    "armor": 1825,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 30975,
+    "item_level": 146,
+    "name": "Onslaught Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "blue",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "hit_rating": 16.0,
+      "stamina": 54.0,
+      "strength": 53.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30975/onslaught-breastplate"
+  },
+  "name": "Onslaught Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30975/onslaught-breastplate"
+}

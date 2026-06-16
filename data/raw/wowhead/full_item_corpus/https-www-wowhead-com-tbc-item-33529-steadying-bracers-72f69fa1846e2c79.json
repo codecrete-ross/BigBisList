@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Steadying Bracers Phase 4 Item Level 128 Binds when picked up Wrist Mail 394 Armor +18 Agility +21 Stamina +19 Intellect Durability 50 / 50 Requires Level 70 Equip: Increases attack power by 50. Equip: Your attacks ignore 105 of your opponent's armor.",
+  "fetched_at": "2026-06-15T20:27:29+00:00",
+  "inventory_slot": null,
+  "item_id": 33529,
+  "item_stats": {
+    "armor": 394,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 33529,
+    "item_level": 128,
+    "name": "Steadying Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "attack_power": 50.0,
+      "intellect": 19.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33529/steadying-bracers"
+  },
+  "name": "Steadying Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33529/steadying-bracers"
+}

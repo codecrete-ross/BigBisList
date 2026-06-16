@@ -1,0 +1,203 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This white cloth armor of item level 35 goes in the \"Legs\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:18+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 10035,
+  "item_stats": {
+    "armor": 39,
+    "armor_type": "Cloth",
+    "binding": "unknown",
+    "id": 10035,
+    "item_level": 35,
+    "name": "Tuxedo Pants",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12089,
+      "entity_name": "Tuxedo Pants",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10323,
+          "entity_name": "Pattern: Tuxedo Pants",
+          "item_id": 10323,
+          "source_url": "https://www.wowhead.com/tbc/item=10035",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10035",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10035",
+      "spell_id": 12089,
+      "type": "crafted"
+    },
+    "quality": "common",
+    "slot": "Legs",
+    "source_summary": "Crafted: Tuxedo Pants",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12089,
+        "entity_name": "Tuxedo Pants",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 10323,
+            "entity_name": "Pattern: Tuxedo Pants",
+            "item_id": 10323,
+            "source_url": "https://www.wowhead.com/tbc/item=10035",
+            "type": "vendor"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10035",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10035",
+        "spell_id": 12089,
+        "type": "crafted"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10035"
+  },
+  "name": "Tuxedo Pants",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12089,
+      "entity_name": "Tuxedo Pants",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10323,
+          "entity_name": "Pattern: Tuxedo Pants",
+          "item_id": 10323,
+          "source_url": "https://www.wowhead.com/tbc/item=10035",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10035",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10035",
+      "spell_id": 12089,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "common",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          245,
+          250,
+          255,
+          260
+        ],
+        "creates": [
+          10035,
+          1,
+          1
+        ],
+        "id": 12089,
+        "learnedat": 245,
+        "level": 0,
+        "name": "Tuxedo Pants",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 1,
+        "reagents": [
+          [
+            4339,
+            4
+          ],
+          [
+            8343,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 10323,
+        "level": 49,
+        "name": "Pattern: Tuxedo Pants",
+        "popularity": 6,
+        "quality": 1,
+        "skill": 245,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 10323,
+      "level": 49,
+      "name": "Pattern: Tuxedo Pants",
+      "popularity": 6,
+      "quality": 1,
+      "skill": 245,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10035"
+}

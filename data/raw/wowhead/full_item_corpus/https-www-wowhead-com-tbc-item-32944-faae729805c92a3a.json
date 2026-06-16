@@ -1,0 +1,148 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic fist weapon has an item level of 134. It is looted from Al'ar. In the Fist Weapons category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 32944,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 96.48,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 32944,
+    "item_level": 134,
+    "name": "Talon of the Phoenix",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 45,
+      "drop_percent": 9.74,
+      "entity_id": 19514,
+      "entity_name": "Al'ar",
+      "out_of": 462,
+      "source_url": "https://www.wowhead.com/tbc/item=32944",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "Drop: Al'ar (Tempest Keep) 9.7%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 45,
+        "drop_percent": 9.74,
+        "entity_id": 19514,
+        "entity_name": "Al'ar",
+        "out_of": 462,
+        "source_url": "https://www.wowhead.com/tbc/item=32944",
+        "type": "drop",
+        "zone": "Tempest Keep"
+      }
+    ],
+    "stats": {
+      "attack_power": 52.0,
+      "crit_rating": 19.0,
+      "hit_rating": 15.0
+    },
+    "weapon_max_damage": 339,
+    "weapon_min_damage": 182,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Fist Weapon",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32944"
+  },
+  "name": "Talon of the Phoenix",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 45,
+      "drop_percent": 9.74,
+      "entity_id": 19514,
+      "entity_name": "Al'ar",
+      "out_of": 462,
+      "source_url": "https://www.wowhead.com/tbc/item=32944",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 45,
+        "id": 19514,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 506,
+                "outof": 5563
+              }
+            },
+            "4": {
+              "0": {
+                "count": 109,
+                "outof": 932
+              }
+            },
+            "5": {
+              "0": {
+                "count": 45,
+                "outof": 462
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 506,
+            "outof": 5563
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Al'ar",
+        "outof": 462,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Phoenix God",
+        "type": 4
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32944"
+}

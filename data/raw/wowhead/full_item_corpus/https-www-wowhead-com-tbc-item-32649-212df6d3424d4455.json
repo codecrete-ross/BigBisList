@@ -1,0 +1,140 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 141 goes in the \"Neck\" slot. It is a quest reward. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Neck",
+  "item_id": 32649,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 32649,
+    "item_level": 141,
+    "name": "Medallion of Karabor",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10985,
+      "entity_name": "A Distraction for Akama",
+      "quest_id": 10985,
+      "source_url": "https://www.wowhead.com/tbc/item=32649",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    "quality": "epic",
+    "slot": "Neck",
+    "source_summary": "Quest: A Distraction for Akama +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10985,
+        "entity_name": "A Distraction for Akama",
+        "quest_id": 10985,
+        "source_url": "https://www.wowhead.com/tbc/item=32649",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 13429,
+        "entity_name": "A Distraction for Akama",
+        "quest_id": 13429,
+        "source_url": "https://www.wowhead.com/tbc/item=32649",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      }
+    ],
+    "stats": {
+      "stamina": 49.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32649"
+  },
+  "name": "Medallion of Karabor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10985,
+      "entity_name": "A Distraction for Akama",
+      "quest_id": 10985,
+      "source_url": "https://www.wowhead.com/tbc/item=32649",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13429,
+      "entity_name": "A Distraction for Akama",
+      "quest_id": 13429,
+      "source_url": "https://www.wowhead.com/tbc/item=32649",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10985,
+        "itemrewards": [
+          [
+            32649,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "A Distraction for Akama",
+        "popularity": 15,
+        "reprewards": [
+          [
+            935,
+            250
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 12650
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 13429,
+        "itemrewards": [
+          [
+            32649,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "A Distraction for Akama",
+        "popularity": 10,
+        "reprewards": [
+          [
+            935,
+            250
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 128,
+        "xp": 4115
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32649"
+}

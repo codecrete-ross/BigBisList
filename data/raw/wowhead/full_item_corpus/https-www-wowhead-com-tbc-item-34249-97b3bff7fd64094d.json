@@ -1,0 +1,95 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This white amulet of item level 70 goes in the \"Neck\" slot. It is sold by Griftah. In the Amulets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Neck",
+  "item_id": 34249,
+  "item_stats": {
+    "binding": "unknown",
+    "id": 34249,
+    "item_level": 70,
+    "name": "Hula Girl Doll",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 19227,
+      "entity_name": "Griftah",
+      "source_url": "https://www.wowhead.com/tbc/item=34249",
+      "type": "vendor",
+      "vendor_id": 19227,
+      "zone": "Shattrath City"
+    },
+    "quality": "common",
+    "slot": "Neck",
+    "source_summary": "Vendor: Griftah (Shattrath City)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 19227,
+        "entity_name": "Griftah",
+        "source_url": "https://www.wowhead.com/tbc/item=34249",
+        "type": "vendor",
+        "vendor_id": 19227,
+        "zone": "Shattrath City"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34249"
+  },
+  "name": "Hula Girl Doll",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19227,
+      "entity_name": "Griftah",
+      "source_url": "https://www.wowhead.com/tbc/item=34249",
+      "type": "vendor",
+      "vendor_id": 19227,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "common",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            850000
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 19227,
+        "location": [
+          3703
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Griftah",
+        "popularity": 27,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Amazing Amulets",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34249"
+}

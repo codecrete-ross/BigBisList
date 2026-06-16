@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Legplates of the Innocent Phase 1 Item Level 115 Binds when picked up Legs Plate 1269 Armor +24 Stamina +32 Intellect Yellow Socket Blue Socket Blue Socket Socket Bonus: +4 Intellect Durability 120 / 120 Requires Level 70 Equip: Improves spell critical strike rating by 21. Equip: Increases healing done by up to 66 and damage done by up to 22 for all magical spells and effects. Equip: Restores 8 mana per 5 sec. Sell Price: 8 10 51 Dropped by: Echo of Medivh",
+  "fetched_at": "2026-06-15T20:25:23+00:00",
+  "inventory_slot": null,
+  "item_id": 28748,
+  "item_stats": {
+    "armor": 1269,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 28748,
+    "item_level": 115,
+    "name": "Legplates of the Innocent",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "intellect": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "blue",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 66.0,
+      "intellect": 32.0,
+      "mp5": 8.0,
+      "spell_crit_rating": 21.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28748/legplates-of-the-innocent"
+  },
+  "name": "Legplates of the Innocent",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28748/legplates-of-the-innocent"
+}

@@ -1,0 +1,233 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic ring of item level 130 goes in the \"Finger\" slot. It is a quest reward. In the Rings category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 29283,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 29283,
+    "item_level": 130,
+    "name": "Violet Signet of the Master Assassin",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 11031,
+      "entity_name": "Archmage No More",
+      "quest_id": 11031,
+      "source_url": "https://www.wowhead.com/tbc/item=29283",
+      "type": "quest",
+      "zone": "Karazhan"
+    },
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "Quest: Archmage No More +3",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10727,
+        "entity_name": "Eminence Among the Violet Eye",
+        "quest_id": 10727,
+        "source_url": "https://www.wowhead.com/tbc/item=29283",
+        "type": "quest",
+        "zone": "Karazhan"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 11031,
+        "entity_name": "Archmage No More",
+        "quest_id": 11031,
+        "source_url": "https://www.wowhead.com/tbc/item=29283",
+        "type": "quest",
+        "zone": "Karazhan"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 11032,
+        "entity_name": "Protector No More",
+        "quest_id": 11032,
+        "source_url": "https://www.wowhead.com/tbc/item=29283",
+        "type": "quest",
+        "zone": "Karazhan"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 11034,
+        "entity_name": "Restorer No More",
+        "quest_id": 11034,
+        "source_url": "https://www.wowhead.com/tbc/item=29283",
+        "type": "quest",
+        "zone": "Karazhan"
+      }
+    ],
+    "stats": {
+      "attack_power": 56.0,
+      "hit_rating": 25.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29283"
+  },
+  "name": "Violet Signet of the Master Assassin",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10727,
+      "entity_name": "Eminence Among the Violet Eye",
+      "quest_id": 10727,
+      "source_url": "https://www.wowhead.com/tbc/item=29283",
+      "type": "quest",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11031,
+      "entity_name": "Archmage No More",
+      "quest_id": 11031,
+      "source_url": "https://www.wowhead.com/tbc/item=29283",
+      "type": "quest",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11032,
+      "entity_name": "Protector No More",
+      "quest_id": 11032,
+      "source_url": "https://www.wowhead.com/tbc/item=29283",
+      "type": "quest",
+      "zone": "Karazhan"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11034,
+      "entity_name": "Restorer No More",
+      "quest_id": 11034,
+      "source_url": "https://www.wowhead.com/tbc/item=29283",
+      "type": "quest",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3457,
+        "category2": 3,
+        "id": 10727,
+        "itemrewards": [
+          [
+            29283,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Eminence Among the Violet Eye",
+        "popularity": 3,
+        "reprewards": [
+          [
+            967,
+            350
+          ]
+        ],
+        "reqlevel": 70,
+        "side": 3,
+        "xp": 15800
+      },
+      {
+        "category": 3457,
+        "category2": 3,
+        "id": 11031,
+        "itemchoices": [
+          [
+            29290,
+            1
+          ],
+          [
+            29279,
+            1
+          ],
+          [
+            29283,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Archmage No More",
+        "popularity": 8,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      },
+      {
+        "category": 3457,
+        "category2": 3,
+        "id": 11032,
+        "itemchoices": [
+          [
+            29290,
+            1
+          ],
+          [
+            29287,
+            1
+          ],
+          [
+            29283,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Protector No More",
+        "popularity": 6,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      },
+      {
+        "category": 3457,
+        "category2": 3,
+        "id": 11034,
+        "itemchoices": [
+          [
+            29283,
+            1
+          ],
+          [
+            29279,
+            1
+          ],
+          [
+            29287,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Restorer No More",
+        "popularity": 5,
+        "reqlevel": 70,
+        "side": 3,
+        "wflags": 17
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29283"
+}

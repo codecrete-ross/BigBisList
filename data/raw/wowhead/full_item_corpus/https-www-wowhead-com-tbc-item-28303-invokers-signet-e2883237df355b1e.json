@@ -1,0 +1,38 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Invoker's Signet Item Level 21 Binds when picked up Finger +3 Intellect Equip: Improves spell critical strike rating by 2. Sell Price: 4 3",
+  "fetched_at": "2026-06-15T20:25:10+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 28303,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by"
+    ],
+    "id": 28303,
+    "item_level": 21,
+    "name": "Invoker's Signet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 3.0,
+      "spell_crit_rating": 2.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28303/invokers-signet"
+  },
+  "name": "Invoker's Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28303/invokers-signet"
+}

@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Expedition Repeater Phase 1 Item Level 93 Binds when picked up Ranged Crossbow 112 - 169 Damage Speed 2.90 (48.45 damage per second) +6 Agility Durability 65 / 65 Equip: Improves critical strike rating by 7. Equip: Increases attack power by 14. Sell Price: 4 68 48",
+  "fetched_at": "2026-06-15T20:25:04+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 28062,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 48.45,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 28062,
+    "item_level": 93,
+    "name": "Expedition Repeater",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "attack_power": 14.0,
+      "crit_rating": 7.0
+    },
+    "weapon_max_damage": 169,
+    "weapon_min_damage": 112,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Crossbow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28062/expedition-repeater"
+  },
+  "name": "Expedition Repeater",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28062/expedition-repeater"
+}

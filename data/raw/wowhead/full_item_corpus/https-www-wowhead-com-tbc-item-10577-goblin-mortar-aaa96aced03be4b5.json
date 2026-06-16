@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Goblin Mortar Item Level 41 Binds when equipped Trinket Requires Engineering (205) Use: Inflicts 383 to 517 Fire damage and stuns the targets in a 5 yard radius for 3 sec. (10 Min Cooldown) 6 Charges Sell Price: 20",
+  "fetched_at": "2026-06-15T20:17:16+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 10577,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10577,
+    "item_level": 41,
+    "name": "Goblin Mortar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10577/goblin-mortar"
+  },
+  "name": "Goblin Mortar",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Mortar Item Level 41 Binds when equipped Trinket Requires Engineering (205) Use: Inflicts 383 to 517 Fire damage and stuns the targets in a 5 yard radius for 3 sec. (10 Min Cooldown) 6 Charges Sell Price: 20",
+      "scope": "equip_or_use",
+      "skill": 205,
+      "source_url": "https://www.wowhead.com/tbc/item=10577/goblin-mortar",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10577/goblin-mortar"
+}

@@ -1,0 +1,113 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This white one-handed axe has an item level of 8. It is a quest reward from Return to Bellowfiz. In the One-Handed Axes category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-06-15T19:53:01+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 1011,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 3.27,
+    "id": 1011,
+    "item_level": 8,
+    "name": "Sharp Axe",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 320,
+      "entity_name": "Return to Bellowfiz",
+      "quest_id": 320,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=1011",
+      "type": "quest"
+    },
+    "quality": "common",
+    "slot": "Main Hand",
+    "source_summary": "Quest: Return to Bellowfiz",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 320,
+        "entity_name": "Return to Bellowfiz",
+        "quest_id": 320,
+        "side": "Alliance",
+        "source_url": "https://www.wowhead.com/tbc/item=1011",
+        "type": "quest"
+      }
+    ],
+    "weapon_max_damage": 11,
+    "weapon_min_damage": 6,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=1011"
+  },
+  "name": "Sharp Axe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 320,
+      "entity_name": "Return to Bellowfiz",
+      "quest_id": 320,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=1011",
+      "type": "quest"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "common",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1,
+        "category2": 0,
+        "id": 320,
+        "itemchoices": [
+          [
+            1011,
+            1
+          ],
+          [
+            1010,
+            1
+          ],
+          [
+            10547,
+            1
+          ]
+        ],
+        "level": 8,
+        "name": "Return to Bellowfiz",
+        "popularity": 4,
+        "reprewards": [
+          [
+            47,
+            350
+          ],
+          [
+            54,
+            350
+          ]
+        ],
+        "reqlevel": 2,
+        "side": 1,
+        "xp": 880
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=1011"
+}

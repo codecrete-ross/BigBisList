@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sceptre of Smiting Phase 1 Item Level 65 Binds when picked up Unique-Equipped One-Hand Mace 77 - 145 Damage Speed 2.60 (42.69 damage per second) Durability 90 / 90 Requires Level 60 Equip: Increases your expertise rating by 4. Chance on hit: Blasts the enemy with poison for 63 to 93 Nature damage. Sell Price: 5 24 67",
+  "fetched_at": "2026-06-15T20:22:06+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 19908,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 42.69,
+    "equip_effects": [
+      "Equip: Increases your expertise rating by"
+    ],
+    "id": 19908,
+    "item_level": 65,
+    "name": "Sceptre of Smiting",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "expertise_rating": 4.0
+    },
+    "weapon_max_damage": 145,
+    "weapon_min_damage": 77,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19908/sceptre-of-smiting"
+  },
+  "name": "Sceptre of Smiting",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19908/sceptre-of-smiting"
+}

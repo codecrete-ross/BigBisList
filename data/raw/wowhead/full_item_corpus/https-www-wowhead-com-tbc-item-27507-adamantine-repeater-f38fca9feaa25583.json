@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Adamantine Repeater Phase 1 Item Level 115 Binds when picked up Ranged Crossbow 159 - 239 Damage Speed 3.00 (66.33 damage per second) +15 Agility Durability 75 / 75 Requires Level 70 Equip: Improves hit rating by 10. Sell Price: 6 56 19",
+  "fetched_at": "2026-06-15T20:24:51+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 27507,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 66.33,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 27507,
+    "item_level": 115,
+    "name": "Adamantine Repeater",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "hit_rating": 10.0
+    },
+    "weapon_max_damage": 239,
+    "weapon_min_damage": 159,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Crossbow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27507/adamantine-repeater"
+  },
+  "name": "Adamantine Repeater",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27507/adamantine-repeater"
+}

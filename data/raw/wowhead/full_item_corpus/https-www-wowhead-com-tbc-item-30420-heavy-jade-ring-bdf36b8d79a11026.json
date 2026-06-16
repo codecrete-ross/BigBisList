@@ -1,0 +1,38 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Heavy Jade Ring Item Level 29 Binds when equipped Unique-Equipped Finger Requires Level 24 Equip: Improves critical strike rating by 6. Sell Price: 6 77",
+  "fetched_at": "2026-06-15T20:26:00+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 30420,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 30420,
+    "item_level": 29,
+    "name": "Heavy Jade Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 24,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30420/heavy-jade-ring"
+  },
+  "name": "Heavy Jade Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30420/heavy-jade-ring"
+}

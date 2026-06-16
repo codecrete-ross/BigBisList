@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Aurora Gloves Phase 1 Item Level 39 Binds when equipped Hands Cloth 32 Armor +8 Intellect Durability 25 / 25 Requires Level 34 Equip: Increases damage and healing done by magical spells and effects by up to 9. Sell Price: 21 7",
+  "fetched_at": "2026-06-15T20:28:19+00:00",
+  "inventory_slot": null,
+  "item_id": 4042,
+  "item_stats": {
+    "armor": 32,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 4042,
+    "item_level": 39,
+    "name": "Aurora Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 34,
+    "source_summary": "",
+    "stats": {
+      "intellect": 8.0,
+      "spell_power": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=4042/aurora-gloves"
+  },
+  "name": "Aurora Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=4042/aurora-gloves"
+}

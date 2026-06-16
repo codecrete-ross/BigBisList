@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bloodthirster's Wargreaves Phase 4 Item Level 128 Binds when picked up Legs Plate 1406 Armor +46 Strength +43 Stamina Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Strength Durability 120 / 120 Requires Level 70 Equip: Improves hit rating by 38.",
+  "fetched_at": "2026-06-15T20:27:28+00:00",
+  "inventory_slot": null,
+  "item_id": 33501,
+  "item_stats": {
+    "armor": 1406,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 33501,
+    "item_level": 128,
+    "name": "Bloodthirster's Wargreaves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "strength": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 38.0,
+      "stamina": 43.0,
+      "strength": 46.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33501/bloodthirsters-wargreaves"
+  },
+  "name": "Bloodthirster's Wargreaves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33501/bloodthirsters-wargreaves"
+}

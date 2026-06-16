@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Leggings of the Avatar Phase 2 Item Level 133 Binds when picked up Legs Cloth 195 Armor +37 Stamina +36 Intellect +26 Spirit Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 75 / 75 Classes: Priest Requires Level 70 Equip: Improves spell hit rating by 25. Equip: Improves spell critical strike rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 54. Avatar Regalia (0/5) Handguards of the Avatar Hood of the Avatar Leggings of the Avatar Shroud of the Avatar Wings of the Avatar (2) Set : Each time you cast an offensive spell, there is a chance your next spell will cost 150 less mana. (Proc chance: 6%) (4) Set : Each time your Shadow Word: Pain deals damage, it has a chance to grant your next spell cast within 15 sec up to 100 damage and healing. (Proc chance: 40%)",
+  "fetched_at": "2026-06-15T20:25:53+00:00",
+  "inventory_slot": null,
+  "item_id": 30162,
+  "item_stats": {
+    "armor": 195,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30162,
+    "item_level": 133,
+    "name": "Leggings of the Avatar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 36.0,
+      "spell_crit_rating": 18.0,
+      "spell_hit_rating": 25.0,
+      "spell_power": 54.0,
+      "spirit": 26.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30162/leggings-of-the-avatar"
+  },
+  "name": "Leggings of the Avatar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30162/leggings-of-the-avatar"
+}

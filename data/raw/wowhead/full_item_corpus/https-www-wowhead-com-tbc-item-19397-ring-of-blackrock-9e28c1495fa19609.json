@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ring of Blackrock Phase 1 Item Level 75 Binds when picked up Unique-Equipped Finger Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 19. Equip: Restores 9 mana per 5 sec. Sell Price: 10 74 38",
+  "fetched_at": "2026-06-15T20:21:56+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 19397,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 19397,
+    "item_level": 75,
+    "name": "Ring of Blackrock",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "mp5": 9.0,
+      "spell_power": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19397/ring-of-blackrock"
+  },
+  "name": "Ring of Blackrock",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19397/ring-of-blackrock"
+}

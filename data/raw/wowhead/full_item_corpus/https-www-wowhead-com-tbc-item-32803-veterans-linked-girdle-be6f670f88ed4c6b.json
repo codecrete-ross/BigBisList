@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Veteran's Linked Girdle Phase 2 Item Level 136 Binds when picked up Waist Mail 537 Armor +31 Strength +45 Stamina +20 Intellect Durability 50 / 50 Classes: Hunter , Shaman Requires Level 70 Equip: Improves critical strike rating by 30. Equip: Improves your resilience rating by 21.",
+  "fetched_at": "2026-06-15T20:27:17+00:00",
+  "inventory_slot": null,
+  "item_id": 32803,
+  "item_stats": {
+    "armor": 537,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 32803,
+    "item_level": 136,
+    "name": "Veteran's Linked Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 30.0,
+      "intellect": 20.0,
+      "resilience_rating": 21.0,
+      "stamina": 45.0,
+      "strength": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32803/veterans-linked-girdle"
+  },
+  "name": "Veteran's Linked Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32803/veterans-linked-girdle"
+}

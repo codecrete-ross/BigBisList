@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rod of the Unyielding Phase 1 Item Level 87 Binds when picked up Two-Hand Staff 131 - 197 Damage Speed 2.70 (60.74 damage per second) +27 Stamina +18 Intellect Durability 85 / 85 Equip: Improves spell critical strike rating by 17. Equip: Increases damage and healing done by magical spells and effects by up to 21. Sell Price: 7 28 50",
+  "fetched_at": "2026-06-15T20:25:33+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 29109,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 60.74,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 29109,
+    "item_level": 87,
+    "name": "Rod of the Unyielding",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_crit_rating": 17.0,
+      "spell_power": 21.0,
+      "stamina": 27.0
+    },
+    "weapon_max_damage": 197,
+    "weapon_min_damage": 131,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29109/rod-of-the-unyielding"
+  },
+  "name": "Rod of the Unyielding",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29109/rod-of-the-unyielding"
+}

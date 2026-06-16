@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Rose Colored Goggles Phase 1 Item Level 46 Binds when equipped Head Cloth 49 Armor +12 Intellect +13 Spirit Durability 45 / 45 Requires Engineering (230) Sell Price: 51 69",
+  "fetched_at": "2026-06-15T20:17:15+00:00",
+  "inventory_slot": null,
+  "item_id": 10503,
+  "item_stats": {
+    "armor": 49,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10503,
+    "item_level": 46,
+    "name": "Rose Colored Goggles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "intellect": 12.0,
+      "spirit": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10503/rose-colored-goggles"
+  },
+  "name": "Rose Colored Goggles",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Rose Colored Goggles Phase 1 Item Level 46 Binds when equipped Head Cloth 49 Armor +12 Intellect +13 Spirit Durability 45 / 45 Requires Engineering (230) Sell Price: 51 69",
+      "scope": "equip_or_use",
+      "skill": 230,
+      "source_url": "https://www.wowhead.com/tbc/item=10503/rose-colored-goggles",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10503/rose-colored-goggles"
+}

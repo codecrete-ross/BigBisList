@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deep Strike Bow Phase 1 Item Level 60 Binds when picked up Ranged Bow 74 - 138 Damage Speed 2.70 (39.26 damage per second) +6 Agility +4 Stamina +6 Intellect Durability 75 / 75 Requires Level 55 Sell Price: 3 73 36 Dropped by: Earthen Templar Drop Chance: 2.04%",
+  "fetched_at": "2026-06-15T20:22:21+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 20663,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 39.26,
+    "id": 20663,
+    "item_level": 60,
+    "name": "Deep Strike Bow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 6.0,
+      "intellect": 6.0,
+      "stamina": 4.0
+    },
+    "weapon_max_damage": 138,
+    "weapon_min_damage": 74,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20663/deep-strike-bow"
+  },
+  "name": "Deep Strike Bow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20663/deep-strike-bow"
+}

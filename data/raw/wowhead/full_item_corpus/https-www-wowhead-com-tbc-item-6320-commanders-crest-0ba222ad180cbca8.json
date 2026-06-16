@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Commander's Crest Phase 1 Item Level 28 Binds when picked up Off Hand Shield 623 Armor 13 Block +6 Strength +3 Stamina Durability 95 / 95 Requires Level 20 Equip: Increases your dodge rating by 3. Sell Price: 27 11",
+  "fetched_at": "2026-06-15T20:29:13+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 6320,
+  "item_stats": {
+    "armor": 623,
+    "armor_type": "Shield",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Increases your dodge rating by"
+    ],
+    "id": 6320,
+    "item_level": 28,
+    "name": "Commander's Crest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 20,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "dodge_rating": 3.0,
+      "stamina": 3.0,
+      "strength": 6.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=6320/commanders-crest"
+  },
+  "name": "Commander's Crest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=6320/commanders-crest"
+}

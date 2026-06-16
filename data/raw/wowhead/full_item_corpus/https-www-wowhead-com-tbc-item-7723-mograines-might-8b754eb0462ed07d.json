@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mograine's Might Phase 1 Item Level 44 Binds when picked up Two-Hand Mace 87 - 131 Damage Speed 2.80 (38.93 damage per second) +17 Stamina Durability 100 / 100 Requires Level 39 Equip: Improves hit rating by 16. Sell Price: 2 25 67",
+  "fetched_at": "2026-06-15T20:29:37+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 7723,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 38.93,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 7723,
+    "item_level": 44,
+    "name": "Mograine's Might",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 39,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 16.0,
+      "stamina": 17.0
+    },
+    "weapon_max_damage": 131,
+    "weapon_min_damage": 87,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=7723/mograines-might"
+  },
+  "name": "Mograine's Might",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=7723/mograines-might"
+}

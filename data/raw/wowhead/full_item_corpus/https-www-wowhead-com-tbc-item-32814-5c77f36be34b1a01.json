@@ -1,0 +1,302 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 126 goes in the \"Wrist\" slot. Requires Rogue or Druid. It is obtained through PvP. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:34+00:00",
+  "inventory_slot": "Wrist",
+  "item_id": 32814,
+  "item_stats": {
+    "armor": 174,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 32814,
+    "item_level": 126,
+    "name": "Veteran's Leather Bracers",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 9785,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 10,
+          "item_id": 20558,
+          "name": "Item 20558"
+        }
+      ],
+      "entity_id": 12777,
+      "entity_name": "Captain Dirgehammer",
+      "source_url": "https://www.wowhead.com/tbc/item=32814",
+      "type": "pvp",
+      "vendor_id": 12777
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Wrist",
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "PvP: Captain Dirgehammer (9785 Honor Points, 10 Item 20558) +2",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 9785,
+            "currency_id": 1901,
+            "name": "Honor Points"
+          },
+          {
+            "amount": 10,
+            "item_id": 20558,
+            "name": "Item 20558"
+          }
+        ],
+        "entity_id": 12777,
+        "entity_name": "Captain Dirgehammer",
+        "source_url": "https://www.wowhead.com/tbc/item=32814",
+        "type": "pvp",
+        "vendor_id": 12777
+      },
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 9785,
+            "currency_id": 1901,
+            "name": "Honor Points"
+          },
+          {
+            "amount": 10,
+            "item_id": 20558,
+            "name": "Item 20558"
+          }
+        ],
+        "entity_id": 12792,
+        "entity_name": "Lady Palanseer",
+        "source_url": "https://www.wowhead.com/tbc/item=32814",
+        "type": "pvp",
+        "vendor_id": 12792
+      },
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 25,
+            "currency_id": 29434,
+            "name": "Badge of Justice"
+          }
+        ],
+        "entity_id": 26089,
+        "entity_name": "Kayri",
+        "source_url": "https://www.wowhead.com/tbc/item=32814",
+        "type": "vendor",
+        "vendor_id": 26089,
+        "zone": "Isle of Quel'Danas"
+      }
+    ],
+    "stats": {
+      "agility": 21.0,
+      "attack_power": 20.0,
+      "crit_rating": 9.0,
+      "resilience_rating": 15.0,
+      "stamina": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32814"
+  },
+  "name": "Veteran's Leather Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 9785,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 10,
+          "item_id": 20558,
+          "name": "Item 20558"
+        }
+      ],
+      "entity_id": 12777,
+      "entity_name": "Captain Dirgehammer",
+      "source_url": "https://www.wowhead.com/tbc/item=32814",
+      "type": "pvp",
+      "vendor_id": 12777
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 9785,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 10,
+          "item_id": 20558,
+          "name": "Item 20558"
+        }
+      ],
+      "entity_id": 12792,
+      "entity_name": "Lady Palanseer",
+      "source_url": "https://www.wowhead.com/tbc/item=32814",
+      "type": "pvp",
+      "vendor_id": 12792
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 25,
+          "currency_id": 29434,
+          "name": "Badge of Justice"
+        }
+      ],
+      "entity_id": 26089,
+      "entity_name": "Kayri",
+      "source_url": "https://www.wowhead.com/tbc/item=32814",
+      "type": "vendor",
+      "vendor_id": 26089,
+      "zone": "Isle of Quel'Danas"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                9785
+              ]
+            ],
+            [
+              [
+                20558,
+                10
+              ]
+            ]
+          ]
+        ],
+        "id": 12777,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Captain Dirgehammer",
+        "popularity": 7,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                9785
+              ]
+            ],
+            [
+              [
+                20558,
+                10
+              ]
+            ]
+          ]
+        ],
+        "id": 12792,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Lady Palanseer",
+        "popularity": 4,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                29434,
+                25
+              ]
+            ]
+          ]
+        ],
+        "id": 26089,
+        "location": [
+          4080
+        ],
+        "name": "Kayri",
+        "popularity": 9,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Exotic Gear Purveyor",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32814"
+}

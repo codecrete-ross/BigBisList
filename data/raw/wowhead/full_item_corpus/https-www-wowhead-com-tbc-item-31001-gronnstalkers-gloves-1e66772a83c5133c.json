@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gronnstalker's Gloves Phase 3 Item Level 146 Binds when picked up Hands Mail 639 Armor +35 Agility +31 Stamina +21 Intellect Red Socket Socket Bonus: +2 Critical Strike Rating Durability 50 / 50 Classes: Hunter Requires Level 70 Equip: Improves critical strike rating by 13. Equip: Increases attack power by 62. Equip: Your attacks ignore 140 of your opponent's armor. Gronnstalker's Armor (0/8) Gronnstalker's Chestguard Gronnstalker's Gloves Gronnstalker's Helmet Gronnstalker's Leggings Gronnstalker's Spaulders Gronnstalker's Belt Gronnstalker's Bracers Gronnstalker's Boots (2) Set : Increases the mana you gain from your Aspect of the Viper by an additional 5% of your Intellect. (4) Set : Increases the damage dealt by your Steady Shot ability by 10%.",
+  "fetched_at": "2026-06-15T20:26:12+00:00",
+  "inventory_slot": null,
+  "item_id": 31001,
+  "item_stats": {
+    "armor": 639,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 31001,
+    "item_level": 146,
+    "name": "Gronnstalker's Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 35.0,
+      "attack_power": 62.0,
+      "crit_rating": 13.0,
+      "intellect": 21.0,
+      "stamina": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31001/gronnstalkers-gloves"
+  },
+  "name": "Gronnstalker's Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31001/gronnstalkers-gloves"
+}

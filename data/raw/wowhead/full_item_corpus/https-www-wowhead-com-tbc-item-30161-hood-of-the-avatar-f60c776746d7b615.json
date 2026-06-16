@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hood of the Avatar Phase 2 Item Level 133 Binds when picked up Head Cloth 181 Armor +30 Stamina +36 Intellect +24 Spirit Meta Socket Yellow Socket Socket Bonus: +5 Spell Damage and Healing Durability 60 / 60 Classes: Priest Requires Level 70 Equip: Improves spell hit rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 55. Avatar Regalia (0/5) Handguards of the Avatar Hood of the Avatar Leggings of the Avatar Shroud of the Avatar Wings of the Avatar (2) Set : Each time you cast an offensive spell, there is a chance your next spell will cost 150 less mana. (Proc chance: 6%) (4) Set : Each time your Shadow Word: Pain deals damage, it has a chance to grant your next spell cast within 15 sec up to 100 damage and healing. (Proc chance: 40%)",
+  "fetched_at": "2026-06-15T20:25:53+00:00",
+  "inventory_slot": null,
+  "item_id": 30161,
+  "item_stats": {
+    "armor": 181,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip:"
+    ],
+    "id": 30161,
+    "item_level": 133,
+    "name": "Hood of the Avatar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "meta",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 36.0,
+      "spell_hit_rating": 24.0,
+      "spell_power": 55.0,
+      "spirit": 24.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30161/hood-of-the-avatar"
+  },
+  "name": "Hood of the Avatar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30161/hood-of-the-avatar"
+}

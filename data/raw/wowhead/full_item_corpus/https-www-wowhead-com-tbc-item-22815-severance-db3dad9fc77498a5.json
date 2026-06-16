@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Severance Phase 1 Item Level 81 Binds when picked up Two-Hand Axe 235 - 354 Damage Speed 3.60 (81.81 damage per second) +43 Strength +18 Stamina Durability 120 / 120 Requires Level 60 Equip: Increases your critical strike rating by 28. Sell Price: 11 21 34",
+  "fetched_at": "2026-06-15T20:23:03+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 22815,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 81.81,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 22815,
+    "item_level": 81,
+    "name": "Severance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 28.0,
+      "stamina": 18.0,
+      "strength": 43.0
+    },
+    "weapon_max_damage": 354,
+    "weapon_min_damage": 235,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22815/severance"
+  },
+  "name": "Severance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22815/severance"
+}

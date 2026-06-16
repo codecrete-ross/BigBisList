@@ -1,0 +1,154 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue plate armor of item level 115 goes in the \"Head\" slot. It is looted from Pathaleon the Calculator. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:26+00:00",
+  "inventory_slot": "Head",
+  "item_id": 28285,
+  "item_stats": {
+    "armor": 946,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Increases defense rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 28285,
+    "item_level": 115,
+    "name": "Helm of the Righteous",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 76,
+      "drop_percent": 15.77,
+      "entity_id": 19220,
+      "entity_name": "Pathaleon the Calculator",
+      "out_of": 482,
+      "source_url": "https://www.wowhead.com/tbc/item=28285",
+      "type": "drop",
+      "zone": "The Mechanar"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Head",
+    "socket_bonus": {
+      "intellect": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "meta"
+    ],
+    "source_summary": "Drop: Pathaleon the Calculator (The Mechanar) 15.8%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 76,
+        "drop_percent": 15.77,
+        "entity_id": 19220,
+        "entity_name": "Pathaleon the Calculator",
+        "out_of": 482,
+        "source_url": "https://www.wowhead.com/tbc/item=28285",
+        "type": "drop",
+        "zone": "The Mechanar"
+      }
+    ],
+    "stats": {
+      "defense_rating": 21.0,
+      "intellect": 20.0,
+      "mp5": 6.0,
+      "spell_power": 23.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28285"
+  },
+  "name": "Helm of the Righteous",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 76,
+      "drop_percent": 15.77,
+      "entity_id": 19220,
+      "entity_name": "Pathaleon the Calculator",
+      "out_of": 482,
+      "source_url": "https://www.wowhead.com/tbc/item=28285",
+      "type": "drop",
+      "zone": "The Mechanar"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 76,
+        "id": 19220,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2039,
+                "outof": 13622
+              }
+            },
+            "4": {
+              "0": {
+                "count": 129,
+                "outof": 870
+              }
+            },
+            "5": {
+              "0": {
+                "count": 76,
+                "outof": 482
+              }
+            }
+          }
+        },
+        "location": [
+          3849
+        ],
+        "maxlevel": 72,
+        "minlevel": 72,
+        "modes": {
+          "0": {
+            "count": 2039,
+            "outof": 13622
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Pathaleon the Calculator",
+        "outof": 482,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28285"
+}

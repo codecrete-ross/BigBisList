@@ -1,0 +1,116 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue trinket of item level 115 goes in the \"Trinket\" slot. It is sold by Quartermaster Enuril. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 29132,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by"
+    ],
+    "id": 29132,
+    "item_level": 115,
+    "name": "Scryer's Bloodgem",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 19331,
+      "entity_name": "Quartermaster Enuril",
+      "source_url": "https://www.wowhead.com/tbc/item=29132",
+      "type": "vendor",
+      "vendor_id": 19331,
+      "zone": "Shattrath City"
+    },
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "Vendor: Quartermaster Enuril (Shattrath City)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 19331,
+        "entity_name": "Quartermaster Enuril",
+        "source_url": "https://www.wowhead.com/tbc/item=29132",
+        "type": "vendor",
+        "vendor_id": 19331,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "spell_hit_rating": 32.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29132"
+  },
+  "name": "Scryer's Bloodgem",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Scryer's Bloodgem Phase 1 Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Requires The Scryers - Revered Equip: Improves spell hit rating by 32. Use: Increases spell damage by up to 150 and healing by up to 280 for 15 sec. (1 Min, 30 Sec Cooldown) Sell Price: 4 39 88 This blue trinket of item level 115 goes in the \"Trinket\" slot. It is sold by Quartermaster Enuril. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+      "reputation": "The Scryers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29132",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19331,
+      "entity_name": "Quartermaster Enuril",
+      "source_url": "https://www.wowhead.com/tbc/item=29132",
+      "type": "vendor",
+      "vendor_id": 19331,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            149559
+          ]
+        ],
+        "id": 19331,
+        "location": [
+          3703
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Quartermaster Enuril",
+        "popularity": 7,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Scryers: Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29132"
+}

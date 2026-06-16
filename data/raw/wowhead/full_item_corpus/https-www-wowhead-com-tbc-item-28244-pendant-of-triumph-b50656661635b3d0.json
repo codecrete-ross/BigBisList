@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pendant of Triumph Phase 1 Item Level 113 Binds when picked up Unique Neck +28 Stamina Yellow Socket Socket Bonus: +2 Hit Rating Requires Level 70 Equip: Improves critical strike rating by 10. Equip: Improves your resilience rating by 17. Equip: Increases attack power by 36.",
+  "fetched_at": "2026-06-15T20:25:09+00:00",
+  "inventory_slot": null,
+  "item_id": 28244,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 28244,
+    "item_level": 113,
+    "name": "Pendant of Triumph",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "hit_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 36.0,
+      "crit_rating": 10.0,
+      "resilience_rating": 17.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28244/pendant-of-triumph"
+  },
+  "name": "Pendant of Triumph",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28244/pendant-of-triumph"
+}

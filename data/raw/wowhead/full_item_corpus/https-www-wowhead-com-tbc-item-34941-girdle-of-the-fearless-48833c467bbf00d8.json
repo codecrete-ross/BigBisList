@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Girdle of the Fearless Phase 3 Item Level 141 Binds when picked up Waist Plate 993 Armor +58 Stamina Red Socket Socket Bonus: +3 Stamina Durability 55 / 55 Requires Level 70 Equip: Increases defense rating by 34. Equip: Improves hit rating by 23. Equip: Increases your expertise rating by 22.",
+  "fetched_at": "2026-06-15T20:27:55+00:00",
+  "inventory_slot": null,
+  "item_id": 34941,
+  "item_stats": {
+    "armor": 993,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Increases defense rating by",
+      "Equip: Improves hit rating by",
+      "Equip: Increases your expertise rating by"
+    ],
+    "id": 34941,
+    "item_level": 141,
+    "name": "Girdle of the Fearless",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 34.0,
+      "expertise_rating": 22.0,
+      "hit_rating": 23.0,
+      "stamina": 58.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34941/girdle-of-the-fearless"
+  },
+  "name": "Girdle of the Fearless",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34941/girdle-of-the-fearless"
+}

@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Battle-Mage's Helmet Phase 1 Item Level 111 Binds when picked up Head Mail 465 Armor +25 Stamina +18 Intellect Durability 60 / 60 Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 30. Sell Price: 3 33 22",
+  "fetched_at": "2026-06-15T20:25:45+00:00",
+  "inventory_slot": null,
+  "item_id": 29773,
+  "item_stats": {
+    "armor": 465,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 29773,
+    "item_level": 111,
+    "name": "Battle-Mage's Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_crit_rating": 26.0,
+      "spell_power": 30.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29773/battle-mages-helmet"
+  },
+  "name": "Battle-Mage's Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29773/battle-mages-helmet"
+}

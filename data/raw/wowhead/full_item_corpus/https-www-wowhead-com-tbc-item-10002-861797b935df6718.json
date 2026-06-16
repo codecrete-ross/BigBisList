@@ -1,0 +1,151 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 42 goes in the \"Legs\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:50:44+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 10002,
+  "item_stats": {
+    "armor": 48,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10002,
+    "item_level": 42,
+    "name": "Shadoweave Pants",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12052,
+      "entity_name": "Shadoweave Pants",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10002",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10002",
+      "spell_id": 12052,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 37,
+    "slot": "Legs",
+    "source_summary": "Crafted: Shadoweave Pants",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12052,
+        "entity_name": "Shadoweave Pants",
+        "profession": "Tailoring",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10002",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10002",
+        "spell_id": 12052,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10002"
+  },
+  "name": "Shadoweave Pants",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12052,
+      "entity_name": "Shadoweave Pants",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10002",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10002",
+      "spell_id": 12052,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          210,
+          225,
+          240,
+          255
+        ],
+        "creates": [
+          10002,
+          1,
+          1
+        ],
+        "id": 12052,
+        "learnedat": 210,
+        "level": 0,
+        "name": "Shadoweave Pants",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            3
+          ],
+          [
+            10285,
+            2
+          ],
+          [
+            8343,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "trainingcost": 4500
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10002"
+}

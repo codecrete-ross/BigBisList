@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Medallion of the Alliance Phase 1 Item Level 115 Binds when picked up Unique Trinket Classes: Priest Requires any Alliance race Requires Level 70 Equip: Improves your resilience rating by 20. Use: Removes all movement impairing effects and all effects which cause loss of control of your character. (2 Min Cooldown)",
+  "fetched_at": "2026-06-15T20:25:58+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 30349,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 30349,
+    "item_level": 115,
+    "name": "Medallion of the Alliance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "resilience_rating": 20.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30349/medallion-of-the-alliance"
+  },
+  "name": "Medallion of the Alliance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30349/medallion-of-the-alliance"
+}

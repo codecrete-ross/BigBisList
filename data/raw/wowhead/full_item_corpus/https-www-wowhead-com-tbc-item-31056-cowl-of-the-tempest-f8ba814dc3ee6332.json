@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cowl of the Tempest Phase 3 Item Level 146 Binds when picked up Head Cloth 199 Armor +30 Stamina +40 Intellect +28 Spirit Meta Socket Yellow Socket Socket Bonus: +6 Stamina Durability 60 / 60 Classes: Mage Requires Level 70 Equip: Improves spell hit rating by 13. Equip: Improves spell critical strike rating by 29. Equip: Increases damage and healing done by magical spells and effects by up to 62. Tempest Regalia (0/8) Cowl of the Tempest Gloves of the Tempest Leggings of the Tempest Mantle of the Tempest Robes of the Tempest Boots of the Tempest Bracers of the Tempest Belt of the Tempest (2) Set : Increases the duration of your Evocation ability by 2 sec. (4) Set : Increases the damage of your Fireball, Frostbolt, and Arcane Missiles abilities by 5%.",
+  "fetched_at": "2026-06-15T20:26:14+00:00",
+  "inventory_slot": null,
+  "item_id": 31056,
+  "item_stats": {
+    "armor": 199,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 31056,
+    "item_level": 146,
+    "name": "Cowl of the Tempest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 6.0
+    },
+    "sockets": [
+      "meta",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 40.0,
+      "spell_crit_rating": 29.0,
+      "spell_hit_rating": 13.0,
+      "spell_power": 62.0,
+      "spirit": 28.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31056/cowl-of-the-tempest"
+  },
+  "name": "Cowl of the Tempest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31056/cowl-of-the-tempest"
+}

@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Stoneflower Staff Phase 1 Item Level 61 Binds when picked up Two-Hand Staff 113 - 171 Damage Speed 3.00 (47.33 damage per second) +24 Intellect Durability 85 / 85 Requires Level 56 Equip: Increases your spell critical strike rating by 14. Sell Price: 5 31 42",
+  "fetched_at": "2026-06-15T20:19:44+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 18353,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 47.33,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 18353,
+    "item_level": 61,
+    "name": "Stoneflower Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 56,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 24.0,
+      "spell_crit_rating": 14.0
+    },
+    "weapon_max_damage": 171,
+    "weapon_min_damage": 113,
+    "weapon_speed": 3.0,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18353/stoneflower-staff"
+  },
+  "name": "Stoneflower Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18353/stoneflower-staff"
+}

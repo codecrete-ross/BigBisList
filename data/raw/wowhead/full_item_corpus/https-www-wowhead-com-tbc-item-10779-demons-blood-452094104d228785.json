@@ -1,0 +1,37 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Demon's Blood Item Level 60 Binds when picked up Trinket Equip: Increases defense rating by 5, Shadow resistance by 10 and your normal health regeneration by 3. Sell Price: 88 7",
+  "fetched_at": "2026-06-15T20:17:20+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 10779,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10779,
+    "item_level": 60,
+    "name": "Demon's Blood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 5.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10779/demons-blood"
+  },
+  "name": "Demon's Blood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10779/demons-blood"
+}

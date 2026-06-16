@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Onslaught Belt Phase 5 Item Level 154 Binds when picked up Waist Plate 1081 Armor +43 Strength Yellow Socket Socket Bonus: +2 Strength Durability 55 / 55 Classes: Warrior Requires Level 70 Equip: Improves critical strike rating by 40. Equip: Improves haste rating by 26. Equip: Increases your expertise rating by 26. Onslaught Battlegear (0/8) Onslaught Battle-Helm Onslaught Breastplate Onslaught Gauntlets Onslaught Greaves Onslaught Shoulderblades Onslaught Belt Onslaught Bracers Onslaught Treads (2) Set : Reduces the rage cost of your Execute ability by 3. (4) Set : Increases the damage of your Mortal Strike and Bloodthirst abilities by 5%.",
+  "fetched_at": "2026-06-15T20:27:48+00:00",
+  "inventory_slot": null,
+  "item_id": 34546,
+  "item_stats": {
+    "armor": 1081,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves haste rating by",
+      "Equip: Increases your expertise rating by"
+    ],
+    "id": 34546,
+    "item_level": 154,
+    "name": "Onslaught Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "strength": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 40.0,
+      "expertise_rating": 26.0,
+      "haste_rating": 26.0,
+      "strength": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34546/onslaught-belt"
+  },
+  "name": "Onslaught Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34546/onslaught-belt"
+}

@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Chain Helm Phase 1 Item Level 123 Binds when picked up Head Mail 703 Armor +34 Agility +49 Stamina +18 Intellect Meta Socket Red Socket Socket Bonus: +4 Resilience Rating Durability 85 / 85 Classes: Hunter Requires Level 70 Equip: Improves critical strike rating by 20. Equip: Improves your resilience rating by 20. Equip: Increases attack power by 36. Gladiator's Pursuit (0/5) Gladiator's Chain Armor Gladiator's Chain Gauntlets Gladiator's Chain Helm Gladiator's Chain Leggings Gladiator's Chain Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Multi-Shot ability by 1 sec.",
+  "fetched_at": "2026-06-15T20:25:12+00:00",
+  "inventory_slot": null,
+  "item_id": 28331,
+  "item_stats": {
+    "armor": 703,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 28331,
+    "item_level": 123,
+    "name": "Gladiator's Chain Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "attack_power": 36.0,
+      "crit_rating": 20.0,
+      "intellect": 18.0,
+      "resilience_rating": 20.0,
+      "stamina": 49.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28331/gladiators-chain-helm"
+  },
+  "name": "Gladiator's Chain Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28331/gladiators-chain-helm"
+}

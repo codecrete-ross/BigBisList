@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Savage Plate Helm Phase 1 Item Level 115 Binds when picked up Head Plate 946 Armor +20 Strength +34 Stamina Meta Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 80 / 80 Classes: Warrior Requires Level 70 Requires Thrallmar - Honored Equip: Improves critical strike rating by 24. Equip: Improves your resilience rating by 19. Oathbound's Savage Plate Battlegear (0/5) Savage Plate Chestpiece Savage Plate Gauntlets Savage Plate Helm Savage Plate Legguards Savage Plate Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Intercept ability by 5 sec. Sell Price: 4 69 29",
+  "fetched_at": "2026-06-15T20:28:06+00:00",
+  "inventory_slot": null,
+  "item_id": 35409,
+  "item_stats": {
+    "armor": 946,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 35409,
+    "item_level": 115,
+    "name": "Savage Plate Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 24.0,
+      "resilience_rating": 19.0,
+      "stamina": 34.0,
+      "strength": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35409/savage-plate-helm"
+  },
+  "name": "Savage Plate Helm",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Savage Plate Helm Phase 1 Item Level 115 Binds when picked up Head Plate 946 Armor +20 Strength +34 Stamina Meta Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 80 / 80 Classes: Warrior Requires Level 70 Requires Thrallmar - Honored Equip: Improves critical strike rating by 24. Equip: Improves your resilience rating by 19. Oathbound's Savage Plate Battlegear (0/5) Savage Plate Chestpiece Savage Plate Gauntlets Savage Plate Helm Savage Plate Legguards Savage Plate Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Intercept ability by 5 sec. Sell Price: 4 69 29",
+      "reputation": "Thrallmar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35409/savage-plate-helm",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35409/savage-plate-helm"
+}

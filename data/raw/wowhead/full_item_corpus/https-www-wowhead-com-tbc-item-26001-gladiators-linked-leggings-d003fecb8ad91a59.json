@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Linked Leggings Phase 1 Item Level 123 Binds when picked up Legs Mail 758 Armor +30 Strength +54 Stamina +25 Intellect Durability 105 / 105 Classes: Shaman Requires Level 70 Equip: Improves critical strike rating by 36. Equip: Improves your resilience rating by 28. Gladiator's Earthshaker (0/5) Gladiator's Linked Armor Gladiator's Linked Gauntlets Gladiator's Linked Helm Gladiator's Linked Leggings Gladiator's Linked Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Stormstrike ability by 1 sec.",
+  "fetched_at": "2026-06-15T20:24:45+00:00",
+  "inventory_slot": null,
+  "item_id": 26001,
+  "item_stats": {
+    "armor": 758,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 26001,
+    "item_level": 123,
+    "name": "Gladiator's Linked Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 36.0,
+      "intellect": 25.0,
+      "resilience_rating": 28.0,
+      "stamina": 54.0,
+      "strength": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=26001/gladiators-linked-leggings"
+  },
+  "name": "Gladiator's Linked Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=26001/gladiators-linked-leggings"
+}

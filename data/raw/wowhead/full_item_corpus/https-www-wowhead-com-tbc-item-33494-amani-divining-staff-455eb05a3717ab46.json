@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Amani Divining Staff Phase 4 Item Level 132 Binds when picked up Two-Hand Staff 144 - 303 Damage Speed 3.20 (69.84 damage per second) +58 Stamina +47 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 120 / 120 Requires Level 70 Equip: Improves spell critical strike rating by 31. Equip: Increases damage and healing done by magical spells and effects by up to 217. Sell Price: 16 85 85",
+  "fetched_at": "2026-06-15T20:27:27+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 33494,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 69.84,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 33494,
+    "item_level": 132,
+    "name": "Amani Divining Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 47.0,
+      "spell_crit_rating": 31.0,
+      "spell_power": 217.0,
+      "stamina": 58.0
+    },
+    "weapon_max_damage": 303,
+    "weapon_min_damage": 144,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33494/amani-divining-staff"
+  },
+  "name": "Amani Divining Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33494/amani-divining-staff"
+}

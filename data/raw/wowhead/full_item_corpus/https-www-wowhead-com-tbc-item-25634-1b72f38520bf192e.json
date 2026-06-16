@@ -1,0 +1,115 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 105 goes in the \"Trinket\" slot. It is a quest reward from Gava'xi. In the Trinkets category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 25634,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 25634,
+    "item_level": 105,
+    "name": "Oshu'gun Relic",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 9900,
+      "entity_name": "Gava'xi",
+      "quest_id": 9900,
+      "source_url": "https://www.wowhead.com/tbc/item=25634",
+      "type": "quest",
+      "zone": "Nagrand"
+    },
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "Quest: Gava'xi",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 9900,
+        "entity_name": "Gava'xi",
+        "quest_id": 9900,
+        "source_url": "https://www.wowhead.com/tbc/item=25634",
+        "type": "quest",
+        "zone": "Nagrand"
+      }
+    ],
+    "stats": {
+      "healing_power": 53.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25634"
+  },
+  "name": "Oshu'gun Relic",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 9900,
+      "entity_name": "Gava'xi",
+      "quest_id": 9900,
+      "source_url": "https://www.wowhead.com/tbc/item=25634",
+      "type": "quest",
+      "zone": "Nagrand"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3518,
+        "category2": 8,
+        "id": 9900,
+        "itemchoices": [
+          [
+            25637,
+            1
+          ],
+          [
+            25634,
+            1
+          ],
+          [
+            25544,
+            1
+          ]
+        ],
+        "level": 67,
+        "money": 37000,
+        "name": "Gava'xi",
+        "popularity": 18,
+        "reprewards": [
+          [
+            933,
+            250
+          ]
+        ],
+        "reqlevel": 65,
+        "side": 3,
+        "xp": 11650
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25634"
+}

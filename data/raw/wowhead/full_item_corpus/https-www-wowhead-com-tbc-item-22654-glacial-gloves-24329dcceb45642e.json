@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Glacial Gloves Phase 1 Item Level 80 Binds when equipped Hands Cloth 87 Armor +22 Stamina +30 Frost Resistance Durability 35 / 35 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 15. Sell Price: 1 68 4",
+  "fetched_at": "2026-06-15T20:22:59+00:00",
+  "inventory_slot": null,
+  "item_id": 22654,
+  "item_stats": {
+    "armor": 87,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 22654,
+    "item_level": 80,
+    "name": "Glacial Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "spell_power": 15.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22654/glacial-gloves"
+  },
+  "name": "Glacial Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22654/glacial-gloves"
+}

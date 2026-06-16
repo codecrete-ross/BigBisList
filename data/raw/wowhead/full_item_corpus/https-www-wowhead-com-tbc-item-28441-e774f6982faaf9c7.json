@@ -1,0 +1,165 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic two-handed mace has an item level of 123. It is crafted. In the Two-Handed Maces category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:27+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 28441,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 118.55,
+    "id": 28441,
+    "item_level": 123,
+    "name": "Deep Thunder",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 34548,
+      "entity_name": "Deep Thunder",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28441",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28441",
+      "spell_id": 34548,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "Crafted: Deep Thunder",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 34548,
+        "entity_name": "Deep Thunder",
+        "profession": "Blacksmithing",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Blacksmithing",
+            "raw_text": "Blacksmithing",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=28441",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=28441",
+        "spell_id": 34548,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "agility": 37.0,
+      "stamina": 55.0,
+      "strength": 37.0
+    },
+    "weapon_max_damage": 541,
+    "weapon_min_damage": 360,
+    "weapon_speed": 3.8,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28441"
+  },
+  "name": "Deep Thunder",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Deep Thunder Phase 1 Item Level 123 Binds when picked up Unique Two-Hand Mace 360 - 541 Damage Speed 3.80 (118.55 damage per second) +37 Strength +37 Agility +55 Stamina Durability 120 / 120 Requires Level 70 Requires Master Hammersmith Chance on hit: Stuns target for 4 sec. Sell Price: 14 92 70 This epic two-handed mace has an item level of 123. It is crafted. In the Two-Handed Maces category. Added in World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28441",
+      "specialization": "Master Hammersmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 34548,
+      "entity_name": "Deep Thunder",
+      "profession": "Blacksmithing",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Blacksmithing",
+          "raw_text": "Blacksmithing",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=28441",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=28441",
+      "spell_id": 34548,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          28441,
+          1,
+          1
+        ],
+        "id": 34548,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Deep Thunder",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 4,
+        "reagents": [
+          [
+            28440,
+            1
+          ],
+          [
+            23572,
+            8
+          ],
+          [
+            22457,
+            10
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          164
+        ],
+        "specialization": 17040,
+        "trainingcost": 250000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28441"
+}

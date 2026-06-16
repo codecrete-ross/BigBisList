@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Wyrmhide Tunic Phase 3 Item Level 146 Binds when picked up Chest Leather 501 Armor +55 Stamina +28 Intellect Red Socket Red Socket Yellow Socket Socket Bonus: +4 Resilience Rating Durability 120 / 120 Classes: Druid Requires Level 70 Equip: Improves spell critical strike rating by 13. Equip: Improves your resilience rating by 27. Equip: Increases damage and healing done by magical spells and effects by up to 53. Equip: Restores 5 mana per 5 sec. Gladiator's Wildhide (0/5) Gladiator's Wyrmhide Gloves Gladiator's Wyrmhide Helm Gladiator's Wyrmhide Legguards Gladiator's Wyrmhide Spaulders Gladiator's Wyrmhide Tunic (2) Set : +35 Resilience Rating. (4) Set : Your Wrath casts have a chance to reduce the cast time on your next Starfire by 1.5 sec. (Proc chance: 15%, 15s cooldown)",
+  "fetched_at": "2026-06-15T20:27:35+00:00",
+  "inventory_slot": null,
+  "item_id": 33771,
+  "item_stats": {
+    "armor": 501,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 33771,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Wyrmhide Tunic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "mp5": 5.0,
+      "resilience_rating": 27.0,
+      "spell_crit_rating": 13.0,
+      "spell_power": 53.0,
+      "stamina": 55.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33771/vengeful-gladiators-wyrmhide-tunic"
+  },
+  "name": "Vengeful Gladiator's Wyrmhide Tunic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33771/vengeful-gladiators-wyrmhide-tunic"
+}

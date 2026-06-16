@@ -1,0 +1,138 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 128 goes in the \"Feet\" slot. It is looted from The Lurker Below. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 30067,
+  "item_stats": {
+    "armor": 148,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30067,
+    "item_level": 128,
+    "name": "Velvet Boots of the Guardian",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 9,
+      "drop_percent": 20.93,
+      "entity_id": 21217,
+      "entity_name": "The Lurker Below",
+      "out_of": 43,
+      "source_url": "https://www.wowhead.com/tbc/item=30067",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Feet",
+    "source_summary": "Drop: The Lurker Below (Serpentshrine Cavern) 20.9%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 9,
+        "drop_percent": 20.93,
+        "entity_id": 21217,
+        "entity_name": "The Lurker Below",
+        "out_of": 43,
+        "source_url": "https://www.wowhead.com/tbc/item=30067",
+        "type": "drop",
+        "zone": "Serpentshrine Cavern"
+      }
+    ],
+    "stats": {
+      "intellect": 21.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 49.0,
+      "spirit": 15.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30067"
+  },
+  "name": "Velvet Boots of the Guardian",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 9,
+      "drop_percent": 20.93,
+      "entity_id": 21217,
+      "entity_name": "The Lurker Below",
+      "out_of": 43,
+      "source_url": "https://www.wowhead.com/tbc/item=30067",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 9,
+        "id": 21217,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 20,
+                "outof": 125
+              }
+            },
+            "4": {
+              "0": {
+                "count": 9,
+                "outof": 43
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 20,
+            "outof": 125
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "The Lurker Below",
+        "outof": 43,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30067"
+}

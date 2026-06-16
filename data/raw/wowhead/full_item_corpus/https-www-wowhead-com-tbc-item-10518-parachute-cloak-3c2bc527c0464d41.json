@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Parachute Cloak Phase 1 Item Level 45 Binds when equipped Back 30 Armor +8 Agility Requires Engineering (225) Use: Reduces your fall speed for 10 sec. (30 Sec Cooldown) Sell Price: 46 96",
+  "fetched_at": "2026-06-15T20:17:15+00:00",
+  "inventory_slot": null,
+  "item_id": 10518,
+  "item_stats": {
+    "armor": 30,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10518,
+    "item_level": 45,
+    "name": "Parachute Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "agility": 8.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10518/parachute-cloak"
+  },
+  "name": "Parachute Cloak",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Parachute Cloak Phase 1 Item Level 45 Binds when equipped Back 30 Armor +8 Agility Requires Engineering (225) Use: Reduces your fall speed for 10 sec. (30 Sec Cooldown) Sell Price: 46 96",
+      "scope": "equip_or_use",
+      "skill": 225,
+      "source_url": "https://www.wowhead.com/tbc/item=10518/parachute-cloak",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10518/parachute-cloak"
+}

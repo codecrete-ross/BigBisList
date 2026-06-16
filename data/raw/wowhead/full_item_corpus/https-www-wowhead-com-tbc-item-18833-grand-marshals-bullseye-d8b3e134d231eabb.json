@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grand Marshal's Bullseye Phase 1 Item Level 78 Binds when picked up Ranged Bow 80 - 121 Damage Speed 1.80 (55.83 damage per second) +2 Stamina Durability 90 / 90 Requires Level 60 Equip: Increases ranged attack power by 36.",
+  "fetched_at": "2026-06-15T20:19:59+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 18833,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 55.83,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 18833,
+    "item_level": 78,
+    "name": "Grand Marshal's Bullseye",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "ranged_attack_power": 36.0,
+      "stamina": 2.0
+    },
+    "weapon_max_damage": 121,
+    "weapon_min_damage": 80,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18833/grand-marshals-bullseye"
+  },
+  "name": "Grand Marshal's Bullseye",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18833/grand-marshals-bullseye"
+}

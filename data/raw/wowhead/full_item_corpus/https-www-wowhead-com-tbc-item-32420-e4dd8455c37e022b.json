@@ -1,0 +1,240 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This crafted back is one of the key pieces of Shadow Resistance gear most classes use for defeating Mother Shahraz in the Black Temple raid. It is crafted.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": null,
+  "item_id": 32420,
+  "item_stats": {
+    "armor": 109,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 32420,
+    "item_level": 130,
+    "name": "Night's End",
+    "parse_confidence": "tooltip",
+    "phase": "T6",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 40060,
+      "entity_name": "Night's End",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 32447,
+          "entity_name": "Pattern: Night's End",
+          "item_id": 32447,
+          "source_url": "https://www.wowhead.com/tbc/item=32420",
+          "type": "vendor",
+          "zone": "Black Temple"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32420",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32420",
+      "spell_id": 40060,
+      "type": "crafted",
+      "zone": "Black Temple"
+    },
+    "quality": "unknown",
+    "required_level": 70,
+    "source_summary": "Crafted: Night's End",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 40060,
+        "entity_name": "Night's End",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 32447,
+            "entity_name": "Pattern: Night's End",
+            "item_id": 32447,
+            "source_url": "https://www.wowhead.com/tbc/item=32420",
+            "type": "vendor",
+            "zone": "Black Temple"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=32420",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=32420",
+        "spell_id": 40060,
+        "type": "crafted",
+        "zone": "Black Temple"
+      }
+    ],
+    "stats": {
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32420"
+  },
+  "name": "Night's End",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 40060,
+      "entity_name": "Night's End",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 32447,
+          "entity_name": "Pattern: Night's End",
+          "item_id": 32447,
+          "source_url": "https://www.wowhead.com/tbc/item=32420",
+          "type": "vendor",
+          "zone": "Black Temple"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=32420",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=32420",
+      "spell_id": 40060,
+      "type": "crafted",
+      "zone": "Black Temple"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          32420,
+          1,
+          1
+        ],
+        "id": 40060,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Night's End",
+        "nskillup": 1,
+        "popularity": 8,
+        "quality": 4,
+        "reagents": [
+          [
+            32428,
+            1
+          ],
+          [
+            22450,
+            1
+          ],
+          [
+            21886,
+            2
+          ],
+          [
+            22456,
+            2
+          ],
+          [
+            21842,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 32447,
+        "level": 75,
+        "name": "Pattern: Night's End",
+        "popularity": 5,
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Okuno",
+            "t": 1,
+            "ti": 23159,
+            "z": 3959
+          }
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 32447,
+      "level": 75,
+      "name": "Pattern: Night's End",
+      "popularity": 5,
+      "quality": 1,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Okuno",
+          "t": 1,
+          "ti": 23159,
+          "z": 3959
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32420"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Figurine - Living Ruby Serpent Phase 1 Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50",
+  "fetched_at": "2026-06-15T20:23:25+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 24126,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 24126,
+    "item_level": 115,
+    "name": "Figurine - Living Ruby Serpent",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "intellect": 23.0,
+      "spell_power": 150.0,
+      "stamina": 33.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent"
+  },
+  "name": "Figurine - Living Ruby Serpent",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Living Ruby Serpent Phase 1 Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24126/figurine-living-ruby-serpent"
+}

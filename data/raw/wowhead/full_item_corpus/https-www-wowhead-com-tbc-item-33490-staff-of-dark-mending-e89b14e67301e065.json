@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of Dark Mending Phase 4 Item Level 132 Binds when picked up Two-Hand Staff 144 - 303 Damage Speed 3.20 (69.84 damage per second) +46 Stamina +47 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +9 Healing and +3 Spell Damage Durability 120 / 120 Requires Level 70 Equip: Increases healing done by up to 407 and damage done by up to 136 for all magical spells and effects. Equip: Restores 16 mana per 5 sec. Sell Price: 16 61 40",
+  "fetched_at": "2026-06-15T20:27:27+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 33490,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 69.84,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 33490,
+    "item_level": 132,
+    "name": "Staff of Dark Mending",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 407.0,
+      "intellect": 47.0,
+      "mp5": 16.0,
+      "stamina": 46.0
+    },
+    "weapon_max_damage": 303,
+    "weapon_min_damage": 144,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33490/staff-of-dark-mending"
+  },
+  "name": "Staff of Dark Mending",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33490/staff-of-dark-mending"
+}

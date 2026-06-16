@@ -1,0 +1,200 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 133 goes in the \"Chest\" slot. Requires Mage. It is sold by NPCs. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:32+00:00",
+  "inventory_slot": "Chest",
+  "item_id": 30196,
+  "item_stats": {
+    "armor": 223,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30196,
+    "item_level": 133,
+    "name": "Robes of Tirisfal",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 30238,
+          "name": "Item 30238"
+        }
+      ],
+      "entity_id": 21906,
+      "entity_name": "Kelara",
+      "source_url": "https://www.wowhead.com/tbc/item=30196",
+      "type": "vendor",
+      "vendor_id": 21906,
+      "zone": "Shattrath City"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Chest",
+    "sockets": [
+      "yellow",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "Vendor: Kelara (1 Item 30238) +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 30238,
+            "name": "Item 30238"
+          }
+        ],
+        "entity_id": 21905,
+        "entity_name": "Veynna Dawnstar",
+        "source_url": "https://www.wowhead.com/tbc/item=30196",
+        "type": "vendor",
+        "vendor_id": 21905,
+        "zone": "Shattrath City"
+      },
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 1,
+            "item_id": 30238,
+            "name": "Item 30238"
+          }
+        ],
+        "entity_id": 21906,
+        "entity_name": "Kelara",
+        "source_url": "https://www.wowhead.com/tbc/item=30196",
+        "type": "vendor",
+        "vendor_id": 21906,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "intellect": 35.0,
+      "spell_crit_rating": 19.0,
+      "spell_power": 55.0,
+      "spirit": 20.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30196"
+  },
+  "name": "Robes of Tirisfal",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 30238,
+          "name": "Item 30238"
+        }
+      ],
+      "entity_id": 21905,
+      "entity_name": "Veynna Dawnstar",
+      "source_url": "https://www.wowhead.com/tbc/item=30196",
+      "type": "vendor",
+      "vendor_id": 21905,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 1,
+          "item_id": 30238,
+          "name": "Item 30238"
+        }
+      ],
+      "entity_id": 21906,
+      "entity_name": "Kelara",
+      "source_url": "https://www.wowhead.com/tbc/item=30196",
+      "type": "vendor",
+      "vendor_id": 21906,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                30238,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 21905,
+        "location": [
+          3703
+        ],
+        "name": "Veynna Dawnstar",
+        "popularity": 26,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Heirlooms",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [],
+            [
+              [
+                30238,
+                1
+              ]
+            ]
+          ]
+        ],
+        "id": 21906,
+        "location": [
+          3703
+        ],
+        "name": "Kelara",
+        "popularity": 21,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keeper of Sha'tari Heirlooms",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30196"
+}

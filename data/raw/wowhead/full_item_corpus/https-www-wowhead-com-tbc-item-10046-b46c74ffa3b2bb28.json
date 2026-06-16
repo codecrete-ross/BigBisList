@@ -1,0 +1,144 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This white cloth armor of item level 9 goes in the \"Feet\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:36+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 10046,
+  "item_stats": {
+    "armor": 11,
+    "armor_type": "Cloth",
+    "binding": "unknown",
+    "id": 10046,
+    "item_level": 9,
+    "name": "Simple Linen Boots",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12045,
+      "entity_name": "Simple Linen Boots",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10046",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10046",
+      "spell_id": 12045,
+      "type": "crafted"
+    },
+    "quality": "common",
+    "required_level": 4,
+    "slot": "Feet",
+    "source_summary": "Crafted: Simple Linen Boots",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12045,
+        "entity_name": "Simple Linen Boots",
+        "profession": "Tailoring",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10046",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10046",
+        "spell_id": 12045,
+        "type": "crafted"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10046"
+  },
+  "name": "Simple Linen Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12045,
+      "entity_name": "Simple Linen Boots",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10046",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10046",
+      "spell_id": 12045,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "common",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          20,
+          50,
+          67,
+          85
+        ],
+        "creates": [
+          10046,
+          1,
+          1
+        ],
+        "id": 12045,
+        "learnedat": 20,
+        "level": 0,
+        "name": "Simple Linen Boots",
+        "nskillup": 1,
+        "popularity": 10,
+        "quality": 1,
+        "reagents": [
+          [
+            2996,
+            2
+          ],
+          [
+            2318,
+            1
+          ],
+          [
+            2320,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "trainingcost": 50
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10046"
+}

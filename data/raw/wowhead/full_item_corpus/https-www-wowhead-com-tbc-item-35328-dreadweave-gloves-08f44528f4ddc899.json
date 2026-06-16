@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dreadweave Gloves Phase 1 Item Level 115 Binds when picked up Hands Cloth 97 Armor +31 Stamina +21 Intellect Durability 30 / 30 Classes: Warlock Requires Level 70 Requires Keepers of Time - Honored Equip: Improves your resilience rating by 12. Equip: Gives you a 50% chance to avoid interruption caused by damage while casting Fear. Equip: Increases damage and healing done by magical spells and effects by up to 26. Oathbound's Dreadweave Battlegear (0/5) Dreadweave Gloves Dreadweave Hood Dreadweave Leggings Dreadweave Mantle Dreadweave Robe (2) Set : +35 Resilience Rating. (4) Set : Reduces the casting time of your Fear spell by 0.2 sec. Sell Price: 1 73 91",
+  "fetched_at": "2026-06-15T20:28:03+00:00",
+  "inventory_slot": null,
+  "item_id": 35328,
+  "item_stats": {
+    "armor": 97,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 35328,
+    "item_level": 115,
+    "name": "Dreadweave Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 21.0,
+      "resilience_rating": 12.0,
+      "spell_power": 26.0,
+      "stamina": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35328/dreadweave-gloves"
+  },
+  "name": "Dreadweave Gloves",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Dreadweave Gloves Phase 1 Item Level 115 Binds when picked up Hands Cloth 97 Armor +31 Stamina +21 Intellect Durability 30 / 30 Classes: Warlock Requires Level 70 Requires Keepers of Time - Honored Equip: Improves your resilience rating by 12. Equip: Gives you a 50% chance to avoid interruption caused by damage while casting Fear. Equip: Increases damage and healing done by magical spells and effects by up to 26. Oathbound's Dreadweave Battlegear (0/5) Dreadweave Gloves Dreadweave Hood Dreadweave Leggings Dreadweave Mantle Dreadweave Robe (2) Set : +35 Resilience Rating. (4) Set : Reduces the casting time of your Fear spell by 0.2 sec. Sell Price: 1 73 91",
+      "reputation": "Keepers of Time",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35328/dreadweave-gloves",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35328/dreadweave-gloves"
+}

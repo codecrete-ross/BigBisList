@@ -1,0 +1,217 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 43 goes in the \"Chest\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:50:47+00:00",
+  "inventory_slot": "Chest",
+  "item_id": 10007,
+  "item_stats": {
+    "armor": 57,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10007,
+    "item_level": 43,
+    "name": "Red Mageweave Vest",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12056,
+      "entity_name": "Red Mageweave Vest",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 10300,
+          "entity_name": "Pattern: Red Mageweave Vest",
+          "item_id": 10300,
+          "source_url": "https://www.wowhead.com/tbc/item=10007",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10007",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10007",
+      "spell_id": 12056,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 38,
+    "slot": "Chest",
+    "source_summary": "Crafted: Red Mageweave Vest",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12056,
+        "entity_name": "Red Mageweave Vest",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 10300,
+            "entity_name": "Pattern: Red Mageweave Vest",
+            "item_id": 10300,
+            "source_url": "https://www.wowhead.com/tbc/item=10007",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10007",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10007",
+        "spell_id": 12056,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10007"
+  },
+  "name": "Red Mageweave Vest",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12056,
+      "entity_name": "Red Mageweave Vest",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 10300,
+          "entity_name": "Pattern: Red Mageweave Vest",
+          "item_id": 10300,
+          "source_url": "https://www.wowhead.com/tbc/item=10007",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10007",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10007",
+      "spell_id": 12056,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          215,
+          230,
+          245,
+          260
+        ],
+        "creates": [
+          10007,
+          1,
+          1
+        ],
+        "id": 12056,
+        "learnedat": 215,
+        "level": 0,
+        "name": "Red Mageweave Vest",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            3
+          ],
+          [
+            2604,
+            2
+          ],
+          [
+            8343,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 10300,
+        "level": 43,
+        "name": "Pattern: Red Mageweave Vest",
+        "popularity": 8,
+        "quality": 2,
+        "skill": 215,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 10300,
+      "level": 43,
+      "name": "Pattern: Red Mageweave Vest",
+      "popularity": 8,
+      "quality": 2,
+      "skill": 215,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10007"
+}

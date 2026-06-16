@@ -1,0 +1,238 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This epic mail armor of item level 128 goes in the \"Waist\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Waist",
+  "item_id": 30046,
+  "item_stats": {
+    "armor": 506,
+    "armor_type": "Mail",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30046,
+    "item_level": 128,
+    "name": "Belt of the Black Eagle",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 36352,
+      "entity_name": "Belt of the Black Eagle",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 30303,
+          "entity_name": "Pattern: Belt of the Black Eagle",
+          "item_id": 30303,
+          "source_url": "https://www.wowhead.com/tbc/item=30046",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30046",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30046",
+      "spell_id": 36352,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Waist",
+    "socket_bonus": {
+      "agility": 3.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "Crafted: Belt of the Black Eagle",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 36352,
+        "entity_name": "Belt of the Black Eagle",
+        "profession": "Leatherworking",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 30303,
+            "entity_name": "Pattern: Belt of the Black Eagle",
+            "item_id": 30303,
+            "source_url": "https://www.wowhead.com/tbc/item=30046",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Leatherworking",
+            "raw_text": "Leatherworking",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=30046",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=30046",
+        "spell_id": 36352,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "agility": 17.0,
+      "attack_power": 66.0,
+      "crit_rating": 17.0,
+      "intellect": 23.0,
+      "stamina": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30046"
+  },
+  "name": "Belt of the Black Eagle",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36352,
+      "entity_name": "Belt of the Black Eagle",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 30303,
+          "entity_name": "Pattern: Belt of the Black Eagle",
+          "item_id": 30303,
+          "source_url": "https://www.wowhead.com/tbc/item=30046",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30046",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30046",
+      "spell_id": 36352,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          30046,
+          1,
+          1
+        ],
+        "id": 36352,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Belt of the Black Eagle",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 4,
+        "reagents": [
+          [
+            30183,
+            2
+          ],
+          [
+            23793,
+            4
+          ],
+          [
+            22451,
+            10
+          ],
+          [
+            29547,
+            10
+          ],
+          [
+            14341,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 30303,
+        "level": 75,
+        "name": "Pattern: Belt of the Black Eagle",
+        "popularity": 9,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 30303,
+      "level": 75,
+      "name": "Pattern: Belt of the Black Eagle",
+      "popularity": 9,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30046"
+}

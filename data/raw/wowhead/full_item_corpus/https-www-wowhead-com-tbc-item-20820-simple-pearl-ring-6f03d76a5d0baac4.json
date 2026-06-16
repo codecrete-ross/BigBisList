@@ -1,0 +1,38 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Simple Pearl Ring Item Level 22 Binds when equipped Unique-Equipped Finger Requires Level 17 Equip: Improves spell hit rating by 4. Sell Price: 10 64",
+  "fetched_at": "2026-06-15T20:22:24+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 20820,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by"
+    ],
+    "id": 20820,
+    "item_level": 22,
+    "name": "Simple Pearl Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 17,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "spell_hit_rating": 4.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20820/simple-pearl-ring"
+  },
+  "name": "Simple Pearl Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20820/simple-pearl-ring"
+}

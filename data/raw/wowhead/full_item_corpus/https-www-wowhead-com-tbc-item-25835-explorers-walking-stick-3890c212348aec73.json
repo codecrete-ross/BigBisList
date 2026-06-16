@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Explorer's Walking Stick Phase 1 Item Level 91 Binds when picked up Two-Hand Staff 132 - 199 Damage Speed 2.30 (71.96 damage per second) +51 Stamina Durability 100 / 100 Requires Level 62 Requires Cenarion Expedition - Honored Equip: Increases attack power by 68. Equip: Run speed increased slightly. Sell Price: 8 95 96",
+  "fetched_at": "2026-06-15T20:24:41+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 25835,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 71.96,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 25835,
+    "item_level": 91,
+    "name": "Explorer's Walking Stick",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 62,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 68.0,
+      "stamina": 51.0
+    },
+    "weapon_max_damage": 199,
+    "weapon_min_damage": 132,
+    "weapon_speed": 2.3,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25835/explorers-walking-stick"
+  },
+  "name": "Explorer's Walking Stick",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Explorer's Walking Stick Phase 1 Item Level 91 Binds when picked up Two-Hand Staff 132 - 199 Damage Speed 2.30 (71.96 damage per second) +51 Stamina Durability 100 / 100 Requires Level 62 Requires Cenarion Expedition - Honored Equip: Increases attack power by 68. Equip: Run speed increased slightly. Sell Price: 8 95 96",
+      "reputation": "Cenarion Expedition",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=25835/explorers-walking-stick",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25835/explorers-walking-stick"
+}

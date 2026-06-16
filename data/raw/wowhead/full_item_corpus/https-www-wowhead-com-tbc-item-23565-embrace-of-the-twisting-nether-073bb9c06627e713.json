@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Embrace of the Twisting Nether Phase 1 Item Level 146 Binds when picked up Chest Mail 1022 Armor +56 Stamina +27 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Agility Durability 140 / 140 Requires Level 70 Requires Armorsmith Equip: Improves critical strike rating by 35. Equip: Increases attack power by 84. Equip: Restores 10 mana per 5 sec. Use: You are protected from all physical attacks for 6 sec, but cannot attack or use physical abilities. (30 Min Cooldown) Sell Price: 9 13 27",
+  "fetched_at": "2026-06-15T20:23:20+00:00",
+  "inventory_slot": null,
+  "item_id": 23565,
+  "item_stats": {
+    "armor": 1022,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 23565,
+    "item_level": 146,
+    "name": "Embrace of the Twisting Nether",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 4.0,
+      "attack_power": 84.0,
+      "crit_rating": 35.0,
+      "intellect": 27.0,
+      "mp5": 10.0,
+      "stamina": 56.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23565/embrace-of-the-twisting-nether"
+  },
+  "name": "Embrace of the Twisting Nether",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Embrace of the Twisting Nether Phase 1 Item Level 146 Binds when picked up Chest Mail 1022 Armor +56 Stamina +27 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Agility Durability 140 / 140 Requires Level 70 Requires Armorsmith Equip: Improves critical strike rating by 35. Equip: Increases attack power by 84. Equip: Restores 10 mana per 5 sec. Use: You are protected from all physical attacks for 6 sec, but cannot attack or use physical abilities. (30 Min Cooldown) Sell Price: 9 13 27",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=23565/embrace-of-the-twisting-nether",
+      "specialization": "Armorsmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23565/embrace-of-the-twisting-nether"
+}

@@ -1,0 +1,38 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Runed Ring Phase 1 Item Level 50 Binds when equipped Finger <Random enchantment> Requires Level 45 Equip: Increases damage and healing done by magical spells and effects by up to 7. Sell Price: 3 82 22",
+  "fetched_at": "2026-06-15T20:29:49+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 862,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 862,
+    "item_level": 50,
+    "name": "Runed Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 45,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=862/runed-ring"
+  },
+  "name": "Runed Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=862/runed-ring"
+}

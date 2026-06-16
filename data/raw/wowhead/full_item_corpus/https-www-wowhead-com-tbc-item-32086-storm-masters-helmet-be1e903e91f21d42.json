@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Storm Master's Helmet Phase 1 Item Level 110 Binds when picked up Head Mail 632 Armor +24 Stamina +32 Intellect Meta Socket Blue Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 85 / 85 Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 37.",
+  "fetched_at": "2026-06-15T20:27:06+00:00",
+  "inventory_slot": null,
+  "item_id": 32086,
+  "item_stats": {
+    "armor": 632,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 32086,
+    "item_level": 110,
+    "name": "Storm Master's Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "meta",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 32.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 37.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32086/storm-masters-helmet"
+  },
+  "name": "Storm Master's Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32086/storm-masters-helmet"
+}

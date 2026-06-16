@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spymaster's Crossbow Phase 1 Item Level 108 Binds when picked up Ranged Crossbow 104 - 195 Damage Speed 2.70 (55.37 damage per second) +7 Agility +5 Intellect Durability 65 / 65 Equip: Increases attack power by 24. Sell Price: 5 1 41",
+  "fetched_at": "2026-06-15T20:25:59+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 30397,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 55.37,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 30397,
+    "item_level": 108,
+    "name": "Spymaster's Crossbow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "attack_power": 24.0,
+      "intellect": 5.0
+    },
+    "weapon_max_damage": 195,
+    "weapon_min_damage": 104,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Crossbow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30397/spymasters-crossbow"
+  },
+  "name": "Spymaster's Crossbow",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30397/spymasters-crossbow"
+}

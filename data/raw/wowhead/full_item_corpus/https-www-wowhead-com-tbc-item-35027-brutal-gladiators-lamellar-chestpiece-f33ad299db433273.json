@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brutal Gladiator's Lamellar Chestpiece Phase 5 Item Level 159 Binds when picked up Chest Plate 1983 Armor +73 Stamina +36 Intellect Red Socket Red Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 165 / 165 Classes: Paladin Requires Level 70 Equip: Improves spell critical strike rating by 44. Equip: Improves your resilience rating by 31. Equip: Increases damage and healing done by magical spells and effects by up to 37. Gladiator's Aegis (0/5) Gladiator's Lamellar Chestpiece Gladiator's Lamellar Gauntlets Gladiator's Lamellar Helm Gladiator's Lamellar Legguards Gladiator's Lamellar Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Hammer of Justice by 10 sec.",
+  "fetched_at": "2026-06-15T20:27:57+00:00",
+  "inventory_slot": null,
+  "item_id": 35027,
+  "item_stats": {
+    "armor": 1983,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 35027,
+    "item_level": 159,
+    "name": "Brutal Gladiator's Lamellar Chestpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 36.0,
+      "resilience_rating": 31.0,
+      "spell_crit_rating": 44.0,
+      "spell_power": 37.0,
+      "stamina": 73.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35027/brutal-gladiators-lamellar-chestpiece"
+  },
+  "name": "Brutal Gladiator's Lamellar Chestpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35027/brutal-gladiators-lamellar-chestpiece"
+}

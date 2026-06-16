@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Charged Footwear Phase 1 Item Level 105 Binds when picked up Feet Leather 167 Armor +16 Stamina Durability 45 / 45 Equip: Improves critical strike rating by 27. Equip: Increases attack power by 30. Sell Price: 2 43 42",
+  "fetched_at": "2026-06-15T20:26:49+00:00",
+  "inventory_slot": null,
+  "item_id": 31453,
+  "item_stats": {
+    "armor": 167,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 31453,
+    "item_level": 105,
+    "name": "Charged Footwear",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 30.0,
+      "crit_rating": 27.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31453/charged-footwear"
+  },
+  "name": "Charged Footwear",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31453/charged-footwear"
+}

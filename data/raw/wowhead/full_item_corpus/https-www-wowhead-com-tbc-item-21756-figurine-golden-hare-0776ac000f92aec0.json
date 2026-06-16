@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Figurine - Golden Hare Item Level 40 Binds when picked up Unique Trinket Requires Level 35 Requires Jewelcrafting (200) Equip: Run speed increased slightly. Use: Increased speed by 30% and prevents new snares from landing on the user for 6 sec. (20 Min Cooldown) Sell Price: 15",
+  "fetched_at": "2026-06-15T20:22:43+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 21756,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 21756,
+    "item_level": 40,
+    "name": "Figurine - Golden Hare",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 35,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21756/figurine-golden-hare"
+  },
+  "name": "Figurine - Golden Hare",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Figurine - Golden Hare Item Level 40 Binds when picked up Unique Trinket Requires Level 35 Requires Jewelcrafting (200) Equip: Run speed increased slightly. Use: Increased speed by 30% and prevents new snares from landing on the user for 6 sec. (20 Min Cooldown) Sell Price: 15",
+      "scope": "equip_or_use",
+      "skill": 200,
+      "source_url": "https://www.wowhead.com/tbc/item=21756/figurine-golden-hare",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21756/figurine-golden-hare"
+}

@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Aurastone Hammer Phase 1 Item Level 69 Binds when picked up Main Hand Mace 79 - 162 Damage Speed 2.70 (44.63 damage per second) +10 Stamina +10 Intellect Durability 105 / 105 Requires Level 60 Equip: Restores 5 mana per 5 sec. Equip: Increases damage and healing done by magical spells and effects by up to 25. Sell Price: 7 41 49",
+  "fetched_at": "2026-06-15T20:19:32+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 17105,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 44.63,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 17105,
+    "item_level": 69,
+    "name": "Aurastone Hammer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "mp5": 5.0,
+      "spell_power": 25.0,
+      "stamina": 10.0
+    },
+    "weapon_max_damage": 162,
+    "weapon_min_damage": 79,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=17105/aurastone-hammer"
+  },
+  "name": "Aurastone Hammer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=17105/aurastone-hammer"
+}

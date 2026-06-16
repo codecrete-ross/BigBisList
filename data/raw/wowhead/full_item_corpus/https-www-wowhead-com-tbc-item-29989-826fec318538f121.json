@@ -1,0 +1,142 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloak of item level 138 goes in the \"Back\" slot. It is looted from Kael'thas Sunstrider. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:30+00:00",
+  "inventory_slot": "Back",
+  "item_id": 29989,
+  "item_stats": {
+    "armor": 116,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 29989,
+    "item_level": 138,
+    "name": "Sunshower Light Cloak",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 107,
+      "drop_percent": 14.78,
+      "entity_id": 19622,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 724,
+      "source_url": "https://www.wowhead.com/tbc/item=29989",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Back",
+    "source_summary": "Drop: Kael'thas Sunstrider (Tempest Keep) 14.8%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 107,
+        "drop_percent": 14.78,
+        "entity_id": 19622,
+        "entity_name": "Kael'thas Sunstrider",
+        "out_of": 724,
+        "source_url": "https://www.wowhead.com/tbc/item=29989",
+        "type": "drop",
+        "zone": "Tempest Keep"
+      }
+    ],
+    "stats": {
+      "healing_power": 77.0,
+      "intellect": 24.0,
+      "spirit": 20.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29989"
+  },
+  "name": "Sunshower Light Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 107,
+      "drop_percent": 14.78,
+      "entity_id": 19622,
+      "entity_name": "Kael'thas Sunstrider",
+      "out_of": 724,
+      "source_url": "https://www.wowhead.com/tbc/item=29989",
+      "type": "drop",
+      "zone": "Tempest Keep"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 107,
+        "id": 19622,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1002,
+                "outof": 6777
+              }
+            },
+            "4": {
+              "0": {
+                "count": 217,
+                "outof": 1563
+              }
+            },
+            "5": {
+              "0": {
+                "count": 107,
+                "outof": 724
+              }
+            }
+          }
+        },
+        "location": [
+          3845
+        ],
+        "modes": {
+          "0": {
+            "count": 1002,
+            "outof": 6777
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kael'thas Sunstrider",
+        "outof": 724,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Lord of the Blood Elves",
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29989"
+}

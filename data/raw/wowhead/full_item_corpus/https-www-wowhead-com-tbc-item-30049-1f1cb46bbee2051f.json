@@ -1,0 +1,197 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic off-hand frill of item level 128 goes in the \"Held In Off-hand\" slot. It is looted from Hydross the Unstable. In the Off-hand Frills category.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 30049,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30049,
+    "item_level": 128,
+    "name": "Fathomstone",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1636,
+      "drop_percent": 17.54,
+      "entity_id": 21216,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 9328,
+      "source_url": "https://www.wowhead.com/tbc/item=30049",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Off Hand",
+    "source_summary": "Drop: Hydross the Unstable (Serpentshrine Cavern) 17.5% +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 1636,
+        "drop_percent": 17.54,
+        "entity_id": 21216,
+        "entity_name": "Hydross the Unstable",
+        "out_of": 9328,
+        "source_url": "https://www.wowhead.com/tbc/item=30049",
+        "type": "drop",
+        "zone": "Serpentshrine Cavern"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 21932,
+        "entity_name": "Hydross the Unstable",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=30049",
+        "type": "drop"
+      }
+    ],
+    "stats": {
+      "intellect": 12.0,
+      "spell_crit_rating": 23.0,
+      "spell_power": 36.0,
+      "stamina": 16.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30049"
+  },
+  "name": "Fathomstone",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1636,
+      "drop_percent": 17.54,
+      "entity_id": 21216,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 9328,
+      "source_url": "https://www.wowhead.com/tbc/item=30049",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 21932,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=30049",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1636,
+        "id": 21216,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1636,
+                "outof": 9328
+              }
+            },
+            "4": {
+              "0": {
+                "count": 263,
+                "outof": 1208
+              }
+            },
+            "5": {
+              "0": {
+                "count": 120,
+                "outof": 603
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 1636,
+            "outof": 9328
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 9328,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Duke of Currents",
+        "type": 4
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21932,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 24.2
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 24.2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 24.2,
+        "personal_loot": 0,
+        "popularity": 4,
+        "tag": "Duke of Currents",
+        "type": 4
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30049"
+}

@@ -1,0 +1,189 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 128 goes in the \"Trinket\" slot. Requires Druid. It is looted from Hydross the Unstable. In the Trinkets category.",
+  "fetched_at": "2026-06-15T18:31:32+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 30664,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 30664,
+    "item_level": 128,
+    "name": "Living Root of the Wildheart",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1530,
+      "drop_percent": 16.4,
+      "entity_id": 21216,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 9328,
+      "source_url": "https://www.wowhead.com/tbc/item=30664",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "Drop: Hydross the Unstable (Serpentshrine Cavern) 16.4% +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 1530,
+        "drop_percent": 16.4,
+        "entity_id": 21216,
+        "entity_name": "Hydross the Unstable",
+        "out_of": 9328,
+        "source_url": "https://www.wowhead.com/tbc/item=30664",
+        "type": "drop",
+        "zone": "Serpentshrine Cavern"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 21932,
+        "entity_name": "Hydross the Unstable",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=30664",
+        "type": "drop"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30664"
+  },
+  "name": "Living Root of the Wildheart",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1530,
+      "drop_percent": 16.4,
+      "entity_id": 21216,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 9328,
+      "source_url": "https://www.wowhead.com/tbc/item=30664",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 21932,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=30664",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1530,
+        "id": 21216,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1530,
+                "outof": 9328
+              }
+            },
+            "4": {
+              "0": {
+                "count": 238,
+                "outof": 1208
+              }
+            },
+            "5": {
+              "0": {
+                "count": 91,
+                "outof": 603
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 1530,
+            "outof": 9328
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 9328,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Duke of Currents",
+        "type": 4
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21932,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 23.2
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 23.2
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 23.2,
+        "personal_loot": 0,
+        "popularity": 4,
+        "tag": "Duke of Currents",
+        "type": 4
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30664"
+}

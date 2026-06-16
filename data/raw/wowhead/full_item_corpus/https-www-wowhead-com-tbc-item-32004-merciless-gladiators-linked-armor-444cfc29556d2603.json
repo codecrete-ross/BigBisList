@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Merciless Gladiator's Linked Armor Phase 2 Item Level 136 Binds when picked up Chest Mail 954 Armor +31 Strength +57 Stamina Red Socket Red Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 140 / 140 Classes: Shaman Requires Level 70 Equip: Improves critical strike rating by 30. Equip: Improves your resilience rating by 27. Equip: Restores 8 mana per 5 sec. Gladiator's Earthshaker (0/5) Gladiator's Linked Armor Gladiator's Linked Gauntlets Gladiator's Linked Helm Gladiator's Linked Leggings Gladiator's Linked Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Stormstrike ability by 1 sec.",
+  "fetched_at": "2026-06-15T20:27:03+00:00",
+  "inventory_slot": null,
+  "item_id": 32004,
+  "item_stats": {
+    "armor": 954,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 32004,
+    "item_level": 136,
+    "name": "Merciless Gladiator's Linked Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 30.0,
+      "mp5": 8.0,
+      "resilience_rating": 27.0,
+      "stamina": 57.0,
+      "strength": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32004/merciless-gladiators-linked-armor"
+  },
+  "name": "Merciless Gladiator's Linked Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32004/merciless-gladiators-linked-armor"
+}

@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Adamantite Cleaver Phase 1 Item Level 105 Binds when equipped Two-Hand Axe 203 - 305 Damage Speed 3.50 (72.57 damage per second) +25 Agility +39 Stamina Durability 85 / 85 Requires Level 65 Equip: Increases attack power by 52. Sell Price: 8 51 43",
+  "fetched_at": "2026-06-15T20:23:18+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 23503,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 72.57,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 23503,
+    "item_level": 105,
+    "name": "Adamantite Cleaver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 65,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 25.0,
+      "attack_power": 52.0,
+      "stamina": 39.0
+    },
+    "weapon_max_damage": 305,
+    "weapon_min_damage": 203,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23503/adamantite-cleaver"
+  },
+  "name": "Adamantite Cleaver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23503/adamantite-cleaver"
+}

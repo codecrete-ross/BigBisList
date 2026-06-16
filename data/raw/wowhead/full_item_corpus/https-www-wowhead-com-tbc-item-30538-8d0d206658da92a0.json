@@ -1,0 +1,154 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 110 goes in the \"Legs\" slot. It is looted from Quagmirran. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:32+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 30538,
+  "item_stats": {
+    "armor": 305,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30538,
+    "item_level": 110,
+    "name": "Midnight Legguards",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 107,
+      "drop_percent": 15.03,
+      "entity_id": 17942,
+      "entity_name": "Quagmirran",
+      "out_of": 712,
+      "source_url": "https://www.wowhead.com/tbc/item=30538",
+      "type": "drop",
+      "zone": "The Slave Pens"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Legs",
+    "socket_bonus": {
+      "hit_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "blue"
+    ],
+    "source_summary": "Drop: Quagmirran (The Slave Pens) 15.0%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "dungeon",
+        "count": 107,
+        "drop_percent": 15.03,
+        "entity_id": 17942,
+        "entity_name": "Quagmirran",
+        "out_of": 712,
+        "source_url": "https://www.wowhead.com/tbc/item=30538",
+        "type": "drop",
+        "zone": "The Slave Pens"
+      }
+    ],
+    "stats": {
+      "attack_power": 64.0,
+      "crit_rating": 27.0,
+      "hit_rating": 17.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30538"
+  },
+  "name": "Midnight Legguards",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "dungeon",
+      "count": 107,
+      "drop_percent": 15.03,
+      "entity_id": 17942,
+      "entity_name": "Quagmirran",
+      "out_of": 712,
+      "source_url": "https://www.wowhead.com/tbc/item=30538",
+      "type": "drop",
+      "zone": "The Slave Pens"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "count": 107,
+        "id": 17942,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1820,
+                "outof": 23080
+              }
+            },
+            "4": {
+              "0": {
+                "count": 208,
+                "outof": 1207
+              }
+            },
+            "5": {
+              "0": {
+                "count": 107,
+                "outof": 712
+              }
+            }
+          }
+        },
+        "location": [
+          3717
+        ],
+        "maxlevel": 72,
+        "minlevel": 64,
+        "modes": {
+          "0": {
+            "count": 1820,
+            "outof": 23080
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Quagmirran",
+        "outof": 712,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30538"
+}

@@ -1,0 +1,137 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloak of item level 128 goes in the \"Back\" slot. It is looted from Morogrim Tidewalker. In the Cloaks category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Back",
+  "item_id": 30098,
+  "item_stats": {
+    "armor": 108,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 30098,
+    "item_level": 128,
+    "name": "Razor-Scale Battlecloak",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 111,
+      "drop_percent": 18.94,
+      "entity_id": 21213,
+      "entity_name": "Morogrim Tidewalker",
+      "out_of": 586,
+      "source_url": "https://www.wowhead.com/tbc/item=30098",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Back",
+    "source_summary": "Drop: Morogrim Tidewalker (Serpentshrine Cavern) 18.9%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 111,
+        "drop_percent": 18.94,
+        "entity_id": 21213,
+        "entity_name": "Morogrim Tidewalker",
+        "out_of": 586,
+        "source_url": "https://www.wowhead.com/tbc/item=30098",
+        "type": "drop",
+        "zone": "Serpentshrine Cavern"
+      }
+    ],
+    "stats": {
+      "agility": 23.0,
+      "stamina": 22.0,
+      "strength": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30098"
+  },
+  "name": "Razor-Scale Battlecloak",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 111,
+      "drop_percent": 18.94,
+      "entity_id": 21213,
+      "entity_name": "Morogrim Tidewalker",
+      "out_of": 586,
+      "source_url": "https://www.wowhead.com/tbc/item=30098",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 111,
+        "id": 21213,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1356,
+                "outof": 7025
+              }
+            },
+            "4": {
+              "0": {
+                "count": 271,
+                "outof": 1249
+              }
+            },
+            "5": {
+              "0": {
+                "count": 111,
+                "outof": 586
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 1356,
+            "outof": 7025
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Morogrim Tidewalker",
+        "outof": 586,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 5
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30098"
+}

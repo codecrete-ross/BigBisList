@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Crystal Spiked Maul Phase 1 Item Level 63 Binds when equipped Two-Hand Mace 168 - 252 Damage Speed 3.90 (53.85 damage per second) +16 Strength Durability 100 / 100 Requires Level 58 Equip: Increases your critical strike rating by 28. Sell Price: 6 31 58",
+  "fetched_at": "2026-06-15T20:22:22+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 20696,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 53.85,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 20696,
+    "item_level": 63,
+    "name": "Crystal Spiked Maul",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 58,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 28.0,
+      "strength": 16.0
+    },
+    "weapon_max_damage": 252,
+    "weapon_min_damage": 168,
+    "weapon_speed": 3.9,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20696/crystal-spiked-maul"
+  },
+  "name": "Crystal Spiked Maul",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20696/crystal-spiked-maul"
+}

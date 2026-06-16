@@ -1,0 +1,145 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 46 goes in the \"Shoulder\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:08+00:00",
+  "inventory_slot": "Shoulder",
+  "item_id": 10027,
+  "item_stats": {
+    "armor": 45,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10027,
+    "item_level": 46,
+    "name": "Black Mageweave Shoulders",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12074,
+      "entity_name": "Black Mageweave Shoulders",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10027",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10027",
+      "spell_id": 12074,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 41,
+    "slot": "Shoulder",
+    "source_summary": "Crafted: Black Mageweave Shoulders",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12074,
+        "entity_name": "Black Mageweave Shoulders",
+        "profession": "Tailoring",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10027",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10027",
+        "spell_id": 12074,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 9.0,
+      "spirit": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10027"
+  },
+  "name": "Black Mageweave Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12074,
+      "entity_name": "Black Mageweave Shoulders",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10027",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10027",
+      "spell_id": 12074,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          230,
+          245,
+          260,
+          275
+        ],
+        "creates": [
+          10027,
+          1,
+          1
+        ],
+        "id": 12074,
+        "learnedat": 230,
+        "level": 0,
+        "name": "Black Mageweave Shoulders",
+        "nskillup": 1,
+        "popularity": 5,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            3
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "trainingcost": 6000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10027"
+}

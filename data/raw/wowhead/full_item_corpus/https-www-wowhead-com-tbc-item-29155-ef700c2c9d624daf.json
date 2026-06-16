@@ -1,0 +1,123 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic one-handed sword has an item level of 100. It is sold by Quartermaster Urgronn. In the One-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:29+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 29155,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.11,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 29155,
+    "item_level": 100,
+    "name": "Stormcaller",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 17585,
+      "entity_name": "Quartermaster Urgronn",
+      "source_url": "https://www.wowhead.com/tbc/item=29155",
+      "type": "vendor",
+      "vendor_id": 17585,
+      "zone": "Hellfire Peninsula"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "Vendor: Quartermaster Urgronn (Hellfire Peninsula)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 17585,
+        "entity_name": "Quartermaster Urgronn",
+        "source_url": "https://www.wowhead.com/tbc/item=29155",
+        "type": "vendor",
+        "vendor_id": 17585,
+        "zone": "Hellfire Peninsula"
+      }
+    ],
+    "stats": {
+      "intellect": 12.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 159.0,
+      "stamina": 12.0
+    },
+    "weapon_max_damage": 118,
+    "weapon_min_damage": 30,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29155"
+  },
+  "name": "Stormcaller",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Stormcaller Phase 1 Item Level 100 Binds when picked up Unique Main Hand Sword 30 - 118 Damage Speed 1.80 (41.11 damage per second) +12 Stamina +12 Intellect Durability 105 / 105 Requires Level 70 Requires Thrallmar - Exalted Equip: Improves spell critical strike rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 159. Sell Price: 43 12 11 This epic one-handed sword has an item level of 100. It is sold by Quartermaster Urgronn. In the One-Handed Swords category. Added in World of Warcraft: The Burning Crusade.",
+      "reputation": "Thrallmar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29155",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 17585,
+      "entity_name": "Quartermaster Urgronn",
+      "source_url": "https://www.wowhead.com/tbc/item=29155",
+      "type": "vendor",
+      "vendor_id": 17585,
+      "zone": "Hellfire Peninsula"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            1832650
+          ]
+        ],
+        "id": 17585,
+        "location": [
+          3483
+        ],
+        "maxlevel": 62,
+        "minlevel": 62,
+        "name": "Quartermaster Urgronn",
+        "popularity": 6,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Thrallmar Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29155"
+}

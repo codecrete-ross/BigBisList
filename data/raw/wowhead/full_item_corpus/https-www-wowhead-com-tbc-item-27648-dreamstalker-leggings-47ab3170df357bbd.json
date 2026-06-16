@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dreamstalker Leggings Phase 1 Item Level 100 Binds when picked up Unique Legs Leather 284 Armor +20 Strength +7 Agility +30 Stamina +10 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 75 / 75 Requires Level 66 Equip: Improves your resilience rating by 20. Equip: Increases healing done by up to 44 and damage done by up to 15 for all magical spells and effects.",
+  "fetched_at": "2026-06-15T20:24:54+00:00",
+  "inventory_slot": null,
+  "item_id": 27648,
+  "item_stats": {
+    "armor": 284,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves your resilience rating by",
+      "Equip:"
+    ],
+    "id": 27648,
+    "item_level": 100,
+    "name": "Dreamstalker Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 66,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 7.0,
+      "healing_power": 44.0,
+      "intellect": 10.0,
+      "resilience_rating": 20.0,
+      "stamina": 30.0,
+      "strength": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27648/dreamstalker-leggings"
+  },
+  "name": "Dreamstalker Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27648/dreamstalker-leggings"
+}

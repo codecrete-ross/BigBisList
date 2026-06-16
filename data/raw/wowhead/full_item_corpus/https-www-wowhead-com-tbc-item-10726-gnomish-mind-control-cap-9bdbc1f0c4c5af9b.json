@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gnomish Mind Control Cap Phase 1 Item Level 47 Binds when equipped Head Cloth 50 Armor +14 Spirit Durability 45 / 45 Requires Engineering (215) Use: Engage in mental combat with a humanoid target to try and control their mind. If all works well, you will control the mind of the target for 20 sec ..... Increased chance of failure when used against targets over level 60. (30 Min Cooldown) Sell Price: 55 20",
+  "fetched_at": "2026-06-15T20:17:18+00:00",
+  "inventory_slot": null,
+  "item_id": 10726,
+  "item_stats": {
+    "armor": 50,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10726,
+    "item_level": 47,
+    "name": "Gnomish Mind Control Cap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "spirit": 14.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10726/gnomish-mind-control-cap"
+  },
+  "name": "Gnomish Mind Control Cap",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Gnomish Mind Control Cap Phase 1 Item Level 47 Binds when equipped Head Cloth 50 Armor +14 Spirit Durability 45 / 45 Requires Engineering (215) Use: Engage in mental combat with a humanoid target to try and control their mind. If all works well, you will control the mind of the target for 20 sec ..... Increased chance of failure when used against targets over level 60. (30 Min Cooldown) Sell Price: 55 20",
+      "scope": "equip_or_use",
+      "skill": 215,
+      "source_url": "https://www.wowhead.com/tbc/item=10726/gnomish-mind-control-cap",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10726/gnomish-mind-control-cap"
+}

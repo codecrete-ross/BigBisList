@@ -1,0 +1,217 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 47 goes in the \"Shoulder\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:11+00:00",
+  "inventory_slot": "Shoulder",
+  "item_id": 10029,
+  "item_stats": {
+    "armor": 46,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10029,
+    "item_level": 47,
+    "name": "Red Mageweave Shoulders",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12078,
+      "entity_name": "Red Mageweave Shoulders",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 10315,
+          "entity_name": "Pattern: Red Mageweave Shoulders",
+          "item_id": 10315,
+          "source_url": "https://www.wowhead.com/tbc/item=10029",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10029",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10029",
+      "spell_id": 12078,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 42,
+    "slot": "Shoulder",
+    "source_summary": "Crafted: Red Mageweave Shoulders",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12078,
+        "entity_name": "Red Mageweave Shoulders",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 10315,
+            "entity_name": "Pattern: Red Mageweave Shoulders",
+            "item_id": 10315,
+            "source_url": "https://www.wowhead.com/tbc/item=10029",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10029",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10029",
+        "spell_id": 12078,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10029"
+  },
+  "name": "Red Mageweave Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12078,
+      "entity_name": "Red Mageweave Shoulders",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 10315,
+          "entity_name": "Pattern: Red Mageweave Shoulders",
+          "item_id": 10315,
+          "source_url": "https://www.wowhead.com/tbc/item=10029",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10029",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10029",
+      "spell_id": 12078,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          235,
+          250,
+          265,
+          280
+        ],
+        "creates": [
+          10029,
+          1,
+          1
+        ],
+        "id": 12078,
+        "learnedat": 235,
+        "level": 0,
+        "name": "Red Mageweave Shoulders",
+        "nskillup": 1,
+        "popularity": 3,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            4
+          ],
+          [
+            2604,
+            2
+          ],
+          [
+            8343,
+            3
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 10315,
+        "level": 47,
+        "name": "Pattern: Red Mageweave Shoulders",
+        "popularity": 6,
+        "quality": 2,
+        "skill": 235,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 10315,
+      "level": 47,
+      "name": "Pattern: Red Mageweave Shoulders",
+      "popularity": 6,
+      "quality": 2,
+      "skill": 235,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10029"
+}

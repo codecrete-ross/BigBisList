@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Summoner's Blade Phase 1 Item Level 109 Binds when picked up Main Hand Sword 55 - 160 Damage Speed 2.60 (41.35 damage per second) +10 Stamina +20 Intellect Durability 90 / 90 Equip: Improves spell critical strike rating by 11. Equip: Increases damage and healing done by magical spells and effects by up to 103. Sell Price: 8 8 80",
+  "fetched_at": "2026-06-15T20:26:12+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 31002,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.35,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 31002,
+    "item_level": 109,
+    "name": "Summoner's Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 20.0,
+      "spell_crit_rating": 11.0,
+      "spell_power": 103.0,
+      "stamina": 10.0
+    },
+    "weapon_max_damage": 160,
+    "weapon_min_damage": 55,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31002/summoners-blade"
+  },
+  "name": "Summoner's Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31002/summoners-blade"
+}

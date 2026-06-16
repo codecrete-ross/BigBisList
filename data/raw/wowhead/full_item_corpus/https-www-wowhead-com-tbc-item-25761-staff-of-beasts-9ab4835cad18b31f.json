@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of Beasts Phase 1 Item Level 103 Binds when picked up Two-Hand Staff 145 - 253 Damage Speed 3.30 (60.30 damage per second) +31 Strength +30 Agility +45 Stamina Durability 100 / 100 Equip: Increases attack power by 375 in Cat, Bear, Dire Bear, and Moonkin forms only. Sell Price: 9 96 92",
+  "fetched_at": "2026-06-15T20:24:39+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 25761,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 60.3,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 25761,
+    "item_level": 103,
+    "name": "Staff of Beasts",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 375.0,
+      "stamina": 45.0,
+      "strength": 31.0
+    },
+    "weapon_max_damage": 253,
+    "weapon_min_damage": 145,
+    "weapon_speed": 3.3,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25761/staff-of-beasts"
+  },
+  "name": "Staff of Beasts",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25761/staff-of-beasts"
+}

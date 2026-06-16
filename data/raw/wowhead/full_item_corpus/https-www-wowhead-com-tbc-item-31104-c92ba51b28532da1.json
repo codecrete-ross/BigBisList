@@ -1,0 +1,188 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This blue cloth armor of item level 109 goes in the \"Head\" slot. It is a quest reward. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:33+00:00",
+  "inventory_slot": "Head",
+  "item_id": 31104,
+  "item_stats": {
+    "armor": 120,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 31104,
+    "item_level": 109,
+    "name": "Evoker's Helmet of Second Sight",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10639,
+      "entity_name": "Teron Gorefiend, I am...",
+      "quest_id": 10639,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31104",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    "quality": "rare",
+    "slot": "Head",
+    "sockets": [
+      "blue",
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "Quest: Teron Gorefiend, I am... +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10639,
+        "entity_name": "Teron Gorefiend, I am...",
+        "quest_id": 10639,
+        "side": "Horde",
+        "source_url": "https://www.wowhead.com/tbc/item=31104",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10645,
+        "entity_name": "Teron Gorefiend, I am...",
+        "quest_id": 10645,
+        "side": "Alliance",
+        "source_url": "https://www.wowhead.com/tbc/item=31104",
+        "type": "quest",
+        "zone": "Shadowmoon Valley"
+      }
+    ],
+    "stats": {
+      "intellect": 15.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 35.0,
+      "spirit": 8.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31104"
+  },
+  "name": "Evoker's Helmet of Second Sight",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10639,
+      "entity_name": "Teron Gorefiend, I am...",
+      "quest_id": 10639,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=31104",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10645,
+      "entity_name": "Teron Gorefiend, I am...",
+      "quest_id": 10645,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=31104",
+      "type": "quest",
+      "zone": "Shadowmoon Valley"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10639,
+        "itemchoices": [
+          [
+            31104,
+            1
+          ],
+          [
+            31105,
+            1
+          ],
+          [
+            31106,
+            1
+          ],
+          [
+            31107,
+            1
+          ],
+          [
+            31109,
+            1
+          ],
+          [
+            31110,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Teron Gorefiend, I am...",
+        "popularity": 18,
+        "reqlevel": 67,
+        "side": 2,
+        "xp": 19000
+      },
+      {
+        "category": 3520,
+        "category2": 8,
+        "id": 10645,
+        "itemchoices": [
+          [
+            31104,
+            1
+          ],
+          [
+            31105,
+            1
+          ],
+          [
+            31106,
+            1
+          ],
+          [
+            31107,
+            1
+          ],
+          [
+            31109,
+            1
+          ],
+          [
+            31110,
+            1
+          ]
+        ],
+        "level": 70,
+        "name": "Teron Gorefiend, I am...",
+        "popularity": 8,
+        "reqlevel": 67,
+        "side": 1,
+        "xp": 19000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31104"
+}

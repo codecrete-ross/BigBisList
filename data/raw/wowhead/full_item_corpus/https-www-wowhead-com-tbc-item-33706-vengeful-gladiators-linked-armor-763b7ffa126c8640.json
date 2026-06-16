@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Linked Armor Phase 3 Item Level 146 Binds when picked up Chest Mail 1022 Armor +27 Strength +64 Stamina Red Socket Red Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 140 / 140 Classes: Shaman Requires Level 70 Equip: Improves hit rating by 12. Equip: Improves critical strike rating by 30. Equip: Improves your resilience rating by 31. Equip: Restores 10 mana per 5 sec. Equip: Your attacks ignore 84 of your opponent's armor. Gladiator's Earthshaker (0/5) Gladiator's Linked Armor Gladiator's Linked Gauntlets Gladiator's Linked Helm Gladiator's Linked Leggings Gladiator's Linked Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Stormstrike ability by 1 sec.",
+  "fetched_at": "2026-06-15T20:27:32+00:00",
+  "inventory_slot": null,
+  "item_id": 33706,
+  "item_stats": {
+    "armor": 1022,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 33706,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Linked Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 30.0,
+      "hit_rating": 12.0,
+      "mp5": 10.0,
+      "resilience_rating": 31.0,
+      "stamina": 64.0,
+      "strength": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33706/vengeful-gladiators-linked-armor"
+  },
+  "name": "Vengeful Gladiator's Linked Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33706/vengeful-gladiators-linked-armor"
+}

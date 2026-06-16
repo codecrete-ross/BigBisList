@@ -1,0 +1,91 @@
+{
+  "contexts": ["best_overall", "hit", "survival", "easy_source", "boe", "dungeon"],
+  "runtime_contexts": ["best_overall"],
+  "level_bands": ["1-19", "20-39", "40-57", "58-70"],
+  "profiles": [
+    {
+      "class": "Paladin",
+      "context": "best_overall",
+      "level_band": "58-70",
+      "role": "physical_dps",
+      "spec": "Retribution",
+      "weights": {
+        "agility": 0.7,
+        "attack_power": 1.0,
+        "crit_rating": 1.1,
+        "dps": 5.0,
+        "expertise": 3.0,
+        "hit_rating": 1.3,
+        "socket": 1.0,
+        "stamina": 0.25,
+        "strength": 2.1
+      }
+    }
+  ],
+  "role_defaults": {
+    "caster_dps": {
+      "crit_rating": 0.9,
+      "intellect": 0.5,
+      "spell_damage": 1.0,
+      "spell_hit_rating": 1.3,
+      "spell_power": 1.0,
+      "spirit": 0.2,
+      "stamina": 0.2
+    },
+    "healer": {
+      "healing_power": 1.0,
+      "intellect": 0.7,
+      "mp5": 1.1,
+      "spirit": 0.5,
+      "stamina": 0.2
+    },
+    "physical_dps": {
+      "agility": 0.8,
+      "attack_power": 1.0,
+      "crit_rating": 1.0,
+      "dps": 4.0,
+      "expertise": 2.0,
+      "hit_rating": 1.2,
+      "stamina": 0.2,
+      "strength": 1.5
+    },
+    "tank": {
+      "armor": 0.05,
+      "defense_rating": 1.2,
+      "dodge_rating": 1.0,
+      "parry_rating": 1.0,
+      "stamina": 1.5,
+      "strength": 0.6
+    }
+  },
+  "spec_roles": {
+    "Druid/Balance": "caster_dps",
+    "Druid/Feral dps": "physical_dps",
+    "Druid/Feral tank": "tank",
+    "Druid/Restoration": "healer",
+    "Hunter/Beast mastery": "physical_dps",
+    "Hunter/Marksmanship": "physical_dps",
+    "Hunter/Survival": "physical_dps",
+    "Mage/Arcane": "caster_dps",
+    "Mage/Fire": "caster_dps",
+    "Mage/Frost": "caster_dps",
+    "Paladin/Holy": "healer",
+    "Paladin/Protection": "tank",
+    "Paladin/Retribution": "physical_dps",
+    "Priest/Holy": "healer",
+    "Priest/Shadow": "caster_dps",
+    "Rogue/Assassination": "physical_dps",
+    "Rogue/Combat": "physical_dps",
+    "Rogue/Subtlety": "physical_dps",
+    "Shaman/Elemental": "caster_dps",
+    "Shaman/Enhancement": "physical_dps",
+    "Shaman/Restoration": "healer",
+    "Warlock/Affliction": "caster_dps",
+    "Warlock/Demonology": "caster_dps",
+    "Warlock/Destruction": "caster_dps",
+    "Warlock/Destruction fire": "caster_dps",
+    "Warrior/Arms": "physical_dps",
+    "Warrior/Fury": "physical_dps",
+    "Warrior/Protection": "tank"
+  }
+}

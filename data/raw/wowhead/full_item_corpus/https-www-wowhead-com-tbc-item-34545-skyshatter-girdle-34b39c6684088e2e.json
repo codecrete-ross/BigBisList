@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skyshatter Girdle Phase 5 Item Level 154 Binds when picked up Waist Mail 605 Armor +43 Strength +24 Stamina +15 Intellect Red Socket Socket Bonus: +2 Critical Strike Rating Durability 50 / 50 Classes: Shaman Requires Level 70 Equip: Improves critical strike rating by 28. Equip: Improves haste rating by 29. Equip: Increases your expertise rating by 22. Skyshatter Harness (0/8) Skyshatter Tunic Skyshatter Grips Skyshatter Cover Skyshatter Pants Skyshatter Pauldrons Skyshatter Greaves Skyshatter Wristguards Skyshatter Girdle (2) Set : Your Earth Shock, Flame Shock, and Frost Shock abilities cost 10% less mana. (4) Set : Whenever you use Stormstrike, you gain 70 attack power for 12 sec.",
+  "fetched_at": "2026-06-15T20:27:48+00:00",
+  "inventory_slot": null,
+  "item_id": 34545,
+  "item_stats": {
+    "armor": 605,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves haste rating by",
+      "Equip: Increases your expertise rating by"
+    ],
+    "id": 34545,
+    "item_level": 154,
+    "name": "Skyshatter Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 28.0,
+      "expertise_rating": 22.0,
+      "haste_rating": 29.0,
+      "intellect": 15.0,
+      "stamina": 24.0,
+      "strength": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34545/skyshatter-girdle"
+  },
+  "name": "Skyshatter Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34545/skyshatter-girdle"
+}

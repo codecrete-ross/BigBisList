@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Chestpiece Phase 2 Item Level 133 Binds when picked up Chest Mail 934 Armor +37 Stamina +28 Intellect Blue Socket Yellow Socket Yellow Socket Socket Bonus: +5 Spell Damage and Healing Durability 140 / 140 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 55. Equip: Restores 10 mana per 5 sec. Cataclysm Regalia (0/5) Cataclysm Chestpiece Cataclysm Handgrips Cataclysm Headpiece Cataclysm Leggings Cataclysm Shoulderpads (2) Set : Each time you cast an offensive spell, there is a chance your next Lesser Healing Wave will cost 380 less mana. (Proc chance: 7%) (4) Set : Your Lightning Bolt critical strikes have a chance to grant you 120 mana. (Proc chance: 25%)",
+  "fetched_at": "2026-06-15T20:25:53+00:00",
+  "inventory_slot": null,
+  "item_id": 30169,
+  "item_stats": {
+    "armor": 934,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 30169,
+    "item_level": 133,
+    "name": "Cataclysm Chestpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "blue",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "mp5": 10.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 55.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30169/cataclysm-chestpiece"
+  },
+  "name": "Cataclysm Chestpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30169/cataclysm-chestpiece"
+}

@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Steelgrip Gauntlets Phase 1 Item Level 105 Binds when equipped Hands Plate 831 Armor +28 Strength +36 Stamina Red Socket Blue Socket Socket Bonus: +3 Critical Strike Rating Durability 55 / 55 Requires Level 70 Equip: Disarm duration reduced by 50%. Sell Price: 3 69 55",
+  "fetched_at": "2026-06-15T20:23:19+00:00",
+  "inventory_slot": null,
+  "item_id": 23533,
+  "item_stats": {
+    "armor": 831,
+    "armor_type": "Plate",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 23533,
+    "item_level": 105,
+    "name": "Steelgrip Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "stamina": 36.0,
+      "strength": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23533/steelgrip-gauntlets"
+  },
+  "name": "Steelgrip Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23533/steelgrip-gauntlets"
+}

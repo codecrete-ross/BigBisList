@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cyclone Headdress Phase 1 Item Level 120 Binds when picked up Head Mail 687 Armor +30 Stamina +41 Intellect Meta Socket Blue Socket Socket Bonus: +9 Healing and +3 Spell Damage Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects. Equip: Restores 8 mana per 5 sec. Cyclone Raiment (0/5) Cyclone Gloves Cyclone Hauberk Cyclone Headdress Cyclone Kilt Cyclone Shoulderpads (2) Set : Your Mana Spring Totem ability grants an additional 3 mana every 2 sec. (4) Set : Reduces the cooldown on your Nature's Swiftness ability by 24 sec.",
+  "fetched_at": "2026-06-15T20:25:30+00:00",
+  "inventory_slot": null,
+  "item_id": 29028,
+  "item_stats": {
+    "armor": 687,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 29028,
+    "item_level": 120,
+    "name": "Cyclone Headdress",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "meta",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 75.0,
+      "intellect": 41.0,
+      "mp5": 8.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29028/cyclone-headdress"
+  },
+  "name": "Cyclone Headdress",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29028/cyclone-headdress"
+}

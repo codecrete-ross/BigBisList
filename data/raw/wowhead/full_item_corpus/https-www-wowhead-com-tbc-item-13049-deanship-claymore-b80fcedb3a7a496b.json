@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Deanship Claymore Phase 1 Item Level 29 Binds when equipped Two-Hand Sword 53 - 80 Damage Speed 2.80 (23.75 damage per second) +4 Spirit Durability 100 / 100 Requires Level 26 Equip: Increases defense rating by 15. Sell Price: 61 91",
+  "fetched_at": "2026-06-15T20:17:45+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 13049,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 23.75,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 13049,
+    "item_level": 29,
+    "name": "Deanship Claymore",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 26,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 15.0,
+      "spirit": 4.0
+    },
+    "weapon_max_damage": 80,
+    "weapon_min_damage": 53,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=13049/deanship-claymore"
+  },
+  "name": "Deanship Claymore",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=13049/deanship-claymore"
+}

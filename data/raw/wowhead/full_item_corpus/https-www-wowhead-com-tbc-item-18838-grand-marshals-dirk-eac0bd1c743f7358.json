@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Grand Marshal's Dirk Phase 1 Item Level 78 Binds when picked up One-Hand Dagger 95 - 143 Damage Speed 2.00 (59.50 damage per second) +7 Stamina Durability 75 / 75 Requires Level 60 Equip: Increases your critical strike rating by 14. Equip: Increases attack power by 28.",
+  "fetched_at": "2026-06-15T20:19:59+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 18838,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 59.5,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 18838,
+    "item_level": 78,
+    "name": "Grand Marshal's Dirk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "crit_rating": 14.0,
+      "stamina": 7.0
+    },
+    "weapon_max_damage": 143,
+    "weapon_min_damage": 95,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18838/grand-marshals-dirk"
+  },
+  "name": "Grand Marshal's Dirk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18838/grand-marshals-dirk"
+}

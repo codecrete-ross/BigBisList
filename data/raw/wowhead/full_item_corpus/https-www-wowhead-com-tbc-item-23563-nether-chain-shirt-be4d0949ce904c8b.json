@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nether Chain Shirt Phase 1 Item Level 107 Binds when picked up Chest Mail 757 Armor +40 Stamina +18 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Agility Durability 140 / 140 Requires Level 70 Requires Armorsmith Equip: Improves critical strike rating by 28. Equip: Increases attack power by 40. Equip: Restores 7 mana per 5 sec. Sell Price: 6 82 32",
+  "fetched_at": "2026-06-15T20:23:20+00:00",
+  "inventory_slot": null,
+  "item_id": 23563,
+  "item_stats": {
+    "armor": 757,
+    "armor_type": "Mail",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 23563,
+    "item_level": 107,
+    "name": "Nether Chain Shirt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 4.0,
+      "attack_power": 40.0,
+      "crit_rating": 28.0,
+      "intellect": 18.0,
+      "mp5": 7.0,
+      "stamina": 40.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23563/nether-chain-shirt"
+  },
+  "name": "Nether Chain Shirt",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Nether Chain Shirt Phase 1 Item Level 107 Binds when picked up Chest Mail 757 Armor +40 Stamina +18 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Agility Durability 140 / 140 Requires Level 70 Requires Armorsmith Equip: Improves critical strike rating by 28. Equip: Increases attack power by 40. Equip: Restores 7 mana per 5 sec. Sell Price: 6 82 32",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=23563/nether-chain-shirt",
+      "specialization": "Armorsmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23563/nether-chain-shirt"
+}

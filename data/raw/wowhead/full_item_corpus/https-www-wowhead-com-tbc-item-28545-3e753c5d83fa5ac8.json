@@ -1,0 +1,153 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Edgewalker Longboots are Leather Feet that drop from Moroes in Karazhan. This epic leather armor of item level 115 goes in the \"Feet\" slot. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:27+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 28545,
+  "item_stats": {
+    "armor": 250,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip:"
+    ],
+    "id": 28545,
+    "item_level": 115,
+    "name": "Edgewalker Longboots",
+    "parse_confidence": "tooltip",
+    "phase": "T4",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 250,
+      "drop_percent": 13.24,
+      "entity_id": 15687,
+      "entity_name": "Moroes",
+      "out_of": 1888,
+      "source_url": "https://www.wowhead.com/tbc/item=28545",
+      "type": "drop",
+      "zone": "Karazhan"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Feet",
+    "socket_bonus": {
+      "hit_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "Drop: Moroes (Karazhan) 13.2%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 250,
+        "drop_percent": 13.24,
+        "entity_id": 15687,
+        "entity_name": "Moroes",
+        "out_of": 1888,
+        "source_url": "https://www.wowhead.com/tbc/item=28545",
+        "type": "drop",
+        "zone": "Karazhan"
+      }
+    ],
+    "stats": {
+      "agility": 29.0,
+      "attack_power": 44.0,
+      "hit_rating": 13.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28545"
+  },
+  "name": "Edgewalker Longboots",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 250,
+      "drop_percent": 13.24,
+      "entity_id": 15687,
+      "entity_name": "Moroes",
+      "out_of": 1888,
+      "source_url": "https://www.wowhead.com/tbc/item=28545",
+      "type": "drop",
+      "zone": "Karazhan"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 250,
+        "id": 15687,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3540,
+                "outof": 21907
+              }
+            },
+            "4": {
+              "0": {
+                "count": 436,
+                "outof": 2503
+              }
+            },
+            "5": {
+              "0": {
+                "count": 250,
+                "outof": 1888
+              }
+            }
+          }
+        },
+        "location": [
+          3457
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 3540,
+            "outof": 21907
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Moroes",
+        "outof": 1888,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Tower Steward",
+        "type": 6
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28545"
+}

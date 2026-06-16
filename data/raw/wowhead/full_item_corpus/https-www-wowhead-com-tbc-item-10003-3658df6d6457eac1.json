@@ -1,0 +1,147 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 43 goes in the \"Hands\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:50:45+00:00",
+  "inventory_slot": "Hands",
+  "item_id": 10003,
+  "item_stats": {
+    "armor": 35,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10003,
+    "item_level": 43,
+    "name": "Black Mageweave Gloves",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12053,
+      "entity_name": "Black Mageweave Gloves",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10003",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10003",
+      "spell_id": 12053,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 38,
+    "slot": "Hands",
+    "source_summary": "Crafted: Black Mageweave Gloves",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12053,
+        "entity_name": "Black Mageweave Gloves",
+        "profession": "Tailoring",
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10003",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10003",
+        "spell_id": 12053,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "spell_power": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10003"
+  },
+  "name": "Black Mageweave Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12053,
+      "entity_name": "Black Mageweave Gloves",
+      "profession": "Tailoring",
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10003",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10003",
+      "spell_id": 12053,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          215,
+          230,
+          245,
+          260
+        ],
+        "creates": [
+          10003,
+          1,
+          1
+        ],
+        "id": 12053,
+        "learnedat": 215,
+        "level": 0,
+        "name": "Black Mageweave Gloves",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            2
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "trainingcost": 5000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10003"
+}

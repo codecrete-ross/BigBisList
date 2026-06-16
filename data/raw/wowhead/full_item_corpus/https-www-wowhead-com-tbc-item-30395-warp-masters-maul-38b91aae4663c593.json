@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warp-Master's Maul Phase 1 Item Level 114 Binds when picked up Two-Hand Mace 179 - 270 Damage Speed 2.80 (80.18 damage per second) +21 Intellect Durability 85 / 85 Equip: Improves spell critical strike rating by 16. Equip: Increases damage and healing done by magical spells and effects by up to 46. Sell Price: 8 70 99",
+  "fetched_at": "2026-06-15T20:25:59+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 30395,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 80.18,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30395,
+    "item_level": 114,
+    "name": "Warp-Master's Maul",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 21.0,
+      "spell_crit_rating": 16.0,
+      "spell_power": 46.0
+    },
+    "weapon_max_damage": 270,
+    "weapon_min_damage": 179,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30395/warp-masters-maul"
+  },
+  "name": "Warp-Master's Maul",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30395/warp-masters-maul"
+}

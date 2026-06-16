@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warp-Raider's Eyepatch Phase 1 Item Level 108 Binds when picked up Head Leather 203 Armor +25 Strength +24 Agility +21 Stamina Durability 50 / 50 Equip: Increases your dodge rating by 14. Equip: Improves hit rating by 15. Sell Price: 2 55 51",
+  "fetched_at": "2026-06-15T20:25:56+00:00",
+  "inventory_slot": null,
+  "item_id": 30269,
+  "item_stats": {
+    "armor": 203,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Increases your dodge rating by",
+      "Equip: Improves hit rating by"
+    ],
+    "id": 30269,
+    "item_level": 108,
+    "name": "Warp-Raider's Eyepatch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "agility": 24.0,
+      "dodge_rating": 14.0,
+      "hit_rating": 15.0,
+      "stamina": 21.0,
+      "strength": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30269/warp-raiders-eyepatch"
+  },
+  "name": "Warp-Raider's Eyepatch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30269/warp-raiders-eyepatch"
+}

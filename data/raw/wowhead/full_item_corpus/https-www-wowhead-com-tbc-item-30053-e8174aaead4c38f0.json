@@ -1,0 +1,203 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic plate armor of item level 128 goes in the \"Shoulder\" slot. It is looted from Hydross the Unstable. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Shoulder",
+  "item_id": 30053,
+  "item_stats": {
+    "armor": 1206,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 30053,
+    "item_level": 128,
+    "name": "Pauldrons of the Wardancer",
+    "parse_confidence": "tooltip",
+    "phase": "T5",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1410,
+      "drop_percent": 15.12,
+      "entity_id": 21216,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 9328,
+      "source_url": "https://www.wowhead.com/tbc/item=30053",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Shoulder",
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "Drop: Hydross the Unstable (Serpentshrine Cavern) 15.1% +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 1410,
+        "drop_percent": 15.12,
+        "entity_id": 21216,
+        "entity_name": "Hydross the Unstable",
+        "out_of": 9328,
+        "source_url": "https://www.wowhead.com/tbc/item=30053",
+        "type": "drop",
+        "zone": "Serpentshrine Cavern"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "entity_id": 21932,
+        "entity_name": "Hydross the Unstable",
+        "out_of": 0,
+        "source_url": "https://www.wowhead.com/tbc/item=30053",
+        "type": "drop"
+      }
+    ],
+    "stats": {
+      "crit_rating": 29.0,
+      "stamina": 21.0,
+      "strength": 38.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30053"
+  },
+  "name": "Pauldrons of the Wardancer",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1410,
+      "drop_percent": 15.12,
+      "entity_id": 21216,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 9328,
+      "source_url": "https://www.wowhead.com/tbc/item=30053",
+      "type": "drop",
+      "zone": "Serpentshrine Cavern"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "entity_id": 21932,
+      "entity_name": "Hydross the Unstable",
+      "out_of": 0,
+      "source_url": "https://www.wowhead.com/tbc/item=30053",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1410,
+        "id": 21216,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1410,
+                "outof": 9328
+              }
+            },
+            "4": {
+              "0": {
+                "count": 228,
+                "outof": 1208
+              }
+            },
+            "5": {
+              "0": {
+                "count": 104,
+                "outof": 603
+              }
+            }
+          }
+        },
+        "location": [
+          3607
+        ],
+        "modes": {
+          "0": {
+            "count": 1410,
+            "outof": 9328
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 9328,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "tag": "Duke of Currents",
+        "type": 4
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 21932,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": -1,
+                "outof": 0,
+                "percentOverride": 22.3
+              }
+            }
+          }
+        },
+        "modes": {
+          "0": {
+            "count": -1,
+            "outof": 0,
+            "percentOverride": 22.3
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Hydross the Unstable",
+        "outof": 0,
+        "pctstack": null,
+        "percentOverride": 22.3,
+        "personal_loot": 0,
+        "popularity": 4,
+        "tag": "Duke of Currents",
+        "type": 4
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30053"
+}

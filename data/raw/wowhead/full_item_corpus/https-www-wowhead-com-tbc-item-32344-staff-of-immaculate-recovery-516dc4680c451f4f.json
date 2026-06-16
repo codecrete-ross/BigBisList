@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Staff of Immaculate Recovery Phase 3 Item Level 141 Binds when picked up Two-Hand Staff 145 - 312 Damage Speed 3.20 (71.41 damage per second) +73 Stamina +51 Intellect +35 Spirit Durability 120 / 120 Requires Level 70 Equip: Increases healing done by up to 443 and damage done by up to 148 for all magical spells and effects. Equip: Restores 14 mana per 5 sec. Sell Price: 17 91 72",
+  "fetched_at": "2026-06-15T20:27:10+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 32344,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 71.41,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 32344,
+    "item_level": 141,
+    "name": "Staff of Immaculate Recovery",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 443.0,
+      "intellect": 51.0,
+      "mp5": 14.0,
+      "spirit": 35.0,
+      "stamina": 73.0
+    },
+    "weapon_max_damage": 312,
+    "weapon_min_damage": 145,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32344/staff-of-immaculate-recovery"
+  },
+  "name": "Staff of Immaculate Recovery",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32344/staff-of-immaculate-recovery"
+}

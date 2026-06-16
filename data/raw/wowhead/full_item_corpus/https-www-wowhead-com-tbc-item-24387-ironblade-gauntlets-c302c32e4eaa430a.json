@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ironblade Gauntlets Phase 1 Item Level 88 Binds when picked up Hands Plate 564 Armor +20 Strength +14 Agility +19 Stamina Red Socket Yellow Socket Socket Bonus: +3 Parry Rating Durability 45 / 45 Requires Level 61 Equip: Improves hit rating by 6. Sell Price: 2 45 77",
+  "fetched_at": "2026-06-15T20:23:29+00:00",
+  "inventory_slot": null,
+  "item_id": 24387,
+  "item_stats": {
+    "armor": 564,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by"
+    ],
+    "id": 24387,
+    "item_level": 88,
+    "name": "Ironblade Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 61,
+    "socket_bonus": {
+      "parry_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 14.0,
+      "hit_rating": 6.0,
+      "stamina": 19.0,
+      "strength": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24387/ironblade-gauntlets"
+  },
+  "name": "Ironblade Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24387/ironblade-gauntlets"
+}

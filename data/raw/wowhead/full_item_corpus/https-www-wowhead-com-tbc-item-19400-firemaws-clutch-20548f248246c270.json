@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Firemaw's Clutch Phase 1 Item Level 75 Binds when picked up Waist Cloth 74 Armor +12 Stamina +12 Intellect Durability 35 / 35 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 35. Equip: Restores 5 mana per 5 sec. Sell Price: 1 60 61 Dropped by: Firemaw Drop Chance: 16.27%",
+  "fetched_at": "2026-06-15T20:21:56+00:00",
+  "inventory_slot": null,
+  "item_id": 19400,
+  "item_stats": {
+    "armor": 74,
+    "armor_type": "Cloth",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 19400,
+    "item_level": 75,
+    "name": "Firemaw's Clutch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "intellect": 12.0,
+      "mp5": 5.0,
+      "spell_power": 35.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19400/firemaws-clutch"
+  },
+  "name": "Firemaw's Clutch",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19400/firemaws-clutch"
+}

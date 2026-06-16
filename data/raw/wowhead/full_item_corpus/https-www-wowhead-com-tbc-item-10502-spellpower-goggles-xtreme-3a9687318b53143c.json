@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Spellpower Goggles Xtreme Phase 1 Item Level 43 Binds when equipped Head Cloth 46 Armor Durability 45 / 45 Requires Engineering (215) Equip: Increases damage and healing done by magical spells and effects by up to 21. Sell Price: 40 88",
+  "fetched_at": "2026-06-15T20:17:15+00:00",
+  "inventory_slot": null,
+  "item_id": 10502,
+  "item_stats": {
+    "armor": 46,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 10502,
+    "item_level": 43,
+    "name": "Spellpower Goggles Xtreme",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10502/spellpower-goggles-xtreme"
+  },
+  "name": "Spellpower Goggles Xtreme",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Spellpower Goggles Xtreme Phase 1 Item Level 43 Binds when equipped Head Cloth 46 Armor Durability 45 / 45 Requires Engineering (215) Equip: Increases damage and healing done by magical spells and effects by up to 21. Sell Price: 40 88",
+      "scope": "equip_or_use",
+      "skill": 215,
+      "source_url": "https://www.wowhead.com/tbc/item=10502/spellpower-goggles-xtreme",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10502/spellpower-goggles-xtreme"
+}

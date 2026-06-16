@@ -1,0 +1,265 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Spellstrike Hood is a Cloth helm that can be crafted by Tailors with a skill of 375. The pattern for this item, Pattern: Spellstrike Hood, has a chance to drop for Tailors from Grand Warlock Nethekurse in The Shattered Halls.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": null,
+  "item_id": 24266,
+  "item_stats": {
+    "armor": 145,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip: Improves spell hit rating by",
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 24266,
+    "item_level": 105,
+    "name": "Spellstrike Hood",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 31455,
+      "entity_name": "Spellstrike Hood",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "dungeon",
+          "entity_id": 24312,
+          "entity_name": "Pattern: Spellstrike Hood",
+          "item_id": 24312,
+          "source_url": "https://www.wowhead.com/tbc/item=24266",
+          "type": "drop",
+          "zone": "The Shattered Halls"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24266",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24266",
+      "spell_id": 31455,
+      "type": "crafted",
+      "zone": "The Shattered Halls"
+    },
+    "quality": "unknown",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 6.0
+    },
+    "sockets": [
+      "blue",
+      "yellow",
+      "red"
+    ],
+    "source_summary": "Crafted: Spellstrike Hood",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 31455,
+        "entity_name": "Spellstrike Hood",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "dungeon",
+            "entity_id": 24312,
+            "entity_name": "Pattern: Spellstrike Hood",
+            "item_id": 24312,
+            "source_url": "https://www.wowhead.com/tbc/item=24266",
+            "type": "drop",
+            "zone": "The Shattered Halls"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=24266",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=24266",
+        "spell_id": 31455,
+        "type": "crafted",
+        "zone": "The Shattered Halls"
+      }
+    ],
+    "stats": {
+      "intellect": 12.0,
+      "spell_crit_rating": 24.0,
+      "spell_hit_rating": 16.0,
+      "spell_power": 46.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24266"
+  },
+  "name": "Spellstrike Hood",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Spellstrike Hood Phase 1 Item Level 105 Binds when equipped Head Cloth 145 Armor +16 Stamina +12 Intellect Blue Socket Yellow Socket Red Socket Socket Bonus: +6 Stamina Durability 60 / 60 Requires Level 70 Equip: Improves spell hit rating by 16. Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 46. Spellstrike Infusion (0/2) Requires Tailoring (350) Spellstrike Hood Spellstrike Pants (2) Set : Gives a chance when your harmful spells land to increase the damage of your spells and effects by 92 for 10 sec. (Proc chance: 5%) Sell Price: 3 8 89 Spellstrike Hood is a Cloth helm that can be crafted by Tailors with a skill of 375. The pattern for this item, Pattern: Spellstrike Hood, has a chance to drop for Tailors from Grand Warlock Nethekurse in The Shattered Halls.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24266",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31455,
+      "entity_name": "Spellstrike Hood",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "dungeon",
+          "entity_id": 24312,
+          "entity_name": "Pattern: Spellstrike Hood",
+          "item_id": 24312,
+          "source_url": "https://www.wowhead.com/tbc/item=24266",
+          "type": "drop",
+          "zone": "The Shattered Halls"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24266",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24266",
+      "spell_id": 31455,
+      "type": "crafted",
+      "zone": "The Shattered Halls"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          24266,
+          1,
+          1
+        ],
+        "id": 31455,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Spellstrike Hood",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 4,
+        "reagents": [
+          [
+            24271,
+            10
+          ],
+          [
+            23571,
+            5
+          ],
+          [
+            23572,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24312,
+        "level": 75,
+        "name": "Pattern: Spellstrike Hood",
+        "popularity": 7,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "sourcemore": [
+          {
+            "bd": 1,
+            "n": "Grand Warlock Nethekurse",
+            "t": 1,
+            "ti": 16807,
+            "z": 3714
+          }
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24312,
+      "level": 75,
+      "name": "Pattern: Spellstrike Hood",
+      "popularity": 7,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "sourcemore": [
+        {
+          "bd": 1,
+          "n": "Grand Warlock Nethekurse",
+          "t": 1,
+          "ti": 16807,
+          "z": 3714
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24266"
+}

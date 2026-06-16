@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Embrace of Starlight Phase 5 Item Level 141 Binds when picked up Chest Leather 444 Armor +34 Stamina +38 Intellect +26 Spirit Red Socket Socket Bonus: +3 Stamina Durability 120 / 120 Requires Level 70 Equip: Improves spell critical strike rating by 36. Equip: Increases damage and healing done by magical spells and effects by up to 60.",
+  "fetched_at": "2026-06-15T20:27:53+00:00",
+  "inventory_slot": null,
+  "item_id": 34903,
+  "item_stats": {
+    "armor": 444,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 34903,
+    "item_level": 141,
+    "name": "Embrace of Starlight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 38.0,
+      "spell_crit_rating": 36.0,
+      "spell_power": 60.0,
+      "spirit": 26.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34903/embrace-of-starlight"
+  },
+  "name": "Embrace of Starlight",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34903/embrace-of-starlight"
+}

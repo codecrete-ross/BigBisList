@@ -1,0 +1,229 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 128 goes in the \"Feet\" slot. It is crafted. Added in World of Warcraft: The Burning Crusade. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:31+00:00",
+  "inventory_slot": "Feet",
+  "item_id": 30039,
+  "item_stats": {
+    "armor": 278,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves hit rating by",
+      "Equip: Improves critical strike rating by",
+      "Equip:"
+    ],
+    "id": 30039,
+    "item_level": 128,
+    "name": "Boots of Utter Darkness",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 36357,
+      "entity_name": "Boots of Utter Darkness",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 30306,
+          "entity_name": "Pattern: Boots of Utter Darkness",
+          "item_id": 30306,
+          "source_url": "https://www.wowhead.com/tbc/item=30039",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30039",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30039",
+      "spell_id": 36357,
+      "type": "crafted"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Feet",
+    "source_summary": "Crafted: Boots of Utter Darkness",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 36357,
+        "entity_name": "Boots of Utter Darkness",
+        "profession": "Leatherworking",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 30306,
+            "entity_name": "Pattern: Boots of Utter Darkness",
+            "item_id": 30306,
+            "source_url": "https://www.wowhead.com/tbc/item=30039",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Leatherworking",
+            "raw_text": "Leatherworking",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=30039",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=30039",
+        "spell_id": 36357,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "attack_power": 66.0,
+      "crit_rating": 32.0,
+      "hit_rating": 23.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30039"
+  },
+  "name": "Boots of Utter Darkness",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 36357,
+      "entity_name": "Boots of Utter Darkness",
+      "profession": "Leatherworking",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 30306,
+          "entity_name": "Pattern: Boots of Utter Darkness",
+          "item_id": 30306,
+          "source_url": "https://www.wowhead.com/tbc/item=30039",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=30039",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=30039",
+      "spell_id": 36357,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          395,
+          405
+        ],
+        "creates": [
+          30039,
+          1,
+          1
+        ],
+        "id": 36357,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Boots of Utter Darkness",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 4,
+        "reagents": [
+          [
+            23572,
+            2
+          ],
+          [
+            23793,
+            4
+          ],
+          [
+            22456,
+            12
+          ],
+          [
+            14341,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 30306,
+        "level": 75,
+        "name": "Pattern: Boots of Utter Darkness",
+        "popularity": 8,
+        "quality": 4,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 1
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "commondrop": true,
+      "flags2": 24580,
+      "id": 30306,
+      "level": 75,
+      "name": "Pattern: Boots of Utter Darkness",
+      "popularity": 8,
+      "quality": 4,
+      "skill": 375,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 1
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30039"
+}

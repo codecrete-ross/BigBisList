@@ -1,0 +1,224 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Bracers of Havok are Cloth Wrists that can be crafted by Tailors with 350 Tailoring skill. The pattern for this item, Pattern: Bracers of Havok, is a rare world drop.",
+  "fetched_at": "2026-06-15T18:31:25+00:00",
+  "inventory_slot": null,
+  "item_id": 24250,
+  "item_stats": {
+    "armor": 67,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 24250,
+    "item_level": 112,
+    "name": "Bracers of Havok",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 31435,
+      "entity_name": "Bracers of Havok",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 24297,
+          "entity_name": "Pattern: Bracers of Havok",
+          "item_id": 24297,
+          "source_url": "https://www.wowhead.com/tbc/item=24250",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24250",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24250",
+      "spell_id": 31435,
+      "type": "crafted"
+    },
+    "quality": "unknown",
+    "required_level": 69,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "Crafted: Bracers of Havok",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 31435,
+        "entity_name": "Bracers of Havok",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24297,
+            "entity_name": "Pattern: Bracers of Havok",
+            "item_id": 24297,
+            "source_url": "https://www.wowhead.com/tbc/item=24250",
+            "type": "drop"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=24250",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=24250",
+        "spell_id": 31435,
+        "type": "crafted"
+      }
+    ],
+    "stats": {
+      "intellect": 12.0,
+      "spell_power": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24250"
+  },
+  "name": "Bracers of Havok",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 31435,
+      "entity_name": "Bracers of Havok",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "content_type": "other",
+          "entity_id": 24297,
+          "entity_name": "Pattern: Bracers of Havok",
+          "item_id": 24297,
+          "source_url": "https://www.wowhead.com/tbc/item=24250",
+          "type": "drop"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=24250",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=24250",
+      "spell_id": 31435,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          350,
+          360,
+          365,
+          370
+        ],
+        "creates": [
+          24250,
+          1,
+          1
+        ],
+        "id": 31435,
+        "learnedat": 350,
+        "level": 0,
+        "name": "Bracers of Havok",
+        "nskillup": 1,
+        "popularity": 11,
+        "quality": 3,
+        "reagents": [
+          [
+            21842,
+            4
+          ],
+          [
+            22452,
+            4
+          ],
+          [
+            22456,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 24297,
+        "level": 70,
+        "name": "Pattern: Bracers of Havok",
+        "popularity": 13,
+        "quality": 3,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 24297,
+      "level": 70,
+      "name": "Pattern: Bracers of Havok",
+      "popularity": 13,
+      "quality": 3,
+      "skill": 350,
+      "slot": 0,
+      "source": [
+        2
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24250"
+}

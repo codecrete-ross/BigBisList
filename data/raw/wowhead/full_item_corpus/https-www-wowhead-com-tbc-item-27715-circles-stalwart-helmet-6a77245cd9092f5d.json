@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Circle's Stalwart Helmet Phase 1 Item Level 90 Binds when picked up Head Plate 681 Armor +16 Strength +22 Stamina Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Strength Durability 70 / 70 Equip: Improves critical strike rating by 15. Sell Price: 3 8 89",
+  "fetched_at": "2026-06-15T20:24:55+00:00",
+  "inventory_slot": null,
+  "item_id": 27715,
+  "item_stats": {
+    "armor": 681,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by"
+    ],
+    "id": 27715,
+    "item_level": 90,
+    "name": "Circle's Stalwart Helmet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "socket_bonus": {
+      "strength": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 15.0,
+      "stamina": 22.0,
+      "strength": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27715/circles-stalwart-helmet"
+  },
+  "name": "Circle's Stalwart Helmet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27715/circles-stalwart-helmet"
+}

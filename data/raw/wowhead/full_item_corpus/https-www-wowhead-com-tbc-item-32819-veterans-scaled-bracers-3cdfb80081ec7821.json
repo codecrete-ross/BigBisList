@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Veteran's Scaled Bracers Phase 2 Item Level 126 Binds when picked up Wrist Plate 693 Armor +29 Strength +25 Stamina +13 Intellect Yellow Socket Socket Bonus: +2 Resilience Rating Durability 55 / 55 Classes: Warrior , Paladin Requires Level 70 Equip: Improves critical strike rating by 8. Equip: Improves your resilience rating by 9.",
+  "fetched_at": "2026-06-15T20:27:17+00:00",
+  "inventory_slot": null,
+  "item_id": 32819,
+  "item_stats": {
+    "armor": 693,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves your resilience rating by"
+    ],
+    "id": 32819,
+    "item_level": 126,
+    "name": "Veteran's Scaled Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 8.0,
+      "intellect": 13.0,
+      "resilience_rating": 9.0,
+      "stamina": 25.0,
+      "strength": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32819/veterans-scaled-bracers"
+  },
+  "name": "Veteran's Scaled Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32819/veterans-scaled-bracers"
+}

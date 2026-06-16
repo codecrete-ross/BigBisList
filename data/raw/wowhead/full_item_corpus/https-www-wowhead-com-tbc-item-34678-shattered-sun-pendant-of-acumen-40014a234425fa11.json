@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shattered Sun Pendant of Acumen Phase 5 Item Level 115 Binds when picked up Neck +19 Stamina +18 Intellect Requires Level 70 Requires Shattered Sun Offensive - Exalted Equip: Increases damage and healing done by magical spells and effects by up to 37. Equip: Your spells have a chance to call on the power of the Arcane if you're exalted with the Scryers, or the Light if you're exalted with the Aldor. (Proc chance: 15%, 45s cooldown) Sell Price: 5 81 88",
+  "fetched_at": "2026-06-15T20:27:51+00:00",
+  "inventory_slot": null,
+  "item_id": 34678,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 34678,
+    "item_level": 115,
+    "name": "Shattered Sun Pendant of Acumen",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_power": 37.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34678/shattered-sun-pendant-of-acumen"
+  },
+  "name": "Shattered Sun Pendant of Acumen",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Shattered Sun Pendant of Acumen Phase 5 Item Level 115 Binds when picked up Neck +19 Stamina +18 Intellect Requires Level 70 Requires Shattered Sun Offensive - Exalted Equip: Increases damage and healing done by magical spells and effects by up to 37. Equip: Your spells have a chance to call on the power of the Arcane if you're exalted with the Scryers, or the Light if you're exalted with the Aldor. (Proc chance: 15%, 45s cooldown) Sell Price: 5 81 88",
+      "reputation": "Shattered Sun Offensive",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=34678/shattered-sun-pendant-of-acumen",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34678/shattered-sun-pendant-of-acumen"
+}

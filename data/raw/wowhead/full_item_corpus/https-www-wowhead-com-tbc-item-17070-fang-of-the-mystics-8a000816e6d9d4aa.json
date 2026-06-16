@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fang of the Mystics Phase 1 Item Level 70 Binds when picked up Main Hand Dagger 39 - 86 Damage Speed 1.50 (41.67 damage per second) +10 Intellect Durability 75 / 75 Requires Level 60 Equip: Increases your spell critical strike rating by 14. Equip: Restores 4 mana per 5 sec. Equip: Increases damage and healing done by magical spells and effects by up to 40. Sell Price: 7 64 83 Dropped by: Azuregos Drop Chance: 17.90%",
+  "fetched_at": "2026-06-15T20:19:31+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 17070,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.67,
+    "equip_effects": [
+      "Equip:",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 17070,
+    "item_level": 70,
+    "name": "Fang of the Mystics",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "mp5": 4.0,
+      "spell_crit_rating": 14.0,
+      "spell_power": 40.0
+    },
+    "weapon_max_damage": 86,
+    "weapon_min_damage": 39,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=17070/fang-of-the-mystics"
+  },
+  "name": "Fang of the Mystics",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=17070/fang-of-the-mystics"
+}

@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crystalfire Staff Phase 1 Item Level 85 Binds when picked up Two-Hand Staff 91 - 150 Damage Speed 2.10 (57.38 damage per second) +34 Stamina +34 Intellect Durability 100 / 100 Requires Level 60 Equip: Improves spell critical strike rating by 16. Equip: Increases damage and healing done by magical spells and effects by up to 46. Sell Price: 8 49 50",
+  "fetched_at": "2026-06-15T20:23:23+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 24069,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 57.38,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip:"
+    ],
+    "id": 24069,
+    "item_level": 85,
+    "name": "Crystalfire Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 34.0,
+      "spell_crit_rating": 16.0,
+      "spell_power": 46.0,
+      "stamina": 34.0
+    },
+    "weapon_max_damage": 150,
+    "weapon_min_damage": 91,
+    "weapon_speed": 2.1,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24069/crystalfire-staff"
+  },
+  "name": "Crystalfire Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24069/crystalfire-staff"
+}

@@ -1,0 +1,228 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This green cloth armor of item level 48 goes in the \"Head\" slot. It is crafted. Added in Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-06-15T19:51:12+00:00",
+  "inventory_slot": "Head",
+  "item_id": 10030,
+  "item_stats": {
+    "armor": 51,
+    "armor_type": "Cloth",
+    "binding": "bind_on_equip",
+    "boe": true,
+    "id": 10030,
+    "item_level": 48,
+    "name": "Admiral's Hat",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 12081,
+      "entity_name": "Admiral's Hat",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10318,
+          "entity_name": "Pattern: Admiral's Hat",
+          "item_id": 10318,
+          "source_url": "https://www.wowhead.com/tbc/item=10030",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10030",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10030",
+      "spell_id": 12081,
+      "type": "crafted"
+    },
+    "quality": "uncommon",
+    "required_level": 43,
+    "slot": "Head",
+    "source_summary": "Crafted: Admiral's Hat",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12081,
+        "entity_name": "Admiral's Hat",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 10318,
+            "entity_name": "Pattern: Admiral's Hat",
+            "item_id": 10318,
+            "source_url": "https://www.wowhead.com/tbc/item=10030",
+            "type": "vendor"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=10030",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=10030",
+        "spell_id": 12081,
+        "type": "crafted"
+      }
+    ],
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=10030"
+  },
+  "name": "Admiral's Hat",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12081,
+      "entity_name": "Admiral's Hat",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 10318,
+          "entity_name": "Pattern: Admiral's Hat",
+          "item_id": 10318,
+          "source_url": "https://www.wowhead.com/tbc/item=10030",
+          "type": "vendor"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=10030",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=10030",
+      "spell_id": 12081,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          240,
+          255,
+          270,
+          285
+        ],
+        "creates": [
+          10030,
+          1,
+          1
+        ],
+        "id": 12081,
+        "learnedat": 240,
+        "level": 0,
+        "name": "Admiral's Hat",
+        "nskillup": 1,
+        "popularity": 6,
+        "quality": 2,
+        "reagents": [
+          [
+            4339,
+            3
+          ],
+          [
+            4589,
+            6
+          ],
+          [
+            8343,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 10318,
+        "level": 48,
+        "name": "Pattern: Admiral's Hat",
+        "popularity": 4,
+        "quality": 1,
+        "skill": 240,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Cowardly Crosby",
+            "t": 1,
+            "ti": 2672,
+            "z": 33
+          }
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 10318,
+      "level": 48,
+      "name": "Pattern: Admiral's Hat",
+      "popularity": 4,
+      "quality": 1,
+      "skill": 240,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Cowardly Crosby",
+          "t": 1,
+          "ti": 2672,
+          "z": 33
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=10030"
+}

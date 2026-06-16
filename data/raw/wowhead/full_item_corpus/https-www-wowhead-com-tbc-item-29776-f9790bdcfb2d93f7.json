@@ -1,0 +1,111 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This green trinket of item level 108 goes in the \"Trinket\" slot. It is a quest reward from Ar'kelos the Guardian. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-06-15T18:31:30+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 29776,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 29776,
+    "item_level": 108,
+    "name": "Core of Ar'kelos",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 10176,
+      "entity_name": "Ar'kelos the Guardian",
+      "quest_id": 10176,
+      "source_url": "https://www.wowhead.com/tbc/item=29776",
+      "type": "quest",
+      "zone": "Netherstorm"
+    },
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "Quest: Ar'kelos the Guardian",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 10176,
+        "entity_name": "Ar'kelos the Guardian",
+        "quest_id": 10176,
+        "source_url": "https://www.wowhead.com/tbc/item=29776",
+        "type": "quest",
+        "zone": "Netherstorm"
+      }
+    ],
+    "stats": {
+      "attack_power": 52.0
+    },
+    "use_effects": [
+      "Use:"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29776"
+  },
+  "name": "Core of Ar'kelos",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 10176,
+      "entity_name": "Ar'kelos the Guardian",
+      "quest_id": 10176,
+      "source_url": "https://www.wowhead.com/tbc/item=29776",
+      "type": "quest",
+      "zone": "Netherstorm"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "uncommon",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3523,
+        "category2": 8,
+        "id": 10176,
+        "itemchoices": [
+          [
+            29775,
+            1
+          ],
+          [
+            29776,
+            1
+          ],
+          [
+            29777,
+            1
+          ],
+          [
+            29779,
+            1
+          ]
+        ],
+        "level": 68,
+        "money": 39000,
+        "name": "Ar'kelos the Guardian",
+        "popularity": 7,
+        "reqlevel": 67,
+        "side": 3,
+        "xp": 12000
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29776"
+}

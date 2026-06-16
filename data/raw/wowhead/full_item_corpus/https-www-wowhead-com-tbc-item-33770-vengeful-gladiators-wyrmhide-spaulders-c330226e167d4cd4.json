@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Wyrmhide Spaulders Phase 3 Item Level 146 Binds when picked up Shoulder Leather 386 Armor +43 Stamina +20 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 70 / 70 Classes: Druid Requires Level 70 Equip: Improves spell critical strike rating by 8. Equip: Improves your resilience rating by 22. Equip: Increases damage and healing done by magical spells and effects by up to 36. Equip: Restores 3 mana per 5 sec. Gladiator's Wildhide (0/5) Gladiator's Wyrmhide Gloves Gladiator's Wyrmhide Helm Gladiator's Wyrmhide Legguards Gladiator's Wyrmhide Spaulders Gladiator's Wyrmhide Tunic (2) Set : +35 Resilience Rating. (4) Set : Your Wrath casts have a chance to reduce the cast time on your next Starfire by 1.5 sec. (Proc chance: 15%, 15s cooldown)",
+  "fetched_at": "2026-06-15T20:27:35+00:00",
+  "inventory_slot": null,
+  "item_id": 33770,
+  "item_stats": {
+    "armor": 386,
+    "armor_type": "Leather",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by",
+      "Equip: Improves your resilience rating by",
+      "Equip:",
+      "Equip:"
+    ],
+    "id": 33770,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Wyrmhide Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 20.0,
+      "mp5": 3.0,
+      "resilience_rating": 22.0,
+      "spell_crit_rating": 8.0,
+      "spell_power": 36.0,
+      "stamina": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33770/vengeful-gladiators-wyrmhide-spaulders"
+  },
+  "name": "Vengeful Gladiator's Wyrmhide Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33770/vengeful-gladiators-wyrmhide-spaulders"
+}

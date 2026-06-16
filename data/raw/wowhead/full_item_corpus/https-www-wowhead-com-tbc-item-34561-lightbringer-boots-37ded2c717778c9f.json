@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lightbringer Boots Phase 5 Item Level 154 Binds when picked up Feet Plate 1322 Armor +42 Strength +22 Stamina Red Socket Socket Bonus: +2 Critical Strike Rating Durability 75 / 75 Classes: Paladin Requires Level 70 Equip: Improves critical strike rating by 40. Equip: Improves haste rating by 27. Equip: Increases your expertise rating by 19. Lightbringer Battlegear (0/8) Lightbringer Breastplate Lightbringer Gauntlets Lightbringer Greaves Lightbringer Shoulderbraces Lightbringer War-Helm Lightbringer Boots Lightbringer Bands Lightbringer Girdle (2) Set : Your melee attacks have a chance to grant you 50 mana. (Proc chance: 20%) (4) Set : Increases the damage dealt by your Hammer of Wrath ability by 10%.",
+  "fetched_at": "2026-06-15T20:27:48+00:00",
+  "inventory_slot": null,
+  "item_id": 34561,
+  "item_stats": {
+    "armor": 1322,
+    "armor_type": "Plate",
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip: Improves critical strike rating by",
+      "Equip: Improves haste rating by",
+      "Equip: Increases your expertise rating by"
+    ],
+    "id": 34561,
+    "item_level": 154,
+    "name": "Lightbringer Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 40.0,
+      "expertise_rating": 19.0,
+      "haste_rating": 27.0,
+      "stamina": 22.0,
+      "strength": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34561/lightbringer-boots"
+  },
+  "name": "Lightbringer Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.9.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34561/lightbringer-boots"
+}
