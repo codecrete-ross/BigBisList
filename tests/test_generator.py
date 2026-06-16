@@ -22,6 +22,7 @@ class GeneratorTests(unittest.TestCase):
         self.assertIn('["consumables"] = {', rendered)
         self.assertIn('["leveling_gear"] = {', rendered)
         self.assertIn('["leveling_recommendations"] = {', rendered)
+        self.assertIn('["item_fallbacks"] = {', rendered)
         self.assertIn('["uses"] = {', rendered)
         self.assertIn('["tooltip_aliases"] = {', rendered)
         self.assertNotIn('["bis_lists"] = {', rendered)
@@ -40,7 +41,15 @@ class GeneratorTests(unittest.TestCase):
         canonical_consumables = canonical_json("consumables")["consumables"]
         canonical_leveling_gear = canonical_json("leveling_gear")["leveling_gear"]
         canonical_recommendations = canonical_json("leveling_recommendations")["leveling_recommendations"]
+        canonical_item_stats = canonical_json("item_stats")["item_stats"]
         starter_alias_count = 0
+        full_item_ids = {item["id"] for item in canonical_items}
+        fallback_item_ids = {
+            row["item_id"]
+            for row in canonical_recommendations
+            if row["item_id"] not in full_item_ids
+        }
+        stats_item_ids = {item["id"] for item in canonical_item_stats}
 
         for item in canonical_items:
             seen = set()
@@ -53,6 +62,7 @@ class GeneratorTests(unittest.TestCase):
 
         self.assertEqual(data["format"], 2)
         self.assertEqual(len(data["items"]), len(canonical_items))
+        self.assertEqual(len(data["item_fallbacks"]), len(fallback_item_ids & stats_item_ids))
         self.assertEqual(data["meta"]["slot_list_count"], len(canonical_bis))
         self.assertEqual(data["meta"]["use_count"], sum(len(row["items"]) for row in canonical_bis))
         self.assertEqual(len(data["uses"]), data["meta"]["use_count"])
@@ -63,7 +73,25 @@ class GeneratorTests(unittest.TestCase):
         self.assertEqual(len(data["leveling_recommendations"]), len(canonical_recommendations))
         self.assertEqual(data["meta"]["leveling_gear_count"], len(canonical_leveling_gear))
         self.assertEqual(data["meta"]["leveling_recommendation_count"], len(canonical_recommendations))
+        self.assertEqual(data["meta"]["item_fallback_count"], len(data["item_fallbacks"]))
         self.assertEqual(sum(len(row[1]) for row in data["tooltip_aliases"]), starter_alias_count)
+
+    def test_item_fallbacks_cover_recommendation_only_items(self):
+        data = build_data()
+        schema = data["schemas"]["item_fallback"]
+        positions = {key: index for index, key in enumerate(schema)}
+        fallbacks = {
+            row[positions["id"]]: row
+            for row in data["item_fallbacks"]
+        }
+
+        self.assertEqual(fallbacks[31701][positions["name"]], "Saboteur's Axe")
+        self.assertEqual(fallbacks[31701][positions["quality"]], "uncommon")
+        self.assertEqual(fallbacks[30394][positions["name"]], "Sunfury Blade")
+        self.assertEqual(fallbacks[30394][positions["quality"]], "uncommon")
+        self.assertEqual(fallbacks[30789][positions["name"]], "Illidari-Bane Claymore")
+        self.assertEqual(fallbacks[30789][positions["quality"]], "rare")
+        self.assertNotIn(25762, fallbacks)
 
     def test_data_lua_is_current_after_generation(self):
         existing = Path(OUTPUT_PATH).read_text(encoding="utf-8").replace("\r\n", "\n")

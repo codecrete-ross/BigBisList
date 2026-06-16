@@ -51,6 +51,12 @@ ITEM_SCHEMA = [
     "requirements",
 ]
 
+ITEM_FALLBACK_SCHEMA = [
+    "id",
+    "name",
+    "quality",
+]
+
 SOURCE_SCHEMA = [
     "type",
     "entity_id",
@@ -229,6 +235,7 @@ ENCHANT_EFFECT_SCHEMA = [
 
 SCHEMAS = {
     "item": ITEM_SCHEMA,
+    "item_fallback": ITEM_FALLBACK_SCHEMA,
     "source": SOURCE_SCHEMA,
     "requirement": REQUIREMENT_SCHEMA,
     "cost": COST_SCHEMA,
@@ -375,10 +382,34 @@ def build_uses(bis_lists: list[dict]) -> list[list]:
     return uses
 
 
+def build_item_fallbacks(items: list[dict], item_stats: list[dict], leveling_recommendations: list[dict]) -> list[dict]:
+    full_item_ids = {item["id"] for item in items}
+    needed_ids = {
+        row["item_id"]
+        for row in leveling_recommendations
+        if row.get("item_id") not in full_item_ids
+    }
+    stats_by_id = {item["id"]: item for item in item_stats}
+    fallbacks = []
+
+    for item_id in sorted(needed_ids):
+        item = stats_by_id.get(item_id)
+        if not item:
+            continue
+        fallbacks.append({
+            "id": item_id,
+            "name": item.get("name"),
+            "quality": item.get("quality"),
+        })
+
+    return fallbacks
+
+
 def build_data() -> dict:
     classes = canonical_json("classes")["classes"]
     phases = canonical_json("phases")["phases"]
     items = canonical_json("items")["items"]
+    item_stats = canonical_json("item_stats")["item_stats"]
     bis_lists = canonical_json("bis_lists")["lists"]
     gems = canonical_json("gems")["gems"]
     gem_sources = canonical_json("gem_sources")["gem_sources"]
@@ -391,6 +422,7 @@ def build_data() -> dict:
     overrides = canonical_json("overrides")["overrides"]
     manifest = canonical_json("scrape_manifest")
     lookups = build_runtime_lookups(items)
+    item_fallbacks = build_item_fallbacks(items, item_stats, leveling_recommendations)
 
     return {
         "format": 2,
@@ -407,11 +439,13 @@ def build_data() -> dict:
             "consumable_count": len(consumables),
             "leveling_gear_count": len(leveling_gear),
             "leveling_recommendation_count": len(leveling_recommendations),
+            "item_fallback_count": len(item_fallbacks),
             "override_count": len(overrides),
         },
         "classes": classes,
         "phases": phases,
         "items": compact_list(items, "item"),
+        "item_fallbacks": compact_list(item_fallbacks, "item_fallback"),
         "uses": build_uses(bis_lists),
         "gems": compact_list(gems, "gem"),
         "gem_sources": compact_list(gem_sources, "source_record"),

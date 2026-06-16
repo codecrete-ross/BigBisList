@@ -3036,7 +3036,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     if entityType == "spell" then
         self:SetSpellButton(iconButton, data.spell_id or entityId, nameText, data.name, data, mode)
     else
-        self:SetItemButton(iconButton, data.item_id, nameText, data.name, item and item.quality, data, mode)
+        self:SetItemButton(iconButton, data.item_id, nameText, data.name, data.quality or (item and item.quality), data, mode)
     end
 
     safeSetText(detailText, self:GetRowSubline(data, mode, not layout.showWhy))
@@ -3560,7 +3560,7 @@ function UI:CreateGearSlotRow(parent, rowData, xOffset, yOffset, width)
 
     if rowData.item_id then
         local item = rowData.item or BigBiSList:GetItemData(rowData.item_id)
-        self:SetItemButton(iconButton, rowData.item_id, nameText, rowData.name, item and item.quality, rowData, row.detailMode)
+        self:SetItemButton(iconButton, rowData.item_id, nameText, rowData.name, rowData.quality or (item and item.quality), rowData, row.detailMode)
         local detail = rowData.bestUse and rowData.bestUse.leveling
             and ((rowData.bestUse.level_label or rowData.bestUse.level_value_text or "Leveling recommendation") .. " - " .. rowData.bestUse.slot)
             or rowData.bestUse

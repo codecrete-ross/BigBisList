@@ -1860,13 +1860,25 @@ local function itemReputations(item)
 end
 
 local function buildItemMeta(index, itemId, item)
+    local fallback = item
+    if not fallback and index and itemId then
+        if index.compact then
+            index.itemFallbackCache = index.itemFallbackCache or {}
+            if index.itemFallbackCache[itemId] == nil then
+                index.itemFallbackCache[itemId] = inflateCompactRecord(index, "item_fallback", index.itemFallbackRecordsById[itemId])
+            end
+            fallback = index.itemFallbackCache[itemId]
+        else
+            fallback = index.itemFallbacksById and index.itemFallbacksById[itemId] or nil
+        end
+    end
     local sourceType = getSourceType(item)
     local sourceFilter = getSourceFilterKey(item)
     local acquisitionPhase = getAcquisitionPhase(item)
     return {
         item_id = itemId,
         item = item,
-        name = getItemName(itemId, item),
+        name = getItemName(itemId, item, fallback),
         source_summary = item and item.source_summary or "",
         source_type = sourceType,
         source_type_label = SOURCE_TYPE_LABELS[sourceType] or sourceType,
@@ -1881,7 +1893,7 @@ local function buildItemMeta(index, itemId, item)
         sides = getSourceSides(item),
         binding = item and item.binding or "unknown",
         boe = item and item.boe,
-        quality = item and item.quality,
+        quality = (item and item.quality) or (fallback and fallback.quality),
         requirements = item and item.requirements,
         reputations = itemReputations(item),
         phase = {},
@@ -1918,9 +1930,11 @@ local function getItemPhaseMeta(index, itemId, item, selectedPhaseIndex)
     return meta.phase[selectedPhaseIndex]
 end
 
-getItemName = function(itemId, item)
+getItemName = function(itemId, item, fallback)
     if item and item.name and item.name ~= "" then
         return item.name
+    elseif fallback and fallback.name and fallback.name ~= "" then
+        return fallback.name
     end
     return "Item " .. tostring(itemId)
 end
@@ -2179,7 +2193,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         slot = slotName,
         item_id = itemId,
         item = item,
-        name = getItemName(itemId, item),
+        name = meta.name or getItemName(itemId, item),
         rank = useEntry and useEntry.rank,
         rank_label = (useEntry and useEntry.rank_label) or "Option",
         rank_group = (useEntry and useEntry.rank_group) or "option",
@@ -2258,7 +2272,7 @@ local function buildLevelingGearRow(index, levelingGearRef)
         slot = entry.slot,
         item_id = itemId,
         item = item,
-        name = getItemName(itemId, item),
+        name = meta.name or getItemName(itemId, item),
         rank = entry.rank,
         rank_label = categoryLabel,
         rank_group = "option",
@@ -2342,7 +2356,7 @@ local function buildLevelingRecommendationRow(index, recommendationRef)
         item_id = itemId,
         variant_id = entry.variant_id,
         item = item,
-        name = getItemName(itemId, item),
+        name = meta.name or getItemName(itemId, item),
         rank = entry.rank,
         rank_label = categoryLabel,
         rank_group = "option",
@@ -2412,6 +2426,69 @@ function LEVELING_HELPERS.sortForLevel(a, b, selectedLevel)
         return (a.rank or 999) < (b.rank or 999)
     end
     return lower(a.name) < lower(b.name)
+end
+
+function LEVELING_HELPERS.isExactRace(row, selectedRace)
+    return row
+        and selectedRace
+        and selectedRace ~= ""
+        and selectedRace ~= "*"
+        and row.race == selectedRace
+end
+
+function LEVELING_HELPERS.isGenericRace(row)
+    return not row or not row.race or row.race == "" or row.race == "*"
+end
+
+function LEVELING_HELPERS.rowBeats(candidate, current, selectedRace, selectedLevel)
+    if not candidate then
+        return false
+    elseif not current then
+        return true
+    end
+
+    local candidateExactRace = LEVELING_HELPERS.isExactRace(candidate, selectedRace)
+    local currentExactRace = LEVELING_HELPERS.isExactRace(current, selectedRace)
+    if candidateExactRace ~= currentExactRace then
+        return candidateExactRace
+    end
+
+    local candidateOptimized = candidate.computed_recommendation and true or false
+    local currentOptimized = current.computed_recommendation and true or false
+    if candidateOptimized ~= currentOptimized then
+        return candidateOptimized
+    end
+
+    local candidateGeneric = LEVELING_HELPERS.isGenericRace(candidate)
+    local currentGeneric = LEVELING_HELPERS.isGenericRace(current)
+    if candidateGeneric ~= currentGeneric then
+        return candidateGeneric
+    end
+
+    return LEVELING_HELPERS.sortForLevel(candidate, current, selectedLevel)
+end
+
+function LEVELING_HELPERS.addDisplayRow(grouped, seenBySlot, row, selectedRace, selectedLevel)
+    if not row or not row.slot or not row.item_id then
+        return
+    end
+
+    local slotName = row.slot
+    grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
+    seenBySlot[slotName] = seenBySlot[slotName] or {}
+
+    local key = tostring(row.item_id)
+    local existingIndex = seenBySlot[slotName][key]
+    if existingIndex then
+        local current = grouped[slotName].items[existingIndex]
+        if LEVELING_HELPERS.rowBeats(row, current, selectedRace, selectedLevel) then
+            grouped[slotName].items[existingIndex] = row
+        end
+        return
+    end
+
+    table.insert(grouped[slotName].items, row)
+    seenBySlot[slotName][key] = #grouped[slotName].items
 end
 
 function LEVELING_HELPERS.sortByNextLevel(a, b)
@@ -3293,7 +3370,9 @@ function BigBiSList:GetDataIndex()
         schemas = data.schemas or {},
         schemaPositions = {},
         itemRecordsById = {},
+        itemFallbackRecordsById = {},
         itemCache = {},
+        itemFallbackCache = {},
         itemMetaCache = {},
         itemMetaCacheOrder = {},
         rowAccessCache = {},
@@ -3303,6 +3382,7 @@ function BigBiSList:GetDataIndex()
         levelingRecommendationCache = {},
         tooltipUseCache = {},
         itemsById = {},
+        itemFallbacksById = {},
         classes = classSpecIndex.classes,
         classNames = classSpecIndex.classNames,
         specsByClass = classSpecIndex.specsByClass,
@@ -3340,6 +3420,13 @@ function BigBiSList:GetDataIndex()
             local itemId = compactField(index, "item", itemRecord, "id")
             if itemId then
                 index.itemRecordsById[itemId] = itemRecord
+            end
+        end
+
+        for _, itemFallbackRecord in ipairs(data.item_fallbacks or {}) do
+            local itemId = compactField(index, "item_fallback", itemFallbackRecord, "id")
+            if itemId then
+                index.itemFallbackRecordsById[itemId] = itemFallbackRecord
             end
         end
 
@@ -3424,6 +3511,10 @@ function BigBiSList:GetDataIndex()
             for _, zone in ipairs(getSourceZones(item)) do
                 addUnique(index.zones, zoneSeen, zone)
             end
+        end
+
+        for _, itemFallback in ipairs(data.item_fallbacks or {}) do
+            index.itemFallbacksById[itemFallback.id] = itemFallback
         end
 
         for _, sourceData in ipairs(data.gem_sources or {}) do
@@ -3629,7 +3720,7 @@ end
 function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, level, allowedSlots, race)
     local selectedLevel = math.max(1, math.min(70, math.floor(tonumber(level) or 70)))
     race = race or self:GetPlayerRaceName()
-    local matches = {}
+    local bestUse
 
     for _, row in ipairs(self:GetItemLevelingUses(itemId)) do
         if row.class == className
@@ -3637,14 +3728,13 @@ function BigBiSList:GetItemBestLevelingUseForSpec(itemId, className, specName, l
             and raceMatches(row.race, race)
             and LEVELING_HELPERS.isAvailableAt(row, selectedLevel)
             and (not allowedSlots or slotListContains(allowedSlots, row.slot)) then
-            table.insert(matches, row)
+            if LEVELING_HELPERS.rowBeats(row, bestUse, race, selectedLevel) then
+                bestUse = row
+            end
         end
     end
 
-    table.sort(matches, function(a, b)
-        return LEVELING_HELPERS.sortForLevel(a, b, selectedLevel)
-    end)
-    return matches[1]
+    return bestUse
 end
 
 function BigBiSList:GetItemNextLevelingUseForSpec(itemId, className, specName, level, allowedSlots, race)
@@ -3989,37 +4079,14 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
         end
 
         if includeRecommendation then
-            local slotName = row.slot
-            grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
-            seenBySlot[slotName] = seenBySlot[slotName] or {}
-
-            local key = table.concat({
-                tostring(row.item_id),
-                tostring(row.level_min),
-                tostring(row.level_max),
-                tostring(row.race or "*"),
-                tostring(row.context or ""),
-                tostring(row.variant_id or ""),
-            }, ":")
-            if not seenBySlot[slotName][key] then
-                seenBySlot[slotName][key] = true
-                table.insert(grouped[slotName].items, row)
-            end
+            LEVELING_HELPERS.addDisplayRow(grouped, seenBySlot, row, selectedRace, selectedLevel)
         end
     end
 
     for _, levelingRef in ipairs(levelingRefs) do
         local row = buildLevelingGearRow(index, levelingRef)
         if row and LEVELING_HELPERS.isAvailableAt(row, selectedLevel) and includeByFilter(row, filters, phaseIndex(LEVELING_PHASE_KEY)) then
-            local slotName = row.slot
-            grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
-            seenBySlot[slotName] = seenBySlot[slotName] or {}
-
-            local key = tostring(row.item_id) .. ":" .. tostring(row.level_min) .. ":" .. tostring(row.level_max) .. ":" .. tostring(row.source_note or "")
-            if not seenBySlot[slotName][key] then
-                seenBySlot[slotName][key] = true
-                table.insert(grouped[slotName].items, row)
-            end
+            LEVELING_HELPERS.addDisplayRow(grouped, seenBySlot, row, selectedRace, selectedLevel)
         end
     end
 

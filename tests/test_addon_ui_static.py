@@ -590,6 +590,8 @@ class AddonUIStaticTests(unittest.TestCase):
         for token in [
             "ITEM_META_CACHE_LIMIT",
             "itemMetaCache",
+            "itemFallbackRecordsById",
+            "itemFallbackCache",
             "function BigBiSList:GetItemMeta(itemId)",
             "buildItemMeta",
             "itemReputations",
@@ -597,6 +599,12 @@ class AddonUIStaticTests(unittest.TestCase):
             "getItemPhaseMeta",
         ]:
             self.assertIn(token, data_index)
+
+    def test_item_button_uses_row_quality_before_client_cache(self):
+        ui = self.read_lua("UI.lua")
+
+        self.assertIn("data.quality or (item and item.quality)", ui)
+        self.assertIn("rowData.quality or (item and item.quality)", ui)
 
     def test_filter_availability_uses_one_snapshot(self):
         data_index = self.read_lua("DataIndex.lua")
@@ -915,6 +923,22 @@ class AddonUIStaticTests(unittest.TestCase):
             "self:RefreshDetails(rowData.item_id, rowData, row.detailMode)",
         ]:
             self.assertIn(token, ui)
+
+    def test_leveling_rows_merge_duplicate_items_after_race_filtering(self):
+        data_index = self.read_lua("DataIndex.lua")
+        leveling_body = data_index.split("function BigBiSList:GetLevelingRows", 1)[1].split("function BigBiSList:GetPlannerRows", 1)[0]
+
+        for token in [
+            "function LEVELING_HELPERS.rowBeats",
+            "function LEVELING_HELPERS.addDisplayRow",
+            "LEVELING_HELPERS.isExactRace(candidate, selectedRace)",
+            "candidate.computed_recommendation",
+            "LEVELING_HELPERS.addDisplayRow(grouped, seenBySlot, row, selectedRace, selectedLevel)",
+        ]:
+            self.assertIn(token, data_index)
+
+        self.assertNotIn("tostring(row.level_min) .. \":\" .. tostring(row.level_max)", leveling_body)
+        self.assertNotIn("tostring(row.source_note or \"\")", leveling_body)
 
     def test_tooltip_settings_drive_rendering(self):
         tooltip = self.read_lua("Tooltip.lua")
