@@ -77,6 +77,24 @@ if ($iconTexture) {
     }
 }
 
+$luac = Get-Command luac -ErrorAction SilentlyContinue
+if ($luac) {
+    $luaFiles = [System.Collections.Generic.List[string]]::new()
+    foreach ($entry in $deployEntries) {
+        if ([System.IO.Path]::GetExtension($entry) -ieq ".lua") {
+            [void]$luaFiles.Add((Join-Path $repoRoot $entry))
+        }
+    }
+    if ($luaFiles.Count -gt 0) {
+        & $luac.Source -p @luaFiles
+        if ($LASTEXITCODE -ne 0) {
+            throw "Lua compile preflight failed; refusing to deploy."
+        }
+    }
+} else {
+    Write-Warning "luac not found; skipping Lua compile preflight."
+}
+
 if (-not $NoClean -and (Test-Path -LiteralPath $targetRoot)) {
     Remove-Item -LiteralPath $targetRoot -Recurse -Force
 }

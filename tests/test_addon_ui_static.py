@@ -1,4 +1,6 @@
 import re
+import shutil
+import subprocess
 import unittest
 
 from tools.project import ADDON_DIR
@@ -7,6 +9,27 @@ from tools.project import ADDON_DIR
 class AddonUIStaticTests(unittest.TestCase):
     def read_lua(self, name: str) -> str:
         return (ADDON_DIR / name).read_text(encoding="utf-8")
+
+    def test_runtime_lua_files_compile_with_lua51(self):
+        luac = shutil.which("luac")
+        if not luac:
+            self.skipTest("luac is not available")
+        lua_files = [
+            "Config.lua",
+            "Core.lua",
+            "Data.lua",
+            "DataIndex.lua",
+            "Widgets.lua",
+            "UI.lua",
+            "Tooltip.lua",
+            "Minimap.lua",
+        ]
+        result = subprocess.run(
+            [luac, "-p", *(str(ADDON_DIR / name) for name in lua_files)],
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
 
     def test_user_facing_name_remains_spaced(self):
         self.assertIn('BigBiSList.displayName = "Big BiS List"', self.read_lua("Config.lua"))
@@ -1213,13 +1236,13 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_leveling_recommendation_tags_are_cased_for_display(self):
         data_index = self.read_lua("DataIndex.lua")
         for token in [
-            "local function levelingReasonTagLabel(tag)",
+            "function LEVELING_HELPERS.reasonTagLabel(tag)",
             'best_overall = "Best Overall"',
             'best_easy_source = "Best Easy Source"',
             'human_sword_bonus = "Human Sword Bonus"',
             'night_elf_dodge_bonus = "Night Elf Dodge Bonus"',
-            'return "Best for " .. race:gsub("_", " "):gsub("%S+", titleCaseToken)',
-            "recommendationSummary = levelingReasonTagLabel(primaryTag)",
+            'return "Best for " .. race:gsub("_", " "):gsub("%S+", function(token)',
+            "recommendationSummary = LEVELING_HELPERS.reasonTagLabel(primaryTag)",
         ]:
             self.assertIn(token, data_index)
         self.assertNotIn('recommendationSummary = primaryTag:gsub("_", " ")', data_index)

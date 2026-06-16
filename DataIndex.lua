@@ -1262,7 +1262,7 @@ end
 
 local LEVELING_HELPERS = {}
 
-local LEVELING_REASON_TAG_LABELS = {
+LEVELING_HELPERS.reasonTagLabels = {
     best_overall = "Best Overall",
     best_survival = "Best Survival",
     best_hit = "Best Hit",
@@ -1289,27 +1289,27 @@ local LEVELING_REASON_TAG_LABELS = {
     troll_throwing_bonus = "Troll Throwing Bonus",
 }
 
-local function titleCaseToken(token)
-    return (token:gsub("^%l", string.upper))
-end
-
-local function levelingReasonTagLabel(tag)
+function LEVELING_HELPERS.reasonTagLabel(tag)
     tag = trim(tag or "")
     if tag == "" then
         return ""
     end
 
-    local mapped = LEVELING_REASON_TAG_LABELS[tag]
+    local mapped = LEVELING_HELPERS.reasonTagLabels[tag]
     if mapped then
         return mapped
     end
 
     local race = tag:match("^best_for_(.+)$")
     if race then
-        return "Best for " .. race:gsub("_", " "):gsub("%S+", titleCaseToken)
+        return "Best for " .. race:gsub("_", " "):gsub("%S+", function(token)
+            return (token:gsub("^%l", string.upper))
+        end)
     end
 
-    return tag:gsub("_", " "):gsub("%S+", titleCaseToken)
+    return tag:gsub("_", " "):gsub("%S+", function(token)
+        return (token:gsub("^%l", string.upper))
+    end)
 end
 
 function LEVELING_HELPERS.categoryKey(label)
@@ -2320,7 +2320,7 @@ local function buildLevelingRecommendationRow(index, recommendationRef)
     local tooltipLevelLabel = levelMax > levelMin and ("Leveling " .. tostring(levelMin) .. "-" .. tostring(levelMax)) or ("Leveling " .. tostring(levelMin))
     local recommendationSummary = entry.source_summary or meta.source_summary or ""
     if primaryTag and primaryTag ~= "" then
-        recommendationSummary = levelingReasonTagLabel(primaryTag)
+        recommendationSummary = LEVELING_HELPERS.reasonTagLabel(primaryTag)
     elseif recommendationSummary == "" then
         recommendationSummary = levelLabel
     end
