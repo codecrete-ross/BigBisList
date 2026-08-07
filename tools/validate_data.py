@@ -13,7 +13,7 @@ if __package__ is None or __package__ == "":
 
 from tools.manifest_coverage import GLOBAL_FAMILIES, MATRIX_FAMILIES, STATIC_DATA_FAMILIES, units_covered_by_source
 from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES, canonical_json
-from tools.reputations import CANONICAL_REPUTATIONS
+from tools.reputations import CANONICAL_REPUTATIONS, infer_source_side
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 
 
@@ -82,6 +82,16 @@ def phase_start_epoch_from_utc(value: str) -> int | None:
     except ValueError:
         return None
     return int(parsed.replace(tzinfo=timezone.utc).timestamp())
+
+
+def validate_source_side(label: str, source: object, errors: list[str]) -> None:
+    if not isinstance(source, dict):
+        return
+    side = source.get("side")
+    _require(side is None or side in {"Alliance", "Horde"}, errors, f"{label} has invalid side: {side}")
+    inferred_side = infer_source_side(source)
+    if inferred_side:
+        _require(side == inferred_side, errors, f"{label} needs side {inferred_side}")
 
 
 def validate_requirements(label: str, requirements: object, errors: list[str], required: bool = False) -> None:
@@ -224,6 +234,7 @@ def validate() -> ValidationResult:
                     _require(source.get("difficulty") in {"heroic"}, errors, f"Item {item_id} has invalid source difficulty: {source.get('difficulty')}")
                 _require(bool(source.get("confidence")), errors, f"Item {item_id} source is missing confidence")
                 validate_requirements(f"Item {item_id} source {source_type}", source.get("requirements"), errors)
+                validate_source_side(f"Item {item_id} source {source_type}", source, errors)
                 source_url = source.get("source_url")
                 if source_url:
                     _require(str(source_url).startswith("https://www.wowhead.com/tbc/"), errors, f"Item {item_id} source URL must be a Wowhead TBC URL")
@@ -463,6 +474,10 @@ def validate() -> ValidationResult:
         _require(isinstance(restrictions, dict), errors, f"Item stat {item_id} restrictions must be an object")
         source_summary = item.get("source_summary")
         _require(source_summary is None or isinstance(source_summary, str), errors, f"Item stat {item_id} source_summary must be a string")
+        for source in item.get("sources") or []:
+            validate_source_side(f"Item stat {item_id} source", source, errors)
+            validate_requirements(f"Item stat {item_id} source", source.get("requirements"), errors)
+        validate_requirements(f"Item stat {item_id}", item.get("requirements"), errors)
 
     variant_keys: set[tuple[int, int]] = set()
     for variant in item_variants_doc.get("item_variants", []):

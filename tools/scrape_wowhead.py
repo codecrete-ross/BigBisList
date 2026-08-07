@@ -25,7 +25,7 @@ if __package__ is None or __package__ == "":
 from tools.manifest_coverage import build_manifest_coverage
 from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES, canonical_json, write_text
 from tools.recommend_leveling import build_recommendation_documents
-from tools.reputations import normalize_reputation_names
+from tools.reputations import infer_source_side, normalize_reputation_names, requirement_side
 from tools.sources import (
     classify_source,
     classify_sources,
@@ -868,6 +868,64 @@ def normalize_requirement_reputation_names(requirements: list[dict[str, Any]]) -
     return dedupe_requirements(normalized)
 
 
+SOURCE_NESTED_KEYS = ("token_sources", "quest_starter_sources", "recipe_sources")
+
+
+def add_source_side_metadata(source: dict[str, Any]) -> dict[str, Any]:
+    enriched = deepcopy(source)
+    for key in SOURCE_NESTED_KEYS:
+        if isinstance(enriched.get(key), list):
+            enriched[key] = [
+                add_source_side_metadata(nested_source) if isinstance(nested_source, dict) else nested_source
+                for nested_source in enriched[key]
+            ]
+
+    side = infer_source_side(enriched)
+    if side and not enriched.get("side"):
+        enriched["side"] = side
+    return enriched
+
+
+def append_source_requirement(source: dict[str, Any], requirement: dict[str, Any]) -> None:
+    requirements = [
+        existing
+        for existing in source.get("requirements") or []
+        if isinstance(existing, dict)
+    ]
+    requirements.append(requirement)
+    source["requirements"] = dedupe_requirements(requirements)
+
+
+def apply_source_access_metadata(
+    sources: list[dict[str, Any]],
+    requirements: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    enriched_sources = [add_source_side_metadata(source) for source in sources or []]
+    source_sides = {side for side in (infer_source_side(source) for source in enriched_sources) if side}
+    remaining_requirements: list[dict[str, Any]] = []
+
+    for requirement in dedupe_requirements(requirements or []):
+        side = requirement_side(requirement)
+        if side:
+            matching_sources = [
+                source
+                for source in enriched_sources
+                if infer_source_side(source) == side
+            ]
+            if matching_sources:
+                for source in matching_sources:
+                    append_source_requirement(source, requirement)
+                continue
+
+            if source_sides:
+                continue
+
+        remaining_requirements.append(requirement)
+
+    enriched_sources = [add_source_side_metadata(source) for source in enriched_sources]
+    return classify_sources(enriched_sources), dedupe_requirements(remaining_requirements)
+
+
 def row_requirements(row: dict[str, Any], source_url: str) -> list[dict[str, Any]]:
     source_text = clean_text(str(row.get("source_text") or row.get("text") or ""))
     parsed_requirements = extract_requirements_from_text(source_text, source_url, requirement_scope_from_source_text(source_text), "parsed_source_text")
@@ -1447,7 +1505,7 @@ def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) ->
     for source in sources:
         attach_requirements_to_source(source, url, requirement_scope_for_source(source), "wowhead_item")
 
-    return classify_sources(sources)
+    return classify_sources([add_source_side_metadata(source) for source in sources])
 
 
 def parse_quality_from_description(description: str) -> str:
@@ -1714,6 +1772,32 @@ def parse_socket_bonus(text: str) -> dict[str, float]:
     return {key: float(match.group(1))}
 
 
+RESTRICTION_STOP_WORDS = (
+    "Requires",
+    "Equip:",
+    "Use:",
+    "Chance on hit:",
+    "Sell Price",
+    "Durability",
+    "Classes:",
+    "Races:",
+    "Item Level",
+    "Phase",
+)
+
+
+def parse_tooltip_restriction_values(text: str, label: str) -> list[str]:
+    stop_pattern = "|".join(re.escape(word) for word in RESTRICTION_STOP_WORDS if word != f"{label}:")
+    match = re.search(
+        rf"\b{re.escape(label)}:\s*(.+?)(?=\s+(?:{stop_pattern})|$)",
+        clean_text(text),
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        return []
+    return [clean_text(value) for value in re.split(r",|/", match.group(1)) if clean_text(value)]
+
+
 def parse_tooltip_stats(lines: list[str], fallback_text: str = "") -> dict[str, Any]:
     stats: dict[str, float] = {}
     sockets: list[str] = []
@@ -1782,12 +1866,12 @@ def parse_tooltip_stats(lines: list[str], fallback_text: str = "") -> dict[str, 
         elif line.startswith("Use:"):
             use_effects.append(line)
 
-        classes_match = re.search(r"\bClasses:\s*(.+)$", line)
-        if classes_match:
-            restrictions["classes"] = [clean_text(value) for value in re.split(r",|/", classes_match.group(1)) if clean_text(value)]
-        races_match = re.search(r"\bRaces:\s*(.+)$", line)
-        if races_match:
-            restrictions["races"] = [clean_text(value) for value in re.split(r",|/", races_match.group(1)) if clean_text(value)]
+        classes = parse_tooltip_restriction_values(line, "Classes")
+        if classes:
+            restrictions["classes"] = classes
+        races = parse_tooltip_restriction_values(line, "Races")
+        if races:
+            restrictions["races"] = races
 
         lowered = line.lower()
         for subtype in WEAPON_SUBTYPES:
@@ -1810,6 +1894,16 @@ def parse_tooltip_stats(lines: list[str], fallback_text: str = "") -> dict[str, 
             armor_type = (armor_type_match.group(1) or armor_type_match.group(2)).title()
         if re.search(r"\bOff[- ]Hand\s+Shield\b", line, flags=re.IGNORECASE):
             armor_type = "Shield"
+
+    combined_restriction_text = clean_text(" ".join([*lines, fallback_text]))
+    if "classes" not in restrictions:
+        classes = parse_tooltip_restriction_values(combined_restriction_text, "Classes")
+        if classes:
+            restrictions["classes"] = classes
+    if "races" not in restrictions:
+        races = parse_tooltip_restriction_values(combined_restriction_text, "Races")
+        if races:
+            restrictions["races"] = races
 
     effect_stats = apply_effect_stat_classification(stats, effect_source_text)
     full_effect_texts = [effect["raw_text"] for effect in effect_stats if effect.get("raw_text")]
@@ -2490,7 +2584,7 @@ def item_list_source_type(ref: dict[str, Any]) -> str:
         if 1 in source_kinds:
             return "crafted"
         if 2 in source_kinds:
-            return "world_drop" if ref.get("commondrop") and not ref.get("sourcemore") else "drop"
+            return "world_drop" if not ref.get("sourcemore") else "drop"
     return "unknown"
 
 
@@ -2524,6 +2618,37 @@ def item_list_sources_from_ref(ref: dict[str, Any]) -> list[dict[str, Any]]:
         sources.append(cleaned)
 
     return classify_sources(sources)
+
+
+def source_detail_score(source: dict[str, Any] | None) -> int:
+    if not isinstance(source, dict):
+        return 0
+    if source.get("world_drop"):
+        return 3
+    score = 0
+    if source.get("entity_name") or source.get("entity_id"):
+        score += 4
+    if source.get("zone"):
+        score += 1
+    if source.get("costs"):
+        score += 1
+    return score
+
+
+def sources_detail_score(sources: list[dict[str, Any]] | None) -> int:
+    return sum(source_detail_score(source) for source in sources or [])
+
+
+def item_snapshot_sources(snapshot: dict[str, Any] | None) -> list[dict[str, Any]]:
+    if not isinstance(snapshot, dict):
+        return []
+    sources = snapshot.get("normalized_sources")
+    if sources:
+        return deepcopy(sources)
+    tables = snapshot.get("related_tables") if isinstance(snapshot.get("related_tables"), dict) else {}
+    if any(tables.get(key) for key in ["dropped-by", "reward-from-q", "sold-by", "created-by", "created-by-spell"]):
+        return normalize_item_sources(str(snapshot.get("url") or item_url_for_id(snapshot.get("item_id") or 0)), tables)
+    return []
 
 
 def item_list_metadata_by_id(snapshots: list[dict[str, Any]], *, authoritative_only: bool = False) -> dict[int, dict[str, Any]]:
@@ -4853,7 +4978,7 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
         ref = item_refs.get(item_id, {})
         snapshot = item_snapshots.get(item_id)
         source_hints = item_source_hints.get(item_id, [])
-        raw_sources = snapshot.get("normalized_sources") if snapshot else current.get("sources", [])
+        raw_sources = item_snapshot_sources(snapshot) if snapshot else current.get("sources", [])
         if not raw_sources:
             raw_sources = guide_fallback_sources(source_hints)
         raw_sources = apply_source_hints_to_sources(raw_sources, source_hints)
@@ -4889,6 +5014,11 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
         if current.get("requirements"):
             item["requirements"] = deepcopy(current["requirements"])
         requirements = item_requirements_for_import(item_id, item, snapshot, sources, source_hints)
+        sources, requirements = apply_source_access_metadata(sources, requirements)
+        item["sources"] = sources
+        item["primary_source"] = derive_primary_source(sources)
+        item["source_summary"] = summarize_sources(sources)
+        item["acquisition_phase"] = derive_acquisition_phase(sources)
         if requirements:
             item["requirements"] = requirements
         else:
@@ -4896,6 +5026,33 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
         items.append(item)
 
     return apply_item_overrides({"items": items})
+
+
+def enrich_item_stats_access_metadata(row: dict[str, Any], snapshot: dict[str, Any] | None) -> dict[str, Any]:
+    enriched = deepcopy(row)
+    snapshot_sources = item_snapshot_sources(snapshot)
+    sources = deepcopy(enriched.get("sources") or snapshot_sources)
+    if snapshot_sources and sources_detail_score(snapshot_sources) > sources_detail_score(sources):
+        sources = deepcopy(snapshot_sources)
+    requirements: list[dict[str, Any]] = []
+    requirements.extend(requirement for requirement in enriched.get("requirements") or [] if isinstance(requirement, dict))
+    requirements.extend(snapshot_requirements(snapshot))
+    requirements.extend(source_list_requirements(sources))
+    requirements = normalize_tradeable_crafted_profession_requirements(requirements, enriched, snapshot, sources)
+
+    sources, requirements = apply_source_access_metadata(sources, requirements)
+    if sources:
+        enriched["sources"] = sources
+        enriched["primary_source"] = derive_primary_source(sources)
+        enriched["source_summary"] = summarize_sources(sources)
+        enriched["phase"] = derive_acquisition_phase(sources)
+
+    if requirements:
+        enriched["requirements"] = requirements
+    else:
+        enriched.pop("requirements", None)
+
+    return {key: value for key, value in enriched.items() if value not in (None, [], {})}
 
 
 def item_stats_from_snapshot(snapshot: dict[str, Any]) -> dict[str, Any] | None:
@@ -4908,7 +5065,7 @@ def item_stats_from_snapshot(snapshot: dict[str, Any]) -> dict[str, Any] | None:
     if isinstance(stats, dict) and stats.get("id"):
         return sanitize_item_stats_effects(deepcopy(stats), str(snapshot.get("description") or ""))
 
-    sources = snapshot.get("normalized_sources") or []
+    sources = item_snapshot_sources(snapshot)
     row = {
         "id": item_id,
         "name": snapshot.get("name") or f"Item {item_id}",
@@ -4954,6 +5111,7 @@ def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[st
         if restrict_to_list and item_id not in allowed_item_ids:
             continue
         row = apply_item_list_metadata(row, list_metadata.get(int(row["id"])))
+        row = enrich_item_stats_access_metadata(row, snapshot)
         rows[item_id] = row
     return {"item_stats": [rows[item_id] for item_id in sorted(rows)]}
 

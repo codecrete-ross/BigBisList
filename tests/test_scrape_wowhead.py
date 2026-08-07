@@ -589,6 +589,73 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(row["quality"], "epic")
         self.assertEqual(row["slot"], "Waist")
 
+    def test_item_list_sources_avoid_unknown_when_only_source_kind_or_zone_is_known(self):
+        quest_sources = scraper.item_list_sources_from_ref(
+            {
+                "id": 25772,
+                "url": "https://www.wowhead.com/tbc/item=25772/crystalline-kopesh",
+                "source": [4],
+                "sourcemore": [{"z": 3518}],
+            }
+        )
+        drop_sources = scraper.item_list_sources_from_ref(
+            {
+                "id": 31234,
+                "url": "https://www.wowhead.com/tbc/item=31234/crystalblade-of-the-draenei",
+                "source": [2],
+            }
+        )
+
+        self.assertEqual(scraper.summarize_sources(quest_sources), "Quest: Nagrand")
+        self.assertEqual(drop_sources[0]["type"], "world_drop")
+        self.assertEqual(scraper.summarize_sources(drop_sources), "World Drop")
+
+    def test_item_stats_import_prefers_related_table_sources_over_generic_item_list_sources(self):
+        snapshot = {
+            "page_type": "item",
+            "item_id": 999301,
+            "name": "Fixture Quest Sword",
+            "description": "Fixture Quest Sword One-Hand Sword +1 Strength",
+            "url": "https://www.wowhead.com/tbc/item=999301/fixture-quest-sword",
+            "quality": "rare",
+            "item_stats": {
+                "id": 999301,
+                "name": "Fixture Quest Sword",
+                "slot": "One Hand",
+                "source_summary": "Quest: Nagrand",
+                "primary_source": {
+                    "type": "quest",
+                    "zone": "Nagrand",
+                    "source_url": "https://www.wowhead.com/tbc/item=999301/fixture-quest-sword",
+                    "confidence": "wowhead_item_list",
+                },
+                "sources": [
+                    {
+                        "type": "quest",
+                        "zone": "Nagrand",
+                        "source_url": "https://www.wowhead.com/tbc/item=999301/fixture-quest-sword",
+                        "confidence": "wowhead_item_list",
+                    }
+                ],
+            },
+            "related_tables": {
+                "reward-from-q": [
+                    {
+                        "id": 9937,
+                        "name": "Wanted: Durn the Hungerer",
+                        "category": 3518,
+                        "side": 2,
+                    }
+                ]
+            },
+        }
+
+        row = scraper.import_item_stats_from_snapshots([snapshot])["item_stats"][0]
+
+        self.assertEqual(row["source_summary"], "Quest: Wanted: Durn the Hungerer")
+        self.assertEqual(row["primary_source"]["quest_id"], 9937)
+        self.assertEqual(row["primary_source"]["side"], "Horde")
+
     def test_item_stats_import_keeps_manifest_seed_items(self):
         original_canonical_json = scraper.canonical_json
         scraper.canonical_json = lambda name: {
@@ -914,6 +981,74 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(requirement["scope"], "learn_recipe")
         self.assertEqual(requirement["profession"], "Enchanting")
         self.assertEqual(requirement["skill"], 305)
+
+    def test_source_access_metadata_assigns_side_specific_vendor_requirements(self):
+        source_url = "https://www.wowhead.com/tbc/item=29155/stormcaller"
+        sources = [
+            {
+                "type": "vendor",
+                "entity_id": 17585,
+                "entity_name": "Quartermaster Urgronn",
+                "vendor_id": 17585,
+                "source_url": source_url,
+                "confidence": "wowhead_item",
+            },
+            {
+                "type": "vendor",
+                "entity_id": 17657,
+                "entity_name": "Logistics Officer Ulrike",
+                "vendor_id": 17657,
+                "source_url": source_url,
+                "confidence": "wowhead_item",
+            },
+        ]
+        requirements = scraper.extract_requirements_from_text(
+            "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Exalted)",
+            source_url,
+            "vendor_purchase",
+            "parsed_source_text",
+        )
+
+        enriched_sources, remaining = scraper.apply_source_access_metadata(sources, requirements)
+
+        self.assertEqual(remaining, [])
+        by_name = {source["entity_name"]: source for source in enriched_sources}
+        self.assertEqual(by_name["Quartermaster Urgronn"]["side"], "Horde")
+        self.assertEqual(by_name["Logistics Officer Ulrike"]["side"], "Alliance")
+        self.assertEqual(by_name["Quartermaster Urgronn"]["requirements"][0]["reputation"], "Thrallmar")
+        self.assertEqual(by_name["Logistics Officer Ulrike"]["requirements"][0]["reputation"], "Honor Hold")
+
+    def test_item_stats_import_persists_requirements_and_flat_class_restrictions(self):
+        snapshot = scraper.parse_item_tooltip_endpoint(
+            "https://www.wowhead.com/tbc/item=16480/field-marshals-plate-shoulderguards",
+            json.dumps(
+                {
+                    "name": "Field Marshal's Plate Shoulderguards",
+                    "quality": 4,
+                    "tooltip": "<table><tr><td><b>Field Marshal's Plate Shoulderguards</b><br>Shoulder Plate<br>Classes: Warrior Requires Level 60 Equip: Increases your hit rating by 10.</td></tr></table>",
+                }
+            ),
+        )
+
+        row = scraper.import_item_stats_from_snapshots([snapshot])["item_stats"][0]
+
+        self.assertEqual(row["restrictions"]["classes"], ["Warrior"])
+
+        goggles = scraper.parse_item_tooltip_endpoint(
+            "https://www.wowhead.com/tbc/item=32472/furious-gizmatic-goggles",
+            json.dumps(
+                {
+                    "name": "Furious Gizmatic Goggles",
+                    "quality": 4,
+                    "tooltip": "<table><tr><td><b>Furious Gizmatic Goggles</b><br>Head Plate<br>Requires Engineering (350)</td></tr></table>",
+                }
+            ),
+        )
+        goggles_row = scraper.import_item_stats_from_snapshots([goggles])["item_stats"][0]
+
+        self.assertEqual(goggles_row["requirements"][0]["type"], "profession")
+        self.assertEqual(goggles_row["requirements"][0]["profession"], "Engineering")
+        self.assertEqual(goggles_row["requirements"][0]["skill"], 350)
 
     def test_requirement_parser_extracts_reputation_phrases(self):
         source_url = "https://www.wowhead.com/tbc/guide/example"

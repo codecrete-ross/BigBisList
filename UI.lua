@@ -1711,7 +1711,7 @@ end
 
 function UI:GetContextSourceSummary(data)
     local evaluation = self:GetAccessEvaluation(data)
-    if evaluation and evaluation.context_matched then
+    if evaluation then
         local optionEvaluation = evaluation.optionEvaluation
         local option = optionEvaluation and optionEvaluation.option
         local summary = self:GetAccessOptionDisplayText(option)

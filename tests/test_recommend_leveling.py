@@ -528,8 +528,8 @@ class LevelingRecommendationTests(unittest.TestCase):
     def test_form_only_attack_power_scores_only_for_feral_druids(self):
         _item_stats, _item_variants, racials, profiles = self.docs()
         mace = {
-            "id": 21268,
-            "name": "Blessed Qiraji War Hammer",
+            "id": 999109,
+            "name": "Fixture Feral Mace",
             "required_level": 60,
             "slot": "One Hand",
             "weapon_type": "One Hand",
@@ -544,6 +544,8 @@ class LevelingRecommendationTests(unittest.TestCase):
                 }
             ],
             "source_bucket": "quest",
+            "source_summary": "Quest: Fixture",
+            "wowhead_url": "https://www.wowhead.com/tbc/item=999109/fixture-feral-mace",
         }
 
         paladin = candidate_score(
@@ -684,6 +686,137 @@ class LevelingRecommendationTests(unittest.TestCase):
         self.assertEqual(rows[0]["item_id"], 999101)
         self.assertNotIn(999104, {row["item_id"] for row in rows})
         self.assertNotIn(999104, {row["item_id"] for row in audit})
+
+    def test_pre_70_leveling_recommendations_ignore_pvp_profession_and_classic_raid_quest_gates(self):
+        item_stats, item_variants, racials, profiles = self.docs()
+        item_stats = deepcopy(item_stats)
+        item_stats["item_stats"].extend(
+            [
+                {
+                    "id": 999201,
+                    "name": "Fixture PvP Hammer",
+                    "required_level": 60,
+                    "quality": "epic",
+                    "binding": "bind_on_pickup",
+                    "boe": False,
+                    "slot": "Two Hand",
+                    "weapon_type": "Two Hand",
+                    "weapon_subtype": "Mace",
+                    "dps": 300,
+                    "stats": {"strength": 300},
+                    "source_bucket": "pvp",
+                    "source_summary": "PvP: Fixture",
+                    "wowhead_url": "https://www.wowhead.com/tbc/item=999201/fixture-pvp-hammer",
+                },
+                {
+                    "id": 999202,
+                    "name": "Fixture Engineering Hammer",
+                    "required_level": 62,
+                    "quality": "epic",
+                    "binding": "bind_on_pickup",
+                    "boe": False,
+                    "slot": "Two Hand",
+                    "weapon_type": "Two Hand",
+                    "weapon_subtype": "Mace",
+                    "dps": 310,
+                    "stats": {"strength": 310},
+                    "source_bucket": "crafted",
+                    "source_summary": "Crafted: Engineering",
+                    "requirements": [
+                        {
+                            "type": "profession",
+                            "scope": "equip_or_use",
+                            "profession": "Engineering",
+                            "skill": 350,
+                            "source_url": "https://www.wowhead.com/tbc/item=999202/fixture-engineering-hammer",
+                            "confidence": "wowhead_item",
+                        }
+                    ],
+                    "wowhead_url": "https://www.wowhead.com/tbc/item=999202/fixture-engineering-hammer",
+                },
+                {
+                    "id": 999203,
+                    "name": "Blessed Qiraji Fixture Hammer",
+                    "required_level": 60,
+                    "quality": "epic",
+                    "binding": "bind_on_pickup",
+                    "boe": False,
+                    "slot": "Two Hand",
+                    "weapon_type": "Two Hand",
+                    "weapon_subtype": "Mace",
+                    "dps": 320,
+                    "stats": {"strength": 320},
+                    "source_bucket": "quest",
+                    "source_summary": "Quest: Imperial Qiraji Regalia",
+                    "wowhead_url": "https://www.wowhead.com/tbc/item=999203/blessed-qiraji-fixture-hammer",
+                },
+            ]
+        )
+
+        rows, audit = recommendation_rows_for(
+            item_stats,
+            item_variants,
+            racials,
+            profiles,
+            class_name="Paladin",
+            spec_name="Retribution",
+            race="Human",
+            level=64,
+            slot="Two Hand",
+            context="best_overall",
+        )
+
+        blocked_ids = {999201, 999202, 999203}
+        self.assertEqual(rows[0]["item_id"], 999101)
+        self.assertTrue(blocked_ids.isdisjoint({row["item_id"] for row in rows}))
+        self.assertTrue(blocked_ids.isdisjoint({row["item_id"] for row in audit}))
+
+    def test_tradeable_self_craft_requirement_does_not_block_leveling_recommendation(self):
+        _item_stats, item_variants, racials, profiles = self.docs()
+        item_stats = {
+            "item_stats": [
+                {
+                    "id": 999204,
+                    "name": "Fixture BoE Crafted Hammer",
+                    "required_level": 64,
+                    "quality": "rare",
+                    "binding": "bind_on_equip",
+                    "boe": True,
+                    "slot": "Two Hand",
+                    "weapon_type": "Two Hand",
+                    "weapon_subtype": "Mace",
+                    "dps": 90,
+                    "stats": {"strength": 40},
+                    "source_bucket": "crafted",
+                    "source_summary": "Crafted: Blacksmithing",
+                    "requirements": [
+                        {
+                            "type": "profession",
+                            "scope": "self_craft",
+                            "profession": "Blacksmithing",
+                            "source_url": "https://www.wowhead.com/tbc/item=999204/fixture-boe-crafted-hammer",
+                            "confidence": "wowhead_item",
+                        }
+                    ],
+                    "wowhead_url": "https://www.wowhead.com/tbc/item=999204/fixture-boe-crafted-hammer",
+                }
+            ]
+        }
+
+        rows, _audit = recommendation_rows_for(
+            item_stats,
+            item_variants,
+            racials,
+            profiles,
+            class_name="Paladin",
+            spec_name="Retribution",
+            race="Human",
+            level=64,
+            slot="Two Hand",
+            context="best_overall",
+        )
+
+        self.assertEqual(rows[0]["item_id"], 999204)
 
     def test_level_70_requests_are_clamped_and_do_not_emit_devastation(self):
         item_stats, item_variants, racials, profiles = self.docs()

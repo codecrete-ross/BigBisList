@@ -113,6 +113,49 @@ SPEC_WEAPON_STYLE_POLICIES = {
 
 EXPERTISE_RATING_PER_EXPERTISE = 3.94
 
+RAID_SOURCE_ZONES = {
+    "Molten Core",
+    "Blackwing Lair",
+    "Zul'Gurub",
+    "Ruins of Ahn'Qiraj",
+    "Ahn'Qiraj",
+    "Naxxramas",
+    "Karazhan",
+    "Gruul's Lair",
+    "Magtheridon's Lair",
+    "Serpentshrine Cavern",
+    "Tempest Keep",
+    "Hyjal Summit",
+    "Black Temple",
+    "Zul'Aman",
+    "Sunwell Plateau",
+}
+
+CLASSIC_RAID_QUEST_MARKERS = (
+    "blessed qiraji",
+    "imperial qiraji",
+    "dreadnaught",
+    "redemption",
+    "cryptstalker",
+    "earthshatter",
+    "dreamwalker",
+    "bonescythe",
+    "frostfire",
+    "plagueheart",
+    "garb of faith",
+    "ring of the dreadnaught",
+    "ring of redemption",
+    "ring of the cryptstalker",
+    "ring of the earthshatterer",
+    "ring of the dreamwalker",
+    "bonescythe ring",
+    "frostfire ring",
+    "plagueheart ring",
+    "ring of faith",
+)
+
+PROFESSION_GATE_TYPES = {"profession", "profession_specialization", "recipe_known"}
+
 
 def now_utc() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -241,6 +284,70 @@ def source_bucket(item: dict[str, Any]) -> str:
     if source_type:
         return str(source_type)
     return "unknown"
+
+
+def iter_sources(source: dict[str, Any] | None):
+    if not isinstance(source, dict):
+        return
+    yield source
+    for key in ["token_sources", "quest_starter_sources", "recipe_sources"]:
+        for nested_source in source.get(key) or []:
+            yield from iter_sources(nested_source)
+
+
+def item_sources(item: dict[str, Any]):
+    primary = item.get("primary_source") if isinstance(item.get("primary_source"), dict) else None
+    yield from iter_sources(primary)
+    for source in item.get("sources") or []:
+        yield from iter_sources(source)
+
+
+def source_is_raid_gated(source: dict[str, Any]) -> bool:
+    if source.get("content_type") == "raid":
+        return True
+    zone = source.get("zone")
+    return isinstance(zone, str) and zone in RAID_SOURCE_ZONES
+
+
+def item_has_raid_gated_source(item: dict[str, Any]) -> bool:
+    return any(source_is_raid_gated(source) for source in item_sources(item))
+
+
+def item_looks_like_classic_raid_quest_reward(item: dict[str, Any]) -> bool:
+    if source_bucket(item) != "quest":
+        return False
+    text_parts = [item.get("name"), item.get("source_summary")]
+    primary = item.get("primary_source") if isinstance(item.get("primary_source"), dict) else {}
+    text_parts.append(primary.get("entity_name"))
+    text = " ".join(str(part or "") for part in text_parts).lower()
+    return any(marker in text for marker in CLASSIC_RAID_QUEST_MARKERS)
+
+
+def iter_requirements(source_or_item: dict[str, Any]):
+    for requirement in source_or_item.get("requirements") or []:
+        if isinstance(requirement, dict):
+            yield requirement
+    for source in item_sources(source_or_item):
+        for requirement in source.get("requirements") or []:
+            if isinstance(requirement, dict):
+                yield requirement
+
+
+def is_tradeable(item: dict[str, Any]) -> bool:
+    return item.get("boe") is True or item.get("binding") == "bind_on_equip"
+
+
+def item_has_leveling_profession_gate(item: dict[str, Any]) -> bool:
+    tradeable = is_tradeable(item)
+    for requirement in iter_requirements(item):
+        if requirement.get("type") not in PROFESSION_GATE_TYPES:
+            continue
+        scope = requirement.get("scope")
+        if scope == "equip_or_use":
+            return True
+        if not tradeable:
+            return True
+    return False
 
 
 def class_can_use_item(item: dict[str, Any], class_name: str) -> bool:
@@ -403,7 +510,17 @@ def recommendation_slots_for_item(item: dict[str, Any]) -> list[str]:
 
 
 def leveling_source_allowed(item: dict[str, Any], level: int) -> bool:
-    if level <= MAX_LEVELING_LEVEL and source_bucket(item) == "raid_drop":
+    if level > MAX_LEVELING_LEVEL:
+        return True
+
+    bucket = source_bucket(item)
+    if bucket in {"raid_drop", "pvp"}:
+        return False
+    if item_has_raid_gated_source(item):
+        return False
+    if item_looks_like_classic_raid_quest_reward(item):
+        return False
+    if item_has_leveling_profession_gate(item):
         return False
     return True
 

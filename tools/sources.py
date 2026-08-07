@@ -333,16 +333,21 @@ def format_costs(costs: list[dict[str, Any]] | None) -> str:
 
 def compact_source(source: dict[str, Any]) -> str:
     source_type = source.get("type")
-    entity = source.get("entity_name") or source.get("profession") or "Unknown"
+    entity = source.get("entity_name") or source.get("profession")
     zone = source.get("zone")
     costs = format_costs(source.get("costs"))
 
     if source_type == "drop":
         if source.get("world_drop"):
             return "World Drop"
-        text = f"Drop: {entity}"
-        if zone:
-            text += f" ({zone})"
+        if entity:
+            text = f"Drop: {entity}"
+            if zone:
+                text += f" ({zone})"
+        elif zone:
+            text = f"Drop: {zone}"
+        else:
+            text = "Drop"
         if isinstance(source.get("drop_percent"), (int, float)):
             text += f" {float(source['drop_percent']):.1f}%"
         return text
@@ -375,7 +380,12 @@ def compact_source(source: dict[str, Any]) -> str:
         return text
 
     if source_type == "quest":
-        text = f"Quest: {entity}"
+        if entity:
+            text = f"Quest: {entity}"
+        elif zone:
+            text = f"Quest: {zone}"
+        else:
+            text = "Quest"
         quest_starter_sources = [
             starter_source
             for starter_source in source.get("quest_starter_sources", [])

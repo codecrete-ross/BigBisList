@@ -154,7 +154,17 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertEqual(unknown_source_items, [])
 
     def iter_requirements(self):
-        for family in ["items", "gems", "gem_sources", "enchants", "enchant_sources", "consumables", "leveling_gear"]:
+        for family in [
+            "items",
+            "item_stats",
+            "gems",
+            "gem_sources",
+            "enchants",
+            "enchant_sources",
+            "consumables",
+            "leveling_gear",
+            "leveling_recommendations",
+        ]:
             doc = canonical_json(family)
             stack = [doc]
             while stack:

@@ -7,6 +7,7 @@ from typing import Any
 
 CANONICAL_REPUTATIONS = (
     "Ashtongue Deathsworn",
+    "Brood of Nozdormu",
     "Cenarion Circle",
     "Cenarion Expedition",
     "Honor Hold",
@@ -14,8 +15,10 @@ CANONICAL_REPUTATIONS = (
     "Kurenai",
     "Lower City",
     "Netherwing",
+    "Sha'tari Skyguard",
     "Ogri'la",
     "Shattered Sun Offensive",
+    "Sporeggar",
     "The Aldor",
     "The Consortium",
     "The Mag'har",
@@ -25,7 +28,25 @@ CANONICAL_REPUTATIONS = (
     "The Violet Eye",
     "Timbermaw Hold",
     "Thrallmar",
+    "Tranquillien",
 )
+
+REPUTATION_SIDES = {
+    "Honor Hold": "Alliance",
+    "Kurenai": "Alliance",
+    "Thrallmar": "Horde",
+    "The Mag'har": "Horde",
+}
+
+VENDOR_SIDES_BY_ID = {
+    17585: "Horde",  # Quartermaster Urgronn
+    17657: "Alliance",  # Logistics Officer Ulrike
+}
+
+VENDOR_SIDES_BY_NAME = {
+    "logistics officer ulrike": "Alliance",
+    "quartermaster urgronn": "Horde",
+}
 
 
 def _key(value: str) -> str:
@@ -149,3 +170,57 @@ def normalize_requirements(requirements: list[dict[str, Any]] | None) -> list[di
             seen.add(key)
             normalized.append(item)
     return normalized
+
+def side_for_reputation(reputation: str | None) -> str | None:
+    names = normalize_reputation_names(reputation)
+    sides = {REPUTATION_SIDES[name] for name in names if name in REPUTATION_SIDES}
+    return next(iter(sides)) if len(sides) == 1 else None
+
+
+def side_for_vendor(entity_id: Any = None, entity_name: str | None = None) -> str | None:
+    try:
+        vendor_id = int(entity_id)
+    except (TypeError, ValueError):
+        vendor_id = None
+    if vendor_id in VENDOR_SIDES_BY_ID:
+        return VENDOR_SIDES_BY_ID[vendor_id]
+
+    key = _key(str(entity_name or ""))
+    return VENDOR_SIDES_BY_NAME.get(key)
+
+
+def requirement_side(requirement: dict[str, Any] | None) -> str | None:
+    if not isinstance(requirement, dict) or requirement.get("type") != "reputation":
+        return None
+    return side_for_reputation(requirement.get("reputation"))
+
+
+def infer_source_side(source: dict[str, Any] | None) -> str | None:
+    if not isinstance(source, dict):
+        return None
+
+    side = source.get("side")
+    if side in {"Alliance", "Horde"}:
+        return side
+
+    if source.get("type") in {"vendor", "pvp", "token_turnin"}:
+        side = side_for_vendor(source.get("vendor_id") or source.get("entity_id"), source.get("entity_name"))
+        if side:
+            return side
+
+    requirement_sides = {
+        side
+        for side in (requirement_side(requirement) for requirement in source.get("requirements") or [])
+        if side
+    }
+    if len(requirement_sides) == 1:
+        return next(iter(requirement_sides))
+
+    nested_sides: set[str] = set()
+    for key in ["token_sources", "quest_starter_sources", "recipe_sources"]:
+        for nested_source in source.get(key) or []:
+            nested_side = infer_source_side(nested_source)
+            if nested_side:
+                nested_sides.add(nested_side)
+    return next(iter(nested_sides)) if len(nested_sides) == 1 else None
+
