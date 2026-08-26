@@ -55,6 +55,12 @@ ITEM_FALLBACK_SCHEMA = [
     "id",
     "name",
     "quality",
+    "source_summary",
+    "wowhead_url",
+    "acquisition_phase",
+    "primary_source",
+    "sources",
+    "requirements",
 ]
 
 SOURCE_SCHEMA = [
@@ -63,12 +69,16 @@ SOURCE_SCHEMA = [
     "entity_name",
     "source_url",
     "zone",
+    "location_area",
+    "location_note",
     "content_type",
     "confidence",
     "count",
     "out_of",
     "drop_percent",
     "vendor_id",
+    "price_copper",
+    "purchase_quantity",
     "costs",
     "token_sources",
     "quest_id",
@@ -267,7 +277,7 @@ def compact_requirements(requirements: list[dict] | None) -> list[list] | None:
 
 
 def compact_value(schema_name: str, key: str, value):
-    if schema_name in {"item", "source_record"}:
+    if schema_name in {"item", "item_fallback", "source_record"}:
         if key == "primary_source":
             return compact_source(value)
         if key == "sources":
@@ -400,6 +410,12 @@ def build_item_fallbacks(items: list[dict], item_stats: list[dict], leveling_rec
             "id": item_id,
             "name": item.get("name"),
             "quality": item.get("quality"),
+            "source_summary": item.get("source_summary"),
+            "wowhead_url": item.get("wowhead_url"),
+            "acquisition_phase": item.get("acquisition_phase") or item.get("phase"),
+            "primary_source": item.get("primary_source"),
+            "sources": item.get("sources"),
+            "requirements": item.get("requirements"),
         })
 
     return fallbacks

@@ -4,7 +4,8 @@ from types import SimpleNamespace
 import tools.scrape_wowhead as scraper
 from tools.project import canonical_json
 from tools.scrape_wowhead import build_audit
-from tools.sources import classify_source, derive_acquisition_phase, derive_primary_source, phase_rank, source_filter_key, summarize_sources
+from tools.sources import classify_source, derive_acquisition_phase, derive_primary_source, format_price_copper, format_purchase_cost, phase_rank, source_filter_key, summarize_sources
+from tools.validate_data import audit_purchase_source_completeness, validate_source_detail_fields
 
 
 class StructuredSourceTests(unittest.TestCase):
@@ -432,6 +433,111 @@ class StructuredSourceTests(unittest.TestCase):
             ),
             "Quest: The Fall of Magtheridon via Magtheridon's Head - Magtheridon (Magtheridon's Lair) 46.1%",
         )
+
+    def test_vendor_money_and_bundle_cost_formatting_stays_compact(self):
+        source = {
+            "type": "vendor",
+            "entity_name": "Floyd Pinkus",
+            "location_area": "Hellfire Peninsula",
+            "price_copper": 2850,
+            "purchase_quantity": 200,
+            "confidence": "fixture",
+        }
+
+        self.assertEqual(format_price_copper(800000), "80g")
+        self.assertEqual(format_price_copper(27000), "2g 70s")
+        self.assertEqual(format_purchase_cost(source), "28s 50c per 200")
+        self.assertEqual(summarize_sources([source]), "Vendor: Floyd Pinkus (Hellfire Peninsula)")
+
+    def test_primary_vendor_prefers_complete_route_over_reported_zero_cost_route(self):
+        incomplete = {
+            "type": "vendor",
+            "entity_name": "Aardvark Seller",
+            "location_area": "Stormwind City",
+            "confidence": "fixture",
+        }
+        complete = {
+            "type": "vendor",
+            "entity_name": "Later Seller",
+            "location_area": "Sunwell Plateau",
+            "zone": "Sunwell Plateau",
+            "price_copper": 10000,
+            "purchase_quantity": 1,
+            "confidence": "fixture",
+        }
+
+        self.assertEqual(derive_acquisition_phase([complete]), "SWP")
+        self.assertEqual(derive_primary_source([incomplete, complete]), complete)
+
+        complete_pvp = {
+            "type": "pvp",
+            "entity_name": "Honor Quartermaster",
+            "location_area": "Stormwind City",
+            "costs": [{"amount": 1000, "name": "Honor Points", "currency_id": 1901}],
+            "confidence": "fixture",
+        }
+        self.assertEqual(derive_primary_source([incomplete, complete_pvp]), complete_pvp)
+
+        unknown = {"type": "unknown", "confidence": "fixture"}
+        self.assertEqual(derive_primary_source([unknown, incomplete]), incomplete)
+
+    def test_purchase_source_completeness_audit_recurses_without_rejecting_unknowns(self):
+        sources = [
+            {
+                "type": "crafted",
+                "entity_name": "Tailoring",
+                "recipe_sources": [
+                    {
+                        "type": "vendor",
+                        "entity_name": "Recipe Seller",
+                        "location_area": "Shattrath City",
+                        "price_copper": 27000,
+                        "purchase_quantity": 1,
+                    },
+                    {
+                        "type": "vendor",
+                        "entity_name": "Reported Seller",
+                        "location_note": "Portable summoned vendor",
+                    },
+                ],
+            }
+        ]
+
+        audit = audit_purchase_source_completeness(sources, "fixture.sources")
+        self.assertEqual(audit["total"], 2)
+        self.assertEqual(audit["complete"], 1)
+        self.assertEqual(audit["missing_vendor"], 0)
+        self.assertEqual(audit["missing_location"], 1)
+        self.assertEqual(audit["missing_cost"], 1)
+        self.assertIn("fixture.sources[0].recipe_sources[1] is missing location, cost", audit["issues"])
+
+    def test_recursive_source_detail_validation_rejects_invalid_new_fields(self):
+        errors = []
+        validate_source_detail_fields(
+            "Fixture",
+            [
+                {
+                    "type": "crafted",
+                    "recipe_sources": [
+                        {
+                            "type": "vendor",
+                            "entity_name": "Unknown",
+                            "location_area": "",
+                            "price_copper": 0,
+                            "purchase_quantity": False,
+                            "costs": [{"amount": 8, "name": "Item 29735", "item_id": 29735}],
+                        }
+                    ],
+                }
+            ],
+            errors,
+        )
+
+        self.assertTrue(any("location_area" in error for error in errors))
+        self.assertTrue(any("price_copper" in error for error in errors))
+        self.assertTrue(any("purchase_quantity" in error for error in errors))
+        self.assertTrue(any("entity_name must not be a placeholder" in error for error in errors))
+        self.assertTrue(any("name must not be a placeholder" in error for error in errors))
 
     def test_scrape_audit_passes_seed_structured_data(self):
         audit = build_audit()

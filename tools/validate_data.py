@@ -7,6 +7,7 @@ import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 if __package__ is None or __package__ == "":
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -62,6 +63,16 @@ TBC_RACES = {
 RACIAL_MODIFIER_TYPES = {"numeric", "contextual", "audit_only"}
 MAX_LEVELING_LEVEL = 69
 LEVEL_BANDS = {"1-19", "20-39", "40-57", "58-69"}
+SOURCE_CHILD_KEYS = ("token_sources", "quest_starter_sources", "recipe_sources")
+PURCHASE_SOURCE_TYPES = {"vendor", "pvp", "token_turnin"}
+PLACEHOLDER_SOURCE_LABEL = re.compile(r"^item\s+\d+$", re.IGNORECASE)
+
+
+def is_placeholder_source_label(value: object) -> bool:
+    if not isinstance(value, str):
+        return False
+    normalized = value.strip()
+    return normalized.lower() in {"none", "unknown"} or bool(PLACEHOLDER_SOURCE_LABEL.fullmatch(normalized))
 
 
 @dataclass
@@ -92,6 +103,135 @@ def validate_source_side(label: str, source: object, errors: list[str]) -> None:
     inferred_side = infer_source_side(source)
     if inferred_side:
         _require(side == inferred_side, errors, f"{label} needs side {inferred_side}")
+
+
+def iter_source_tree(sources: object, label: str = "sources"):
+    if not isinstance(sources, list):
+        return
+    for index, source in enumerate(sources):
+        source_label = f"{label}[{index}]"
+        yield source_label, source
+        if not isinstance(source, dict):
+            continue
+        for child_key in SOURCE_CHILD_KEYS:
+            child_sources = source.get(child_key)
+            if isinstance(child_sources, list):
+                yield from iter_source_tree(child_sources, f"{source_label}.{child_key}")
+
+
+def validate_source_detail_fields(label: str, sources: object, errors: list[str]) -> None:
+    if sources is None:
+        return
+    _require(isinstance(sources, list), errors, f"{label} sources must be an array")
+    if not isinstance(sources, list):
+        return
+
+    for source_label, source in iter_source_tree(sources, f"{label} sources"):
+        _require(isinstance(source, dict), errors, f"{source_label} must be an object")
+        if not isinstance(source, dict):
+            continue
+
+        for field_name in ("location_area", "location_note"):
+            if field_name in source:
+                value = source.get(field_name)
+                _require(isinstance(value, str) and bool(value.strip()), errors, f"{source_label} {field_name} must be a non-empty string")
+
+        if source.get("type") in PURCHASE_SOURCE_TYPES and "entity_name" in source:
+            _require(
+                not is_placeholder_source_label(source.get("entity_name")),
+                errors,
+                f"{source_label} entity_name must not be a placeholder",
+            )
+
+        if "price_copper" in source:
+            price_copper = source.get("price_copper")
+            _require(
+                isinstance(price_copper, int) and not isinstance(price_copper, bool) and price_copper > 0,
+                errors,
+                f"{source_label} price_copper must be a positive integer",
+            )
+        if "purchase_quantity" in source:
+            purchase_quantity = source.get("purchase_quantity")
+            _require(
+                isinstance(purchase_quantity, int) and not isinstance(purchase_quantity, bool) and purchase_quantity > 0,
+                errors,
+                f"{source_label} purchase_quantity must be a positive integer",
+            )
+
+        costs = source.get("costs")
+        if costs is not None:
+            _require(isinstance(costs, list), errors, f"{source_label} costs must be an array")
+        if isinstance(costs, list):
+            for cost_index, cost in enumerate(costs):
+                cost_label = f"{source_label} costs[{cost_index}]"
+                _require(isinstance(cost, dict), errors, f"{cost_label} must be an object")
+                if not isinstance(cost, dict):
+                    continue
+                amount = cost.get("amount")
+                _require(
+                    isinstance(amount, int) and not isinstance(amount, bool) and amount >= 0,
+                    errors,
+                    f"{cost_label} needs a non-negative integer amount",
+                )
+                cost_name = cost.get("name")
+                _require(bool(cost_name), errors, f"{cost_label} needs a name")
+                _require(
+                    not is_placeholder_source_label(cost_name),
+                    errors,
+                    f"{cost_label} name must not be a placeholder",
+                )
+
+
+def audit_purchase_source_completeness(sources: object, label: str = "sources") -> dict[str, Any]:
+    audit: dict[str, Any] = {
+        "total": 0,
+        "complete": 0,
+        "missing_vendor": 0,
+        "missing_location": 0,
+        "missing_cost": 0,
+        "issues": [],
+    }
+    for source_label, source in iter_source_tree(sources, label):
+        if not isinstance(source, dict) or source.get("type") not in PURCHASE_SOURCE_TYPES:
+            continue
+
+        audit["total"] += 1
+        missing: list[str] = []
+        if not source.get("entity_name") or is_placeholder_source_label(source.get("entity_name")):
+            audit["missing_vendor"] += 1
+            missing.append("vendor")
+        if not (source.get("location_area") or source.get("zone")):
+            audit["missing_location"] += 1
+            missing.append("location")
+        has_money_cost = (
+            isinstance(source.get("price_copper"), int)
+            and not isinstance(source.get("price_copper"), bool)
+            and source["price_copper"] > 0
+        )
+        has_generic_cost = any(
+            isinstance(cost, dict)
+            and isinstance(cost.get("amount"), int)
+            and not isinstance(cost.get("amount"), bool)
+            and cost["amount"] > 0
+            and bool(cost.get("name"))
+            and not is_placeholder_source_label(cost.get("name"))
+            for cost in source.get("costs", [])
+        ) if isinstance(source.get("costs"), list) else False
+        if not (has_money_cost or has_generic_cost):
+            audit["missing_cost"] += 1
+            missing.append("cost")
+
+        if missing:
+            audit["issues"].append(f"{source_label} is missing {', '.join(missing)}")
+        else:
+            audit["complete"] += 1
+    return audit
+
+
+def merge_purchase_source_audit(target: dict[str, Any], source: dict[str, Any]) -> None:
+    for key in ("total", "complete", "missing_vendor", "missing_location", "missing_cost"):
+        target[key] += source[key]
+    target["issues"].extend(source["issues"])
 
 
 def validate_requirements(label: str, requirements: object, errors: list[str], required: bool = False) -> None:
@@ -221,6 +361,7 @@ def validate() -> ValidationResult:
         validate_requirements(f"Item {item_id}", item.get("requirements"), errors)
         sources = item.get("sources")
         _require(isinstance(sources, list) and len(sources) > 0, errors, f"Item {item_id} must have at least one structured source")
+        validate_source_detail_fields(f"Item {item_id}", sources, errors)
         if isinstance(sources, list) and sources:
             _require(item.get("primary_source") == derive_primary_source(sources), errors, f"Item {item_id} primary_source is not derived from sources")
             _require(item.get("source_summary") == summarize_sources(sources), errors, f"Item {item_id} source_summary is not derived from sources")
@@ -474,6 +615,7 @@ def validate() -> ValidationResult:
         _require(isinstance(restrictions, dict), errors, f"Item stat {item_id} restrictions must be an object")
         source_summary = item.get("source_summary")
         _require(source_summary is None or isinstance(source_summary, str), errors, f"Item stat {item_id} source_summary must be a string")
+        validate_source_detail_fields(f"Item stat {item_id}", item.get("sources"), errors)
         for source in item.get("sources") or []:
             validate_source_side(f"Item stat {item_id} source", source, errors)
             validate_requirements(f"Item stat {item_id} source", source.get("requirements"), errors)
@@ -579,6 +721,7 @@ def validate() -> ValidationResult:
             _require(bool(source_row.get("name")), errors, f"{source_doc_name} {source_id} needs name")
             _require(str(source_row.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"{source_doc_name} {source_id} needs a Wowhead source URL")
             validate_requirements(f"{source_doc_name} {source_id}", source_row.get("requirements"), errors)
+            validate_source_detail_fields(f"{source_doc_name} {source_id}", source_row.get("sources"), errors)
             for source in source_row.get("sources", []):
                 validate_requirements(f"{source_doc_name} {source_id} source", source.get("requirements"), errors)
 
@@ -607,6 +750,27 @@ def validate() -> ValidationResult:
         _require(bool(override.get("reviewed_at")), errors, f"Override {override_id} is missing reviewed_at")
         _require(str(override.get("source_url", "")).startswith("https://www.wowhead.com/tbc/"), errors, f"Override {override_id} source_url must be a Wowhead TBC URL")
 
+    purchase_source_audit: dict[str, Any] = {
+        "total": 0,
+        "complete": 0,
+        "missing_vendor": 0,
+        "missing_location": 0,
+        "missing_cost": 0,
+        "issues": [],
+    }
+    for doc_name, rows in [
+        ("items", items_doc.get("items", [])),
+        ("item_stats", item_stats_doc.get("item_stats", [])),
+        ("gem_sources", gem_sources_doc.get("gem_sources", [])),
+        ("enchant_sources", enchant_sources_doc.get("enchant_sources", [])),
+    ]:
+        for row_index, row in enumerate(rows):
+            if isinstance(row, dict):
+                merge_purchase_source_audit(
+                    purchase_source_audit,
+                    audit_purchase_source_completeness(row.get("sources"), f"{doc_name}[{row_index}].sources"),
+                )
+
     summary = {
         "classes": len(class_names),
         "specs": spec_count,
@@ -627,6 +791,11 @@ def validate() -> ValidationResult:
         "scoring_profiles": len(scoring_profiles_doc.get("profiles", [])),
         "leveling_recommendations": len(leveling_recommendations_doc.get("leveling_recommendations", [])),
         "overrides": len(overrides_doc.get("overrides", [])),
+        "purchase_sources": purchase_source_audit["total"],
+        "purchase_sources_complete": purchase_source_audit["complete"],
+        "purchase_sources_missing_vendor": purchase_source_audit["missing_vendor"],
+        "purchase_sources_missing_location": purchase_source_audit["missing_location"],
+        "purchase_sources_missing_cost": purchase_source_audit["missing_cost"],
         "coverage": str(bis_doc.get("coverage", "")),
     }
     return ValidationResult(not errors, errors, summary)

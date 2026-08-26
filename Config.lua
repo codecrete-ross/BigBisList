@@ -21,10 +21,49 @@ if version == nil or version == "" or version == "@project-version@" then
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 15
+local DEFAULTS_VERSION = 16
 local DEFAULT_SELECTED_CLASS = "Druid"
 local DEFAULT_SELECTED_SPEC = "Feral dps"
 local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel
+local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"
+local DEFAULT_ENDGAME_PHASE_KEY = "PR"
+local DEFAULT_CONTENT_MODE = "endgame"
+
+local CONTENT_MODES = {
+    endgame = true,
+    leveling = true,
+}
+
+local ENDGAME_PHASE_KEYS = {
+    PR = true,
+    T4 = true,
+    T5 = true,
+    T6 = true,
+    ZA = true,
+    SWP = true,
+}
+
+local MODE_DEFAULT_TABS = {
+    endgame = "Upgrades",
+    leveling = "Gear Guide",
+}
+
+local MODE_TABS = {
+    endgame = {
+        Upgrades = true,
+        ["By Slot"] = true,
+        Equipped = true,
+        Enhance = true,
+        Wishlist = true,
+        Settings = true,
+    },
+    leveling = {
+        ["Gear Guide"] = true,
+        Equipped = true,
+        Wishlist = true,
+        Settings = true,
+    },
+}
 
 local PLAYER_CLASS_NAMES = {
     DRUID = DEFAULT_SELECTED_CLASS,
@@ -49,10 +88,68 @@ local TAB_NAME_ALIASES = {
     Gear = "Equipped",
     Planner = "Upgrades",
     Enhancements = "Enhance",
+    ["BiS List"] = "By Slot",
+    ["My Gear"] = "Equipped",
+    Leveling = "Gear Guide",
 }
 
 local function normalizeTabName(tabName)
     return TAB_NAME_ALIASES[tabName] or tabName
+end
+
+local function normalizeContentMode(mode)
+    if CONTENT_MODES[mode] then
+        return mode
+    end
+    return DEFAULT_CONTENT_MODE
+end
+
+local function isEndgamePhaseKey(phaseKey)
+    return ENDGAME_PHASE_KEYS[phaseKey] == true
+end
+
+local function tabIsValidForMode(tabName, mode)
+    local normalizedMode = normalizeContentMode(mode)
+    local normalizedTab = normalizeTabName(tabName)
+    return MODE_TABS[normalizedMode][normalizedTab] == true
+end
+
+local function levelingTabFromLegacyTab(tabName)
+    local normalizedTab = normalizeTabName(tabName)
+    if tabIsValidForMode(normalizedTab, "leveling") then
+        return normalizedTab
+    end
+    if normalizedTab == "Upgrades" or normalizedTab == "By Slot" or normalizedTab == "Enhance" then
+        return MODE_DEFAULT_TABS.leveling
+    end
+    return nil
+end
+
+local VIEW_STATE_KEY_ALIASES = {
+    upgrades = "upgrades",
+    Upgrades = "upgrades",
+    planner = "upgrades",
+    Planner = "upgrades",
+    bisList = "bisList",
+    ["BiS List"] = "bisList",
+    ["By Slot"] = "bisList",
+    Phase = "bisList",
+    gearGuide = "gearGuide",
+    ["Gear Guide"] = "gearGuide",
+    Leveling = "gearGuide",
+    myGear = "myGear",
+    ["My Gear"] = "myGear",
+    Equipped = "myGear",
+    Gear = "myGear",
+    enhancements = "enhancements",
+    Enhancements = "enhancements",
+    Enhance = "enhancements",
+    wishlist = "wishlist",
+    Wishlist = "wishlist",
+}
+
+local function normalizeViewStateKey(viewName)
+    return VIEW_STATE_KEY_ALIASES[viewName]
 end
 
 BigBiSList.defaults = {
@@ -70,6 +167,7 @@ BigBiSList.defaults = {
             height = 660,
             scale = 1,
             locked = false,
+            inspectorVisible = false,
         },
         tooltips = {
             enabled = true,
@@ -78,6 +176,7 @@ BigBiSList.defaults = {
             showAllOnAlt = true,
             specFilters = {},
             specFiltersInitialized = false,
+            collapsedClasses = {},
         },
     },
     char = {
@@ -89,8 +188,13 @@ BigBiSList.defaults = {
         selection = {
             class = DEFAULT_SELECTED_CLASS,
             spec = DEFAULT_SELECTED_SPEC,
-            phase = "PR",
+            phase = DEFAULT_ENDGAME_PHASE_KEY,
+            mode = DEFAULT_CONTENT_MODE,
             tab = "Upgrades",
+            lastTabs = {
+                endgame = "Upgrades",
+                leveling = "Gear Guide",
+            },
         },
         leveling = {
             selectedLevel = MAX_LEVELING_LEVEL,
@@ -118,6 +222,40 @@ BigBiSList.defaults = {
             faction = "all",
             longevity = "all",
             slots = {},
+        },
+        viewState = {
+            upgrades = {
+                sort = "priority",
+                sortDirection = "desc",
+                upgradeMode = "actual",
+                usefulness = "all",
+            },
+            bisList = {
+                sort = "rank",
+                sortDirection = "asc",
+                groupBy = "slot",
+            },
+            gearGuide = {
+                sort = "priority",
+                sortDirection = "asc",
+                groupBy = "slot",
+                recommendationCategory = "all",
+            },
+            myGear = {
+                sort = "slot",
+                sortDirection = "asc",
+            },
+            enhancements = {
+                sort = "recommendation",
+                sortDirection = "asc",
+                type = "all",
+                appliedState = "all",
+            },
+            wishlist = {
+                sort = "priority",
+                sortDirection = "asc",
+                relevance = "all",
+            },
         },
         bankCache = {
             scanned = false,
@@ -161,6 +299,80 @@ local function migrateSelection(char)
 
     char.selection.tab = normalizeTabName(char.selection.tab)
     char.selectedTab = normalizeTabName(char.selectedTab)
+end
+
+local function recoverEndgamePhase(char)
+    local selection = char.selection or {}
+    if isEndgamePhaseKey(selection.phase) then
+        return selection.phase
+    end
+    if isEndgamePhaseKey(selection.endgamePhase) then
+        return selection.endgamePhase
+    end
+    if isEndgamePhaseKey(char.selectedPhase) then
+        return char.selectedPhase
+    end
+    if isEndgamePhaseKey(char.lastDetectedPhase) then
+        return char.lastDetectedPhase
+    end
+    return DEFAULT_ENDGAME_PHASE_KEY
+end
+
+local function normalizeContentModeState(char)
+    char.selection = char.selection or {}
+    local selection = char.selection
+    local legacyLevelingPhase = selection.phase == LEVELING_PHASE_KEY or char.selectedPhase == LEVELING_PHASE_KEY
+    local mode = legacyLevelingPhase and "leveling" or normalizeContentMode(selection.mode)
+    local activeTab = normalizeTabName(selection.tab or char.selectedTab)
+
+    if type(selection.lastTabs) ~= "table" then
+        selection.lastTabs = {}
+    end
+
+    local endgameTab = normalizeTabName(selection.lastTabs.endgame)
+    if not tabIsValidForMode(endgameTab, "endgame") then
+        endgameTab = MODE_DEFAULT_TABS.endgame
+    end
+
+    local levelingTab = levelingTabFromLegacyTab(selection.lastTabs.leveling)
+    if not levelingTab then
+        levelingTab = MODE_DEFAULT_TABS.leveling
+    end
+
+    if mode == "leveling" then
+        activeTab = levelingTabFromLegacyTab(activeTab)
+        if activeTab then
+            levelingTab = activeTab
+        end
+    elseif tabIsValidForMode(activeTab, "endgame") then
+        endgameTab = activeTab
+    end
+
+    selection.phase = recoverEndgamePhase(char)
+    selection.endgamePhase = nil
+    selection.mode = mode
+    selection.lastTabs.endgame = endgameTab
+    selection.lastTabs.leveling = levelingTab
+    selection.tab = selection.lastTabs[mode]
+end
+
+local function migrateViewState(char, previousVersion)
+    if previousVersion ~= nil and previousVersion >= 16 then
+        return
+    end
+
+    local filters = char.filters
+    local upgrades = char.viewState and char.viewState.upgrades
+    if type(filters) ~= "table" or type(upgrades) ~= "table" then
+        return
+    end
+
+    if filters.upgradeMode ~= nil then
+        upgrades.upgradeMode = filters.upgradeMode
+    end
+    if filters.longevity ~= nil then
+        upgrades.usefulness = filters.longevity
+    end
 end
 
 local function migrateLegacyDefaults(char, previousVersion)
@@ -546,6 +758,21 @@ local function syncSelectionAliases(char)
     char.selectedTab = char.selection.tab
 end
 
+local function setContentModeOnChar(char, requestedMode)
+    normalizeContentModeState(char)
+
+    local selection = char.selection
+    local currentMode = selection.mode
+    local targetMode = normalizeContentMode(requestedMode)
+    local currentTab = normalizeTabName(selection.tab)
+    if tabIsValidForMode(currentTab, currentMode) then
+        selection.lastTabs[currentMode] = currentTab
+    end
+
+    selection.mode = targetMode
+    selection.tab = selection.lastTabs[targetMode] or MODE_DEFAULT_TABS[targetMode]
+end
+
 local function applyDetectedPlayerSelection(char)
     if not char or BigBiSList.classSpecAutoSelectionActive == false then
         return false
@@ -668,6 +895,62 @@ function BigBiSList:GetSelection()
     return BigBiSListCharDB.selection
 end
 
+function BigBiSList:GetContentMode()
+    self:EnsureDatabase()
+    return BigBiSListCharDB.selection.mode
+end
+
+function BigBiSList:SetContentMode(mode)
+    self:EnsureDatabase()
+
+    if not CONTENT_MODES[mode] then
+        return false
+    end
+
+    local selection = BigBiSListCharDB.selection
+    local previousMode = selection.mode
+    local previousTab = selection.tab
+    setContentModeOnChar(BigBiSListCharDB, mode)
+    syncSelectionAliases(BigBiSListCharDB)
+
+    return selection.mode ~= previousMode or selection.tab ~= previousTab
+end
+
+function BigBiSList:GetEffectivePhaseKey(selection)
+    if selection == nil then
+        self:EnsureDatabase()
+        selection = BigBiSListCharDB.selection
+    end
+
+    if selection.mode == "leveling" or selection.phase == LEVELING_PHASE_KEY then
+        return LEVELING_PHASE_KEY
+    end
+    if isEndgamePhaseKey(selection.phase) then
+        return selection.phase
+    end
+    return DEFAULT_ENDGAME_PHASE_KEY
+end
+
+function BigBiSList:GetViewState(viewName)
+    self:EnsureDatabase()
+
+    if viewName == nil then
+        viewName = BigBiSListCharDB.selection.tab
+    end
+    local viewKey = normalizeViewStateKey(viewName)
+    return viewKey and BigBiSListCharDB.viewState[viewKey] or nil
+end
+
+function BigBiSList:IsInspectorVisible()
+    self:EnsureDatabase()
+    return BigBiSListDB.profile.window.inspectorVisible == true
+end
+
+function BigBiSList:SetInspectorVisible(visible)
+    self:EnsureDatabase()
+    BigBiSListDB.profile.window.inspectorVisible = visible ~= false
+end
+
 function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
     self:EnsureDatabase()
 
@@ -681,13 +964,21 @@ function BigBiSList:SetSelection(className, specName, phaseKey, tabName)
         BigBiSListCharDB.selectedSpec = specName
     end
     if phaseKey then
-        selection.phase = phaseKey
-        BigBiSListCharDB.selectedPhase = phaseKey
+        if phaseKey == LEVELING_PHASE_KEY then
+            setContentModeOnChar(BigBiSListCharDB, "leveling")
+        elseif isEndgamePhaseKey(phaseKey) then
+            selection.phase = phaseKey
+        end
     end
     if tabName then
-        selection.tab = normalizeTabName(tabName)
-        BigBiSListCharDB.selectedTab = selection.tab
+        local normalizedTab = normalizeTabName(tabName)
+        if tabIsValidForMode(normalizedTab, selection.mode) then
+            selection.tab = normalizedTab
+            selection.lastTabs[selection.mode] = normalizedTab
+        end
     end
+
+    syncSelectionAliases(BigBiSListCharDB)
 end
 
 function BigBiSList:GetCharacterDB()
@@ -695,7 +986,42 @@ function BigBiSList:GetCharacterDB()
     return BigBiSListCharDB
 end
 
+local initializedAccountDB
+local initializedProfileDB
+local initializedCharacterDB
+
+local function databaseInitializationIsCurrent(addon)
+    local accountDB = BigBiSListDB
+    local profileDB = type(accountDB) == "table" and accountDB.profile or nil
+    local characterDB = BigBiSListCharDB
+
+    if accountDB ~= initializedAccountDB
+        or profileDB ~= initializedProfileDB
+        or characterDB ~= initializedCharacterDB then
+        return false
+    end
+    if type(profileDB) ~= "table"
+        or type(characterDB) ~= "table"
+        or profileDB.defaultsVersion ~= DEFAULTS_VERSION
+        or characterDB.defaultsVersion ~= DEFAULTS_VERSION
+        or accountDB.char ~= nil then
+        return false
+    end
+
+    local tooltips = profileDB.tooltips
+    if addon.GetClassSpecIndex
+        and (type(tooltips) ~= "table" or tooltips.specFiltersInitialized ~= true) then
+        return false
+    end
+    return true
+end
+
 function BigBiSList:EnsureDatabase()
+    local accountDB = BigBiSListDB
+    if databaseInitializationIsCurrent(self) then
+        return accountDB
+    end
+
     BigBiSListDB = BigBiSListDB or {}
     BigBiSListDB.profile = BigBiSListDB.profile or {}
     BigBiSListDB.char = nil
@@ -710,6 +1036,8 @@ function BigBiSList:EnsureDatabase()
     applyDefaults(BigBiSListCharDB, self.defaults.char)
     migrateSelection(BigBiSListCharDB)
     migrateLegacyDefaults(BigBiSListCharDB, charPreviousVersion)
+    normalizeContentModeState(BigBiSListCharDB)
+    migrateViewState(BigBiSListCharDB, charPreviousVersion)
     migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
     migrateFacetedFilters(BigBiSListCharDB, charPreviousVersion)
@@ -720,6 +1048,10 @@ function BigBiSList:EnsureDatabase()
     syncSelectionAliases(BigBiSListCharDB)
     BigBiSListDB.profile.defaultsVersion = DEFAULTS_VERSION
     BigBiSListCharDB.defaultsVersion = DEFAULTS_VERSION
+
+    initializedAccountDB = BigBiSListDB
+    initializedProfileDB = BigBiSListDB.profile
+    initializedCharacterDB = BigBiSListCharDB
 
     return BigBiSListDB
 end

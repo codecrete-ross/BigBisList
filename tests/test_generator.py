@@ -1,7 +1,7 @@
 from pathlib import Path
 import unittest
 
-from tools.generate_lua import OUTPUT_PATH, build_data, render_lua
+from tools.generate_lua import OUTPUT_PATH, build_data, compact_record, render_lua
 from tools.project import canonical_json
 
 
@@ -94,6 +94,57 @@ class GeneratorTests(unittest.TestCase):
         self.assertEqual(fallbacks[29914][positions["name"]], "Hellfire Skiver")
         self.assertEqual(fallbacks[29914][positions["quality"]], "uncommon")
         self.assertNotIn(25762, fallbacks)
+
+    def test_item_fallbacks_preserve_acquisition_sources(self):
+        data = build_data()
+        schema = data["schemas"]["item_fallback"]
+        positions = {key: index for index, key in enumerate(schema)}
+        source_schema = data["schemas"]["source"]
+        source_positions = {key: index for index, key in enumerate(source_schema)}
+        fallbacks = {
+            row[positions["id"]]: row
+            for row in data["item_fallbacks"]
+        }
+
+        vendor_fallback = next(
+            row
+            for row in fallbacks.values()
+            if len(row) > positions["sources"]
+            and row[positions["sources"]]
+            and any(
+                source[source_positions["type"]] in {"vendor", "pvp", "token_turnin"}
+                for source in row[positions["sources"]]
+            )
+        )
+
+        self.assertTrue(vendor_fallback[positions["source_summary"]])
+        self.assertTrue(vendor_fallback[positions["primary_source"]])
+        self.assertTrue(vendor_fallback[positions["sources"]])
+
+    def test_source_schema_preserves_vendor_detail_fields(self):
+        data = build_data()
+        schema = data["schemas"]["source"]
+        positions = {key: index for index, key in enumerate(schema)}
+        compacted = compact_record(
+            {
+                "type": "vendor",
+                "entity_name": "Field Repair Bot 110G",
+                "location_area": "Portable",
+                "location_note": "Created by engineers",
+                "price_copper": 3000,
+                "purchase_quantity": 200,
+            },
+            "source",
+        )
+
+        self.assertIn("location_area", schema)
+        self.assertIn("location_note", schema)
+        self.assertIn("price_copper", schema)
+        self.assertIn("purchase_quantity", schema)
+        self.assertEqual(compacted[positions["location_area"]], "Portable")
+        self.assertEqual(compacted[positions["location_note"]], "Created by engineers")
+        self.assertEqual(compacted[positions["price_copper"]], 3000)
+        self.assertEqual(compacted[positions["purchase_quantity"]], 200)
 
     def test_data_lua_is_current_after_generation(self):
         existing = Path(OUTPUT_PATH).read_text(encoding="utf-8").replace("\r\n", "\n")

@@ -8,6 +8,17 @@
         "entity_id": 31084,
         "entity_name": "Bold Living Ruby",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24193,
+            "entity_name": "Design: Bold Living Ruby",
+            "item_id": 24193,
+            "source_url": "https://www.wowhead.com/tbc/item=24027/bold-living-ruby",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -40,6 +51,17 @@
           "entity_id": 31084,
           "entity_name": "Bold Living Ruby",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24193,
+              "entity_name": "Design: Bold Living Ruby",
+              "item_id": 24193,
+              "source_url": "https://www.wowhead.com/tbc/item=24027/bold-living-ruby",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -65,6 +87,17 @@
         "entity_id": 31085,
         "entity_name": "Delicate Living Ruby",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24194,
+            "entity_name": "Design: Delicate Living Ruby",
+            "item_id": 24194,
+            "source_url": "https://www.wowhead.com/tbc/item=24028/delicate-living-ruby",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -97,6 +130,17 @@
           "entity_id": 31085,
           "entity_name": "Delicate Living Ruby",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24194,
+              "entity_name": "Design: Delicate Living Ruby",
+              "item_id": 24194,
+              "source_url": "https://www.wowhead.com/tbc/item=24028/delicate-living-ruby",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -122,6 +166,17 @@
         "entity_id": 31087,
         "entity_name": "Teardrop Living Ruby",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24195,
+            "entity_name": "Design: Teardrop Living Ruby",
+            "item_id": 24195,
+            "source_url": "https://www.wowhead.com/tbc/item=24029/teardrop-living-ruby",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -154,6 +209,17 @@
           "entity_id": 31087,
           "entity_name": "Teardrop Living Ruby",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24195,
+              "entity_name": "Design: Teardrop Living Ruby",
+              "item_id": 24195,
+              "source_url": "https://www.wowhead.com/tbc/item=24029/teardrop-living-ruby",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -179,6 +245,18 @@
         "entity_id": 31088,
         "entity_name": "Runed Living Ruby",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "dungeon",
+            "entity_id": 35305,
+            "entity_name": "Design: Runed Living Ruby",
+            "item_id": 35305,
+            "source_url": "https://www.wowhead.com/tbc/item=24030/runed-living-ruby",
+            "type": "drop",
+            "zone": "Magisters' Terrace"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -191,7 +269,8 @@
         ],
         "source_url": "https://www.wowhead.com/tbc/item=24030/runed-living-ruby",
         "spell_id": 31088,
-        "type": "crafted"
+        "type": "crafted",
+        "zone": "Magisters' Terrace"
       },
       "requirements": [
         {
@@ -211,6 +290,18 @@
           "entity_id": 31088,
           "entity_name": "Runed Living Ruby",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "dungeon",
+              "entity_id": 35305,
+              "entity_name": "Design: Runed Living Ruby",
+              "item_id": 35305,
+              "source_url": "https://www.wowhead.com/tbc/item=24030/runed-living-ruby",
+              "type": "drop",
+              "zone": "Magisters' Terrace"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -223,7 +314,8 @@
           ],
           "source_url": "https://www.wowhead.com/tbc/item=24030/runed-living-ruby",
           "spell_id": 31088,
-          "type": "crafted"
+          "type": "crafted",
+          "zone": "Magisters' Terrace"
         }
       ],
       "type": "item"
@@ -236,6 +328,18 @@
         "entity_id": 31092,
         "entity_name": "Solid Star of Elune",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "dungeon",
+            "entity_id": 35304,
+            "entity_name": "Design: Solid Star of Elune",
+            "item_id": 35304,
+            "source_url": "https://www.wowhead.com/tbc/item=24033/solid-star-of-elune",
+            "type": "drop",
+            "zone": "Magisters' Terrace"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -248,7 +352,8 @@
         ],
         "source_url": "https://www.wowhead.com/tbc/item=24033/solid-star-of-elune",
         "spell_id": 31092,
-        "type": "crafted"
+        "type": "crafted",
+        "zone": "Magisters' Terrace"
       },
       "requirements": [
         {
@@ -268,6 +373,18 @@
           "entity_id": 31092,
           "entity_name": "Solid Star of Elune",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "dungeon",
+              "entity_id": 35304,
+              "entity_name": "Design: Solid Star of Elune",
+              "item_id": 35304,
+              "source_url": "https://www.wowhead.com/tbc/item=24033/solid-star-of-elune",
+              "type": "drop",
+              "zone": "Magisters' Terrace"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -280,7 +397,8 @@
           ],
           "source_url": "https://www.wowhead.com/tbc/item=24033/solid-star-of-elune",
           "spell_id": 31092,
-          "type": "crafted"
+          "type": "crafted",
+          "zone": "Magisters' Terrace"
         }
       ],
       "type": "item"
@@ -293,6 +411,17 @@
         "entity_id": 31096,
         "entity_name": "Brilliant Dawnstone",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24203,
+            "entity_name": "Design: Brilliant Dawnstone",
+            "item_id": 24203,
+            "source_url": "https://www.wowhead.com/tbc/item=24047/brilliant-living-ruby",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -325,6 +454,17 @@
           "entity_id": 31096,
           "entity_name": "Brilliant Dawnstone",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24203,
+              "entity_name": "Design: Brilliant Dawnstone",
+              "item_id": 24203,
+              "source_url": "https://www.wowhead.com/tbc/item=24047/brilliant-living-ruby",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -350,6 +490,17 @@
         "entity_id": 31102,
         "entity_name": "Sovereign Nightseye",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24209,
+            "entity_name": "Design: Sovereign Nightseye",
+            "item_id": 24209,
+            "source_url": "https://www.wowhead.com/tbc/item=24054/sovereign-nightseye",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -382,6 +533,17 @@
           "entity_id": 31102,
           "entity_name": "Sovereign Nightseye",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24209,
+              "entity_name": "Design: Sovereign Nightseye",
+              "item_id": 24209,
+              "source_url": "https://www.wowhead.com/tbc/item=24054/sovereign-nightseye",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -407,6 +569,17 @@
         "entity_id": 31103,
         "entity_name": "Shifting Nightseye",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24210,
+            "entity_name": "Design: Shifting Nightseye",
+            "item_id": 24210,
+            "source_url": "https://www.wowhead.com/tbc/item=24055/shifting-nightseye",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -439,6 +612,17 @@
           "entity_id": 31103,
           "entity_name": "Shifting Nightseye",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24210,
+              "entity_name": "Design: Shifting Nightseye",
+              "item_id": 24210,
+              "source_url": "https://www.wowhead.com/tbc/item=24055/shifting-nightseye",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -464,6 +648,17 @@
         "entity_id": 31104,
         "entity_name": "Glowing Nightseye",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24211,
+            "entity_name": "Design: Glowing Nightseye",
+            "item_id": 24211,
+            "source_url": "https://www.wowhead.com/tbc/item=24056/timeless-nightseye",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -496,6 +691,17 @@
           "entity_id": 31104,
           "entity_name": "Glowing Nightseye",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24211,
+              "entity_name": "Design: Glowing Nightseye",
+              "item_id": 24211,
+              "source_url": "https://www.wowhead.com/tbc/item=24056/timeless-nightseye",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -521,6 +727,17 @@
         "entity_id": 31105,
         "entity_name": "Royal Nightseye",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24212,
+            "entity_name": "Design: Royal Nightseye",
+            "item_id": 24212,
+            "source_url": "https://www.wowhead.com/tbc/item=24057/royal-nightseye",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -553,6 +770,17 @@
           "entity_id": 31105,
           "entity_name": "Royal Nightseye",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24212,
+              "entity_name": "Design: Royal Nightseye",
+              "item_id": 24212,
+              "source_url": "https://www.wowhead.com/tbc/item=24057/royal-nightseye",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -578,6 +806,17 @@
         "entity_id": 31106,
         "entity_name": "Inscribed Noble Topaz",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24213,
+            "entity_name": "Design: Inscribed Noble Topaz",
+            "item_id": 24213,
+            "source_url": "https://www.wowhead.com/tbc/item=24058/inscribed-noble-topaz",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -610,6 +849,17 @@
           "entity_id": 31106,
           "entity_name": "Inscribed Noble Topaz",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24213,
+              "entity_name": "Design: Inscribed Noble Topaz",
+              "item_id": 24213,
+              "source_url": "https://www.wowhead.com/tbc/item=24058/inscribed-noble-topaz",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -635,6 +885,17 @@
         "entity_id": 31107,
         "entity_name": "Potent Noble Topaz",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24214,
+            "entity_name": "Design: Potent Noble Topaz",
+            "item_id": 24214,
+            "source_url": "https://www.wowhead.com/tbc/item=24059/potent-noble-topaz",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -667,6 +928,17 @@
           "entity_id": 31107,
           "entity_name": "Potent Noble Topaz",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24214,
+              "entity_name": "Design: Potent Noble Topaz",
+              "item_id": 24214,
+              "source_url": "https://www.wowhead.com/tbc/item=24059/potent-noble-topaz",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -692,6 +964,17 @@
         "entity_id": 31108,
         "entity_name": "Luminous Noble Topaz",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24215,
+            "entity_name": "Design: Luminous Noble Topaz",
+            "item_id": 24215,
+            "source_url": "https://www.wowhead.com/tbc/item=24060/reckless-noble-topaz",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -724,6 +1007,17 @@
           "entity_id": 31108,
           "entity_name": "Luminous Noble Topaz",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24215,
+              "entity_name": "Design: Luminous Noble Topaz",
+              "item_id": 24215,
+              "source_url": "https://www.wowhead.com/tbc/item=24060/reckless-noble-topaz",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -749,6 +1043,17 @@
         "entity_id": 31109,
         "entity_name": "Glinting Noble Topaz",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 24216,
+            "entity_name": "Design: Glinting Noble Topaz",
+            "item_id": 24216,
+            "source_url": "https://www.wowhead.com/tbc/item=24061/glinting-noble-topaz",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -781,6 +1086,17 @@
           "entity_id": 31109,
           "entity_name": "Glinting Noble Topaz",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 24216,
+              "entity_name": "Design: Glinting Noble Topaz",
+              "item_id": 24216,
+              "source_url": "https://www.wowhead.com/tbc/item=24061/glinting-noble-topaz",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -806,6 +1122,17 @@
         "entity_id": 32872,
         "entity_name": "Mystical Skyfire Diamond",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 25909,
+            "entity_name": "Design: Mystical Skyfire Diamond",
+            "item_id": 25909,
+            "source_url": "https://www.wowhead.com/tbc/item=25893/mystical-skyfire-diamond",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -838,6 +1165,17 @@
           "entity_id": 32872,
           "entity_name": "Mystical Skyfire Diamond",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 25909,
+              "entity_name": "Design: Mystical Skyfire Diamond",
+              "item_id": 25909,
+              "source_url": "https://www.wowhead.com/tbc/item=25893/mystical-skyfire-diamond",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -863,6 +1201,17 @@
         "entity_id": 32866,
         "entity_name": "Powerful Earthstorm Diamond",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 25902,
+            "entity_name": "Design: Powerful Earthstorm Diamond",
+            "item_id": 25902,
+            "source_url": "https://www.wowhead.com/tbc/item=25896/powerful-earthstorm-diamond",
+            "type": "vendor",
+            "zone": "Karazhan"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -875,7 +1224,8 @@
         ],
         "source_url": "https://www.wowhead.com/tbc/item=25896/powerful-earthstorm-diamond",
         "spell_id": 32866,
-        "type": "crafted"
+        "type": "crafted",
+        "zone": "Karazhan"
       },
       "requirements": [
         {
@@ -895,6 +1245,17 @@
           "entity_id": 32866,
           "entity_name": "Powerful Earthstorm Diamond",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "entity_id": 25902,
+              "entity_name": "Design: Powerful Earthstorm Diamond",
+              "item_id": 25902,
+              "source_url": "https://www.wowhead.com/tbc/item=25896/powerful-earthstorm-diamond",
+              "type": "vendor",
+              "zone": "Karazhan"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -907,7 +1268,8 @@
           ],
           "source_url": "https://www.wowhead.com/tbc/item=25896/powerful-earthstorm-diamond",
           "spell_id": 32866,
-          "type": "crafted"
+          "type": "crafted",
+          "zone": "Karazhan"
         }
       ],
       "type": "item"
@@ -920,6 +1282,17 @@
         "entity_id": 32867,
         "entity_name": "Bracing Earthstorm Diamond",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 25903,
+            "entity_name": "Design: Bracing Earthstorm Diamond",
+            "item_id": 25903,
+            "source_url": "https://www.wowhead.com/tbc/item=25897/bracing-earthstorm-diamond",
+            "type": "vendor",
+            "zone": "Karazhan"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -932,7 +1305,8 @@
         ],
         "source_url": "https://www.wowhead.com/tbc/item=25897/bracing-earthstorm-diamond",
         "spell_id": 32867,
-        "type": "crafted"
+        "type": "crafted",
+        "zone": "Karazhan"
       },
       "requirements": [
         {
@@ -952,6 +1326,17 @@
           "entity_id": 32867,
           "entity_name": "Bracing Earthstorm Diamond",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "entity_id": 25903,
+              "entity_name": "Design: Bracing Earthstorm Diamond",
+              "item_id": 25903,
+              "source_url": "https://www.wowhead.com/tbc/item=25897/bracing-earthstorm-diamond",
+              "type": "vendor",
+              "zone": "Karazhan"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -964,7 +1349,8 @@
           ],
           "source_url": "https://www.wowhead.com/tbc/item=25897/bracing-earthstorm-diamond",
           "spell_id": 32867,
-          "type": "crafted"
+          "type": "crafted",
+          "zone": "Karazhan"
         }
       ],
       "type": "item"
@@ -977,6 +1363,17 @@
         "entity_id": 32870,
         "entity_name": "Insightful Earthstorm Diamond",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 25904,
+            "entity_name": "Design: Insightful Earthstorm Diamond",
+            "item_id": 25904,
+            "source_url": "https://www.wowhead.com/tbc/item=25901/insightful-earthstorm-diamond",
+            "type": "vendor",
+            "zone": "Shattrath City"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -989,7 +1386,8 @@
         ],
         "source_url": "https://www.wowhead.com/tbc/item=25901/insightful-earthstorm-diamond",
         "spell_id": 32870,
-        "type": "crafted"
+        "type": "crafted",
+        "zone": "Shattrath City"
       },
       "requirements": [
         {
@@ -1009,6 +1407,17 @@
           "entity_id": 32870,
           "entity_name": "Insightful Earthstorm Diamond",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "entity_id": 25904,
+              "entity_name": "Design: Insightful Earthstorm Diamond",
+              "item_id": 25904,
+              "source_url": "https://www.wowhead.com/tbc/item=25901/insightful-earthstorm-diamond",
+              "type": "vendor",
+              "zone": "Shattrath City"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -1021,7 +1430,8 @@
           ],
           "source_url": "https://www.wowhead.com/tbc/item=25901/insightful-earthstorm-diamond",
           "spell_id": 32870,
-          "type": "crafted"
+          "type": "crafted",
+          "zone": "Shattrath City"
         }
       ],
       "type": "item"
@@ -1034,6 +1444,17 @@
         "entity_id": 39470,
         "entity_name": "Veiled Noble Topaz",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 31878,
+            "entity_name": "Design: Veiled Noble Topaz",
+            "item_id": 31878,
+            "source_url": "https://www.wowhead.com/tbc/item=31867/veiled-noble-topaz",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -1066,6 +1487,17 @@
           "entity_id": 39470,
           "entity_name": "Veiled Noble Topaz",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 31878,
+              "entity_name": "Design: Veiled Noble Topaz",
+              "item_id": 31878,
+              "source_url": "https://www.wowhead.com/tbc/item=31867/veiled-noble-topaz",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -1091,6 +1523,17 @@
         "entity_id": 39471,
         "entity_name": "Wicked Noble Topaz",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 31879,
+            "entity_name": "Design: Wicked Noble Topaz",
+            "item_id": 31879,
+            "source_url": "https://www.wowhead.com/tbc/item=31868/deadly-noble-topaz",
+            "type": "drop"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -1123,6 +1566,17 @@
           "entity_id": 39471,
           "entity_name": "Wicked Noble Topaz",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 31879,
+              "entity_name": "Design: Wicked Noble Topaz",
+              "item_id": 31879,
+              "source_url": "https://www.wowhead.com/tbc/item=31868/deadly-noble-topaz",
+              "type": "drop"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -1148,6 +1602,24 @@
         "entity_id": 39961,
         "entity_name": "Relentless Earthstorm Diamond",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 32412,
+            "entity_name": "Design: Relentless Earthstorm Diamond",
+            "item_id": 32412,
+            "source_url": "https://www.wowhead.com/tbc/item=32409/relentless-earthstorm-diamond",
+            "type": "unknown"
+          },
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 33622,
+            "entity_name": "Design: Relentless Earthstorm Diamond",
+            "item_id": 33622,
+            "source_url": "https://www.wowhead.com/tbc/item=32409/relentless-earthstorm-diamond",
+            "type": "vendor"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -1180,6 +1652,24 @@
           "entity_id": 39961,
           "entity_name": "Relentless Earthstorm Diamond",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "entity_id": 32412,
+              "entity_name": "Design: Relentless Earthstorm Diamond",
+              "item_id": 32412,
+              "source_url": "https://www.wowhead.com/tbc/item=32409/relentless-earthstorm-diamond",
+              "type": "unknown"
+            },
+            {
+              "confidence": "wowhead_item",
+              "entity_id": 33622,
+              "entity_name": "Design: Relentless Earthstorm Diamond",
+              "item_id": 33622,
+              "source_url": "https://www.wowhead.com/tbc/item=32409/relentless-earthstorm-diamond",
+              "type": "vendor"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -1262,6 +1752,18 @@
         "entity_id": 44794,
         "entity_name": "Chaotic Skyfire Diamond",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "content_type": "other",
+            "entity_id": 34689,
+            "entity_name": "Design: Chaotic Skyfire Diamond",
+            "item_id": 34689,
+            "source_url": "https://www.wowhead.com/tbc/item=34220/chaotic-skyfire-diamond",
+            "type": "drop",
+            "zone": "Shadowmoon Valley"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -1274,7 +1776,8 @@
         ],
         "source_url": "https://www.wowhead.com/tbc/item=34220/chaotic-skyfire-diamond",
         "spell_id": 44794,
-        "type": "crafted"
+        "type": "crafted",
+        "zone": "Shadowmoon Valley"
       },
       "requirements": [
         {
@@ -1294,6 +1797,18 @@
           "entity_id": 44794,
           "entity_name": "Chaotic Skyfire Diamond",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "content_type": "other",
+              "entity_id": 34689,
+              "entity_name": "Design: Chaotic Skyfire Diamond",
+              "item_id": 34689,
+              "source_url": "https://www.wowhead.com/tbc/item=34220/chaotic-skyfire-diamond",
+              "type": "drop",
+              "zone": "Shadowmoon Valley"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",
@@ -1306,7 +1821,8 @@
           ],
           "source_url": "https://www.wowhead.com/tbc/item=34220/chaotic-skyfire-diamond",
           "spell_id": 44794,
-          "type": "crafted"
+          "type": "crafted",
+          "zone": "Shadowmoon Valley"
         }
       ],
       "type": "item"
@@ -1319,6 +1835,16 @@
         "entity_id": 46403,
         "entity_name": "Quick Dawnstone",
         "profession": "Jewelcrafting",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 35322,
+            "entity_name": "Design: Quick Dawnstone",
+            "item_id": 35322,
+            "source_url": "https://www.wowhead.com/tbc/item=35315/quick-dawnstone",
+            "type": "vendor"
+          }
+        ],
         "requirements": [
           {
             "confidence": "wowhead_item",
@@ -1351,6 +1877,16 @@
           "entity_id": 46403,
           "entity_name": "Quick Dawnstone",
           "profession": "Jewelcrafting",
+          "recipe_sources": [
+            {
+              "confidence": "wowhead_item",
+              "entity_id": 35322,
+              "entity_name": "Design: Quick Dawnstone",
+              "item_id": 35322,
+              "source_url": "https://www.wowhead.com/tbc/item=35315/quick-dawnstone",
+              "type": "vendor"
+            }
+          ],
           "requirements": [
             {
               "confidence": "wowhead_item",

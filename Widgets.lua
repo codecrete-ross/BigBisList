@@ -7,6 +7,136 @@ local Widgets = {}
 BigBiSList.Widgets = Widgets
 
 local dropdownCounter = 0
+local DROPDOWN_LIST_BASE_LEVEL = 1000
+
+local function resolveDropdownOwner(owner)
+    if type(owner) == "string" and _G then
+        return _G[owner]
+    end
+    return owner
+end
+
+local function isBigBisDropdownOwner(owner)
+    owner = resolveDropdownOwner(owner)
+    return type(owner) == "table" and owner.__bigBisListDropdown == true
+end
+
+local function restoreDropdownList(listFrame)
+    local state = listFrame and listFrame.__bigBisListDropdownState
+    if not state then
+        return
+    end
+    if state.strata and listFrame.SetFrameStrata then
+        listFrame:SetFrameStrata(state.strata)
+    end
+    if state.level and listFrame.SetFrameLevel then
+        listFrame:SetFrameLevel(state.level)
+    end
+    if state.mouseEnabled ~= nil and listFrame.EnableMouse then
+        listFrame:EnableMouse(state.mouseEnabled)
+    end
+    listFrame.__bigBisListDropdownState = nil
+end
+
+local function prepareDropdownList(listFrame, listIndex, explicitOwner)
+    if not listFrame then
+        return
+    end
+
+    if listFrame.IsShown and not listFrame:IsShown() then
+        restoreDropdownList(listFrame)
+        return
+    end
+
+    local requestedOwner = resolveDropdownOwner(explicitOwner)
+    local actualOwner = resolveDropdownOwner(listFrame.dropdown or (_G and _G.UIDROPDOWNMENU_OPEN_MENU))
+    if requestedOwner and actualOwner and requestedOwner ~= actualOwner then
+        restoreDropdownList(listFrame)
+        return
+    end
+    local owner = actualOwner or requestedOwner
+    if not isBigBisDropdownOwner(owner) then
+        restoreDropdownList(listFrame)
+        return
+    end
+
+    if not listFrame.__bigBisListDropdownState then
+        local mouseEnabled
+        if listFrame.IsMouseEnabled then
+            mouseEnabled = listFrame:IsMouseEnabled()
+        end
+        listFrame.__bigBisListDropdownState = {
+            strata = listFrame.GetFrameStrata and listFrame:GetFrameStrata() or nil,
+            level = listFrame.GetFrameLevel and listFrame:GetFrameLevel() or nil,
+            mouseEnabled = mouseEnabled,
+        }
+    end
+
+    if listFrame.SetFrameStrata then
+        listFrame:SetFrameStrata("FULLSCREEN_DIALOG")
+    end
+    local previousLevel = listFrame.GetFrameLevel and listFrame:GetFrameLevel() or 0
+    if listFrame.SetFrameLevel then
+        listFrame:SetFrameLevel(math.max(previousLevel or 0, DROPDOWN_LIST_BASE_LEVEL + (listIndex or 1)))
+    end
+    if listFrame.EnableMouse then
+        listFrame:EnableMouse(true)
+    end
+end
+
+local function installDropdownListHook(listFrame, listIndex)
+    if not listFrame then
+        return
+    end
+    if not listFrame.__bigBisListDropdownListHooked and listFrame.HookScript then
+        listFrame.__bigBisListDropdownListHooked = true
+        listFrame:HookScript("OnShow", function(shownList)
+            prepareDropdownList(shownList, listIndex)
+        end)
+        listFrame:HookScript("OnHide", function(hiddenList)
+            restoreDropdownList(hiddenList)
+        end)
+    end
+end
+
+local function prepareDropdownLists(owner)
+    local maxLevels = tonumber(UIDROPDOWNMENU_MAXLEVELS) or 2
+    maxLevels = math.max(2, maxLevels)
+    for listIndex = 1, maxLevels do
+        local listFrame = _G and _G["DropDownList" .. listIndex]
+        installDropdownListHook(listFrame, listIndex)
+        if owner then
+            prepareDropdownList(listFrame, listIndex, owner)
+        end
+    end
+end
+
+local function restoreDropdownLists()
+    local maxLevels = math.max(2, tonumber(UIDROPDOWNMENU_MAXLEVELS) or 2)
+    for listIndex = 1, maxLevels do
+        restoreDropdownList(_G and _G["DropDownList" .. listIndex])
+    end
+end
+
+function Widgets:CloseDropdownMenus()
+    if type(CloseDropDownMenus) == "function" then
+        CloseDropDownMenus()
+        restoreDropdownLists()
+        return true
+    end
+
+    local closed = false
+    local maxLevels = math.max(2, tonumber(UIDROPDOWNMENU_MAXLEVELS) or 2)
+    for listIndex = 1, maxLevels do
+        local listFrame = _G and _G["DropDownList" .. listIndex]
+        if listFrame and listFrame.Hide then
+            listFrame:Hide()
+            closed = true
+        end
+    end
+    restoreDropdownLists()
+    return closed
+end
 
 local function setBackdrop(frame, bg, border)
     if not frame.SetBackdrop then
@@ -158,6 +288,7 @@ function Widgets:CreateDropdown(name, parent, width, getText, getItems, onSelect
     dropdownCounter = dropdownCounter + 1
     local dropdownName = name or ("BigBiSListDropdown" .. dropdownCounter)
     local frame = CreateFrame("Frame", dropdownName, parent, "UIDropDownMenuTemplate")
+    frame.__bigBisListDropdown = true
     UIDropDownMenu_SetWidth(frame, width or 120)
 
     local function refresh()
@@ -184,6 +315,40 @@ function Widgets:CreateDropdown(name, parent, width, getText, getItems, onSelect
             UIDropDownMenu_AddButton(info, level)
         end
     end)
+
+    prepareDropdownLists()
+
+    local nativeButton = _G and _G[dropdownName .. "Button"]
+    local clickCover = CreateFrame("Button", nil, frame)
+    clickCover:SetAllPoints(frame)
+    clickCover:EnableMouse(true)
+    clickCover:RegisterForClicks("LeftButtonUp")
+    if clickCover.SetFrameLevel then
+        local nativeLevel = nativeButton and nativeButton.GetFrameLevel and nativeButton:GetFrameLevel() or 0
+        local frameLevel = frame.GetFrameLevel and frame:GetFrameLevel() or 0
+        clickCover:SetFrameLevel(math.max(nativeLevel or 0, frameLevel or 0) + 1)
+    end
+    clickCover:SetScript("OnClick", function()
+        if nativeButton and nativeButton.IsEnabled and not nativeButton:IsEnabled() then
+            return
+        end
+
+        if type(ToggleDropDownMenu) == "function" then
+            ToggleDropDownMenu(1, nil, frame)
+        elseif nativeButton and nativeButton.Click then
+            nativeButton:Click()
+        end
+
+        prepareDropdownLists(frame)
+        if C_Timer and C_Timer.After then
+            C_Timer.After(0, function()
+                prepareDropdownLists(frame)
+            end)
+        end
+    end)
+
+    frame.nativeButton = nativeButton
+    frame.clickCover = clickCover
 
     frame.Refresh = refresh
     refresh()

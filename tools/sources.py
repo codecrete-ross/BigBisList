@@ -292,11 +292,28 @@ def _source_data_quality_rank(source: dict[str, Any]) -> int:
     return 1 if source.get("drop_percent") is None else 0
 
 
+def _purchase_source_quality_rank(source: dict[str, Any]) -> int:
+    if source.get("type") == "unknown":
+        return 4
+    if source.get("type") not in {"vendor", "pvp", "token_turnin"}:
+        return 0
+
+    missing_fields = 0
+    if not source.get("entity_name"):
+        missing_fields += 1
+    if not (source.get("location_area") or source.get("zone")):
+        missing_fields += 1
+    if not source.get("price_copper") and not source.get("costs"):
+        missing_fields += 1
+    return missing_fields
+
+
 def _source_sort_key(source: dict[str, Any]) -> tuple:
     drop_percent = source.get("drop_percent")
     drop_rank = -float(drop_percent) if isinstance(drop_percent, (int, float)) else 0.0
     return (
         _source_data_quality_rank(source),
+        _purchase_source_quality_rank(source),
         phase_rank(derive_source_acquisition_phase(source)),
         SOURCE_TYPE_PRIORITY.get(str(source.get("type", "unknown")), 99),
         drop_rank,
@@ -318,8 +335,12 @@ def format_costs(costs: list[dict[str, Any]] | None) -> str:
 
     parts: list[str] = []
     for cost in costs:
+        if not isinstance(cost, dict):
+            continue
         amount = cost.get("amount")
         name = cost.get("name") or cost.get("currency_name") or cost.get("item_name")
+        if isinstance(amount, bool) or (isinstance(amount, (int, float)) and amount <= 0):
+            continue
         if amount is None and not name:
             continue
         if amount is None:
@@ -331,11 +352,51 @@ def format_costs(costs: list[dict[str, Any]] | None) -> str:
     return ", ".join(parts)
 
 
+def format_price_copper(price_copper: Any, purchase_quantity: Any = None) -> str:
+    if isinstance(price_copper, bool) or not isinstance(price_copper, (int, float)) or price_copper <= 0:
+        return ""
+
+    copper = int(price_copper)
+    gold, remainder = divmod(copper, 10_000)
+    silver, copper = divmod(remainder, 100)
+    parts: list[str] = []
+    if gold:
+        parts.append(f"{gold}g")
+    if silver:
+        parts.append(f"{silver}s")
+    if copper:
+        parts.append(f"{copper}c")
+    text = " ".join(parts)
+
+    if isinstance(purchase_quantity, int) and not isinstance(purchase_quantity, bool) and purchase_quantity > 1:
+        text += f" per {purchase_quantity}"
+    return text
+
+
+def format_purchase_cost(source: dict[str, Any]) -> str:
+    parts: list[str] = []
+    money = format_price_copper(source.get("price_copper"), source.get("purchase_quantity"))
+    if money:
+        parts.append(money)
+
+    item_or_currency_costs = format_costs(source.get("costs"))
+    if item_or_currency_costs:
+        if (
+            not money
+            and isinstance(source.get("purchase_quantity"), int)
+            and not isinstance(source.get("purchase_quantity"), bool)
+            and source["purchase_quantity"] > 1
+        ):
+            item_or_currency_costs += f" per {source['purchase_quantity']}"
+        parts.append(item_or_currency_costs)
+    return " + ".join(parts)
+
+
 def compact_source(source: dict[str, Any]) -> str:
     source_type = source.get("type")
     entity = source.get("entity_name") or source.get("profession")
-    zone = source.get("zone")
-    costs = format_costs(source.get("costs"))
+    zone = source.get("location_area") or source.get("zone")
+    costs = format_purchase_cost(source)
 
     if source_type == "drop":
         if source.get("world_drop"):
@@ -407,16 +468,18 @@ def compact_source(source: dict[str, Any]) -> str:
         return text
 
     if source_type == "vendor":
-        text = f"Vendor: {entity}"
-        if costs:
-            text += f" ({costs})"
-        elif zone:
+        text = f"Vendor: {entity}" if entity else "Vendor"
+        if zone:
             text += f" ({zone})"
+        elif costs:
+            text += f" ({costs})"
         return text
 
     if source_type == "pvp":
-        text = f"PvP: {entity}"
-        if costs:
+        text = f"PvP: {entity}" if entity else "PvP Vendor"
+        if zone:
+            text += f" ({zone})"
+        elif costs:
             text += f" ({costs})"
         return text
 

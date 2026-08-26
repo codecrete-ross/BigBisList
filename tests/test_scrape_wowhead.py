@@ -234,6 +234,8 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(by_type["drop"]["zone"], "Karazhan")
         self.assertEqual(by_type["drop"]["drop_percent"], 16.74)
         self.assertEqual(by_type["vendor"]["costs"][0]["name"], "Badge of Justice")
+        self.assertEqual(by_type["vendor"]["location_area"], "Shattrath City")
+        self.assertEqual(by_type["vendor"]["purchase_quantity"], 1)
         self.assertEqual(by_type["quest"]["side"], "Alliance")
         self.assertEqual(by_type["crafted"]["profession"], "Leatherworking")
 
@@ -263,6 +265,77 @@ class WowheadScraperParserTests(unittest.TestCase):
         live_shape_cost = parse_costs([[0, [], [[31095, 1]]]])[0]
         self.assertEqual(live_shape_cost["item_id"], 31095)
         self.assertEqual(live_shape_cost["amount"], 1)
+        mixed_shape = [[800000, [], [[29434, 20]]]]
+        self.assertEqual(scraper.parse_price_copper(mixed_shape), 800000)
+        self.assertEqual(parse_costs(mixed_shape)[0]["currency_id"], 29434)
+        self.assertEqual(parse_costs(mixed_shape)[0]["amount"], 20)
+        self.assertEqual(scraper.parse_price_copper([800000]), 800000)
+        self.assertEqual(scraper.parse_price_copper([[27000]]), 27000)
+        self.assertIsNone(scraper.parse_price_copper([[0]]))
+        self.assertEqual(parse_costs([[0, [], [[31095, 0]]]]), [])
+
+    def test_vendor_purchase_parser_preserves_bundle_price_and_location(self):
+        sources = scraper.normalize_item_sources(
+            "https://www.wowhead.com/tbc/item=28056/blackflight-arrow",
+            {"sold-by": [{"id": 16602, "name": "Floyd Pinkus", "location": [3483], "stack": 200, "cost": [[2850]]}]},
+        )
+
+        source = sources[0]
+        self.assertEqual(source["entity_name"], "Floyd Pinkus")
+        self.assertEqual(source["zone"], "Hellfire Peninsula")
+        self.assertEqual(source["location_area"], "Hellfire Peninsula")
+        self.assertEqual(source["price_copper"], 2850)
+        self.assertEqual(source["purchase_quantity"], 200)
+
+    def test_zero_vendor_price_remains_unresolved_instead_of_free(self):
+        sources = scraper.normalize_item_sources(
+            "https://www.wowhead.com/tbc/item=99990/unresolved-vendor-item",
+            {"sold-by": [{"id": 123, "name": "Reported Seller", "location": [1519], "cost": [[0]]}]},
+        )
+
+        source = sources[0]
+        self.assertEqual(source["location_area"], "Stormwind City")
+        self.assertNotIn("price_copper", source)
+        self.assertNotIn("costs", source)
+        self.assertNotIn("purchase_quantity", source)
+
+    def test_vendor_multiple_locations_keep_area_and_plain_language_note(self):
+        source = scraper.normalize_item_sources(
+            "https://www.wowhead.com/tbc/item=99991/multi-location-item",
+            {
+                "sold-by": [
+                    {
+                        "id": 12777,
+                        "name": "Captain Dirgehammer",
+                        "location": [2597, 3358, 3820, -1],
+                        "cost": [[10000]],
+                    }
+                ]
+            },
+        )[0]
+
+        self.assertEqual(source["location_area"], "Alterac Valley")
+        self.assertEqual(source["location_note"], "Also reported in Arathi Basin, Eye of the Storm")
+        self.assertNotIn("coordinates", source)
+
+    def test_portable_vendor_uses_explicit_area_and_explanatory_note(self):
+        source = scraper.normalize_item_sources(
+            "https://www.wowhead.com/tbc/item=28056/blackflight-arrow",
+            {
+                "sold-by": [
+                    {
+                        "id": 17921,
+                        "name": "Field Repair Bot 110G",
+                        "stack": 200,
+                        "cost": [[2850]],
+                    }
+                ]
+            },
+        )[0]
+
+        self.assertEqual(source["location_area"], "Portable")
+        self.assertEqual(source["location_note"], "Portable summoned vendor")
+        self.assertNotIn("zone", source)
 
     def test_item_parser_extracts_vendor_item_cost_tokens(self):
         html = """
@@ -589,6 +662,37 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(row["quality"], "epic")
         self.assertEqual(row["slot"], "Waist")
 
+    def test_item_stats_import_resolves_placeholder_item_cost_names_offline(self):
+        purchased_item = {
+            "page_type": "item",
+            "item_id": 900101,
+            "name": "Fixture Inscription",
+            "url": "https://www.wowhead.com/tbc/item=900101/fixture-inscription",
+            "quality": "rare",
+            "normalized_sources": [
+                {
+                    "type": "token_turnin",
+                    "entity_name": "Fixture Inscriber",
+                    "location_area": "Shattrath City",
+                    "costs": [{"amount": 8, "name": "Item 29735", "item_id": 29735}],
+                }
+            ],
+        }
+        token_item = {
+            "page_type": "item",
+            "item_id": 29735,
+            "name": "Holy Dust",
+            "url": "https://www.wowhead.com/tbc/item=29735/holy-dust",
+            "quality": "uncommon",
+        }
+
+        rows = scraper.import_item_stats_from_snapshots([purchased_item, token_item])["item_stats"]
+        row = next(item for item in rows if item["id"] == 900101)
+
+        self.assertEqual(row["sources"][0]["costs"][0]["name"], "Holy Dust")
+        self.assertIn("Holy Dust", row["source_summary"])
+        self.assertNotIn("Item 29735", row["source_summary"])
+
     def test_item_list_sources_avoid_unknown_when_only_source_kind_or_zone_is_known(self):
         quest_sources = scraper.item_list_sources_from_ref(
             {
@@ -609,6 +713,38 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(scraper.summarize_sources(quest_sources), "Quest: Nagrand")
         self.assertEqual(drop_sources[0]["type"], "world_drop")
         self.assertEqual(scraper.summarize_sources(drop_sources), "World Drop")
+
+    def test_item_list_sources_classify_mixed_drop_and_vendor_rows_individually(self):
+        sources = scraper.item_list_sources_from_ref(
+            {
+                "id": 22986,
+                "url": "https://www.wowhead.com/tbc/item=22986/apothecarys-robe",
+                "source": [2, 5],
+                "sourcemore": [
+                    {"dd": -1, "n": "Landslide", "ti": 12203, "z": 2100},
+                    {"n": "Provisioner Vredigar", "ti": 16528, "z": 3433},
+                ],
+            },
+            {16528},
+        )
+
+        by_type = {source["type"]: source for source in sources}
+        self.assertEqual(set(by_type), {"drop", "vendor"})
+        self.assertEqual(by_type["drop"]["entity_name"], "Landslide")
+        self.assertEqual(by_type["drop"]["zone"], "Maraudon")
+        self.assertEqual(by_type["vendor"]["entity_name"], "Provisioner Vredigar")
+        self.assertEqual(by_type["vendor"]["location_area"], "Ghostlands")
+
+    def test_mixed_item_list_row_without_drop_marker_needs_committed_vendor_evidence(self):
+        ref = {
+            "id": 900102,
+            "url": "https://www.wowhead.com/tbc/item=900102/fixture-pattern",
+            "source": [2, 5],
+            "sourcemore": [{"n": "Disembodied Vindicator", "ti": 900201, "z": 3520}],
+        }
+
+        self.assertEqual(scraper.item_list_sources_from_ref(ref)[0]["type"], "drop")
+        self.assertEqual(scraper.item_list_sources_from_ref(ref, {900201})[0]["type"], "vendor")
 
     def test_item_stats_import_prefers_related_table_sources_over_generic_item_list_sources(self):
         snapshot = {
@@ -1726,6 +1862,32 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(counts["leveling"], 1)
         self.assertEqual(counts["enchant_sources"], 40)
 
+    def test_items_import_family_uses_committed_snapshots_and_writes_only_items(self):
+        loaded_from = []
+        writes = []
+        original_load_snapshots = scraper.load_snapshots
+        original_import_items = scraper.import_items_from_snapshots
+        original_write_text = scraper.write_text
+        scraper.load_snapshots = lambda path: loaded_from.append(path) or []
+        scraper.import_items_from_snapshots = lambda snapshots: {"items": [{"id": 1}]}
+        scraper.write_text = lambda path, content: writes.append((path, content))
+        try:
+            args = SimpleNamespace(input_dir=scraper.RAW_WOWHEAD_DIR, family="items", dry_run=False)
+            exit_code = scraper.command_import(args)
+        finally:
+            scraper.load_snapshots = original_load_snapshots
+            scraper.import_items_from_snapshots = original_import_items
+            scraper.write_text = original_write_text
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(
+            loaded_from,
+            [scraper.RAW_WOWHEAD_DIR / directory for directory in scraper.ITEM_REFRESH_SNAPSHOT_DIRS],
+        )
+        self.assertEqual([path.name for path, _ in writes], ["items.json"])
+        parsed_args = scraper.build_parser().parse_args(["import", "--family", "items", "--dry-run"])
+        self.assertEqual(parsed_args.family, "items")
+
     def test_leveling_import_uses_narrative_sections_without_tables(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-leveling"
         snapshot = parse_guide_html(
@@ -2095,6 +2257,41 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(source["token_sources"][0]["token_item_id"], 31095)
         self.assertEqual(source["token_sources"][0]["entity_name"], "Archimonde")
         self.assertEqual(item["source_summary"], "Token: Helm of the Forgotten Protector - Archimonde (Hyjal Summit) 55.6%")
+
+    def test_entity_source_import_enriches_committed_item_cost_names(self):
+        inscription_url = "https://www.wowhead.com/tbc/item=28888/greater-inscription-of-vengeance"
+        inscription = {
+            "page_type": "item",
+            "item_id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "url": inscription_url,
+            "normalized_sources": scraper.normalize_item_sources(
+                inscription_url,
+                {
+                    "sold-by": [
+                        {"id": 21905, "name": "Inscriber Saalyn", "location": [3703], "cost": [[0, [], [[29735, 8]]]]}
+                    ]
+                },
+            ),
+        }
+        token = {
+            "page_type": "item",
+            "item_id": 29735,
+            "name": "Holy Dust",
+            "url": "https://www.wowhead.com/tbc/item=29735/holy-dust",
+            "normalized_sources": [],
+        }
+
+        imported = scraper.import_entity_sources_from_snapshots(
+            [inscription, token],
+            [{"id": 28888, "type": "item"}],
+            "enchant_sources",
+        )["enchant_sources"][0]
+
+        source = imported["sources"][0]
+        self.assertEqual(source["costs"][0]["name"], "Holy Dust")
+        self.assertEqual(source["location_area"], "Shattrath City")
+        self.assertEqual(source["purchase_quantity"], 1)
 
     def test_import_items_attaches_reviewed_quest_starter_sources(self):
         reward_url = "https://www.wowhead.com/tbc/item=28791/ring-of-the-recalcitrant"

@@ -125,6 +125,16 @@ local function addTooltipInfoSafely(tooltip, tooltipData)
     end
 end
 
+local function familiarTooltipText(value)
+    local text = tostring(value or "")
+    text = string.gsub(text, "No match", "Not ranked")
+    text = string.gsub(text, "Hard Farm", "Hard")
+    text = string.gsub(text, "Nice%-to%-have", "Optional")
+    text = string.gsub(text, "%f[%a]BiS%f[%A]", "Best in slot")
+    text = string.gsub(text, "%f[%a]Alt%f[%A]", "Alternative")
+    return (string.gsub(string.gsub(text, "^%s+", ""), "%s+$", ""))
+end
+
 local function lineForTooltipMatch(match)
     local left = match.class .. " " .. match.spec
     if match.slot and match.slot ~= "" then
@@ -132,7 +142,7 @@ local function lineForTooltipMatch(match)
     end
 
     if match.tooltip_grouped then
-        return left, match.phase_summary or ""
+        return left, familiarTooltipText(match.phase_summary)
     end
 
     local right = BigBiSList:GetPhaseDisplayName(match.phase)
@@ -141,7 +151,7 @@ local function lineForTooltipMatch(match)
     end
     local tagLabel = match.display_rank_label or match.rank_label
     if not match.leveling and tagLabel and tagLabel ~= "" then
-        right = right .. " " .. tagLabel
+        right = right .. " " .. familiarTooltipText(tagLabel)
     end
 
     return left, right
@@ -165,7 +175,8 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     end
 
     local selection = self:GetCharacterDB().selection or {}
-    local levelingMode = selection.phase == LEVELING_PHASE_KEY
+    local effectivePhaseKey = self.GetEffectivePhaseKey and self:GetEffectivePhaseKey(selection) or selection.phase
+    local levelingMode = effectivePhaseKey == LEVELING_PHASE_KEY
     local selectedLevel = levelingMode and self.GetSelectedLevelingLevel and self:GetSelectedLevelingLevel() or nil
     local selectedSpecFirst = settings.selectedSpecFirst ~= false
     local specFilters = settings.specFilters
@@ -191,7 +202,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         tostring(showExpanded),
         tostring(selection.class),
         tostring(selection.spec),
-        tostring(selection.phase),
+        tostring(effectivePhaseKey),
         tostring(selectedLevel),
         tostring(priorityContext and priorityContext.playerClass),
         tostring(priorityContext and priorityContext.playerSpec),
@@ -219,7 +230,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     local rawDiffersFromGrouped = #rawMatches ~= #groupedMatches
     local hasHiddenRows = #matches > maxRows
     if not showExpanded and settings.showAllOnAlt and (rawDiffersFromGrouped or hasHiddenRows) then
-        tooltip:AddLine("Hold ALT to show all Big BiS List matches", 0.62, 0.62, 0.66)
+        tooltip:AddLine("Hold ALT to show all rankings", 0.62, 0.62, 0.66)
     end
 end
 

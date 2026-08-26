@@ -120,30 +120,73 @@ PROFESSION_SPECIALIZATION_PROFESSIONS = {
 }
 
 ZONE_ID_NAMES = {
+    3: "Badlands",
+    4: "Blasted Lands",
+    8: "Swamp of Sorrows",
+    10: "Duskwood",
+    11: "Wetlands",
+    12: "Elwynn Forest",
+    15: "Dustwallow Marsh",
+    16: "Azshara",
+    17: "The Barrens",
+    28: "Western Plaguelands",
+    33: "Stranglethorn Vale",
+    36: "Alterac Mountains",
+    41: "Deadwind Pass",
+    44: "Redridge Mountains",
+    45: "Arathi Highlands",
+    47: "The Hinterlands",
+    51: "Searing Gorge",
+    139: "Eastern Plaguelands",
+    215: "Mulgore",
+    267: "Hillsbrad Foothills",
+    331: "Ashenvale",
+    357: "Feralas",
+    361: "Felwood",
+    400: "Thousand Needles",
+    405: "Desolace",
+    406: "Stonetalon Mountains",
     440: "Tanaris",
+    490: "Un'Goro Crater",
+    493: "Moonglade",
+    618: "Winterspring",
     1377: "Silithus",
+    1497: "Undercity",
+    1519: "Stormwind City",
+    1537: "Ironforge",
+    1637: "Orgrimmar",
+    1638: "Thunder Bluff",
+    1657: "Darnassus",
     1583: "Blackrock Spire",
     1584: "Blackrock Depths",
     1941: "Caverns of Time",
     1977: "Zul'Gurub",
     2017: "Stratholme",
     2057: "Scholomance",
+    2100: "Maraudon",
     2366: "The Black Morass",
     2367: "Old Hillsbrad Foothills",
     2557: "Dire Maul",
+    2597: "Alterac Valley",
     2677: "Blackwing Lair",
     2717: "Molten Core",
+    3358: "Arathi Basin",
     3428: "Ahn'Qiraj",
     3429: "Ruins of Ahn'Qiraj",
+    3430: "Eversong Woods",
+    3433: "Ghostlands",
     3456: "Naxxramas",
     3457: "Karazhan",
     3483: "Hellfire Peninsula",
+    3487: "Silvermoon City",
     3518: "Nagrand",
     3519: "Terokkar Forest",
     3520: "Shadowmoon Valley",
     3521: "Zangarmarsh",
     3522: "Blade's Edge Mountains",
     3523: "Netherstorm",
+    3524: "Azuremyst Isle",
+    3557: "The Exodar",
     3562: "Hellfire Ramparts",
     3606: "Hyjal Summit",
     3607: "Serpentshrine Cavern",
@@ -159,6 +202,7 @@ ZONE_ID_NAMES = {
     3791: "Sethekk Halls",
     3792: "Mana-Tombs",
     3805: "Zul'Aman",
+    3820: "Eye of the Storm",
     3836: "Magtheridon's Lair",
     3845: "Tempest Keep",
     3847: "The Botanica",
@@ -1276,26 +1320,44 @@ def first_zone_name(row: dict[str, Any]) -> str | None:
     return zones[0] if zones else None
 
 
-def parse_costs(raw_cost: Any) -> list[dict[str, Any]]:
-    if not isinstance(raw_cost, list):
+def location_fields_for_row(row: dict[str, Any]) -> dict[str, Any]:
+    zones = zone_names_for_row(row)
+    fields: dict[str, Any] = {}
+    if zones:
+        fields["zone"] = zones[0]
+        fields["location_area"] = zones[0]
+    if len(zones) > 1:
+        fields["location_note"] = "Also reported in " + ", ".join(zones[1:])
+    elif not zones and re.match(r"^Field Repair Bot\b", str(row.get("name") or ""), flags=re.IGNORECASE):
+        fields["location_area"] = "Portable"
+        fields["location_note"] = "Portable summoned vendor"
+    return fields
+
+
+def normalized_cost_groups(raw_cost: Any) -> list[list[Any]]:
+    if not isinstance(raw_cost, list) or not raw_cost:
         return []
+    if isinstance(raw_cost[0], (int, float)) and not isinstance(raw_cost[0], bool):
+        return [raw_cost]
+    return [group for group in raw_cost if isinstance(group, list)]
+
+
+def parse_costs(raw_cost: Any) -> list[dict[str, Any]]:
     costs: list[dict[str, Any]] = []
-
-    cost_groups = raw_cost
-    if raw_cost and isinstance(raw_cost[0], (int, float)):
-        cost_groups = [raw_cost]
-
-    for cost_group in cost_groups:
-        if not isinstance(cost_group, list):
-            continue
+    for cost_group in normalized_cost_groups(raw_cost):
         for bucket in cost_group[1:]:
             if not isinstance(bucket, list):
                 continue
             for entry in bucket:
                 if not isinstance(entry, list) or len(entry) < 2:
                     continue
-                cost_id = int(entry[0])
-                amount = int(entry[1])
+                try:
+                    cost_id = int(entry[0])
+                    amount = int(entry[1])
+                except (TypeError, ValueError):
+                    continue
+                if cost_id <= 0 or amount <= 0:
+                    continue
                 cost: dict[str, Any] = {"amount": amount, "name": CURRENCY_NAMES.get(cost_id, f"Item {cost_id}")}
                 if cost_id in CURRENCY_NAMES:
                     cost["currency_id"] = cost_id
@@ -1303,6 +1365,39 @@ def parse_costs(raw_cost: Any) -> list[dict[str, Any]]:
                     cost["item_id"] = cost_id
                 costs.append(cost)
     return costs
+
+
+def parse_price_copper(raw_cost: Any) -> int | None:
+    prices: list[int] = []
+    for cost_group in normalized_cost_groups(raw_cost):
+        if not cost_group:
+            continue
+        raw_price = cost_group[0]
+        if isinstance(raw_price, bool) or not isinstance(raw_price, (int, float)):
+            continue
+        price = int(raw_price)
+        if price > 0:
+            prices.append(price)
+    return prices[0] if prices else None
+
+
+def purchase_fields_for_row(row: dict[str, Any]) -> dict[str, Any]:
+    costs = parse_costs(row.get("cost"))
+    price_copper = parse_price_copper(row.get("cost"))
+    fields: dict[str, Any] = {}
+    if price_copper is not None:
+        fields["price_copper"] = price_copper
+    if costs:
+        fields["costs"] = costs
+
+    if price_copper is not None or costs:
+        raw_quantity = row.get("stack", 1)
+        try:
+            purchase_quantity = int(raw_quantity)
+        except (TypeError, ValueError):
+            purchase_quantity = 1
+        fields["purchase_quantity"] = purchase_quantity if purchase_quantity > 0 else 1
+    return fields
 
 
 def pct_from_row(row: dict[str, Any]) -> float | None:
@@ -1429,17 +1524,18 @@ def normalize_item_sources(url: str, tables: dict[str, list[dict[str, Any]]]) ->
         sources.append({key: value for key, value in source.items() if value is not None})
 
     for row in tables.get("sold-by", []):
-        costs = parse_costs(row.get("cost"))
+        purchase_fields = purchase_fields_for_row(row)
+        costs = purchase_fields.get("costs", [])
         source_type = "pvp" if any(cost.get("currency_id") in {1900, 1901} for cost in costs) else "vendor"
         source = {
             "type": source_type,
             "entity_id": row.get("id"),
             "entity_name": row.get("name"),
             "vendor_id": row.get("id"),
-            "zone": first_zone_name(row),
-            "costs": costs,
             "source_url": url,
             "confidence": "wowhead_item",
+            **location_fields_for_row(row),
+            **purchase_fields,
         }
         sources.append({key: value for key, value in source.items() if value not in (None, [])})
 
@@ -2129,15 +2225,17 @@ def normalize_spell_sources(url: str, tables: dict[str, list[dict[str, Any]]]) -
         sources.append({key: value for key, value in source.items() if value is not None})
 
     for row in tables.get("sold-by", []):
+        purchase_fields = purchase_fields_for_row(row)
+        costs = purchase_fields.get("costs", [])
         source = {
-            "type": "vendor",
+            "type": "pvp" if any(cost.get("currency_id") in {1900, 1901} for cost in costs) else "vendor",
             "vendor_id": row.get("id"),
             "entity_id": row.get("id"),
             "entity_name": row.get("name"),
-            "zone": first_zone_name(row),
-            "costs": parse_costs(row.get("cost")),
             "source_url": url,
             "confidence": "wowhead_spell",
+            **location_fields_for_row(row),
+            **purchase_fields,
         }
         sources.append({key: value for key, value in source.items() if value not in (None, [])})
 
@@ -2572,10 +2670,36 @@ def item_listview_slot_name(value: Any) -> str | None:
         return None
 
 
-def item_list_source_type(ref: dict[str, Any]) -> str:
+def item_list_source_type(
+    ref: dict[str, Any],
+    source_row: dict[str, Any] | None = None,
+    known_vendor_ids: set[int] | None = None,
+) -> str:
     source_kinds = ref.get("source")
     if isinstance(source_kinds, list):
-        if 5 in source_kinds:
+        if isinstance(source_row, dict) and source_row:
+            if "dd" in source_row and 2 in source_kinds:
+                return "drop"
+            if source_row.get("t") == 6 and 1 in source_kinds:
+                return "crafted"
+            if source_row.get("t") == 5 and 4 in source_kinds:
+                return "quest"
+            entity_id = source_row.get("ti") or source_row.get("id")
+            if 2 in source_kinds and 5 in source_kinds:
+                if isinstance(entity_id, int) and entity_id in (known_vendor_ids or set()):
+                    return "vendor"
+                return "drop"
+            if 5 in source_kinds:
+                return "vendor"
+            if 3 in source_kinds:
+                return "pvp"
+            if 4 in source_kinds:
+                return "quest"
+            if 1 in source_kinds:
+                return "crafted"
+            if 2 in source_kinds:
+                return "drop"
+        if len(source_kinds) == 1 and 5 in source_kinds:
             return "vendor"
         if 4 in source_kinds:
             return "quest"
@@ -2588,8 +2712,7 @@ def item_list_source_type(ref: dict[str, Any]) -> str:
     return "unknown"
 
 
-def item_list_sources_from_ref(ref: dict[str, Any]) -> list[dict[str, Any]]:
-    source_type = item_list_source_type(ref)
+def item_list_sources_from_ref(ref: dict[str, Any], known_vendor_ids: set[int] | None = None) -> list[dict[str, Any]]:
     source_rows = ref.get("sourcemore") if isinstance(ref.get("sourcemore"), list) else []
     if not source_rows:
         source_rows = [{}]
@@ -2599,6 +2722,7 @@ def item_list_sources_from_ref(ref: dict[str, Any]) -> list[dict[str, Any]]:
     for source_row in source_rows:
         if not isinstance(source_row, dict):
             continue
+        source_type = item_list_source_type(ref, source_row, known_vendor_ids)
         row_for_zone = {"sourcemore": [source_row]}
         source = {
             "type": source_type,
@@ -2608,6 +2732,11 @@ def item_list_sources_from_ref(ref: dict[str, Any]) -> list[dict[str, Any]]:
             "source_url": ref.get("url"),
             "confidence": "wowhead_item_list",
         }
+        if source_type in {"vendor", "pvp"}:
+            purchase_row = {**ref, **source_row}
+            purchase_row["sourcemore"] = [source_row]
+            source.update(location_fields_for_row(purchase_row))
+            source.update(purchase_fields_for_row(purchase_row))
         if source_type == "world_drop":
             source["world_drop"] = True
         cleaned = {key: value for key, value in source.items() if value not in (None, "", [])}
@@ -2630,7 +2759,9 @@ def source_detail_score(source: dict[str, Any] | None) -> int:
         score += 4
     if source.get("zone"):
         score += 1
-    if source.get("costs"):
+    if source.get("location_area"):
+        score += 1
+    if source.get("costs") or source.get("price_copper"):
         score += 1
     return score
 
@@ -2651,8 +2782,21 @@ def item_snapshot_sources(snapshot: dict[str, Any] | None) -> list[dict[str, Any
     return []
 
 
+def committed_vendor_entity_ids(snapshots: list[dict[str, Any]]) -> set[int]:
+    vendor_ids: set[int] = set()
+    for snapshot in snapshots:
+        for source in item_snapshot_sources(snapshot):
+            if source.get("type") not in {"vendor", "pvp", "token_turnin"}:
+                continue
+            entity_id = source.get("vendor_id") or source.get("entity_id")
+            if isinstance(entity_id, int) and entity_id > 0:
+                vendor_ids.add(entity_id)
+    return vendor_ids
+
+
 def item_list_metadata_by_id(snapshots: list[dict[str, Any]], *, authoritative_only: bool = False) -> dict[int, dict[str, Any]]:
     metadata: dict[int, dict[str, Any]] = {}
+    known_vendor_ids = committed_vendor_entity_ids(snapshots)
     for snapshot in snapshots:
         if snapshot.get("page_type") != "item_list":
             continue
@@ -2679,7 +2823,7 @@ def item_list_metadata_by_id(snapshots: list[dict[str, Any]], *, authoritative_o
                 current["name"] = ref["name"]
             if ref.get("url"):
                 current["wowhead_url"] = ref["url"]
-            sources = item_list_sources_from_ref(ref)
+            sources = item_list_sources_from_ref(ref, known_vendor_ids)
             if sources:
                 current["sources"] = sources
                 current["primary_source"] = derive_primary_source(sources)
@@ -4223,7 +4367,7 @@ def import_entity_sources_from_snapshots(
 
     for item_id in sorted(item_id for item_id in wanted_item_ids if item_id in item_snapshots):
         snapshot = item_snapshots[item_id]
-        sources = snapshot.get("normalized_sources", [])
+        sources = attach_token_turnins_to_sources(snapshot.get("normalized_sources", []), item_snapshots)
         requirements = dedupe_requirements(snapshot_requirements(snapshot) + source_list_requirements(sources))
         source_row = {
             "id": item_id,
@@ -4240,7 +4384,7 @@ def import_entity_sources_from_snapshots(
 
     for spell_id in sorted(spell_id for spell_id in wanted_spell_ids if spell_id in spell_snapshots):
         snapshot = spell_snapshots[spell_id]
-        sources = snapshot.get("normalized_sources", [])
+        sources = attach_token_turnins_to_sources(snapshot.get("normalized_sources", []), item_snapshots)
         requirements = dedupe_requirements(snapshot_requirements(snapshot) + source_list_requirements(sources))
         source_row = {
             "id": spell_id,
@@ -5096,9 +5240,46 @@ def item_stats_from_snapshot(snapshot: dict[str, Any]) -> dict[str, Any] | None:
     return sanitize_item_stats_effects({key: value for key, value in row.items() if value not in (None, [], {})}, description)
 
 
+def enrich_source_cost_names(sources: list[dict[str, Any]], item_names: dict[int, str]) -> list[dict[str, Any]]:
+    enriched_sources: list[dict[str, Any]] = []
+    for source in sources or []:
+        enriched = deepcopy(source)
+        costs = []
+        for raw_cost in source.get("costs", []) or []:
+            cost = deepcopy(raw_cost)
+            item_id = cost.get("item_id")
+            cost_name = str(cost.get("name") or "").strip()
+            if (
+                isinstance(item_id, int)
+                and item_id > 0
+                and (not cost_name or re.fullmatch(r"Item\s+\d+", cost_name, flags=re.IGNORECASE))
+                and item_names.get(item_id)
+            ):
+                cost["name"] = item_names[item_id]
+            costs.append(cost)
+        if costs:
+            enriched["costs"] = costs
+        for child_key in ("token_sources", "quest_starter_sources", "recipe_sources"):
+            if source.get(child_key):
+                enriched[child_key] = enrich_source_cost_names(source[child_key], item_names)
+        enriched_sources.append(enriched)
+    return enriched_sources
+
+
 def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
     rows: dict[int, dict[str, Any]] = {}
     list_metadata = item_list_metadata_by_id(snapshots, authoritative_only=True)
+    item_names = {
+        int(snapshot["item_id"]): str(snapshot["name"])
+        for snapshot in snapshots
+        if isinstance(snapshot.get("item_id"), int) and snapshot.get("name")
+    }
+    for snapshot in snapshots:
+        for ref in snapshot.get("item_refs", []) or []:
+            item_id = ref.get("id")
+            if isinstance(item_id, int) and item_id > 0 and ref.get("name"):
+                item_names[item_id] = str(ref["name"])
+    item_names.update({item_id: str(metadata["name"]) for item_id, metadata in list_metadata.items() if metadata.get("name")})
     restrict_to_list = bool(list_metadata)
     allowed_item_ids = set(list_metadata)
     if restrict_to_list:
@@ -5112,6 +5293,10 @@ def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[st
             continue
         row = apply_item_list_metadata(row, list_metadata.get(int(row["id"])))
         row = enrich_item_stats_access_metadata(row, snapshot)
+        if row.get("sources"):
+            row["sources"] = enrich_source_cost_names(row["sources"], item_names)
+            row["primary_source"] = derive_primary_source(row["sources"])
+            row["source_summary"] = summarize_sources(row["sources"])
         rows[item_id] = row
     return {"item_stats": [rows[item_id] for item_id in sorted(rows)]}
 
@@ -5346,12 +5531,14 @@ IMPORT_OUTPUT_FILES = {
 }
 
 IMPORT_FILES_BY_FAMILY = {
+    "items": ["items.json"],
     "bis_lists": ["items.json", "bis_lists.json"],
     "gems": ["items.json", "gems.json", "gem_sources.json"],
     "enchants": ["items.json", "enchants.json", "enchant_sources.json"],
     "consumables": ["items.json", "consumables.json"],
     "leveling": ["items.json", "leveling.json", "leveling_gear.json"],
     "item_corpus": ["item_stats.json", "item_variants.json", "leveling_recommendations.json", "recommendation_audit.json"],
+    "item_stats": ["item_stats.json"],
 }
 
 
@@ -5395,11 +5582,40 @@ def canonical_doc_or_default(name: str, default: dict[str, Any]) -> dict[str, An
         return deepcopy(default)
 
 
+ITEM_REFRESH_SNAPSHOT_DIRS = (
+    "full_item_corpus",
+    "full_bis",
+    "full_leveling",
+    "full_consumables",
+    "full_gems",
+    "full_enchants",
+)
+
+
+def load_committed_item_refresh_snapshots() -> list[dict[str, Any]]:
+    snapshots: list[dict[str, Any]] = []
+    for directory_name in ITEM_REFRESH_SNAPSHOT_DIRS:
+        snapshots.extend(load_snapshots(RAW_WOWHEAD_DIR / directory_name))
+    return snapshots
+
+
 def command_import(args: argparse.Namespace) -> int:
+    use_committed_item_refresh = args.family in {"items", "item_stats"} and args.input_dir == RAW_WOWHEAD_DIR
     if args.family == "item_corpus" and args.input_dir == RAW_WOWHEAD_DIR:
         args.input_dir = RAW_WOWHEAD_DIR / "full_item_corpus"
-    snapshots = load_snapshots(args.input_dir)
+    if use_committed_item_refresh:
+        snapshots = load_committed_item_refresh_snapshots()
+    else:
+        snapshots = load_snapshots(args.input_dir)
     imported_items = import_items_from_snapshots(snapshots)
+    if args.family == "items":
+        if args.dry_run:
+            print(json.dumps({"family": "items", "items": len(imported_items.get("items", []))}, indent=2, sort_keys=True))
+            return 0
+        file_name = "items.json"
+        write_text(CANONICAL_DIR / file_name, json.dumps(imported_items, indent=2, sort_keys=True) + "\n")
+        print(f"Wrote {CANONICAL_DIR / file_name}")
+        return 0
     imported_bis_lists = apply_bis_overrides(import_bis_lists_from_snapshots(snapshots))
     imported_gems = import_gems_from_snapshots(snapshots)
     imported_gem_sources = import_entity_sources_from_snapshots(snapshots, imported_gems["gems"], "gem_sources")
@@ -6301,7 +6517,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     import_parser = subparsers.add_parser("import", help="Import canonical data from normalized snapshots.")
     import_parser.add_argument("--input-dir", type=Path, default=RAW_WOWHEAD_DIR)
-    import_parser.add_argument("--family", choices=["bis_lists", "gems", "enchants", "consumables", "leveling", "item_corpus"])
+    import_parser.add_argument("--family", choices=["items", "bis_lists", "gems", "enchants", "consumables", "leveling", "item_corpus", "item_stats"])
     import_parser.add_argument("--dry-run", action="store_true")
     import_parser.set_defaults(func=command_import)
 

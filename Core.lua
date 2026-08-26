@@ -57,19 +57,30 @@ end
 
 function BigBiSList:ShowStatus()
     printLine(self.displayName .. " " .. self.version .. " loaded.")
-    printLine("Data seed: " .. self:GetDataSummary() .. ".")
+    printLine("Data: " .. self:GetDataSummary() .. ".")
 end
 
 function BigBiSList:RunSmokeTest()
     self:EnsureDatabase()
     printLine("Smoke test passed. Saved variable BigBiSListDB is initialized.")
     local selection = self:GetCharacterDB().selection
-    printLine("Current selection: " .. selection.class .. " / " .. selection.spec .. " / " .. self:GetPhaseDisplayName(selection.phase) .. ".")
+    local effectivePhaseKey = self.GetEffectivePhaseKey and self:GetEffectivePhaseKey(selection) or selection.phase
+    local levelingPhaseKey = self.levelingPhaseKey or "LEVELING"
+    local contextLabel
+    if effectivePhaseKey == levelingPhaseKey then
+        local level = self.GetSelectedLevelingLevel and self:GetSelectedLevelingLevel() or (self.maxLevelingLevel or 69)
+        contextLabel = "Leveling (level " .. tostring(level) .. ")"
+    else
+        contextLabel = self:GetPhaseDisplayName(selection.phase or effectivePhaseKey)
+    end
+    printLine("Viewing: " .. selection.class .. " / " .. selection.spec .. " / " .. contextLabel .. ".")
     self:RunTimingSmokeTest(selection)
 end
 
 function BigBiSList:RunTimingSmokeTest(selection)
     selection = selection or self:GetCharacterDB().selection
+    local effectivePhaseKey = self.GetEffectivePhaseKey and self:GetEffectivePhaseKey(selection) or selection.phase
+    local levelingPhaseKey = self.levelingPhaseKey or "LEVELING"
     local filters = {
         sourceType = "all",
         zone = "all",
@@ -89,32 +100,32 @@ function BigBiSList:RunTimingSmokeTest(selection)
     timeSmokeStep("GetDataIndex", function()
         return self:GetDataIndex()
     end)
-    if selection.phase == self.levelingPhaseKey then
+    if effectivePhaseKey == levelingPhaseKey then
         filters.level = self.GetSelectedLevelingLevel and self:GetSelectedLevelingLevel() or (self.maxLevelingLevel or 69)
         timeSmokeStep("leveling rows", function()
             return self:GetLevelingRows(selection.class, selection.spec, filters.level, filters)
         end)
     else
         timeSmokeStep("planner rows", function()
-            return self:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
+            return self:GetPlannerRows(selection.class, selection.spec, effectivePhaseKey, filters)
         end)
         timeSmokeStep("phase rows", function()
-            return self:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
+            return self:GetPhaseRows(selection.class, selection.spec, effectivePhaseKey, filters)
         end)
     end
     timeSmokeStep("filter availability", function()
-        return self:GetFilterAvailabilitySnapshot(selection.class, selection.spec, selection.phase, selection.tab, filters)
+        return self:GetFilterAvailabilitySnapshot(selection.class, selection.spec, effectivePhaseKey, selection.tab, filters)
     end)
     timeSmokeStep("repeated cached calls", function()
         for _ = 1, 3 do
             self:GetDataIndex()
-            if selection.phase == self.levelingPhaseKey then
+            if effectivePhaseKey == levelingPhaseKey then
                 self:GetLevelingRows(selection.class, selection.spec, filters.level, filters)
             else
-                self:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
-                self:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
+                self:GetPlannerRows(selection.class, selection.spec, effectivePhaseKey, filters)
+                self:GetPhaseRows(selection.class, selection.spec, effectivePhaseKey, filters)
             end
-            self:GetFilterAvailabilitySnapshot(selection.class, selection.spec, selection.phase, selection.tab, filters)
+            self:GetFilterAvailabilitySnapshot(selection.class, selection.spec, effectivePhaseKey, selection.tab, filters)
         end
     end)
 end
@@ -194,6 +205,16 @@ SLASH_BIGBISLIST2 = "/bbl"
 SlashCmdList.BIGBISLIST = handleSlashCommand
 
 SLASH_BIGBISLISTTEST1 = "/bbltest"
-SlashCmdList.BIGBISLISTTEST = function()
+SlashCmdList.BIGBISLISTTEST = function(input)
+    input = string.lower((input or ""):gsub("^%s+", ""):gsub("%s+$", ""))
+    if input == "perf" then
+        local ui = BigBiSList.UI
+        if ui and type(ui.RunPerformanceSmoke) == "function" then
+            ui:RunPerformanceSmoke()
+        else
+            printLine("Performance smoke test is unavailable in this build.")
+        end
+        return
+    end
     BigBiSList:RunSmokeTest()
 end
