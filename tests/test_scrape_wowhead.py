@@ -7,6 +7,7 @@ import tempfile
 import unittest
 
 import tools.scrape_wowhead as scraper
+from tools.recommend_leveling import recommendation_rows_for
 from tools.scrape_wowhead import parse_costs, parse_guide_html, parse_item_html, parse_spell_html
 
 
@@ -662,6 +663,299 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual(row["quality"], "epic")
         self.assertEqual(row["slot"], "Waist")
 
+    def test_item_stats_import_is_order_independent_and_preserves_richest_snapshot(self):
+        url = "https://www.wowhead.com/tbc/item=812/glowing-brightwood-staff"
+        rich_snapshot = {
+            "parser_version": scraper.PARSER_VERSION,
+            "page_type": "item",
+            "item_id": 812,
+            "name": "Glowing Brightwood Staff",
+            "url": url,
+            "quality": "epic",
+            "binding": "bind_on_equip",
+            "boe": True,
+            "item_stats": {
+                "id": 812,
+                "name": "Glowing Brightwood Staff",
+                "required_level": 49,
+                "item_level": 54,
+                "quality": "epic",
+                "binding": "bind_on_equip",
+                "boe": True,
+                "slot": "Two Hand",
+                "stats": {"intellect": 29.0, "spirit": 9.0, "stamina": 15.0},
+                "dps": 51.29,
+                "weapon_min_damage": 127,
+                "weapon_max_damage": 191,
+                "weapon_speed": 3.1,
+                "weapon_type": "Two Hand",
+                "weapon_subtype": "Staff",
+                "wowhead_url": url,
+                "parse_confidence": "tooltip_endpoint",
+            },
+            "normalized_sources": [],
+        }
+        legacy_snapshot = {
+            "parser_version": "wowhead-scraper-0.7.0",
+            "page_type": "item",
+            "item_id": 812,
+            "name": "Glowing Brightwood Staff",
+            "url": url,
+            "quality": "epic",
+            "binding": "bind_on_equip",
+            "boe": True,
+            "description": "This epic staff has an item level of 54. It is looted from Rotting Behemoth.",
+            "normalized_sources": [
+                {
+                    "type": "world_drop",
+                    "entity_name": "World Drop",
+                    "world_drop": True,
+                    "source_url": url,
+                    "confidence": "wowhead_item",
+                }
+            ],
+        }
+        complementary_snapshot = {
+            "parser_version": "wowhead-scraper-0.8.0",
+            "page_type": "item",
+            "item_id": 812,
+            "name": "Glowing Brightwood Staff",
+            "url": url,
+            "item_stats": {
+                "id": 812,
+                "name": "Glowing Brightwood Staff",
+                "slot": "Two Hand",
+                "stats": {"intellect": 1.0, "nature_resistance": 15.0},
+                "equip_effects": ["Equip: Restores 4 mana per 5 sec."],
+                "wowhead_url": url,
+                "parse_confidence": "tooltip",
+            },
+        }
+
+        forward = scraper.import_item_stats_from_snapshots([rich_snapshot, complementary_snapshot, legacy_snapshot])
+        reversed_order = scraper.import_item_stats_from_snapshots([legacy_snapshot, complementary_snapshot, rich_snapshot])
+
+        self.assertEqual(forward, reversed_order)
+        row = forward["item_stats"][0]
+        self.assertEqual(row["parse_confidence"], "tooltip_endpoint")
+        self.assertEqual(row["stats"], {"intellect": 29.0, "nature_resistance": 15.0, "spirit": 9.0, "stamina": 15.0})
+        self.assertEqual(row["equip_effects"], ["Equip: Restores 4 mana per 5 sec."])
+        self.assertEqual(row["dps"], 51.29)
+        self.assertEqual(row["weapon_min_damage"], 127)
+        self.assertEqual(row["weapon_max_damage"], 191)
+        self.assertEqual(row["source_summary"], "World Drop")
+
+    def test_item_stats_import_deterministically_merges_duplicate_source_metadata(self):
+        category_url = "https://www.wowhead.com/tbc/items/armor/cloth"
+        quest_category_url = "https://www.wowhead.com/tbc/items/quests/armor/cloth"
+        item_url = "https://www.wowhead.com/tbc/item=999401/fixture-belt"
+        list_snapshot = {
+            "page_type": "item_list",
+            "url": category_url,
+            "item_refs": [
+                {
+                    "id": 999401,
+                    "name": "Fixture Belt",
+                    "url": item_url,
+                    "slot": 6,
+                    "level": 105,
+                    "required_level": 70,
+                    "quality": 4,
+                    "source": [5],
+                    "sourcemore": [{"ti": 999501, "n": "Fixture Quartermaster"}],
+                }
+            ],
+        }
+        quest_list_snapshot = {
+            "page_type": "item_list",
+            "url": quest_category_url,
+            "item_refs": [
+                {
+                    "id": 999401,
+                    "name": "Fixture Belt",
+                    "url": item_url,
+                    "slot": 6,
+                    "level": 105,
+                    "required_level": 70,
+                    "quality": 4,
+                    "source": [4],
+                    "sourcemore": [{"ti": 999601, "n": "Fixture Belt Quest"}],
+                }
+            ],
+        }
+        rich_snapshot = {
+            "page_type": "item",
+            "item_id": 999401,
+            "name": "Fixture Belt",
+            "url": item_url,
+            "item_stats": {
+                "id": 999401,
+                "name": "Fixture Belt",
+                "stats": {"intellect": 18.0},
+                "armor": 100,
+                "wowhead_url": item_url,
+                "parse_confidence": "tooltip_endpoint",
+            },
+            "normalized_sources": [
+                {
+                    "type": "vendor",
+                    "vendor_id": 999501,
+                    "entity_name": "Fixture Quartermaster",
+                    "location_area": "Shattrath City",
+                    "price_copper": 25000,
+                    "source_url": item_url,
+                    "confidence": "wowhead_item",
+                }
+            ],
+        }
+        complementary_snapshot = {
+            "page_type": "item",
+            "item_id": 999401,
+            "name": "Fixture Belt",
+            "url": item_url,
+            "item_stats": {
+                "id": 999401,
+                "name": "Fixture Belt",
+                "stats": {"intellect": 1.0},
+                "wowhead_url": item_url,
+                "parse_confidence": "tooltip",
+            },
+            "normalized_sources": [
+                {
+                    "type": "vendor",
+                    "vendor_id": 999501,
+                    "entity_name": "Fixture Quartermaster",
+                    "costs": [{"amount": 12, "name": "Badge of Justice"}],
+                    "source_url": item_url,
+                    "confidence": "wowhead_item",
+                }
+            ],
+            "normalized_requirements": [
+                {
+                    "type": "reputation",
+                    "scope": "vendor_purchase",
+                    "reputation": "The Sha'tar",
+                    "standing": "Honored",
+                    "source_url": item_url,
+                    "raw_text": "Requires The Sha'tar - Honored",
+                    "confidence": "wowhead_item",
+                }
+            ],
+        }
+        manifest = {
+            "sources": [
+                {"url": category_url, "data_family": "item_corpus"},
+                {"url": quest_category_url, "data_family": "item_corpus"},
+            ]
+        }
+        original_canonical_json = scraper.canonical_json
+        scraper.canonical_json = lambda name: manifest if name == "scrape_manifest" else original_canonical_json(name)
+        try:
+            forward = scraper.import_item_stats_from_snapshots(
+                [list_snapshot, quest_list_snapshot, rich_snapshot, complementary_snapshot]
+            )
+            reversed_order = scraper.import_item_stats_from_snapshots(
+                [complementary_snapshot, rich_snapshot, quest_list_snapshot, list_snapshot]
+            )
+        finally:
+            scraper.canonical_json = original_canonical_json
+
+        self.assertEqual(forward, reversed_order)
+        row = forward["item_stats"][0]
+        self.assertEqual(row["required_level"], 70)
+        self.assertEqual(row["item_level"], 105)
+        self.assertEqual(row["quality"], "epic")
+        self.assertEqual(row["slot"], "Waist")
+        self.assertEqual(row["stats"], {"intellect": 18.0})
+        self.assertEqual({source["type"] for source in row["sources"]}, {"quest", "vendor"})
+        vendor_source = next(source for source in row["sources"] if source["type"] == "vendor")
+        quest_source = next(source for source in row["sources"] if source["type"] == "quest")
+        self.assertEqual(vendor_source["price_copper"], 25000)
+        self.assertEqual(vendor_source["costs"], [{"amount": 12, "name": "Badge of Justice"}])
+        self.assertEqual(quest_source["entity_name"], "Fixture Belt Quest")
+        self.assertEqual(row["requirements"][0]["reputation"], "The Sha'tar")
+
+    def test_rich_duplicate_snapshot_restores_leveling_recommendation(self):
+        item_url = "https://www.wowhead.com/tbc/item=999701/recovered-caster-belt"
+        source = {
+            "type": "quest",
+            "quest_id": 999801,
+            "entity_name": "Fixture Recovery Quest",
+            "source_url": item_url,
+            "confidence": "wowhead_item",
+        }
+        rich_snapshot = {
+            "page_type": "item",
+            "item_id": 999701,
+            "name": "Recovered Caster Belt",
+            "url": item_url,
+            "item_stats": {
+                "id": 999701,
+                "name": "Recovered Caster Belt",
+                "required_level": 10,
+                "item_level": 25,
+                "quality": "rare",
+                "slot": "Waist",
+                "stats": {"spell_power": 100.0},
+                "wowhead_url": item_url,
+                "parse_confidence": "tooltip_endpoint",
+            },
+            "normalized_sources": [source],
+        }
+        legacy_snapshot = {
+            "page_type": "item",
+            "item_id": 999701,
+            "name": "Recovered Caster Belt",
+            "url": item_url,
+            "inventory_slot": "Waist",
+            "description": "Recovered Caster Belt requires level 10.",
+            "normalized_sources": [source],
+        }
+        competitors = [
+            {
+                "id": 999710 + index,
+                "name": f"Fixture Competitor {index}",
+                "required_level": 10,
+                "slot": "Waist",
+                "stats": {"spell_power": spell_power},
+                "source_bucket": "quest",
+                "source_summary": "Quest: Fixture",
+                "wowhead_url": f"https://www.wowhead.com/tbc/item={999710 + index}/fixture-competitor",
+            }
+            for index, spell_power in enumerate([30.0, 20.0, 10.0], start=1)
+        ]
+        legacy_doc = scraper.import_item_stats_from_snapshots([legacy_snapshot])
+        merged_doc = scraper.import_item_stats_from_snapshots([rich_snapshot, legacy_snapshot])
+        legacy_doc["item_stats"].extend(scraper.deepcopy(competitors))
+        merged_doc["item_stats"].extend(scraper.deepcopy(competitors))
+        recommendation_args = {
+            "class_name": "Mage",
+            "spec_name": "Arcane",
+            "race": "*",
+            "level": 20,
+            "slot": "Waist",
+            "context": "best_overall",
+        }
+
+        legacy_rows, _legacy_audit = recommendation_rows_for(
+            legacy_doc,
+            {"item_variants": []},
+            scraper.canonical_json("racial_modifiers"),
+            scraper.canonical_json("scoring_profiles"),
+            **recommendation_args,
+        )
+        merged_rows, _merged_audit = recommendation_rows_for(
+            merged_doc,
+            {"item_variants": []},
+            scraper.canonical_json("racial_modifiers"),
+            scraper.canonical_json("scoring_profiles"),
+            **recommendation_args,
+        )
+
+        self.assertNotIn(999701, {row["item_id"] for row in legacy_rows})
+        self.assertEqual(merged_rows[0]["item_id"], 999701)
+        self.assertEqual(merged_rows[0]["score"], 100.0)
+
     def test_item_stats_import_resolves_placeholder_item_cost_names_offline(self):
         purchased_item = {
             "page_type": "item",
@@ -923,6 +1217,85 @@ class WowheadScraperParserTests(unittest.TestCase):
             self.assertTrue(any("Truncated item list snapshot" in error for error in audit["errors"]))
         finally:
             scraper.canonical_json = original_canonical_json
+
+    def test_item_corpus_audit_reports_completeness_and_fails_fidelity_regressions(self):
+        category_url = "https://www.wowhead.com/tbc/items/weapons/staves"
+        item_url = "https://www.wowhead.com/tbc/item=812/glowing-brightwood-staff"
+        list_snapshot = {
+            "parser_version": scraper.PARSER_VERSION,
+            "url": category_url,
+            "page_type": "item_list",
+            "item_refs": [
+                {"id": 812, "name": "Glowing Brightwood Staff", "url": item_url, "slot": 17, "level": 54, "required_level": 49},
+            ],
+            "summary": {"truncated": False, "displayed_items": 1, "total_items": 1},
+        }
+        item_snapshot = {
+            "parser_version": scraper.PARSER_VERSION,
+            "url": item_url,
+            "page_type": "item",
+            "item_id": 812,
+            "name": "Glowing Brightwood Staff",
+            "quality": "epic",
+            "item_stats": {
+                "id": 812,
+                "name": "Glowing Brightwood Staff",
+                "slot": "Two Hand",
+                "stats": {"intellect": 29.0},
+                "wowhead_url": item_url,
+                "parse_confidence": "tooltip_endpoint",
+            },
+            "normalized_sources": [
+                {"type": "world_drop", "entity_name": "World Drop", "world_drop": True, "source_url": item_url, "confidence": "wowhead_item"},
+            ],
+        }
+        manifest = {"sources": [{"url": category_url, "data_family": "item_corpus"}]}
+        expected = scraper.import_item_stats_from_snapshots([list_snapshot, item_snapshot])
+        stale = scraper.deepcopy(expected)
+        stale["item_stats"][0].pop("stats")
+        original_canonical_json = scraper.canonical_json
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                input_dir = Path(tmp)
+                (input_dir / "list.json").write_text(json.dumps(list_snapshot), encoding="utf-8")
+                (input_dir / "item.json").write_text(json.dumps(item_snapshot), encoding="utf-8")
+
+                scraper.canonical_json = lambda name: manifest if name == "scrape_manifest" else expected if name == "item_stats" else original_canonical_json(name)
+                clean_audit = scraper.build_item_corpus_audit(input_dir)
+
+                scraper.canonical_json = lambda name: manifest if name == "scrape_manifest" else stale if name == "item_stats" else original_canonical_json(name)
+                stale_audit = scraper.build_item_corpus_audit(input_dir)
+        finally:
+            scraper.canonical_json = original_canonical_json
+
+        self.assertTrue(clean_audit["ok"])
+        self.assertEqual(clean_audit["summary"]["raw_completeness"], 1)
+        self.assertEqual(clean_audit["summary"]["canonical_completeness"], 1)
+        self.assertEqual(clean_audit["summary"]["minimum_canonical_completeness"], 14_448)
+        self.assertEqual(scraper.ITEM_CORPUS_MIN_COMPLETE, 14_448)
+        self.assertEqual(clean_audit["summary"]["fidelity_regressions"], 0)
+        self.assertFalse(stale_audit["ok"])
+        self.assertEqual(stale_audit["summary"]["raw_completeness"], 1)
+        self.assertEqual(stale_audit["summary"]["canonical_completeness"], 0)
+        self.assertEqual(stale_audit["summary"]["fidelity_regressions"], 1)
+        self.assertEqual(stale_audit["fidelity_regressions"][0]["field"], "stats")
+        self.assertTrue(any("Canonical item stat fidelity regressions" in error for error in stale_audit["errors"]))
+
+    def test_committed_item_stats_preserve_release_completeness_and_item_812(self):
+        item_stats_doc = scraper.canonical_json("item_stats")
+        report = scraper.item_corpus_report(item_stats_doc)
+        by_id = {item["id"]: item for item in item_stats_doc["item_stats"]}
+        item = by_id[812]
+
+        self.assertGreaterEqual(report["complete"], 14_448)
+        self.assertEqual(item["parse_confidence"], "tooltip_endpoint")
+        self.assertEqual(item["stats"], {"intellect": 29.0, "spirit": 9.0, "stamina": 15.0})
+        self.assertEqual(item["dps"], 51.29)
+        self.assertEqual(item["weapon_min_damage"], 127)
+        self.assertEqual(item["weapon_max_damage"], 191)
+        self.assertEqual(item["weapon_speed"], 3.1)
+        self.assertEqual(item["weapon_type"], "Two Hand")
+        self.assertEqual(item["weapon_subtype"], "Staff")
 
     def test_bootstrap_item_list_cannot_satisfy_item_corpus_audit(self):
         original_canonical_json = scraper.canonical_json
@@ -1887,6 +2260,25 @@ class WowheadScraperParserTests(unittest.TestCase):
         self.assertEqual([path.name for path, _ in writes], ["items.json"])
         parsed_args = scraper.build_parser().parse_args(["import", "--family", "items", "--dry-run"])
         self.assertEqual(parsed_args.family, "items")
+
+    def test_item_corpus_import_family_uses_all_committed_snapshots_and_regenerates_dependents(self):
+        committed_snapshots = [{"page_type": "item", "item_id": 812}]
+        original_loader = scraper.load_committed_item_refresh_snapshots
+        scraper.load_committed_item_refresh_snapshots = lambda: committed_snapshots
+        try:
+            loaded = scraper.load_import_snapshots(scraper.RAW_WOWHEAD_DIR, "item_corpus")
+            audit_loaded = scraper.load_item_corpus_audit_snapshots(scraper.RAW_WOWHEAD_DIR / "full_item_corpus")
+        finally:
+            scraper.load_committed_item_refresh_snapshots = original_loader
+
+        self.assertIs(loaded, committed_snapshots)
+        self.assertIs(audit_loaded, committed_snapshots)
+        self.assertEqual(
+            scraper.IMPORT_FILES_BY_FAMILY["item_corpus"],
+            ["item_stats.json", "item_variants.json", "leveling_recommendations.json", "recommendation_audit.json"],
+        )
+        parsed_args = scraper.build_parser().parse_args(["import", "--family", "item_corpus", "--dry-run"])
+        self.assertEqual(parsed_args.input_dir, scraper.RAW_WOWHEAD_DIR)
 
     def test_leveling_import_uses_narrative_sections_without_tables(self):
         url = "https://www.wowhead.com/tbc/guide/synthetic-leveling"

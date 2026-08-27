@@ -11,10 +11,20 @@
         "required": ["key", "name"],
         "properties": {
           "key": { "type": "string" },
-          "name": { "type": "string" }
+          "name": { "type": "string" },
+          "starts_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$",
+            "description": "Official UTC content-launch timestamp when a phase has a published schedule."
+          },
+          "starts_at_epoch": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Unix timestamp equivalent of starts_at, or zero for content available at launch."
+          }
         }
       }
     }
   }
 }
-

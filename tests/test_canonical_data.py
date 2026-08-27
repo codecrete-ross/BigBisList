@@ -24,7 +24,9 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertEqual(phases["T4"]["starts_at_epoch"], 1771542000)
         self.assertEqual(phases["T5"]["starts_at"], "2026-05-14T22:00:00Z")
         self.assertEqual(phases["T5"]["starts_at_epoch"], 1778796000)
-        for phase_key in ["T6", "ZA", "SWP"]:
+        self.assertEqual(phases["T6"]["starts_at"], "2026-08-27T22:00:00Z")
+        self.assertEqual(phases["T6"]["starts_at_epoch"], 1787868000)
+        for phase_key in ["ZA", "SWP"]:
             self.assertNotIn("starts_at", phases[phase_key])
             self.assertNotIn("starts_at_epoch", phases[phase_key])
 

@@ -36,6 +36,35 @@ When sources conflict, prefer item/spell acquisition pages for acquisition
 details and guide pages for ranking/context. If neither source is sufficient,
 use an override and record why.
 
+### Duplicate Snapshot Fidelity
+
+Multiple committed snapshots may describe the same item. Their filesystem or
+input-directory order must never decide which values survive import. Merging
+must be deterministic and order-independent under these rules:
+
+- Select the highest-fidelity evidence for each field. For item statistics,
+  fidelity includes populated primary stats, damage and DPS, armor, sockets,
+  weapon fields, effects, and parse confidence.
+- A lower-fidelity snapshot may fill missing list, source, cost, requirement, or
+  other complementary metadata, but it must not erase or replace populated
+  higher-fidelity evidence with empty or less-specific values.
+- Preserve distinct compatible evidence when sources contribute different
+  fields; do not reduce a rich record to whichever whole snapshot happens to be
+  read last.
+- Apply reviewed overrides after the deterministic evidence merge.
+
+The item-corpus audit compares canonical output with the richest committed
+snapshot evidence. A best-source fidelity regression is a release-blocking
+error even when aggregate row counts still look plausible.
+
+### Content Schedule Evidence
+
+Tier 6's Anniversary launch is recorded as `2026-08-27T22:00:00Z` (Unix epoch
+`1787868000`) from Blizzard's official [August 2026 content
+announcement](https://worldofwarcraft.blizzard.com/en-us/news/24291476). The
+release schedule review was completed on 2026-08-26, with runtime coverage for
+the instant immediately before launch and the launch instant itself.
+
 ## Override Policy
 
 Every manual correction in `data/canonical/overrides.json` must include:
@@ -76,14 +105,8 @@ into an internal doc, an override reason, a test name, or a PR note.
 
 ## Validation Evidence
 
-Before release or data-heavy changes, keep the following checks green:
-
-```powershell
-python -m unittest discover -s tests
-python tools/validate_data.py --json
-python tools/generate_lua.py --check
-python tools/scrape_wowhead.py coverage --summary --strict
-```
-
-For refreshed snapshots, also run the relevant `snapshot-audit` and
-`requirements-audit` commands for the changed family.
+`docs/internal/release-process.md` is the authoritative release checklist.
+Before tagging, run `scripts/check-release.ps1 -Version <version> -FullData`;
+the script owns the exact automated command set so this document cannot drift
+into a competing checklist. Record the gate result and any explicitly accepted
+skip, including its reason, in the release handoff or PR.

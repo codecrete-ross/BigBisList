@@ -2794,9 +2794,14 @@ def committed_vendor_entity_ids(snapshots: list[dict[str, Any]]) -> set[int]:
     return vendor_ids
 
 
-def item_list_metadata_by_id(snapshots: list[dict[str, Any]], *, authoritative_only: bool = False) -> dict[int, dict[str, Any]]:
+def item_list_metadata_by_id(
+    snapshots: list[dict[str, Any]],
+    *,
+    authoritative_only: bool = False,
+    known_vendor_ids: set[int] | None = None,
+) -> dict[int, dict[str, Any]]:
     metadata: dict[int, dict[str, Any]] = {}
-    known_vendor_ids = committed_vendor_entity_ids(snapshots)
+    vendor_ids = committed_vendor_entity_ids(snapshots) if known_vendor_ids is None else known_vendor_ids
     for snapshot in snapshots:
         if snapshot.get("page_type") != "item_list":
             continue
@@ -2823,11 +2828,12 @@ def item_list_metadata_by_id(snapshots: list[dict[str, Any]], *, authoritative_o
                 current["name"] = ref["name"]
             if ref.get("url"):
                 current["wowhead_url"] = ref["url"]
-            sources = item_list_sources_from_ref(ref, known_vendor_ids)
+            sources = item_list_sources_from_ref(ref, vendor_ids)
             if sources:
-                current["sources"] = sources
-                current["primary_source"] = derive_primary_source(sources)
-                current["source_summary"] = summarize_sources(sources)
+                merged_sources = merge_item_source_lists([current.get("sources") or [], sources])
+                current["sources"] = merged_sources
+                current["primary_source"] = derive_primary_source(merged_sources)
+                current["source_summary"] = summarize_sources(merged_sources)
     return metadata
 
 
@@ -5175,13 +5181,12 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
 def enrich_item_stats_access_metadata(row: dict[str, Any], snapshot: dict[str, Any] | None) -> dict[str, Any]:
     enriched = deepcopy(row)
     snapshot_sources = item_snapshot_sources(snapshot)
-    sources = deepcopy(enriched.get("sources") or snapshot_sources)
-    if snapshot_sources and sources_detail_score(snapshot_sources) > sources_detail_score(sources):
-        sources = deepcopy(snapshot_sources)
+    sources = merge_item_source_lists([enriched.get("sources") or [], snapshot_sources])
     requirements: list[dict[str, Any]] = []
     requirements.extend(requirement for requirement in enriched.get("requirements") or [] if isinstance(requirement, dict))
     requirements.extend(snapshot_requirements(snapshot))
     requirements.extend(source_list_requirements(sources))
+    requirements.sort(key=stable_json_sort_key)
     requirements = normalize_tradeable_crafted_profession_requirements(requirements, enriched, snapshot, sources)
 
     sources, requirements = apply_source_access_metadata(sources, requirements)
@@ -5197,6 +5202,191 @@ def enrich_item_stats_access_metadata(row: dict[str, Any], snapshot: dict[str, A
         enriched.pop("requirements", None)
 
     return {key: value for key, value in enriched.items() if value not in (None, [], {})}
+
+
+ITEM_STAT_EVIDENCE_FIELDS = (
+    "required_level",
+    "item_level",
+    "quality",
+    "binding",
+    "boe",
+    "slot",
+    "stats",
+    "sockets",
+    "socket_bonus",
+    "restrictions",
+    "dps",
+    "armor",
+    "armor_type",
+    "weapon_type",
+    "weapon_subtype",
+    "weapon_speed",
+    "weapon_min_damage",
+    "weapon_max_damage",
+    "equip_effects",
+    "use_effects",
+    "effect_stats",
+    "parse_confidence",
+)
+
+ITEM_STAT_PAYLOAD_FIELDS = (
+    "stats",
+    "sockets",
+    "socket_bonus",
+    "restrictions",
+    "dps",
+    "armor",
+    "armor_type",
+    "weapon_type",
+    "weapon_subtype",
+    "weapon_speed",
+    "weapon_min_damage",
+    "weapon_max_damage",
+    "equip_effects",
+    "use_effects",
+    "effect_stats",
+)
+
+ITEM_STAT_PARSE_CONFIDENCE_RANK = {
+    "legacy_snapshot": 0,
+    "description_only": 1,
+    "tooltip": 2,
+    "tooltip_endpoint": 3,
+}
+
+ITEM_CORPUS_MIN_COMPLETE = 14_448
+
+SOURCE_IDENTITY_KEYS = ("quest_id", "vendor_id", "entity_id", "spell_id", "item_id")
+
+
+def value_is_populated(value: Any) -> bool:
+    return value not in (None, "", [], {})
+
+
+def stable_json_sort_key(value: Any) -> str:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+
+
+def populated_leaf_count(value: Any) -> int:
+    if isinstance(value, dict):
+        return sum(populated_leaf_count(child) for child in value.values())
+    if isinstance(value, list):
+        return sum(populated_leaf_count(child) for child in value)
+    return 1 if value_is_populated(value) else 0
+
+
+def item_stat_fidelity_key(row: dict[str, Any]) -> tuple[int, int, int, int, int, str, str]:
+    populated_payload_fields = sum(value_is_populated(row.get(field)) for field in ITEM_STAT_PAYLOAD_FIELDS)
+    payload_leaves = sum(populated_leaf_count(row.get(field)) for field in ITEM_STAT_PAYLOAD_FIELDS)
+    confidence_rank = ITEM_STAT_PARSE_CONFIDENCE_RANK.get(str(row.get("parse_confidence") or ""), -1)
+    evidence_fields = sum(value_is_populated(row.get(field)) for field in ITEM_STAT_EVIDENCE_FIELDS)
+    return (
+        int(populated_payload_fields > 0),
+        populated_payload_fields,
+        payload_leaves,
+        evidence_fields,
+        confidence_rank,
+        stable_json_sort_key({field: row.get(field) for field in ITEM_STAT_EVIDENCE_FIELDS if field in row}),
+        stable_json_sort_key(row),
+    )
+
+
+def merge_missing_item_stat_fields(preferred: dict[str, Any], fallback: dict[str, Any]) -> dict[str, Any]:
+    merged = deepcopy(preferred)
+    excluded = {"sources", "primary_source", "source_summary", "phase", "requirements"}
+    for key, fallback_value in fallback.items():
+        if key in excluded or not value_is_populated(fallback_value):
+            continue
+        preferred_value = merged.get(key)
+        if isinstance(preferred_value, dict) and isinstance(fallback_value, dict):
+            combined = deepcopy(preferred_value)
+            for child_key, child_value in fallback_value.items():
+                if not value_is_populated(combined.get(child_key)) and value_is_populated(child_value):
+                    combined[child_key] = deepcopy(child_value)
+            merged[key] = combined
+        elif not value_is_populated(preferred_value):
+            merged[key] = deepcopy(fallback_value)
+    return merged
+
+
+def source_identity_conflicts(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    if left.get("type") and right.get("type") and left.get("type") != right.get("type"):
+        return True
+    for key in SOURCE_IDENTITY_KEYS:
+        if value_is_populated(left.get(key)) and value_is_populated(right.get(key)) and left.get(key) != right.get(key):
+            return True
+    for key in ("entity_name", "profession"):
+        if value_is_populated(left.get(key)) and value_is_populated(right.get(key)) and left.get(key) != right.get(key):
+            return True
+    if "world_drop" in left and "world_drop" in right and bool(left.get("world_drop")) != bool(right.get("world_drop")):
+        return True
+    return False
+
+
+def sources_describe_same_acquisition(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    if source_identity_conflicts(left, right):
+        return False
+    if left.get("type") != right.get("type"):
+        return False
+    shared_identity = any(
+        value_is_populated(left.get(key)) and left.get(key) == right.get(key)
+        for key in SOURCE_IDENTITY_KEYS + ("entity_name", "profession")
+    )
+    if shared_identity or (left.get("world_drop") and right.get("world_drop")):
+        return True
+    left_specific = any(value_is_populated(left.get(key)) for key in SOURCE_IDENTITY_KEYS + ("entity_name", "profession"))
+    right_specific = any(value_is_populated(right.get(key)) for key in SOURCE_IDENTITY_KEYS + ("entity_name", "profession"))
+    return not left_specific or not right_specific
+
+
+def source_fidelity_key(source: dict[str, Any]) -> tuple[int, int, str]:
+    return source_detail_score(source), populated_leaf_count(source), stable_json_sort_key(source)
+
+
+def merge_source_metadata(preferred: dict[str, Any], fallback: dict[str, Any]) -> dict[str, Any]:
+    merged = deepcopy(preferred)
+    for key, fallback_value in fallback.items():
+        if not value_is_populated(fallback_value):
+            continue
+        preferred_value = merged.get(key)
+        if key in SOURCE_NESTED_KEYS and isinstance(fallback_value, list):
+            merged[key] = merge_item_source_lists([preferred_value or [], fallback_value])
+        elif key == "requirements" and isinstance(fallback_value, list):
+            requirements = [requirement for requirement in (preferred_value or []) + fallback_value if isinstance(requirement, dict)]
+            requirements.sort(key=stable_json_sort_key)
+            merged[key] = dedupe_requirements(requirements)
+        elif key == "costs" and isinstance(fallback_value, list):
+            costs = {
+                stable_json_sort_key(cost): deepcopy(cost)
+                for cost in (preferred_value or []) + fallback_value
+                if isinstance(cost, dict)
+            }
+            merged[key] = [costs[key] for key in sorted(costs)]
+        elif isinstance(preferred_value, dict) and isinstance(fallback_value, dict):
+            combined = deepcopy(preferred_value)
+            for child_key, child_value in fallback_value.items():
+                if not value_is_populated(combined.get(child_key)) and value_is_populated(child_value):
+                    combined[child_key] = deepcopy(child_value)
+            merged[key] = combined
+        elif not value_is_populated(preferred_value):
+            merged[key] = deepcopy(fallback_value)
+    return {key: value for key, value in merged.items() if value_is_populated(value)}
+
+
+def merge_item_source_lists(source_lists: list[list[dict[str, Any]]]) -> list[dict[str, Any]]:
+    candidates = [deepcopy(source) for sources in source_lists for source in sources or [] if isinstance(source, dict)]
+    candidates.sort(key=source_fidelity_key, reverse=True)
+    merged: list[dict[str, Any]] = []
+    for candidate in candidates:
+        matching_index = next(
+            (index for index, existing in enumerate(merged) if sources_describe_same_acquisition(existing, candidate)),
+            None,
+        )
+        if matching_index is None:
+            merged.append(candidate)
+        else:
+            merged[matching_index] = merge_source_metadata(merged[matching_index], candidate)
+    return sorted(merged, key=stable_json_sort_key)
 
 
 def item_stats_from_snapshot(snapshot: dict[str, Any]) -> dict[str, Any] | None:
@@ -5268,17 +5458,27 @@ def enrich_source_cost_names(sources: list[dict[str, Any]], item_names: dict[int
 
 def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
     rows: dict[int, dict[str, Any]] = {}
-    list_metadata = item_list_metadata_by_id(snapshots, authoritative_only=True)
-    item_names = {
-        int(snapshot["item_id"]): str(snapshot["name"])
-        for snapshot in snapshots
-        if isinstance(snapshot.get("item_id"), int) and snapshot.get("name")
-    }
+    item_candidates: dict[int, list[dict[str, Any]]] = {}
+    list_snapshots = sorted(
+        (snapshot for snapshot in snapshots if snapshot.get("page_type") == "item_list"),
+        key=stable_json_sort_key,
+    )
+    list_metadata = item_list_metadata_by_id(
+        list_snapshots,
+        authoritative_only=True,
+        known_vendor_ids=committed_vendor_entity_ids(snapshots),
+    )
+    item_names: dict[int, str] = {}
+    for snapshot in snapshots:
+        item_id = snapshot.get("item_id")
+        name = snapshot.get("name")
+        if isinstance(item_id, int) and name:
+            item_names[item_id] = max(item_names.get(item_id, ""), str(name))
     for snapshot in snapshots:
         for ref in snapshot.get("item_refs", []) or []:
             item_id = ref.get("id")
             if isinstance(item_id, int) and item_id > 0 and ref.get("name"):
-                item_names[item_id] = str(ref["name"])
+                item_names[item_id] = max(item_names.get(item_id, ""), str(ref["name"]))
     item_names.update({item_id: str(metadata["name"]) for item_id, metadata in list_metadata.items() if metadata.get("name")})
     restrict_to_list = bool(list_metadata)
     allowed_item_ids = set(list_metadata)
@@ -5291,13 +5491,46 @@ def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[st
         item_id = int(row["id"])
         if restrict_to_list and item_id not in allowed_item_ids:
             continue
-        row = apply_item_list_metadata(row, list_metadata.get(int(row["id"])))
         row = enrich_item_stats_access_metadata(row, snapshot)
-        if row.get("sources"):
-            row["sources"] = enrich_source_cost_names(row["sources"], item_names)
+        item_candidates.setdefault(item_id, []).append(row)
+
+    for item_id, candidates in item_candidates.items():
+        ranked_candidates = sorted(candidates, key=item_stat_fidelity_key, reverse=True)
+        row = deepcopy(ranked_candidates[0])
+        for fallback in ranked_candidates[1:]:
+            row = merge_missing_item_stat_fields(row, fallback)
+
+        metadata = list_metadata.get(item_id)
+        row = apply_item_list_metadata(row, metadata)
+        sources = merge_item_source_lists(
+            [
+                *[candidate.get("sources") or [] for candidate in ranked_candidates],
+                (metadata or {}).get("sources") or [],
+            ]
+        )
+        requirements = [
+            requirement
+            for candidate in ranked_candidates
+            for requirement in candidate.get("requirements") or []
+            if isinstance(requirement, dict)
+        ]
+        requirements.extend(source_list_requirements(sources))
+        requirements.sort(key=stable_json_sort_key)
+        sources, requirements = apply_source_access_metadata(sources, requirements)
+        if sources:
+            row["sources"] = enrich_source_cost_names(sources, item_names)
             row["primary_source"] = derive_primary_source(row["sources"])
             row["source_summary"] = summarize_sources(row["sources"])
-        rows[item_id] = row
+            row["phase"] = derive_acquisition_phase(row["sources"])
+        else:
+            row.pop("sources", None)
+            row.pop("primary_source", None)
+            row.pop("source_summary", None)
+        if requirements:
+            row["requirements"] = requirements
+        else:
+            row.pop("requirements", None)
+        rows[item_id] = {key: value for key, value in row.items() if value_is_populated(value)}
     return {"item_stats": [rows[item_id] for item_id in sorted(rows)]}
 
 
@@ -5358,9 +5591,60 @@ def item_corpus_report(item_stats_doc: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def item_stat_fidelity_regressions(raw_item_stats_doc: dict[str, Any], canonical_item_stats_doc: dict[str, Any]) -> list[dict[str, Any]]:
+    canonical_by_id = {
+        int(item["id"]): item
+        for item in canonical_item_stats_doc.get("item_stats", [])
+        if isinstance(item, dict) and isinstance(item.get("id"), int)
+    }
+    regressions: list[dict[str, Any]] = []
+    for raw_item in raw_item_stats_doc.get("item_stats", []):
+        item_id = raw_item.get("id")
+        if not isinstance(item_id, int):
+            continue
+        canonical_item = canonical_by_id.get(item_id)
+        if canonical_item is None:
+            regressions.append({
+                "item_id": item_id,
+                "name": raw_item.get("name"),
+                "field": "item",
+                "reason": "missing_canonical_row",
+            })
+            continue
+        for field in ITEM_STAT_EVIDENCE_FIELDS:
+            raw_value = raw_item.get(field)
+            if not value_is_populated(raw_value):
+                continue
+            if canonical_item.get(field) != raw_value:
+                regressions.append({
+                    "item_id": item_id,
+                    "name": raw_item.get("name"),
+                    "field": field,
+                    "reason": "canonical_value_differs",
+                    "raw_value": raw_value,
+                    "canonical_value": canonical_item.get(field),
+                })
+    return regressions
+
+
+def is_committed_item_corpus_input(input_dir: Path) -> bool:
+    resolved = input_dir.resolve()
+    return resolved in {RAW_WOWHEAD_DIR.resolve(), (RAW_WOWHEAD_DIR / "full_item_corpus").resolve()}
+
+
+def load_item_corpus_audit_snapshots(input_dir: Path) -> list[dict[str, Any]]:
+    if is_committed_item_corpus_input(input_dir):
+        return load_committed_item_refresh_snapshots()
+    return load_snapshots(input_dir)
+
+
 def build_item_corpus_audit(input_dir: Path) -> dict[str, Any]:
-    snapshots = load_snapshots(input_dir)
+    snapshots = load_item_corpus_audit_snapshots(input_dir)
     item_stats_doc = import_item_stats_from_snapshots(snapshots)
+    canonical_item_stats_doc = canonical_json("item_stats")
+    raw_report = item_corpus_report(item_stats_doc)
+    canonical_report = item_corpus_report(canonical_item_stats_doc)
+    fidelity_regressions = item_stat_fidelity_regressions(item_stats_doc, canonical_item_stats_doc)
     errors: list[str] = []
     warnings: list[str] = []
     authoritative_list_snapshots = [snapshot for snapshot in snapshots if item_corpus_snapshot_is_authoritative(snapshot)]
@@ -5405,11 +5689,37 @@ def build_item_corpus_audit(input_dir: Path) -> dict[str, Any]:
         if not (item.get("stats") or item.get("dps") or item.get("armor") or item.get("sockets")):
             warnings.append(f"Missing tooltip stats for item corpus row: {label}")
 
+    if fidelity_regressions:
+        affected_items = len({regression["item_id"] for regression in fidelity_regressions})
+        errors.append(
+            f"Canonical item stat fidelity regressions: {len(fidelity_regressions)} field(s) across {affected_items} item(s)"
+        )
+    if is_committed_item_corpus_input(input_dir):
+        if raw_report["complete"] < ITEM_CORPUS_MIN_COMPLETE:
+            errors.append(
+                f"Raw merged item stat completeness is below release floor: {raw_report['complete']} < {ITEM_CORPUS_MIN_COMPLETE}"
+            )
+        if canonical_report["complete"] < ITEM_CORPUS_MIN_COMPLETE:
+            errors.append(
+                f"Canonical item stat completeness is below release floor: {canonical_report['complete']} < {ITEM_CORPUS_MIN_COMPLETE}"
+            )
+
+    summary = dict(raw_report)
+    summary.update({
+        "raw_items": raw_report["items"],
+        "raw_completeness": raw_report["complete"],
+        "canonical_items": canonical_report["items"],
+        "canonical_completeness": canonical_report["complete"],
+        "minimum_canonical_completeness": ITEM_CORPUS_MIN_COMPLETE,
+        "fidelity_regressions": len(fidelity_regressions),
+    })
+
     return {
         "ok": not errors,
         "errors": errors,
         "warnings": warnings,
-        "summary": item_corpus_report(item_stats_doc),
+        "fidelity_regressions": fidelity_regressions,
+        "summary": summary,
     }
 
 
@@ -5599,14 +5909,14 @@ def load_committed_item_refresh_snapshots() -> list[dict[str, Any]]:
     return snapshots
 
 
+def load_import_snapshots(input_dir: Path, family: str | None) -> list[dict[str, Any]]:
+    if input_dir == RAW_WOWHEAD_DIR and family in {"items", "item_stats", "item_corpus"}:
+        return load_committed_item_refresh_snapshots()
+    return load_snapshots(input_dir)
+
+
 def command_import(args: argparse.Namespace) -> int:
-    use_committed_item_refresh = args.family in {"items", "item_stats"} and args.input_dir == RAW_WOWHEAD_DIR
-    if args.family == "item_corpus" and args.input_dir == RAW_WOWHEAD_DIR:
-        args.input_dir = RAW_WOWHEAD_DIR / "full_item_corpus"
-    if use_committed_item_refresh:
-        snapshots = load_committed_item_refresh_snapshots()
-    else:
-        snapshots = load_snapshots(args.input_dir)
+    snapshots = load_import_snapshots(args.input_dir, args.family)
     imported_items = import_items_from_snapshots(snapshots)
     if args.family == "items":
         if args.dry_run:

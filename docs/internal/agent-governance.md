@@ -34,7 +34,10 @@ automation agents, not addon users.
 - For release packaging, update `.pkgmeta`, `.toc`, and release docs only when
   the task is explicitly about packaging or release preparation.
 - For release preparation, follow `docs/internal/release-process.md` for version
-  selection, required checks, tagging, and publishing.
+  selection, required checks, manual smoke evidence, tagging, and publishing.
+  It is the authoritative release checklist; invoke
+  `scripts/check-release.ps1 -Version <version> -FullData` rather than copying
+  individual gate commands into another document.
 - For internal governance, use `AGENTS.md` for concise rules and
   `docs/internal` for deeper policy. Keep `CLAUDE.md` as a pointer only.
 
@@ -58,8 +61,13 @@ automation agents, not addon users.
   reviewer, reviewed date, and source URL.
 - `Data.lua` is current if canonical data changed.
 - `.pkgmeta` excludes internal-only docs and development-only directories.
-- Relevant tests and validation commands were run, or any skipped command is
-  called out with the reason.
+- The authoritative release gate was run with `-FullData` for a release, and
+  its result is recorded.
+- Official Blizzard content schedules were reviewed against canonical phase
+  metadata when timing could have changed.
+- Runtime, UI, or migration changes have dated in-game smoke-test evidence.
+- Any skipped check records the reason, risk, owner, and follow-up rather than
+  being silently omitted.
 
 ## Agent-Authored Work
 

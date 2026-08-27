@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.12.0 - 2026-08-26
+
+### Added
+
+- Separate Endgame and Leveling content modes with mode-specific tabs, saved
+  view state, and migration of existing character selections.
+- Rich acquisition-path details for vendors and token turn-ins, including
+  seller, location, cost, faction, reputation, and token-source provenance.
+- Responsive, virtualized data tables that adapt their columns when the window
+  or item inspector changes the available width.
+- Expansion-wide wishlist rankings across every phase and relevant spec.
+
+### Changed
+
+- Leveling recommendations use broader audited item and source evidence, with
+  improved acquisition filtering and recommendation fallbacks.
+- Duplicate item-stat snapshots are merged by evidence fidelity so weaker
+  legacy records cannot erase richer stats, sockets, weapon data, or effects.
+- Tier 6 is recognized as the live phase beginning August 27, 2026 at
+  22:00 UTC.
+- Saved-variable defaults advance to version 16 for content-mode and per-view
+  state migration.
+- Release preparation now runs through one repository release gate, including
+  canonical-data fidelity and published-count checks.
+
+### Fixed
+
+- Vendor routes now prefer complete purchase details and keep the selected
+  acquisition path consistent across rows, filters, tooltips, and inspectors.
+- Layout-only refreshes reuse cached data and row widgets instead of rebuilding
+  ownership, access, and query state.
+
 ## 0.11.0 - 2026-06-17
 
 ### Added

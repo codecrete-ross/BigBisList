@@ -49,6 +49,7 @@ local LIST_SECTION_GAP = 6
 local LIST_OVERSCAN_PIXELS = 120
 local SEARCH_DEBOUNCE_SECONDS = 0.12
 local LAYOUT_WIDTH_EPSILON = 0.5
+local TABLE_WIDE_BREAKPOINT = 1040
 
 local OWNERSHIP_LABELS = {
     equipped = "Equipped",
@@ -581,151 +582,251 @@ local function contentWidth(parent, fallback)
     return math.max(260, width - 4)
 end
 
-local function viewColumnDefinitions(mode, compact)
-    if mode == "planner" then
-        if compact then
-            return {
-                { key = "item", label = "Item", flex = true, minimum = 150 },
-                { key = "slot", label = "Slot", width = 70 },
-                { key = "value", label = "Value", width = 110 },
-                { key = "acquisition", label = "Acquisition", width = 170 },
-                { key = "owned", label = "Owned", width = 80, align = "CENTER" },
-                { key = "action", label = "Wishlist", width = 58, align = "CENTER" },
-            }
-        end
-        return {
-            { key = "item", label = "Item", flex = true, minimum = 170 },
-            { key = "slot", label = "Slot", width = 72 },
-            { key = "value", label = "Value", width = 126 },
-            { key = "source", label = "Source", width = 108 },
-            { key = "location", label = "Location", width = 150 },
-            { key = "owned", label = "Owned", width = 86, align = "CENTER" },
-            { key = "action", label = "Wishlist", width = 58, align = "CENTER" },
-        }
-    elseif mode == "phase" then
-        if compact then
-            return {
-                { key = "rank", label = "Rank", width = 82 },
-                { key = "item", label = "Item", flex = true, minimum = 160 },
-                { key = "acquisition", label = "Acquisition", width = 180 },
-                { key = "owned", label = "Owned", width = 80, align = "CENTER" },
-                { key = "action", label = "Wishlist", width = 58, align = "CENTER" },
-            }
-        end
-        return {
-            { key = "rank", label = "Rank", width = 92 },
-            { key = "item", label = "Item", flex = true, minimum = 190 },
-            { key = "source", label = "Source", width = 108 },
-            { key = "location", label = "Location", width = 150 },
-            { key = "owned", label = "Owned", width = 86, align = "CENTER" },
-            { key = "action", label = "Wishlist", width = 58, align = "CENTER" },
-        }
-    elseif mode == "leveling" then
-        if compact then
-            return {
-                { key = "item", label = "Item", flex = true, minimum = 150 },
-                { key = "slot", label = "Slot", width = 70 },
-                { key = "value", label = "Level / Value", width = 118 },
-                { key = "acquisition", label = "Acquisition", width = 170 },
-                { key = "owned", label = "Owned", width = 80, align = "CENTER" },
-                { key = "action", label = "Wishlist", width = 58, align = "CENTER" },
-            }
-        end
-        return {
-            { key = "item", label = "Item", flex = true, minimum = 170 },
-            { key = "slot", label = "Slot", width = 72 },
-            { key = "value", label = "Level / Value", width = 128 },
-            { key = "source", label = "Source", width = 108 },
-            { key = "location", label = "Location", width = 140 },
-            { key = "owned", label = "Owned", width = 86, align = "CENTER" },
-            { key = "action", label = "Wishlist", width = 58, align = "CENTER" },
-        }
-    elseif mode == "enhance" then
-        if compact then
-            return {
-                { key = "item", label = "Enhancement", flex = true, minimum = 160 },
-                { key = "slot", label = "For", width = 84 },
-                { key = "value", label = "Recommendation", width = 126 },
-                { key = "owned", label = "Applied / Owned", width = 104, align = "CENTER" },
-                { key = "acquisition", label = "Source / Access", width = 176 },
-            }
-        end
-        return {
-            { key = "item", label = "Enhancement", flex = true, minimum = 180 },
-            { key = "slot", label = "For", width = 96 },
-            { key = "value", label = "Recommendation", width = 140 },
-            { key = "owned", label = "Applied / Owned", width = 104, align = "CENTER" },
-            { key = "source", label = "Source", width = 108 },
-            { key = "access", label = "Access", width = 116, align = "CENTER" },
-        }
-    elseif mode == "wishlist" then
-        if compact then
-            return {
-                { key = "item", label = "Item", flex = true, minimum = 120, ownershipInline = true },
-                { key = "slot", label = "Slots", width = 64 },
-                { key = "expansion", label = "Expansion Ranking", width = 254 },
-                { key = "acquisition", label = "Acquisition", width = 136 },
-                { key = "action", label = "Remove", width = 58, align = "CENTER" },
-            }
-        end
-        return {
-            { key = "item", label = "Item", flex = true, minimum = 140 },
-            { key = "slot", label = "Slots", width = 68 },
-            { key = "expansion", label = "Expansion Ranking", width = 260 },
-            { key = "source", label = "Source", width = 96 },
-            { key = "location", label = "Location", width = 112 },
-            { key = "owned", label = "Owned", width = 80, align = "CENTER" },
-            { key = "action", label = "Remove", width = 58, align = "CENTER" },
-        }
-    elseif mode == "gear" then
-        if compact then
-            return {
-                { key = "slot", label = "Slot", width = 82 },
-                { key = "item", label = "Equipped Item", flex = true, minimum = 180 },
-                { key = "currentRank", label = "Current Rank", width = 128 },
-                { key = "usefulThrough", label = "Useful Through", width = 112 },
-            }
-        end
-        return {
-            { key = "slot", label = "Slot", width = 106 },
-            { key = "item", label = "Equipped Item", flex = true, minimum = 260 },
-            { key = "currentRank", label = "Current Rank", width = 170 },
-            { key = "usefulThrough", label = "Useful Through", width = 150 },
-        }
+function UI:GetTableViewportWidth(parent, fallback)
+    local width = self.contentScroll and self.contentScroll.GetWidth and self.contentScroll:GetWidth()
+    if not width or width <= 1 then
+        width = parent and parent.GetWidth and parent:GetWidth()
     end
-
-    return viewColumnDefinitions("phase", compact)
+    if not width or width <= 1 then
+        width = fallback or 560
+    end
+    return math.max(260, width - 4)
 end
 
-local function tableColumnLayout(width, mode, forceCompact)
-    local usable = math.max(260, width - (ROW_HORIZONTAL_PADDING * 2))
-    local compact = forceCompact or usable < 1040
-    local definitions = viewColumnDefinitions(mode, compact)
-    local fixed = 0
-    local flexCount = 0
-    for _, definition in ipairs(definitions) do
-        if definition.flex then
-            flexCount = flexCount + 1
-            fixed = fixed + (definition.minimum or 120)
-        else
-            fixed = fixed + definition.width
-        end
+local function columnDefinition(key, label, minWidth, preferredWidth, maxWidth, growWeight, options)
+    local definition = {
+        key = key,
+        label = label,
+        minWidth = minWidth,
+        preferredWidth = preferredWidth,
+        maxWidth = maxWidth,
+        growWeight = growWeight or 0,
+    }
+    for optionKey, value in pairs(options or {}) do
+        definition[optionKey] = value
     end
-    fixed = fixed + (COLUMN_GAP * math.max(0, #definitions - 1))
-    local extra = math.max(0, usable - fixed)
-    local x = ROW_HORIZONTAL_PADDING
-    local layout = { columns = {}, compact = compact }
+    return definition
+end
+
+local function fixedColumn(key, label, width, options)
+    return columnDefinition(key, label, width, width, width, 0, options)
+end
+
+local TABLE_COLUMN_CONFIG = {
+    planner = {
+        wide = {
+            columnDefinition("item", "Item", 170, 260, 420, 8),
+            columnDefinition("slot", "Slot", 72, 88, 112, 2),
+            columnDefinition("value", "Value", 126, 170, 240, 4),
+            columnDefinition("source", "Source", 108, 128, 168, 2),
+            columnDefinition("location", "Location", 150, 210, 300, 6),
+            fixedColumn("owned", "Owned", 86, { align = "CENTER" }),
+            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
+        },
+        compact = {
+            columnDefinition("item", "Item", 140, 220, 340, 8),
+            columnDefinition("slot", "Slot", 64, 82, 100, 2),
+            columnDefinition("value", "Value", 96, 145, 210, 4),
+            columnDefinition("acquisition", "Acquisition", 145, 230, 330, 6),
+            fixedColumn("owned", "Owned", 80, { align = "CENTER" }),
+            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
+        },
+    },
+    phase = {
+        wide = {
+            columnDefinition("rank", "Rank", 92, 104, 128, 2),
+            columnDefinition("item", "Item", 190, 300, 460, 8),
+            columnDefinition("source", "Source", 108, 128, 168, 2),
+            columnDefinition("location", "Location", 150, 220, 320, 6),
+            fixedColumn("owned", "Owned", 86, { align = "CENTER" }),
+            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
+        },
+        compact = {
+            columnDefinition("rank", "Rank", 76, 94, 116, 2),
+            columnDefinition("item", "Item", 145, 250, 400, 8),
+            columnDefinition("acquisition", "Acquisition", 145, 250, 360, 6),
+            fixedColumn("owned", "Owned", 80, { align = "CENTER" }),
+            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
+        },
+    },
+    leveling = {
+        wide = {
+            columnDefinition("item", "Item", 170, 260, 420, 8),
+            columnDefinition("slot", "Slot", 72, 88, 112, 2),
+            columnDefinition("value", "Level / Value", 128, 176, 250, 4),
+            columnDefinition("source", "Source", 108, 128, 168, 2),
+            columnDefinition("location", "Location", 140, 210, 300, 6),
+            fixedColumn("owned", "Owned", 86, { align = "CENTER" }),
+            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
+        },
+        compact = {
+            columnDefinition("item", "Item", 140, 220, 340, 8),
+            columnDefinition("slot", "Slot", 64, 82, 100, 2),
+            columnDefinition("value", "Level / Value", 104, 155, 220, 4),
+            columnDefinition("acquisition", "Acquisition", 145, 230, 330, 6),
+            fixedColumn("owned", "Owned", 80, { align = "CENTER" }),
+            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
+        },
+    },
+    enhance = {
+        wide = {
+            columnDefinition("item", "Enhancement", 180, 260, 420, 8),
+            columnDefinition("slot", "For", 96, 116, 144, 2),
+            columnDefinition("value", "Recommendation", 140, 190, 270, 5),
+            fixedColumn("owned", "Applied / Owned", 104, { align = "CENTER" }),
+            columnDefinition("source", "Source", 108, 128, 168, 2),
+            columnDefinition("access", "Access", 116, 140, 176, 3, { align = "CENTER" }),
+        },
+        compact = {
+            columnDefinition("item", "Enhancement", 145, 230, 360, 8),
+            columnDefinition("slot", "For", 72, 102, 130, 2),
+            columnDefinition("value", "Recommendation", 108, 170, 240, 5),
+            fixedColumn("owned", "Applied / Owned", 104, { align = "CENTER" }),
+            columnDefinition("acquisition", "Source / Access", 150, 240, 340, 6),
+        },
+    },
+    wishlist = {
+        wide = {
+            columnDefinition("item", "Item", 140, 220, 340, 6),
+            columnDefinition("slot", "Slots", 68, 90, 120, 2),
+            columnDefinition("expansion", "Expansion Ranking", 260, 340, 500, 10),
+            columnDefinition("source", "Source", 96, 116, 156, 2),
+            columnDefinition("location", "Location", 112, 180, 280, 6),
+            fixedColumn("owned", "Owned", 80, { align = "CENTER" }),
+            fixedColumn("action", "Remove", 58, { align = "CENTER" }),
+        },
+        compact = {
+            columnDefinition("item", "Item", 105, 180, 280, 6, { ownershipInline = true }),
+            columnDefinition("slot", "Slots", 56, 80, 105, 2),
+            columnDefinition("expansion", "Expansion Ranking", 230, 330, 480, 10),
+            columnDefinition("acquisition", "Acquisition", 115, 190, 290, 6),
+            fixedColumn("action", "Remove", 58, { align = "CENTER" }),
+        },
+    },
+    gear = {
+        wide = {
+            columnDefinition("slot", "Slot", 106, 120, 150, 2),
+            columnDefinition("item", "Equipped Item", 260, 420, 620, 8),
+            columnDefinition("currentRank", "Current Rank", 170, 220, 300, 4),
+            columnDefinition("usefulThrough", "Useful Through", 150, 180, 220, 3),
+        },
+        compact = {
+            columnDefinition("slot", "Slot", 72, 100, 126, 2),
+            columnDefinition("item", "Equipped Item", 165, 300, 480, 8),
+            columnDefinition("currentRank", "Current Rank", 105, 180, 260, 4),
+            columnDefinition("usefulThrough", "Useful Through", 96, 145, 190, 3),
+        },
+    },
+}
+
+function UI:GetViewColumnDefinitions(mode, compact)
+    local config = TABLE_COLUMN_CONFIG[mode] or TABLE_COLUMN_CONFIG.phase
+    return compact and config.compact or config.wide
+end
+
+local function growColumnWidths(columns, targetKey, remaining)
+    while remaining > 0 do
+        local active = {}
+        local totalWeight = 0
+        for _, column in ipairs(columns) do
+            local target = tonumber(column[targetKey]) or column.width
+            local capacity = math.max(0, target - column.width)
+            local weight = math.max(0, tonumber(column.growWeight) or 0)
+            if capacity > 0 and weight > 0 then
+                local entry = {
+                    column = column,
+                    capacity = capacity,
+                    weight = weight,
+                }
+                active[#active + 1] = entry
+                totalWeight = totalWeight + weight
+            end
+        end
+        if #active == 0 or totalWeight <= 0 then
+            break
+        end
+
+        local granted = 0
+        local cycleRemaining = remaining
+        for _, entry in ipairs(active) do
+            local exact = (cycleRemaining * entry.weight) / totalWeight
+            local whole = math.floor(exact)
+            entry.grant = math.min(entry.capacity, whole)
+            granted = granted + entry.grant
+        end
+
+        local remainderPixels = remaining - granted
+        for _, entry in ipairs(active) do
+            if remainderPixels <= 0 then
+                break
+            elseif entry.grant < entry.capacity then
+                entry.grant = entry.grant + 1
+                granted = granted + 1
+                remainderPixels = remainderPixels - 1
+            end
+        end
+        if granted <= 0 then
+            break
+        end
+
+        for _, entry in ipairs(active) do
+            entry.column.width = entry.column.width + entry.grant
+        end
+        remaining = remaining - granted
+    end
+    return remaining
+end
+
+function UI:GetTableColumnLayout(width, mode, forceCompact)
+    width = tonumber(width) or 760
+    local usable = math.max(260, math.floor(width - (ROW_HORIZONTAL_PADDING * 2)))
+    local compact = forceCompact or usable < TABLE_WIDE_BREAKPOINT
+    local normalizedMode = TABLE_COLUMN_CONFIG[mode] and mode or "phase"
+    local cacheKey = normalizedMode .. ":" .. (compact and "compact" or "wide")
+    self.columnLayoutCache = self.columnLayoutCache or {}
+    local cached = self.columnLayoutCache[cacheKey]
+    if cached and cached.usableWidth == usable then
+        return cached.layout
+    end
+
+    local definitions = self:GetViewColumnDefinitions(normalizedMode, compact)
+    local columns = {}
+    local minimumWidth = COLUMN_GAP * math.max(0, #definitions - 1)
     for _, definition in ipairs(definitions) do
         local column = {}
         for key, value in pairs(definition) do
             column[key] = value
         end
-        column.width = definition.flex and ((definition.minimum or 120) + math.floor(extra / math.max(1, flexCount))) or definition.width
+        column.width = column.minWidth
+        columns[#columns + 1] = column
+        minimumWidth = minimumWidth + column.width
+    end
+
+    local remaining = math.max(0, usable - minimumWidth)
+    remaining = growColumnWidths(columns, "preferredWidth", remaining)
+    remaining = growColumnWidths(columns, "maxWidth", remaining)
+
+    local x = ROW_HORIZONTAL_PADDING
+    local usedWidth = COLUMN_GAP * math.max(0, #columns - 1)
+    local layout = {
+        columns = columns,
+        compact = compact,
+        usableWidth = usable,
+        signature = cacheKey .. ":" .. tostring(usable),
+    }
+    for _, column in ipairs(columns) do
         column.x = x
-        layout.columns[#layout.columns + 1] = column
         layout[column.key] = column
         x = x + column.width + COLUMN_GAP
+        usedWidth = usedWidth + column.width
     end
+    layout.usedWidth = usedWidth
+    layout.trailingWidth = math.max(0, usable - usedWidth)
+
+    self.columnLayoutCache[cacheKey] = {
+        usableWidth = usable,
+        layout = layout,
+    }
     return layout
 end
 
@@ -3903,8 +4004,8 @@ local function createGridText(parent, column, text, color, template, label)
 end
 
 function UI:CreateListColumnHeader(parent, yOffset, mode, header)
-    local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 760)
-    local layout = tableColumnLayout(width, mode, self:IsInspectorVisible())
+    local width = self:GetTableViewportWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 760)
+    local layout = self:GetTableColumnLayout(width, mode, self:IsInspectorVisible())
     if not header then
         header = CreateFrame("Frame", nil, parent)
         header.columnButtons = {}
@@ -3917,6 +4018,7 @@ function UI:CreateListColumnHeader(parent, yOffset, mode, header)
     header:SetHeight(COLUMN_HEADER_HEIGHT)
     header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
+    header.columnLayout = layout
 
     header.columnButtons = header.columnButtons or {}
     for _, button in ipairs(header.columnButtons) do
@@ -3973,8 +4075,8 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     local widgets = BigBiSList.Widgets
     local entityType = data.entity_type or (data.spell_id and "spell") or "item"
     local entityId = data.entity_id or data.spell_id or data.item_id
-    local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 760)
-    local layout = tableColumnLayout(width, mode, self:IsInspectorVisible())
+    local width = self:GetTableViewportWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 760)
+    local layout = self:GetTableColumnLayout(width, mode, self:IsInspectorVisible())
     if not row then
         row = widgets:CreateItemRow(parent, fixedHeight or ROW_HEIGHT)
         row.cells = {}
@@ -4065,6 +4167,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     row.boundData = data
     row.boundEntityId = entityId
     row.boundMode = mode
+    row.columnLayout = layout
 
     for _, cell in pairs(row.cells) do
         cell:Hide()
@@ -4086,7 +4189,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     local nameText = row.nameText
     nameText:ClearAllPoints()
     nameText:SetPoint("TOPLEFT", iconButton, "TOPRIGHT", 8, -2)
-    nameText:SetWidth(math.max(70, itemColumn.width - ROW_ICON_SIZE - 8))
+    nameText:SetWidth(math.max(48, itemColumn.width - ROW_ICON_SIZE - 8))
     local item = data.item or (data.item_id and BigBiSList:GetItemData(data.item_id))
     if not entityId then
         self:ResetEntityButton(iconButton, nameText, data.disabledReason or data.name or "Empty")
@@ -4100,7 +4203,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
         local inline = row.inlineOwnership
         inline:ClearAllPoints()
         inline:SetPoint("TOPLEFT", nameText, "BOTTOMLEFT", 0, -4)
-        inline:SetWidth(math.max(70, itemColumn.width - ROW_ICON_SIZE - 8))
+        inline:SetWidth(math.max(48, itemColumn.width - ROW_ICON_SIZE - 8))
         inline:SetText(ownershipStateLabel(self:GetRowOwnershipState(data)))
         inline:Show()
     end
@@ -4618,14 +4721,14 @@ function UI:UpdateVirtualList(force)
     local viewportHeight = math.max(1, scroll:GetHeight() or 1)
     local minTop = math.max(0, scrollTop - LIST_OVERSCAN_PIXELS)
     local maxBottom = scrollTop + viewportHeight + LIST_OVERSCAN_PIXELS
-    local width = contentWidth(child, scroll:GetWidth() or 760)
-    local compact = tableColumnLayout(width, self.stickyHeaderMode or "phase", self:IsInspectorVisible()).compact
+    local width = self:GetTableViewportWidth(child, scroll:GetWidth() or 760)
+    local columnLayout = self:GetTableColumnLayout(width, self.stickyHeaderMode or "phase", self:IsInspectorVisible())
+    local compact = columnLayout.compact
     local rangeKey = table.concat({
         tostring(self.renderModelSerial or 0),
         tostring(math.floor(minTop / 20)),
         tostring(math.floor(maxBottom / 20)),
-        compact and "compact" or "wide",
-        tostring(math.floor(width + 0.5)),
+        columnLayout.signature,
     }, ":")
     if not force and self.renderRangeKey == rangeKey then
         return

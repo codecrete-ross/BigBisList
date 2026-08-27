@@ -1,8 +1,9 @@
 # Release Process
 
-This playbook is for maintainers and automation agents preparing Big BiS List
-releases. It expands the root `AGENTS.md` guidance and stays internal; `.pkgmeta`
-excludes `docs` from packaged addon artifacts.
+This is the authoritative playbook for maintainers and automation agents
+preparing Big BiS List releases. Other governance documents should link here
+instead of copying an independent command list. The playbook stays internal;
+`.pkgmeta` excludes `docs` from packaged addon artifacts.
 
 ## Version Policy
 
@@ -31,47 +32,87 @@ example, a bug fix plus a new filter is a minor release.
 1. Inspect the worktree with `git status --short --branch` and preserve unrelated
    dirty changes.
 2. Review `git log <last-tag>..HEAD` and `git diff --stat <last-tag>..HEAD`.
-3. Choose the next version using the version policy above.
-4. Update `CHANGELOG.md` with a dated section for the new version.
-5. Update release-specific README references and the fallback version in
+3. Review official Blizzard TBC Anniversary content announcements against
+   `data/canonical/phases.json`. Record the authoritative URL and exact UTC
+   timestamp for a changed schedule, update the epoch from that same instant,
+   and cover the boundary immediately before and at launch. Record that the
+   review found no change when applicable.
+4. Choose the next version using the version policy above.
+5. Update `CHANGELOG.md` with a dated section for the new version.
+6. Update release-specific README references and the fallback version in
    `Config.lua`.
-6. Regenerate `Data.lua` only when canonical data or generator behavior changed.
+7. Regenerate `Data.lua` only when canonical data or generator behavior changed.
    Never hand-edit generated Lua.
-7. Commit release prep changes before tagging.
+8. Commit release prep changes before running the release gate. The gate
+   requires a clean worktree; if a failed check requires an edit, commit the fix
+   and run the gate again.
 
 Keep `BigBiSList.toc` on the Anniversary interface line unless the release task
 explicitly changes the target client. The `## Version` field should stay
 `@project-version@` so CurseForge packaging can substitute the tag version.
 
-## Required Checks
+## Automated Release Gate
 
-Run these from the repository root before tagging:
+Use a dedicated Python 3.10-or-newer virtual environment installed from the
+repository's `pyproject.toml` (for example, create the environment and run its
+Python with `-m pip install .`). Do not rely on an unrelated global Python whose
+installed packages merely happen to satisfy some tests. From the clean release
+commit, run:
 
 ```powershell
-python -m unittest discover -s tests
-python tools/validate_data.py --json
-python tools/generate_lua.py --check
-python tools/scrape_wowhead.py audit
-python tools/scrape_wowhead.py coverage --summary --strict
+pwsh -File scripts/check-release.ps1 -Version <next-version> -PythonPath <venv-python> -FullData
 ```
 
-For intentional data refreshes, also run the relevant snapshot and requirements
-audits for each changed data family before release.
+Pass `-PythonPath <path>` when the release interpreter is not available as
+`python`, `python3`, or `py`. The script is fail-fast and non-destructive. It
+preflights declared Python dependencies and Lua 5.1 tooling, requires a clean
+Git state and consistent release metadata, checks README data counts against
+canonical validation, and owns the exact unit, compile, generation, scrape,
+coverage, corpus, recommendation, suffix, snapshot, and requirements audit set.
+
+Omitting `-FullData` is useful for a quicker local check but is not a release
+gate. Do not tag from a partial run.
+
+## Manual Release Evidence
+
+Automated checks do not replace a TBC Anniversary client smoke test. For any
+runtime, UI, saved-state, or migration change, record the client build, tester,
+date, and outcome. Exercise the affected behavior and, when applicable:
+
+- saved-variable migration from the prior release;
+- Endgame/Leveling switching, responsive columns, inspectors, and dropdowns;
+- acquisition paths, tooltips, ownership, wishlist, and ignore actions;
+- `/bbltest`, `/bbl status`, and `/bbltest perf`.
+
+Record the automated gate result, content-schedule review, and in-game result in
+the release PR or handoff. A skipped applicable check must include its reason,
+risk, owner, and follow-up. Treat an undocumented skip as a failed gate; the
+release owner must explicitly accept a documented exception before publishing.
 
 ## Publish
 
-After checks pass, commit release prep changes, tag the release commit, push
-`main`, push the tag, and create the GitHub release:
+After all gates pass, push the release commit, tag it, push the tag, and create
+the GitHub release:
 
 ```powershell
 $version = "<next-version>"
-git tag $version
 git push origin HEAD:main
+git tag $version
 git push origin $version
-gh release create $version --repo codecrete-ross/BigBisList --title $version --notes-file CHANGELOG.md
+
+$escapedVersion = [regex]::Escape($version)
+$notesMatch = [regex]::Match(
+    (Get-Content -Raw CHANGELOG.md),
+    "(?ms)^##\s+$escapedVersion\s+-\s+\d{4}-\d{2}-\d{2}\s*$.*?(?=^##\s+|\z)"
+)
+if (-not $notesMatch.Success) {
+    throw "Could not find the $version changelog section."
+}
+$notes = $notesMatch.Value.Trim()
+gh release create $version --repo codecrete-ross/BigBisList --title $version --notes $notes
 ```
 
-Use the matching changelog section as release notes when practical. CurseForge
-release files are generated by the repository webhook from the pushed Git tag.
-Do not commit generated zip files or use a GitHub release asset as the
-CurseForge source.
+Use only the matching current-version changelog section as release notes, not
+the whole changelog. CurseForge release files are generated by the repository
+webhook from the pushed Git tag. Do not commit generated zip files or use a
+GitHub release asset as the CurseForge source.

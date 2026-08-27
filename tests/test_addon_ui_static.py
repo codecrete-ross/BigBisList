@@ -450,8 +450,13 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("function UI:RenderGearTab()", ui)
         self.assertIn('self:AddListSection(model, "Current Gear", "gear")', ui)
         self.assertIn('self:AddListRow(model, rowData, "gear")', ui)
-        for heading in ["Slot", "Equipped Item", "Current Rank", "Useful Through"]:
-            self.assertIn(f'label = "{heading}"', ui)
+        for key, heading in [
+            ("slot", "Slot"),
+            ("item", "Equipped Item"),
+            ("currentRank", "Current Rank"),
+            ("usefulThrough", "Useful Through"),
+        ]:
+            self.assertIn(f'columnDefinition("{key}", "{heading}"', ui)
         self.assertIn('label = "Finger 1"', data_index)
         self.assertIn('label = "Finger 2"', data_index)
         self.assertIn('label = "Trinket 1"', data_index)
@@ -507,20 +512,28 @@ class AddonUIStaticTests(unittest.TestCase):
         data_index = self.read_lua("DataIndex.lua")
 
         for token in [
-            "viewColumnDefinitions",
-            "tableColumnLayout(width, mode, forceCompact)",
-            "local compact = forceCompact or usable < 1040",
+            "function UI:GetTableViewportWidth(parent, fallback)",
+            "function UI:GetViewColumnDefinitions(mode, compact)",
+            "function UI:GetTableColumnLayout(width, mode, forceCompact)",
+            "local TABLE_WIDE_BREAKPOINT = 1040",
+            "minWidth = minWidth",
+            "preferredWidth = preferredWidth",
+            "maxWidth = maxWidth",
+            "growWeight = growWeight or 0",
+            "growColumnWidths",
+            "header.columnLayout = layout",
+            "row.columnLayout = layout",
             "CreateListColumnHeader",
-            'label = "Rank"',
-            'label = "Item"',
-            'label = "Slot"',
-            'label = "Value"',
-            'label = "Source"',
-            'label = "Location"',
-            'label = "Owned"',
-            'label = "Wishlist"',
-            'label = "Expansion Ranking"',
-            'label = "Acquisition"',
+            'columnDefinition("rank", "Rank"',
+            'columnDefinition("item", "Item"',
+            'columnDefinition("slot", "Slot"',
+            'columnDefinition("value", "Value"',
+            'columnDefinition("source", "Source"',
+            'columnDefinition("location", "Location"',
+            'fixedColumn("owned", "Owned"',
+            'fixedColumn("action", "Wishlist"',
+            'columnDefinition("expansion", "Expansion Ranking"',
+            'columnDefinition("acquisition", "Acquisition"',
             "CreateRankBadge",
             "GetRowOwnershipState",
             "GetRowRecommendationText",
@@ -551,6 +564,8 @@ class AddonUIStaticTests(unittest.TestCase):
             self.assertIn(token, data_index)
 
         self.assertIn('sourceText .. "\\n" .. locationText', ui)
+        self.assertNotIn("definition.flex", ui)
+        self.assertNotIn("extra / math.max(1, flexCount)", ui)
 
     def test_column_headers_are_kept_visible_while_lists_scroll(self):
         ui = self.read_lua("UI.lua")
@@ -648,13 +663,13 @@ class AddonUIStaticTests(unittest.TestCase):
         ui = self.read_lua("UI.lua")
 
         for token in [
-            'label = "Enhancement"',
-            'label = "For"',
-            'label = "Recommendation"',
-            'label = "Applied / Owned"',
-            'label = "Source"',
-            'label = "Access"',
-            'label = "Source / Access"',
+            'columnDefinition("item", "Enhancement"',
+            'columnDefinition("slot", "For"',
+            'columnDefinition("value", "Recommendation"',
+            'fixedColumn("owned", "Applied / Owned"',
+            'columnDefinition("source", "Source"',
+            'columnDefinition("access", "Access"',
+            'columnDefinition("acquisition", "Source / Access"',
             'self:AddListSection(model, section.title, "enhance")',
             'self:AddListRow(model, rowData, "enhance")',
         ]:
@@ -909,7 +924,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "GetEnhancementAppliedSummary",
             'title = "Applied"',
             '"Applied: " .. appliedSummary.label',
-            'label = "Applied / Owned"',
+            'fixedColumn("owned", "Applied / Owned"',
             "table.insert(cache.links, itemLink)",
         ]:
             self.assertIn(token, ui)
@@ -1093,12 +1108,13 @@ class AddonUIStaticTests(unittest.TestCase):
 
     def test_current_gear_grid_reserves_formal_columns(self):
         ui = self.read_lua("UI.lua")
-        body = ui.split('elseif mode == "gear"', 1)[1].split('return viewColumnDefinitions("phase"', 1)[0]
+        config_body = ui.split("local TABLE_COLUMN_CONFIG =", 1)[1].split("function UI:GetViewColumnDefinitions", 1)[0]
+        body = config_body.split("gear = {", 1)[1]
         for token in [
-            '{ key = "slot", label = "Slot"',
-            '{ key = "item", label = "Equipped Item"',
-            '{ key = "currentRank", label = "Current Rank"',
-            '{ key = "usefulThrough", label = "Useful Through"',
+            'columnDefinition("slot", "Slot"',
+            'columnDefinition("item", "Equipped Item"',
+            'columnDefinition("currentRank", "Current Rank"',
+            'columnDefinition("usefulThrough", "Useful Through"',
         ]:
             self.assertIn(token, body)
         self.assertIn('self:AddListRow(model, rowData, "gear")', ui)

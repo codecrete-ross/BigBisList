@@ -44,8 +44,11 @@ committed snapshots unless a data-refresh task explicitly requires new fetches.
 
 ## Release Workflow
 
-- Follow `docs/internal/release-process.md` for version-bump decisions, release
-  prep, tagging, and publishing.
+- `docs/internal/release-process.md` is the authoritative release playbook for
+  version selection, preparation, validation evidence, tagging, and publishing.
+- Run `scripts/check-release.ps1 -Version <version> -FullData` from a clean
+  release commit before tagging. Do not replace it with a hand-maintained subset
+  of its commands in other documentation.
 - Use plain numeric tags such as `0.6.0`; do not prefix release tags with `v`.
 - Update `CHANGELOG.md`, release-specific README references, and the fallback
   version in `Config.lua` before tagging.
@@ -84,10 +87,8 @@ code already does so.
 
 ## Required Checks
 
-- General: `python -m unittest discover -s tests`
-- Canonical data: `python tools/validate_data.py --json`
-- Generated Lua: `python tools/generate_lua.py --check`
-- Manifest coverage: `python tools/scrape_wowhead.py coverage --summary --strict`
-
-For data refreshes, also run the relevant snapshot and requirements audits for
-the changed data family before release.
+- For release work, use the authoritative gate in
+  `docs/internal/release-process.md`; a release run must include `-FullData`.
+- For non-release changes, run the narrow checks relevant to the files changed.
+  Before handoff, state which checks ran and why any applicable check was
+  skipped.

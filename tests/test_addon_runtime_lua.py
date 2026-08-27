@@ -617,6 +617,592 @@ equal(UI.selectedItemMode, "enhance", "selection preserves the matching row mode
 equal(UI.selectedEntityType, "spell", "item ID collision cannot change selected entity type")
 ''')
 
+    def test_flexible_column_layouts_are_bounded_deterministic_and_cached(self):
+        self.run_lua(r'''
+BigBiSList = {}
+dofile("UI.lua")
+
+local UI = BigBiSList.UI
+local modes = { "planner", "phase", "leveling", "enhance", "wishlist", "gear" }
+local expectedColumns = {
+    planner = {
+        wide = {
+            { "item", "Item", 170, 260, 420, 8 }, { "slot", "Slot", 72, 88, 112, 2 },
+            { "value", "Value", 126, 170, 240, 4 }, { "source", "Source", 108, 128, 168, 2 },
+            { "location", "Location", 150, 210, 300, 6 }, { "owned", "Owned", 86, 86, 86, 0 },
+            { "action", "Wishlist", 58, 58, 58, 0 },
+        },
+        compact = {
+            { "item", "Item", 140, 220, 340, 8 }, { "slot", "Slot", 64, 82, 100, 2 },
+            { "value", "Value", 96, 145, 210, 4 }, { "acquisition", "Acquisition", 145, 230, 330, 6 },
+            { "owned", "Owned", 80, 80, 80, 0 }, { "action", "Wishlist", 58, 58, 58, 0 },
+        },
+    },
+    phase = {
+        wide = {
+            { "rank", "Rank", 92, 104, 128, 2 }, { "item", "Item", 190, 300, 460, 8 },
+            { "source", "Source", 108, 128, 168, 2 }, { "location", "Location", 150, 220, 320, 6 },
+            { "owned", "Owned", 86, 86, 86, 0 }, { "action", "Wishlist", 58, 58, 58, 0 },
+        },
+        compact = {
+            { "rank", "Rank", 76, 94, 116, 2 }, { "item", "Item", 145, 250, 400, 8 },
+            { "acquisition", "Acquisition", 145, 250, 360, 6 }, { "owned", "Owned", 80, 80, 80, 0 },
+            { "action", "Wishlist", 58, 58, 58, 0 },
+        },
+    },
+    leveling = {
+        wide = {
+            { "item", "Item", 170, 260, 420, 8 }, { "slot", "Slot", 72, 88, 112, 2 },
+            { "value", "Level / Value", 128, 176, 250, 4 }, { "source", "Source", 108, 128, 168, 2 },
+            { "location", "Location", 140, 210, 300, 6 }, { "owned", "Owned", 86, 86, 86, 0 },
+            { "action", "Wishlist", 58, 58, 58, 0 },
+        },
+        compact = {
+            { "item", "Item", 140, 220, 340, 8 }, { "slot", "Slot", 64, 82, 100, 2 },
+            { "value", "Level / Value", 104, 155, 220, 4 }, { "acquisition", "Acquisition", 145, 230, 330, 6 },
+            { "owned", "Owned", 80, 80, 80, 0 }, { "action", "Wishlist", 58, 58, 58, 0 },
+        },
+    },
+    enhance = {
+        wide = {
+            { "item", "Enhancement", 180, 260, 420, 8 }, { "slot", "For", 96, 116, 144, 2 },
+            { "value", "Recommendation", 140, 190, 270, 5 }, { "owned", "Applied / Owned", 104, 104, 104, 0 },
+            { "source", "Source", 108, 128, 168, 2 }, { "access", "Access", 116, 140, 176, 3 },
+        },
+        compact = {
+            { "item", "Enhancement", 145, 230, 360, 8 }, { "slot", "For", 72, 102, 130, 2 },
+            { "value", "Recommendation", 108, 170, 240, 5 }, { "owned", "Applied / Owned", 104, 104, 104, 0 },
+            { "acquisition", "Source / Access", 150, 240, 340, 6 },
+        },
+    },
+    wishlist = {
+        wide = {
+            { "item", "Item", 140, 220, 340, 6 }, { "slot", "Slots", 68, 90, 120, 2 },
+            { "expansion", "Expansion Ranking", 260, 340, 500, 10 }, { "source", "Source", 96, 116, 156, 2 },
+            { "location", "Location", 112, 180, 280, 6 }, { "owned", "Owned", 80, 80, 80, 0 },
+            { "action", "Remove", 58, 58, 58, 0 },
+        },
+        compact = {
+            { "item", "Item", 105, 180, 280, 6 }, { "slot", "Slots", 56, 80, 105, 2 },
+            { "expansion", "Expansion Ranking", 230, 330, 480, 10 },
+            { "acquisition", "Acquisition", 115, 190, 290, 6 }, { "action", "Remove", 58, 58, 58, 0 },
+        },
+    },
+    gear = {
+        wide = {
+            { "slot", "Slot", 106, 120, 150, 2 }, { "item", "Equipped Item", 260, 420, 620, 8 },
+            { "currentRank", "Current Rank", 170, 220, 300, 4 },
+            { "usefulThrough", "Useful Through", 150, 180, 220, 3 },
+        },
+        compact = {
+            { "slot", "Slot", 72, 100, 126, 2 }, { "item", "Equipped Item", 165, 300, 480, 8 },
+            { "currentRank", "Current Rank", 105, 180, 260, 4 },
+            { "usefulThrough", "Useful Through", 96, 145, 190, 3 },
+        },
+    },
+}
+
+for _, mode in ipairs(modes) do
+    for _, shape in ipairs({ "wide", "compact" }) do
+        local definitions = UI:GetViewColumnDefinitions(mode, shape == "compact")
+        local expected = expectedColumns[mode][shape]
+        equal(#definitions, #expected, mode .. " " .. shape .. " configured column count")
+        for index, values in ipairs(expected) do
+            local definition = definitions[index]
+            equal(definition.key, values[1], mode .. " " .. shape .. " key " .. tostring(index))
+            equal(definition.label, values[2], mode .. " " .. shape .. " label " .. tostring(index))
+            equal(definition.minWidth, values[3], mode .. " " .. shape .. " minimum " .. definition.key)
+            equal(definition.preferredWidth, values[4], mode .. " " .. shape .. " preferred " .. definition.key)
+            equal(definition.maxWidth, values[5], mode .. " " .. shape .. " maximum " .. definition.key)
+            equal(definition.growWeight, values[6], mode .. " " .. shape .. " weight " .. definition.key)
+        end
+    end
+end
+expect(UI:GetViewColumnDefinitions("wishlist", true)[1].ownershipInline,
+    "compact Wishlist keeps ownership in the Item column")
+
+local fractionalLayout = UI:GetTableColumnLayout(1016.75, "planner", true)
+equal(fractionalLayout.usableWidth, 1000, "fractional viewport widths round down")
+expect(fractionalLayout.usedWidth <= fractionalLayout.usableWidth, "fractional widths cannot overshoot the viewport")
+
+local function totalFor(definitions, widthKey)
+    local total = 8 * math.max(0, #definitions - 1)
+    for _, definition in ipairs(definitions) do
+        total = total + definition[widthKey]
+    end
+    return total
+end
+
+local function expectTargetWidths(layout, definitions, widthKey, label)
+    for index, definition in ipairs(definitions) do
+        equal(layout.columns[index].width, definition[widthKey], label .. " " .. definition.key)
+    end
+end
+
+local function validateLayout(mode, compact, layout, label)
+    local definitions = UI:GetViewColumnDefinitions(mode, compact)
+    equal(layout.compact, compact, label .. " shape")
+    equal(#layout.columns, #definitions, label .. " column count")
+    local expectedX = 8
+    local usedWidth = 8 * math.max(0, #definitions - 1)
+    for index, definition in ipairs(definitions) do
+        local column = layout.columns[index]
+        equal(column.key, definition.key, label .. " key " .. tostring(index))
+        equal(layout[column.key], column, label .. " keyed column " .. definition.key)
+        equal(column.x, expectedX, label .. " x " .. definition.key)
+        equal(column.width, math.floor(column.width), label .. " integer width " .. definition.key)
+        expect(column.width >= definition.minWidth, label .. " respects minimum " .. definition.key)
+        expect(column.width <= definition.maxWidth, label .. " respects maximum " .. definition.key)
+        expectedX = expectedX + column.width + 8
+        usedWidth = usedWidth + column.width
+    end
+    equal(layout.usedWidth, usedWidth, label .. " used width")
+    equal(layout.trailingWidth, math.max(0, layout.usableWidth - usedWidth), label .. " trailing width")
+    expect(usedWidth <= layout.usableWidth, label .. " fits usable width")
+end
+
+for _, mode in ipairs(modes) do
+    for _, shape in ipairs({ { compact = false }, { compact = true } }) do
+        local definitions = UI:GetViewColumnDefinitions(mode, shape.compact)
+        for _, definition in ipairs(definitions) do
+            expect(type(definition.minWidth) == "number", mode .. " minimum is configured")
+            expect(type(definition.preferredWidth) == "number", mode .. " preferred width is configured")
+            expect(type(definition.maxWidth) == "number", mode .. " maximum is configured")
+            expect(type(definition.growWeight) == "number", mode .. " growth weight is configured")
+            expect(definition.minWidth <= definition.preferredWidth, mode .. " minimum <= preferred")
+            expect(definition.preferredWidth <= definition.maxWidth, mode .. " preferred <= maximum")
+            expect(definition.growWeight >= 0, mode .. " growth weight is nonnegative")
+            if definition.growWeight == 0 then
+                equal(definition.minWidth, definition.preferredWidth, mode .. " fixed preferred width")
+                equal(definition.preferredWidth, definition.maxWidth, mode .. " fixed maximum width")
+            end
+        end
+    end
+
+    local compactDefinitions = UI:GetViewColumnDefinitions(mode, true)
+    local compactMinimum = totalFor(compactDefinitions, "minWidth")
+    local compactPreferred = totalFor(compactDefinitions, "preferredWidth")
+    local compactMaximum = totalFor(compactDefinitions, "maxWidth")
+    expect(compactMinimum + 16 <= 662, mode .. " compact minima and row padding fit the supported narrow viewport")
+
+    local supportedMinimumLayout = UI:GetTableColumnLayout(662, mode, true)
+    validateLayout(mode, true, supportedMinimumLayout, mode .. " supported minimum viewport")
+
+    local minimumLayout = UI:GetTableColumnLayout(compactMinimum + 16, mode, true)
+    validateLayout(mode, true, minimumLayout, mode .. " exact minimum")
+    expectTargetWidths(minimumLayout, compactDefinitions, "minWidth", mode .. " exact minimum")
+
+    local preferredLayout = UI:GetTableColumnLayout(compactPreferred + 16, mode, true)
+    validateLayout(mode, true, preferredLayout, mode .. " exact preferred")
+    expectTargetWidths(preferredLayout, compactDefinitions, "preferredWidth", mode .. " exact preferred")
+
+    local maximumLayout = UI:GetTableColumnLayout(compactMaximum + 16, mode, true)
+    validateLayout(mode, true, maximumLayout, mode .. " exact maximum")
+    expectTargetWidths(maximumLayout, compactDefinitions, "maxWidth", mode .. " exact maximum")
+
+    local overMaximum = UI:GetTableColumnLayout(compactMaximum + 216, mode, true)
+    validateLayout(mode, true, overMaximum, mode .. " over maximum")
+    expectTargetWidths(overMaximum, compactDefinitions, "maxWidth", mode .. " capped maximum")
+    equal(overMaximum.trailingWidth, 200, mode .. " leaves a trailing gutter after all caps")
+    equal(UI:GetTableColumnLayout(compactMaximum + 216, mode, true), overMaximum, mode .. " identical layout is cached")
+
+    local onePixelLayout = UI:GetTableColumnLayout(compactMinimum + 17, mode, true)
+    local allocated = 0
+    for index, definition in ipairs(compactDefinitions) do
+        allocated = allocated + (onePixelLayout.columns[index].width - definition.minWidth)
+    end
+    equal(allocated, 1, mode .. " residual pixel is allocated exactly once")
+    local widths = {}
+    for index, column in ipairs(onePixelLayout.columns) do widths[index] = column.width end
+    UI.columnLayoutCache[mode .. ":compact"] = nil
+    local repeatedPixelLayout = UI:GetTableColumnLayout(compactMinimum + 17, mode, true)
+    for index, width in ipairs(widths) do
+        equal(repeatedPixelLayout.columns[index].width, width, mode .. " residual rounding is deterministic")
+    end
+
+    local weightTotal = 0
+    for _, definition in ipairs(compactDefinitions) do
+        weightTotal = weightTotal + definition.growWeight
+    end
+    local weightedLayout = UI:GetTableColumnLayout(compactMinimum + 16 + weightTotal, mode, true)
+    for index, definition in ipairs(compactDefinitions) do
+        equal(weightedLayout.columns[index].width, definition.minWidth + definition.growWeight,
+            mode .. " applies configured growth weight to " .. definition.key)
+    end
+
+    local firstGrowableIndex
+    for index, definition in ipairs(compactDefinitions) do
+        if definition.growWeight > 0 and not firstGrowableIndex then
+            firstGrowableIndex = index
+        end
+    end
+    local preferredPlusOne = UI:GetTableColumnLayout(compactPreferred + 17, mode, true)
+    for index, definition in ipairs(compactDefinitions) do
+        local expectedWidth = definition.preferredWidth + (index == firstGrowableIndex and 1 or 0)
+        equal(preferredPlusOne.columns[index].width, expectedWidth,
+            mode .. " finishes preferred growth before left-to-right maximum growth " .. definition.key)
+        equal(definition.width, nil, mode .. " definition width remains immutable " .. definition.key)
+        equal(definition.x, nil, mode .. " definition position remains immutable " .. definition.key)
+    end
+
+    local autoCompact = UI:GetTableColumnLayout(956, mode, false)
+    expect(autoCompact.compact, mode .. " uses compact columns below the breakpoint")
+    local forcedCompact = UI:GetTableColumnLayout(1096, mode, true)
+    expect(forcedCompact.compact, mode .. " inspector forces compact columns")
+
+    local boundaryWide = UI:GetTableColumnLayout(1056, mode, false)
+    local defaultWide = UI:GetTableColumnLayout(1096, mode, false)
+    local maximumWide = UI:GetTableColumnLayout(1896, mode, false)
+    validateLayout(mode, false, boundaryWide, mode .. " boundary wide")
+    validateLayout(mode, false, defaultWide, mode .. " default wide")
+    validateLayout(mode, false, maximumWide, mode .. " maximum wide")
+    equal(boundaryWide.usedWidth, boundaryWide.usableWidth, mode .. " boundary width is fully allocated")
+    equal(defaultWide.usedWidth, defaultWide.usableWidth, mode .. " default width is fully allocated")
+
+    local growingColumns = 0
+    local anyBeyondPreferred = false
+    local wideDefinitions = UI:GetViewColumnDefinitions(mode, false)
+    for index, definition in ipairs(wideDefinitions) do
+        local boundaryColumn = boundaryWide.columns[index]
+        local defaultColumn = defaultWide.columns[index]
+        local maximumColumn = maximumWide.columns[index]
+        expect(defaultColumn.width >= boundaryColumn.width, mode .. " grows monotonically to default " .. definition.key)
+        expect(maximumColumn.width >= defaultColumn.width, mode .. " grows monotonically to maximum " .. definition.key)
+        if definition.growWeight > 0 and defaultColumn.width > definition.minWidth then
+            growingColumns = growingColumns + 1
+        end
+        if definition.growWeight > 0 and defaultColumn.width > definition.preferredWidth then
+            anyBeyondPreferred = true
+        end
+        equal(maximumColumn.width, definition.maxWidth, mode .. " reaches wide maximum " .. definition.key)
+    end
+    expect(growingColumns >= 2, mode .. " grows multiple semantic columns")
+    if anyBeyondPreferred then
+        for index, definition in ipairs(wideDefinitions) do
+            if definition.growWeight > 0 then
+                expect(defaultWide.columns[index].width >= definition.preferredWidth, mode .. " completes preferred stage before maximum stage")
+            end
+        end
+    end
+    expect(maximumWide.trailingWidth > 0, mode .. " maximum-width layout keeps a trailing gutter")
+end
+
+local owned = { marker = "owned" }
+local access = { marker = "access" }
+local availability = { marker = "availability" }
+local query = { marker = "query" }
+local payload = { marker = "payload" }
+local model = { marker = "model", entries = { { top = 1, bottom = 2 } } }
+UI.currentOwned = owned
+UI.currentAccess = access
+UI.currentAvailabilitySnapshot = availability
+UI.currentViewQueryCache = query
+UI.currentFilterPayload = payload
+UI.renderModel = model
+UI.renderModelSerial = 77
+UI.columnLayoutCache = {}
+for width = 678, 1896, 11 do
+    for _, mode in ipairs(modes) do
+        UI:GetTableColumnLayout(width, mode, false)
+        UI:GetTableColumnLayout(width, mode, true)
+    end
+end
+local cacheEntries = 0
+for _ in pairs(UI.columnLayoutCache) do cacheEntries = cacheEntries + 1 end
+expect(cacheEntries <= 12, "column cache is bounded by mode and shape")
+local cachedPlanner = UI:GetTableColumnLayout(1096, "planner", false)
+equal(UI:GetTableColumnLayout(1096, "planner", false), cachedPlanner, "same mode and width reuse cached layout")
+local entriesBeforeReplacement = cacheEntries
+expect(UI:GetTableColumnLayout(1100, "planner", false) ~= cachedPlanner, "new width replaces cached layout")
+cacheEntries = 0
+for _ in pairs(UI.columnLayoutCache) do cacheEntries = cacheEntries + 1 end
+equal(cacheEntries, entriesBeforeReplacement, "replacement does not grow the cache")
+for index = 1, 30 do
+    UI:GetTableColumnLayout(1096, "unknown-" .. tostring(index), false)
+end
+cacheEntries = 0
+for _ in pairs(UI.columnLayoutCache) do cacheEntries = cacheEntries + 1 end
+equal(cacheEntries, entriesBeforeReplacement, "unknown modes share the phase cache entry")
+equal(UI.currentOwned, owned, "column layout keeps ownership cache")
+equal(UI.currentAccess, access, "column layout keeps access cache")
+equal(UI.currentAvailabilitySnapshot, availability, "column layout keeps availability cache")
+equal(UI.currentViewQueryCache, query, "column layout keeps query cache")
+equal(UI.currentFilterPayload, payload, "column layout keeps filter payload")
+equal(UI.renderModel, model, "column layout keeps render model")
+equal(UI.renderModelSerial, 77, "column layout keeps model serial")
+equal(UI.renderModel.entries[1].top, 1, "column layout keeps model row top")
+equal(UI.renderModel.entries[1].bottom, 2, "column layout keeps model row bottom")
+''')
+
+    def test_header_rows_badges_actions_and_hover_share_resolved_geometry(self):
+        self.run_lua(r'''
+BigBiSList = {}
+dofile("UI.lua")
+
+local UI = BigBiSList.UI
+local function frame(parent, width, height)
+    local value = {
+        parent = parent,
+        width = width or 0,
+        height = height or 0,
+        points = {},
+        scripts = {},
+        shown = true,
+        frameLevel = 1,
+    }
+    function value:GetParent() return self.parent end
+    function value:SetParent(newParent) self.parent = newParent end
+    function value:Show() self.shown = true end
+    function value:Hide() self.shown = false end
+    function value:IsShown() return self.shown end
+    function value:ClearAllPoints() self.points = {} end
+    function value:SetPoint(...) table.insert(self.points, { ... }) end
+    function value:SetAllPoints(...) self.allPoints = { ... } end
+    function value:SetSize(newWidth, newHeight) self.width, self.height = newWidth, newHeight end
+    function value:SetWidth(newWidth) self.width = newWidth end
+    function value:SetHeight(newHeight) self.height = newHeight end
+    function value:GetWidth() return self.width end
+    function value:GetHeight() return self.height end
+    function value:GetFrameLevel() return self.frameLevel end
+    function value:SetFrameLevel(newLevel) self.frameLevel = newLevel end
+    function value:EnableMouse(enabled) self.mouseEnabled = enabled end
+    function value:SetScript(event, callback) self.scripts[event] = callback end
+    function value:GetScript(event) return self.scripts[event] end
+    function value:SetWordWrap(enabled) self.wordWrap = enabled end
+    function value:SetJustifyH(justify) self.justify = justify end
+    function value:SetTextColor(...) self.textColor = { ... } end
+    function value:SetText(text) self.text = text end
+    function value:CreateFontString()
+        return frame(self)
+    end
+    return value
+end
+
+CreateFrame = function(_, _, parent) return frame(parent) end
+BigBiSList.Widgets = {
+    CreateItemRow = function(_, parent, height)
+        local row = frame(parent, 0, height)
+        row.highlight = frame(row)
+        return row
+    end,
+    CreateIconButton = function(_, parent, size)
+        return frame(parent, size, size)
+    end,
+    CreateWrappedLabel = function(_, parent, text)
+        local label = frame(parent)
+        label:SetText(text)
+        return label
+    end,
+    CreateLabel = function(_, parent, text)
+        local label = frame(parent)
+        label:SetText(text)
+        return label
+    end,
+    CreateTextButton = function(_, parent, text, width, height, callback)
+        local button = frame(parent, width, height)
+        button.label = frame(button)
+        button.label:SetText(text)
+        button:SetScript("OnClick", callback)
+        return button
+    end,
+}
+
+local inspectorVisible = false
+UI.contentScroll = frame(nil, 1096, 500)
+UI.GetViewState = function() return {} end
+UI.IsInspectorVisible = function() return inspectorVisible end
+UI.CountPerformance = function() end
+UI.GetRowSlotDisplay = function() return "Head" end
+UI.GetRowRecommendationText = function() return "Best in slot" end
+UI.GetWishlistExpansionText = function() return "PR BiS" end
+UI.GetGearUsefulThrough = function() return "Phase 5" end
+UI.GetRowOwnershipState = function() return "missing" end
+UI.GetRowAcquisitionDisplay = function() return "Raid", "Long Boss Name", "ready" end
+UI.ShowAcquisitionTooltip = function() end
+UI.SetItemButton = function(_, _, _, nameText, name) nameText:SetText(name) end
+UI.CreateRankBadge = function(_, parent, _, _, _, _, existing) return existing or frame(parent) end
+UI.CreateOwnershipBadge = function(_, parent, _, _, existing) return existing or frame(parent) end
+UI.CreateAccessBadge = function(_, parent, _, _, existing) return existing or frame(parent) end
+BigBiSList.GetItemData = function() return {} end
+BigBiSList.GetCharacterDB = function() return { wishlist = {} } end
+
+local narrowParent = frame(nil, 320, 500)
+equal(UI:GetTableViewportWidth(narrowParent, 400), 1092, "canonical width comes from the live scroll frame")
+narrowParent.width = 1800
+equal(UI:GetTableViewportWidth(narrowParent, 400), 1092, "header and row parent widths cannot diverge the table")
+
+local function pointX(widget)
+    for _, point in ipairs(widget.points or {}) do
+        if point[1] == "TOPLEFT" then
+            return point[4]
+        end
+    end
+end
+
+local function expectGeometry(widget, column, label)
+    expect(widget, label .. " exists")
+    equal(pointX(widget), column.x, label .. " x")
+    equal(widget.width, column.width, label .. " width")
+end
+
+local modes = { "planner", "phase", "leveling", "enhance", "wishlist", "gear" }
+for _, compact in ipairs({ false, true }) do
+    inspectorVisible = compact
+    for _, mode in ipairs(modes) do
+        local parent = frame(nil, compact and 430 or 1600, 500)
+        local header = UI:CreateListColumnHeader(parent, 0, mode)
+        local row = UI:CreateDataRow(parent, 0, {
+            item_id = 12345,
+            entity_type = "item",
+            name = "An Item With A Long Name",
+            rank_group = "bis",
+            item = {},
+        }, mode, nil, 74)
+        local layout = header.columnLayout
+        equal(row.columnLayout, layout, mode .. " " .. tostring(compact) .. " header and row share cached layout")
+
+        for index, column in ipairs(layout.columns) do
+            expectGeometry(header.columnButtons[index], column, mode .. " header " .. column.key)
+            if column.key == "item" then
+                equal(pointX(row.iconButton), column.x, mode .. " item icon x")
+            elseif column.key == "rank" then
+                expectGeometry(row.rankBadge, column, mode .. " rank badge")
+            elseif column.key == "owned" then
+                expectGeometry(row.ownershipBadge, column, mode .. " ownership badge")
+            elseif column.key == "access" then
+                expectGeometry(row.accessBadge, column, mode .. " access badge")
+            elseif column.key == "action" then
+                expectGeometry(row.actionButton, column, mode .. " action")
+            else
+                expectGeometry(row.cells[column.key], column, mode .. " cell " .. column.key)
+            end
+        end
+
+        local sourceColumn = layout.acquisition or layout.source
+        if sourceColumn then
+            local lastSourceColumn = layout.location or sourceColumn
+            equal(pointX(row.sourceHover), sourceColumn.x, mode .. " acquisition hover x")
+            equal(row.sourceHover.width,
+                (lastSourceColumn.x + lastSourceColumn.width) - sourceColumn.x,
+                mode .. " acquisition hover spans resolved source columns")
+        end
+    end
+end
+''')
+
+    def test_layout_only_resize_rebinds_viewport_without_rebuilding_data(self):
+        self.run_lua(r'''
+BigBiSList = {}
+dofile("UI.lua")
+
+local UI = BigBiSList.UI
+local scrollWidth = 1096
+local inspectorVisible = false
+local created = 0
+local bound = 0
+local performance = {}
+
+local function pooledFrame()
+    local value = {}
+    function value:Hide() self.hidden = true end
+    function value:ClearAllPoints() self.cleared = true end
+    return value
+end
+
+local model = {
+    entries = {
+        { kind = "row", top = 0, bottom = 46, rowHeight = 46, mode = "planner", data = { id = 1 } },
+        { kind = "row", top = 50, bottom = 96, rowHeight = 46, mode = "planner", data = { id = 2 } },
+        { kind = "row", top = 100, bottom = 146, rowHeight = 46, mode = "planner", data = { id = 3 } },
+    },
+}
+local owned = { marker = "owned" }
+local access = { marker = "access" }
+local availability = { marker = "availability" }
+local query = { marker = "query" }
+local payload = { marker = "payload" }
+
+UI.frame = { IsShown = function() return true end }
+UI.renderModel = model
+UI.renderModelSerial = 9
+UI.stickyHeaderMode = "planner"
+UI.contentScroll = {
+    GetVerticalScroll = function() return 0 end,
+    GetHeight = function() return 180 end,
+    GetWidth = function() return scrollWidth end,
+}
+UI.contentListLayer = {}
+UI.contentChild = UI.contentListLayer
+UI.currentOwned = owned
+UI.currentAccess = access
+UI.currentAvailabilitySnapshot = availability
+UI.currentViewQueryCache = query
+UI.currentFilterPayload = payload
+UI.IsInspectorVisible = function() return inspectorVisible end
+UI.ApplyBodyLayout = function() end
+UI.SetStickyHeaderMode = function(self, mode)
+    self.stickyHeaderMode = mode
+    self.lastHeaderLayout = self:GetTableColumnLayout(self:GetTableViewportWidth(self.contentListLayer, scrollWidth), mode, inspectorVisible)
+end
+UI.CountPerformance = function(_, key, amount)
+    performance[key] = (performance[key] or 0) + (amount or 1)
+end
+UI.CreateDataRow = function(_, _, _, _, _, reusable)
+    bound = bound + 1
+    if not reusable then
+        created = created + 1
+        reusable = pooledFrame()
+    end
+    return reusable
+end
+UI.BuildOwnedItems = function() error("layout must not rebuild ownership") end
+UI.BuildAccessState = function() error("layout must not rebuild access") end
+UI.BuildFilterPayload = function() error("layout must not rebuild filters") end
+UI.BuildViewQuery = function() error("layout must not rebuild queries") end
+
+UI:RefreshLayout("initial")
+equal(created, 3, "initial wide viewport creates one widget per visible row")
+equal(bound, 3, "initial wide viewport binds visible rows")
+local initialRange = UI.renderRangeKey
+UI:UpdateVirtualList(false)
+equal(bound, 3, "unchanged viewport geometry does not rebind")
+
+UI:Invalidate("layout", "wider")
+scrollWidth = 1200
+UI:RefreshLayout("wider")
+expect(UI.renderRangeKey ~= initialRange, "width change updates the viewport geometry signature")
+equal(created, 3, "wide resize reuses the warmed wide row pool")
+equal(bound, 6, "wide resize rebinds visible rows")
+
+inspectorVisible = true
+UI:Invalidate("layout", "inspector-open")
+UI:RefreshLayout("inspector-open")
+equal(created, 6, "first compact shape creates one compact widget set")
+equal(bound, 9, "inspector transition rebinds compact rows")
+expect(UI.lastHeaderLayout.compact, "inspector forces the compact header shape")
+
+inspectorVisible = false
+UI:Invalidate("layout", "inspector-close")
+UI:RefreshLayout("inspector-close")
+equal(created, 6, "returning to wide shape reuses the warmed pool")
+equal(bound, 12, "returning to wide shape rebinds rows")
+expect(not UI.lastHeaderLayout.compact, "closing inspector restores the wide header shape")
+
+equal(UI.renderModel, model, "layout refresh keeps render model identity")
+equal(UI.renderModelSerial, 9, "layout refresh keeps model serial")
+equal(model.entries[1].top, 0, "layout refresh keeps row top bounds")
+equal(model.entries[3].bottom, 146, "layout refresh keeps row bottom bounds")
+equal(UI.currentOwned, owned, "layout refresh keeps ownership cache")
+equal(UI.currentAccess, access, "layout refresh keeps access cache")
+equal(UI.currentAvailabilitySnapshot, availability, "layout refresh keeps availability cache")
+equal(UI.currentViewQueryCache, query, "layout refresh keeps query corpus")
+equal(UI.currentFilterPayload, payload, "layout refresh keeps filter payload")
+equal(performance.ownershipBuilds, nil, "layout path records no ownership builds")
+equal(performance.accessBuilds, nil, "layout path records no access builds")
+equal(performance.availabilityBuilds, nil, "layout path records no availability builds")
+equal(performance.dataBuilds, nil, "layout path records no data builds")
+''')
+
     def test_sticky_header_and_body_layout_are_geometry_idempotent(self):
         self.run_lua(r'''
 BigBiSList = {}
@@ -1655,6 +2241,37 @@ for _, group in ipairs(BigBiSList:GetPhaseRows("Druid", "Feral dps", "PR", share
     end
 end
 expect(phaseCount > 0, "BiS list vendor rows")
+''')
+
+    def test_tier_six_phase_boundary_uses_the_official_launch_epoch(self):
+        self.run_lua(r'''
+BigBiSList = {}
+BigBiSListData = {
+    classes = {},
+    phases = {
+        { key = "PR", name = "Pre-Raid", starts_at_epoch = 0 },
+        { key = "T4", name = "Tier 4", starts_at_epoch = 1771542000 },
+        { key = "T5", name = "Tier 5", starts_at_epoch = 1778796000 },
+        { key = "T6", name = "Tier 6", starts_at_epoch = 1787868000 },
+        { key = "ZA", name = "Zul'Aman" },
+        { key = "SWP", name = "Sunwell Plateau" },
+    },
+    items = {},
+    item_fallbacks = {},
+    bis_lists = {},
+    leveling_gear = {},
+    leveling_recommendations = {},
+    gems = {},
+    gem_sources = {},
+    enchants = {},
+    enchant_sources = {},
+    enchant_effects = {},
+    consumables = {},
+}
+dofile("DataIndex.lua")
+
+equal(BigBiSList:GetCurrentPhaseKey(1787867999), "T5", "one second before Tier 6 launch")
+equal(BigBiSList:GetCurrentPhaseKey(1787868000), "T6", "exactly at Tier 6 launch")
 ''')
 
     def test_enhancement_rows_support_type_applied_and_availability_filters(self):
