@@ -40,5 +40,7 @@ class AddonShellTests(unittest.TestCase):
         self.assertNotIn("BISTBCDB", toc_text)
 
         for path in ADDON_DIR.glob("*.lua"):
+            if not path.is_file():
+                continue
             text = path.read_text(encoding="utf-8")
             self.assertNotIn("BISTBC", text, str(path))
