@@ -44,6 +44,19 @@ class ReleaseMetadataTests(unittest.TestCase):
                 f"README {label} count is stale; update it from validate_data.py --json",
             )
 
+    def test_ci_runs_the_authoritative_full_release_gate_for_pull_requests_and_tags(self):
+        workflow = (ROOT / ".github" / "workflows" / "release-check.yml").read_text(encoding="utf-8")
+
+        self.assertIn("workflow_dispatch:", workflow)
+        self.assertIn("pull_request:", workflow)
+        self.assertIn("tags:", workflow)
+        self.assertIn("scripts/check-release.ps1", workflow)
+        self.assertIn("-FullData", workflow)
+        self.assertIn("GITHUB_REF_NAME", workflow)
+        self.assertIn("luaVersion: \"5.1.5\"", workflow)
+        self.assertIn(".lua/", (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines())
+        self.assertIn("  - .github", (ROOT / ".pkgmeta").read_text(encoding="utf-8").splitlines())
+
 
 if __name__ == "__main__":
     unittest.main()
