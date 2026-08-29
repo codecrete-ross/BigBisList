@@ -50,8 +50,15 @@ committed snapshots unless a data-refresh task explicitly requires new fetches.
   release commit before tagging. Do not replace it with a hand-maintained subset
   of its commands in other documentation.
 - Use plain numeric tags such as `0.6.0`; do not prefix release tags with `v`.
-- Update `CHANGELOG.md`, release-specific README references, and the fallback
-  version in `Config.lua` before tagging.
+- Replace `CHANGELOG.md` before each tag so it contains exactly one dated
+  section for that version and only changes shipped since the prior release.
+  Do not append older sections; Git tags preserve their historical changelogs.
+- Update release-specific README references and the fallback version in
+  `Config.lua` before tagging.
+- CurseForge ingestion is automatic from the pushed Git tag and `.pkgmeta`.
+  The release process has no manual CurseForge upload, changelog edit, or other
+  author-UI step; make corrections in the repository and publish them through a
+  subsequent normal release.
 - Keep `BigBiSList.toc` using `@project-version@` unless packaging requirements
   explicitly change.
 

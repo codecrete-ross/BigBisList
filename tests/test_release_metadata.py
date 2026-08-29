@@ -1,5 +1,6 @@
 import re
 import unittest
+from datetime import date
 
 from tools.project import ROOT
 from tools.validate_data import validate
@@ -22,6 +23,68 @@ README_COUNT_KEYS = {
 
 
 class ReleaseMetadataTests(unittest.TestCase):
+    def test_changelog_is_release_specific_and_matches_fallback_version(self):
+        changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+        config = (ROOT / "Config.lua").read_text(encoding="utf-8")
+
+        config_match = re.search(
+            r'^\s*version\s*=\s*"(?P<version>\d+\.\d+\.\d+)"\s*$',
+            config,
+            re.MULTILINE,
+        )
+        self.assertIsNotNone(config_match, "Config.lua is missing its fallback version")
+
+        release_headings = list(
+            re.finditer(
+                r"^##\s+(?P<version>\d+\.\d+\.\d+)(?:\s+-\s+.*)?\s*$",
+                changelog,
+                re.MULTILINE,
+            )
+        )
+        self.assertEqual(
+            len(release_headings),
+            1,
+            "CHANGELOG.md must contain exactly one release section",
+        )
+
+        heading = release_headings[0]
+        dated_heading = re.fullmatch(
+            r"##\s+(?P<version>\d+\.\d+\.\d+)\s+-\s+(?P<date>\d{4}-\d{2}-\d{2})",
+            heading.group(0).strip(),
+        )
+        self.assertIsNotNone(
+            dated_heading,
+            "the changelog release heading must use an ISO date",
+        )
+        date.fromisoformat(dated_heading.group("date"))
+        self.assertEqual(dated_heading.group("version"), config_match.group("version"))
+        self.assertTrue(
+            changelog[heading.end():].strip(),
+            "the changelog release section must have a non-empty body",
+        )
+
+    def test_pkgmeta_uses_the_release_specific_markdown_changelog(self):
+        pkgmeta = (ROOT / ".pkgmeta").read_text(encoding="utf-8")
+        self.assertRegex(
+            pkgmeta,
+            r"(?m)^manual-changelog:\s*$\n^\s+filename:\s+CHANGELOG\.md\s*$\n^\s+markup-type:\s+markdown\s*$",
+        )
+
+    def test_curseforge_ingestion_is_documented_as_automatic_only(self):
+        governance = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        release_process = (
+            ROOT / "docs" / "internal" / "release-process.md"
+        ).read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+
+        self.assertIn("CurseForge ingestion is automatic", governance)
+        self.assertRegex(
+            release_process,
+            r"there is\s+no manual CurseForge follow-up step",
+        )
+        self.assertIn("Do not manually upload generated zip files", release_process)
+        self.assertIn("The release process has no manual CurseForge", readme)
+
     def test_readme_generated_counts_match_canonical_validation_summary(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         match = re.search(

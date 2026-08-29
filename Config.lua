@@ -17,7 +17,7 @@ end
 
 local version = addonMetadata("Version")
 if version == nil or version == "" or version == "@project-version@" then
-    version = "0.12.0"
+    version = "0.12.1"
 end
 BigBiSList.version = version
 

@@ -257,9 +257,22 @@ function Assert-VersionMetadata {
     }
 
     $changelog = Get-Content -Raw -LiteralPath (Join-Path $RepositoryRoot "CHANGELOG.md")
-    $changelogMatch = [regex]::Match($changelog, '(?m)^##\s+(?<version>\d+\.\d+\.\d+)\s+-\s+\d{4}-\d{2}-\d{2}\s*$')
+    $releaseHeadings = [regex]::Matches($changelog, '(?m)^##\s+(?<version>\d+\.\d+\.\d+)(?:\s+-\s+.*)?\s*$')
+    if ($releaseHeadings.Count -ne 1) {
+        throw "CHANGELOG.md must contain exactly one release section; found $($releaseHeadings.Count)."
+    }
+
+    $changelogMatch = [regex]::Match(
+        $releaseHeadings[0].Value,
+        '^##\s+(?<version>\d+\.\d+\.\d+)\s+-\s+(?<date>\d{4}-\d{2}-\d{2})\s*$'
+    )
     if (-not $changelogMatch.Success -or $changelogMatch.Groups['version'].Value -ne $ReleaseVersion) {
-        throw "The first CHANGELOG.md release section must be $ReleaseVersion with an ISO date."
+        throw "The sole CHANGELOG.md release section must be $ReleaseVersion with an ISO date."
+    }
+
+    $changelogBody = $changelog.Substring($releaseHeadings[0].Index + $releaseHeadings[0].Length).Trim()
+    if (-not $changelogBody) {
+        throw "The $ReleaseVersion CHANGELOG.md release section must have a non-empty body."
     }
 
     $readme = Get-Content -Raw -LiteralPath (Join-Path $RepositoryRoot "README.md")
@@ -280,6 +293,58 @@ function Assert-VersionMetadata {
     if ($toc -notmatch '(?m)^##\s+Version:\s+@project-version@\s*$') {
         throw "BigBiSList.toc must keep ## Version: @project-version@ for tag packaging."
     }
+}
+
+function Assert-ChangelogChangedSincePriorRelease {
+    param(
+        [Parameter(Mandatory = $true)][string]$ReleaseVersion
+    )
+
+    $git = Get-ExecutablePath -Candidate "git"
+    if (-not $git) {
+        throw "Git was not found on PATH."
+    }
+
+    $releaseVersionValue = [version]$ReleaseVersion
+    $candidateTags = @(
+        foreach ($tag in @(& $git tag --list)) {
+            if ($tag -notmatch '^\d+\.\d+\.\d+$') {
+                continue
+            }
+            $tagVersion = [version]$tag
+            if ($tagVersion -lt $releaseVersionValue) {
+                [pscustomobject]@{
+                    Name = $tag
+                    Version = $tagVersion
+                }
+            }
+        }
+    )
+    if ($LASTEXITCODE -ne 0) {
+        throw "Could not inspect prior release tags."
+    }
+
+    $priorRelease = $candidateTags | Sort-Object Version -Descending | Select-Object -First 1
+    if (-not $priorRelease) {
+        Write-Host "No earlier numeric release tag found; skipping changelog comparison."
+        return
+    }
+
+    & $git merge-base --is-ancestor $priorRelease.Name HEAD
+    if ($LASTEXITCODE -ne 0) {
+        throw "Prior release tag $($priorRelease.Name) is not an ancestor of HEAD."
+    }
+
+    & $git diff --quiet $priorRelease.Name HEAD -- CHANGELOG.md
+    $diffExitCode = $LASTEXITCODE
+    if ($diffExitCode -eq 0) {
+        throw "CHANGELOG.md is unchanged since prior release $($priorRelease.Name). Replace it with notes for $ReleaseVersion."
+    }
+    if ($diffExitCode -ne 1) {
+        throw "Could not compare CHANGELOG.md with prior release $($priorRelease.Name)."
+    }
+
+    Write-Host "CHANGELOG.md differs from prior release $($priorRelease.Name)."
 }
 
 function Assert-ReadmeDataCounts {
@@ -411,6 +476,7 @@ try {
     Test-PythonEnvironment -PythonExecutable $python -PyprojectPath (Join-Path $repoRoot "pyproject.toml")
     Assert-GitReleaseState -ReleaseVersion $Version
     Assert-VersionMetadata -ReleaseVersion $Version -RepositoryRoot $repoRoot
+    Assert-ChangelogChangedSincePriorRelease -ReleaseVersion $Version
 
     Invoke-CheckedCommand -Label "Unit tests" -Executable $python -Arguments @("-m", "unittest", "discover", "-s", "tests")
     Invoke-LuaCompile -LuaCompiler $luaCompiler -RepositoryRoot $repoRoot
