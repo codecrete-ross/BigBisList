@@ -51,8 +51,15 @@ committed snapshots unless a data-refresh task explicitly requires new fetches.
   of its commands in other documentation.
 - Use plain numeric tags such as `0.6.0`; do not prefix release tags with `v`.
 - Replace `CHANGELOG.md` before each tag so it contains exactly one dated
-  section for that version and only changes shipped since the prior release.
-  Do not append older sections; Git tags preserve their historical changelogs.
+  section for that version and only player-observable addon behavior shipped
+  since the prior release. Include UI, commands, settings, compatibility,
+  runtime fixes, and addon data or recommendation changes when applicable.
+  Exclude development-only work such as governance and documentation, tests and
+  CI, tooling and refactors, packaging metadata, release automation, and
+  contributor workflow changes. Put those details in commits, pull requests,
+  and internal release evidence instead. If a release has no addon behavior
+  changes, use the exact note `- No addon behavior changes.` Do not append older
+  sections; Git tags preserve their historical changelogs.
 - Update release-specific README references and the fallback version in
   `Config.lua` before tagging.
 - CurseForge ingestion is automatic from the pushed Git tag and `.pkgmeta`.

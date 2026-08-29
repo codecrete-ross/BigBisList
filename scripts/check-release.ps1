@@ -275,6 +275,27 @@ function Assert-VersionMetadata {
         throw "The $ReleaseVersion CHANGELOG.md release section must have a non-empty body."
     }
 
+    $developmentOnlyTerms = [ordered]@{
+        "GitHub" = '(?i)\bGitHub\b'
+        "CurseForge" = '(?i)\bCurseForge\b'
+        "CI" = '(?i)\bCI\b'
+        "workflow" = '(?i)\bworkflows?\b'
+        "repository" = '(?i)\brepositor(?:y|ies)\b'
+        "governance" = '(?i)\bgovernance\b'
+        "documentation" = '(?i)\b(?:documentation|docs)\b'
+        "test suite" = '(?i)\b(?:unit|integration|static|release|test) tests?\b|\btest suite\b'
+        "tooling" = '(?i)\btooling\b'
+        "refactor" = '(?i)\brefactor(?:ed|ing|s)?\b'
+        "packaging" = '(?i)\bpackag(?:e|ed|ing) metadata\b|\bpackaging\b'
+        "release process" = '(?i)\brelease (?:automation|gate|process|workflow)\b'
+        "contributor workflow" = '(?i)\bcontributor workflow\b'
+    }
+    foreach ($entry in $developmentOnlyTerms.GetEnumerator()) {
+        if ($changelogBody -match $entry.Value) {
+            throw "CHANGELOG.md must describe addon behavior only. Move development-only '$($entry.Key)' details to internal release evidence."
+        }
+    }
+
     $readme = Get-Content -Raw -LiteralPath (Join-Path $RepositoryRoot "README.md")
     $readmeVersions = @(
         @(

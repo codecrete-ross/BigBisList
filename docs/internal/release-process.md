@@ -39,8 +39,15 @@ example, a bug fix plus a new filter is a minor release.
    review found no change when applicable.
 4. Choose the next version using the version policy above.
 5. Replace `CHANGELOG.md` with one dated section for the new version containing
-   only changes shipped since the prior release tag. Do not append older
-   release sections; each tag preserves its own historical changelog.
+   only player-observable addon behavior shipped since the prior release tag.
+   Appropriate notes cover UI, commands, settings, compatibility, runtime fixes,
+   and addon data or recommendation changes. Never include governance,
+   documentation, tests, CI, tooling, refactors, packaging metadata, release
+   automation, or contributor workflow changes. Record those development details
+   in commits, pull requests, and the internal release evidence. If there are no
+   addon behavior changes, use the exact note `- No addon behavior changes.` Do
+   not append older release sections; each tag preserves its own historical
+   changelog.
 6. Update release-specific README references and the fallback version in
    `Config.lua`.
 7. Regenerate `Data.lua` only when canonical data or generator behavior changed.
@@ -105,12 +112,14 @@ git push origin $version
 gh release create $version --repo codecrete-ross/BigBisList --title $version --notes-file CHANGELOG.md
 ```
 
-The release-only `CHANGELOG.md` is the source for both GitHub release notes and
-the `.pkgmeta` `manual-changelog` field. That field is CurseForge configuration
-terminology; CurseForge automatically reads it from the pushed Git tag through
-the repository webhook, builds the release file, and publishes that tag's
-changelog. Publishing is complete after the repository commands above; there is
-no manual CurseForge follow-up step.
+The release-only, player-facing `CHANGELOG.md` is the source for both GitHub
+release notes and the `.pkgmeta` `manual-changelog` field. Public release notes
+must describe addon behavior only; internal development work belongs in release
+evidence and repository history. The `manual-changelog` field is CurseForge
+configuration terminology; CurseForge automatically reads it from the pushed
+Git tag through the repository webhook, builds the release file, and publishes
+that tag's changelog. Publishing is complete after the repository commands
+above; there is no manual CurseForge follow-up step.
 
 Do not manually upload generated zip files, edit a published CurseForge
 changelog, or change release metadata through the CurseForge author UI. If

@@ -70,6 +70,32 @@ class ReleaseMetadataTests(unittest.TestCase):
             r"(?m)^manual-changelog:\s*$\n^\s+filename:\s+CHANGELOG\.md\s*$\n^\s+markup-type:\s+markdown\s*$",
         )
 
+    def test_changelog_policy_is_addon_behavior_only(self):
+        governance = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        release_process = (
+            ROOT / "docs" / "internal" / "release-process.md"
+        ).read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+
+        self.assertIn("only player-observable addon behavior", governance)
+        self.assertIn("Exclude development-only work", governance)
+        self.assertIn("only player-observable addon behavior", release_process)
+        self.assertIn("Public release notes", release_process)
+        self.assertIn("internal development work", readme)
+        self.assertIn("- No addon behavior changes.", governance)
+        self.assertIn("- No addon behavior changes.", release_process)
+        self.assertNotRegex(
+            changelog,
+            r"(?i)\b(?:GitHub|CurseForge|CI|governance|documentation|tooling|packaging)\b"
+            r"|\brelease (?:automation|gate|process|workflow)\b",
+        )
+        release_gate = (ROOT / "scripts" / "check-release.ps1").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("$developmentOnlyTerms", release_gate)
+        self.assertIn("must describe addon behavior only", release_gate)
+
     def test_curseforge_ingestion_is_documented_as_automatic_only(self):
         governance = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
         release_process = (
