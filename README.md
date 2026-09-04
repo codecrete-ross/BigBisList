@@ -5,8 +5,8 @@ Warcraft. It shows phase-based BiS lists, acquisition details, gem/enchant and
 consumable recommendations, item tooltip matches, ownership state, and a simple
 priority planner.
 
-This repository is prepared for the `0.12.2` release. This addon targets TBC
-Anniversary only. The `0.12.2` package uses WoW interface `20505`, matching the
+This repository is prepared for the `0.12.3` release. This addon targets TBC
+Anniversary only. The `0.12.3` package uses WoW interface `20505`, matching the
 local `wow_anniversary` 2.5.5 client, and is not intended for Retail, Classic
 Era, Cataclysm Classic, Mists Classic, or other WoW releases.
 
@@ -47,7 +47,7 @@ test.
 
 ## Data Scope
 
-The `0.12.2` release ships with generated data from audited local Wowhead TBC
+The `0.12.3` release ships with generated data from audited local Wowhead TBC
 snapshots plus curated overrides where source data needed correction.
 
 Current generated data includes:
@@ -77,7 +77,7 @@ release.
 - Planner priority is heuristic; it is not a simulator and does not replace
   class-specific stat weights.
 - Bank ownership only includes banked items after the character opens the bank.
-- No profile import/export is included in `0.12.2`.
+- No profile import/export is included in `0.12.3`.
 
 ## Release Checks
 
@@ -86,12 +86,15 @@ The authoritative release checklist is
 single release gate from the repository root before tagging or releasing:
 
 ```powershell
-.\scripts\check-release.ps1 -Version 0.12.2 -FullData
+.\scripts\check-release.ps1 -Version 0.12.3 -FullData
 ```
 
-Use the release-only `CHANGELOG.md` as the GitHub release notes. It describes
-only player-observable addon behavior, never internal development work. If a
-release has no addon behavior changes, it says so directly. CurseForge
+`CHANGELOG.md` preserves the complete history of player-observable addon
+behavior, excluding internal development work. Generate `RELEASE_NOTES.md` with
+`tools/generate_release_notes.py` during release preparation and use it for
+GitHub release notes. It retains every version section in the current major/minor
+line, so patches preserve that line's earlier changes. A version with no addon
+behavior changes says so in its own section. CurseForge
 automatically ingests the pushed Git tag, package metadata, and changelog
 through the repository webhook. The release process has no manual CurseForge
 upload or author-UI step.

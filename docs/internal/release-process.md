@@ -38,21 +38,27 @@ example, a bug fix plus a new filter is a minor release.
    and cover the boundary immediately before and at launch. Record that the
    review found no change when applicable.
 4. Choose the next version using the version policy above.
-5. Replace `CHANGELOG.md` with one dated section for the new version containing
+5. Prepend one `## VERSION - YYYY-MM-DD` section to the complete `CHANGELOG.md`,
+   retaining all earlier releases in descending numeric version order. Describe
    only player-observable addon behavior shipped since the prior release tag.
    Appropriate notes cover UI, commands, settings, compatibility, runtime fixes,
    and addon data or recommendation changes. Never include governance,
    documentation, tests, CI, tooling, refactors, packaging metadata, release
    automation, or contributor workflow changes. Record those development details
    in commits, pull requests, and the internal release evidence. If there are no
-   addon behavior changes, use the exact note `- No addon behavior changes.` Do
-   not append older release sections; each tag preserves its own historical
-   changelog.
+   addon behavior changes, use the exact note `- No addon behavior changes.`
+   Published entries are preserved; record later behavior changes under the new
+   version. Every reachable numeric tag must have a dated entry with bullet notes.
 6. Update release-specific README references and the fallback version in
    `Config.lua`.
 7. Regenerate `Data.lua` only when canonical data or generator behavior changed.
    Never hand-edit generated Lua.
-8. Commit release prep changes before running the release gate. The gate
+8. Run the release environment's Python with `tools/generate_release_notes.py`.
+   Commit the generated `RELEASE_NOTES.md`: it contains all sections sharing the
+   current version's exact `MAJOR.MINOR`, including its initial `.0`, newest
+   first. Each section remains an incremental account of that version. A new
+   minor or major starts a fresh view. Never edit the generated file by hand.
+9. Commit release prep changes before running the release gate. The gate
    requires a clean worktree; if a failed check requires an edit, commit the fix
    and run the gate again.
 
@@ -78,6 +84,17 @@ preflights declared Python dependencies and Lua 5.1 tooling, requires a clean
 Git state and consistent release metadata, checks README data counts against
 canonical validation, and owns the exact unit, compile, generation, scrape,
 coverage, corpus, recommendation, suffix, snapshot, and requirements audit set.
+It also runs `tools/generate_release_notes.py --version <next-version> --check`,
+which validates the full changelog and compares the generated notes without
+writing files. Use a full checkout with all tags; CI uses `fetch-depth: 0`.
+The behavior-topic guard catches common development notes, but release review
+must still assess whether each entry describes an actual player-visible impact.
+
+The 0.12.3 migration restores earlier history from tags, reconstructs missing
+0.3.0/0.4.0 notes, and removes development details. From that baseline onward,
+the gate also compares published entries with the prior tag to prevent history
+from being silently rewritten. Existing remote tags and release pages are not
+changed by the migration.
 
 Omitting `-FullData` is useful for a quicker local check but is not a release
 gate. Do not tag from a partial run.
@@ -109,12 +126,14 @@ git push origin HEAD:main
 git tag $version
 git push origin $version
 
-gh release create $version --repo codecrete-ross/BigBisList --title $version --notes-file CHANGELOG.md
+gh release create $version --repo codecrete-ross/BigBisList --title $version --notes-file RELEASE_NOTES.md
 ```
 
-The release-only, player-facing `CHANGELOG.md` is the source for both GitHub
-release notes and the `.pkgmeta` `manual-changelog` field. Public release notes
-must describe addon behavior only; internal development work belongs in release
+The generated, player-facing `RELEASE_NOTES.md` is the source for both GitHub
+release notes and the `.pkgmeta` `manual-changelog` field. `CHANGELOG.md` remains
+the complete source history and is excluded from the installable package.
+Public release notes must describe addon behavior only; internal development
+work belongs in release
 evidence and repository history. The `manual-changelog` field is CurseForge
 configuration terminology; CurseForge automatically reads it from the pushed
 Git tag through the repository webhook, builds the release file, and publishes
@@ -125,3 +144,19 @@ Do not manually upload generated zip files, edit a published CurseForge
 changelog, or change release metadata through the CurseForge author UI. If
 packaging metadata or release notes need correction, update the repository and
 ship the correction through a subsequent normal release.
+
+Verify that the GitHub body matches `RELEASE_NOTES.md`, that the tag points at
+the validated commit, and that the hosted release gate succeeds. A read-only
+check of the automatically published CurseForge file should show the current
+minor line's sections and no older minor line; report ingestion as unverified
+if the new file is not yet available. This check does not introduce a manual
+publishing or correction step.
+
+## Convention References
+
+- [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and
+  [Common Changelog](https://common-changelog.org/) inform the durable,
+  version-by-version history. Current-minor release notes are this project's
+  presentation choice for players installing the latest patch.
+- [CurseForge PackageMeta](https://support.curseforge.com/support/solutions/articles/9000197952-preparing-the-packagemeta-file)
+  consumes the entire configured changelog file; it does not select a version.

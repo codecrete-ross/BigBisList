@@ -256,46 +256,6 @@ function Assert-VersionMetadata {
         throw "Config.lua fallback version must be $ReleaseVersion."
     }
 
-    $changelog = Get-Content -Raw -LiteralPath (Join-Path $RepositoryRoot "CHANGELOG.md")
-    $releaseHeadings = [regex]::Matches($changelog, '(?m)^##\s+(?<version>\d+\.\d+\.\d+)(?:\s+-\s+.*)?\s*$')
-    if ($releaseHeadings.Count -ne 1) {
-        throw "CHANGELOG.md must contain exactly one release section; found $($releaseHeadings.Count)."
-    }
-
-    $changelogMatch = [regex]::Match(
-        $releaseHeadings[0].Value,
-        '^##\s+(?<version>\d+\.\d+\.\d+)\s+-\s+(?<date>\d{4}-\d{2}-\d{2})\s*$'
-    )
-    if (-not $changelogMatch.Success -or $changelogMatch.Groups['version'].Value -ne $ReleaseVersion) {
-        throw "The sole CHANGELOG.md release section must be $ReleaseVersion with an ISO date."
-    }
-
-    $changelogBody = $changelog.Substring($releaseHeadings[0].Index + $releaseHeadings[0].Length).Trim()
-    if (-not $changelogBody) {
-        throw "The $ReleaseVersion CHANGELOG.md release section must have a non-empty body."
-    }
-
-    $developmentOnlyTerms = [ordered]@{
-        "GitHub" = '(?i)\bGitHub\b'
-        "CurseForge" = '(?i)\bCurseForge\b'
-        "CI" = '(?i)\bCI\b'
-        "workflow" = '(?i)\bworkflows?\b'
-        "repository" = '(?i)\brepositor(?:y|ies)\b'
-        "governance" = '(?i)\bgovernance\b'
-        "documentation" = '(?i)\b(?:documentation|docs)\b'
-        "test suite" = '(?i)\b(?:unit|integration|static|release|test) tests?\b|\btest suite\b'
-        "tooling" = '(?i)\btooling\b'
-        "refactor" = '(?i)\brefactor(?:ed|ing|s)?\b'
-        "packaging" = '(?i)\bpackag(?:e|ed|ing) metadata\b|\bpackaging\b'
-        "release process" = '(?i)\brelease (?:automation|gate|process|workflow)\b'
-        "contributor workflow" = '(?i)\bcontributor workflow\b'
-    }
-    foreach ($entry in $developmentOnlyTerms.GetEnumerator()) {
-        if ($changelogBody -match $entry.Value) {
-            throw "CHANGELOG.md must describe addon behavior only. Move development-only '$($entry.Key)' details to internal release evidence."
-        }
-    }
-
     $readme = Get-Content -Raw -LiteralPath (Join-Path $RepositoryRoot "README.md")
     $readmeVersions = @(
         @(
@@ -314,58 +274,6 @@ function Assert-VersionMetadata {
     if ($toc -notmatch '(?m)^##\s+Version:\s+@project-version@\s*$') {
         throw "BigBiSList.toc must keep ## Version: @project-version@ for tag packaging."
     }
-}
-
-function Assert-ChangelogChangedSincePriorRelease {
-    param(
-        [Parameter(Mandatory = $true)][string]$ReleaseVersion
-    )
-
-    $git = Get-ExecutablePath -Candidate "git"
-    if (-not $git) {
-        throw "Git was not found on PATH."
-    }
-
-    $releaseVersionValue = [version]$ReleaseVersion
-    $candidateTags = @(
-        foreach ($tag in @(& $git tag --list)) {
-            if ($tag -notmatch '^\d+\.\d+\.\d+$') {
-                continue
-            }
-            $tagVersion = [version]$tag
-            if ($tagVersion -lt $releaseVersionValue) {
-                [pscustomobject]@{
-                    Name = $tag
-                    Version = $tagVersion
-                }
-            }
-        }
-    )
-    if ($LASTEXITCODE -ne 0) {
-        throw "Could not inspect prior release tags."
-    }
-
-    $priorRelease = $candidateTags | Sort-Object Version -Descending | Select-Object -First 1
-    if (-not $priorRelease) {
-        Write-Host "No earlier numeric release tag found; skipping changelog comparison."
-        return
-    }
-
-    & $git merge-base --is-ancestor $priorRelease.Name HEAD
-    if ($LASTEXITCODE -ne 0) {
-        throw "Prior release tag $($priorRelease.Name) is not an ancestor of HEAD."
-    }
-
-    & $git diff --quiet $priorRelease.Name HEAD -- CHANGELOG.md
-    $diffExitCode = $LASTEXITCODE
-    if ($diffExitCode -eq 0) {
-        throw "CHANGELOG.md is unchanged since prior release $($priorRelease.Name). Replace it with notes for $ReleaseVersion."
-    }
-    if ($diffExitCode -ne 1) {
-        throw "Could not compare CHANGELOG.md with prior release $($priorRelease.Name)."
-    }
-
-    Write-Host "CHANGELOG.md differs from prior release $($priorRelease.Name)."
 }
 
 function Assert-ReadmeDataCounts {
@@ -497,7 +405,7 @@ try {
     Test-PythonEnvironment -PythonExecutable $python -PyprojectPath (Join-Path $repoRoot "pyproject.toml")
     Assert-GitReleaseState -ReleaseVersion $Version
     Assert-VersionMetadata -ReleaseVersion $Version -RepositoryRoot $repoRoot
-    Assert-ChangelogChangedSincePriorRelease -ReleaseVersion $Version
+    Invoke-CheckedCommand -Label "Changelog history and generated release notes" -Executable $python -Arguments @("tools/generate_release_notes.py", "--version", $Version, "--check")
 
     Invoke-CheckedCommand -Label "Unit tests" -Executable $python -Arguments @("-m", "unittest", "discover", "-s", "tests")
     Invoke-LuaCompile -LuaCompiler $luaCompiler -RepositoryRoot $repoRoot

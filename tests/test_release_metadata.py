@@ -1,7 +1,7 @@
 import re
 import unittest
-from datetime import date
 
+from tools.generate_release_notes import parse_changelog, render_release_notes
 from tools.project import ROOT
 from tools.validate_data import validate
 
@@ -23,78 +23,44 @@ README_COUNT_KEYS = {
 
 
 class ReleaseMetadataTests(unittest.TestCase):
-    def test_changelog_is_release_specific_and_matches_fallback_version(self):
+    def test_changelog_history_and_generated_notes_match_fallback_version(self):
         changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
         config = (ROOT / "Config.lua").read_text(encoding="utf-8")
+        config_match = re.search(r'^\s*version\s*=\s*"(?P<version>\d+\.\d+\.\d+)"\s*$', config, re.MULTILINE)
+        self.assertIsNotNone(config_match)
+        releases = parse_changelog(changelog)
+        self.assertEqual(releases[0].version, config_match["version"])
+        notes = (ROOT / "RELEASE_NOTES.md").read_text(encoding="utf-8")
+        self.assertEqual(notes, render_release_notes(releases, config_match["version"]))
 
-        config_match = re.search(
-            r'^\s*version\s*=\s*"(?P<version>\d+\.\d+\.\d+)"\s*$',
-            config,
-            re.MULTILINE,
-        )
-        self.assertIsNotNone(config_match, "Config.lua is missing its fallback version")
-
-        release_headings = list(
-            re.finditer(
-                r"^##\s+(?P<version>\d+\.\d+\.\d+)(?:\s+-\s+.*)?\s*$",
-                changelog,
-                re.MULTILINE,
-            )
-        )
-        self.assertEqual(
-            len(release_headings),
-            1,
-            "CHANGELOG.md must contain exactly one release section",
-        )
-
-        heading = release_headings[0]
-        dated_heading = re.fullmatch(
-            r"##\s+(?P<version>\d+\.\d+\.\d+)\s+-\s+(?P<date>\d{4}-\d{2}-\d{2})",
-            heading.group(0).strip(),
-        )
-        self.assertIsNotNone(
-            dated_heading,
-            "the changelog release heading must use an ISO date",
-        )
-        date.fromisoformat(dated_heading.group("date"))
-        self.assertEqual(dated_heading.group("version"), config_match.group("version"))
-        self.assertTrue(
-            changelog[heading.end():].strip(),
-            "the changelog release section must have a non-empty body",
-        )
-
-    def test_pkgmeta_uses_the_release_specific_markdown_changelog(self):
+    def test_pkgmeta_and_publish_use_generated_notes(self):
         pkgmeta = (ROOT / ".pkgmeta").read_text(encoding="utf-8")
         self.assertRegex(
             pkgmeta,
-            r"(?m)^manual-changelog:\s*$\n^\s+filename:\s+CHANGELOG\.md\s*$\n^\s+markup-type:\s+markdown\s*$",
+            r"(?m)^manual-changelog:\s*$\n^\s+filename:\s+RELEASE_NOTES\.md\s*$\n^\s+markup-type:\s+markdown\s*$",
         )
+        self.assertIn("  - CHANGELOG.md", pkgmeta.splitlines())
+        self.assertNotIn("  - RELEASE_NOTES.md", pkgmeta.splitlines())
+        for internal in ("AGENTS.md", "CLAUDE.md", "docs", "tools", "tests"):
+            self.assertIn(f"  - {internal}", pkgmeta.splitlines())
+        release_process = (ROOT / "docs/internal/release-process.md").read_text(encoding="utf-8")
+        self.assertIn("--notes-file RELEASE_NOTES.md", release_process)
+        self.assertNotIn("--notes-file CHANGELOG.md", release_process)
+        gate = (ROOT / "scripts/check-release.ps1").read_text(encoding="utf-8")
+        self.assertIn('"tools/generate_release_notes.py", "--version", $Version, "--check"', gate)
 
-    def test_changelog_policy_is_addon_behavior_only(self):
-        governance = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
-        release_process = (
-            ROOT / "docs" / "internal" / "release-process.md"
-        ).read_text(encoding="utf-8")
-        readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-
+    def test_changelog_policy_documents_source_generation_and_player_impact(self):
+        for path in ("AGENTS.md", "docs/internal/release-process.md", "README.md"):
+            with self.subTest(path=path):
+                text = (ROOT / path).read_text(encoding="utf-8")
+                self.assertIn("CHANGELOG.md", text)
+                self.assertIn("RELEASE_NOTES.md", text)
+                self.assertIn("generate_release_notes.py", text)
+                self.assertIn("behavior", text)
+        governance = " ".join((ROOT / "AGENTS.md").read_text(encoding="utf-8").split())
         self.assertIn("only player-observable addon behavior", governance)
         self.assertIn("Exclude development-only work", governance)
-        self.assertIn("only player-observable addon behavior", release_process)
-        self.assertIn("Public release notes", release_process)
-        self.assertIn("internal development work", readme)
         self.assertIn("- No addon behavior changes.", governance)
-        self.assertIn("- No addon behavior changes.", release_process)
-        self.assertNotRegex(
-            changelog,
-            r"(?i)\b(?:GitHub|CurseForge|CI|governance|documentation|tooling|packaging)\b"
-            r"|\brelease (?:automation|gate|process|workflow)\b",
-        )
-        release_gate = (ROOT / "scripts" / "check-release.ps1").read_text(
-            encoding="utf-8"
-        )
-        self.assertIn("$developmentOnlyTerms", release_gate)
-        self.assertIn("must describe addon behavior only", release_gate)
 
     def test_curseforge_ingestion_is_documented_as_automatic_only(self):
         governance = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
@@ -136,6 +102,7 @@ class ReleaseMetadataTests(unittest.TestCase):
     def test_ci_runs_the_authoritative_full_release_gate_for_pull_requests_and_tags(self):
         workflow = (ROOT / ".github" / "workflows" / "release-check.yml").read_text(encoding="utf-8")
 
+        self.assertIn("fetch-depth: 0", workflow)
         self.assertIn("workflow_dispatch:", workflow)
         self.assertIn("pull_request:", workflow)
         self.assertIn("tags:", workflow)
