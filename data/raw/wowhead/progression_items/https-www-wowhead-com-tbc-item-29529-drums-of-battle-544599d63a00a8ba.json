@@ -1,0 +1,49 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Drums of Battle Item Level 73 Requires Leatherworking (350) Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:03+00:00",
+  "inventory_slot": null,
+  "item_id": 29529,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges",
+        "type": "use"
+      }
+    ],
+    "id": 29529,
+    "item_level": 73,
+    "name": "Drums of Battle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29529/drums-of-battle"
+  },
+  "name": "Drums of Battle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Drums of Battle Item Level 73 Requires Leatherworking (350) Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges Sell Price: 50",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=29529/drums-of-battle",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29529/drums-of-battle"
+}

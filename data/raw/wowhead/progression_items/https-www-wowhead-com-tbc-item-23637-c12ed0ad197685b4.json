@@ -1,0 +1,80 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Plans: Hand of Eternity Item Level 73 Requires Blacksmithing (365) Use: Teaches you how to make Hand of Eternity. Sell Price: 12 Hand of Eternity Item Level 105 Binds when equipped Main Hand Mace 35 - 131 Damage Speed 1.90 (43.68 damage per second) +20 Intellect Durability 105 / 105 Requires Level 70 Equip: Restores 7 mana per 5 sec. Equip: Increases healing done by up to 317 and damage done by up to 106 for all magical spells and effects. Sell Price: 10 61 63 Requires Khorium Bar (10), Hardened Adamantite Bar (4), Eternium Bar (10), Primal Might (8), Primal Nether (4)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:29+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 23637,
+  "item_stats": {
+    "binding": "unknown",
+    "dps": 43.68,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make Hand of Eternity.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Restores 7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 317 and damage done by up to 106 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 317.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Restores 7 mana per 5 sec.",
+      "Equip: Increases healing done by up to 317 and damage done by up to 106 for all magical spells and effects."
+    ],
+    "id": 23637,
+    "item_level": 73,
+    "name": "Plans: Hand of Eternity",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 317.0,
+      "intellect": 20.0,
+      "mp5": 7.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make Hand of Eternity."
+    ],
+    "weapon_max_damage": 131,
+    "weapon_min_damage": 35,
+    "weapon_speed": 1.9,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23637"
+  },
+  "name": "Plans: Hand of Eternity",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Hand of Eternity Item Level 73 Requires Blacksmithing (365) Use: Teaches you how to make Hand of Eternity. Sell Price: 12 Hand of Eternity Item Level 105 Binds when equipped Main Hand Mace 35 - 131 Damage Speed 1.90 (43.68 damage per second) +20 Intellect Durability 105 / 105 Requires Level 70 Equip: Restores 7 mana per 5 sec. Equip: Increases healing done by up to 317 and damage done by up to 106 for all magical spells and effects. Sell Price: 10 61 63 Requires Khorium Bar (10), Hardened Adamantite Bar (4), Eternium Bar (10), Primal Might (8), Primal Nether (4)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=23637",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23637"
+}

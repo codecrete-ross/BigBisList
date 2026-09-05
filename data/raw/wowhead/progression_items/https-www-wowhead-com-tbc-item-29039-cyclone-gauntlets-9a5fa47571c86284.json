@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cyclone Gauntlets Phase 1 Item Level 120 Binds when picked up Hands Mail 528 Armor +27 Strength +21 Agility +26 Stamina +24 Intellect Durability 50 / 50 Classes: Shaman Requires Level 70 Equip: Improves hit rating by 19. Equip: Restores 5 mana per 5 sec. Cyclone Harness (0/5) Cyclone Breastplate Cyclone Gauntlets Cyclone Helm Cyclone Shoulderplates Cyclone War-Kilt (2) Set : Your Strength of Earth Totem ability grants an additional 12 strength. (4) Set : Your Stormstrike ability does an additional 30 damage per weapon.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:14+00:00",
+  "inventory_slot": null,
+  "item_id": 29039,
+  "item_stats": {
+    "armor": 528,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 19.",
+        "stats": {
+          "hit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 5 mana per 5 sec.",
+        "stats": {
+          "mp5": 5.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 19.",
+      "Equip: Restores 5 mana per 5 sec."
+    ],
+    "id": 29039,
+    "item_level": 120,
+    "name": "Cyclone Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "agility": 21.0,
+      "hit_rating": 19.0,
+      "intellect": 24.0,
+      "mp5": 5.0,
+      "stamina": 26.0,
+      "strength": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29039/cyclone-gauntlets"
+  },
+  "name": "Cyclone Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29039/cyclone-gauntlets"
+}

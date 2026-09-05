@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Lamellar Gauntlets Phase 1 Item Level 123 Binds when picked up Hands Plate 967 Armor +34 Stamina +24 Intellect Durability 55 / 55 Classes: Paladin Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Improves your resilience rating by 14. Equip: Increases damage and healing done by magical spells and effects by up to 28. Equip: Increases the critical effect chance of your Flash of Light by 2%. Gladiator's Aegis (0/5) Gladiator's Lamellar Chestpiece Gladiator's Lamellar Gauntlets Gladiator's Lamellar Helm Gladiator's Lamellar Legguards Gladiator's Lamellar Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Hammer of Justice by 10 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:29+00:00",
+  "inventory_slot": null,
+  "item_id": 27703,
+  "item_stats": {
+    "armor": 967,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 24.",
+        "stats": {
+          "spell_crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 14.",
+        "stats": {
+          "resilience_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases the critical effect chance of your Flash of Light by 2%.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 24.",
+      "Equip: Improves your resilience rating by 14.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+      "Equip: Increases the critical effect chance of your Flash of Light by 2%."
+    ],
+    "id": 27703,
+    "item_level": 123,
+    "name": "Gladiator's Lamellar Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "intellect": 24.0,
+      "resilience_rating": 14.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 28.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27703/gladiators-lamellar-gauntlets"
+  },
+  "name": "Gladiator's Lamellar Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27703/gladiators-lamellar-gauntlets"
+}

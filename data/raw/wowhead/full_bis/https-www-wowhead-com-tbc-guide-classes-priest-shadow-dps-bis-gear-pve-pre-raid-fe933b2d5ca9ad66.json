@@ -1,7 +1,10 @@
 {
-  "fetched_at": "2026-05-24T04:24:41+00:00",
+  "content_phase": "T6",
+  "fetched_at": "2026-09-04T23:49:02+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "previous_verified_phase": "PR",
+  "recommendation_status": "unverified_phase",
   "sections": [],
   "tables": [
     {
@@ -543,7 +546,7 @@
             [
               {
                 "id": 30925,
-                "name": "Spaulders of the Torn-Heart",
+                "name": "Spaulders of the Torn-heart",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
               }
@@ -552,23 +555,23 @@
           ],
           "cells": [
             "Option",
-            "Spaulders of the Torn-Heart",
+            "Spaulders of the Torn-heart",
             "Quest: The Cipher of Damnation - The Third Fragment Recovered"
           ],
           "entities": [
             {
               "id": 30925,
-              "name": "Spaulders of the Torn-Heart",
+              "name": "Spaulders of the Torn-heart",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
             }
           ],
           "entity_id": 30925,
-          "entity_name": "Spaulders of the Torn-Heart",
+          "entity_name": "Spaulders of the Torn-heart",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "item_id": 30925,
-          "item_name": "Spaulders of the Torn-Heart",
+          "item_name": "Spaulders of the Torn-heart",
           "item_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "rank_label": "Option",
           "source_links": [
@@ -833,7 +836,7 @@
             [
               {
                 "id": 30971,
-                "name": "Torn-Heart Cloak",
+                "name": "Torn-heart Cloak",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30971/torn-heart-cloak"
               }
@@ -842,23 +845,23 @@
           ],
           "cells": [
             "Option",
-            "Torn-Heart Cloak",
+            "Torn-heart Cloak",
             "Quest: The Cipher of Damnation - The Second Fragment Recovered"
           ],
           "entities": [
             {
               "id": 30971,
-              "name": "Torn-Heart Cloak",
+              "name": "Torn-heart Cloak",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30971/torn-heart-cloak"
             }
           ],
           "entity_id": 30971,
-          "entity_name": "Torn-Heart Cloak",
+          "entity_name": "Torn-heart Cloak",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30971/torn-heart-cloak",
           "item_id": 30971,
-          "item_name": "Torn-Heart Cloak",
+          "item_name": "Torn-heart Cloak",
           "item_url": "https://www.wowhead.com/tbc/item=30971/torn-heart-cloak",
           "rank_label": "Option",
           "source_links": [
@@ -1057,7 +1060,7 @@
             [
               {
                 "id": 28342,
-                "name": "Warp-Infused Drape",
+                "name": "Warp Infused Drape",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
               }
@@ -1066,23 +1069,23 @@
           ],
           "cells": [
             "Option",
-            "Warp-Infused Drape",
+            "Warp Infused Drape",
             "Drop: Warp Splinter (Heroic The Botanica)"
           ],
           "entities": [
             {
               "id": 28342,
-              "name": "Warp-Infused Drape",
+              "name": "Warp Infused Drape",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
             }
           ],
           "entity_id": 28342,
-          "entity_name": "Warp-Infused Drape",
+          "entity_name": "Warp Infused Drape",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape",
           "item_id": 28342,
-          "item_name": "Warp-Infused Drape",
+          "item_name": "Warp Infused Drape",
           "item_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape",
           "rank_label": "Option",
           "source_links": [
@@ -1136,16 +1139,6 @@
               "standing": "Honored",
               "standing_rank": 6,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Aldor"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Endarin (The Aldor - Honored)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -2126,7 +2119,7 @@
           "cells": [
             "Option",
             "Uvuros Hide Gloves",
-            "Quest: WANTED: Uvuros, Scourge of Shadowmoon / WANTED: Uvuros, Scourge of Shadowmoon (Shadowmoon Valley)"
+            "Quest: Wanted: Uvuros, Scourge of Shadowmoon / Wanted: Uvuros, Scourge of Shadowmoon (Shadowmoon Valley)"
           ],
           "entities": [
             {
@@ -2147,14 +2140,14 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10648/wanted-uvuros-scourge-of-shadowmoon",
-              "text": "WANTED: Uvuros, Scourge of Shadowmoon"
+              "text": "Wanted: Uvuros, Scourge of Shadowmoon"
             },
             {
               "href": "https://www.wowhead.com/tbc/quest=10647/wanted-uvuros-scourge-of-shadowmoon",
-              "text": "WANTED: Uvuros, Scourge of Shadowmoon"
+              "text": "Wanted: Uvuros, Scourge of Shadowmoon"
             }
           ],
-          "source_text": "Quest: WANTED: Uvuros, Scourge of Shadowmoon / WANTED: Uvuros, Scourge of Shadowmoon (Shadowmoon Valley)"
+          "source_text": "Quest: Wanted: Uvuros, Scourge of Shadowmoon / Wanted: Uvuros, Scourge of Shadowmoon (Shadowmoon Valley)"
         },
         {
           "cell_entities": [
@@ -4042,16 +4035,6 @@
               "standing": "Exalted",
               "standing_rank": 8,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -4697,16 +4680,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -4832,7 +4805,7 @@
           "cells": [
             "BiS",
             "Gavel of Unearthed Secrets",
-            "Vendor: Almaador (Lower City Exalted)"
+            "Vendor: Nakodu (Lower City Exalted)"
           ],
           "entities": [
             {
@@ -4852,7 +4825,7 @@
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Almaador (Lower City Exalted)",
+              "raw_text": "Vendor: Nakodu (Lower City Exalted)",
               "reputation": "Lower City",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-bis-gear-pve-pre-raid",
@@ -4864,11 +4837,11 @@
           "rank_label": "BiS",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=21432/almaador",
-              "text": "Almaador"
+              "href": "https://www.wowhead.com/tbc/npc=21655/nakodu",
+              "text": "Nakodu"
             }
           ],
-          "source_text": "Vendor: Almaador (Lower City Exalted)"
+          "source_text": "Vendor: Nakodu (Lower City Exalted)"
         },
         {
           "cell_entities": [

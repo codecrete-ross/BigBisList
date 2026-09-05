@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warboots of Obliteration Phase 2 Item Level 128 Binds when picked up Feet Plate 1105 Armor +44 Strength +29 Stamina Durability 75 / 75 Requires Level 70 Equip: Improves critical strike rating by 31. Sell Price: 6 61 66",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:34+00:00",
+  "inventory_slot": null,
+  "item_id": 30081,
+  "item_stats": {
+    "armor": 1105,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 31.",
+        "stats": {
+          "crit_rating": 31.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 31."
+    ],
+    "id": 30081,
+    "item_level": 128,
+    "name": "Warboots of Obliteration",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 31.0,
+      "stamina": 29.0,
+      "strength": 44.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30081/warboots-of-obliteration"
+  },
+  "name": "Warboots of Obliteration",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30081/warboots-of-obliteration"
+}

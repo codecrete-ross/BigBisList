@@ -1,0 +1,202 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic cloth armor of item level 71 goes in the \"Legs\" slot. It is looted from Lord Kazzak. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-09-04T23:50:26+00:00",
+  "inventory_slot": "Legs",
+  "item_id": 19133,
+  "item_stats": {
+    "armor": 109,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 19133,
+    "item_level": 71,
+    "name": "Fel Infused Leggings",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 243,
+      "drop_percent": 15.2,
+      "entity_id": 12397,
+      "entity_name": "Lord Kazzak",
+      "out_of": 1599,
+      "source_url": "https://www.wowhead.com/tbc/item=19133/fel-infused-leggings",
+      "type": "drop",
+      "zone": "Blasted Lands"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Legs",
+    "source_summary": "Drop: Lord Kazzak (Blasted Lands) 15.2% +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 243,
+        "drop_percent": 15.2,
+        "entity_id": 12397,
+        "entity_name": "Lord Kazzak",
+        "out_of": 1599,
+        "source_url": "https://www.wowhead.com/tbc/item=19133/fel-infused-leggings",
+        "type": "drop",
+        "zone": "Blasted Lands"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": -1,
+        "drop_percent": -0.92,
+        "entity_id": 18338,
+        "entity_name": "Highlord Kruul",
+        "out_of": 109,
+        "source_url": "https://www.wowhead.com/tbc/item=19133/fel-infused-leggings",
+        "type": "drop",
+        "zone": "Searing Gorge"
+      }
+    ],
+    "stats": {
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19133/fel-infused-leggings"
+  },
+  "name": "Fel Infused Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 243,
+      "drop_percent": 15.2,
+      "entity_id": 12397,
+      "entity_name": "Lord Kazzak",
+      "out_of": 1599,
+      "source_url": "https://www.wowhead.com/tbc/item=19133/fel-infused-leggings",
+      "type": "drop",
+      "zone": "Blasted Lands"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": -1,
+      "drop_percent": -0.92,
+      "entity_id": 18338,
+      "entity_name": "Highlord Kruul",
+      "out_of": 109,
+      "source_url": "https://www.wowhead.com/tbc/item=19133/fel-infused-leggings",
+      "type": "drop",
+      "zone": "Searing Gorge"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 3,
+        "count": 243,
+        "id": 12397,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 243,
+                "outof": 1599
+              }
+            }
+          }
+        },
+        "location": [
+          4
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 243,
+            "outof": 1599
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lord Kazzak",
+        "outof": 1599,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 3,
+        "count": -1,
+        "id": 18338,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 28,
+                "outof": 109
+              },
+              "1": {
+                "count": -1,
+                "outof": 109
+              }
+            }
+          }
+        },
+        "location": [
+          51,
+          139,
+          1537,
+          -1
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 28,
+            "outof": 109
+          },
+          "1": {
+            "count": -1,
+            "outof": 109
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Highlord Kruul",
+        "outof": 109,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 35,
+        "react": [
+          0,
+          0
+        ],
+        "type": 3
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19133/fel-infused-leggings"
+}

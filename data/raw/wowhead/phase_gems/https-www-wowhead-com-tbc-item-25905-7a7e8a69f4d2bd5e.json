@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Tenacious Earthstorm Diamond Item Level 73 Requires Jewelcrafting (365) Use: Teaches you how to cut a Tenacious Earthstorm Diamond. Sell Price: 3 Tenacious Earthstorm Diamond Item Level 70 +12 Defense Rating & Chance to Restore Health on hit Requires at least 5 Blue Gems \"Only fits in a meta gem slot.\" Sell Price: 3 Requires Earthstorm Diamond",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:23:01+00:00",
+  "inventory_slot": null,
+  "item_id": 25905,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Tenacious Earthstorm Diamond.",
+        "type": "use"
+      }
+    ],
+    "id": 25905,
+    "item_level": 73,
+    "name": "Design: Tenacious Earthstorm Diamond",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Tenacious Earthstorm Diamond."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25905"
+  },
+  "name": "Design: Tenacious Earthstorm Diamond",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Tenacious Earthstorm Diamond Item Level 73 Requires Jewelcrafting (365)",
+      "scope": "learn_recipe",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=25905",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "reagent_item_ids": [
+    25867
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 25898,
+  "teaches_spell_ids": [
+    32868
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/25905",
+  "url": "https://www.wowhead.com/tbc/item=25905"
+}

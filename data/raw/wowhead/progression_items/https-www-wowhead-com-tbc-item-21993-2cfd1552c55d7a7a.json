@@ -1,0 +1,166 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This first aid book is used for the First Aid profession. It is sold by NPCs. In the First Aid Guides category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-09-04T23:50:48+00:00",
+  "inventory_slot": null,
+  "item_id": 21993,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Heavy Netherweave Bandage.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Heals 3400 damage over 8 sec. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 21993,
+    "item_level": 70,
+    "name": "Manual: Heavy Netherweave Bandage",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 18991,
+      "entity_name": "Aresella",
+      "location_area": "Hellfire Peninsula",
+      "price_copper": 40000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=21993",
+      "type": "vendor",
+      "vendor_id": 18991,
+      "zone": "Hellfire Peninsula"
+    },
+    "quality": "unknown",
+    "source_summary": "Vendor: Aresella (Hellfire Peninsula) +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 18990,
+        "entity_name": "Burko",
+        "location_area": "Hellfire Peninsula",
+        "price_copper": 38000,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=21993",
+        "type": "vendor",
+        "vendor_id": 18990,
+        "zone": "Hellfire Peninsula"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 18991,
+        "entity_name": "Aresella",
+        "location_area": "Hellfire Peninsula",
+        "price_copper": 40000,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=21993",
+        "type": "vendor",
+        "vendor_id": 18991,
+        "zone": "Hellfire Peninsula"
+      }
+    ],
+    "use_effects": [
+      "Use: Teaches you how to make a Heavy Netherweave Bandage.",
+      "Use: Heals 3400 damage over 8 sec. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21993"
+  },
+  "name": "Manual: Heavy Netherweave Bandage",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 18990,
+      "entity_name": "Burko",
+      "location_area": "Hellfire Peninsula",
+      "price_copper": 38000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=21993",
+      "type": "vendor",
+      "vendor_id": 18990,
+      "zone": "Hellfire Peninsula"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 18991,
+      "entity_name": "Aresella",
+      "location_area": "Hellfire Peninsula",
+      "price_copper": 40000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=21993",
+      "type": "vendor",
+      "vendor_id": 18991,
+      "zone": "Hellfire Peninsula"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            38000
+          ]
+        ],
+        "id": 18990,
+        "location": [
+          3483
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Burko",
+        "popularity": 16,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Medic",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            40000
+          ]
+        ],
+        "id": 18991,
+        "location": [
+          3483
+        ],
+        "maxlevel": 60,
+        "minlevel": 60,
+        "name": "Aresella",
+        "popularity": 3,
+        "react": [
+          null,
+          1
+        ],
+        "stock": -1,
+        "tag": "Medic",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    27033,
+    27031
+  ],
+  "url": "https://www.wowhead.com/tbc/item=21993"
+}

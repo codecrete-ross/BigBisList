@@ -1,0 +1,36 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Totem of Living Water Phase 1 Item Level 128 Binds when picked up Unique Relic Totem Requires Level 70 Equip: Reduces the base mana cost of Chain Heal by 20.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:49+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 33505,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 33505,
+    "item_level": 128,
+    "name": "Totem of Living Water",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Relic",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33505/totem-of-living-water"
+  },
+  "name": "Totem of Living Water",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33505/totem-of-living-water"
+}

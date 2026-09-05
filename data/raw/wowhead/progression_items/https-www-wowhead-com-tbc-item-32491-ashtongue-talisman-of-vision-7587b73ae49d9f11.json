@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ashtongue Talisman of Vision Phase 3 Item Level 141 Binds when picked up Unique Trinket Classes: Shaman Requires Ashtongue Deathsworn - Exalted Equip: Lesser Healing Wave has a 10% chance to grant 170 mana, Lightning Bolt has a 15% chance to grant up to 170 mana, and Stormstrike has a 50% chance to grant up to 275 attack power for 10 sec. Sell Price: 7 20 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:07+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32491,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Lesser Healing Wave has a 10% chance to grant 170 mana, Lightning Bolt has a 15% chance to grant up to 170 mana, and Stormstrike has a 50% chance to grant up to 275 attack power for 10 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Lesser Healing Wave has a 10% chance to grant 170 mana, Lightning Bolt has a 15% chance to grant up to 170 mana, and Stormstrike has a 50% chance to grant up to 275 attack power for 10 sec."
+    ],
+    "id": 32491,
+    "item_level": 141,
+    "name": "Ashtongue Talisman of Vision",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32491/ashtongue-talisman-of-vision"
+  },
+  "name": "Ashtongue Talisman of Vision",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Ashtongue Talisman of Vision Phase 3 Item Level 141 Binds when picked up Unique Trinket Classes: Shaman Requires Ashtongue Deathsworn - Exalted Equip: Lesser Healing Wave has a 10% chance to grant 170 mana, Lightning Bolt has a 15% chance to grant up to 170 mana, and Stormstrike has a 50% chance to grant up to 275 attack power for 10 sec. Sell Price: 7 20 39",
+      "reputation": "Ashtongue Deathsworn",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32491/ashtongue-talisman-of-vision",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32491/ashtongue-talisman-of-vision"
+}

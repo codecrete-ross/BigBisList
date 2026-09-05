@@ -1,7 +1,10 @@
 {
-  "fetched_at": "2026-05-24T04:24:44+00:00",
+  "content_phase": "T6",
+  "fetched_at": "2026-09-04T23:49:08+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "previous_verified_phase": "PR",
+  "recommendation_status": "unverified_phase",
   "sections": [],
   "tables": [
     {
@@ -3111,16 +3114,6 @@
               "standing": "Exalted",
               "standing_rank": 8,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Aldor"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Endarin Requires Exalted with The Aldor",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/dps-bis-gear-pve-pre-raid",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Off-Hand Alternative",

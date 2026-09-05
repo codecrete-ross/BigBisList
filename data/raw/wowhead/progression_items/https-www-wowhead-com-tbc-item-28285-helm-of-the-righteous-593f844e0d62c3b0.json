@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Helm of the Righteous Phase 1 Item Level 115 Binds when picked up Head Plate 946 Armor +30 Stamina +20 Intellect Yellow Socket Meta Socket Socket Bonus: +4 Intellect Durability 80 / 80 Requires Level 70 Equip: Increases defense rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 23. Equip: Restores 6 mana per 5 sec. Righteous Armor (0/5) Breastplate of the Righteous Gauntlets of the Righteous Helm of the Righteous Legplates of the Righteous Spaulders of the Righteous (2) Set : Your Consecration ability costs 15% less mana. (4) Set : Reduces the cooldown on your Righteous Defense ability by 2 sec. Sell Price: 4 70 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:11+00:00",
+  "inventory_slot": null,
+  "item_id": 28285,
+  "item_stats": {
+    "armor": 946,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases defense rating by 21.",
+        "stats": {
+          "defense_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+        "stats": {
+          "spell_power": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+      "Equip: Restores 6 mana per 5 sec."
+    ],
+    "id": 28285,
+    "item_level": 115,
+    "name": "Helm of the Righteous",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "intellect": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "meta"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 21.0,
+      "intellect": 20.0,
+      "mp5": 6.0,
+      "spell_power": 23.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28285/helm-of-the-righteous"
+  },
+  "name": "Helm of the Righteous",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28285/helm-of-the-righteous"
+}

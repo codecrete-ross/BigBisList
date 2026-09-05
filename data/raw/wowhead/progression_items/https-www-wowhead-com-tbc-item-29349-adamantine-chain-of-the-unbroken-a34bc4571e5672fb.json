@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Adamantine Chain of the Unbroken Phase 1 Item Level 110 Binds when picked up Unique Neck +19 Stamina Requires Level 70 Equip: Improves critical strike rating by 30. Equip: Increases attack power by 34. Sell Price: 8 83 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:51+00:00",
+  "inventory_slot": null,
+  "item_id": 29349,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 30.",
+        "stats": {
+          "crit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 34.",
+        "stats": {
+          "attack_power": 34.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 30.",
+      "Equip: Increases attack power by 34."
+    ],
+    "id": 29349,
+    "item_level": 110,
+    "name": "Adamantine Chain of the Unbroken",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "attack_power": 34.0,
+      "crit_rating": 30.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29349/adamantine-chain-of-the-unbroken"
+  },
+  "name": "Adamantine Chain of the Unbroken",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29349/adamantine-chain-of-the-unbroken"
+}

@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vindicator's Scaled Belt Phase 3 Item Level 146 Binds when picked up Waist Plate 1027 Armor +40 Strength +39 Stamina +26 Intellect Durability 55 / 55 Classes: Warrior , Paladin Requires Level 70 Equip: Improves critical strike rating by 27. Equip: Improves your resilience rating by 26.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:12+00:00",
+  "inventory_slot": null,
+  "item_id": 33909,
+  "item_stats": {
+    "armor": 1027,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 27.",
+        "stats": {
+          "crit_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 26.",
+        "stats": {
+          "resilience_rating": 26.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 27.",
+      "Equip: Improves your resilience rating by 26."
+    ],
+    "id": 33909,
+    "item_level": 146,
+    "name": "Vindicator's Scaled Belt",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Warrior",
+        "Paladin"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 27.0,
+      "intellect": 26.0,
+      "resilience_rating": 26.0,
+      "stamina": 39.0,
+      "strength": 40.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33909/vindicators-scaled-belt"
+  },
+  "name": "Vindicator's Scaled Belt",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33909/vindicators-scaled-belt"
+}

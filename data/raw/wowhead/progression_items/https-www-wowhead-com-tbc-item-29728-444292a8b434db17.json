@@ -1,0 +1,67 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Windslayer Wraps Item Level 73 Requires Leatherworking (365) Use: Teaches you how to make Windslayer Wraps. Sell Price: 6 Windslayer Wraps Item Level 105 Binds when equipped Hands Leather 208 Armor +36 Strength +18 Agility +25 Stamina Durability 40 / 40 Requires Level 70 Equip: Improves hit rating by 17. Sell Price: 2 74 61 Requires Heavy Knothide Leather (4), Wind Scales (12), Primal Earth (18), Primal Air (8), Primal Nether",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:06+00:00",
+  "inventory_slot": null,
+  "item_id": 29728,
+  "item_stats": {
+    "armor": 208,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make Windslayer Wraps.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves hit rating by 17.",
+        "stats": {
+          "hit_rating": 17.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 17."
+    ],
+    "id": 29728,
+    "item_level": 73,
+    "name": "Pattern: Windslayer Wraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "hit_rating": 17.0,
+      "stamina": 25.0,
+      "strength": 36.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make Windslayer Wraps."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29728"
+  },
+  "name": "Pattern: Windslayer Wraps",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Windslayer Wraps Item Level 73 Requires Leatherworking (365) Use: Teaches you how to make Windslayer Wraps. Sell Price: 6 Windslayer Wraps Item Level 105 Binds when equipped Hands Leather 208 Armor +36 Strength +18 Agility +25 Stamina Durability 40 / 40 Requires Level 70 Equip: Improves hit rating by 17. Sell Price: 2 74 61 Requires Heavy Knothide Leather (4), Wind Scales (12), Primal Earth (18), Primal Air (8), Primal Nether",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=29728",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29728"
+}

@@ -224,6 +224,8 @@ class StructuredSourceTests(unittest.TestCase):
         item = next(item for item in self.items.values() if item["name"] == "Staff of Natural Fury")
         matching_uses = []
         for row in canonical_json("bis_lists")["lists"]:
+            if row["phase"] == "PR" and row.get("content_phase", "PR") != "PR":
+                continue
             if row["class"] != "Druid" or row["spec"] != "Feral dps" or row["slot"] != "Two Hand":
                 continue
             for entry in row.get("items", []):
@@ -328,7 +330,7 @@ class StructuredSourceTests(unittest.TestCase):
     def test_bis_rows_do_not_reference_future_acquisitions(self):
         violations = []
         for row in canonical_json("bis_lists")["lists"]:
-            row_phase = row["phase"]
+            row_phase = row.get("content_phase", row["phase"])
             for entry in row["items"]:
                 item = self.items[entry["item_id"]]
                 acquisition_phase = item["acquisition_phase"]

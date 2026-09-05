@@ -1,0 +1,235 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic mail armor of item level 71 goes in the \"Hands\" slot. Requires Hunter. It is obtained through PvP. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:22+00:00",
+  "inventory_slot": "Hands",
+  "item_id": 16463,
+  "item_stats": {
+    "armor": 363,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your critical strike rating by 14.",
+        "stats": {
+          "crit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 28.",
+        "stats": {
+          "attack_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases your critical strike rating by 14.",
+      "Equip: Increases attack power by 28."
+    ],
+    "id": 16463,
+    "item_level": 71,
+    "name": "Marshal's Chain Grips",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 8415,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 2,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 12785,
+      "entity_name": "Sergeant Major Clate",
+      "location_area": "Stormwind City",
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=16463/marshals-chain-grips",
+      "type": "pvp",
+      "vendor_id": 12785,
+      "zone": "Stormwind City"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Hands",
+    "source_summary": "PvP: Sergeant Major Clate (Stormwind City) +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 12777,
+        "entity_name": "Captain Dirgehammer",
+        "location_area": "Alterac Valley",
+        "location_note": "Also reported in Arathi Basin, Eye of the Storm",
+        "price_copper": 74899,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=16463/marshals-chain-grips",
+        "type": "vendor",
+        "vendor_id": 12777,
+        "zone": "Alterac Valley"
+      },
+      {
+        "confidence": "wowhead_item",
+        "costs": [
+          {
+            "amount": 8415,
+            "currency_id": 1901,
+            "name": "Honor Points"
+          },
+          {
+            "amount": 2,
+            "item_id": 20560,
+            "name": "Item 20560"
+          }
+        ],
+        "entity_id": 12785,
+        "entity_name": "Sergeant Major Clate",
+        "location_area": "Stormwind City",
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=16463/marshals-chain-grips",
+        "type": "pvp",
+        "vendor_id": 12785,
+        "zone": "Stormwind City"
+      }
+    ],
+    "stats": {
+      "agility": 14.0,
+      "attack_power": 28.0,
+      "crit_rating": 14.0,
+      "intellect": 4.0,
+      "stamina": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=16463/marshals-chain-grips"
+  },
+  "name": "Marshal's Chain Grips",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 12777,
+      "entity_name": "Captain Dirgehammer",
+      "location_area": "Alterac Valley",
+      "location_note": "Also reported in Arathi Basin, Eye of the Storm",
+      "price_copper": 74899,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=16463/marshals-chain-grips",
+      "type": "vendor",
+      "vendor_id": 12777,
+      "zone": "Alterac Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "costs": [
+        {
+          "amount": 8415,
+          "currency_id": 1901,
+          "name": "Honor Points"
+        },
+        {
+          "amount": 2,
+          "item_id": 20560,
+          "name": "Item 20560"
+        }
+      ],
+      "entity_id": 12785,
+      "entity_name": "Sergeant Major Clate",
+      "location_area": "Stormwind City",
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=16463/marshals-chain-grips",
+      "type": "pvp",
+      "vendor_id": 12785,
+      "zone": "Stormwind City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            74899
+          ]
+        ],
+        "id": 12777,
+        "location": [
+          2597,
+          3358,
+          3820,
+          -1
+        ],
+        "maxlevel": 65,
+        "minlevel": 65,
+        "name": "Captain Dirgehammer",
+        "popularity": 15,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            0,
+            [
+              [
+                1901,
+                8415
+              ]
+            ],
+            [
+              [
+                20560,
+                2
+              ]
+            ]
+          ]
+        ],
+        "id": 12785,
+        "location": [
+          1519
+        ],
+        "maxlevel": 55,
+        "minlevel": 55,
+        "name": "Sergeant Major Clate",
+        "popularity": 11,
+        "react": [
+          1,
+          null
+        ],
+        "stock": -1,
+        "tag": "Armor Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=16463/marshals-chain-grips"
+}

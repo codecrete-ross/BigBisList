@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bangle of Endless Blessings Phase 1 Item Level 115 Binds when picked up Unique-Equipped Trinket Requires Level 70 Equip: Your spell casts have a chance to allow [15 - Max( 70 - 70, 0) / 2]% of your mana regeneration to continue while casting for 15 sec. (Proc chance: 10%, 50s cooldown) Use: Increases your Spirit by 130 for 20 sec. (2 Min Cooldown) Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:17+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28370,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your spell casts have a chance to allow [15 - Max( 70 - 70, 0) / 2]% of your mana regeneration to continue while casting for 15 sec. (Proc chance: 10%, 50s cooldown)",
+        "type": "temporary"
+      },
+      {
+        "raw_text": "Use: Increases your Spirit by 130 for 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your spell casts have a chance to allow [15 - Max( 70 - 70, 0) / 2]% of your mana regeneration to continue while casting for 15 sec. (Proc chance: 10%, 50s cooldown)"
+    ],
+    "id": 28370,
+    "item_level": 115,
+    "name": "Bangle of Endless Blessings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases your Spirit by 130 for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28370/bangle-of-endless-blessings"
+  },
+  "name": "Bangle of Endless Blessings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28370/bangle-of-endless-blessings"
+}

@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:52+00:00",
+  "fetched_at": "2026-09-04T23:49:20+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -701,7 +701,7 @@
           "cells": [
             "Great",
             "Gladiator's Plate Chestpiece",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -721,11 +721,11 @@
           "rank_label": "Great",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -2636,7 +2636,7 @@
           "cells": [
             "Alternative",
             "Gladiator's Slicer",
-            "PvP: 2283"
+            "PvP: 2283 Arena Points"
           ],
           "entities": [
             {
@@ -2656,11 +2656,11 @@
           "rank_label": "Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "PvP: 2283"
+          "source_text": "PvP: 2283 Arena Points"
         },
         {
           "cell_entities": [
@@ -2817,7 +2817,7 @@
           "cells": [
             "Best",
             "Gladiator's Slicer Gladiator's Cleaver",
-            "PvP: 2283"
+            "PvP: 2283 Arena Points"
           ],
           "entities": [
             {
@@ -2843,11 +2843,11 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "PvP: 2283"
+          "source_text": "PvP: 2283 Arena Points"
         },
         {
           "cell_entities": [
@@ -3067,16 +3067,6 @@
               "standing": "Exalted",
               "standing_rank": 8,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Aldor"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Endarin Requires Exalted with The Aldor",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/fury-warrior-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Alternative",

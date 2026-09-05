@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Smooth Dawnstone Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Smooth Dawnstone. Sell Price: 3 Smooth Dawnstone Item Level 70 +8 Critical Strike Rating \"Matches a Yellow Socket.\" Sell Price: 3 Requires Dawnstone",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:22:58+00:00",
+  "inventory_slot": null,
+  "item_id": 24204,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Smooth Dawnstone.",
+        "type": "use"
+      }
+    ],
+    "id": 24204,
+    "item_level": 70,
+    "name": "Design: Smooth Dawnstone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Smooth Dawnstone."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24204"
+  },
+  "name": "Design: Smooth Dawnstone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Smooth Dawnstone Item Level 70 Requires Jewelcrafting (350)",
+      "scope": "learn_recipe",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24204",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "reagent_item_ids": [
+    23440
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 24048,
+  "teaches_spell_ids": [
+    31097
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/24204",
+  "url": "https://www.wowhead.com/tbc/item=24204"
+}

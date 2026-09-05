@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Veteran's Silk Footguards Phase 2 Item Level 136 Binds when picked up Feet Cloth 157 Armor +39 Stamina +27 Intellect Durability 50 / 50 Classes: Priest , Mage , Warlock Requires Level 70 Equip: Improves spell critical strike rating by 27. Equip: Improves your resilience rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 32.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:26+00:00",
+  "inventory_slot": null,
+  "item_id": 32795,
+  "item_stats": {
+    "armor": 157,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 27.",
+        "stats": {
+          "spell_crit_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 26.",
+        "stats": {
+          "resilience_rating": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 32.",
+        "stats": {
+          "spell_power": 32.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 27.",
+      "Equip: Improves your resilience rating by 26.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 32."
+    ],
+    "id": 32795,
+    "item_level": 136,
+    "name": "Veteran's Silk Footguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Mage",
+        "Warlock"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "resilience_rating": 26.0,
+      "spell_crit_rating": 27.0,
+      "spell_power": 32.0,
+      "stamina": 39.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32795/veterans-silk-footguards"
+  },
+  "name": "Veteran's Silk Footguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32795/veterans-silk-footguards"
+}

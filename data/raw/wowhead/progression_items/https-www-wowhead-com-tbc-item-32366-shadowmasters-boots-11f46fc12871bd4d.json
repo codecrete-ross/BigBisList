@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shadowmaster's Boots Phase 3 Item Level 141 Binds when picked up Feet Leather 305 Armor +30 Agility +38 Stamina Red Socket Yellow Socket Socket Bonus: +3 Critical Strike Rating Durability 60 / 60 Requires Level 70 Equip: Improves critical strike rating by 17. Equip: Increases attack power by 76. Sell Price: 5 41 33",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:00+00:00",
+  "inventory_slot": null,
+  "item_id": 32366,
+  "item_stats": {
+    "armor": 305,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 17.",
+        "stats": {
+          "crit_rating": 17.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 76.",
+        "stats": {
+          "attack_power": 76.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 17.",
+      "Equip: Increases attack power by 76."
+    ],
+    "id": 32366,
+    "item_level": 141,
+    "name": "Shadowmaster's Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 76.0,
+      "crit_rating": 17.0,
+      "stamina": 38.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots"
+  },
+  "name": "Shadowmaster's Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots"
+}

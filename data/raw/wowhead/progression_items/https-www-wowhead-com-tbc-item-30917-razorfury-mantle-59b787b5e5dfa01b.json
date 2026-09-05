@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Razorfury Mantle Phase 3 Item Level 141 Binds when picked up Shoulder Leather 333 Armor +28 Agility +55 Stamina Durability 70 / 70 Requires Level 70 Equip: Improves critical strike rating by 23. Equip: Increases attack power by 76. Sell Price: 5 41 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:38+00:00",
+  "inventory_slot": null,
+  "item_id": 30917,
+  "item_stats": {
+    "armor": 333,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 23.",
+        "stats": {
+          "crit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 76.",
+        "stats": {
+          "attack_power": 76.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 23.",
+      "Equip: Increases attack power by 76."
+    ],
+    "id": 30917,
+    "item_level": 141,
+    "name": "Razorfury Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 28.0,
+      "attack_power": 76.0,
+      "crit_rating": 23.0,
+      "stamina": 55.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30917/razorfury-mantle"
+  },
+  "name": "Razorfury Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30917/razorfury-mantle"
+}

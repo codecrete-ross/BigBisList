@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:33+00:00",
+  "fetched_at": "2026-09-04T23:48:48+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -1346,7 +1346,7 @@
             [
               {
                 "id": 33513,
-                "name": "Eternium Rage-Shackles",
+                "name": "Eternium Rage-shackles",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=33513/eternium-rage-shackles"
               }
@@ -1362,13 +1362,13 @@
           ],
           "cells": [
             "Easy to Obtain",
-            "Eternium Rage-Shackles",
+            "Eternium Rage-shackles",
             "60 Badge of Justice"
           ],
           "entities": [
             {
               "id": 33513,
-              "name": "Eternium Rage-Shackles",
+              "name": "Eternium Rage-shackles",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=33513/eternium-rage-shackles"
             },
@@ -1380,11 +1380,11 @@
             }
           ],
           "entity_id": 33513,
-          "entity_name": "Eternium Rage-Shackles",
+          "entity_name": "Eternium Rage-shackles",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=33513/eternium-rage-shackles",
           "item_id": 33513,
-          "item_name": "Eternium Rage-Shackles",
+          "item_name": "Eternium Rage-shackles",
           "item_url": "https://www.wowhead.com/tbc/item=33513/eternium-rage-shackles",
           "rank_label": "Easy to Obtain",
           "source_links": [
@@ -2421,9 +2421,9 @@
             [
               {
                 "id": 30017,
-                "name": "Telonicus' Pendant of Mayhem",
+                "name": "Telonicus's Pendant of Mayhem",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+                "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
               }
             ],
             [
@@ -2437,15 +2437,15 @@
           ],
           "cells": [
             "Optional",
-            "Telonicus' Pendant of Mayhem",
+            "Telonicus's Pendant of Mayhem",
             "Quest: Verdant Sphere off Kael'thas Sunstrider (Tempest Keep)]"
           ],
           "entities": [
             {
               "id": 30017,
-              "name": "Telonicus' Pendant of Mayhem",
+              "name": "Telonicus's Pendant of Mayhem",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+              "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
             },
             {
               "id": 32405,
@@ -2455,12 +2455,12 @@
             }
           ],
           "entity_id": 30017,
-          "entity_name": "Telonicus' Pendant of Mayhem",
+          "entity_name": "Telonicus's Pendant of Mayhem",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "item_id": 30017,
-          "item_name": "Telonicus' Pendant of Mayhem",
-          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "item_name": "Telonicus's Pendant of Mayhem",
+          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "rank_label": "Optional",
           "source_links": [
             {
@@ -2735,7 +2735,7 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Quest: Champion's Covenant - Requires Exalted with the Scales of the Sand",
-              "reputation": "the Scales of the Sand",
+              "reputation": "The Scale of the Sands",
               "scope": "quest_reward",
               "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-za-phase-4-best-in-slot-gear-burning-crusade",
               "standing": "Exalted",
@@ -2768,7 +2768,7 @@
           "cells": [
             "Optional",
             "Vindicator's Band of Triumph",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -2788,11 +2788,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -2901,7 +2901,7 @@
           "cells": [
             "Best",
             "Berserker's Call",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -2921,11 +2921,11 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [
@@ -3297,7 +3297,7 @@
           "cells": [
             "Optional",
             "Vengeful Gladiator's Greatsword",
-            "- PVP Vendor"
+            "Arena Points - PVP Vendor"
           ],
           "entities": [
             {
@@ -3317,11 +3317,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- PVP Vendor"
+          "source_text": "Arena Points - PVP Vendor"
         }
       ],
       "slot": "Weapon"
@@ -3400,7 +3400,7 @@
           "cells": [
             "Orc Best - Non Legendary",
             "Vengeful Gladiator's Cleaver",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3420,11 +3420,11 @@
           "rank_label": "Orc Best - Non Legendary",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -3442,7 +3442,7 @@
           "cells": [
             "Best - Non Legendary",
             "Vengeful Gladiator's Slicer",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3462,11 +3462,11 @@
           "rank_label": "Best - Non Legendary",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -3659,7 +3659,7 @@
           "cells": [
             "Optional",
             "Merciless Gladiator's Slicer",
-            "- Arena Vendor"
+            "Honor Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3679,11 +3679,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Honor Points - Arena Vendor"
         }
       ],
       "slot": "Weapon"
@@ -3708,7 +3708,7 @@
           "cells": [
             "Best",
             "Ancient Amani Longbow",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -3728,11 +3728,11 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [

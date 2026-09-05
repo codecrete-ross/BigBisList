@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Windslayer Wraps Phase 1 Item Level 105 Binds when equipped Hands Leather 208 Armor +36 Strength +18 Agility +25 Stamina Durability 40 / 40 Requires Level 70 Equip: Improves hit rating by 17. Sell Price: 2 74 61",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:00+00:00",
+  "inventory_slot": null,
+  "item_id": 29507,
+  "item_stats": {
+    "armor": 208,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 17.",
+        "stats": {
+          "hit_rating": 17.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 17."
+    ],
+    "id": 29507,
+    "item_level": 105,
+    "name": "Windslayer Wraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "hit_rating": 17.0,
+      "stamina": 25.0,
+      "strength": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29507/windslayer-wraps"
+  },
+  "name": "Windslayer Wraps",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29507/windslayer-wraps"
+}

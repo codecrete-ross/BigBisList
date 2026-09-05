@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:50+00:00",
+  "fetched_at": "2026-09-04T23:49:17+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -196,7 +196,7 @@
           "cells": [
             "Alternative (Threat Skewed)",
             "Brutal Gladiator's Dragonhide Helm",
-            "1875 , 1700 personal rating"
+            "1875 Arena Points , 1700 personal rating"
           ],
           "entities": [
             {
@@ -216,11 +216,11 @@
           "rank_label": "Alternative (Threat Skewed)",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 , 1700 personal rating"
+          "source_text": "1875 Arena Points , 1700 personal rating"
         }
       ],
       "slot": "Head"
@@ -375,7 +375,7 @@
           "cells": [
             "Alternative",
             "Brutal Gladiator's Dragonhide Spaulders",
-            "1500 , 2200 personal rating"
+            "1500 Arena Points , 2200 personal rating"
           ],
           "entities": [
             {
@@ -395,11 +395,11 @@
           "rank_label": "Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1500 , 2200 personal rating"
+          "source_text": "1500 Arena Points , 2200 personal rating"
         },
         {
           "cell_entities": [
@@ -417,7 +417,7 @@
           "cells": [
             "Alternative",
             "Vengeful Gladiator's Dragonhide Spaulders",
-            "750"
+            "750 Arena Points"
           ],
           "entities": [
             {
@@ -437,11 +437,11 @@
           "rank_label": "Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "750"
+          "source_text": "750 Arena Points"
         }
       ],
       "slot": "Shoulder"
@@ -734,7 +734,7 @@
           "cells": [
             "Mit Skewed Alternative",
             "Brutal Gladiator's Dragonhide Tunic",
-            "1875 , 1600 personal rating"
+            "1875 Arena Points , 1600 personal rating"
           ],
           "entities": [
             {
@@ -754,11 +754,11 @@
           "rank_label": "Mit Skewed Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 , 1600 personal rating"
+          "source_text": "1875 Arena Points , 1600 personal rating"
         }
       ],
       "slot": "Chest"
@@ -964,7 +964,7 @@
           "cells": [
             "Mit Skewed Alternative",
             "Guardian's Leather Bracers",
-            "11,794 , 10 Warsong Gulch Mark of Honor , 1575 personal rating"
+            "11,794 Honor Points , 10 Warsong Gulch Mark of Honor , 1575 personal rating"
           ],
           "entities": [
             {
@@ -990,15 +990,15 @@
           "rank_label": "Mit Skewed Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
               "text": "Warsong Gulch Mark of Honor"
             }
           ],
-          "source_text": "11,794 , 10 Warsong Gulch Mark of Honor , 1575 personal rating"
+          "source_text": "11,794 Honor Points , 10 Warsong Gulch Mark of Honor , 1575 personal rating"
         },
         {
           "cell_entities": [
@@ -1023,7 +1023,7 @@
           "cells": [
             "Threat Skewed Alternative",
             "Guardian's Dragonhide Bracers",
-            "11,794 , 10 Warsong Gulch Mark of Honor , 1575 personal rating"
+            "11,794 Honor Points , 10 Warsong Gulch Mark of Honor , 1575 personal rating"
           ],
           "entities": [
             {
@@ -1049,15 +1049,15 @@
           "rank_label": "Threat Skewed Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
               "text": "Warsong Gulch Mark of Honor"
             }
           ],
-          "source_text": "11,794 , 10 Warsong Gulch Mark of Honor , 1575 personal rating"
+          "source_text": "11,794 Honor Points , 10 Warsong Gulch Mark of Honor , 1575 personal rating"
         },
         {
           "cell_entities": [
@@ -1397,7 +1397,7 @@
           "cells": [
             "Best Mit Skewed",
             "Guardian's Leather Belt",
-            "17,850 , 20 Arathi Basin Mark of Honor"
+            "17,850 Honor Points , 20 Arathi Basin Mark of Honor"
           ],
           "entities": [
             {
@@ -1423,15 +1423,15 @@
           "rank_label": "Best Mit Skewed",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20559/arathi-basin-mark-of-honor",
               "text": "Arathi Basin Mark of Honor"
             }
           ],
-          "source_text": "17,850 , 20 Arathi Basin Mark of Honor"
+          "source_text": "17,850 Honor Points , 20 Arathi Basin Mark of Honor"
         },
         {
           "cell_entities": [
@@ -1927,7 +1927,7 @@
           "cells": [
             "Alternative",
             "Guardian's Dragonhide Boots",
-            "17,850 , 20 Eye of the Storm Mark of Honor , 1700 personal rating"
+            "17,850 Honor Points , 20 Eye of the Storm Mark of Honor , 1700 personal rating"
           ],
           "entities": [
             {
@@ -1953,15 +1953,15 @@
           "rank_label": "Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=29024/eye-of-the-storm-mark-of-honor",
               "text": "Eye of the Storm Mark of Honor"
             }
           ],
-          "source_text": "17,850 , 20 Eye of the Storm Mark of Honor , 1700 personal rating"
+          "source_text": "17,850 Honor Points , 20 Eye of the Storm Mark of Honor , 1700 personal rating"
         }
       ],
       "slot": "Feet"
@@ -2432,7 +2432,7 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Quest: Champion's Covenant - Requires Exalted with Scale of the Sands",
-              "reputation": "Scale of the Sands",
+              "reputation": "The Scale of the Sands",
               "scope": "quest_reward",
               "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
               "standing": "Exalted",
@@ -2777,7 +2777,7 @@
           "cells": [
             "Alternative",
             "Battlemaster's Determination",
-            "30,000 , 20 Alterac Valley Mark of Honor or 75 Badge of Justice"
+            "30,000 Honor Points , 20 Alterac Valley Mark of Honor or 75 Badge of Justice"
           ],
           "entities": [
             {
@@ -2809,8 +2809,8 @@
           "rank_label": "Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20560/alterac-valley-mark-of-honor",
@@ -2821,7 +2821,7 @@
               "text": "Badge of Justice"
             }
           ],
-          "source_text": "30,000 , 20 Alterac Valley Mark of Honor or 75 Badge of Justice"
+          "source_text": "30,000 Honor Points , 20 Alterac Valley Mark of Honor or 75 Badge of Justice"
         },
         {
           "cell_entities": [
@@ -2852,7 +2852,7 @@
           "cells": [
             "Alternative",
             "Battlemaster's Cruelty",
-            "30,000 , 20 Alterac Valley Mark of Honor or 75 Badge of Justice"
+            "30,000 Honor Points , 20 Alterac Valley Mark of Honor or 75 Badge of Justice"
           ],
           "entities": [
             {
@@ -2884,8 +2884,8 @@
           "rank_label": "Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20560/alterac-valley-mark-of-honor",
@@ -2896,7 +2896,7 @@
               "text": "Badge of Justice"
             }
           ],
-          "source_text": "30,000 , 20 Alterac Valley Mark of Honor or 75 Badge of Justice"
+          "source_text": "30,000 Honor Points , 20 Alterac Valley Mark of Honor or 75 Badge of Justice"
         },
         {
           "cell_entities": [

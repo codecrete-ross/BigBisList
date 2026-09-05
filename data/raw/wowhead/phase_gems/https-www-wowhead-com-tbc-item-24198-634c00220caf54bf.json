@@ -1,0 +1,57 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Flashing Living Ruby Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Flashing Living Ruby. Sell Price: 3 Flashing Living Ruby Item Level 70 +8 Parry Rating \"Matches a Red Socket.\" Sell Price: 3 Requires Living Ruby",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:22:54+00:00",
+  "inventory_slot": null,
+  "item_id": 24198,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Flashing Living Ruby.",
+        "type": "use"
+      }
+    ],
+    "id": 24198,
+    "item_level": 70,
+    "name": "Design: Flashing Living Ruby",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Flashing Living Ruby."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24198"
+  },
+  "name": "Design: Flashing Living Ruby",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Flashing Living Ruby Item Level 70 Requires Jewelcrafting (350)",
+      "scope": "learn_recipe",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24198",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "reagent_item_ids": [
+    23436
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 24036,
+  "teaches_spell_ids": [
+    31091
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/24198",
+  "url": "https://www.wowhead.com/tbc/item=24198"
+}

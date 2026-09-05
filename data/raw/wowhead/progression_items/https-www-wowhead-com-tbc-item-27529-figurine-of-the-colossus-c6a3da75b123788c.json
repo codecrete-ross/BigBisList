@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Figurine of the Colossus Phase 1 Item Level 115 Binds when picked up Unique-Equipped Trinket Requires Level 70 Equip: Increases your shield block rating by 32. Use: Each successful block heals you for 120. Effect lasts 20 sec. (2 Min Cooldown) Sell Price: 6 62 90",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:23+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 27529,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Each successful block heals you for 120. Effect lasts 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 27529,
+    "item_level": 115,
+    "name": "Figurine of the Colossus",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Each successful block heals you for 120. Effect lasts 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27529/figurine-of-the-colossus"
+  },
+  "name": "Figurine of the Colossus",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27529/figurine-of-the-colossus"
+}

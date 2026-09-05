@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:48+00:00",
+  "fetched_at": "2026-09-04T23:49:14+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -22,7 +22,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Cursed Vision of Sargeras",
             "Drop: Illidan Stormrage (Black Temple)"
           ],
@@ -41,7 +41,7 @@
           "item_id": 32235,
           "item_name": "Cursed Vision of Sargeras",
           "item_url": "https://www.wowhead.com/tbc/item=32235/cursed-vision-of-sargeras",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
@@ -49,48 +49,6 @@
             }
           ],
           "source_text": "Drop: Illidan Stormrage (Black Temple)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31015,
-                "name": "Skyshatter Cover",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31015/skyshatter-cover"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Great",
-            "Skyshatter Cover",
-            "Drop: Helm of the Forgotten Protector - Archimonde (Hyjal Summit)"
-          ],
-          "entities": [
-            {
-              "id": 31015,
-              "name": "Skyshatter Cover",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31015/skyshatter-cover"
-            }
-          ],
-          "entity_id": 31015,
-          "entity_name": "Skyshatter Cover",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31015/skyshatter-cover",
-          "item_id": 31015,
-          "item_name": "Skyshatter Cover",
-          "item_url": "https://www.wowhead.com/tbc/item=31015/skyshatter-cover",
-          "rank_label": "Great",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
-              "text": "Archimonde"
-            }
-          ],
-          "source_text": "Drop: Helm of the Forgotten Protector - Archimonde (Hyjal Summit)"
         },
         {
           "cell_entities": [
@@ -133,6 +91,48 @@
             }
           ],
           "source_text": "Drop: The Illidari Council (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31015,
+                "name": "Skyshatter Cover",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31015/skyshatter-cover"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Great",
+            "Skyshatter Cover",
+            "Drop: Helm of the Forgotten Protector - Archimonde (Hyjal Summit)"
+          ],
+          "entities": [
+            {
+              "id": 31015,
+              "name": "Skyshatter Cover",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31015/skyshatter-cover"
+            }
+          ],
+          "entity_id": 31015,
+          "entity_name": "Skyshatter Cover",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=31015/skyshatter-cover",
+          "item_id": 31015,
+          "item_name": "Skyshatter Cover",
+          "item_url": "https://www.wowhead.com/tbc/item=31015/skyshatter-cover",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
+              "text": "Archimonde"
+            }
+          ],
+          "source_text": "Drop: Helm of the Forgotten Protector - Archimonde (Hyjal Summit)"
         },
         {
           "cell_entities": [
@@ -415,58 +415,6 @@
             [],
             [
               {
-                "id": 32581,
-                "name": "Swiftstrike Shoulders",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best in slot",
-            "Swiftstrike Shoulders",
-            "Profession: Leatherworking (BoP)"
-          ],
-          "entities": [
-            {
-              "id": 32581,
-              "name": "Swiftstrike Shoulders",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders"
-            }
-          ],
-          "entity_id": 32581,
-          "entity_name": "Swiftstrike Shoulders",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
-          "item_id": 32581,
-          "item_name": "Swiftstrike Shoulders",
-          "item_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Leatherworking (BoP)",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
-            }
-          ],
-          "rank_label": "Best in slot",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/skill=165/leatherworking",
-              "text": "Leatherworking"
-            }
-          ],
-          "source_text": "Profession: Leatherworking (BoP)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 32575,
                 "name": "Shoulders of Lightning Reflexes",
                 "type": "item",
@@ -476,7 +424,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Shoulders of Lightning Reflexes",
             "Profession: Leatherworking (BoP)"
           ],
@@ -505,7 +453,59 @@
               "type": "profession"
             }
           ],
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/skill=165/leatherworking",
+              "text": "Leatherworking"
+            }
+          ],
+          "source_text": "Profession: Leatherworking (BoP)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32581,
+                "name": "Swiftstrike Shoulders",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best",
+            "Swiftstrike Shoulders",
+            "Profession: Leatherworking (BoP)"
+          ],
+          "entities": [
+            {
+              "id": 32581,
+              "name": "Swiftstrike Shoulders",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders"
+            }
+          ],
+          "entity_id": 32581,
+          "entity_name": "Swiftstrike Shoulders",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
+          "item_id": 32581,
+          "item_name": "Swiftstrike Shoulders",
+          "item_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking (BoP)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/skill=165/leatherworking",
@@ -836,7 +836,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Shadowmoon Destroyer's Drape",
             "Drop: Teron Gorefiend (Black Temple)"
           ],
@@ -855,7 +855,7 @@
           "item_id": 32323,
           "item_name": "Shadowmoon Destroyer's Drape",
           "item_url": "https://www.wowhead.com/tbc/item=32323/shadowmoon-destroyers-drape",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
@@ -905,6 +905,53 @@
             }
           ],
           "source_text": "Drop: Kael'thas Sunstrider (Tempest Keep)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 24259,
+                "name": "Vengeance Wrap",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Great",
+            "Vengeance Wrap",
+            "Profession: Tailoring (BoE)"
+          ],
+          "entities": [
+            {
+              "id": 24259,
+              "name": "Vengeance Wrap",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap"
+            }
+          ],
+          "entity_id": 24259,
+          "entity_name": "Vengeance Wrap",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "item_id": 24259,
+          "item_name": "Vengeance Wrap",
+          "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (BoE)",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "Great",
+          "source_links": [],
+          "source_text": "Profession: Tailoring (BoE)"
         },
         {
           "cell_entities": [
@@ -967,53 +1014,6 @@
             }
           ],
           "source_text": "Profession: Leatherworking - Requires Exalted with The Violet Eye"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 24259,
-                "name": "Vengeance Wrap",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Great",
-            "Vengeance Wrap",
-            "Profession: Tailoring (BoE)"
-          ],
-          "entities": [
-            {
-              "id": 24259,
-              "name": "Vengeance Wrap",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap"
-            }
-          ],
-          "entity_id": 24259,
-          "entity_name": "Vengeance Wrap",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
-          "item_id": 24259,
-          "item_name": "Vengeance Wrap",
-          "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Tailoring",
-              "raw_text": "Profession: Tailoring (BoE)",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
-            }
-          ],
-          "rank_label": "Great",
-          "source_links": [],
-          "source_text": "Profession: Tailoring (BoE)"
         }
       ],
       "slot": "Back"
@@ -1169,7 +1169,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Midnight Chestguard",
             "Drop: Archimonde (Hyjal Summit)"
           ],
@@ -1188,7 +1188,7 @@
           "item_id": 30905,
           "item_name": "Midnight Chestguard",
           "item_url": "https://www.wowhead.com/tbc/item=30905/midnight-chestguard",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
@@ -1531,7 +1531,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Bindings of Lightning Reflexes",
             "Drop: Leatherworking (BoE)"
           ],
@@ -1559,7 +1559,7 @@
               "type": "unknown_text"
             }
           ],
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/skill=165/leatherworking",
@@ -1582,7 +1582,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Deadly Cuffs",
             "Drop: Rage Winterchill (Hyjal Summit)"
           ],
@@ -1601,7 +1601,7 @@
           "item_id": 30863,
           "item_name": "Deadly Cuffs",
           "item_url": "https://www.wowhead.com/tbc/item=30863/deadly-cuffs",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
@@ -1624,7 +1624,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Insidious Bands",
             "Drop: Teron Gorefiend (Black Temple)"
           ],
@@ -1643,7 +1643,7 @@
           "item_id": 32324,
           "item_name": "Insidious Bands",
           "item_url": "https://www.wowhead.com/tbc/item=32324/insidious-bands",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
@@ -1887,33 +1887,33 @@
             [
               {
                 "id": 28171,
-                "name": "Spymistress' Wristguards",
+                "name": "Spymistress's Wristguards",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards"
+                "url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards"
               }
             ],
             []
           ],
           "cells": [
             "Great",
-            "Spymistress' Wristguards",
+            "Spymistress's Wristguards",
             "Quest: The Soul Devices"
           ],
           "entities": [
             {
               "id": 28171,
-              "name": "Spymistress' Wristguards",
+              "name": "Spymistress's Wristguards",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards"
+              "url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards"
             }
           ],
           "entity_id": 28171,
-          "entity_name": "Spymistress' Wristguards",
+          "entity_name": "Spymistress's Wristguards",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards",
+          "entity_url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards",
           "item_id": 28171,
-          "item_name": "Spymistress' Wristguards",
-          "item_url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards",
+          "item_name": "Spymistress's Wristguards",
+          "item_url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards",
           "rank_label": "Great",
           "source_links": [
             {
@@ -1944,7 +1944,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Fists of Mukoa",
             "Drop: High Warlord Naj'entus (Black Temple)"
           ],
@@ -1963,7 +1963,7 @@
           "item_id": 32234,
           "item_name": "Fists of Mukoa",
           "item_url": "https://www.wowhead.com/tbc/item=32234/fists-of-mukoa",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22887/high-warlord-najentus",
@@ -1986,7 +1986,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Grips of Damnation",
             "Drop: Reliquary of the Lost (Black Temple)"
           ],
@@ -2005,7 +2005,7 @@
           "item_id": 32347,
           "item_name": "Grips of Damnation",
           "item_url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22856/reliquary-of-the-lost",
@@ -2257,7 +2257,7 @@
             []
           ],
           "cells": [
-            "Best in Slot",
+            "Best",
             "Belt of One-Hundred Deaths",
             "Drop: Lady Vashj (Serpentshrine Cavern)"
           ],
@@ -2276,7 +2276,7 @@
           "item_id": 30106,
           "item_name": "Belt of One-Hundred Deaths",
           "item_url": "https://www.wowhead.com/tbc/item=30106/belt-of-one-hundred-deaths",
-          "rank_label": "Best in Slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=21212/lady-vashj",
@@ -2284,6 +2284,48 @@
             }
           ],
           "source_text": "Drop: Lady Vashj (Serpentshrine Cavern)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30879,
+                "name": "Don Alejandro's Money Belt",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Great",
+            "Don Alejandro's Money Belt",
+            "Drop: Anetheron (Hyjal Summit)"
+          ],
+          "entities": [
+            {
+              "id": 30879,
+              "name": "Don Alejandro's Money Belt",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt"
+            }
+          ],
+          "entity_id": 30879,
+          "entity_name": "Don Alejandro's Money Belt",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt",
+          "item_id": 30879,
+          "item_name": "Don Alejandro's Money Belt",
+          "item_url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17808/anetheron",
+              "text": "Anetheron"
+            }
+          ],
+          "source_text": "Drop: Anetheron (Hyjal Summit)"
         },
         {
           "cell_entities": [
@@ -2333,7 +2375,7 @@
             [
               {
                 "id": 32265,
-                "name": "Shadow-Walker's Cord",
+                "name": "Shadow-walker's Cord",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
               }
@@ -2342,23 +2384,23 @@
           ],
           "cells": [
             "Great",
-            "Shadow-Walker's Cord",
+            "Shadow-walker's Cord",
             "Drop: Shade of Akama (Black Temple)"
           ],
           "entities": [
             {
               "id": 32265,
-              "name": "Shadow-Walker's Cord",
+              "name": "Shadow-walker's Cord",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
             }
           ],
           "entity_id": 32265,
-          "entity_name": "Shadow-Walker's Cord",
+          "entity_name": "Shadow-walker's Cord",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
           "item_id": 32265,
-          "item_name": "Shadow-Walker's Cord",
+          "item_name": "Shadow-walker's Cord",
           "item_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
           "rank_label": "Great",
           "source_links": [
@@ -2368,48 +2410,6 @@
             }
           ],
           "source_text": "Drop: Shade of Akama (Black Temple)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30879,
-                "name": "Don Alejandro's Money Belt",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Great",
-            "Don Alejandro's Money Belt",
-            "Drop: Anetheron (Hyjal Summit)"
-          ],
-          "entities": [
-            {
-              "id": 30879,
-              "name": "Don Alejandro's Money Belt",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt"
-            }
-          ],
-          "entity_id": 30879,
-          "entity_name": "Don Alejandro's Money Belt",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt",
-          "item_id": 30879,
-          "item_name": "Don Alejandro's Money Belt",
-          "item_url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt",
-          "rank_label": "Great",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17808/anetheron",
-              "text": "Anetheron"
-            }
-          ],
-          "source_text": "Drop: Anetheron (Hyjal Summit)"
         }
       ],
       "slot": "Waist"
@@ -2418,48 +2418,6 @@
       "data_family": "bis_lists",
       "heading": "Best in Slot Waist Armor for Enhancement Shaman in TBC Classic Phase 3",
       "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30919,
-                "name": "Valestalker Girdle",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Great",
-            "Valestalker Girdle",
-            "Drop: Kaz'rogal (Hyjal Summit)"
-          ],
-          "entities": [
-            {
-              "id": 30919,
-              "name": "Valestalker Girdle",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle"
-            }
-          ],
-          "entity_id": 30919,
-          "entity_name": "Valestalker Girdle",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle",
-          "item_id": 30919,
-          "item_name": "Valestalker Girdle",
-          "item_url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle",
-          "rank_label": "Great",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17888/kazrogal",
-              "text": "Kaz'rogal"
-            }
-          ],
-          "source_text": "Drop: Kaz'rogal (Hyjal Summit)"
-        },
         {
           "cell_entities": [
             [],
@@ -2511,6 +2469,48 @@
             }
           ],
           "source_text": "Profession: Leatherworking (BoE)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30919,
+                "name": "Valestalker Girdle",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Great",
+            "Valestalker Girdle",
+            "Drop: Kaz'rogal (Hyjal Summit)"
+          ],
+          "entities": [
+            {
+              "id": 30919,
+              "name": "Valestalker Girdle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle"
+            }
+          ],
+          "entity_id": 30919,
+          "entity_name": "Valestalker Girdle",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle",
+          "item_id": 30919,
+          "item_name": "Valestalker Girdle",
+          "item_url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17888/kazrogal",
+              "text": "Kaz'rogal"
+            }
+          ],
+          "source_text": "Drop: Kaz'rogal (Hyjal Summit)"
         },
         {
           "cell_entities": [
@@ -2705,7 +2705,7 @@
             [
               {
                 "id": 30900,
-                "name": "Bow-Stitched Leggings",
+                "name": "Bow-stitched Leggings",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
               }
@@ -2713,26 +2713,26 @@
             []
           ],
           "cells": [
-            "Best in slot",
-            "Bow-Stitched Leggings",
+            "Best",
+            "Bow-stitched Leggings",
             "Drop: Azgalor (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30900,
-              "name": "Bow-Stitched Leggings",
+              "name": "Bow-stitched Leggings",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
             }
           ],
           "entity_id": 30900,
-          "entity_name": "Bow-Stitched Leggings",
+          "entity_name": "Bow-stitched Leggings",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "item_id": 30900,
-          "item_name": "Bow-Stitched Leggings",
+          "item_name": "Bow-stitched Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17842/azgalor",
@@ -2783,6 +2783,97 @@
           ],
           "source_text": "Drop: Azgalor (Hyjal Summit)"
         },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31021,
+                "name": "Skyshatter Pants",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31021/skyshatter-pants"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Great",
+            "Skyshatter Pants",
+            "Drop: Leggings of the Forgotten Protector, The Illidari Council (Black Temple"
+          ],
+          "entities": [
+            {
+              "id": 31021,
+              "name": "Skyshatter Pants",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31021/skyshatter-pants"
+            }
+          ],
+          "entity_id": 31021,
+          "entity_name": "Skyshatter Pants",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=31021/skyshatter-pants",
+          "item_id": 31021,
+          "item_name": "Skyshatter Pants",
+          "item_url": "https://www.wowhead.com/tbc/item=31021/skyshatter-pants",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23426/the-illidari-council",
+              "text": "The Illidari Council"
+            }
+          ],
+          "source_text": "Drop: Leggings of the Forgotten Protector, The Illidari Council (Black Temple"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29995,
+                "name": "Leggings of Murderous Intent",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29995/leggings-of-murderous-intent"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Great",
+            "Leggings of Murderous Intent",
+            "Drop: Kael'thas Sunstrider (Tempest Keep)"
+          ],
+          "entities": [
+            {
+              "id": 29995,
+              "name": "Leggings of Murderous Intent",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29995/leggings-of-murderous-intent"
+            }
+          ],
+          "entity_id": 29995,
+          "entity_name": "Leggings of Murderous Intent",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=29995/leggings-of-murderous-intent",
+          "item_id": 29995,
+          "item_name": "Leggings of Murderous Intent",
+          "item_url": "https://www.wowhead.com/tbc/item=29995/leggings-of-murderous-intent",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
+              "text": "Kael'thas Sunstrider"
+            }
+          ],
+          "source_text": "Drop: Kael'thas Sunstrider (Tempest Keep)"
+        }
+      ],
+      "slot": "Legs"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Leg Armor for Enhancement Shaman in TBC Classic Phase 3",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -2866,14 +2957,7 @@
             }
           ],
           "source_text": "Drop: Netherspite (Karazhan)"
-        }
-      ],
-      "slot": "Legs"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Leg Armor for Enhancement Shaman in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2974,48 +3058,6 @@
             [],
             [
               {
-                "id": 32366,
-                "name": "Shadowmaster's Boots",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best in slot",
-            "Shadowmaster's Boots",
-            "Drop: Mother Shahraz (Black Temple)"
-          ],
-          "entities": [
-            {
-              "id": 32366,
-              "name": "Shadowmaster's Boots",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots"
-            }
-          ],
-          "entity_id": 32366,
-          "entity_name": "Shadowmaster's Boots",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots",
-          "item_id": 32366,
-          "item_name": "Shadowmaster's Boots",
-          "item_url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots",
-          "rank_label": "Best in slot",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
-              "text": "Mother Shahraz"
-            }
-          ],
-          "source_text": "Drop: Mother Shahraz (Black Temple)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 32510,
                 "name": "Softstep Boots of Tracking",
                 "type": "item",
@@ -3025,7 +3067,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Softstep Boots of Tracking",
             "Drop: Teron Gorefiend (Black Temple)"
           ],
@@ -3044,7 +3086,7 @@
           "item_id": 32510,
           "item_name": "Softstep Boots of Tracking",
           "item_url": "https://www.wowhead.com/tbc/item=32510/softstep-boots-of-tracking",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
@@ -3052,6 +3094,48 @@
             }
           ],
           "source_text": "Drop: Teron Gorefiend (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32366,
+                "name": "Shadowmaster's Boots",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best",
+            "Shadowmaster's Boots",
+            "Drop: Mother Shahraz (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32366,
+              "name": "Shadowmaster's Boots",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots"
+            }
+          ],
+          "entity_id": 32366,
+          "entity_name": "Shadowmaster's Boots",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots",
+          "item_id": 32366,
+          "item_name": "Shadowmaster's Boots",
+          "item_url": "https://www.wowhead.com/tbc/item=32366/shadowmasters-boots",
+          "rank_label": "Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
+              "text": "Mother Shahraz"
+            }
+          ],
+          "source_text": "Drop: Mother Shahraz (Black Temple)"
         },
         {
           "cell_entities": [
@@ -3343,7 +3427,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Choker of Endless Nightmares",
             "Drop: Supremus (Black Temple)"
           ],
@@ -3362,7 +3446,7 @@
           "item_id": 32260,
           "item_name": "Choker of Endless Nightmares",
           "item_url": "https://www.wowhead.com/tbc/item=32260/choker-of-endless-nightmares",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22898/supremus",
@@ -3382,14 +3466,12 @@
                 "url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades"
               }
             ],
-            [],
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Choker of Serrated Blades",
-            "Drop: Hyjal Summit / Black Temple Trash Mobs",
-            ""
+            "Drop: Hyjal Summit / Black Temple Trash Mobs"
           ],
           "entities": [
             {
@@ -3406,7 +3488,7 @@
           "item_id": 32591,
           "item_name": "Choker of Serrated Blades",
           "item_url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/zone=3606/hyjal-summit",
@@ -3421,36 +3503,38 @@
         },
         {
           "cell_entities": [
+            [],
             [
               {
                 "id": 30017,
-                "name": "Telonicus' Pendant of Mayhem",
+                "name": "Telonicus's Pendant of Mayhem",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+                "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
               }
             ],
             []
           ],
           "cells": [
-            "Telonicus' Pendant of Mayhem",
+            "Great",
+            "Telonicus's Pendant of Mayhem",
             "Drop: Kael'thas Sunstrider (Tempest Keep)"
           ],
           "entities": [
             {
               "id": 30017,
-              "name": "Telonicus' Pendant of Mayhem",
+              "name": "Telonicus's Pendant of Mayhem",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+              "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
             }
           ],
           "entity_id": 30017,
-          "entity_name": "Telonicus' Pendant of Mayhem",
+          "entity_name": "Telonicus's Pendant of Mayhem",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "item_id": 30017,
-          "item_name": "Telonicus' Pendant of Mayhem",
-          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
-          "rank_label": "Telonicus' Pendant of Mayhem",
+          "item_name": "Telonicus's Pendant of Mayhem",
+          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
@@ -3697,7 +3781,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Stormrage Signet Ring",
             "Drop: Illidan Stormrage (Black Temple)"
           ],
@@ -3716,7 +3800,7 @@
           "item_id": 32497,
           "item_name": "Stormrage Signet Ring",
           "item_url": "https://www.wowhead.com/tbc/item=32497/stormrage-signet-ring",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
@@ -3739,7 +3823,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Band of the Eternal Champion",
             "Quest: Champion's Covenant (Hyjal Summit)"
           ],
@@ -3758,7 +3842,7 @@
           "item_id": 29301,
           "item_name": "Band of the Eternal Champion",
           "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10474/champions-covenant",
@@ -3781,7 +3865,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Band of the Ranger-General",
             "Drop: Kael'thas Sunstrider (Tempest Keep)"
           ],
@@ -3800,7 +3884,7 @@
           "item_id": 29997,
           "item_name": "Band of the Ranger-General",
           "item_url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
@@ -4369,7 +4453,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Dragonspine Trophy",
             "Drop: Gruul the Dragonkiller (Gruul's Lair)"
           ],
@@ -4388,7 +4472,7 @@
           "item_id": 28830,
           "item_name": "Dragonspine Trophy",
           "item_url": "https://www.wowhead.com/tbc/item=28830/dragonspine-trophy",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19044/gruul-the-dragonkiller",
@@ -4411,7 +4495,7 @@
             []
           ],
           "cells": [
-            "Best in slot",
+            "Best",
             "Madness of the Betrayer",
             "Drop: The Illidari Council (Black Temple)"
           ],
@@ -4430,7 +4514,7 @@
           "item_id": 32505,
           "item_name": "Madness of the Betrayer",
           "item_url": "https://www.wowhead.com/tbc/item=32505/madness-of-the-betrayer",
-          "rank_label": "Best in slot",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=23426/the-illidari-council",
@@ -4556,7 +4640,7 @@
             []
           ],
           "cells": [
-            "Best in slot - Seasonal",
+            "Best - Seasonal",
             "Empty Mug of Direbrew",
             "Drop: Coren Direbrew (Blackrock Depths)"
           ],
@@ -4575,7 +4659,7 @@
           "item_id": 38287,
           "item_name": "Empty Mug of Direbrew",
           "item_url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew",
-          "rank_label": "Best in slot - Seasonal",
+          "rank_label": "Best - Seasonal",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
@@ -4857,9 +4941,9 @@
             []
           ],
           "cells": [
-            "Best in slot (All)",
+            "Best (All)",
             "Vengeful Gladiator's Cleaver",
-            "Vendor"
+            "Arena Points Vendor"
           ],
           "entities": [
             {
@@ -4876,14 +4960,14 @@
           "item_id": 33669,
           "item_name": "Vengeful Gladiator's Cleaver",
           "item_url": "https://www.wowhead.com/tbc/item=33669/vengeful-gladiators-cleaver",
-          "rank_label": "Best in slot (All)",
+          "rank_label": "Best (All)",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "Vendor"
+          "source_text": "Arena Points Vendor"
         },
         {
           "cell_entities": [
@@ -4899,7 +4983,7 @@
             []
           ],
           "cells": [
-            "Best in slot (All)",
+            "Best (All)",
             "Syphon of the Nathrezim",
             "Drop: Supremus (Black Temple)"
           ],
@@ -4918,7 +5002,7 @@
           "item_id": 32262,
           "item_name": "Syphon of the Nathrezim",
           "item_url": "https://www.wowhead.com/tbc/item=32262/syphon-of-the-nathrezim",
-          "rank_label": "Best in slot (All)",
+          "rank_label": "Best (All)",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22898/supremus",
@@ -5171,7 +5255,7 @@
           "cells": [
             "Optional (All)",
             "Merciless Gladiator's Cleaver",
-            ""
+            "Honor Points"
           ],
           "entities": [
             {
@@ -5191,11 +5275,11 @@
           "rank_label": "Optional (All)",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             }
           ],
-          "source_text": ""
+          "source_text": "Honor Points"
         },
         {
           "cell_entities": [
@@ -5308,7 +5392,7 @@
           "cells": [
             "Optional (All)",
             "Gladiator's Cleaver",
-            ""
+            "Honor Points"
           ],
           "entities": [
             {
@@ -5328,11 +5412,11 @@
           "rank_label": "Optional (All)",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             }
           ],
-          "source_text": ""
+          "source_text": "Honor Points"
         },
         {
           "cell_entities": [
@@ -5375,319 +5459,11 @@
             }
           ],
           "source_text": "Drop: Prince Malchezaar (Karazhan)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 27872,
-                "name": "The Harvester of Souls",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=27872/the-harvester-of-souls"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional (All)",
-            "The Harvester of Souls",
-            "Drop: Exarch Maladaar (Heroic Auchenai Crypts)"
-          ],
-          "entities": [
-            {
-              "id": 27872,
-              "name": "The Harvester of Souls",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27872/the-harvester-of-souls"
-            }
-          ],
-          "entity_id": 27872,
-          "entity_name": "The Harvester of Souls",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=27872/the-harvester-of-souls",
-          "item_id": 27872,
-          "item_name": "The Harvester of Souls",
-          "item_url": "https://www.wowhead.com/tbc/item=27872/the-harvester-of-souls",
-          "rank_label": "Optional (All)",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18373/exarch-maladaar",
-              "text": "Exarch Maladaar"
-            }
-          ],
-          "source_text": "Drop: Exarch Maladaar (Heroic Auchenai Crypts)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28944,
-                "name": "Grand Marshal's Cleaver",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28944/grand-marshals-cleaver"
-              },
-              {
-                "id": 28920,
-                "name": "High Warlord's Cleaver",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28920/high-warlords-cleaver"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional (All)",
-            "Grand Marshal's Cleaver High Warlord's Cleaver",
-            "Honor PvP Vendor"
-          ],
-          "entities": [
-            {
-              "id": 28944,
-              "name": "Grand Marshal's Cleaver",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28944/grand-marshals-cleaver"
-            },
-            {
-              "id": 28920,
-              "name": "High Warlord's Cleaver",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28920/high-warlords-cleaver"
-            }
-          ],
-          "entity_id": 28944,
-          "entity_name": "Grand Marshal's Cleaver",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28944/grand-marshals-cleaver",
-          "item_id": 28944,
-          "item_name": "Grand Marshal's Cleaver",
-          "item_url": "https://www.wowhead.com/tbc/item=28944/grand-marshals-cleaver",
-          "rank_label": "Optional (All)",
-          "source_links": [],
-          "source_text": "Honor PvP Vendor"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28657,
-                "name": "Fool's Bane",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28657/fools-bane"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional (2.6 MH)",
-            "Fool's Bane",
-            "Drop: Terestian Illhoof (Karazhan)"
-          ],
-          "entities": [
-            {
-              "id": 28657,
-              "name": "Fool's Bane",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28657/fools-bane"
-            }
-          ],
-          "entity_id": 28657,
-          "entity_name": "Fool's Bane",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28657/fools-bane",
-          "item_id": 28657,
-          "item_name": "Fool's Bane",
-          "item_url": "https://www.wowhead.com/tbc/item=28657/fools-bane",
-          "rank_label": "Optional (2.6 MH)",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=15688/terestian-illhoof",
-              "text": "Terestian Illhoof"
-            }
-          ],
-          "source_text": "Drop: Terestian Illhoof (Karazhan)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28438,
-                "name": "Dragonmaw",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28438/dragonmaw"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional (2.7 MH)",
-            "Dragonmaw",
-            "Profession: Master Hammersmith Blacksmithing (BoP)"
-          ],
-          "entities": [
-            {
-              "id": 28438,
-              "name": "Dragonmaw",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28438/dragonmaw"
-            }
-          ],
-          "entity_id": 28438,
-          "entity_name": "Dragonmaw",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
-          "item_id": 28438,
-          "item_name": "Dragonmaw",
-          "item_url": "https://www.wowhead.com/tbc/item=28438/dragonmaw",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Blacksmithing",
-              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "specialization": "Master Hammersmith",
-              "type": "profession_specialization"
-            }
-          ],
-          "rank_label": "Optional (2.7 MH)",
-          "source_links": [],
-          "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28432,
-                "name": "Black Planar Edge",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional (2.7 MH)",
-            "Black Planar Edge",
-            "Profession: Master Axesmith Blacksmithing (BoP)"
-          ],
-          "entities": [
-            {
-              "id": 28432,
-              "name": "Black Planar Edge",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge"
-            }
-          ],
-          "entity_id": 28432,
-          "entity_name": "Black Planar Edge",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge",
-          "item_id": 28432,
-          "item_name": "Black Planar Edge",
-          "item_url": "https://www.wowhead.com/tbc/item=28432/black-planar-edge",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Blacksmithing",
-              "raw_text": "Profession: Master Axesmith Blacksmithing (BoP)",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "specialization": "Master Axesmith",
-              "type": "profession_specialization"
-            }
-          ],
-          "rank_label": "Optional (2.7 MH)",
-          "source_links": [],
-          "source_text": "Profession: Master Axesmith Blacksmithing (BoP)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28392,
-                "name": "Reflex Blades",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28392/reflex-blades"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional (2.7 MH)",
-            "Reflex Blades",
-            "Drop: Dalliah the Doomsayer (The Arcatraz)"
-          ],
-          "entities": [
-            {
-              "id": 28392,
-              "name": "Reflex Blades",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28392/reflex-blades"
-            }
-          ],
-          "entity_id": 28392,
-          "entity_name": "Reflex Blades",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28392/reflex-blades",
-          "item_id": 28392,
-          "item_name": "Reflex Blades",
-          "item_url": "https://www.wowhead.com/tbc/item=28392/reflex-blades",
-          "rank_label": "Optional (2.7 MH)",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=20885/dalliah-the-doomsayer",
-              "text": "Dalliah the Doomsayer"
-            }
-          ],
-          "source_text": "Drop: Dalliah the Doomsayer (The Arcatraz)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31139,
-                "name": "Fist of Reckoning",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31139/fist-of-reckoning"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional (2.7 OH)",
-            "Fist of Reckoning",
-            "World Drop: The Outland"
-          ],
-          "entities": [
-            {
-              "id": 31139,
-              "name": "Fist of Reckoning",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31139/fist-of-reckoning"
-            }
-          ],
-          "entity_id": 31139,
-          "entity_name": "Fist of Reckoning",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31139/fist-of-reckoning",
-          "item_id": 31139,
-          "item_name": "Fist of Reckoning",
-          "item_url": "https://www.wowhead.com/tbc/item=31139/fist-of-reckoning",
-          "rank_label": "Optional (2.7 OH)",
-          "source_links": [],
-          "source_text": "World Drop: The Outland"
         }
       ],
       "slot": "Weapon"
     }
   ],
-  "title": "Burning Crusade Classic Enhancement Shaman DPS Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Enhancement Shaman DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

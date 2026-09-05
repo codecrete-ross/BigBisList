@@ -1,0 +1,84 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bulwark of Kings Item Level 127 Binds when picked up Chest Plate 1595 Armor +35 Strength +55 Stamina Blue Socket Yellow Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Armorsmith Equip: Improves hit rating by 23. Equip: Improves critical strike rating by 37. Use: Temporarily Increases Health by 1500 and Strength by 150 for 15 sec. (30 Min Cooldown) Sell Price: 8 94 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:26+00:00",
+  "inventory_slot": null,
+  "item_id": 28484,
+  "item_stats": {
+    "armor": 1595,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 23.",
+        "stats": {
+          "hit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 37.",
+        "stats": {
+          "crit_rating": 37.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Temporarily Increases Health by 1500 and Strength by 150 for 15 sec. (30 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 23.",
+      "Equip: Improves critical strike rating by 37."
+    ],
+    "id": 28484,
+    "item_level": 127,
+    "name": "Bulwark of Kings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "blue",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 37.0,
+      "hit_rating": 23.0,
+      "stamina": 55.0,
+      "strength": 35.0
+    },
+    "use_effects": [
+      "Use: Temporarily Increases Health by 1500 and Strength by 150 for 15 sec. (30 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28484/bulwark-of-kings"
+  },
+  "name": "Bulwark of Kings",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Bulwark of Kings Item Level 127 Binds when picked up Chest Plate 1595 Armor +35 Strength +55 Stamina Blue Socket Yellow Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Armorsmith Equip: Improves hit rating by 23. Equip: Improves critical strike rating by 37. Use: Temporarily Increases Health by 1500 and Strength by 150 for 15 sec. (30 Min Cooldown) Sell Price: 8 94 20",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28484/bulwark-of-kings",
+      "specialization": "Armorsmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28484/bulwark-of-kings"
+}

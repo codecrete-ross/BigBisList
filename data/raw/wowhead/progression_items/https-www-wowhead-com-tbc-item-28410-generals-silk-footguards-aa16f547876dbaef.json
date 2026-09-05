@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "General's Silk Footguards Phase 1 Item Level 123 Binds when picked up Feet Cloth 142 Armor +33 Stamina +23 Intellect Durability 50 / 50 Classes: Priest , Mage , Warlock Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Improves your resilience rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:21+00:00",
+  "inventory_slot": null,
+  "item_id": 28410,
+  "item_stats": {
+    "armor": 142,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 24.",
+        "stats": {
+          "spell_crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 24.",
+        "stats": {
+          "resilience_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 24.",
+      "Equip: Improves your resilience rating by 24.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+    ],
+    "id": 28410,
+    "item_level": 123,
+    "name": "General's Silk Footguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Mage",
+        "Warlock"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "intellect": 23.0,
+      "resilience_rating": 24.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 28.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28410/generals-silk-footguards"
+  },
+  "name": "General's Silk Footguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28410/generals-silk-footguards"
+}

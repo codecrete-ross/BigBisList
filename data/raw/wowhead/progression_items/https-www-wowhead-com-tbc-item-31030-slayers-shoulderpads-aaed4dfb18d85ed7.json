@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Slayer's Shoulderpads Phase 3 Item Level 146 Binds when picked up Shoulder Leather 344 Armor +34 Agility +37 Stamina Yellow Socket Blue Socket Socket Bonus: +6 Attack Power Durability 70 / 70 Classes: Rogue Requires Level 70 Equip: Increases attack power by 68. Equip: Your attacks ignore 175 of your opponent's armor. Slayer's Armor (0/8) Slayer's Chestguard Slayer's Handguards Slayer's Helm Slayer's Legguards Slayer's Shoulderpads Slayer's Boots Slayer's Bracers Slayer's Belt (2) Set : Increases the haste from your Slice and Dice ability by 5%. (4) Set : Increases the damage dealt by your Backstab, Sinister Strike, Mutilate, and Hemorrhage abilities by 6%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:52+00:00",
+  "inventory_slot": null,
+  "item_id": 31030,
+  "item_stats": {
+    "armor": 344,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases attack power by 68.",
+        "stats": {
+          "attack_power": 68.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 175 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases attack power by 68.",
+      "Equip: Your attacks ignore 175 of your opponent's armor."
+    ],
+    "id": 31030,
+    "item_level": 146,
+    "name": "Slayer's Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "attack_power": 68.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31030/slayers-shoulderpads"
+  },
+  "name": "Slayer's Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31030/slayers-shoulderpads"
+}

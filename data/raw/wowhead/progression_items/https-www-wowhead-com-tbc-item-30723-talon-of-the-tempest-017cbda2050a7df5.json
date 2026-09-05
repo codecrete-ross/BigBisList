@@ -1,0 +1,80 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Talon of the Tempest Phase 1 Item Level 120 Binds when picked up Unique Main Hand Dagger 26 - 123 Damage Speed 1.80 (41.39 damage per second) +10 Intellect Yellow Socket Yellow Socket Socket Bonus: +3 Intellect Durability 75 / 75 Requires Level 70 Equip: Improves spell hit rating by 9. Equip: Improves spell critical strike rating by 19. Equip: Increases damage and healing done by magical spells and effects by up to 194. Sell Price: 12 8 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:23+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 30723,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.39,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 9.",
+        "stats": {
+          "spell_hit_rating": 9.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 19.",
+        "stats": {
+          "spell_crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 194.",
+        "stats": {
+          "spell_power": 194.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 9.",
+      "Equip: Improves spell critical strike rating by 19.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 194."
+    ],
+    "id": 30723,
+    "item_level": 120,
+    "name": "Talon of the Tempest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "socket_bonus": {
+      "intellect": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 10.0,
+      "spell_crit_rating": 19.0,
+      "spell_hit_rating": 9.0,
+      "spell_power": 194.0
+    },
+    "weapon_max_damage": 123,
+    "weapon_min_damage": 26,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30723/talon-of-the-tempest"
+  },
+  "name": "Talon of the Tempest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30723/talon-of-the-tempest"
+}

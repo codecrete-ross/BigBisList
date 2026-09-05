@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Velvet Boots of the Guardian Phase 2 Item Level 128 Binds when picked up Feet Cloth 148 Armor +21 Stamina +21 Intellect +15 Spirit Durability 50 / 50 Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 49. Sell Price: 3 35 64",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:33+00:00",
+  "inventory_slot": null,
+  "item_id": 30067,
+  "item_stats": {
+    "armor": 148,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 24.",
+        "stats": {
+          "spell_crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 49.",
+        "stats": {
+          "spell_power": 49.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 24.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 49."
+    ],
+    "id": 30067,
+    "item_level": 128,
+    "name": "Velvet Boots of the Guardian",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 21.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 49.0,
+      "spirit": 15.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30067/velvet-boots-of-the-guardian"
+  },
+  "name": "Velvet Boots of the Guardian",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30067/velvet-boots-of-the-guardian"
+}

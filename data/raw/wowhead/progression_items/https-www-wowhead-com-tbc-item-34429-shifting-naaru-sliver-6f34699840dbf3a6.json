@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shifting Naaru Sliver Phase 5 Item Level 154 Binds when picked up Unique Trinket Requires Level 70 Equip: Improves spell haste rating by 54. Use: Conjures a Power Circle lasting for 15 sec. While standing in this circle, the caster gains up to 320 spell damage and healing. (1 Min, 30 Sec Cooldown) Sell Price: 7 20 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:54+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 34429,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Conjures a Power Circle lasting for 15 sec. While standing in this circle, the caster gains up to 320 spell damage and healing. (1 Min, 30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 34429,
+    "item_level": 154,
+    "name": "Shifting Naaru Sliver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Conjures a Power Circle lasting for 15 sec. While standing in this circle, the caster gains up to 320 spell damage and healing. (1 Min, 30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34429/shifting-naaru-sliver"
+  },
+  "name": "Shifting Naaru Sliver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34429/shifting-naaru-sliver"
+}

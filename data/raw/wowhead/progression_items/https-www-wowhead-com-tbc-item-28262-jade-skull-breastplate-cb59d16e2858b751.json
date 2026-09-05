@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Jade-Skull Breastplate Phase 1 Item Level 115 Binds when picked up Chest Plate 1164 Armor +30 Strength +50 Stamina Durability 135 / 135 Requires Level 70 Equip: Increases defense rating by 25. Equip: Increases your shield block rating by 23. Sell Price: 6 21 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:07+00:00",
+  "inventory_slot": null,
+  "item_id": 28262,
+  "item_stats": {
+    "armor": 1164,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases defense rating by 25.",
+        "stats": {
+          "defense_rating": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 25."
+    ],
+    "id": 28262,
+    "item_level": 115,
+    "name": "Jade-Skull Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 25.0,
+      "stamina": 50.0,
+      "strength": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28262/jade-skull-breastplate"
+  },
+  "name": "Jade-Skull Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28262/jade-skull-breastplate"
+}

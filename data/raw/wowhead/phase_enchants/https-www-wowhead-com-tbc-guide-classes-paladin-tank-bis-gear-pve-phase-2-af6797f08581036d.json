@@ -1,0 +1,467 @@
+{
+  "bindings": [
+    {
+      "class": "Paladin",
+      "phase": "T5",
+      "spec": "Protection"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29186,
+            "name": "Arcanum of the Defender",
+            "type": "item"
+          },
+          "equipment_item_id": 30125,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35443
+        },
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "equipment_item_id": 29070,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        },
+        {
+          "entity": {
+            "id": 27957,
+            "name": "Exceptional Health",
+            "type": "spell"
+          },
+          "equipment_item_id": 29066,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27957
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30126,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 27950,
+            "name": "Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 30033,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27950
+        },
+        {
+          "entity": {
+            "id": 27917,
+            "name": "Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32515,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27917
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30124,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30109,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 33054,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25086,
+            "name": "Dodge",
+            "type": "spell"
+          },
+          "equipment_item_id": 29925,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25086
+        },
+        {
+          "entity": {
+            "id": 27975,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30095,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27975
+        },
+        {
+          "equipment_item_id": 28825,
+          "slot": "Off Hand",
+          "spell_id": 27946
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Protection Paladin Tank in Phase 2",
+      "planner": "paladin/human/A0YR8FMFEyUAABAlIVUfBQNQAC-BQHWtinMAXeEgZSgCAHU3g0BxjoppAF3hIF3hhWBxim01AF3hIF3hQF3hBkB1UgBd4SBd4Ycgda56jABd4YgAdVFtLokAfwNtDYoAdayEzYsAdZ1tFIwAgR5tFA0AcroOAHB1jwB05WH-kAB1j21HkSBwmW0qAF3hEgBtDQ"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29186,
+            "name": "Arcanum of the Defender",
+            "type": "item"
+          },
+          "equipment_item_id": 30125,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35443
+        },
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "equipment_item_id": 29070,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        },
+        {
+          "entity": {
+            "id": 27957,
+            "name": "Exceptional Health",
+            "type": "spell"
+          },
+          "equipment_item_id": 29066,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27957
+        },
+        {
+          "entity": {
+            "id": 29536,
+            "name": "Nethercleft Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30126,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35495
+        },
+        {
+          "entity": {
+            "id": 27950,
+            "name": "Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 32267,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27950
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 32515,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30124,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30083,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 28407,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25086,
+            "name": "Dodge",
+            "type": "spell"
+          },
+          "equipment_item_id": 29925,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25086
+        },
+        {
+          "entity": {
+            "id": 27975,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30095,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27975
+        },
+        {
+          "equipment_item_id": 28825,
+          "slot": "Off Hand",
+          "spell_id": 27946
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Protection Paladin Tank in Phase 2",
+      "planner": "paladin/human/A0YR8FMFEyUAABAlIVUfBQNQAC-BQHWtinMAXeEgZSgCAHU3g0BxjoppAF3hIF3hhWBxim01AF3hIF3hQF3hBkB1kABd4SBd4Ycgda6KpwBd4YhAfgttLgBd4SBd4YkAfwNtCooAdayEzYsAdYNtFIwAbvdtFA0AcroOAHB1jwB05WH-kAB1j21HkSBwmW0qAF3hEgBtDQ"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29186,
+            "name": "Arcanum of the Defender",
+            "type": "item"
+          },
+          "equipment_item_id": 29068,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35443
+        },
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "equipment_item_id": 30127,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        },
+        {
+          "entity": {
+            "id": 27957,
+            "name": "Exceptional Health",
+            "type": "spell"
+          },
+          "equipment_item_id": 29066,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27957
+        },
+        {
+          "entity": {
+            "id": 29536,
+            "name": "Nethercleft Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 28621,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35495
+        },
+        {
+          "entity": {
+            "id": 27950,
+            "name": "Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 30641,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27950
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 32515,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 29998,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30083,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 28407,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25086,
+            "name": "Dodge",
+            "type": "spell"
+          },
+          "equipment_item_id": 29925,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25086
+        },
+        {
+          "entity": {
+            "id": 27975,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30095,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27975
+        },
+        {
+          "equipment_item_id": 28825,
+          "slot": "Off Hand",
+          "spell_id": 27946
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Protection Paladin Tank in Phase 2",
+      "planner": "paladin/human/A0YR8FMFEyUAABAlIVUfBQNQAC-BQHGMinMAXeEgZSgCAHU3g0B1r4ppAF3hIF3hhWBxim01AF3hIF3hQF3hBkB1kABd4SBd4Ydgb82KpwBd4SBd4UBd4YgAd7FtLokAfwNtCopAdS6EzQBd4SBd4YsAdYNtFIwAbvdtFA0AcroOAG9wjwB05WH-kAB1j21HkSBwmW0qAF3hEgBtDQ"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Protection Paladin Tank in Phase 2",
+      "text": "The table below demonstrates the comparison in defensive bonuses between  and  at a finer level of detail.\r\n\r\nComparing the defensive stats between both shoulder enchants,  is the superior option by a small margin, primarily due to providing slightly more crit reduction and total avoidance and block."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Protection Paladin Tank in Phase 2",
+      "text": "The table below demonstrates the comparison in defensive bonuses between  and  at a finer level of detail.\r\n\r\nComparing the defensive stats between both shoulder enchants,  is the superior option by a small margin, primarily due to providing slightly more crit reduction and total avoidance and block."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Set Bonuses",
+      "text": "Aldor vs. Scryer for Protection Paladin Tank in Phase 2\r\nFor Protection Paladins, the stat differences between the blue shoulder enchants for each faction are pretty marginal, with Scryers  barely winning out vs Aldors . The main differences between the factions come in the early game with regard to quest rewards and rep vendor items that can help you gear up much faster for tanking heroic dungeons and Phase 2 raids. In terms of reputation gain, The Scryers tend to be an easier faction to gain reputation with, so in that respect, Scryers are the superior option for those who want to obtain their shoulder enchants as quickly as possible."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:00+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Protection Paladin Tank Best in Slot (BiS) Phase 2 Gear Guide - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-bis-gear-pve-phase-2"
+}

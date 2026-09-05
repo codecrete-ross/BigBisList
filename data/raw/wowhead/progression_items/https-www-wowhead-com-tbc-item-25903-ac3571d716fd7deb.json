@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Bracing Earthstorm Diamond Item Level 73 Binds when picked up Requires Jewelcrafting (365) Requires The Consortium - Revered Use: Teaches you how to cut a Bracing Earthstorm Diamond. Sell Price: 3 Bracing Earthstorm Diamond Item Level 70 +26 Healing +9 Spell Damage and 2% Reduced Threat Requires more Red gems than Blue gems \"Only fits in a meta gem slot.\" Sell Price: 3 Requires Earthstorm Diamond",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:12+00:00",
+  "inventory_slot": null,
+  "item_id": 25903,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Bracing Earthstorm Diamond.",
+        "type": "use"
+      }
+    ],
+    "id": 25903,
+    "item_level": 73,
+    "name": "Design: Bracing Earthstorm Diamond",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Bracing Earthstorm Diamond."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25903"
+  },
+  "name": "Design: Bracing Earthstorm Diamond",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Design: Bracing Earthstorm Diamond Item Level 73 Binds when picked up Requires Jewelcrafting (365) Requires The Consortium - Revered Use: Teaches you how to cut a Bracing Earthstorm Diamond. Sell Price: 3 Bracing Earthstorm Diamond Item Level 70 +26 Healing +9 Spell Damage and 2% Reduced Threat Requires more Red gems than Blue gems \"Only fits in a meta gem slot.\" Sell Price: 3 Requires Earthstorm Diamond",
+      "reputation": "The Consortium",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=25903",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Bracing Earthstorm Diamond Item Level 73 Binds when picked up Requires Jewelcrafting (365) Requires The Consortium - Revered Use: Teaches you how to cut a Bracing Earthstorm Diamond. Sell Price: 3 Bracing Earthstorm Diamond Item Level 70 +26 Healing +9 Spell Damage and 2% Reduced Threat Requires more Red gems than Blue gems \"Only fits in a meta gem slot.\" Sell Price: 3 Requires Earthstorm Diamond",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=25903",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25903"
+}

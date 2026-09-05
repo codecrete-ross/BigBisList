@@ -1,0 +1,161 @@
+{
+  "bindings": [
+    {
+      "class": "Rogue",
+      "phase": "SWP",
+      "spec": "Assassination"
+    },
+    {
+      "class": "Rogue",
+      "phase": "SWP",
+      "spec": "Combat"
+    },
+    {
+      "class": "Rogue",
+      "phase": "SWP",
+      "spec": "Subtlety"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 34244,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "equipment_item_id": 31030,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 34397,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29535,
+            "name": "Nethercobra Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 34188,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35490
+        },
+        {
+          "entity": {
+            "id": 34007,
+            "name": "Enchant Boots - Cat's Swiftness",
+            "type": "spell"
+          },
+          "equipment_item_id": 34575,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34007
+        },
+        {
+          "entity": {
+            "id": 34002,
+            "name": "Enchant Bracer - Assault",
+            "type": "spell"
+          },
+          "equipment_item_id": 34448,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 34002
+        },
+        {
+          "entity": {
+            "id": 25080,
+            "name": "Enchant Gloves - Superior Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34370,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25080
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34241,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 32837,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27984
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 32838,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 27984
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Rogue DPS in Phase 5",
+      "planner": "rogue/human/A0YSIFMgEl8CMwUgAAUBUAIyEVH_gUCFxIp8AH6ZIH3cAgCFgYNAeTaKWQB9ziB91IVghl1tOAB91CB9zkB93AYghv4AfdyHYIWMiqIAfdwgfdxAfdyIIIcPhNcAfdyJIIaQhNIAfc6KQIZCYfgAfdwgfdwLAH7xDACFjQ0AcJ4OAIZ7jyCFwYTUAH3OkACARW1QkQCARm1QEgCFlA"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Rogue DPS in Phase 5",
+      "text": "Should Rogue DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 5?\r\nJust like in Phases 1, 2, 3, and 4, choosing your Shattrath faction either  or  doesn't make that big of a difference in terms of raid performance. The main longstanding benefit will be the shoulder enchants from these factions.  from  is very slightly better than  from , but it is such a minuscule difference that you are unlikely to ever notice it. You will do just fine choosing whichever faction you prefer."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:29+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Rogue DPS Best in Slot (BiS) Phase 5 Gear Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/rogue-dps-swp-phase-5-best-in-slot-gear-burning-crusade"
+}

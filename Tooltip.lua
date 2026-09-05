@@ -181,6 +181,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     local selectedSpecFirst = settings.selectedSpecFirst ~= false
     local specFilters = settings.specFilters
     local priorityContext = getTooltipPriorityContext()
+    priorityContext.selectedPhase = effectivePhaseKey
     local rawMatches = levelingMode
         and self:GetLevelingTooltipMatches(itemId, selection.class, selection.spec, selectedLevel, selectedSpecFirst, specFilters, priorityContext)
         or self:GetTooltipMatches(itemId, selection.class, selection.spec, selectedSpecFirst, specFilters, priorityContext)
@@ -203,6 +204,8 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         tostring(selection.class),
         tostring(selection.spec),
         tostring(effectivePhaseKey),
+        tostring((BigBiSListData or {}).active_schedule),
+        tostring(self.GetCurrentPhaseKey and self:GetCurrentPhaseKey()),
         tostring(selectedLevel),
         tostring(priorityContext and priorityContext.playerClass),
         tostring(priorityContext and priorityContext.playerSpec),

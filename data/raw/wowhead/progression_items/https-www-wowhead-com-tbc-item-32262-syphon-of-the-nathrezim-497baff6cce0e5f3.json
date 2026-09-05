@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Syphon of the Nathrezim Phase 3 Item Level 141 Binds when picked up One-Hand Mace 196 - 365 Damage Speed 2.80 (100.18 damage per second) Durability 105 / 105 Requires Level 70 Equip: Increases attack power by 50. Chance on hit: Fills you with fel energy allowing all melee attacks to drain life from opponents. Sell Price: 13 86 29",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:48+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 32262,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 100.18,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases attack power by 50.",
+        "stats": {
+          "attack_power": 50.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Chance on hit: Fills you with fel energy allowing all melee attacks to drain life from opponents.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases attack power by 50.",
+      "Chance on hit: Fills you with fel energy allowing all melee attacks to drain life from opponents."
+    ],
+    "id": 32262,
+    "item_level": 141,
+    "name": "Syphon of the Nathrezim",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 50.0
+    },
+    "weapon_max_damage": 365,
+    "weapon_min_damage": 196,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32262/syphon-of-the-nathrezim"
+  },
+  "name": "Syphon of the Nathrezim",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32262/syphon-of-the-nathrezim"
+}

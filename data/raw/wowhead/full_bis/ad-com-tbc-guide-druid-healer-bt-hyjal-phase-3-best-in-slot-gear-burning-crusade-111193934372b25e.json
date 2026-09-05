@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:47+00:00",
+  "fetched_at": "2026-09-04T23:49:11+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -284,48 +284,6 @@
             [],
             [
               {
-                "id": 30221,
-                "name": "Nordrassil Life-Mantle",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30221/nordrassil-life-mantle"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Nordrassil Life-Mantle",
-            "Drop: Void Reaver (Tempest Keep: The Eye)"
-          ],
-          "entities": [
-            {
-              "id": 30221,
-              "name": "Nordrassil Life-Mantle",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30221/nordrassil-life-mantle"
-            }
-          ],
-          "entity_id": 30221,
-          "entity_name": "Nordrassil Life-Mantle",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30221/nordrassil-life-mantle",
-          "item_id": 30221,
-          "item_name": "Nordrassil Life-Mantle",
-          "item_url": "https://www.wowhead.com/tbc/item=30221/nordrassil-life-mantle",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=19516/void-reaver",
-              "text": "Void Reaver"
-            }
-          ],
-          "source_text": "Drop: Void Reaver (Tempest Keep: The Eye)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 32583,
                 "name": "Shoulderpads of Renewed Life",
                 "type": "item",
@@ -414,6 +372,48 @@
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30221,
+                "name": "Nordrassil Life-Mantle",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30221/nordrassil-life-mantle"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Nordrassil Life-Mantle",
+            "Drop: Void Reaver (Tempest Keep: The Eye)"
+          ],
+          "entities": [
+            {
+              "id": 30221,
+              "name": "Nordrassil Life-Mantle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30221/nordrassil-life-mantle"
+            }
+          ],
+          "entity_id": 30221,
+          "entity_name": "Nordrassil Life-Mantle",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30221/nordrassil-life-mantle",
+          "item_id": 30221,
+          "item_name": "Nordrassil Life-Mantle",
+          "item_url": "https://www.wowhead.com/tbc/item=30221/nordrassil-life-mantle",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=19516/void-reaver",
+              "text": "Void Reaver"
+            }
+          ],
+          "source_text": "Drop: Void Reaver (Tempest Keep: The Eye)"
         }
       ],
       "slot": "Shoulder"
@@ -709,7 +709,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Shroud of Forgiveness",
             "Drop: Gurtogg Bloodboil (Black Temple)"
           ],
@@ -728,7 +728,7 @@
           "item_id": 32337,
           "item_name": "Shroud of Forgiveness",
           "item_url": "https://www.wowhead.com/tbc/item=32337/shroud-of-forgiveness",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22948/gurtogg-bloodboil",
@@ -1061,60 +1061,6 @@
             [],
             [
               {
-                "id": 30868,
-                "name": "Rejuvenating Bracers",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30868/rejuvenating-bracers"
-              },
-              {
-                "id": 30871,
-                "name": "Bracers of Martyrdom",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30871/bracers-of-martyrdom"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Rejuvenating Bracers Bracers of Martyrdom",
-            "Drop: Rage Winterchill (Hyjal Summit)"
-          ],
-          "entities": [
-            {
-              "id": 30868,
-              "name": "Rejuvenating Bracers",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30868/rejuvenating-bracers"
-            },
-            {
-              "id": 30871,
-              "name": "Bracers of Martyrdom",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30871/bracers-of-martyrdom"
-            }
-          ],
-          "entity_id": 30868,
-          "entity_name": "Rejuvenating Bracers",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30868/rejuvenating-bracers",
-          "item_id": 30868,
-          "item_name": "Rejuvenating Bracers",
-          "item_url": "https://www.wowhead.com/tbc/item=30868/rejuvenating-bracers",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
-              "text": "Rage Winterchill"
-            }
-          ],
-          "source_text": "Drop: Rage Winterchill (Hyjal Summit)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 32584,
                 "name": "Swiftheal Wraps",
                 "type": "item",
@@ -1203,6 +1149,60 @@
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30868,
+                "name": "Rejuvenating Bracers",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30868/rejuvenating-bracers"
+              },
+              {
+                "id": 30871,
+                "name": "Bracers of Martyrdom",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30871/bracers-of-martyrdom"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Rejuvenating Bracers Bracers of Martyrdom",
+            "Drop: Rage Winterchill (Hyjal Summit)"
+          ],
+          "entities": [
+            {
+              "id": 30868,
+              "name": "Rejuvenating Bracers",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30868/rejuvenating-bracers"
+            },
+            {
+              "id": 30871,
+              "name": "Bracers of Martyrdom",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30871/bracers-of-martyrdom"
+            }
+          ],
+          "entity_id": 30868,
+          "entity_name": "Rejuvenating Bracers",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30868/rejuvenating-bracers",
+          "item_id": 30868,
+          "item_name": "Rejuvenating Bracers",
+          "item_url": "https://www.wowhead.com/tbc/item=30868/rejuvenating-bracers",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
+              "text": "Rage Winterchill"
+            }
+          ],
+          "source_text": "Drop: Rage Winterchill (Hyjal Summit)"
         },
         {
           "cell_entities": [
@@ -2713,7 +2713,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Coral Band of the Revived",
             "Drop: Lady Vashj (Serpentshrine Cavern)"
           ],
@@ -2732,7 +2732,7 @@
           "item_id": 30110,
           "item_name": "Coral Band of the Revived",
           "item_url": "https://www.wowhead.com/tbc/item=30110/coral-band-of-the-revived",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=21212/lady-vashj",
@@ -2755,7 +2755,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Band of the Eternal Restorer",
             "Quest: Restorer's Covenant (The Scale of the Sands Exalted)"
           ],
@@ -2786,7 +2786,7 @@
               "type": "reputation"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10473/restorers-covenant",
@@ -2940,48 +2940,6 @@
             [],
             [
               {
-                "id": 38288,
-                "name": "Direbrew Hops",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=38288/direbrew-hops"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Direbrew Hops",
-            "Drop: Coren Direbrew (Brewfest Seasonal Event)"
-          ],
-          "entities": [
-            {
-              "id": 38288,
-              "name": "Direbrew Hops",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=38288/direbrew-hops"
-            }
-          ],
-          "entity_id": 38288,
-          "entity_name": "Direbrew Hops",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=38288/direbrew-hops",
-          "item_id": 38288,
-          "item_name": "Direbrew Hops",
-          "item_url": "https://www.wowhead.com/tbc/item=38288/direbrew-hops",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
-              "text": "Coren Direbrew"
-            }
-          ],
-          "source_text": "Drop: Coren Direbrew (Brewfest Seasonal Event)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 32496,
                 "name": "Memento of Tyrande",
                 "type": "item",
@@ -3018,109 +2976,6 @@
             }
           ],
           "source_text": "Drop: Illidan Stormrage (Black Temple)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 32486,
-                "name": "Ashtongue Talisman of Equilibrium",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Ashtongue Talisman of Equilibrium",
-            "Vendor: Okuno (Ashtongue Deathsworn Exalted)"
-          ],
-          "entities": [
-            {
-              "id": 32486,
-              "name": "Ashtongue Talisman of Equilibrium",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium"
-            }
-          ],
-          "entity_id": 32486,
-          "entity_name": "Ashtongue Talisman of Equilibrium",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium",
-          "item_id": 32486,
-          "item_name": "Ashtongue Talisman of Equilibrium",
-          "item_url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Okuno (Ashtongue Deathsworn Exalted)",
-              "reputation": "Ashtongue Deathsworn",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "standing": "Exalted",
-              "standing_rank": 8,
-              "type": "reputation"
-            }
-          ],
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=23159/okuno",
-              "text": "Okuno"
-            }
-          ],
-          "source_text": "Vendor: Okuno (Ashtongue Deathsworn Exalted)"
-        }
-      ],
-      "slot": "Trinket"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Trinkets for Restoration Druid in TBC Classic Phase 3",
-      "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 25634,
-                "name": "Oshu'gun Relic",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Oshu'gun Relic",
-            "Quest: Gava'xi"
-          ],
-          "entities": [
-            {
-              "id": 25634,
-              "name": "Oshu'gun Relic",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
-            }
-          ],
-          "entity_id": 25634,
-          "entity_name": "Oshu'gun Relic",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic",
-          "item_id": 25634,
-          "item_name": "Oshu'gun Relic",
-          "item_url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/quest=9900/gavaxi",
-              "text": "Gava'xi"
-            }
-          ],
-          "source_text": "Quest: Gava'xi"
         },
         {
           "cell_entities": [
@@ -3164,6 +3019,55 @@
           ],
           "source_text": "Drop: Sapphiron (Classic - Naxxramas)"
         },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 25634,
+                "name": "Oshu'gun Relic",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Oshu'gun Relic",
+            "Quest: Gava'xi"
+          ],
+          "entities": [
+            {
+              "id": 25634,
+              "name": "Oshu'gun Relic",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
+            }
+          ],
+          "entity_id": 25634,
+          "entity_name": "Oshu'gun Relic",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic",
+          "item_id": 25634,
+          "item_name": "Oshu'gun Relic",
+          "item_url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/quest=9900/gavaxi",
+              "text": "Gava'xi"
+            }
+          ],
+          "source_text": "Quest: Gava'xi"
+        }
+      ],
+      "slot": "Trinket"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Trinkets for Restoration Druid in TBC Classic Phase 3",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -3213,43 +3117,6 @@
             }
           ],
           "source_text": "Drop: Flamegor , Firemaw , & Ebonroc (Classic - Blackwing Lair)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28590,
-                "name": "Ribbon of Sacrifice",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Ribbon of Sacrifice",
-            "Drop: Opera Event (Karazhan)"
-          ],
-          "entities": [
-            {
-              "id": 28590,
-              "name": "Ribbon of Sacrifice",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice"
-            }
-          ],
-          "entity_id": 28590,
-          "entity_name": "Ribbon of Sacrifice",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice",
-          "item_id": 28590,
-          "item_name": "Ribbon of Sacrifice",
-          "item_url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Drop: Opera Event (Karazhan)"
         },
         {
           "cell_entities": [
@@ -3346,6 +3213,97 @@
             }
           ],
           "source_text": "Vendor: Nakodu (Lower City Revered)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28590,
+                "name": "Ribbon of Sacrifice",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Ribbon of Sacrifice",
+            "Drop: Opera Event (Karazhan)"
+          ],
+          "entities": [
+            {
+              "id": 28590,
+              "name": "Ribbon of Sacrifice",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice"
+            }
+          ],
+          "entity_id": 28590,
+          "entity_name": "Ribbon of Sacrifice",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice",
+          "item_id": 28590,
+          "item_name": "Ribbon of Sacrifice",
+          "item_url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice",
+          "rank_label": "Option",
+          "source_links": [],
+          "source_text": "Drop: Opera Event (Karazhan)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32486,
+                "name": "Ashtongue Talisman of Equilibrium",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Ashtongue Talisman of Equilibrium",
+            "Vendor: Okuno (Ashtongue Deathsworn Exalted)"
+          ],
+          "entities": [
+            {
+              "id": 32486,
+              "name": "Ashtongue Talisman of Equilibrium",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium"
+            }
+          ],
+          "entity_id": 32486,
+          "entity_name": "Ashtongue Talisman of Equilibrium",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium",
+          "item_id": 32486,
+          "item_name": "Ashtongue Talisman of Equilibrium",
+          "item_url": "https://www.wowhead.com/tbc/item=32486/ashtongue-talisman-of-equilibrium",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Okuno (Ashtongue Deathsworn Exalted)",
+              "reputation": "Ashtongue Deathsworn",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/druid-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23159/okuno",
+              "text": "Okuno"
+            }
+          ],
+          "source_text": "Vendor: Okuno (Ashtongue Deathsworn Exalted)"
         }
       ],
       "slot": "Trinket"
@@ -3619,7 +3577,7 @@
           "cells": [
             "PvP",
             "Gladiator's Salvation",
-            "Vendor: Arena Points (Season 1)"
+            "Vendor: Honor Points (Season 1)"
           ],
           "entities": [
             {
@@ -3638,7 +3596,7 @@
           "item_url": "https://www.wowhead.com/tbc/item=32451/gladiators-salvation",
           "rank_label": "PvP",
           "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
+          "source_text": "Vendor: Honor Points (Season 1)"
         },
         {
           "cell_entities": [
@@ -4184,6 +4142,43 @@
             [],
             [
               {
+                "id": 33736,
+                "name": "Vengeful Gladiator's Reprieve",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=33736/vengeful-gladiators-reprieve"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "PvP",
+            "Vengeful Gladiator's Reprieve",
+            "Vendor: Arena Points (Season 3)"
+          ],
+          "entities": [
+            {
+              "id": 33736,
+              "name": "Vengeful Gladiator's Reprieve",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=33736/vengeful-gladiators-reprieve"
+            }
+          ],
+          "entity_id": 33736,
+          "entity_name": "Vengeful Gladiator's Reprieve",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=33736/vengeful-gladiators-reprieve",
+          "item_id": 33736,
+          "item_name": "Vengeful Gladiator's Reprieve",
+          "item_url": "https://www.wowhead.com/tbc/item=33736/vengeful-gladiators-reprieve",
+          "rank_label": "PvP",
+          "source_links": [],
+          "source_text": "Vendor: Arena Points (Season 3)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 32961,
                 "name": "Merciless Gladiator's Reprieve",
                 "type": "item",
@@ -4355,33 +4350,33 @@
             [
               {
                 "id": 25643,
-                "name": "Harold's Rejuvenating Brooch",
+                "name": "Harold's Rejuvenating Broach",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-brooch"
+                "url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-broach"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Harold's Rejuvenating Brooch",
+            "Harold's Rejuvenating Broach",
             "Quest: The Ultimate Bloodsport"
           ],
           "entities": [
             {
               "id": 25643,
-              "name": "Harold's Rejuvenating Brooch",
+              "name": "Harold's Rejuvenating Broach",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-brooch"
+              "url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-broach"
             }
           ],
           "entity_id": 25643,
-          "entity_name": "Harold's Rejuvenating Brooch",
+          "entity_name": "Harold's Rejuvenating Broach",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-brooch",
+          "entity_url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-broach",
           "item_id": 25643,
-          "item_name": "Harold's Rejuvenating Brooch",
-          "item_url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-brooch",
+          "item_name": "Harold's Rejuvenating Broach",
+          "item_url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-broach",
           "rank_label": "Option",
           "source_links": [
             {
@@ -4395,6 +4390,6 @@
       "slot": "Idol"
     }
   ],
-  "title": "Burning Crusade Classic Restoration Druid Healing Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Restoration Druid Healing Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/druid-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

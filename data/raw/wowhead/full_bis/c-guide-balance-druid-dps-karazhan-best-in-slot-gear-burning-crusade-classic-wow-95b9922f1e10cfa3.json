@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:34+00:00",
+  "fetched_at": "2026-09-04T23:48:48+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -625,7 +625,7 @@
             [
               {
                 "id": 30925,
-                "name": "Spaulders of the Torn-Heart",
+                "name": "Spaulders of the Torn-heart",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
               }
@@ -634,23 +634,23 @@
           ],
           "cells": [
             "Option",
-            "Spaulders of the Torn-Heart",
+            "Spaulders of the Torn-heart",
             "Quest: The Cipher of Damnation - The Third Fragment Recovered"
           ],
           "entities": [
             {
               "id": 30925,
-              "name": "Spaulders of the Torn-Heart",
+              "name": "Spaulders of the Torn-heart",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
             }
           ],
           "entity_id": 30925,
-          "entity_name": "Spaulders of the Torn-Heart",
+          "entity_name": "Spaulders of the Torn-heart",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "item_id": 30925,
-          "item_name": "Spaulders of the Torn-Heart",
+          "item_name": "Spaulders of the Torn-heart",
           "item_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "rank_label": "Option",
           "source_links": [
@@ -1513,7 +1513,7 @@
             [
               {
                 "id": 28342,
-                "name": "Warp-Infused Drape",
+                "name": "Warp Infused Drape",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
               }
@@ -1522,23 +1522,23 @@
           ],
           "cells": [
             "Option",
-            "Warp-Infused Drape",
+            "Warp Infused Drape",
             "Drop: Warp Splinter (The Botanica)"
           ],
           "entities": [
             {
               "id": 28342,
-              "name": "Warp-Infused Drape",
+              "name": "Warp Infused Drape",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
             }
           ],
           "entity_id": 28342,
-          "entity_name": "Warp-Infused Drape",
+          "entity_name": "Warp Infused Drape",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape",
           "item_id": 28342,
-          "item_name": "Warp-Infused Drape",
+          "item_name": "Warp Infused Drape",
           "item_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape",
           "rank_label": "Option",
           "source_links": [
@@ -1629,16 +1629,6 @@
               "standing": "Honored",
               "standing_rank": 6,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Aldor"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Endarin (The Aldor Honored)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -3191,7 +3181,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
-              "reputation": "The Mag'har / Kurenai",
+              "reputation": "The Mag'har",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
+              "reputation": "Kurenai",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
               "standing": "Revered",
@@ -4182,7 +4182,7 @@
             [
               {
                 "id": 27758,
-                "name": "Hydra-Fang Necklace",
+                "name": "Hydra-fang Necklace",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=27758/hydra-fang-necklace"
               }
@@ -4191,23 +4191,23 @@
           ],
           "cells": [
             "Option",
-            "Hydra-Fang Necklace",
+            "Hydra-fang Necklace",
             "Drop: Ghaz'an (Heroic Underbog)"
           ],
           "entities": [
             {
               "id": 27758,
-              "name": "Hydra-Fang Necklace",
+              "name": "Hydra-fang Necklace",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=27758/hydra-fang-necklace"
             }
           ],
           "entity_id": 27758,
-          "entity_name": "Hydra-Fang Necklace",
+          "entity_name": "Hydra-fang Necklace",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=27758/hydra-fang-necklace",
           "item_id": 27758,
-          "item_name": "Hydra-Fang Necklace",
+          "item_name": "Hydra-fang Necklace",
           "item_url": "https://www.wowhead.com/tbc/item=27758/hydra-fang-necklace",
           "rank_label": "Option",
           "source_links": [
@@ -4825,16 +4825,6 @@
               "standing": "Exalted",
               "standing_rank": 8,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -5143,16 +5133,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -6149,16 +6129,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Aldor"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Endarin (The Aldor Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",

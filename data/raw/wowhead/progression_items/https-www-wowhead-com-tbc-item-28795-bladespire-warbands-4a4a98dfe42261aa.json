@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bladespire Warbands Phase 1 Item Level 125 Binds when picked up Wrist Plate 687 Armor +20 Strength +16 Stamina Blue Socket Red Socket Socket Bonus: +3 Strength Durability 55 / 55 Requires Level 70 Equip: Improves critical strike rating by 24. Sell Price: 4 62 94",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:58+00:00",
+  "inventory_slot": null,
+  "item_id": 28795,
+  "item_stats": {
+    "armor": 687,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 24.",
+        "stats": {
+          "crit_rating": 24.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 24."
+    ],
+    "id": 28795,
+    "item_level": 125,
+    "name": "Bladespire Warbands",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "strength": 3.0
+    },
+    "sockets": [
+      "blue",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 24.0,
+      "stamina": 16.0,
+      "strength": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28795/bladespire-warbands"
+  },
+  "name": "Bladespire Warbands",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28795/bladespire-warbands"
+}

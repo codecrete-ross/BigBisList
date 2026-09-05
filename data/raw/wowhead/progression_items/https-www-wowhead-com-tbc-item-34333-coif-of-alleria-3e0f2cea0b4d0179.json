@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Coif of Alleria Phase 5 Item Level 164 Binds when picked up Head Mail 929 Armor +43 Agility +45 Stamina +25 Intellect Red Socket Meta Socket Socket Bonus: +4 Agility Durability 85 / 85 Requires Level 70 Equip: Improves critical strike rating by 34. Equip: Increases attack power by 126. Equip: Your attacks ignore 182 of your opponent's armor. Sell Price: 7 29 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:37+00:00",
+  "inventory_slot": null,
+  "item_id": 34333,
+  "item_stats": {
+    "armor": 929,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 34.",
+        "stats": {
+          "crit_rating": 34.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 126.",
+        "stats": {
+          "attack_power": 126.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 182 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 34.",
+      "Equip: Increases attack power by 126.",
+      "Equip: Your attacks ignore 182 of your opponent's armor."
+    ],
+    "id": 34333,
+    "item_level": 164,
+    "name": "Coif of Alleria",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "agility": 4.0
+    },
+    "sockets": [
+      "red",
+      "meta"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 43.0,
+      "attack_power": 126.0,
+      "crit_rating": 34.0,
+      "intellect": 25.0,
+      "stamina": 45.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34333/coif-of-alleria"
+  },
+  "name": "Coif of Alleria",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34333/coif-of-alleria"
+}

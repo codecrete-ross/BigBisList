@@ -1,0 +1,45 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Recipe: Poached Bluefish Item Level 64 Requires Cooking (320) Use: Teaches you how to cook Poached Bluefish. Sell Price: 75 Poached Bluefish Item Level 65 Requires Level 55 Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and gain 23 Spell Damage and 20 Spirit for 30 min. Max Stack: 20 Sell Price: 1 50 Requires Icefin Bluefish",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:29+00:00",
+  "inventory_slot": null,
+  "item_id": 27698,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cook Poached Bluefish.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and gain 23 Spell Damage and 20 Spirit for 30 min. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 27698,
+    "item_level": 64,
+    "name": "Recipe: Poached Bluefish",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cook Poached Bluefish.",
+      "Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and gain 23 Spell Damage and 20 Spirit for 30 min. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27698"
+  },
+  "name": "Recipe: Poached Bluefish",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27698"
+}

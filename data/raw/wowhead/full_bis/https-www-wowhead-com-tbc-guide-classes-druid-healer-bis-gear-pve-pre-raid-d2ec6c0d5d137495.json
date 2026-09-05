@@ -1,13 +1,63 @@
 {
-  "fetched_at": "2026-05-24T04:24:37+00:00",
+  "content_phase": "T6",
+  "fetched_at": "2026-09-04T23:48:53+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "previous_verified_phase": "PR",
+  "recommendation_status": "unverified_phase",
   "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
       "heading": "Best in Slot Head Armor for Restoration Druid in TBC Classic Pre-Raid",
       "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32479,
+                "name": "Wonderheal XT40 Shades",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Wonderheal XT40 Shades",
+            "Profession: Engineering - BoP only"
+          ],
+          "entities": [
+            {
+              "id": 32479,
+              "name": "Wonderheal XT40 Shades",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades"
+            }
+          ],
+          "entity_id": 32479,
+          "entity_name": "Wonderheal XT40 Shades",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades",
+          "item_id": 32479,
+          "item_name": "Wonderheal XT40 Shades",
+          "item_url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Engineering - BoP only"
+        },
         {
           "cell_entities": [
             [],
@@ -22,7 +72,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Whitemend Hood",
             "Profession: Tailoring - can be purchased on the Auction House"
           ],
@@ -51,46 +101,9 @@
               "type": "profession"
             }
           ],
-          "rank_label": "BiS",
-          "source_links": [],
-          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31376,
-                "name": "Gladiator's Kodohide Helm",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31376/gladiators-kodohide-helm"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gladiator's Kodohide Helm",
-            "Vendor: Arena Points (Season 1)"
-          ],
-          "entities": [
-            {
-              "id": 31376,
-              "name": "Gladiator's Kodohide Helm",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31376/gladiators-kodohide-helm"
-            }
-          ],
-          "entity_id": 31376,
-          "entity_name": "Gladiator's Kodohide Helm",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31376/gladiators-kodohide-helm",
-          "item_id": 31376,
-          "item_name": "Gladiator's Kodohide Helm",
-          "item_url": "https://www.wowhead.com/tbc/item=31376/gladiators-kodohide-helm",
           "rank_label": "Option",
           "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
+          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
         },
         {
           "cell_entities": [
@@ -380,6 +393,100 @@
             [],
             [
               {
+                "id": 32583,
+                "name": "Shoulderpads of Renewed Life",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32583/shoulderpads-of-renewed-life"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Shoulderpads of Renewed Life",
+            "Profession: Leatherworking - BoP only"
+          ],
+          "entities": [
+            {
+              "id": 32583,
+              "name": "Shoulderpads of Renewed Life",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32583/shoulderpads-of-renewed-life"
+            }
+          ],
+          "entity_id": 32583,
+          "entity_name": "Shoulderpads of Renewed Life",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32583/shoulderpads-of-renewed-life",
+          "item_id": 32583,
+          "item_name": "Shoulderpads of Renewed Life",
+          "item_url": "https://www.wowhead.com/tbc/item=32583/shoulderpads-of-renewed-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Leatherworking - BoP only"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32585,
+                "name": "Swiftheal Mantle",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Swiftheal Mantle",
+            "Profession: Tailoring - BoP only"
+          ],
+          "entities": [
+            {
+              "id": 32585,
+              "name": "Swiftheal Mantle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle"
+            }
+          ],
+          "entity_id": 32585,
+          "entity_name": "Swiftheal Mantle",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle",
+          "item_id": 32585,
+          "item_name": "Swiftheal Mantle",
+          "item_url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Tailoring - BoP only"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 21874,
                 "name": "Primal Mooncloth Shoulders",
                 "type": "item",
@@ -389,7 +496,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Primal Mooncloth Shoulders",
             "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
           ],
@@ -427,7 +534,7 @@
               "type": "profession_specialization"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
         },
@@ -472,43 +579,6 @@
             }
           ],
           "source_text": "Drop: Grandmaster Vorpil (Shadow Labyrinth)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31378,
-                "name": "Gladiator's Kodohide Spaulders",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31378/gladiators-kodohide-spaulders"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gladiator's Kodohide Spaulders",
-            "Vendor: Arena Points (Season 1)"
-          ],
-          "entities": [
-            {
-              "id": 31378,
-              "name": "Gladiator's Kodohide Spaulders",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31378/gladiators-kodohide-spaulders"
-            }
-          ],
-          "entity_id": 31378,
-          "entity_name": "Gladiator's Kodohide Spaulders",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31378/gladiators-kodohide-spaulders",
-          "item_id": 31378,
-          "item_name": "Gladiator's Kodohide Spaulders",
-          "item_url": "https://www.wowhead.com/tbc/item=31378/gladiators-kodohide-spaulders",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
         }
       ],
       "slot": "Shoulder"
@@ -701,7 +771,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "White Remedy Cape",
             "Profession: Tailoring - can be purchased on the Auction House"
           ],
@@ -730,7 +800,7 @@
               "type": "profession"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
         },
@@ -775,14 +845,7 @@
             }
           ],
           "source_text": "Drop: Talon King Ikiss (Sethekk Halls)"
-        }
-      ],
-      "slot": "Back"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Back Armor for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -824,7 +887,14 @@
             }
           ],
           "source_text": "Drop: Patchwerk (Classic - Naxxramas)"
-        },
+        }
+      ],
+      "slot": "Back"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Back Armor for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -1075,43 +1145,6 @@
             [],
             [
               {
-                "id": 31379,
-                "name": "Gladiator's Kodohide Tunic",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31379/gladiators-kodohide-tunic"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gladiator's Kodohide Tunic",
-            "Vendor: Arena Points (Season 1)"
-          ],
-          "entities": [
-            {
-              "id": 31379,
-              "name": "Gladiator's Kodohide Tunic",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31379/gladiators-kodohide-tunic"
-            }
-          ],
-          "entity_id": 31379,
-          "entity_name": "Gladiator's Kodohide Tunic",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31379/gladiators-kodohide-tunic",
-          "item_id": 31379,
-          "item_name": "Gladiator's Kodohide Tunic",
-          "item_url": "https://www.wowhead.com/tbc/item=31379/gladiators-kodohide-tunic",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 28230,
                 "name": "Hallowed Garments",
                 "type": "item",
@@ -1148,14 +1181,7 @@
             }
           ],
           "source_text": "Drop: Murmur (Shadow Labyrinth)"
-        }
-      ],
-      "slot": "Chest"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Chest Armor for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -1197,7 +1223,14 @@
             }
           ],
           "source_text": "Drop: Pathaleon the Calculator (The Mechanar)"
-        },
+        }
+      ],
+      "slot": "Chest"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Chest Armor for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -1392,6 +1425,100 @@
             [],
             [
               {
+                "id": 32584,
+                "name": "Swiftheal Wraps",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Swiftheal Wraps",
+            "Profession: Tailoring - can be purchased on the Auction House"
+          ],
+          "entities": [
+            {
+              "id": 32584,
+              "name": "Swiftheal Wraps",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps"
+            }
+          ],
+          "entity_id": 32584,
+          "entity_name": "Swiftheal Wraps",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps",
+          "item_id": 32584,
+          "item_name": "Swiftheal Wraps",
+          "item_url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32582,
+                "name": "Bracers of Renewed Life",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Bracers of Renewed Life",
+            "Profession: Leatherworking - can be purchased on the Auction House"
+          ],
+          "entities": [
+            {
+              "id": 32582,
+              "name": "Bracers of Renewed Life",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life"
+            }
+          ],
+          "entity_id": 32582,
+          "entity_name": "Bracers of Renewed Life",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life",
+          "item_id": 32582,
+          "item_name": "Bracers of Renewed Life",
+          "item_url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 29183,
                 "name": "Bindings of the Timewalker",
                 "type": "item",
@@ -1401,7 +1528,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Bindings of the Timewalker",
             "Vendor: Alurmi (Keepers of Time Exalted)"
           ],
@@ -1432,7 +1559,7 @@
               "type": "reputation"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=21643/alurmi",
@@ -1455,7 +1582,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Windhawk Bracers",
             "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
           ],
@@ -1493,7 +1620,7 @@
               "type": "profession_specialization"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
         }
@@ -1634,43 +1761,6 @@
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31599,
-                "name": "Marshal's Kodohide Bracers",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31599/marshals-kodohide-bracers"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Marshal's Kodohide Bracers",
-            "Vendor: Honor Points (PvP)"
-          ],
-          "entities": [
-            {
-              "id": 31599,
-              "name": "Marshal's Kodohide Bracers",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31599/marshals-kodohide-bracers"
-            }
-          ],
-          "entity_id": 31599,
-          "entity_name": "Marshal's Kodohide Bracers",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31599/marshals-kodohide-bracers",
-          "item_id": 31599,
-          "item_name": "Marshal's Kodohide Bracers",
-          "item_url": "https://www.wowhead.com/tbc/item=31599/marshals-kodohide-bracers",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Vendor: Honor Points (PvP)"
         },
         {
           "cell_entities": [
@@ -1865,43 +1955,6 @@
             [],
             [
               {
-                "id": 31375,
-                "name": "Gladiator's Kodohide Gloves",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31375/gladiators-kodohide-gloves"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gladiator's Kodohide Gloves",
-            "Vendor: Arena Points (Season 1)"
-          ],
-          "entities": [
-            {
-              "id": 31375,
-              "name": "Gladiator's Kodohide Gloves",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31375/gladiators-kodohide-gloves"
-            }
-          ],
-          "entity_id": 31375,
-          "entity_name": "Gladiator's Kodohide Gloves",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31375/gladiators-kodohide-gloves",
-          "item_id": 31375,
-          "item_name": "Gladiator's Kodohide Gloves",
-          "item_url": "https://www.wowhead.com/tbc/item=31375/gladiators-kodohide-gloves",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 24393,
                 "name": "Bloody Surgeon's Mitts",
                 "type": "item",
@@ -1938,21 +1991,14 @@
             }
           ],
           "source_text": "Drop: Broggok (The Blood Furnace)"
-        }
-      ],
-      "slot": "Hands"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Hand Armor for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
             [
               {
                 "id": 29327,
-                "name": "Cryo-Mitts",
+                "name": "Cryo-mitts",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
               }
@@ -1961,23 +2007,23 @@
           ],
           "cells": [
             "Option",
-            "Cryo-Mitts",
+            "Cryo-mitts",
             "Quest: Someone Else's Hard Work Pays Off (Mana-Tombs)"
           ],
           "entities": [
             {
               "id": 29327,
-              "name": "Cryo-Mitts",
+              "name": "Cryo-mitts",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
             }
           ],
           "entity_id": 29327,
-          "entity_name": "Cryo-Mitts",
+          "entity_name": "Cryo-mitts",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts",
           "item_id": 29327,
-          "item_name": "Cryo-Mitts",
+          "item_name": "Cryo-mitts",
           "item_url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts",
           "rank_label": "Option",
           "source_links": [
@@ -2029,7 +2075,14 @@
             }
           ],
           "source_text": "Drop: Avatar of the Martyred (Auchenai Crypts)"
-        },
+        }
+      ],
+      "slot": "Hands"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Hand Armor for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -2266,6 +2319,53 @@
             [],
             [
               {
+                "id": 30036,
+                "name": "Belt of the Long Road",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Belt of the Long Road",
+            "Profession: Tailoring - can be purchased on the Auction House"
+          ],
+          "entities": [
+            {
+              "id": 30036,
+              "name": "Belt of the Long Road",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road"
+            }
+          ],
+          "entity_id": 30036,
+          "entity_name": "Belt of the Long Road",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road",
+          "item_id": 30036,
+          "item_name": "Belt of the Long Road",
+          "item_url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "Option",
+          "source_links": [],
+          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 29524,
                 "name": "Windhawk Belt",
                 "type": "item",
@@ -2366,43 +2466,6 @@
       "data_family": "bis_lists",
       "heading": "Best in Slot Waist Armor for Restoration Druid in TBC Classic Pre-Raid",
       "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31594,
-                "name": "General's Kodohide Belt",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31594/generals-kodohide-belt"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "General's Kodohide Belt",
-            "Vendor: Honor Points (PvP)"
-          ],
-          "entities": [
-            {
-              "id": 31594,
-              "name": "General's Kodohide Belt",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31594/generals-kodohide-belt"
-            }
-          ],
-          "entity_id": 31594,
-          "entity_name": "General's Kodohide Belt",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31594/generals-kodohide-belt",
-          "item_id": 31594,
-          "item_name": "General's Kodohide Belt",
-          "item_url": "https://www.wowhead.com/tbc/item=31594/generals-kodohide-belt",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Vendor: Honor Points (PvP)"
-        },
         {
           "cell_entities": [
             [],
@@ -2620,6 +2683,48 @@
             [],
             [
               {
+                "id": 30543,
+                "name": "Pontifex Kilt",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30543/pontifex-kilt"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Pontifex Kilt",
+            "Drop: Warlord Kalithresh (Heroic The Steamvault)"
+          ],
+          "entities": [
+            {
+              "id": 30543,
+              "name": "Pontifex Kilt",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30543/pontifex-kilt"
+            }
+          ],
+          "entity_id": 30543,
+          "entity_name": "Pontifex Kilt",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30543/pontifex-kilt",
+          "item_id": 30543,
+          "item_name": "Pontifex Kilt",
+          "item_url": "https://www.wowhead.com/tbc/item=30543/pontifex-kilt",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17798/warlord-kalithresh",
+              "text": "Warlord Kalithresh"
+            }
+          ],
+          "source_text": "Drop: Warlord Kalithresh (Heroic The Steamvault)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 24261,
                 "name": "Whitemend Pants",
                 "type": "item",
@@ -2667,48 +2772,6 @@
             [],
             [
               {
-                "id": 30543,
-                "name": "Pontifex Kilt",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30543/pontifex-kilt"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Pontifex Kilt",
-            "Drop: Warlord Kalithresh (Heroic The Steamvault)"
-          ],
-          "entities": [
-            {
-              "id": 30543,
-              "name": "Pontifex Kilt",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30543/pontifex-kilt"
-            }
-          ],
-          "entity_id": 30543,
-          "entity_name": "Pontifex Kilt",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30543/pontifex-kilt",
-          "item_id": 30543,
-          "item_name": "Pontifex Kilt",
-          "item_url": "https://www.wowhead.com/tbc/item=30543/pontifex-kilt",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17798/warlord-kalithresh",
-              "text": "Warlord Kalithresh"
-            }
-          ],
-          "source_text": "Drop: Warlord Kalithresh (Heroic The Steamvault)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 31343,
                 "name": "Kamaei's Cerulean Skirt",
                 "type": "item",
@@ -2718,7 +2781,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Kamaei's Cerulean Skirt",
             "Drop: World Drop"
           ],
@@ -2737,17 +2800,10 @@
           "item_id": 31343,
           "item_name": "Kamaei's Cerulean Skirt",
           "item_url": "https://www.wowhead.com/tbc/item=31343/kamaeis-cerulean-skirt",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [],
           "source_text": "Drop: World Drop"
-        }
-      ],
-      "slot": "Legs"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Leg Armor for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2789,7 +2845,14 @@
             }
           ],
           "source_text": "Drop: Captain Skarloc (Heroic Old Hillsbrad Foothills)"
-        },
+        }
+      ],
+      "slot": "Legs"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Leg Armor for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -2959,33 +3022,33 @@
             [
               {
                 "id": 31335,
-                "name": "Kilt of Living Growth",
+                "name": "Pants of Living Growth",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth"
+                "url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Kilt of Living Growth",
+            "Pants of Living Growth",
             "Drop: World Drop"
           ],
           "entities": [
             {
               "id": 31335,
-              "name": "Kilt of Living Growth",
+              "name": "Pants of Living Growth",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth"
+              "url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth"
             }
           ],
           "entity_id": 31335,
-          "entity_name": "Kilt of Living Growth",
+          "entity_name": "Pants of Living Growth",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth",
+          "entity_url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth",
           "item_id": 31335,
-          "item_name": "Kilt of Living Growth",
-          "item_url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth",
+          "item_name": "Pants of Living Growth",
+          "item_url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth",
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Drop: World Drop"
@@ -3122,14 +3185,44 @@
             }
           ],
           "source_text": "Drop: Exarch Maladaar (Auchenai Crypts)"
-        }
-      ],
-      "slot": "Feet"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Feet Armor for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33886,
+                "name": "Vindicator's Kodohide Boots",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=33886/vindicators-kodohide-boots"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Vindicator's Kodohide Boots",
+            "Vendor: Honor Points (Season 3)"
+          ],
+          "entities": [
+            {
+              "id": 33886,
+              "name": "Vindicator's Kodohide Boots",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=33886/vindicators-kodohide-boots"
+            }
+          ],
+          "entity_id": 33886,
+          "entity_name": "Vindicator's Kodohide Boots",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=33886/vindicators-kodohide-boots",
+          "item_id": 33886,
+          "item_name": "Vindicator's Kodohide Boots",
+          "item_url": "https://www.wowhead.com/tbc/item=33886/vindicators-kodohide-boots",
+          "rank_label": "Option",
+          "source_links": [],
+          "source_text": "Vendor: Honor Points (Season 3)"
+        },
         {
           "cell_entities": [
             [],
@@ -3213,44 +3306,14 @@
             }
           ],
           "source_text": "Quest: Fel Embers (The Shattered Halls)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31595,
-                "name": "General's Kodohide Boots",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31595/generals-kodohide-boots"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "General's Kodohide Boots",
-            "Vendor: Honor Points (PvP)"
-          ],
-          "entities": [
-            {
-              "id": 31595,
-              "name": "General's Kodohide Boots",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31595/generals-kodohide-boots"
-            }
-          ],
-          "entity_id": 31595,
-          "entity_name": "General's Kodohide Boots",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31595/generals-kodohide-boots",
-          "item_id": 31595,
-          "item_name": "General's Kodohide Boots",
-          "item_url": "https://www.wowhead.com/tbc/item=31595/generals-kodohide-boots",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Vendor: Honor Points (PvP)"
-        },
+        }
+      ],
+      "slot": "Feet"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Feet Armor for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -3347,6 +3410,43 @@
             [],
             [
               {
+                "id": 33922,
+                "name": "Vindicator's Pendant of Salvation",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=33922/vindicators-pendant-of-salvation"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Vindicator's Pendant of Salvation",
+            "Vendor: Honor Points (Season 3)"
+          ],
+          "entities": [
+            {
+              "id": 33922,
+              "name": "Vindicator's Pendant of Salvation",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=33922/vindicators-pendant-of-salvation"
+            }
+          ],
+          "entity_id": 33922,
+          "entity_name": "Vindicator's Pendant of Salvation",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=33922/vindicators-pendant-of-salvation",
+          "item_id": 33922,
+          "item_name": "Vindicator's Pendant of Salvation",
+          "item_url": "https://www.wowhead.com/tbc/item=33922/vindicators-pendant-of-salvation",
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Vendor: Honor Points (Season 3)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 30377,
                 "name": "Karja's Medallion",
                 "type": "item",
@@ -3356,7 +3456,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Karja's Medallion",
             "Quest: Shutting Down Manaforge Ara"
           ],
@@ -3375,7 +3475,7 @@
           "item_id": 30377,
           "item_name": "Karja's Medallion",
           "item_url": "https://www.wowhead.com/tbc/item=30377/karjas-medallion",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10323/shutting-down-manaforge-ara",
@@ -3398,7 +3498,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Natasha's Guardian Cord",
             "Quest: The Hound-Master"
           ],
@@ -3417,7 +3517,7 @@
           "item_id": 31691,
           "item_name": "Natasha's Guardian Cord",
           "item_url": "https://www.wowhead.com/tbc/item=31691/natashas-guardian-cord",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10912/the-hound-master",
@@ -3425,14 +3525,7 @@
             }
           ],
           "source_text": "Quest: The Hound-Master"
-        }
-      ],
-      "slot": "Neck"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Neck Jewelry for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -3474,7 +3567,14 @@
             }
           ],
           "source_text": "Vendor: G'eras (Badges of Justice)"
-        },
+        }
+      ],
+      "slot": "Neck"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Neck Jewelry for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -3741,7 +3841,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
-              "reputation": "Thrallmar / Honor Hold",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
+              "reputation": "Honor Hold",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
               "standing": "Revered",
@@ -3761,14 +3871,7 @@
             }
           ],
           "source_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)"
-        }
-      ],
-      "slot": "Ring"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Ring Jewelry for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -3810,7 +3913,14 @@
             }
           ],
           "source_text": "Vendor: G'eras (Badges of Justice)"
-        },
+        }
+      ],
+      "slot": "Ring"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Ring Jewelry for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -4253,104 +4363,42 @@
             [],
             [
               {
-                "id": 30841,
-                "name": "Lower City Prayerbook",
+                "id": 25634,
+                "name": "Oshu'gun Relic",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook"
+                "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
               }
             ],
             []
           ],
           "cells": [
             "BiS",
-            "Lower City Prayerbook",
-            "Vendor: Nakodu (Lower City Revered)"
+            "Oshu'gun Relic",
+            "Quest: Gava'xi"
           ],
           "entities": [
             {
-              "id": 30841,
-              "name": "Lower City Prayerbook",
+              "id": 25634,
+              "name": "Oshu'gun Relic",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook"
+              "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
             }
           ],
-          "entity_id": 30841,
-          "entity_name": "Lower City Prayerbook",
+          "entity_id": 25634,
+          "entity_name": "Oshu'gun Relic",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
-          "item_id": 30841,
-          "item_name": "Lower City Prayerbook",
-          "item_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Nakodu (Lower City Revered)",
-              "reputation": "Lower City",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
-              "standing": "Revered",
-              "standing_rank": 7,
-              "type": "reputation"
-            }
-          ],
+          "entity_url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic",
+          "item_id": 25634,
+          "item_name": "Oshu'gun Relic",
+          "item_url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic",
           "rank_label": "BiS",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=21655/nakodu",
-              "text": "Nakodu"
+              "href": "https://www.wowhead.com/tbc/quest=9900/gavaxi",
+              "text": "Gava'xi"
             }
           ],
-          "source_text": "Vendor: Nakodu (Lower City Revered)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 19395,
-                "name": "Rejuvenating Gem",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Rejuvenating Gem",
-            "Drop: Flamegor , Firemaw , & Ebonroc (Classic - Blackwing Lair)"
-          ],
-          "entities": [
-            {
-              "id": 19395,
-              "name": "Rejuvenating Gem",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem"
-            }
-          ],
-          "entity_id": 19395,
-          "entity_name": "Rejuvenating Gem",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
-          "item_id": 19395,
-          "item_name": "Rejuvenating Gem",
-          "item_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=11981/flamegor",
-              "text": "Flamegor"
-            },
-            {
-              "href": "https://www.wowhead.com/tbc/npc=11983/firemaw",
-              "text": "Firemaw"
-            },
-            {
-              "href": "https://www.wowhead.com/tbc/npc=14601/ebonroc",
-              "text": "Ebonroc"
-            }
-          ],
-          "source_text": "Drop: Flamegor , Firemaw , & Ebonroc (Classic - Blackwing Lair)"
+          "source_text": "Quest: Gava'xi"
         },
         {
           "cell_entities": [
@@ -4393,6 +4441,60 @@
             }
           ],
           "source_text": "Drop: Sapphiron (Classic - Naxxramas)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30841,
+                "name": "Lower City Prayerbook",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Lower City Prayerbook",
+            "Vendor: Nakodu (Lower City Revered)"
+          ],
+          "entities": [
+            {
+              "id": 30841,
+              "name": "Lower City Prayerbook",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook"
+            }
+          ],
+          "entity_id": 30841,
+          "entity_name": "Lower City Prayerbook",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+          "item_id": 30841,
+          "item_name": "Lower City Prayerbook",
+          "item_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Nakodu (Lower City Revered)",
+              "reputation": "Lower City",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=21655/nakodu",
+              "text": "Nakodu"
+            }
+          ],
+          "source_text": "Vendor: Nakodu (Lower City Revered)"
         }
       ],
       "slot": "Trinket"
@@ -4401,6 +4503,56 @@
       "data_family": "bis_lists",
       "heading": "Best in Slot Trinkets for Restoration Druid in TBC Classic Pre-Raid",
       "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 19395,
+                "name": "Rejuvenating Gem",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Rejuvenating Gem",
+            "Drop: Flamegor , Firemaw , & Ebonroc (Classic - Blackwing Lair)"
+          ],
+          "entities": [
+            {
+              "id": 19395,
+              "name": "Rejuvenating Gem",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem"
+            }
+          ],
+          "entity_id": 19395,
+          "entity_name": "Rejuvenating Gem",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+          "item_id": 19395,
+          "item_name": "Rejuvenating Gem",
+          "item_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=11981/flamegor",
+              "text": "Flamegor"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/npc=11983/firemaw",
+              "text": "Firemaw"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/npc=14601/ebonroc",
+              "text": "Ebonroc"
+            }
+          ],
+          "source_text": "Drop: Flamegor , Firemaw , & Ebonroc (Classic - Blackwing Lair)"
+        },
         {
           "cell_entities": [
             [],
@@ -4442,48 +4594,6 @@
             }
           ],
           "source_text": "Drop: Aeonus (The Black Morass)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 25634,
-                "name": "Oshu'gun Relic",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Oshu'gun Relic",
-            "Quest: Gava'xi"
-          ],
-          "entities": [
-            {
-              "id": 25634,
-              "name": "Oshu'gun Relic",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic"
-            }
-          ],
-          "entity_id": 25634,
-          "entity_name": "Oshu'gun Relic",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic",
-          "item_id": 25634,
-          "item_name": "Oshu'gun Relic",
-          "item_url": "https://www.wowhead.com/tbc/item=25634/oshugun-relic",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/quest=9900/gavaxi",
-              "text": "Gava'xi"
-            }
-          ],
-          "source_text": "Quest: Gava'xi"
         },
         {
           "cell_entities": [
@@ -4550,7 +4660,7 @@
           "cells": [
             "BiS",
             "Gladiator's Salvation",
-            "Vendor: Arena Points (Season 1)"
+            "Vendor: Honor Points (Season 1)"
           ],
           "entities": [
             {
@@ -4569,7 +4679,7 @@
           "item_url": "https://www.wowhead.com/tbc/item=32451/gladiators-salvation",
           "rank_label": "BiS",
           "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
+          "source_text": "Vendor: Honor Points (Season 1)"
         },
         {
           "cell_entities": [
@@ -4659,14 +4769,7 @@
             }
           ],
           "source_text": "Drop: Murmur (Heroic Shadow Labyrinth)"
-        }
-      ],
-      "slot": "Weapon"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Weapons for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -4720,7 +4823,14 @@
             }
           ],
           "source_text": "Vendor: Almaador (The Sha'tar Exalted)"
-        },
+        }
+      ],
+      "slot": "Weapon"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Weapons for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -5097,16 +5207,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/healer-bis-gear-pve-pre-raid",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -5223,7 +5323,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Windcaller's Orb",
             "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)"
           ],
@@ -5254,7 +5354,7 @@
               "type": "reputation"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17904/fedryen-swiftspear",
@@ -5262,14 +5362,7 @@
             }
           ],
           "source_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)"
-        }
-      ],
-      "slot": "Off Hand"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Offhands for Restoration Druid in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -5353,7 +5446,14 @@
             }
           ],
           "source_text": "Drop: Noth the Plaguebringer (Classic - Naxxramas)"
-        },
+        }
+      ],
+      "slot": "Off Hand"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Offhands for Restoration Druid in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -5619,33 +5719,33 @@
             [
               {
                 "id": 25643,
-                "name": "Harold's Rejuvenating Brooch",
+                "name": "Harold's Rejuvenating Broach",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-brooch"
+                "url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-broach"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Harold's Rejuvenating Brooch",
+            "Harold's Rejuvenating Broach",
             "Quest: The Ultimate Bloodsport"
           ],
           "entities": [
             {
               "id": 25643,
-              "name": "Harold's Rejuvenating Brooch",
+              "name": "Harold's Rejuvenating Broach",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-brooch"
+              "url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-broach"
             }
           ],
           "entity_id": 25643,
-          "entity_name": "Harold's Rejuvenating Brooch",
+          "entity_name": "Harold's Rejuvenating Broach",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-brooch",
+          "entity_url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-broach",
           "item_id": 25643,
-          "item_name": "Harold's Rejuvenating Brooch",
-          "item_url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-brooch",
+          "item_name": "Harold's Rejuvenating Broach",
+          "item_url": "https://www.wowhead.com/tbc/item=25643/harolds-rejuvenating-broach",
           "rank_label": "Option",
           "source_links": [
             {

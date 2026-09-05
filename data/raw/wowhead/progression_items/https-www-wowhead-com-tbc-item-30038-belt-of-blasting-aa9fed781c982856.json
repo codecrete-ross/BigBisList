@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Belt of Blasting Phase 2 Item Level 128 Binds when equipped Waist Cloth 121 Armor Blue Socket Yellow Socket Socket Bonus: +4 Spell Damage and Healing Durability 35 / 35 Requires Level 70 Equip: Improves spell hit rating by 23. Equip: Improves spell critical strike rating by 30. Equip: Increases damage and healing done by magical spells and effects by up to 50. Sell Price: 2 68 81",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:28+00:00",
+  "inventory_slot": null,
+  "item_id": 30038,
+  "item_stats": {
+    "armor": 121,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 23.",
+        "stats": {
+          "spell_hit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 30.",
+        "stats": {
+          "spell_crit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 50.",
+        "stats": {
+          "spell_power": 50.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 23.",
+      "Equip: Improves spell critical strike rating by 30.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 50."
+    ],
+    "id": 30038,
+    "item_level": 128,
+    "name": "Belt of Blasting",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 30.0,
+      "spell_hit_rating": 23.0,
+      "spell_power": 50.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30038/belt-of-blasting"
+  },
+  "name": "Belt of Blasting",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30038/belt-of-blasting"
+}

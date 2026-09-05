@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Onslaught Shoulderblades Phase 3 Item Level 146 Binds when picked up Shoulder Plate 1369 Armor +39 Strength +39 Agility +34 Stamina Yellow Socket Blue Socket Socket Bonus: +3 Critical Strike Rating Durability 100 / 100 Classes: Warrior Requires Level 70 Equip: Your attacks ignore 91 of your opponent's armor. Onslaught Battlegear (0/8) Onslaught Battle-Helm Onslaught Breastplate Onslaught Gauntlets Onslaught Greaves Onslaught Shoulderblades Onslaught Belt Onslaught Bracers Onslaught Treads (2) Set : Reduces the rage cost of your Execute ability by 3. (4) Set : Increases the damage of your Mortal Strike and Bloodthirst abilities by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:43+00:00",
+  "inventory_slot": null,
+  "item_id": 30979,
+  "item_stats": {
+    "armor": 1369,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your attacks ignore 91 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your attacks ignore 91 of your opponent's armor."
+    ],
+    "id": 30979,
+    "item_level": 146,
+    "name": "Onslaught Shoulderblades",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 39.0,
+      "stamina": 34.0,
+      "strength": 39.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades"
+  },
+  "name": "Onslaught Shoulderblades",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades"
+}

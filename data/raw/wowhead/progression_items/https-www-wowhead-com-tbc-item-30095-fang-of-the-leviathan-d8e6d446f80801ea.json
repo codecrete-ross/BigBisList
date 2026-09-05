@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fang of the Leviathan Phase 2 Item Level 134 Binds when picked up Unique Main Hand Sword 21 - 126 Damage Speed 1.80 (40.83 damage per second) +28 Stamina +20 Intellect Durability 105 / 105 Requires Level 70 Equip: Improves spell critical strike rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 221. Sell Price: 12 87 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:36+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 30095,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 40.83,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 21.",
+        "stats": {
+          "spell_crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 221.",
+        "stats": {
+          "spell_power": 221.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 221."
+    ],
+    "id": 30095,
+    "item_level": 134,
+    "name": "Fang of the Leviathan",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 20.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 221.0,
+      "stamina": 28.0
+    },
+    "weapon_max_damage": 126,
+    "weapon_min_damage": 21,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30095/fang-of-the-leviathan"
+  },
+  "name": "Fang of the Leviathan",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30095/fang-of-the-leviathan"
+}

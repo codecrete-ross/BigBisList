@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brutal Gladiator's Shield Wall Phase 5 Item Level 159 Binds when picked up Off Hand Shield 6662 Armor 185 Block +67 Stamina Durability 120 / 120 Requires Level 70 Equip: Improves your resilience rating by 31.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:32+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 35094,
+  "item_stats": {
+    "armor": 6662,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your resilience rating by 31.",
+        "stats": {
+          "resilience_rating": 31.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your resilience rating by 31."
+    ],
+    "id": 35094,
+    "item_level": 159,
+    "name": "Brutal Gladiator's Shield Wall",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "resilience_rating": 31.0,
+      "stamina": 67.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35094/brutal-gladiators-shield-wall"
+  },
+  "name": "Brutal Gladiator's Shield Wall",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35094/brutal-gladiators-shield-wall"
+}

@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Breastplate of the Bold Phase 1 Item Level 115 Binds when picked up Chest Plate 1164 Armor +23 Strength +21 Agility +33 Stamina Red Socket Red Socket Blue Socket Socket Bonus: +4 Defense Rating Durability 135 / 135 Requires Level 70 Equip: Increases defense rating by 19. Bold Armor (0/5) Breastplate of the Bold Gauntlets of the Bold Legplates of the Bold Shoulderguards of the Bold Warhelm of the Bold (2) Set : All of your shout abilities cost 2 less rage. (4) Set : Your Charge ability generates an additional 5 rage. Sell Price: 6 12 32",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:01+00:00",
+  "inventory_slot": null,
+  "item_id": 28205,
+  "item_stats": {
+    "armor": 1164,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases defense rating by 19.",
+        "stats": {
+          "defense_rating": 19.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 19."
+    ],
+    "id": 28205,
+    "item_level": 115,
+    "name": "Breastplate of the Bold",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "defense_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 21.0,
+      "defense_rating": 19.0,
+      "stamina": 33.0,
+      "strength": 23.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28205/breastplate-of-the-bold"
+  },
+  "name": "Breastplate of the Bold",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28205/breastplate-of-the-bold"
+}

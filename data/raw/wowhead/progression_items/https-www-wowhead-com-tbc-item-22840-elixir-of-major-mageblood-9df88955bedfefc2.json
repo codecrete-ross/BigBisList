@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Major Mageblood Item Level 71 Requires Level 60 Use: Regenerate 16 mana per 5 sec for 1 hour. Guardian Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:08+00:00",
+  "inventory_slot": null,
+  "item_id": 22840,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Regenerate 16 mana per 5 sec for 1 hour. Guardian Elixir. (3 Sec Cooldown) Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 22840,
+    "item_level": 71,
+    "name": "Elixir of Major Mageblood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Regenerate 16 mana per 5 sec for 1 hour. Guardian Elixir. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22840/elixir-of-major-mageblood"
+  },
+  "name": "Elixir of Major Mageblood",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22840/elixir-of-major-mageblood"
+}

@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Avian Cloak of Feathers Phase 1 Item Level 115 Binds when picked up Back 78 Armor +18 Intellect +12 Spirit Requires Level 68 Equip: Restores 5 mana per 5 sec. Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects. Sell Price: 2 69 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:49+00:00",
+  "inventory_slot": null,
+  "item_id": 27946,
+  "item_stats": {
+    "armor": 78,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores 5 mana per 5 sec.",
+        "stats": {
+          "mp5": 5.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 42.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Restores 5 mana per 5 sec.",
+      "Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects."
+    ],
+    "id": 27946,
+    "item_level": 115,
+    "name": "Avian Cloak of Feathers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 42.0,
+      "intellect": 18.0,
+      "mp5": 5.0,
+      "spirit": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27946/avian-cloak-of-feathers"
+  },
+  "name": "Avian Cloak of Feathers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27946/avian-cloak-of-feathers"
+}

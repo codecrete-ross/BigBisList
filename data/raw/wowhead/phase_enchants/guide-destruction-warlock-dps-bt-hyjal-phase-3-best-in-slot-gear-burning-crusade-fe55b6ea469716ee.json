@@ -1,0 +1,262 @@
+{
+  "bindings": [
+    {
+      "class": "Warlock",
+      "phase": "T6",
+      "spec": "Destruction"
+    },
+    {
+      "class": "Warlock",
+      "phase": "T6",
+      "spec": "Destruction fire"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29191,
+            "name": "Glyph of Power",
+            "type": "item"
+          },
+          "equipment_item_id": 31051,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35447
+        },
+        {
+          "equipment_item_id": 31054,
+          "slot": "Shoulder",
+          "spell_id": 29467
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 30107,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 31053,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 32239,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27917,
+            "name": "Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32586,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27917
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 31050,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 25084,
+            "name": "Enchant Cloak - Subtlety",
+            "type": "spell"
+          },
+          "equipment_item_id": 32524,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25084
+        },
+        {
+          "entity": {
+            "id": 27982,
+            "name": "Enchant Weapon - Soulfrost",
+            "type": "spell"
+          },
+          "equipment_item_id": 32374,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Two Hand",
+          "spell_id": 27982
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Setup",
+      "planner": "warlock/orc/A0YT8hUAMBMyAB9QUABRIgBRBTEF8IFAeUuKdwCFrCB92gIAfl2DQHlOcxsAfdcgfdqFYHWbbTgAfcQgfcRAfcQGQHioAH3aIH3XhyB5TXqMAH3aiEB974TYAH3EIH3EiQB_Sm0NiiB5SoTNAH3aCwB_DwwAfw8NAFqnDgB-448Afwxh_JAAfnZtThIAdR4"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29191,
+            "name": "Glyph of Power",
+            "type": "item"
+          },
+          "equipment_item_id": 31051,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35447
+        },
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "equipment_item_id": 31054,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 31052,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30916,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 32239,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27917,
+            "name": "Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32586,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27917
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 31050,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 25084,
+            "name": "Enchant Cloak - Subtlety",
+            "type": "spell"
+          },
+          "equipment_item_id": 32331,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25084
+        },
+        {
+          "entity": {
+            "id": 27982,
+            "name": "Enchant Weapon - Soulfrost",
+            "type": "spell"
+          },
+          "equipment_item_id": 32374,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Two Hand",
+          "spell_id": 27982
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Alternative Example",
+      "planner": "warlock/orc/A0YT8hUAMBMyAB9QUABRIgBRBTEF8IFAeUuKdwCFrCB92gIAdT-DQHlOik4AfdcgfdqFYHlMbTgAfcQgfcRAfcQGQHVWAH3XIH3ah2B4xHqMAH3EIH3EQH3EiEB974TYAH3EIH3EiQB_Sm0NiiB5SoTNAH3ECwByeQwAfw8NAFqnDgB-448Afkth_JAAfnZtThIAdR4"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Destruction Warlock DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 3?",
+      "text": "The Aldor has the better enchant, but there is a very small difference between the two;  is about a 1-2 DPS increase compared to . And  is a special neck that changes proc based on faction alignment. This neck only becomes available by Phase 5, and in this phase, there will be better alternatives, so this is unlikely to affect your decision."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28909,
+            "name": "Greater Inscription of the Orb",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35437
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Destruction Warlock DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 3?",
+      "text": "The Aldor has the better enchant, but there is a very small difference between the two;  is about a 1-2 DPS increase compared to . And  is a special neck that changes proc based on faction alignment. This neck only becomes available by Phase 5, and in this phase, there will be better alternatives, so this is unlikely to affect your decision."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:10+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Destruction Warlock DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/destruction-warlock-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

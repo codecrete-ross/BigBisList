@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Glowing Crystal Insignia Item Level 96 Binds when picked up Trinket Equip: Increases damage and healing done by magical spells and effects by up to 26. Use: Increases damage and healing done by magical spells and effects by up to 104 for 20 sec. (2 Min Cooldown) Sell Price: 70",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:01+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 25619,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
+        "stats": {
+          "spell_power": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases damage and healing done by magical spells and effects by up to 104 for 20 sec. (2 Min Cooldown)",
+        "stats": {
+          "spell_power": 104.0
+        },
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 26."
+    ],
+    "id": 25619,
+    "item_level": 96,
+    "name": "Glowing Crystal Insignia",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 26.0
+    },
+    "use_effects": [
+      "Use: Increases damage and healing done by magical spells and effects by up to 104 for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25619/glowing-crystal-insignia"
+  },
+  "name": "Glowing Crystal Insignia",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25619/glowing-crystal-insignia"
+}

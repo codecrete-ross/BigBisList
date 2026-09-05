@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Onslaught Bracers Phase 5 Item Level 154 Binds when picked up Wrist Plate 841 Armor +33 Strength Red Socket Socket Bonus: +3 Stamina Durability 55 / 55 Classes: Warrior Requires Level 70 Equip: Improves hit rating by 16. Equip: Improves critical strike rating by 30. Equip: Your attacks ignore 140 of your opponent's armor. Onslaught Battlegear (0/8) Onslaught Battle-Helm Onslaught Breastplate Onslaught Gauntlets Onslaught Greaves Onslaught Shoulderblades Onslaught Belt Onslaught Bracers Onslaught Treads (2) Set : Reduces the rage cost of your Execute ability by 3. (4) Set : Increases the damage of your Mortal Strike and Bloodthirst abilities by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:57+00:00",
+  "inventory_slot": null,
+  "item_id": 34441,
+  "item_stats": {
+    "armor": 841,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 16.",
+        "stats": {
+          "hit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 30.",
+        "stats": {
+          "crit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 140 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 16.",
+      "Equip: Improves critical strike rating by 30.",
+      "Equip: Your attacks ignore 140 of your opponent's armor."
+    ],
+    "id": 34441,
+    "item_level": 154,
+    "name": "Onslaught Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 30.0,
+      "hit_rating": 16.0,
+      "strength": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34441/onslaught-bracers"
+  },
+  "name": "Onslaught Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34441/onslaught-bracers"
+}

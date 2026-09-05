@@ -1,0 +1,92 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Dawnstone Crab Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Thrallmar - Revered Use: Teaches you how to craft a Dawnstone Crab. Sell Price: 3 Figurine - Dawnstone Crab Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Requires Jewelcrafting (350) Equip: Increases defense rating by 32. Use: Increases dodge rating by 125 for 20 sec. (2 Min Cooldown) Sell Price: 1 50 Requires Khorium Bar (4), Dawnstone (2), Golden Draenite (4)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:19+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 31358,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Dawnstone Crab.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases defense rating by 32.",
+        "stats": {
+          "defense_rating": 32.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases dodge rating by 125 for 20 sec. (2 Min Cooldown)",
+        "stats": {
+          "dodge_rating": 125.0
+        },
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 32."
+    ],
+    "id": 31358,
+    "item_level": 74,
+    "name": "Design: Dawnstone Crab",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 32.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft a Dawnstone Crab.",
+      "Use: Increases dodge rating by 125 for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31358/design-dawnstone-crab"
+  },
+  "name": "Design: Dawnstone Crab",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Design: Dawnstone Crab Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Thrallmar - Revered Use: Teaches you how to craft a Dawnstone Crab. Sell Price: 3 Figurine - Dawnstone Crab Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Requires Jewelcrafting (350) Equip: Increases defense rating by 32. Use: Increases dodge rating by 125 for 20 sec. (2 Min Cooldown) Sell Price: 1 50 Requires Khorium Bar (4), Dawnstone (2), Golden Draenite (4)",
+      "reputation": "Thrallmar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=31358/design-dawnstone-crab",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Dawnstone Crab Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Thrallmar - Revered Use: Teaches you how to craft a Dawnstone Crab. Sell Price: 3 Figurine - Dawnstone Crab Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Requires Jewelcrafting (350) Equip: Increases defense rating by 32. Use: Increases dodge rating by 125 for 20 sec. (2 Min Cooldown) Sell Price: 1 50 Requires Khorium Bar (4), Dawnstone (2), Golden Draenite (4)",
+      "scope": "equip_or_use",
+      "skill": 370,
+      "source_url": "https://www.wowhead.com/tbc/item=31358/design-dawnstone-crab",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Dawnstone Crab Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Thrallmar - Revered Use: Teaches you how to craft a Dawnstone Crab. Sell Price: 3 Figurine - Dawnstone Crab Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Requires Jewelcrafting (350) Equip: Increases defense rating by 32. Use: Increases dodge rating by 125 for 20 sec. (2 Min Cooldown) Sell Price: 1 50 Requires Khorium Bar (4), Dawnstone (2), Golden Draenite (4)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=31358/design-dawnstone-crab",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31358/design-dawnstone-crab"
+}

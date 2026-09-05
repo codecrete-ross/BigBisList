@@ -1,0 +1,196 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This cooking recipe is used for the Cooking profession. It is a quest reward and sold by NPCs. In the Cooking Recipes category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:23+00:00",
+  "inventory_slot": null,
+  "item_id": 18160,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to brew a Thistle Tea.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Instantly restores [100 - 2 * Max(0, 70 - 40)] energy. (5 Min Cooldown) Max Stack: 10",
+        "type": "use"
+      }
+    ],
+    "id": 18160,
+    "item_level": 15,
+    "name": "Recipe: Thistle Tea",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 2359,
+      "entity_name": "Klaven's Tower",
+      "quest_id": 2359,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=18160",
+      "type": "quest"
+    },
+    "quality": "unknown",
+    "required_level": 5,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "source_summary": "Quest: Klaven's Tower +2",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 2359,
+        "entity_name": "Klaven's Tower",
+        "quest_id": 2359,
+        "side": "Alliance",
+        "source_url": "https://www.wowhead.com/tbc/item=18160",
+        "type": "quest"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 2478,
+        "entity_name": "Mission: Possible But Not Probable",
+        "quest_id": 2478,
+        "side": "Horde",
+        "source_url": "https://www.wowhead.com/tbc/item=18160",
+        "type": "quest"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 6779,
+        "entity_name": "Smudge Thunderwood",
+        "location_area": "Alterac Mountains",
+        "price_copper": 200,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=18160",
+        "type": "vendor",
+        "vendor_id": 6779,
+        "zone": "Alterac Mountains"
+      }
+    ],
+    "use_effects": [
+      "Use: Teaches you how to brew a Thistle Tea.",
+      "Use: Instantly restores [100 - 2 * Max(0, 70 - 40)] energy. (5 Min Cooldown) Max Stack: 10"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18160"
+  },
+  "name": "Recipe: Thistle Tea",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 2359,
+      "entity_name": "Klaven's Tower",
+      "quest_id": 2359,
+      "side": "Alliance",
+      "source_url": "https://www.wowhead.com/tbc/item=18160",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 2478,
+      "entity_name": "Mission: Possible But Not Probable",
+      "quest_id": 2478,
+      "side": "Horde",
+      "source_url": "https://www.wowhead.com/tbc/item=18160",
+      "type": "quest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 6779,
+      "entity_name": "Smudge Thunderwood",
+      "location_area": "Alterac Mountains",
+      "price_copper": 200,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=18160",
+      "type": "vendor",
+      "vendor_id": 6779,
+      "zone": "Alterac Mountains"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": -162,
+        "category2": 4,
+        "classs": 8,
+        "id": 2359,
+        "itemrewards": [
+          [
+            18160,
+            1
+          ]
+        ],
+        "name": "Klaven's Tower",
+        "popularity": 7,
+        "reqclass": 8,
+        "reqlevel": 20,
+        "side": 1,
+        "xp": 1550
+      },
+      {
+        "category": -162,
+        "category2": 4,
+        "classs": 8,
+        "id": 2478,
+        "itemrewards": [
+          [
+            18160,
+            1
+          ]
+        ],
+        "name": "Mission: Possible But Not Probable",
+        "popularity": 16,
+        "reqclass": 8,
+        "reqlevel": 20,
+        "side": 2,
+        "xp": 1550
+      }
+    ],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            200
+          ]
+        ],
+        "id": 6779,
+        "location": [
+          36
+        ],
+        "maxlevel": 45,
+        "minlevel": 45,
+        "name": "Smudge Thunderwood",
+        "popularity": 6,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Poison Supplies",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    9513,
+    9512
+  ],
+  "url": "https://www.wowhead.com/tbc/item=18160"
+}

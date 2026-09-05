@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crystalforge Gauntlets Phase 2 Item Level 133 Binds when picked up Hands Plate 1042 Armor +44 Strength +25 Agility +35 Stamina +23 Intellect Durability 55 / 55 Classes: Paladin Requires Level 70 Crystalforge Battlegear (0/5) Crystalforge Breastplate Crystalforge Gauntlets Crystalforge Greaves Crystalforge Shoulderbraces Crystalforge War-Helm (2) Set : Reduces the cost of your Judgements by 35. (4) Set : Each time you cast a Judgement, there is a chance it will heal all nearby party members for 244 to 256. (Proc chance: 6%)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:43+00:00",
+  "inventory_slot": null,
+  "item_id": 30130,
+  "item_stats": {
+    "armor": 1042,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 30130,
+    "item_level": 133,
+    "name": "Crystalforge Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "agility": 25.0,
+      "intellect": 23.0,
+      "stamina": 35.0,
+      "strength": 44.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30130/crystalforge-gauntlets"
+  },
+  "name": "Crystalforge Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30130/crystalforge-gauntlets"
+}

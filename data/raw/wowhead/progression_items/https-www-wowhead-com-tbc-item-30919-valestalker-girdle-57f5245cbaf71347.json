@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Valestalker Girdle Phase 3 Item Level 141 Binds when picked up Waist Mail 556 Armor +27 Agility +25 Stamina +18 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves haste rating by 36. Equip: Increases attack power by 76. Sell Price: 4 36 16",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:39+00:00",
+  "inventory_slot": null,
+  "item_id": 30919,
+  "item_stats": {
+    "armor": 556,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves haste rating by 36.",
+        "stats": {
+          "haste_rating": 36.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 76.",
+        "stats": {
+          "attack_power": 76.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 36.",
+      "Equip: Increases attack power by 76."
+    ],
+    "id": 30919,
+    "item_level": 141,
+    "name": "Valestalker Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 27.0,
+      "attack_power": 76.0,
+      "haste_rating": 36.0,
+      "intellect": 18.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle"
+  },
+  "name": "Valestalker Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle"
+}

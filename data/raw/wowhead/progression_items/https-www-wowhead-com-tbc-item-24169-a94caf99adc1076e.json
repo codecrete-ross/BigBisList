@@ -1,0 +1,77 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Eye of the Night Item Level 72 Requires Jewelcrafting (360) Use: Teaches you how to craft an Eye of the Night. Sell Price: 3 Eye of the Night Item Level 114 Binds when equipped Neck Requires Level 70 Equip: Improves spell hit rating by 16. Equip: Improves spell critical strike rating by 26. Equip: Increases your spell penetration by 15. Use: Increases spell damage by up to 34 for all nearby party members. Lasts 30 min. (1 Hour Cooldown) 10 Charges Sell Price: 3 94 70 Requires Hardened Adamantite Bar (2), Mercurial Adamantite (2), Nightseye",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:38+00:00",
+  "inventory_slot": null,
+  "item_id": 24169,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft an Eye of the Night.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves spell hit rating by 16.",
+        "stats": {
+          "spell_hit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 26.",
+        "stats": {
+          "spell_crit_rating": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases spell damage by up to 34 for all nearby party members. Lasts 30 min. (1 Hour Cooldown) 10 Charges",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 16.",
+      "Equip: Improves spell critical strike rating by 26."
+    ],
+    "id": 24169,
+    "item_level": 72,
+    "name": "Design: Eye of the Night",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 26.0,
+      "spell_hit_rating": 16.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft an Eye of the Night.",
+      "Use: Increases spell damage by up to 34 for all nearby party members. Lasts 30 min. (1 Hour Cooldown) 10 Charges"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24169"
+  },
+  "name": "Design: Eye of the Night",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Eye of the Night Item Level 72 Requires Jewelcrafting (360) Use: Teaches you how to craft an Eye of the Night. Sell Price: 3 Eye of the Night Item Level 114 Binds when equipped Neck Requires Level 70 Equip: Improves spell hit rating by 16. Equip: Improves spell critical strike rating by 26. Equip: Increases your spell penetration by 15. Use: Increases spell damage by up to 34 for all nearby party members. Lasts 30 min. (1 Hour Cooldown) 10 Charges Sell Price: 3 94 70 Requires Hardened Adamantite Bar (2), Mercurial Adamantite (2), Nightseye",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=24169",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24169"
+}

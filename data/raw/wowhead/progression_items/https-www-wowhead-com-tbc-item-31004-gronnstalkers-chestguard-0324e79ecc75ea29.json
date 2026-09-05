@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gronnstalker's Chestguard Phase 3 Item Level 146 Binds when picked up Chest Mail 1022 Armor +40 Agility +52 Stamina +37 Intellect Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Agility Durability 140 / 140 Classes: Hunter Requires Level 70 Equip: Improves critical strike rating by 19. Equip: Increases attack power by 90. Gronnstalker's Armor (0/8) Gronnstalker's Chestguard Gronnstalker's Gloves Gronnstalker's Helmet Gronnstalker's Leggings Gronnstalker's Spaulders Gronnstalker's Belt Gronnstalker's Bracers Gronnstalker's Boots (2) Set : Increases the mana you gain from your Aspect of the Viper by an additional 5% of your Intellect. (4) Set : Increases the damage dealt by your Steady Shot ability by 10%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:47+00:00",
+  "inventory_slot": null,
+  "item_id": 31004,
+  "item_stats": {
+    "armor": 1022,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 19.",
+        "stats": {
+          "crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 90.",
+        "stats": {
+          "attack_power": 90.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 19.",
+      "Equip: Increases attack power by 90."
+    ],
+    "id": 31004,
+    "item_level": 146,
+    "name": "Gronnstalker's Chestguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "socket_bonus": {
+      "agility": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 40.0,
+      "attack_power": 90.0,
+      "crit_rating": 19.0,
+      "intellect": 37.0,
+      "stamina": 52.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31004/gronnstalkers-chestguard"
+  },
+  "name": "Gronnstalker's Chestguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31004/gronnstalkers-chestguard"
+}

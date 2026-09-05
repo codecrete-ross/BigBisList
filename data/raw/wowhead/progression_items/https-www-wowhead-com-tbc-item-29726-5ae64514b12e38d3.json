@@ -1,0 +1,67 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Hood of Primal Life Item Level 73 Requires Leatherworking (365) Use: Teaches you how to make a Hood of Primal Life. Sell Price: 6 Hood of Primal Life Item Level 105 Binds when equipped Head Leather 271 Armor +34 Stamina +37 Intellect +31 Spirit Durability 70 / 70 Requires Level 70 Equip: Increases healing done by up to 68 and damage done by up to 23 for all magical spells and effects. Sell Price: 4 8 93 Requires Heavy Knothide Leather (6), Primal Life (20), Primal Water (8), Primal Nether",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:06+00:00",
+  "inventory_slot": null,
+  "item_id": 29726,
+  "item_stats": {
+    "armor": 271,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Hood of Primal Life.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 68 and damage done by up to 23 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 68.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 68 and damage done by up to 23 for all magical spells and effects."
+    ],
+    "id": 29726,
+    "item_level": 73,
+    "name": "Pattern: Hood of Primal Life",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 68.0,
+      "intellect": 37.0,
+      "spirit": 31.0,
+      "stamina": 34.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Hood of Primal Life."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29726"
+  },
+  "name": "Pattern: Hood of Primal Life",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Hood of Primal Life Item Level 73 Requires Leatherworking (365) Use: Teaches you how to make a Hood of Primal Life. Sell Price: 6 Hood of Primal Life Item Level 105 Binds when equipped Head Leather 271 Armor +34 Stamina +37 Intellect +31 Spirit Durability 70 / 70 Requires Level 70 Equip: Increases healing done by up to 68 and damage done by up to 23 for all magical spells and effects. Sell Price: 4 8 93 Requires Heavy Knothide Leather (6), Primal Life (20), Primal Water (8), Primal Nether",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=29726",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29726"
+}

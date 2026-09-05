@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vestments of the Avatar Phase 2 Item Level 133 Binds when picked up Chest Cloth 223 Armor +36 Stamina +25 Intellect +39 Spirit Blue Socket Yellow Socket Blue Socket Socket Bonus: +9 Healing and +3 Spell Damage Durability 100 / 100 Classes: Priest Requires Level 70 Equip: Increases healing done by up to 103 and damage done by up to 35 for all magical spells and effects. Avatar Raiment (0/5) Breeches of the Avatar Cowl of the Avatar Gloves of the Avatar Mantle of the Avatar Vestments of the Avatar (2) Set : If your Greater Heal brings the target to full health, you gain 100 mana. (4) Set : Increases the duration of your Renew spell by 3 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:47+00:00",
+  "inventory_slot": null,
+  "item_id": 30150,
+  "item_stats": {
+    "armor": 223,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 103 and damage done by up to 35 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 103.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 103 and damage done by up to 35 for all magical spells and effects."
+    ],
+    "id": 30150,
+    "item_level": 133,
+    "name": "Vestments of the Avatar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "sockets": [
+      "blue",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 103.0,
+      "intellect": 25.0,
+      "spirit": 39.0,
+      "stamina": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30150/vestments-of-the-avatar"
+  },
+  "name": "Vestments of the Avatar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30150/vestments-of-the-avatar"
+}

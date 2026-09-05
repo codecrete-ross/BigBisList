@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Seal of Danzalar Phase 2 Item Level 128 Binds when picked up Unique Finger 295 Armor +33 Stamina Requires Level 70 Equip: Improves your resilience rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 25. \"From beneath you it devours.\" Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:32+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 33054,
+  "item_stats": {
+    "armor": 295,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your resilience rating by 21.",
+        "stats": {
+          "resilience_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25. \"From beneath you it devours.\"",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your resilience rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25. \"From beneath you it devours.\""
+    ],
+    "id": 33054,
+    "item_level": 128,
+    "name": "The Seal of Danzalar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "resilience_rating": 21.0,
+      "spell_power": 25.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33054/the-seal-of-danzalar"
+  },
+  "name": "The Seal of Danzalar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33054/the-seal-of-danzalar"
+}

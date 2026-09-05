@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Belt of the Crescent Moon Phase 3 Item Level 141 Binds when picked up Waist Leather 249 Armor +25 Stamina +27 Intellect +19 Spirit Durability 40 / 40 Requires Level 70 Equip: Improves spell haste rating by 36. Equip: Increases damage and healing done by magical spells and effects by up to 44. Sell Price: 3 56 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:38+00:00",
+  "inventory_slot": null,
+  "item_id": 30914,
+  "item_stats": {
+    "armor": 249,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 44.",
+        "stats": {
+          "spell_power": 44.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 44."
+    ],
+    "id": 30914,
+    "item_level": 141,
+    "name": "Belt of the Crescent Moon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "spell_power": 44.0,
+      "spirit": 19.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30914/belt-of-the-crescent-moon"
+  },
+  "name": "Belt of the Crescent Moon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30914/belt-of-the-crescent-moon"
+}

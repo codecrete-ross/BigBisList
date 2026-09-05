@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mama's Insurance Phase 1 Item Level 111 Binds when picked up Ranged Gun 87 - 163 Damage Speed 2.20 (56.82 damage per second) +10 Agility Durability 65 / 65 Equip: Improves critical strike rating by 6. Equip: Increases attack power by 32. Sell Price: 5 43 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:04+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 30279,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 56.82,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 6.",
+        "stats": {
+          "crit_rating": 6.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 32.",
+        "stats": {
+          "attack_power": 32.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 6.",
+      "Equip: Increases attack power by 32."
+    ],
+    "id": 30279,
+    "item_level": 111,
+    "name": "Mama's Insurance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0,
+      "attack_power": 32.0,
+      "crit_rating": 6.0
+    },
+    "weapon_max_damage": 163,
+    "weapon_min_damage": 87,
+    "weapon_speed": 2.2,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30279/mamas-insurance"
+  },
+  "name": "Mama's Insurance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30279/mamas-insurance"
+}

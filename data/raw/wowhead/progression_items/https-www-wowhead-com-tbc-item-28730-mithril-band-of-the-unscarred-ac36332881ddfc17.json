@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mithril Band of the Unscarred Phase 1 Item Level 115 Binds when picked up Unique Finger +26 Strength +24 Stamina Requires Level 70 Equip: Improves critical strike rating by 22. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:47+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 28730,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 22.",
+        "stats": {
+          "crit_rating": 22.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 22."
+    ],
+    "id": 28730,
+    "item_level": 115,
+    "name": "Mithril Band of the Unscarred",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 22.0,
+      "stamina": 24.0,
+      "strength": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28730/mithril-band-of-the-unscarred"
+  },
+  "name": "Mithril Band of the Unscarred",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28730/mithril-band-of-the-unscarred"
+}

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Runesong Dagger Phase 1 Item Level 112 Binds when picked up Unique Main Hand Dagger 28 - 91 Damage Speed 1.50 (39.67 damage per second) +12 Stamina +11 Intellect Durability 65 / 65 Requires Level 68 Equip: Improves spell critical strike rating by 20. Equip: Increases damage and healing done by magical spells and effects by up to 121. Sell Price: 8 60 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:43+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 27868,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 39.67,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 20.",
+        "stats": {
+          "spell_crit_rating": 20.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 121.",
+        "stats": {
+          "spell_power": 121.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 20.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 121."
+    ],
+    "id": 27868,
+    "item_level": 112,
+    "name": "Runesong Dagger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "spell_crit_rating": 20.0,
+      "spell_power": 121.0,
+      "stamina": 12.0
+    },
+    "weapon_max_damage": 91,
+    "weapon_min_damage": 28,
+    "weapon_speed": 1.5,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27868/runesong-dagger"
+  },
+  "name": "Runesong Dagger",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27868/runesong-dagger"
+}

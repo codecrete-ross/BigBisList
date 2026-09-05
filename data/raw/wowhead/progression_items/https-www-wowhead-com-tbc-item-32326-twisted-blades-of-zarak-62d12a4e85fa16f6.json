@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Twisted Blades of Zarak Phase 3 Item Level 141 Binds when picked up Thrown Thrown 101 - 152 Damage Speed 1.40 (90.36 damage per second) +23 Agility Durability 285 / 285 Requires Level 70 Equip: Improves critical strike rating by 16. Sell Price: 3 63 68",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:53+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 32326,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 90.36,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 16.",
+        "stats": {
+          "crit_rating": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 16."
+    ],
+    "id": 32326,
+    "item_level": 141,
+    "name": "Twisted Blades of Zarak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 23.0,
+      "crit_rating": 16.0
+    },
+    "weapon_max_damage": 152,
+    "weapon_min_damage": 101,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Thrown",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32326/twisted-blades-of-zarak"
+  },
+  "name": "Twisted Blades of Zarak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32326/twisted-blades-of-zarak"
+}

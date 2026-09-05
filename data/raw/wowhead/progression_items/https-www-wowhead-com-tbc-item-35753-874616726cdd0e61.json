@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Recipe: Sorcerer's Alchemist Stone Item Level 70 Binds when picked up Requires Alchemy (375) Requires Shattered Sun Offensive - Exalted Use: Teaches you how to make a Sorcerer's Alchemist Stone. Sell Price: 6 25 Sorcerer's Alchemist Stone Item Level 125 Binds when picked up Unique Trinket Requires Alchemy (350) Equip: Increases damage and healing done by magical spells and effects by up to 63. Equip: Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack. Sell Price: 2 50 Requires Alchemist's Stone , Primal Fire (6), Nether Vortex (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:01:01+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 35753,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Sorcerer's Alchemist Stone.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 63.",
+        "stats": {
+          "spell_power": 63.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 63."
+    ],
+    "id": 35753,
+    "item_level": 70,
+    "name": "Recipe: Sorcerer's Alchemist Stone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spell_power": 63.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Sorcerer's Alchemist Stone."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35753"
+  },
+  "name": "Recipe: Sorcerer's Alchemist Stone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Recipe: Sorcerer's Alchemist Stone Item Level 70 Binds when picked up Requires Alchemy (375) Requires Shattered Sun Offensive - Exalted Use: Teaches you how to make a Sorcerer's Alchemist Stone. Sell Price: 6 25 Sorcerer's Alchemist Stone Item Level 125 Binds when picked up Unique Trinket Requires Alchemy (350) Equip: Increases damage and healing done by magical spells and effects by up to 63. Equip: Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack. Sell Price: 2 50 Requires Alchemist's Stone , Primal Fire (6), Nether Vortex (2)",
+      "reputation": "Shattered Sun Offensive",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=35753",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Sorcerer's Alchemist Stone Item Level 70 Binds when picked up Requires Alchemy (375) Requires Shattered Sun Offensive - Exalted Use: Teaches you how to make a Sorcerer's Alchemist Stone. Sell Price: 6 25 Sorcerer's Alchemist Stone Item Level 125 Binds when picked up Unique Trinket Requires Alchemy (350) Equip: Increases damage and healing done by magical spells and effects by up to 63. Equip: Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack. Sell Price: 2 50 Requires Alchemist's Stone , Primal Fire (6), Nether Vortex (2)",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=35753",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Sorcerer's Alchemist Stone Item Level 70 Binds when picked up Requires Alchemy (375) Requires Shattered Sun Offensive - Exalted Use: Teaches you how to make a Sorcerer's Alchemist Stone. Sell Price: 6 25 Sorcerer's Alchemist Stone Item Level 125 Binds when picked up Unique Trinket Requires Alchemy (350) Equip: Increases damage and healing done by magical spells and effects by up to 63. Equip: Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack. Sell Price: 2 50 Requires Alchemist's Stone , Primal Fire (6), Nether Vortex (2)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35753",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35753"
+}

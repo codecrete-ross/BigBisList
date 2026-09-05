@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cowl of the Grand Engineer Phase 2 Item Level 128 Binds when picked up Head Cloth 175 Armor +22 Stamina +27 Intellect Yellow Socket Yellow Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 60 / 60 Requires Level 70 Equip: Improves spell hit rating by 16. Equip: Improves spell critical strike rating by 35. Equip: Increases damage and healing done by magical spells and effects by up to 53. Sell Price: 3 75 90",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:20+00:00",
+  "inventory_slot": null,
+  "item_id": 29986,
+  "item_stats": {
+    "armor": 175,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 16.",
+        "stats": {
+          "spell_hit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 35.",
+        "stats": {
+          "spell_crit_rating": 35.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 53.",
+        "stats": {
+          "spell_power": 53.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 16.",
+      "Equip: Improves spell critical strike rating by 35.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 53."
+    ],
+    "id": 29986,
+    "item_level": 128,
+    "name": "Cowl of the Grand Engineer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "spell_crit_rating": 35.0,
+      "spell_hit_rating": 16.0,
+      "spell_power": 53.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29986/cowl-of-the-grand-engineer"
+  },
+  "name": "Cowl of the Grand Engineer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29986/cowl-of-the-grand-engineer"
+}

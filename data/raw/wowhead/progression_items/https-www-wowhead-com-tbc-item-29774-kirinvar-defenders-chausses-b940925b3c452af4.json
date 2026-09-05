@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Kirin'Var Defender's Chausses Phase 1 Item Level 111 Binds when picked up Legs Plate 895 Armor +27 Stamina +18 Intellect Durability 85 / 85 Equip: Increases defense rating by 19. Equip: Increases damage and healing done by magical spells and effects by up to 30. Equip: Restores 7 mana per 5 sec. Sell Price: 5 20 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:12+00:00",
+  "inventory_slot": null,
+  "item_id": 29774,
+  "item_stats": {
+    "armor": 895,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases defense rating by 19.",
+        "stats": {
+          "defense_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 30.",
+        "stats": {
+          "spell_power": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 19.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 30.",
+      "Equip: Restores 7 mana per 5 sec."
+    ],
+    "id": 29774,
+    "item_level": 111,
+    "name": "Kirin'Var Defender's Chausses",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 19.0,
+      "intellect": 18.0,
+      "mp5": 7.0,
+      "spell_power": 30.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29774/kirinvar-defenders-chausses"
+  },
+  "name": "Kirin'Var Defender's Chausses",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29774/kirinvar-defenders-chausses"
+}

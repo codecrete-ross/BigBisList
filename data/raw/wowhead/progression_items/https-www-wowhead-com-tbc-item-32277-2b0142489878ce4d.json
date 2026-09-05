@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Delicate Crimson Spinel Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Friendly Use: Teaches you how to cut a Delicate Crimson Spinel. Sell Price: 1 50 Delicate Crimson Spinel Item Level 100 +10 Agility \"Matches a Red Socket.\" Sell Price: 6 Requires Crimson Spinel",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:51+00:00",
+  "inventory_slot": null,
+  "item_id": 32277,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Delicate Crimson Spinel.",
+        "type": "use"
+      }
+    ],
+    "id": 32277,
+    "item_level": 75,
+    "name": "Design: Delicate Crimson Spinel",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "stats": {
+      "agility": 10.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to cut a Delicate Crimson Spinel."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32277"
+  },
+  "name": "Design: Delicate Crimson Spinel",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Design: Delicate Crimson Spinel Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Friendly Use: Teaches you how to cut a Delicate Crimson Spinel. Sell Price: 1 50 Delicate Crimson Spinel Item Level 100 +10 Agility \"Matches a Red Socket.\" Sell Price: 6 Requires Crimson Spinel",
+      "reputation": "The Scale of the Sands",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32277",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Delicate Crimson Spinel Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Friendly Use: Teaches you how to cut a Delicate Crimson Spinel. Sell Price: 1 50 Delicate Crimson Spinel Item Level 100 +10 Agility \"Matches a Red Socket.\" Sell Price: 6 Requires Crimson Spinel",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=32277",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32277"
+}

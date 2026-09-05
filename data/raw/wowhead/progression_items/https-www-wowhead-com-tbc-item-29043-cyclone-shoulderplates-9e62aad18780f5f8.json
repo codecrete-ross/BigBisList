@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cyclone Shoulderplates Phase 1 Item Level 120 Binds when picked up Shoulder Mail 634 Armor +26 Strength +18 Agility +31 Stamina +18 Intellect Red Socket Yellow Socket Socket Bonus: +3 Hit Rating Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Improves hit rating by 14. Cyclone Harness (0/5) Cyclone Breastplate Cyclone Gauntlets Cyclone Helm Cyclone Shoulderplates Cyclone War-Kilt (2) Set : Your Strength of Earth Totem ability grants an additional 12 strength. (4) Set : Your Stormstrike ability does an additional 30 damage per weapon.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:14+00:00",
+  "inventory_slot": null,
+  "item_id": 29043,
+  "item_stats": {
+    "armor": 634,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 14.",
+        "stats": {
+          "hit_rating": 14.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 14."
+    ],
+    "id": 29043,
+    "item_level": 120,
+    "name": "Cyclone Shoulderplates",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "socket_bonus": {
+      "hit_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "hit_rating": 14.0,
+      "intellect": 18.0,
+      "stamina": 31.0,
+      "strength": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29043/cyclone-shoulderplates"
+  },
+  "name": "Cyclone Shoulderplates",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29043/cyclone-shoulderplates"
+}

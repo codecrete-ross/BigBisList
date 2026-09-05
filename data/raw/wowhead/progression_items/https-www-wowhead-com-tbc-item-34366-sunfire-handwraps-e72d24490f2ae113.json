@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Sunfire Handwraps Phase 5 Item Level 159 Binds when equipped Hands Cloth 166 Armor +33 Stamina +30 Intellect Red Socket Red Socket Socket Bonus: +4 Spell Damage and Healing Durability 35 / 35 Requires Level 70 Equip: Improves spell critical strike rating by 37. Equip: Increases damage and healing done by magical spells and effects by up to 53. Sell Price: 3 6 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:45+00:00",
+  "inventory_slot": null,
+  "item_id": 34366,
+  "item_stats": {
+    "armor": 166,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 37.",
+        "stats": {
+          "spell_crit_rating": 37.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 53.",
+        "stats": {
+          "spell_power": 53.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 37.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 53."
+    ],
+    "id": 34366,
+    "item_level": 159,
+    "name": "Sunfire Handwraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 30.0,
+      "spell_crit_rating": 37.0,
+      "spell_power": 53.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34366/sunfire-handwraps"
+  },
+  "name": "Sunfire Handwraps",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34366/sunfire-handwraps"
+}

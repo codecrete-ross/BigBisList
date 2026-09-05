@@ -1,0 +1,55 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Recipe: Free Action Potion Item Level 30 Requires Alchemy (150) Use: Teaches you how to make a Free Action Potion. Sell Price: 4 50 Free Action Potion Item Level 30 Requires Level 20 Use: Makes you immune to Stun and Movement Impairing effects for the next 30 sec. Does not remove effects already on the imbiber. (2 Min Cooldown) Max Stack: 5 Sell Price: 75 Requires Blackmouth Oil (2), Stranglekelp , Leaded Vial",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:01:03+00:00",
+  "inventory_slot": null,
+  "item_id": 5642,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Free Action Potion.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Makes you immune to Stun and Movement Impairing effects for the next 30 sec. Does not remove effects already on the imbiber. (2 Min Cooldown) Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 5642,
+    "item_level": 30,
+    "name": "Recipe: Free Action Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 20,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Free Action Potion.",
+      "Use: Makes you immune to Stun and Movement Impairing effects for the next 30 sec. Does not remove effects already on the imbiber. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=5642"
+  },
+  "name": "Recipe: Free Action Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Free Action Potion Item Level 30 Requires Alchemy (150) Use: Teaches you how to make a Free Action Potion. Sell Price: 4 50 Free Action Potion Item Level 30 Requires Level 20 Use: Makes you immune to Stun and Movement Impairing effects for the next 30 sec. Does not remove effects already on the imbiber. (2 Min Cooldown) Max Stack: 5 Sell Price: 75 Requires Blackmouth Oil (2), Stranglekelp , Leaded Vial",
+      "scope": "equip_or_use",
+      "skill": 150,
+      "source_url": "https://www.wowhead.com/tbc/item=5642",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=5642"
+}

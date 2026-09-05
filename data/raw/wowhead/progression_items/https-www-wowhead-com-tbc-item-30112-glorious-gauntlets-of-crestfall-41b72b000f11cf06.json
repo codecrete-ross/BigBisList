@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Glorious Gauntlets of Crestfall Phase 2 Item Level 138 Binds when picked up Hands Plate 1080 Armor +25 Stamina +26 Intellect Yellow Socket Blue Socket Socket Bonus: +7 Healing +3 Spell Damage Durability 55 / 55 Requires Level 70 Equip: Improves spell critical strike rating by 28. Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects. Sell Price: 5 8 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:39+00:00",
+  "inventory_slot": null,
+  "item_id": 30112,
+  "item_stats": {
+    "armor": 1080,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 28.",
+        "stats": {
+          "spell_crit_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 81.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 28.",
+      "Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects."
+    ],
+    "id": 30112,
+    "item_level": 138,
+    "name": "Glorious Gauntlets of Crestfall",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 81.0,
+      "intellect": 26.0,
+      "spell_crit_rating": 28.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30112/glorious-gauntlets-of-crestfall"
+  },
+  "name": "Glorious Gauntlets of Crestfall",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30112/glorious-gauntlets-of-crestfall"
+}

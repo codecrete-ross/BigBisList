@@ -1,0 +1,45 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Codex: Prayer of Fortitude III Item Level 70 Classes: Priest Requires Level 70 Use: Teaches Prayer of Fortitude (Rank 3). Power infuses the target's party, increasing their Stamina by 79 for 1 hour. Sell Price: 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:04+00:00",
+  "inventory_slot": null,
+  "item_id": 29549,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches Prayer of Fortitude (Rank 3). Power infuses the target's party, increasing their Stamina by 79 for 1 hour.",
+        "type": "use"
+      }
+    ],
+    "id": 29549,
+    "item_level": 70,
+    "name": "Codex: Prayer of Fortitude III",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches Prayer of Fortitude (Rank 3). Power infuses the target's party, increasing their Stamina by 79 for 1 hour."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29549"
+  },
+  "name": "Codex: Prayer of Fortitude III",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29549"
+}

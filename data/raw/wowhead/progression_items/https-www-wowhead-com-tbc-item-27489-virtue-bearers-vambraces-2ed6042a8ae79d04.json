@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Virtue Bearer's Vambraces Phase 1 Item Level 115 Binds when picked up Wrist Plate 509 Armor +16 Intellect Durability 45 / 45 Requires Level 70 Equip: Improves spell critical strike rating by 15. Equip: Increases healing done by up to 35 and damage done by up to 12 for all magical spells and effects. Equip: Restores 6 mana per 5 sec. Sell Price: 3 10 29",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:19+00:00",
+  "inventory_slot": null,
+  "item_id": 27489,
+  "item_stats": {
+    "armor": 509,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 15.",
+        "stats": {
+          "spell_crit_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 35 and damage done by up to 12 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 35.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 15.",
+      "Equip: Increases healing done by up to 35 and damage done by up to 12 for all magical spells and effects.",
+      "Equip: Restores 6 mana per 5 sec."
+    ],
+    "id": 27489,
+    "item_level": 115,
+    "name": "Virtue Bearer's Vambraces",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 35.0,
+      "intellect": 16.0,
+      "mp5": 6.0,
+      "spell_crit_rating": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27489/virtue-bearers-vambraces"
+  },
+  "name": "Virtue Bearer's Vambraces",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27489/virtue-bearers-vambraces"
+}

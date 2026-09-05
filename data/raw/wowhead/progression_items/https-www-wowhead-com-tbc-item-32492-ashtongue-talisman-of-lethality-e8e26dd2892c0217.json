@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ashtongue Talisman of Lethality Phase 3 Item Level 141 Binds when picked up Unique Trinket Classes: Rogue Requires Ashtongue Deathsworn - Exalted Equip: 20% chance per combo point for your finishing moves to grant 145 critical strike rating for 10 sec. Sell Price: 7 20 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:07+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32492,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: 20% chance per combo point for your finishing moves to grant 145 critical strike rating for 10 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: 20% chance per combo point for your finishing moves to grant 145 critical strike rating for 10 sec."
+    ],
+    "id": 32492,
+    "item_level": 141,
+    "name": "Ashtongue Talisman of Lethality",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32492/ashtongue-talisman-of-lethality"
+  },
+  "name": "Ashtongue Talisman of Lethality",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Ashtongue Talisman of Lethality Phase 3 Item Level 141 Binds when picked up Unique Trinket Classes: Rogue Requires Ashtongue Deathsworn - Exalted Equip: 20% chance per combo point for your finishing moves to grant 145 critical strike rating for 10 sec. Sell Price: 7 20 39",
+      "reputation": "Ashtongue Deathsworn",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32492/ashtongue-talisman-of-lethality",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32492/ashtongue-talisman-of-lethality"
+}

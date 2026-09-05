@@ -1,0 +1,41 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Depleted Badge Phase 2 Item Level 115 308 Armor Requires Level 70 Use: Infuse this item with the power of 50 Apexis Shards to activate its true power.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:20+00:00",
+  "inventory_slot": null,
+  "item_id": 32672,
+  "item_stats": {
+    "armor": 308,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Infuse this item with the power of 50 Apexis Shards to activate its true power.",
+        "type": "use"
+      }
+    ],
+    "id": 32672,
+    "item_level": 115,
+    "name": "Depleted Badge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Infuse this item with the power of 50 Apexis Shards to activate its true power."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32672/depleted-badge"
+  },
+  "name": "Depleted Badge",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32672/depleted-badge"
+}

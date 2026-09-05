@@ -1,0 +1,261 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This white one-handed mace has an item level of 4. It is looted from Kobold Laborer. In the One-Handed Maces category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:33+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 2055,
+  "item_stats": {
+    "binding": "unknown",
+    "dps": 1.58,
+    "id": 2055,
+    "item_level": 4,
+    "name": "Small Wooden Hammer",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 999,
+      "drop_percent": 1.66,
+      "entity_id": 80,
+      "entity_name": "Kobold Laborer",
+      "out_of": 60082,
+      "source_url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer",
+      "type": "drop",
+      "zone": "Elwynn Forest"
+    },
+    "quality": "common",
+    "slot": "Main Hand",
+    "source_summary": "Drop: Kobold Laborer (Elwynn Forest) 1.7% +2",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 999,
+        "drop_percent": 1.66,
+        "entity_id": 80,
+        "entity_name": "Kobold Laborer",
+        "out_of": 60082,
+        "source_url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer",
+        "type": "drop",
+        "zone": "Elwynn Forest"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.0,
+        "entity_id": 113,
+        "entity_name": "Stonetusk Boar",
+        "out_of": 107066,
+        "source_url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer",
+        "type": "drop",
+        "zone": "Elwynn Forest"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 20,
+        "drop_percent": 0.07,
+        "entity_id": 724,
+        "entity_name": "Burly Rockjaw Trogg",
+        "out_of": 28052,
+        "source_url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer",
+        "type": "drop"
+      }
+    ],
+    "weapon_max_damage": 4,
+    "weapon_min_damage": 2,
+    "weapon_speed": 1.9,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer"
+  },
+  "name": "Small Wooden Hammer",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 999,
+      "drop_percent": 1.66,
+      "entity_id": 80,
+      "entity_name": "Kobold Laborer",
+      "out_of": 60082,
+      "source_url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer",
+      "type": "drop",
+      "zone": "Elwynn Forest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.0,
+      "entity_id": 113,
+      "entity_name": "Stonetusk Boar",
+      "out_of": 107066,
+      "source_url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer",
+      "type": "drop",
+      "zone": "Elwynn Forest"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 20,
+      "drop_percent": 0.07,
+      "entity_id": 724,
+      "entity_name": "Burly Rockjaw Trogg",
+      "out_of": 28052,
+      "source_url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 999,
+        "id": 80,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 999,
+                "outof": 60082
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 649
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 622
+              }
+            }
+          }
+        },
+        "location": [
+          12
+        ],
+        "maxlevel": 4,
+        "minlevel": 3,
+        "modes": {
+          "0": {
+            "count": 999,
+            "outof": 60082
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Kobold Laborer",
+        "outof": 60082,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          null
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 3,
+        "family": 5,
+        "id": 113,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 107066
+              }
+            }
+          }
+        },
+        "location": [
+          12
+        ],
+        "maxlevel": 6,
+        "minlevel": 5,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 107066
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Stonetusk Boar",
+        "outof": 107066,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 9,
+        "react": [
+          0,
+          0
+        ],
+        "type": 1
+      },
+      {
+        "classification": 0,
+        "count": 20,
+        "id": 724,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 20,
+                "outof": 28052
+              }
+            }
+          }
+        },
+        "location": [
+          1
+        ],
+        "maxlevel": 2,
+        "minlevel": 2,
+        "modes": {
+          "0": {
+            "count": 20,
+            "outof": 28052
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Burly Rockjaw Trogg",
+        "outof": 28052,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 99,
+        "react": [
+          0,
+          null
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=2055/small-wooden-hammer"
+}

@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:42+00:00",
+  "fetched_at": "2026-09-04T23:49:02+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -670,7 +670,7 @@
             [
               {
                 "id": 32647,
-                "name": "Shard-Bound Bracers",
+                "name": "Shard-bound Bracers",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=32647/shard-bound-bracers"
               }
@@ -679,31 +679,34 @@
           ],
           "cells": [
             "Option",
-            "Shard-Bound Bracers",
+            "Shard-bound Bracers",
             "Reputation: Exalted with Ogri'la"
           ],
           "entities": [
             {
               "id": 32647,
-              "name": "Shard-Bound Bracers",
+              "name": "Shard-bound Bracers",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32647/shard-bound-bracers"
             }
           ],
           "entity_id": 32647,
-          "entity_name": "Shard-Bound Bracers",
+          "entity_name": "Shard-bound Bracers",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=32647/shard-bound-bracers",
           "item_id": 32647,
-          "item_name": "Shard-Bound Bracers",
+          "item_name": "Shard-bound Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=32647/shard-bound-bracers",
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
               "raw_text": "Reputation: Exalted with Ogri'la",
+              "reputation": "Ogri'la",
               "scope": "source_access",
               "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-phase-2",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Option",
@@ -763,33 +766,33 @@
             [
               {
                 "id": 28171,
-                "name": "Spymistress' Wristguards",
+                "name": "Spymistress's Wristguards",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards"
+                "url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Spymistress' Wristguards",
+            "Spymistress's Wristguards",
             "Quest: The Soul Devices"
           ],
           "entities": [
             {
               "id": 28171,
-              "name": "Spymistress' Wristguards",
+              "name": "Spymistress's Wristguards",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards"
+              "url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards"
             }
           ],
           "entity_id": 28171,
-          "entity_name": "Spymistress' Wristguards",
+          "entity_name": "Spymistress's Wristguards",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards",
+          "entity_url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards",
           "item_id": 28171,
-          "item_name": "Spymistress' Wristguards",
-          "item_url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards",
+          "item_name": "Spymistress's Wristguards",
+          "item_url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards",
           "rank_label": "Option",
           "source_links": [
             {
@@ -1587,33 +1590,33 @@
             [
               {
                 "id": 30017,
-                "name": "Telonicus' Pendant of Mayhem",
+                "name": "Telonicus's Pendant of Mayhem",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+                "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Telonicus' Pendant of Mayhem",
+            "Telonicus's Pendant of Mayhem",
             "Drop: Kael'thas Sunstrider (Tempest Keep: The Eye)"
           ],
           "entities": [
             {
               "id": 30017,
-              "name": "Telonicus' Pendant of Mayhem",
+              "name": "Telonicus's Pendant of Mayhem",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+              "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
             }
           ],
           "entity_id": 30017,
-          "entity_name": "Telonicus' Pendant of Mayhem",
+          "entity_name": "Telonicus's Pendant of Mayhem",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "item_id": 30017,
-          "item_name": "Telonicus' Pendant of Mayhem",
-          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "item_name": "Telonicus's Pendant of Mayhem",
+          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "rank_label": "Option",
           "source_links": [
             {
@@ -2889,7 +2892,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Logistics Officer Ulrike / Quartermaster Urgronn ( Honor Hold / Thrallmar Exalted)",
-              "reputation": "Honor Hold / Thrallmar",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike / Quartermaster Urgronn ( Honor Hold / Thrallmar Exalted)",
+              "reputation": "Thrallmar",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-bis-gear-pve-phase-2",
               "standing": "Exalted",

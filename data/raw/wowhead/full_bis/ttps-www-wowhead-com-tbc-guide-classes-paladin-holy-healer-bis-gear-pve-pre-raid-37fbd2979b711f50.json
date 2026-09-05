@@ -1,7 +1,10 @@
 {
-  "fetched_at": "2026-05-24T04:24:40+00:00",
+  "content_phase": "T6",
+  "fetched_at": "2026-09-04T23:48:59+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "previous_verified_phase": "PR",
+  "recommendation_status": "unverified_phase",
   "sections": [],
   "tables": [
     {
@@ -773,7 +776,7 @@
             [
               {
                 "id": 30925,
-                "name": "Spaulders of the Torn-Heart",
+                "name": "Spaulders of the Torn-heart",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
               }
@@ -782,23 +785,23 @@
           ],
           "cells": [
             "Option",
-            "Spaulders of the Torn-Heart",
+            "Spaulders of the Torn-heart",
             "Quest: The Cipher of Damnation - The Third Fragment Recovered (Shadowmoon Valley)"
           ],
           "entities": [
             {
               "id": 30925,
-              "name": "Spaulders of the Torn-Heart",
+              "name": "Spaulders of the Torn-heart",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
             }
           ],
           "entity_id": 30925,
-          "entity_name": "Spaulders of the Torn-Heart",
+          "entity_name": "Spaulders of the Torn-heart",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "item_id": 30925,
-          "item_name": "Spaulders of the Torn-Heart",
+          "item_name": "Spaulders of the Torn-heart",
           "item_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "rank_label": "Option",
           "source_links": [
@@ -1358,16 +1361,6 @@
               "standing": "Honored",
               "standing_rank": 6,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Aldor"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Endarin (The Aldor - Honored)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/healer-bis-gear-pve-pre-raid",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -1982,6 +1975,18 @@
           "item_id": 29183,
           "item_name": "Bindings of the Timewalker",
           "item_url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Reputation: Keepers of Time Revered",
+              "reputation": "Keepers of Time",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/healer-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -2619,7 +2624,7 @@
             [
               {
                 "id": 29327,
-                "name": "Cryo-Mitts",
+                "name": "Cryo-mitts",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
               }
@@ -2628,23 +2633,23 @@
           ],
           "cells": [
             "Option",
-            "Cryo-Mitts",
+            "Cryo-mitts",
             "Quest: Someone Else's Hard Work Pays Off (Terokkar Forest)"
           ],
           "entities": [
             {
               "id": 29327,
-              "name": "Cryo-Mitts",
+              "name": "Cryo-mitts",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
             }
           ],
           "entity_id": 29327,
-          "entity_name": "Cryo-Mitts",
+          "entity_name": "Cryo-mitts",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts",
           "item_id": 29327,
-          "item_name": "Cryo-Mitts",
+          "item_name": "Cryo-mitts",
           "item_url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts",
           "rank_label": "Option",
           "source_links": [
@@ -4336,6 +4341,28 @@
           "item_id": 29169,
           "item_name": "Ring of Convalescence",
           "item_url": "https://www.wowhead.com/tbc/item=29169/ring-of-convalescence",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Reputation: Honor Hold / Thrallmar Revered",
+              "reputation": "Honor Hold",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/healer-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Reputation: Honor Hold / Thrallmar Revered",
+              "reputation": "Thrallmar",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/healer-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -4821,6 +4848,18 @@
           "item_id": 30841,
           "item_name": "Lower City Prayerbook",
           "item_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Reputation: Lower City Revered",
+              "reputation": "Lower City",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/healer-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -5814,6 +5853,18 @@
           "item_id": 29170,
           "item_name": "Windcaller's Orb",
           "item_url": "https://www.wowhead.com/tbc/item=29170/windcallers-orb",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Reputation: Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/paladin/holy/healer-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {

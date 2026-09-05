@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Heavy Clefthoof Leggings Phase 1 Item Level 113 Binds when equipped Legs Leather 503 Armor +33 Stamina Blue Socket Yellow Socket Blue Socket Socket Bonus: +4 Dodge Rating Durability 75 / 75 Requires Level 70 Equip: Increases defense rating by 29. Strength of the Clefthoof (0/3) Requires Leatherworking (350) Heavy Clefthoof Boots Heavy Clefthoof Leggings Heavy Clefthoof Vest (3) Set : +20 Strength. Sell Price: 4 48 8",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:04+00:00",
+  "inventory_slot": null,
+  "item_id": 25690,
+  "item_stats": {
+    "armor": 503,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases defense rating by 29.",
+        "stats": {
+          "defense_rating": 29.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 29."
+    ],
+    "id": 25690,
+    "item_level": 113,
+    "name": "Heavy Clefthoof Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "dodge_rating": 4.0
+    },
+    "sockets": [
+      "blue",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 29.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25690/heavy-clefthoof-leggings"
+  },
+  "name": "Heavy Clefthoof Leggings",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Heavy Clefthoof Leggings Phase 1 Item Level 113 Binds when equipped Legs Leather 503 Armor +33 Stamina Blue Socket Yellow Socket Blue Socket Socket Bonus: +4 Dodge Rating Durability 75 / 75 Requires Level 70 Equip: Increases defense rating by 29. Strength of the Clefthoof (0/3) Requires Leatherworking (350) Heavy Clefthoof Boots Heavy Clefthoof Leggings Heavy Clefthoof Vest (3) Set : +20 Strength. Sell Price: 4 48 8",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25690/heavy-clefthoof-leggings",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25690/heavy-clefthoof-leggings"
+}

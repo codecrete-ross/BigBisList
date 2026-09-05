@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:56+00:00",
+  "fetched_at": "2026-09-04T23:49:26+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -158,7 +158,7 @@
           "cells": [
             "Best Threat",
             "Brutal Gladiator's Plate Helm",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -178,11 +178,11 @@
           "rank_label": "Best Threat",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -302,7 +302,7 @@
           "cells": [
             "Best Overall",
             "Brutal Gladiator's Plate Shoulders",
-            "1500 - Arena Vendor"
+            "1500 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -322,11 +322,11 @@
           "rank_label": "Best Overall",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1500 - Arena Vendor"
+          "source_text": "1500 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -656,7 +656,7 @@
           "cells": [
             "Best Overall",
             "Brutal Gladiator's Plate Chestpiece",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -676,11 +676,11 @@
           "rank_label": "Best Overall",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -1447,7 +1447,7 @@
           "cells": [
             "Threat Alternative",
             "Brutal Gladiator's Plate Legguards",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -1467,11 +1467,11 @@
           "rank_label": "Threat Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -1771,9 +1771,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Exalted with Shattered Sun Offensive )",
+              "reputation": "Shattered Sun Offensive",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-swp-phase-5-best-in-slot-gear-burning-crusade",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Mitigation Alternative",
@@ -2562,7 +2565,7 @@
           "cells": [
             "Best for Brutallus",
             "Ancient Aqir Artifact",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -2582,11 +2585,11 @@
           "rank_label": "Best for Brutallus",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [
@@ -3313,7 +3316,7 @@
           "cells": [
             "Unlucky Alternative",
             "Brutal Gladiator's Shield Wall",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3333,11 +3336,11 @@
           "rank_label": "Unlucky Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         }
       ],
       "slot": "Off Hand"
@@ -3488,7 +3491,7 @@
           "cells": [
             "Resilience and Crit",
             "Vengeful Gladiator's War Edge",
-            "1000 - Arena Vendor"
+            "1000 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3508,11 +3511,11 @@
           "rank_label": "Resilience and Crit",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1000 - Arena Vendor"
+          "source_text": "1000 Arena Points - Arena Vendor"
         }
       ],
       "slot": "Ranged"

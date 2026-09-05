@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Timelapse Shard Phase 1 Item Level 105 Binds when picked up Unique Trinket +27 Stamina Requires Level 70 Requires Keepers of Time - Exalted Equip: Improves your resilience rating by 24. Use: Reduces your threat to enemy targets within 30 yards, making them less likely to attack you. (2 Min Cooldown) Sell Price: 19 75 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:33+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 29181,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your resilience rating by 24.",
+        "stats": {
+          "resilience_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Reduces your threat to enemy targets within 30 yards, making them less likely to attack you. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your resilience rating by 24."
+    ],
+    "id": 29181,
+    "item_level": 105,
+    "name": "Timelapse Shard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "resilience_rating": 24.0,
+      "stamina": 27.0
+    },
+    "use_effects": [
+      "Use: Reduces your threat to enemy targets within 30 yards, making them less likely to attack you. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29181/timelapse-shard"
+  },
+  "name": "Timelapse Shard",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Timelapse Shard Phase 1 Item Level 105 Binds when picked up Unique Trinket +27 Stamina Requires Level 70 Requires Keepers of Time - Exalted Equip: Improves your resilience rating by 24. Use: Reduces your threat to enemy targets within 30 yards, making them less likely to attack you. (2 Min Cooldown) Sell Price: 19 75 28",
+      "reputation": "Keepers of Time",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29181/timelapse-shard",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29181/timelapse-shard"
+}

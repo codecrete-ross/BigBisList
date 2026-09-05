@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Greater Rune of Warding Item Level 70 Requires Level 60 Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20 Sell Price: 30",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:00+00:00",
+  "inventory_slot": null,
+  "item_id": 25521,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 25521,
+    "item_level": 70,
+    "name": "Greater Rune of Warding",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25521/greater-rune-of-warding"
+  },
+  "name": "Greater Rune of Warding",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25521/greater-rune-of-warding"
+}

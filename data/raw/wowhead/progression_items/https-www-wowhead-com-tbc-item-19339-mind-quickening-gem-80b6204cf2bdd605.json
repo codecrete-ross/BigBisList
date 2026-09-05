@@ -1,0 +1,165 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 76 goes in the \"Trinket\" slot. Requires Mage. It is looted from Vaelastrasz the Corrupt. In the Trinkets category.",
+  "fetched_at": "2026-09-04T23:50:28+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 19339,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Quickens the mind, increasing the Mage's spell haste rating by 330 for 20 sec. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 19339,
+    "item_level": 76,
+    "name": "Mind Quickening Gem",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 2,
+      "drop_percent": 18.18,
+      "entity_id": 13020,
+      "entity_name": "Vaelastrasz the Corrupt",
+      "out_of": 11,
+      "source_url": "https://www.wowhead.com/tbc/item=19339/mind-quickening-gem",
+      "type": "drop",
+      "zone": "Blackwing Lair"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "Drop: Vaelastrasz the Corrupt (Blackwing Lair) 18.2%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 2,
+        "drop_percent": 18.18,
+        "entity_id": 13020,
+        "entity_name": "Vaelastrasz the Corrupt",
+        "out_of": 11,
+        "source_url": "https://www.wowhead.com/tbc/item=19339/mind-quickening-gem",
+        "type": "drop",
+        "zone": "Blackwing Lair"
+      }
+    ],
+    "use_effects": [
+      "Use: Quickens the mind, increasing the Mage's spell haste rating by 330 for 20 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19339/mind-quickening-gem"
+  },
+  "name": "Mind Quickening Gem",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 2,
+      "drop_percent": 18.18,
+      "entity_id": 13020,
+      "entity_name": "Vaelastrasz the Corrupt",
+      "out_of": 11,
+      "source_url": "https://www.wowhead.com/tbc/item=19339/mind-quickening-gem",
+      "type": "drop",
+      "zone": "Blackwing Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "hasQuests": 1,
+        "id": 13020,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2867,
+                "outof": 14949
+              },
+              "9": {
+                "count": 2867,
+                "outof": 14949
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 11
+              },
+              "9": {
+                "count": 2,
+                "outof": 11
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 17
+              },
+              "9": {
+                "count": 4,
+                "outof": 17
+              }
+            }
+          }
+        },
+        "location": [
+          2677
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2867,
+            "outof": 14949
+          },
+          "9": {
+            "count": 2867,
+            "outof": 14949
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "Vaelastrasz the Corrupt",
+        "outof": 11,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          1,
+          1
+        ],
+        "type": 2
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19339/mind-quickening-gem"
+}

@@ -1,0 +1,132 @@
+{
+  "bindings": [
+    {
+      "class": "Paladin",
+      "phase": "T6",
+      "spec": "Retribution"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "equipment_item_id": 32235,
+          "slot": "Head",
+          "spell_id": 37891
+        },
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "equipment_item_id": 30055,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        },
+        {
+          "entity": {
+            "id": 46502,
+            "name": "Enchant Chest - Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 30905,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 46502
+        },
+        {
+          "entity": {
+            "id": 29535,
+            "name": "Nethercobra Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30900,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35490
+        },
+        {
+          "equipment_item_id": 32366,
+          "slot": "Feet",
+          "spell_id": 46472
+        },
+        {
+          "entity": {
+            "id": 27899,
+            "name": "Enchant Bracer - Brawn",
+            "type": "spell"
+          },
+          "equipment_item_id": 32574,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27899
+        },
+        {
+          "entity": {
+            "id": 33995,
+            "name": "Enchant Gloves - Major Strength",
+            "type": "spell"
+          },
+          "equipment_item_id": 29947,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33995
+        },
+        {
+          "equipment_item_id": 32526,
+          "slot": "Ring",
+          "spell_id": 46519
+        },
+        {
+          "equipment_item_id": 30834,
+          "slot": "Ring",
+          "spell_id": 46519
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 33122,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "equipment_item_id": 32332,
+          "slot": "Two Hand",
+          "spell_id": 46536
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Phase 3 - Black Temple & Mount Hyjal",
+      "planner": "paladin/blood-elf/A0YQXwUyAfBSMAUTADMSUjEFH4FAfeuUAwB-mSB9wQIAdUaDIHVnilkAfcGFYHi5taYAfdMgfcFAfdkGQHWaAH3BIH3Th2B4tIqiAH3BIH3BQH3BiEB-brWIAH3BIH3ZiQB_Pmz7igB0-4TLiwB_DrW3jAB4crW3DQByxw4AcJ6PIIFihNQAfcGQAH5MtcgSAGtc"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 27927,
+            "name": "Enchant Ring - Stats",
+            "type": "spell"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27927
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best in Slot Ring Jewelry for Retribution Paladin in TBC Classic Phase 3",
+      "text": "With Phase 3, there is a new ring enchant that Enchanters can apply to their rings -  - which is our best ring enchant for the rest of the game and extremely good in arena PvP."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:27+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Retribution Paladin DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

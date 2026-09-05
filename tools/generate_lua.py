@@ -49,6 +49,7 @@ ITEM_SCHEMA = [
     "primary_source",
     "sources",
     "requirements",
+    "tradeable",
 ]
 
 ITEM_FALLBACK_SCHEMA = [
@@ -100,6 +101,9 @@ SOURCE_SCHEMA = [
     "quest_starter_name",
     "quest_starter_relationship",
     "quest_starter_source_url",
+    "available_from_phase",
+    "available_until_phase",
+    "tradeable",
 ]
 
 REQUIREMENT_SCHEMA = [
@@ -134,6 +138,7 @@ USE_SCHEMA = [
     "context",
     "note",
     "requirements",
+    "content_phase",
 ]
 
 GEM_SCHEMA = [
@@ -149,6 +154,7 @@ GEM_SCHEMA = [
     "source_summary",
     "source_url",
     "quality",
+    "requirements",
 ]
 
 ENCHANT_SCHEMA = [
@@ -230,6 +236,9 @@ SOURCE_RECORD_SCHEMA = [
     "primary_source",
     "sources",
     "requirements",
+    "binding",
+    "boe",
+    "tradeable",
 ]
 
 ENCHANT_EFFECT_SCHEMA = [
@@ -293,7 +302,7 @@ def compact_value(schema_name: str, key: str, value):
         if key == "costs":
             return compact_list(value, "cost") if value else None
 
-    if schema_name in {"use", "enchant", "consumable", "leveling_gear", "leveling_recommendation"} and key == "requirements":
+    if schema_name in {"use", "gem", "enchant", "consumable", "leveling_gear", "leveling_recommendation"} and key == "requirements":
         return compact_requirements(value)
 
     return value
@@ -386,6 +395,7 @@ def build_uses(bis_lists: list[dict]) -> list[list]:
                 "phase": row["phase"],
                 "slot": row["slot"],
                 "source_url": row["source_url"],
+                "content_phase": row.get("content_phase"),
                 **item,
             }
             uses.append(compact_record(use, "use"))
@@ -460,6 +470,8 @@ def build_data() -> dict:
         },
         "classes": classes,
         "phases": phases,
+        "active_schedule": canonical_json("phases").get("active_schedule"),
+        "phase_schedules": canonical_json("phases").get("schedules", {}),
         "items": compact_list(items, "item"),
         "item_fallbacks": compact_list(item_fallbacks, "item_fallback"),
         "uses": build_uses(bis_lists),

@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ring of Recurrence Phase 1 Item Level 115 Binds when picked up Unique Finger +15 Stamina +15 Intellect Requires Level 70 Equip: Improves spell critical strike rating by 19. Equip: Increases damage and healing done by magical spells and effects by up to 32. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:51+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 28753,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 19.",
+        "stats": {
+          "spell_crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 32.",
+        "stats": {
+          "spell_power": 32.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 19.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 32."
+    ],
+    "id": 28753,
+    "item_level": 115,
+    "name": "Ring of Recurrence",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_crit_rating": 19.0,
+      "spell_power": 32.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28753/ring-of-recurrence"
+  },
+  "name": "Ring of Recurrence",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28753/ring-of-recurrence"
+}

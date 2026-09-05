@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gloves of the Tempest Phase 3 Item Level 146 Binds when picked up Hands Cloth 153 Armor +30 Stamina +26 Intellect +21 Spirit Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 35 / 35 Classes: Mage Requires Level 70 Equip: Improves spell hit rating by 20. Equip: Improves spell critical strike rating by 19. Equip: Increases damage and healing done by magical spells and effects by up to 46. Tempest Regalia (0/8) Cowl of the Tempest Gloves of the Tempest Leggings of the Tempest Mantle of the Tempest Robes of the Tempest Boots of the Tempest Bracers of the Tempest Belt of the Tempest (2) Set : Increases the duration of your Evocation ability by 2 sec. (4) Set : Increases the damage of your Fireball, Frostbolt, and Arcane Missiles abilities by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:57+00:00",
+  "inventory_slot": null,
+  "item_id": 31055,
+  "item_stats": {
+    "armor": 153,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 20.",
+        "stats": {
+          "spell_hit_rating": 20.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 19.",
+        "stats": {
+          "spell_crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 46.",
+        "stats": {
+          "spell_power": 46.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 20.",
+      "Equip: Improves spell critical strike rating by 19.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 46."
+    ],
+    "id": 31055,
+    "item_level": 146,
+    "name": "Gloves of the Tempest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 26.0,
+      "spell_crit_rating": 19.0,
+      "spell_hit_rating": 20.0,
+      "spell_power": 46.0,
+      "spirit": 21.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31055/gloves-of-the-tempest"
+  },
+  "name": "Gloves of the Tempest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31055/gloves-of-the-tempest"
+}

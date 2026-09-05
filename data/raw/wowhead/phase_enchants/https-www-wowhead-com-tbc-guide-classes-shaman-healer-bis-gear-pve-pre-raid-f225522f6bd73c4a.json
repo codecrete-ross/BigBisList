@@ -1,0 +1,140 @@
+{
+  "bindings": [
+    {
+      "class": "Shaman",
+      "phase": "T6",
+      "spec": "Restoration"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29190,
+            "name": "Arcanum of Renewal",
+            "type": "item"
+          },
+          "equipment_item_id": 32475,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35445
+        },
+        {
+          "entity": {
+            "id": 28887,
+            "name": "Greater Inscription of Faith",
+            "type": "item"
+          },
+          "equipment_item_id": 32579,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35404
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 29522,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 24276,
+            "name": "Golden Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30543,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31370
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 33908,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "equipment_item_id": 32577,
+          "slot": "Wrist",
+          "spell_id": 27911
+        },
+        {
+          "entity": {
+            "id": 33999,
+            "name": "Enchant Gloves - Major Healing",
+            "type": "spell"
+          },
+          "equipment_item_id": 29506,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33999
+        },
+        {
+          "equipment_item_id": 31329,
+          "slot": "Back",
+          "spell_id": 34006
+        },
+        {
+          "entity": {
+            "id": 34010,
+            "name": "Major Healing",
+            "type": "spell"
+          },
+          "equipment_item_id": 32451,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 34010
+        },
+        {
+          "entity": {
+            "id": 27945,
+            "name": "Enchant Shield - Intellect",
+            "type": "spell"
+          },
+          "equipment_item_id": 29267,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 27945
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Restoration Shaman Healing in Pre-Raid",
+      "planner": "shaman/orc/A0YOUAP_VQNQUTVTEFEDIfCBQH7binUAZS0gfdgCIISCAH3DgwB_Q4pMhWBzUm04AH3DIH3DQH3DBkBzVAB92CB924dgd096igB9wyB920B92IgAhHSE2IkAf0FtB4oAc0KEzwsAcfEMAH8XDQBywA4Abh6PAHphhNaQAH7DhNqRAHJTbSkSAGuY"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28887,
+            "name": "Greater Inscription of Faith",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35404
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Restoration Shaman Healing in Pre-Raid",
+      "text": "Should Restoration Shaman Healer Choose Aldor or Scryer for BiS in TBC Classic Pre-Raid?\r\nRestoration Shamans favor choosing Aldor. The shoulder enchant, , from the Aldor is better than the Scryer alternative, . There aren't any notable BoP items from either vendor. Since many Restoration Shamans tend to have Leatherworking, there are various Leatherworking recipes from both factions, but nothing noteworthy enough to influence your decision."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:05+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "recommendation_status": "unverified_phase",
+  "title": "Restoration Shaman Healing Pre-Raid Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid"
+}

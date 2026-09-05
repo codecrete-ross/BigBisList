@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mindfire Waistband Phase 1 Item Level 88 Binds when picked up Waist Cloth 68 Armor +10 Stamina +14 Intellect +8 Spirit Yellow Socket Blue Socket Socket Bonus: +3 Spell Hit Rating Durability 30 / 30 Requires Level 61 Equip: Improves spell critical strike rating by 11. Equip: Increases damage and healing done by magical spells and effects by up to 21. Sell Price: 1 43 71",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:50+00:00",
+  "inventory_slot": null,
+  "item_id": 24395,
+  "item_stats": {
+    "armor": 68,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 11.",
+        "stats": {
+          "spell_crit_rating": 11.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 21.",
+        "stats": {
+          "spell_power": 21.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 11.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 21."
+    ],
+    "id": 24395,
+    "item_level": 88,
+    "name": "Mindfire Waistband",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 61,
+    "socket_bonus": {
+      "spell_hit_rating": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 14.0,
+      "spell_crit_rating": 11.0,
+      "spell_power": 21.0,
+      "spirit": 8.0,
+      "stamina": 10.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24395/mindfire-waistband"
+  },
+  "name": "Mindfire Waistband",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24395/mindfire-waistband"
+}

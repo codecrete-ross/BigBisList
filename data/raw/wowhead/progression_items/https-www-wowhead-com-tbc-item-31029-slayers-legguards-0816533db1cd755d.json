@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Slayer's Legguards Phase 3 Item Level 146 Binds when picked up Legs Leather 401 Armor +46 Agility +54 Stamina Blue Socket Socket Bonus: +4 Attack Power Durability 90 / 90 Classes: Rogue Requires Level 70 Equip: Improves critical strike rating by 45. Equip: Increases attack power by 94. Slayer's Armor (0/8) Slayer's Chestguard Slayer's Handguards Slayer's Helm Slayer's Legguards Slayer's Shoulderpads Slayer's Boots Slayer's Bracers Slayer's Belt (2) Set : Increases the haste from your Slice and Dice ability by 5%. (4) Set : Increases the damage dealt by your Backstab, Sinister Strike, Mutilate, and Hemorrhage abilities by 6%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:52+00:00",
+  "inventory_slot": null,
+  "item_id": 31029,
+  "item_stats": {
+    "armor": 401,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 45.",
+        "stats": {
+          "crit_rating": 45.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 94.",
+        "stats": {
+          "attack_power": 94.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 45.",
+      "Equip: Increases attack power by 94."
+    ],
+    "id": 31029,
+    "item_level": 146,
+    "name": "Slayer's Legguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "sockets": [
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 46.0,
+      "attack_power": 94.0,
+      "crit_rating": 45.0,
+      "stamina": 54.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31029/slayers-legguards"
+  },
+  "name": "Slayer's Legguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31029/slayers-legguards"
+}

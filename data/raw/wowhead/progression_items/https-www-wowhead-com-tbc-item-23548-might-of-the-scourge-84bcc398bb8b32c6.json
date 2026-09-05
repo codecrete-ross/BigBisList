@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Might of the Scourge Phase 1 Item Level 60 Binds when picked up Requires Level 60 Use: Permanently adds to a shoulder slot item increased attack power by 26 and also increases your critical strike rating by 14.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:24+00:00",
+  "inventory_slot": null,
+  "item_id": 23548,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Permanently adds to a shoulder slot item increased attack power by 26 and also increases your critical strike rating by 14.",
+        "stats": {
+          "crit_rating": 14.0
+        },
+        "type": "use"
+      }
+    ],
+    "id": 23548,
+    "item_level": 60,
+    "name": "Might of the Scourge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Permanently adds to a shoulder slot item increased attack power by 26 and also increases your critical strike rating by 14."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23548/might-of-the-scourge"
+  },
+  "name": "Might of the Scourge",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23548/might-of-the-scourge"
+}

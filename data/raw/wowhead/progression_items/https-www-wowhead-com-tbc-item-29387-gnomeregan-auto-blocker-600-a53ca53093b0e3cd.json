@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gnomeregan Auto-Blocker 600 Phase 1 Item Level 110 Binds when picked up Unique Trinket Requires Level 70 Equip: Increases the block value of your shield by 59. Use: Increases the block value of your shield by 200 for 20 sec. (2 Min Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:57+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 29387,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases the block value of your shield by 200 for 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 29387,
+    "item_level": 110,
+    "name": "Gnomeregan Auto-Blocker 600",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases the block value of your shield by 200 for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
+  },
+  "name": "Gnomeregan Auto-Blocker 600",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
+}

@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Netherstrike Bracers Phase 1 Item Level 115 Binds when picked up Wrist Mail 355 Armor +13 Stamina +13 Intellect Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 50 / 50 Requires Level 70 Requires Dragonscale Leatherworking Equip: Improves spell critical strike rating by 17. Equip: Increases damage and healing done by magical spells and effects by up to 20. Equip: Restores 6 mana per 5 sec. Netherstrike Armor (0/3) Netherstrike Bracers Netherstrike Belt Netherstrike Breastplate (3) Set : Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 3 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:02+00:00",
+  "inventory_slot": null,
+  "item_id": 29521,
+  "item_stats": {
+    "armor": 355,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 17.",
+        "stats": {
+          "spell_crit_rating": 17.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+        "stats": {
+          "spell_power": 20.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 17.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+      "Equip: Restores 6 mana per 5 sec."
+    ],
+    "id": 29521,
+    "item_level": 115,
+    "name": "Netherstrike Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "mp5": 6.0,
+      "spell_crit_rating": 17.0,
+      "spell_power": 20.0,
+      "stamina": 13.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29521/netherstrike-bracers"
+  },
+  "name": "Netherstrike Bracers",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Netherstrike Bracers Phase 1 Item Level 115 Binds when picked up Wrist Mail 355 Armor +13 Stamina +13 Intellect Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 50 / 50 Requires Level 70 Requires Dragonscale Leatherworking Equip: Improves spell critical strike rating by 17. Equip: Increases damage and healing done by magical spells and effects by up to 20. Equip: Restores 6 mana per 5 sec. Netherstrike Armor (0/3) Netherstrike Bracers Netherstrike Belt Netherstrike Breastplate (3) Set : Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 3 50",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29521/netherstrike-bracers",
+      "specialization": "Dragonscale Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29521/netherstrike-bracers"
+}

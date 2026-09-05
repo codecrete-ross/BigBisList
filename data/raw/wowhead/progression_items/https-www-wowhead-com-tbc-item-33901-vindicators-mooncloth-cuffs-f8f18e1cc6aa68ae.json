@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vindicator's Mooncloth Cuffs Phase 3 Item Level 141 Binds when picked up Wrist Cloth 173 Armor +34 Stamina +20 Intellect Yellow Socket Socket Bonus: +3 Stamina Durability 35 / 35 Classes: Priest , Mage , Warlock Requires Level 70 Equip: Improves your resilience rating by 17. Equip: Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:11+00:00",
+  "inventory_slot": null,
+  "item_id": 33901,
+  "item_stats": {
+    "armor": 173,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your resilience rating by 17.",
+        "stats": {
+          "resilience_rating": 17.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 55.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your resilience rating by 17.",
+      "Equip: Increases healing done by up to 55 and damage done by up to 19 for all magical spells and effects."
+    ],
+    "id": 33901,
+    "item_level": 141,
+    "name": "Vindicator's Mooncloth Cuffs",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Mage",
+        "Warlock"
+      ]
+    },
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 55.0,
+      "intellect": 20.0,
+      "resilience_rating": 17.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33901/vindicators-mooncloth-cuffs"
+  },
+  "name": "Vindicator's Mooncloth Cuffs",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33901/vindicators-mooncloth-cuffs"
+}

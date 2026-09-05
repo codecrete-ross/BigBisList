@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skyshatter Treads Phase 5 Item Level 154 Binds when picked up Feet Mail 740 Armor +21 Stamina +30 Intellect Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 70 / 70 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 23. Equip: Improves spell haste rating by 30. Equip: Increases damage and healing done by magical spells and effects by up to 50. Equip: Restores 7 mana per 5 sec. Skyshatter Regalia (0/8) Skyshatter Breastplate Skyshatter Gauntlets Skyshatter Headguard Skyshatter Legguards Skyshatter Mantle Skyshatter Cord Skyshatter Bands Skyshatter Treads (2) Set : Whenever you have an air totem, an earth totem, a fire totem, and a water totem active at the same time, you gain 15 mana per 5 sec, 35 spell critical strike rating, and up to 45 spell damage. (4) Set : Increases the damage dealt by your Lightning Bolt ability by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:05+00:00",
+  "inventory_slot": null,
+  "item_id": 34566,
+  "item_stats": {
+    "armor": 740,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 23.",
+        "stats": {
+          "spell_crit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 50.",
+        "stats": {
+          "spell_power": 50.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 23.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 50.",
+      "Equip: Restores 7 mana per 5 sec."
+    ],
+    "id": 34566,
+    "item_level": 154,
+    "name": "Skyshatter Treads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 30.0,
+      "mp5": 7.0,
+      "spell_crit_rating": 23.0,
+      "spell_power": 50.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34566/skyshatter-treads"
+  },
+  "name": "Skyshatter Treads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34566/skyshatter-treads"
+}

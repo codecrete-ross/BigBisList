@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nightstaff of the Everliving Phase 1 Item Level 115 Binds when picked up Two-Hand Staff 143 - 290 Damage Speed 3.20 (67.66 damage per second) +33 Stamina +34 Intellect +55 Spirit Durability 120 / 120 Requires Level 70 Equip: Increases healing done by up to 348 and damage done by up to 116 for all magical spells and effects. Sell Price: 14 96 18",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:39+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 28604,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 67.66,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 348 and damage done by up to 116 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 348.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 348 and damage done by up to 116 for all magical spells and effects."
+    ],
+    "id": 28604,
+    "item_level": 115,
+    "name": "Nightstaff of the Everliving",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 348.0,
+      "intellect": 34.0,
+      "spirit": 55.0,
+      "stamina": 33.0
+    },
+    "weapon_max_damage": 290,
+    "weapon_min_damage": 143,
+    "weapon_speed": 3.2,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28604/nightstaff-of-the-everliving"
+  },
+  "name": "Nightstaff of the Everliving",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28604/nightstaff-of-the-everliving"
+}

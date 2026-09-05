@@ -1,0 +1,49 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Formula: Enchant Cloak - Major Resistance Phase 1 Item Level 66 Requires Enchanting (330) Use: Teaches you how to permanently enchant a cloak to increase all resistances by 7. Permanently enchant a cloak to increase all Resistances by 7. Requires a level 35 or higher item. Sell Price: 1 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:02+00:00",
+  "inventory_slot": null,
+  "item_id": 22548,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant a cloak to increase all resistances by 7. Permanently enchant a cloak to increase all Resistances by 7. Requires a level 35 or higher item.",
+        "type": "use"
+      }
+    ],
+    "id": 22548,
+    "item_level": 66,
+    "name": "Formula: Enchant Cloak - Major Resistance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant a cloak to increase all resistances by 7. Permanently enchant a cloak to increase all Resistances by 7. Requires a level 35 or higher item."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22548"
+  },
+  "name": "Formula: Enchant Cloak - Major Resistance",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Cloak - Major Resistance Phase 1 Item Level 66 Requires Enchanting (330) Use: Teaches you how to permanently enchant a cloak to increase all resistances by 7. Permanently enchant a cloak to increase all Resistances by 7. Requires a level 35 or higher item. Sell Price: 1 50",
+      "scope": "equip_or_use",
+      "skill": 330,
+      "source_url": "https://www.wowhead.com/tbc/item=22548",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22548"
+}

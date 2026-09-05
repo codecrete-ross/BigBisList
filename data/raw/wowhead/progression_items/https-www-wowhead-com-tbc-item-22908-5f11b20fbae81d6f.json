@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Recipe: Elixir of Major Firepower Item Level 69 Binds when picked up Requires Alchemy (345) Requires The Scryers - Revered Use: Teaches you how to make an Elixir of Major Firepower. Sell Price: 1 50 Elixir of Major Firepower Item Level 64 Requires Level 50 Use: Increases fire spell damage by up to 55 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 25 Requires Mote of Fire (2), Ancient Lichen , Imbued Vial",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:10+00:00",
+  "inventory_slot": null,
+  "item_id": 22908,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make an Elixir of Major Firepower.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Increases fire spell damage by up to 55 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 22908,
+    "item_level": 69,
+    "name": "Recipe: Elixir of Major Firepower",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 50,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make an Elixir of Major Firepower.",
+      "Use: Increases fire spell damage by up to 55 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22908"
+  },
+  "name": "Recipe: Elixir of Major Firepower",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Recipe: Elixir of Major Firepower Item Level 69 Binds when picked up Requires Alchemy (345) Requires The Scryers - Revered Use: Teaches you how to make an Elixir of Major Firepower. Sell Price: 1 50 Elixir of Major Firepower Item Level 64 Requires Level 50 Use: Increases fire spell damage by up to 55 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 25 Requires Mote of Fire (2), Ancient Lichen , Imbued Vial",
+      "reputation": "The Scryers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=22908",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Elixir of Major Firepower Item Level 69 Binds when picked up Requires Alchemy (345) Requires The Scryers - Revered Use: Teaches you how to make an Elixir of Major Firepower. Sell Price: 1 50 Elixir of Major Firepower Item Level 64 Requires Level 50 Use: Increases fire spell damage by up to 55 for 1 hour. Battle Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 25 Requires Mote of Fire (2), Ancient Lichen , Imbued Vial",
+      "scope": "equip_or_use",
+      "skill": 345,
+      "source_url": "https://www.wowhead.com/tbc/item=22908",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22908"
+}

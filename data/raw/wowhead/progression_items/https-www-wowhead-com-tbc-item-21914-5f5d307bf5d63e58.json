@@ -1,0 +1,149 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This tailoring pattern is used for the Tailoring profession. It is sold by Andrion Darkspinner. In the Tailoring Patterns category. An item.",
+  "fetched_at": "2026-09-04T23:50:45+00:00",
+  "inventory_slot": null,
+  "item_id": 21914,
+  "item_stats": {
+    "armor": 122,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew Frozen Shadoweave Boots.",
+        "type": "use"
+      }
+    ],
+    "id": 21914,
+    "item_level": 73,
+    "name": "Pattern: Frozen Shadoweave Boots",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 22212,
+      "entity_name": "Andrion Darkspinner",
+      "location_area": "Shattrath City",
+      "price_copper": 51000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=21914",
+      "type": "vendor",
+      "vendor_id": 22212,
+      "zone": "Shattrath City"
+    },
+    "quality": "unknown",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_hit_rating": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "Vendor: Andrion Darkspinner (Shattrath City)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 22212,
+        "entity_name": "Andrion Darkspinner",
+        "location_area": "Shattrath City",
+        "price_copper": 51000,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=21914",
+        "type": "vendor",
+        "vendor_id": 22212,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "intellect": 9.0,
+      "stamina": 15.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to sew Frozen Shadoweave Boots."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21914"
+  },
+  "name": "Pattern: Frozen Shadoweave Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Frozen Shadoweave Boots Item Level 73 Binds when picked up Requires Tailoring (365) Requires Shadoweave Tailoring Use: Teaches you how to sew Frozen Shadoweave Boots. Sell Price: 1 50 Frozen Shadoweave Boots Item Level 105 Binds when picked up Feet Cloth 122 Armor +15 Stamina +9 Intellect Yellow Socket Blue Socket Socket Bonus: +3 Spell Hit Rating Durability 50 / 50 Requires Level 70 Requires Shadoweave Tailoring Equip: Increases damage done by Shadow spells and effects by up to 57. Equip: Increases damage done by Frost spells and effects by up to 57. Shadow's Embrace (0/3) Frozen Shadoweave Robe Frozen Shadoweave Shoulders Frozen Shadoweave Boots Sell Price: 3 29 21 Requires Shadowcloth (8), Primal Water (12), Netherweb Spider Silk (2) This tailoring pattern is used for the Tailoring profession. It is sold by Andrion Darkspinner. In the Tailoring Patterns category. An item.",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=21914",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Frozen Shadoweave Boots Item Level 73 Binds when picked up Requires Tailoring (365) Requires Shadoweave Tailoring Use: Teaches you how to sew Frozen Shadoweave Boots. Sell Price: 1 50 Frozen Shadoweave Boots Item Level 105 Binds when picked up Feet Cloth 122 Armor +15 Stamina +9 Intellect Yellow Socket Blue Socket Socket Bonus: +3 Spell Hit Rating Durability 50 / 50 Requires Level 70 Requires Shadoweave Tailoring Equip: Increases damage done by Shadow spells and effects by up to 57. Equip: Increases damage done by Frost spells and effects by up to 57. Shadow's Embrace (0/3) Frozen Shadoweave Robe Frozen Shadoweave Shoulders Frozen Shadoweave Boots Sell Price: 3 29 21 Requires Shadowcloth (8), Primal Water (12), Netherweb Spider Silk (2) This tailoring pattern is used for the Tailoring profession. It is sold by Andrion Darkspinner. In the Tailoring Patterns category. An item.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21914",
+      "specialization": "Shadoweave Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 22212,
+      "entity_name": "Andrion Darkspinner",
+      "location_area": "Shattrath City",
+      "price_copper": 51000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=21914",
+      "type": "vendor",
+      "vendor_id": 22212,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            51000
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 22212,
+        "location": [
+          3703
+        ],
+        "maxlevel": 68,
+        "minlevel": 68,
+        "name": "Andrion Darkspinner",
+        "popularity": 8,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Shadoweave Specialist",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    26757,
+    25706,
+    26717
+  ],
+  "url": "https://www.wowhead.com/tbc/item=21914"
+}

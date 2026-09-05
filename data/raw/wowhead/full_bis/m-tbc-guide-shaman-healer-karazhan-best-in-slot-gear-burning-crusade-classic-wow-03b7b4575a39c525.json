@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:59+00:00",
+  "fetched_at": "2026-09-04T23:49:32+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -2342,7 +2342,7 @@
             [
               {
                 "id": 29327,
-                "name": "Cryo-Mitts",
+                "name": "Cryo-mitts",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
               }
@@ -2351,23 +2351,23 @@
           ],
           "cells": [
             "Option",
-            "Cryo-Mitts",
+            "Cryo-mitts",
             "Quest: Someone Else's Hard Work Pays Off (Mana-Tombs)"
           ],
           "entities": [
             {
               "id": 29327,
-              "name": "Cryo-Mitts",
+              "name": "Cryo-mitts",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
             }
           ],
           "entity_id": 29327,
-          "entity_name": "Cryo-Mitts",
+          "entity_name": "Cryo-mitts",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts",
           "item_id": 29327,
-          "item_name": "Cryo-Mitts",
+          "item_name": "Cryo-mitts",
           "item_url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts",
           "rank_label": "Option",
           "source_links": [
@@ -3238,33 +3238,33 @@
             [
               {
                 "id": 31335,
-                "name": "Kilt of Living Growth",
+                "name": "Pants of Living Growth",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth"
+                "url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Kilt of Living Growth",
+            "Pants of Living Growth",
             "World Drop"
           ],
           "entities": [
             {
               "id": 31335,
-              "name": "Kilt of Living Growth",
+              "name": "Pants of Living Growth",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth"
+              "url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth"
             }
           ],
           "entity_id": 31335,
-          "entity_name": "Kilt of Living Growth",
+          "entity_name": "Pants of Living Growth",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth",
+          "entity_url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth",
           "item_id": 31335,
-          "item_name": "Kilt of Living Growth",
-          "item_url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth",
+          "item_name": "Pants of Living Growth",
+          "item_url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth",
           "rank_label": "Option",
           "source_links": [],
           "source_text": "World Drop"
@@ -4371,7 +4371,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
-              "reputation": "Thrallmar / Honor Hold",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/shaman-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
+              "reputation": "Honor Hold",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/shaman-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
               "standing": "Revered",
@@ -5873,16 +5883,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/shaman-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",

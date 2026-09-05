@@ -1,0 +1,75 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Cobrascale Hood Item Level 73 Requires Leatherworking (365) Use: Teaches you how to make a Cobrascale Hood. Sell Price: 6 Cobrascale Hood Item Level 105 Binds when equipped Head Leather 271 Armor +37 Agility +42 Stamina Durability 70 / 70 Requires Level 70 Equip: Improves hit rating by 18. Equip: Increases attack power by 74. Sell Price: 4 4 47 Requires Heavy Knothide Leather (6), Cobra Scales (10), Primal Air (15), Primal Shadow (15), Primal Nether",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:05+00:00",
+  "inventory_slot": null,
+  "item_id": 29723,
+  "item_stats": {
+    "armor": 271,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Cobrascale Hood.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves hit rating by 18.",
+        "stats": {
+          "hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 74.",
+        "stats": {
+          "attack_power": 74.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 18.",
+      "Equip: Increases attack power by 74."
+    ],
+    "id": 29723,
+    "item_level": 73,
+    "name": "Pattern: Cobrascale Hood",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 37.0,
+      "attack_power": 74.0,
+      "hit_rating": 18.0,
+      "stamina": 42.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Cobrascale Hood."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29723"
+  },
+  "name": "Pattern: Cobrascale Hood",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Cobrascale Hood Item Level 73 Requires Leatherworking (365) Use: Teaches you how to make a Cobrascale Hood. Sell Price: 6 Cobrascale Hood Item Level 105 Binds when equipped Head Leather 271 Armor +37 Agility +42 Stamina Durability 70 / 70 Requires Level 70 Equip: Improves hit rating by 18. Equip: Increases attack power by 74. Sell Price: 4 4 47 Requires Heavy Knothide Leather (6), Cobra Scales (10), Primal Air (15), Primal Shadow (15), Primal Nether",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=29723",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29723"
+}

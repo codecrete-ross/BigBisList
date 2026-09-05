@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Trollbane Phase 4 Item Level 132 Binds when picked up Two-Hand Axe 358 - 537 Damage Speed 3.60 (124.31 damage per second) +39 Agility +58 Stamina Red Socket Blue Socket Socket Bonus: +6 Attack Power Durability 120 / 120 Requires Level 70 Equip: Increases attack power by 94. \"You know this blade...\" Sell Price: 16 73 54",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:47+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 33492,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 124.31,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases attack power by 94. \"You know this blade...\"",
+        "stats": {
+          "attack_power": 94.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases attack power by 94. \"You know this blade...\""
+    ],
+    "id": 33492,
+    "item_level": 132,
+    "name": "Trollbane",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 39.0,
+      "attack_power": 94.0,
+      "stamina": 58.0
+    },
+    "weapon_max_damage": 537,
+    "weapon_min_damage": 358,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33492/trollbane"
+  },
+  "name": "Trollbane",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33492/trollbane"
+}

@@ -199,6 +199,15 @@ def build_manifest_coverage(
     }
     if family_filter:
         report["family"] = family_filter
+    if family_filter in (None, "bis_lists"):
+        declared = {(s.get("class"), s.get("spec"), phase)
+                    for s in manifest.get("sources", []) if s.get("phase") == "PR"
+                    for phase in s.get("content_phases", ["PR"])}
+        expected = {(pair["class"], pair["spec"], phase)
+                    for pair in class_spec_pairs() for phase in PHASE_KEYS}
+        report["pre_raid_progression"] = {"expected": len(expected), "present": len(declared & expected),
+                                           "missing": [list(key) for key in sorted(expected - declared)]}
+        report["ok"] = report["ok"] and not (expected - declared)
     if include_missing:
         report["missing"] = missing_units
     if duplicate_units:

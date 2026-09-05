@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lower City Prayerbook Phase 1 Item Level 115 Binds when picked up Trinket Requires Level 70 Requires Lower City - Revered Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects. Use: Your heals each cost 22 less mana for the next 15 sec. (1 Min Cooldown) \"Short prayers from a dozen different faiths are contained in this book.\" Sell Price: 4 39 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:28+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 30841,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 70.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Your heals each cost 22 less mana for the next 15 sec. (1 Min Cooldown) \"Short prayers from a dozen different faiths are contained in this book.\"",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects."
+    ],
+    "id": 30841,
+    "item_level": 115,
+    "name": "Lower City Prayerbook",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 70.0
+    },
+    "use_effects": [
+      "Use: Your heals each cost 22 less mana for the next 15 sec. (1 Min Cooldown) \"Short prayers from a dozen different faiths are contained in this book.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook"
+  },
+  "name": "Lower City Prayerbook",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Lower City Prayerbook Phase 1 Item Level 115 Binds when picked up Trinket Requires Level 70 Requires Lower City - Revered Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects. Use: Your heals each cost 22 less mana for the next 15 sec. (1 Min Cooldown) \"Short prayers from a dozen different faiths are contained in this book.\" Sell Price: 4 39 88",
+      "reputation": "Lower City",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30841/lower-city-prayerbook"
+}

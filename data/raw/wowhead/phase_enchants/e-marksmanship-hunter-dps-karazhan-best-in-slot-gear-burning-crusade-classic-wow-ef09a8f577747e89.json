@@ -1,0 +1,151 @@
+{
+  "bindings": [
+    {
+      "class": "Hunter",
+      "phase": "T4",
+      "spec": "Marksmanship"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 28275,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "entity": {
+            "id": 23548,
+            "name": "Might of the Scourge",
+            "type": "item"
+          },
+          "equipment_item_id": 27801,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 29483
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 28228,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29535,
+            "name": "Nethercobra Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30739,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35490
+        },
+        {
+          "entity": {
+            "id": 27951,
+            "name": "Enchant Boots - Dexterity",
+            "type": "spell"
+          },
+          "equipment_item_id": 28545,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27951
+        },
+        {
+          "entity": {
+            "id": 34002,
+            "name": "Enchant Bracer - Assault",
+            "type": "spell"
+          },
+          "equipment_item_id": 29246,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 34002
+        },
+        {
+          "entity": {
+            "id": 25080,
+            "name": "Enchant Gloves - Superior Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 27474,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25080
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 24259,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27977,
+            "name": "Enchant 2H Weapon - Major Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 28435,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Two Hand",
+          "spell_id": 27977
+        },
+        {
+          "entity": {
+            "id": 23766,
+            "name": "Stabilized Eternium Scope",
+            "type": "item"
+          },
+          "equipment_item_id": 28772,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ranged",
+          "spell_id": 30260
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Marksmanship Hunter DPS in Phase 1",
+      "planner": "hunter/orc/A0YRUSACAFJQEiQxBR8FBSASBf8AAEkagUBuc4p8AF3cIH6ZAgByxYNAbJlzKwCWkyBd3IVgbkRtOABd3CBd3EB3VQZAcJwAXfcgd1yHYHgTiqIAXdwgXdxAXdyIQG-BbS8AXdwgXf2JAHI-hNKKQGtSYfgAXdwgXdwLAHBVDABwdw0AcJ4OAHLHjyBew4TUAF3ckABvE21JkgBwZHY0"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Marksmanship Hunter DPS in Phase 1",
+      "text": "Should Marksmanship Hunter DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 1?\r\nFor hunters, deciding between either  or  is not that big of a deal at the end of the day. However, the former should be the faction you choose to truly min-max your character. The shoulder enchant  is ever so slightly better than  from The Scryers. This difference is so marginal that you really won't ever notice the dps difference in raids."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:23+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Marksmanship Hunter DPS Phase 1 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/marksmanship-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow"
+}

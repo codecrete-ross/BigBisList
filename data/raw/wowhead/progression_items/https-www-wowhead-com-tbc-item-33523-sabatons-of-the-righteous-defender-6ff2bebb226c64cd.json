@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sabatons of the Righteous Defender Phase 4 Item Level 128 Binds when picked up Feet Plate 1105 Armor +45 Stamina Red Socket Blue Socket Socket Bonus: +4 Stamina Durability 75 / 75 Requires Level 70 Equip: Increases defense rating by 18. Equip: Improves spell hit rating by 18. Equip: Increases the block value of your shield by 30. Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:52+00:00",
+  "inventory_slot": null,
+  "item_id": 33523,
+  "item_stats": {
+    "armor": 1105,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases defense rating by 18.",
+        "stats": {
+          "defense_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell hit rating by 18.",
+        "stats": {
+          "spell_hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+        "stats": {
+          "spell_power": 23.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 18.",
+      "Equip: Improves spell hit rating by 18.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 23."
+    ],
+    "id": 33523,
+    "item_level": 128,
+    "name": "Sabatons of the Righteous Defender",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 4.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 18.0,
+      "spell_hit_rating": 18.0,
+      "spell_power": 23.0,
+      "stamina": 45.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33523/sabatons-of-the-righteous-defender"
+  },
+  "name": "Sabatons of the Righteous Defender",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33523/sabatons-of-the-righteous-defender"
+}

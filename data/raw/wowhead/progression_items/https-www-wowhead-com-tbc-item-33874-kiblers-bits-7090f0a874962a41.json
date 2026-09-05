@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Kibler's Bits Item Level 65 Requires Level 55 Use: Increases the Strength and Spirit of your pet by 20. Lasts for 30 min. \"Pet tested, hunter approved.\" Max Stack: 20 Sell Price: 1 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:08+00:00",
+  "inventory_slot": null,
+  "item_id": 33874,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases the Strength and Spirit of your pet by 20. Lasts for 30 min. \"Pet tested, hunter approved.\" Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 33874,
+    "item_level": 65,
+    "name": "Kibler's Bits",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases the Strength and Spirit of your pet by 20. Lasts for 30 min. \"Pet tested, hunter approved.\" Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33874/kiblers-bits"
+  },
+  "name": "Kibler's Bits",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33874/kiblers-bits"
+}

@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skyshatter Headguard Phase 3 Item Level 146 Binds when picked up Head Mail 830 Armor +42 Stamina +37 Intellect Meta Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 36. Equip: Increases damage and healing done by magical spells and effects by up to 62. Equip: Restores 8 mana per 5 sec. Skyshatter Regalia (0/8) Skyshatter Breastplate Skyshatter Gauntlets Skyshatter Headguard Skyshatter Legguards Skyshatter Mantle Skyshatter Cord Skyshatter Bands Skyshatter Treads (2) Set : Whenever you have an air totem, an earth totem, a fire totem, and a water totem active at the same time, you gain 15 mana per 5 sec, 35 spell critical strike rating, and up to 45 spell damage. (4) Set : Increases the damage dealt by your Lightning Bolt ability by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:48+00:00",
+  "inventory_slot": null,
+  "item_id": 31014,
+  "item_stats": {
+    "armor": 830,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 36.",
+        "stats": {
+          "spell_crit_rating": 36.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 62.",
+        "stats": {
+          "spell_power": 62.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 36.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 62.",
+      "Equip: Restores 8 mana per 5 sec."
+    ],
+    "id": 31014,
+    "item_level": 146,
+    "name": "Skyshatter Headguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "sockets": [
+      "meta",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 37.0,
+      "mp5": 8.0,
+      "spell_crit_rating": 36.0,
+      "spell_power": 62.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31014/skyshatter-headguard"
+  },
+  "name": "Skyshatter Headguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31014/skyshatter-headguard"
+}

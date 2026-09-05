@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Will of Edward the Odd Phase 1 Item Level 100 Binds when equipped Chest Cloth 170 Armor +30 Intellect Durability 100 / 100 Requires Level 70 Equip: Improves spell critical strike rating by 30. Equip: Increases damage and healing done by magical spells and effects by up to 53. Sell Price: 3 97 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:18+00:00",
+  "inventory_slot": null,
+  "item_id": 31340,
+  "item_stats": {
+    "armor": 170,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 30.",
+        "stats": {
+          "spell_crit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 53.",
+        "stats": {
+          "spell_power": 53.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 30.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 53."
+    ],
+    "id": 31340,
+    "item_level": 100,
+    "name": "Will of Edward the Odd",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 30.0,
+      "spell_crit_rating": 30.0,
+      "spell_power": 53.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31340/will-of-edward-the-odd"
+  },
+  "name": "Will of Edward the Odd",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31340/will-of-edward-the-odd"
+}

@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vindicator's Brand Phase 1 Item Level 100 Binds when picked up Unique One-Hand Sword 147 - 275 Damage Speed 2.60 (81.15 damage per second) Durability 105 / 105 Requires Level 70 Requires The Aldor - Exalted Equip: Improves hit rating by 19. Equip: Increases attack power by 38. Sell Price: 41 45 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:26+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 29124,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 81.15,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 19.",
+        "stats": {
+          "hit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 38.",
+        "stats": {
+          "attack_power": 38.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 19.",
+      "Equip: Increases attack power by 38."
+    ],
+    "id": 29124,
+    "item_level": 100,
+    "name": "Vindicator's Brand",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 38.0,
+      "hit_rating": 19.0
+    },
+    "weapon_max_damage": 275,
+    "weapon_min_damage": 147,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29124/vindicators-brand"
+  },
+  "name": "Vindicator's Brand",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Vindicator's Brand Phase 1 Item Level 100 Binds when picked up Unique One-Hand Sword 147 - 275 Damage Speed 2.60 (81.15 damage per second) Durability 105 / 105 Requires Level 70 Requires The Aldor - Exalted Equip: Improves hit rating by 19. Equip: Increases attack power by 38. Sell Price: 41 45 44",
+      "reputation": "The Aldor",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29124/vindicators-brand",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29124/vindicators-brand"
+}

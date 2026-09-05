@@ -1,0 +1,39 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pauldrons of the Vanquished Hero Phase 2 Item Level 70 Binds when picked up Classes: Hunter , Mage , Warlock Requires Level 70 Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:03+00:00",
+  "inventory_slot": null,
+  "item_id": 30250,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 30250,
+    "item_level": 70,
+    "name": "Pauldrons of the Vanquished Hero",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Hunter",
+        "Mage",
+        "Warlock"
+      ]
+    },
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30250"
+  },
+  "name": "Pauldrons of the Vanquished Hero",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30250"
+}

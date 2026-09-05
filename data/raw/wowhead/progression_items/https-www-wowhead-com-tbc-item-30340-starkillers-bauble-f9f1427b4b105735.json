@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Starkiller's Bauble Item Level 114 Binds when picked up Unique Trinket Equip: Improves spell hit rating by 26. Use: Increases spell damage by up to 125 for 15 sec. (1 Min, 30 Sec Cooldown) Sell Price: 3 63 68",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:09+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 30340,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 26.",
+        "stats": {
+          "spell_hit_rating": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases spell damage by up to 125 for 15 sec. (1 Min, 30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 26."
+    ],
+    "id": 30340,
+    "item_level": 114,
+    "name": "Starkiller's Bauble",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spell_hit_rating": 26.0
+    },
+    "use_effects": [
+      "Use: Increases spell damage by up to 125 for 15 sec. (1 Min, 30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30340/starkillers-bauble"
+  },
+  "name": "Starkiller's Bauble",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30340/starkillers-bauble"
+}

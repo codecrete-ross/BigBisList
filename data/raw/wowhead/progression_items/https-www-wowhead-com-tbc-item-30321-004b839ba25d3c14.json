@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Plans: Belt of the Guardian Phase 2 Item Level 75 Binds when picked up Requires Blacksmithing (375) Use: Teaches you how to make a Belt of the Guardian. Sell Price: 6 Belt of the Guardian Item Level 128 Binds when equipped Waist Plate 904 Armor +48 Stamina +13 Intellect Red Socket Yellow Socket Socket Bonus: +4 Stamina Durability 55 / 55 Requires Level 70 Equip: Increases defense rating by 19. Equip: Increases damage and healing done by magical spells and effects by up to 21. Equip: Increases the block value of your shield by 33. Sell Price: 4 66 42 Requires Nether Vortex (2), Hardened Adamantite Bar (5), Primal Water (10), Primal Earth (5)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:08+00:00",
+  "inventory_slot": null,
+  "item_id": 30321,
+  "item_stats": {
+    "armor": 904,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Belt of the Guardian.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases defense rating by 19.",
+        "stats": {
+          "defense_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 21.",
+        "stats": {
+          "spell_power": 21.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 19.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 21."
+    ],
+    "id": 30321,
+    "item_level": 75,
+    "name": "Plans: Belt of the Guardian",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 19.0,
+      "intellect": 13.0,
+      "spell_power": 21.0,
+      "stamina": 48.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Belt of the Guardian."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30321"
+  },
+  "name": "Plans: Belt of the Guardian",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Belt of the Guardian Phase 2 Item Level 75 Binds when picked up Requires Blacksmithing (375) Use: Teaches you how to make a Belt of the Guardian. Sell Price: 6 Belt of the Guardian Item Level 128 Binds when equipped Waist Plate 904 Armor +48 Stamina +13 Intellect Red Socket Yellow Socket Socket Bonus: +4 Stamina Durability 55 / 55 Requires Level 70 Equip: Increases defense rating by 19. Equip: Increases damage and healing done by magical spells and effects by up to 21. Equip: Increases the block value of your shield by 33. Sell Price: 4 66 42 Requires Nether Vortex (2), Hardened Adamantite Bar (5), Primal Water (10), Primal Earth (5)",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=30321",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30321"
+}

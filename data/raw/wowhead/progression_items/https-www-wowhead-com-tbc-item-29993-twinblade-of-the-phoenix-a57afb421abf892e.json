@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Twinblade of the Phoenix Phase 2 Item Level 141 Binds when picked up Two-Hand Sword 375 - 564 Damage Speed 3.60 (130.42 damage per second) +53 Stamina Red Socket Yellow Socket Blue Socket Socket Bonus: +8 Attack Power Durability 120 / 120 Requires Level 70 Equip: Improves critical strike rating by 37. Equip: Increases attack power by 110. Sell Price: 18 4 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:21+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 29993,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 130.42,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 37.",
+        "stats": {
+          "crit_rating": 37.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 110.",
+        "stats": {
+          "attack_power": 110.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 37.",
+      "Equip: Increases attack power by 110."
+    ],
+    "id": 29993,
+    "item_level": 141,
+    "name": "Twinblade of the Phoenix",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 110.0,
+      "crit_rating": 37.0,
+      "stamina": 53.0
+    },
+    "weapon_max_damage": 564,
+    "weapon_min_damage": 375,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29993/twinblade-of-the-phoenix"
+  },
+  "name": "Twinblade of the Phoenix",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29993/twinblade-of-the-phoenix"
+}

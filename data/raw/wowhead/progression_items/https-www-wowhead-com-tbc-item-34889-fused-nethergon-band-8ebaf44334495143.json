@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fused Nethergon Band Phase 5 Item Level 141 Binds when picked up Unique Finger +27 Stamina +19 Intellect Requires Level 70 Equip: Improves spell hit rating by 28. Equip: Increases damage and healing done by magical spells and effects by up to 35.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:19+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 34889,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 28.",
+        "stats": {
+          "spell_hit_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 35.",
+        "stats": {
+          "spell_power": 35.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 28.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 35."
+    ],
+    "id": 34889,
+    "item_level": 141,
+    "name": "Fused Nethergon Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 19.0,
+      "spell_hit_rating": 28.0,
+      "spell_power": 35.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34889/fused-nethergon-band"
+  },
+  "name": "Fused Nethergon Band",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34889/fused-nethergon-band"
+}

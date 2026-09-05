@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sin'dorei Pendant of Conquest Phase 5 Item Level 141 Binds when picked up Unique Neck +18 Stamina +19 Intellect Blue Socket Socket Bonus: +2 Spell Damage and Healing Requires Level 70 Equip: Improves spell critical strike rating by 19. Equip: Improves your resilience rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 34. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:45+00:00",
+  "inventory_slot": null,
+  "item_id": 35290,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 19.",
+        "stats": {
+          "spell_crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 18.",
+        "stats": {
+          "resilience_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+        "stats": {
+          "spell_power": 34.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 19.",
+      "Equip: Improves your resilience rating by 18.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+    ],
+    "id": 35290,
+    "item_level": 141,
+    "name": "Sin'dorei Pendant of Conquest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 19.0,
+      "resilience_rating": 18.0,
+      "spell_crit_rating": 19.0,
+      "spell_power": 34.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35290/sindorei-pendant-of-conquest"
+  },
+  "name": "Sin'dorei Pendant of Conquest",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35290/sindorei-pendant-of-conquest"
+}

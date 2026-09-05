@@ -1,0 +1,96 @@
+{
+  "description": "In the Profession Spells category. Added in World of Warcraft: The Burning Crusade. Always up to date with the latest patch (2.5.6).",
+  "fetched_at": "2026-09-05T00:09:12+00:00",
+  "name": "Spellfire Robe",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 21910,
+      "entity_name": "Pattern: Spellfire Robe",
+      "item_id": 21910,
+      "source_url": "https://www.wowhead.com/tbc/spell=26754",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          375,
+          385,
+          390,
+          395
+        ],
+        "creates": [
+          21848,
+          1,
+          1
+        ],
+        "id": 26754,
+        "learnedat": 375,
+        "level": 0,
+        "name": "Spellfire Robe",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            24271,
+            14
+          ],
+          [
+            21884,
+            16
+          ],
+          [
+            21881,
+            4
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ],
+        "specialization": 26797
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21910,
+        "level": 75,
+        "name": "Pattern: Spellfire Robe",
+        "quality": 1,
+        "skill": 375,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Gidge Spellweaver",
+            "t": 1,
+            "ti": 22213,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 26754,
+  "url": "https://www.wowhead.com/tbc/spell=26754"
+}

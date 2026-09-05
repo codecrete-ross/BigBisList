@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Smooth Lionseye Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Friendly Use: Teaches you how to cut a Smooth Lionseye. Sell Price: 1 50 Smooth Lionseye Item Level 100 +10 Critical Strike Rating \"Matches a Yellow Socket.\" Sell Price: 6 Requires Lionseye",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:13:18+00:00",
+  "inventory_slot": null,
+  "item_id": 32291,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Smooth Lionseye.",
+        "type": "use"
+      }
+    ],
+    "id": 32291,
+    "item_level": 75,
+    "name": "Design: Smooth Lionseye",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Smooth Lionseye."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32291"
+  },
+  "name": "Design: Smooth Lionseye",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Design: Smooth Lionseye Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Friendly",
+      "reputation": "The Scale of the Sands",
+      "scope": "learn_recipe",
+      "source_url": "https://www.wowhead.com/tbc/item=32291",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Smooth Lionseye Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Friendly",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=32291",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "reagent_item_ids": [
+    32229
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 32205,
+  "teaches_spell_ids": [
+    39720
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/32291",
+  "url": "https://www.wowhead.com/tbc/item=32291"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Belt of Primal Majesty Phase 3 Item Level 141 Binds when picked up Waist Leather 249 Armor +34 Stamina +29 Intellect Durability 40 / 40 Requires Level 70 Equip: Improves spell haste rating by 37. Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects. Sell Price: 3 51 87",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:55+00:00",
+  "inventory_slot": null,
+  "item_id": 32339,
+  "item_stats": {
+    "armor": 249,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 84.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects."
+    ],
+    "id": 32339,
+    "item_level": 141,
+    "name": "Belt of Primal Majesty",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 84.0,
+      "intellect": 29.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32339/belt-of-primal-majesty"
+  },
+  "name": "Belt of Primal Majesty",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32339/belt-of-primal-majesty"
+}

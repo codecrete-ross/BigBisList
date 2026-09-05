@@ -1,0 +1,106 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Fel Leather Gloves Item Level 68 Binds when picked up Requires Leatherworking (340) Requires The Consortium - Friendly Use: Teaches you how to make Fel Leather Gloves. Sell Price: 3 Fel Leather Gloves Item Level 106 Binds when equipped Hands Leather 169 Armor Yellow Socket Red Socket Socket Bonus: +6 Attack Power Durability 35 / 35 Requires Level 67 Equip: Improves hit rating by 17. Equip: Improves critical strike rating by 24. Equip: Increases attack power by 36. Fel Skin (0/3) Requires Leatherworking (350) Fel Leather Gloves Fel Leather Boots Fel Leather Leggings Sell Price: 2 7 71 Requires Heavy Knothide Leather (6), Fel Hide (6), Primal Shadow (6), Rune Thread (3)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:05+00:00",
+  "inventory_slot": null,
+  "item_id": 25732,
+  "item_stats": {
+    "armor": 169,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make Fel Leather Gloves.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves hit rating by 17.",
+        "stats": {
+          "hit_rating": 17.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 24.",
+        "stats": {
+          "crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 36.",
+        "stats": {
+          "attack_power": 36.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 17.",
+      "Equip: Improves critical strike rating by 24.",
+      "Equip: Increases attack power by 36."
+    ],
+    "id": 25732,
+    "item_level": 68,
+    "name": "Pattern: Fel Leather Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 67,
+    "sockets": [
+      "yellow",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 36.0,
+      "crit_rating": 24.0,
+      "hit_rating": 17.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make Fel Leather Gloves."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25732"
+  },
+  "name": "Pattern: Fel Leather Gloves",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Fel Leather Gloves Item Level 68 Binds when picked up Requires Leatherworking (340) Requires The Consortium - Friendly Use: Teaches you how to make Fel Leather Gloves. Sell Price: 3 Fel Leather Gloves Item Level 106 Binds when equipped Hands Leather 169 Armor Yellow Socket Red Socket Socket Bonus: +6 Attack Power Durability 35 / 35 Requires Level 67 Equip: Improves hit rating by 17. Equip: Improves critical strike rating by 24. Equip: Increases attack power by 36. Fel Skin (0/3) Requires Leatherworking (350) Fel Leather Gloves Fel Leather Boots Fel Leather Leggings Sell Price: 2 7 71 Requires Heavy Knothide Leather (6), Fel Hide (6), Primal Shadow (6), Rune Thread (3)",
+      "reputation": "The Consortium",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=25732",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Fel Leather Gloves Item Level 68 Binds when picked up Requires Leatherworking (340) Requires The Consortium - Friendly Use: Teaches you how to make Fel Leather Gloves. Sell Price: 3 Fel Leather Gloves Item Level 106 Binds when equipped Hands Leather 169 Armor Yellow Socket Red Socket Socket Bonus: +6 Attack Power Durability 35 / 35 Requires Level 67 Equip: Improves hit rating by 17. Equip: Improves critical strike rating by 24. Equip: Increases attack power by 36. Fel Skin (0/3) Requires Leatherworking (350) Fel Leather Gloves Fel Leather Boots Fel Leather Leggings Sell Price: 2 7 71 Requires Heavy Knothide Leather (6), Fel Hide (6), Primal Shadow (6), Rune Thread (3)",
+      "scope": "equip_or_use",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/item=25732",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Fel Leather Gloves Item Level 68 Binds when picked up Requires Leatherworking (340) Requires The Consortium - Friendly Use: Teaches you how to make Fel Leather Gloves. Sell Price: 3 Fel Leather Gloves Item Level 106 Binds when equipped Hands Leather 169 Armor Yellow Socket Red Socket Socket Bonus: +6 Attack Power Durability 35 / 35 Requires Level 67 Equip: Improves hit rating by 17. Equip: Improves critical strike rating by 24. Equip: Increases attack power by 36. Fel Skin (0/3) Requires Leatherworking (350) Fel Leather Gloves Fel Leather Boots Fel Leather Leggings Sell Price: 2 7 71 Requires Heavy Knothide Leather (6), Fel Hide (6), Primal Shadow (6), Rune Thread (3)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25732",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25732"
+}

@@ -1,0 +1,49 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Potent Noble Topaz Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Potent Noble Topaz. Sell Price: 3 Potent Noble Topaz Item Level 70 +4 Spell Critical Rating and +5 Spell Damage \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:42+00:00",
+  "inventory_slot": null,
+  "item_id": 24214,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Potent Noble Topaz.",
+        "type": "use"
+      }
+    ],
+    "id": 24214,
+    "item_level": 70,
+    "name": "Design: Potent Noble Topaz",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Potent Noble Topaz."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24214"
+  },
+  "name": "Design: Potent Noble Topaz",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Potent Noble Topaz Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Potent Noble Topaz. Sell Price: 3 Potent Noble Topaz Item Level 70 +4 Spell Critical Rating and +5 Spell Damage \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24214",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24214"
+}

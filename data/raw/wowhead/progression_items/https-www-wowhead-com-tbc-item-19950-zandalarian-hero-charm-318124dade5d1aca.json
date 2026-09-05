@@ -1,0 +1,112 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 68 goes in the \"Trinket\" slot. It is a quest reward from The Heart of Hakkar. In the Trinkets category. Always up to date.",
+  "fetched_at": "2026-09-04T23:50:31+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 19950,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases your spell damage by up to 204 and your healing by up to 408 for 20 sec. Every time you cast a spell, the bonus is reduced by 17 spell damage and 34 healing. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 19950,
+    "item_level": 68,
+    "name": "Zandalarian Hero Charm",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 8183,
+      "entity_name": "The Heart of Hakkar",
+      "quest_id": 8183,
+      "source_url": "https://www.wowhead.com/tbc/item=19950/zandalarian-hero-charm",
+      "type": "quest",
+      "zone": "Zul'Gurub"
+    },
+    "quality": "epic",
+    "slot": "Trinket",
+    "source_summary": "Quest: The Heart of Hakkar",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 8183,
+        "entity_name": "The Heart of Hakkar",
+        "quest_id": 8183,
+        "source_url": "https://www.wowhead.com/tbc/item=19950/zandalarian-hero-charm",
+        "type": "quest",
+        "zone": "Zul'Gurub"
+      }
+    ],
+    "use_effects": [
+      "Use: Increases your spell damage by up to 204 and your healing by up to 408 for 20 sec. Every time you cast a spell, the bonus is reduced by 17 spell damage and 34 healing. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19950/zandalarian-hero-charm"
+  },
+  "name": "Zandalarian Hero Charm",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8183,
+      "entity_name": "The Heart of Hakkar",
+      "quest_id": 8183,
+      "source_url": "https://www.wowhead.com/tbc/item=19950/zandalarian-hero-charm",
+      "type": "quest",
+      "zone": "Zul'Gurub"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1977,
+        "category2": 3,
+        "id": 8183,
+        "itemchoices": [
+          [
+            19948,
+            1
+          ],
+          [
+            19950,
+            1
+          ],
+          [
+            19949,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "The Heart of Hakkar",
+        "popularity": 7,
+        "reprewards": [
+          [
+            270,
+            500
+          ]
+        ],
+        "reqlevel": 58,
+        "side": 3,
+        "xp": 14300
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19950/zandalarian-hero-charm"
+}

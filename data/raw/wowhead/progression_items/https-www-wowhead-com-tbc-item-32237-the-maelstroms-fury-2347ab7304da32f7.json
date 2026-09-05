@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Maelstrom's Fury Phase 3 Item Level 141 Binds when picked up Main Hand Dagger 20 - 129 Damage Speed 1.80 (41.39 damage per second) +33 Stamina +21 Intellect Durability 75 / 75 Requires Level 70 Equip: Improves spell critical strike rating by 22. Equip: Increases damage and healing done by magical spells and effects by up to 236. Sell Price: 14 64 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:43+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 32237,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.39,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 22.",
+        "stats": {
+          "spell_crit_rating": 22.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 236.",
+        "stats": {
+          "spell_power": 236.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 22.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 236."
+    ],
+    "id": 32237,
+    "item_level": 141,
+    "name": "The Maelstrom's Fury",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 21.0,
+      "spell_crit_rating": 22.0,
+      "spell_power": 236.0,
+      "stamina": 33.0
+    },
+    "weapon_max_damage": 129,
+    "weapon_min_damage": 20,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32237/the-maelstroms-fury"
+  },
+  "name": "The Maelstrom's Fury",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32237/the-maelstroms-fury"
+}

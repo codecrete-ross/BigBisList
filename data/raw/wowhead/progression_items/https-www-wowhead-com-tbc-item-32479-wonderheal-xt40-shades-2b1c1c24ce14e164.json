@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wonderheal XT40 Shades Phase 2 Item Level 127 Binds when picked up Head Leather 326 Armor +15 Stamina +38 Intellect +22 Spirit Meta Socket Blue Socket Socket Bonus: +9 Healing and +3 Spell Damage Durability 70 / 70 Requires Level 62 Requires Engineering (350) Equip: Increases healing done by up to 106 and damage done by up to 36 for all magical spells and effects. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 4 91 65",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:05+00:00",
+  "inventory_slot": null,
+  "item_id": 32479,
+  "item_stats": {
+    "armor": 326,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 106 and damage done by up to 36 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 106.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Allows you to look far into the distance. (3 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 106 and damage done by up to 36 for all magical spells and effects."
+    ],
+    "id": 32479,
+    "item_level": 127,
+    "name": "Wonderheal XT40 Shades",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 62,
+    "sockets": [
+      "meta",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 106.0,
+      "intellect": 38.0,
+      "spirit": 22.0,
+      "stamina": 15.0
+    },
+    "use_effects": [
+      "Use: Allows you to look far into the distance. (3 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades"
+  },
+  "name": "Wonderheal XT40 Shades",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Wonderheal XT40 Shades Phase 2 Item Level 127 Binds when picked up Head Leather 326 Armor +15 Stamina +38 Intellect +22 Spirit Meta Socket Blue Socket Socket Bonus: +9 Healing and +3 Spell Damage Durability 70 / 70 Requires Level 62 Requires Engineering (350) Equip: Increases healing done by up to 106 and damage done by up to 36 for all magical spells and effects. Equip: Shows the location of all nearby gas clouds on the minimap. Equip: Slightly increases your stealth detection. Use: Allows you to look far into the distance. (3 Sec Cooldown) Sell Price: 4 91 65",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32479/wonderheal-xt40-shades"
+}

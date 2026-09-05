@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:57+00:00",
+  "fetched_at": "2026-09-04T23:49:28+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -138,7 +138,7 @@
           "cells": [
             "Optional",
             "Gladiator's Scaled Helm",
-            "PvP: 1875x"
+            "PvP: 1875x Arena Points"
           ],
           "entities": [
             {
@@ -158,11 +158,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "PvP: 1875x"
+          "source_text": "PvP: 1875x Arena Points"
         },
         {
           "cell_entities": [
@@ -515,7 +515,7 @@
           "cells": [
             "Optional",
             "Gladiator's Scaled Shoulders",
-            "PvP: 1500x"
+            "PvP: 1275x Arena Points"
           ],
           "entities": [
             {
@@ -535,11 +535,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "PvP: 1500x"
+          "source_text": "PvP: 1275x Arena Points"
         }
       ],
       "slot": "Shoulder"
@@ -1056,7 +1056,7 @@
           "cells": [
             "Optional",
             "Gladiator's Scaled Chestpiece",
-            "PvP: 1875x"
+            "PvP: 1875x Arena Points"
           ],
           "entities": [
             {
@@ -1076,11 +1076,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "PvP: 1875x"
+          "source_text": "PvP: 1875x Arena Points"
         }
       ],
       "slot": "Chest"
@@ -1476,7 +1476,7 @@
           "cells": [
             "Optional",
             "General's Scaled Bracers Marshal's Scaled Bracers",
-            "PvP: 11794x"
+            "PvP: 11794x Honor Points"
           ],
           "entities": [
             {
@@ -1502,11 +1502,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             }
           ],
-          "source_text": "PvP: 11794x"
+          "source_text": "PvP: 11794x Honor Points"
         },
         {
           "cell_entities": [
@@ -1573,7 +1573,7 @@
                 "id": 32499,
                 "name": "Leatherworking",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=32499/felstalker-bracer"
+                "url": "https://www.wowhead.com/tbc/spell=32499/felstalker-bracers"
               }
             ]
           ],
@@ -1593,7 +1593,7 @@
               "id": 32499,
               "name": "Leatherworking",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=32499/felstalker-bracer"
+              "url": "https://www.wowhead.com/tbc/spell=32499/felstalker-bracers"
             }
           ],
           "entity_id": 25697,
@@ -1606,14 +1606,14 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/spell=32499/felstalker-bracer",
+              "href": "https://www.wowhead.com/tbc/spell=32499/felstalker-bracers",
               "text": "Leatherworking"
             }
           ],
           "source_text": "Crafted: Leatherworking (Bind on Equip)",
           "spell_id": 32499,
           "spell_name": "Leatherworking",
-          "spell_url": "https://www.wowhead.com/tbc/spell=32499/felstalker-bracer"
+          "spell_url": "https://www.wowhead.com/tbc/spell=32499/felstalker-bracers"
         },
         {
           "cell_entities": [
@@ -1742,7 +1742,14 @@
             }
           ],
           "source_text": "Quest: The Flesh Lies..."
-        },
+        }
+      ],
+      "slot": "Hands"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Hand Armor for Retribution Paladin in TBC Classic Phase 1",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -1821,14 +1828,7 @@
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Drop: Multiple Bosses (Molten Core)"
-        }
-      ],
-      "slot": "Hands"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Hand Armor for Retribution Paladin in TBC Classic Phase 1",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2290,7 +2290,14 @@
             }
           ],
           "source_text": "Quest: Showdown Quest: Showdown"
-        },
+        }
+      ],
+      "slot": "Legs"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Leg Armor for Retribution Paladin in TBC Classic Phase 1",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -2391,14 +2398,7 @@
             }
           ],
           "source_text": "Drop: Gruul the Dragonkiller (Gruul's Lair) (via Leggings of the Fallen Champion )"
-        }
-      ],
-      "slot": "Legs"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Leg Armor for Retribution Paladin in TBC Classic Phase 1",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2864,9 +2864,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Exalted with The Consortium",
+              "reputation": "The Consortium",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Best",
@@ -2901,7 +2904,7 @@
           "cells": [
             "Optional",
             "Necklace of Trophies",
-            "Random World Drop (Bind on Equip)"
+            "Random World Drop: (Bind on Equip)"
           ],
           "entities": [
             {
@@ -2920,7 +2923,7 @@
           "item_url": "https://www.wowhead.com/tbc/item=31275/necklace-of-trophies",
           "rank_label": "Optional",
           "source_links": [],
-          "source_text": "Random World Drop (Bind on Equip)"
+          "source_text": "Random World Drop: (Bind on Equip)"
         }
       ],
       "slot": "Neck"
@@ -2966,9 +2969,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Exalted with Lower City",
+              "reputation": "Lower City",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Best",
@@ -3234,9 +3240,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Exalted with The Sha'tar",
+              "reputation": "The Sha'tar",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Optional",
@@ -3360,48 +3369,6 @@
             [],
             [
               {
-                "id": 19343,
-                "name": "Scrolls of Blinding Light",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best: Active",
-            "Scrolls of Blinding Light",
-            "Drop: Firemaw (Blackwing Lair)"
-          ],
-          "entities": [
-            {
-              "id": 19343,
-              "name": "Scrolls of Blinding Light",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light"
-            }
-          ],
-          "entity_id": 19343,
-          "entity_name": "Scrolls of Blinding Light",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light",
-          "item_id": 19343,
-          "item_name": "Scrolls of Blinding Light",
-          "item_url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light",
-          "rank_label": "Best: Active",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=11983/firemaw",
-              "text": "Firemaw"
-            }
-          ],
-          "source_text": "Drop: Firemaw (Blackwing Lair)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 29383,
                 "name": "Bloodlust Brooch",
                 "type": "item",
@@ -3457,6 +3424,48 @@
             [],
             [
               {
+                "id": 19343,
+                "name": "Scrolls of Blinding Light",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best: Active (<60s)",
+            "Scrolls of Blinding Light",
+            "Drop: Firemaw (Blackwing Lair)"
+          ],
+          "entities": [
+            {
+              "id": 19343,
+              "name": "Scrolls of Blinding Light",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light"
+            }
+          ],
+          "entity_id": 19343,
+          "entity_name": "Scrolls of Blinding Light",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light",
+          "item_id": 19343,
+          "item_name": "Scrolls of Blinding Light",
+          "item_url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light",
+          "rank_label": "Best: Active (<60s)",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=11983/firemaw",
+              "text": "Firemaw"
+            }
+          ],
+          "source_text": "Drop: Firemaw (Blackwing Lair)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 28288,
                 "name": "Abacus of Violent Odds",
                 "type": "item",
@@ -3466,7 +3475,7 @@
             []
           ],
           "cells": [
-            "Best: Active",
+            "Best: Active (>60s)",
             "Abacus of Violent Odds",
             "Drop: Pathaleon the Calculator (The Mechanar)"
           ],
@@ -3485,7 +3494,7 @@
           "item_id": 28288,
           "item_name": "Abacus of Violent Odds",
           "item_url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds",
-          "rank_label": "Best: Active",
+          "rank_label": "Best: Active (>60s)",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19220/pathaleon-the-calculator",
@@ -3769,7 +3778,14 @@
         {
           "cell_entities": [
             [],
-            [],
+            [
+              {
+                "id": 28441,
+                "name": "Deep Thunder",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28441/deep-thunder"
+              }
+            ],
             [
               {
                 "id": 34548,
@@ -3781,10 +3797,16 @@
           ],
           "cells": [
             "Best: Hammersmith",
-            "",
+            "Deep Thunder",
             "Crafting: Blacksmithing (Bind on Pickup) (requires Master Hammersmithing)"
           ],
           "entities": [
+            {
+              "id": 28441,
+              "name": "Deep Thunder",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=28441/deep-thunder"
+            },
             {
               "id": 34548,
               "name": "Blacksmithing",
@@ -3792,10 +3814,13 @@
               "url": "https://www.wowhead.com/tbc/spell=34548/deep-thunder"
             }
           ],
-          "entity_id": 34548,
-          "entity_name": "Blacksmithing",
-          "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=34548/deep-thunder",
+          "entity_id": 28441,
+          "entity_name": "Deep Thunder",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=28441/deep-thunder",
+          "item_id": 28441,
+          "item_name": "Deep Thunder",
+          "item_url": "https://www.wowhead.com/tbc/item=28441/deep-thunder",
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
@@ -4008,7 +4033,7 @@
           "cells": [
             "Optional",
             "Gladiator's Greatsword",
-            "PvP: 3750x"
+            "PvP: 3750x Arena Points"
           ],
           "entities": [
             {
@@ -4028,11 +4053,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "PvP: 3750x"
+          "source_text": "PvP: 3750x Arena Points"
         }
       ],
       "slot": "Weapon"

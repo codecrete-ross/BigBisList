@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deathmantle Helm Phase 2 Item Level 133 Binds when picked up Head Leather 341 Armor +39 Agility +48 Stamina Meta Socket Red Socket Socket Bonus: +8 Attack Power Durability 70 / 70 Classes: Rogue Requires Level 70 Equip: Improves critical strike rating by 25. Equip: Increases attack power by 78. Deathmantle (0/5) Deathmantle Chestguard Deathmantle Handguards Deathmantle Helm Deathmantle Legguards Deathmantle Shoulderpads (2) Set : Your Eviscerate and Envenom abilities cause 40 extra damage per combo point. (4) Set : Your attacks have a chance to make your next finishing move cost no energy.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:47+00:00",
+  "inventory_slot": null,
+  "item_id": 30146,
+  "item_stats": {
+    "armor": 341,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 25.",
+        "stats": {
+          "crit_rating": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 78.",
+        "stats": {
+          "attack_power": 78.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 25.",
+      "Equip: Increases attack power by 78."
+    ],
+    "id": 30146,
+    "item_level": 133,
+    "name": "Deathmantle Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "sockets": [
+      "meta",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 39.0,
+      "attack_power": 78.0,
+      "crit_rating": 25.0,
+      "stamina": 48.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30146/deathmantle-helm"
+  },
+  "name": "Deathmantle Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30146/deathmantle-helm"
+}

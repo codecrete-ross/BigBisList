@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bastion of Light Phase 3 Item Level 141 Binds when picked up Off Hand Shield 5930 Armor 160 Block +28 Stamina +28 Intellect Red Socket Socket Bonus: 1 Mana per 5 sec. Durability 120 / 120 Requires Level 70 Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects. Sell Price: 9 40 71",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:32+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 30882,
+  "item_stats": {
+    "armor": 5930,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 62.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects."
+    ],
+    "id": 30882,
+    "item_level": 141,
+    "name": "Bastion of Light",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Off Hand",
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 62.0,
+      "intellect": 28.0,
+      "stamina": 28.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30882/bastion-of-light"
+  },
+  "name": "Bastion of Light",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30882/bastion-of-light"
+}

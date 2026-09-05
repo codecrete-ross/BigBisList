@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hellfire-Encased Pendant Phase 3 Item Level 141 Binds when picked up Unique Neck +16 Stamina +17 Intellect +12 Spirit Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Increases damage done by Fire spells and effects by up to 51. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:16+00:00",
+  "inventory_slot": null,
+  "item_id": 32589,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 24.",
+        "stats": {
+          "spell_crit_rating": 24.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 24."
+    ],
+    "id": 32589,
+    "item_level": 141,
+    "name": "Hellfire-Encased Pendant",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "spell_crit_rating": 24.0,
+      "spirit": 12.0,
+      "stamina": 16.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32589/hellfire-encased-pendant"
+  },
+  "name": "Hellfire-Encased Pendant",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32589/hellfire-encased-pendant"
+}

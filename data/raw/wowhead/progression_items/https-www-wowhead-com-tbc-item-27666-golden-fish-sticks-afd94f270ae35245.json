@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Golden Fish Sticks Item Level 65 Requires Level 55 Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and increase healing done by 44 and Spirit by 20 for 30 min. Max Stack: 20 Sell Price: 1 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:27+00:00",
+  "inventory_slot": null,
+  "item_id": 27666,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and increase healing done by 44 and Spirit by 20 for 30 min. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 27666,
+    "item_level": 65,
+    "name": "Golden Fish Sticks",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and increase healing done by 44 and Spirit by 20 for 30 min. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27666/golden-fish-sticks"
+  },
+  "name": "Golden Fish Sticks",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27666/golden-fish-sticks"
+}

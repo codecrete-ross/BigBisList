@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Amice of the Convoker Phase 5 Item Level 159 Binds when picked up Shoulder Cloth 199 Armor +36 Stamina +28 Intellect Red Socket Yellow Socket Socket Bonus: +4 Spell Damage and Healing Durability 60 / 60 Requires Level 70 Equip: Improves spell critical strike rating by 22. Equip: Improves spell haste rating by 30. Equip: Increases damage and healing done by magical spells and effects by up to 53. Sell Price: 4 89 66",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:29+00:00",
+  "inventory_slot": null,
+  "item_id": 34210,
+  "item_stats": {
+    "armor": 199,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 22.",
+        "stats": {
+          "spell_crit_rating": 22.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 53.",
+        "stats": {
+          "spell_power": 53.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 22.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 53."
+    ],
+    "id": 34210,
+    "item_level": 159,
+    "name": "Amice of the Convoker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "spell_crit_rating": 22.0,
+      "spell_power": 53.0,
+      "stamina": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34210/amice-of-the-convoker"
+  },
+  "name": "Amice of the Convoker",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34210/amice-of-the-convoker"
+}

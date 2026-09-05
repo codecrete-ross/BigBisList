@@ -1,10 +1,107 @@
 {
   "phases": [
-    { "key": "PR", "name": "Pre-Raid", "starts_at_epoch": 0 },
-    { "key": "T4", "name": "Tier 4", "starts_at": "2026-02-19T23:00:00Z", "starts_at_epoch": 1771542000 },
-    { "key": "T5", "name": "Tier 5", "starts_at": "2026-05-14T22:00:00Z", "starts_at_epoch": 1778796000 },
-    { "key": "T6", "name": "Tier 6", "starts_at": "2026-08-27T22:00:00Z", "starts_at_epoch": 1787868000 },
-    { "key": "ZA", "name": "Zul'Aman" },
-    { "key": "SWP", "name": "Sunwell Plateau" }
-  ]
+    {
+      "key": "PR",
+      "name": "Pre-Raid",
+      "source_terms": [
+        "pr",
+        "pre-raid",
+        "pre raid"
+      ]
+    },
+    {
+      "key": "T4",
+      "name": "Tier 4",
+      "source_terms": [
+        "t4",
+        "tier 4",
+        "karazhan",
+        "gruul",
+        "magtheridon"
+      ]
+    },
+    {
+      "key": "T5",
+      "name": "Tier 5",
+      "source_terms": [
+        "t5",
+        "tier 5",
+        "serpentshrine cavern",
+        "tempest keep"
+      ]
+    },
+    {
+      "key": "T6",
+      "name": "Tier 6",
+      "source_terms": [
+        "t6",
+        "tier 6",
+        "black temple",
+        "hyjal"
+      ]
+    },
+    {
+      "key": "ZA",
+      "name": "Zul'Aman",
+      "source_terms": [
+        "za",
+        "zul'aman",
+        "zulaman"
+      ]
+    },
+    {
+      "key": "SWP",
+      "name": "Sunwell Plateau",
+      "source_terms": [
+        "swp",
+        "sunwell"
+      ]
+    }
+  ],
+  "active_schedule": "tbc_anniversary_2026",
+  "schedules": {
+    "tbc_anniversary_2026": {
+      "source_url": "https://worldofwarcraft.blizzard.com/en-us/news/24291476",
+      "phase_starts": [
+        {
+          "key": "PR",
+          "starts_at_epoch": 0
+        },
+        {
+          "key": "T4",
+          "starts_at": "2026-02-19T23:00:00Z",
+          "starts_at_epoch": 1771542000
+        },
+        {
+          "key": "T5",
+          "starts_at": "2026-05-14T22:00:00Z",
+          "starts_at_epoch": 1778796000
+        },
+        {
+          "key": "T6",
+          "starts_at": "2026-08-27T22:00:00Z",
+          "starts_at_epoch": 1787868000,
+          "source_url": "https://us.forums.blizzard.com/en/wow/t/new-raids-open-at-300-pm-pdt-on-august-27/2340643/1"
+        }
+      ]
+    }
+  },
+  "source_phase_numbers": {
+    "anniversary_2026": {
+      "0": "PR",
+      "4": "SWP",
+      "1": "T4",
+      "3.5": "ZA",
+      "2": "T5",
+      "3": "T6"
+    },
+    "wowhead_classic": {
+      "0": "PR",
+      "4": "ZA",
+      "1": "T4",
+      "2": "T5",
+      "5": "SWP",
+      "3": "T6"
+    }
+  }
 }

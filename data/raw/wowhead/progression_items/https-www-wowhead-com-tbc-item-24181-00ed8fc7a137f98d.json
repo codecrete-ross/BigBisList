@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Living Ruby Serpent Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Keepers of Time - Revered Use: Teaches you how to craft a Living Ruby Serpent. Sell Price: 3 Figurine - Living Ruby Serpent Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50 Requires Felsteel Bar (2), Living Ruby (2), Primal Fire (4)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:39+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 24181,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Living Ruby Serpent.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown)",
+        "stats": {
+          "spell_power": 150.0
+        },
+        "type": "use"
+      }
+    ],
+    "id": 24181,
+    "item_level": 74,
+    "name": "Design: Living Ruby Serpent",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "intellect": 23.0,
+      "stamina": 33.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft a Living Ruby Serpent.",
+      "Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24181"
+  },
+  "name": "Design: Living Ruby Serpent",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Design: Living Ruby Serpent Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Keepers of Time - Revered Use: Teaches you how to craft a Living Ruby Serpent. Sell Price: 3 Figurine - Living Ruby Serpent Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50 Requires Felsteel Bar (2), Living Ruby (2), Primal Fire (4)",
+      "reputation": "Keepers of Time",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=24181",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Living Ruby Serpent Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Keepers of Time - Revered Use: Teaches you how to craft a Living Ruby Serpent. Sell Price: 3 Figurine - Living Ruby Serpent Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50 Requires Felsteel Bar (2), Living Ruby (2), Primal Fire (4)",
+      "scope": "equip_or_use",
+      "skill": 370,
+      "source_url": "https://www.wowhead.com/tbc/item=24181",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Living Ruby Serpent Item Level 74 Binds when picked up Requires Jewelcrafting (370) Requires Keepers of Time - Revered Use: Teaches you how to craft a Living Ruby Serpent. Sell Price: 3 Figurine - Living Ruby Serpent Item Level 115 Binds when picked up Unique Trinket +33 Stamina +23 Intellect Requires Level 70 Requires Jewelcrafting (350) Use: Increases damage and healing done by magical spells and effects by up to 150 for 20 sec. (5 Min Cooldown) Sell Price: 1 50 Requires Felsteel Bar (2), Living Ruby (2), Primal Fire (4)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24181",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24181"
+}

@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Runic Spellthread Item Level 75 Binds when picked up Requires Tailoring (375) Requires The Scryers - Exalted Use: Teaches you how to create Runic Spellthread. Sell Price: 9 Runic Spellthread Item Level 75 Requires Level 60 Use: Permanently embroiders spellthread into pants, increasing spell damage and healing by up to 35 and Stamina by 20. Max Stack: 20 Sell Price: 5 Requires Rune Thread , Primal Mana (10), Primal Nether",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:45+00:00",
+  "inventory_slot": null,
+  "item_id": 24294,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to create Runic Spellthread.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Permanently embroiders spellthread into pants, increasing spell damage and healing by up to 35 and Stamina by 20. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 24294,
+    "item_level": 75,
+    "name": "Pattern: Runic Spellthread",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to create Runic Spellthread.",
+      "Use: Permanently embroiders spellthread into pants, increasing spell damage and healing by up to 35 and Stamina by 20. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24294"
+  },
+  "name": "Pattern: Runic Spellthread",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Runic Spellthread Item Level 75 Binds when picked up Requires Tailoring (375) Requires The Scryers - Exalted Use: Teaches you how to create Runic Spellthread. Sell Price: 9 Runic Spellthread Item Level 75 Requires Level 60 Use: Permanently embroiders spellthread into pants, increasing spell damage and healing by up to 35 and Stamina by 20. Max Stack: 20 Sell Price: 5 Requires Rune Thread , Primal Mana (10), Primal Nether",
+      "reputation": "The Scryers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=24294",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Runic Spellthread Item Level 75 Binds when picked up Requires Tailoring (375) Requires The Scryers - Exalted Use: Teaches you how to create Runic Spellthread. Sell Price: 9 Runic Spellthread Item Level 75 Requires Level 60 Use: Permanently embroiders spellthread into pants, increasing spell damage and healing by up to 35 and Stamina by 20. Max Stack: 20 Sell Price: 5 Requires Rune Thread , Primal Mana (10), Primal Nether",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=24294",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24294"
+}

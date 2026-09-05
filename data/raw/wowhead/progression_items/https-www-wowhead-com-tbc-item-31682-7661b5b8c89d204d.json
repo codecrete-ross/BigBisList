@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Recipe: Fel Mana Potion Item Level 72 Binds when picked up Requires Alchemy (360) Use: Teaches you how to make a Fel Mana Potion. Sell Price: 1 Fel Mana Potion Item Level 72 Requires Level 60 Use: Restores 3200 mana over 24 sec, but at a cost. Also reduces spell damage by 25 and healing done by 50 for 15 min. (2 Min Cooldown) Max Stack: 5 Sell Price: 50 Requires Mana Thistle , Nightmare Vine (2), Imbued Vial",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:26+00:00",
+  "inventory_slot": null,
+  "item_id": 31682,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Fel Mana Potion.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Restores 3200 mana over 24 sec, but at a cost. Also reduces spell damage by 25 and healing done by 50 for 15 min. (2 Min Cooldown) Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 31682,
+    "item_level": 72,
+    "name": "Recipe: Fel Mana Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Fel Mana Potion.",
+      "Use: Restores 3200 mana over 24 sec, but at a cost. Also reduces spell damage by 25 and healing done by 50 for 15 min. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31682"
+  },
+  "name": "Recipe: Fel Mana Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Fel Mana Potion Item Level 72 Binds when picked up Requires Alchemy (360) Use: Teaches you how to make a Fel Mana Potion. Sell Price: 1 Fel Mana Potion Item Level 72 Requires Level 60 Use: Restores 3200 mana over 24 sec, but at a cost. Also reduces spell damage by 25 and healing done by 50 for 15 min. (2 Min Cooldown) Max Stack: 5 Sell Price: 50 Requires Mana Thistle , Nightmare Vine (2), Imbued Vial",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=31682",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31682"
+}

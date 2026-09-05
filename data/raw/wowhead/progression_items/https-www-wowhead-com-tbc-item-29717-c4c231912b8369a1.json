@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Drums of Battle Item Level 73 Binds when picked up Requires Leatherworking (365) Requires The Sha'tar - Honored Use: Teaches you how to make Drums of Battle. Sell Price: 3 Drums of Battle Item Level 73 Requires Leatherworking (350) Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges Sell Price: 50 Requires Heavy Knothide Leather (6), Thick Clefthoof Leather (4)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:05+00:00",
+  "inventory_slot": null,
+  "item_id": 29717,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make Drums of Battle.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges",
+        "type": "use"
+      }
+    ],
+    "id": 29717,
+    "item_level": 73,
+    "name": "Pattern: Drums of Battle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make Drums of Battle.",
+      "Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29717"
+  },
+  "name": "Pattern: Drums of Battle",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Drums of Battle Item Level 73 Binds when picked up Requires Leatherworking (365) Requires The Sha'tar - Honored Use: Teaches you how to make Drums of Battle. Sell Price: 3 Drums of Battle Item Level 73 Requires Leatherworking (350) Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges Sell Price: 50 Requires Heavy Knothide Leather (6), Thick Clefthoof Leather (4)",
+      "reputation": "The Sha'tar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29717",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Drums of Battle Item Level 73 Binds when picked up Requires Leatherworking (365) Requires The Sha'tar - Honored Use: Teaches you how to make Drums of Battle. Sell Price: 3 Drums of Battle Item Level 73 Requires Leatherworking (350) Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges Sell Price: 50 Requires Heavy Knothide Leather (6), Thick Clefthoof Leather (4)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=29717",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Drums of Battle Item Level 73 Binds when picked up Requires Leatherworking (365) Requires The Sha'tar - Honored Use: Teaches you how to make Drums of Battle. Sell Price: 3 Drums of Battle Item Level 73 Requires Leatherworking (350) Use: Increases melee, ranged and spell haste rating on nearby party members by 80. Lasts 30 sec. (2 Min Cooldown) 50 Charges Sell Price: 50 Requires Heavy Knothide Leather (6), Thick Clefthoof Leather (4)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=29717",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29717"
+}

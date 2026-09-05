@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ashtongue Talisman of Zeal Phase 3 Item Level 141 Binds when picked up Unique Trinket Classes: Paladin Requires Ashtongue Deathsworn - Exalted Equip: Flash of Light and Holy Light have a 15% chance to grant your target 760 healing over 12 sec, and your Judgements have a 50% chance to inflict 480 damage on their target over 8 sec. Sell Price: 7 20 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:07+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32489,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Flash of Light and Holy Light have a 15% chance to grant your target 760 healing over 12 sec, and your Judgements have a 50% chance to inflict 480 damage on their target over 8 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Flash of Light and Holy Light have a 15% chance to grant your target 760 healing over 12 sec, and your Judgements have a 50% chance to inflict 480 damage on their target over 8 sec."
+    ],
+    "id": 32489,
+    "item_level": 141,
+    "name": "Ashtongue Talisman of Zeal",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32489/ashtongue-talisman-of-zeal"
+  },
+  "name": "Ashtongue Talisman of Zeal",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Ashtongue Talisman of Zeal Phase 3 Item Level 141 Binds when picked up Unique Trinket Classes: Paladin Requires Ashtongue Deathsworn - Exalted Equip: Flash of Light and Holy Light have a 15% chance to grant your target 760 healing over 12 sec, and your Judgements have a 50% chance to inflict 480 damage on their target over 8 sec. Sell Price: 7 20 39",
+      "reputation": "Ashtongue Deathsworn",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32489/ashtongue-talisman-of-zeal",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32489/ashtongue-talisman-of-zeal"
+}

@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Runic Spellthread Item Level 75 Requires Level 60 Use: Permanently embroiders spellthread into pants, increasing spell damage and healing by up to 35 and Stamina by 20. Max Stack: 20 Sell Price: 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:45+00:00",
+  "inventory_slot": null,
+  "item_id": 24274,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Permanently embroiders spellthread into pants, increasing spell damage and healing by up to 35 and Stamina by 20. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 24274,
+    "item_level": 75,
+    "name": "Runic Spellthread",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Permanently embroiders spellthread into pants, increasing spell damage and healing by up to 35 and Stamina by 20. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24274/runic-spellthread"
+  },
+  "name": "Runic Spellthread",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24274/runic-spellthread"
+}

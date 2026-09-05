@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:50+00:00",
+  "fetched_at": "2026-09-04T23:49:16+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -108,7 +108,7 @@
           "cells": [
             "Mit skewed PvP alternative",
             "Gladiator's Dragonhide Helm",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -128,11 +128,11 @@
           "rank_label": "Mit skewed PvP alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -290,7 +290,7 @@
           "cells": [
             "Mit skewed alternative",
             "Gladiator's Dragonhide Spaulders",
-            "1500 - Arena Vendor"
+            "1500 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -310,11 +310,11 @@
           "rank_label": "Mit skewed alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1500 - Arena Vendor"
+          "source_text": "1500 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -785,7 +785,7 @@
           "cells": [
             "Mit skewed alternative",
             "Gladiator's Dragonhide Tunic",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -805,11 +805,11 @@
           "rank_label": "Mit skewed alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -1915,7 +1915,7 @@
           "cells": [
             "Alternative",
             "Gladiator's Dragonhide Legguards",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -1935,11 +1935,11 @@
           "rank_label": "Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         }
       ],
       "slot": "Legs"
@@ -3144,33 +3144,33 @@
             [
               {
                 "id": 13503,
-                "name": "Alchemist Stone",
+                "name": "Alchemist's Stone",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone"
+                "url": "https://www.wowhead.com/tbc/item=13503/alchemists-stone"
               }
             ],
             []
           ],
           "cells": [
             "Best Balanced Option",
-            "Alchemist Stone",
+            "Alchemist's Stone",
             "Profession: Alchemy (Bind on Creation)"
           ],
           "entities": [
             {
               "id": 13503,
-              "name": "Alchemist Stone",
+              "name": "Alchemist's Stone",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone"
+              "url": "https://www.wowhead.com/tbc/item=13503/alchemists-stone"
             }
           ],
           "entity_id": 13503,
-          "entity_name": "Alchemist Stone",
+          "entity_name": "Alchemist's Stone",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+          "entity_url": "https://www.wowhead.com/tbc/item=13503/alchemists-stone",
           "item_id": 13503,
-          "item_name": "Alchemist Stone",
-          "item_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+          "item_name": "Alchemist's Stone",
+          "item_url": "https://www.wowhead.com/tbc/item=13503/alchemists-stone",
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
@@ -3264,7 +3264,7 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Alurmi - Requires Exalted with Keepers of TIme",
-              "reputation": "Keepers of TIme",
+              "reputation": "Keepers of Time",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
               "standing": "Exalted",
@@ -3381,7 +3381,7 @@
           "cells": [
             "Threat Alternative",
             "Abacus of Violent Odds",
-            "Drop: Pathaleon the Calculator (Naxxramas)"
+            "Drop: Pathaleon the Calculator (The Mechanar))"
           ],
           "entities": [
             {
@@ -3405,7 +3405,7 @@
               "text": "Pathaleon the Calculator"
             }
           ],
-          "source_text": "Drop: Pathaleon the Calculator (Naxxramas)"
+          "source_text": "Drop: Pathaleon the Calculator (The Mechanar))"
         },
         {
           "cell_entities": [
@@ -3556,7 +3556,7 @@
           "cells": [
             "Best Defense Swap",
             "Gladiator's Maul",
-            "1875 - Arena Vendor"
+            "1875 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3576,11 +3576,11 @@
           "rank_label": "Best Defense Swap",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1875 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -3829,7 +3829,7 @@
           "cells": [
             "Situational",
             "Gladiator's Idol of Resolve",
-            "500 - Arena Vendor"
+            "500 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3849,11 +3849,11 @@
           "rank_label": "Situational",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "500 - Arena Vendor"
+          "source_text": "500 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [

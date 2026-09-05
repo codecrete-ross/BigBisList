@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mana-Binders Cowl Phase 1 Item Level 110 Binds when picked up Unique Head Cloth 151 Armor +38 Stamina +29 Intellect Yellow Socket Meta Socket Socket Bonus: +5 Spell Damage and Healing Durability 60 / 60 Requires Level 70 Equip: Improves spell critical strike rating by 15. Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:42+00:00",
+  "inventory_slot": null,
+  "item_id": 32089,
+  "item_stats": {
+    "armor": 151,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 15.",
+        "stats": {
+          "spell_crit_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+        "stats": {
+          "spell_power": 34.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 15.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+    ],
+    "id": 32089,
+    "item_level": 110,
+    "name": "Mana-Binders Cowl",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "meta"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 29.0,
+      "spell_crit_rating": 15.0,
+      "spell_power": 34.0,
+      "stamina": 38.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32089/mana-binders-cowl"
+  },
+  "name": "Mana-Binders Cowl",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32089/mana-binders-cowl"
+}

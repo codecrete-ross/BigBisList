@@ -1,0 +1,45 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Recipe: Golden Fish Sticks Item Level 65 Requires Cooking (325) Use: Teaches you how to cook Golden Fish Sticks. Sell Price: 75 Golden Fish Sticks Item Level 65 Requires Level 55 Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and increase healing done by 44 and Spirit by 20 for 30 min. Max Stack: 20 Sell Price: 1 50 Requires Golden Darter",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:29+00:00",
+  "inventory_slot": null,
+  "item_id": 27699,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cook Golden Fish Sticks.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and increase healing done by 44 and Spirit by 20 for 30 min. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 27699,
+    "item_level": 65,
+    "name": "Recipe: Golden Fish Sticks",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cook Golden Fish Sticks.",
+      "Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and increase healing done by 44 and Spirit by 20 for 30 min. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27699"
+  },
+  "name": "Recipe: Golden Fish Sticks",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27699"
+}

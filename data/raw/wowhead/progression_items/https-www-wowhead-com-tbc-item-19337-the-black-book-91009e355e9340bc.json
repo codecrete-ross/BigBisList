@@ -1,0 +1,154 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 76 goes in the \"Trinket\" slot. Requires Warlock. It is looted from Razorgore the Untamed. In the Trinkets category.",
+  "fetched_at": "2026-09-04T23:50:28+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 19337,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Empowers your pet, increasing its spell damage by 200, its attack power by 325, and its armor by 1600 for 30 sec. This spell will only affect an Imp, Succubus, Incubus, Voidwalker, Felhunter, or Felguard. (5 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 19337,
+    "item_level": 76,
+    "name": "The Black Book",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 3,
+      "drop_percent": 15.79,
+      "entity_id": 12435,
+      "entity_name": "Razorgore the Untamed",
+      "out_of": 19,
+      "source_url": "https://www.wowhead.com/tbc/item=19337/the-black-book",
+      "type": "drop",
+      "zone": "Blackwing Lair"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "Drop: Razorgore the Untamed (Blackwing Lair) 15.8%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 3,
+        "drop_percent": 15.79,
+        "entity_id": 12435,
+        "entity_name": "Razorgore the Untamed",
+        "out_of": 19,
+        "source_url": "https://www.wowhead.com/tbc/item=19337/the-black-book",
+        "type": "drop",
+        "zone": "Blackwing Lair"
+      }
+    ],
+    "use_effects": [
+      "Use: Empowers your pet, increasing its spell damage by 200, its attack power by 325, and its armor by 1600 for 30 sec. This spell will only affect an Imp, Succubus, Incubus, Voidwalker, Felhunter, or Felguard. (5 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19337/the-black-book"
+  },
+  "name": "The Black Book",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 3,
+      "drop_percent": 15.79,
+      "entity_id": 12435,
+      "entity_name": "Razorgore the Untamed",
+      "out_of": 19,
+      "source_url": "https://www.wowhead.com/tbc/item=19337/the-black-book",
+      "type": "drop",
+      "zone": "Blackwing Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 3,
+        "id": 12435,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 5548,
+                "outof": 27472
+              },
+              "9": {
+                "count": 5548,
+                "outof": 27472
+              }
+            },
+            "4": {
+              "0": {
+                "count": 3,
+                "outof": 19
+              },
+              "9": {
+                "count": 3,
+                "outof": 19
+              }
+            }
+          }
+        },
+        "location": [
+          2677
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 5548,
+            "outof": 27472
+          },
+          "9": {
+            "count": 5548,
+            "outof": 27472
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "Razorgore the Untamed",
+        "outof": 19,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19337/the-black-book"
+}

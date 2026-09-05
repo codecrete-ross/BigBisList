@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thori'dal, the Stars' Fury Phase 5 Item Level 164 Binds when picked up Unique Ranged Bow 356 - 524 Damage Speed 2.70 (162.96 damage per second) +17 Agility Durability 110 / 110 Requires Level 70 Equip: Improves critical strike rating by 16. Equip: Increases attack power by 34. Equip: Your attacks ignore 112 of your opponent's armor. Equip: Increases ranged attack speed by 15%. Does not stack with quiver or ammo pouch haste effects. Equip: Thori'dal generates magical arrows when the bow string is drawn. Does not use ammo. \"The energy of the Sunwell courses through Thori'dal.\" Sell Price: 18 29 30",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:37+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 34334,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 162.96,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 16.",
+        "stats": {
+          "crit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 34.",
+        "stats": {
+          "attack_power": 34.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 112 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 16.",
+      "Equip: Increases attack power by 34.",
+      "Equip: Your attacks ignore 112 of your opponent's armor."
+    ],
+    "id": 34334,
+    "item_level": 164,
+    "name": "Thori'dal, the Stars' Fury",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "legendary",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "agility": 17.0,
+      "attack_power": 34.0,
+      "crit_rating": 16.0
+    },
+    "weapon_max_damage": 524,
+    "weapon_min_damage": 356,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34334/thoridal-the-stars-fury"
+  },
+  "name": "Thori'dal, the Stars' Fury",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "legendary",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34334/thoridal-the-stars-fury"
+}

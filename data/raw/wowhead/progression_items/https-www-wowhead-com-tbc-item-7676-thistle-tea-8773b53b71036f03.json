@@ -1,0 +1,45 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Thistle Tea Item Level 15 Classes: Rogue Requires Level 5 Use: Instantly restores [100 - 2 * Max(0, 70 - 40)] energy. (5 Min Cooldown) Max Stack: 10 Sell Price: 30",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:01:04+00:00",
+  "inventory_slot": null,
+  "item_id": 7676,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Instantly restores [100 - 2 * Max(0, 70 - 40)] energy. (5 Min Cooldown) Max Stack: 10",
+        "type": "use"
+      }
+    ],
+    "id": 7676,
+    "item_level": 15,
+    "name": "Thistle Tea",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 5,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "source_summary": "",
+    "use_effects": [
+      "Use: Instantly restores [100 - 2 * Max(0, 70 - 40)] energy. (5 Min Cooldown) Max Stack: 10"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=7676/thistle-tea"
+  },
+  "name": "Thistle Tea",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=7676/thistle-tea"
+}

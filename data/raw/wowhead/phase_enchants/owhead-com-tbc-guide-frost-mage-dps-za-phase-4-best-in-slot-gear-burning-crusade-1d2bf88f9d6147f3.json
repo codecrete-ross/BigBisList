@@ -1,0 +1,51 @@
+{
+  "bindings": [
+    {
+      "class": "Mage",
+      "phase": "ZA",
+      "spec": "Frost"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Frost Mage DPS in Phase 4",
+      "text": "Should Frost Mage DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 4?\r\nThe Aldor vs Scryer choice for Mages is not super important. The main difference, particularly at this stage of TBC, to keep in mind is the enchants,  and . They're extremely close when it comes to output, but to summarize, you should make your decision based on what you focus on - Aldor pushes ahead by about 2-3 DPS in single target, while Scryers outperforms by a similar amount in AoE scenarios."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28909,
+            "name": "Greater Inscription of the Orb",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35437
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Frost Mage DPS in Phase 4",
+      "text": "Should Frost Mage DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 4?\r\nThe Aldor vs Scryer choice for Mages is not super important. The main difference, particularly at this stage of TBC, to keep in mind is the enchants,  and . They're extremely close when it comes to output, but to summarize, you should make your decision based on what you focus on - Aldor pushes ahead by about 2-3 DPS in single target, while Scryers outperforms by a similar amount in AoE scenarios."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:19+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Frost Mage DPS Best in Slot (BiS) Phase 4 Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/frost-mage-dps-za-phase-4-best-in-slot-gear-burning-crusade"
+}

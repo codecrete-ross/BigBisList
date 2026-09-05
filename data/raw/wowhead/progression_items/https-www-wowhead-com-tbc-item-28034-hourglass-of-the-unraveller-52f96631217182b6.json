@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hourglass of the Unraveller Phase 1 Item Level 112 Binds when picked up Unique-Equipped Trinket Requires Level 68 Equip: Improves critical strike rating by 32. Equip: Chance on critical hit to increase your attack power by 300 for 10 secs. (Proc chance: 10%, 50s cooldown) Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:52+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28034,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 32.",
+        "stats": {
+          "crit_rating": 32.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Chance on critical hit to increase your attack power by 300 for 10 secs. (Proc chance: 10%, 50s cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 32.",
+      "Equip: Chance on critical hit to increase your attack power by 300 for 10 secs. (Proc chance: 10%, 50s cooldown)"
+    ],
+    "id": 28034,
+    "item_level": 112,
+    "name": "Hourglass of the Unraveller",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 32.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28034/hourglass-of-the-unraveller"
+  },
+  "name": "Hourglass of the Unraveller",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28034/hourglass-of-the-unraveller"
+}

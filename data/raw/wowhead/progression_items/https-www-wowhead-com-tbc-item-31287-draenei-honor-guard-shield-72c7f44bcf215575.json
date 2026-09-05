@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Draenei Honor Guard Shield Phase 1 Item Level 109 Binds when equipped Off Hand Shield 3615 Armor 80 Block +16 Intellect Durability 100 / 100 Requires Level 68 Equip: Improves spell critical strike rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 19. Sell Price: 5 11 57",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:12+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 31287,
+  "item_stats": {
+    "armor": 3615,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 21.",
+        "stats": {
+          "spell_crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 19.",
+        "stats": {
+          "spell_power": 19.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 19."
+    ],
+    "id": 31287,
+    "item_level": 109,
+    "name": "Draenei Honor Guard Shield",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 16.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 19.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31287/draenei-honor-guard-shield"
+  },
+  "name": "Draenei Honor Guard Shield",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31287/draenei-honor-guard-shield"
+}

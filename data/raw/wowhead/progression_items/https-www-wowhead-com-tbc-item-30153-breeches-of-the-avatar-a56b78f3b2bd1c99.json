@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Breeches of the Avatar Phase 2 Item Level 133 Binds when picked up Legs Cloth 195 Armor +37 Stamina +36 Intellect +27 Spirit Blue Socket Socket Bonus: +4 Healing +2 Spell Damage Durability 75 / 75 Classes: Priest Requires Level 70 Equip: Increases healing done by up to 101 and damage done by up to 34 for all magical spells and effects. Equip: Restores 12 mana per 5 sec. Avatar Raiment (0/5) Breeches of the Avatar Cowl of the Avatar Gloves of the Avatar Mantle of the Avatar Vestments of the Avatar (2) Set : If your Greater Heal brings the target to full health, you gain 100 mana. (4) Set : Increases the duration of your Renew spell by 3 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:48+00:00",
+  "inventory_slot": null,
+  "item_id": 30153,
+  "item_stats": {
+    "armor": 195,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 101 and damage done by up to 34 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 101.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 12 mana per 5 sec.",
+        "stats": {
+          "mp5": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 101 and damage done by up to 34 for all magical spells and effects.",
+      "Equip: Restores 12 mana per 5 sec."
+    ],
+    "id": 30153,
+    "item_level": 133,
+    "name": "Breeches of the Avatar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "sockets": [
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 101.0,
+      "intellect": 36.0,
+      "mp5": 12.0,
+      "spirit": 27.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30153/breeches-of-the-avatar"
+  },
+  "name": "Breeches of the Avatar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30153/breeches-of-the-avatar"
+}

@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Quantum Blade Phase 1 Item Level 105 Binds when picked up Two-Hand Sword 304 - 456 Damage Speed 3.50 (108.57 damage per second) +31 Stamina Durability 120 / 120 Requires Level 70 Equip: Improves critical strike rating by 30. Equip: Increases attack power by 102. Sell Price: 13 83 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:53+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 29356,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 108.57,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 30.",
+        "stats": {
+          "crit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 102.",
+        "stats": {
+          "attack_power": 102.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 30.",
+      "Equip: Increases attack power by 102."
+    ],
+    "id": 29356,
+    "item_level": 105,
+    "name": "Quantum Blade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 102.0,
+      "crit_rating": 30.0,
+      "stamina": 31.0
+    },
+    "weapon_max_damage": 456,
+    "weapon_min_damage": 304,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29356/quantum-blade"
+  },
+  "name": "Quantum Blade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29356/quantum-blade"
+}

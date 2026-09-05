@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Skull of Gul'dan Phase 3 Item Level 151 Binds when picked up Unique Trinket Requires Level 70 Equip: Improves spell hit rating by 25. Equip: Increases damage and healing done by magical spells and effects by up to 55. Use: Tap into the power of the skull, increasing spell haste rating by 175 for 20 sec. (2 Min Cooldown) Sell Price: 9 11 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:06+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32483,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 25.",
+        "stats": {
+          "spell_hit_rating": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 55.",
+        "stats": {
+          "spell_power": 55.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Tap into the power of the skull, increasing spell haste rating by 175 for 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 25.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 55."
+    ],
+    "id": 32483,
+    "item_level": 151,
+    "name": "The Skull of Gul'dan",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spell_hit_rating": 25.0,
+      "spell_power": 55.0
+    },
+    "use_effects": [
+      "Use: Tap into the power of the skull, increasing spell haste rating by 175 for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32483/the-skull-of-guldan"
+  },
+  "name": "The Skull of Gul'dan",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32483/the-skull-of-guldan"
+}

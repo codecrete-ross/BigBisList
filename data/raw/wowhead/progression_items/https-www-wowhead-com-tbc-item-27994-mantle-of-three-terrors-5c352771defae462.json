@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mantle of Three Terrors Phase 1 Item Level 112 Binds when picked up Shoulder Cloth 114 Armor +29 Stamina +25 Intellect Durability 50 / 50 Requires Level 68 Equip: Improves spell hit rating by 12. Equip: Increases damage and healing done by magical spells and effects by up to 29. Sell Price: 2 51 43",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:50+00:00",
+  "inventory_slot": null,
+  "item_id": 27994,
+  "item_stats": {
+    "armor": 114,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 12.",
+        "stats": {
+          "spell_hit_rating": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 29.",
+        "stats": {
+          "spell_power": 29.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 12.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 29."
+    ],
+    "id": 27994,
+    "item_level": 112,
+    "name": "Mantle of Three Terrors",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "source_summary": "",
+    "stats": {
+      "intellect": 25.0,
+      "spell_hit_rating": 12.0,
+      "spell_power": 29.0,
+      "stamina": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27994/mantle-of-three-terrors"
+  },
+  "name": "Mantle of Three Terrors",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27994/mantle-of-three-terrors"
+}

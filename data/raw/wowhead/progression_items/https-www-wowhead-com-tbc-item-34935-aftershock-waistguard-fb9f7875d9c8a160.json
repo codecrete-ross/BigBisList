@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Aftershock Waistguard Phase 5 Item Level 141 Binds when picked up Waist Mail 556 Armor +27 Stamina +27 Intellect Yellow Socket Socket Bonus: +3 Stamina Durability 50 / 50 Requires Level 70 Equip: Improves spell haste rating by 34. Equip: Increases damage and healing done by magical spells and effects by up to 46.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:25+00:00",
+  "inventory_slot": null,
+  "item_id": 34935,
+  "item_stats": {
+    "armor": 556,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 46.",
+        "stats": {
+          "spell_power": 46.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 46."
+    ],
+    "id": 34935,
+    "item_level": 141,
+    "name": "Aftershock Waistguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "spell_power": 46.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34935/aftershock-waistguard"
+  },
+  "name": "Aftershock Waistguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34935/aftershock-waistguard"
+}

@@ -1,0 +1,169 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic leather armor of item level 78 goes in the \"Hands\" slot. It is looted from Princess Huhuran. Added in Classic World of Warcraft. Always up to date.",
+  "fetched_at": "2026-09-04T23:50:40+00:00",
+  "inventory_slot": "Hands",
+  "item_id": 21617,
+  "item_stats": {
+    "armor": 164,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 53 and damage done by up to 18 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 53.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 53 and damage done by up to 18 for all magical spells and effects."
+    ],
+    "id": 21617,
+    "item_level": 78,
+    "name": "Wasphide Gauntlets",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 2,
+      "drop_percent": 9.09,
+      "entity_id": 15509,
+      "entity_name": "Princess Huhuran",
+      "out_of": 22,
+      "source_url": "https://www.wowhead.com/tbc/item=21617/wasphide-gauntlets",
+      "type": "drop",
+      "zone": "Ahn'Qiraj"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Hands",
+    "source_summary": "Drop: Princess Huhuran (Ahn'Qiraj) 9.1%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 2,
+        "drop_percent": 9.09,
+        "entity_id": 15509,
+        "entity_name": "Princess Huhuran",
+        "out_of": 22,
+        "source_url": "https://www.wowhead.com/tbc/item=21617/wasphide-gauntlets",
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
+      }
+    ],
+    "stats": {
+      "healing_power": 53.0,
+      "intellect": 15.0,
+      "spirit": 16.0,
+      "stamina": 14.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21617/wasphide-gauntlets"
+  },
+  "name": "Wasphide Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 2,
+      "drop_percent": 9.09,
+      "entity_id": 15509,
+      "entity_name": "Princess Huhuran",
+      "out_of": 22,
+      "source_url": "https://www.wowhead.com/tbc/item=21617/wasphide-gauntlets",
+      "type": "drop",
+      "zone": "Ahn'Qiraj"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 2,
+        "id": 15509,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2710,
+                "outof": 16653
+              },
+              "9": {
+                "count": 2710,
+                "outof": 16653
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 22
+              },
+              "9": {
+                "count": 2,
+                "outof": 22
+              }
+            },
+            "5": {
+              "0": {
+                "count": 4,
+                "outof": 30
+              },
+              "9": {
+                "count": 4,
+                "outof": 30
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2710,
+            "outof": 16653
+          },
+          "9": {
+            "count": 2710,
+            "outof": 16653
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "Princess Huhuran",
+        "outof": 22,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21617/wasphide-gauntlets"
+}

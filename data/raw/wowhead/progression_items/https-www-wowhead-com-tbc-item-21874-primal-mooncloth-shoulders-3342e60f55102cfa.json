@@ -1,0 +1,267 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Primal Mooncloth Shoulders is a Cloth shoulder crafted by Tailors who specialize in Mooncloth tailoring. This epic cloth armor of item level 105 goes in the \"Shoulder\" slot.",
+  "fetched_at": "2026-09-04T23:50:44+00:00",
+  "inventory_slot": "Shoulder",
+  "item_id": 21874,
+  "item_stats": {
+    "armor": 133,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 92 and damage done by up to 31 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 92.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 92 and damage done by up to 31 for all magical spells and effects.",
+      "Equip: Restores 7 mana per 5 sec."
+    ],
+    "id": 21874,
+    "item_level": 105,
+    "name": "Primal Mooncloth Shoulders",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 26761,
+      "entity_name": "Primal Mooncloth Shoulders",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21918,
+          "entity_name": "Pattern: Primal Mooncloth Shoulders",
+          "item_id": 21918,
+          "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "type": "vendor",
+          "zone": "Shattrath City"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+      "spell_id": 26761,
+      "type": "crafted",
+      "zone": "Shattrath City"
+    },
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Shoulder",
+    "source_summary": "Crafted: Primal Mooncloth Shoulders",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 26761,
+        "entity_name": "Primal Mooncloth Shoulders",
+        "profession": "Tailoring",
+        "recipe_sources": [
+          {
+            "confidence": "wowhead_item",
+            "entity_id": 21918,
+            "entity_name": "Pattern: Primal Mooncloth Shoulders",
+            "item_id": 21918,
+            "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+            "type": "vendor",
+            "zone": "Shattrath City"
+          }
+        ],
+        "requirements": [
+          {
+            "confidence": "wowhead_item",
+            "profession": "Tailoring",
+            "raw_text": "Tailoring",
+            "scope": "self_craft",
+            "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+            "type": "profession"
+          }
+        ],
+        "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+        "spell_id": 26761,
+        "type": "crafted",
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "healing_power": 92.0,
+      "intellect": 16.0,
+      "mp5": 7.0,
+      "spirit": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders"
+  },
+  "name": "Primal Mooncloth Shoulders",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Primal Mooncloth Shoulders Phase 1 Item Level 105 Binds when picked up Shoulder Cloth 133 Armor +16 Intellect +15 Spirit Durability 60 / 60 Requires Level 70 Requires Mooncloth Tailoring Equip: Increases healing done by up to 92 and damage done by up to 31 for all magical spells and effects. Equip: Restores 7 mana per 5 sec. Primal Mooncloth (0/3) Primal Mooncloth Robe Primal Mooncloth Shoulders Primal Mooncloth Belt (3) Set : Allow 5% of your Mana regeneration to continue while casting. Sell Price: 3 33 98 Primal Mooncloth Shoulders is a Cloth shoulder crafted by Tailors who specialize in Mooncloth tailoring. This epic cloth armor of item level 105 goes in the \"Shoulder\" slot.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+      "specialization": "Mooncloth Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 26761,
+      "entity_name": "Primal Mooncloth Shoulders",
+      "profession": "Tailoring",
+      "recipe_sources": [
+        {
+          "confidence": "wowhead_item",
+          "entity_id": 21918,
+          "entity_name": "Pattern: Primal Mooncloth Shoulders",
+          "item_id": 21918,
+          "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "type": "vendor",
+          "zone": "Shattrath City"
+        }
+      ],
+      "requirements": [
+        {
+          "confidence": "wowhead_item",
+          "profession": "Tailoring",
+          "raw_text": "Tailoring",
+          "scope": "self_craft",
+          "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders",
+      "spell_id": 26761,
+      "type": "crafted",
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 11,
+        "colors": [
+          365,
+          375,
+          380,
+          385
+        ],
+        "creates": [
+          21874,
+          1,
+          1
+        ],
+        "id": 26761,
+        "learnedat": 365,
+        "level": 0,
+        "name": "Primal Mooncloth Shoulders",
+        "nskillup": 1,
+        "popularity": 7,
+        "quality": 4,
+        "reagents": [
+          [
+            21845,
+            8
+          ],
+          [
+            21881,
+            2
+          ],
+          [
+            21886,
+            8
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          197
+        ],
+        "source": [
+          5
+        ],
+        "specialization": 26798
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 21918,
+        "level": 73,
+        "name": "Pattern: Primal Mooncloth Shoulders",
+        "popularity": 4,
+        "quality": 1,
+        "skill": 365,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Nasmara Moonsong",
+            "t": 1,
+            "ti": 22208,
+            "z": 3703
+          }
+        ],
+        "subclass": 2
+      }
+    ]
+  },
+  "taught_by_items": [
+    {
+      "classs": 9,
+      "flags2": 24580,
+      "id": 21918,
+      "level": 73,
+      "name": "Pattern: Primal Mooncloth Shoulders",
+      "popularity": 4,
+      "quality": 1,
+      "skill": 365,
+      "slot": 0,
+      "source": [
+        5
+      ],
+      "sourcemore": [
+        {
+          "n": "Nasmara Moonsong",
+          "t": 1,
+          "ti": 22208,
+          "z": 3703
+        }
+      ],
+      "subclass": 2
+    }
+  ],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21874/primal-mooncloth-shoulders"
+}

@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Flask of Chromatic Wonder Item Level 70 Requires Level 65 Use: Increases resistance to all schools of magic by 35 and all stats by 18 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5 Sell Price: 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:36+00:00",
+  "inventory_slot": null,
+  "item_id": 33208,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases resistance to all schools of magic by 35 and all stats by 18 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 33208,
+    "item_level": 70,
+    "name": "Flask of Chromatic Wonder",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 65,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases resistance to all schools of magic by 35 and all stats by 18 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33208/flask-of-chromatic-wonder"
+  },
+  "name": "Flask of Chromatic Wonder",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33208/flask-of-chromatic-wonder"
+}

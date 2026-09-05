@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Eternium Rage-shackles Phase 4 Item Level 128 Binds when picked up Wrist Plate 703 Armor +32 Strength +32 Stamina Durability 55 / 55 Requires Level 70 Equip: Your attacks ignore 150 of your opponent's armor.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:51+00:00",
+  "inventory_slot": null,
+  "item_id": 33513,
+  "item_stats": {
+    "armor": 703,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your attacks ignore 150 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your attacks ignore 150 of your opponent's armor."
+    ],
+    "id": 33513,
+    "item_level": 128,
+    "name": "Eternium Rage-shackles",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "stamina": 32.0,
+      "strength": 32.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33513/eternium-rage-shackles"
+  },
+  "name": "Eternium Rage-shackles",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33513/eternium-rage-shackles"
+}

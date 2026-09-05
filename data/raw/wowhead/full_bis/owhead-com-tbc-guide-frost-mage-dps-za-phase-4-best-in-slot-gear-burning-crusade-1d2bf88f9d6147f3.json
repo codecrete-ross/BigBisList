@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:52+00:00",
+  "fetched_at": "2026-09-04T23:49:19+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -98,7 +98,7 @@
             [
               {
                 "id": 32494,
-                "name": "Destruction Holo-Gogs",
+                "name": "Destruction Holo-gogs",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs"
               }
@@ -107,23 +107,23 @@
           ],
           "cells": [
             "Pre-Raid",
-            "Destruction Holo-Gogs",
+            "Destruction Holo-gogs",
             "Profession: Engineering - BoP only"
           ],
           "entities": [
             {
               "id": 32494,
-              "name": "Destruction Holo-Gogs",
+              "name": "Destruction Holo-gogs",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs"
             }
           ],
           "entity_id": 32494,
-          "entity_name": "Destruction Holo-Gogs",
+          "entity_name": "Destruction Holo-gogs",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs",
           "item_id": 32494,
-          "item_name": "Destruction Holo-Gogs",
+          "item_name": "Destruction Holo-gogs",
           "item_url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs",
           "normalized_requirements": [
             {
@@ -719,7 +719,7 @@
             [
               {
                 "id": 33588,
-                "name": "Runed Spell-Cuffs",
+                "name": "Runed Spell-cuffs",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=33588/runed-spell-cuffs"
               }
@@ -728,23 +728,23 @@
           ],
           "cells": [
             "Pre-Raid",
-            "Runed Spell-Cuffs",
+            "Runed Spell-cuffs",
             "Vendor: G'eras (Badges of Justice)"
           ],
           "entities": [
             {
               "id": 33588,
-              "name": "Runed Spell-Cuffs",
+              "name": "Runed Spell-cuffs",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=33588/runed-spell-cuffs"
             }
           ],
           "entity_id": 33588,
-          "entity_name": "Runed Spell-Cuffs",
+          "entity_name": "Runed Spell-cuffs",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=33588/runed-spell-cuffs",
           "item_id": 33588,
-          "item_name": "Runed Spell-Cuffs",
+          "item_name": "Runed Spell-cuffs",
           "item_url": "https://www.wowhead.com/tbc/item=33588/runed-spell-cuffs",
           "rank_label": "Pre-Raid",
           "source_links": [
@@ -1032,7 +1032,7 @@
             [
               {
                 "id": 33291,
-                "name": "Voodoo-Woven Belt",
+                "name": "Voodoo-woven Belt",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=33291/voodoo-woven-belt"
               }
@@ -1041,23 +1041,23 @@
           ],
           "cells": [
             "Pre-Raid",
-            "Voodoo-Woven Belt",
+            "Voodoo-woven Belt",
             "Vendor: G'eras (Badges of Justice)"
           ],
           "entities": [
             {
               "id": 33291,
-              "name": "Voodoo-Woven Belt",
+              "name": "Voodoo-woven Belt",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=33291/voodoo-woven-belt"
             }
           ],
           "entity_id": 33291,
-          "entity_name": "Voodoo-Woven Belt",
+          "entity_name": "Voodoo-woven Belt",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=33291/voodoo-woven-belt",
           "item_id": 33291,
-          "item_name": "Voodoo-Woven Belt",
+          "item_name": "Voodoo-woven Belt",
           "item_url": "https://www.wowhead.com/tbc/item=33291/voodoo-woven-belt",
           "rank_label": "Pre-Raid",
           "source_links": [
@@ -1404,7 +1404,7 @@
           "cells": [
             "BiS",
             "Loop of Cursed Bones",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -1424,11 +1424,11 @@
           "rank_label": "BiS",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [
@@ -2214,7 +2214,7 @@
           "cells": [
             "Option",
             "Blade of Twisted Visions",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -2234,11 +2234,11 @@
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [

@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Voidheart Robe Phase 1 Item Level 120 Binds when picked up Chest Cloth 202 Armor +42 Stamina +33 Intellect Yellow Socket Yellow Socket Red Socket Socket Bonus: +6 Stamina Durability 100 / 100 Classes: Warlock Requires Level 70 Equip: Improves spell hit rating by 13. Equip: Increases damage and healing done by magical spells and effects by up to 42. Voidheart Raiment (0/5) Voidheart Crown Voidheart Gloves Voidheart Leggings Voidheart Mantle Voidheart Robe (2) Set : Your shadow damage spells have a chance to grant you 135 bonus shadow damage for 15 sec. (Proc chance: 5%) (2) Set : Your fire damage spells have a chance to grant you 135 bonus fire damage for 15 sec. (Proc chance: 5%) (4) Set : Increases the duration of your Corruption and Immolate abilities by 3 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:06+00:00",
+  "inventory_slot": null,
+  "item_id": 28964,
+  "item_stats": {
+    "armor": 202,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 13.",
+        "stats": {
+          "spell_hit_rating": 13.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 42.",
+        "stats": {
+          "spell_power": 42.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 13.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 42."
+    ],
+    "id": 28964,
+    "item_level": 120,
+    "name": "Voidheart Robe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "socket_bonus": {
+      "stamina": 6.0
+    },
+    "sockets": [
+      "yellow",
+      "yellow",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 33.0,
+      "spell_hit_rating": 13.0,
+      "spell_power": 42.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28964/voidheart-robe"
+  },
+  "name": "Voidheart Robe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28964/voidheart-robe"
+}

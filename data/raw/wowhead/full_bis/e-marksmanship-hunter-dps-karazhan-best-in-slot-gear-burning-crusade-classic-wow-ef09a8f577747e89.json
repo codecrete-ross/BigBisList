@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:53+00:00",
+  "fetched_at": "2026-09-04T23:49:23+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -1003,7 +1003,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Profession: Leatherworking - Pattern Requires Honored with Honor Hold / Thrallmar (BoE)",
-              "reputation": "Honor Hold / Thrallmar (BoE",
+              "reputation": "Honor Hold",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/marksmanship-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Profession: Leatherworking - Pattern Requires Honored with Honor Hold / Thrallmar (BoE)",
+              "reputation": "Thrallmar",
               "scope": "self_craft",
               "source_url": "https://www.wowhead.com/tbc/guide/marksmanship-hunter-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
               "standing": "Honored",
@@ -4027,7 +4037,7 @@
           "cells": [
             "Optional",
             "Don Santos' Famous Hunting Rifle",
-            "World Drop - The Burning Crusade"
+            "World Drop - Outland"
           ],
           "entities": [
             {
@@ -4047,11 +4057,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/faction=980/the-burning-crusade",
-              "text": "The Burning Crusade"
+              "href": "https://www.wowhead.com/tbc/faction=980/outland",
+              "text": "Outland"
             }
           ],
-          "source_text": "World Drop - The Burning Crusade"
+          "source_text": "World Drop - Outland"
         },
         {
           "cell_entities": [
@@ -4233,7 +4243,7 @@
           "cells": [
             "Optional",
             "Valanos' Longbow",
-            "World Drop - The Burning Crusade"
+            "World Drop - Outland"
           ],
           "entities": [
             {
@@ -4253,11 +4263,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/faction=980/the-burning-crusade",
-              "text": "The Burning Crusade"
+              "href": "https://www.wowhead.com/tbc/faction=980/outland",
+              "text": "Outland"
             }
           ],
-          "source_text": "World Drop - The Burning Crusade"
+          "source_text": "World Drop - Outland"
         }
       ],
       "slot": "Weapon"
@@ -4421,7 +4431,7 @@
           "cells": [
             "Optional",
             "Harpy Hide Quiver",
-            "Vendor: Jorek Ironside Vendor: Thanthaldis Snowgleam"
+            "Vendor: Jekyll Flandring Vendor: Thanthaldis Snowgleam"
           ],
           "entities": [
             {
@@ -4441,15 +4451,15 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=13219/jorek-ironside",
-              "text": "Jorek Ironside"
+              "href": "https://www.wowhead.com/tbc/npc=13219/jekyll-flandring",
+              "text": "Jekyll Flandring"
             },
             {
               "href": "https://www.wowhead.com/tbc/npc=13217/thanthaldis-snowgleam",
               "text": "Thanthaldis Snowgleam"
             }
           ],
-          "source_text": "Vendor: Jorek Ironside Vendor: Thanthaldis Snowgleam"
+          "source_text": "Vendor: Jekyll Flandring Vendor: Thanthaldis Snowgleam"
         }
       ],
       "slot": "Quiver"
@@ -4528,7 +4538,7 @@
           "cells": [
             "Optional",
             "Gnoll Skin Bandolier",
-            "Vendor: Jorek Ironside Vendor: Thanthaldis Snowgleam"
+            "Vendor: Jekyll Flandring Vendor: Thanthaldis Snowgleam"
           ],
           "entities": [
             {
@@ -4548,15 +4558,15 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=13219/jorek-ironside",
-              "text": "Jorek Ironside"
+              "href": "https://www.wowhead.com/tbc/npc=13219/jekyll-flandring",
+              "text": "Jekyll Flandring"
             },
             {
               "href": "https://www.wowhead.com/tbc/npc=13217/thanthaldis-snowgleam",
               "text": "Thanthaldis Snowgleam"
             }
           ],
-          "source_text": "Vendor: Jorek Ironside Vendor: Thanthaldis Snowgleam"
+          "source_text": "Vendor: Jekyll Flandring Vendor: Thanthaldis Snowgleam"
         }
       ],
       "slot": "Quiver"
@@ -4681,7 +4691,7 @@
           "cells": [
             "Optional",
             "Blackflight Arrow",
-            "Various vendors in The Burning Crusade"
+            "Various vendors in Outland"
           ],
           "entities": [
             {
@@ -4701,11 +4711,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/faction=980/the-burning-crusade",
-              "text": "The Burning Crusade"
+              "href": "https://www.wowhead.com/tbc/faction=980/outland",
+              "text": "Outland"
             }
           ],
-          "source_text": "Various vendors in The Burning Crusade"
+          "source_text": "Various vendors in Outland"
         }
       ],
       "slot": "Ammo"
@@ -4856,7 +4866,7 @@
           "cells": [
             "Optional",
             "Ironbite Shell",
-            "Various vendors in The Burning Crusade"
+            "Various vendors in Outland"
           ],
           "entities": [
             {
@@ -4876,11 +4886,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/faction=980/the-burning-crusade",
-              "text": "The Burning Crusade"
+              "href": "https://www.wowhead.com/tbc/faction=980/outland",
+              "text": "Outland"
             }
           ],
-          "source_text": "Various vendors in The Burning Crusade"
+          "source_text": "Various vendors in Outland"
         }
       ],
       "slot": "Ammo"

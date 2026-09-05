@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blue's Greaves of the Righteous Guardian Phase 3 Item Level 141 Binds when picked up Feet Plate 1213 Armor +58 Stamina Red Socket Socket Bonus: +3 Stamina Durability 75 / 75 Requires Level 70 Equip: Increases your shield block rating by 34. Equip: Improves spell hit rating by 23. Equip: Increases damage and healing done by magical spells and effects by up to 26.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:27+00:00",
+  "inventory_slot": null,
+  "item_id": 34947,
+  "item_stats": {
+    "armor": 1213,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 23.",
+        "stats": {
+          "spell_hit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 26.",
+        "stats": {
+          "spell_power": 26.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 23.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 26."
+    ],
+    "id": 34947,
+    "item_level": 141,
+    "name": "Blue's Greaves of the Righteous Guardian",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "spell_hit_rating": 23.0,
+      "spell_power": 26.0,
+      "stamina": 58.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34947/blues-greaves-of-the-righteous-guardian"
+  },
+  "name": "Blue's Greaves of the Righteous Guardian",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34947/blues-greaves-of-the-righteous-guardian"
+}

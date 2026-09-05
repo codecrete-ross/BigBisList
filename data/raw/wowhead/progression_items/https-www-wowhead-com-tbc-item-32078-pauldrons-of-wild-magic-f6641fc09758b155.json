@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pauldrons of Wild Magic Phase 1 Item Level 110 Binds when picked up Shoulder Mail 583 Armor +21 Stamina +28 Intellect Durability 85 / 85 Requires Level 70 Equip: Improves spell critical strike rating by 23. Equip: Increases damage and healing done by magical spells and effects by up to 33. Sell Price: 5 2 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:40+00:00",
+  "inventory_slot": null,
+  "item_id": 32078,
+  "item_stats": {
+    "armor": 583,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 23.",
+        "stats": {
+          "spell_crit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 33.",
+        "stats": {
+          "spell_power": 33.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 23.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 33."
+    ],
+    "id": 32078,
+    "item_level": 110,
+    "name": "Pauldrons of Wild Magic",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "spell_crit_rating": 23.0,
+      "spell_power": 33.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32078/pauldrons-of-wild-magic"
+  },
+  "name": "Pauldrons of Wild Magic",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32078/pauldrons-of-wild-magic"
+}

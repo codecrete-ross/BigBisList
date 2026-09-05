@@ -1,0 +1,66 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Delicate Eternium Ring Item Level 71 Requires Jewelcrafting (355) Use: Teaches you how to craft a Delicate Eternium Ring. Sell Price: 3 Delicate Eternium Ring Item Level 101 Binds when equipped Unique-Equipped Finger +25 Agility +15 Stamina Requires Level 70 Equip: Increases your dodge rating by 16. Sell Price: 3 91 22 Requires Eternium Bar , Mercurial Adamantite (5)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:38+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 24164,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Delicate Eternium Ring.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases your dodge rating by 16.",
+        "stats": {
+          "dodge_rating": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases your dodge rating by 16."
+    ],
+    "id": 24164,
+    "item_level": 71,
+    "name": "Design: Delicate Eternium Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 25.0,
+      "dodge_rating": 16.0,
+      "stamina": 15.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft a Delicate Eternium Ring."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24164"
+  },
+  "name": "Design: Delicate Eternium Ring",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Delicate Eternium Ring Item Level 71 Requires Jewelcrafting (355) Use: Teaches you how to craft a Delicate Eternium Ring. Sell Price: 3 Delicate Eternium Ring Item Level 101 Binds when equipped Unique-Equipped Finger +25 Agility +15 Stamina Requires Level 70 Equip: Increases your dodge rating by 16. Sell Price: 3 91 22 Requires Eternium Bar , Mercurial Adamantite (5)",
+      "scope": "equip_or_use",
+      "skill": 355,
+      "source_url": "https://www.wowhead.com/tbc/item=24164",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24164"
+}

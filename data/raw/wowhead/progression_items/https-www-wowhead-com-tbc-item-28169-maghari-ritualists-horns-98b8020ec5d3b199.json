@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mag'hari Ritualist's Horns Phase 1 Item Level 103 Binds when picked up Head Cloth 114 Armor +18 Stamina +16 Intellect Durability 50 / 50 Equip: Improves spell hit rating by 12. Equip: Improves spell critical strike rating by 15. Equip: Increases damage and healing done by magical spells and effects by up to 50. Sell Price: 2 41 12",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:56+00:00",
+  "inventory_slot": null,
+  "item_id": 28169,
+  "item_stats": {
+    "armor": 114,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 12.",
+        "stats": {
+          "spell_hit_rating": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 15.",
+        "stats": {
+          "spell_crit_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 50.",
+        "stats": {
+          "spell_power": 50.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 12.",
+      "Equip: Improves spell critical strike rating by 15.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 50."
+    ],
+    "id": 28169,
+    "item_level": 103,
+    "name": "Mag'hari Ritualist's Horns",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "stats": {
+      "intellect": 16.0,
+      "spell_crit_rating": 15.0,
+      "spell_hit_rating": 12.0,
+      "spell_power": 50.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28169/maghari-ritualists-horns"
+  },
+  "name": "Mag'hari Ritualist's Horns",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28169/maghari-ritualists-horns"
+}

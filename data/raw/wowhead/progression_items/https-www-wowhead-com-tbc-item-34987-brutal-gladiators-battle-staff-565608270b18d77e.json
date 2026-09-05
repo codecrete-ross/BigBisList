@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brutal Gladiator's Battle Staff Phase 5 Item Level 154 Binds when picked up Two-Hand Staff 86 - 199 Damage Speed 2.00 (71.25 damage per second) +66 Stamina +50 Intellect Durability 120 / 120 Requires Level 70 Equip: Improves spell hit rating by 32. Equip: Improves spell critical strike rating by 50. Equip: Improves your resilience rating by 29. Equip: Increases damage and healing done by magical spells and effects by up to 266.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:27+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 34987,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 71.25,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 32.",
+        "stats": {
+          "spell_hit_rating": 32.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 50.",
+        "stats": {
+          "spell_crit_rating": 50.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 29.",
+        "stats": {
+          "resilience_rating": 29.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 266.",
+        "stats": {
+          "spell_power": 266.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 32.",
+      "Equip: Improves spell critical strike rating by 50.",
+      "Equip: Improves your resilience rating by 29.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 266."
+    ],
+    "id": 34987,
+    "item_level": 154,
+    "name": "Brutal Gladiator's Battle Staff",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 50.0,
+      "resilience_rating": 29.0,
+      "spell_crit_rating": 50.0,
+      "spell_hit_rating": 32.0,
+      "spell_power": 266.0,
+      "stamina": 66.0
+    },
+    "weapon_max_damage": 199,
+    "weapon_min_damage": 86,
+    "weapon_speed": 2.0,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34987/brutal-gladiators-battle-staff"
+  },
+  "name": "Brutal Gladiator's Battle Staff",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34987/brutal-gladiators-battle-staff"
+}

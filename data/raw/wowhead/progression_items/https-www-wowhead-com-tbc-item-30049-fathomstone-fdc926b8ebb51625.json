@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Fathomstone Phase 2 Item Level 128 Binds when picked up Held In Off-hand +16 Stamina +12 Intellect Requires Level 70 Equip: Improves spell critical strike rating by 23. Equip: Increases damage and healing done by magical spells and effects by up to 36. Sell Price: 20 30 59",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:30+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 30049,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 23.",
+        "stats": {
+          "spell_crit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 36.",
+        "stats": {
+          "spell_power": 36.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 23.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+    ],
+    "id": 30049,
+    "item_level": 128,
+    "name": "Fathomstone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 12.0,
+      "spell_crit_rating": 23.0,
+      "spell_power": 36.0,
+      "stamina": 16.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30049/fathomstone"
+  },
+  "name": "Fathomstone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30049/fathomstone"
+}

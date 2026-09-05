@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pauldrons of the Wardancer Phase 2 Item Level 128 Binds when picked up Shoulder Plate 1206 Armor +38 Strength +21 Stamina Red Socket Blue Socket Socket Bonus: +3 Critical Strike Rating Durability 100 / 100 Requires Level 70 Equip: Improves critical strike rating by 29. Sell Price: 6 91 76",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:30+00:00",
+  "inventory_slot": null,
+  "item_id": 30053,
+  "item_stats": {
+    "armor": 1206,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 29.",
+        "stats": {
+          "crit_rating": 29.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 29."
+    ],
+    "id": 30053,
+    "item_level": 128,
+    "name": "Pauldrons of the Wardancer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 29.0,
+      "stamina": 21.0,
+      "strength": 38.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30053/pauldrons-of-the-wardancer"
+  },
+  "name": "Pauldrons of the Wardancer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30053/pauldrons-of-the-wardancer"
+}

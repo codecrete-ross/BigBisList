@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Shoulderguards Phase 2 Item Level 133 Binds when picked up Shoulder Mail 700 Armor +28 Stamina +28 Intellect Blue Socket Blue Socket Socket Bonus: +7 Healing +3 Spell Damage Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Increases healing done by up to 79 and damage done by up to 27 for all magical spells and effects. Equip: Restores 8 mana per 5 sec. Cataclysm Raiment (0/5) Cataclysm Chestguard Cataclysm Gloves Cataclysm Headguard Cataclysm Legguards Cataclysm Shoulderguards (2) Set : Reduces the cost of your Lesser Healing Wave spell by 5%. (4) Set : Your critical heals from Healing Wave, Lesser Healing Wave, and Chain Heal reduce the cast time of your next Healing Wave spell by 0.50 sec for 10 sec. This effect cannot occur more than once per minute. (1m cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:50+00:00",
+  "inventory_slot": null,
+  "item_id": 30168,
+  "item_stats": {
+    "armor": 700,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 79 and damage done by up to 27 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 79.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 79 and damage done by up to 27 for all magical spells and effects.",
+      "Equip: Restores 8 mana per 5 sec."
+    ],
+    "id": 30168,
+    "item_level": 133,
+    "name": "Cataclysm Shoulderguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "sockets": [
+      "blue",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 79.0,
+      "intellect": 28.0,
+      "mp5": 8.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30168/cataclysm-shoulderguards"
+  },
+  "name": "Cataclysm Shoulderguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30168/cataclysm-shoulderguards"
+}

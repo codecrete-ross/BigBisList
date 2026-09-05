@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Flame Cap Item Level 67 Requires Level 55 Use: Chance to strike a ranged or melee target for 40 fire damage. Also increases fire spell damage by up to 80. Lasts 1 min. (3 Min Cooldown) Max Stack: 20 Sell Price: 7 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:05+00:00",
+  "inventory_slot": null,
+  "item_id": 22788,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Chance to strike a ranged or melee target for 40 fire damage. Also increases fire spell damage by up to 80. Lasts 1 min. (3 Min Cooldown) Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 22788,
+    "item_level": 67,
+    "name": "Flame Cap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Chance to strike a ranged or melee target for 40 fire damage. Also increases fire spell damage by up to 80. Lasts 1 min. (3 Min Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22788/flame-cap"
+  },
+  "name": "Flame Cap",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22788/flame-cap"
+}

@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T08:50:59+00:00",
+  "fetched_at": "2026-09-04T23:49:02+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [
     {
       "data_family": "consumables",
@@ -164,9 +164,9 @@
           "entities": [
             {
               "id": 27501,
-              "name": "Scroll of Versatility V",
+              "name": "Scroll of Spirit V",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27501/scroll-of-versatility-v"
+              "url": "https://www.wowhead.com/tbc/item=27501/scroll-of-spirit-v"
             },
             {
               "id": 27500,
@@ -179,15 +179,15 @@
           "section": "Best Consumable Check List for Shadow Priest DPS in TBC Classic",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/item=27501/scroll-of-versatility-v",
-              "text": "Scroll of Versatility V"
+              "href": "https://www.wowhead.com/tbc/item=27501/scroll-of-spirit-v",
+              "text": "Scroll of Spirit V"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=27500/scroll-of-protection-v",
               "text": "Scroll of Protection V"
             }
           ],
-          "text": "Scroll of Versatility V and Scroll of Protection V"
+          "text": "Scroll of Spirit V and Scroll of Protection V"
         },
         {
           "entities": [
@@ -243,13 +243,13 @@
                 "id": 25431,
                 "name": "Inner Fire",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=25431"
+                "url": "https://www.wowhead.com/tbc/spell=25431/inner-fire"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Inner Fire",
             "Armor"
           ],
           "entities": [
@@ -257,19 +257,19 @@
               "id": 25431,
               "name": "Inner Fire",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=25431"
+              "url": "https://www.wowhead.com/tbc/spell=25431/inner-fire"
             }
           ],
           "entity_id": 25431,
           "entity_name": "Inner Fire",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=25431",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=25431/inner-fire",
+          "rank_label": "Inner Fire",
           "source_links": [],
           "source_text": "Armor",
           "spell_id": 25431,
           "spell_name": "Inner Fire",
-          "spell_url": "https://www.wowhead.com/tbc/spell=25431"
+          "spell_url": "https://www.wowhead.com/tbc/spell=25431/inner-fire"
         },
         {
           "cell_entities": [
@@ -278,13 +278,13 @@
                 "id": 25392,
                 "name": "Prayer of Fortitude",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=25392"
+                "url": "https://www.wowhead.com/tbc/spell=25392/prayer-of-fortitude"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Prayer of Fortitude",
             "Stamina"
           ],
           "entities": [
@@ -292,19 +292,19 @@
               "id": 25392,
               "name": "Prayer of Fortitude",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=25392"
+              "url": "https://www.wowhead.com/tbc/spell=25392/prayer-of-fortitude"
             }
           ],
           "entity_id": 25392,
           "entity_name": "Prayer of Fortitude",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=25392",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=25392/prayer-of-fortitude",
+          "rank_label": "Prayer of Fortitude",
           "source_links": [],
           "source_text": "Stamina",
           "spell_id": 25392,
           "spell_name": "Prayer of Fortitude",
-          "spell_url": "https://www.wowhead.com/tbc/spell=25392"
+          "spell_url": "https://www.wowhead.com/tbc/spell=25392/prayer-of-fortitude"
         },
         {
           "cell_entities": [
@@ -313,13 +313,13 @@
                 "id": 39374,
                 "name": "Prayer of Shadow Protection",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=39374"
+                "url": "https://www.wowhead.com/tbc/spell=39374/prayer-of-shadow-protection"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Prayer of Shadow Protection",
             "Shadow Resistance"
           ],
           "entities": [
@@ -327,19 +327,19 @@
               "id": 39374,
               "name": "Prayer of Shadow Protection",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=39374"
+              "url": "https://www.wowhead.com/tbc/spell=39374/prayer-of-shadow-protection"
             }
           ],
           "entity_id": 39374,
           "entity_name": "Prayer of Shadow Protection",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=39374",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=39374/prayer-of-shadow-protection",
+          "rank_label": "Prayer of Shadow Protection",
           "source_links": [],
           "source_text": "Shadow Resistance",
           "spell_id": 39374,
           "spell_name": "Prayer of Shadow Protection",
-          "spell_url": "https://www.wowhead.com/tbc/spell=39374"
+          "spell_url": "https://www.wowhead.com/tbc/spell=39374/prayer-of-shadow-protection"
         }
       ],
       "slot": null

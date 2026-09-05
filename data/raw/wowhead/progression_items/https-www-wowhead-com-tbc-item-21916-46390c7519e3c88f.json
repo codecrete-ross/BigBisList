@@ -1,0 +1,169 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This tailoring pattern is used for the Tailoring profession. It is sold by Nasmara Moonsong. In the Tailoring Patterns category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-09-04T23:50:46+00:00",
+  "inventory_slot": null,
+  "item_id": 21916,
+  "item_stats": {
+    "armor": 109,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew a Primal Mooncloth Belt.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 81.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects.",
+      "Equip: Restores 8 mana per 5 sec."
+    ],
+    "id": 21916,
+    "item_level": 71,
+    "name": "Pattern: Primal Mooncloth Belt",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 22208,
+      "entity_name": "Nasmara Moonsong",
+      "location_area": "Shattrath City",
+      "price_copper": 57000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=21916",
+      "type": "vendor",
+      "vendor_id": 22208,
+      "zone": "Shattrath City"
+    },
+    "quality": "unknown",
+    "required_level": 70,
+    "socket_bonus": {
+      "intellect": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "Vendor: Nasmara Moonsong (Shattrath City)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 22208,
+        "entity_name": "Nasmara Moonsong",
+        "location_area": "Shattrath City",
+        "price_copper": 57000,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=21916",
+        "type": "vendor",
+        "vendor_id": 22208,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "healing_power": 81.0,
+      "intellect": 12.0,
+      "mp5": 8.0,
+      "spirit": 11.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to sew a Primal Mooncloth Belt."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21916"
+  },
+  "name": "Pattern: Primal Mooncloth Belt",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Primal Mooncloth Belt Item Level 71 Binds when picked up Requires Tailoring (355) Requires Mooncloth Tailoring Use: Teaches you how to sew a Primal Mooncloth Belt. Sell Price: 1 50 Primal Mooncloth Belt Item Level 115 Binds when picked up Waist Cloth 109 Armor +12 Intellect +11 Spirit Yellow Socket Blue Socket Socket Bonus: +3 Intellect Durability 35 / 35 Requires Level 70 Requires Mooncloth Tailoring Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects. Equip: Restores 8 mana per 5 sec. Primal Mooncloth (0/3) Primal Mooncloth Robe Primal Mooncloth Shoulders Primal Mooncloth Belt Sell Price: 2 40 89 Requires Primal Mooncloth (4), Netherweb Spider Silk (2), Primal Life (8) This tailoring pattern is used for the Tailoring profession. It is sold by Nasmara Moonsong. In the Tailoring Patterns category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 355,
+      "source_url": "https://www.wowhead.com/tbc/item=21916",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Primal Mooncloth Belt Item Level 71 Binds when picked up Requires Tailoring (355) Requires Mooncloth Tailoring Use: Teaches you how to sew a Primal Mooncloth Belt. Sell Price: 1 50 Primal Mooncloth Belt Item Level 115 Binds when picked up Waist Cloth 109 Armor +12 Intellect +11 Spirit Yellow Socket Blue Socket Socket Bonus: +3 Intellect Durability 35 / 35 Requires Level 70 Requires Mooncloth Tailoring Equip: Increases healing done by up to 81 and damage done by up to 27 for all magical spells and effects. Equip: Restores 8 mana per 5 sec. Primal Mooncloth (0/3) Primal Mooncloth Robe Primal Mooncloth Shoulders Primal Mooncloth Belt Sell Price: 2 40 89 Requires Primal Mooncloth (4), Netherweb Spider Silk (2), Primal Life (8) This tailoring pattern is used for the Tailoring profession. It is sold by Nasmara Moonsong. In the Tailoring Patterns category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=21916",
+      "specialization": "Mooncloth Tailoring",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 22208,
+      "entity_name": "Nasmara Moonsong",
+      "location_area": "Shattrath City",
+      "price_copper": 57000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=21916",
+      "type": "vendor",
+      "vendor_id": 22208,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            57000
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 22208,
+        "location": [
+          3703
+        ],
+        "maxlevel": 68,
+        "minlevel": 68,
+        "name": "Nasmara Moonsong",
+        "popularity": 9,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Mooncloth Specialist",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    26760,
+    18048,
+    18378
+  ],
+  "url": "https://www.wowhead.com/tbc/item=21916"
+}

@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant Weapon - Soulfrost Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Use: Learn how to permanently enchant a Melee Weapon to increase the damage done by your frost and shadow spells by up to 54. Permanently enchant a Melee Weapon to add up to 54 damage to frost and shadow spells. Requires a level 35 or higher item. Sell Price: 1 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:03+00:00",
+  "inventory_slot": null,
+  "item_id": 22561,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Learn how to permanently enchant a Melee Weapon to increase the damage done by your frost and shadow spells by up to 54. Permanently enchant a Melee Weapon to add up to 54 damage to frost and shadow spells. Requires a level 35 or higher item.",
+        "type": "use"
+      }
+    ],
+    "id": 22561,
+    "item_level": 75,
+    "name": "Formula: Enchant Weapon - Soulfrost",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Learn how to permanently enchant a Melee Weapon to increase the damage done by your frost and shadow spells by up to 54. Permanently enchant a Melee Weapon to add up to 54 damage to frost and shadow spells. Requires a level 35 or higher item."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22561"
+  },
+  "name": "Formula: Enchant Weapon - Soulfrost",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Weapon - Soulfrost Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Use: Learn how to permanently enchant a Melee Weapon to increase the damage done by your frost and shadow spells by up to 54. Permanently enchant a Melee Weapon to add up to 54 damage to frost and shadow spells. Requires a level 35 or higher item. Sell Price: 1 50",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=22561",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22561"
+}

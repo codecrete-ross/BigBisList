@@ -1,0 +1,105 @@
+{
+  "description": "In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.6).",
+  "fetched_at": "2026-09-05T00:08:29+00:00",
+  "name": "Gnomish Battle Chicken",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Engineering",
+      "raw_text": "Engineering",
+      "scope": "learn_recipe",
+      "skill": 230,
+      "source_url": "https://www.wowhead.com/tbc/spell=12906",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Engineering Trainer",
+      "profession": "Engineering",
+      "required_skill": 230,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Engineering",
+          "raw_text": "Engineering",
+          "scope": "learn_recipe",
+          "skill": 230,
+          "source_url": "https://www.wowhead.com/tbc/spell=12906",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=12906",
+      "type": "trainer"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          230,
+          250,
+          260,
+          270
+        ],
+        "creates": [
+          10725,
+          1,
+          1
+        ],
+        "id": 12906,
+        "learnedat": 230,
+        "level": 0,
+        "name": "Gnomish Battle Chicken",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            10561,
+            1
+          ],
+          [
+            6037,
+            6
+          ],
+          [
+            3860,
+            6
+          ],
+          [
+            9060,
+            2
+          ],
+          [
+            10558,
+            1
+          ],
+          [
+            1529,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          202
+        ],
+        "specialization": 20219,
+        "trainingcost": 2400
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 12906,
+  "url": "https://www.wowhead.com/tbc/spell=12906"
+}

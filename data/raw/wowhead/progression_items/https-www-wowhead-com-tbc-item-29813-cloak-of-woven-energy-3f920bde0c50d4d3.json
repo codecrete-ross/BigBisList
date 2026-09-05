@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cloak of Woven Energy Phase 1 Item Level 106 Binds when picked up Back 72 Armor +6 Stamina +13 Intellect +3 Spirit Equip: Improves spell critical strike rating by 6. Equip: Increases damage and healing done by magical spells and effects by up to 29. Sell Price: 2 55 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:14+00:00",
+  "inventory_slot": null,
+  "item_id": 29813,
+  "item_stats": {
+    "armor": 72,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 6.",
+        "stats": {
+          "spell_crit_rating": 6.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 29.",
+        "stats": {
+          "spell_power": 29.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 6.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 29."
+    ],
+    "id": 29813,
+    "item_level": 106,
+    "name": "Cloak of Woven Energy",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "stats": {
+      "intellect": 13.0,
+      "spell_crit_rating": 6.0,
+      "spell_power": 29.0,
+      "spirit": 3.0,
+      "stamina": 6.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29813/cloak-of-woven-energy"
+  },
+  "name": "Cloak of Woven Energy",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29813/cloak-of-woven-energy"
+}

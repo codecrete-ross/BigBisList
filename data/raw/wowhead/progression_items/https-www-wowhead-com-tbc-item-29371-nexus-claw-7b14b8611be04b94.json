@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Nexus-Claw Phase 1 Item Level 108 Binds when equipped Main Hand Fist Weapon 113 - 211 Damage Speed 2.80 (57.86 damage per second) Durability 55 / 55 Requires Level 66 Equip: Improves critical strike rating by 14. Equip: Increases attack power by 28. Sell Price: 6 96 66",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:54+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 29371,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 57.86,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 14.",
+        "stats": {
+          "crit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 28.",
+        "stats": {
+          "attack_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 14.",
+      "Equip: Increases attack power by 28."
+    ],
+    "id": 29371,
+    "item_level": 108,
+    "name": "Nexus-Claw",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 66,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "crit_rating": 14.0
+    },
+    "weapon_max_damage": 211,
+    "weapon_min_damage": 113,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Fist Weapon",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29371/nexus-claw"
+  },
+  "name": "Nexus-Claw",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29371/nexus-claw"
+}

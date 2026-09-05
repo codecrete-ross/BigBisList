@@ -2,27 +2,108 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Big BiS List phases",
   "type": "object",
-  "required": ["phases"],
+  "required": [
+    "phases",
+    "active_schedule",
+    "schedules",
+    "source_phase_numbers"
+  ],
   "properties": {
     "phases": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["key", "name"],
+        "required": [
+          "key",
+          "name"
+        ],
         "properties": {
-          "key": { "type": "string" },
-          "name": { "type": "string" },
-          "starts_at": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "Z$",
-            "description": "Official UTC content-launch timestamp when a phase has a published schedule."
+          "key": {
+            "enum": [
+              "PR",
+              "T4",
+              "T5",
+              "T6",
+              "ZA",
+              "SWP"
+            ]
           },
-          "starts_at_epoch": {
-            "type": "integer",
-            "minimum": 0,
-            "description": "Unix timestamp equivalent of starts_at, or zero for content available at launch."
+          "name": {
+            "type": "string"
+          },
+          "source_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
+        }
+      }
+    },
+    "active_schedule": {
+      "type": "string"
+    },
+    "schedules": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "phase_starts"
+        ],
+        "properties": {
+          "source_url": {
+            "type": "string"
+          },
+          "phase_starts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "key",
+                "starts_at_epoch"
+              ],
+              "properties": {
+                "key": {
+                  "enum": [
+                    "PR",
+                    "T4",
+                    "T5",
+                    "T6",
+                    "ZA",
+                    "SWP"
+                  ]
+                },
+                "starts_at_epoch": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "starts_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "Z$"
+                },
+                "source_url": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "source_phase_numbers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "enum": [
+            "PR",
+            "T4",
+            "T5",
+            "T6",
+            "ZA",
+            "SWP"
+          ]
         }
       }
     }

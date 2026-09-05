@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Coral Band of the Revived Phase 2 Item Level 138 Binds when picked up Unique Finger +21 Stamina +14 Intellect +27 Spirit Requires Level 70 Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:39+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 30110,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 75.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects."
+    ],
+    "id": 30110,
+    "item_level": 138,
+    "name": "Coral Band of the Revived",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 75.0,
+      "intellect": 14.0,
+      "spirit": 27.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30110/coral-band-of-the-revived"
+  },
+  "name": "Coral Band of the Revived",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30110/coral-band-of-the-revived"
+}

@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Blade of Harbingers Phase 5 Item Level 146 Binds when picked up Two-Hand Axe 375 - 563 Damage Speed 3.50 (134.00 damage per second) Durability 120 / 120 Requires Level 70 Equip: Improves critical strike rating by 55. Equip: Improves haste rating by 53. Equip: Increases attack power by 108.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:20+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 34891,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 134.0,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 55.",
+        "stats": {
+          "crit_rating": 55.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves haste rating by 53.",
+        "stats": {
+          "haste_rating": 53.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 108.",
+        "stats": {
+          "attack_power": 108.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 55.",
+      "Equip: Improves haste rating by 53.",
+      "Equip: Increases attack power by 108."
+    ],
+    "id": 34891,
+    "item_level": 146,
+    "name": "The Blade of Harbingers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 108.0,
+      "crit_rating": 55.0,
+      "haste_rating": 53.0
+    },
+    "weapon_max_damage": 563,
+    "weapon_min_damage": 375,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34891/the-blade-of-harbingers"
+  },
+  "name": "The Blade of Harbingers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34891/the-blade-of-harbingers"
+}

@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Recipe: Super Mana Potion Item Level 68 Binds when picked up Requires Alchemy (340) Use: Teaches you how to make a Super Mana Potion. Sell Price: 1 25 Super Mana Potion Item Level 68 Requires Level 55 Use: Restores 1800 to 3000 mana. (2 Min Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreaming Glory (2), Felweed , Imbued Vial",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:09+00:00",
+  "inventory_slot": null,
+  "item_id": 22907,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Super Mana Potion.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Restores 1800 to 3000 mana. (2 Min Cooldown) Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 22907,
+    "item_level": 68,
+    "name": "Recipe: Super Mana Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Super Mana Potion.",
+      "Use: Restores 1800 to 3000 mana. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22907"
+  },
+  "name": "Recipe: Super Mana Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Super Mana Potion Item Level 68 Binds when picked up Requires Alchemy (340) Use: Teaches you how to make a Super Mana Potion. Sell Price: 1 25 Super Mana Potion Item Level 68 Requires Level 55 Use: Restores 1800 to 3000 mana. (2 Min Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreaming Glory (2), Felweed , Imbued Vial",
+      "scope": "equip_or_use",
+      "skill": 340,
+      "source_url": "https://www.wowhead.com/tbc/item=22907",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22907"
+}

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "World Breaker Phase 2 Item Level 134 Binds when picked up Two-Hand Mace 371 - 558 Damage Speed 3.70 (125.54 damage per second) +50 Strength +51 Stamina Durability 120 / 120 Requires Level 70 Chance on hit: Increases the critical strike rating of your next attack made within 4 seconds by 900. Sell Price: 17 46 77",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:35+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 30090,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 125.54,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Increases the critical strike rating of your next attack made within 4 seconds by 900.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Increases the critical strike rating of your next attack made within 4 seconds by 900."
+    ],
+    "id": 30090,
+    "item_level": 134,
+    "name": "World Breaker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 51.0,
+      "strength": 50.0
+    },
+    "weapon_max_damage": 558,
+    "weapon_min_damage": 371,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30090/world-breaker"
+  },
+  "name": "World Breaker",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30090/world-breaker"
+}

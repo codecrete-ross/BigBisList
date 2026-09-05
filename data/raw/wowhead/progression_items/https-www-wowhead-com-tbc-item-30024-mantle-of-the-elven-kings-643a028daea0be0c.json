@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mantle of the Elven Kings Phase 2 Item Level 128 Binds when picked up Shoulder Cloth 161 Armor +27 Stamina +18 Intellect +17 Spirit Durability 60 / 60 Requires Level 70 Equip: Improves spell hit rating by 18. Equip: Improves spell critical strike rating by 25. Equip: Increases damage and healing done by magical spells and effects by up to 39. Sell Price: 3 83 24",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:25+00:00",
+  "inventory_slot": null,
+  "item_id": 30024,
+  "item_stats": {
+    "armor": 161,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 18.",
+        "stats": {
+          "spell_hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 25.",
+        "stats": {
+          "spell_crit_rating": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+        "stats": {
+          "spell_power": 39.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 18.",
+      "Equip: Improves spell critical strike rating by 25.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 39."
+    ],
+    "id": 30024,
+    "item_level": 128,
+    "name": "Mantle of the Elven Kings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_crit_rating": 25.0,
+      "spell_hit_rating": 18.0,
+      "spell_power": 39.0,
+      "spirit": 17.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30024/mantle-of-the-elven-kings"
+  },
+  "name": "Mantle of the Elven Kings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30024/mantle-of-the-elven-kings"
+}

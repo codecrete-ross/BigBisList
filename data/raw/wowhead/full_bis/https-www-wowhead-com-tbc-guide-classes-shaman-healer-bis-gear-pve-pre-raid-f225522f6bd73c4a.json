@@ -1,13 +1,63 @@
 {
-  "fetched_at": "2026-05-24T04:24:43+00:00",
+  "content_phase": "T6",
+  "fetched_at": "2026-09-04T23:49:05+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "previous_verified_phase": "PR",
+  "recommendation_status": "unverified_phase",
   "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
       "heading": "Best in Slot Head Armor for Restoration Shaman in TBC Classic Pre-Raid",
       "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32475,
+                "name": "Living Replicator Specs",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32475/living-replicator-specs"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Living Replicator Specs",
+            "Profession: Engineering - BoP only"
+          ],
+          "entities": [
+            {
+              "id": 32475,
+              "name": "Living Replicator Specs",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32475/living-replicator-specs"
+            }
+          ],
+          "entity_id": 32475,
+          "entity_name": "Living Replicator Specs",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32475/living-replicator-specs",
+          "item_id": 32475,
+          "item_name": "Living Replicator Specs",
+          "item_url": "https://www.wowhead.com/tbc/item=32475/living-replicator-specs",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Engineering",
+              "raw_text": "Profession: Engineering - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Engineering - BoP only"
+        },
         {
           "cell_entities": [
             [],
@@ -22,7 +72,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Whitemend Hood",
             "Profession: Tailoring - can be purchased on the Auction House"
           ],
@@ -51,46 +101,9 @@
               "type": "profession"
             }
           ],
-          "rank_label": "BiS",
-          "source_links": [],
-          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31400,
-                "name": "Gladiator's Ringmail Helm",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31400/gladiators-ringmail-helm"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gladiator's Ringmail Helm",
-            "Vendor: Arena Points (Season 1)"
-          ],
-          "entities": [
-            {
-              "id": 31400,
-              "name": "Gladiator's Ringmail Helm",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31400/gladiators-ringmail-helm"
-            }
-          ],
-          "entity_id": 31400,
-          "entity_name": "Gladiator's Ringmail Helm",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31400/gladiators-ringmail-helm",
-          "item_id": 31400,
-          "item_name": "Gladiator's Ringmail Helm",
-          "item_url": "https://www.wowhead.com/tbc/item=31400/gladiators-ringmail-helm",
           "rank_label": "Option",
           "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
+          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
         },
         {
           "cell_entities": [
@@ -506,6 +519,100 @@
             [],
             [
               {
+                "id": 32579,
+                "name": "Living Earth Shoulders",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32579/living-earth-shoulders"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Living Earth Shoulders",
+            "Profession: Leatherworking - BoP only"
+          ],
+          "entities": [
+            {
+              "id": 32579,
+              "name": "Living Earth Shoulders",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32579/living-earth-shoulders"
+            }
+          ],
+          "entity_id": 32579,
+          "entity_name": "Living Earth Shoulders",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32579/living-earth-shoulders",
+          "item_id": 32579,
+          "item_name": "Living Earth Shoulders",
+          "item_url": "https://www.wowhead.com/tbc/item=32579/living-earth-shoulders",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Leatherworking - BoP only"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32585,
+                "name": "Swiftheal Mantle",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Swiftheal Mantle",
+            "Profession: Tailoring - BoP only"
+          ],
+          "entities": [
+            {
+              "id": 32585,
+              "name": "Swiftheal Mantle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle"
+            }
+          ],
+          "entity_id": 32585,
+          "entity_name": "Swiftheal Mantle",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle",
+          "item_id": 32585,
+          "item_name": "Swiftheal Mantle",
+          "item_url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "Option",
+          "source_links": [],
+          "source_text": "Profession: Tailoring - BoP only"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 21874,
                 "name": "Primal Mooncloth Shoulders",
                 "type": "item",
@@ -515,7 +622,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Primal Mooncloth Shoulders",
             "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
           ],
@@ -553,7 +660,7 @@
               "type": "profession_specialization"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
         },
@@ -598,44 +705,14 @@
             }
           ],
           "source_text": "Drop: Grandmaster Vorpil (Shadow Labyrinth)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31407,
-                "name": "Gladiator's Ringmail Spaulders",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31407/gladiators-ringmail-spaulders"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gladiator's Ringmail Spaulders",
-            "Vendor: Arena Points (Season 1)"
-          ],
-          "entities": [
-            {
-              "id": 31407,
-              "name": "Gladiator's Ringmail Spaulders",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31407/gladiators-ringmail-spaulders"
-            }
-          ],
-          "entity_id": 31407,
-          "entity_name": "Gladiator's Ringmail Spaulders",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31407/gladiators-ringmail-spaulders",
-          "item_id": 31407,
-          "item_name": "Gladiator's Ringmail Spaulders",
-          "item_url": "https://www.wowhead.com/tbc/item=31407/gladiators-ringmail-spaulders",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
-        },
+        }
+      ],
+      "slot": "Shoulder"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Shoulder Armor for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -677,14 +754,7 @@
             }
           ],
           "source_text": "Drop: Epoch Hunter (Old Hillsbrad Foothills)"
-        }
-      ],
-      "slot": "Shoulder"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Shoulder Armor for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -990,7 +1060,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "White Remedy Cape",
             "Profession: Tailoring - can be purchased on the Auction House"
           ],
@@ -1019,7 +1089,7 @@
               "type": "profession"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Tailoring - can be purchased on the Auction House"
         },
@@ -1070,42 +1140,42 @@
             [],
             [
               {
-                "id": 22960,
-                "name": "Cloak of Suturing",
+                "id": 29375,
+                "name": "Bishop's Cloak",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=22960/cloak-of-suturing"
+                "url": "https://www.wowhead.com/tbc/item=29375/bishops-cloak"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Cloak of Suturing",
-            "Drop: Patchwerk (Classic - Naxxramas)"
+            "Bishop's Cloak",
+            "Vendor: G'eras (Badges of Justice)"
           ],
           "entities": [
             {
-              "id": 22960,
-              "name": "Cloak of Suturing",
+              "id": 29375,
+              "name": "Bishop's Cloak",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=22960/cloak-of-suturing"
+              "url": "https://www.wowhead.com/tbc/item=29375/bishops-cloak"
             }
           ],
-          "entity_id": 22960,
-          "entity_name": "Cloak of Suturing",
+          "entity_id": 29375,
+          "entity_name": "Bishop's Cloak",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=22960/cloak-of-suturing",
-          "item_id": 22960,
-          "item_name": "Cloak of Suturing",
-          "item_url": "https://www.wowhead.com/tbc/item=22960/cloak-of-suturing",
+          "entity_url": "https://www.wowhead.com/tbc/item=29375/bishops-cloak",
+          "item_id": 29375,
+          "item_name": "Bishop's Cloak",
+          "item_url": "https://www.wowhead.com/tbc/item=29375/bishops-cloak",
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=16028/patchwerk",
-              "text": "Patchwerk"
+              "href": "https://www.wowhead.com/tbc/npc=18525/geras",
+              "text": "G'eras"
             }
           ],
-          "source_text": "Drop: Patchwerk (Classic - Naxxramas)"
+          "source_text": "Vendor: G'eras (Badges of Justice)"
         }
       ],
       "slot": "Back"
@@ -1161,42 +1231,42 @@
             [],
             [
               {
-                "id": 29375,
-                "name": "Bishop's Cloak",
+                "id": 22960,
+                "name": "Cloak of Suturing",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29375/bishops-cloak"
+                "url": "https://www.wowhead.com/tbc/item=22960/cloak-of-suturing"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Bishop's Cloak",
-            "Vendor: G'eras (Badges of Justice)"
+            "Cloak of Suturing",
+            "Drop: Patchwerk (Classic - Naxxramas)"
           ],
           "entities": [
             {
-              "id": 29375,
-              "name": "Bishop's Cloak",
+              "id": 22960,
+              "name": "Cloak of Suturing",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29375/bishops-cloak"
+              "url": "https://www.wowhead.com/tbc/item=22960/cloak-of-suturing"
             }
           ],
-          "entity_id": 29375,
-          "entity_name": "Bishop's Cloak",
+          "entity_id": 22960,
+          "entity_name": "Cloak of Suturing",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29375/bishops-cloak",
-          "item_id": 29375,
-          "item_name": "Bishop's Cloak",
-          "item_url": "https://www.wowhead.com/tbc/item=29375/bishops-cloak",
+          "entity_url": "https://www.wowhead.com/tbc/item=22960/cloak-of-suturing",
+          "item_id": 22960,
+          "item_name": "Cloak of Suturing",
+          "item_url": "https://www.wowhead.com/tbc/item=22960/cloak-of-suturing",
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=18525/geras",
-              "text": "G'eras"
+              "href": "https://www.wowhead.com/tbc/npc=16028/patchwerk",
+              "text": "Patchwerk"
             }
           ],
-          "source_text": "Vendor: G'eras (Badges of Justice)"
+          "source_text": "Drop: Patchwerk (Classic - Naxxramas)"
         },
         {
           "cell_entities": [
@@ -1252,62 +1322,6 @@
             [],
             [
               {
-                "id": 21875,
-                "name": "Primal Mooncloth Robe",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Primal Mooncloth Robe",
-            "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
-          ],
-          "entities": [
-            {
-              "id": 21875,
-              "name": "Primal Mooncloth Robe",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe"
-            }
-          ],
-          "entity_id": 21875,
-          "entity_name": "Primal Mooncloth Robe",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
-          "item_id": 21875,
-          "item_name": "Primal Mooncloth Robe",
-          "item_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Tailoring",
-              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
-              "type": "profession"
-            },
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Tailoring",
-              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
-              "specialization": "Mooncloth Tailoring",
-              "type": "profession_specialization"
-            }
-          ],
-          "rank_label": "BiS",
-          "source_links": [],
-          "source_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 29522,
                 "name": "Windhawk Hauberk",
                 "type": "item",
@@ -1317,7 +1331,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "BiS",
             "Windhawk Hauberk",
             "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
           ],
@@ -1355,7 +1369,7 @@
               "type": "profession_specialization"
             }
           ],
-          "rank_label": "Option",
+          "rank_label": "BiS",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
         },
@@ -1364,37 +1378,56 @@
             [],
             [
               {
-                "id": 31396,
-                "name": "Gladiator's Ringmail Armor",
+                "id": 21875,
+                "name": "Primal Mooncloth Robe",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31396/gladiators-ringmail-armor"
+                "url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Gladiator's Ringmail Armor",
-            "Vendor: Arena Points (Season 1)"
+            "Primal Mooncloth Robe",
+            "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
           ],
           "entities": [
             {
-              "id": 31396,
-              "name": "Gladiator's Ringmail Armor",
+              "id": 21875,
+              "name": "Primal Mooncloth Robe",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31396/gladiators-ringmail-armor"
+              "url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe"
             }
           ],
-          "entity_id": 31396,
-          "entity_name": "Gladiator's Ringmail Armor",
+          "entity_id": 21875,
+          "entity_name": "Primal Mooncloth Robe",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31396/gladiators-ringmail-armor",
-          "item_id": 31396,
-          "item_name": "Gladiator's Ringmail Armor",
-          "item_url": "https://www.wowhead.com/tbc/item=31396/gladiators-ringmail-armor",
+          "entity_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+          "item_id": 21875,
+          "item_name": "Primal Mooncloth Robe",
+          "item_url": "https://www.wowhead.com/tbc/item=21875/primal-mooncloth-robe",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "specialization": "Mooncloth Tailoring",
+              "type": "profession_specialization"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
+          "source_text": "Profession: Tailoring (Primal Mooncloth Tailoring) - BoP only"
         },
         {
           "cell_entities": [
@@ -1437,14 +1470,7 @@
             }
           ],
           "source_text": "Drop: Murmur (Shadow Labyrinth)"
-        }
-      ],
-      "slot": "Chest"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Chest Armor for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -1486,7 +1512,14 @@
             }
           ],
           "source_text": "Drop: Pathaleon the Calculator (The Mechanar)"
-        },
+        }
+      ],
+      "slot": "Chest"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Chest Armor for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -1854,6 +1887,208 @@
             [],
             [
               {
+                "id": 32577,
+                "name": "Living Earth Bindings",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32577/living-earth-bindings"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Living Earth Bindings",
+            "Profession: Leatherworking - can be purchased on the Auction House"
+          ],
+          "entities": [
+            {
+              "id": 32577,
+              "name": "Living Earth Bindings",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32577/living-earth-bindings"
+            }
+          ],
+          "entity_id": 32577,
+          "entity_name": "Living Earth Bindings",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32577/living-earth-bindings",
+          "item_id": 32577,
+          "item_name": "Living Earth Bindings",
+          "item_url": "https://www.wowhead.com/tbc/item=32577/living-earth-bindings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32584,
+                "name": "Swiftheal Wraps",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Swiftheal Wraps",
+            "Profession: Tailoring - can be purchased on the Auction House"
+          ],
+          "entities": [
+            {
+              "id": 32584,
+              "name": "Swiftheal Wraps",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps"
+            }
+          ],
+          "entity_id": 32584,
+          "entity_name": "Swiftheal Wraps",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps",
+          "item_id": 32584,
+          "item_name": "Swiftheal Wraps",
+          "item_url": "https://www.wowhead.com/tbc/item=32584/swiftheal-wraps",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32582,
+                "name": "Bracers of Renewed Life",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Bracers of Renewed Life",
+            "Profession: Leatherworking - can be purchased on the Auction House"
+          ],
+          "entities": [
+            {
+              "id": 32582,
+              "name": "Bracers of Renewed Life",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life"
+            }
+          ],
+          "entity_id": 32582,
+          "entity_name": "Bracers of Renewed Life",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life",
+          "item_id": 32582,
+          "item_name": "Bracers of Renewed Life",
+          "item_url": "https://www.wowhead.com/tbc/item=32582/bracers-of-renewed-life",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Leatherworking",
+              "raw_text": "Profession: Leatherworking - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Profession: Leatherworking - can be purchased on the Auction House"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29183,
+                "name": "Bindings of the Timewalker",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Bindings of the Timewalker",
+            "Vendor: Alurmi (Keepers of Time Exalted)"
+          ],
+          "entities": [
+            {
+              "id": 29183,
+              "name": "Bindings of the Timewalker",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker"
+            }
+          ],
+          "entity_id": 29183,
+          "entity_name": "Bindings of the Timewalker",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker",
+          "item_id": 29183,
+          "item_name": "Bindings of the Timewalker",
+          "item_url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Alurmi (Keepers of Time Exalted)",
+              "reputation": "Keepers of Time",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=21643/alurmi",
+              "text": "Alurmi"
+            }
+          ],
+          "source_text": "Vendor: Alurmi (Keepers of Time Exalted)"
+        }
+      ],
+      "slot": "Wrist"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Wrist Armor for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 29523,
                 "name": "Windhawk Bracers",
                 "type": "item",
@@ -1863,7 +2098,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Windhawk Bracers",
             "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
           ],
@@ -1901,63 +2136,9 @@
               "type": "profession_specialization"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Leatherworking (Tribal Leatherworking) - BoP only"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29183,
-                "name": "Bindings of the Timewalker",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Bindings of the Timewalker",
-            "Vendor: Alurmi (Keepers of Time Exalted)"
-          ],
-          "entities": [
-            {
-              "id": 29183,
-              "name": "Bindings of the Timewalker",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker"
-            }
-          ],
-          "entity_id": 29183,
-          "entity_name": "Bindings of the Timewalker",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker",
-          "item_id": 29183,
-          "item_name": "Bindings of the Timewalker",
-          "item_url": "https://www.wowhead.com/tbc/item=29183/bindings-of-the-timewalker",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Alurmi (Keepers of Time Exalted)",
-              "reputation": "Keepers of Time",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
-              "standing": "Exalted",
-              "standing_rank": 8,
-              "type": "reputation"
-            }
-          ],
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=21643/alurmi",
-              "text": "Alurmi"
-            }
-          ],
-          "source_text": "Vendor: Alurmi (Keepers of Time Exalted)"
         },
         {
           "cell_entities": [
@@ -2042,14 +2223,7 @@
             }
           ],
           "source_text": "Drop: Emperor Vek'nilash (Classic - Ahn'Qiraj)"
-        }
-      ],
-      "slot": "Wrist"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Wrist Armor for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2332,43 +2506,6 @@
             [],
             [
               {
-                "id": 31397,
-                "name": "Gladiator's Ringmail Gauntlets",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31397/gladiators-ringmail-gauntlets"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gladiator's Ringmail Gauntlets",
-            "Vendor: Arena Points (Season 1)"
-          ],
-          "entities": [
-            {
-              "id": 31397,
-              "name": "Gladiator's Ringmail Gauntlets",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31397/gladiators-ringmail-gauntlets"
-            }
-          ],
-          "entity_id": 31397,
-          "entity_name": "Gladiator's Ringmail Gauntlets",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31397/gladiators-ringmail-gauntlets",
-          "item_id": 31397,
-          "item_name": "Gladiator's Ringmail Gauntlets",
-          "item_url": "https://www.wowhead.com/tbc/item=31397/gladiators-ringmail-gauntlets",
-          "rank_label": "Option",
-          "source_links": [],
-          "source_text": "Vendor: Arena Points (Season 1)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 24393,
                 "name": "Bloody Surgeon's Mitts",
                 "type": "item",
@@ -2412,7 +2549,7 @@
             [
               {
                 "id": 29327,
-                "name": "Cryo-Mitts",
+                "name": "Cryo-mitts",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
               }
@@ -2421,23 +2558,23 @@
           ],
           "cells": [
             "Option",
-            "Cryo-Mitts",
+            "Cryo-mitts",
             "Quest: Someone Else's Hard Work Pays Off (Mana-Tombs)"
           ],
           "entities": [
             {
               "id": 29327,
-              "name": "Cryo-Mitts",
+              "name": "Cryo-mitts",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts"
             }
           ],
           "entity_id": 29327,
-          "entity_name": "Cryo-Mitts",
+          "entity_name": "Cryo-mitts",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts",
           "item_id": 29327,
-          "item_name": "Cryo-Mitts",
+          "item_name": "Cryo-mitts",
           "item_url": "https://www.wowhead.com/tbc/item=29327/cryo-mitts",
           "rank_label": "Option",
           "source_links": [
@@ -2447,14 +2584,7 @@
             }
           ],
           "source_text": "Quest: Someone Else's Hard Work Pays Off (Mana-Tombs)"
-        }
-      ],
-      "slot": "Hands"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Hand Armor for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2496,7 +2626,14 @@
             }
           ],
           "source_text": "Drop: Warlord Kalithresh (The Steamvault)"
-        },
+        }
+      ],
+      "slot": "Hands"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Hand Armor for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -2831,6 +2968,53 @@
             [],
             [
               {
+                "id": 30036,
+                "name": "Belt of the Long Road",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Belt of the Long Road",
+            "Profession: Tailoring - can be purchased on the Auction House"
+          ],
+          "entities": [
+            {
+              "id": 30036,
+              "name": "Belt of the Long Road",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road"
+            }
+          ],
+          "entity_id": 30036,
+          "entity_name": "Belt of the Long Road",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road",
+          "item_id": 30036,
+          "item_name": "Belt of the Long Road",
+          "item_url": "https://www.wowhead.com/tbc/item=30036/belt-of-the-long-road",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "scope": "self_craft",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "Option",
+          "source_links": [],
+          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 29250,
                 "name": "Cord of Sanctification",
                 "type": "item",
@@ -2867,7 +3051,14 @@
             }
           ],
           "source_text": "Drop: Epoch Hunter (Heroic Old Hillsbrad Foothills)"
-        },
+        }
+      ],
+      "slot": "Waist"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Waist Armor for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -2909,14 +3100,7 @@
             }
           ],
           "source_text": "Drop: C'Thun (Classic - Ahn'Qiraj)"
-        }
-      ],
-      "slot": "Waist"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Waist Armor for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -3515,33 +3699,33 @@
             [
               {
                 "id": 31335,
-                "name": "Kilt of Living Growth",
+                "name": "Pants of Living Growth",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth"
+                "url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Kilt of Living Growth",
+            "Pants of Living Growth",
             "Drop: World Drop"
           ],
           "entities": [
             {
               "id": 31335,
-              "name": "Kilt of Living Growth",
+              "name": "Pants of Living Growth",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth"
+              "url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth"
             }
           ],
           "entity_id": 31335,
-          "entity_name": "Kilt of Living Growth",
+          "entity_name": "Pants of Living Growth",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth",
+          "entity_url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth",
           "item_id": 31335,
-          "item_name": "Kilt of Living Growth",
-          "item_url": "https://www.wowhead.com/tbc/item=31335/kilt-of-living-growth",
+          "item_name": "Pants of Living Growth",
+          "item_url": "https://www.wowhead.com/tbc/item=31335/pants-of-living-growth",
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Drop: World Drop"
@@ -3642,6 +3826,43 @@
             [],
             [
               {
+                "id": 33908,
+                "name": "Vindicator's Ringmail Sabatons",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=33908/vindicators-ringmail-sabatons"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Vindicator's Ringmail Sabatons",
+            "Vendor: Honor Points (Season 3)"
+          ],
+          "entities": [
+            {
+              "id": 33908,
+              "name": "Vindicator's Ringmail Sabatons",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=33908/vindicators-ringmail-sabatons"
+            }
+          ],
+          "entity_id": 33908,
+          "entity_name": "Vindicator's Ringmail Sabatons",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=33908/vindicators-ringmail-sabatons",
+          "item_id": 33908,
+          "item_name": "Vindicator's Ringmail Sabatons",
+          "item_url": "https://www.wowhead.com/tbc/item=33908/vindicators-ringmail-sabatons",
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Vendor: Honor Points (Season 3)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 27411,
                 "name": "Slippers of Serenity",
                 "type": "item",
@@ -3651,7 +3872,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Slippers of Serenity",
             "Drop: Exarch Maladaar (Auchenai Crypts)"
           ],
@@ -3670,7 +3891,7 @@
           "item_id": 27411,
           "item_name": "Slippers of Serenity",
           "item_url": "https://www.wowhead.com/tbc/item=27411/slippers-of-serenity",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=18373/exarch-maladaar",
@@ -3762,7 +3983,14 @@
             }
           ],
           "source_text": "Drop: Warbringer O'mrogg (The Shattered Halls)"
-        },
+        }
+      ],
+      "slot": "Feet"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Feet Armor for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -3804,14 +4032,7 @@
             }
           ],
           "source_text": "Drop: Rokmar the Crackler (Heroic The Slave Pens)"
-        }
-      ],
-      "slot": "Feet"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Feet Armor for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -3908,6 +4129,85 @@
             [],
             [
               {
+                "id": 33922,
+                "name": "Vindicator's Pendant of Salvation",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=33922/vindicators-pendant-of-salvation"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Vindicator's Pendant of Salvation",
+            "Vendor: Honor Points (Season 3)"
+          ],
+          "entities": [
+            {
+              "id": 33922,
+              "name": "Vindicator's Pendant of Salvation",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=33922/vindicators-pendant-of-salvation"
+            }
+          ],
+          "entity_id": 33922,
+          "entity_name": "Vindicator's Pendant of Salvation",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=33922/vindicators-pendant-of-salvation",
+          "item_id": 33922,
+          "item_name": "Vindicator's Pendant of Salvation",
+          "item_url": "https://www.wowhead.com/tbc/item=33922/vindicators-pendant-of-salvation",
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Vendor: Honor Points (Season 3)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32531,
+                "name": "Gezzarak's Fang",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32531/gezzaraks-fang"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Gezzarak's Fang",
+            "Drop: Gezzarak the Huntress (Terokkar Forest)"
+          ],
+          "entities": [
+            {
+              "id": 32531,
+              "name": "Gezzarak's Fang",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32531/gezzaraks-fang"
+            }
+          ],
+          "entity_id": 32531,
+          "entity_name": "Gezzarak's Fang",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32531/gezzaraks-fang",
+          "item_id": 32531,
+          "item_name": "Gezzarak's Fang",
+          "item_url": "https://www.wowhead.com/tbc/item=32531/gezzaraks-fang",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23163/gezzarak-the-huntress",
+              "text": "Gezzarak the Huntress"
+            }
+          ],
+          "source_text": "Drop: Gezzarak the Huntress (Terokkar Forest)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 31691,
                 "name": "Natasha's Guardian Cord",
                 "type": "item",
@@ -3917,7 +4217,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Natasha's Guardian Cord",
             "Quest: The Hound-Master"
           ],
@@ -3936,7 +4236,7 @@
           "item_id": 31691,
           "item_name": "Natasha's Guardian Cord",
           "item_url": "https://www.wowhead.com/tbc/item=31691/natashas-guardian-cord",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10912/the-hound-master",
@@ -3959,7 +4259,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Karja's Medallion",
             "Quest: Shutting Down Manaforge Ara"
           ],
@@ -3978,7 +4278,7 @@
           "item_id": 30377,
           "item_name": "Karja's Medallion",
           "item_url": "https://www.wowhead.com/tbc/item=30377/karjas-medallion",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10323/shutting-down-manaforge-ara",
@@ -3986,7 +4286,14 @@
             }
           ],
           "source_text": "Quest: Shutting Down Manaforge Ara"
-        },
+        }
+      ],
+      "slot": "Neck"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Neck Jewelry for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -4070,14 +4377,7 @@
             }
           ],
           "source_text": "Drop: C'Thun (Classic - Ahn'Qiraj)"
-        }
-      ],
-      "slot": "Neck"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Neck Jewelry for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -4174,48 +4474,6 @@
             [],
             [
               {
-                "id": 27780,
-                "name": "Ring of Fabled Hope",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=27780/ring-of-fabled-hope"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Ring of Fabled Hope",
-            "Drop: The Black Stalker (Heroic The Underbog)"
-          ],
-          "entities": [
-            {
-              "id": 27780,
-              "name": "Ring of Fabled Hope",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27780/ring-of-fabled-hope"
-            }
-          ],
-          "entity_id": 27780,
-          "entity_name": "Ring of Fabled Hope",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=27780/ring-of-fabled-hope",
-          "item_id": 27780,
-          "item_name": "Ring of Fabled Hope",
-          "item_url": "https://www.wowhead.com/tbc/item=27780/ring-of-fabled-hope",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17882/the-black-stalker",
-              "text": "The Black Stalker"
-            }
-          ],
-          "source_text": "Drop: The Black Stalker (Heroic The Underbog)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 29168,
                 "name": "Ancestral Band",
                 "type": "item",
@@ -4260,7 +4518,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
-              "reputation": "Thrallmar / Honor Hold",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
+              "reputation": "Honor Hold",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
               "standing": "Revered",
@@ -4286,6 +4554,48 @@
             [],
             [
               {
+                "id": 32535,
+                "name": "Gift of the Talonpriests",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32535/gift-of-the-talonpriests"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Gift of the Talonpriests",
+            "Drop: Terokk (Terokkar Forest)"
+          ],
+          "entities": [
+            {
+              "id": 32535,
+              "name": "Gift of the Talonpriests",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32535/gift-of-the-talonpriests"
+            }
+          ],
+          "entity_id": 32535,
+          "entity_name": "Gift of the Talonpriests",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32535/gift-of-the-talonpriests",
+          "item_id": 32535,
+          "item_name": "Gift of the Talonpriests",
+          "item_url": "https://www.wowhead.com/tbc/item=32535/gift-of-the-talonpriests",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=21838/terokk",
+              "text": "Terokk"
+            }
+          ],
+          "source_text": "Drop: Terokk (Terokkar Forest)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 29814,
                 "name": "Celestial Jewel Ring",
                 "type": "item",
@@ -4295,7 +4605,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Celestial Jewel Ring",
             "Quest: Hitting the Motherlode"
           ],
@@ -4314,7 +4624,7 @@
           "item_id": 29814,
           "item_name": "Celestial Jewel Ring",
           "item_url": "https://www.wowhead.com/tbc/item=29814/celestial-jewel-ring",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10293/hitting-the-motherlode",
@@ -4322,6 +4632,139 @@
             }
           ],
           "source_text": "Quest: Hitting the Motherlode"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29373,
+                "name": "Band of Halos",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29373/band-of-halos"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Band of Halos",
+            "Vendor: G'eras (Badges of Justice)"
+          ],
+          "entities": [
+            {
+              "id": 29373,
+              "name": "Band of Halos",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29373/band-of-halos"
+            }
+          ],
+          "entity_id": 29373,
+          "entity_name": "Band of Halos",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=29373/band-of-halos",
+          "item_id": 29373,
+          "item_name": "Band of Halos",
+          "item_url": "https://www.wowhead.com/tbc/item=29373/band-of-halos",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=18525/geras",
+              "text": "G'eras"
+            }
+          ],
+          "source_text": "Vendor: G'eras (Badges of Justice)"
+        }
+      ],
+      "slot": "Ring"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Ring Jewelry for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28259,
+                "name": "Cosmic Lifeband",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28259/cosmic-lifeband"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Cosmic Lifeband",
+            "Drop: Nethermancer Sepethrea (The Mechanar)"
+          ],
+          "entities": [
+            {
+              "id": 28259,
+              "name": "Cosmic Lifeband",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=28259/cosmic-lifeband"
+            }
+          ],
+          "entity_id": 28259,
+          "entity_name": "Cosmic Lifeband",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=28259/cosmic-lifeband",
+          "item_id": 28259,
+          "item_name": "Cosmic Lifeband",
+          "item_url": "https://www.wowhead.com/tbc/item=28259/cosmic-lifeband",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=19221/nethermancer-sepethrea",
+              "text": "Nethermancer Sepethrea"
+            }
+          ],
+          "source_text": "Drop: Nethermancer Sepethrea (The Mechanar)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 27780,
+                "name": "Ring of Fabled Hope",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=27780/ring-of-fabled-hope"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Ring of Fabled Hope",
+            "Drop: The Black Stalker (Heroic The Underbog)"
+          ],
+          "entities": [
+            {
+              "id": 27780,
+              "name": "Ring of Fabled Hope",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=27780/ring-of-fabled-hope"
+            }
+          ],
+          "entity_id": 27780,
+          "entity_name": "Ring of Fabled Hope",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=27780/ring-of-fabled-hope",
+          "item_id": 27780,
+          "item_name": "Ring of Fabled Hope",
+          "item_url": "https://www.wowhead.com/tbc/item=27780/ring-of-fabled-hope",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17882/the-black-stalker",
+              "text": "The Black Stalker"
+            }
+          ],
+          "source_text": "Drop: The Black Stalker (Heroic The Underbog)"
         },
         {
           "cell_entities": [
@@ -4364,55 +4807,6 @@
             }
           ],
           "source_text": "Quest: Battle of the Crimson Watch"
-        }
-      ],
-      "slot": "Ring"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Ring Jewelry for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29373,
-                "name": "Band of Halos",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29373/band-of-halos"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Band of Halos",
-            "Vendor: G'eras (Badges of Justice)"
-          ],
-          "entities": [
-            {
-              "id": 29373,
-              "name": "Band of Halos",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29373/band-of-halos"
-            }
-          ],
-          "entity_id": 29373,
-          "entity_name": "Band of Halos",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29373/band-of-halos",
-          "item_id": 29373,
-          "item_name": "Band of Halos",
-          "item_url": "https://www.wowhead.com/tbc/item=29373/band-of-halos",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18525/geras",
-              "text": "G'eras"
-            }
-          ],
-          "source_text": "Vendor: G'eras (Badges of Justice)"
         },
         {
           "cell_entities": [
@@ -4581,48 +4975,6 @@
             }
           ],
           "source_text": "Drop: Yor (Heroic Mana-Tombs)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28259,
-                "name": "Cosmic Lifeband",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28259/cosmic-lifeband"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Cosmic Lifeband",
-            "Drop: Nethermancer Sepethrea (The Mechanar)"
-          ],
-          "entities": [
-            {
-              "id": 28259,
-              "name": "Cosmic Lifeband",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28259/cosmic-lifeband"
-            }
-          ],
-          "entity_id": 28259,
-          "entity_name": "Cosmic Lifeband",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28259/cosmic-lifeband",
-          "item_id": 28259,
-          "item_name": "Cosmic Lifeband",
-          "item_url": "https://www.wowhead.com/tbc/item=28259/cosmic-lifeband",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=19221/nethermancer-sepethrea",
-              "text": "Nethermancer Sepethrea"
-            }
-          ],
-          "source_text": "Drop: Nethermancer Sepethrea (The Mechanar)"
         },
         {
           "cell_entities": [
@@ -4814,6 +5166,48 @@
             [],
             [
               {
+                "id": 28190,
+                "name": "Scarab of the Infinite Cycle",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Scarab of the Infinite Cycle",
+            "Drop: Aeonus (The Black Morass)"
+          ],
+          "entities": [
+            {
+              "id": 28190,
+              "name": "Scarab of the Infinite Cycle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle"
+            }
+          ],
+          "entity_id": 28190,
+          "entity_name": "Scarab of the Infinite Cycle",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle",
+          "item_id": 28190,
+          "item_name": "Scarab of the Infinite Cycle",
+          "item_url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle",
+          "rank_label": "BiS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17881/aeonus",
+              "text": "Aeonus"
+            }
+          ],
+          "source_text": "Drop: Aeonus (The Black Morass)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 30841,
                 "name": "Lower City Prayerbook",
                 "type": "item",
@@ -4862,48 +5256,6 @@
             }
           ],
           "source_text": "Vendor: Nakodu (Lower City Revered)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28190,
-                "name": "Scarab of the Infinite Cycle",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Scarab of the Infinite Cycle",
-            "Drop: Aeonus (The Black Morass)"
-          ],
-          "entities": [
-            {
-              "id": 28190,
-              "name": "Scarab of the Infinite Cycle",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle"
-            }
-          ],
-          "entity_id": 28190,
-          "entity_name": "Scarab of the Infinite Cycle",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle",
-          "item_id": 28190,
-          "item_name": "Scarab of the Infinite Cycle",
-          "item_url": "https://www.wowhead.com/tbc/item=28190/scarab-of-the-infinite-cycle",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17881/aeonus",
-              "text": "Aeonus"
-            }
-          ],
-          "source_text": "Drop: Aeonus (The Black Morass)"
         },
         {
           "cell_entities": [
@@ -5137,6 +5489,43 @@
             [],
             [
               {
+                "id": 32451,
+                "name": "Gladiator's Salvation",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32451/gladiators-salvation"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "BiS",
+            "Gladiator's Salvation",
+            "Vendor: Honor Points (Season 1)"
+          ],
+          "entities": [
+            {
+              "id": 32451,
+              "name": "Gladiator's Salvation",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32451/gladiators-salvation"
+            }
+          ],
+          "entity_id": 32451,
+          "entity_name": "Gladiator's Salvation",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32451/gladiators-salvation",
+          "item_id": 32451,
+          "item_name": "Gladiator's Salvation",
+          "item_url": "https://www.wowhead.com/tbc/item=32451/gladiators-salvation",
+          "rank_label": "BiS",
+          "source_links": [],
+          "source_text": "Vendor: Honor Points (Season 1)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 23556,
                 "name": "Hand of Eternity",
                 "type": "item",
@@ -5146,7 +5535,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Hand of Eternity",
             "Profession: Blacksmithing - can be purchased on the Auction House"
           ],
@@ -5175,7 +5564,7 @@
               "type": "profession"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [],
           "source_text": "Profession: Blacksmithing - can be purchased on the Auction House"
         },
@@ -5193,7 +5582,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Shockwave Truncheon",
             "Drop: Murmur (Heroic Shadow Labyrinth)"
           ],
@@ -5212,7 +5601,7 @@
           "item_id": 29353,
           "item_name": "Shockwave Truncheon",
           "item_url": "https://www.wowhead.com/tbc/item=29353/shockwave-truncheon",
-          "rank_label": "BiS",
+          "rank_label": "Option",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=18708/murmur",
@@ -5274,7 +5663,14 @@
             }
           ],
           "source_text": "Vendor: Almaador (The Sha'tar Exalted)"
-        },
+        }
+      ],
+      "slot": "Weapon"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Weapons for Restoration Shaman in TBC Classic Pre-Raid",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -5311,14 +5707,7 @@
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Drop: World Drop"
-        }
-      ],
-      "slot": "Weapon"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Weapons for Restoration Shaman in TBC Classic Pre-Raid",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -5616,16 +6005,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -5702,7 +6081,7 @@
           "cells": [
             "BiS",
             "Light-Bearer's Faith Shield",
-            "Vendor: G'eras , Shattrath City - 33"
+            "Vendor: G'eras (Badges of Justice)"
           ],
           "entities": [
             {
@@ -5726,7 +6105,7 @@
               "text": "G'eras"
             }
           ],
-          "source_text": "Vendor: G'eras , Shattrath City - 33"
+          "source_text": "Vendor: G'eras (Badges of Justice)"
         },
         {
           "cell_entities": [
@@ -5742,9 +6121,9 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Option",
             "Tears of Heaven",
-            "Vendor: G'eras , Shattrath City - 25"
+            "Vendor: G'eras (Badges of Justice)"
           ],
           "entities": [
             {
@@ -5761,14 +6140,9 @@
           "item_id": 29274,
           "item_name": "Tears of Heaven",
           "item_url": "https://www.wowhead.com/tbc/item=29274/tears-of-heaven",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18525/geras",
-              "text": "G'eras"
-            }
-          ],
-          "source_text": "Vendor: G'eras , Shattrath City - 25"
+          "rank_label": "Option",
+          "source_links": [],
+          "source_text": "Vendor: G'eras (Badges of Justice)"
         },
         {
           "cell_entities": [
@@ -5828,7 +6202,7 @@
           "cells": [
             "Option",
             "Windcaller's Orb",
-            "Reputation: Cenarion Expedition Exalted)"
+            "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)"
           ],
           "entities": [
             {
@@ -5845,14 +6219,26 @@
           "item_id": 29170,
           "item_name": "Windcaller's Orb",
           "item_url": "https://www.wowhead.com/tbc/item=29170/windcallers-orb",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)",
+              "reputation": "Cenarion Expedition",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/shaman/healer-bis-gear-pve-pre-raid",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/faction=942/cenarion-expedition",
-              "text": "Cenarion Expedition"
+              "href": "https://www.wowhead.com/tbc/npc=17904/fedryen-swiftspear",
+              "text": "Fedryen Swiftspear"
             }
           ],
-          "source_text": "Reputation: Cenarion Expedition Exalted)"
+          "source_text": "Vendor: Fedryen Swiftspear (Cenarion Expedition Exalted)"
         }
       ],
       "slot": "Off Hand"
@@ -6166,7 +6552,7 @@
           "cells": [
             "Option",
             "Mazthoril Honor Shield",
-            "Vendor: G'eras , Shattrath City - 33"
+            "Vendor: G'eras (Badges of Justice)"
           ],
           "entities": [
             {
@@ -6184,13 +6570,8 @@
           "item_name": "Mazthoril Honor Shield",
           "item_url": "https://www.wowhead.com/tbc/item=29268/mazthoril-honor-shield",
           "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18525/geras",
-              "text": "G'eras"
-            }
-          ],
-          "source_text": "Vendor: G'eras , Shattrath City - 33"
+          "source_links": [],
+          "source_text": "Vendor: G'eras (Badges of Justice)"
         }
       ],
       "slot": "Off Hand"

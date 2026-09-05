@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vindicator's Leather Boots Phase 3 Item Level 146 Binds when picked up Feet Leather 315 Armor +33 Agility +49 Stamina Durability 60 / 60 Classes: Rogue , Druid Requires Level 70 Equip: Improves critical strike rating by 19. Equip: Improves your resilience rating by 30. Equip: Increases attack power by 40.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:11+00:00",
+  "inventory_slot": null,
+  "item_id": 33892,
+  "item_stats": {
+    "armor": 315,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 19.",
+        "stats": {
+          "crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 30.",
+        "stats": {
+          "resilience_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 40.",
+        "stats": {
+          "attack_power": 40.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 19.",
+      "Equip: Improves your resilience rating by 30.",
+      "Equip: Increases attack power by 40."
+    ],
+    "id": 33892,
+    "item_level": 146,
+    "name": "Vindicator's Leather Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Rogue",
+        "Druid"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "agility": 33.0,
+      "attack_power": 40.0,
+      "crit_rating": 19.0,
+      "resilience_rating": 30.0,
+      "stamina": 49.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33892/vindicators-leather-boots"
+  },
+  "name": "Vindicator's Leather Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33892/vindicators-leather-boots"
+}

@@ -1,41 +1,12 @@
-# Big BiS List 0.12.3
+# Big BiS List 0.13.0
 
-Addon behavior changes in the 0.12.x releases, newest first. Each section describes changes introduced in that version.
+Addon behavior changes in the 0.13.x releases, newest first. Each section describes changes introduced in that version.
 
-## 0.12.3 - 2026-09-04
+## 0.13.0 - 2026-09-04
 
-- No addon behavior changes.
-
-## 0.12.2 - 2026-08-29
-
-- No addon behavior changes.
-
-## 0.12.1 - 2026-08-29
-
-- No addon behavior changes.
-
-## 0.12.0 - 2026-08-26
-
-### Added
-
-- Separate Endgame and Leveling content modes with mode-specific tabs and saved
-  views. Existing character selections carry forward into the appropriate mode.
-- Vendor and token turn-in details now show seller, location, cost, faction,
-  reputation, and where required tokens come from.
-- Tables adapt their columns when the window or item inspector changes width.
-- Wishlist rankings span every phase and relevant spec across the expansion.
-
-### Changed
-
-- Leveling recommendations cover more items and acquisition sources, with
-  improved acquisition filtering and fallback recommendations.
-- Item details retain more complete stats, sockets, weapon information, and
-  effects when an item appears in multiple sources.
-- Tier 6 is recognized as the live phase beginning August 27, 2026 at 22:00 UTC.
-
-### Fixed
-
-- Vendor routes prefer complete purchase details and keep the selected
-  acquisition path consistent across rows, filters, tooltips, and inspectors.
-- Resizing the window and adjusting the layout reuse displayed rows for smoother
-  refreshes.
+- Updated compatibility for the TBC Anniversary 2.5.6 client.
+- Pre-Raid recommendations now follow the live content phase while preserving earlier gearing paths and manually selected raid tiers.
+- Raid selectors and ranking labels use stable content names so historical phase numbering does not confuse progression.
+- Refreshed gearing and enhancement recommendations, including Phase 3 epic gems with rare budget alternatives and recipe requirements.
+- Corrected phase availability for Season 3 gear, vendors, recipes, and token exchanges across gearing views, tooltips, and Wishlist.
+- Added the Phase 3 Mark of the Illidari purchases for bundles of ten Haste or Destruction Potions, including their reputation requirements.

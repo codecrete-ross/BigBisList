@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Sunblessed Gauntlets Phase 5 Item Level 159 Binds when equipped Hands Plate 1239 Armor +33 Stamina +31 Intellect Blue Socket Red Socket Socket Bonus: 1 Mana per 5 sec. Durability 55 / 55 Requires Level 70 Equip: Improves spell critical strike rating by 36. Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects. Equip: Restores 8 mana per 5 sec. Sell Price: 5 82 94",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:47+00:00",
+  "inventory_slot": null,
+  "item_id": 34380,
+  "item_stats": {
+    "armor": 1239,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 36.",
+        "stats": {
+          "spell_crit_rating": 36.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 84.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 36.",
+      "Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects.",
+      "Equip: Restores 8 mana per 5 sec."
+    ],
+    "id": 34380,
+    "item_level": 159,
+    "name": "Sunblessed Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "blue",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 84.0,
+      "intellect": 31.0,
+      "mp5": 8.0,
+      "spell_crit_rating": 36.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34380/sunblessed-gauntlets"
+  },
+  "name": "Sunblessed Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34380/sunblessed-gauntlets"
+}

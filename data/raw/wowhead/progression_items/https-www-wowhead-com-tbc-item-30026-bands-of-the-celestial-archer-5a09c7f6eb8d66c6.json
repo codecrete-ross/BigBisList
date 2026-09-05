@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Bands of the Celestial Archer Phase 2 Item Level 128 Binds when picked up Wrist Mail 394 Armor +17 Agility +24 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves critical strike rating by 17. Equip: Increases attack power by 48. Sell Price: 3 86 11",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:25+00:00",
+  "inventory_slot": null,
+  "item_id": 30026,
+  "item_stats": {
+    "armor": 394,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 17.",
+        "stats": {
+          "crit_rating": 17.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 48.",
+        "stats": {
+          "attack_power": 48.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 17.",
+      "Equip: Increases attack power by 48."
+    ],
+    "id": 30026,
+    "item_level": 128,
+    "name": "Bands of the Celestial Archer",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 17.0,
+      "attack_power": 48.0,
+      "crit_rating": 17.0,
+      "intellect": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30026/bands-of-the-celestial-archer"
+  },
+  "name": "Bands of the Celestial Archer",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30026/bands-of-the-celestial-archer"
+}

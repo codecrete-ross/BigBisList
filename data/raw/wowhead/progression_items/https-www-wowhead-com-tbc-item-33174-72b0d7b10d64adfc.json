@@ -1,0 +1,92 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Plans: Ragesteel Shoulders Item Level 73 Binds when picked up Requires Blacksmithing (365) Use: Teaches you how to make Ragesteel Shoulders. Sell Price: 2 Ragesteel Shoulders Item Level 115 Binds when equipped Shoulder Plate 873 Armor +32 Strength +12 Stamina Yellow Socket Yellow Socket Socket Bonus: +3 Critical Strike Rating Durability 80 / 80 Requires Level 70 Equip: Improves hit rating by 9. Equip: Improves critical strike rating by 17. Burning Rage (0/4) Requires Blacksmithing (350) Ragesteel Breastplate Ragesteel Helm Ragesteel Gloves Ragesteel Shoulders Sell Price: 4 63 80 Requires Fel Iron Bar (12), Primal Fire (2), Khorium Bar (8), Scroll of Strength V (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:35+00:00",
+  "inventory_slot": null,
+  "item_id": 33174,
+  "item_stats": {
+    "armor": 873,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make Ragesteel Shoulders.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves hit rating by 9.",
+        "stats": {
+          "hit_rating": 9.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 17.",
+        "stats": {
+          "crit_rating": 17.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 9.",
+      "Equip: Improves critical strike rating by 17."
+    ],
+    "id": 33174,
+    "item_level": 73,
+    "name": "Plans: Ragesteel Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 17.0,
+      "hit_rating": 9.0,
+      "stamina": 12.0,
+      "strength": 32.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make Ragesteel Shoulders."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33174"
+  },
+  "name": "Plans: Ragesteel Shoulders",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Ragesteel Shoulders Item Level 73 Binds when picked up Requires Blacksmithing (365) Use: Teaches you how to make Ragesteel Shoulders. Sell Price: 2 Ragesteel Shoulders Item Level 115 Binds when equipped Shoulder Plate 873 Armor +32 Strength +12 Stamina Yellow Socket Yellow Socket Socket Bonus: +3 Critical Strike Rating Durability 80 / 80 Requires Level 70 Equip: Improves hit rating by 9. Equip: Improves critical strike rating by 17. Burning Rage (0/4) Requires Blacksmithing (350) Ragesteel Breastplate Ragesteel Helm Ragesteel Gloves Ragesteel Shoulders Sell Price: 4 63 80 Requires Fel Iron Bar (12), Primal Fire (2), Khorium Bar (8), Scroll of Strength V (2)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=33174",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Ragesteel Shoulders Item Level 73 Binds when picked up Requires Blacksmithing (365) Use: Teaches you how to make Ragesteel Shoulders. Sell Price: 2 Ragesteel Shoulders Item Level 115 Binds when equipped Shoulder Plate 873 Armor +32 Strength +12 Stamina Yellow Socket Yellow Socket Socket Bonus: +3 Critical Strike Rating Durability 80 / 80 Requires Level 70 Equip: Improves hit rating by 9. Equip: Improves critical strike rating by 17. Burning Rage (0/4) Requires Blacksmithing (350) Ragesteel Breastplate Ragesteel Helm Ragesteel Gloves Ragesteel Shoulders Sell Price: 4 63 80 Requires Fel Iron Bar (12), Primal Fire (2), Khorium Bar (8), Scroll of Strength V (2)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=33174",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33174"
+}

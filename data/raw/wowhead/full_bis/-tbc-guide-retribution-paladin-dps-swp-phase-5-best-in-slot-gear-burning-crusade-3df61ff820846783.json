@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:57+00:00",
+  "fetched_at": "2026-09-04T23:49:28+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -1562,7 +1562,7 @@
           "cells": [
             "Optional-PVP",
             "Vengeful Gladiator's Scaled Chestpiece",
-            "- Arena Points"
+            "Arena Points - Arena Points"
           ],
           "entities": [
             {
@@ -1582,11 +1582,11 @@
           "rank_label": "Optional-PVP",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Points"
+          "source_text": "Arena Points - Arena Points"
         },
         {
           "cell_entities": [
@@ -1922,7 +1922,7 @@
           "cells": [
             "Optional-PVP",
             "Vindicator's Scaled Bracers",
-            "- Arena Points"
+            "Arena Points - Arena Points"
           ],
           "entities": [
             {
@@ -1942,11 +1942,11 @@
           "rank_label": "Optional-PVP",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Points"
+          "source_text": "Arena Points - Arena Points"
         },
         {
           "cell_entities": [
@@ -2363,7 +2363,7 @@
             [
               {
                 "id": 32265,
-                "name": "Shadow-Walker's Cord",
+                "name": "Shadow-walker's Cord",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
               }
@@ -2372,23 +2372,23 @@
           ],
           "cells": [
             "Optional",
-            "Shadow-Walker's Cord",
+            "Shadow-walker's Cord",
             "Drop: Shade of Akama (Black Temple)"
           ],
           "entities": [
             {
               "id": 32265,
-              "name": "Shadow-Walker's Cord",
+              "name": "Shadow-walker's Cord",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
             }
           ],
           "entity_id": 32265,
-          "entity_name": "Shadow-Walker's Cord",
+          "entity_name": "Shadow-walker's Cord",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
           "item_id": 32265,
-          "item_name": "Shadow-Walker's Cord",
+          "item_name": "Shadow-walker's Cord",
           "item_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
           "rank_label": "Optional",
           "source_links": [
@@ -2671,7 +2671,7 @@
             [
               {
                 "id": 30900,
-                "name": "Bow-Stitched Leggings",
+                "name": "Bow-stitched Leggings",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
               }
@@ -2680,23 +2680,23 @@
           ],
           "cells": [
             "P4 BIS",
-            "Bow-Stitched Leggings",
+            "Bow-stitched Leggings",
             "Drop: Azgalor (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30900,
-              "name": "Bow-Stitched Leggings",
+              "name": "Bow-stitched Leggings",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
             }
           ],
           "entity_id": 30900,
-          "entity_name": "Bow-Stitched Leggings",
+          "entity_name": "Bow-stitched Leggings",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "item_id": 30900,
-          "item_name": "Bow-Stitched Leggings",
+          "item_name": "Bow-stitched Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "rank_label": "P4 BIS",
           "source_links": [
@@ -4298,7 +4298,7 @@
           "cells": [
             "P4",
             "Berserker's Call",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -4318,11 +4318,11 @@
           "rank_label": "P4",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         }
       ],
       "slot": "Trinket"
@@ -5059,7 +5059,7 @@
           "cells": [
             "PVP Option",
             "Vengeful Gladiator's Greatsword",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -5079,11 +5079,11 @@
           "rank_label": "PVP Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -5143,7 +5143,7 @@
           "cells": [
             "Phase",
             "Jin'rohk, The Great Apocalypse",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -5163,11 +5163,11 @@
           "rank_label": "Phase",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [
@@ -5349,33 +5349,33 @@
             [
               {
                 "id": 33503,
-                "name": "Libram of Divine Judgment",
+                "name": "Libram of Divine Judgement",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=33503/libram-of-divine-judgment"
+                "url": "https://www.wowhead.com/tbc/item=33503/libram-of-divine-judgement"
               }
             ],
             []
           ],
           "cells": [
             "Optional",
-            "Libram of Divine Judgment",
+            "Libram of Divine Judgement",
             "Vendor: G'eras (20 Badges of Justice)"
           ],
           "entities": [
             {
               "id": 33503,
-              "name": "Libram of Divine Judgment",
+              "name": "Libram of Divine Judgement",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=33503/libram-of-divine-judgment"
+              "url": "https://www.wowhead.com/tbc/item=33503/libram-of-divine-judgement"
             }
           ],
           "entity_id": 33503,
-          "entity_name": "Libram of Divine Judgment",
+          "entity_name": "Libram of Divine Judgement",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=33503/libram-of-divine-judgment",
+          "entity_url": "https://www.wowhead.com/tbc/item=33503/libram-of-divine-judgement",
           "item_id": 33503,
-          "item_name": "Libram of Divine Judgment",
-          "item_url": "https://www.wowhead.com/tbc/item=33503/libram-of-divine-judgment",
+          "item_name": "Libram of Divine Judgement",
+          "item_url": "https://www.wowhead.com/tbc/item=33503/libram-of-divine-judgement",
           "rank_label": "Optional",
           "source_links": [
             {

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Robe of the Elder Scribes Phase 1 Item Level 115 Binds when picked up Chest Cloth 194 Armor +27 Stamina +29 Intellect +24 Spirit Durability 100 / 100 Requires Level 70 Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 32. Equip: Gives a chance when your harmful spells land to increase the damage of your spells and effects by up to 130 for 10 sec. (Proc chance: 20%, 50s cooldown) Sell Price: 4 75 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:38+00:00",
+  "inventory_slot": null,
+  "item_id": 28602,
+  "item_stats": {
+    "armor": 194,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 24.",
+        "stats": {
+          "spell_crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 32.",
+        "stats": {
+          "spell_power": 32.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Gives a chance when your harmful spells land to increase the damage of your spells and effects by up to 130 for 10 sec. (Proc chance: 20%, 50s cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 24.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 32.",
+      "Equip: Gives a chance when your harmful spells land to increase the damage of your spells and effects by up to 130 for 10 sec. (Proc chance: 20%, 50s cooldown)"
+    ],
+    "id": 28602,
+    "item_level": 115,
+    "name": "Robe of the Elder Scribes",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 29.0,
+      "spell_crit_rating": 24.0,
+      "spell_power": 32.0,
+      "spirit": 24.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28602/robe-of-the-elder-scribes"
+  },
+  "name": "Robe of the Elder Scribes",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28602/robe-of-the-elder-scribes"
+}

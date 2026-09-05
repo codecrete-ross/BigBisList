@@ -1,0 +1,86 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Atiesh, Greatstaff of the Guardian Item Level 90 Binds when picked up Two-Hand Staff 130 - 243 Damage Speed 2.90 (64.31 damage per second) +28 Stamina +28 Intellect +27 Spirit Durability 145 / 145 Classes: Druid Requires Level 60 Equip: Restores 11 mana per 5 seconds to all party members within 30 yards. Equip: Increases healing done by up to 300 and damage done by up to 100 for all magical spells and effects. Equip: Increases attack power by 592 in Cat, Bear, Dire Bear, and Moonkin forms only. Use: Creates a portal, teleporting group members that use it to Karazhan. (1 Min Cooldown) Sell Price: 17 34 74",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:04+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 22632,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 64.31,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores 11 mana per 5 seconds to all party members within 30 yards.",
+        "stats": {
+          "mp5": 11.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 300 and damage done by up to 100 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 300.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 592 in Cat, Bear, Dire Bear, and Moonkin forms only.",
+        "stats": {
+          "attack_power": 592.0
+        },
+        "type": "form_only"
+      },
+      {
+        "raw_text": "Use: Creates a portal, teleporting group members that use it to Karazhan. (1 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Restores 11 mana per 5 seconds to all party members within 30 yards.",
+      "Equip: Increases healing done by up to 300 and damage done by up to 100 for all magical spells and effects.",
+      "Equip: Increases attack power by 592 in Cat, Bear, Dire Bear, and Moonkin forms only."
+    ],
+    "id": 22632,
+    "item_level": 90,
+    "name": "Atiesh, Greatstaff of the Guardian",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "legendary",
+    "required_level": 60,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 300.0,
+      "intellect": 28.0,
+      "mp5": 11.0,
+      "spirit": 27.0,
+      "stamina": 28.0
+    },
+    "use_effects": [
+      "Use: Creates a portal, teleporting group members that use it to Karazhan. (1 Min Cooldown)"
+    ],
+    "weapon_max_damage": 243,
+    "weapon_min_damage": 130,
+    "weapon_speed": 2.9,
+    "weapon_subtype": "Staff",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22632/atiesh-greatstaff-of-the-guardian"
+  },
+  "name": "Atiesh, Greatstaff of the Guardian",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "legendary",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22632/atiesh-greatstaff-of-the-guardian"
+}

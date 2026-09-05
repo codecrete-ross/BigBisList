@@ -1,0 +1,80 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Fletcher's Gloves of the Phoenix Item Level 75 Requires Leatherworking (365) Use: Teaches you how to craft Fletcher's Gloves of the Phoenix. Sell Price: 2 Fletcher's Gloves of the Phoenix Item Level 159 Binds when equipped Hands Mail 694 Armor +30 Agility +33 Stamina +25 Intellect Yellow Socket Yellow Socket Socket Bonus: +6 Attack Power Durability 50 / 50 Requires Level 70 Equip: Improves haste rating by 34. Equip: Increases attack power by 76. Sell Price: 4 73 77 Requires Heavy Knothide Leather (30), Wind Scales (16), Primal Air (18), Primal Might (8), Sunmote (6)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:56+00:00",
+  "inventory_slot": null,
+  "item_id": 35541,
+  "item_stats": {
+    "armor": 694,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Fletcher's Gloves of the Phoenix.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves haste rating by 34.",
+        "stats": {
+          "haste_rating": 34.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 76.",
+        "stats": {
+          "attack_power": 76.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 34.",
+      "Equip: Increases attack power by 76."
+    ],
+    "id": 35541,
+    "item_level": 75,
+    "name": "Pattern: Fletcher's Gloves of the Phoenix",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 76.0,
+      "haste_rating": 34.0,
+      "intellect": 25.0,
+      "stamina": 33.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft Fletcher's Gloves of the Phoenix."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35541"
+  },
+  "name": "Pattern: Fletcher's Gloves of the Phoenix",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Fletcher's Gloves of the Phoenix Item Level 75 Requires Leatherworking (365) Use: Teaches you how to craft Fletcher's Gloves of the Phoenix. Sell Price: 2 Fletcher's Gloves of the Phoenix Item Level 159 Binds when equipped Hands Mail 694 Armor +30 Agility +33 Stamina +25 Intellect Yellow Socket Yellow Socket Socket Bonus: +6 Attack Power Durability 50 / 50 Requires Level 70 Equip: Improves haste rating by 34. Equip: Increases attack power by 76. Sell Price: 4 73 77 Requires Heavy Knothide Leather (30), Wind Scales (16), Primal Air (18), Primal Might (8), Sunmote (6)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35541",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35541"
+}

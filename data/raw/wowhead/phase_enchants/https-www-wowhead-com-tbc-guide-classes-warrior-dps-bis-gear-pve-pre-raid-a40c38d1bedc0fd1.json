@@ -1,0 +1,257 @@
+{
+  "bindings": [
+    {
+      "class": "Warrior",
+      "phase": "T6",
+      "spec": "Arms"
+    },
+    {
+      "class": "Warrior",
+      "phase": "T6",
+      "spec": "Fury"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 32087,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "entity": {
+            "id": 23548,
+            "name": "Might of the Scourge",
+            "type": "item"
+          },
+          "equipment_item_id": 33173,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 29483
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 23522,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29535,
+            "name": "Nethercobra Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30538,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35490
+        },
+        {
+          "entity": {
+            "id": 34007,
+            "name": "Enchant Boots - Cat's Swiftness",
+            "type": "spell"
+          },
+          "equipment_item_id": 25686,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34007
+        },
+        {
+          "entity": {
+            "id": 27899,
+            "name": "Enchant Bracer - Brawn",
+            "type": "spell"
+          },
+          "equipment_item_id": 23537,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27899
+        },
+        {
+          "entity": {
+            "id": 33995,
+            "name": "Enchant Gloves - Major Strength",
+            "type": "spell"
+          },
+          "equipment_item_id": 25685,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33995
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 24259,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 28438,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27984
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 28295,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 27984
+        },
+        {
+          "entity": {
+            "id": 23765,
+            "name": "Khorium Scope",
+            "type": "item"
+          },
+          "equipment_item_id": 30279,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ranged",
+          "spell_id": 30252
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Pre-Raid Best In Slot Gear for  Warrior DPS in Phase 1",
+      "planner": "warrior/human/A0YAgUB9V4p8AF3wIH6ZAgByxYNAgZVzKwBd8CBd8IUAW-JtOAZAbVEAXfogXgOHYHdKiqIAXfogXfpAXgOIQGRWhNcAXfAgXfqJAFvxbPuKQGRVhMsAXfAgXfoLAHhyDAByww0AcscOAG2CjyBew4TUAF36kABvFm1QkQBuh21QkgB2R3Ys"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 32087,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "entity": {
+            "id": 23548,
+            "name": "Might of the Scourge",
+            "type": "item"
+          },
+          "equipment_item_id": 33173,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 29483
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 23522,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29535,
+            "name": "Nethercobra Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30538,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35490
+        },
+        {
+          "entity": {
+            "id": 34007,
+            "name": "Enchant Boots - Cat's Swiftness",
+            "type": "spell"
+          },
+          "equipment_item_id": 25686,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34007
+        },
+        {
+          "entity": {
+            "id": 27899,
+            "name": "Enchant Bracer - Brawn",
+            "type": "spell"
+          },
+          "equipment_item_id": 23537,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27899
+        },
+        {
+          "entity": {
+            "id": 33995,
+            "name": "Enchant Gloves - Major Strength",
+            "type": "spell"
+          },
+          "equipment_item_id": 25685,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33995
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 24259,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 28429,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Two Hand",
+          "spell_id": 27984
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Pre-Raid Best In Slot Gear for  Warrior DPS in Phase 1",
+      "planner": "warrior/human/A0YAgUB9V4p8AF3wIH6ZAgByxYNAgZVzKwBd8CBd8IUAW-JtOAZAbVEAXfogXgOHYHdKiqIAXfogXfpAXgOIQGRWhNcAXfAgXfqJAFvxbPuKQGRVhMsAXfAgXfoLAHhyDAByww0AbYIOAHLHjyBew4TUAF36kABvDW1QEgB2Rw"
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:08+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "recommendation_status": "unverified_phase",
+  "title": "Warrior DPS Pre-Raid Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/classes/warrior/dps-bis-gear-pve-pre-raid"
+}

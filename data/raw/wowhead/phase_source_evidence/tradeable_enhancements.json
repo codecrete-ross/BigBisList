@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "complete_tooltip": "Stabilized Eternium Scope Item Level 75 Requires Level 60 Use: Attaches a permanent scope to a bow or gun that increases its critical strike rating by 28. Max Stack: 5 Sell Price: 2",
+      "fetched_at": "2026-09-04T23:51:29+00:00",
+      "item_id": 23766,
+      "name": "Stabilized Eternium Scope",
+      "review_basis": "The complete item tooltip has no binding restriction. This is the finished enhancement item, not its recipe. Preserve existing recipe and source phase gates and retain separate self-crafting requirements.",
+      "snapshot_path": "data/raw/wowhead/progression_items/https-www-wowhead-com-tbc-item-23766-stabilized-eternium-scope-0d40de5f62efb339.json",
+      "source_url": "https://www.wowhead.com/tbc/item=23766/stabilized-eternium-scope",
+      "tradeable": true
+    },
+    {
+      "complete_tooltip": "Powerful Earthstorm Diamond Phase 1 Item Level 70 +18 Stamina & 5% Stun Resist Requires at least 3 Blue Gems \"Only fits in a meta gem slot.\" Sell Price: 3",
+      "fetched_at": "2026-09-04T23:52:11+00:00",
+      "item_id": 25896,
+      "name": "Powerful Earthstorm Diamond",
+      "review_basis": "The complete item tooltip has no binding restriction. This is the finished enhancement item, not its recipe. Preserve existing recipe and source phase gates and retain separate self-crafting requirements.",
+      "snapshot_path": "data/raw/wowhead/progression_items/https-www-wowhead-com-tbc-item-25896-powerful-earthstorm-diamond-4a0969258ada3923.json",
+      "source_url": "https://www.wowhead.com/tbc/item=25896/powerful-earthstorm-diamond",
+      "tradeable": true
+    },
+    {
+      "complete_tooltip": "Bracing Earthstorm Diamond Phase 1 Item Level 70 +26 Healing +9 Spell Damage and 2% Reduced Threat Requires more Red gems than Blue gems \"Only fits in a meta gem slot.\" Sell Price: 3",
+      "fetched_at": "2026-09-04T23:52:11+00:00",
+      "item_id": 25897,
+      "name": "Bracing Earthstorm Diamond",
+      "review_basis": "The complete item tooltip has no binding restriction. This is the finished enhancement item, not its recipe. Preserve existing recipe and source phase gates and retain separate self-crafting requirements.",
+      "snapshot_path": "data/raw/wowhead/progression_items/https-www-wowhead-com-tbc-item-25897-bracing-earthstorm-diamond-f096249dba5402f4.json",
+      "source_url": "https://www.wowhead.com/tbc/item=25897/bracing-earthstorm-diamond",
+      "tradeable": true
+    }
+  ],
+  "reviewed_at": "2026-09-05",
+  "schema_version": 1,
+  "verification": "Current public Wowhead item pages and committed complete item tooltips agree; each finished enhancement is unbound. The parser conservatively left binding unknown because there is no positive Binds line."
+}

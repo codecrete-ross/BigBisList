@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Moonstrider Boots Phase 1 Item Level 112 Binds when picked up Feet Leather 196 Armor +21 Stamina +22 Intellect Durability 50 / 50 Requires Level 68 Equip: Improves spell critical strike rating by 20. Equip: Increases damage and healing done by magical spells and effects by up to 25. Equip: Restores 6 mana per 5 sec. Sell Price: 3 38 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:48+00:00",
+  "inventory_slot": null,
+  "item_id": 27914,
+  "item_stats": {
+    "armor": 196,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 20.",
+        "stats": {
+          "spell_crit_rating": 20.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 20.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+      "Equip: Restores 6 mana per 5 sec."
+    ],
+    "id": 27914,
+    "item_level": 112,
+    "name": "Moonstrider Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "source_summary": "",
+    "stats": {
+      "intellect": 22.0,
+      "mp5": 6.0,
+      "spell_crit_rating": 20.0,
+      "spell_power": 25.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27914/moonstrider-boots"
+  },
+  "name": "Moonstrider Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27914/moonstrider-boots"
+}

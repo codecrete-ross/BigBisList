@@ -1,0 +1,125 @@
+{
+  "bindings": [
+    {
+      "class": "Druid",
+      "phase": "T6",
+      "spec": "Balance"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "equipment_item_id": 31040,
+          "slot": "Head",
+          "spell_id": 15714
+        },
+        {
+          "equipment_item_id": 31049,
+          "slot": "Shoulder",
+          "spell_id": 9346
+        },
+        {
+          "equipment_item_id": 31043,
+          "slot": "Chest",
+          "spell_id": 27959
+        },
+        {
+          "equipment_item_id": 30916,
+          "slot": "Legs",
+          "spell_id": 31471
+        },
+        {
+          "equipment_item_id": 32586,
+          "slot": "Wrist",
+          "spell_id": 27918
+        },
+        {
+          "equipment_item_id": 31035,
+          "slot": "Hands",
+          "spell_id": 14799
+        },
+        {
+          "equipment_item_id": 32527,
+          "slot": "Ring",
+          "spell_id": 27923
+        },
+        {
+          "equipment_item_id": 29305,
+          "slot": "Ring",
+          "spell_id": 27923
+        },
+        {
+          "equipment_item_id": 32331,
+          "slot": "Back",
+          "spell_id": 25070
+        },
+        {
+          "equipment_item_id": 32374,
+          "slot": "Two Hand",
+          "spell_id": 27979
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Balance Druid DPS in Phase 3",
+      "planner": "druid/night-elf/A0YPUQAiMSUDE1IxNR_1IAM_gUB5QD1iAH3aIIWsAgB1P4NAeUkkggB91yB92oVgeUNtNwB9xCB9xEB9xAYAeMKHYHjEeu8AfcQgfcRAfcQIQH5gAH3aIH3XiQB_Sm0OiiB5OznPAH3aiwB_D20TjAByeW0TDQB-5g4AfuOPAH5LYe6QAH52bUsSAH6D"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Balance Druid DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 3?",
+      "text": "The Aldor offer a better shoulder enchant with , slightly edging out . On the other hand, Scryer Tailors are also able to pick up and make their own , although the finished product can be bought and sold on the Auction House. In the long run, taking future phases into account, the Shattered Sun Offensive trinket proc off of  is better if you are aligned with The Aldor."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28909,
+            "name": "Greater Inscription of the Orb",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35437
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Balance Druid DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 3?",
+      "text": "The Aldor offer a better shoulder enchant with , slightly edging out . On the other hand, Scryer Tailors are also able to pick up and make their own , although the finished product can be bought and sold on the Auction House. In the long run, taking future phases into account, the Shattered Sun Offensive trinket proc off of  is better if you are aligned with The Aldor."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Balance Druid DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 3?",
+      "text": "The Aldor offer a better shoulder enchant with , slightly edging out . On the other hand, Scryer Tailors are also able to pick up and make their own , although the finished product can be bought and sold on the Auction House. In the long run, taking future phases into account, the Shattered Sun Offensive trinket proc off of  is better if you are aligned with The Aldor."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:48:48+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Balance Druid DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

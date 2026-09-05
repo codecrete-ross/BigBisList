@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Treads of Booming Thunder Phase 4 Item Level 128 Binds when picked up Feet Mail 619 Armor +21 Stamina +33 Intellect Red Socket Yellow Socket Socket Bonus: +3 Spell Critical Strike Rating Durability 70 / 70 Requires Level 70 Equip: Improves spell critical strike rating by 14. Equip: Increases damage and healing done by magical spells and effects by up to 40.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:53+00:00",
+  "inventory_slot": null,
+  "item_id": 33537,
+  "item_stats": {
+    "armor": 619,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 14.",
+        "stats": {
+          "spell_crit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 40.",
+        "stats": {
+          "spell_power": 40.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 14.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 40."
+    ],
+    "id": 33537,
+    "item_level": 128,
+    "name": "Treads of Booming Thunder",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 33.0,
+      "spell_crit_rating": 14.0,
+      "spell_power": 40.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33537/treads-of-booming-thunder"
+  },
+  "name": "Treads of Booming Thunder",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33537/treads-of-booming-thunder"
+}

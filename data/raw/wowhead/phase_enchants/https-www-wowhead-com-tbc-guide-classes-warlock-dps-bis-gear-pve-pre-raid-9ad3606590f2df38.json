@@ -1,0 +1,163 @@
+{
+  "bindings": [
+    {
+      "class": "Warlock",
+      "phase": "T6",
+      "spec": "Destruction"
+    },
+    {
+      "class": "Warlock",
+      "phase": "T6",
+      "spec": "Destruction fire"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29191,
+            "name": "Glyph of Power",
+            "type": "item"
+          },
+          "equipment_item_id": 32494,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35447
+        },
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "equipment_item_id": 21869,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 21871,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 24262,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 21870,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27917,
+            "name": "Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 24250,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27917
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 27465,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 25084,
+            "name": "Enchant Cloak - Subtlety",
+            "type": "spell"
+          },
+          "equipment_item_id": 23050,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25084
+        },
+        {
+          "entity": {
+            "id": 27982,
+            "name": "Enchant Weapon - Soulfrost",
+            "type": "spell"
+          },
+          "equipment_item_id": 32053,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27982
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Destruction Warlock DPS in Pre-Raid in Phase 3",
+      "planner": "warlock/orc/A0YAgUB-7op3AIWsIF34AgBt5oNAVW2KTgB8eyBd-IVAVW9tOAB8eyBd-AZAdVYAXfggfHuHYF7GeowAfHsgXd5AXd6IQFVuhNgAfHsgXfiJIF66bQ0AfHuKQGtJhM0AXd4gXd4LAHH0DABviw0AcroOAGwjjwBaCmH8kAB9NW1OEQByWRIAWSU"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Destruction Warlock DPS Choose Aldor or Scryer for BiS in TBC Classic Pre-Raid?",
+      "text": "The Aldor has the better enchant, but there is a very small difference between the two;  is about a 1-2 DPS increase compared to . And  is a special neck that changes proc based on faction alignment. This neck only becomes available by Phase 5, and in this phase, there will be better alternatives, so this is unlikely to affect your decision."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28909,
+            "name": "Greater Inscription of the Orb",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35437
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Destruction Warlock DPS Choose Aldor or Scryer for BiS in TBC Classic Pre-Raid?",
+      "text": "The Aldor has the better enchant, but there is a very small difference between the two;  is about a 1-2 DPS increase compared to . And  is a special neck that changes proc based on faction alignment. This neck only becomes available by Phase 5, and in this phase, there will be better alternatives, so this is unlikely to affect your decision."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:07+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "recommendation_status": "verified_phase_update",
+  "title": "Destruction Warlock DPS Pre-Raid Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-bis-gear-pve-pre-raid"
+}

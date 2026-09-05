@@ -1,0 +1,90 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Hard Khorium Choker Item Level 70 Requires Jewelcrafting (365) Use: Teaches you how to craft a Hard Khorium Choker. Sell Price: 3 50 Hard Khorium Choker Item Level 159 Binds when picked up Neck +42 Stamina Yellow Socket Socket Bonus: +4 Attack Power Requires Level 70 Requires Jewelcrafting (350) Equip: Improves haste rating by 29. Equip: Increases attack power by 58. Equip: Your attacks ignore 150 of your opponent's armor. Sell Price: 8 83 55 Requires Hardened Khorium (6), Primal Nether (9)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:40+00:00",
+  "inventory_slot": null,
+  "item_id": 35203,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Hard Khorium Choker.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves haste rating by 29.",
+        "stats": {
+          "haste_rating": 29.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 58.",
+        "stats": {
+          "attack_power": 58.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 150 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 29.",
+      "Equip: Increases attack power by 58.",
+      "Equip: Your attacks ignore 150 of your opponent's armor."
+    ],
+    "id": 35203,
+    "item_level": 70,
+    "name": "Design: Hard Khorium Choker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 58.0,
+      "haste_rating": 29.0,
+      "stamina": 42.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft a Hard Khorium Choker."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35203"
+  },
+  "name": "Design: Hard Khorium Choker",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Hard Khorium Choker Item Level 70 Requires Jewelcrafting (365) Use: Teaches you how to craft a Hard Khorium Choker. Sell Price: 3 50 Hard Khorium Choker Item Level 159 Binds when picked up Neck +42 Stamina Yellow Socket Socket Bonus: +4 Attack Power Requires Level 70 Requires Jewelcrafting (350) Equip: Improves haste rating by 29. Equip: Increases attack power by 58. Equip: Your attacks ignore 150 of your opponent's armor. Sell Price: 8 83 55 Requires Hardened Khorium (6), Primal Nether (9)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35203",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Hard Khorium Choker Item Level 70 Requires Jewelcrafting (365) Use: Teaches you how to craft a Hard Khorium Choker. Sell Price: 3 50 Hard Khorium Choker Item Level 159 Binds when picked up Neck +42 Stamina Yellow Socket Socket Bonus: +4 Attack Power Requires Level 70 Requires Jewelcrafting (350) Equip: Improves haste rating by 29. Equip: Increases attack power by 58. Equip: Your attacks ignore 150 of your opponent's armor. Sell Price: 8 83 55 Requires Hardened Khorium (6), Primal Nether (9)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35203",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35203"
+}

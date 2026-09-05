@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Schematic: Khorium Scope Item Level 72 Binds when picked up Requires Engineering (360) Use: Teaches you how to make a Khorium Scope. Sell Price: 4 Khorium Scope Item Level 72 Requires Level 55 Use: Attaches a permanent scope to a bow or gun that increases its damage by 12. Max Stack: 5 Sell Price: 25 Requires Hardened Adamantite Tube , Khorium Bar (4), Dawnstone (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:30+00:00",
+  "inventory_slot": null,
+  "item_id": 23808,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Khorium Scope.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Attaches a permanent scope to a bow or gun that increases its damage by 12. Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 23808,
+    "item_level": 72,
+    "name": "Schematic: Khorium Scope",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Khorium Scope.",
+      "Use: Attaches a permanent scope to a bow or gun that increases its damage by 12. Max Stack: 5"
+    ],
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23808"
+  },
+  "name": "Schematic: Khorium Scope",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Schematic: Khorium Scope Item Level 72 Binds when picked up Requires Engineering (360) Use: Teaches you how to make a Khorium Scope. Sell Price: 4 Khorium Scope Item Level 72 Requires Level 55 Use: Attaches a permanent scope to a bow or gun that increases its damage by 12. Max Stack: 5 Sell Price: 25 Requires Hardened Adamantite Tube , Khorium Bar (4), Dawnstone (2)",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=23808",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23808"
+}

@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lightfathom Scepter Phase 2 Item Level 141 Binds when picked up Unique Main Hand Mace 21 - 136 Damage Speed 1.90 (41.32 damage per second) +28 Stamina +20 Intellect Durability 105 / 105 Requires Level 70 Equip: Increases healing done by up to 443 and damage done by up to 148 for all magical spells and effects. Equip: Restores 11 mana per 5 sec. Sell Price: 14 54 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:38+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 30108,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.32,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 443 and damage done by up to 148 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 443.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 11 mana per 5 sec.",
+        "stats": {
+          "mp5": 11.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 443 and damage done by up to 148 for all magical spells and effects.",
+      "Equip: Restores 11 mana per 5 sec."
+    ],
+    "id": 30108,
+    "item_level": 141,
+    "name": "Lightfathom Scepter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 443.0,
+      "intellect": 20.0,
+      "mp5": 11.0,
+      "stamina": 28.0
+    },
+    "weapon_max_damage": 136,
+    "weapon_min_damage": 21,
+    "weapon_speed": 1.9,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30108/lightfathom-scepter"
+  },
+  "name": "Lightfathom Scepter",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30108/lightfathom-scepter"
+}

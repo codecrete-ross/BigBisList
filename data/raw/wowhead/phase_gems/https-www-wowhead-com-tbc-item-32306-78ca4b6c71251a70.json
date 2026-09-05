@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Glinting Pyrestone Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Honored Use: Teaches you how to cut a Glinting Pyrestone. Sell Price: 1 50 Glinting Pyrestone Item Level 100 +5 Hit Rating and +5 Agility \"Matches a Red or Yellow Socket.\" Sell Price: 6 Requires Pyrestone",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:13:29+00:00",
+  "inventory_slot": null,
+  "item_id": 32306,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Glinting Pyrestone.",
+        "type": "use"
+      }
+    ],
+    "id": 32306,
+    "item_level": 75,
+    "name": "Design: Glinting Pyrestone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Glinting Pyrestone."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32306"
+  },
+  "name": "Design: Glinting Pyrestone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Design: Glinting Pyrestone Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Honored",
+      "reputation": "The Scale of the Sands",
+      "scope": "learn_recipe",
+      "source_url": "https://www.wowhead.com/tbc/item=32306",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Glinting Pyrestone Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Honored",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=32306",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "reagent_item_ids": [
+    32231
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 32220,
+  "teaches_spell_ids": [
+    39736
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/32306",
+  "url": "https://www.wowhead.com/tbc/item=32306"
+}

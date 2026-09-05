@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Greater Inscription of the Orb Item Level 70 Binds when picked up Requires Level 70 Requires The Scryers - Exalted Use: Permanently adds 15 spell critical strike rating and up to 12 spell damage to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:03+00:00",
+  "inventory_slot": null,
+  "item_id": 28909,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Permanently adds 15 spell critical strike rating and up to 12 spell damage to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot.",
+        "type": "use"
+      }
+    ],
+    "id": 28909,
+    "item_level": 70,
+    "name": "Greater Inscription of the Orb",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Permanently adds 15 spell critical strike rating and up to 12 spell damage to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28909/greater-inscription-of-the-orb"
+  },
+  "name": "Greater Inscription of the Orb",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Greater Inscription of the Orb Item Level 70 Binds when picked up Requires Level 70 Requires The Scryers - Exalted Use: Permanently adds 15 spell critical strike rating and up to 12 spell damage to a shoulder slot item. Does not stack with other enchantments for the selected equipment slot.",
+      "reputation": "The Scryers",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28909/greater-inscription-of-the-orb",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28909/greater-inscription-of-the-orb"
+}

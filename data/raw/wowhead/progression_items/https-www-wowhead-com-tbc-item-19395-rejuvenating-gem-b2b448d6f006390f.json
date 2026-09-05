@@ -1,0 +1,300 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 75 goes in the \"Trinket\" slot. It is looted from Flamegor. In the Trinkets category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:29+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 19395,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 66 and damage done by up to 22 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 66.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 9 mana per 5 sec.",
+        "stats": {
+          "mp5": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 66 and damage done by up to 22 for all magical spells and effects.",
+      "Equip: Restores 9 mana per 5 sec."
+    ],
+    "id": 19395,
+    "item_level": 75,
+    "name": "Rejuvenating Gem",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1761,
+      "drop_percent": 6.99,
+      "entity_id": 14601,
+      "entity_name": "Ebonroc",
+      "out_of": 25197,
+      "source_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+      "type": "drop",
+      "zone": "Blackwing Lair"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "Drop: Ebonroc (Blackwing Lair) 7.0% +2",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 1938,
+        "drop_percent": 6.77,
+        "entity_id": 11981,
+        "entity_name": "Flamegor",
+        "out_of": 28620,
+        "source_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+        "type": "drop",
+        "zone": "Blackwing Lair"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 1856,
+        "drop_percent": 6.63,
+        "entity_id": 11983,
+        "entity_name": "Firemaw",
+        "out_of": 28012,
+        "source_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+        "type": "drop",
+        "zone": "Blackwing Lair"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 1761,
+        "drop_percent": 6.99,
+        "entity_id": 14601,
+        "entity_name": "Ebonroc",
+        "out_of": 25197,
+        "source_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+        "type": "drop",
+        "zone": "Blackwing Lair"
+      }
+    ],
+    "stats": {
+      "healing_power": 66.0,
+      "mp5": 9.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem"
+  },
+  "name": "Rejuvenating Gem",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1938,
+      "drop_percent": 6.77,
+      "entity_id": 11981,
+      "entity_name": "Flamegor",
+      "out_of": 28620,
+      "source_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+      "type": "drop",
+      "zone": "Blackwing Lair"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1856,
+      "drop_percent": 6.63,
+      "entity_id": 11983,
+      "entity_name": "Firemaw",
+      "out_of": 28012,
+      "source_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+      "type": "drop",
+      "zone": "Blackwing Lair"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 1761,
+      "drop_percent": 6.99,
+      "entity_id": 14601,
+      "entity_name": "Ebonroc",
+      "out_of": 25197,
+      "source_url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem",
+      "type": "drop",
+      "zone": "Blackwing Lair"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1938,
+        "id": 11981,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1938,
+                "outof": 28620
+              },
+              "9": {
+                "count": 1938,
+                "outof": 28620
+              }
+            }
+          }
+        },
+        "location": [
+          2677
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1938,
+            "outof": 28620
+          },
+          "9": {
+            "count": 1938,
+            "outof": 28620
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "Flamegor",
+        "outof": 28620,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1856,
+        "id": 11983,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1856,
+                "outof": 28012
+              },
+              "9": {
+                "count": 1856,
+                "outof": 28012
+              }
+            }
+          }
+        },
+        "location": [
+          2677
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1856,
+            "outof": 28012
+          },
+          "9": {
+            "count": 1856,
+            "outof": 28012
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "Firemaw",
+        "outof": 28012,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 8,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      },
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 1761,
+        "id": 14601,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1761,
+                "outof": 25197
+              },
+              "9": {
+                "count": 1761,
+                "outof": 25197
+              }
+            }
+          }
+        },
+        "location": [
+          2677
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1761,
+            "outof": 25197
+          },
+          "9": {
+            "count": 1761,
+            "outof": 25197
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "Ebonroc",
+        "outof": 25197,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 99,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 2
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=19395/rejuvenating-gem"
+}

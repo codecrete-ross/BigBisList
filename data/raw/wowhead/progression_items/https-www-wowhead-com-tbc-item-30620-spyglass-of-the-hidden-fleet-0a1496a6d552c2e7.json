@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spyglass of the Hidden Fleet Phase 2 Item Level 128 Binds when picked up Unique Trinket +40 Stamina Requires Level 70 Use: Heals 1300 damage over 12 sec. (2 Min Cooldown) Sell Price: 7 20 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:16+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 30620,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Heals 1300 damage over 12 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 30620,
+    "item_level": 128,
+    "name": "Spyglass of the Hidden Fleet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 40.0
+    },
+    "use_effects": [
+      "Use: Heals 1300 damage over 12 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30620/spyglass-of-the-hidden-fleet"
+  },
+  "name": "Spyglass of the Hidden Fleet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30620/spyglass-of-the-hidden-fleet"
+}

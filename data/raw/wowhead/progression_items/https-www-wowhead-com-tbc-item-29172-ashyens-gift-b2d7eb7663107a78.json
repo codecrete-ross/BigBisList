@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ashyen's Gift Phase 1 Item Level 105 Binds when picked up Unique Finger +30 Stamina Requires Level 70 Requires Cenarion Expedition - Exalted Equip: Improves spell hit rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 19 75 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:32+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 29172,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 21.",
+        "stats": {
+          "spell_hit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+        "stats": {
+          "spell_power": 23.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 23."
+    ],
+    "id": 29172,
+    "item_level": 105,
+    "name": "Ashyen's Gift",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "spell_hit_rating": 21.0,
+      "spell_power": 23.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift"
+  },
+  "name": "Ashyen's Gift",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Ashyen's Gift Phase 1 Item Level 105 Binds when picked up Unique Finger +30 Stamina Requires Level 70 Requires Cenarion Expedition - Exalted Equip: Improves spell hit rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 19 75 28",
+      "reputation": "Cenarion Expedition",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift"
+}

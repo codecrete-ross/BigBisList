@@ -1,0 +1,76 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Bindings of Lightning Reflexes Item Level 70 Requires Leatherworking (375) Use: Teaches you how to craft Bindings of Lightning Reflexes. Sell Price: 1 25 Bindings of Lightning Reflexes Item Level 141 Binds when equipped Wrist Mail 432 Armor +21 Agility +15 Stamina +16 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves haste rating by 27. Equip: Increases attack power by 56. Sell Price: 4 36 24 Requires Heavy Knothide Leather (4), Primal Air (4), Primal Water (4), Wind Scales (12), Heart of Darkness (4)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:50+00:00",
+  "inventory_slot": null,
+  "item_id": 35517,
+  "item_stats": {
+    "armor": 432,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Bindings of Lightning Reflexes.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves haste rating by 27.",
+        "stats": {
+          "haste_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 56.",
+        "stats": {
+          "attack_power": 56.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 27.",
+      "Equip: Increases attack power by 56."
+    ],
+    "id": 35517,
+    "item_level": 70,
+    "name": "Pattern: Bindings of Lightning Reflexes",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 21.0,
+      "attack_power": 56.0,
+      "haste_rating": 27.0,
+      "intellect": 16.0,
+      "stamina": 15.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft Bindings of Lightning Reflexes."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35517"
+  },
+  "name": "Pattern: Bindings of Lightning Reflexes",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Bindings of Lightning Reflexes Item Level 70 Requires Leatherworking (375) Use: Teaches you how to craft Bindings of Lightning Reflexes. Sell Price: 1 25 Bindings of Lightning Reflexes Item Level 141 Binds when equipped Wrist Mail 432 Armor +21 Agility +15 Stamina +16 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves haste rating by 27. Equip: Increases attack power by 56. Sell Price: 4 36 24 Requires Heavy Knothide Leather (4), Primal Air (4), Primal Water (4), Wind Scales (12), Heart of Darkness (4)",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=35517",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35517"
+}

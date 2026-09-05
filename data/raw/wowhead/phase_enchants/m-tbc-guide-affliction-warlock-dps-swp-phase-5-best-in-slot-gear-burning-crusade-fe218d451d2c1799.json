@@ -1,0 +1,51 @@
+{
+  "bindings": [
+    {
+      "class": "Warlock",
+      "phase": "SWP",
+      "spec": "Affliction"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Affliction Warlock DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 5?",
+      "text": "The Aldor has the better enchant, but there is a very small difference between the two;  is about a 1-2 DPS increase compared to ."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28909,
+            "name": "Greater Inscription of the Orb",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35437
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Affliction Warlock DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 5?",
+      "text": "The Aldor has the better enchant, but there is a very small difference between the two;  is about a 1-2 DPS increase compared to ."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:48:45+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Affliction Warlock DPS Best in Slot (BiS) Phase 5 Gear Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/affliction-warlock-dps-swp-phase-5-best-in-slot-gear-burning-crusade"
+}

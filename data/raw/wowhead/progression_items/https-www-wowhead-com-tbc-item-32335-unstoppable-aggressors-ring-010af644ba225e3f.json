@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Unstoppable Aggressor's Ring Phase 3 Item Level 141 Binds when picked up Unique Finger +36 Strength +28 Stamina Requires Level 70 Equip: Improves critical strike rating by 30. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:54+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 32335,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 30.",
+        "stats": {
+          "crit_rating": 30.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 30."
+    ],
+    "id": 32335,
+    "item_level": 141,
+    "name": "Unstoppable Aggressor's Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 30.0,
+      "stamina": 28.0,
+      "strength": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32335/unstoppable-aggressors-ring"
+  },
+  "name": "Unstoppable Aggressor's Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32335/unstoppable-aggressors-ring"
+}

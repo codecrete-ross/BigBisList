@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Red Belt of Battle Phase 2 Item Level 128 Binds when equipped Waist Plate 904 Armor +41 Strength +21 Stamina Blue Socket Yellow Socket Socket Bonus: +3 Critical Strike Rating Durability 55 / 55 Requires Level 70 Equip: Improves hit rating by 14. Equip: Improves critical strike rating by 24. Sell Price: 4 63 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:27+00:00",
+  "inventory_slot": null,
+  "item_id": 30032,
+  "item_stats": {
+    "armor": 904,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 14.",
+        "stats": {
+          "hit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 24.",
+        "stats": {
+          "crit_rating": 24.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 14.",
+      "Equip: Improves critical strike rating by 24."
+    ],
+    "id": 30032,
+    "item_level": 128,
+    "name": "Red Belt of Battle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 24.0,
+      "hit_rating": 14.0,
+      "stamina": 21.0,
+      "strength": 41.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle"
+  },
+  "name": "Red Belt of Battle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle"
+}

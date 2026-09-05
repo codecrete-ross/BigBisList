@@ -58,6 +58,7 @@ def _key(value: str) -> str:
 _CANONICAL_BY_KEY = {_key(name): name for name in CANONICAL_REPUTATIONS}
 
 _ALIASES = {
+    "the timbermaw hold": ("Timbermaw Hold",),
     "classic - cenarion circle": ("Cenarion Circle",),
     "honor hold / thrallmar": ("Honor Hold", "Thrallmar"),
     "thrallmar / honor hold": ("Thrallmar", "Honor Hold"),

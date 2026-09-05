@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brooch of the Highborne Phase 5 Item Level 154 Binds when picked up Neck +33 Stamina +22 Intellect Requires Level 70 Equip: Improves spell haste rating by 20. Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects. Equip: Restores 9 mana per 5 sec. Sell Price: 10 27 77",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:22+00:00",
+  "inventory_slot": null,
+  "item_id": 34184,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 70.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 9 mana per 5 sec.",
+        "stats": {
+          "mp5": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects.",
+      "Equip: Restores 9 mana per 5 sec."
+    ],
+    "id": 34184,
+    "item_level": 154,
+    "name": "Brooch of the Highborne",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 70.0,
+      "intellect": 22.0,
+      "mp5": 9.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34184/brooch-of-the-highborne"
+  },
+  "name": "Brooch of the Highborne",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34184/brooch-of-the-highborne"
+}

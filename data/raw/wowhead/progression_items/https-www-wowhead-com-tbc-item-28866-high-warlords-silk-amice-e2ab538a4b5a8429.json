@@ -1,0 +1,80 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "High Warlord's Silk Amice Phase 1 Item Level 115 Binds when picked up Shoulder Cloth 117 Armor +21 Stamina +16 Intellect Blue Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 50 / 50 Classes: Mage Requires Level 70 Equip: Improves spell critical strike rating by 8. Equip: Improves your resilience rating by 15. Equip: Increases damage and healing done by magical spells and effects by up to 25. Oathbound's Silk Battlegear (0/5) Evoker's Silk Amice Evoker's Silk Cowl Evoker's Silk Handguards Evoker's Silk Raiment Evoker's Silk Trousers (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Blink spell by 2 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:02+00:00",
+  "inventory_slot": null,
+  "item_id": 28866,
+  "item_stats": {
+    "armor": 117,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 8.",
+        "stats": {
+          "spell_crit_rating": 8.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 15.",
+        "stats": {
+          "resilience_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 8.",
+      "Equip: Improves your resilience rating by 15.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25."
+    ],
+    "id": 28866,
+    "item_level": 115,
+    "name": "High Warlord's Silk Amice",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 16.0,
+      "resilience_rating": 15.0,
+      "spell_crit_rating": 8.0,
+      "spell_power": 25.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28866/high-warlords-silk-amice"
+  },
+  "name": "High Warlord's Silk Amice",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28866/high-warlords-silk-amice"
+}

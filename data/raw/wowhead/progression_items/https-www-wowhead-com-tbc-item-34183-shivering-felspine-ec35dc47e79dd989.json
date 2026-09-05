@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shivering Felspine Phase 5 Item Level 154 Binds when picked up Two-Hand Polearm 393 - 590 Damage Speed 3.50 (140.43 damage per second) +52 Agility Yellow Socket Socket Bonus: +4 Attack Power Durability 120 / 120 Requires Level 70 Equip: Improves haste rating by 53. Equip: Increases attack power by 120. Sell Price: 18 80 53",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:22+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 34183,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 140.43,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves haste rating by 53.",
+        "stats": {
+          "haste_rating": 53.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 120.",
+        "stats": {
+          "attack_power": 120.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 53.",
+      "Equip: Increases attack power by 120."
+    ],
+    "id": 34183,
+    "item_level": 154,
+    "name": "Shivering Felspine",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 52.0,
+      "attack_power": 120.0,
+      "haste_rating": 53.0
+    },
+    "weapon_max_damage": 590,
+    "weapon_min_damage": 393,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Polearm",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34183/shivering-felspine"
+  },
+  "name": "Shivering Felspine",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34183/shivering-felspine"
+}

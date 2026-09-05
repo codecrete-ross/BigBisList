@@ -1,0 +1,103 @@
+{
+  "description": "In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.6).",
+  "fetched_at": "2026-09-05T00:08:37+00:00",
+  "name": "Alchemist's Stone",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 13517,
+      "entity_name": "Recipe: Alchemist's Stone",
+      "item_id": 13517,
+      "source_url": "https://www.wowhead.com/tbc/spell=17632",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          300,
+          365,
+          372,
+          380
+        ],
+        "creates": [
+          13503,
+          1,
+          1
+        ],
+        "id": 17632,
+        "learnedat": 300,
+        "level": 0,
+        "name": "Alchemist's Stone",
+        "nskillup": 1,
+        "quality": 4,
+        "reagents": [
+          [
+            9149,
+            1
+          ],
+          [
+            25867,
+            1
+          ],
+          [
+            25868,
+            1
+          ],
+          [
+            22794,
+            2
+          ],
+          [
+            23571,
+            5
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 13517,
+        "level": 70,
+        "name": "Recipe: Alchemist's Stone",
+        "quality": 1,
+        "skill": 350,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "sourcemore": [
+          {
+            "n": "Almaador",
+            "t": 1,
+            "ti": 21432,
+            "z": 3703
+          }
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 17632,
+  "url": "https://www.wowhead.com/tbc/spell=17632"
+}

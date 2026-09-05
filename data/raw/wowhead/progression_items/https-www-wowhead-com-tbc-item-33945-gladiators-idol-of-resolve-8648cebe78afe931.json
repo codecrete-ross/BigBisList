@@ -1,0 +1,47 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Idol of Resolve Phase 1 Item Level 115 Binds when picked up Relic Idol Classes: Druid Requires Level 70 Equip: Your Mangle ability also grants you 26 resilience rating for 6 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:14+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 33945,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your Mangle ability also grants you 26 resilience rating for 6 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your Mangle ability also grants you 26 resilience rating for 6 sec."
+    ],
+    "id": 33945,
+    "item_level": 115,
+    "name": "Gladiator's Idol of Resolve",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "slot": "Relic",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33945/gladiators-idol-of-resolve"
+  },
+  "name": "Gladiator's Idol of Resolve",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33945/gladiators-idol-of-resolve"
+}

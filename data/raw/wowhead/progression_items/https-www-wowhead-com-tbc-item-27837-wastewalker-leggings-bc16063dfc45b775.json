@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Wastewalker Leggings Phase 1 Item Level 115 Binds when picked up Legs Leather 256 Armor +31 Agility +27 Stamina Red Socket Red Socket Blue Socket Socket Bonus: +4 Resilience Rating Durability 75 / 75 Requires Level 70 Equip: Improves hit rating by 19. Equip: Increases attack power by 28. Wastewalker Armor (0/5) Wastewalker Tunic Wastewalker Gloves Wastewalker Helm Wastewalker Leggings Wastewalker Shoulderpads (2) Set : Increases your hit rating by 35. (4) Set : Your attacks have a chance to grant you 160 attack power for 15 sec. (Proc chance: 2%) Sell Price: 4 55 27",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:41+00:00",
+  "inventory_slot": null,
+  "item_id": 27837,
+  "item_stats": {
+    "armor": 256,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 19.",
+        "stats": {
+          "hit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 28.",
+        "stats": {
+          "attack_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 19.",
+      "Equip: Increases attack power by 28."
+    ],
+    "id": 27837,
+    "item_level": 115,
+    "name": "Wastewalker Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 31.0,
+      "attack_power": 28.0,
+      "hit_rating": 19.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27837/wastewalker-leggings"
+  },
+  "name": "Wastewalker Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27837/wastewalker-leggings"
+}

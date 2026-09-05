@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thunderheart Handguards Phase 3 Item Level 146 Binds when picked up Hands Leather 287 Armor +30 Stamina +30 Intellect +22 Spirit Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 40 / 40 Classes: Druid Requires Level 70 Equip: Improves spell hit rating by 12. Equip: Improves spell critical strike rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 46. Thunderheart Regalia (0/8) Thunderheart Vest Thunderheart Handguards Thunderheart Headguard Thunderheart Pants Thunderheart Shoulderpads Thunderheart Footwraps Thunderheart Bands Thunderheart Cord (2) Set : Increases the duration of your Moonfire ability by 3 sec. (4) Set : Increases the critical strike chance of your Starfire ability by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:53+00:00",
+  "inventory_slot": null,
+  "item_id": 31035,
+  "item_stats": {
+    "armor": 287,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 12.",
+        "stats": {
+          "spell_hit_rating": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 21.",
+        "stats": {
+          "spell_crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 46.",
+        "stats": {
+          "spell_power": 46.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 12.",
+      "Equip: Improves spell critical strike rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 46."
+    ],
+    "id": 31035,
+    "item_level": 146,
+    "name": "Thunderheart Handguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 30.0,
+      "spell_crit_rating": 21.0,
+      "spell_hit_rating": 12.0,
+      "spell_power": 46.0,
+      "spirit": 22.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31035/thunderheart-handguards"
+  },
+  "name": "Thunderheart Handguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31035/thunderheart-handguards"
+}

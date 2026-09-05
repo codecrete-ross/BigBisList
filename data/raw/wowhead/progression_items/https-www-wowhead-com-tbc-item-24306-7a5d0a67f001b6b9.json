@@ -1,0 +1,79 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Vengeance Wrap Item Level 73 Requires Tailoring (365) Use: Teaches you how to sew a Vengeance Wrap. Sell Price: 3 Vengeance Wrap Item Level 105 Binds when equipped Back 89 Armor Red Socket Socket Bonus: +2 Hit Rating Requires Level 70 Equip: Improves critical strike rating by 23. Equip: Increases attack power by 52. Sell Price: 3 32 97 Requires Shadowcloth (10), Primal Air (14), Primal Nether",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:47+00:00",
+  "inventory_slot": null,
+  "item_id": 24306,
+  "item_stats": {
+    "armor": 89,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew a Vengeance Wrap.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 23.",
+        "stats": {
+          "crit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 52.",
+        "stats": {
+          "attack_power": 52.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 23.",
+      "Equip: Increases attack power by 52."
+    ],
+    "id": 24306,
+    "item_level": 73,
+    "name": "Pattern: Vengeance Wrap",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "hit_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "attack_power": 52.0,
+      "crit_rating": 23.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to sew a Vengeance Wrap."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24306"
+  },
+  "name": "Pattern: Vengeance Wrap",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Vengeance Wrap Item Level 73 Requires Tailoring (365) Use: Teaches you how to sew a Vengeance Wrap. Sell Price: 3 Vengeance Wrap Item Level 105 Binds when equipped Back 89 Armor Red Socket Socket Bonus: +2 Hit Rating Requires Level 70 Equip: Improves critical strike rating by 23. Equip: Increases attack power by 52. Sell Price: 3 32 97 Requires Shadowcloth (10), Primal Air (14), Primal Nether",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=24306",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24306"
+}

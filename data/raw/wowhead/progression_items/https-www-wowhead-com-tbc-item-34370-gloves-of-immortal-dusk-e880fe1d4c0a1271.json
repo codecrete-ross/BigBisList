@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gloves of Immortal Dusk Phase 5 Item Level 159 Binds when equipped Hands Leather 312 Armor +30 Agility +33 Stamina Red Socket Red Socket Socket Bonus: +3 Critical Strike Rating Durability 40 / 40 Requires Level 70 Equip: Improves critical strike rating by 30. Equip: Increases attack power by 90. Equip: Your attacks ignore 154 of your opponent's armor. Sell Price: 3 89",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:45+00:00",
+  "inventory_slot": null,
+  "item_id": 34370,
+  "item_stats": {
+    "armor": 312,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 30.",
+        "stats": {
+          "crit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 90.",
+        "stats": {
+          "attack_power": 90.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 154 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 30.",
+      "Equip: Increases attack power by 90.",
+      "Equip: Your attacks ignore 154 of your opponent's armor."
+    ],
+    "id": 34370,
+    "item_level": 159,
+    "name": "Gloves of Immortal Dusk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 90.0,
+      "crit_rating": 30.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34370/gloves-of-immortal-dusk"
+  },
+  "name": "Gloves of Immortal Dusk",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34370/gloves-of-immortal-dusk"
+}

@@ -1,0 +1,83 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Plans: Felsteel Helm Phase 1 Item Level 73 Binds when picked up Requires Blacksmithing (365) Use: Teaches you how to make a Felsteel Helm. Sell Price: 1 50 Felsteel Helm Item Level 115 Binds when equipped Head Plate 1284 Armor +27 Stamina Red Socket Blue Socket Blue Socket Socket Bonus: +4 Hit Rating Durability 80 / 80 Requires Level 70 Equip: Increases defense rating by 33. Faith in Felsteel (0/3) Requires Blacksmithing (350) Felsteel Helm Felsteel Leggings Felsteel Gloves Sell Price: 4 58 22 Requires Felsteel Bar (8)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:26+00:00",
+  "inventory_slot": null,
+  "item_id": 23607,
+  "item_stats": {
+    "armor": 1284,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Felsteel Helm.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases defense rating by 33.",
+        "stats": {
+          "defense_rating": 33.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 33."
+    ],
+    "id": 23607,
+    "item_level": 73,
+    "name": "Plans: Felsteel Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "hit_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "blue",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 33.0,
+      "stamina": 27.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Felsteel Helm."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23607"
+  },
+  "name": "Plans: Felsteel Helm",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Felsteel Helm Phase 1 Item Level 73 Binds when picked up Requires Blacksmithing (365) Use: Teaches you how to make a Felsteel Helm. Sell Price: 1 50 Felsteel Helm Item Level 115 Binds when equipped Head Plate 1284 Armor +27 Stamina Red Socket Blue Socket Blue Socket Socket Bonus: +4 Hit Rating Durability 80 / 80 Requires Level 70 Equip: Increases defense rating by 33. Faith in Felsteel (0/3) Requires Blacksmithing (350) Felsteel Helm Felsteel Leggings Felsteel Gloves Sell Price: 4 58 22 Requires Felsteel Bar (8)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=23607",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Felsteel Helm Phase 1 Item Level 73 Binds when picked up Requires Blacksmithing (365) Use: Teaches you how to make a Felsteel Helm. Sell Price: 1 50 Felsteel Helm Item Level 115 Binds when equipped Head Plate 1284 Armor +27 Stamina Red Socket Blue Socket Blue Socket Socket Bonus: +4 Hit Rating Durability 80 / 80 Requires Level 70 Equip: Increases defense rating by 33. Faith in Felsteel (0/3) Requires Blacksmithing (350) Felsteel Helm Felsteel Leggings Felsteel Gloves Sell Price: 4 58 22 Requires Felsteel Bar (8)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23607",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23607"
+}

@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Decapitator Phase 1 Item Level 125 Binds when picked up Main Hand Axe 167 - 312 Damage Speed 2.60 (92.12 damage per second) Durability 105 / 105 Requires Level 70 Equip: Improves critical strike rating by 27. Use: Hurls your axe in an attempt to decapitate your target causing 513 to 567 damage. (3 Min Cooldown) Sell Price: 12 44 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:53+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 28767,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 92.12,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 27.",
+        "stats": {
+          "crit_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Hurls your axe in an attempt to decapitate your target causing 513 to 567 damage. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 27."
+    ],
+    "id": 28767,
+    "item_level": 125,
+    "name": "The Decapitator",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 27.0
+    },
+    "use_effects": [
+      "Use: Hurls your axe in an attempt to decapitate your target causing 513 to 567 damage. (3 Min Cooldown)"
+    ],
+    "weapon_max_damage": 312,
+    "weapon_min_damage": 167,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28767/the-decapitator"
+  },
+  "name": "The Decapitator",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28767/the-decapitator"
+}

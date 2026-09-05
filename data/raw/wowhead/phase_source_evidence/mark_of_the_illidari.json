@@ -1,0 +1,71 @@
+{
+  "reviewed_at": "2026-09-04",
+  "reviewer": "codex-source-review",
+  "source_url": "https://www.wowhead.com/tbc/news/take-advantage-of-mark-of-the-illidari-for-free-raid-consumables-382623",
+  "supporting_urls": [
+    "https://www.wowhead.com/tbc/news/haste-potions-and-destruction-potions-available-for-marks-of-the-illidari-on-the-382402",
+    "https://www.wowhead.com/tbc/item=32897/mark-of-the-illidari",
+    "https://www.wowhead.com/tbc/npc=23483/arcanist-xorith",
+    "https://www.wowhead.com/tbc/npc=23484/haldor-the-compulsive"
+  ],
+  "content_phase": "T6",
+  "potion_item_ids": [
+    22838,
+    22839
+  ],
+  "purchase_quantity": 10,
+  "cost_item_id": 32897,
+  "cost_amount": 1,
+  "vendors": [
+    {
+      "id": 23483,
+      "name": "Arcanist Xorith",
+      "reputation": "The Scryers"
+    },
+    {
+      "id": 23484,
+      "name": "Haldor the Compulsive",
+      "reputation": "The Aldor"
+    }
+  ],
+  "required_reputations": [
+    "The Sha'tar",
+    "Cenarion Expedition",
+    "chosen Aldor or Scryers"
+  ],
+  "standing": "Exalted",
+  "mark_binding": "unbound",
+  "mark_sources": [
+    {
+      "zone": "Serpentshrine Cavern",
+      "available_from_phase": "T6",
+      "source_type": "raid_trash"
+    },
+    {
+      "zone": "Tempest Keep",
+      "available_from_phase": "T6",
+      "source_type": "raid_trash"
+    },
+    {
+      "zone": "Hyjal Summit",
+      "available_from_phase": "T6",
+      "source_type": "raid_trash"
+    },
+    {
+      "zone": "Black Temple",
+      "available_from_phase": "T6",
+      "source_type": "raid_trash"
+    },
+    {
+      "zone": "Sunwell Plateau",
+      "available_from_phase": "SWP",
+      "source_type": "raid_trash"
+    }
+  ],
+  "review_notes": [
+    "The September 3 live report confirms the earlier PTR exchange is present, for the original potion item IDs.",
+    "The Mark can be traded, so an item-currency vendor route is not inherently a personally raid-only purchase.",
+    "Keep reputation restrictions on the vendor route; ordinary crafted/purchased potions do not require these reputations.",
+    "Do not replace the original Alchemy acquisition route or add raid-only use restrictions from Shattrath flasks to these ordinary potions."
+  ]
+}

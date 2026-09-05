@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lightbringer Greathelm Phase 3 Item Level 146 Binds when picked up Head Plate 1483 Armor +42 Stamina +37 Intellect Yellow Socket Meta Socket Socket Bonus: 2 mana per 5 sec. Durability 100 / 100 Classes: Paladin Requires Level 70 Equip: Improves spell critical strike rating by 36. Equip: Increases healing done by up to 119 and damage done by up to 40 for all magical spells and effects. Lightbringer Raiment (0/8) Lightbringer Chestpiece Lightbringer Gloves Lightbringer Greathelm Lightbringer Leggings Lightbringer Pauldrons Lightbringer Bracers Lightbringer Belt Lightbringer Treads (2) Set : Increases the critical strike chance of your Holy Light ability by 5%. (4) Set : Increases the healing from your Flash of Light ability by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:45+00:00",
+  "inventory_slot": null,
+  "item_id": 30988,
+  "item_stats": {
+    "armor": 1483,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 36.",
+        "stats": {
+          "spell_crit_rating": 36.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 119 and damage done by up to 40 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 119.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 36.",
+      "Equip: Increases healing done by up to 119 and damage done by up to 40 for all magical spells and effects."
+    ],
+    "id": 30988,
+    "item_level": 146,
+    "name": "Lightbringer Greathelm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "sockets": [
+      "yellow",
+      "meta"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 119.0,
+      "intellect": 37.0,
+      "spell_crit_rating": 36.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30988/lightbringer-greathelm"
+  },
+  "name": "Lightbringer Greathelm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30988/lightbringer-greathelm"
+}

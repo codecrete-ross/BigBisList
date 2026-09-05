@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant Boots - Fortitude Phase 1 Item Level 64 Binds when picked up Requires Enchanting (320) Use: Teaches you how to permanently enchant boots to grant 12 Stamina. Permanently enchant boots to increase Stamina by 12. Requires a level 35 or higher item. Sell Price: 1 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:01+00:00",
+  "inventory_slot": null,
+  "item_id": 22543,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant boots to grant 12 Stamina. Permanently enchant boots to increase Stamina by 12. Requires a level 35 or higher item.",
+        "type": "use"
+      }
+    ],
+    "id": 22543,
+    "item_level": 64,
+    "name": "Formula: Enchant Boots - Fortitude",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant boots to grant 12 Stamina. Permanently enchant boots to increase Stamina by 12. Requires a level 35 or higher item."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22543"
+  },
+  "name": "Formula: Enchant Boots - Fortitude",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Boots - Fortitude Phase 1 Item Level 64 Binds when picked up Requires Enchanting (320) Use: Teaches you how to permanently enchant boots to grant 12 Stamina. Permanently enchant boots to increase Stamina by 12. Requires a level 35 or higher item. Sell Price: 1 50",
+      "scope": "equip_or_use",
+      "skill": 320,
+      "source_url": "https://www.wowhead.com/tbc/item=22543",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22543"
+}

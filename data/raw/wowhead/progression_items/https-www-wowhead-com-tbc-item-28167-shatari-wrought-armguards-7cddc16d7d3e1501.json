@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sha'tari Wrought Armguards Phase 1 Item Level 115 Binds when picked up Wrist Plate 509 Armor +20 Strength +18 Stamina Yellow Socket Socket Bonus: +3 Stamina Durability 45 / 45 Equip: Increases defense rating by 12. Sell Price: 3 10 29",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:56+00:00",
+  "inventory_slot": null,
+  "item_id": 28167,
+  "item_stats": {
+    "armor": 509,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases defense rating by 12.",
+        "stats": {
+          "defense_rating": 12.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 12."
+    ],
+    "id": 28167,
+    "item_level": 115,
+    "name": "Sha'tari Wrought Armguards",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 12.0,
+      "stamina": 18.0,
+      "strength": 20.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28167/shatari-wrought-armguards"
+  },
+  "name": "Sha'tari Wrought Armguards",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28167/shatari-wrought-armguards"
+}

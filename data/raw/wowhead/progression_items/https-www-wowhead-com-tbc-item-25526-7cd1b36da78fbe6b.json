@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Plans: Greater Rune of Warding Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make a Greater Rune of Warding. Sell Price: 1 50 Greater Rune of Warding Item Level 70 Requires Level 60 Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20 Sell Price: 30 Requires Khorium Bar",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:01+00:00",
+  "inventory_slot": null,
+  "item_id": 25526,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Greater Rune of Warding.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 25526,
+    "item_level": 70,
+    "name": "Plans: Greater Rune of Warding",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Greater Rune of Warding.",
+      "Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25526"
+  },
+  "name": "Plans: Greater Rune of Warding",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Plans: Greater Rune of Warding Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make a Greater Rune of Warding. Sell Price: 1 50 Greater Rune of Warding Item Level 70 Requires Level 60 Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20 Sell Price: 30 Requires Khorium Bar",
+      "reputation": "Cenarion Expedition",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=25526",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Greater Rune of Warding Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make a Greater Rune of Warding. Sell Price: 1 50 Greater Rune of Warding Item Level 70 Requires Level 60 Use: Enchant a piece of chest armor so it has a 25% chance per hit of giving you 400 points of physical damage absorption. 90 sec. cooldown. Lasts for 1 hour. Max Stack: 20 Sell Price: 30 Requires Khorium Bar",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25526",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25526"
+}

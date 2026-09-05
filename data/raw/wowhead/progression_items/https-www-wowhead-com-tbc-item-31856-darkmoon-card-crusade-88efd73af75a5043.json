@@ -1,0 +1,36 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Darkmoon Card: Crusade Phase 3 Item Level 100 Binds when picked up Unique Trinket Requires Level 70 Equip: Each time you deal melee or ranged damage to an opponent, you gain 6 attack power for the next 10 sec., stacking up to 20 times. Each time you land a harmful spell on an opponent, you gain 8 spell damage for the next 10 sec., stacking up to 10 times. Sell Price: 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:29+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 31856,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 31856,
+    "item_level": 100,
+    "name": "Darkmoon Card: Crusade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31856/darkmoon-card-crusade"
+  },
+  "name": "Darkmoon Card: Crusade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31856/darkmoon-card-crusade"
+}

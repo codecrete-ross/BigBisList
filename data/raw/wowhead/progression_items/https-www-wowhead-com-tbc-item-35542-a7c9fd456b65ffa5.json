@@ -1,0 +1,87 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Gloves of Immortal Dusk Item Level 75 Requires Leatherworking (365) Use: Teaches you how to craft Gloves of Immortal Dusk. Sell Price: 2 Gloves of Immortal Dusk Item Level 159 Binds when equipped Hands Leather 312 Armor +30 Agility +33 Stamina Red Socket Red Socket Socket Bonus: +3 Critical Strike Rating Durability 40 / 40 Requires Level 70 Equip: Improves critical strike rating by 30. Equip: Increases attack power by 90. Equip: Your attacks ignore 154 of your opponent's armor. Sell Price: 3 89 Requires Heavy Knothide Leather (30), Fel Hide (16), Primal Shadow (18), Primal Might (8), Sunmote (6)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:56+00:00",
+  "inventory_slot": null,
+  "item_id": 35542,
+  "item_stats": {
+    "armor": 312,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Gloves of Immortal Dusk.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 30.",
+        "stats": {
+          "crit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 90.",
+        "stats": {
+          "attack_power": 90.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 154 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 30.",
+      "Equip: Increases attack power by 90.",
+      "Equip: Your attacks ignore 154 of your opponent's armor."
+    ],
+    "id": 35542,
+    "item_level": 75,
+    "name": "Pattern: Gloves of Immortal Dusk",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 90.0,
+      "crit_rating": 30.0,
+      "stamina": 33.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft Gloves of Immortal Dusk."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35542"
+  },
+  "name": "Pattern: Gloves of Immortal Dusk",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Gloves of Immortal Dusk Item Level 75 Requires Leatherworking (365) Use: Teaches you how to craft Gloves of Immortal Dusk. Sell Price: 2 Gloves of Immortal Dusk Item Level 159 Binds when equipped Hands Leather 312 Armor +30 Agility +33 Stamina Red Socket Red Socket Socket Bonus: +3 Critical Strike Rating Durability 40 / 40 Requires Level 70 Equip: Improves critical strike rating by 30. Equip: Increases attack power by 90. Equip: Your attacks ignore 154 of your opponent's armor. Sell Price: 3 89 Requires Heavy Knothide Leather (30), Fel Hide (16), Primal Shadow (18), Primal Might (8), Sunmote (6)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35542",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35542"
+}

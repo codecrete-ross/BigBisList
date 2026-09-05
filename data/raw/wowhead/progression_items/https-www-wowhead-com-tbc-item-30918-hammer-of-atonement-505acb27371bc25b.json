@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Hammer of Atonement Phase 3 Item Level 141 Binds when picked up Main Hand Mace 20 - 129 Damage Speed 1.80 (41.39 damage per second) +31 Stamina +21 Intellect Durability 105 / 105 Requires Level 70 Equip: Improves spell critical strike rating by 23. Equip: Increases healing done by up to 443 and damage done by up to 148 for all magical spells and effects. Sell Price: 14 48 64",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:39+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 30918,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.39,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 23.",
+        "stats": {
+          "spell_crit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 443 and damage done by up to 148 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 443.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 23.",
+      "Equip: Increases healing done by up to 443 and damage done by up to 148 for all magical spells and effects."
+    ],
+    "id": 30918,
+    "item_level": 141,
+    "name": "Hammer of Atonement",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 443.0,
+      "intellect": 21.0,
+      "spell_crit_rating": 23.0,
+      "stamina": 31.0
+    },
+    "weapon_max_damage": 129,
+    "weapon_min_damage": 20,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30918/hammer-of-atonement"
+  },
+  "name": "Hammer of Atonement",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30918/hammer-of-atonement"
+}

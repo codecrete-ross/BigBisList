@@ -1,0 +1,87 @@
+{
+  "description": "In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.6).",
+  "fetched_at": "2026-09-05T00:08:26+00:00",
+  "name": "Elixir of Demonslaying",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 9300,
+      "entity_name": "Recipe: Elixir of Demonslaying",
+      "item_id": 9300,
+      "source_url": "https://www.wowhead.com/tbc/spell=11477",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          250,
+          265,
+          285,
+          305
+        ],
+        "creates": [
+          9224,
+          1,
+          1
+        ],
+        "id": 11477,
+        "learnedat": 250,
+        "level": 0,
+        "name": "Elixir of Demonslaying",
+        "nskillup": 1,
+        "quality": 1,
+        "reagents": [
+          [
+            8846,
+            1
+          ],
+          [
+            8845,
+            1
+          ],
+          [
+            8925,
+            1
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          171
+        ],
+        "source": [
+          5
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "flags2": 24580,
+        "id": 9300,
+        "level": 50,
+        "name": "Recipe: Elixir of Demonslaying",
+        "quality": 1,
+        "skill": 250,
+        "slot": 0,
+        "source": [
+          5
+        ],
+        "subclass": 6
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 11477,
+  "url": "https://www.wowhead.com/tbc/spell=11477"
+}

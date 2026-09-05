@@ -1,0 +1,81 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "An item in the Holiday Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.6).",
+  "fetched_at": "2026-09-04T23:50:50+00:00",
+  "inventory_slot": null,
+  "item_id": 22157,
+  "item_stats": {
+    "binding": "unknown",
+    "id": 22157,
+    "item_level": 1,
+    "name": "Pledge of Adoration: Undercity",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 27515,
+      "entity_name": "Receive Quest Object, Undercity Guard",
+      "source_url": "https://www.wowhead.com/tbc/item=22157",
+      "spell_id": 27515,
+      "type": "crafted"
+    },
+    "quality": "unknown",
+    "source_summary": "Crafted: Receive Quest Object, Undercity Guard",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 27515,
+        "entity_name": "Receive Quest Object, Undercity Guard",
+        "source_url": "https://www.wowhead.com/tbc/item=22157",
+        "spell_id": 27515,
+        "type": "crafted"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22157"
+  },
+  "name": "Pledge of Adoration: Undercity",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 27515,
+      "entity_name": "Receive Quest Object, Undercity Guard",
+      "source_url": "https://www.wowhead.com/tbc/item=22157",
+      "spell_id": 27515,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          22157,
+          0,
+          0
+        ],
+        "id": 27515,
+        "level": 0,
+        "name": "Receive Quest Object, Undercity Guard",
+        "popularity": 4,
+        "quality": 1,
+        "schools": 1
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22157"
+}

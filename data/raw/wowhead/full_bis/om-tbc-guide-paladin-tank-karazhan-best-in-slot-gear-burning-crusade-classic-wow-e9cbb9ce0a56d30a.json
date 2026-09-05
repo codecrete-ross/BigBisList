@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:55+00:00",
+  "fetched_at": "2026-09-04T23:49:24+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -219,6 +219,7 @@
           "item_id": 29266,
           "item_name": "Azure-Shield of Coldarra",
           "item_url": "https://www.wowhead.com/tbc/item=29266/azure-shield-of-coldarra",
+          "level_range": "4",
           "rank_label": "4",
           "source_links": [
             {
@@ -234,9 +235,9 @@
             [
               {
                 "id": 29387,
-                "name": "Gnomeregan Auto-Dodger 600",
+                "name": "Gnomeregan Auto-Blocker 600",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600"
+                "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
               }
             ],
             [
@@ -250,15 +251,15 @@
           ],
           "cells": [
             "5",
-            "Gnomeregan Auto-Dodger 600",
+            "Gnomeregan Auto-Blocker 600",
             "41 Badge of Justice"
           ],
           "entities": [
             {
               "id": 29387,
-              "name": "Gnomeregan Auto-Dodger 600",
+              "name": "Gnomeregan Auto-Blocker 600",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600"
+              "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
             },
             {
               "id": 29434,
@@ -268,12 +269,13 @@
             }
           ],
           "entity_id": 29387,
-          "entity_name": "Gnomeregan Auto-Dodger 600",
+          "entity_name": "Gnomeregan Auto-Blocker 600",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600",
+          "entity_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600",
           "item_id": 29387,
-          "item_name": "Gnomeregan Auto-Dodger 600",
-          "item_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600",
+          "item_name": "Gnomeregan Auto-Blocker 600",
+          "item_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600",
+          "level_range": "5",
           "rank_label": "5",
           "source_links": [
             {
@@ -432,7 +434,7 @@
           "cells": [
             "Viable - PvP Required",
             "Gladiator's Lamellar Helm",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -452,11 +454,11 @@
           "rank_label": "Viable - PvP Required",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         }
       ],
       "slot": "Head"
@@ -797,7 +799,7 @@
           "cells": [
             "Best - PvP",
             "Gladiator's Lamellar Shoulders",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -817,11 +819,11 @@
           "rank_label": "Best - PvP",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -1506,7 +1508,7 @@
           "cells": [
             "Best - PvP",
             "Gladiator's Lamellar Chestpiece",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -1526,11 +1528,11 @@
           "rank_label": "Best - PvP",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -1660,9 +1662,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Endarin - Revered with The Aldor",
+              "reputation": "The Aldor",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
             }
           ],
           "rank_label": "Viable",
@@ -1875,7 +1880,7 @@
           "cells": [
             "Best - PvP",
             "General's Lamellar Bracers",
-            "- Honor Vendor"
+            "Honor Points - Honor Vendor"
           ],
           "entities": [
             {
@@ -1895,11 +1900,11 @@
           "rank_label": "Best - PvP",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             }
           ],
-          "source_text": "- Honor Vendor"
+          "source_text": "Honor Points - Honor Vendor"
         },
         {
           "cell_entities": [
@@ -2598,9 +2603,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Enuril - Revered with The Scryers",
+              "reputation": "The Scryers",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
             }
           ],
           "rank_label": "Option",
@@ -2719,7 +2727,7 @@
           "cells": [
             "Best - PvP",
             "General's Lamellar Belt",
-            "- Honor Vendor"
+            "Honor Points - Honor Vendor"
           ],
           "entities": [
             {
@@ -2739,11 +2747,11 @@
           "rank_label": "Best - PvP",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             }
           ],
-          "source_text": "- Honor Vendor"
+          "source_text": "Honor Points - Honor Vendor"
         },
         {
           "cell_entities": [
@@ -3141,9 +3149,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Alurmi - Revered with The Keepers of Time",
+              "reputation": "Keepers of Time",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
             }
           ],
           "rank_label": "Viable",
@@ -3484,7 +3495,7 @@
           "cells": [
             "Best- PvP",
             "General's Lamellar Greaves",
-            "- Honor Vendor"
+            "Honor Points - Honor Vendor"
           ],
           "entities": [
             {
@@ -3504,11 +3515,11 @@
           "rank_label": "Best- PvP",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             }
           ],
-          "source_text": "- Honor Vendor"
+          "source_text": "Honor Points - Honor Vendor"
         },
         {
           "cell_entities": [
@@ -3876,7 +3887,7 @@
           "cells": [
             "Best - Threat (Requires PvP)",
             "Pendant of Dominance",
-            "- Honor Vendor"
+            "Honor Points - Honor Vendor"
           ],
           "entities": [
             {
@@ -3896,11 +3907,11 @@
           "rank_label": "Best - Threat (Requires PvP)",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             }
           ],
-          "source_text": "- Honor Vendor"
+          "source_text": "Honor Points - Honor Vendor"
         },
         {
           "cell_entities": [
@@ -4156,9 +4167,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Fedryen Swiftspear - Revered with Cenarion Expedition",
+              "reputation": "Cenarion Expedition",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
             }
           ],
           "rank_label": "Viable",
@@ -4513,9 +4527,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Fedryen Swiftspear - Exalted with Cenarion Expedition",
+              "reputation": "Cenarion Expedition",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Best - Threat",
@@ -4564,9 +4581,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Quest: Eminence Among the Violet Eye - Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
               "scope": "quest_reward",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Best - Defensive",
@@ -4744,9 +4764,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Enuril - Exalted with The Scryers",
+              "reputation": "The Scryers",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Viable - Threat",
@@ -5876,33 +5899,33 @@
             [
               {
                 "id": 29387,
-                "name": "Gnomeregan Auto-Dodger 600",
+                "name": "Gnomeregan Auto-Blocker 600",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600"
+                "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
               }
             ],
             []
           ],
           "cells": [
             "Viable - Mitigation",
-            "Gnomeregan Auto-Dodger 600",
+            "Gnomeregan Auto-Blocker 600",
             "Vendor: G'eras (41 Badges of Justice)"
           ],
           "entities": [
             {
               "id": 29387,
-              "name": "Gnomeregan Auto-Dodger 600",
+              "name": "Gnomeregan Auto-Blocker 600",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600"
+              "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
             }
           ],
           "entity_id": 29387,
-          "entity_name": "Gnomeregan Auto-Dodger 600",
+          "entity_name": "Gnomeregan Auto-Blocker 600",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600",
+          "entity_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600",
           "item_id": 29387,
-          "item_name": "Gnomeregan Auto-Dodger 600",
-          "item_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600",
+          "item_name": "Gnomeregan Auto-Blocker 600",
+          "item_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600",
           "rank_label": "Viable - Mitigation",
           "source_links": [
             {
@@ -5956,9 +5979,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Quest: Hail, Commander! - Revered with Netherwing",
+              "reputation": "Netherwing",
               "scope": "quest_reward",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
             }
           ],
           "rank_label": "Viable",
@@ -6065,33 +6091,33 @@
             [
               {
                 "id": 13503,
-                "name": "Alchemist Stone",
+                "name": "Alchemist's Stone",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone"
+                "url": "https://www.wowhead.com/tbc/item=13503/alchemists-stone"
               }
             ],
             []
           ],
           "cells": [
             "Viable Alchemists",
-            "Alchemist Stone",
+            "Alchemist's Stone",
             "Profession: Alchemy"
           ],
           "entities": [
             {
               "id": 13503,
-              "name": "Alchemist Stone",
+              "name": "Alchemist's Stone",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone"
+              "url": "https://www.wowhead.com/tbc/item=13503/alchemists-stone"
             }
           ],
           "entity_id": 13503,
-          "entity_name": "Alchemist Stone",
+          "entity_name": "Alchemist's Stone",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+          "entity_url": "https://www.wowhead.com/tbc/item=13503/alchemists-stone",
           "item_id": 13503,
-          "item_name": "Alchemist Stone",
-          "item_url": "https://www.wowhead.com/tbc/item=13503/alchemist-stone",
+          "item_name": "Alchemist's Stone",
+          "item_url": "https://www.wowhead.com/tbc/item=13503/alchemists-stone",
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
@@ -6150,9 +6176,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Enuril - Revered with The Scryers",
+              "reputation": "The Scryers",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
             }
           ],
           "rank_label": "Great",
@@ -6565,9 +6594,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Nakodu - Exalted with Lower City",
+              "reputation": "Lower City",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Strong",
@@ -6616,9 +6648,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Urgronn - Exalted with Honor Hold",
+              "reputation": "Honor Hold",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Strong (Alliance Only)",
@@ -6674,9 +6709,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Logistics Officer Ulrike - Exalted with Thrallmar",
+              "reputation": "Thrallmar",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Strong (Horde Only)",
@@ -6762,9 +6800,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Alurmi - Revered with Keepers of Time",
+              "reputation": "Keepers of Time",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
             }
           ],
           "rank_label": "Viable",
@@ -7039,9 +7080,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Almaador - Exalted with The Sha'tar",
+              "reputation": "The Sha'tar",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Viable",
@@ -7181,9 +7225,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Jho'nass - Revered with Ogri'la",
+              "reputation": "Ogri'la",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
             }
           ],
           "rank_label": "Viable",

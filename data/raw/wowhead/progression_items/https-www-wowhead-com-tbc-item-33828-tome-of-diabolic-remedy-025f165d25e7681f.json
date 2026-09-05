@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tome of Diabolic Remedy Phase 4 Item Level 133 Binds when picked up Unique Trinket Requires Level 70 Equip: Restores 18 mana per 5 sec. Use: Increases healing done by spells by up to 396 and damage done by spells by up to 132 for 20 sec. (2 Min Cooldown) Sell Price: 9 11 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:06+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 33828,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores 18 mana per 5 sec.",
+        "stats": {
+          "mp5": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases healing done by spells by up to 396 and damage done by spells by up to 132 for 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Restores 18 mana per 5 sec."
+    ],
+    "id": 33828,
+    "item_level": 133,
+    "name": "Tome of Diabolic Remedy",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "mp5": 18.0
+    },
+    "use_effects": [
+      "Use: Increases healing done by spells by up to 396 and damage done by spells by up to 132 for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33828/tome-of-diabolic-remedy"
+  },
+  "name": "Tome of Diabolic Remedy",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33828/tome-of-diabolic-remedy"
+}

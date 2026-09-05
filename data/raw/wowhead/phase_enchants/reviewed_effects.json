@@ -1,0 +1,70 @@
+{
+  "fetch_method": "web_tool",
+  "fetched_at": "2026-09-05T00:43:14+00:00",
+  "page_type": "enchant_effect_review",
+  "parser_version": "phase-enchants-review-1",
+  "planner_encoding_review": {
+    "meaning": "The picker assigns an enchant record spell ID to the slot enchant field. Export writes that value as two bytes. Item applications use their spell ID, not the in-game enchant effect ID.",
+    "reviewed_at": "2026-09-05T00:43:14+00:00",
+    "source_url": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js"
+  },
+  "records": [
+    {
+      "effect_ids": [
+        2617
+      ],
+      "effect_text": "+30 Healing and +10 Spell Damage",
+      "evidence_section": "Spell Details / Effect / Enchant Item",
+      "fetched_at": "2026-09-05T00:43:14+00:00",
+      "id": 27911,
+      "name": "Superior Healing",
+      "slot": "Wrist",
+      "source_spell_id": 27911,
+      "source_url": "https://www.wowhead.com/tbc/spell=27911/enchant-bracer-superior-healing",
+      "type": "spell"
+    },
+    {
+      "effect_ids": [
+        1144
+      ],
+      "effect_text": "+15 Spirit",
+      "evidence_section": "Spell Details / Effect / Enchant Item",
+      "fetched_at": "2026-09-05T00:43:14+00:00",
+      "id": 33990,
+      "name": "Major Spirit",
+      "slot": "Chest",
+      "source_spell_id": 33990,
+      "source_url": "https://www.wowhead.com/tbc/spell=33990/enchant-chest-major-spirit",
+      "type": "spell"
+    },
+    {
+      "effect_ids": [
+        3222
+      ],
+      "effect_text": "+20 Agility",
+      "evidence_section": "Spell Details / Effect / Enchant Item",
+      "fetched_at": "2026-09-05T00:43:14+00:00",
+      "id": 42620,
+      "name": "Greater Agility",
+      "slot": "Main Hand",
+      "source_spell_id": 42620,
+      "source_url": "https://www.wowhead.com/tbc/spell=42620/enchant-weapon-greater-agility",
+      "type": "spell"
+    },
+    {
+      "effect_ids": [
+        3225
+      ],
+      "effect_text": "Executioner",
+      "evidence_section": "Spell Details / Effect / Enchant Item",
+      "fetched_at": "2026-09-05T00:43:14+00:00",
+      "id": 42974,
+      "name": "Executioner",
+      "slot": "Main Hand",
+      "source_spell_id": 42974,
+      "source_url": "https://www.wowhead.com/tbc/spell=42974/enchant-weapon-executioner",
+      "type": "spell"
+    }
+  ],
+  "url": "https://www.wowhead.com/tbc/spell=42620/enchant-weapon-greater-agility"
+}

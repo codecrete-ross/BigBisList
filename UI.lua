@@ -1435,8 +1435,6 @@ function UI:ValidateSelection()
         phaseKey = detectedPhase
     elseif not phaseExists(phaseKey) then
         phaseKey = detectedPhase
-    elseif phaseKey == char.lastDetectedPhase and detectedPhase ~= char.lastDetectedPhase then
-        phaseKey = detectedPhase
     end
     char.lastDetectedPhase = detectedPhase
     if BigBiSList.ApplyDetectedPlayerLevel then
@@ -1816,7 +1814,10 @@ local function optionIsPhaseAvailable(option, selectedPhaseIndex)
     if not selectedPhaseIndex then
         return true
     end
-    return (option and (option.acquisitionPhaseIndex or phaseIndex(option.acquisition_phase or "PR")) or 999) <= selectedPhaseIndex
+    if BigBiSList.IsAccessOptionPhaseAvailable then
+        return BigBiSList:IsAccessOptionPhaseAvailable(option, selectedPhaseIndex)
+    end
+    return option and (option.acquisitionPhaseIndex or phaseIndex(option.acquisition_phase or "PR")) <= selectedPhaseIndex
 end
 
 local function optionMatchesActiveSourceContext(option, filters, selectedPhaseIndex)
@@ -1858,6 +1859,14 @@ function UI:EvaluateAccessOption(option, accessState)
 end
 
 function UI:GetAccessEvaluation(data)
+    local phaseKey = data and data.expansion_summary and data.content_phase or self:GetEffectivePhaseKey()
+    local selectedPhaseIndex = BigBiSList.GetAvailabilityPhaseIndex
+        and BigBiSList:GetAvailabilityPhaseIndex(phaseKey) or phaseIndex(phaseKey)
+    local progressionKey = tostring((BigBiSListData or {}).active_schedule) .. ":" .. tostring(phaseKey) .. ":" .. tostring(selectedPhaseIndex)
+    if self.currentAccessEvaluationContext ~= progressionKey then
+        self.currentAccessEvaluationCache = {}
+        self.currentAccessEvaluationContext = progressionKey
+    end
     self.currentAccessEvaluationCache = self.currentAccessEvaluationCache or {}
     if data and self.currentAccessEvaluationCache[data] then
         return self.currentAccessEvaluationCache[data]
@@ -1865,7 +1874,6 @@ function UI:GetAccessEvaluation(data)
     self.currentAccess = self.currentAccess or self:BuildAccessState()
     local accessState = self.currentAccess
     local filters = self:GetFilters()
-    local selectedPhaseIndex = phaseIndex(self:GetEffectivePhaseKey())
     local options = data and BigBiSList:GetRowAccessOptions(data)
     local preferredOption = data and (data.matched_access_option or (data.acquisition_display and data.acquisition_display.option))
 
@@ -1880,9 +1888,24 @@ function UI:GetAccessEvaluation(data)
         for _, option in ipairs(options) do
             if optionMatchesPlayerSide(option, accessState) then
                 local evaluation = self:EvaluateAccessOption(option, accessState)
+                if not optionIsPhaseAvailable(option, selectedPhaseIndex) then
+                    local nextPhase
+                    if BigBiSList.GetAccessOptionNextAvailablePhase then
+                        nextPhase = BigBiSList:GetAccessOptionNextAvailablePhase(option, selectedPhaseIndex)
+                    elseif (option.acquisitionPhaseIndex or phaseIndex(option.acquisition_phase or "PR")) > selectedPhaseIndex then
+                        nextPhase = option.acquisitionPhaseIndex or phaseIndex(option.acquisition_phase)
+                    end
+                    evaluation.status = nextPhase and "future" or "unavailable"
+                end
                 table.insert(optionEvaluations, evaluation)
+                if preferredOption == option and data.acquisition_display and data.acquisition_display.status == "unknown" then
+                    evaluation.status = "unknown"
+                    preferredEvaluation = evaluation
+                end
 
-                if not isReportedOnlyAccessOption(option) then
+                local preRaidEligible = phaseKey ~= "PR" or not BigBiSList.IsPreRaidAccessOption
+                    or BigBiSList:IsPreRaidAccessOption(option, selectedPhaseIndex)
+                if not isReportedOnlyAccessOption(option) and evaluation.status ~= "unavailable" and preRaidEligible then
                     firstEvaluation = firstEvaluation or evaluation
                     if option.is_primary and not primaryEvaluation then
                         primaryEvaluation = evaluation
@@ -2016,10 +2039,6 @@ local function sellerDetailKey(option)
 end
 
 function UI:GetSellerDetailLines(option)
-    if not isSellerAccessOption(option) then
-        return nil
-    end
-
     if BigBiSList.GetAccessOptionDetailFields then
         local fields = BigBiSList:GetAccessOptionDetailFields(option)
         if type(fields) == "table" and #fields > 0 then
@@ -2034,6 +2053,9 @@ function UI:GetSellerDetailLines(option)
             end
             return lines, option.vendor_details_status
         end
+    end
+    if not isSellerAccessOption(option) then
+        return nil
     end
 
     local vendor = trim(option.vendor_label)
@@ -2071,7 +2093,8 @@ end
 function UI:GetRowSellerDisplayGroups(data, selectedOption)
     local groups
     if BigBiSList.GetRowSellerGroups then
-        groups = BigBiSList:GetRowSellerGroups(data, selectedOption)
+        local phaseKey = data and data.expansion_summary and data.content_phase or self:GetEffectivePhaseKey()
+        groups = BigBiSList:GetRowSellerGroups(data, selectedOption, phaseKey)
     end
     groups = groups or {}
 
@@ -2618,7 +2641,18 @@ function UI:BuildFilterPayload()
     return self.currentFilterPayload
 end
 
+function UI:GetProgressionCacheKey()
+    local livePhase = BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey() or "PR"
+    local selectedPhase = BigBiSList.GetCharacterDB and (self:GetSelection() or {}).phase or nil
+    return tostring((BigBiSListData or {}).active_schedule) .. ":" .. tostring(livePhase) .. ":" .. tostring(selectedPhase)
+end
+
 function UI:GetCachedViewQuery(cacheKey, builder)
+    local progressionKey = self:GetProgressionCacheKey()
+    if self.currentViewQueryContext ~= progressionKey then
+        self.currentViewQueryCache = {}
+        self.currentViewQueryContext = progressionKey
+    end
     self.currentViewQueryCache = self.currentViewQueryCache or {}
     if self.currentViewQueryCache[cacheKey] ~= nil then
         return self.currentViewQueryCache[cacheKey]
@@ -3941,7 +3975,7 @@ function UI:GetGearUsefulThrough(data)
     local selection = self:GetSelection()
     local latestPhase
     local latestIndex = 0
-    for _, use in ipairs(BigBiSList:GetItemUses(data.item_id) or {}) do
+    for _, use in ipairs(BigBiSList:GetItemUses(data.item_id, selection.phase) or {}) do
         if use.class == selection.class and use.spec == selection.spec then
             local index = phaseOrderIndex(use.phase)
             if index > latestIndex and index < 999 then
@@ -5785,7 +5819,7 @@ end
 
 function UI:BuildPhaseUseText(itemId)
     local selection = self:GetSelection()
-    local uses = BigBiSList:GetItemUses(itemId)
+    local uses = BigBiSList:GetItemUses(itemId, selection.phase)
     local parts = {}
 
     for _, phaseKey in ipairs(BigBiSList:GetPhaseOrder()) do
@@ -6536,6 +6570,9 @@ function UI:CreatePhaseBar(frame)
         local button = widgets:CreateTextButton(phaseBar, phaseLabel, 96, 24, function()
             self:SetPhase(phaseKey)
         end)
+        if button.label and button.label.GetStringWidth then
+            button:SetWidth(math.max(96, math.ceil(button.label:GetStringWidth()) + 24))
+        end
         button.phaseBaseLabel = phaseLabel
         if previous then
             button:SetPoint("LEFT", previous, "RIGHT", 6, 0)
@@ -7209,6 +7246,9 @@ function UI:Open()
 
     self:ApplyResizeBounds()
     self.frame:Show()
+    if self.currentViewQueryContext ~= self:GetProgressionCacheKey() then
+        self:Invalidate("query", "progression-changed")
+    end
     local dirty = self.dirtyDomains or {}
     local dataDirty = dirty.ownership or dirty.access or dirty.query or dirty.availability or dirty.details or dirty.controls or dirty.presentation
     if not self.hasRenderedContent or dataDirty then

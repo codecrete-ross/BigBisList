@@ -1,0 +1,89 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Ringmail Spaulders Phase 1 Item Level 123 Binds when picked up Shoulder Mail 649 Armor +33 Stamina +19 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 18. Equip: Improves your resilience rating by 20. Equip: Restores 6 mana per 5 sec. Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects. Gladiator's Wartide (0/5) Gladiator's Ringmail Armor Gladiator's Ringmail Gauntlets Gladiator's Ringmail Helm Gladiator's Ringmail Leggings Gladiator's Ringmail Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Grounding Totem ability by 1.5 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:22+00:00",
+  "inventory_slot": null,
+  "item_id": 31407,
+  "item_stats": {
+    "armor": 649,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 18.",
+        "stats": {
+          "spell_crit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 20.",
+        "stats": {
+          "resilience_rating": 20.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 42.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 18.",
+      "Equip: Improves your resilience rating by 20.",
+      "Equip: Restores 6 mana per 5 sec.",
+      "Equip: Increases healing done by up to 42 and damage done by up to 14 for all magical spells and effects."
+    ],
+    "id": 31407,
+    "item_level": 123,
+    "name": "Gladiator's Ringmail Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 42.0,
+      "intellect": 19.0,
+      "mp5": 6.0,
+      "resilience_rating": 20.0,
+      "spell_crit_rating": 18.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31407/gladiators-ringmail-spaulders"
+  },
+  "name": "Gladiator's Ringmail Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31407/gladiators-ringmail-spaulders"
+}

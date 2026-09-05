@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skyshatter Leggings Phase 3 Item Level 146 Binds when picked up Legs Mail 894 Armor +55 Stamina +44 Intellect Red Socket Socket Bonus: 1 Mana per 5 sec. Durability 105 / 105 Classes: Shaman Requires Level 70 Equip: Increases healing done by up to 119 and damage done by up to 40 for all magical spells and effects. Equip: Restores 14 mana per 5 sec. Skyshatter Raiment (0/8) Skyshatter Chestguard Skyshatter Gloves Skyshatter Helmet Skyshatter Leggings Skyshatter Shoulderpads Skyshatter Belt Skyshatter Bracers Skyshatter Boots (2) Set : Your Chain Heal ability costs 10% less mana. (4) Set : Increases the amount healed by your Chain Heal ability by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:49+00:00",
+  "inventory_slot": null,
+  "item_id": 31019,
+  "item_stats": {
+    "armor": 894,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 119 and damage done by up to 40 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 119.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 14 mana per 5 sec.",
+        "stats": {
+          "mp5": 14.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 119 and damage done by up to 40 for all magical spells and effects.",
+      "Equip: Restores 14 mana per 5 sec."
+    ],
+    "id": 31019,
+    "item_level": 146,
+    "name": "Skyshatter Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 119.0,
+      "intellect": 44.0,
+      "mp5": 14.0,
+      "stamina": 55.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31019/skyshatter-leggings"
+  },
+  "name": "Skyshatter Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31019/skyshatter-leggings"
+}

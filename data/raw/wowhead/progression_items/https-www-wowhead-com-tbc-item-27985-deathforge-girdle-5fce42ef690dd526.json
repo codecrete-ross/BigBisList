@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Deathforge Girdle Phase 1 Item Level 115 Binds when picked up Waist Plate 655 Armor +22 Strength +25 Stamina Red Socket Blue Socket Socket Bonus: +3 Agility Durability 45 / 45 Requires Level 68 Equip: Improves critical strike rating by 20. Sell Price: 3 22 96",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:50+00:00",
+  "inventory_slot": null,
+  "item_id": 27985,
+  "item_stats": {
+    "armor": 655,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 20.",
+        "stats": {
+          "crit_rating": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 20."
+    ],
+    "id": 27985,
+    "item_level": 115,
+    "name": "Deathforge Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "socket_bonus": {
+      "agility": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 20.0,
+      "stamina": 25.0,
+      "strength": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27985/deathforge-girdle"
+  },
+  "name": "Deathforge Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27985/deathforge-girdle"
+}

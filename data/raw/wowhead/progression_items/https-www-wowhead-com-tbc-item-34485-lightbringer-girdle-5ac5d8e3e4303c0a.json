@@ -1,0 +1,79 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lightbringer Girdle Phase 5 Item Level 154 Binds when picked up Waist Plate 1081 Armor +44 Strength +24 Stamina Red Socket Socket Bonus: +2 Critical Strike Rating Durability 55 / 55 Classes: Paladin Requires Level 70 Equip: Improves critical strike rating by 42. Equip: Improves haste rating by 29. Equip: Increases your expertise rating by 25. Lightbringer Battlegear (0/8) Lightbringer Breastplate Lightbringer Gauntlets Lightbringer Greaves Lightbringer Shoulderbraces Lightbringer War-Helm Lightbringer Boots Lightbringer Bands Lightbringer Girdle (2) Set : Your melee attacks have a chance to grant you 50 mana. (Proc chance: 20%) (4) Set : Increases the damage dealt by your Hammer of Wrath ability by 10%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:59+00:00",
+  "inventory_slot": null,
+  "item_id": 34485,
+  "item_stats": {
+    "armor": 1081,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 42.",
+        "stats": {
+          "crit_rating": 42.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves haste rating by 29.",
+        "stats": {
+          "haste_rating": 29.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your expertise rating by 25.",
+        "stats": {
+          "expertise_rating": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 42.",
+      "Equip: Improves haste rating by 29.",
+      "Equip: Increases your expertise rating by 25."
+    ],
+    "id": 34485,
+    "item_level": 154,
+    "name": "Lightbringer Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 42.0,
+      "expertise_rating": 25.0,
+      "haste_rating": 29.0,
+      "stamina": 24.0,
+      "strength": 44.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34485/lightbringer-girdle"
+  },
+  "name": "Lightbringer Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34485/lightbringer-girdle"
+}

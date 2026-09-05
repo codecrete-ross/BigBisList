@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Tormented Demonsoul Robes Phase 5 Item Level 141 Binds when picked up Chest Cloth 236 Armor +39 Stamina +38 Intellect Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 100 / 100 Requires Level 70 Equip: Improves spell critical strike rating by 50. Equip: Increases damage and healing done by magical spells and effects by up to 62.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:25+00:00",
+  "inventory_slot": null,
+  "item_id": 34936,
+  "item_stats": {
+    "armor": 236,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 50.",
+        "stats": {
+          "spell_crit_rating": 50.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 62.",
+        "stats": {
+          "spell_power": 62.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 50.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 62."
+    ],
+    "id": 34936,
+    "item_level": 141,
+    "name": "Tormented Demonsoul Robes",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 38.0,
+      "spell_crit_rating": 50.0,
+      "spell_power": 62.0,
+      "stamina": 39.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34936/tormented-demonsoul-robes"
+  },
+  "name": "Tormented Demonsoul Robes",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34936/tormented-demonsoul-robes"
+}

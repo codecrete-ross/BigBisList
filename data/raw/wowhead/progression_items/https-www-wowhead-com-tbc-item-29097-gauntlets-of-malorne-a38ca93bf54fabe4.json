@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gauntlets of Malorne Phase 1 Item Level 120 Binds when picked up Hands Leather 475 Armor +32 Strength +24 Agility +28 Stamina +12 Intellect Durability 40 / 40 Classes: Druid Requires Level 70 Malorne Harness (0/5) Breastplate of Malorne Gauntlets of Malorne Greaves of Malorne Mantle of Malorne Stag-Helm of Malorne (2) Set : Your melee attacks in Bear Form and Dire Bear Form have a chance to generate 10 additional rage. (Proc chance: 4%) (2) Set : Your melee attacks in Cat Form have a chance to generate 20 additional energy. (Proc chance: 4%) (4) Set : Increases your armor by 1400 in Bear Form and Dire Bear Form. (4) Set : Increases your strength by 30 in Cat Form.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:24+00:00",
+  "inventory_slot": null,
+  "item_id": 29097,
+  "item_stats": {
+    "armor": 475,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 29097,
+    "item_level": 120,
+    "name": "Gauntlets of Malorne",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "agility": 24.0,
+      "intellect": 12.0,
+      "stamina": 28.0,
+      "strength": 32.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29097/gauntlets-of-malorne"
+  },
+  "name": "Gauntlets of Malorne",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29097/gauntlets-of-malorne"
+}

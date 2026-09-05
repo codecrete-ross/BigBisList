@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Skullshatter Warboots Phase 4 Item Level 128 Binds when picked up Feet Plate 1105 Armor +30 Strength +37 Stamina Red Socket Blue Socket Socket Bonus: +2 Critical Strike Rating Durability 75 / 75 Requires Level 70 Equip: Improves critical strike rating by 29. Sell Price: 6 92 37",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:39+00:00",
+  "inventory_slot": null,
+  "item_id": 33303,
+  "item_stats": {
+    "armor": 1105,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 29.",
+        "stats": {
+          "crit_rating": 29.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 29."
+    ],
+    "id": 33303,
+    "item_level": 128,
+    "name": "Skullshatter Warboots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 29.0,
+      "stamina": 37.0,
+      "strength": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33303/skullshatter-warboots"
+  },
+  "name": "Skullshatter Warboots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33303/skullshatter-warboots"
+}

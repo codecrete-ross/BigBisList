@@ -1,0 +1,467 @@
+{
+  "bindings": [
+    {
+      "class": "Paladin",
+      "phase": "ZA",
+      "spec": "Protection"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29191,
+            "name": "Glyph of Power",
+            "type": "item"
+          },
+          "equipment_item_id": 32521,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35447
+        },
+        {
+          "equipment_item_id": 30998,
+          "slot": "Shoulder",
+          "spell_id": 29480
+        },
+        {
+          "entity": {
+            "id": 27957,
+            "name": "Exceptional Health",
+            "type": "spell"
+          },
+          "equipment_item_id": 30991,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27957
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30995,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 27950,
+            "name": "Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 32245,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27950
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 32232,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 25072,
+            "name": "Enchant Gloves - Threat",
+            "type": "spell"
+          },
+          "equipment_item_id": 30985,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25072
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32261,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 29172,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25086,
+            "name": "Dodge",
+            "type": "spell"
+          },
+          "equipment_item_id": 33593,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25086
+        },
+        {
+          "entity": {
+            "id": 27975,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30910,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27975
+        },
+        {
+          "entity": {
+            "id": 34009,
+            "name": "Enchant Shield - Major Stamina",
+            "type": "spell"
+          },
+          "equipment_item_id": 32375,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 34009
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Protection Paladin- Phase 4 Best In Slot\r\nBalanced set",
+      "planner": "paladin/human/A0YT8FMFEwUAABIlIQXwUgUBEwAwH4FAfwmKdwBlKCB9xAIAfmqDQHkWcygAfcggfciFYHkPbTUAfcQgfcRAfd0GQH5WAH3IIH3IhyB5E3qMAH3IiEB99W0uAH3IIH3IiQB96G0KiiB5CWHwAH3EiwB-BW0UjABx9G0UDQCEJQ4AfHKPAIM5Yf6QAHi-bUeRAH53hNkSAILg"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29191,
+            "name": "Glyph of Power",
+            "type": "item"
+          },
+          "equipment_item_id": 32521,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35447
+        },
+        {
+          "equipment_item_id": 30998,
+          "slot": "Shoulder",
+          "spell_id": 29480
+        },
+        {
+          "entity": {
+            "id": 27957,
+            "name": "Exceptional Health",
+            "type": "spell"
+          },
+          "equipment_item_id": 30991,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27957
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30995,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 27950,
+            "name": "Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 33523,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27950
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 32279,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 25072,
+            "name": "Enchant Gloves - Threat",
+            "type": "spell"
+          },
+          "equipment_item_id": 30985,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25072
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 28555,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 29172,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25086,
+            "name": "Dodge",
+            "type": "spell"
+          },
+          "equipment_item_id": 28766,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25086
+        },
+        {
+          "entity": {
+            "id": 27975,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30910,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27975
+        },
+        {
+          "entity": {
+            "id": 34009,
+            "name": "Enchant Shield - Major Stamina",
+            "type": "spell"
+          },
+          "equipment_item_id": 32375,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 34009
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Protection Paladin- Phase 4 Best In Slot\r\nThreat set with hit cap (Horde)",
+      "planner": "paladin/blood-elf/A0YT8FMFAwUAABMlIQXwUgUBEwAwH4FAfwmKdwBlKCB93QIAdTeDQHkWcygAfcggfciFYHkPbTUAfd0gfd1AfdIGQIL0AH3IIH3ShyB5E3qMAH3IiECC820uAH3dIH3IiQB-F20KiiB5CWHwAH3diwBvi20UjABx9G0UDQB-9Q4AhCWPAHBeYf6QAHi-bUeRAH53hNkSAILg"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29191,
+            "name": "Glyph of Power",
+            "type": "item"
+          },
+          "equipment_item_id": 32521,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35447
+        },
+        {
+          "equipment_item_id": 30998,
+          "slot": "Shoulder",
+          "spell_id": 29480
+        },
+        {
+          "entity": {
+            "id": 27957,
+            "name": "Exceptional Health",
+            "type": "spell"
+          },
+          "equipment_item_id": 30991,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27957
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30995,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 27950,
+            "name": "Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 33523,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27950
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 32279,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 25072,
+            "name": "Enchant Gloves - Threat",
+            "type": "spell"
+          },
+          "equipment_item_id": 30985,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25072
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 28793,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 29172,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25086,
+            "name": "Dodge",
+            "type": "spell"
+          },
+          "equipment_item_id": 28766,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25086
+        },
+        {
+          "entity": {
+            "id": 27975,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 30910,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27975
+        },
+        {
+          "entity": {
+            "id": 34009,
+            "name": "Enchant Shield - Major Stamina",
+            "type": "spell"
+          },
+          "equipment_item_id": 32375,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 34009
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Protection Paladin- Phase 4 Best In Slot\r\nThreat set with hit cap (Alliance)",
+      "planner": "paladin/human/A0YT8FMFAwUAABMlIQXwUgUBEwAwH4FAfwmKdwBlKCB9xAIghIEAfdKDQHkWcygAfcggfciFYHkPbTUAfcQgfcRAfdIGQIL0AH3IIH3ShyB5E3qMAH3IiECC820uAH3XIH3IiQB-F20KiiB5CWHwAH3XiwBweW0UjABx9G0UDQCEJQ4AfvWPAHBeYf6QAHi-bUeRAH53hNkSAHLM"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Aldor vs. Scryer for Protection Paladin Tank in Phase 4",
+      "text": "Comparing the defensive stats between both shoulder enchants,  is the superior option by a small margin due to the prevalence of dodge. It is worth noting that  offers more overall avoidance in the form of Block Rating, but this is largely wasted in phase 4."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Aldor vs. Scryer for Protection Paladin Tank in Phase 4",
+      "text": "Aldor spell power enchant  also offers better threat stats over the Scryer alternative , giving a clear overall advantage to Aldor. However, those who went Scryer early on will not see any major disadvantages for doing so and staying with the Blood Elf faction."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28909,
+            "name": "Greater Inscription of the Orb",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35437
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Aldor vs. Scryer for Protection Paladin Tank in Phase 4",
+      "text": "Aldor spell power enchant  also offers better threat stats over the Scryer alternative , giving a clear overall advantage to Aldor. However, those who went Scryer early on will not see any major disadvantages for doing so and staying with the Blood Elf faction."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:24+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Protection Paladin Tank Best in Slot (BiS) Phase 4 Gear Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/paladin-tank-za-phase-4-best-in-slot-gear-burning-crusade"
+}

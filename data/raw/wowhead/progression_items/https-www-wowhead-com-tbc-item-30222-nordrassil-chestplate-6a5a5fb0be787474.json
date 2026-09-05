@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Nordrassil Chestplate Phase 2 Item Level 133 Binds when picked up Chest Leather 727 Armor +46 Strength +30 Agility +43 Stamina +17 Intellect Blue Socket Yellow Socket Red Socket Socket Bonus: +4 Strength Durability 120 / 120 Classes: Druid Requires Level 70 Nordrassil Harness (0/5) Nordrassil Chestplate Nordrassil Handgrips Nordrassil Headdress Nordrassil Feral-Kilt Nordrassil Feral-Mantle (2) Set : When you shift out of Bear Form, Dire Bear Form, or Cat Form, your next Regrowth spell takes 2.0 fewer sec. to cast. (4) Set : Your Shred ability deals an additional 75 damage, and your Lacerate ability does an additional 15 per application.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:56+00:00",
+  "inventory_slot": null,
+  "item_id": 30222,
+  "item_stats": {
+    "armor": 727,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 30222,
+    "item_level": 133,
+    "name": "Nordrassil Chestplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "socket_bonus": {
+      "strength": 4.0
+    },
+    "sockets": [
+      "blue",
+      "yellow",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "intellect": 17.0,
+      "stamina": 43.0,
+      "strength": 46.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30222/nordrassil-chestplate"
+  },
+  "name": "Nordrassil Chestplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30222/nordrassil-chestplate"
+}

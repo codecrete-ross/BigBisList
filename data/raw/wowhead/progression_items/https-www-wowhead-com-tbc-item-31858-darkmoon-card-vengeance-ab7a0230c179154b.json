@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Darkmoon Card: Vengeance Phase 3 Item Level 100 Binds when picked up Unique Trinket +51 Stamina Requires Level 70 Equip: You have a 10% chance when hit by an attack or harmful spell to deal 95 to 115 holy damage to your attacker. (Proc chance: 10%) Sell Price: 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:29+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 31858,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: You have a 10% chance when hit by an attack or harmful spell to deal 95 to 115 holy damage to your attacker. (Proc chance: 10%)",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: You have a 10% chance when hit by an attack or harmful spell to deal 95 to 115 holy damage to your attacker. (Proc chance: 10%)"
+    ],
+    "id": 31858,
+    "item_level": 100,
+    "name": "Darkmoon Card: Vengeance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 51.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31858/darkmoon-card-vengeance"
+  },
+  "name": "Darkmoon Card: Vengeance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31858/darkmoon-card-vengeance"
+}

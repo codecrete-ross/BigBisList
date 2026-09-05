@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crimson Bracers of Gloom Phase 1 Item Level 115 Binds when picked up Wrist Cloth 68 Armor +18 Stamina +18 Intellect Durability 30 / 30 Requires Level 70 Equip: Improves spell hit rating by 12. Equip: Increases damage and healing done by magical spells and effects by up to 22. Sell Price: 1 84 74",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:17+00:00",
+  "inventory_slot": null,
+  "item_id": 27462,
+  "item_stats": {
+    "armor": 68,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 12.",
+        "stats": {
+          "spell_hit_rating": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 22.",
+        "stats": {
+          "spell_power": 22.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 12.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 22."
+    ],
+    "id": 27462,
+    "item_level": 115,
+    "name": "Crimson Bracers of Gloom",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_hit_rating": 12.0,
+      "spell_power": 22.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27462/crimson-bracers-of-gloom"
+  },
+  "name": "Crimson Bracers of Gloom",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27462/crimson-bracers-of-gloom"
+}

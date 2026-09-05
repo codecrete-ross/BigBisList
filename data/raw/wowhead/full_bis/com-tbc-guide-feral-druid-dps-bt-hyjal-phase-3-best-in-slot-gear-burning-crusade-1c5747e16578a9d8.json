@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:49+00:00",
+  "fetched_at": "2026-09-04T23:49:15+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -1603,7 +1603,7 @@
             [
               {
                 "id": 32265,
-                "name": "Shadow-Walker's Cord",
+                "name": "Shadow-walker's Cord",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
               }
@@ -1612,23 +1612,23 @@
           ],
           "cells": [
             "Option",
-            "Shadow-Walker's Cord",
+            "Shadow-walker's Cord",
             "Drop: Shade of Akama (Black Temple)"
           ],
           "entities": [
             {
               "id": 32265,
-              "name": "Shadow-Walker's Cord",
+              "name": "Shadow-walker's Cord",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
             }
           ],
           "entity_id": 32265,
-          "entity_name": "Shadow-Walker's Cord",
+          "entity_name": "Shadow-walker's Cord",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
           "item_id": 32265,
-          "item_name": "Shadow-Walker's Cord",
+          "item_name": "Shadow-walker's Cord",
           "item_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
           "rank_label": "Option",
           "source_links": [
@@ -2317,33 +2317,33 @@
             [
               {
                 "id": 30017,
-                "name": "Telonicus' Pendant of Mayhem",
+                "name": "Telonicus's Pendant of Mayhem",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+                "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
               }
             ],
             []
           ],
           "cells": [
             "BiS in 6% Hit Set",
-            "Telonicus' Pendant of Mayhem",
+            "Telonicus's Pendant of Mayhem",
             "Drop: Kael'thas Sunstrider (Tempest Keep: The Eye)"
           ],
           "entities": [
             {
               "id": 30017,
-              "name": "Telonicus' Pendant of Mayhem",
+              "name": "Telonicus's Pendant of Mayhem",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+              "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
             }
           ],
           "entity_id": 30017,
-          "entity_name": "Telonicus' Pendant of Mayhem",
+          "entity_name": "Telonicus's Pendant of Mayhem",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "item_id": 30017,
-          "item_name": "Telonicus' Pendant of Mayhem",
-          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "item_name": "Telonicus's Pendant of Mayhem",
+          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "rank_label": "BiS in 6% Hit Set",
           "source_links": [
             {
@@ -3076,49 +3076,14 @@
             }
           ],
           "source_text": "Vendor: G'eras (Badges of Justice)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 38287,
-                "name": "Empty Mug of Direbrew",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS in 6% Hit Set (with Wolfshead)",
-            "Empty Mug of Direbrew",
-            "Drop: Coren Direbrew (Brewfest Seasonal Event)"
-          ],
-          "entities": [
-            {
-              "id": 38287,
-              "name": "Empty Mug of Direbrew",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew"
-            }
-          ],
-          "entity_id": 38287,
-          "entity_name": "Empty Mug of Direbrew",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew",
-          "item_id": 38287,
-          "item_name": "Empty Mug of Direbrew",
-          "item_url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew",
-          "rank_label": "BiS in 6% Hit Set (with Wolfshead)",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
-              "text": "Coren Direbrew"
-            }
-          ],
-          "source_text": "Drop: Coren Direbrew (Brewfest Seasonal Event)"
-        },
+        }
+      ],
+      "slot": "Trinket"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Trinkets for Feral Druid DPS in TBC Classic Phase 3",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -3133,7 +3098,7 @@
             []
           ],
           "cells": [
-            "BiS in 6% Hit Set (without Wolfshead)",
+            "Option in 6% Hit Set (without Wolfshead)",
             "Dragonspine Trophy",
             "Drop: Gruul the Dragonkiller (Gruul's Lair)"
           ],
@@ -3152,7 +3117,7 @@
           "item_id": 28830,
           "item_name": "Dragonspine Trophy",
           "item_url": "https://www.wowhead.com/tbc/item=28830/dragonspine-trophy",
-          "rank_label": "BiS in 6% Hit Set (without Wolfshead)",
+          "rank_label": "Option in 6% Hit Set (without Wolfshead)",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19044/gruul-the-dragonkiller",
@@ -3160,14 +3125,7 @@
             }
           ],
           "source_text": "Drop: Gruul the Dragonkiller (Gruul's Lair)"
-        }
-      ],
-      "slot": "Trinket"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Trinkets for Feral Druid DPS in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -3209,6 +3167,48 @@
             }
           ],
           "source_text": "Drop: Keli'dan the Breaker (Heroic The Blood Furnace)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38287,
+                "name": "Empty Mug of Direbrew",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option in 6% Hit Set (with Wolfshead)",
+            "Empty Mug of Direbrew",
+            "Drop: Coren Direbrew (Brewfest Seasonal Event)"
+          ],
+          "entities": [
+            {
+              "id": 38287,
+              "name": "Empty Mug of Direbrew",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew"
+            }
+          ],
+          "entity_id": 38287,
+          "entity_name": "Empty Mug of Direbrew",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew",
+          "item_id": 38287,
+          "item_name": "Empty Mug of Direbrew",
+          "item_url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew",
+          "rank_label": "Option in 6% Hit Set (with Wolfshead)",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
+              "text": "Coren Direbrew"
+            }
+          ],
+          "source_text": "Drop: Coren Direbrew (Brewfest Seasonal Event)"
         },
         {
           "cell_entities": [
@@ -3893,6 +3893,6 @@
       "slot": "Idol"
     }
   ],
-  "title": "Burning Crusade Classic Feral Druid DPS Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Feral Druid DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/feral-druid-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

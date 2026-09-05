@@ -1,0 +1,539 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "It is looted and sold by NPCs. In the Holiday Items category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.6).",
+  "fetched_at": "2026-09-04T23:50:22+00:00",
+  "inventory_slot": null,
+  "item_id": 17202,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Throw me! Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 17202,
+    "item_level": 5,
+    "name": "Snowball",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1,
+      "drop_percent": 100.0,
+      "entity_id": 178609,
+      "entity_name": "Holiday Snow",
+      "out_of": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "drop",
+      "zone": "Alterac Mountains"
+    },
+    "quality": "unknown",
+    "source_summary": "Drop: Holiday Snow (Alterac Mountains) 100.0% +9",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 13420,
+        "entity_name": "Penney Copperpinch",
+        "location_area": "Orgrimmar",
+        "price_copper": 10,
+        "purchase_quantity": 5,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "vendor",
+        "vendor_id": 13420,
+        "zone": "Orgrimmar"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 13429,
+        "entity_name": "Nardstrum Copperpinch",
+        "location_area": "Undercity",
+        "price_copper": 10,
+        "purchase_quantity": 5,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "vendor",
+        "vendor_id": 13429,
+        "zone": "Undercity"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 13432,
+        "entity_name": "Seersa Copperpinch",
+        "location_area": "Thunder Bluff",
+        "price_copper": 10,
+        "purchase_quantity": 5,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "vendor",
+        "vendor_id": 13432,
+        "zone": "Thunder Bluff"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 13433,
+        "entity_name": "Wulmort Jinglepocket",
+        "location_area": "Ironforge",
+        "price_copper": 10,
+        "purchase_quantity": 5,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "vendor",
+        "vendor_id": 13433,
+        "zone": "Ironforge"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 13435,
+        "entity_name": "Khole Jinglepocket",
+        "location_area": "Stormwind City",
+        "price_copper": 10,
+        "purchase_quantity": 5,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "vendor",
+        "vendor_id": 13435,
+        "zone": "Stormwind City"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 23010,
+        "entity_name": "Wolgren Jinglepocket",
+        "location_area": "The Exodar",
+        "price_copper": 10,
+        "purchase_quantity": 5,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "vendor",
+        "vendor_id": 23010,
+        "zone": "The Exodar"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 23064,
+        "entity_name": "Eebee Jinglepocket",
+        "location_area": "Shattrath City",
+        "price_copper": 10,
+        "purchase_quantity": 5,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "vendor",
+        "vendor_id": 23064,
+        "zone": "Shattrath City"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 21935,
+        "entity_name": "Snowmaster 9000",
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "spell_id": 21935,
+        "type": "crafted"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 1,
+        "drop_percent": 100.0,
+        "entity_id": 178609,
+        "entity_name": "Holiday Snow",
+        "out_of": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "drop",
+        "zone": "Alterac Mountains"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 873,
+        "drop_percent": 99.89,
+        "entity_id": 35512,
+        "entity_name": "Contained in: Pocket Full of Snow",
+        "item_id": 35512,
+        "out_of": 874,
+        "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+        "type": "drop"
+      }
+    ],
+    "use_effects": [
+      "Use: Throw me! Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=17202/snowball"
+  },
+  "name": "Snowball",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13420,
+      "entity_name": "Penney Copperpinch",
+      "location_area": "Orgrimmar",
+      "price_copper": 10,
+      "purchase_quantity": 5,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "vendor",
+      "vendor_id": 13420,
+      "zone": "Orgrimmar"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13429,
+      "entity_name": "Nardstrum Copperpinch",
+      "location_area": "Undercity",
+      "price_copper": 10,
+      "purchase_quantity": 5,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "vendor",
+      "vendor_id": 13429,
+      "zone": "Undercity"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13432,
+      "entity_name": "Seersa Copperpinch",
+      "location_area": "Thunder Bluff",
+      "price_copper": 10,
+      "purchase_quantity": 5,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "vendor",
+      "vendor_id": 13432,
+      "zone": "Thunder Bluff"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13433,
+      "entity_name": "Wulmort Jinglepocket",
+      "location_area": "Ironforge",
+      "price_copper": 10,
+      "purchase_quantity": 5,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "vendor",
+      "vendor_id": 13433,
+      "zone": "Ironforge"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 13435,
+      "entity_name": "Khole Jinglepocket",
+      "location_area": "Stormwind City",
+      "price_copper": 10,
+      "purchase_quantity": 5,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "vendor",
+      "vendor_id": 13435,
+      "zone": "Stormwind City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 23010,
+      "entity_name": "Wolgren Jinglepocket",
+      "location_area": "The Exodar",
+      "price_copper": 10,
+      "purchase_quantity": 5,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "vendor",
+      "vendor_id": 23010,
+      "zone": "The Exodar"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 23064,
+      "entity_name": "Eebee Jinglepocket",
+      "location_area": "Shattrath City",
+      "price_copper": 10,
+      "purchase_quantity": 5,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "vendor",
+      "vendor_id": 23064,
+      "zone": "Shattrath City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21935,
+      "entity_name": "Snowmaster 9000",
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "spell_id": 21935,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1,
+      "drop_percent": 100.0,
+      "entity_id": 178609,
+      "entity_name": "Holiday Snow",
+      "out_of": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "drop",
+      "zone": "Alterac Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 873,
+      "drop_percent": 99.89,
+      "entity_id": 35512,
+      "entity_name": "Contained in: Pocket Full of Snow",
+      "item_id": 35512,
+      "out_of": 874,
+      "source_url": "https://www.wowhead.com/tbc/item=17202/snowball",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 0,
+        "count": 873,
+        "flags2": 24580,
+        "id": 35512,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 873,
+                "outof": 874
+              }
+            },
+            "4": {
+              "0": {
+                "count": 2,
+                "outof": 2
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 2
+              }
+            }
+          }
+        },
+        "name": "Pocket Full of Snow",
+        "outof": 874,
+        "pctstack": "{2: 24.7423,3: 26.0023,4: 26.3459,5: 22.9095}",
+        "quality": 1,
+        "slot": 0,
+        "subclass": 0
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 178609,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 7842,
+                "outof": 7842
+              }
+            },
+            "4": {
+              "0": {
+                "count": 9,
+                "outof": 9
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 1
+              }
+            }
+          }
+        },
+        "location": [
+          36
+        ],
+        "name": "Holiday Snow",
+        "outof": 1,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": -26,
+        "creates": [
+          17202,
+          0,
+          0
+        ],
+        "id": 21935,
+        "level": 38,
+        "name": "Snowmaster 9000",
+        "popularity": 5,
+        "quality": 1,
+        "reagents": [
+          [
+            159,
+            1
+          ]
+        ],
+        "schools": 1
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10
+          ]
+        ],
+        "id": 13420,
+        "location": [
+          1637
+        ],
+        "name": "Penney Copperpinch",
+        "popularity": 5,
+        "react": [
+          null,
+          1
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Smokywood Pastures",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 13429,
+        "location": [
+          1497
+        ],
+        "name": "Nardstrum Copperpinch",
+        "popularity": 5,
+        "react": [
+          null,
+          1
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Smokywood Pastures",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10
+          ]
+        ],
+        "id": 13432,
+        "location": [
+          1638
+        ],
+        "name": "Seersa Copperpinch",
+        "popularity": 5,
+        "react": [
+          null,
+          1
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Smokywood Pastures",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 13433,
+        "location": [
+          1537
+        ],
+        "name": "Wulmort Jinglepocket",
+        "popularity": 6,
+        "react": [
+          1,
+          null
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Smokywood Pastures",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10
+          ]
+        ],
+        "hasQuests": 1,
+        "id": 13435,
+        "location": [
+          1519
+        ],
+        "name": "Khole Jinglepocket",
+        "popularity": 13,
+        "react": [
+          1,
+          null
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Smokywood Pastures",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10
+          ]
+        ],
+        "id": 23010,
+        "location": [
+          3557
+        ],
+        "name": "Wolgren Jinglepocket",
+        "popularity": 6,
+        "stack": 5,
+        "stock": -1,
+        "tag": "Smokywood Pastures",
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "cost": [
+          [
+            10
+          ]
+        ],
+        "id": 23064,
+        "location": [
+          3703
+        ],
+        "name": "Eebee Jinglepocket",
+        "popularity": 5,
+        "react": [
+          1,
+          null
+        ],
+        "stack": 5,
+        "stock": -1,
+        "tag": "Smokywood Pastures",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=17202/snowball"
+}

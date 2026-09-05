@@ -1,0 +1,80 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gronnstalker's Leggings Phase 3 Item Level 146 Binds when picked up Legs Mail 894 Armor +37 Agility +43 Stamina +28 Intellect Red Socket Socket Bonus: +2 Agility Durability 105 / 105 Classes: Hunter Requires Level 70 Equip: Improves critical strike rating by 19. Equip: Increases attack power by 106. Equip: Restores 11 mana per 5 sec. Gronnstalker's Armor (0/8) Gronnstalker's Chestguard Gronnstalker's Gloves Gronnstalker's Helmet Gronnstalker's Leggings Gronnstalker's Spaulders Gronnstalker's Belt Gronnstalker's Bracers Gronnstalker's Boots (2) Set : Increases the mana you gain from your Aspect of the Viper by an additional 5% of your Intellect. (4) Set : Increases the damage dealt by your Steady Shot ability by 10%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:47+00:00",
+  "inventory_slot": null,
+  "item_id": 31005,
+  "item_stats": {
+    "armor": 894,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 19.",
+        "stats": {
+          "crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 106.",
+        "stats": {
+          "attack_power": 106.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 11 mana per 5 sec.",
+        "stats": {
+          "mp5": 11.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 19.",
+      "Equip: Increases attack power by 106.",
+      "Equip: Restores 11 mana per 5 sec."
+    ],
+    "id": 31005,
+    "item_level": 146,
+    "name": "Gronnstalker's Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "socket_bonus": {
+      "agility": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 37.0,
+      "attack_power": 106.0,
+      "crit_rating": 19.0,
+      "intellect": 28.0,
+      "mp5": 11.0,
+      "stamina": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31005/gronnstalkers-leggings"
+  },
+  "name": "Gronnstalker's Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31005/gronnstalkers-leggings"
+}

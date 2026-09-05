@@ -1,0 +1,134 @@
+{
+  "bindings": [
+    {
+      "class": "Shaman",
+      "phase": "T5",
+      "spec": "Enhancement"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 30190,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "equipment_item_id": 30055,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 30185,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29535,
+            "name": "Nethercobra Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30192,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35490
+        },
+        {
+          "entity": {
+            "id": 34007,
+            "name": "Enchant Boots - Cat's Swiftness",
+            "type": "spell"
+          },
+          "equipment_item_id": 30039,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34007
+        },
+        {
+          "entity": {
+            "id": 27899,
+            "name": "Enchant Bracer - Brawn",
+            "type": "spell"
+          },
+          "equipment_item_id": 30091,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27899
+        },
+        {
+          "entity": {
+            "id": 33995,
+            "name": "Enchant Gloves - Major Strength",
+            "type": "spell"
+          },
+          "equipment_item_id": 30189,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33995
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 29994,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 32944,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27984
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 29996,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 27984
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Enhancement Shaman DPS in Phase 2",
+      "planner": "shaman/orc/A0YRJQAxUB9QBSAhBQETNTEVH_CBQHXuinwAfpkgXfoCAHVBgyB1Z4pZAF3bhWB16W04AF3bIF32QF36BkB1mgBd2yBd9ocgdfCKogBd24gAdVeE14kgdYts-wBd24oAde2EywsAdS0MAHVkDQBwng4AcsePAHUqhNSQAICwbVCRAHUsbVASAGyn"
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:04+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Enhancement Shaman DPS Best in Slot (BiS) Phase 2 Gear Guide - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/classes/shaman/enhancement/dps-bis-gear-pve-phase-2"
+}

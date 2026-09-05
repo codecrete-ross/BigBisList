@@ -1,0 +1,145 @@
+{
+  "bindings": [
+    {
+      "class": "Priest",
+      "phase": "T6",
+      "spec": "Shadow"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29191,
+            "name": "Glyph of Power",
+            "type": "item"
+          },
+          "equipment_item_id": 31064,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35447
+        },
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "equipment_item_id": 31070,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 31065,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30916,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 21870,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27917,
+            "name": "Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32586,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27917
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 31061,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32527,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32527,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25084,
+            "name": "Enchant Cloak - Subtlety",
+            "type": "spell"
+          },
+          "equipment_item_id": 32590,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25084
+        },
+        {
+          "entity": {
+            "id": 27982,
+            "name": "Enchant Weapon - Soulfrost",
+            "type": "spell"
+          },
+          "equipment_item_id": 32374,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Two Hand",
+          "spell_id": 27982
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Shadow Priest DPS in Phase 3",
+      "planner": "priest/undead/A0YRUAIwAT_1AyIFECUBEwUVUfCBQHlYincAZSUgfdcCAH5dg0B5XopOAH3EIH3EhWB5WW04AH3EIH3EQH3EBgB-AIdgeMR6jAB9xCB9xEB9xIhAVW6E2AB9xCB9xIkAf0ptDYogeVWEzQB9xIsAfw9tFIwAfw9tFA0AfuMOAHK6jwB_TmH8kAB-dm1OEgB1Hg"
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:30+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Shadow Priest DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/shadow-priest-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

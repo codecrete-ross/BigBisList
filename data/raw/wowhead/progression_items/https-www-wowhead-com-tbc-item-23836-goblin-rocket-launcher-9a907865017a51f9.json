@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Goblin Rocket Launcher Phase 1 Item Level 70 Binds when equipped Trinket +45 Stamina Requires Engineering (350) Requires Goblin Engineer Use: Fire a powerful rocket at the enemy that does 960 to 1440 damage and stuns them for 3 sec. This thing has quite a kick though... (2 Min Cooldown) Sell Price: 2 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:31+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 23836,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Fire a powerful rocket at the enemy that does 960 to 1440 damage and stuns them for 3 sec. This thing has quite a kick though... (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 23836,
+    "item_level": 70,
+    "name": "Goblin Rocket Launcher",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 45.0
+    },
+    "use_effects": [
+      "Use: Fire a powerful rocket at the enemy that does 960 to 1440 damage and stuns them for 3 sec. This thing has quite a kick though... (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher"
+  },
+  "name": "Goblin Rocket Launcher",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Rocket Launcher Phase 1 Item Level 70 Binds when equipped Trinket +45 Stamina Requires Engineering (350) Requires Goblin Engineer Use: Fire a powerful rocket at the enemy that does 960 to 1440 damage and stuns them for 3 sec. This thing has quite a kick though... (2 Min Cooldown) Sell Price: 2 25",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Engineering",
+      "raw_text": "Goblin Rocket Launcher Phase 1 Item Level 70 Binds when equipped Trinket +45 Stamina Requires Engineering (350) Requires Goblin Engineer Use: Fire a powerful rocket at the enemy that does 960 to 1440 damage and stuns them for 3 sec. This thing has quite a kick though... (2 Min Cooldown) Sell Price: 2 25",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher",
+      "specialization": "Goblin Engineer",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23836/goblin-rocket-launcher"
+}

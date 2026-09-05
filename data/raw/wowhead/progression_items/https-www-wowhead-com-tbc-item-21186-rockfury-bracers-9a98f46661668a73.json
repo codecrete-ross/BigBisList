@@ -1,0 +1,132 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Rockfury Bracers was considered a best-in-slot item for Balance Druids, Mages, Shadow Priests, Elemental Shamans and Warlocks that became available starting Phase 4 of WoW Classic. While equipped, this item increases damage and healing done by magical spells and effects by up to 27 and increases your spell hit rating by 8. This item is obtainable as a reward upon completion of the quest: Stalwart's Battlegear.",
+  "fetched_at": "2026-09-04T23:50:38+00:00",
+  "inventory_slot": null,
+  "item_id": 21186,
+  "item_stats": {
+    "armor": 48,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 27.",
+        "stats": {
+          "spell_power": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your spell hit rating by 8.",
+        "stats": {
+          "spell_hit_rating": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 27.",
+      "Equip: Increases your spell hit rating by 8."
+    ],
+    "id": 21186,
+    "item_level": 62,
+    "name": "Rockfury Bracers",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 8574,
+      "entity_name": "Stalwart's Battlegear",
+      "quest_id": 8574,
+      "source_url": "https://www.wowhead.com/tbc/item=21186/rockfury-bracers",
+      "type": "quest",
+      "zone": "Silithus"
+    },
+    "quality": "unknown",
+    "source_summary": "Quest: Stalwart's Battlegear",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 8574,
+        "entity_name": "Stalwart's Battlegear",
+        "quest_id": 8574,
+        "source_url": "https://www.wowhead.com/tbc/item=21186/rockfury-bracers",
+        "type": "quest",
+        "zone": "Silithus"
+      }
+    ],
+    "stats": {
+      "spell_hit_rating": 8.0,
+      "spell_power": 27.0,
+      "stamina": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21186/rockfury-bracers"
+  },
+  "name": "Rockfury Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8574,
+      "entity_name": "Stalwart's Battlegear",
+      "quest_id": 8574,
+      "source_url": "https://www.wowhead.com/tbc/item=21186/rockfury-bracers",
+      "type": "quest",
+      "zone": "Silithus"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 1377,
+        "category2": 1,
+        "id": 8574,
+        "itemchoices": [
+          [
+            21184,
+            1
+          ],
+          [
+            21185,
+            1
+          ],
+          [
+            21186,
+            1
+          ],
+          [
+            21189,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "Stalwart's Battlegear",
+        "popularity": 5,
+        "reprewards": [
+          [
+            609,
+            75
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "wflags": 1
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21186/rockfury-bracers"
+}

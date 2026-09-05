@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Ironshield Potion Item Level 73 Requires Level 60 Use: Increases armor by 2500 for 2 min. (2 Min Cooldown) Max Stack: 5 Sell Price: 70",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:08+00:00",
+  "inventory_slot": null,
+  "item_id": 22849,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases armor by 2500 for 2 min. (2 Min Cooldown) Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 22849,
+    "item_level": 73,
+    "name": "Ironshield Potion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases armor by 2500 for 2 min. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22849/ironshield-potion"
+  },
+  "name": "Ironshield Potion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22849/ironshield-potion"
+}

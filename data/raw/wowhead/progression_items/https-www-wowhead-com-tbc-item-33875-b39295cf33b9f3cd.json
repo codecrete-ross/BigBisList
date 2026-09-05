@@ -1,0 +1,46 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Recipe: Kibler's Bits Item Level 60 Binds when picked up Requires Cooking (300) Use: Teaches you how to cook Kibler's Bits. Sell Price: 50 Kibler's Bits Item Level 65 Requires Level 55 Use: Increases the Strength and Spirit of your pet by 20. Lasts for 30 min. \"Pet tested, hunter approved.\" Max Stack: 20 Sell Price: 1 50 Requires Buzzard Meat",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:09+00:00",
+  "inventory_slot": null,
+  "item_id": 33875,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cook Kibler's Bits.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Increases the Strength and Spirit of your pet by 20. Lasts for 30 min. \"Pet tested, hunter approved.\" Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 33875,
+    "item_level": 60,
+    "name": "Recipe: Kibler's Bits",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cook Kibler's Bits.",
+      "Use: Increases the Strength and Spirit of your pet by 20. Lasts for 30 min. \"Pet tested, hunter approved.\" Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33875"
+  },
+  "name": "Recipe: Kibler's Bits",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33875"
+}

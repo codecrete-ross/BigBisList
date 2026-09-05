@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:59+00:00",
+  "fetched_at": "2026-09-04T23:49:32+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -543,6 +543,53 @@
       "data_family": "bis_lists",
       "heading": "Best in Slot Shoulder Armor for Restoration Shaman in TBC Classic Phase 3",
       "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32585,
+                "name": "Swiftheal Mantle",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Swiftheal Mantle",
+            "Profession: Tailoring - BoP only"
+          ],
+          "entities": [
+            {
+              "id": 32585,
+              "name": "Swiftheal Mantle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle"
+            }
+          ],
+          "entity_id": 32585,
+          "entity_name": "Swiftheal Mantle",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle",
+          "item_id": 32585,
+          "item_name": "Swiftheal Mantle",
+          "item_url": "https://www.wowhead.com/tbc/item=32585/swiftheal-mantle",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "profession": "Tailoring",
+              "raw_text": "Profession: Tailoring - BoP only",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/shaman-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "profession"
+            }
+          ],
+          "rank_label": "Option",
+          "source_links": [],
+          "source_text": "Profession: Tailoring - BoP only"
+        },
         {
           "cell_entities": [
             [],
@@ -1941,13 +1988,19 @@
                 "name": "Gloves of Centering",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=28520/gloves-of-centering"
+              },
+              {
+                "id": 28521,
+                "name": "Mitts of the Treemender",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28521/mitts-of-the-treemender"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Gloves of Centering",
+            "Gloves of Centering Mitts of the Treemender",
             "Drop: Maiden of Virtue (Karazhan)"
           ],
           "entities": [
@@ -1956,6 +2009,12 @@
               "name": "Gloves of Centering",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=28520/gloves-of-centering"
+            },
+            {
+              "id": 28521,
+              "name": "Mitts of the Treemender",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=28521/mitts-of-the-treemender"
             }
           ],
           "entity_id": 28520,
@@ -1972,43 +2031,6 @@
               "text": "Maiden of Virtue"
             }
           ],
-          "source_text": "Drop: Maiden of Virtue (Karazhan)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28521,
-                "name": "Mitts of the Treemender",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28521/mitts-of-the-treemender"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Mitts of the Treemender",
-            "Drop: Maiden of Virtue (Karazhan)"
-          ],
-          "entities": [
-            {
-              "id": 28521,
-              "name": "Mitts of the Treemender",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28521/mitts-of-the-treemender"
-            }
-          ],
-          "entity_id": 28521,
-          "entity_name": "Mitts of the Treemender",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28521/mitts-of-the-treemender",
-          "item_id": 28521,
-          "item_name": "Mitts of the Treemender",
-          "item_url": "https://www.wowhead.com/tbc/item=28521/mitts-of-the-treemender",
-          "rank_label": "Option",
-          "source_links": [],
           "source_text": "Drop: Maiden of Virtue (Karazhan)"
         },
         {
@@ -2523,7 +2545,7 @@
             [
               {
                 "id": 30893,
-                "name": "Sun-Touched Chain Leggings",
+                "name": "Sun-touched Chain Leggings",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30893/sun-touched-chain-leggings"
               }
@@ -2532,23 +2554,23 @@
           ],
           "cells": [
             "Option",
-            "Sun-Touched Chain Leggings",
+            "Sun-touched Chain Leggings",
             "Drop: Kaz'rogal (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30893,
-              "name": "Sun-Touched Chain Leggings",
+              "name": "Sun-touched Chain Leggings",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30893/sun-touched-chain-leggings"
             }
           ],
           "entity_id": 30893,
-          "entity_name": "Sun-Touched Chain Leggings",
+          "entity_name": "Sun-touched Chain Leggings",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30893/sun-touched-chain-leggings",
           "item_id": 30893,
-          "item_name": "Sun-Touched Chain Leggings",
+          "item_name": "Sun-touched Chain Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=30893/sun-touched-chain-leggings",
           "rank_label": "Option",
           "source_links": [
@@ -2788,48 +2810,6 @@
             [],
             [
               {
-                "id": 30873,
-                "name": "Stillwater Boots",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30873/stillwater-boots"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Stillwater Boots",
-            "Drop: Rage Winterchill (Hyjal Summit)"
-          ],
-          "entities": [
-            {
-              "id": 30873,
-              "name": "Stillwater Boots",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30873/stillwater-boots"
-            }
-          ],
-          "entity_id": 30873,
-          "entity_name": "Stillwater Boots",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30873/stillwater-boots",
-          "item_id": 30873,
-          "item_name": "Stillwater Boots",
-          "item_url": "https://www.wowhead.com/tbc/item=30873/stillwater-boots",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
-              "text": "Rage Winterchill"
-            }
-          ],
-          "source_text": "Drop: Rage Winterchill (Hyjal Summit)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 32609,
                 "name": "Boots of the Divine Light",
                 "type": "item",
@@ -2876,7 +2856,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "BiS",
             "Gold-Leaf Wildboots",
             "Drop: Doom Lord Kazzak (World Boss)"
           ],
@@ -2895,7 +2875,7 @@
           "item_id": 30737,
           "item_name": "Gold-Leaf Wildboots",
           "item_url": "https://www.wowhead.com/tbc/item=30737/gold-leaf-wildboots",
-          "rank_label": "Option",
+          "rank_label": "BiS",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=18728/doom-lord-kazzak",
@@ -2945,6 +2925,48 @@
             }
           ],
           "source_text": "Drop: Leotheras the Blind (Serpentshrine Cavern)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30873,
+                "name": "Stillwater Boots",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30873/stillwater-boots"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Stillwater Boots",
+            "Drop: Rage Winterchill (Hyjal Summit)"
+          ],
+          "entities": [
+            {
+              "id": 30873,
+              "name": "Stillwater Boots",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30873/stillwater-boots"
+            }
+          ],
+          "entity_id": 30873,
+          "entity_name": "Stillwater Boots",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30873/stillwater-boots",
+          "item_id": 30873,
+          "item_name": "Stillwater Boots",
+          "item_url": "https://www.wowhead.com/tbc/item=30873/stillwater-boots",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
+              "text": "Rage Winterchill"
+            }
+          ],
+          "source_text": "Drop: Rage Winterchill (Hyjal Summit)"
         }
       ],
       "slot": "Feet"
@@ -2953,6 +2975,48 @@
       "data_family": "bis_lists",
       "heading": "Best in Slot Feet Armor for Restoration Shaman in TBC Classic Phase 3",
       "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32352,
+                "name": "Naturewarden's Treads",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32352/naturewardens-treads"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Naturewarden's Treads",
+            "Drop: Essence of Anger (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32352,
+              "name": "Naturewarden's Treads",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32352/naturewardens-treads"
+            }
+          ],
+          "entity_id": 32352,
+          "entity_name": "Naturewarden's Treads",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32352/naturewardens-treads",
+          "item_id": 32352,
+          "item_name": "Naturewarden's Treads",
+          "item_url": "https://www.wowhead.com/tbc/item=32352/naturewardens-treads",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23420/essence-of-anger",
+              "text": "Essence of Anger"
+            }
+          ],
+          "source_text": "Drop: Essence of Anger (Black Temple)"
+        },
         {
           "cell_entities": [
             [],
@@ -3746,7 +3810,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
-              "reputation": "Thrallmar / Honor Hold",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/shaman-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
+              "reputation": "Honor Hold",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/shaman-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
               "standing": "Revered",
@@ -3989,48 +4063,6 @@
             [],
             [
               {
-                "id": 38288,
-                "name": "Direbrew Hops",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=38288/direbrew-hops"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Direbrew Hops",
-            "Drop: Coren Direbrew (Brewfest Seasonal Event)"
-          ],
-          "entities": [
-            {
-              "id": 38288,
-              "name": "Direbrew Hops",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=38288/direbrew-hops"
-            }
-          ],
-          "entity_id": 38288,
-          "entity_name": "Direbrew Hops",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=38288/direbrew-hops",
-          "item_id": 38288,
-          "item_name": "Direbrew Hops",
-          "item_url": "https://www.wowhead.com/tbc/item=38288/direbrew-hops",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
-              "text": "Coren Direbrew"
-            }
-          ],
-          "source_text": "Drop: Coren Direbrew (Brewfest Seasonal Event)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 28190,
                 "name": "Scarab of the Infinite Cycle",
                 "type": "item",
@@ -4067,14 +4099,7 @@
             }
           ],
           "source_text": "Drop: Aeonus (The Black Morass)"
-        }
-      ],
-      "slot": "Trinket"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Trinkets for Restoration Shaman in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -4111,7 +4136,14 @@
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Drop: Opera Event (Karazhan)"
-        },
+        }
+      ],
+      "slot": "Trinket"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Trinkets for Restoration Shaman in TBC Classic Phase 3",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -5502,6 +5534,6 @@
       "slot": "Totem"
     }
   ],
-  "title": "Burning Crusade Classic Restoration Shaman Healing Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Restoration Shaman Healing Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/shaman-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

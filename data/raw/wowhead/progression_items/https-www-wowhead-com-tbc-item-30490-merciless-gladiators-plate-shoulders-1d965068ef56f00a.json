@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Merciless Gladiator's Plate Shoulders Phase 2 Item Level 136 Binds when picked up Shoulder Plate 1278 Armor +29 Strength +51 Stamina Red Socket Yellow Socket Socket Bonus: +3 Strength Durability 100 / 100 Classes: Warrior Requires Level 70 Equip: Improves critical strike rating by 27. Equip: Improves your resilience rating by 20. Gladiator's Battlegear (0/5) Gladiator's Plate Chestpiece Gladiator's Plate Gauntlets Gladiator's Plate Helm Gladiator's Plate Legguards Gladiator's Plate Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Intercept ability by 5 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:14+00:00",
+  "inventory_slot": null,
+  "item_id": 30490,
+  "item_stats": {
+    "armor": 1278,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 27.",
+        "stats": {
+          "crit_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 20.",
+        "stats": {
+          "resilience_rating": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 27.",
+      "Equip: Improves your resilience rating by 20."
+    ],
+    "id": 30490,
+    "item_level": 136,
+    "name": "Merciless Gladiator's Plate Shoulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "socket_bonus": {
+      "strength": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 27.0,
+      "resilience_rating": 20.0,
+      "stamina": 51.0,
+      "strength": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30490/merciless-gladiators-plate-shoulders"
+  },
+  "name": "Merciless Gladiator's Plate Shoulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30490/merciless-gladiators-plate-shoulders"
+}

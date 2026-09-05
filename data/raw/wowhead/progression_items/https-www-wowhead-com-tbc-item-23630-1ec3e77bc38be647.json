@@ -1,0 +1,76 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Plans: Khorium Champion Item Level 73 Requires Blacksmithing (365) Use: Teaches you how to make a Khorium Champion. Sell Price: 12 Khorium Champion Item Level 105 Binds when equipped Two-Hand Sword 286 - 430 Damage Speed 3.30 (108.48 damage per second) +50 Strength Durability 120 / 120 Requires Level 70 Equip: Improves hit rating by 37. Chance on hit: Heal self for 270 to 450 and increases Strength by 120 for 30 sec. Sell Price: 13 52 2 Requires Khorium Bar (20), Hardened Adamantite Bar (2), Primal Might (6), Primal Nether (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:28+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 23630,
+  "item_stats": {
+    "binding": "unknown",
+    "dps": 108.48,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Khorium Champion.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves hit rating by 37.",
+        "stats": {
+          "hit_rating": 37.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Chance on hit: Heal self for 270 to 450 and increases Strength by 120 for 30 sec.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 37.",
+      "Chance on hit: Heal self for 270 to 450 and increases Strength by 120 for 30 sec."
+    ],
+    "id": 23630,
+    "item_level": 73,
+    "name": "Plans: Khorium Champion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 37.0,
+      "strength": 50.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Khorium Champion."
+    ],
+    "weapon_max_damage": 430,
+    "weapon_min_damage": 286,
+    "weapon_speed": 3.3,
+    "weapon_subtype": "Sword",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23630"
+  },
+  "name": "Plans: Khorium Champion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Khorium Champion Item Level 73 Requires Blacksmithing (365) Use: Teaches you how to make a Khorium Champion. Sell Price: 12 Khorium Champion Item Level 105 Binds when equipped Two-Hand Sword 286 - 430 Damage Speed 3.30 (108.48 damage per second) +50 Strength Durability 120 / 120 Requires Level 70 Equip: Improves hit rating by 37. Chance on hit: Heal self for 270 to 450 and increases Strength by 120 for 30 sec. Sell Price: 13 52 2 Requires Khorium Bar (20), Hardened Adamantite Bar (2), Primal Might (6), Primal Nether (2)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=23630",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23630"
+}

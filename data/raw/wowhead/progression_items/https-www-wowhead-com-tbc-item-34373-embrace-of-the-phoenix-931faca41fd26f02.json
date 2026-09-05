@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Embrace of the Phoenix Phase 5 Item Level 159 Binds when picked up Chest Mail 1110 Armor +44 Agility +43 Stamina +30 Intellect Red Socket Red Socket Red Socket Socket Bonus: +8 Attack Power Durability 140 / 140 Requires Level 70 Requires Leatherworking (350) Equip: Improves haste rating by 44. Equip: Increases attack power by 104. Sell Price: 9 44 4",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:46+00:00",
+  "inventory_slot": null,
+  "item_id": 34373,
+  "item_stats": {
+    "armor": 1110,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves haste rating by 44.",
+        "stats": {
+          "haste_rating": 44.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 104.",
+        "stats": {
+          "attack_power": 104.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 44.",
+      "Equip: Increases attack power by 104."
+    ],
+    "id": 34373,
+    "item_level": 159,
+    "name": "Embrace of the Phoenix",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 44.0,
+      "attack_power": 104.0,
+      "haste_rating": 44.0,
+      "intellect": 30.0,
+      "stamina": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34373/embrace-of-the-phoenix"
+  },
+  "name": "Embrace of the Phoenix",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Embrace of the Phoenix Phase 5 Item Level 159 Binds when picked up Chest Mail 1110 Armor +44 Agility +43 Stamina +30 Intellect Red Socket Red Socket Red Socket Socket Bonus: +8 Attack Power Durability 140 / 140 Requires Level 70 Requires Leatherworking (350) Equip: Improves haste rating by 44. Equip: Increases attack power by 104. Sell Price: 9 44 4",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34373/embrace-of-the-phoenix",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34373/embrace-of-the-phoenix"
+}

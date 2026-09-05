@@ -13,11 +13,13 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertTrue(result.ok, result.errors)
         self.assertEqual(result.summary["classes"], 9)
         self.assertEqual(result.summary["specs"], 28)
-        self.assertEqual(result.summary["enchant_effects"], 65)
+        self.assertEqual(result.summary["enchant_effects"], 69)
         self.assertEqual(result.summary["coverage"], "scraped_snapshot")
 
     def test_phase_schedule_metadata_tracks_current_anniversary_phase(self):
-        phases = {phase["key"]: phase for phase in canonical_json("phases")["phases"]}
+        definitions = canonical_json("phases")
+        phases = {phase["key"]: phase for phase in definitions["schedules"][definitions["active_schedule"]]["phase_starts"]}
+        self.assertTrue(all("starts_at" not in phase and "starts_at_epoch" not in phase for phase in definitions["phases"]))
 
         self.assertEqual(phases["PR"]["starts_at_epoch"], 0)
         self.assertEqual(phases["T4"]["starts_at"], "2026-02-19T23:00:00Z")
@@ -27,8 +29,7 @@ class CanonicalDataTests(unittest.TestCase):
         self.assertEqual(phases["T6"]["starts_at"], "2026-08-27T22:00:00Z")
         self.assertEqual(phases["T6"]["starts_at_epoch"], 1787868000)
         for phase_key in ["ZA", "SWP"]:
-            self.assertNotIn("starts_at", phases[phase_key])
-            self.assertNotIn("starts_at_epoch", phases[phase_key])
+            self.assertNotIn(phase_key, phases)
 
     def test_feral_dps_phase_2_trinket_regressions(self):
         trinkets = []
@@ -117,6 +118,7 @@ class CanonicalDataTests(unittest.TestCase):
                     row["class"],
                     row["spec"],
                     row["phase"],
+                    row.get("content_phase"),
                     row["slot"],
                     entry["item_id"],
                     entry["context"],

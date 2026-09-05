@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Leather Gauntlets of the Sun Phase 5 Item Level 159 Binds when equipped Hands Leather 312 Armor +25 Stamina +26 Intellect +30 Spirit Blue Socket Red Socket Socket Bonus: +3 Spirit Durability 40 / 40 Requires Level 70 Equip: Improves spell haste rating by 38. Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects. Sell Price: 3 91 93",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:46+00:00",
+  "inventory_slot": null,
+  "item_id": 34372,
+  "item_stats": {
+    "armor": 312,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 84.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 84 and damage done by up to 28 for all magical spells and effects."
+    ],
+    "id": 34372,
+    "item_level": 159,
+    "name": "Leather Gauntlets of the Sun",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spirit": 3.0
+    },
+    "sockets": [
+      "blue",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 84.0,
+      "intellect": 26.0,
+      "spirit": 30.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34372/leather-gauntlets-of-the-sun"
+  },
+  "name": "Leather Gauntlets of the Sun",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34372/leather-gauntlets-of-the-sun"
+}

@@ -1,0 +1,81 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cyclone Chestguard Phase 1 Item Level 120 Binds when picked up Chest Mail 846 Armor +33 Stamina +32 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Spell Hit Rating Durability 140 / 140 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 20. Equip: Increases damage and healing done by magical spells and effects by up to 39. Equip: Restores 8 mana per 5 sec. Cyclone Regalia (0/5) Cyclone Chestguard Cyclone Faceguard Cyclone Handguards Cyclone Legguards Cyclone Shoulderguards (2) Set : Your Wrath of Air Totem ability grants an additional 20 spell damage. (4) Set : Your offensive spell critical strikes have a chance to reduce the base mana cost of your next spell by 270. (Proc chance: 11%)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:13+00:00",
+  "inventory_slot": null,
+  "item_id": 29033,
+  "item_stats": {
+    "armor": 846,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 20.",
+        "stats": {
+          "spell_crit_rating": 20.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+        "stats": {
+          "spell_power": 39.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 20.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+      "Equip: Restores 8 mana per 5 sec."
+    ],
+    "id": 29033,
+    "item_level": 120,
+    "name": "Cyclone Chestguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "socket_bonus": {
+      "spell_hit_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 32.0,
+      "mp5": 8.0,
+      "spell_crit_rating": 20.0,
+      "spell_power": 39.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29033/cyclone-chestguard"
+  },
+  "name": "Cyclone Chestguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29033/cyclone-chestguard"
+}

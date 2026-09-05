@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crimson Sun Phase 1 Item Level 130 Binds when picked up Unique-Equipped +24 Attack Power Requires Jewelcrafting (360) \"Matches a Red Socket. Socketing this gem causes the item to become Soulbound.\" Sell Price: 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:11:07+00:00",
+  "inventory_slot": null,
+  "item_id": 33131,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 33131,
+    "item_level": 130,
+    "name": "Crimson Sun",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33131"
+  },
+  "name": "Crimson Sun",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Crimson Sun Phase 1 Item Level 130 Binds when picked up Unique-Equipped +24 Attack Power Requires Jewelcrafting (360) \"Matches a Red Socket. Socketing this gem causes the item to become Soulbound.\" Sell Price: 3",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=33131",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/33131",
+  "url": "https://www.wowhead.com/tbc/item=33131"
+}

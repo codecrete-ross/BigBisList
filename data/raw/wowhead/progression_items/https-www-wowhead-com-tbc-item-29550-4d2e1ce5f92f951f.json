@@ -1,0 +1,50 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Tome of Conjure Water IX Item Level 70 Classes: Mage Requires Level 70 Use: Teaches Conjure Water (Rank 9). Conjures 10 skin of glacier water, providing the mage and his allies with something to drink. Conjured items disappear if logged out for more than 15 minutes. Sell Price: 1 Conjured Glacier Water Item Level 75 Conjured Item Requires Level 65 Use: Restores 7200 mana over 30 sec. Must remain seated while drinking. Max Stack: 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:04+00:00",
+  "inventory_slot": null,
+  "item_id": 29550,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches Conjure Water (Rank 9). Conjures 10 skin of glacier water, providing the mage and his allies with something to drink. Conjured items disappear if logged out for more than 15 minutes.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Restores 7200 mana over 30 sec. Must remain seated while drinking. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 29550,
+    "item_level": 70,
+    "name": "Tome of Conjure Water IX",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Mage"
+      ]
+    },
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches Conjure Water (Rank 9). Conjures 10 skin of glacier water, providing the mage and his allies with something to drink. Conjured items disappear if logged out for more than 15 minutes.",
+      "Use: Restores 7200 mana over 30 sec. Must remain seated while drinking. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29550"
+  },
+  "name": "Tome of Conjure Water IX",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29550"
+}

@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cloak of the Pit Stalker Phase 1 Item Level 125 Binds when picked up Back 105 Armor +28 Stamina Requires Level 70 Equip: Improves critical strike rating by 24. Equip: Increases attack power by 56. Sell Price: 3 97 40",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:55+00:00",
+  "inventory_slot": null,
+  "item_id": 28777,
+  "item_stats": {
+    "armor": 105,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 24.",
+        "stats": {
+          "crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 56.",
+        "stats": {
+          "attack_power": 56.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 24.",
+      "Equip: Increases attack power by 56."
+    ],
+    "id": 28777,
+    "item_level": 125,
+    "name": "Cloak of the Pit Stalker",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "attack_power": 56.0,
+      "crit_rating": 24.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28777/cloak-of-the-pit-stalker"
+  },
+  "name": "Cloak of the Pit Stalker",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28777/cloak-of-the-pit-stalker"
+}

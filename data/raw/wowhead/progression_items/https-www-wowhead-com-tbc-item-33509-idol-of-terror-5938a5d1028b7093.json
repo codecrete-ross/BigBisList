@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Idol of Terror Phase 1 Item Level 128 Binds when picked up Unique Relic Idol Requires Level 70 Equip: Your Mangle ability has a chance to grant 65 agility for 10 sec. (Proc chance: 85%, 10s cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:50+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 33509,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your Mangle ability has a chance to grant 65 agility for 10 sec. (Proc chance: 85%, 10s cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your Mangle ability has a chance to grant 65 agility for 10 sec. (Proc chance: 85%, 10s cooldown)"
+    ],
+    "id": 33509,
+    "item_level": 128,
+    "name": "Idol of Terror",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Relic",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33509/idol-of-terror"
+  },
+  "name": "Idol of Terror",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33509/idol-of-terror"
+}

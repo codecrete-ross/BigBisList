@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Master Assassin Wristwraps Phase 3 Item Level 128 Binds when picked up Wrist Leather 177 Armor +17 Agility +22 Stamina Yellow Socket Socket Bonus: +2 Critical Strike Rating Durability 40 / 40 Requires Level 70 Equip: Improves critical strike rating by 18. Equip: Increases attack power by 50.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:54+00:00",
+  "inventory_slot": null,
+  "item_id": 33540,
+  "item_stats": {
+    "armor": 177,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 18.",
+        "stats": {
+          "crit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 50.",
+        "stats": {
+          "attack_power": 50.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 18.",
+      "Equip: Increases attack power by 50."
+    ],
+    "id": 33540,
+    "item_level": 128,
+    "name": "Master Assassin Wristwraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 17.0,
+      "attack_power": 50.0,
+      "crit_rating": 18.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33540/master-assassin-wristwraps"
+  },
+  "name": "Master Assassin Wristwraps",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33540/master-assassin-wristwraps"
+}

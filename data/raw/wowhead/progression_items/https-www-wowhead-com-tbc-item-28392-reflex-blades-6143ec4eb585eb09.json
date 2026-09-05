@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Reflex Blades Phase 1 Item Level 115 Binds when picked up Main Hand Fist Weapon 135 - 252 Damage Speed 2.70 (71.67 damage per second) +13 Stamina Durability 65 / 65 Requires Level 70 Equip: Improves hit rating by 16. Equip: Increases attack power by 32. Sell Price: 8 78 26",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:19+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 28392,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 71.67,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 16.",
+        "stats": {
+          "hit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 32.",
+        "stats": {
+          "attack_power": 32.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 16.",
+      "Equip: Increases attack power by 32."
+    ],
+    "id": 28392,
+    "item_level": 115,
+    "name": "Reflex Blades",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 32.0,
+      "hit_rating": 16.0,
+      "stamina": 13.0
+    },
+    "weapon_max_damage": 252,
+    "weapon_min_damage": 135,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Fist Weapon",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28392/reflex-blades"
+  },
+  "name": "Reflex Blades",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28392/reflex-blades"
+}

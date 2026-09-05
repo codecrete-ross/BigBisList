@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Voidheart Gloves Phase 1 Item Level 120 Binds when picked up Hands Cloth 126 Armor +34 Stamina +28 Intellect Durability 35 / 35 Classes: Warlock Requires Level 70 Equip: Improves spell critical strike rating by 22. Equip: Increases damage and healing done by magical spells and effects by up to 35. Voidheart Raiment (0/5) Voidheart Crown Voidheart Gloves Voidheart Leggings Voidheart Mantle Voidheart Robe (2) Set : Your shadow damage spells have a chance to grant you 135 bonus shadow damage for 15 sec. (Proc chance: 5%) (2) Set : Your fire damage spells have a chance to grant you 135 bonus fire damage for 15 sec. (Proc chance: 5%) (4) Set : Increases the duration of your Corruption and Immolate abilities by 3 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:07+00:00",
+  "inventory_slot": null,
+  "item_id": 28968,
+  "item_stats": {
+    "armor": 126,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 22.",
+        "stats": {
+          "spell_crit_rating": 22.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 35.",
+        "stats": {
+          "spell_power": 35.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 22.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 35."
+    ],
+    "id": 28968,
+    "item_level": 120,
+    "name": "Voidheart Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "spell_crit_rating": 22.0,
+      "spell_power": 35.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28968/voidheart-gloves"
+  },
+  "name": "Voidheart Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28968/voidheart-gloves"
+}

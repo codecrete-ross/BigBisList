@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pendant of the Violet Eye Phase 1 Item Level 115 Binds when picked up Unique Trinket +40 Intellect Requires Level 70 Use: Each spell cast within 20 seconds will grant a stacking bonus of 21 mana regen per 5 sec. Expires after 20 seconds. Abilities with no mana cost will not trigger this trinket. (2 Min Cooldown) Sell Price: 9 11 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:47+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28727,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Each spell cast within 20 seconds will grant a stacking bonus of 21 mana regen per 5 sec. Expires after 20 seconds. Abilities with no mana cost will not trigger this trinket. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 28727,
+    "item_level": 115,
+    "name": "Pendant of the Violet Eye",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "intellect": 40.0
+    },
+    "use_effects": [
+      "Use: Each spell cast within 20 seconds will grant a stacking bonus of 21 mana regen per 5 sec. Expires after 20 seconds. Abilities with no mana cost will not trigger this trinket. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28727/pendant-of-the-violet-eye"
+  },
+  "name": "Pendant of the Violet Eye",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28727/pendant-of-the-violet-eye"
+}

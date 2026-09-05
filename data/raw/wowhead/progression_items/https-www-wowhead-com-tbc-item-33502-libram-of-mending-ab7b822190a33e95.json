@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Libram of Mending Phase 4 Item Level 128 Binds when picked up Unique Relic Libram Requires Level 70 Equip: Your Holy Light spell grants 22 mana per 5 sec. for 30 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:49+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 33502,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your Holy Light spell grants 22 mana per 5 sec. for 30 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your Holy Light spell grants 22 mana per 5 sec. for 30 sec."
+    ],
+    "id": 33502,
+    "item_level": 128,
+    "name": "Libram of Mending",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Relic",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33502/libram-of-mending"
+  },
+  "name": "Libram of Mending",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33502/libram-of-mending"
+}

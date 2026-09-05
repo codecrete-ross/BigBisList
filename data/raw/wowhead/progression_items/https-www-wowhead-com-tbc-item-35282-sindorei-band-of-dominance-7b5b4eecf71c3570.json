@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sin'dorei Band of Dominance Phase 5 Item Level 141 Binds when picked up Unique Finger +22 Stamina +15 Intellect Requires Level 70 Equip: Improves spell critical strike rating by 28. Equip: Improves your resilience rating by 15. Equip: Increases damage and healing done by magical spells and effects by up to 34. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:44+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 35282,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 28.",
+        "stats": {
+          "spell_crit_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 15.",
+        "stats": {
+          "resilience_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+        "stats": {
+          "spell_power": 34.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 28.",
+      "Equip: Improves your resilience rating by 15.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+    ],
+    "id": 35282,
+    "item_level": 141,
+    "name": "Sin'dorei Band of Dominance",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "resilience_rating": 15.0,
+      "spell_crit_rating": 28.0,
+      "spell_power": 34.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35282/sindorei-band-of-dominance"
+  },
+  "name": "Sin'dorei Band of Dominance",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35282/sindorei-band-of-dominance"
+}

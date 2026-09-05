@@ -1,0 +1,156 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dark Storm Gauntlets was considered a best-in-slot item for Balance Druids, Mages, Shadow Priests, Elemental Shamans and Warlocks that became available starting Phase 5 of WoW Classic. While equipped, this item increases damage and healing done by magical spells and effects by up to 37 but also increases your spell hit rating by 8. This item is obtainable by defeating C'Thun within Ahn'Qiraj.",
+  "fetched_at": "2026-09-04T23:50:39+00:00",
+  "inventory_slot": null,
+  "item_id": 21585,
+  "item_stats": {
+    "armor": 95,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 37.",
+        "stats": {
+          "spell_power": 37.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your spell hit rating by 8.",
+        "stats": {
+          "spell_hit_rating": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 37.",
+      "Equip: Increases your spell hit rating by 8."
+    ],
+    "id": 21585,
+    "item_level": 88,
+    "name": "Dark Storm Gauntlets",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 82,
+      "drop_percent": 16.7,
+      "entity_id": 15727,
+      "entity_name": "C'Thun",
+      "out_of": 491,
+      "source_url": "https://www.wowhead.com/tbc/item=21585/dark-storm-gauntlets",
+      "type": "drop",
+      "zone": "Ahn'Qiraj"
+    },
+    "quality": "unknown",
+    "required_level": 60,
+    "source_summary": "Drop: C'Thun (Ahn'Qiraj) 16.7%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 82,
+        "drop_percent": 16.7,
+        "entity_id": 15727,
+        "entity_name": "C'Thun",
+        "out_of": 491,
+        "source_url": "https://www.wowhead.com/tbc/item=21585/dark-storm-gauntlets",
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
+      }
+    ],
+    "stats": {
+      "intellect": 15.0,
+      "spell_hit_rating": 8.0,
+      "spell_power": 37.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21585/dark-storm-gauntlets"
+  },
+  "name": "Dark Storm Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 82,
+      "drop_percent": 16.7,
+      "entity_id": 15727,
+      "entity_name": "C'Thun",
+      "out_of": 491,
+      "source_url": "https://www.wowhead.com/tbc/item=21585/dark-storm-gauntlets",
+      "type": "drop",
+      "zone": "Ahn'Qiraj"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 82,
+        "id": 15727,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 82,
+                "outof": 491
+              },
+              "9": {
+                "count": 82,
+                "outof": 491
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 82,
+            "outof": 491
+          },
+          "9": {
+            "count": 82,
+            "outof": 491
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "C'Thun",
+        "outof": 491,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21585/dark-storm-gauntlets"
+}

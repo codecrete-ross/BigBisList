@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of the Ranger-General Phase 2 Item Level 138 Binds when picked up Unique Finger +27 Stamina Requires Level 70 Equip: Improves hit rating by 18. Equip: Improves critical strike rating by 28. Equip: Increases attack power by 56. \"This ring was formerly held by Sylvanas Windrunner....\" Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:22+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 29997,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 18.",
+        "stats": {
+          "hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 28.",
+        "stats": {
+          "crit_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 56. \"This ring was formerly held by Sylvanas Windrunner....\"",
+        "stats": {
+          "attack_power": 56.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 18.",
+      "Equip: Improves critical strike rating by 28.",
+      "Equip: Increases attack power by 56. \"This ring was formerly held by Sylvanas Windrunner....\""
+    ],
+    "id": 29997,
+    "item_level": 138,
+    "name": "Band of the Ranger-General",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 56.0,
+      "crit_rating": 28.0,
+      "hit_rating": 18.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general"
+  },
+  "name": "Band of the Ranger-General",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general"
+}

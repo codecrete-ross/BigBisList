@@ -1,0 +1,83 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Cobrascale Gloves Item Level 73 Requires Leatherworking (365) Use: Teaches you how to make Cobrascale Gloves. Sell Price: 6 Cobrascale Gloves Item Level 105 Binds when equipped Hands Leather 208 Armor +33 Stamina Durability 40 / 40 Requires Level 70 Equip: Improves hit rating by 20. Equip: Improves critical strike rating by 25. Equip: Increases attack power by 50. Sell Price: 2 70 64 Requires Heavy Knothide Leather (4), Cobra Scales (8), Primal Air (12), Primal Shadow (12), Primal Nether",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:06+00:00",
+  "inventory_slot": null,
+  "item_id": 29724,
+  "item_stats": {
+    "armor": 208,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make Cobrascale Gloves.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves hit rating by 20.",
+        "stats": {
+          "hit_rating": 20.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 25.",
+        "stats": {
+          "crit_rating": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 50.",
+        "stats": {
+          "attack_power": 50.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 20.",
+      "Equip: Improves critical strike rating by 25.",
+      "Equip: Increases attack power by 50."
+    ],
+    "id": 29724,
+    "item_level": 73,
+    "name": "Pattern: Cobrascale Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "attack_power": 50.0,
+      "crit_rating": 25.0,
+      "hit_rating": 20.0,
+      "stamina": 33.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make Cobrascale Gloves."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29724"
+  },
+  "name": "Pattern: Cobrascale Gloves",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Cobrascale Gloves Item Level 73 Requires Leatherworking (365) Use: Teaches you how to make Cobrascale Gloves. Sell Price: 6 Cobrascale Gloves Item Level 105 Binds when equipped Hands Leather 208 Armor +33 Stamina Durability 40 / 40 Requires Level 70 Equip: Improves hit rating by 20. Equip: Improves critical strike rating by 25. Equip: Increases attack power by 50. Sell Price: 2 70 64 Requires Heavy Knothide Leather (4), Cobra Scales (8), Primal Air (12), Primal Shadow (12), Primal Nether",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=29724",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29724"
+}

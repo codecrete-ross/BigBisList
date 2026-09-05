@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Chestplate Phase 2 Item Level 133 Binds when picked up Chest Mail 934 Armor +41 Strength +32 Agility +46 Stamina +28 Intellect Red Socket Blue Socket Yellow Socket Socket Bonus: +4 Critical Strike Rating Durability 140 / 140 Classes: Shaman Requires Level 70 Equip: Improves hit rating by 19. Cataclysm Harness (0/5) Cataclysm Chestplate Cataclysm Gauntlets Cataclysm Helm Cataclysm Legplates Cataclysm Shoulderplates (2) Set : Your melee attacks have a chance to reduce the cast time of your next Lesser Healing Wave by 1.5 sec. (Proc chance: 2%) (4) Set : You gain 5% additional haste from your Flurry ability.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:52+00:00",
+  "inventory_slot": null,
+  "item_id": 30185,
+  "item_stats": {
+    "armor": 934,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 19.",
+        "stats": {
+          "hit_rating": 19.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 19."
+    ],
+    "id": 30185,
+    "item_level": 133,
+    "name": "Cataclysm Chestplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 32.0,
+      "hit_rating": 19.0,
+      "intellect": 28.0,
+      "stamina": 46.0,
+      "strength": 41.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30185/cataclysm-chestplate"
+  },
+  "name": "Cataclysm Chestplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30185/cataclysm-chestplate"
+}

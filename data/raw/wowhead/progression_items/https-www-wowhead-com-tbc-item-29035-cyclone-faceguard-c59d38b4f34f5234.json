@@ -1,0 +1,77 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cyclone Faceguard Phase 1 Item Level 120 Binds when picked up Head Mail 687 Armor +30 Stamina +31 Intellect Meta Socket Yellow Socket Socket Bonus: +5 Spell Damage and Healing Durability 85 / 85 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 25. Equip: Increases damage and healing done by magical spells and effects by up to 39. Equip: Restores 8 mana per 5 sec. Cyclone Regalia (0/5) Cyclone Chestguard Cyclone Faceguard Cyclone Handguards Cyclone Legguards Cyclone Shoulderguards (2) Set : Your Wrath of Air Totem ability grants an additional 20 spell damage. (4) Set : Your offensive spell critical strikes have a chance to reduce the base mana cost of your next spell by 270. (Proc chance: 11%)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:13+00:00",
+  "inventory_slot": null,
+  "item_id": 29035,
+  "item_stats": {
+    "armor": 687,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 25.",
+        "stats": {
+          "spell_crit_rating": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+        "stats": {
+          "spell_power": 39.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 8 mana per 5 sec.",
+        "stats": {
+          "mp5": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 25.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+      "Equip: Restores 8 mana per 5 sec."
+    ],
+    "id": 29035,
+    "item_level": 120,
+    "name": "Cyclone Faceguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "sockets": [
+      "meta",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 31.0,
+      "mp5": 8.0,
+      "spell_crit_rating": 25.0,
+      "spell_power": 39.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29035/cyclone-faceguard"
+  },
+  "name": "Cyclone Faceguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29035/cyclone-faceguard"
+}

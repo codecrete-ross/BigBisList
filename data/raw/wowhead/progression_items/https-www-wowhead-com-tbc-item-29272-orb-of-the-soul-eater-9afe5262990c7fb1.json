@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Orb of the Soul-Eater Phase 1 Item Level 110 Binds when picked up Held In Off-hand +18 Stamina Requires Level 70 Equip: Increases damage done by Shadow spells and effects by up to 51.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:41+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 29272,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 29272,
+    "item_level": 110,
+    "name": "Orb of the Soul-Eater",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 18.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29272/orb-of-the-soul-eater"
+  },
+  "name": "Orb of the Soul-Eater",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29272/orb-of-the-soul-eater"
+}

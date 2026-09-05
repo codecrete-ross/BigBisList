@@ -1,0 +1,84 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Boots of Blasting Phase 2 Item Level 75 Requires Tailoring (375) Use: Teaches you how to sew Boots of Blasting. Sell Price: 3 Boots of Blasting Item Level 128 Binds when picked up Feet Cloth 148 Armor +25 Stamina +25 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves spell hit rating by 18. Equip: Improves spell critical strike rating by 25. Equip: Increases damage and healing done by magical spells and effects by up to 39. Sell Price: 4 1 79 Requires Primal Nether (2), Shadowcloth (4), Spellcloth (4), Rune Thread (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:05+00:00",
+  "inventory_slot": null,
+  "item_id": 30282,
+  "item_stats": {
+    "armor": 148,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew Boots of Blasting.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves spell hit rating by 18.",
+        "stats": {
+          "spell_hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 25.",
+        "stats": {
+          "spell_crit_rating": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+        "stats": {
+          "spell_power": 39.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 18.",
+      "Equip: Improves spell critical strike rating by 25.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 39."
+    ],
+    "id": 30282,
+    "item_level": 75,
+    "name": "Pattern: Boots of Blasting",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 25.0,
+      "spell_crit_rating": 25.0,
+      "spell_hit_rating": 18.0,
+      "spell_power": 39.0,
+      "stamina": 25.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to sew Boots of Blasting."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30282"
+  },
+  "name": "Pattern: Boots of Blasting",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Boots of Blasting Phase 2 Item Level 75 Requires Tailoring (375) Use: Teaches you how to sew Boots of Blasting. Sell Price: 3 Boots of Blasting Item Level 128 Binds when picked up Feet Cloth 148 Armor +25 Stamina +25 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves spell hit rating by 18. Equip: Improves spell critical strike rating by 25. Equip: Increases damage and healing done by magical spells and effects by up to 39. Sell Price: 4 1 79 Requires Primal Nether (2), Shadowcloth (4), Spellcloth (4), Rune Thread (2)",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=30282",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30282"
+}

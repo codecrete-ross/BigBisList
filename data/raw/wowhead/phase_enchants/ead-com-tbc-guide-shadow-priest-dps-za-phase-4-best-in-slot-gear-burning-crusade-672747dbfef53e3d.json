@@ -1,0 +1,51 @@
+{
+  "bindings": [
+    {
+      "class": "Priest",
+      "phase": "ZA",
+      "spec": "Shadow"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Shadow Priest DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 4?",
+      "text": "For Shadow Priests, though, the answer is simple. The Aldor enchant, , provides a significant amount more spell power than the Scryers, , does, and is by far the best shoulder enchant for Shadow. If you decide against going Aldor, your best option will be , but let's be real, no one likes going back to , at least not in TBC."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28909,
+            "name": "Greater Inscription of the Orb",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35437
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Shadow Priest DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 4?",
+      "text": "For Shadow Priests, though, the answer is simple. The Aldor enchant, , provides a significant amount more spell power than the Scryers, , does, and is by far the best shoulder enchant for Shadow. If you decide against going Aldor, your best option will be , but let's be real, no one likes going back to , at least not in TBC."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:31+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Shadow Priest DPS Best in Slot (BiS) Phase 4 Gear Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/shadow-priest-dps-za-phase-4-best-in-slot-gear-burning-crusade"
+}

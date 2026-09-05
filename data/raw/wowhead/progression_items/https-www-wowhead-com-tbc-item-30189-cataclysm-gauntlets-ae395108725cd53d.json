@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Gauntlets Phase 2 Item Level 133 Binds when picked up Hands Mail 583 Armor +35 Strength +24 Agility +34 Stamina +23 Intellect Durability 50 / 50 Classes: Shaman Requires Level 70 Equip: Improves hit rating by 24. Cataclysm Harness (0/5) Cataclysm Chestplate Cataclysm Gauntlets Cataclysm Helm Cataclysm Legplates Cataclysm Shoulderplates (2) Set : Your melee attacks have a chance to reduce the cast time of your next Lesser Healing Wave by 1.5 sec. (Proc chance: 2%) (4) Set : You gain 5% additional haste from your Flurry ability.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:52+00:00",
+  "inventory_slot": null,
+  "item_id": 30189,
+  "item_stats": {
+    "armor": 583,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 24.",
+        "stats": {
+          "hit_rating": 24.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 24."
+    ],
+    "id": 30189,
+    "item_level": 133,
+    "name": "Cataclysm Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "agility": 24.0,
+      "hit_rating": 24.0,
+      "intellect": 23.0,
+      "stamina": 34.0,
+      "strength": 35.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30189/cataclysm-gauntlets"
+  },
+  "name": "Cataclysm Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30189/cataclysm-gauntlets"
+}

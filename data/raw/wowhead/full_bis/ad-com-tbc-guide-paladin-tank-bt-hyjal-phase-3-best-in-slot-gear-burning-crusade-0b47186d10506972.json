@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:54+00:00",
+  "fetched_at": "2026-09-04T23:49:23+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -618,7 +618,7 @@
           "rank_label": "Optional PvP",
           "source_links": [
             {
-              "href": "https://tbc.wowhead.com/currency=1900/arena-points",
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
               "text": "Arena Points"
             }
           ],
@@ -810,7 +810,7 @@
               "text": "Warsong Gulch Mark of Honor"
             },
             {
-              "href": "https://tbc.wowhead.com/currency=1901/honor-points",
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
               "text": "/Honor Points"
             }
           ],
@@ -1306,7 +1306,7 @@
           "rank_label": "Optional PvP",
           "source_links": [
             {
-              "href": "https://tbc.wowhead.com/currency=1900/arena-points",
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
               "text": "Arena Points"
             }
           ],
@@ -1367,7 +1367,7 @@
             [
               {
                 "id": 32245,
-                "name": "Tide-Stomper's Greaves",
+                "name": "Tide-stomper's Greaves",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=32245/tide-stompers-greaves"
               }
@@ -1376,23 +1376,23 @@
           ],
           "cells": [
             "Best Overall",
-            "Tide-Stomper's Greaves",
+            "Tide-stomper's Greaves",
             "Drop: High Warlord Naj'entus (Black Temple)"
           ],
           "entities": [
             {
               "id": 32245,
-              "name": "Tide-Stomper's Greaves",
+              "name": "Tide-stomper's Greaves",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32245/tide-stompers-greaves"
             }
           ],
           "entity_id": 32245,
-          "entity_name": "Tide-Stomper's Greaves",
+          "entity_name": "Tide-stomper's Greaves",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=32245/tide-stompers-greaves",
           "item_id": 32245,
-          "item_name": "Tide-Stomper's Greaves",
+          "item_name": "Tide-stomper's Greaves",
           "item_url": "https://www.wowhead.com/tbc/item=32245/tide-stompers-greaves",
           "rank_label": "Best Overall",
           "source_links": [
@@ -1552,7 +1552,7 @@
           "cells": [
             "Best Mitigation",
             "The Darkener's Grasp",
-            "Reward from the quest Kael'thas and the Verdant Sphere - The Eye ."
+            "Reward from the quest Kael'thas and the Verdant Sphere - Tempest Keep ."
           ],
           "entities": [
             {
@@ -1576,11 +1576,11 @@
               "text": "Kael'thas and the Verdant Sphere"
             },
             {
-              "href": "https://www.wowhead.com/tbc/zone=3845/the-eye",
-              "text": "The Eye"
+              "href": "https://www.wowhead.com/tbc/zone=3845/tempest-keep",
+              "text": "Tempest Keep"
             }
           ],
-          "source_text": "Reward from the quest Kael'thas and the Verdant Sphere - The Eye ."
+          "source_text": "Reward from the quest Kael'thas and the Verdant Sphere - Tempest Keep ."
         },
         {
           "cell_entities": [
@@ -1635,7 +1635,7 @@
               "text": "Eye of the Storm Mark of Honor"
             },
             {
-              "href": "https://tbc.wowhead.com/currency=1901/honor-points",
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
               "text": "/Honor Points"
             }
           ],
@@ -1769,9 +1769,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Fedryen Swiftspear - Exalted with Cenarion Expedition",
+              "reputation": "Cenarion Expedition",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Best Threat",
@@ -1886,9 +1889,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Quest: Eminence Among the Violet Eye - Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
               "scope": "quest_reward",
               "source_url": "https://www.wowhead.com/tbc/guide/paladin-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Optional Mitigation",
@@ -1916,7 +1922,7 @@
           "cells": [
             "Optional Mitigation",
             "Seventh Ring of the Tirisfalen",
-            "Drop: The Eye Trash Mobs"
+            "Drop: Tempest Keep Trash Mobs"
           ],
           "entities": [
             {
@@ -1936,11 +1942,11 @@
           "rank_label": "Optional Mitigation",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/zone=3845/the-eye",
-              "text": "The Eye"
+              "href": "https://www.wowhead.com/tbc/zone=3845/tempest-keep",
+              "text": "Tempest Keep"
             }
           ],
-          "source_text": "Drop: The Eye Trash Mobs"
+          "source_text": "Drop: Tempest Keep Trash Mobs"
         },
         {
           "cell_entities": [
@@ -2260,6 +2266,90 @@
             }
           ],
           "source_text": "Quest: Darkmoon Lunacy Deck - Darkmoon Faire"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 37127,
+                "name": "Brightbrew Charm",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=37127/brightbrew-charm"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Great - Seasonal",
+            "Brightbrew Charm",
+            "Drop: Coren Direbrew (Blackrock Depths - Brewfest)"
+          ],
+          "entities": [
+            {
+              "id": 37127,
+              "name": "Brightbrew Charm",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=37127/brightbrew-charm"
+            }
+          ],
+          "entity_id": 37127,
+          "entity_name": "Brightbrew Charm",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=37127/brightbrew-charm",
+          "item_id": 37127,
+          "item_name": "Brightbrew Charm",
+          "item_url": "https://www.wowhead.com/tbc/item=37127/brightbrew-charm",
+          "rank_label": "Great - Seasonal",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
+              "text": "Coren Direbrew"
+            }
+          ],
+          "source_text": "Drop: Coren Direbrew (Blackrock Depths - Brewfest)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 37128,
+                "name": "Balebrew Charm",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=37128/balebrew-charm"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Great - Seasonal",
+            "Balebrew Charm",
+            "Drop: Coren Direbrew (Blackrock Depths - Brewfest)"
+          ],
+          "entities": [
+            {
+              "id": 37128,
+              "name": "Balebrew Charm",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=37128/balebrew-charm"
+            }
+          ],
+          "entity_id": 37128,
+          "entity_name": "Balebrew Charm",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=37128/balebrew-charm",
+          "item_id": 37128,
+          "item_name": "Balebrew Charm",
+          "item_url": "https://www.wowhead.com/tbc/item=37128/balebrew-charm",
+          "rank_label": "Great - Seasonal",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
+              "text": "Coren Direbrew"
+            }
+          ],
+          "source_text": "Drop: Coren Direbrew (Blackrock Depths - Brewfest)"
         },
         {
           "cell_entities": [
@@ -2659,9 +2749,9 @@
             [
               {
                 "id": 29387,
-                "name": "Gnomeregan Auto-Dodger 600",
+                "name": "Gnomeregan Auto-Blocker 600",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600"
+                "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
               }
             ],
             [
@@ -2675,15 +2765,15 @@
           ],
           "cells": [
             "Viable",
-            "Gnomeregan Auto-Dodger 600",
+            "Gnomeregan Auto-Blocker 600",
             "41 Badge of Justice - G'eras , Shattrath City"
           ],
           "entities": [
             {
               "id": 29387,
-              "name": "Gnomeregan Auto-Dodger 600",
+              "name": "Gnomeregan Auto-Blocker 600",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600"
+              "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
             },
             {
               "id": 29434,
@@ -2693,12 +2783,12 @@
             }
           ],
           "entity_id": 29387,
-          "entity_name": "Gnomeregan Auto-Dodger 600",
+          "entity_name": "Gnomeregan Auto-Blocker 600",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600",
+          "entity_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600",
           "item_id": 29387,
-          "item_name": "Gnomeregan Auto-Dodger 600",
-          "item_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600",
+          "item_name": "Gnomeregan Auto-Blocker 600",
+          "item_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600",
           "rank_label": "Viable",
           "source_links": [
             {
@@ -2786,7 +2876,7 @@
             ]
           ],
           "cells": [
-            "Great",
+            "Best",
             "Icon of the Silver Crescent",
             "41 Badge of Justice - G'eras , Shattrath City"
           ],
@@ -2811,7 +2901,7 @@
           "item_id": 29370,
           "item_name": "Icon of the Silver Crescent",
           "item_url": "https://www.wowhead.com/tbc/item=29370/icon-of-the-silver-crescent",
-          "rank_label": "Great",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
@@ -2827,6 +2917,48 @@
             }
           ],
           "source_text": "41 Badge of Justice - G'eras , Shattrath City"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38290,
+                "name": "Dark Iron Smoking Pipe",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best - Seasonal",
+            "Dark Iron Smoking Pipe",
+            "Drop: Coren Direbrew (Blackrock Depths - Brewfest)"
+          ],
+          "entities": [
+            {
+              "id": 38290,
+              "name": "Dark Iron Smoking Pipe",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe"
+            }
+          ],
+          "entity_id": 38290,
+          "entity_name": "Dark Iron Smoking Pipe",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe",
+          "item_id": 38290,
+          "item_name": "Dark Iron Smoking Pipe",
+          "item_url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe",
+          "rank_label": "Best - Seasonal",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
+              "text": "Coren Direbrew"
+            }
+          ],
+          "source_text": "Drop: Coren Direbrew (Blackrock Depths - Brewfest)"
         },
         {
           "cell_entities": [
@@ -2849,7 +2981,7 @@
             ]
           ],
           "cells": [
-            "Great",
+            "Best - Demon/Undead",
             "Mark of the Champion",
             "The Fall of Kel'Thuzad - The Phylactery of Kel'Thuzad dropped by Kel'Thuzad , Naxxramas WoW Classic"
           ],
@@ -2874,7 +3006,7 @@
           "item_id": 23207,
           "item_name": "Mark of the Champion",
           "item_url": "https://www.wowhead.com/tbc/item=23207/mark-of-the-champion",
-          "rank_label": "Great",
+          "rank_label": "Best - Demon/Undead",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=9120/the-fall-of-kelthuzad",
@@ -2894,6 +3026,90 @@
             }
           ],
           "source_text": "The Fall of Kel'Thuzad - The Phylactery of Kel'Thuzad dropped by Kel'Thuzad , Naxxramas WoW Classic"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28789,
+                "name": "Eye of Magtheridon",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best",
+            "Eye of Magtheridon",
+            "Drop: Magtheridon (Magtheridon's Lair)"
+          ],
+          "entities": [
+            {
+              "id": 28789,
+              "name": "Eye of Magtheridon",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon"
+            }
+          ],
+          "entity_id": 28789,
+          "entity_name": "Eye of Magtheridon",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon",
+          "item_id": 28789,
+          "item_name": "Eye of Magtheridon",
+          "item_url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon",
+          "rank_label": "Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17257/magtheridon",
+              "text": "Magtheridon"
+            }
+          ],
+          "source_text": "Drop: Magtheridon (Magtheridon's Lair)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30447,
+                "name": "Tome of Fiery Redemption",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30447/tome-of-fiery-redemption"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best",
+            "Tome of Fiery Redemption",
+            "Drop: Al'ar (Tempest Keep)"
+          ],
+          "entities": [
+            {
+              "id": 30447,
+              "name": "Tome of Fiery Redemption",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30447/tome-of-fiery-redemption"
+            }
+          ],
+          "entity_id": 30447,
+          "entity_name": "Tome of Fiery Redemption",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30447/tome-of-fiery-redemption",
+          "item_id": 30447,
+          "item_name": "Tome of Fiery Redemption",
+          "item_url": "https://www.wowhead.com/tbc/item=30447/tome-of-fiery-redemption",
+          "rank_label": "Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=19514/alar",
+              "text": "Al'ar"
+            }
+          ],
+          "source_text": "Drop: Al'ar (Tempest Keep)"
         },
         {
           "cell_entities": [
@@ -2948,95 +3164,11 @@
               "text": "Alterac Valley Mark of Honor"
             },
             {
-              "href": "https://tbc.wowhead.com/currency=1901/honor-points",
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
               "text": "/Honor Points"
             }
           ],
           "source_text": "20 Alterac Valley Mark of Honor - 30000 /Honor Points"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28789,
-                "name": "Eye of Magtheridon",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Good",
-            "Eye of Magtheridon",
-            "Drop: Magtheridon (Magtheridon's Lair)"
-          ],
-          "entities": [
-            {
-              "id": 28789,
-              "name": "Eye of Magtheridon",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon"
-            }
-          ],
-          "entity_id": 28789,
-          "entity_name": "Eye of Magtheridon",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon",
-          "item_id": 28789,
-          "item_name": "Eye of Magtheridon",
-          "item_url": "https://www.wowhead.com/tbc/item=28789/eye-of-magtheridon",
-          "rank_label": "Good",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17257/magtheridon",
-              "text": "Magtheridon"
-            }
-          ],
-          "source_text": "Drop: Magtheridon (Magtheridon's Lair)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30447,
-                "name": "Tome of Fiery Redemption",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30447/tome-of-fiery-redemption"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Good",
-            "Tome of Fiery Redemption",
-            "Drop: Al'ar (Tempest Keep)"
-          ],
-          "entities": [
-            {
-              "id": 30447,
-              "name": "Tome of Fiery Redemption",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30447/tome-of-fiery-redemption"
-            }
-          ],
-          "entity_id": 30447,
-          "entity_name": "Tome of Fiery Redemption",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30447/tome-of-fiery-redemption",
-          "item_id": 30447,
-          "item_name": "Tome of Fiery Redemption",
-          "item_url": "https://www.wowhead.com/tbc/item=30447/tome-of-fiery-redemption",
-          "rank_label": "Good",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=19514/alar",
-              "text": "Al'ar"
-            }
-          ],
-          "source_text": "Drop: Al'ar (Tempest Keep)"
         },
         {
           "cell_entities": [
@@ -3177,7 +3309,7 @@
           "rank_label": "Best PvP",
           "source_links": [
             {
-              "href": "https://tbc.wowhead.com/currency=1900/arena-points",
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
               "text": "Arena Points"
             }
           ],
@@ -3189,33 +3321,33 @@
             [
               {
                 "id": 34009,
-                "name": "Hammer of Judgment",
+                "name": "Hammer of Judgement",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment"
+                "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
               }
             ],
             []
           ],
           "cells": [
             "Optional PvE",
-            "Hammer of Judgment",
+            "Hammer of Judgement",
             "Drop: Hyjal Summit and Black Temple Trash Mobs"
           ],
           "entities": [
             {
               "id": 34009,
-              "name": "Hammer of Judgment",
+              "name": "Hammer of Judgement",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment"
+              "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
             }
           ],
           "entity_id": 34009,
-          "entity_name": "Hammer of Judgment",
+          "entity_name": "Hammer of Judgement",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment",
+          "entity_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement",
           "item_id": 34009,
-          "item_name": "Hammer of Judgment",
-          "item_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment",
+          "item_name": "Hammer of Judgement",
+          "item_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement",
           "rank_label": "Optional PvE",
           "source_links": [
             {
@@ -3265,7 +3397,7 @@
           "rank_label": "Optional PvP",
           "source_links": [
             {
-              "href": "https://tbc.wowhead.com/currency=1900/arena-points",
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
               "text": "Arena Points"
             }
           ],
@@ -3375,33 +3507,33 @@
             [
               {
                 "id": 30909,
-                "name": "Antonidas' Aegis of Rapt Concentration",
+                "name": "Antonidas's Aegis of Rapt Concentration",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration"
+                "url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration"
               }
             ],
             []
           ],
           "cells": [
             "Best Threat",
-            "Antonidas' Aegis of Rapt Concentration",
+            "Antonidas's Aegis of Rapt Concentration",
             "Drop: Archimonde (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30909,
-              "name": "Antonidas' Aegis of Rapt Concentration",
+              "name": "Antonidas's Aegis of Rapt Concentration",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration"
+              "url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration"
             }
           ],
           "entity_id": 30909,
-          "entity_name": "Antonidas' Aegis of Rapt Concentration",
+          "entity_name": "Antonidas's Aegis of Rapt Concentration",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration",
+          "entity_url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration",
           "item_id": 30909,
-          "item_name": "Antonidas' Aegis of Rapt Concentration",
-          "item_url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration",
+          "item_name": "Antonidas's Aegis of Rapt Concentration",
+          "item_url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration",
           "rank_label": "Best Threat",
           "source_links": [
             {
@@ -3632,6 +3764,6 @@
       "slot": "Libram"
     }
   ],
-  "title": "Burning Crusade Classic Protection Paladin Tank Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Protection Paladin Tank Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/paladin-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

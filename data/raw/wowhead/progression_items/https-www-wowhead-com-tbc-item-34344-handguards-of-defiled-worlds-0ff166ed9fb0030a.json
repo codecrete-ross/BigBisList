@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Handguards of Defiled Worlds Phase 5 Item Level 164 Binds when picked up Hands Cloth 171 Armor +33 Stamina +32 Intellect Yellow Socket Red Socket Socket Bonus: +4 Spell Damage and Healing Durability 35 / 35 Requires Level 70 Equip: Improves spell hit rating by 27. Equip: Improves spell haste rating by 36. Equip: Increases damage and healing done by magical spells and effects by up to 47. Sell Price: 3 37 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:39+00:00",
+  "inventory_slot": null,
+  "item_id": 34344,
+  "item_stats": {
+    "armor": 171,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 27.",
+        "stats": {
+          "spell_hit_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 47.",
+        "stats": {
+          "spell_power": 47.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 27.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 47."
+    ],
+    "id": 34344,
+    "item_level": 164,
+    "name": "Handguards of Defiled Worlds",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 32.0,
+      "spell_hit_rating": 27.0,
+      "spell_power": 47.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34344/handguards-of-defiled-worlds"
+  },
+  "name": "Handguards of Defiled Worlds",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34344/handguards-of-defiled-worlds"
+}

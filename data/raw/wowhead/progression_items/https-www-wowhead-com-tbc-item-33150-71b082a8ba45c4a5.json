@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant Cloak - Subtlety Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Honor Hold - Exalted Use: Teaches you how to permanently enchant a cloak to reduce how threatening the wearer is to monsters by 2%. Permanently enchant a cloak to decrease threat caused by the wearer by 2%. Sell Price: 2 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:34+00:00",
+  "inventory_slot": null,
+  "item_id": 33150,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant a cloak to reduce how threatening the wearer is to monsters by 2%. Permanently enchant a cloak to decrease threat caused by the wearer by 2%.",
+        "type": "use"
+      }
+    ],
+    "id": 33150,
+    "item_level": 70,
+    "name": "Formula: Enchant Cloak - Subtlety",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant a cloak to reduce how threatening the wearer is to monsters by 2%. Permanently enchant a cloak to decrease threat caused by the wearer by 2%."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33150"
+  },
+  "name": "Formula: Enchant Cloak - Subtlety",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Formula: Enchant Cloak - Subtlety Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Honor Hold - Exalted Use: Teaches you how to permanently enchant a cloak to reduce how threatening the wearer is to monsters by 2%. Permanently enchant a cloak to decrease threat caused by the wearer by 2%. Sell Price: 2 50",
+      "reputation": "Honor Hold",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=33150",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Cloak - Subtlety Phase 1 Item Level 70 Binds when picked up Requires Enchanting (300) Requires Honor Hold - Exalted Use: Teaches you how to permanently enchant a cloak to reduce how threatening the wearer is to monsters by 2%. Permanently enchant a cloak to decrease threat caused by the wearer by 2%. Sell Price: 2 50",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=33150",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33150"
+}

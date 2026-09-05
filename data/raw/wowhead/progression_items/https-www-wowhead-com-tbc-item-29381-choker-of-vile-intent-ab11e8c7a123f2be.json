@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Choker of Vile Intent Phase 1 Item Level 110 Binds when picked up Neck +20 Agility +18 Stamina Requires Level 70 Equip: Improves hit rating by 18. Equip: Increases attack power by 42.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:56+00:00",
+  "inventory_slot": null,
+  "item_id": 29381,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 18.",
+        "stats": {
+          "hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 42.",
+        "stats": {
+          "attack_power": 42.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 18.",
+      "Equip: Increases attack power by 42."
+    ],
+    "id": 29381,
+    "item_level": 110,
+    "name": "Choker of Vile Intent",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 20.0,
+      "attack_power": 42.0,
+      "hit_rating": 18.0,
+      "stamina": 18.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29381/choker-of-vile-intent"
+  },
+  "name": "Choker of Vile Intent",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29381/choker-of-vile-intent"
+}

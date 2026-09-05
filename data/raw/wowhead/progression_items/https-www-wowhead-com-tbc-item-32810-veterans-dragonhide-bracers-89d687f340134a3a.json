@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Veteran's Dragonhide Bracers Phase 2 Item Level 126 Binds when picked up Wrist Leather 216 Armor +19 Strength +18 Agility +25 Stamina Red Socket Socket Bonus: +2 Resilience Rating Durability 40 / 40 Classes: Rogue , Druid Requires Level 70 Equip: Improves your resilience rating by 17. Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:27+00:00",
+  "inventory_slot": null,
+  "item_id": 32810,
+  "item_stats": {
+    "armor": 216,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your resilience rating by 17.",
+        "stats": {
+          "resilience_rating": 17.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your resilience rating by 17.",
+      "Equip: Increases healing done by up to 20 and damage done by up to 7 for all magical spells and effects."
+    ],
+    "id": 32810,
+    "item_level": 126,
+    "name": "Veteran's Dragonhide Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Rogue",
+        "Druid"
+      ]
+    },
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "healing_power": 20.0,
+      "resilience_rating": 17.0,
+      "stamina": 25.0,
+      "strength": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32810/veterans-dragonhide-bracers"
+  },
+  "name": "Veteran's Dragonhide Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32810/veterans-dragonhide-bracers"
+}

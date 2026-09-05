@@ -1,0 +1,51 @@
+{
+  "bindings": [
+    {
+      "class": "Druid",
+      "phase": "ZA",
+      "spec": "Feral dps"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Feral Druid DPS in Phase 4",
+      "text": "Should Feral Druid DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 4?\r\nUnlike most other specs in TBC, the choice of Aldor versus Scryers faction has almost zero impact on the long-term PvE performance of a Feral Druid. For Feral DPS, the only permanently relevant items provided by these factions are the two shoulder enchants:  and , which require Exalted reputation with the Aldor and Scryer factions, respectively. Despite providing different distributions of attack Power versus critical strike rating, simulations show that both enchants provide identical DPS value to within the simulation resolution of +/- 1 DPS. So feel free to choose either faction based on personal preference, as the choice will not impact your DPS output whatsoever in the long run. Technically, these enchants are not even used in a true BiS gear set since  is superior to both, but the vast majority of players will not have Sapphiron enchants saved up from Phase 6 of Classic."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 23548,
+            "name": "Might of the Scourge",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 29483
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Feral Druid DPS in Phase 4",
+      "text": "Should Feral Druid DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 4?\r\nUnlike most other specs in TBC, the choice of Aldor versus Scryers faction has almost zero impact on the long-term PvE performance of a Feral Druid. For Feral DPS, the only permanently relevant items provided by these factions are the two shoulder enchants:  and , which require Exalted reputation with the Aldor and Scryer factions, respectively. Despite providing different distributions of attack Power versus critical strike rating, simulations show that both enchants provide identical DPS value to within the simulation resolution of +/- 1 DPS. So feel free to choose either faction based on personal preference, as the choice will not impact your DPS output whatsoever in the long run. Technically, these enchants are not even used in a true BiS gear set since  is superior to both, but the vast majority of players will not have Sapphiron enchants saved up from Phase 6 of Classic."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:16+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Feral Druid DPS Best in Slot (BiS) Phase 4 Gear Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/feral-druid-dps-za-phase-4-best-in-slot-gear-burning-crusade"
+}

@@ -25,6 +25,8 @@ if __package__ is None or __package__ == "":
 from tools.manifest_coverage import build_manifest_coverage
 from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES, canonical_json, write_text
 from tools.recommend_leveling import build_recommendation_documents
+from tools.progression import expand_pre_raid_paths, resolve_source_content
+from tools.phase_source_overrides import apply_source_rule_overrides
 from tools.reputations import infer_source_side, normalize_reputation_names, requirement_side
 from tools.sources import (
     classify_source,
@@ -37,8 +39,8 @@ from tools.sources import (
 )
 from tools.validate_data import validate
 
-PARSER_VERSION = "wowhead-scraper-0.9.0"
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 BigBiSListScraper/0.4"
+PARSER_VERSION = "wowhead-scraper-0.10.0"
+USER_AGENT = "Mozilla/5.0"
 MAX_LEVELING_LEVEL = 69
 
 CURRENCY_NAMES = {
@@ -374,7 +376,9 @@ def item_teaches_spell_ids(item_id: int | None, name: str, html: str) -> list[in
 
 
 def parse_binding_from_text(text: str) -> tuple[str, bool | None]:
-    lowered = text.lower()
+    # Recipe tooltips may embed their crafted result after "Use:". Binding
+    # belongs to the outer item, not that nested result.
+    lowered = re.split(r"\buse:", text.lower(), maxsplit=1)[0]
     if "binds when equipped" in lowered:
         return "bind_on_equip", True
     if "binds when picked up" in lowered:
@@ -494,7 +498,7 @@ def level_range_from_text(text: str) -> str | None:
     match = re.fullmatch(r"\s*(\d{1,2})\s*", text)
     if match:
         return str(int(match.group(1)))
-    match = re.search(r"\b(?:levels?\s*)?(\d{1,2})\s*[-–]\s*(\d{1,2})\b", text, flags=re.IGNORECASE)
+    match = re.search(r"\b(?:levels?\s*)?(\d{1,2})\s*[-\u2013]\s*(\d{1,2})\b", text, flags=re.IGNORECASE)
     if match:
         return f"{int(match.group(1))}-{int(match.group(2))}"
     match = re.search(r"\blevel\s+(\d{1,2})\b", text, flags=re.IGNORECASE)
@@ -506,7 +510,7 @@ def level_range_from_text(text: str) -> str | None:
 def level_bounds_from_range(value: str | None) -> tuple[int | None, int | None, bool]:
     if not value:
         return None, None, False
-    match = re.fullmatch(r"\s*(\d{1,2})\s*[-–]\s*(\d{1,2})\s*", str(value))
+    match = re.fullmatch(r"\s*(\d{1,2})\s*[-\u2013]\s*(\d{1,2})\s*", str(value))
     if match:
         level_min = int(match.group(1))
         level_max = int(match.group(2))
@@ -589,7 +593,7 @@ def extract_aldor_scryer_choices(value: str) -> list[str]:
 def extract_explicit_faction_choice_names(text: str) -> list[str]:
     choices: list[str] = []
     choice_patterns = [
-        r"\brequires?\s+(?P<choices>(?:the aldor|the scryers)(?:\s*/\s*(?:the aldor|the scryers))*)\b(?!\s*[-–]?\s*(?:Neutral|Friendly|Honored|Revered|Exalted)\b)",
+        r"\brequires?\s+(?P<choices>(?:the aldor|the scryers)(?:\s*/\s*(?:the aldor|the scryers))*)\b(?!\s*[-\u2013]?\s*(?:Neutral|Friendly|Honored|Revered|Exalted)\b)",
         r"\((?P<choices>(?:the aldor|the scryers)(?:\s*/\s*(?:the aldor|the scryers))*)\)",
     ]
     for pattern in choice_patterns:
@@ -711,11 +715,11 @@ def extract_reputation_requirements(text: str, source_url: str, scope: str, conf
     requirements: list[dict[str, Any]] = []
     standing_pattern = "|".join(REPUTATION_STANDING_RANKS)
     patterns = [
-        rf"\brequires?\s+(?:level\s+\d+\s+requires?\s+)?(?P<reputation>(?:(?!\s+requires?\b).)+?)\s*[-–]\s*(?P<standing>{standing_pattern})(?=(?:\s+(?:Vendor|Quest|Drop|Profession|Use|Equip|Sell Price):|\s+and\s+requires?\b|[.;,]|$))",
+        rf"\brequires?\s+(?:level\s+\d+\s+requires?\s+)?(?P<reputation>(?:(?!\s+requires?\b).)+?)\s*[-\u2013]\s*(?P<standing>{standing_pattern})(?=(?:\s+(?:Vendor|Quest|Drop|Profession|Use|Equip|Sell Price):|\s+and\s+requires?\b|[.;,]|$))",
         rf"\b(?:requires?|when|at|learned at)\s+(?P<standing>{standing_pattern})(?:\s+reputation)?\s+(?:with|from)\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
         rf"\b(?P<standing>{standing_pattern})(?:\s+reputation)?\s+with\s+(?P<reputation>.+?)(?=(?:\s+(?:Vendor|Quest|Drop|Profession):|\s+and\s+requires?\b|[.;,]|$))",
-        rf"\((?P<reputation>[^()]+?)\s*(?:-\s*)?(?P<standing>{standing_pattern})\)",
-        rf"(?:^|[-:]\s+|\()\s*(?P<reputation>[^,().:;-]+?)\s+(?P<standing>{standing_pattern})(?=[,.)]|$)",
+        rf"\((?P<reputation>[^()]+?)\s*(?:[-\u2013]\s*)?(?P<standing>{standing_pattern})\)",
+        rf"(?:^|[-\u2013:]\s+|\()\s*(?P<reputation>[^,().:;\u2013-]+?)\s+(?P<standing>{standing_pattern})(?=[,.)]|$)",
     ]
     for pattern in patterns:
         for match in re.finditer(pattern, text, flags=re.IGNORECASE):
@@ -2172,6 +2176,7 @@ def parse_item_tooltip_endpoint(url: str, payload_text: str) -> dict[str, Any]:
         "url": url,
         "fetched_at": now_utc(),
         "page_type": "item",
+        "fetch_method": "tooltip_endpoint",
         "item_id": item_id,
         "name": name,
         "quality": quality,
@@ -2185,6 +2190,19 @@ def parse_item_tooltip_endpoint(url: str, payload_text: str) -> dict[str, Any]:
         "item_stats": item_stats,
         "taught_by_items": [],
         "teaches_spell_ids": [],
+    }
+
+
+def parse_spell_tooltip_endpoint(url: str, payload_text: str) -> dict[str, Any]:
+    payload = json.loads(payload_text)
+    description = element_text(make_soup(str(payload.get("tooltip") or "")))
+    return {
+        "parser_version": PARSER_VERSION, "url": url, "fetched_at": now_utc(),
+        "page_type": "spell", "fetch_method": "tooltip_endpoint",
+        "spell_id": spell_id_from_href(url), "name": payload.get("name"),
+        "description": description, "related_tables": {}, "normalized_sources": [],
+        "normalized_requirements": extract_requirements_from_text(
+            description, url, "cast_enchant", "wowhead_spell_recipe", include_unknown=False),
     }
 
 
@@ -2396,9 +2414,6 @@ def fetch_url(url: str, cache_dir: Path, retries: int = 3, delay: float = 0.75) 
                 url,
                 headers={
                     "User-Agent": USER_AGENT,
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                    "Accept-Language": "en-US,en;q=0.9",
-                    "Referer": "https://www.wowhead.com/tbc/items",
                 },
             )
             with urlopen(request, timeout=30) as response:
@@ -2433,11 +2448,14 @@ def fetch_normalized_snapshot(
         snapshot = normalize_html(url, html)
     except RuntimeError as exc:
         item_id = item_id_from_href(url)
-        if not item_id or "HTTP Error 403" not in str(exc):
+        spell_id = spell_id_from_href(url)
+        if not (item_id or spell_id) or "HTTP Error 403" not in str(exc):
             raise
-        tooltip_url = f"https://nether.wowhead.com/tbc/tooltip/item/{item_id}"
+        kind = "item" if item_id else "spell"
+        tooltip_url = f"https://nether.wowhead.com/tbc/tooltip/{kind}/{item_id or spell_id}"
         payload_text = fetch_url(tooltip_url, cache_dir, retries=retries, delay=delay)
-        snapshot = parse_item_tooltip_endpoint(url, payload_text)
+        parser = parse_item_tooltip_endpoint if item_id else parse_spell_tooltip_endpoint
+        snapshot = parser(url, payload_text)
     write_snapshot(snapshot, output_dir)
     return snapshot
 
@@ -2499,7 +2517,9 @@ def source_families(source: dict[str, Any]) -> set[str]:
 
 
 def manifest_sources_for_snapshot(snapshot: dict[str, Any], data_family: str) -> list[dict[str, Any]]:
-    sources = manifest_sources_by_url().get(snapshot.get("url"), [])
+    sources = (snapshot.get("manifest_bindings") if snapshot.get("historical_pre_raid") else None)
+    if not sources:
+        sources = manifest_sources_by_url().get(snapshot.get("url"), [])
     matches: list[dict[str, Any]] = []
     for source in sources:
         families = source.get("data_families")
@@ -2508,6 +2528,40 @@ def manifest_sources_for_snapshot(snapshot: dict[str, Any], data_family: str) ->
         elif source.get("data_family") == data_family:
             matches.append(source)
     return matches
+
+
+def select_pre_raid_snapshots(snapshots: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Select each spec/phase independently when a shared guide splits URLs."""
+    winners: dict[tuple[str, str, str], tuple[int, dict[str, Any]]] = {}
+    candidate_bindings: dict[int, list[dict[str, Any]]] = {}
+    other = []
+    for index, snapshot in enumerate(snapshots):
+        bindings = manifest_sources_for_snapshot(snapshot, "bis_lists") if snapshot.get("page_type") == "guide" else []
+        pr_bindings = [row for row in bindings if row.get("phase") == "PR"]
+        if not pr_bindings or snapshot.get("recommendation_status") in {"no_distinct_update", "unverified_phase"}:
+            other.append(snapshot)
+            continue
+        candidate_bindings[index] = bindings
+        for binding in pr_bindings:
+            key = (str(binding.get("class")), str(binding.get("spec")), str(snapshot.get("content_phase", "PR")))
+            previous = winners.get(key)
+            if previous is None or (str(snapshot.get("fetched_at", "")), stable_json_sort_key(snapshot)) > (
+                    str(previous[1].get("fetched_at", "")), stable_json_sort_key(previous[1])):
+                winners[key] = (index, snapshot)
+    selected = []
+    for index, bindings in candidate_bindings.items():
+        snapshot = snapshots[index]
+        retained = []
+        keys = []
+        for binding in bindings:
+            key = (str(binding.get("class")), str(binding.get("spec")), str(snapshot.get("content_phase", "PR")))
+            if binding.get("phase") != "PR" or winners[key][0] == index:
+                retained.append(binding)
+                keys.append(key)
+        if retained:
+            selected.append((min(keys), {**snapshot, "historical_pre_raid": True,
+                                         "manifest_bindings": deepcopy(retained)}))
+    return other + [snapshot for _, snapshot in sorted(selected, key=lambda entry: entry[0])]
 
 
 def manifest_source_for_snapshot(snapshot: dict[str, Any], data_family: str) -> dict[str, Any]:
@@ -3038,6 +3092,7 @@ def command_fetch(args: argparse.Namespace) -> int:
 
 
 def load_snapshots(input_dir: Path) -> list[dict[str, Any]]:
+    input_dir = input_dir.resolve()
     snapshots = []
     for path in sorted(input_dir.glob("*.json")):
         if path.name == "last_snapshot.json":
@@ -3046,6 +3101,14 @@ def load_snapshots(input_dir: Path) -> list[dict[str, Any]]:
             snapshot = json.load(handle)
         if isinstance(snapshot, dict) and snapshot.get("parser_version"):
             snapshots.append(refresh_snapshot_normalized_sources(snapshot))
+    # Refreshed acquisition evidence is shared by the endgame families. Keep
+    # historical guide snapshots local to their family, not duplicated per run.
+    if input_dir.parent == RAW_WOWHEAD_DIR and input_dir.name in {
+        "full_bis", "full_gems", "full_enchants", "full_consumables"
+    }:
+        snapshots.extend(load_snapshots(RAW_WOWHEAD_DIR / "progression_items"))
+        snapshots.extend(load_snapshots(RAW_WOWHEAD_DIR / "phase_gems"))
+        snapshots.extend(load_snapshots(RAW_WOWHEAD_DIR / "phase_enchants"))
     return snapshots
 
 
@@ -3244,8 +3307,10 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
     rows: list[dict[str, Any]] = []
     item_snapshots = item_snapshots_by_id(snapshots)
 
-    for snapshot in snapshots:
+    for snapshot in select_pre_raid_snapshots(snapshots):
         if snapshot.get("page_type") != "guide":
+            continue
+        if snapshot.get("recommendation_status") in {"no_distinct_update", "unverified_phase"}:
             continue
         for source_meta in manifest_sources_for_snapshot(snapshot, "bis_lists"):
             class_name = source_meta.get("class")
@@ -3303,6 +3368,7 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                             "slot": slot,
                             "source_url": snapshot["url"],
                             "items": sorted(items_by_id.values(), key=lambda item: int(item.get("rank") or 999)),
+                            **({"content_phase": snapshot.get("content_phase", "PR")} if phase == "PR" else {}),
                         }
                     )
 
@@ -3330,19 +3396,9 @@ def phase_from_row(source_meta: dict[str, Any], table: dict[str, Any], row: dict
     if isinstance(phases, list) and len(phases) == 1 and phases[0] in PHASE_KEYS:
         return str(phases[0])
 
-    normalized = text_for_phase_detection(source_meta, table, row).lower()
-    aliases = {
-        "PR": ["pr", "pre-raid", "pre raid", "phase 0"],
-        "T4": ["t4", "tier 4", "phase 1"],
-        "T5": ["t5", "tier 5", "phase 2"],
-        "T6": ["t6", "tier 6", "phase 3", "phase 4"],
-        "ZA": ["za", "zul'aman", "zulaman"],
-        "SWP": ["swp", "sunwell", "phase 5"],
-    }
-    for phase in PHASE_KEYS:
-        if any(re.search(rf"\b{re.escape(alias)}\b", normalized) for alias in aliases[phase]):
-            return phase
-    return None
+    return resolve_source_content(text_for_phase_detection(source_meta, table, row),
+                                  canonical_json("phases"),
+                                  str(source_meta.get("content_terminology", "wowhead_classic")))
 
 
 def phases_from_row(source_meta: dict[str, Any], table: dict[str, Any], row: dict[str, Any]) -> list[str]:
@@ -3550,19 +3606,44 @@ def quality_rank(value: Any) -> int | None:
 
 
 def item_snapshots_by_id(snapshots: list[dict[str, Any]]) -> dict[int, dict[str, Any]]:
-    return {
-        int(snapshot["item_id"]): snapshot
-        for snapshot in snapshots
-        if snapshot.get("page_type") == "item" and isinstance(snapshot.get("item_id"), int)
-    }
+    return merge_entity_snapshots(snapshots, "item")
 
 
 def spell_snapshots_by_id(snapshots: list[dict[str, Any]]) -> dict[int, dict[str, Any]]:
-    return {
-        int(snapshot["spell_id"]): snapshot
-        for snapshot in snapshots
-        if snapshot.get("page_type") == "spell" and isinstance(snapshot.get("spell_id"), int)
-    }
+    return merge_entity_snapshots(snapshots, "spell")
+
+
+def merge_entity_snapshots(snapshots: list[dict[str, Any]], kind: str) -> dict[int, dict[str, Any]]:
+    """Prefer current populated fields without losing older acquisition evidence.
+
+    Some current item pages omit their Listviews entirely. Such a fetch is
+    evidence of the current name/tooltip, not evidence that old routes vanished.
+    Conflicting prices remain separate routes for explicit review.
+    """
+    grouped: dict[int, list[dict[str, Any]]] = {}
+    for snapshot in snapshots:
+        entity_id = snapshot.get(kind + "_id")
+        if snapshot.get("page_type") == kind and isinstance(entity_id, int):
+            grouped.setdefault(entity_id, []).append(snapshot)
+    merged = {}
+    for entity_id, candidates in grouped.items():
+        candidates.sort(key=lambda row: (str(row.get("fetched_at") or ""),
+                                        populated_leaf_count(row), stable_json_sort_key(row)), reverse=True)
+        result = deepcopy(candidates[0])
+        for candidate in candidates[1:]:
+            for key, value in candidate.items():
+                if key == "normalized_sources":
+                    continue
+                if not value_is_populated(result.get(key)) and value_is_populated(value):
+                    result[key] = deepcopy(value)
+                elif isinstance(value, dict) and isinstance(result.get(key), dict):
+                    for field, child in value.items():
+                        if not value_is_populated(result[key].get(field)):
+                            result[key][field] = deepcopy(child)
+        result["normalized_sources"] = merge_item_source_lists(
+            [candidate.get("normalized_sources", []) for candidate in candidates])
+        merged[entity_id] = result
+    return merged
 
 
 def normalized_spell_name(value: str | None) -> str:
@@ -3834,7 +3915,8 @@ def import_gems_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_cano
 
     if not rows and fallback_to_canonical:
         return canonical_json("gems")
-    return {"gems": rows}
+    from tools.phase_gems import import_phase_gems
+    return import_phase_gems(snapshots, {"gems": rows})
 
 
 def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_canonical: bool = True) -> dict[str, Any]:
@@ -3961,7 +4043,8 @@ def import_enchants_from_snapshots(snapshots: list[dict[str, Any]], fallback_to_
 
     if not rows and fallback_to_canonical:
         return canonical_json("enchants")
-    return {"enchants": rows}
+    from tools.phase_enchants import import_phase_enchants
+    return import_phase_enchants(snapshots, {"enchants": rows})
 
 
 def consumable_category(table: dict[str, Any], row: dict[str, Any]) -> str:
@@ -4367,10 +4450,32 @@ def import_entity_sources_from_snapshots(
     wanted_item_ids.update(item_id for row in rows for item_id in row.get("items", []))
     wanted_item_ids.update(item_id for row in rows for item_id in row.get("formula_item_ids", []))
     wanted_spell_ids = {row.get("id") for row in rows if row.get("type") == "spell" and row.get("id")}
-    item_snapshots = {snapshot.get("item_id"): snapshot for snapshot in snapshots if snapshot.get("page_type") == "item"}
-    spell_snapshots = {snapshot.get("spell_id"): snapshot for snapshot in snapshots if snapshot.get("page_type") == "spell"}
+    item_snapshots = item_snapshots_by_id(snapshots)
+    spell_snapshots = spell_snapshots_by_id(snapshots)
+    spell_snapshots_by_name = spell_snapshots_by_normalized_name(snapshots)
+    overrides = reviewed_overrides()
     source_rows: list[dict[str, Any]] = []
+    resolved_spells: dict[int, tuple[dict[str, Any], dict[str, Any], list[int]]] = {}
+    for spell_id in sorted(wanted_spell_ids):
+        recommendations = [row for row in rows if row.get("type") == "spell" and row.get("id") == spell_id]
+        linked = spell_snapshots.get(spell_id) or {
+            "spell_id": spell_id, "name": next((row.get("name") for row in recommendations if row.get("name")), None),
+            "url": spell_url_for_id(spell_id),
+        }
+        source_snapshot = next((spell_snapshots[row["source_spell_id"]] for row in recommendations
+                                if row.get("source_spell_id") in spell_snapshots and enchant_spell_has_source_data(
+                                    spell_snapshots[row["source_spell_id"]], item_snapshots)), None)
+        source_snapshot = source_snapshot or resolve_enchant_source_spell_snapshot(
+            spell_id, linked, spell_snapshots_by_name, item_snapshots) or linked
+        actual_spell_id = source_snapshot.get("spell_id", spell_id)
+        formula_ids = sorted(set(enchant_formula_item_ids(source_snapshot))
+                             | set(formula_item_ids_for_spell(actual_spell_id, item_snapshots))
+                             | set(formula_item_ids_for_spell(spell_id, item_snapshots))
+                             | {item_id for row in recommendations for item_id in row.get("formula_item_ids", [])})
+        wanted_item_ids.update(formula_ids)
+        resolved_spells[spell_id] = (linked, source_snapshot, formula_ids)
 
+    imported_item_sources: dict[int, dict[str, Any]] = {}
     for item_id in sorted(item_id for item_id in wanted_item_ids if item_id in item_snapshots):
         snapshot = item_snapshots[item_id]
         sources = attach_token_turnins_to_sources(snapshot.get("normalized_sources", []), item_snapshots)
@@ -4383,21 +4488,40 @@ def import_entity_sources_from_snapshots(
             "primary_source": derive_primary_source(sources),
             "source_summary": summarize_sources(sources),
             "source_url": snapshot["url"],
+            "binding": snapshot.get("binding", "unknown"),
+            "boe": snapshot.get("boe"),
         }
         if requirements:
             source_row["requirements"] = requirements
+        source_row = apply_source_rule_overrides(source_row, overrides, entity_kind="item")
+        imported_item_sources[item_id] = source_row
         source_rows.append(source_row)
 
-    for spell_id in sorted(spell_id for spell_id in wanted_spell_ids if spell_id in spell_snapshots):
-        snapshot = spell_snapshots[spell_id]
+    for spell_id, (linked_snapshot, snapshot, formula_ids) in sorted(resolved_spells.items()):
         sources = attach_token_turnins_to_sources(snapshot.get("normalized_sources", []), item_snapshots)
+        known_formula_ids = {source.get("item_id") for source in sources if source.get("type") == "taught_by_item"}
+        sources.extend({"type": "taught_by_item", "item_id": item_id, "entity_id": item_id,
+                        "entity_name": item_snapshots[item_id].get("name"), "source_url": item_snapshots[item_id]["url"],
+                        "confidence": "wowhead_item"}
+                       for item_id in formula_ids if item_id not in known_formula_ids and item_id in item_snapshots)
+        for source in sources:
+            if source.get("type") != "taught_by_item":
+                continue
+            formula = imported_item_sources.get(source.get("item_id", source.get("entity_id")))
+            if formula and formula.get("sources"):
+                # Keep the actual formula's gates on the dependency. A guide's
+                # alternate enchant-effect spell ID must not erase them.
+                source["recipe_sources"] = deepcopy(formula["sources"])
+        actual_spell_id = snapshot.get("spell_id", spell_id)
+        reviewed_source = apply_source_rule_overrides({"id": actual_spell_id, "sources": sources}, overrides, entity_kind="spell")
+        sources = reviewed_source["sources"]
         requirements = dedupe_requirements(snapshot_requirements(snapshot) + source_list_requirements(sources))
         source_row = {
             "id": spell_id,
             "type": "spell",
-            "name": snapshot.get("name"),
+            "name": linked_snapshot.get("name") or snapshot.get("name"),
             "sources": sources,
-            "source_url": snapshot["url"],
+            "source_url": linked_snapshot["url"],
         }
         if requirements:
             source_row["requirements"] = requirements
@@ -4405,7 +4529,8 @@ def import_entity_sources_from_snapshots(
 
     if not source_rows:
         return canonical_json(output_key)
-    return {output_key: source_rows}
+    return {output_key: [apply_source_rule_overrides(row, overrides, entity_kind=row.get("type", "item"))
+                         for row in source_rows]}
 
 
 def token_sources_for_cost(cost: dict[str, Any], token_snapshot: dict[str, Any] | None) -> list[dict[str, Any]]:
@@ -4461,6 +4586,10 @@ def attach_token_turnins_to_sources(
 def guide_item_refs(snapshots: list[dict[str, Any]]) -> dict[int, dict[str, Any]]:
     refs: dict[int, dict[str, Any]] = {}
     for snapshot in snapshots:
+        if snapshot.get("page_type") == "phase_gem_guide":
+            for entry in snapshot.get("gem_guidance", []):
+                for item_id in entry.get("gem_ids", []):
+                    refs.setdefault(item_id, {"id": item_id, "wowhead_url": item_url_for_id(item_id)})
         if snapshot.get("page_type") != "guide":
             continue
         for table in snapshot.get("tables", []):
@@ -4477,6 +4606,15 @@ def guide_item_refs(snapshots: list[dict[str, Any]]) -> dict[int, dict[str, Any]
                         "name": entity.get("name") or row.get("item_name") or row.get("entity_name") or f"Item {item_id}",
                         "wowhead_url": entity.get("url") or row.get("item_url") or item_url_for_id(item_id),
                     }
+        for section in snapshot.get("sections", []):
+            for entry in section.get("entries", []):
+                for entity in entry.get("entities", []):
+                    item_id = entity.get("id")
+                    if entity.get("type") == "item" and isinstance(item_id, int):
+                        refs.setdefault(item_id, {
+                            "id": item_id, "name": entity.get("name") or f"Item {item_id}",
+                            "wowhead_url": entity.get("url") or item_url_for_id(item_id),
+                        })
     return refs
 
 
@@ -4588,7 +4726,7 @@ def is_tradeable_item(item: dict[str, Any] | None, snapshot: dict[str, Any] | No
     for candidate in (snapshot, item):
         if not isinstance(candidate, dict):
             continue
-        if candidate.get("boe") is True or candidate.get("binding") == "bind_on_equip":
+        if candidate.get("tradeable") is True or candidate.get("boe") is True or candidate.get("binding") == "bind_on_equip":
             return True
     return False
 
@@ -5050,7 +5188,9 @@ def apply_item_overrides(imported_items: dict[str, Any]) -> dict[str, Any]:
                 item["sources"] = deepcopy(current_sources)
                 by_id[item_id] = refresh_item_derived_fields(item)
 
-    return {"items": [refresh_item_derived_fields(by_id[item["id"]]) for item in items]}
+    overrides = reviewed_overrides()
+    return {"items": [refresh_item_derived_fields(apply_source_rule_overrides(by_id[item["id"]], overrides))
+                      for item in items]}
 
 
 def apply_bis_overrides(imported_bis_lists: dict[str, Any]) -> dict[str, Any]:
@@ -5107,7 +5247,7 @@ def apply_bis_overrides(imported_bis_lists: dict[str, Any]) -> dict[str, Any]:
 
 def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
     existing_items = {item["id"]: item for item in canonical_json("items").get("items", []) if item.get("sources")}
-    item_snapshots = {snapshot.get("item_id"): snapshot for snapshot in snapshots if snapshot.get("page_type") == "item"}
+    item_snapshots = item_snapshots_by_id(snapshots)
     item_refs = guide_item_refs(snapshots)
     item_source_hints = guide_item_source_hints(snapshots)
     starter_item_overrides = reviewed_quest_starter_items()
@@ -5129,6 +5269,10 @@ def import_items_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, An
         snapshot = item_snapshots.get(item_id)
         source_hints = item_source_hints.get(item_id, [])
         raw_sources = item_snapshot_sources(snapshot) if snapshot else current.get("sources", [])
+        if not raw_sources:
+            # A tooltip-only response has no acquisition Listviews. Do not
+            # erase a richer record imported from another recommendation family.
+            raw_sources = deepcopy(current.get("sources", []))
         if not raw_sources:
             raw_sources = guide_fallback_sources(source_hints)
         raw_sources = apply_source_hints_to_sources(raw_sources, source_hints)
@@ -5324,6 +5468,10 @@ def source_identity_conflicts(left: dict[str, Any], right: dict[str, Any]) -> bo
 
 
 def sources_describe_same_acquisition(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    if any(left.get(key) != right.get(key) for key in ("available_from_phase", "available_until_phase")):
+        return False
+    if left.get("costs") and right.get("costs") and left["costs"] != right["costs"]:
+        return False
     if source_identity_conflicts(left, right):
         return False
     if left.get("type") != right.get("type"):
@@ -5926,7 +6074,33 @@ def command_import(args: argparse.Namespace) -> int:
         write_text(CANONICAL_DIR / file_name, json.dumps(imported_items, indent=2, sort_keys=True) + "\n")
         print(f"Wrote {CANONICAL_DIR / file_name}")
         return 0
+    if args.family in {"bis_lists", "gems", "enchants", "consumables"}:
+        output_docs = {"items.json": imported_items}
+        if args.family == "bis_lists":
+            document = apply_bis_overrides(import_bis_lists_from_snapshots(snapshots))
+            document["lists"] = expand_pre_raid_paths(
+                document["lists"], {item["id"]: item for item in imported_items["items"]})
+            output_docs["bis_lists.json"] = document
+        elif args.family == "gems":
+            document = import_gems_from_snapshots(snapshots)
+            output_docs["gems.json"] = document
+            output_docs["gem_sources.json"] = import_entity_sources_from_snapshots(snapshots, document["gems"], "gem_sources")
+        elif args.family == "enchants":
+            document = import_enchants_from_snapshots(snapshots)
+            output_docs["enchants.json"] = document
+            output_docs["enchant_sources.json"] = import_entity_sources_from_snapshots(snapshots, document["enchants"], "enchant_sources")
+        else:
+            output_docs["consumables.json"] = import_consumables_from_snapshots(snapshots)
+        if args.dry_run:
+            print(json.dumps(import_dry_run_counts(output_docs, args.family), indent=2, sort_keys=True))
+            return 0
+        for file_name, document in output_docs.items():
+            write_text(CANONICAL_DIR / file_name, json.dumps(document, indent=2, sort_keys=True) + "\n")
+            print(f"Wrote {CANONICAL_DIR / file_name}")
+        return 0
     imported_bis_lists = apply_bis_overrides(import_bis_lists_from_snapshots(snapshots))
+    imported_bis_lists["lists"] = expand_pre_raid_paths(
+        imported_bis_lists["lists"], {item["id"]: item for item in imported_items["items"]})
     imported_gems = import_gems_from_snapshots(snapshots)
     imported_gem_sources = import_entity_sources_from_snapshots(snapshots, imported_gems["gems"], "gem_sources")
     imported_enchants = import_enchants_from_snapshots(snapshots)
@@ -5997,8 +6171,10 @@ def manifest_urls_for_family(data_family: str) -> set[str]:
 def raw_bis_rows_from_snapshots(snapshots: list[dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     item_snapshots = item_snapshots_by_id(snapshots)
-    for snapshot in snapshots:
+    for snapshot in select_pre_raid_snapshots(snapshots):
         if snapshot.get("page_type") != "guide":
+            continue
+        if snapshot.get("recommendation_status") in {"no_distinct_update", "unverified_phase"}:
             continue
         for source_meta in manifest_sources_for_snapshot(snapshot, "bis_lists"):
             class_name = source_meta.get("class")
@@ -6029,6 +6205,7 @@ def raw_bis_rows_from_snapshots(snapshots: list[dict[str, Any]]) -> list[dict[st
                             "source_text": clean_text(str(row.get("source_text") or "")),
                             "source_url": snapshot.get("url"),
                             "table_heading": table.get("heading") or "",
+                            "content_phase": snapshot.get("content_phase", "PR") if phase == "PR" else phase,
                         }
                     )
     return rows
@@ -6372,7 +6549,9 @@ def item_acquisition_errors(
 ) -> list[str]:
     if not snapshot:
         return []
-    sources = snapshot.get("normalized_sources", [])
+    reviewed = apply_source_rule_overrides(
+        {"id": item_id, "sources": snapshot.get("normalized_sources", [])}, reviewed_overrides())
+    sources = reviewed.get("sources", [])
     if not sources:
         return [f"{label} item {item_id} has no structured acquisition source"]
     errors: list[str] = []
@@ -6665,6 +6844,7 @@ def build_snapshot_audit(input_dir: Path, data_family: str, guide_only: bool = F
             str(row.get("class")),
             str(row.get("spec")),
             str(row.get("phase")),
+            str(row.get("content_phase", "")),
             str(row.get("slot")),
             int(row.get("item_id")),
             str(row.get("context")),

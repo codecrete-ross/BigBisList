@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pantaloons of Calming Strife Phase 5 Item Level 159 Binds when picked up Legs Cloth 232 Armor +29 Stamina +36 Intellect +42 Spirit Red Socket Yellow Socket Blue Socket Socket Bonus: +4 Spirit Durability 75 / 75 Requires Level 70 Equip: Improves spell critical strike rating by 25. Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects. Sell Price: 6 36 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:19+00:00",
+  "inventory_slot": null,
+  "item_id": 34170,
+  "item_stats": {
+    "armor": 232,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 25.",
+        "stats": {
+          "spell_crit_rating": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 134.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 25.",
+      "Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects."
+    ],
+    "id": 34170,
+    "item_level": 159,
+    "name": "Pantaloons of Calming Strife",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spirit": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 134.0,
+      "intellect": 36.0,
+      "spell_crit_rating": 25.0,
+      "spirit": 42.0,
+      "stamina": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34170"
+  },
+  "name": "Pantaloons of Calming Strife",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34170"
+}

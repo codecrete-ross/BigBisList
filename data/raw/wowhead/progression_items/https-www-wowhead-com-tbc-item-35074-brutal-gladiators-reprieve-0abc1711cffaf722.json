@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brutal Gladiator's Reprieve Phase 5 Item Level 159 Binds when picked up Held In Off-hand +37 Stamina +25 Intellect Requires Level 70 Equip: Improves your resilience rating by 27. Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:31+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 35074,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your resilience rating by 27.",
+        "stats": {
+          "resilience_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 75.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your resilience rating by 27.",
+      "Equip: Increases healing done by up to 75 and damage done by up to 25 for all magical spells and effects."
+    ],
+    "id": 35074,
+    "item_level": 159,
+    "name": "Brutal Gladiator's Reprieve",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 75.0,
+      "intellect": 25.0,
+      "resilience_rating": 27.0,
+      "stamina": 37.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35074/brutal-gladiators-reprieve"
+  },
+  "name": "Brutal Gladiator's Reprieve",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35074/brutal-gladiators-reprieve"
+}

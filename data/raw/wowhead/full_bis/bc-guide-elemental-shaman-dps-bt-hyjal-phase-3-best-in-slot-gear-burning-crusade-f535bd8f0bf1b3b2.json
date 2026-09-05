@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:47+00:00",
+  "fetched_at": "2026-09-04T23:49:13+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -22,7 +22,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Skyshatter Headguard",
             "Drop: Archimonde (Hyjal Summit)"
           ],
@@ -41,7 +41,7 @@
           "item_id": 31014,
           "item_name": "Skyshatter Headguard",
           "item_url": "https://www.wowhead.com/tbc/item=31014/skyshatter-headguard",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
@@ -64,7 +64,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Cowl of the Illidari High Lord",
             "Drop: Illidan Stormrage (Black Temple)"
           ],
@@ -83,7 +83,7 @@
           "item_id": 32525,
           "item_name": "Cowl of the Illidari High Lord",
           "item_url": "https://www.wowhead.com/tbc/item=32525/cowl-of-the-illidari-high-lord",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
@@ -419,7 +419,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Skyshatter Mantle",
             "Drop: Mother Shahraz (Black Temple)"
           ],
@@ -438,7 +438,7 @@
           "item_id": 31023,
           "item_name": "Skyshatter Mantle",
           "item_url": "https://www.wowhead.com/tbc/item=31023/skyshatter-mantle",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
@@ -461,7 +461,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Mantle of Nimble Thought",
             "Profession: Tailoring - BoP only"
           ],
@@ -490,7 +490,7 @@
               "type": "profession"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [],
           "source_text": "Profession: Tailoring - BoP only"
         },
@@ -712,7 +712,7 @@
             [
               {
                 "id": 30925,
-                "name": "Spaulders of the Torn-Heart",
+                "name": "Spaulders of the Torn-heart",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
               }
@@ -721,23 +721,23 @@
           ],
           "cells": [
             "Option",
-            "Spaulders of the Torn-Heart",
+            "Spaulders of the Torn-heart",
             "Quest: The Cipher of Damnation - The Third Fragment Recovered"
           ],
           "entities": [
             {
               "id": 30925,
-              "name": "Spaulders of the Torn-Heart",
+              "name": "Spaulders of the Torn-heart",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
             }
           ],
           "entity_id": 30925,
-          "entity_name": "Spaulders of the Torn-Heart",
+          "entity_name": "Spaulders of the Torn-heart",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "item_id": 30925,
-          "item_name": "Spaulders of the Torn-Heart",
+          "item_name": "Spaulders of the Torn-heart",
           "item_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "rank_label": "Option",
           "source_links": [
@@ -760,6 +760,48 @@
             [],
             [
               {
+                "id": 32524,
+                "name": "Shroud of the Highborne",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32524/shroud-of-the-highborne"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best",
+            "Shroud of the Highborne",
+            "Drop: Illidan Stormrage (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32524,
+              "name": "Shroud of the Highborne",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32524/shroud-of-the-highborne"
+            }
+          ],
+          "entity_id": 32524,
+          "entity_name": "Shroud of the Highborne",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32524/shroud-of-the-highborne",
+          "item_id": 32524,
+          "item_name": "Shroud of the Highborne",
+          "item_url": "https://www.wowhead.com/tbc/item=32524/shroud-of-the-highborne",
+          "rank_label": "Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
+              "text": "Illidan Stormrage"
+            }
+          ],
+          "source_text": "Drop: Illidan Stormrage (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 32331,
                 "name": "Cloak of the Illidari Council",
                 "type": "item",
@@ -769,7 +811,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Cloak of the Illidari Council",
             "Drop: The Illidari Council (Black Temple)"
           ],
@@ -788,7 +830,7 @@
           "item_id": 32331,
           "item_name": "Cloak of the Illidari Council",
           "item_url": "https://www.wowhead.com/tbc/item=32331/cloak-of-the-illidari-council",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=23426/the-illidari-council",
@@ -811,7 +853,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Brute Cloak of the Ogre-Magi",
             "Drop: High King Maulgar (Gruul's Lair)"
           ],
@@ -830,7 +872,7 @@
           "item_id": 28797,
           "item_name": "Brute Cloak of the Ogre-Magi",
           "item_url": "https://www.wowhead.com/tbc/item=28797/brute-cloak-of-the-ogre-magi",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=18831/high-king-maulgar",
@@ -853,7 +895,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Royal Cloak of the Sunstriders",
             "Drop: Kael'thas Sunstrider (Tempest Keep: The Eye)"
           ],
@@ -872,7 +914,7 @@
           "item_id": 29992,
           "item_name": "Royal Cloak of the Sunstriders",
           "item_url": "https://www.wowhead.com/tbc/item=29992/royal-cloak-of-the-sunstriders",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
@@ -880,7 +922,14 @@
             }
           ],
           "source_text": "Drop: Kael'thas Sunstrider (Tempest Keep: The Eye)"
-        },
+        }
+      ],
+      "slot": "Back"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Back Armor for Elemental Shaman in TBC Classic Phase 3",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -922,14 +971,7 @@
             }
           ],
           "source_text": "Drop: Prince Malchezaar (Karazhan)"
-        }
-      ],
-      "slot": "Back"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Back Armor for Elemental Shaman in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -993,7 +1035,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Skyshatter Breastplate",
             "Drop: Illidan Stormrage (Black Temple)"
           ],
@@ -1012,7 +1054,7 @@
           "item_id": 31017,
           "item_name": "Skyshatter Breastplate",
           "item_url": "https://www.wowhead.com/tbc/item=31017/skyshatter-breastplate",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
@@ -1035,7 +1077,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Chestguard of Relentless Storms",
             "Drop: Trash Mobs (Hyjal Summit / Black Temple)"
           ],
@@ -1054,7 +1096,7 @@
           "item_id": 32592,
           "item_name": "Chestguard of Relentless Storms",
           "item_url": "https://www.wowhead.com/tbc/item=32592/chestguard-of-relentless-storms",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [],
           "source_text": "Drop: Trash Mobs (Hyjal Summit / Black Temple)"
         },
@@ -1072,7 +1114,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Cataclysm Chestpiece",
             "Drop: Kael'thas Sunstrider (Tempest Keep: The Eye)"
           ],
@@ -1091,7 +1133,7 @@
           "item_id": 30169,
           "item_name": "Cataclysm Chestpiece",
           "item_url": "https://www.wowhead.com/tbc/item=30169/cataclysm-chestpiece",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
@@ -1361,9 +1403,9 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Bracers of Nimble Thought",
-            "Profession: Tailoring - can be purchased on the Auction House"
+            "Profession: Tailoring (BoE)"
           ],
           "entities": [
             {
@@ -1384,15 +1426,15 @@
             {
               "confidence": "parsed_source_text",
               "profession": "Tailoring",
-              "raw_text": "Profession: Tailoring - can be purchased on the Auction House",
+              "raw_text": "Profession: Tailoring (BoE)",
               "scope": "self_craft",
               "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
               "type": "profession"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [],
-          "source_text": "Profession: Tailoring - can be purchased on the Auction House"
+          "source_text": "Profession: Tailoring (BoE)"
         },
         {
           "cell_entities": [
@@ -1408,7 +1450,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Cuffs of Devastation",
             "Drop: Rage Winterchill (Hyjal Summit)"
           ],
@@ -1427,7 +1469,7 @@
           "item_id": 30870,
           "item_name": "Cuffs of Devastation",
           "item_url": "https://www.wowhead.com/tbc/item=30870/cuffs-of-devastation",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
@@ -1450,7 +1492,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Bands of the Coming Storm",
             "Drop: Supremus (Black Temple)"
           ],
@@ -1469,7 +1511,7 @@
           "item_id": 32259,
           "item_name": "Bands of the Coming Storm",
           "item_url": "https://www.wowhead.com/tbc/item=32259/bands-of-the-coming-storm",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22898/supremus",
@@ -1697,7 +1739,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Skyshatter Gauntlets",
             "Drop: Azgalor (Hyjal Summit)"
           ],
@@ -1716,7 +1758,7 @@
           "item_id": 31008,
           "item_name": "Skyshatter Gauntlets",
           "item_url": "https://www.wowhead.com/tbc/item=31008/skyshatter-gauntlets",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17842/azgalor",
@@ -1739,7 +1781,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Botanist's Gloves of Growth",
             "Drop: Teron Gorefiend (Black Temple)"
           ],
@@ -1758,7 +1800,7 @@
           "item_id": 32328,
           "item_name": "Botanist's Gloves of Growth",
           "item_url": "https://www.wowhead.com/tbc/item=32328/botanists-gloves-of-growth",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
@@ -2005,7 +2047,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Flashfire Girdle",
             "Drop: Shade of Akama (Black Temple)"
           ],
@@ -2024,7 +2066,7 @@
           "item_id": 32276,
           "item_name": "Flashfire Girdle",
           "item_url": "https://www.wowhead.com/tbc/item=32276/flashfire-girdle",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22841/shade-of-akama",
@@ -2047,7 +2089,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Waistwrap of Infinity",
             "Drop: Supremus (Black Temple)"
           ],
@@ -2066,7 +2108,7 @@
           "item_id": 32256,
           "item_name": "Waistwrap of Infinity",
           "item_url": "https://www.wowhead.com/tbc/item=32256/waistwrap-of-infinity",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22898/supremus",
@@ -2393,7 +2435,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Leggings of Channeled Elements",
             "Drop: Kaz'rogal (Hyjal Summit)"
           ],
@@ -2412,7 +2454,7 @@
           "item_id": 30916,
           "item_name": "Leggings of Channeled Elements",
           "item_url": "https://www.wowhead.com/tbc/item=30916/leggings-of-channeled-elements",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17888/kazrogal",
@@ -2435,7 +2477,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Skyshatter Legguards",
             "Drop: The Illidari Council (Black Temple)"
           ],
@@ -2454,7 +2496,7 @@
           "item_id": 31020,
           "item_name": "Skyshatter Legguards",
           "item_url": "https://www.wowhead.com/tbc/item=31020/skyshatter-legguards",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=23426/the-illidari-council",
@@ -2692,7 +2734,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
-              "reputation": "The Mag'har / Kurenai",
+              "reputation": "The Mag'har",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
+              "reputation": "Kurenai",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
               "standing": "Revered",
@@ -2734,7 +2786,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Slippers of the Seacaller",
             "Drop: High Warlord Naj'entus (Black Temple)"
           ],
@@ -2753,7 +2805,7 @@
           "item_id": 32239,
           "item_name": "Slippers of the Seacaller",
           "item_url": "https://www.wowhead.com/tbc/item=32239/slippers-of-the-seacaller",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22887/high-warlord-najentus",
@@ -2776,7 +2828,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Naturewarden's Treads",
             "Drop: Reliquary of the Lost (Black Temple)"
           ],
@@ -2795,7 +2847,7 @@
           "item_id": 32352,
           "item_name": "Naturewarden's Treads",
           "item_url": "https://www.wowhead.com/tbc/item=32352/naturewardens-treads",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22856/reliquary-of-the-lost",
@@ -2818,7 +2870,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Great",
             "Boots of Oceanic Fury",
             "Drop: High Warlord Naj'entus (Black Temple)"
           ],
@@ -2837,7 +2889,7 @@
           "item_id": 32242,
           "item_name": "Boots of Oceanic Fury",
           "item_url": "https://www.wowhead.com/tbc/item=32242/boots-of-oceanic-fury",
-          "rank_label": "BiS",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22887/high-warlord-najentus",
@@ -3136,7 +3188,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "The Sun King's Talisman",
             "Drop: Kael'thas Sunstrider (Tempest Keep: The Eye)"
           ],
@@ -3155,7 +3207,7 @@
           "item_id": 30015,
           "item_name": "The Sun King's Talisman",
           "item_url": "https://www.wowhead.com/tbc/item=30015/the-sun-kings-talisman",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
@@ -3178,7 +3230,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Translucent Spellthread Necklace",
             "Drop: Reliquary of the Lost (Black Temple)"
           ],
@@ -3197,7 +3249,7 @@
           "item_id": 32349,
           "item_name": "Translucent Spellthread Necklace",
           "item_url": "https://www.wowhead.com/tbc/item=32349/translucent-spellthread-necklace",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22856/reliquary-of-the-lost",
@@ -3360,7 +3412,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Ring of Ancient Knowledge",
             "Drop: Trash Mobs (Black Temple)"
           ],
@@ -3379,7 +3431,7 @@
           "item_id": 32527,
           "item_name": "Ring of Ancient Knowledge",
           "item_url": "https://www.wowhead.com/tbc/item=32527/ring-of-ancient-knowledge",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [],
           "source_text": "Drop: Trash Mobs (Black Temple)"
         },
@@ -3397,7 +3449,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Band of the Eternal Sage",
             "Quest: (The Scale of the Sands Exalted)"
           ],
@@ -3428,7 +3480,7 @@
               "type": "reputation"
             }
           ],
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [],
           "source_text": "Quest: (The Scale of the Sands Exalted)"
         },
@@ -3446,7 +3498,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Ring of Captured Storms",
             "Drop: High Warlord Naj'entus (Black Temple)"
           ],
@@ -3465,7 +3517,7 @@
           "item_id": 32247,
           "item_name": "Ring of Captured Storms",
           "item_url": "https://www.wowhead.com/tbc/item=32247/ring-of-captured-storms",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22887/high-warlord-najentus",
@@ -3488,7 +3540,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Ring of Unrelenting Storms",
             "Drop: Trash Mobs (Karazhan)"
           ],
@@ -3507,7 +3559,7 @@
           "item_id": 30667,
           "item_name": "Ring of Unrelenting Storms",
           "item_url": "https://www.wowhead.com/tbc/item=30667/ring-of-unrelenting-storms",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [],
           "source_text": "Drop: Trash Mobs (Karazhan)"
         }
@@ -3812,16 +3864,6 @@
               "standing": "Exalted",
               "standing_rank": 8,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -3933,7 +3975,7 @@
             []
           ],
           "cells": [
-            "Special",
+            "Best - Undead/Demons",
             "Mark of the Champion",
             "Quest: The Fall of Kel'Thuzad (Classic - Naxxramas)"
           ],
@@ -3952,7 +3994,7 @@
           "item_id": 23207,
           "item_name": "Mark of the Champion",
           "item_url": "https://www.wowhead.com/tbc/item=23207/mark-of-the-champion",
-          "rank_label": "Special",
+          "rank_label": "Best - Undead/Demons",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=9120/the-fall-of-kelthuzad",
@@ -3975,7 +4017,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "The Skull of Gul'dan",
             "Drop: Illidan Stormrage (Black Temple)"
           ],
@@ -3994,7 +4036,7 @@
           "item_id": 32483,
           "item_name": "The Skull of Gul'dan",
           "item_url": "https://www.wowhead.com/tbc/item=32483/the-skull-of-guldan",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
@@ -4017,7 +4059,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "The Lightning Capacitor",
             "Drop: Terestian Illhoof (Karazhan)"
           ],
@@ -4036,7 +4078,7 @@
           "item_id": 28785,
           "item_name": "The Lightning Capacitor",
           "item_url": "https://www.wowhead.com/tbc/item=28785/the-lightning-capacitor",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=15688/terestian-illhoof",
@@ -4059,7 +4101,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Icon of the Silver Crescent",
             "Vendor: G'eras (Badges of Justice)"
           ],
@@ -4078,7 +4120,7 @@
           "item_id": 29370,
           "item_name": "Icon of the Silver Crescent",
           "item_url": "https://www.wowhead.com/tbc/item=29370/icon-of-the-silver-crescent",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=18525/geras",
@@ -4101,7 +4143,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best - Seasonal",
             "Dark Iron Smoking Pipe",
             "Drop: Coren Direbrew (Brewfest Seasonal Event)"
           ],
@@ -4120,7 +4162,7 @@
           "item_id": 38290,
           "item_name": "Dark Iron Smoking Pipe",
           "item_url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe",
-          "rank_label": "BiS",
+          "rank_label": "Best - Seasonal",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
@@ -4359,16 +4401,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -4485,7 +4517,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Zhar'doom, Greatstaff of the Devourer",
             "Drop: Illidan Stormrage (Black Temple)"
           ],
@@ -4504,7 +4536,7 @@
           "item_id": 32374,
           "item_name": "Zhar'doom, Greatstaff of the Devourer",
           "item_url": "https://www.wowhead.com/tbc/item=32374/zhardoom-greatstaff-of-the-devourer",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
@@ -4527,7 +4559,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "The Maelstrom's Fury",
             "Drop: High Warlord Naj'entus (Black Temple)"
           ],
@@ -4546,7 +4578,7 @@
           "item_id": 32237,
           "item_name": "The Maelstrom's Fury",
           "item_url": "https://www.wowhead.com/tbc/item=32237/the-maelstroms-fury",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22887/high-warlord-najentus",
@@ -4569,7 +4601,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Vengeful Gladiator's Gavel",
             "Vendor: Arena Points (Season 3)"
           ],
@@ -4588,7 +4620,7 @@
           "item_id": 33687,
           "item_name": "Vengeful Gladiator's Gavel",
           "item_url": "https://www.wowhead.com/tbc/item=33687/vengeful-gladiators-gavel",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [],
           "source_text": "Vendor: Arena Points (Season 3)"
         },
@@ -4598,33 +4630,33 @@
             [
               {
                 "id": 34009,
-                "name": "Hammer of Judgment",
+                "name": "Hammer of Judgement",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment"
+                "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Hammer of Judgment",
+            "Hammer of Judgement",
             "Drop: Trash Mobs (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 34009,
-              "name": "Hammer of Judgment",
+              "name": "Hammer of Judgement",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment"
+              "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
             }
           ],
           "entity_id": 34009,
-          "entity_name": "Hammer of Judgment",
+          "entity_name": "Hammer of Judgement",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment",
+          "entity_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement",
           "item_id": 34009,
-          "item_name": "Hammer of Judgment",
-          "item_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment",
+          "item_name": "Hammer of Judgement",
+          "item_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement",
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Drop: Trash Mobs (Hyjal Summit)"
@@ -4913,34 +4945,34 @@
             [
               {
                 "id": 30909,
-                "name": "Antonidas' Aegis of Rapt Concentration",
+                "name": "Antonidas's Aegis of Rapt Concentration",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration"
+                "url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration"
               }
             ],
             []
           ],
           "cells": [
-            "BiS",
-            "Antonidas' Aegis of Rapt Concentration",
+            "Best",
+            "Antonidas's Aegis of Rapt Concentration",
             "Drop: Archimonde (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30909,
-              "name": "Antonidas' Aegis of Rapt Concentration",
+              "name": "Antonidas's Aegis of Rapt Concentration",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration"
+              "url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration"
             }
           ],
           "entity_id": 30909,
-          "entity_name": "Antonidas' Aegis of Rapt Concentration",
+          "entity_name": "Antonidas's Aegis of Rapt Concentration",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration",
+          "entity_url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration",
           "item_id": 30909,
-          "item_name": "Antonidas' Aegis of Rapt Concentration",
-          "item_url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration",
-          "rank_label": "BiS",
+          "item_name": "Antonidas's Aegis of Rapt Concentration",
+          "item_url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
@@ -4963,7 +4995,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Chronicle of Dark Secrets",
             "Drop: Rage Winterchill (Hyjal Summit)"
           ],
@@ -4982,7 +5014,7 @@
           "item_id": 30872,
           "item_name": "Chronicle of Dark Secrets",
           "item_url": "https://www.wowhead.com/tbc/item=30872/chronicle-of-dark-secrets",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
@@ -5224,7 +5256,7 @@
             []
           ],
           "cells": [
-            "BiS",
+            "Best",
             "Totem of Ancestral Guidance",
             "Drop: Teron Gorefiend (Black Temple)"
           ],
@@ -5243,7 +5275,7 @@
           "item_id": 32330,
           "item_name": "Totem of Ancestral Guidance",
           "item_url": "https://www.wowhead.com/tbc/item=32330/totem-of-ancestral-guidance",
-          "rank_label": "BiS",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
@@ -5266,7 +5298,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Great",
             "Totem of the Void",
             "Drop: Cache of the Legion (The Mechanar)"
           ],
@@ -5285,7 +5317,7 @@
           "item_id": 28248,
           "item_name": "Totem of the Void",
           "item_url": "https://www.wowhead.com/tbc/item=28248/totem-of-the-void",
-          "rank_label": "Option",
+          "rank_label": "Great",
           "source_links": [],
           "source_text": "Drop: Cache of the Legion (The Mechanar)"
         },
@@ -5372,6 +5404,6 @@
       "slot": "Totem"
     }
   ],
-  "title": "Burning Crusade Classic Elemental Shaman DPS Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Elemental Shaman DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

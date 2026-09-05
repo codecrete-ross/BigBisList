@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:33+00:00",
+  "fetched_at": "2026-09-04T23:48:47+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -2407,7 +2407,7 @@
           "cells": [
             "Optional",
             "Gladiator's Greatsword",
-            "Vendor: 3750"
+            "Vendor: 3750 Arena Points"
           ],
           "entities": [
             {
@@ -2427,11 +2427,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "Vendor: 3750"
+          "source_text": "Vendor: 3750 Arena Points"
         },
         {
           "cell_entities": [
@@ -2577,7 +2577,7 @@
           "cells": [
             "Best",
             "Gladiator's Slicer",
-            "PvP: 2283"
+            "PvP: 2283 Arena Points"
           ],
           "entities": [
             {
@@ -2597,11 +2597,11 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "PvP: 2283"
+          "source_text": "PvP: 2283 Arena Points"
         },
         {
           "cell_entities": [
@@ -2785,16 +2785,6 @@
               "standing": "Exalted",
               "standing_rank": 8,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Aldor"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Endarin Requires Exalted with The Aldor",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/arms-warrior-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Alternative",
@@ -2829,7 +2819,7 @@
           "cells": [
             "Best",
             "Gladiator's Quickblade",
-            "PvP: 370"
+            "PvP: 370 Arena Points"
           ],
           "entities": [
             {
@@ -2849,11 +2839,11 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "PvP: 370"
+          "source_text": "PvP: 370 Arena Points"
         },
         {
           "cell_entities": [

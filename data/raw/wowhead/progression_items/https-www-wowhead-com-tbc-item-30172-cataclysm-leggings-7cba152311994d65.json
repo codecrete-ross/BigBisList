@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Leggings Phase 2 Item Level 133 Binds when picked up Legs Mail 817 Armor +48 Stamina +46 Intellect Yellow Socket Socket Bonus: +2 Spell Damage and Healing Durability 105 / 105 Classes: Shaman Requires Level 70 Equip: Improves spell hit rating by 14. Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 54. Cataclysm Regalia (0/5) Cataclysm Chestpiece Cataclysm Handgrips Cataclysm Headpiece Cataclysm Leggings Cataclysm Shoulderpads (2) Set : Each time you cast an offensive spell, there is a chance your next Lesser Healing Wave will cost 380 less mana. (Proc chance: 7%) (4) Set : Your Lightning Bolt critical strikes have a chance to grant you 120 mana. (Proc chance: 25%)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:51+00:00",
+  "inventory_slot": null,
+  "item_id": 30172,
+  "item_stats": {
+    "armor": 817,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 14.",
+        "stats": {
+          "spell_hit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 24.",
+        "stats": {
+          "spell_crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 54.",
+        "stats": {
+          "spell_power": 54.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 14.",
+      "Equip: Improves spell critical strike rating by 24.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 54."
+    ],
+    "id": 30172,
+    "item_level": 133,
+    "name": "Cataclysm Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 46.0,
+      "spell_crit_rating": 24.0,
+      "spell_hit_rating": 14.0,
+      "spell_power": 54.0,
+      "stamina": 48.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30172/cataclysm-leggings"
+  },
+  "name": "Cataclysm Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30172/cataclysm-leggings"
+}

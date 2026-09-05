@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Justicar Shoulderplates Phase 1 Item Level 120 Binds when picked up Shoulder Plate 1133 Armor +36 Strength +13 Agility +24 Stamina +15 Intellect Yellow Socket Red Socket Socket Bonus: +3 Hit Rating Durability 100 / 100 Classes: Paladin Requires Level 70 Equip: Improves hit rating by 16. Justicar Battlegear (0/5) Justicar Breastplate Justicar Crown Justicar Gauntlets Justicar Greaves Justicar Shoulderplates (2) Set : Increases the damage bonus of your Judgement of the Crusader by 15%. (4) Set : Increases the damage dealt by your Judgement of Command by 10%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:21+00:00",
+  "inventory_slot": null,
+  "item_id": 29075,
+  "item_stats": {
+    "armor": 1133,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 16.",
+        "stats": {
+          "hit_rating": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 16."
+    ],
+    "id": 29075,
+    "item_level": 120,
+    "name": "Justicar Shoulderplates",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "socket_bonus": {
+      "hit_rating": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 13.0,
+      "hit_rating": 16.0,
+      "intellect": 15.0,
+      "stamina": 24.0,
+      "strength": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29075/justicar-shoulderplates"
+  },
+  "name": "Justicar Shoulderplates",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29075/justicar-shoulderplates"
+}

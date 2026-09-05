@@ -1,7 +1,10 @@
 {
-  "fetched_at": "2026-05-24T04:24:45+00:00",
+  "content_phase": "T6",
+  "fetched_at": "2026-09-04T23:49:09+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "previous_verified_phase": "PR",
+  "recommendation_status": "unverified_phase",
   "sections": [],
   "tables": [
     {
@@ -392,7 +395,7 @@
           "cells": [
             "Optional",
             "Grand Marshal's Plate Shoulders High Warlord's Plate Shoulders",
-            "PvP: 12622 + 20 Arathi Basin Mark of Honor"
+            "PvP: 12622 Honor Points + 20 Arathi Basin Mark of Honor"
           ],
           "entities": [
             {
@@ -424,15 +427,15 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20559/arathi-basin-mark-of-honor",
               "text": "Arathi Basin Mark of Honor"
             }
           ],
-          "source_text": "PvP: 12622 + 20 Arathi Basin Mark of Honor"
+          "source_text": "PvP: 12622 Honor Points + 20 Arathi Basin Mark of Honor"
         },
         {
           "cell_entities": [
@@ -970,7 +973,7 @@
           "cells": [
             "Best",
             "Grand Marshal's Plate Chestpiece High Warlord's Plate Chestpiece",
-            "PvP: 20655 + 30 Arathi Basin Mark of Honor"
+            "PvP: 20655 Honor Points + 30 Arathi Basin Mark of Honor"
           ],
           "entities": [
             {
@@ -1002,15 +1005,15 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20559/arathi-basin-mark-of-honor",
               "text": "Arathi Basin Mark of Honor"
             }
           ],
-          "source_text": "PvP: 20655 + 30 Arathi Basin Mark of Honor"
+          "source_text": "PvP: 20655 Honor Points + 30 Arathi Basin Mark of Honor"
         },
         {
           "cell_entities": [
@@ -1187,7 +1190,7 @@
           "cells": [
             "Best",
             "Marshal's Plate Bracers",
-            "5897 20 Warsong Gulch Mark of Honor - Faction Capital"
+            "5897 Honor Points 20 Warsong Gulch Mark of Honor - Faction Capital"
           ],
           "entities": [
             {
@@ -1213,15 +1216,15 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
               "text": "Warsong Gulch Mark of Honor"
             }
           ],
-          "source_text": "5897 20 Warsong Gulch Mark of Honor - Faction Capital"
+          "source_text": "5897 Honor Points 20 Warsong Gulch Mark of Honor - Faction Capital"
         },
         {
           "cell_entities": [
@@ -1579,16 +1582,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril - Requires Revered with The Scryers",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Easy to Obtain",
@@ -1721,7 +1714,7 @@
           "cells": [
             "Best",
             "Marshal's Plate Belt",
-            "8925 40 Arathi Basin Mark of Honor - Faction Capital"
+            "8925 Honor Points 40 Arathi Basin Mark of Honor - Faction Capital"
           ],
           "entities": [
             {
@@ -1747,15 +1740,15 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20559/arathi-basin-mark-of-honor",
               "text": "Arathi Basin Mark of Honor"
             }
           ],
-          "source_text": "8925 40 Arathi Basin Mark of Honor - Faction Capital"
+          "source_text": "8925 Honor Points 40 Arathi Basin Mark of Honor - Faction Capital"
         },
         {
           "cell_entities": [
@@ -2291,7 +2284,7 @@
           "cells": [
             "Best",
             "Marshal's Plate Greaves",
-            "8925 40 Eye of the Storm Mark of Honor - Faction Capital"
+            "8925 Honor Points 40 Eye of the Storm Mark of Honor - Faction Capital"
           ],
           "entities": [
             {
@@ -2317,15 +2310,15 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=29024/eye-of-the-storm-mark-of-honor",
               "text": "Eye of the Storm Mark of Honor"
             }
           ],
-          "source_text": "8925 40 Eye of the Storm Mark of Honor - Faction Capital"
+          "source_text": "8925 Honor Points 40 Eye of the Storm Mark of Honor - Faction Capital"
         },
         {
           "cell_entities": [
@@ -2582,7 +2575,7 @@
           "cells": [
             "Best Threat",
             "Pendant of Triumph",
-            "15300 10 Eye of the Storm Mark of Honor - Faction Capital"
+            "15300 Honor Points 10 Eye of the Storm Mark of Honor - Faction Capital"
           ],
           "entities": [
             {
@@ -2608,15 +2601,15 @@
           "rank_label": "Best Threat",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=29024/eye-of-the-storm-mark-of-honor",
               "text": "Eye of the Storm Mark of Honor"
             }
           ],
-          "source_text": "15300 10 Eye of the Storm Mark of Honor - Faction Capital"
+          "source_text": "15300 Honor Points 10 Eye of the Storm Mark of Honor - Faction Capital"
         },
         {
           "cell_entities": [
@@ -3197,33 +3190,33 @@
             [
               {
                 "id": 29387,
-                "name": "Gnomeregan Auto-Dodger 600",
+                "name": "Gnomeregan Auto-Blocker 600",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600"
+                "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
               }
             ],
             []
           ],
           "cells": [
             "Threat Alternative",
-            "Gnomeregan Auto-Dodger 600",
+            "Gnomeregan Auto-Blocker 600",
             "Vendor: G'eras (25 Badges of Justice)"
           ],
           "entities": [
             {
               "id": 29387,
-              "name": "Gnomeregan Auto-Dodger 600",
+              "name": "Gnomeregan Auto-Blocker 600",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600"
+              "url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600"
             }
           ],
           "entity_id": 29387,
-          "entity_name": "Gnomeregan Auto-Dodger 600",
+          "entity_name": "Gnomeregan Auto-Blocker 600",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600",
+          "entity_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600",
           "item_id": 29387,
-          "item_name": "Gnomeregan Auto-Dodger 600",
-          "item_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-dodger-600",
+          "item_name": "Gnomeregan Auto-Blocker 600",
+          "item_url": "https://www.wowhead.com/tbc/item=29387/gnomeregan-auto-blocker-600",
           "rank_label": "Threat Alternative",
           "source_links": [
             {
@@ -4296,7 +4289,7 @@
           "cells": [
             "Alternative",
             "Grand Marshal's Barricade High Warlord's Barricade",
-            "PvP: 19125 + 20 Eye of the Storm Mark of Honor"
+            "PvP: 19125 Honor Points + 20 Eye of the Storm Mark of Honor"
           ],
           "entities": [
             {
@@ -4328,15 +4321,15 @@
           "rank_label": "Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=29024/eye-of-the-storm-mark-of-honor",
               "text": "Eye of the Storm Mark of Honor"
             }
           ],
-          "source_text": "PvP: 19125 + 20 Eye of the Storm Mark of Honor"
+          "source_text": "PvP: 19125 Honor Points + 20 Eye of the Storm Mark of Honor"
         },
         {
           "cell_entities": [

@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Dragonhide Gloves Phase 3 Item Level 146 Binds when picked up Hands Leather 343 Armor +31 Strength +32 Agility +44 Stamina +21 Intellect Durability 40 / 40 Classes: Druid Requires Level 70 Equip: Improves hit rating by 9. Equip: Improves your resilience rating by 22. Equip: Causes your Maim ability to interrupt spellcasting and prevent any spell in that school from being cast for 3 sec. Gladiator's Sanctuary (0/5) Gladiator's Dragonhide Gloves Gladiator's Dragonhide Helm Gladiator's Dragonhide Legguards Gladiator's Dragonhide Spaulders Gladiator's Dragonhide Tunic (2) Set : +35 Resilience Rating. (4) Set : Increases your movement speed by 15% while in Bear Form, Cat Form, or Travel Form. Only active outdoors.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:59+00:00",
+  "inventory_slot": null,
+  "item_id": 33671,
+  "item_stats": {
+    "armor": 343,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 9.",
+        "stats": {
+          "hit_rating": 9.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 22.",
+        "stats": {
+          "resilience_rating": 22.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Causes your Maim ability to interrupt spellcasting and prevent any spell in that school from being cast for 3 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 9.",
+      "Equip: Improves your resilience rating by 22.",
+      "Equip: Causes your Maim ability to interrupt spellcasting and prevent any spell in that school from being cast for 3 sec."
+    ],
+    "id": 33671,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Dragonhide Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "agility": 32.0,
+      "hit_rating": 9.0,
+      "intellect": 21.0,
+      "resilience_rating": 22.0,
+      "stamina": 44.0,
+      "strength": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33671/vengeful-gladiators-dragonhide-gloves"
+  },
+  "name": "Vengeful Gladiator's Dragonhide Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33671/vengeful-gladiators-dragonhide-gloves"
+}

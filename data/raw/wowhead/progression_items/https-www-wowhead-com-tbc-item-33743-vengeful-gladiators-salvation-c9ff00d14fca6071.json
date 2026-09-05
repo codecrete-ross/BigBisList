@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeful Gladiator's Salvation Phase 3 Item Level 146 Binds when picked up Main Hand Mace 16 - 116 Damage Speed 1.60 (41.25 damage per second) +35 Stamina +23 Intellect Durability 105 / 105 Requires Level 70 Equip: Improves your resilience rating by 21. Equip: Increases healing done by up to 464 and damage done by up to 155 for all magical spells and effects.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:03+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 33743,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.25,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves your resilience rating by 21.",
+        "stats": {
+          "resilience_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 464 and damage done by up to 155 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 464.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves your resilience rating by 21.",
+      "Equip: Increases healing done by up to 464 and damage done by up to 155 for all magical spells and effects."
+    ],
+    "id": 33743,
+    "item_level": 146,
+    "name": "Vengeful Gladiator's Salvation",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 464.0,
+      "intellect": 23.0,
+      "resilience_rating": 21.0,
+      "stamina": 35.0
+    },
+    "weapon_max_damage": 116,
+    "weapon_min_damage": 16,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33743/vengeful-gladiators-salvation"
+  },
+  "name": "Vengeful Gladiator's Salvation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33743/vengeful-gladiators-salvation"
+}

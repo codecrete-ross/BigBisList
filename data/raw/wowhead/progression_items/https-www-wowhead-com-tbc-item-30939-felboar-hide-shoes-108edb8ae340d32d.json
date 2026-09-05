@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Felboar Hide Shoes Phase 1 Item Level 109 Binds when picked up Feet Leather 191 Armor +18 Agility +15 Stamina Durability 50 / 50 Equip: Improves hit rating by 9. Equip: Increases attack power by 68. Sell Price: 3 23 6",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:40+00:00",
+  "inventory_slot": null,
+  "item_id": 30939,
+  "item_stats": {
+    "armor": 191,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 9.",
+        "stats": {
+          "hit_rating": 9.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 68.",
+        "stats": {
+          "attack_power": 68.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 9.",
+      "Equip: Increases attack power by 68."
+    ],
+    "id": 30939,
+    "item_level": 109,
+    "name": "Felboar Hide Shoes",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "attack_power": 68.0,
+      "hit_rating": 9.0,
+      "stamina": 15.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30939/felboar-hide-shoes"
+  },
+  "name": "Felboar Hide Shoes",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30939/felboar-hide-shoes"
+}

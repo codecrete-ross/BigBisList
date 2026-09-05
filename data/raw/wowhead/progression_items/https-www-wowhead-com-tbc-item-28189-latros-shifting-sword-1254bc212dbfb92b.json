@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Latro's Shifting Sword Phase 1 Item Level 115 Binds when picked up One-Hand Sword 70 - 131 Damage Speed 1.40 (71.79 damage per second) +15 Agility Durability 90 / 90 Requires Level 70 Equip: Increases your expertise rating by 14. Equip: Increases attack power by 26. Latro's Flurry (0/2) Latro's Dancing Blade Latro's Shifting Sword (2) Set : Increases attack power by 30. Sell Price: 8 87 85",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:59+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 28189,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 71.79,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases your expertise rating by 14.",
+        "stats": {
+          "expertise_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 26.",
+        "stats": {
+          "attack_power": 26.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases your expertise rating by 14.",
+      "Equip: Increases attack power by 26."
+    ],
+    "id": 28189,
+    "item_level": 115,
+    "name": "Latro's Shifting Sword",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "attack_power": 26.0,
+      "expertise_rating": 14.0
+    },
+    "weapon_max_damage": 131,
+    "weapon_min_damage": 70,
+    "weapon_speed": 1.4,
+    "weapon_subtype": "Sword",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28189/latros-shifting-sword"
+  },
+  "name": "Latro's Shifting Sword",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28189/latros-shifting-sword"
+}

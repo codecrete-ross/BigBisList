@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Hard Khorium Band Item Level 70 Binds when picked up Requires Jewelcrafting (365) Use: Teaches you how to craft a Hard Khorium Band. Sell Price: 3 50 Hard Khorium Band Item Level 159 Binds when equipped Unique-Equipped Finger +30 Agility +42 Stamina Requires Level 70 Equip: Improves haste rating by 28. Equip: Increases attack power by 58. Sell Price: 6 2 56 Requires Hardened Khorium (4), Primal Air (20), Mercurial Adamantite (12), Sunmote (5)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:39+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 35200,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Hard Khorium Band.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves haste rating by 28.",
+        "stats": {
+          "haste_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 58.",
+        "stats": {
+          "attack_power": 58.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 28.",
+      "Equip: Increases attack power by 58."
+    ],
+    "id": 35200,
+    "item_level": 70,
+    "name": "Design: Hard Khorium Band",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 58.0,
+      "haste_rating": 28.0,
+      "stamina": 42.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft a Hard Khorium Band."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35200"
+  },
+  "name": "Design: Hard Khorium Band",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Hard Khorium Band Item Level 70 Binds when picked up Requires Jewelcrafting (365) Use: Teaches you how to craft a Hard Khorium Band. Sell Price: 3 50 Hard Khorium Band Item Level 159 Binds when equipped Unique-Equipped Finger +30 Agility +42 Stamina Requires Level 70 Equip: Improves haste rating by 28. Equip: Increases attack power by 58. Sell Price: 6 2 56 Requires Hardened Khorium (4), Primal Air (20), Mercurial Adamantite (12), Sunmote (5)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35200",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35200"
+}

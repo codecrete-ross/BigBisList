@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vindicator's Ringmail Sabatons Phase 3 Item Level 146 Binds when picked up Feet Mail 702 Armor +43 Stamina +30 Intellect Durability 70 / 70 Classes: Hunter , Shaman Requires Level 70 Equip: Improves spell critical strike rating by 29. Equip: Improves your resilience rating by 27. Equip: Increases healing done by up to 66 and damage done by up to 22 for all magical spells and effects.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:11+00:00",
+  "inventory_slot": null,
+  "item_id": 33908,
+  "item_stats": {
+    "armor": 702,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 29.",
+        "stats": {
+          "spell_crit_rating": 29.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 27.",
+        "stats": {
+          "resilience_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 66 and damage done by up to 22 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 66.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 29.",
+      "Equip: Improves your resilience rating by 27.",
+      "Equip: Increases healing done by up to 66 and damage done by up to 22 for all magical spells and effects."
+    ],
+    "id": 33908,
+    "item_level": 146,
+    "name": "Vindicator's Ringmail Sabatons",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Hunter",
+        "Shaman"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "healing_power": 66.0,
+      "intellect": 30.0,
+      "resilience_rating": 27.0,
+      "spell_crit_rating": 29.0,
+      "stamina": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33908/vindicators-ringmail-sabatons"
+  },
+  "name": "Vindicator's Ringmail Sabatons",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33908/vindicators-ringmail-sabatons"
+}

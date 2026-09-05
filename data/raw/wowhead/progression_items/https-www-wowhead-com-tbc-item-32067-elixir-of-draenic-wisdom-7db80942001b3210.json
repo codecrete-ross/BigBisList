@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Elixir of Draenic Wisdom Item Level 64 Requires Level 50 Use: Increases Intellect and Spirit by 30 for 1 hour. Guardian Elixir. (3 Sec Cooldown) Max Stack: 20 Sell Price: 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:39+00:00",
+  "inventory_slot": null,
+  "item_id": 32067,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases Intellect and Spirit by 30 for 1 hour. Guardian Elixir. (3 Sec Cooldown) Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 32067,
+    "item_level": 64,
+    "name": "Elixir of Draenic Wisdom",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 50,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases Intellect and Spirit by 30 for 1 hour. Guardian Elixir. (3 Sec Cooldown) Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32067/elixir-of-draenic-wisdom"
+  },
+  "name": "Elixir of Draenic Wisdom",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32067/elixir-of-draenic-wisdom"
+}

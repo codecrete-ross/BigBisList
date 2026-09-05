@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Legacy Phase 1 Item Level 115 Binds when picked up Two-Hand Axe 319 - 479 Damage Speed 3.50 (114.00 damage per second) +40 Agility +46 Stamina Durability 120 / 120 Requires Level 70 Equip: Increases attack power by 80. Equip: Restores 8 mana per 5 sec. \"Legend tells of this axe being wielded by Draenei exarchs since the time of their banishment from Argus.\" Sell Price: 15 12 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:36+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 28587,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 114.0,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases attack power by 80.",
+        "stats": {
+          "attack_power": 80.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 8 mana per 5 sec. \"Legend tells of this axe being wielded by Draenei exarchs since the time of their banishment from Argus.\"",
+        "stats": {
+          "mp5": 8.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases attack power by 80.",
+      "Equip: Restores 8 mana per 5 sec. \"Legend tells of this axe being wielded by Draenei exarchs since the time of their banishment from Argus.\""
+    ],
+    "id": 28587,
+    "item_level": 115,
+    "name": "Legacy",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 40.0,
+      "attack_power": 80.0,
+      "mp5": 8.0,
+      "stamina": 46.0
+    },
+    "weapon_max_damage": 479,
+    "weapon_min_damage": 319,
+    "weapon_speed": 3.5,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28587/legacy"
+  },
+  "name": "Legacy",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28587/legacy"
+}

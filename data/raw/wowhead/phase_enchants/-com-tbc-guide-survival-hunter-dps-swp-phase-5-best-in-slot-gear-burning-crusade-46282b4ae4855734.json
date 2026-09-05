@@ -1,0 +1,34 @@
+{
+  "bindings": [
+    {
+      "class": "Hunter",
+      "phase": "SWP",
+      "spec": "Survival"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Survival Hunter DPS in Phase 5",
+      "text": "Aldor vs. Scryer for Hunter DPS in Phase 5\r\nIn Phase 5,  is still the best faction choice for Hunters; choosing  is not the end of the world, as the difference is very minor. There are no new key items that we benefit from in Phase 5. The only relevant item is still the shoulder enchant  or ."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:33+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Survival Hunter DPS Best in Slot (BiS) Phase 5 Gear Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/survival-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade"
+}

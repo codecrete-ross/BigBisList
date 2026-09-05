@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shiv of Exsanguination Phase 5 Item Level 154 Binds when picked up One-Hand Dagger 136 - 253 Damage Speed 1.80 (108.06 damage per second) +25 Agility Durability 75 / 75 Requires Level 70 Equip: Increases attack power by 42. Equip: Your attacks ignore 196 of your opponent's armor. Sell Price: 14 70 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:26+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 34197,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 108.06,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases attack power by 42.",
+        "stats": {
+          "attack_power": 42.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 196 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases attack power by 42.",
+      "Equip: Your attacks ignore 196 of your opponent's armor."
+    ],
+    "id": 34197,
+    "item_level": 154,
+    "name": "Shiv of Exsanguination",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "agility": 25.0,
+      "attack_power": 42.0
+    },
+    "weapon_max_damage": 253,
+    "weapon_min_damage": 136,
+    "weapon_speed": 1.8,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34197/shiv-of-exsanguination"
+  },
+  "name": "Shiv of Exsanguination",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34197/shiv-of-exsanguination"
+}

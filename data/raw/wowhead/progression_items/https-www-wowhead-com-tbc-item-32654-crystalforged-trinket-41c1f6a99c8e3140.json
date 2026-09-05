@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crystalforged Trinket Phase 2 Item Level 115 Binds when picked up Unique-Equipped Trinket Requires Ogri'la - Revered Use: Increases attack power by 216 for 10 sec. (1 Min Cooldown) Equip: +7 Weapon Damage. Sell Price: 1 95 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:19+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32654,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases attack power by 216 for 10 sec. (1 Min Cooldown)",
+        "stats": {
+          "attack_power": 216.0
+        },
+        "type": "use"
+      }
+    ],
+    "id": 32654,
+    "item_level": 115,
+    "name": "Crystalforged Trinket",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases attack power by 216 for 10 sec. (1 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32654/crystalforged-trinket"
+  },
+  "name": "Crystalforged Trinket",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Crystalforged Trinket Phase 2 Item Level 115 Binds when picked up Unique-Equipped Trinket Requires Ogri'la - Revered Use: Increases attack power by 216 for 10 sec. (1 Min Cooldown) Equip: +7 Weapon Damage. Sell Price: 1 95 50",
+      "reputation": "Ogri'la",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32654/crystalforged-trinket",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32654/crystalforged-trinket"
+}

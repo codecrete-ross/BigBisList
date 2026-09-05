@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shield of Condemnation Phase 1 Item Level 92 Binds when picked up Off Hand Shield 3936 Armor 90 Block +10 Stamina +10 Intellect Durability 120 / 120 Requires Level 60 Equip: Restores 6 mana per 5 sec. Equip: Increases healing done by up to 59 and damage done by up to 20 for all magical spells and effects. Sell Price: 5 89 90",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:06+00:00",
+  "inventory_slot": "Off Hand",
+  "item_id": 22819,
+  "item_stats": {
+    "armor": 3936,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 59 and damage done by up to 20 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 59.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Restores 6 mana per 5 sec.",
+      "Equip: Increases healing done by up to 59 and damage done by up to 20 for all magical spells and effects."
+    ],
+    "id": 22819,
+    "item_level": 92,
+    "name": "Shield of Condemnation",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Off Hand",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 59.0,
+      "intellect": 10.0,
+      "mp5": 6.0,
+      "stamina": 10.0
+    },
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22819/shield-of-condemnation"
+  },
+  "name": "Shield of Condemnation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22819/shield-of-condemnation"
+}

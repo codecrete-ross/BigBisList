@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ribbon of Sacrifice Phase 1 Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Use: For the next 20 sec, your direct heals grant Fecundity to your target, increasing the healing received by the target by up to 30. Fecundity lasts 10 sec and stacks up to 5 times. (2 Min Cooldown) Equip: Increases healing done by up to 73 and damage done by up to 25 for all magical spells and effects. Sell Price: 9 11 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:36+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28590,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: For the next 20 sec, your direct heals grant Fecundity to your target, increasing the healing received by the target by up to 30. Fecundity lasts 10 sec and stacks up to 5 times. (2 Min Cooldown)",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 73 and damage done by up to 25 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 73.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 73 and damage done by up to 25 for all magical spells and effects."
+    ],
+    "id": 28590,
+    "item_level": 115,
+    "name": "Ribbon of Sacrifice",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "healing_power": 73.0
+    },
+    "use_effects": [
+      "Use: For the next 20 sec, your direct heals grant Fecundity to your target, increasing the healing received by the target by up to 30. Fecundity lasts 10 sec and stacks up to 5 times. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice"
+  },
+  "name": "Ribbon of Sacrifice",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28590/ribbon-of-sacrifice"
+}

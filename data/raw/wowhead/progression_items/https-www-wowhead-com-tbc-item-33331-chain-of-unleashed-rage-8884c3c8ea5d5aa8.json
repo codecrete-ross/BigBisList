@@ -1,0 +1,62 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Chain of Unleashed Rage Phase 4 Item Level 128 Binds when picked up Waist Plate 904 Armor +34 Strength +37 Stamina Red Socket Blue Socket Socket Bonus: +3 Hit Rating Durability 55 / 55 Requires Level 70 Equip: Improves hit rating by 14. Equip: Your attacks ignore 154 of your opponent's armor.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:40+00:00",
+  "inventory_slot": null,
+  "item_id": 33331,
+  "item_stats": {
+    "armor": 904,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 14.",
+        "stats": {
+          "hit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 154 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 14.",
+      "Equip: Your attacks ignore 154 of your opponent's armor."
+    ],
+    "id": 33331,
+    "item_level": 128,
+    "name": "Chain of Unleashed Rage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "hit_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 14.0,
+      "stamina": 37.0,
+      "strength": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33331/chain-of-unleashed-rage"
+  },
+  "name": "Chain of Unleashed Rage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33331/chain-of-unleashed-rage"
+}

@@ -1,0 +1,60 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Solid Azure Moonstone Item Level 60 Requires Jewelcrafting (300) Use: Teaches you how to cut a Solid Azure Moonstone. Sell Price: 1 Solid Azure Moonstone Item Level 60 +9 Stamina \"Matches a Blue Socket.\" Sell Price: 25 Requires Azure Moonstone",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:22:53+00:00",
+  "inventory_slot": null,
+  "item_id": 23152,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Solid Azure Moonstone.",
+        "type": "use"
+      }
+    ],
+    "id": 23152,
+    "item_level": 60,
+    "name": "Design: Solid Azure Moonstone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "stats": {
+      "stamina": 9.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to cut a Solid Azure Moonstone."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23152"
+  },
+  "name": "Design: Solid Azure Moonstone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Solid Azure Moonstone Item Level 60 Requires Jewelcrafting (300)",
+      "scope": "learn_recipe",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=23152",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "reagent_item_ids": [
+    23117
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 23118,
+  "teaches_spell_ids": [
+    28950
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/23152",
+  "url": "https://www.wowhead.com/tbc/item=23152"
+}

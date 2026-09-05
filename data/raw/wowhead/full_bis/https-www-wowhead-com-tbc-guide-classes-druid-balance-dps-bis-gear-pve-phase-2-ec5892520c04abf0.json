@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:36+00:00",
+  "fetched_at": "2026-09-04T23:48:50+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -2309,7 +2309,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
-              "reputation": "The Mag'har / Kurenai",
+              "reputation": "The Mag'har",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-bis-gear-pve-phase-2",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
+              "reputation": "Kurenai",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-bis-gear-pve-phase-2",
               "standing": "Revered",
@@ -3402,16 +3412,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-bis-gear-pve-phase-2",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",

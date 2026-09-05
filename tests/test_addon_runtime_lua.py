@@ -2329,7 +2329,7 @@ local allianceConsumables = BigBiSList:GetEnhancementRows(
 equal(
     #allianceConsumables[3].rows,
     #consumables[3].rows,
-    "faction context preserves neutral consumables without access paths"
+    "faction context preserves neutral consumables with eligible access paths"
 )
 local ownedConsumableId = consumables[3].rows[1].item_id
 local ownedConsumables = BigBiSList:GetEnhancementRows(
@@ -2356,8 +2356,9 @@ local availability = BigBiSList:GetFilterAvailabilitySnapshot(
     "Druid", "Feral dps", "PR", "Enhance",
     { enhancementType = "gem", getEnhancementAppliedState = appliedResolver }
 )
-equal(#availability.sourceTypes, 1, "type-scoped enhancement availability")
-equal(availability.sourceTypes[1], "crafted", "gem source availability")
+equal(#availability.sourceTypes, 2, "type-scoped enhancement availability")
+expect(contains(availability.sourceTypes, "crafted"), "gem crafting availability")
+expect(contains(availability.sourceTypes, "trade"), "verified gem purchase availability")
 ''')
 
 

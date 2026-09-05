@@ -1,0 +1,173 @@
+{
+  "bindings": [
+    {
+      "class": "Paladin",
+      "phase": "T4",
+      "spec": "Protection"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29186,
+            "name": "Arcanum of the Defender",
+            "type": "item"
+          },
+          "equipment_item_id": 29068,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35443
+        },
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "equipment_item_id": 29070,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        },
+        {
+          "entity": {
+            "id": 27957,
+            "name": "Exceptional Health",
+            "type": "spell"
+          },
+          "equipment_item_id": 29066,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27957
+        },
+        {
+          "entity": {
+            "id": 29536,
+            "name": "Nethercleft Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 28621,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35495
+        },
+        {
+          "entity": {
+            "id": 27950,
+            "name": "Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 30641,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27950
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 28502,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 28518,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 29279,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 28675,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25086,
+            "name": "Dodge",
+            "type": "spell"
+          },
+          "equipment_item_id": 27804,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25086
+        },
+        {
+          "entity": {
+            "id": 27975,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 28802,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27975
+        },
+        {
+          "entity": {
+            "id": 34009,
+            "name": "Enchant Shield - Major Stamina",
+            "type": "spell"
+          },
+          "equipment_item_id": 28825,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 34009
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Protection Paladin Tank in Phase 1",
+      "planner": "paladin/human/A0YR8FMFEyUAABAlIVUfBQNQAC-BQHGMinMAXeEgZSgCAG9kg0BxjoppAF3hIF3hhWBxim01AF3hIF3hQF3hBkBvlgBd4SBd4Ydgb82KpwBd4SBd4UBd4YgAd7FtLokgb1ZtCgBd4YpAb2aEzQBd4SBd4YsAcl9tFIwAcANtFA0AXRwOAG9wjwBsnGH-kABwgm1HkSBwmYTZAF3hEgByzA"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Aldor vs. Scryer for Protection Paladin Tank in Phase 1",
+      "text": "For the shoulder enchants,  from the Scryers will edge out , although marginal, it still offers more towards Crit reduction and overall Avoidance. The Aldor do offer a really solid tank chest with , but this can easily be replaced with other gear. And on that note, the Scryers offer two relatively strong Threat pieces with  and , and offer a really strong tank necklace with , which you could be wearing longer than the tank chest option offered from The Aldor."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:24+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Protection Paladin Tank Phase 1 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/paladin-tank-karazhan-best-in-slot-gear-burning-crusade-classic-wow"
+}

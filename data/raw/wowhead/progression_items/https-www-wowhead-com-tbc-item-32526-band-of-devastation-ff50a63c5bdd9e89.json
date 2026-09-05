@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Devastation Phase 3 Item Level 151 Binds when picked up Finger +44 Stamina Requires Level 70 Equip: Improves haste rating by 31. Equip: Increases attack power by 66. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:11+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 32526,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves haste rating by 31.",
+        "stats": {
+          "haste_rating": 31.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 66.",
+        "stats": {
+          "attack_power": 66.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 31.",
+      "Equip: Increases attack power by 66."
+    ],
+    "id": 32526,
+    "item_level": 151,
+    "name": "Band of Devastation",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 66.0,
+      "haste_rating": 31.0,
+      "stamina": 44.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32526/band-of-devastation"
+  },
+  "name": "Band of Devastation",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32526/band-of-devastation"
+}

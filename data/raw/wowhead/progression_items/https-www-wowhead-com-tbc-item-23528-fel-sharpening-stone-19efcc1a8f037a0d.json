@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Fel Sharpening Stone Item Level 60 Requires Level 50 Use: Increase sharp weapon damage by 12 for 1 hour. Max Stack: 20 Sell Price: 7 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:22+00:00",
+  "inventory_slot": null,
+  "item_id": 23528,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increase sharp weapon damage by 12 for 1 hour. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 23528,
+    "item_level": 60,
+    "name": "Fel Sharpening Stone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 50,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increase sharp weapon damage by 12 for 1 hour. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23528/fel-sharpening-stone"
+  },
+  "name": "Fel Sharpening Stone",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23528/fel-sharpening-stone"
+}

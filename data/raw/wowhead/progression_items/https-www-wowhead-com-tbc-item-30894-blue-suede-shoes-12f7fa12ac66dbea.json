@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Blue Suede Shoes Phase 3 Item Level 141 Binds when picked up Feet Cloth 162 Armor +37 Stamina +32 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves spell hit rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 56. \"Keep Off\" Sell Price: 3 75 42",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:34+00:00",
+  "inventory_slot": null,
+  "item_id": 30894,
+  "item_stats": {
+    "armor": 162,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 18.",
+        "stats": {
+          "spell_hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 56. \"Keep Off\"",
+        "stats": {
+          "spell_power": 56.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 18.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 56. \"Keep Off\""
+    ],
+    "id": 30894,
+    "item_level": 141,
+    "name": "Blue Suede Shoes",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 32.0,
+      "spell_hit_rating": 18.0,
+      "spell_power": 56.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30894/blue-suede-shoes"
+  },
+  "name": "Blue Suede Shoes",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30894/blue-suede-shoes"
+}

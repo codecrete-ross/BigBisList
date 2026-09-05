@@ -1,0 +1,44 @@
+{
+  "bindings": [
+    {
+      "class": "Rogue",
+      "phase": "ZA",
+      "spec": "Assassination"
+    },
+    {
+      "class": "Rogue",
+      "phase": "ZA",
+      "spec": "Combat"
+    },
+    {
+      "class": "Rogue",
+      "phase": "ZA",
+      "spec": "Subtlety"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Rogue DPS in Phase 4",
+      "text": "Should Rogue DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 4?\r\nJust like in previous phases, choosing your Shattrath faction, either  or , doesn't make that big of a difference in terms of raid performance. The main longstanding benefit will be the shoulder enchants from these factions.  from the Aldor is very slightly better than  from the Scryers, but it is such a minuscule difference that you are unlikely ever to notice it. You will do just fine choosing whichever faction you prefer."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:30+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Rogue DPS Best in Slot (BiS) Phase 4 Gear Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/rogue-dps-za-phase-4-best-in-slot-gear-burning-crusade"
+}

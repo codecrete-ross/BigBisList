@@ -1,0 +1,54 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Vengeance of the Illidari Phase 1 Item Level 88 Binds when picked up Unique Trinket Equip: Improves spell critical strike rating by 26. Use: Increases spell damage done by up to 120 and healing done by up to 220 for 15 sec. (1 Min, 30 Sec Cooldown) Sell Price: 6 62 90",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:52+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28040,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 26.",
+        "stats": {
+          "spell_crit_rating": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases spell damage done by up to 120 and healing done by up to 220 for 15 sec. (1 Min, 30 Sec Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 26."
+    ],
+    "id": 28040,
+    "item_level": 88,
+    "name": "Vengeance of the Illidari",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 26.0
+    },
+    "use_effects": [
+      "Use: Increases spell damage done by up to 120 and healing done by up to 220 for 15 sec. (1 Min, 30 Sec Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28040/vengeance-of-the-illidari"
+  },
+  "name": "Vengeance of the Illidari",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28040/vengeance-of-the-illidari"
+}

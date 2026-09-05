@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Truestrike Ring Phase 1 Item Level 100 Binds when equipped Unique Finger +21 Agility Requires Level 70 Equip: Increases attack power by 40. Equip: Restores 7 mana per 5 sec. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:16+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 31326,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases attack power by 40.",
+        "stats": {
+          "attack_power": 40.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases attack power by 40.",
+      "Equip: Restores 7 mana per 5 sec."
+    ],
+    "id": 31326,
+    "item_level": 100,
+    "name": "Truestrike Ring",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 21.0,
+      "attack_power": 40.0,
+      "mp5": 7.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31326/truestrike-ring"
+  },
+  "name": "Truestrike Ring",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31326/truestrike-ring"
+}

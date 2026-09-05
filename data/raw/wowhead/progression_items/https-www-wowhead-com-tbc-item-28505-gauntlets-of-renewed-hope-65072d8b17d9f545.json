@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gauntlets of Renewed Hope Phase 1 Item Level 115 Binds when picked up Hands Plate 906 Armor +19 Stamina +29 Intellect Blue Socket Blue Socket Socket Bonus: +3 Intellect Durability 55 / 55 Requires Level 70 Equip: Restores 5 mana per 5 sec. Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects. Sell Price: 4 12 19",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:27+00:00",
+  "inventory_slot": null,
+  "item_id": 28505,
+  "item_stats": {
+    "armor": 906,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Restores 5 mana per 5 sec.",
+        "stats": {
+          "mp5": 5.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 62.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Restores 5 mana per 5 sec.",
+      "Equip: Increases healing done by up to 62 and damage done by up to 21 for all magical spells and effects."
+    ],
+    "id": 28505,
+    "item_level": 115,
+    "name": "Gauntlets of Renewed Hope",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "intellect": 3.0
+    },
+    "sockets": [
+      "blue",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 62.0,
+      "intellect": 29.0,
+      "mp5": 5.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28505/gauntlets-of-renewed-hope"
+  },
+  "name": "Gauntlets of Renewed Hope",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28505/gauntlets-of-renewed-hope"
+}

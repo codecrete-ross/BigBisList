@@ -1,0 +1,159 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic trinket of item level 76 goes in the \"Trinket\" slot. It is looted from Battleguard Sartura. In the Trinkets category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:41+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 21670,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Gives a chance on melee or ranged attack to apply an armor penetration effect on you for 30 sec, lowering the target's physical armor by 200 to your own attacks. The armor penetration effect can be applied up to 6 times. (3 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 21670,
+    "item_level": 76,
+    "name": "Badge of the Swarmguard",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 9,
+      "drop_percent": 19.57,
+      "entity_id": 15516,
+      "entity_name": "Battleguard Sartura",
+      "out_of": 46,
+      "source_url": "https://www.wowhead.com/tbc/item=21670/badge-of-the-swarmguard",
+      "type": "drop",
+      "zone": "Ahn'Qiraj"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Trinket",
+    "source_summary": "Drop: Battleguard Sartura (Ahn'Qiraj) 19.6%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 9,
+        "drop_percent": 19.57,
+        "entity_id": 15516,
+        "entity_name": "Battleguard Sartura",
+        "out_of": 46,
+        "source_url": "https://www.wowhead.com/tbc/item=21670/badge-of-the-swarmguard",
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
+      }
+    ],
+    "use_effects": [
+      "Use: Gives a chance on melee or ranged attack to apply an armor penetration effect on you for 30 sec, lowering the target's physical armor by 200 to your own attacks. The armor penetration effect can be applied up to 6 times. (3 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21670/badge-of-the-swarmguard"
+  },
+  "name": "Badge of the Swarmguard",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 9,
+      "drop_percent": 19.57,
+      "entity_id": 15516,
+      "entity_name": "Battleguard Sartura",
+      "out_of": 46,
+      "source_url": "https://www.wowhead.com/tbc/item=21670/badge-of-the-swarmguard",
+      "type": "drop",
+      "zone": "Ahn'Qiraj"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 9,
+        "id": 15516,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2598,
+                "outof": 16713
+              },
+              "9": {
+                "count": 2598,
+                "outof": 16713
+              }
+            },
+            "4": {
+              "0": {
+                "count": 11,
+                "outof": 78
+              },
+              "9": {
+                "count": 11,
+                "outof": 78
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 46
+              },
+              "9": {
+                "count": 9,
+                "outof": 46
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 2598,
+            "outof": 16713
+          },
+          "9": {
+            "count": 2598,
+            "outof": 16713
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "Battleguard Sartura",
+        "outof": 46,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21670/badge-of-the-swarmguard"
+}

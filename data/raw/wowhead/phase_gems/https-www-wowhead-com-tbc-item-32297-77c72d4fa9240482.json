@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Sovereign Shadowsong Amethyst Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Use: Teaches you how to cut a Sovereign Shadowsong Amethyst. Sell Price: 1 50 Sovereign Shadowsong Amethyst Item Level 100 +5 Strength and +7 Stamina \"Matches a Red or Blue Socket.\" Sell Price: 6 Requires Shadowsong Amethyst",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:13:22+00:00",
+  "inventory_slot": null,
+  "item_id": 32297,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Sovereign Shadowsong Amethyst.",
+        "type": "use"
+      }
+    ],
+    "id": 32297,
+    "item_level": 75,
+    "name": "Design: Sovereign Shadowsong Amethyst",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Sovereign Shadowsong Amethyst."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32297"
+  },
+  "name": "Design: Sovereign Shadowsong Amethyst",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Sovereign Shadowsong Amethyst Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375)",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=32297",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "reagent_item_ids": [
+    32230
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 32211,
+  "teaches_spell_ids": [
+    39727
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/32297",
+  "url": "https://www.wowhead.com/tbc/item=32297"
+}

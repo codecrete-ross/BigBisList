@@ -1,0 +1,49 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Overseer's Signet Phase 1 Item Level 109 Binds when picked up Finger +25 Strength +15 Agility Equip: Improves hit rating by 10. Sell Price: 70 86",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:10+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 30365,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 10.",
+        "stats": {
+          "hit_rating": 10.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 10."
+    ],
+    "id": 30365,
+    "item_level": 109,
+    "name": "Overseer's Signet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "agility": 15.0,
+      "hit_rating": 10.0,
+      "strength": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30365/overseers-signet"
+  },
+  "name": "Overseer's Signet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30365/overseers-signet"
+}

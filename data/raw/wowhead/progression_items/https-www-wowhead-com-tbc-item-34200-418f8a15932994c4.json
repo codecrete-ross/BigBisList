@@ -1,0 +1,61 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Quiver of a Thousand Feathers Item Level 70 Binds when picked up Requires Leatherworking (350) Requires Lower City - Revered Use: Teaches you how to craft a Quiver of a Thousand Feathers. Sell Price: 4",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:26+00:00",
+  "inventory_slot": "Quiver",
+  "item_id": 34200,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Quiver of a Thousand Feathers.",
+        "type": "use"
+      }
+    ],
+    "id": 34200,
+    "item_level": 70,
+    "name": "Pattern: Quiver of a Thousand Feathers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "slot": "Quiver",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to craft a Quiver of a Thousand Feathers."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34200"
+  },
+  "name": "Pattern: Quiver of a Thousand Feathers",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Quiver of a Thousand Feathers Item Level 70 Binds when picked up Requires Leatherworking (350) Requires Lower City - Revered Use: Teaches you how to craft a Quiver of a Thousand Feathers. Sell Price: 4",
+      "reputation": "Lower City",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=34200",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Quiver of a Thousand Feathers Item Level 70 Binds when picked up Requires Leatherworking (350) Requires Lower City - Revered Use: Teaches you how to craft a Quiver of a Thousand Feathers. Sell Price: 4",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34200",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34200"
+}

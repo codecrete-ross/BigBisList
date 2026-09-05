@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Argussian Compass Phase 1 Item Level 115 Binds when picked up Unique-Equipped Trinket +36 Stamina Requires Level 70 Use: Reduces damage from each attack by 68, up to a total of 1150 damage absorbed. Lasts 20 sec. (2 Min Cooldown) Sell Price: 2 16 12",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:34+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 27770,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Reduces damage from each attack by 68, up to a total of 1150 damage absorbed. Lasts 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 27770,
+    "item_level": 115,
+    "name": "Argussian Compass",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 36.0
+    },
+    "use_effects": [
+      "Use: Reduces damage from each attack by 68, up to a total of 1150 damage absorbed. Lasts 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27770/argussian-compass"
+  },
+  "name": "Argussian Compass",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27770/argussian-compass"
+}

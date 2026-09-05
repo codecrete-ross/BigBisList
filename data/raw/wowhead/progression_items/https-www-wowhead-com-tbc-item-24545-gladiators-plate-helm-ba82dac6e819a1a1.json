@@ -1,0 +1,71 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Plate Helm Phase 1 Item Level 123 Binds when picked up Head Plate 1257 Armor +30 Strength +52 Stamina Meta Socket Yellow Socket Socket Bonus: +4 Strength Durability 100 / 100 Classes: Warrior Requires Level 70 Equip: Improves critical strike rating by 28. Equip: Improves your resilience rating by 25. Gladiator's Battlegear (0/5) Gladiator's Plate Chestpiece Gladiator's Plate Gauntlets Gladiator's Plate Helm Gladiator's Plate Legguards Gladiator's Plate Shoulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Intercept ability by 5 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:52+00:00",
+  "inventory_slot": null,
+  "item_id": 24545,
+  "item_stats": {
+    "armor": 1257,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 28.",
+        "stats": {
+          "crit_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 25.",
+        "stats": {
+          "resilience_rating": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 28.",
+      "Equip: Improves your resilience rating by 25."
+    ],
+    "id": 24545,
+    "item_level": 123,
+    "name": "Gladiator's Plate Helm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "socket_bonus": {
+      "strength": 4.0
+    },
+    "sockets": [
+      "meta",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 28.0,
+      "resilience_rating": 25.0,
+      "stamina": 52.0,
+      "strength": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24545/gladiators-plate-helm"
+  },
+  "name": "Gladiator's Plate Helm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24545/gladiators-plate-helm"
+}

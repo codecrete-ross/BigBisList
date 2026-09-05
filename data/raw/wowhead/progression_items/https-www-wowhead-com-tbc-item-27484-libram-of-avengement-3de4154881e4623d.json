@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Libram of Avengement Phase 1 Item Level 115 Binds when picked up Unique Relic Libram Requires Level 70 Equip: Causes your Judgement of Command, Judgement of Righteousness, Judgment of Blood / the Martyr , and Judgement of Corruption / Vengeance to increase your Critical Strike rating by 53 for 5 sec. Sell Price: 2 52 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:18+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 27484,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Causes your Judgement of Command, Judgement of Righteousness, Judgment of Blood / the Martyr , and Judgement of Corruption / Vengeance to increase your Critical Strike rating by 53 for 5 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Causes your Judgement of Command, Judgement of Righteousness, Judgment of Blood / the Martyr , and Judgement of Corruption / Vengeance to increase your Critical Strike rating by 53 for 5 sec."
+    ],
+    "id": 27484,
+    "item_level": 115,
+    "name": "Libram of Avengement",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Relic",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27484/libram-of-avengement"
+  },
+  "name": "Libram of Avengement",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27484/libram-of-avengement"
+}

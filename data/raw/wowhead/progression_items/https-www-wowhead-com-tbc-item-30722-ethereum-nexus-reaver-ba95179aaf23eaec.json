@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ethereum Nexus-Reaver Phase 1 Item Level 120 Binds when picked up Two-Hand Axe 346 - 519 Damage Speed 3.70 (116.89 damage per second) +50 Strength Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Expertise Rating Durability 120 / 120 Requires Level 70 Equip: Improves critical strike rating by 30. Sell Price: 15 5 14",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:23+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 30722,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 116.89,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 30.",
+        "stats": {
+          "crit_rating": 30.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 30."
+    ],
+    "id": 30722,
+    "item_level": 120,
+    "name": "Ethereum Nexus-Reaver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "socket_bonus": {
+      "expertise_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 30.0,
+      "strength": 50.0
+    },
+    "weapon_max_damage": 519,
+    "weapon_min_damage": 346,
+    "weapon_speed": 3.7,
+    "weapon_subtype": "Axe",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30722/ethereum-nexus-reaver"
+  },
+  "name": "Ethereum Nexus-Reaver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30722/ethereum-nexus-reaver"
+}

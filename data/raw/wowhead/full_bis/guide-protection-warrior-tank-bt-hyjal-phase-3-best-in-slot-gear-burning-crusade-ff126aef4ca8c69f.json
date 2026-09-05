@@ -1,13 +1,55 @@
 {
-  "fetched_at": "2026-05-24T04:24:56+00:00",
+  "fetched_at": "2026-09-04T23:49:26+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
       "data_family": "bis_lists",
       "heading": "Best in Slot Head Armor for Protection Warrior in TBC Classic Phase 3",
       "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33730,
+                "name": "Vengeful Gladiator's Plate Helm",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=33730/vengeful-gladiators-plate-helm"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best Threat",
+            "Vengeful Gladiator's Plate Helm",
+            "1550 Arena Points - Arena Vendor"
+          ],
+          "entities": [
+            {
+              "id": 33730,
+              "name": "Vengeful Gladiator's Plate Helm",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=33730/vengeful-gladiators-plate-helm"
+            }
+          ],
+          "entity_id": 33730,
+          "entity_name": "Vengeful Gladiator's Plate Helm",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=33730/vengeful-gladiators-plate-helm",
+          "item_id": 33730,
+          "item_name": "Vengeful Gladiator's Plate Helm",
+          "item_url": "https://www.wowhead.com/tbc/item=33730/vengeful-gladiators-plate-helm",
+          "rank_label": "Best Threat",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
+            }
+          ],
+          "source_text": "1550 Arena Points - Arena Vendor"
+        },
         {
           "cell_entities": [
             [],
@@ -55,84 +97,59 @@
             [],
             [
               {
-                "id": 33730,
-                "name": "Vengeful Gladiator's Plate Helm",
+                "id": 30115,
+                "name": "Destroyer Greathelm",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=33730/vengeful-gladiators-plate-helm"
+                "url": "https://www.wowhead.com/tbc/item=30115/destroyer-greathelm"
               }
             ],
-            []
-          ],
-          "cells": [
-            "Best Threat",
-            "Vengeful Gladiator's Plate Helm",
-            "1875 - Arena Vendor"
-          ],
-          "entities": [
-            {
-              "id": 33730,
-              "name": "Vengeful Gladiator's Plate Helm",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=33730/vengeful-gladiators-plate-helm"
-            }
-          ],
-          "entity_id": 33730,
-          "entity_name": "Vengeful Gladiator's Plate Helm",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=33730/vengeful-gladiators-plate-helm",
-          "item_id": 33730,
-          "item_name": "Vengeful Gladiator's Plate Helm",
-          "item_url": "https://www.wowhead.com/tbc/item=33730/vengeful-gladiators-plate-helm",
-          "rank_label": "Best Threat",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
-            }
-          ],
-          "source_text": "1875 - Arena Vendor"
-        },
-        {
-          "cell_entities": [
-            [],
             [
               {
-                "id": 30974,
-                "name": "Onslaught Greathelm",
+                "id": 30243,
+                "name": "Helm of the Vanquished Defender",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30974/onslaught-greathelm"
+                "url": "https://www.wowhead.com/tbc/item=30243/helm-of-the-vanquished-defender"
               }
-            ],
-            []
+            ]
           ],
           "cells": [
             "Mitigation Alternative",
-            "Onslaught Greathelm",
-            "Drop: Helm of the Forgotten Protector - Archimonde (Hyjal Summit)"
+            "Destroyer Greathelm",
+            "Drop: Helm of the Vanquished Defender from Lady Vashj (Serpentshrine Cavern)"
           ],
           "entities": [
             {
-              "id": 30974,
-              "name": "Onslaught Greathelm",
+              "id": 30115,
+              "name": "Destroyer Greathelm",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30974/onslaught-greathelm"
+              "url": "https://www.wowhead.com/tbc/item=30115/destroyer-greathelm"
+            },
+            {
+              "id": 30243,
+              "name": "Helm of the Vanquished Defender",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30243/helm-of-the-vanquished-defender"
             }
           ],
-          "entity_id": 30974,
-          "entity_name": "Onslaught Greathelm",
+          "entity_id": 30115,
+          "entity_name": "Destroyer Greathelm",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30974/onslaught-greathelm",
-          "item_id": 30974,
-          "item_name": "Onslaught Greathelm",
-          "item_url": "https://www.wowhead.com/tbc/item=30974/onslaught-greathelm",
+          "entity_url": "https://www.wowhead.com/tbc/item=30115/destroyer-greathelm",
+          "item_id": 30115,
+          "item_name": "Destroyer Greathelm",
+          "item_url": "https://www.wowhead.com/tbc/item=30115/destroyer-greathelm",
           "rank_label": "Mitigation Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
-              "text": "Archimonde"
+              "href": "https://www.wowhead.com/tbc/item=30243/helm-of-the-vanquished-defender",
+              "text": "Helm of the Vanquished Defender"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/npc=21212/lady-vashj",
+              "text": "Lady Vashj"
             }
           ],
-          "source_text": "Drop: Helm of the Forgotten Protector - Archimonde (Hyjal Summit)"
+          "source_text": "Drop: Helm of the Vanquished Defender from Lady Vashj (Serpentshrine Cavern)"
         },
         {
           "cell_entities": [
@@ -145,7 +162,14 @@
                 "url": "https://www.wowhead.com/tbc/item=30972/onslaught-battle-helm"
               }
             ],
-            []
+            [
+              {
+                "id": 31095,
+                "name": "Helm of the Forgotten Protector",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31095/helm-of-the-forgotten-protector"
+              }
+            ]
           ],
           "cells": [
             "Threat Alternative",
@@ -158,6 +182,12 @@
               "name": "Onslaught Battle-Helm",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30972/onslaught-battle-helm"
+            },
+            {
+              "id": 31095,
+              "name": "Helm of the Forgotten Protector",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31095/helm-of-the-forgotten-protector"
             }
           ],
           "entity_id": 30972,
@@ -169,6 +199,10 @@
           "item_url": "https://www.wowhead.com/tbc/item=30972/onslaught-battle-helm",
           "rank_label": "Threat Alternative",
           "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/item=31095/helm-of-the-forgotten-protector",
+              "text": "Helm of the Forgotten Protector"
+            },
             {
               "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
               "text": "Archimonde"
@@ -188,6 +222,65 @@
             [],
             [
               {
+                "id": 30979,
+                "name": "Onslaught Shoulderblades",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades"
+              }
+            ],
+            [
+              {
+                "id": 31103,
+                "name": "Pauldrons of the Forgotten Protector",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31103/pauldrons-of-the-forgotten-protector"
+              }
+            ]
+          ],
+          "cells": [
+            "Best Threat",
+            "Onslaught Shoulderblades",
+            "Drop: Pauldrons of the Forgotten Protector - Mother Shahraz (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 30979,
+              "name": "Onslaught Shoulderblades",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades"
+            },
+            {
+              "id": 31103,
+              "name": "Pauldrons of the Forgotten Protector",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31103/pauldrons-of-the-forgotten-protector"
+            }
+          ],
+          "entity_id": 30979,
+          "entity_name": "Onslaught Shoulderblades",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades",
+          "item_id": 30979,
+          "item_name": "Onslaught Shoulderblades",
+          "item_url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades",
+          "rank_label": "Best Threat",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/item=31103/pauldrons-of-the-forgotten-protector",
+              "text": "Pauldrons of the Forgotten Protector"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
+              "text": "Mother Shahraz"
+            }
+          ],
+          "source_text": "Drop: Pauldrons of the Forgotten Protector - Mother Shahraz (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 33732,
                 "name": "Vengeful Gladiator's Plate Shoulders",
                 "type": "item",
@@ -197,9 +290,9 @@
             []
           ],
           "cells": [
-            "Best Overall",
+            "Threat Alternative",
             "Vengeful Gladiator's Plate Shoulders",
-            "1500 - Arena Vendor"
+            "1245 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -216,98 +309,14 @@
           "item_id": 33732,
           "item_name": "Vengeful Gladiator's Plate Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=33732/vengeful-gladiators-plate-shoulders",
-          "rank_label": "Best Overall",
+          "rank_label": "Threat Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1500 - Arena Vendor"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30979,
-                "name": "Onslaught Shoulderblades",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best Threat",
-            "Onslaught Shoulderblades",
-            "Drop: Pauldrons of the Forgotten Protector - Mother Shahraz (Black Temple)"
-          ],
-          "entities": [
-            {
-              "id": 30979,
-              "name": "Onslaught Shoulderblades",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades"
-            }
-          ],
-          "entity_id": 30979,
-          "entity_name": "Onslaught Shoulderblades",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades",
-          "item_id": 30979,
-          "item_name": "Onslaught Shoulderblades",
-          "item_url": "https://www.wowhead.com/tbc/item=30979/onslaught-shoulderblades",
-          "rank_label": "Best Threat",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
-              "text": "Mother Shahraz"
-            }
-          ],
-          "source_text": "Drop: Pauldrons of the Forgotten Protector - Mother Shahraz (Black Temple)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30980,
-                "name": "Onslaught Shoulderguards",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30980/onslaught-shoulderguards"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best Mitigation",
-            "Onslaught Shoulderguards",
-            "Drop: Pauldrons of the Forgotten Protector - Mother Shahraz (Black Temple)"
-          ],
-          "entities": [
-            {
-              "id": 30980,
-              "name": "Onslaught Shoulderguards",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30980/onslaught-shoulderguards"
-            }
-          ],
-          "entity_id": 30980,
-          "entity_name": "Onslaught Shoulderguards",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30980/onslaught-shoulderguards",
-          "item_id": 30980,
-          "item_name": "Onslaught Shoulderguards",
-          "item_url": "https://www.wowhead.com/tbc/item=30980/onslaught-shoulderguards",
-          "rank_label": "Best Mitigation",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
-              "text": "Mother Shahraz"
-            }
-          ],
-          "source_text": "Drop: Pauldrons of the Forgotten Protector - Mother Shahraz (Black Temple)"
+          "source_text": "1245 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -350,14 +359,66 @@
             }
           ],
           "source_text": "Drop: Void Reaver (Tempest Keep)"
-        }
-      ],
-      "slot": "Shoulder"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Shoulder Armor for Protection Warrior in TBC Classic Phase 3",
-      "rows": [
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30980,
+                "name": "Onslaught Shoulderguards",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30980/onslaught-shoulderguards"
+              }
+            ],
+            [
+              {
+                "id": 31103,
+                "name": "Pauldrons of the Forgotten Protector",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31103/pauldrons-of-the-forgotten-protector"
+              }
+            ]
+          ],
+          "cells": [
+            "Best Mitigation",
+            "Onslaught Shoulderguards",
+            "Drop: Pauldrons of the Forgotten Protector - Mother Shahraz (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 30980,
+              "name": "Onslaught Shoulderguards",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30980/onslaught-shoulderguards"
+            },
+            {
+              "id": 31103,
+              "name": "Pauldrons of the Forgotten Protector",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31103/pauldrons-of-the-forgotten-protector"
+            }
+          ],
+          "entity_id": 30980,
+          "entity_name": "Onslaught Shoulderguards",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30980/onslaught-shoulderguards",
+          "item_id": 30980,
+          "item_name": "Onslaught Shoulderguards",
+          "item_url": "https://www.wowhead.com/tbc/item=30980/onslaught-shoulderguards",
+          "rank_label": "Best Mitigation",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/item=31103/pauldrons-of-the-forgotten-protector",
+              "text": "Pauldrons of the Forgotten Protector"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
+              "text": "Mother Shahraz"
+            }
+          ],
+          "source_text": "Drop: Pauldrons of the Forgotten Protector - Mother Shahraz (Black Temple)"
+        },
         {
           "cell_entities": [
             [],
@@ -501,48 +562,6 @@
             [],
             [
               {
-                "id": 28529,
-                "name": "Royal Cloak of Arathi Kings",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Hit Alternative",
-            "Royal Cloak of Arathi Kings",
-            "Drop: Moroes (Karazhan)"
-          ],
-          "entities": [
-            {
-              "id": 28529,
-              "name": "Royal Cloak of Arathi Kings",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings"
-            }
-          ],
-          "entity_id": 28529,
-          "entity_name": "Royal Cloak of Arathi Kings",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings",
-          "item_id": 28529,
-          "item_name": "Royal Cloak of Arathi Kings",
-          "item_url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings",
-          "rank_label": "Hit Alternative",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=15687/moroes",
-              "text": "Moroes"
-            }
-          ],
-          "source_text": "Drop: Moroes (Karazhan)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 28672,
                 "name": "Drape of the Dark Reavers",
                 "type": "item",
@@ -579,55 +598,48 @@
             }
           ],
           "source_text": "Drop: Shade of Aran (Karazhan)"
-        }
-      ],
-      "slot": "Back"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Back Armor for Protection Warrior in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
             [
               {
-                "id": 30098,
-                "name": "Razor-Scale Battlecloak",
+                "id": 28529,
+                "name": "Royal Cloak of Arathi Kings",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30098/razor-scale-battlecloak"
+                "url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings"
               }
             ],
             []
           ],
           "cells": [
-            "No Hit Alternative",
-            "Razor-Scale Battlecloak",
-            "Drop: Morogrim Tidewalker (Serpentshrine Cavern)"
+            "Hit Alternative",
+            "Royal Cloak of Arathi Kings",
+            "Drop: Moroes (Karazhan)"
           ],
           "entities": [
             {
-              "id": 30098,
-              "name": "Razor-Scale Battlecloak",
+              "id": 28529,
+              "name": "Royal Cloak of Arathi Kings",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30098/razor-scale-battlecloak"
+              "url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings"
             }
           ],
-          "entity_id": 30098,
-          "entity_name": "Razor-Scale Battlecloak",
+          "entity_id": 28529,
+          "entity_name": "Royal Cloak of Arathi Kings",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30098/razor-scale-battlecloak",
-          "item_id": 30098,
-          "item_name": "Razor-Scale Battlecloak",
-          "item_url": "https://www.wowhead.com/tbc/item=30098/razor-scale-battlecloak",
-          "rank_label": "No Hit Alternative",
+          "entity_url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings",
+          "item_id": 28529,
+          "item_name": "Royal Cloak of Arathi Kings",
+          "item_url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings",
+          "rank_label": "Hit Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=21213/morogrim-tidewalker",
-              "text": "Morogrim Tidewalker"
+              "href": "https://www.wowhead.com/tbc/npc=15687/moroes",
+              "text": "Moroes"
             }
           ],
-          "source_text": "Drop: Morogrim Tidewalker (Serpentshrine Cavern)"
+          "source_text": "Drop: Moroes (Karazhan)"
         },
         {
           "cell_entities": [
@@ -694,7 +706,7 @@
           "cells": [
             "Best Overall",
             "Vengeful Gladiator's Plate Chestpiece",
-            "1875 - Arena Vendor"
+            "1550 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -714,11 +726,11 @@
           "rank_label": "Best Overall",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1550 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -731,7 +743,14 @@
                 "url": "https://www.wowhead.com/tbc/item=30975/onslaught-breastplate"
               }
             ],
-            []
+            [
+              {
+                "id": 31091,
+                "name": "Chestguard of the Forgotten Protector",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31091/chestguard-of-the-forgotten-protector"
+              }
+            ]
           ],
           "cells": [
             "Best Threat",
@@ -744,6 +763,12 @@
               "name": "Onslaught Breastplate",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30975/onslaught-breastplate"
+            },
+            {
+              "id": 31091,
+              "name": "Chestguard of the Forgotten Protector",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31091/chestguard-of-the-forgotten-protector"
             }
           ],
           "entity_id": 30975,
@@ -755,6 +780,10 @@
           "item_url": "https://www.wowhead.com/tbc/item=30975/onslaught-breastplate",
           "rank_label": "Best Threat",
           "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/item=31091/chestguard-of-the-forgotten-protector",
+              "text": "Chestguard of the Forgotten Protector"
+            },
             {
               "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
               "text": "Illidan Stormrage"
@@ -776,7 +805,7 @@
             []
           ],
           "cells": [
-            "Best Mitigation",
+            "Threat Alternative",
             "Destroyer Chestguard",
             "Drop: Kael'thas Sunstrider (Tempest Keep)"
           ],
@@ -795,7 +824,7 @@
           "item_id": 30113,
           "item_name": "Destroyer Chestguard",
           "item_url": "https://www.wowhead.com/tbc/item=30113/destroyer-chestguard",
-          "rank_label": "Best Mitigation",
+          "rank_label": "Threat Alternative",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
@@ -818,7 +847,7 @@
             []
           ],
           "cells": [
-            "Mitigation Alternative",
+            "Best Mitigation",
             "Glory of the Defender",
             "Drop: Azgalor (Hyjal Summit)"
           ],
@@ -837,7 +866,7 @@
           "item_id": 30896,
           "item_name": "Glory of the Defender",
           "item_url": "https://www.wowhead.com/tbc/item=30896/glory-of-the-defender",
-          "rank_label": "Mitigation Alternative",
+          "rank_label": "Best Mitigation",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17842/azgalor",
@@ -876,7 +905,7 @@
           "cells": [
             "Best Overall",
             "Vindicator's Plate Bracers",
-            "11794 20 Warsong Gulch Mark of Honor - Honor Vendor"
+            "9785 Honor Points 10 Warsong Gulch Mark of Honor - Honor Vendor"
           ],
           "entities": [
             {
@@ -902,15 +931,15 @@
           "rank_label": "Best Overall",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
               "text": "Warsong Gulch Mark of Honor"
             }
           ],
-          "source_text": "11794 20 Warsong Gulch Mark of Honor - Honor Vendor"
+          "source_text": "9785 Honor Points 10 Warsong Gulch Mark of Honor - Honor Vendor"
         },
         {
           "cell_entities": [
@@ -926,7 +955,7 @@
             []
           ],
           "cells": [
-            "Hit option",
+            "Hit Alternative",
             "Bracers of Eradication",
             "The Lurker Below - Serpentshrine Cavern"
           ],
@@ -945,7 +974,7 @@
           "item_id": 30057,
           "item_name": "Bracers of Eradication",
           "item_url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication",
-          "rank_label": "Hit option",
+          "rank_label": "Hit Alternative",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=21217/the-lurker-below",
@@ -972,7 +1001,7 @@
             []
           ],
           "cells": [
-            "No def option",
+            "Threat Alternative",
             "Furious Shackles",
             "Drop: Rage Winterchill (Hyjal Summit)"
           ],
@@ -991,7 +1020,7 @@
           "item_id": 30861,
           "item_name": "Furious Shackles",
           "item_url": "https://www.wowhead.com/tbc/item=30861/furious-shackles",
-          "rank_label": "No def option",
+          "rank_label": "Threat Alternative",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
@@ -1420,7 +1449,7 @@
           "cells": [
             "Best Overall",
             "Vengeful Gladiator's Plate Legguards",
-            "1875 - Arena Vendor"
+            "1550 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -1440,11 +1469,11 @@
           "rank_label": "Best Overall",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "1550 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -1457,12 +1486,19 @@
                 "url": "https://www.wowhead.com/tbc/item=30977/onslaught-greaves"
               }
             ],
-            []
+            [
+              {
+                "id": 31100,
+                "name": "Leggings of the Forgotten Protector",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31100/leggings-of-the-forgotten-protector"
+              }
+            ]
           ],
           "cells": [
             "Best Threat",
             "Onslaught Greaves",
-            "Drop: Leggings of the Forgotten Protecto - Gathios the Shatterer (Black Temple)"
+            "Drop: Leggings of the Forgotten Protector - Gathios the Shatterer (Black Temple)"
           ],
           "entities": [
             {
@@ -1470,6 +1506,12 @@
               "name": "Onslaught Greaves",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30977/onslaught-greaves"
+            },
+            {
+              "id": 31100,
+              "name": "Leggings of the Forgotten Protector",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31100/leggings-of-the-forgotten-protector"
             }
           ],
           "entity_id": 30977,
@@ -1482,11 +1524,15 @@
           "rank_label": "Best Threat",
           "source_links": [
             {
+              "href": "https://www.wowhead.com/tbc/item=31100/leggings-of-the-forgotten-protector",
+              "text": "Leggings of the Forgotten Protector"
+            },
+            {
               "href": "https://www.wowhead.com/tbc/npc=22949/gathios-the-shatterer",
               "text": "Gathios the Shatterer"
             }
           ],
-          "source_text": "Drop: Leggings of the Forgotten Protecto - Gathios the Shatterer (Black Temple)"
+          "source_text": "Drop: Leggings of the Forgotten Protector - Gathios the Shatterer (Black Temple)"
         },
         {
           "cell_entities": [
@@ -1571,14 +1617,7 @@
             }
           ],
           "source_text": "Drop: Shade of Akama (Black Temple)"
-        }
-      ],
-      "slot": "Legs"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Leg Armor for Protection Warrior in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -1590,12 +1629,19 @@
                 "url": "https://www.wowhead.com/tbc/item=30978/onslaught-legguards"
               }
             ],
-            []
+            [
+              {
+                "id": 31100,
+                "name": "Leggings of the Forgotten Protector",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31100/leggings-of-the-forgotten-protector"
+              }
+            ]
           ],
           "cells": [
             "Mitigation Alternative",
             "Onslaught Legguards",
-            "Drop: Leggings of the Forgotten Protecto - Gathios the Shatterer (Black Temple)"
+            "Drop: Leggings of the Forgotten Protector - Gathios the Shatterer (Black Temple)"
           ],
           "entities": [
             {
@@ -1603,6 +1649,12 @@
               "name": "Onslaught Legguards",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30978/onslaught-legguards"
+            },
+            {
+              "id": 31100,
+              "name": "Leggings of the Forgotten Protector",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31100/leggings-of-the-forgotten-protector"
             }
           ],
           "entity_id": 30978,
@@ -1615,11 +1667,15 @@
           "rank_label": "Mitigation Alternative",
           "source_links": [
             {
+              "href": "https://www.wowhead.com/tbc/item=31100/leggings-of-the-forgotten-protector",
+              "text": "Leggings of the Forgotten Protector"
+            },
+            {
               "href": "https://www.wowhead.com/tbc/npc=22949/gathios-the-shatterer",
               "text": "Gathios the Shatterer"
             }
           ],
-          "source_text": "Drop: Leggings of the Forgotten Protecto - Gathios the Shatterer (Black Temple)"
+          "source_text": "Drop: Leggings of the Forgotten Protector - Gathios the Shatterer (Black Temple)"
         }
       ],
       "slot": "Legs"
@@ -1651,7 +1707,7 @@
           "cells": [
             "Best Overall",
             "Vindicator's Plate Greaves",
-            "17850 40 Eye of the Storm Mark of Honor - Faction Capital"
+            "14815 Honor Points 20 Eye of the Storm Mark of Honor - Faction Capital"
           ],
           "entities": [
             {
@@ -1677,15 +1733,15 @@
           "rank_label": "Best Overall",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=29024/eye-of-the-storm-mark-of-honor",
               "text": "Eye of the Storm Mark of Honor"
             }
           ],
-          "source_text": "17850 40 Eye of the Storm Mark of Honor - Faction Capital"
+          "source_text": "14815 Honor Points 20 Eye of the Storm Mark of Honor - Faction Capital"
         },
         {
           "cell_entities": [
@@ -1843,7 +1899,7 @@
           "cells": [
             "No hit Alternative",
             "Vindicator's Pendant of Triumph",
-            "15300 10 Eye of the Storm Mark of Honor - Faction Capital"
+            "12695 Honor Points 5 Eye of the Storm Mark of Honor - Faction Capital"
           ],
           "entities": [
             {
@@ -1869,15 +1925,15 @@
           "rank_label": "No hit Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=29024/eye-of-the-storm-mark-of-honor",
               "text": "Eye of the Storm Mark of Honor"
             }
           ],
-          "source_text": "15300 10 Eye of the Storm Mark of Honor - Faction Capital"
+          "source_text": "12695 Honor Points 5 Eye of the Storm Mark of Honor - Faction Capital"
         },
         {
           "cell_entities": [
@@ -1920,48 +1976,6 @@
             }
           ],
           "source_text": "Drop: Fathom-Lord Karathress (Serpentshrine Cavern)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 32591,
-                "name": "Choker of Serrated Blades",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "No hit Alternative",
-            "Choker of Serrated Blades",
-            "Drop: Hyjal Summit Trash Mobs"
-          ],
-          "entities": [
-            {
-              "id": 32591,
-              "name": "Choker of Serrated Blades",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades"
-            }
-          ],
-          "entity_id": 32591,
-          "entity_name": "Choker of Serrated Blades",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades",
-          "item_id": 32591,
-          "item_name": "Choker of Serrated Blades",
-          "item_url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades",
-          "rank_label": "No hit Alternative",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/zone=3606/hyjal-summit",
-              "text": "Hyjal Summit"
-            }
-          ],
-          "source_text": "Drop: Hyjal Summit Trash Mobs"
         }
       ],
       "slot": "Neck"
@@ -2125,72 +2139,6 @@
             [],
             [
               {
-                "id": 33919,
-                "name": "Vindicator's Band of Triumph",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=33919/vindicators-band-of-triumph"
-              }
-            ],
-            [
-              {
-                "id": 20560,
-                "name": "Alterac Valley Mark of Honor",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=20560/alterac-valley-mark-of-honor"
-              }
-            ]
-          ],
-          "cells": [
-            "Threat optional",
-            "Vindicator's Band of Triumph",
-            "15300 10 Alterac Valley Mark of Honor - Honor Vendor"
-          ],
-          "entities": [
-            {
-              "id": 33919,
-              "name": "Vindicator's Band of Triumph",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=33919/vindicators-band-of-triumph"
-            },
-            {
-              "id": 20560,
-              "name": "Alterac Valley Mark of Honor",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=20560/alterac-valley-mark-of-honor"
-            }
-          ],
-          "entity_id": 33919,
-          "entity_name": "Vindicator's Band of Triumph",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=33919/vindicators-band-of-triumph",
-          "item_id": 33919,
-          "item_name": "Vindicator's Band of Triumph",
-          "item_url": "https://www.wowhead.com/tbc/item=33919/vindicators-band-of-triumph",
-          "rank_label": "Threat optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
-            },
-            {
-              "href": "https://www.wowhead.com/tbc/item=20560/alterac-valley-mark-of-honor",
-              "text": "Alterac Valley Mark of Honor"
-            }
-          ],
-          "source_text": "15300 10 Alterac Valley Mark of Honor - Honor Vendor"
-        }
-      ],
-      "slot": "Ring"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Ring Jewelry for Protection Warrior in TBC Classic Phase 3",
-      "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 29296,
                 "name": "Band of Eternity",
                 "type": "item",
@@ -2281,6 +2229,72 @@
             }
           ],
           "source_text": "Drop: Supremus (Black Temple)"
+        }
+      ],
+      "slot": "Ring"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Ring Jewelry for Protection Warrior in TBC Classic Phase 3",
+      "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 33919,
+                "name": "Vindicator's Band of Triumph",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=33919/vindicators-band-of-triumph"
+              }
+            ],
+            [
+              {
+                "id": 20560,
+                "name": "Alterac Valley Mark of Honor",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=20560/alterac-valley-mark-of-honor"
+              }
+            ]
+          ],
+          "cells": [
+            "Threat Alternative",
+            "Vindicator's Band of Triumph",
+            "12695 Honor Points 5 Alterac Valley Mark of Honor - Honor Vendor"
+          ],
+          "entities": [
+            {
+              "id": 33919,
+              "name": "Vindicator's Band of Triumph",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=33919/vindicators-band-of-triumph"
+            },
+            {
+              "id": 20560,
+              "name": "Alterac Valley Mark of Honor",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=20560/alterac-valley-mark-of-honor"
+            }
+          ],
+          "entity_id": 33919,
+          "entity_name": "Vindicator's Band of Triumph",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=33919/vindicators-band-of-triumph",
+          "item_id": 33919,
+          "item_name": "Vindicator's Band of Triumph",
+          "item_url": "https://www.wowhead.com/tbc/item=33919/vindicators-band-of-triumph",
+          "rank_label": "Threat Alternative",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=20560/alterac-valley-mark-of-honor",
+              "text": "Alterac Valley Mark of Honor"
+            }
+          ],
+          "source_text": "12695 Honor Points 5 Alterac Valley Mark of Honor - Honor Vendor"
         },
         {
           "cell_entities": [
@@ -2383,7 +2397,7 @@
     },
     {
       "data_family": "bis_lists",
-      "heading": "Best in Slot Trinkets for Balance Druid in TBC Classic Phase 3",
+      "heading": "Best in Slot Trinkets for Protection Warrior in TBC Classic Phase 3",
       "rows": [
         {
           "cell_entities": [
@@ -2552,14 +2566,7 @@
             }
           ],
           "source_text": "Drop: Coren Direbrew (Blackrock Depths)"
-        }
-      ],
-      "slot": "Trinket"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Trinkets for Balance Druid in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2601,7 +2608,14 @@
             }
           ],
           "source_text": "Quest: Hail, Commander!"
-        },
+        }
+      ],
+      "slot": "Trinket"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Trinkets for Protection Warrior in TBC Classic Phase 3",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -2731,9 +2745,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Alurmi - Exalted with Keepers of Time",
+              "reputation": "Keepers of Time",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "27 Stam - 24 resilience",
@@ -2792,48 +2809,6 @@
             [],
             [
               {
-                "id": 28579,
-                "name": "Romulo's Poison Vial",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Steady Threat",
-            "Romulo's Poison Vial",
-            "Drop: Julianne (Karazhan)"
-          ],
-          "entities": [
-            {
-              "id": 28579,
-              "name": "Romulo's Poison Vial",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial"
-            }
-          ],
-          "entity_id": 28579,
-          "entity_name": "Romulo's Poison Vial",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial",
-          "item_id": 28579,
-          "item_name": "Romulo's Poison Vial",
-          "item_url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial",
-          "rank_label": "Steady Threat",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17534/julianne",
-              "text": "Julianne"
-            }
-          ],
-          "source_text": "Drop: Julianne (Karazhan)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 28121,
                 "name": "Icon of Unyielding Courage",
                 "type": "item",
@@ -2876,46 +2851,42 @@
             [],
             [
               {
-                "id": 10725,
-                "name": "Gnomish Battle Chicken",
+                "id": 28579,
+                "name": "Romulo's Poison Vial",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=10725/gnomish-battle-chicken"
+                "url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial"
               }
             ],
             []
           ],
           "cells": [
-            "Engineers (20 min CD)",
-            "Gnomish Battle Chicken",
-            "Profession: Gnomish Engineering"
+            "Steady Threat",
+            "Romulo's Poison Vial",
+            "Drop: Julianne (Karazhan)"
           ],
           "entities": [
             {
-              "id": 10725,
-              "name": "Gnomish Battle Chicken",
+              "id": 28579,
+              "name": "Romulo's Poison Vial",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=10725/gnomish-battle-chicken"
+              "url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial"
             }
           ],
-          "entity_id": 10725,
-          "entity_name": "Gnomish Battle Chicken",
+          "entity_id": 28579,
+          "entity_name": "Romulo's Poison Vial",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=10725/gnomish-battle-chicken",
-          "item_id": 10725,
-          "item_name": "Gnomish Battle Chicken",
-          "item_url": "https://www.wowhead.com/tbc/item=10725/gnomish-battle-chicken",
-          "normalized_requirements": [
+          "entity_url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial",
+          "item_id": 28579,
+          "item_name": "Romulo's Poison Vial",
+          "item_url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial",
+          "rank_label": "Steady Threat",
+          "source_links": [
             {
-              "confidence": "parsed_source_text",
-              "raw_text": "Profession: Gnomish Engineering",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "unknown_text"
+              "href": "https://www.wowhead.com/tbc/npc=17534/julianne",
+              "text": "Julianne"
             }
           ],
-          "rank_label": "Engineers (20 min CD)",
-          "source_links": [],
-          "source_text": "Profession: Gnomish Engineering"
+          "source_text": "Drop: Julianne (Karazhan)"
         }
       ],
       "slot": "Trinket"
@@ -3064,7 +3035,7 @@
             []
           ],
           "cells": [
-            "Threat + Best Mitigation",
+            "Best Mitigation",
             "The Unbreakable Will",
             "Drop: Anetheron (Hyjal Summit)"
           ],
@@ -3083,7 +3054,7 @@
           "item_id": 30874,
           "item_name": "The Unbreakable Will",
           "item_url": "https://www.wowhead.com/tbc/item=30874/the-unbreakable-will",
-          "rank_label": "Threat + Best Mitigation",
+          "rank_label": "Best Mitigation",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17808/anetheron",
@@ -3091,71 +3062,6 @@
             }
           ],
           "source_text": "Drop: Anetheron (Hyjal Summit)"
-        }
-      ],
-      "slot": "Weapon"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Weapons for Protection Warrior in TBC Classic Phase 3",
-      "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28427,
-                "name": "Blazefury",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28427/blazefury"
-              }
-            ],
-            [
-              {
-                "id": 36258,
-                "name": "Blazefury",
-                "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=36258/blazefury"
-              }
-            ]
-          ],
-          "cells": [
-            "Human 3rd Choice",
-            "Blazefury",
-            "Blazefury"
-          ],
-          "entities": [
-            {
-              "id": 28427,
-              "name": "Blazefury",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28427/blazefury"
-            },
-            {
-              "id": 36258,
-              "name": "Blazefury",
-              "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=36258/blazefury"
-            }
-          ],
-          "entity_id": 28427,
-          "entity_name": "Blazefury",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28427/blazefury",
-          "item_id": 28427,
-          "item_name": "Blazefury",
-          "item_url": "https://www.wowhead.com/tbc/item=28427/blazefury",
-          "rank_label": "Human 3rd Choice",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/spell=36258/blazefury",
-              "text": "Blazefury"
-            }
-          ],
-          "source_text": "Blazefury",
-          "spell_id": 36258,
-          "spell_name": "Blazefury",
-          "spell_url": "https://www.wowhead.com/tbc/spell=36258/blazefury"
         },
         {
           "cell_entities": [
@@ -3171,7 +3077,7 @@
             []
           ],
           "cells": [
-            "Phase 2 Best",
+            "P2 Best",
             "Mallet of the Tides",
             "Drop: The Lurker Below (Serpentshrine Cavaern)"
           ],
@@ -3190,7 +3096,7 @@
           "item_id": 30058,
           "item_name": "Mallet of the Tides",
           "item_url": "https://www.wowhead.com/tbc/item=30058/mallet-of-the-tides",
-          "rank_label": "Phase 2 Best",
+          "rank_label": "P2 Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=21217/the-lurker-below",
@@ -3306,7 +3212,7 @@
           "cells": [
             "Unlucky Alternative",
             "Vengeful Gladiator's Shield Wall",
-            "1875 - Arena Vendor"
+            "900 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3326,11 +3232,11 @@
           "rank_label": "Unlucky Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1875 - Arena Vendor"
+          "source_text": "900 Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -3428,48 +3334,6 @@
             [],
             [
               {
-                "id": 29949,
-                "name": "Arcanite Steam-Pistol",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29949/arcanite-steam-pistol"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best Threat",
-            "Arcanite Steam-Pistol",
-            "Drop: Al'ar (Tempest Keep)"
-          ],
-          "entities": [
-            {
-              "id": 29949,
-              "name": "Arcanite Steam-Pistol",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29949/arcanite-steam-pistol"
-            }
-          ],
-          "entity_id": 29949,
-          "entity_name": "Arcanite Steam-Pistol",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29949/arcanite-steam-pistol",
-          "item_id": 29949,
-          "item_name": "Arcanite Steam-Pistol",
-          "item_url": "https://www.wowhead.com/tbc/item=29949/arcanite-steam-pistol",
-          "rank_label": "Best Threat",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=19514/alar",
-              "text": "Al'ar"
-            }
-          ],
-          "source_text": "Drop: Al'ar (Tempest Keep)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 32756,
                 "name": "Gyro-Balanced Khorium Destroyer",
                 "type": "item",
@@ -3517,6 +3381,48 @@
             [],
             [
               {
+                "id": 29949,
+                "name": "Arcanite Steam-Pistol",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29949/arcanite-steam-pistol"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Hit Alternative",
+            "Arcanite Steam-Pistol",
+            "Drop: Al'ar (Tempest Keep)"
+          ],
+          "entities": [
+            {
+              "id": 29949,
+              "name": "Arcanite Steam-Pistol",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29949/arcanite-steam-pistol"
+            }
+          ],
+          "entity_id": 29949,
+          "entity_name": "Arcanite Steam-Pistol",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=29949/arcanite-steam-pistol",
+          "item_id": 29949,
+          "item_name": "Arcanite Steam-Pistol",
+          "item_url": "https://www.wowhead.com/tbc/item=29949/arcanite-steam-pistol",
+          "rank_label": "Hit Alternative",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=19514/alar",
+              "text": "Al'ar"
+            }
+          ],
+          "source_text": "Drop: Al'ar (Tempest Keep)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 30025,
                 "name": "Serpentshrine Shuriken",
                 "type": "item",
@@ -3553,14 +3459,7 @@
             }
           ],
           "source_text": "Drop: Serpentshrine Cavern Trash Mobs"
-        }
-      ],
-      "slot": "Ranged"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Ranged Weapons for Protection Warrior in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -3575,9 +3474,9 @@
             []
           ],
           "cells": [
-            "Resilience and Crit",
+            "Resilience",
             "Vengeful Gladiator's War Edge",
-            "1000 - Arena Vendor"
+            "830 Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -3594,19 +3493,19 @@
           "item_id": 33765,
           "item_name": "Vengeful Gladiator's War Edge",
           "item_url": "https://www.wowhead.com/tbc/item=33765/vengeful-gladiators-war-edge",
-          "rank_label": "Resilience and Crit",
+          "rank_label": "Resilience",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "1000 - Arena Vendor"
+          "source_text": "830 Arena Points - Arena Vendor"
         }
       ],
       "slot": "Ranged"
     }
   ],
-  "title": "Burning Crusade Classic Protection Warrior Tank Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Protection Warrior Tank Phase 3 Best in Slot - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

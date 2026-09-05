@@ -1,0 +1,63 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Ruinous Delight Phase 5 Item Level 154 Binds when picked up Unique Finger +30 Stamina Requires Level 70 Equip: Improves critical strike rating by 32. Equip: Your attacks ignore 161 of your opponent's armor. Equip: Increases attack power by 66. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:23+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 34189,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 32.",
+        "stats": {
+          "crit_rating": 32.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 161 of your opponent's armor.",
+        "type": "proc"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 66.",
+        "stats": {
+          "attack_power": 66.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 32.",
+      "Equip: Your attacks ignore 161 of your opponent's armor.",
+      "Equip: Increases attack power by 66."
+    ],
+    "id": 34189,
+    "item_level": 154,
+    "name": "Band of Ruinous Delight",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 66.0,
+      "crit_rating": 32.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34189/band-of-ruinous-delight"
+  },
+  "name": "Band of Ruinous Delight",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34189/band-of-ruinous-delight"
+}

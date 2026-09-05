@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Handguards of the Avatar Phase 2 Item Level 133 Binds when picked up Hands Cloth 140 Armor +31 Stamina +27 Intellect +25 Spirit Durability 35 / 35 Classes: Priest Requires Level 70 Equip: Improves spell hit rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 41. Avatar Regalia (0/5) Handguards of the Avatar Hood of the Avatar Leggings of the Avatar Shroud of the Avatar Wings of the Avatar (2) Set : Each time you cast an offensive spell, there is a chance your next spell will cost 150 less mana. (Proc chance: 6%) (4) Set : Each time your Shadow Word: Pain deals damage, it has a chance to grant your next spell cast within 15 sec up to 100 damage and healing. (Proc chance: 40%)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:49+00:00",
+  "inventory_slot": null,
+  "item_id": 30160,
+  "item_stats": {
+    "armor": 140,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 18.",
+        "stats": {
+          "spell_hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 41.",
+        "stats": {
+          "spell_power": 41.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 18.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 41."
+    ],
+    "id": 30160,
+    "item_level": 133,
+    "name": "Handguards of the Avatar",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "spell_hit_rating": 18.0,
+      "spell_power": 41.0,
+      "spirit": 25.0,
+      "stamina": 31.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30160/handguards-of-the-avatar"
+  },
+  "name": "Handguards of the Avatar",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30160/handguards-of-the-avatar"
+}

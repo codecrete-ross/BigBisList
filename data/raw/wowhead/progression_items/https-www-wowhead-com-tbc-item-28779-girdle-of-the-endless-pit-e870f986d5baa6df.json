@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Girdle of the Endless Pit Phase 1 Item Level 125 Binds when picked up Waist Plate 884 Armor +34 Strength +30 Stamina Red Socket Blue Socket Socket Bonus: +3 Critical Strike Rating Durability 55 / 55 Requires Level 70 Equip: Improves critical strike rating by 28. Sell Price: 4 24 94",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:56+00:00",
+  "inventory_slot": null,
+  "item_id": 28779,
+  "item_stats": {
+    "armor": 884,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 28.",
+        "stats": {
+          "crit_rating": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 28."
+    ],
+    "id": 28779,
+    "item_level": 125,
+    "name": "Girdle of the Endless Pit",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 28.0,
+      "stamina": 30.0,
+      "strength": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit"
+  },
+  "name": "Girdle of the Endless Pit",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit"
+}

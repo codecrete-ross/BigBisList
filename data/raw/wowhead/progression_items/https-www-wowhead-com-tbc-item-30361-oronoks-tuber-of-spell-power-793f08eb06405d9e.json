@@ -1,0 +1,41 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Oronok's Tuber of Spell Power Item Level 75 Binds when picked up Requires Level 65 Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and gain 23 Spell Damage and 20 Spirit for 30 min. Max Stack: 20 Sell Price: 4",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:09+00:00",
+  "inventory_slot": null,
+  "item_id": 30361,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and gain 23 Spell Damage and 20 Spirit for 30 min. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 30361,
+    "item_level": 75,
+    "name": "Oronok's Tuber of Spell Power",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 65,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 7500 health over 30 sec. Must remain seated while eating. If you spend at least 10 seconds eating you will become well fed and gain 23 Spell Damage and 20 Spirit for 30 min. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30361/oronoks-tuber-of-spell-power"
+  },
+  "name": "Oronok's Tuber of Spell Power",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30361/oronoks-tuber-of-spell-power"
+}

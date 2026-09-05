@@ -415,6 +415,7 @@ try {
     Invoke-CheckedCommand -Label "Strict manifest coverage" -Executable $python -Arguments @("tools/scrape_wowhead.py", "coverage", "--summary", "--strict")
 
     if ($FullData) {
+        Invoke-CheckedCommand -Label "Progression and refresh evidence audit" -Executable $python -Arguments @("tools/progression_audit.py", "--check")
         Invoke-CheckedCommand -Label "Item corpus audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "item-corpus-audit")
         Invoke-CheckedCommand -Label "Random suffix audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "suffix-audit")
         Invoke-CheckedCommand -Label "Leveling recommendation audit" -Executable $python -Arguments @("tools/scrape_wowhead.py", "recommendation-audit")

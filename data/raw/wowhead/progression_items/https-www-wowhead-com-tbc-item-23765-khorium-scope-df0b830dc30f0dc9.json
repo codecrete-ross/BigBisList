@@ -1,0 +1,42 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Khorium Scope Item Level 72 Requires Level 55 Use: Attaches a permanent scope to a bow or gun that increases its damage by 12. Max Stack: 5 Sell Price: 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:29+00:00",
+  "inventory_slot": null,
+  "item_id": 23765,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Attaches a permanent scope to a bow or gun that increases its damage by 12. Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 23765,
+    "item_level": 72,
+    "name": "Khorium Scope",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 55,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Attaches a permanent scope to a bow or gun that increases its damage by 12. Max Stack: 5"
+    ],
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23765/khorium-scope"
+  },
+  "name": "Khorium Scope",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23765/khorium-scope"
+}

@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant Bracer - Superior Healing Phase 1 Item Level 65 Binds when picked up Requires Enchanting (325) Requires Honor Hold - Friendly Use: Teaches you how to permanently enchant a bracer to increase the effect of healing spells by up to 30 and damage spells by up to 10. Permanently enchants bracers to increase the effect of your healing spells by up to 30 and your damage spells by up to 10. Requires a level 35 or higher item. Sell Price: 1 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:00+00:00",
+  "inventory_slot": null,
+  "item_id": 22531,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant a bracer to increase the effect of healing spells by up to 30 and damage spells by up to 10. Permanently enchants bracers to increase the effect of your healing spells by up to 30 and your damage spells by up to 10. Requires a level 35 or higher item.",
+        "type": "use"
+      }
+    ],
+    "id": 22531,
+    "item_level": 65,
+    "name": "Formula: Enchant Bracer - Superior Healing",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant a bracer to increase the effect of healing spells by up to 30 and damage spells by up to 10. Permanently enchants bracers to increase the effect of your healing spells by up to 30 and your damage spells by up to 10. Requires a level 35 or higher item."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22531"
+  },
+  "name": "Formula: Enchant Bracer - Superior Healing",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Formula: Enchant Bracer - Superior Healing Phase 1 Item Level 65 Binds when picked up Requires Enchanting (325) Requires Honor Hold - Friendly Use: Teaches you how to permanently enchant a bracer to increase the effect of healing spells by up to 30 and damage spells by up to 10. Permanently enchants bracers to increase the effect of your healing spells by up to 30 and your damage spells by up to 10. Requires a level 35 or higher item. Sell Price: 1 50",
+      "reputation": "Honor Hold",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=22531",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Bracer - Superior Healing Phase 1 Item Level 65 Binds when picked up Requires Enchanting (325) Requires Honor Hold - Friendly Use: Teaches you how to permanently enchant a bracer to increase the effect of healing spells by up to 30 and damage spells by up to 10. Permanently enchants bracers to increase the effect of your healing spells by up to 30 and your damage spells by up to 10. Requires a level 35 or higher item. Sell Price: 1 50",
+      "scope": "equip_or_use",
+      "skill": 325,
+      "source_url": "https://www.wowhead.com/tbc/item=22531",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22531"
+}

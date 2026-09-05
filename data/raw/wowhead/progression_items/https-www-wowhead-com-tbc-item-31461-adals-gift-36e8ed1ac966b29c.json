@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "A'dal's Gift Phase 1 Item Level 115 Binds when picked up Waist Cloth 88 Armor +25 Intellect Durability 30 / 30 Equip: Improves spell critical strike rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 34. Sell Price: 1 78 99",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:23+00:00",
+  "inventory_slot": null,
+  "item_id": 31461,
+  "item_stats": {
+    "armor": 88,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 21.",
+        "stats": {
+          "spell_crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+        "stats": {
+          "spell_power": 34.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+    ],
+    "id": 31461,
+    "item_level": 115,
+    "name": "A'dal's Gift",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "stats": {
+      "intellect": 25.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31461/adals-gift"
+  },
+  "name": "A'dal's Gift",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31461/adals-gift"
+}

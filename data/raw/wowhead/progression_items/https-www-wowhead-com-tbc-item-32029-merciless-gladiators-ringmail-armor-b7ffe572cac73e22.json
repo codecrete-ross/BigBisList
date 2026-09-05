@@ -1,0 +1,90 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Merciless Gladiator's Ringmail Armor Phase 2 Item Level 136 Binds when picked up Chest Mail 954 Armor +48 Stamina +26 Intellect Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 140 / 140 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 26. Equip: Improves your resilience rating by 26. Equip: Restores 7 mana per 5 sec. Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects. Gladiator's Wartide (0/5) Gladiator's Ringmail Armor Gladiator's Ringmail Gauntlets Gladiator's Ringmail Helm Gladiator's Ringmail Leggings Gladiator's Ringmail Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Grounding Totem ability by 1.5 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:36+00:00",
+  "inventory_slot": null,
+  "item_id": 32029,
+  "item_stats": {
+    "armor": 954,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 26.",
+        "stats": {
+          "spell_crit_rating": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 26.",
+        "stats": {
+          "resilience_rating": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 70.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 26.",
+      "Equip: Improves your resilience rating by 26.",
+      "Equip: Restores 7 mana per 5 sec.",
+      "Equip: Increases healing done by up to 70 and damage done by up to 24 for all magical spells and effects."
+    ],
+    "id": 32029,
+    "item_level": 136,
+    "name": "Merciless Gladiator's Ringmail Armor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 70.0,
+      "intellect": 26.0,
+      "mp5": 7.0,
+      "resilience_rating": 26.0,
+      "spell_crit_rating": 26.0,
+      "stamina": 48.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32029/merciless-gladiators-ringmail-armor"
+  },
+  "name": "Merciless Gladiator's Ringmail Armor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32029/merciless-gladiators-ringmail-armor"
+}

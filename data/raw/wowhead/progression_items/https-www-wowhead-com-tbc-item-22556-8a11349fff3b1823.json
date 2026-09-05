@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant 2H Weapon - Major Agility Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Use: Teaches you how to permanently enchant a two-handed weapon to increase Agility by 35. Permanently enchant a Two Handed Melee Weapon to add 35 Agility. Requires a level 35 or higher item. Sell Price: 1 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:02+00:00",
+  "inventory_slot": null,
+  "item_id": 22556,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant a two-handed weapon to increase Agility by 35. Permanently enchant a Two Handed Melee Weapon to add 35 Agility. Requires a level 35 or higher item.",
+        "type": "use"
+      }
+    ],
+    "id": 22556,
+    "item_level": 72,
+    "name": "Formula: Enchant 2H Weapon - Major Agility",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant a two-handed weapon to increase Agility by 35. Permanently enchant a Two Handed Melee Weapon to add 35 Agility. Requires a level 35 or higher item."
+    ],
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22556"
+  },
+  "name": "Formula: Enchant 2H Weapon - Major Agility",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant 2H Weapon - Major Agility Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Use: Teaches you how to permanently enchant a two-handed weapon to increase Agility by 35. Permanently enchant a Two Handed Melee Weapon to add 35 Agility. Requires a level 35 or higher item. Sell Price: 1 50",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=22556",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22556"
+}

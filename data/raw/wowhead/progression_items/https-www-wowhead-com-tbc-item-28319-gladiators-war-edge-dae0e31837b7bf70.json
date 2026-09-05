@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's War Edge Phase 1 Item Level 123 Binds when picked up Thrown Thrown 140 - 172 Damage Speed 1.90 (82.11 damage per second) +15 Stamina Durability 285 / 285 Requires Level 70 Equip: Improves critical strike rating by 11. Equip: Improves your resilience rating by 12. Equip: Increases attack power by 24.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:14+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 28319,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 82.11,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 11.",
+        "stats": {
+          "crit_rating": 11.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 12.",
+        "stats": {
+          "resilience_rating": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 24.",
+        "stats": {
+          "attack_power": 24.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 11.",
+      "Equip: Improves your resilience rating by 12.",
+      "Equip: Increases attack power by 24."
+    ],
+    "id": 28319,
+    "item_level": 123,
+    "name": "Gladiator's War Edge",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 24.0,
+      "crit_rating": 11.0,
+      "resilience_rating": 12.0,
+      "stamina": 15.0
+    },
+    "weapon_max_damage": 172,
+    "weapon_min_damage": 140,
+    "weapon_speed": 1.9,
+    "weapon_subtype": "Thrown",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28319/gladiators-war-edge"
+  },
+  "name": "Gladiator's War Edge",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28319/gladiators-war-edge"
+}

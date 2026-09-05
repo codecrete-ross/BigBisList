@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "General's Silk Cuffs Phase 1 Item Level 113 Binds when picked up Wrist Cloth 84 Armor +22 Stamina +17 Intellect Yellow Socket Socket Bonus: +2 Spell Damage Durability 35 / 35 Classes: Priest , Mage , Warlock Requires Level 70 Equip: Improves spell critical strike rating by 12. Equip: Improves your resilience rating by 11. Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:21+00:00",
+  "inventory_slot": null,
+  "item_id": 28411,
+  "item_stats": {
+    "armor": 84,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 12.",
+        "stats": {
+          "spell_crit_rating": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 11.",
+        "stats": {
+          "resilience_rating": 11.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+        "stats": {
+          "spell_power": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 12.",
+      "Equip: Improves your resilience rating by 11.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    ],
+    "id": 28411,
+    "item_level": 113,
+    "name": "General's Silk Cuffs",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest",
+        "Mage",
+        "Warlock"
+      ]
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "resilience_rating": 11.0,
+      "spell_crit_rating": 12.0,
+      "spell_power": 20.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28411/generals-silk-cuffs"
+  },
+  "name": "General's Silk Cuffs",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28411/generals-silk-cuffs"
+}

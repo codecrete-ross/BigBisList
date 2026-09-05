@@ -1,0 +1,65 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Translucent Spellthread Necklace Phase 3 Item Level 141 Binds when picked up Neck Requires Level 70 Equip: Improves spell hit rating by 15. Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 46. Sell Price: 8 83 55",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:57+00:00",
+  "inventory_slot": null,
+  "item_id": 32349,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 15.",
+        "stats": {
+          "spell_hit_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 24.",
+        "stats": {
+          "spell_crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 46.",
+        "stats": {
+          "spell_power": 46.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 15.",
+      "Equip: Improves spell critical strike rating by 24.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 46."
+    ],
+    "id": 32349,
+    "item_level": 141,
+    "name": "Translucent Spellthread Necklace",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 24.0,
+      "spell_hit_rating": 15.0,
+      "spell_power": 46.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32349/translucent-spellthread-necklace"
+  },
+  "name": "Translucent Spellthread Necklace",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32349/translucent-spellthread-necklace"
+}

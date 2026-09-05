@@ -1,0 +1,89 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Sunfire Robe Item Level 70 Requires Tailoring (365) Use: Teaches you how to sew Sunfire Robe. Sell Price: 2 Sunfire Robe Item Level 159 Binds when picked up Chest Cloth 266 Armor +36 Stamina +34 Intellect Red Socket Red Socket Red Socket Socket Bonus: +5 Spell Damage and Healing Durability 100 / 100 Requires Level 70 Requires Tailoring (350) Equip: Improves spell critical strike rating by 40. Equip: Improves spell haste rating by 40. Equip: Increases damage and healing done by magical spells and effects by up to 71. Sell Price: 6 8 49 Requires Spellcloth (12), Shadowcloth (12), Primal Nether (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:40+00:00",
+  "inventory_slot": null,
+  "item_id": 35206,
+  "item_stats": {
+    "armor": 266,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew Sunfire Robe.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 40.",
+        "stats": {
+          "spell_crit_rating": 40.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 71.",
+        "stats": {
+          "spell_power": 71.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 40.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 71."
+    ],
+    "id": 35206,
+    "item_level": 70,
+    "name": "Pattern: Sunfire Robe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 34.0,
+      "spell_crit_rating": 40.0,
+      "spell_power": 71.0,
+      "stamina": 36.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to sew Sunfire Robe."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35206"
+  },
+  "name": "Pattern: Sunfire Robe",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Sunfire Robe Item Level 70 Requires Tailoring (365) Use: Teaches you how to sew Sunfire Robe. Sell Price: 2 Sunfire Robe Item Level 159 Binds when picked up Chest Cloth 266 Armor +36 Stamina +34 Intellect Red Socket Red Socket Red Socket Socket Bonus: +5 Spell Damage and Healing Durability 100 / 100 Requires Level 70 Requires Tailoring (350) Equip: Improves spell critical strike rating by 40. Equip: Improves spell haste rating by 40. Equip: Increases damage and healing done by magical spells and effects by up to 71. Sell Price: 6 8 49 Requires Spellcloth (12), Shadowcloth (12), Primal Nether (2)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35206",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Sunfire Robe Item Level 70 Requires Tailoring (365) Use: Teaches you how to sew Sunfire Robe. Sell Price: 2 Sunfire Robe Item Level 159 Binds when picked up Chest Cloth 266 Armor +36 Stamina +34 Intellect Red Socket Red Socket Red Socket Socket Bonus: +5 Spell Damage and Healing Durability 100 / 100 Requires Level 70 Requires Tailoring (350) Equip: Improves spell critical strike rating by 40. Equip: Improves spell haste rating by 40. Equip: Increases damage and healing done by magical spells and effects by up to 71. Sell Price: 6 8 49 Requires Spellcloth (12), Shadowcloth (12), Primal Nether (2)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35206",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35206"
+}

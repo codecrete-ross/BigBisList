@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Glyph of Renewal Item Level 70 Binds when picked up Requires Level 70 Requires Honor Hold - Revered Use: Permanently adds up to 35 healing, +12 Spell Damage, and 7 mana per 5 sec. to a head slot item. Does not stack with other enchantments for the selected equipment slot. Sell Price: 25",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:34+00:00",
+  "inventory_slot": null,
+  "item_id": 29189,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Permanently adds up to 35 healing, +12 Spell Damage, and 7 mana per 5 sec. to a head slot item. Does not stack with other enchantments for the selected equipment slot.",
+        "type": "use"
+      }
+    ],
+    "id": 29189,
+    "item_level": 70,
+    "name": "Glyph of Renewal",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 70,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Permanently adds up to 35 healing, +12 Spell Damage, and 7 mana per 5 sec. to a head slot item. Does not stack with other enchantments for the selected equipment slot."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29189/glyph-of-renewal"
+  },
+  "name": "Glyph of Renewal",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Glyph of Renewal Item Level 70 Binds when picked up Requires Level 70 Requires Honor Hold - Revered Use: Permanently adds up to 35 healing, +12 Spell Damage, and 7 mana per 5 sec. to a head slot item. Does not stack with other enchantments for the selected equipment slot. Sell Price: 25",
+      "reputation": "Honor Hold",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29189/glyph-of-renewal",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29189/glyph-of-renewal"
+}

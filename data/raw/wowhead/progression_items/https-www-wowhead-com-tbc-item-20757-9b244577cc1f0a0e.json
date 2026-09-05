@@ -1,0 +1,141 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Rin'wosho the Trader. In the Enchanting Formulae category. An item.",
+  "fetched_at": "2026-09-04T23:50:37+00:00",
+  "inventory_slot": null,
+  "item_id": 20757,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to create Brilliant Mana Oil. Creates Brilliant Mana Oil.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: While applied to target weapon it restores 12 mana to the caster every 5 seconds and increases the effect of healing spells by up to 25. Lasts for 1 hour. 5 Charges",
+        "type": "use"
+      }
+    ],
+    "id": 20757,
+    "item_level": 60,
+    "name": "Formula: Brilliant Mana Oil",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 14921,
+      "entity_name": "Rin'wosho the Trader",
+      "location_area": "Stranglethorn Vale",
+      "price_copper": 32000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=20757",
+      "type": "vendor",
+      "vendor_id": 14921,
+      "zone": "Stranglethorn Vale"
+    },
+    "quality": "unknown",
+    "required_level": 45,
+    "source_summary": "Vendor: Rin'wosho the Trader (Stranglethorn Vale)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 14921,
+        "entity_name": "Rin'wosho the Trader",
+        "location_area": "Stranglethorn Vale",
+        "price_copper": 32000,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=20757",
+        "type": "vendor",
+        "vendor_id": 14921,
+        "zone": "Stranglethorn Vale"
+      }
+    ],
+    "use_effects": [
+      "Use: Teaches you how to create Brilliant Mana Oil. Creates Brilliant Mana Oil.",
+      "Use: While applied to target weapon it restores 12 mana to the caster every 5 seconds and increases the effect of healing spells by up to 25. Lasts for 1 hour. 5 Charges"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20757"
+  },
+  "name": "Formula: Brilliant Mana Oil",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Formula: Brilliant Mana Oil Phase 1 Item Level 60 Binds when picked up Requires Enchanting (300) Requires Zandalar Tribe - Friendly Use: Teaches you how to create Brilliant Mana Oil. Creates Brilliant Mana Oil. Sell Price: 1 Brilliant Mana Oil Item Level 55 Requires Level 45 Use: While applied to target weapon it restores 12 mana to the caster every 5 seconds and increases the effect of healing spells by up to 25. Lasts for 1 hour. 5 Charges Sell Price: 10 Requires Large Brilliant Shard (2), Purple Lotus (3), Imbued Vial This enchanting formula is used for the Enchanting profession. It is sold by Rin'wosho the Trader. In the Enchanting Formulae category. An item.",
+      "reputation": "Zandalar Tribe",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=20757",
+      "standing": "Friendly",
+      "standing_rank": 5,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Brilliant Mana Oil Phase 1 Item Level 60 Binds when picked up Requires Enchanting (300) Requires Zandalar Tribe - Friendly Use: Teaches you how to create Brilliant Mana Oil. Creates Brilliant Mana Oil. Sell Price: 1 Brilliant Mana Oil Item Level 55 Requires Level 45 Use: While applied to target weapon it restores 12 mana to the caster every 5 seconds and increases the effect of healing spells by up to 25. Lasts for 1 hour. 5 Charges Sell Price: 10 Requires Large Brilliant Shard (2), Purple Lotus (3), Imbued Vial This enchanting formula is used for the Enchanting profession. It is sold by Rin'wosho the Trader. In the Enchanting Formulae category. An item.",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=20757",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 14921,
+      "entity_name": "Rin'wosho the Trader",
+      "location_area": "Stranglethorn Vale",
+      "price_copper": 32000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=20757",
+      "type": "vendor",
+      "vendor_id": 14921,
+      "zone": "Stranglethorn Vale"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            32000
+          ]
+        ],
+        "id": 14921,
+        "location": [
+          33
+        ],
+        "maxlevel": 56,
+        "minlevel": 56,
+        "name": "Rin'wosho the Trader",
+        "popularity": 12,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Zandalar Supplies & Repair",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    25130,
+    25123
+  ],
+  "url": "https://www.wowhead.com/tbc/item=20757"
+}

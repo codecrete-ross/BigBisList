@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Breastplate of Agony's Aversion Phase 5 Item Level 159 Binds when picked up Chest Plate 1983 Armor +78 Stamina Blue Socket Blue Socket Red Socket Socket Bonus: +6 Stamina Durability 165 / 165 Requires Level 70 Equip: Increases defense rating by 36. Equip: Increases your dodge rating by 52. Equip: Improves haste rating by 40.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:50+00:00",
+  "inventory_slot": null,
+  "item_id": 34394,
+  "item_stats": {
+    "armor": 1983,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases defense rating by 36.",
+        "stats": {
+          "defense_rating": 36.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your dodge rating by 52.",
+        "stats": {
+          "dodge_rating": 52.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves haste rating by 40.",
+        "stats": {
+          "haste_rating": 40.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 36.",
+      "Equip: Increases your dodge rating by 52.",
+      "Equip: Improves haste rating by 40."
+    ],
+    "id": 34394,
+    "item_level": 159,
+    "name": "Breastplate of Agony's Aversion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 6.0
+    },
+    "sockets": [
+      "blue",
+      "blue",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 36.0,
+      "dodge_rating": 52.0,
+      "haste_rating": 40.0,
+      "stamina": 78.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34394/breastplate-of-agonys-aversion"
+  },
+  "name": "Breastplate of Agony's Aversion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34394/breastplate-of-agonys-aversion"
+}

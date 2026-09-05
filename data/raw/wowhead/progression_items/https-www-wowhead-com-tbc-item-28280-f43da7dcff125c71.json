@@ -1,0 +1,49 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Formula: Enchant Boots - Boar's Speed Phase 1 Item Level 72 Requires Enchanting (360) Use: Teaches you how to permanently enchant boots to increase move speed slightly and Stamina by 9. Permanently enchant boots to give a minor movement speed increase and 9 Stamina. Requires a level 35 or higher item. Sell Price: 3",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:10+00:00",
+  "inventory_slot": null,
+  "item_id": 28280,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant boots to increase move speed slightly and Stamina by 9. Permanently enchant boots to give a minor movement speed increase and 9 Stamina. Requires a level 35 or higher item.",
+        "type": "use"
+      }
+    ],
+    "id": 28280,
+    "item_level": 72,
+    "name": "Formula: Enchant Boots - Boar's Speed",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant boots to increase move speed slightly and Stamina by 9. Permanently enchant boots to give a minor movement speed increase and 9 Stamina. Requires a level 35 or higher item."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28280"
+  },
+  "name": "Formula: Enchant Boots - Boar's Speed",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Boots - Boar's Speed Phase 1 Item Level 72 Requires Enchanting (360) Use: Teaches you how to permanently enchant boots to increase move speed slightly and Stamina by 9. Permanently enchant boots to give a minor movement speed increase and 9 Stamina. Requires a level 35 or higher item. Sell Price: 3",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=28280",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28280"
+}

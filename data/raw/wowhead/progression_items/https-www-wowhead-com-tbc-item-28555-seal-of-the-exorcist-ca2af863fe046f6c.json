@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Seal of the Exorcist Phase 1 Item Level 95 Binds when picked up Unique Finger +24 Stamina Requires Level 67 Equip: Improves spell hit rating by 12. Equip: Improves your resilience rating by 11. Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:32+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 28555,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 12.",
+        "stats": {
+          "spell_hit_rating": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 11.",
+        "stats": {
+          "resilience_rating": 11.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 12.",
+      "Equip: Improves your resilience rating by 11.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+    ],
+    "id": 28555,
+    "item_level": 95,
+    "name": "Seal of the Exorcist",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 67,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "resilience_rating": 11.0,
+      "spell_hit_rating": 12.0,
+      "spell_power": 28.0,
+      "stamina": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28555/seal-of-the-exorcist"
+  },
+  "name": "Seal of the Exorcist",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28555/seal-of-the-exorcist"
+}

@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Band of Dominion Phase 1 Item Level 109 Binds when equipped Unique-Equipped Finger Requires Level 70 Equip: Improves spell critical strike rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 28. Sell Price: 1 7 9",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:13+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 31290,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 21.",
+        "stats": {
+          "spell_crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+    ],
+    "id": 31290,
+    "item_level": 109,
+    "name": "Band of Dominion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 21.0,
+      "spell_power": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion"
+  },
+  "name": "Band of Dominion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31290/band-of-dominion"
+}

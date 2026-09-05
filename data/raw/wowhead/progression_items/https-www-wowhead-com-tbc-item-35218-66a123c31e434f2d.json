@@ -1,0 +1,98 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Carapace of Sun and Shadow Item Level 75 Requires Leatherworking (365) Use: Teaches you how to craft Carapace of Sun and Shadow. Sell Price: 2 Carapace of Sun and Shadow Item Level 159 Binds when picked up Chest Leather 499 Armor +42 Agility +45 Stamina Yellow Socket Red Socket Red Socket Socket Bonus: +8 Attack Power Durability 120 / 120 Requires Level 70 Requires Leatherworking (350) Equip: Improves hit rating by 30. Equip: Improves haste rating by 38. Equip: Increases attack power by 120. Sell Price: 7 75 8 Requires Heavy Knothide Leather (40), Fel Hide (24), Primal Might (6), Primal Nether (6)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:43+00:00",
+  "inventory_slot": null,
+  "item_id": 35218,
+  "item_stats": {
+    "armor": 499,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft Carapace of Sun and Shadow.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves hit rating by 30.",
+        "stats": {
+          "hit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves haste rating by 38.",
+        "stats": {
+          "haste_rating": 38.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 120.",
+        "stats": {
+          "attack_power": 120.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 30.",
+      "Equip: Improves haste rating by 38.",
+      "Equip: Increases attack power by 120."
+    ],
+    "id": 35218,
+    "item_level": 75,
+    "name": "Pattern: Carapace of Sun and Shadow",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 42.0,
+      "attack_power": 120.0,
+      "haste_rating": 38.0,
+      "hit_rating": 30.0,
+      "stamina": 45.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft Carapace of Sun and Shadow."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35218"
+  },
+  "name": "Pattern: Carapace of Sun and Shadow",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Carapace of Sun and Shadow Item Level 75 Requires Leatherworking (365) Use: Teaches you how to craft Carapace of Sun and Shadow. Sell Price: 2 Carapace of Sun and Shadow Item Level 159 Binds when picked up Chest Leather 499 Armor +42 Agility +45 Stamina Yellow Socket Red Socket Red Socket Socket Bonus: +8 Attack Power Durability 120 / 120 Requires Level 70 Requires Leatherworking (350) Equip: Improves hit rating by 30. Equip: Improves haste rating by 38. Equip: Increases attack power by 120. Sell Price: 7 75 8 Requires Heavy Knothide Leather (40), Fel Hide (24), Primal Might (6), Primal Nether (6)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35218",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Carapace of Sun and Shadow Item Level 75 Requires Leatherworking (365) Use: Teaches you how to craft Carapace of Sun and Shadow. Sell Price: 2 Carapace of Sun and Shadow Item Level 159 Binds when picked up Chest Leather 499 Armor +42 Agility +45 Stamina Yellow Socket Red Socket Red Socket Socket Bonus: +8 Attack Power Durability 120 / 120 Requires Level 70 Requires Leatherworking (350) Equip: Improves hit rating by 30. Equip: Improves haste rating by 38. Equip: Increases attack power by 120. Sell Price: 7 75 8 Requires Heavy Knothide Leather (40), Fel Hide (24), Primal Might (6), Primal Nether (6)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35218",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35218"
+}

@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Gloves of Pandemonium Phase 1 Item Level 91 Binds when equipped Hands Cloth 78 Armor +15 Intellect Durability 30 / 30 Requires Level 62 Equip: Improves spell hit rating by 10. Equip: Improves spell critical strike rating by 22. Equip: Increases damage and healing done by magical spells and effects by up to 25. Sell Price: 1 35 99",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:08+00:00",
+  "inventory_slot": null,
+  "item_id": 31149,
+  "item_stats": {
+    "armor": 78,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 10.",
+        "stats": {
+          "spell_hit_rating": 10.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 22.",
+        "stats": {
+          "spell_crit_rating": 22.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 25.",
+        "stats": {
+          "spell_power": 25.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 10.",
+      "Equip: Improves spell critical strike rating by 22.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 25."
+    ],
+    "id": 31149,
+    "item_level": 91,
+    "name": "Gloves of Pandemonium",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 62,
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_crit_rating": 22.0,
+      "spell_hit_rating": 10.0,
+      "spell_power": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31149/gloves-of-pandemonium"
+  },
+  "name": "Gloves of Pandemonium",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31149/gloves-of-pandemonium"
+}

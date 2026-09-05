@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ashtongue Talisman of Swiftness Phase 3 Item Level 141 Binds when picked up Unique Trinket Classes: Hunter Requires Ashtongue Deathsworn - Exalted Equip: Your Steady Shot has a 15% chance to grant you 275 attack power for 8 sec. (Proc chance: 15%) Sell Price: 7 20 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:06+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32487,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your Steady Shot has a 15% chance to grant you 275 attack power for 8 sec. (Proc chance: 15%)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your Steady Shot has a 15% chance to grant you 275 attack power for 8 sec. (Proc chance: 15%)"
+    ],
+    "id": 32487,
+    "item_level": 141,
+    "name": "Ashtongue Talisman of Swiftness",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32487/ashtongue-talisman-of-swiftness"
+  },
+  "name": "Ashtongue Talisman of Swiftness",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Ashtongue Talisman of Swiftness Phase 3 Item Level 141 Binds when picked up Unique Trinket Classes: Hunter Requires Ashtongue Deathsworn - Exalted Equip: Your Steady Shot has a 15% chance to grant you 275 attack power for 8 sec. (Proc chance: 15%) Sell Price: 7 20 39",
+      "reputation": "Ashtongue Deathsworn",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=32487/ashtongue-talisman-of-swiftness",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32487/ashtongue-talisman-of-swiftness"
+}

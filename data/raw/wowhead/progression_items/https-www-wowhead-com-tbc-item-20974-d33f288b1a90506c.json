@@ -1,0 +1,1894 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Bloodscalp Warrior. In the Jewelcrafting Designs category.",
+  "fetched_at": "2026-09-04T23:50:37+00:00",
+  "inventory_slot": null,
+  "item_id": 20974,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Jade Pendant of Blasting.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 8.",
+        "stats": {
+          "spell_power": 8.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Increases spell damage done by nearby party members by up to 15 for 30 min. 10 Charges",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 8."
+    ],
+    "id": 20974,
+    "item_level": 36,
+    "name": "Design: Jade Pendant of Blasting",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 7.69,
+      "entity_id": 1754,
+      "entity_name": "Lord Gregor Lescovar",
+      "out_of": 26,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Stormwind City"
+    },
+    "quality": "unknown",
+    "required_level": 31,
+    "source_summary": "Drop: Lord Gregor Lescovar (Stormwind City) 7.7% +26",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.01,
+        "entity_id": 587,
+        "entity_name": "Bloodscalp Warrior",
+        "out_of": 58680,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Stranglethorn Vale"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 7.69,
+        "entity_id": 1754,
+        "entity_name": "Lord Gregor Lescovar",
+        "out_of": 26,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Stormwind City"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.01,
+        "entity_id": 2240,
+        "entity_name": "Syndicate Footpad",
+        "out_of": 36675,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Alterac Mountains"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 2249,
+        "entity_name": "Ferocious Yeti",
+        "out_of": 29666,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Hillsbrad Foothills"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.18,
+        "entity_id": 2335,
+        "entity_name": "Magistrate Burnside",
+        "out_of": 1687,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Hillsbrad Foothills"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 2371,
+        "entity_name": "Daggerspine Siren",
+        "out_of": 41440,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Hillsbrad Foothills"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 2566,
+        "entity_name": "Boulderfist Brute",
+        "out_of": 23486,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Arathi Highlands"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 3763,
+        "entity_name": "Felmusk Shadowstalker",
+        "out_of": 14977,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Ashenvale"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 4101,
+        "entity_name": "Screeching Roguefeather",
+        "out_of": 33304,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Thousand Needles"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 0.0,
+        "entity_id": 4286,
+        "entity_name": "Scarlet Soldier",
+        "out_of": 169044,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 6,
+        "drop_percent": 0.0,
+        "entity_id": 4287,
+        "entity_name": "Scarlet Gallant",
+        "out_of": 129433,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.05,
+        "entity_id": 4290,
+        "entity_name": "Scarlet Guardsman",
+        "out_of": 3666,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 4292,
+        "entity_name": "Scarlet Protector",
+        "out_of": 99815,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 4295,
+        "entity_name": "Scarlet Myrmidon",
+        "out_of": 251029,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 4298,
+        "entity_name": "Scarlet Defender",
+        "out_of": 251346,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.0,
+        "entity_id": 4299,
+        "entity_name": "Scarlet Chaplain",
+        "out_of": 97412,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.0,
+        "entity_id": 4301,
+        "entity_name": "Scarlet Centurion",
+        "out_of": 203314,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.07,
+        "entity_id": 4302,
+        "entity_name": "Scarlet Champion",
+        "out_of": 2886,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 13,
+        "drop_percent": 0.02,
+        "entity_id": 4304,
+        "entity_name": "Scarlet Tracking Hound",
+        "out_of": 60298,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.04,
+        "entity_id": 4515,
+        "entity_name": "Death's Head Acolyte",
+        "out_of": 5274,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 4,
+        "drop_percent": 0.0,
+        "entity_id": 4540,
+        "entity_name": "Scarlet Monk",
+        "out_of": 166861,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 3,
+        "drop_percent": 0.01,
+        "entity_id": 7329,
+        "entity_name": "Withered Quilguard",
+        "out_of": 23471,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 7346,
+        "entity_name": "Splinterbone Centurion",
+        "out_of": 23762,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.01,
+        "entity_id": 7873,
+        "entity_name": "Razorfen Battleguard",
+        "out_of": 19256,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "The Barrens"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 2,
+        "drop_percent": 0.06,
+        "entity_id": 23554,
+        "entity_name": "Risen Spirit",
+        "out_of": 3134,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Dustwallow Marsh"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 1,
+        "drop_percent": 0.2,
+        "entity_id": 2855,
+        "entity_name": "Solid Chest",
+        "out_of": 488,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop",
+        "zone": "Alterac Mountains"
+      },
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 1,
+        "drop_percent": 0.57,
+        "entity_id": 16883,
+        "entity_name": "Contained in: Worn Junkbox",
+        "item_id": 16883,
+        "out_of": 176,
+        "source_url": "https://www.wowhead.com/tbc/item=20974",
+        "type": "drop"
+      }
+    ],
+    "stats": {
+      "intellect": 3.0,
+      "spell_power": 8.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft a Jade Pendant of Blasting.",
+      "Use: Increases spell damage done by nearby party members by up to 15 for 30 min. 10 Charges"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20974"
+  },
+  "name": "Design: Jade Pendant of Blasting",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Jade Pendant of Blasting Item Level 36 Requires Jewelcrafting (160) Use: Teaches you how to craft a Jade Pendant of Blasting. Sell Price: 6 25 Jade Pendant of Blasting Item Level 36 Binds when equipped Neck +3 Intellect Requires Level 31 Equip: Increases damage and healing done by magical spells and effects by up to 8. Use: Increases spell damage done by nearby party members by up to 15 for 30 min. 10 Charges Sell Price: 34 82 Requires Jade , Mithril Filigree (2) This jewelcrafting design is used for the Jewelcrafting profession. It is looted from Bloodscalp Warrior. In the Jewelcrafting Designs category.",
+      "scope": "equip_or_use",
+      "skill": 160,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 587,
+      "entity_name": "Bloodscalp Warrior",
+      "out_of": 58680,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Stranglethorn Vale"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 7.69,
+      "entity_id": 1754,
+      "entity_name": "Lord Gregor Lescovar",
+      "out_of": 26,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Stormwind City"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 2240,
+      "entity_name": "Syndicate Footpad",
+      "out_of": 36675,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Alterac Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 2249,
+      "entity_name": "Ferocious Yeti",
+      "out_of": 29666,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Hillsbrad Foothills"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.18,
+      "entity_id": 2335,
+      "entity_name": "Magistrate Burnside",
+      "out_of": 1687,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Hillsbrad Foothills"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 2371,
+      "entity_name": "Daggerspine Siren",
+      "out_of": 41440,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Hillsbrad Foothills"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 2566,
+      "entity_name": "Boulderfist Brute",
+      "out_of": 23486,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Arathi Highlands"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 3763,
+      "entity_name": "Felmusk Shadowstalker",
+      "out_of": 14977,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Ashenvale"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 4101,
+      "entity_name": "Screeching Roguefeather",
+      "out_of": 33304,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Thousand Needles"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.0,
+      "entity_id": 4286,
+      "entity_name": "Scarlet Soldier",
+      "out_of": 169044,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 6,
+      "drop_percent": 0.0,
+      "entity_id": 4287,
+      "entity_name": "Scarlet Gallant",
+      "out_of": 129433,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.05,
+      "entity_id": 4290,
+      "entity_name": "Scarlet Guardsman",
+      "out_of": 3666,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 4292,
+      "entity_name": "Scarlet Protector",
+      "out_of": 99815,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 4295,
+      "entity_name": "Scarlet Myrmidon",
+      "out_of": 251029,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 4298,
+      "entity_name": "Scarlet Defender",
+      "out_of": 251346,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.0,
+      "entity_id": 4299,
+      "entity_name": "Scarlet Chaplain",
+      "out_of": 97412,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.0,
+      "entity_id": 4301,
+      "entity_name": "Scarlet Centurion",
+      "out_of": 203314,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.07,
+      "entity_id": 4302,
+      "entity_name": "Scarlet Champion",
+      "out_of": 2886,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 13,
+      "drop_percent": 0.02,
+      "entity_id": 4304,
+      "entity_name": "Scarlet Tracking Hound",
+      "out_of": 60298,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.04,
+      "entity_id": 4515,
+      "entity_name": "Death's Head Acolyte",
+      "out_of": 5274,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 4,
+      "drop_percent": 0.0,
+      "entity_id": 4540,
+      "entity_name": "Scarlet Monk",
+      "out_of": 166861,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 3,
+      "drop_percent": 0.01,
+      "entity_id": 7329,
+      "entity_name": "Withered Quilguard",
+      "out_of": 23471,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 7346,
+      "entity_name": "Splinterbone Centurion",
+      "out_of": 23762,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.01,
+      "entity_id": 7873,
+      "entity_name": "Razorfen Battleguard",
+      "out_of": 19256,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "The Barrens"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 2,
+      "drop_percent": 0.06,
+      "entity_id": 23554,
+      "entity_name": "Risen Spirit",
+      "out_of": 3134,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Dustwallow Marsh"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1,
+      "drop_percent": 0.2,
+      "entity_id": 2855,
+      "entity_name": "Solid Chest",
+      "out_of": 488,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop",
+      "zone": "Alterac Mountains"
+    },
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1,
+      "drop_percent": 0.57,
+      "entity_id": 16883,
+      "entity_name": "Contained in: Worn Junkbox",
+      "item_id": 16883,
+      "out_of": 176,
+      "source_url": "https://www.wowhead.com/tbc/item=20974",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [
+      {
+        "classs": 15,
+        "count": 1,
+        "flags2": 24580,
+        "id": 16883,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 176
+              }
+            }
+          }
+        },
+        "level": 30,
+        "name": "Worn Junkbox",
+        "outof": 176,
+        "pctstack": "",
+        "quality": 1,
+        "slot": 0,
+        "source": [
+          2,
+          21
+        ],
+        "subclass": 4
+      }
+    ],
+    "contained-in-object": [
+      {
+        "count": 1,
+        "id": 2855,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 28550
+              }
+            },
+            "4": {
+              "0": {
+                "count": 1,
+                "outof": 488
+              }
+            },
+            "5": {
+              "0": {
+                "count": 1,
+                "outof": 475
+              }
+            }
+          }
+        },
+        "location": [
+          36,
+          33,
+          405,
+          -1
+        ],
+        "name": "Solid Chest",
+        "outof": 488,
+        "pctstack": "",
+        "type": 3
+      }
+    ],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 3,
+        "id": 587,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 58680
+              }
+            }
+          }
+        },
+        "location": [
+          33
+        ],
+        "maxlevel": 34,
+        "minlevel": 33,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 58680
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Bloodscalp Warrior",
+        "outof": 58680,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 1754,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 26
+              }
+            }
+          }
+        },
+        "location": [
+          1519
+        ],
+        "maxlevel": 31,
+        "minlevel": 31,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 26
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Lord Gregor Lescovar",
+        "outof": 26,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 35,
+        "react": [
+          1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 3,
+        "id": 2240,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 36675
+              }
+            }
+          }
+        },
+        "location": [
+          36
+        ],
+        "maxlevel": 33,
+        "minlevel": 32,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 36675
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Syndicate Footpad",
+        "outof": 36675,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 8,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 2249,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 29666
+              }
+            }
+          }
+        },
+        "location": [
+          267
+        ],
+        "maxlevel": 32,
+        "minlevel": 31,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 29666
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Ferocious Yeti",
+        "outof": 29666,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 9,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 3,
+        "id": 2335,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 1687
+              }
+            }
+          }
+        },
+        "location": [
+          267
+        ],
+        "maxlevel": 30,
+        "minlevel": 30,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 1687
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Magistrate Burnside",
+        "outof": 1687,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 99,
+        "react": [
+          null,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 2371,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 41440
+              }
+            }
+          }
+        },
+        "location": [
+          267
+        ],
+        "maxlevel": 32,
+        "minlevel": 31,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 41440
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Daggerspine Siren",
+        "outof": 41440,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 2566,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 23486
+              }
+            }
+          }
+        },
+        "location": [
+          45
+        ],
+        "maxlevel": 36,
+        "minlevel": 35,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 23486
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Boulderfist Brute",
+        "outof": 23486,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 7,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 3763,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 14977
+              }
+            }
+          }
+        },
+        "location": [
+          331
+        ],
+        "maxlevel": 27,
+        "minlevel": 26,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 14977
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Felmusk Shadowstalker",
+        "outof": 14977,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 3
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 4101,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 33304
+              }
+            }
+          }
+        },
+        "location": [
+          400
+        ],
+        "maxlevel": 30,
+        "minlevel": 29,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 33304
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Screeching Roguefeather",
+        "outof": 33304,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 4,
+        "id": 4286,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 169044
+              },
+              "1": {
+                "count": 4,
+                "outof": 169044
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 35,
+        "minlevel": 35,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 169044
+          },
+          "1": {
+            "count": 4,
+            "outof": 169044
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Soldier",
+        "outof": 169044,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 6,
+        "id": 4287,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 6,
+                "outof": 129433
+              },
+              "1": {
+                "count": 6,
+                "outof": 129433
+              }
+            },
+            "5": {
+              "0": {
+                "count": 3,
+                "outof": 2958
+              },
+              "1": {
+                "count": 3,
+                "outof": 2958
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 34,
+        "minlevel": 33,
+        "modes": {
+          "0": {
+            "count": 6,
+            "outof": 129433
+          },
+          "1": {
+            "count": 6,
+            "outof": 129433
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Gallant",
+        "outof": 129433,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 4290,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 3666
+              },
+              "1": {
+                "count": 2,
+                "outof": 3666
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 36,
+        "minlevel": 35,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 3666
+          },
+          "1": {
+            "count": 2,
+            "outof": 3666
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Guardsman",
+        "outof": 3666,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 4292,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 99815
+              },
+              "1": {
+                "count": 2,
+                "outof": 99815
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 36,
+        "minlevel": 35,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 99815
+          },
+          "1": {
+            "count": 2,
+            "outof": 99815
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Protector",
+        "outof": 99815,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 4295,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 251029
+              },
+              "1": {
+                "count": 2,
+                "outof": 251029
+              }
+            },
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 8851
+              },
+              "1": {
+                "count": 2,
+                "outof": 8851
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 36,
+        "minlevel": 36,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 251029
+          },
+          "1": {
+            "count": 2,
+            "outof": 251029
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Myrmidon",
+        "outof": 251029,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 6,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 4298,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 251346
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 36,
+        "minlevel": 36,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 251346
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Scarlet Defender",
+        "outof": 251346,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 4299,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 97412
+              },
+              "1": {
+                "count": 2,
+                "outof": 97412
+              }
+            },
+            "5": {
+              "0": {
+                "count": 5,
+                "outof": 2556
+              },
+              "1": {
+                "count": 5,
+                "outof": 2556
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 34,
+        "minlevel": 34,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 97412
+          },
+          "1": {
+            "count": 2,
+            "outof": 97412
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Chaplain",
+        "outof": 97412,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "id": 4301,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 203314
+              },
+              "1": {
+                "count": 3,
+                "outof": 203314
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 39,
+        "minlevel": 38,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 203314
+          },
+          "1": {
+            "count": 3,
+            "outof": 203314
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Centurion",
+        "outof": 203314,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 4302,
+        "itemSeasonPhaseData": {
+          "0": {
+            "5": {
+              "0": {
+                "count": 2,
+                "outof": 2886
+              },
+              "1": {
+                "count": 2,
+                "outof": 2886
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 39,
+        "minlevel": 39,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 2886
+          },
+          "1": {
+            "count": 2,
+            "outof": 2886
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Champion",
+        "outof": 2886,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 22,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 13,
+        "family": 25,
+        "id": 4304,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 13,
+                "outof": 60298
+              },
+              "1": {
+                "count": 13,
+                "outof": 60298
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 33,
+        "minlevel": 33,
+        "modes": {
+          "0": {
+            "count": 13,
+            "outof": 60298
+          },
+          "1": {
+            "count": 13,
+            "outof": 60298
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Tracking Hound",
+        "outof": 60298,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 1
+      },
+      {
+        "classification": 1,
+        "count": 2,
+        "id": 4515,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 5274
+              },
+              "1": {
+                "count": 2,
+                "outof": 5274
+              }
+            }
+          }
+        },
+        "location": [
+          491
+        ],
+        "maxlevel": 26,
+        "minlevel": 25,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 5274
+          },
+          "1": {
+            "count": 2,
+            "outof": 5274
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Death's Head Acolyte",
+        "outof": 5274,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 4,
+        "id": 4540,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 4,
+                "outof": 166861
+              },
+              "1": {
+                "count": 4,
+                "outof": 166861
+              }
+            }
+          }
+        },
+        "location": [
+          796
+        ],
+        "maxlevel": 34,
+        "minlevel": 34,
+        "modes": {
+          "0": {
+            "count": 4,
+            "outof": 166861
+          },
+          "1": {
+            "count": 4,
+            "outof": 166861
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Scarlet Monk",
+        "outof": 166861,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 17,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 1,
+        "count": 3,
+        "id": 7329,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 3,
+                "outof": 23471
+              },
+              "1": {
+                "count": 3,
+                "outof": 23471
+              }
+            }
+          }
+        },
+        "location": [
+          722
+        ],
+        "maxlevel": 35,
+        "minlevel": 35,
+        "modes": {
+          "0": {
+            "count": 3,
+            "outof": 23471
+          },
+          "1": {
+            "count": 3,
+            "outof": 23471
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Withered Quilguard",
+        "outof": 23471,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 5,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 7346,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 23762
+              },
+              "1": {
+                "count": 2,
+                "outof": 23762
+              }
+            }
+          }
+        },
+        "location": [
+          722
+        ],
+        "maxlevel": 36,
+        "minlevel": 36,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 23762
+          },
+          "1": {
+            "count": 2,
+            "outof": 23762
+          },
+          "mode": [
+            1,
+            0
+          ]
+        },
+        "name": "Splinterbone Centurion",
+        "outof": 23762,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 10,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 7873,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 19256
+              }
+            }
+          }
+        },
+        "location": [
+          17,
+          400
+        ],
+        "maxlevel": 34,
+        "minlevel": 33,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 19256
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Razorfen Battleguard",
+        "outof": 19256,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      },
+      {
+        "classification": 0,
+        "count": 2,
+        "id": 23554,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 2,
+                "outof": 3134
+              }
+            }
+          }
+        },
+        "location": [
+          15
+        ],
+        "maxlevel": 36,
+        "minlevel": 35,
+        "modes": {
+          "0": {
+            "count": 2,
+            "outof": 3134
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Risen Spirit",
+        "outof": 3134,
+        "pctstack": null,
+        "personal_loot": 0,
+        "popularity": 7,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 6
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    25618,
+    9398,
+    25607
+  ],
+  "url": "https://www.wowhead.com/tbc/item=20974"
+}

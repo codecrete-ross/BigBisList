@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Robes of Rhonin Phase 3 Item Level 151 Binds when picked up Chest Cloth 253 Armor +55 Stamina +38 Intellect Durability 100 / 100 Requires Level 70 Equip: Improves spell hit rating by 27. Equip: Improves spell critical strike rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 81. Sell Price: 6 6 35",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:38+00:00",
+  "inventory_slot": null,
+  "item_id": 30913,
+  "item_stats": {
+    "armor": 253,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 27.",
+        "stats": {
+          "spell_hit_rating": 27.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 24.",
+        "stats": {
+          "spell_crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 81.",
+        "stats": {
+          "spell_power": 81.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 27.",
+      "Equip: Improves spell critical strike rating by 24.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 81."
+    ],
+    "id": 30913,
+    "item_level": 151,
+    "name": "Robes of Rhonin",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 38.0,
+      "spell_crit_rating": 24.0,
+      "spell_hit_rating": 27.0,
+      "spell_power": 81.0,
+      "stamina": 55.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30913/robes-of-rhonin"
+  },
+  "name": "Robes of Rhonin",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30913/robes-of-rhonin"
+}

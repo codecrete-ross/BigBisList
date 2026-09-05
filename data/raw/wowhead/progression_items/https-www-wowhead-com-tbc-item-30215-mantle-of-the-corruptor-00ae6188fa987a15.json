@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mantle of the Corruptor Phase 2 Item Level 133 Binds when picked up Shoulder Cloth 168 Armor +37 Stamina +24 Intellect Yellow Socket Yellow Socket Socket Bonus: +4 Spell Damage and Healing Durability 60 / 60 Classes: Warlock Requires Level 70 Equip: Improves spell hit rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 41. Corruptor Raiment (0/5) Gloves of the Corruptor Hood of the Corruptor Leggings of the Corruptor Mantle of the Corruptor Robe of the Corruptor (2) Set : Causes your pet to be healed for 15% of the damage you deal. (4) Set : Your Shadowbolt spell hits increase the damage of Corruption by 10% and your Incinerate spell hits increase the damage of Immolate by 10%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:54+00:00",
+  "inventory_slot": null,
+  "item_id": 30215,
+  "item_stats": {
+    "armor": 168,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 18.",
+        "stats": {
+          "spell_hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 41.",
+        "stats": {
+          "spell_power": 41.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 18.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 41."
+    ],
+    "id": 30215,
+    "item_level": 133,
+    "name": "Mantle of the Corruptor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Warlock"
+      ]
+    },
+    "sockets": [
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 24.0,
+      "spell_hit_rating": 18.0,
+      "spell_power": 41.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30215/mantle-of-the-corruptor"
+  },
+  "name": "Mantle of the Corruptor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30215/mantle-of-the-corruptor"
+}

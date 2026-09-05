@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Lightning Crown Phase 3 Item Level 100 Binds when equipped Head Mail 577 Armor Durability 85 / 85 Requires Level 70 Equip: Improves spell critical strike rating by 43. Equip: Increases damage done by Nature spells and effects by up to 66. Sell Price: 4 76 83",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:16+00:00",
+  "inventory_slot": null,
+  "item_id": 31330,
+  "item_stats": {
+    "armor": 577,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 43.",
+        "stats": {
+          "spell_crit_rating": 43.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 43."
+    ],
+    "id": 31330,
+    "item_level": 100,
+    "name": "Lightning Crown",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "spell_crit_rating": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31330/lightning-crown"
+  },
+  "name": "Lightning Crown",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31330/lightning-crown"
+}

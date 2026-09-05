@@ -1,0 +1,153 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic totem of item level 78 goes in the \"Relic\" slot. It is looted from Fankriss the Unyielding. In the Totems category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:50+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 22396,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 22396,
+    "item_level": 78,
+    "name": "Totem of Life",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 4,
+      "drop_percent": 8.89,
+      "entity_id": 15510,
+      "entity_name": "Fankriss the Unyielding",
+      "out_of": 45,
+      "source_url": "https://www.wowhead.com/tbc/item=22396/totem-of-life",
+      "type": "drop",
+      "zone": "Ahn'Qiraj"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Relic",
+    "source_summary": "Drop: Fankriss the Unyielding (Ahn'Qiraj) 8.9%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "raid",
+        "count": 4,
+        "drop_percent": 8.89,
+        "entity_id": 15510,
+        "entity_name": "Fankriss the Unyielding",
+        "out_of": 45,
+        "source_url": "https://www.wowhead.com/tbc/item=22396/totem-of-life",
+        "type": "drop",
+        "zone": "Ahn'Qiraj"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22396/totem-of-life"
+  },
+  "name": "Totem of Life",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "raid",
+      "count": 4,
+      "drop_percent": 8.89,
+      "entity_id": 15510,
+      "entity_name": "Fankriss the Unyielding",
+      "out_of": 45,
+      "source_url": "https://www.wowhead.com/tbc/item=22396/totem-of-life",
+      "type": "drop",
+      "zone": "Ahn'Qiraj"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "boss": 1,
+        "classification": 3,
+        "count": 4,
+        "id": 15510,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1255,
+                "outof": 17158
+              },
+              "9": {
+                "count": 1255,
+                "outof": 17158
+              }
+            },
+            "4": {
+              "0": {
+                "count": 4,
+                "outof": 45
+              },
+              "9": {
+                "count": 4,
+                "outof": 45
+              }
+            },
+            "5": {
+              "0": {
+                "count": 9,
+                "outof": 35
+              },
+              "9": {
+                "count": 9,
+                "outof": 35
+              }
+            }
+          }
+        },
+        "location": [
+          3428
+        ],
+        "maxlevel": 9999,
+        "minlevel": 9999,
+        "modes": {
+          "0": {
+            "count": 1255,
+            "outof": 17158
+          },
+          "9": {
+            "count": 1255,
+            "outof": 17158
+          },
+          "mode": [
+            0,
+            9
+          ]
+        },
+        "name": "Fankriss the Unyielding",
+        "outof": 45,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 10
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22396/totem-of-life"
+}

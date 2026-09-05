@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T08:50:59+00:00",
+  "fetched_at": "2026-09-04T23:49:03+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [
     {
       "data_family": "consumables",
@@ -107,9 +107,9 @@
           "entities": [
             {
               "id": 20749,
-              "name": "Expired Wizard Oil",
+              "name": "Brilliant Wizard Oil",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=20749/expired-wizard-oil"
+              "url": "https://www.wowhead.com/tbc/item=20749/brilliant-wizard-oil"
             },
             {
               "id": 22522,
@@ -122,15 +122,15 @@
           "section": "Best Consumable Check List for Elemental Shaman DPS in TBC Classic",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/item=20749/expired-wizard-oil",
-              "text": "Expired Wizard Oil"
+              "href": "https://www.wowhead.com/tbc/item=20749/brilliant-wizard-oil",
+              "text": "Brilliant Wizard Oil"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=22522/superior-wizard-oil",
               "text": "Superior Wizard Oil"
             }
           ],
-          "text": "Expired Wizard Oil or Superior Wizard Oil"
+          "text": "Brilliant Wizard Oil or Superior Wizard Oil"
         },
         {
           "entities": [
@@ -234,13 +234,13 @@
                 "id": 26990,
                 "name": "Mark of the Wild",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=26990"
+                "url": "https://www.wowhead.com/tbc/spell=26990/mark-of-the-wild"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Mark of the Wild",
             "Armor & Resistances"
           ],
           "entities": [
@@ -248,19 +248,19 @@
               "id": 26990,
               "name": "Mark of the Wild",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=26990"
+              "url": "https://www.wowhead.com/tbc/spell=26990/mark-of-the-wild"
             }
           ],
           "entity_id": 26990,
           "entity_name": "Mark of the Wild",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=26990",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=26990/mark-of-the-wild",
+          "rank_label": "Mark of the Wild",
           "source_links": [],
           "source_text": "Armor & Resistances",
           "spell_id": 26990,
           "spell_name": "Mark of the Wild",
-          "spell_url": "https://www.wowhead.com/tbc/spell=26990"
+          "spell_url": "https://www.wowhead.com/tbc/spell=26990/mark-of-the-wild"
         },
         {
           "cell_entities": [
@@ -269,13 +269,13 @@
                 "id": 25392,
                 "name": "Prayer of Fortitude",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=25392"
+                "url": "https://www.wowhead.com/tbc/spell=25392/prayer-of-fortitude"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Prayer of Fortitude",
             "Stamina"
           ],
           "entities": [
@@ -283,19 +283,19 @@
               "id": 25392,
               "name": "Prayer of Fortitude",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=25392"
+              "url": "https://www.wowhead.com/tbc/spell=25392/prayer-of-fortitude"
             }
           ],
           "entity_id": 25392,
           "entity_name": "Prayer of Fortitude",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=25392",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=25392/prayer-of-fortitude",
+          "rank_label": "Prayer of Fortitude",
           "source_links": [],
           "source_text": "Stamina",
           "spell_id": 25392,
           "spell_name": "Prayer of Fortitude",
-          "spell_url": "https://www.wowhead.com/tbc/spell=25392"
+          "spell_url": "https://www.wowhead.com/tbc/spell=25392/prayer-of-fortitude"
         },
         {
           "cell_entities": [
@@ -304,13 +304,13 @@
                 "id": 25312,
                 "name": "Divine Spirit",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=25312"
+                "url": "https://www.wowhead.com/tbc/spell=25312/divine-spirit"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Divine Spirit",
             "Spirit"
           ],
           "entities": [
@@ -318,19 +318,19 @@
               "id": 25312,
               "name": "Divine Spirit",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=25312"
+              "url": "https://www.wowhead.com/tbc/spell=25312/divine-spirit"
             }
           ],
           "entity_id": 25312,
           "entity_name": "Divine Spirit",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=25312",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=25312/divine-spirit",
+          "rank_label": "Divine Spirit",
           "source_links": [],
           "source_text": "Spirit",
           "spell_id": 25312,
           "spell_name": "Divine Spirit",
-          "spell_url": "https://www.wowhead.com/tbc/spell=25312"
+          "spell_url": "https://www.wowhead.com/tbc/spell=25312/divine-spirit"
         },
         {
           "cell_entities": [
@@ -339,13 +339,13 @@
                 "id": 27127,
                 "name": "Arcane Brilliance",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=27127"
+                "url": "https://www.wowhead.com/tbc/spell=27127/arcane-brilliance"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Arcane Brilliance",
             "Intellect"
           ],
           "entities": [
@@ -353,19 +353,19 @@
               "id": 27127,
               "name": "Arcane Brilliance",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=27127"
+              "url": "https://www.wowhead.com/tbc/spell=27127/arcane-brilliance"
             }
           ],
           "entity_id": 27127,
           "entity_name": "Arcane Brilliance",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=27127",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=27127/arcane-brilliance",
+          "rank_label": "Arcane Brilliance",
           "source_links": [],
           "source_text": "Intellect",
           "spell_id": 27127,
           "spell_name": "Arcane Brilliance",
-          "spell_url": "https://www.wowhead.com/tbc/spell=27127"
+          "spell_url": "https://www.wowhead.com/tbc/spell=27127/arcane-brilliance"
         },
         {
           "cell_entities": [
@@ -374,13 +374,13 @@
                 "id": 27143,
                 "name": "Greater Blessing of Wisdom",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=27143"
+                "url": "https://www.wowhead.com/tbc/spell=27143/greater-blessing-of-wisdom"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Greater Blessing of Wisdom",
             "MP5"
           ],
           "entities": [
@@ -388,19 +388,19 @@
               "id": 27143,
               "name": "Greater Blessing of Wisdom",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=27143"
+              "url": "https://www.wowhead.com/tbc/spell=27143/greater-blessing-of-wisdom"
             }
           ],
           "entity_id": 27143,
           "entity_name": "Greater Blessing of Wisdom",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=27143",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=27143/greater-blessing-of-wisdom",
+          "rank_label": "Greater Blessing of Wisdom",
           "source_links": [],
           "source_text": "MP5",
           "spell_id": 27143,
           "spell_name": "Greater Blessing of Wisdom",
-          "spell_url": "https://www.wowhead.com/tbc/spell=27143"
+          "spell_url": "https://www.wowhead.com/tbc/spell=27143/greater-blessing-of-wisdom"
         },
         {
           "cell_entities": [
@@ -409,13 +409,13 @@
                 "id": 25895,
                 "name": "Greater Blessing of Salvation",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=25895"
+                "url": "https://www.wowhead.com/tbc/spell=25895/greater-blessing-of-salvation"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Greater Blessing of Salvation",
             "Threat reduction"
           ],
           "entities": [
@@ -423,19 +423,19 @@
               "id": 25895,
               "name": "Greater Blessing of Salvation",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=25895"
+              "url": "https://www.wowhead.com/tbc/spell=25895/greater-blessing-of-salvation"
             }
           ],
           "entity_id": 25895,
           "entity_name": "Greater Blessing of Salvation",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=25895",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=25895/greater-blessing-of-salvation",
+          "rank_label": "Greater Blessing of Salvation",
           "source_links": [],
           "source_text": "Threat reduction",
           "spell_id": 25895,
           "spell_name": "Greater Blessing of Salvation",
-          "spell_url": "https://www.wowhead.com/tbc/spell=25895"
+          "spell_url": "https://www.wowhead.com/tbc/spell=25895/greater-blessing-of-salvation"
         },
         {
           "cell_entities": [
@@ -444,13 +444,13 @@
                 "id": 25898,
                 "name": "Greater Blessing of Kings",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=25898"
+                "url": "https://www.wowhead.com/tbc/spell=25898/greater-blessing-of-kings"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Greater Blessing of Kings",
             "All stats"
           ],
           "entities": [
@@ -458,19 +458,19 @@
               "id": 25898,
               "name": "Greater Blessing of Kings",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=25898"
+              "url": "https://www.wowhead.com/tbc/spell=25898/greater-blessing-of-kings"
             }
           ],
           "entity_id": 25898,
           "entity_name": "Greater Blessing of Kings",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=25898",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=25898/greater-blessing-of-kings",
+          "rank_label": "Greater Blessing of Kings",
           "source_links": [],
           "source_text": "All stats",
           "spell_id": 25898,
           "spell_name": "Greater Blessing of Kings",
-          "spell_url": "https://www.wowhead.com/tbc/spell=25898"
+          "spell_url": "https://www.wowhead.com/tbc/spell=25898/greater-blessing-of-kings"
         }
       ],
       "slot": null
@@ -486,13 +486,13 @@
                 "id": 20337,
                 "name": "Improved Seal of the Crusader",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=20337"
+                "url": "https://www.wowhead.com/tbc/spell=20337/improved-seal-of-the-crusader"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Improved Seal of the Crusader",
             "Increased Critical Strike Chance"
           ],
           "entities": [
@@ -500,19 +500,19 @@
               "id": 20337,
               "name": "Improved Seal of the Crusader",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=20337"
+              "url": "https://www.wowhead.com/tbc/spell=20337/improved-seal-of-the-crusader"
             }
           ],
           "entity_id": 20337,
           "entity_name": "Improved Seal of the Crusader",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=20337",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=20337/improved-seal-of-the-crusader",
+          "rank_label": "Improved Seal of the Crusader",
           "source_links": [],
           "source_text": "Increased Critical Strike Chance",
           "spell_id": 20337,
           "spell_name": "Improved Seal of the Crusader",
-          "spell_url": "https://www.wowhead.com/tbc/spell=20337"
+          "spell_url": "https://www.wowhead.com/tbc/spell=20337/improved-seal-of-the-crusader"
         },
         {
           "cell_entities": [
@@ -521,13 +521,13 @@
                 "id": 27164,
                 "name": "Judgement of Wisdom",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=27164"
+                "url": "https://www.wowhead.com/tbc/spell=27164/judgement-of-wisdom"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Judgement of Wisdom",
             "Chance to grant mana on hit"
           ],
           "entities": [
@@ -535,19 +535,19 @@
               "id": 27164,
               "name": "Judgement of Wisdom",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=27164"
+              "url": "https://www.wowhead.com/tbc/spell=27164/judgement-of-wisdom"
             }
           ],
           "entity_id": 27164,
           "entity_name": "Judgement of Wisdom",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=27164",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=27164/judgement-of-wisdom",
+          "rank_label": "Judgement of Wisdom",
           "source_links": [],
           "source_text": "Chance to grant mana on hit",
           "spell_id": 27164,
           "spell_name": "Judgement of Wisdom",
-          "spell_url": "https://www.wowhead.com/tbc/spell=27164"
+          "spell_url": "https://www.wowhead.com/tbc/spell=27164/judgement-of-wisdom"
         },
         {
           "cell_entities": [
@@ -556,13 +556,13 @@
                 "id": 33195,
                 "name": "Misery",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=33195"
+                "url": "https://www.wowhead.com/tbc/spell=33195/misery"
               }
             ],
             []
           ],
           "cells": [
-            "",
+            "Misery",
             "Increased spell damage taken"
           ],
           "entities": [
@@ -570,19 +570,19 @@
               "id": 33195,
               "name": "Misery",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=33195"
+              "url": "https://www.wowhead.com/tbc/spell=33195/misery"
             }
           ],
           "entity_id": 33195,
           "entity_name": "Misery",
           "entity_type": "spell",
-          "entity_url": "https://www.wowhead.com/tbc/spell=33195",
-          "rank_label": "",
+          "entity_url": "https://www.wowhead.com/tbc/spell=33195/misery",
+          "rank_label": "Misery",
           "source_links": [],
           "source_text": "Increased spell damage taken",
           "spell_id": 33195,
           "spell_name": "Misery",
-          "spell_url": "https://www.wowhead.com/tbc/spell=33195"
+          "spell_url": "https://www.wowhead.com/tbc/spell=33195/misery"
         },
         {
           "cell_entities": [

@@ -1,0 +1,220 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Alterac Valley Mark of Honor is a currency in World of Warcraft. It is a quest reward. In the Items category. Added in Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:35+00:00",
+  "inventory_slot": null,
+  "item_id": 20560,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 20560,
+    "item_level": 1,
+    "name": "Alterac Valley Mark of Honor",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 11336,
+      "entity_name": "Call to Arms: Alterac Valley",
+      "quest_id": 11336,
+      "source_url": "https://www.wowhead.com/tbc/item=20560",
+      "type": "quest",
+      "zone": "Alterac Valley"
+    },
+    "quality": "unknown",
+    "source_summary": "Quest: Call to Arms: Alterac Valley +4",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 11336,
+        "entity_name": "Call to Arms: Alterac Valley",
+        "quest_id": 11336,
+        "source_url": "https://www.wowhead.com/tbc/item=20560",
+        "type": "quest",
+        "zone": "Alterac Valley"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 11340,
+        "entity_name": "Call to Arms: Alterac Valley",
+        "quest_id": 11340,
+        "source_url": "https://www.wowhead.com/tbc/item=20560",
+        "type": "quest",
+        "zone": "Alterac Valley"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 24954,
+        "entity_name": "Alterac Valley Mark of Honor (Loser)",
+        "source_url": "https://www.wowhead.com/tbc/item=20560",
+        "spell_id": 24954,
+        "type": "crafted"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 24955,
+        "entity_name": "Alterac Valley Mark of Honor (Winner)",
+        "source_url": "https://www.wowhead.com/tbc/item=20560",
+        "spell_id": 24955,
+        "type": "crafted"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 354649,
+        "entity_name": "Grant Battleground Marks",
+        "source_url": "https://www.wowhead.com/tbc/item=20560",
+        "spell_id": 354649,
+        "type": "crafted"
+      }
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=20560"
+  },
+  "name": "Alterac Valley Mark of Honor",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11336,
+      "entity_name": "Call to Arms: Alterac Valley",
+      "quest_id": 11336,
+      "source_url": "https://www.wowhead.com/tbc/item=20560",
+      "type": "quest",
+      "zone": "Alterac Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 11340,
+      "entity_name": "Call to Arms: Alterac Valley",
+      "quest_id": 11340,
+      "source_url": "https://www.wowhead.com/tbc/item=20560",
+      "type": "quest",
+      "zone": "Alterac Valley"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 24954,
+      "entity_name": "Alterac Valley Mark of Honor (Loser)",
+      "source_url": "https://www.wowhead.com/tbc/item=20560",
+      "spell_id": 24954,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 24955,
+      "entity_name": "Alterac Valley Mark of Honor (Winner)",
+      "source_url": "https://www.wowhead.com/tbc/item=20560",
+      "spell_id": 24955,
+      "type": "crafted"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 354649,
+      "entity_name": "Grant Battleground Marks",
+      "source_url": "https://www.wowhead.com/tbc/item=20560",
+      "spell_id": 354649,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 0,
+        "creates": [
+          20560,
+          1,
+          1
+        ],
+        "id": 24954,
+        "level": 0,
+        "name": "Alterac Valley Mark of Honor (Loser)",
+        "popularity": 6,
+        "quality": 2,
+        "schools": 1
+      },
+      {
+        "cat": 0,
+        "creates": [
+          20560,
+          3,
+          3
+        ],
+        "id": 24955,
+        "level": 0,
+        "name": "Alterac Valley Mark of Honor (Winner)",
+        "popularity": 7,
+        "quality": 2,
+        "schools": 1
+      },
+      {
+        "cat": 0,
+        "creates": [
+          20560,
+          100,
+          100
+        ],
+        "id": 354649,
+        "level": 0,
+        "name": "Grant Battleground Marks",
+        "popularity": 4,
+        "quality": 2,
+        "schools": 0
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 2597,
+        "category2": 6,
+        "daily": 1,
+        "id": 11336,
+        "itemrewards": [
+          [
+            20560,
+            3
+          ]
+        ],
+        "money": 2000,
+        "name": "Call to Arms: Alterac Valley",
+        "popularity": 14,
+        "reqlevel": 51,
+        "side": 3,
+        "type": 41,
+        "wflags": 2,
+        "xp": 7070
+      },
+      {
+        "category": 2597,
+        "category2": 6,
+        "daily": 1,
+        "id": 11340,
+        "itemrewards": [
+          [
+            20560,
+            3
+          ]
+        ],
+        "money": 900,
+        "name": "Call to Arms: Alterac Valley",
+        "popularity": 6,
+        "reqlevel": 51,
+        "side": 3,
+        "type": 41,
+        "wflags": 2,
+        "xp": 7070
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=20560"
+}

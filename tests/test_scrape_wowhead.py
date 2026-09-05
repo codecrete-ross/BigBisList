@@ -12,6 +12,14 @@ from tools.scrape_wowhead import parse_costs, parse_guide_html, parse_item_html,
 
 
 class WowheadScraperParserTests(unittest.TestCase):
+    def test_unicode_dash_preserves_level_and_reputation_parsing(self):
+        self.assertEqual(scraper.level_range_from_text("Levels 60\u201370"), "60-70")
+        self.assertEqual(scraper.level_bounds_from_range("60\u201370"), (60, 69, True))
+        requirements = scraper.extract_reputation_requirements(
+            "Requires The Aldor \u2013 Exalted", "https://www.wowhead.com/tbc/item=1", "equip", "tooltip"
+        )
+        self.assertEqual([(r["reputation"], r["standing"]) for r in requirements], [("The Aldor", "Exalted")])
+
     def test_guide_parser_extracts_malformed_bis_table_rows(self):
         html = """
         <html><head><title>Guide</title></head><body>

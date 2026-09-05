@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:39+00:00",
+  "fetched_at": "2026-09-04T23:48:56+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -98,7 +98,7 @@
             [
               {
                 "id": 32494,
-                "name": "Destruction Holo-Gogs",
+                "name": "Destruction Holo-gogs",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs"
               }
@@ -114,13 +114,13 @@
           ],
           "cells": [
             "Option",
-            "Destruction Holo-Gogs",
+            "Destruction Holo-gogs",
             "Crafted: Destruction Holo-gogs (Engineering)"
           ],
           "entities": [
             {
               "id": 32494,
-              "name": "Destruction Holo-Gogs",
+              "name": "Destruction Holo-gogs",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs"
             },
@@ -132,11 +132,11 @@
             }
           ],
           "entity_id": 32494,
-          "entity_name": "Destruction Holo-Gogs",
+          "entity_name": "Destruction Holo-gogs",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs",
           "item_id": 32494,
-          "item_name": "Destruction Holo-Gogs",
+          "item_name": "Destruction Holo-gogs",
           "item_url": "https://www.wowhead.com/tbc/item=32494/destruction-holo-gogs",
           "rank_label": "Option",
           "source_links": [
@@ -626,7 +626,7 @@
           "cells": [
             "Option",
             "High Warlord's Silk Amice",
-            "Lady Palanseer - 10475 10 Arathi Basin Mark of Honor"
+            "Lady Palanseer - 10475 Honor Points 10 Arathi Basin Mark of Honor"
           ],
           "entities": [
             {
@@ -656,15 +656,15 @@
               "text": "Lady Palanseer"
             },
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20559/arathi-basin-mark-of-honor",
               "text": "Arathi Basin Mark of Honor"
             }
           ],
-          "source_text": "Lady Palanseer - 10475 10 Arathi Basin Mark of Honor"
+          "source_text": "Lady Palanseer - 10475 Honor Points 10 Arathi Basin Mark of Honor"
         },
         {
           "cell_entities": [
@@ -1502,7 +1502,7 @@
             [
               {
                 "id": 28342,
-                "name": "Warp-Infused Drape",
+                "name": "Warp Infused Drape",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
               }
@@ -1511,23 +1511,23 @@
           ],
           "cells": [
             "Option",
-            "Warp-Infused Drape",
+            "Warp Infused Drape",
             "Drop: Warp Splinter (The Botanica)"
           ],
           "entities": [
             {
               "id": 28342,
-              "name": "Warp-Infused Drape",
+              "name": "Warp Infused Drape",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
             }
           ],
           "entity_id": 28342,
-          "entity_name": "Warp-Infused Drape",
+          "entity_name": "Warp Infused Drape",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape",
           "item_id": 28342,
-          "item_name": "Warp-Infused Drape",
+          "item_name": "Warp Infused Drape",
           "item_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape",
           "rank_label": "Option",
           "source_links": [
@@ -3585,7 +3585,7 @@
             [
               {
                 "id": 27758,
-                "name": "Hydra-Fang Necklace",
+                "name": "Hydra-fang Necklace",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=27758/hydra-fang-necklace"
               }
@@ -3594,23 +3594,23 @@
           ],
           "cells": [
             "Option",
-            "Hydra-Fang Necklace",
+            "Hydra-fang Necklace",
             "Drop: Ghaz'an (Heroic The Underbog)"
           ],
           "entities": [
             {
               "id": 27758,
-              "name": "Hydra-Fang Necklace",
+              "name": "Hydra-fang Necklace",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=27758/hydra-fang-necklace"
             }
           ],
           "entity_id": 27758,
-          "entity_name": "Hydra-Fang Necklace",
+          "entity_name": "Hydra-fang Necklace",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=27758/hydra-fang-necklace",
           "item_id": 27758,
-          "item_name": "Hydra-Fang Necklace",
+          "item_name": "Hydra-fang Necklace",
           "item_url": "https://www.wowhead.com/tbc/item=27758/hydra-fang-necklace",
           "rank_label": "Option",
           "source_links": [
@@ -4601,7 +4601,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Exalted)",
-              "reputation": "Thrallmar / Honor Hold",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Exalted)",
+              "reputation": "Honor Hold",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/classes/mage/arcane/dps-bis-gear-pve-phase-2",
               "standing": "Exalted",

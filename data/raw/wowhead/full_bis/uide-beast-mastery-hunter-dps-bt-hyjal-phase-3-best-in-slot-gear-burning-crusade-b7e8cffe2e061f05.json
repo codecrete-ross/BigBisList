@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:35+00:00",
+  "fetched_at": "2026-09-04T23:48:49+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -66,7 +66,7 @@
           "cells": [
             "Best Alternative",
             "Vengeful Gladiator's Chain Helm",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -86,11 +86,11 @@
           "rank_label": "Best Alternative",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -288,7 +288,7 @@
             []
           ],
           "cells": [
-            "Best Until T6",
+            "Great",
             "Rift Stalker Mantle",
             "Drop: Pauldrons of the Vanquished Hero: Void Reaver (Tempest Keep)"
           ],
@@ -307,7 +307,7 @@
           "item_id": 30143,
           "item_name": "Rift Stalker Mantle",
           "item_url": "https://www.wowhead.com/tbc/item=30143/rift-stalker-mantle",
-          "rank_label": "Best Until T6",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19516/void-reaver",
@@ -322,7 +322,7 @@
             [
               {
                 "id": 30892,
-                "name": "Beast-Tamer's Shoulders",
+                "name": "Beast-tamer's Shoulders",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30892/beast-tamers-shoulders"
               }
@@ -331,23 +331,23 @@
           ],
           "cells": [
             "Optional",
-            "Beast-Tamer's Shoulders",
+            "Beast-tamer's Shoulders",
             "Drop: Kaz'rogal (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30892,
-              "name": "Beast-Tamer's Shoulders",
+              "name": "Beast-tamer's Shoulders",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30892/beast-tamers-shoulders"
             }
           ],
           "entity_id": 30892,
-          "entity_name": "Beast-Tamer's Shoulders",
+          "entity_name": "Beast-tamer's Shoulders",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30892/beast-tamers-shoulders",
           "item_id": 30892,
-          "item_name": "Beast-Tamer's Shoulders",
+          "item_name": "Beast-tamer's Shoulders",
           "item_url": "https://www.wowhead.com/tbc/item=30892/beast-tamers-shoulders",
           "rank_label": "Optional",
           "source_links": [
@@ -548,7 +548,7 @@
     },
     {
       "data_family": "bis_lists",
-      "heading": "Best in Slot Back Armor for Beast Mastery in TBC Classic Phase 3",
+      "heading": "Best in Slot Back Armor for Beast Mastery Hunter in TBC Classic Phase 3",
       "rows": [
         {
           "cell_entities": [
@@ -728,7 +728,7 @@
     },
     {
       "data_family": "bis_lists",
-      "heading": "Best in Slot Back Armor for Beast Mastery in TBC Classic Phase 3",
+      "heading": "Best in Slot Back Armor for Beast Mastery Hunter in TBC Classic Phase 3",
       "rows": [
         {
           "cell_entities": [
@@ -813,90 +813,6 @@
             }
           ],
           "source_text": "Drop: Magtheridon (Magtheridon's Lair)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 27878,
-                "name": "Auchenai Death Shroud",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Auchenai Death Shroud",
-            "Drop: Avatar of the Martyred (Heroic Auchenai Crypts)"
-          ],
-          "entities": [
-            {
-              "id": 27878,
-              "name": "Auchenai Death Shroud",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud"
-            }
-          ],
-          "entity_id": 27878,
-          "entity_name": "Auchenai Death Shroud",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud",
-          "item_id": 27878,
-          "item_name": "Auchenai Death Shroud",
-          "item_url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18478/avatar-of-the-martyred",
-              "text": "Avatar of the Martyred"
-            }
-          ],
-          "source_text": "Drop: Avatar of the Martyred (Heroic Auchenai Crypts)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 27892,
-                "name": "Cloak of the Inciter",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=27892/cloak-of-the-inciter"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Cloak of the Inciter",
-            "Drop: Blackheart the Inciter (Shadow Labyrinth)"
-          ],
-          "entities": [
-            {
-              "id": 27892,
-              "name": "Cloak of the Inciter",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27892/cloak-of-the-inciter"
-            }
-          ],
-          "entity_id": 27892,
-          "entity_name": "Cloak of the Inciter",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=27892/cloak-of-the-inciter",
-          "item_id": 27892,
-          "item_name": "Cloak of the Inciter",
-          "item_url": "https://www.wowhead.com/tbc/item=27892/cloak-of-the-inciter",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18667/blackheart-the-inciter",
-              "text": "Blackheart the Inciter"
-            }
-          ],
-          "source_text": "Drop: Blackheart the Inciter (Shadow Labyrinth)"
         }
       ],
       "slot": "Back"
@@ -961,7 +877,7 @@
             []
           ],
           "cells": [
-            "Best Until Tier 6",
+            "Great",
             "Rift Stalker Hauberk",
             "Drop: Chestguard of the Vanquished Hero: Kael'thas Sunstrider (Tempest Keep)"
           ],
@@ -980,7 +896,7 @@
           "item_id": 30139,
           "item_name": "Rift Stalker Hauberk",
           "item_url": "https://www.wowhead.com/tbc/item=30139/rift-stalker-hauberk",
-          "rank_label": "Best Until Tier 6",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=23054/kaelthas-sunstrider",
@@ -1003,7 +919,7 @@
             []
           ],
           "cells": [
-            "Best Until Tier 5",
+            "Great (4 set)",
             "Beast Lord Cuirass",
             "Drop: Warp Splinter (The Botanica)"
           ],
@@ -1022,7 +938,7 @@
           "item_id": 28228,
           "item_name": "Beast Lord Cuirass",
           "item_url": "https://www.wowhead.com/tbc/item=28228/beast-lord-cuirass",
-          "rank_label": "Best Until Tier 5",
+          "rank_label": "Great (4 set)",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17977/warp-splinter",
@@ -1175,48 +1091,6 @@
           "rank_label": "Optional",
           "source_links": [],
           "source_text": "Profession: Dragonscale Leatherworking (BoP)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30933,
-                "name": "Hauberk of Karabor",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30933/hauberk-of-karabor"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Hauberk of Karabor",
-            "Quest: Varedis Must Be Stopped"
-          ],
-          "entities": [
-            {
-              "id": 30933,
-              "name": "Hauberk of Karabor",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30933/hauberk-of-karabor"
-            }
-          ],
-          "entity_id": 30933,
-          "entity_name": "Hauberk of Karabor",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30933/hauberk-of-karabor",
-          "item_id": 30933,
-          "item_name": "Hauberk of Karabor",
-          "item_url": "https://www.wowhead.com/tbc/item=30933/hauberk-of-karabor",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/quest=10692/varedis-must-be-stopped",
-              "text": "Varedis Must Be Stopped"
-            }
-          ],
-          "source_text": "Quest: Varedis Must Be Stopped"
         }
       ],
       "slot": "Chest"
@@ -1281,7 +1155,7 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Great",
             "Vambraces of Ending",
             "Drop: High Astromancer Solarian (Tempest Keep)"
           ],
@@ -1300,7 +1174,7 @@
           "item_id": 29966,
           "item_name": "Vambraces of Ending",
           "item_url": "https://www.wowhead.com/tbc/item=29966/vambraces-of-ending",
-          "rank_label": "Optional",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=18805/high-astromancer-solarian",
@@ -1367,7 +1241,7 @@
           "cells": [
             "Optional",
             "Bands of the Celestial Archer",
-            "Drop: The Eye Trash Mobs"
+            "Drop: Tempest Keep Trash Mobs"
           ],
           "entities": [
             {
@@ -1387,11 +1261,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/zone=3845/the-eye",
-              "text": "The Eye"
+              "href": "https://www.wowhead.com/tbc/zone=3845/tempest-keep",
+              "text": "Tempest Keep"
             }
           ],
-          "source_text": "Drop: The Eye Trash Mobs"
+          "source_text": "Drop: Tempest Keep Trash Mobs"
         }
       ],
       "slot": "Wrist"
@@ -1535,191 +1409,6 @@
             }
           ],
           "source_text": "Drop: Leotheras the Blind (Serpentshrine Cavern)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29246,
-                "name": "Nightfall Wristguards",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29246/nightfall-wristguards"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Nightfall Wristguards",
-            "Drop: Epoch Hunter (Heroic Old Hillsbrad Foothills)"
-          ],
-          "entities": [
-            {
-              "id": 29246,
-              "name": "Nightfall Wristguards",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29246/nightfall-wristguards"
-            }
-          ],
-          "entity_id": 29246,
-          "entity_name": "Nightfall Wristguards",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29246/nightfall-wristguards",
-          "item_id": 29246,
-          "item_name": "Nightfall Wristguards",
-          "item_url": "https://www.wowhead.com/tbc/item=29246/nightfall-wristguards",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18096/epoch-hunter",
-              "text": "Epoch Hunter"
-            }
-          ],
-          "source_text": "Drop: Epoch Hunter (Heroic Old Hillsbrad Foothills)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29527,
-                "name": "Primalstrike Bracers",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Primalstrike Bracers",
-            "Profession: Elemental Leatherworking (BoP)"
-          ],
-          "entities": [
-            {
-              "id": 29527,
-              "name": "Primalstrike Bracers",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers"
-            }
-          ],
-          "entity_id": 29527,
-          "entity_name": "Primalstrike Bracers",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
-          "item_id": 29527,
-          "item_name": "Primalstrike Bracers",
-          "item_url": "https://www.wowhead.com/tbc/item=29527/primalstrike-bracers",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Elemental Leatherworking (BoP)",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/beast-mastery-hunter-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "specialization": "Elemental Leatherworking",
-              "type": "profession_specialization"
-            }
-          ],
-          "rank_label": "Optional",
-          "source_links": [],
-          "source_text": "Profession: Elemental Leatherworking (BoP)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 25697,
-                "name": "Felstalker Bracers",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Felstalker Bracers",
-            "Profession: Leatherworking (BoE)"
-          ],
-          "entities": [
-            {
-              "id": 25697,
-              "name": "Felstalker Bracers",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers"
-            }
-          ],
-          "entity_id": 25697,
-          "entity_name": "Felstalker Bracers",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers",
-          "item_id": 25697,
-          "item_name": "Felstalker Bracers",
-          "item_url": "https://www.wowhead.com/tbc/item=25697/felstalker-bracers",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Leatherworking (BoE)",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/beast-mastery-hunter-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
-            }
-          ],
-          "rank_label": "Optional",
-          "source_links": [],
-          "source_text": "Profession: Leatherworking (BoE)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29517,
-                "name": "Ebon Netherscale Bracers",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Ebon Netherscale Bracers",
-            "Profession: Dragonscale Leatherworking (BoP)"
-          ],
-          "entities": [
-            {
-              "id": 29517,
-              "name": "Ebon Netherscale Bracers",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers"
-            }
-          ],
-          "entity_id": 29517,
-          "entity_name": "Ebon Netherscale Bracers",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers",
-          "item_id": 29517,
-          "item_name": "Ebon Netherscale Bracers",
-          "item_url": "https://www.wowhead.com/tbc/item=29517/ebon-netherscale-bracers",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Dragonscale Leatherworking (BoP)",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/beast-mastery-hunter-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "specialization": "Dragonscale Leatherworking",
-              "type": "profession_specialization"
-            }
-          ],
-          "rank_label": "Optional",
-          "source_links": [],
-          "source_text": "Profession: Dragonscale Leatherworking (BoP)"
         }
       ],
       "slot": "Wrist"
@@ -1784,7 +1473,7 @@
             []
           ],
           "cells": [
-            "Best",
+            "Great",
             "Rift Stalker Gauntlets",
             "Drop: Gloves of the Vanquished Hero: Leotheras the Blind (Serpentshrine Cavern)"
           ],
@@ -1803,7 +1492,7 @@
           "item_id": 30140,
           "item_name": "Rift Stalker Gauntlets",
           "item_url": "https://www.wowhead.com/tbc/item=30140/rift-stalker-gauntlets",
-          "rank_label": "Best",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=21215/leotheras-the-blind",
@@ -1826,7 +1515,7 @@
             []
           ],
           "cells": [
-            "Best Until Tier 5",
+            "Great (4 set)",
             "Beast Lord Handguards",
             "Drop: Warchief Kargath Bladefist (The Shattered Halls)"
           ],
@@ -1845,7 +1534,7 @@
           "item_id": 27474,
           "item_name": "Beast Lord Handguards",
           "item_url": "https://www.wowhead.com/tbc/item=27474/beast-lord-handguards",
-          "rank_label": "Best Until Tier 5",
+          "rank_label": "Great (4 set)",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=16808/warchief-kargath-bladefist",
@@ -2097,7 +1786,7 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Great",
             "Belt of Deep Shadow",
             "Profession: Leatherworking"
           ],
@@ -2126,7 +1815,7 @@
               "type": "profession"
             }
           ],
-          "rank_label": "Optional",
+          "rank_label": "Great",
           "source_links": [],
           "source_text": "Profession: Leatherworking"
         },
@@ -2351,186 +2040,6 @@
             }
           ],
           "source_text": "Drop: Aeonus (Heroic Black Morass)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29526,
-                "name": "Primalstrike Belt",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Primalstrike Belt",
-            "Profession: Elemental Leatherworking (BoP)"
-          ],
-          "entities": [
-            {
-              "id": 29526,
-              "name": "Primalstrike Belt",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt"
-            }
-          ],
-          "entity_id": 29526,
-          "entity_name": "Primalstrike Belt",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
-          "item_id": 29526,
-          "item_name": "Primalstrike Belt",
-          "item_url": "https://www.wowhead.com/tbc/item=29526/primalstrike-belt",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Elemental Leatherworking (BoP)",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/beast-mastery-hunter-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "specialization": "Elemental Leatherworking",
-              "type": "profession_specialization"
-            }
-          ],
-          "rank_label": "Optional",
-          "source_links": [],
-          "source_text": "Profession: Elemental Leatherworking (BoP)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 27760,
-                "name": "Dunewind Sash",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=27760/dunewind-sash"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Dunewind Sash",
-            "Drop: Ghaz'an (Heroic The Underbog)"
-          ],
-          "entities": [
-            {
-              "id": 27760,
-              "name": "Dunewind Sash",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27760/dunewind-sash"
-            }
-          ],
-          "entity_id": 27760,
-          "entity_name": "Dunewind Sash",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=27760/dunewind-sash",
-          "item_id": 27760,
-          "item_name": "Dunewind Sash",
-          "item_url": "https://www.wowhead.com/tbc/item=27760/dunewind-sash",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18105/ghazan",
-              "text": "Ghaz'an"
-            }
-          ],
-          "source_text": "Drop: Ghaz'an (Heroic The Underbog)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29516,
-                "name": "Ebon Netherscale Belt",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29516/ebon-netherscale-belt"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Ebon Netherscale Belt",
-            "Drop: Ghaz'an (Heroic The Underbog)"
-          ],
-          "entities": [
-            {
-              "id": 29516,
-              "name": "Ebon Netherscale Belt",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29516/ebon-netherscale-belt"
-            }
-          ],
-          "entity_id": 29516,
-          "entity_name": "Ebon Netherscale Belt",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29516/ebon-netherscale-belt",
-          "item_id": 29516,
-          "item_name": "Ebon Netherscale Belt",
-          "item_url": "https://www.wowhead.com/tbc/item=29516/ebon-netherscale-belt",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18105/ghazan",
-              "text": "Ghaz'an"
-            }
-          ],
-          "source_text": "Drop: Ghaz'an (Heroic The Underbog)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28656,
-                "name": "Girdle of the Prowler",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28656/girdle-of-the-prowler"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Girdle of the Prowler",
-            "Profession: Dragonscale Leatherworking (BoP)"
-          ],
-          "entities": [
-            {
-              "id": 28656,
-              "name": "Girdle of the Prowler",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28656/girdle-of-the-prowler"
-            }
-          ],
-          "entity_id": 28656,
-          "entity_name": "Girdle of the Prowler",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28656/girdle-of-the-prowler",
-          "item_id": 28656,
-          "item_name": "Girdle of the Prowler",
-          "item_url": "https://www.wowhead.com/tbc/item=28656/girdle-of-the-prowler",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Dragonscale Leatherworking (BoP)",
-              "scope": "equip_or_use",
-              "source_url": "https://www.wowhead.com/tbc/guide/beast-mastery-hunter-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "specialization": "Dragonscale Leatherworking",
-              "type": "profession_specialization"
-            }
-          ],
-          "rank_label": "Optional",
-          "source_links": [],
-          "source_text": "Profession: Dragonscale Leatherworking (BoP)"
         }
       ],
       "slot": "Waist"
@@ -2671,7 +2180,7 @@
             [
               {
                 "id": 30900,
-                "name": "Bow-Stitched Leggings",
+                "name": "Bow-stitched Leggings",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
               }
@@ -2680,23 +2189,23 @@
           ],
           "cells": [
             "Optional",
-            "Bow-Stitched Leggings",
+            "Bow-stitched Leggings",
             "Azgalor (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30900,
-              "name": "Bow-Stitched Leggings",
+              "name": "Bow-stitched Leggings",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
             }
           ],
           "entity_id": 30900,
-          "entity_name": "Bow-Stitched Leggings",
+          "entity_name": "Bow-stitched Leggings",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "item_id": 30900,
-          "item_name": "Bow-Stitched Leggings",
+          "item_name": "Bow-stitched Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "rank_label": "Optional",
           "source_links": [
@@ -2923,90 +2432,6 @@
             }
           ],
           "source_text": "Drop: Quagmirran (Heroic Slave Pens)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 27874,
-                "name": "Beast Lord Leggings",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=27874/beast-lord-leggings"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Beast Lord Leggings",
-            "Drop: Warlord Kalithresh (The Steamvault)"
-          ],
-          "entities": [
-            {
-              "id": 27874,
-              "name": "Beast Lord Leggings",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27874/beast-lord-leggings"
-            }
-          ],
-          "entity_id": 27874,
-          "entity_name": "Beast Lord Leggings",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=27874/beast-lord-leggings",
-          "item_id": 27874,
-          "item_name": "Beast Lord Leggings",
-          "item_url": "https://www.wowhead.com/tbc/item=27874/beast-lord-leggings",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17798/warlord-kalithresh",
-              "text": "Warlord Kalithresh"
-            }
-          ],
-          "source_text": "Drop: Warlord Kalithresh (The Steamvault)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 27837,
-                "name": "Wastewalker Leggings",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=27837/wastewalker-leggings"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Wastewalker Leggings",
-            "Drop: Nexus-Prince Shaffar (Heroic Mana-Tombs)"
-          ],
-          "entities": [
-            {
-              "id": 27837,
-              "name": "Wastewalker Leggings",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27837/wastewalker-leggings"
-            }
-          ],
-          "entity_id": 27837,
-          "entity_name": "Wastewalker Leggings",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=27837/wastewalker-leggings",
-          "item_id": 27837,
-          "item_name": "Wastewalker Leggings",
-          "item_url": "https://www.wowhead.com/tbc/item=27837/wastewalker-leggings",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18344/nexus-prince-shaffar",
-              "text": "Nexus-Prince Shaffar"
-            }
-          ],
-          "source_text": "Drop: Nexus-Prince Shaffar (Heroic Mana-Tombs)"
         }
       ],
       "slot": "Legs"
@@ -3071,7 +2496,7 @@
             []
           ],
           "cells": [
-            "Best Option for early 4p Tier 6",
+            "Great",
             "Edgewalker Longboots",
             "Drop: Moroes (Karazhan)"
           ],
@@ -3090,7 +2515,7 @@
           "item_id": 28545,
           "item_name": "Edgewalker Longboots",
           "item_url": "https://www.wowhead.com/tbc/item=28545/edgewalker-longboots",
-          "rank_label": "Best Option for early 4p Tier 6",
+          "rank_label": "Great",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=15687/moroes",
@@ -3113,7 +2538,7 @@
             []
           ],
           "cells": [
-            "Temporary Hit Option",
+            "Great - Hit",
             "Softstep Boots of Tracking",
             "Drop: Teron Gorefiend (Black Temple)"
           ],
@@ -3132,7 +2557,7 @@
           "item_id": 32510,
           "item_name": "Softstep Boots of Tracking",
           "item_url": "https://www.wowhead.com/tbc/item=32510/softstep-boots-of-tracking",
-          "rank_label": "Temporary Hit Option",
+          "rank_label": "Great - Hit",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
@@ -3155,7 +2580,7 @@
             []
           ],
           "cells": [
-            "Temporary Hit Option",
+            "Great - Hit",
             "Quickstrider Moccasins",
             "Drop: Anetheron (Hyjal Summit)"
           ],
@@ -3174,7 +2599,7 @@
           "item_id": 30880,
           "item_name": "Quickstrider Moccasins",
           "item_url": "https://www.wowhead.com/tbc/item=30880/quickstrider-moccasins",
-          "rank_label": "Temporary Hit Option",
+          "rank_label": "Great - Hit",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17808/anetheron",
@@ -3360,6 +2785,6 @@
       "slot": "Feet"
     }
   ],
-  "title": "Burning Crusade Classic Beast Mastery Hunter DPS Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Beast Mastery Hunter DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/beast-mastery-hunter-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Breastplate of Malorne Phase 1 Item Level 120 Binds when picked up Chest Leather 659 Armor +33 Strength +34 Agility +36 Stamina +13 Intellect Yellow Socket Blue Socket Red Socket Socket Bonus: +4 Hit Rating Durability 120 / 120 Classes: Druid Requires Level 70 Malorne Harness (0/5) Breastplate of Malorne Gauntlets of Malorne Greaves of Malorne Mantle of Malorne Stag-Helm of Malorne (2) Set : Your melee attacks in Bear Form and Dire Bear Form have a chance to generate 10 additional rage. (Proc chance: 4%) (2) Set : Your melee attacks in Cat Form have a chance to generate 20 additional energy. (Proc chance: 4%) (4) Set : Increases your armor by 1400 in Bear Form and Dire Bear Form. (4) Set : Increases your strength by 30 in Cat Form.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:24+00:00",
+  "inventory_slot": null,
+  "item_id": 29096,
+  "item_stats": {
+    "armor": 659,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 29096,
+    "item_level": 120,
+    "name": "Breastplate of Malorne",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "socket_bonus": {
+      "hit_rating": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "blue",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "intellect": 13.0,
+      "stamina": 36.0,
+      "strength": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29096/breastplate-of-malorne"
+  },
+  "name": "Breastplate of Malorne",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29096/breastplate-of-malorne"
+}

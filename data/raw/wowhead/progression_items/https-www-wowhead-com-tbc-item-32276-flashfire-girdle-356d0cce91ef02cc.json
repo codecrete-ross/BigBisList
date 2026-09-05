@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Flashfire Girdle Phase 3 Item Level 141 Binds when picked up Waist Mail 556 Armor +27 Stamina +26 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves spell critical strike rating by 18. Equip: Improves spell haste rating by 37. Equip: Increases damage and healing done by magical spells and effects by up to 44. Sell Price: 4 6 47",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:51+00:00",
+  "inventory_slot": null,
+  "item_id": 32276,
+  "item_stats": {
+    "armor": 556,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 18.",
+        "stats": {
+          "spell_crit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 44.",
+        "stats": {
+          "spell_power": 44.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 18.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 44."
+    ],
+    "id": 32276,
+    "item_level": 141,
+    "name": "Flashfire Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 26.0,
+      "spell_crit_rating": 18.0,
+      "spell_power": 44.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32276/flashfire-girdle"
+  },
+  "name": "Flashfire Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32276/flashfire-girdle"
+}

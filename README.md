@@ -5,9 +5,9 @@ Warcraft. It shows phase-based BiS lists, acquisition details, gem/enchant and
 consumable recommendations, item tooltip matches, ownership state, and a simple
 priority planner.
 
-This repository is prepared for the `0.12.3` release. This addon targets TBC
-Anniversary only. The `0.12.3` package uses WoW interface `20505`, matching the
-local `wow_anniversary` 2.5.5 client, and is not intended for Retail, Classic
+This repository is prepared for the `0.13.0` release. This addon targets TBC
+Anniversary only. The `0.13.0` package uses WoW interface `20506`, matching the
+local `wow_anniversary` 2.5.6 client, and is not intended for Retail, Classic
 Era, Cataclysm Classic, Mists Classic, or other WoW releases.
 
 ## Install
@@ -29,7 +29,7 @@ test.
 
 ## Features
 
-- Phase-based TBC Anniversary BiS lists from Pre-Raid through Sunwell.
+- Phase-based TBC Anniversary BiS lists from Pre-Raid through Sunwell, with Pre-Raid automatically following live content.
 - Leveling mode with guide-backed gear pickups, computed item recommendations,
   and level controls.
 - Class, spec, phase, slot, source, zone, reputation, rank, ownership, BoE, and
@@ -47,7 +47,7 @@ test.
 
 ## Data Scope
 
-The `0.12.3` release ships with generated data from audited local Wowhead TBC
+The `0.13.0` release ships with generated data from audited local Wowhead TBC
 snapshots plus curated overrides where source data needed correction.
 
 Current generated data includes:
@@ -55,11 +55,11 @@ Current generated data includes:
 - 9 classes
 - 28 specs
 - 6 phases
-- 4,549 BiS slot lists
-- 2,520 item records
+- 8,274 BiS slot lists
+- 2,672 item records
 - 15,109 item stat records
-- 666 gem rows
-- 1,776 enchant rows
+- 921 gem rows
+- 1,990 enchant rows
 - 1,518 consumable rows
 - 1,337 leveling rows
 - 456 guide-backed leveling gear rows
@@ -77,7 +77,7 @@ release.
 - Planner priority is heuristic; it is not a simulator and does not replace
   class-specific stat weights.
 - Bank ownership only includes banked items after the character opens the bank.
-- No profile import/export is included in `0.12.3`.
+- No profile import/export is included in `0.13.0`.
 
 ## Release Checks
 
@@ -86,7 +86,7 @@ The authoritative release checklist is
 single release gate from the repository root before tagging or releasing:
 
 ```powershell
-.\scripts\check-release.ps1 -Version 0.12.3 -FullData
+.\scripts\check-release.ps1 -Version 0.13.0 -FullData
 ```
 
 `CHANGELOG.md` preserves the complete history of player-observable addon
@@ -126,7 +126,7 @@ by git.
 - Addon folder: `BigBiSList`
 - Source layout: addon `.toc` and Lua files at repository root for CurseForge
   auto-packaging
-- Target client: TBC Anniversary only (`## Interface: 20505`)
+- Target client: TBC Anniversary only (`## Interface: 20506`)
 - Saved variable: `BigBiSListDB`
 - Globals: `BigBiSList`, `BigBiSListData`
 - Slash commands: `/bigbis`, `/bbl`, `/bbltest`

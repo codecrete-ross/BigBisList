@@ -1,0 +1,52 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Bold Living Ruby Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Bold Living Ruby. Sell Price: 3 Bold Living Ruby Item Level 70 +8 Strength \"Matches a Red Socket.\" Sell Price: 3 Requires Living Ruby",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:39+00:00",
+  "inventory_slot": null,
+  "item_id": 24193,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Bold Living Ruby.",
+        "type": "use"
+      }
+    ],
+    "id": 24193,
+    "item_level": 70,
+    "name": "Design: Bold Living Ruby",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "stats": {
+      "strength": 8.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to cut a Bold Living Ruby."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24193"
+  },
+  "name": "Design: Bold Living Ruby",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Bold Living Ruby Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Bold Living Ruby. Sell Price: 3 Bold Living Ruby Item Level 70 +8 Strength \"Matches a Red Socket.\" Sell Price: 3 Requires Living Ruby",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24193",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24193"
+}

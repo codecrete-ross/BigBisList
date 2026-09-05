@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warp Infused Drape Phase 1 Item Level 115 Binds when picked up Chest Cloth 156 Armor +27 Stamina +28 Intellect Red Socket Blue Socket Yellow Socket Socket Bonus: +4 Spell Critical Strike Rating Durability 80 / 80 Requires Level 70 Equip: Improves spell hit rating by 12. Equip: Increases damage and healing done by magical spells and effects by up to 30. Sell Price: 3 64 36",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:16+00:00",
+  "inventory_slot": null,
+  "item_id": 28342,
+  "item_stats": {
+    "armor": 156,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 12.",
+        "stats": {
+          "spell_hit_rating": 12.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 30.",
+        "stats": {
+          "spell_power": 30.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 12.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 30."
+    ],
+    "id": 28342,
+    "item_level": 115,
+    "name": "Warp Infused Drape",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "spell_hit_rating": 12.0,
+      "spell_power": 30.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
+  },
+  "name": "Warp Infused Drape",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
+}

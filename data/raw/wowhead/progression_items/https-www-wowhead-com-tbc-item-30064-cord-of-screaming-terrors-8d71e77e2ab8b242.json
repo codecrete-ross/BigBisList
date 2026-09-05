@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cord of Screaming Terrors Phase 2 Item Level 128 Binds when picked up Waist Cloth 121 Armor +34 Stamina +15 Intellect Yellow Socket Yellow Socket Socket Bonus: +4 Stamina Durability 35 / 35 Requires Level 70 Equip: Improves spell hit rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 50. Sell Price: 2 55 44",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:33+00:00",
+  "inventory_slot": null,
+  "item_id": 30064,
+  "item_stats": {
+    "armor": 121,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 24.",
+        "stats": {
+          "spell_hit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 50.",
+        "stats": {
+          "spell_power": 50.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 24.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 50."
+    ],
+    "id": 30064,
+    "item_level": 128,
+    "name": "Cord of Screaming Terrors",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 15.0,
+      "spell_hit_rating": 24.0,
+      "spell_power": 50.0,
+      "stamina": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30064/cord-of-screaming-terrors"
+  },
+  "name": "Cord of Screaming Terrors",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30064/cord-of-screaming-terrors"
+}

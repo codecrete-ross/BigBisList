@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:46+00:00",
+  "fetched_at": "2026-09-04T23:49:10+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -2023,16 +2023,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/destruction-warlock-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -2791,9 +2781,9 @@
             [
               {
                 "id": 22128,
-                "name": "Master Firestone (DEPRECATED)",
+                "name": "Master Firestone",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=22128/master-firestone-deprecated"
+                "url": "https://www.wowhead.com/tbc/item=22128/master-firestone"
               }
             ],
             [
@@ -2801,47 +2791,47 @@
                 "id": 27250,
                 "name": "Create Firestone",
                 "type": "spell",
-                "url": "https://www.wowhead.com/tbc/spell=27250"
+                "url": "https://www.wowhead.com/tbc/spell=27250/create-firestone"
               }
             ]
           ],
           "cells": [
             "Option",
-            "Master Firestone (DEPRECATED)",
-            "Conjured:"
+            "Master Firestone",
+            "Conjured: Create Firestone"
           ],
           "entities": [
             {
               "id": 22128,
-              "name": "Master Firestone (DEPRECATED)",
+              "name": "Master Firestone",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=22128/master-firestone-deprecated"
+              "url": "https://www.wowhead.com/tbc/item=22128/master-firestone"
             },
             {
               "id": 27250,
               "name": "Create Firestone",
               "type": "spell",
-              "url": "https://www.wowhead.com/tbc/spell=27250"
+              "url": "https://www.wowhead.com/tbc/spell=27250/create-firestone"
             }
           ],
           "entity_id": 22128,
-          "entity_name": "Master Firestone (DEPRECATED)",
+          "entity_name": "Master Firestone",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=22128/master-firestone-deprecated",
+          "entity_url": "https://www.wowhead.com/tbc/item=22128/master-firestone",
           "item_id": 22128,
-          "item_name": "Master Firestone (DEPRECATED)",
-          "item_url": "https://www.wowhead.com/tbc/item=22128/master-firestone-deprecated",
+          "item_name": "Master Firestone",
+          "item_url": "https://www.wowhead.com/tbc/item=22128/master-firestone",
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/spell=27250",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/spell=27250/create-firestone",
+              "text": "Create Firestone"
             }
           ],
-          "source_text": "Conjured:",
+          "source_text": "Conjured: Create Firestone",
           "spell_id": 27250,
           "spell_name": "Create Firestone",
-          "spell_url": "https://www.wowhead.com/tbc/spell=27250"
+          "spell_url": "https://www.wowhead.com/tbc/spell=27250/create-firestone"
         }
       ],
       "slot": "Ranged"

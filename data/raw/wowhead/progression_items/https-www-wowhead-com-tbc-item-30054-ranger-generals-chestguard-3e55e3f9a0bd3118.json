@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ranger-General's Chestguard Phase 2 Item Level 128 Binds when picked up Chest Mail 900 Armor +36 Agility +19 Stamina +30 Intellect Blue Socket Red Socket Yellow Socket Socket Bonus: +4 Agility Durability 140 / 140 Requires Level 70 Equip: Improves critical strike rating by 14. Equip: Increases attack power by 88. Sell Price: 7 94 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:31+00:00",
+  "inventory_slot": null,
+  "item_id": 30054,
+  "item_stats": {
+    "armor": 900,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 14.",
+        "stats": {
+          "crit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 88.",
+        "stats": {
+          "attack_power": 88.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 14.",
+      "Equip: Increases attack power by 88."
+    ],
+    "id": 30054,
+    "item_level": 128,
+    "name": "Ranger-General's Chestguard",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "agility": 4.0
+    },
+    "sockets": [
+      "blue",
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 36.0,
+      "attack_power": 88.0,
+      "crit_rating": 14.0,
+      "intellect": 30.0,
+      "stamina": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30054/ranger-generals-chestguard"
+  },
+  "name": "Ranger-General's Chestguard",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30054/ranger-generals-chestguard"
+}

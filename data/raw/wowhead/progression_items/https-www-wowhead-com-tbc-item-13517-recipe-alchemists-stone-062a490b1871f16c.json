@@ -1,0 +1,143 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is sold by Almaador. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:21+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 13517,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make an Alchemist's Stone.",
+        "type": "use"
+      }
+    ],
+    "id": 13517,
+    "item_level": 70,
+    "name": "Recipe: Alchemist's Stone",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 21432,
+      "entity_name": "Almaador",
+      "location_area": "Shattrath City",
+      "price_copper": 68000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=13517/recipe-alchemists-stone",
+      "type": "vendor",
+      "vendor_id": 21432,
+      "zone": "Shattrath City"
+    },
+    "quality": "unknown",
+    "slot": "Trinket",
+    "source_summary": "Vendor: Almaador (Shattrath City)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 21432,
+        "entity_name": "Almaador",
+        "location_area": "Shattrath City",
+        "price_copper": 68000,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=13517/recipe-alchemists-stone",
+        "type": "vendor",
+        "vendor_id": 21432,
+        "zone": "Shattrath City"
+      }
+    ],
+    "stats": {
+      "agility": 15.0,
+      "intellect": 15.0,
+      "spirit": 15.0,
+      "stamina": 15.0,
+      "strength": 15.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make an Alchemist's Stone."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=13517/recipe-alchemists-stone"
+  },
+  "name": "Recipe: Alchemist's Stone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Recipe: Alchemist's Stone Item Level 70 Binds when picked up Requires Alchemy (350) Requires The Sha'tar - Revered Use: Teaches you how to make an Alchemist's Stone. Sell Price: 2 Alchemist's Stone Item Level 90 Binds when picked up Unique Trinket +15 Strength +15 Agility +15 Stamina +15 Intellect +15 Spirit Requires Alchemy (350) Equip: Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack. Sell Price: 2 50 Requires Philosopher's Stone , Earthstorm Diamond , Skyfire Diamond , Fel Lotus (2), Primal Might (5) This alchemy recipe is used for the Alchemy profession. It is sold by Almaador. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "reputation": "The Sha'tar",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=13517/recipe-alchemists-stone",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Alchemist's Stone Item Level 70 Binds when picked up Requires Alchemy (350) Requires The Sha'tar - Revered Use: Teaches you how to make an Alchemist's Stone. Sell Price: 2 Alchemist's Stone Item Level 90 Binds when picked up Unique Trinket +15 Strength +15 Agility +15 Stamina +15 Intellect +15 Spirit Requires Alchemy (350) Equip: Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack. Sell Price: 2 50 Requires Philosopher's Stone , Earthstorm Diamond , Skyfire Diamond , Fel Lotus (2), Primal Might (5) This alchemy recipe is used for the Alchemy profession. It is sold by Almaador. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=13517/recipe-alchemists-stone",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 21432,
+      "entity_name": "Almaador",
+      "location_area": "Shattrath City",
+      "price_copper": 68000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=13517/recipe-alchemists-stone",
+      "type": "vendor",
+      "vendor_id": 21432,
+      "zone": "Shattrath City"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 0,
+        "cost": [
+          [
+            68000
+          ]
+        ],
+        "id": 21432,
+        "location": [
+          3703
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Almaador",
+        "popularity": 28,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Sha'tari Quartermaster",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    17632,
+    17619
+  ],
+  "url": "https://www.wowhead.com/tbc/item=13517/recipe-alchemists-stone"
+}

@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Shoulderpads of the Stranger Phase 2 Item Level 128 Binds when picked up Shoulder Leather 303 Armor +33 Agility +28 Stamina Red Socket Socket Bonus: +2 Agility Durability 70 / 70 Requires Level 70 Equip: Improves critical strike rating by 16. Equip: Increases your expertise rating by 10. Equip: Increases attack power by 60. Sell Price: 4 98 59",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:31+00:00",
+  "inventory_slot": null,
+  "item_id": 30055,
+  "item_stats": {
+    "armor": 303,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 16.",
+        "stats": {
+          "crit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases your expertise rating by 10.",
+        "stats": {
+          "expertise_rating": 10.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 60.",
+        "stats": {
+          "attack_power": 60.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 16.",
+      "Equip: Increases your expertise rating by 10.",
+      "Equip: Increases attack power by 60."
+    ],
+    "id": 30055,
+    "item_level": 128,
+    "name": "Shoulderpads of the Stranger",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "agility": 2.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 33.0,
+      "attack_power": 60.0,
+      "crit_rating": 16.0,
+      "expertise_rating": 10.0,
+      "stamina": 28.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30055/shoulderpads-of-the-stranger"
+  },
+  "name": "Shoulderpads of the Stranger",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30055/shoulderpads-of-the-stranger"
+}

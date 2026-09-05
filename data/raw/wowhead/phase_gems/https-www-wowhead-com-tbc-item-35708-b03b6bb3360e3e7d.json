@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Regal Nightseye Item Level 70 Binds when picked up Requires Jewelcrafting (350) Requires Shattered Sun Offensive - Revered Use: Teaches you how to cut a Regal Nightseye. Sell Price: 3 Regal Nightseye Item Level 70 +4 Dodge Rating and +6 Stamina \"Matches a Red or Blue Socket.\" Sell Price: 3 Requires Nightseye",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:26:49+00:00",
+  "inventory_slot": null,
+  "item_id": 35708,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Regal Nightseye.",
+        "type": "use"
+      }
+    ],
+    "id": 35708,
+    "item_level": 70,
+    "name": "Design: Regal Nightseye",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Regal Nightseye."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35708"
+  },
+  "name": "Design: Regal Nightseye",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Design: Regal Nightseye Item Level 70 Binds when picked up Requires Jewelcrafting (350) Requires Shattered Sun Offensive - Revered",
+      "reputation": "Shattered Sun Offensive",
+      "scope": "learn_recipe",
+      "source_url": "https://www.wowhead.com/tbc/item=35708",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Regal Nightseye Item Level 70 Binds when picked up Requires Jewelcrafting (350) Requires Shattered Sun Offensive - Revered",
+      "scope": "learn_recipe",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35708",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "reagent_item_ids": [
+    23441
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 35707,
+  "teaches_spell_ids": [
+    46803
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/35708",
+  "url": "https://www.wowhead.com/tbc/item=35708"
+}

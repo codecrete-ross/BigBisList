@@ -1,0 +1,467 @@
+{
+  "bindings": [
+    {
+      "class": "Warrior",
+      "phase": "T6",
+      "spec": "Protection"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 33730,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "equipment_item_id": 30979,
+          "slot": "Shoulder",
+          "spell_id": 29480
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 33728,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29536,
+            "name": "Nethercleft Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30977,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35495
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 33812,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 33813,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 25072,
+            "name": "Enchant Gloves - Threat",
+            "type": "spell"
+          },
+          "equipment_item_id": 32280,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25072
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34010,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 32254,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27984
+        },
+        {
+          "entity": {
+            "id": 34009,
+            "name": "Enchant Shield - Major Stamina",
+            "type": "spell"
+          },
+          "equipment_item_id": 32375,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 34009
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Protection Warrior - Phase 3 Best In Slot\r\nBalanced set with Arena gear (6% hit)",
+      "planner": "warrior/orc/A0YTNQADATAvA_AFVREDMBAQFQE1H4FAg8KKfAB-mSB93AIghIMAfdyDQHkDcygAfcggfciFYIPAbTgAfcggfchAfcgGQHWaAH3cIH3IhyB5AYqnAH3IiACEFITYiSCEFW0KAH3IigB-GGHwCwB4cgwAcnUNAHxyDgB8c48AhNqE1JAAff5tUJEAfneE2RIAff0"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 33730,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "equipment_item_id": 30979,
+          "slot": "Shoulder",
+          "spell_id": 29480
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 33728,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29536,
+            "name": "Nethercleft Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30977,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35495
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 32268,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 33813,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 25072,
+            "name": "Enchant Gloves - Threat",
+            "type": "spell"
+          },
+          "equipment_item_id": 32280,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25072
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34010,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 32254,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27984
+        },
+        {
+          "entity": {
+            "id": 34009,
+            "name": "Enchant Shield - Major Stamina",
+            "type": "spell"
+          },
+          "equipment_item_id": 32375,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 34009
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Protection Warrior - Phase 3 Best In Slot\r\nBalanced set with Arena gear (9% hit)",
+      "planner": "warrior/orc/A0YTNQADATAvA_AFVREDMBAQFQE1H4FAg8KKfAB-mSB93AIghIMAfdyDQHkDcygAfcggfciFYIPAbTgAfcggfchAfcgGQHWaAH3IIH3IhyB5AYqnAH3IiEB-DITYAH3IIH3IiSCEFW0KAH3IigB-GGHwCwB4cgwAfgoNAHxyDgB8c48AhNqE1JAAff5tUJEAfneE2RIAdP0"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 32521,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "equipment_item_id": 30979,
+          "slot": "Shoulder",
+          "spell_id": 35439
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 30975,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29536,
+            "name": "Nethercleft Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 30978,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35495
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 33812,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 33813,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 25072,
+            "name": "Enchant Gloves - Threat",
+            "type": "spell"
+          },
+          "equipment_item_id": 32280,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25072
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34010,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 32254,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27984
+        },
+        {
+          "entity": {
+            "id": 34009,
+            "name": "Enchant Shield - Major Stamina",
+            "type": "spell"
+          },
+          "equipment_item_id": 32375,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 34009
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Protection Warrior - Phase 3 Best In Slot\r\nBalanced set without Arena gear (6% hit)",
+      "planner": "warrior/orc/A0YTNQADATAvA_AFVREDMBAQFQE1H4FAfwmKfAB-mSB93AIghIMAfdyDQHkDim8AfcggfciFYHj_bTgAfcggfchAfcgGQHWaAH3cIH3IhyB5AoqnAH3UiACEFITYiSCEFW0KAIuuigB-GGHwCwB4cgwAfgUNAHxyDgB8c48AhNqE1JAAff5tUJEAfneE2RIAff0"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 19782,
+            "name": "Presence of Might",
+            "type": "item"
+          },
+          "equipment_item_id": 32521,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 24149
+        },
+        {
+          "entity": {
+            "id": 28911,
+            "name": "Greater Inscription of the Knight",
+            "type": "item"
+          },
+          "equipment_item_id": 30979,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35433
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 30975,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29536,
+            "name": "Nethercleft Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 32263,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35495
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 32268,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27914,
+            "name": "Enchant Bracer - Fortitude",
+            "type": "spell"
+          },
+          "equipment_item_id": 33813,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27914
+        },
+        {
+          "entity": {
+            "id": 25072,
+            "name": "Enchant Gloves - Threat",
+            "type": "spell"
+          },
+          "equipment_item_id": 32280,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25072
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34010,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "equipment_item_id": 32254,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27984
+        },
+        {
+          "entity": {
+            "id": 34009,
+            "name": "Enchant Shield - Major Stamina",
+            "type": "spell"
+          },
+          "equipment_item_id": 32375,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 34009
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Protection Warrior - Phase 3 Best In Slot\r\nMitigation-heavy set without Arena gear (6% hit)",
+      "planner": "warrior/gnome/A0YSNQADAR8F8AVVEQMwEBA1ATUfgUB_CV5VAGUoIH3UAiCEgwCLroNAeQOKaQB9yCB9yIVgeP9tOAB9yCB9yEB9yAZAfk0AfcggfciHYH4HiqcAi64gi65AfdSIQH4MhNgAfcggfciJIIQVbQoAfciKAH4YYfALAHhyDAB-BQ0AfHIOAHxzjwCE2oTUkAB9_m1QkQB-d4TZEgB9_Q"
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:26+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Protection Warrior Tank Phase 3 Best in Slot - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/protection-warrior-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

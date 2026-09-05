@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Spaulders of Oblivion Phase 1 Item Level 115 Binds when picked up Shoulder Cloth 117 Armor +25 Stamina +17 Intellect Yellow Socket Blue Socket Socket Bonus: +3 Spell Hit Rating Durability 50 / 50 Requires Level 70 Equip: Increases damage and healing done by magical spells and effects by up to 29. Oblivion Raiment (0/5) Gloves of Oblivion Hood of Oblivion Robe of Oblivion Spaulders of Oblivion Trousers of Oblivion (2) Set : Grants your pet 45 mana per 5 sec. (4) Set : Your Seed of Corruption deals 180 additional damage when it detonates. Sell Price: 2 74 24",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:35+00:00",
+  "inventory_slot": null,
+  "item_id": 27778,
+  "item_stats": {
+    "armor": 117,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 29.",
+        "stats": {
+          "spell_power": 29.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 29."
+    ],
+    "id": 27778,
+    "item_level": 115,
+    "name": "Spaulders of Oblivion",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_hit_rating": 3.0
+    },
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "spell_power": 29.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27778/spaulders-of-oblivion"
+  },
+  "name": "Spaulders of Oblivion",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27778/spaulders-of-oblivion"
+}

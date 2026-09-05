@@ -1,0 +1,93 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Heavy Clefthoof Vest Phase 1 Item Level 72 Binds when picked up Requires Leatherworking (360) Requires Cenarion Expedition - Honored Use: Teaches you how to make a Heavy Clefthoof Vest. Sell Price: 4 Heavy Clefthoof Vest Item Level 114 Binds when equipped Chest Leather 500 Armor +45 Stamina Yellow Socket Yellow Socket Blue Socket Socket Bonus: +4 Dodge Rating Durability 100 / 100 Requires Level 70 Equip: Increases defense rating by 24. Strength of the Clefthoof (0/3) Requires Leatherworking (350) Heavy Clefthoof Boots Heavy Clefthoof Leggings Heavy Clefthoof Vest Sell Price: 4 50 10 Requires Heavy Knothide Leather (6), Thick Clefthoof Leather (40), Primal Earth (4), Rune Thread (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:06+00:00",
+  "inventory_slot": null,
+  "item_id": 25735,
+  "item_stats": {
+    "armor": 500,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Heavy Clefthoof Vest.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases defense rating by 24.",
+        "stats": {
+          "defense_rating": 24.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases defense rating by 24."
+    ],
+    "id": 25735,
+    "item_level": 72,
+    "name": "Pattern: Heavy Clefthoof Vest",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "dodge_rating": 4.0
+    },
+    "sockets": [
+      "yellow",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "defense_rating": 24.0,
+      "stamina": 45.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Heavy Clefthoof Vest."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=25735"
+  },
+  "name": "Pattern: Heavy Clefthoof Vest",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Heavy Clefthoof Vest Phase 1 Item Level 72 Binds when picked up Requires Leatherworking (360) Requires Cenarion Expedition - Honored Use: Teaches you how to make a Heavy Clefthoof Vest. Sell Price: 4 Heavy Clefthoof Vest Item Level 114 Binds when equipped Chest Leather 500 Armor +45 Stamina Yellow Socket Yellow Socket Blue Socket Socket Bonus: +4 Dodge Rating Durability 100 / 100 Requires Level 70 Equip: Increases defense rating by 24. Strength of the Clefthoof (0/3) Requires Leatherworking (350) Heavy Clefthoof Boots Heavy Clefthoof Leggings Heavy Clefthoof Vest Sell Price: 4 50 10 Requires Heavy Knothide Leather (6), Thick Clefthoof Leather (40), Primal Earth (4), Rune Thread (2)",
+      "reputation": "Cenarion Expedition",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=25735",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Heavy Clefthoof Vest Phase 1 Item Level 72 Binds when picked up Requires Leatherworking (360) Requires Cenarion Expedition - Honored Use: Teaches you how to make a Heavy Clefthoof Vest. Sell Price: 4 Heavy Clefthoof Vest Item Level 114 Binds when equipped Chest Leather 500 Armor +45 Stamina Yellow Socket Yellow Socket Blue Socket Socket Bonus: +4 Dodge Rating Durability 100 / 100 Requires Level 70 Equip: Increases defense rating by 24. Strength of the Clefthoof (0/3) Requires Leatherworking (350) Heavy Clefthoof Boots Heavy Clefthoof Leggings Heavy Clefthoof Vest Sell Price: 4 50 10 Requires Heavy Knothide Leather (6), Thick Clefthoof Leather (40), Primal Earth (4), Rune Thread (2)",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=25735",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Heavy Clefthoof Vest Phase 1 Item Level 72 Binds when picked up Requires Leatherworking (360) Requires Cenarion Expedition - Honored Use: Teaches you how to make a Heavy Clefthoof Vest. Sell Price: 4 Heavy Clefthoof Vest Item Level 114 Binds when equipped Chest Leather 500 Armor +45 Stamina Yellow Socket Yellow Socket Blue Socket Socket Bonus: +4 Dodge Rating Durability 100 / 100 Requires Level 70 Equip: Increases defense rating by 24. Strength of the Clefthoof (0/3) Requires Leatherworking (350) Heavy Clefthoof Boots Heavy Clefthoof Leggings Heavy Clefthoof Vest Sell Price: 4 50 10 Requires Heavy Knothide Leather (6), Thick Clefthoof Leather (40), Primal Earth (4), Rune Thread (2)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=25735",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=25735"
+}

@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Naturewarden's Treads Phase 3 Item Level 141 Binds when picked up Feet Leather 305 Armor +39 Stamina +18 Intellect Yellow Socket Blue Socket Socket Bonus: +4 Spell Damage and Healing Durability 60 / 60 Requires Level 70 Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 44. Equip: Restores 7 mana per 5 sec. Sell Price: 5 53 10",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:58+00:00",
+  "inventory_slot": null,
+  "item_id": 32352,
+  "item_stats": {
+    "armor": 305,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 26.",
+        "stats": {
+          "spell_crit_rating": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 44.",
+        "stats": {
+          "spell_power": 44.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 26.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 44.",
+      "Equip: Restores 7 mana per 5 sec."
+    ],
+    "id": 32352,
+    "item_level": 141,
+    "name": "Naturewarden's Treads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "mp5": 7.0,
+      "spell_crit_rating": 26.0,
+      "spell_power": 44.0,
+      "stamina": 39.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32352/naturewardens-treads"
+  },
+  "name": "Naturewarden's Treads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32352/naturewardens-treads"
+}

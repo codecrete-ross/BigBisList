@@ -1,0 +1,179 @@
+{
+  "bindings": [
+    {
+      "class": "Mage",
+      "phase": "T6",
+      "spec": "Fire"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29191,
+            "name": "Glyph of Power",
+            "type": "item"
+          },
+          "equipment_item_id": 32525,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35447
+        },
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "equipment_item_id": 31059,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 31057,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 24274,
+            "name": "Runic Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 31058,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31372
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 32239,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "entity": {
+            "id": 27917,
+            "name": "Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32586,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 27917
+        },
+        {
+          "entity": {
+            "id": 33997,
+            "name": "Major Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 31055,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33997
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32527,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 27924,
+            "name": "Enchant Ring - Spellpower",
+            "type": "spell"
+          },
+          "equipment_item_id": 32527,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27924
+        },
+        {
+          "entity": {
+            "id": 25084,
+            "name": "Enchant Cloak - Subtlety",
+            "type": "spell"
+          },
+          "equipment_item_id": 32524,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 25084
+        },
+        {
+          "entity": {
+            "id": 27981,
+            "name": "Sunfire",
+            "type": "spell"
+          },
+          "equipment_item_id": 32374,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Two Hand",
+          "spell_id": 27981
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Fire Mage DPS in Phase 3",
+      "planner": "mage/troll/A0YSL1BSMgAjAzMAUxJR8FMgAAHwgUB_DYp3AGUlIH3XAgB_TYNAeVOKTgB9xCB9xIVgeVFtOAB9xCB9xEB9xAZAdVYAfcQgfcSHIHlSeowAfcSIQH3vhNgAfcQgfcSJAH9KbQ2KIHlPhM0AfcSLAH8PbRSMAH8PbRQNAHgADgB-448Afwxh_JAAfnZtTRIAdR4"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28886,
+            "name": "Greater Inscription of Discipline",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35406
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Fire Mage DPS in Phase 3",
+      "text": "Should Fire Mage DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 3?\r\nThe Aldor vs Scryer choice for Mages is not super important. The main difference, particularly at this stage of TBC, to keep in mind is the enchants,  and . They're extremely close when it comes to output, but to summarize, you should make your decision based on what you focus on - Aldor pushes ahead by about 2-3 DPS in single target, while Scryer outperforms by a similar amount in AoE scenarios."
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28909,
+            "name": "Greater Inscription of the Orb",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35437
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Fire Mage DPS in Phase 3",
+      "text": "Should Fire Mage DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 3?\r\nThe Aldor vs Scryer choice for Mages is not super important. The main difference, particularly at this stage of TBC, to keep in mind is the enchants,  and . They're extremely close when it comes to output, but to summarize, you should make your decision based on what you focus on - Aldor pushes ahead by about 2-3 DPS in single target, while Scryer outperforms by a similar amount in AoE scenarios."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:17+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Fire Mage DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/fire-mage-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

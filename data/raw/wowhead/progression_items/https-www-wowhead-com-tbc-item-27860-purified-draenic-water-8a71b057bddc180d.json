@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Purified Draenic Water Item Level 75 Requires Level 65 Use: Restores 7200 mana over 30 sec. Must remain seated while drinking. Max Stack: 20 Sell Price: 3 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:42+00:00",
+  "inventory_slot": null,
+  "item_id": 27860,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Restores 7200 mana over 30 sec. Must remain seated while drinking. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 27860,
+    "item_level": 75,
+    "name": "Purified Draenic Water",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 65,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Restores 7200 mana over 30 sec. Must remain seated while drinking. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27860/purified-draenic-water"
+  },
+  "name": "Purified Draenic Water",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27860/purified-draenic-water"
+}

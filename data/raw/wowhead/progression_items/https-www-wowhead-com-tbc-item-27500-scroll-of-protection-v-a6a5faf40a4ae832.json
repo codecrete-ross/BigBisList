@@ -1,0 +1,40 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Scroll of Protection V Item Level 70 Requires Level 60 Use: Increases the target's Armor by 300 for 30 min. Max Stack: 5 Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:20+00:00",
+  "inventory_slot": null,
+  "item_id": 27500,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases the target's Armor by 300 for 30 min. Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 27500,
+    "item_level": 70,
+    "name": "Scroll of Protection V",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases the target's Armor by 300 for 30 min. Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27500/scroll-of-protection-v"
+  },
+  "name": "Scroll of Protection V",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27500/scroll-of-protection-v"
+}

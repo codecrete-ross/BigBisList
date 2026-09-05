@@ -1,0 +1,43 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Flask of Relentless Assault Item Level 75 Requires Level 65 Use: Increases attack power by 120 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5 Sell Price: 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:08+00:00",
+  "inventory_slot": null,
+  "item_id": 22854,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases attack power by 120 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5",
+        "stats": {
+          "attack_power": 120.0
+        },
+        "type": "use"
+      }
+    ],
+    "id": 22854,
+    "item_level": 75,
+    "name": "Flask of Relentless Assault",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 65,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases attack power by 120 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22854/flask-of-relentless-assault"
+  },
+  "name": "Flask of Relentless Assault",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22854/flask-of-relentless-assault"
+}

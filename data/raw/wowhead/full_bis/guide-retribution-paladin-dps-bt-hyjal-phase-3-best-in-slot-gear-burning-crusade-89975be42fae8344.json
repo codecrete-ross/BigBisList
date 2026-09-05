@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:56+00:00",
+  "fetched_at": "2026-09-04T23:49:27+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -64,9 +64,9 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Very Good",
             "Forest Prowler's Helm",
-            "Drop: High Nethermancer Zerevor (Black Temple)"
+            "Drop: Illidari Council (Black Temple)"
           ],
           "entities": [
             {
@@ -83,14 +83,14 @@
           "item_id": 32376,
           "item_name": "Forest Prowler's Helm",
           "item_url": "https://www.wowhead.com/tbc/item=32376/forest-prowlers-helm",
-          "rank_label": "Optional",
+          "rank_label": "Very Good",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=22950/high-nethermancer-zerevor",
-              "text": "High Nethermancer Zerevor"
+              "href": "https://www.wowhead.com/tbc/npc=23426/the-illidari-council",
+              "text": "Illidari Council"
             }
           ],
-          "source_text": "Drop: High Nethermancer Zerevor (Black Temple)"
+          "source_text": "Drop: Illidari Council (Black Temple)"
         },
         {
           "cell_entities": [
@@ -106,9 +106,9 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Very Good: Hit",
             "Helm of the Illidari Shatterer",
-            "Drop: High Nethermancer Zerevor (Black Temple)"
+            "Drop: Illidari Council (Black Temple)"
           ],
           "entities": [
             {
@@ -125,56 +125,14 @@
           "item_id": 32373,
           "item_name": "Helm of the Illidari Shatterer",
           "item_url": "https://www.wowhead.com/tbc/item=32373/helm-of-the-illidari-shatterer",
-          "rank_label": "Optional",
+          "rank_label": "Very Good: Hit",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=22950/high-nethermancer-zerevor",
-              "text": "High Nethermancer Zerevor"
+              "href": "https://www.wowhead.com/tbc/npc=23426/the-illidari-council",
+              "text": "Illidari Council"
             }
           ],
-          "source_text": "Drop: High Nethermancer Zerevor (Black Temple)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30989,
-                "name": "Lightbringer War-Helm",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30989/lightbringer-war-helm"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Tier Option",
-            "Lightbringer War-Helm",
-            "Drop: Helm of the Forgotten Conqueror - Archimonde (Hyjal Summit)"
-          ],
-          "entities": [
-            {
-              "id": 30989,
-              "name": "Lightbringer War-Helm",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30989/lightbringer-war-helm"
-            }
-          ],
-          "entity_id": 30989,
-          "entity_name": "Lightbringer War-Helm",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30989/lightbringer-war-helm",
-          "item_id": 30989,
-          "item_name": "Lightbringer War-Helm",
-          "item_url": "https://www.wowhead.com/tbc/item=30989/lightbringer-war-helm",
-          "rank_label": "Tier Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
-              "text": "Archimonde"
-            }
-          ],
-          "source_text": "Drop: Helm of the Forgotten Conqueror - Archimonde (Hyjal Summit)"
+          "source_text": "Drop: Illidari Council (Black Temple)"
         }
       ],
       "slot": "Head"
@@ -194,12 +152,19 @@
                 "url": "https://www.wowhead.com/tbc/item=32461/furious-gizmatic-goggles"
               }
             ],
-            []
+            [
+              {
+                "id": 40274,
+                "name": "Engineering",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=40274/furious-gizmatic-goggles"
+              }
+            ]
           ],
           "cells": [
-            "P2 BIS",
+            "Great: Engi",
             "Furious Gizmatic Goggles",
-            "Profession: Engineering"
+            "Crafted: Engineering (Bind on Pickup)"
           ],
           "entities": [
             {
@@ -207,6 +172,12 @@
               "name": "Furious Gizmatic Goggles",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32461/furious-gizmatic-goggles"
+            },
+            {
+              "id": 40274,
+              "name": "Engineering",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=40274/furious-gizmatic-goggles"
             }
           ],
           "entity_id": 32461,
@@ -216,19 +187,76 @@
           "item_id": 32461,
           "item_name": "Furious Gizmatic Goggles",
           "item_url": "https://www.wowhead.com/tbc/item=32461/furious-gizmatic-goggles",
-          "normalized_requirements": [
+          "rank_label": "Great: Engi",
+          "source_links": [
             {
-              "confidence": "parsed_source_text",
-              "profession": "Engineering",
-              "raw_text": "Profession: Engineering",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
+              "href": "https://www.wowhead.com/tbc/spell=40274/furious-gizmatic-goggles",
+              "text": "Engineering"
             }
           ],
-          "rank_label": "P2 BIS",
-          "source_links": [],
-          "source_text": "Profession: Engineering"
+          "source_text": "Crafted: Engineering (Bind on Pickup)",
+          "spell_id": 40274,
+          "spell_name": "Engineering",
+          "spell_url": "https://www.wowhead.com/tbc/spell=40274/furious-gizmatic-goggles"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30989,
+                "name": "Lightbringer War-Helm",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30989/lightbringer-war-helm"
+              }
+            ],
+            [
+              {
+                "id": 31097,
+                "name": "Helm of the Forgotten Conqueror",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31097/helm-of-the-forgotten-conqueror"
+              }
+            ]
+          ],
+          "cells": [
+            "Great",
+            "Lightbringer War-Helm",
+            "Drop: Archimonde (Hyjal Summit) (via Helm of the Forgotten Conqueror )"
+          ],
+          "entities": [
+            {
+              "id": 30989,
+              "name": "Lightbringer War-Helm",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30989/lightbringer-war-helm"
+            },
+            {
+              "id": 31097,
+              "name": "Helm of the Forgotten Conqueror",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31097/helm-of-the-forgotten-conqueror"
+            }
+          ],
+          "entity_id": 30989,
+          "entity_name": "Lightbringer War-Helm",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30989/lightbringer-war-helm",
+          "item_id": 30989,
+          "item_name": "Lightbringer War-Helm",
+          "item_url": "https://www.wowhead.com/tbc/item=30989/lightbringer-war-helm",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
+              "text": "Archimonde"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=31097/helm-of-the-forgotten-conqueror",
+              "text": "Helm of the Forgotten Conqueror"
+            }
+          ],
+          "source_text": "Drop: Archimonde (Hyjal Summit) (via Helm of the Forgotten Conqueror )"
         }
       ],
       "slot": "Head"
@@ -278,137 +306,6 @@
             }
           ],
           "source_text": "Drop: Hydross the Unstable (Serpentshrine Cavern)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 32581,
-                "name": "Swiftstrike Shoulders",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best - No Expertise",
-            "Swiftstrike Shoulders",
-            "Profession: Leatherworking"
-          ],
-          "entities": [
-            {
-              "id": 32581,
-              "name": "Swiftstrike Shoulders",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders"
-            }
-          ],
-          "entity_id": 32581,
-          "entity_name": "Swiftstrike Shoulders",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
-          "item_id": 32581,
-          "item_name": "Swiftstrike Shoulders",
-          "item_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Leatherworking",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
-            }
-          ],
-          "rank_label": "Best - No Expertise",
-          "source_links": [],
-          "source_text": "Profession: Leatherworking"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30997,
-                "name": "Lightbringer Shoulderbraces",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30997/lightbringer-shoulderbraces"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "T6 Option",
-            "Lightbringer Shoulderbraces",
-            "Drop: Pauldrons of the Forgotten Conqueror - Mother Shahraz (Black Temple)"
-          ],
-          "entities": [
-            {
-              "id": 30997,
-              "name": "Lightbringer Shoulderbraces",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30997/lightbringer-shoulderbraces"
-            }
-          ],
-          "entity_id": 30997,
-          "entity_name": "Lightbringer Shoulderbraces",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30997/lightbringer-shoulderbraces",
-          "item_id": 30997,
-          "item_name": "Lightbringer Shoulderbraces",
-          "item_url": "https://www.wowhead.com/tbc/item=30997/lightbringer-shoulderbraces",
-          "rank_label": "T6 Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
-              "text": "Mother Shahraz"
-            }
-          ],
-          "source_text": "Drop: Pauldrons of the Forgotten Conqueror - Mother Shahraz (Black Temple)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30133,
-                "name": "Crystalforge Shoulderbraces",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30133/crystalforge-shoulderbraces"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Crystalforge Shoulderbraces",
-            "Drop: Pauldrons of the Vanquished Champion - Void Reaver (Tempest Keep)"
-          ],
-          "entities": [
-            {
-              "id": 30133,
-              "name": "Crystalforge Shoulderbraces",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30133/crystalforge-shoulderbraces"
-            }
-          ],
-          "entity_id": 30133,
-          "entity_name": "Crystalforge Shoulderbraces",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30133/crystalforge-shoulderbraces",
-          "item_id": 30133,
-          "item_name": "Crystalforge Shoulderbraces",
-          "item_url": "https://www.wowhead.com/tbc/item=30133/crystalforge-shoulderbraces",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=19516/void-reaver",
-              "text": "Void Reaver"
-            }
-          ],
-          "source_text": "Drop: Pauldrons of the Vanquished Champion - Void Reaver (Tempest Keep)"
         }
       ],
       "slot": "Shoulder"
@@ -422,42 +319,175 @@
             [],
             [
               {
-                "id": 29075,
-                "name": "Justicar Shoulderplates",
+                "id": 32581,
+                "name": "Swiftstrike Shoulders",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29075/justicar-shoulderplates"
+                "url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders"
               }
             ],
-            []
+            [
+              {
+                "id": 41160,
+                "name": "Leatherworking",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=41160/swiftstrike-shoulders"
+              }
+            ]
           ],
           "cells": [
-            "Option",
-            "Justicar Shoulderplates",
-            "Drop: Pauldrons of the Fallen Champion - High King Maulgar (Gruul's Lair)"
+            "Great: LW",
+            "Swiftstrike Shoulders",
+            "Crafted: Leatherworking (Bind on Pickup)"
           ],
           "entities": [
             {
-              "id": 29075,
-              "name": "Justicar Shoulderplates",
+              "id": 32581,
+              "name": "Swiftstrike Shoulders",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29075/justicar-shoulderplates"
+              "url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders"
+            },
+            {
+              "id": 41160,
+              "name": "Leatherworking",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=41160/swiftstrike-shoulders"
             }
           ],
-          "entity_id": 29075,
-          "entity_name": "Justicar Shoulderplates",
+          "entity_id": 32581,
+          "entity_name": "Swiftstrike Shoulders",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29075/justicar-shoulderplates",
-          "item_id": 29075,
-          "item_name": "Justicar Shoulderplates",
-          "item_url": "https://www.wowhead.com/tbc/item=29075/justicar-shoulderplates",
-          "rank_label": "Option",
+          "entity_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
+          "item_id": 32581,
+          "item_name": "Swiftstrike Shoulders",
+          "item_url": "https://www.wowhead.com/tbc/item=32581/swiftstrike-shoulders",
+          "rank_label": "Great: LW",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=18831/high-king-maulgar",
-              "text": "High King Maulgar"
+              "href": "https://www.wowhead.com/tbc/spell=41160/swiftstrike-shoulders",
+              "text": "Leatherworking"
             }
           ],
-          "source_text": "Drop: Pauldrons of the Fallen Champion - High King Maulgar (Gruul's Lair)"
+          "source_text": "Crafted: Leatherworking (Bind on Pickup)",
+          "spell_id": 41160,
+          "spell_name": "Leatherworking",
+          "spell_url": "https://www.wowhead.com/tbc/spell=41160/swiftstrike-shoulders"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32570,
+                "name": "Swiftsteel Shoulders",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders"
+              }
+            ],
+            [
+              {
+                "id": 41133,
+                "name": "Blacksmithing",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=41133/swiftsteel-shoulders"
+              }
+            ]
+          ],
+          "cells": [
+            "Great: BS",
+            "Swiftsteel Shoulders",
+            "Crafted: Blacksmithing (Bind on Pickup)"
+          ],
+          "entities": [
+            {
+              "id": 32570,
+              "name": "Swiftsteel Shoulders",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders"
+            },
+            {
+              "id": 41133,
+              "name": "Blacksmithing",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=41133/swiftsteel-shoulders"
+            }
+          ],
+          "entity_id": 32570,
+          "entity_name": "Swiftsteel Shoulders",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders",
+          "item_id": 32570,
+          "item_name": "Swiftsteel Shoulders",
+          "item_url": "https://www.wowhead.com/tbc/item=32570/swiftsteel-shoulders",
+          "rank_label": "Great: BS",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=41133/swiftsteel-shoulders",
+              "text": "Blacksmithing"
+            }
+          ],
+          "source_text": "Crafted: Blacksmithing (Bind on Pickup)",
+          "spell_id": 41133,
+          "spell_name": "Blacksmithing",
+          "spell_url": "https://www.wowhead.com/tbc/spell=41133/swiftsteel-shoulders"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30997,
+                "name": "Lightbringer Shoulderbraces",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30997/lightbringer-shoulderbraces"
+              }
+            ],
+            [
+              {
+                "id": 31101,
+                "name": "Pauldrons of the Forgotten Conqueror",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31101/pauldrons-of-the-forgotten-conqueror"
+              }
+            ]
+          ],
+          "cells": [
+            "Great",
+            "Lightbringer Shoulderbraces",
+            "Drop: Mother Shahraz (Black Temple) (via Pauldrons of the Forgotten Conqueror )"
+          ],
+          "entities": [
+            {
+              "id": 30997,
+              "name": "Lightbringer Shoulderbraces",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30997/lightbringer-shoulderbraces"
+            },
+            {
+              "id": 31101,
+              "name": "Pauldrons of the Forgotten Conqueror",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31101/pauldrons-of-the-forgotten-conqueror"
+            }
+          ],
+          "entity_id": 30997,
+          "entity_name": "Lightbringer Shoulderbraces",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30997/lightbringer-shoulderbraces",
+          "item_id": 30997,
+          "item_name": "Lightbringer Shoulderbraces",
+          "item_url": "https://www.wowhead.com/tbc/item=30997/lightbringer-shoulderbraces",
+          "rank_label": "Great",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22947/mother-shahraz",
+              "text": "Mother Shahraz"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=31101/pauldrons-of-the-forgotten-conqueror",
+              "text": "Pauldrons of the Forgotten Conqueror"
+            }
+          ],
+          "source_text": "Drop: Mother Shahraz (Black Temple) (via Pauldrons of the Forgotten Conqueror )"
         }
       ],
       "slot": "Shoulder"
@@ -471,18 +501,67 @@
             [],
             [
               {
+                "id": 32323,
+                "name": "Shadowmoon Destroyer's Drape",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32323/shadowmoon-destroyers-drape"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best: Hit",
+            "Shadowmoon Destroyer's Drape",
+            "Drop: Teron Gorefiend (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32323,
+              "name": "Shadowmoon Destroyer's Drape",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32323/shadowmoon-destroyers-drape"
+            }
+          ],
+          "entity_id": 32323,
+          "entity_name": "Shadowmoon Destroyer's Drape",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32323/shadowmoon-destroyers-drape",
+          "item_id": 32323,
+          "item_name": "Shadowmoon Destroyer's Drape",
+          "item_url": "https://www.wowhead.com/tbc/item=32323/shadowmoon-destroyers-drape",
+          "rank_label": "Best: Hit",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
+              "text": "Teron Gorefiend"
+            }
+          ],
+          "source_text": "Drop: Teron Gorefiend (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 33122,
                 "name": "Cloak of Darkness",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=33122/cloak-of-darkness"
               }
             ],
-            []
+            [
+              {
+                "id": 42546,
+                "name": "Leatherworking",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=42546/cloak-of-darkness"
+              }
+            ]
           ],
           "cells": [
-            "Best - Crafted",
+            "Best",
             "Cloak of Darkness",
-            "Profession: Leatherworking"
+            "Crafted: Leatherworking (Bind on Equip)"
           ],
           "entities": [
             {
@@ -490,6 +569,12 @@
               "name": "Cloak of Darkness",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=33122/cloak-of-darkness"
+            },
+            {
+              "id": 42546,
+              "name": "Leatherworking",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=42546/cloak-of-darkness"
             }
           ],
           "entity_id": 33122,
@@ -499,19 +584,17 @@
           "item_id": 33122,
           "item_name": "Cloak of Darkness",
           "item_url": "https://www.wowhead.com/tbc/item=33122/cloak-of-darkness",
-          "normalized_requirements": [
+          "rank_label": "Best",
+          "source_links": [
             {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Leatherworking",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
+              "href": "https://www.wowhead.com/tbc/spell=42546/cloak-of-darkness",
+              "text": "Leatherworking"
             }
           ],
-          "rank_label": "Best - Crafted",
-          "source_links": [],
-          "source_text": "Profession: Leatherworking"
+          "source_text": "Crafted: Leatherworking (Bind on Equip)",
+          "spell_id": 42546,
+          "spell_name": "Leatherworking",
+          "spell_url": "https://www.wowhead.com/tbc/spell=42546/cloak-of-darkness"
         },
         {
           "cell_entities": [
@@ -566,12 +649,19 @@
                 "url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap"
               }
             ],
-            []
+            [
+              {
+                "id": 31449,
+                "name": "Tailoring",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=31449/vengeance-wrap"
+              }
+            ]
           ],
           "cells": [
-            "Optional-Crafted",
+            "Near Best",
             "Vengeance Wrap",
-            "Profession: Tailoring (BoE)"
+            "Crafted: Tailoring (Bind on Equip)"
           ],
           "entities": [
             {
@@ -579,6 +669,12 @@
               "name": "Vengeance Wrap",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap"
+            },
+            {
+              "id": 31449,
+              "name": "Tailoring",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=31449/vengeance-wrap"
             }
           ],
           "entity_id": 24259,
@@ -588,19 +684,17 @@
           "item_id": 24259,
           "item_name": "Vengeance Wrap",
           "item_url": "https://www.wowhead.com/tbc/item=24259/vengeance-wrap",
-          "normalized_requirements": [
+          "rank_label": "Near Best",
+          "source_links": [
             {
-              "confidence": "parsed_source_text",
-              "profession": "Tailoring",
-              "raw_text": "Profession: Tailoring (BoE)",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
+              "href": "https://www.wowhead.com/tbc/spell=31449/vengeance-wrap",
+              "text": "Tailoring"
             }
           ],
-          "rank_label": "Optional-Crafted",
-          "source_links": [],
-          "source_text": "Profession: Tailoring (BoE)"
+          "source_text": "Crafted: Tailoring (Bind on Equip)",
+          "spell_id": 31449,
+          "spell_name": "Tailoring",
+          "spell_url": "https://www.wowhead.com/tbc/spell=31449/vengeance-wrap"
         },
         {
           "cell_entities": [
@@ -616,7 +710,7 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Near Best",
             "Thalassian Wildercloak",
             "Drop: Kael'thas Sunstrider (Tempest Keep)"
           ],
@@ -635,7 +729,7 @@
           "item_id": 29994,
           "item_name": "Thalassian Wildercloak",
           "item_url": "https://www.wowhead.com/tbc/item=29994/thalassian-wildercloak",
-          "rank_label": "Optional",
+          "rank_label": "Near Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
@@ -656,84 +750,84 @@
             [],
             [
               {
-                "id": 27878,
-                "name": "Auchenai Death Shroud",
+                "id": 30729,
+                "name": "Black-Iron Battlecloak",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud"
+                "url": "https://www.wowhead.com/tbc/item=30729/black-iron-battlecloak"
               }
             ],
             []
           ],
           "cells": [
-            "BIS for Hit",
-            "Auchenai Death Shroud",
-            "Drop: Avatar of the Martyred (Heroic Auchenai Crypts)"
+            "Optional",
+            "Black-Iron Battlecloak",
+            "Drop: Doomwalker (World Boss)"
           ],
           "entities": [
             {
-              "id": 27878,
-              "name": "Auchenai Death Shroud",
+              "id": 30729,
+              "name": "Black-Iron Battlecloak",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud"
+              "url": "https://www.wowhead.com/tbc/item=30729/black-iron-battlecloak"
             }
           ],
-          "entity_id": 27878,
-          "entity_name": "Auchenai Death Shroud",
+          "entity_id": 30729,
+          "entity_name": "Black-Iron Battlecloak",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud",
-          "item_id": 27878,
-          "item_name": "Auchenai Death Shroud",
-          "item_url": "https://www.wowhead.com/tbc/item=27878/auchenai-death-shroud",
-          "rank_label": "BIS for Hit",
+          "entity_url": "https://www.wowhead.com/tbc/item=30729/black-iron-battlecloak",
+          "item_id": 30729,
+          "item_name": "Black-Iron Battlecloak",
+          "item_url": "https://www.wowhead.com/tbc/item=30729/black-iron-battlecloak",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=18478/avatar-of-the-martyred",
-              "text": "Avatar of the Martyred"
+              "href": "https://www.wowhead.com/tbc/npc=17711/doomwalker",
+              "text": "Doomwalker"
             }
           ],
-          "source_text": "Drop: Avatar of the Martyred (Heroic Auchenai Crypts)"
+          "source_text": "Drop: Doomwalker (World Boss)"
         },
         {
           "cell_entities": [
             [],
             [
               {
-                "id": 28529,
-                "name": "Royal Cloak of Arathi Kings",
+                "id": 28672,
+                "name": "Drape of the Dark Reavers",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings"
+                "url": "https://www.wowhead.com/tbc/item=28672/drape-of-the-dark-reavers"
               }
             ],
             []
           ],
           "cells": [
-            "Optional - Hit",
-            "Royal Cloak of Arathi Kings",
-            "Drop: Moroes (Karazhan)"
+            "Optional",
+            "Drape of the Dark Reavers",
+            "Drop: Shade of Aran (Karazhan)"
           ],
           "entities": [
             {
-              "id": 28529,
-              "name": "Royal Cloak of Arathi Kings",
+              "id": 28672,
+              "name": "Drape of the Dark Reavers",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings"
+              "url": "https://www.wowhead.com/tbc/item=28672/drape-of-the-dark-reavers"
             }
           ],
-          "entity_id": 28529,
-          "entity_name": "Royal Cloak of Arathi Kings",
+          "entity_id": 28672,
+          "entity_name": "Drape of the Dark Reavers",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings",
-          "item_id": 28529,
-          "item_name": "Royal Cloak of Arathi Kings",
-          "item_url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings",
-          "rank_label": "Optional - Hit",
+          "entity_url": "https://www.wowhead.com/tbc/item=28672/drape-of-the-dark-reavers",
+          "item_id": 28672,
+          "item_name": "Drape of the Dark Reavers",
+          "item_url": "https://www.wowhead.com/tbc/item=28672/drape-of-the-dark-reavers",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=15687/moroes",
-              "text": "Moroes"
+              "href": "https://www.wowhead.com/tbc/npc=16524/shade-of-aran",
+              "text": "Shade of Aran"
             }
           ],
-          "source_text": "Drop: Moroes (Karazhan)"
+          "source_text": "Drop: Shade of Aran (Karazhan)"
         }
       ],
       "slot": "Back"
@@ -742,6 +836,132 @@
       "data_family": "bis_lists",
       "heading": "Best in Slot Chest Armor for Retribution Paladin in TBC Classic Phase 3",
       "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28485,
+                "name": "Bulwark of the Ancient Kings",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings"
+              }
+            ],
+            [
+              {
+                "id": 36257,
+                "name": "Blacksmithing",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=36257/bulwark-of-the-ancient-kings"
+              }
+            ]
+          ],
+          "cells": [
+            "Best: CD Ready",
+            "Bulwark of the Ancient Kings",
+            "Crafted: Blacksmithing (Bind on Pickup) (requires Armorsmithing)"
+          ],
+          "entities": [
+            {
+              "id": 28485,
+              "name": "Bulwark of the Ancient Kings",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings"
+            },
+            {
+              "id": 36257,
+              "name": "Blacksmithing",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=36257/bulwark-of-the-ancient-kings"
+            }
+          ],
+          "entity_id": 28485,
+          "entity_name": "Bulwark of the Ancient Kings",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
+          "item_id": 28485,
+          "item_name": "Bulwark of the Ancient Kings",
+          "item_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Crafted: Blacksmithing (Bind on Pickup) (requires Armorsmithing)",
+              "scope": "equip_or_use",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "type": "unknown_text"
+            }
+          ],
+          "rank_label": "Best: CD Ready",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=36257/bulwark-of-the-ancient-kings",
+              "text": "Blacksmithing"
+            }
+          ],
+          "source_text": "Crafted: Blacksmithing (Bind on Pickup) (requires Armorsmithing)",
+          "spell_id": 36257,
+          "spell_name": "Blacksmithing",
+          "spell_url": "https://www.wowhead.com/tbc/spell=36257/bulwark-of-the-ancient-kings"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30990,
+                "name": "Lightbringer Breastplate",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30990/lightbringer-breastplate"
+              }
+            ],
+            [
+              {
+                "id": 31089,
+                "name": "Chestguard of the Forgotten Conqueror",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31089/chestguard-of-the-forgotten-conqueror"
+              }
+            ]
+          ],
+          "cells": [
+            "Best",
+            "Lightbringer Breastplate",
+            "Drop: Illidan Stormrage (Black Temple) (via Chestguard of the Forgotten Conqueror )"
+          ],
+          "entities": [
+            {
+              "id": 30990,
+              "name": "Lightbringer Breastplate",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30990/lightbringer-breastplate"
+            },
+            {
+              "id": 31089,
+              "name": "Chestguard of the Forgotten Conqueror",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31089/chestguard-of-the-forgotten-conqueror"
+            }
+          ],
+          "entity_id": 30990,
+          "entity_name": "Lightbringer Breastplate",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30990/lightbringer-breastplate",
+          "item_id": 30990,
+          "item_name": "Lightbringer Breastplate",
+          "item_url": "https://www.wowhead.com/tbc/item=30990/lightbringer-breastplate",
+          "rank_label": "Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
+              "text": "Illidan Stormrage"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=31089/chestguard-of-the-forgotten-conqueror",
+              "text": "Chestguard of the Forgotten Conqueror"
+            }
+          ],
+          "source_text": "Drop: Illidan Stormrage (Black Temple) (via Chestguard of the Forgotten Conqueror )"
+        },
         {
           "cell_entities": [
             [],
@@ -756,7 +976,7 @@
             []
           ],
           "cells": [
-            "Best - Non tier",
+            "Best",
             "Midnight Chestguard",
             "Drop: Archimonde (Hyjal Summit)"
           ],
@@ -775,7 +995,7 @@
           "item_id": 30905,
           "item_name": "Midnight Chestguard",
           "item_url": "https://www.wowhead.com/tbc/item=30905/midnight-chestguard",
-          "rank_label": "Best - Non tier",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
@@ -783,136 +1003,6 @@
             }
           ],
           "source_text": "Drop: Archimonde (Hyjal Summit)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30990,
-                "name": "Lightbringer Breastplate",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30990/lightbringer-breastplate"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional - tier",
-            "Lightbringer Breastplate",
-            "Drop: Chestguard of the Vanquished Champion - Illidan Stormrage (Black Temple)"
-          ],
-          "entities": [
-            {
-              "id": 30990,
-              "name": "Lightbringer Breastplate",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30990/lightbringer-breastplate"
-            }
-          ],
-          "entity_id": 30990,
-          "entity_name": "Lightbringer Breastplate",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30990/lightbringer-breastplate",
-          "item_id": 30990,
-          "item_name": "Lightbringer Breastplate",
-          "item_url": "https://www.wowhead.com/tbc/item=30990/lightbringer-breastplate",
-          "rank_label": "Optional - tier",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
-              "text": "Illidan Stormrage"
-            }
-          ],
-          "source_text": "Drop: Chestguard of the Vanquished Champion - Illidan Stormrage (Black Temple)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30129,
-                "name": "Crystalforge Breastplate",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Old Tier",
-            "Crystalforge Breastplate",
-            "Drop: Morogrim Tidewalker (Serpentshrine Cavern)"
-          ],
-          "entities": [
-            {
-              "id": 30129,
-              "name": "Crystalforge Breastplate",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate"
-            }
-          ],
-          "entity_id": 30129,
-          "entity_name": "Crystalforge Breastplate",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate",
-          "item_id": 30129,
-          "item_name": "Crystalforge Breastplate",
-          "item_url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate",
-          "rank_label": "Old Tier",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=21213/morogrim-tidewalker",
-              "text": "Morogrim Tidewalker"
-            }
-          ],
-          "source_text": "Drop: Morogrim Tidewalker (Serpentshrine Cavern)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28485,
-                "name": "Bulwark of the Ancient Kings",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Crafting - Alternate",
-            "Bulwark of the Ancient Kings",
-            "Profession: Armorsmithing Blacksmithing (PvP)"
-          ],
-          "entities": [
-            {
-              "id": 28485,
-              "name": "Bulwark of the Ancient Kings",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings"
-            }
-          ],
-          "entity_id": 28485,
-          "entity_name": "Bulwark of the Ancient Kings",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
-          "item_id": 28485,
-          "item_name": "Bulwark of the Ancient Kings",
-          "item_url": "https://www.wowhead.com/tbc/item=28485/bulwark-of-the-ancient-kings",
-          "normalized_requirements": [
-            {
-              "confidence": "parsed_source_text",
-              "raw_text": "Profession: Armorsmithing Blacksmithing (PvP)",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "unknown_text"
-            }
-          ],
-          "rank_label": "Crafting - Alternate",
-          "source_links": [],
-          "source_text": "Profession: Armorsmithing Blacksmithing (PvP)"
         }
       ],
       "slot": "Chest"
@@ -926,42 +1016,101 @@
             [],
             [
               {
-                "id": 30101,
-                "name": "Bloodsea Brigand's Vest",
+                "id": 30129,
+                "name": "Crystalforge Breastplate",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30101/bloodsea-brigands-vest"
+                "url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate"
+              }
+            ],
+            [
+              {
+                "id": 30236,
+                "name": "Chestguard of the Vanquished Champion",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30236/chestguard-of-the-vanquished-champion"
+              }
+            ]
+          ],
+          "cells": [
+            "Optional",
+            "Crystalforge Breastplate",
+            "Drop: Kael'thas Sunstrider (Tempest Keep) (via Chestguard of the Vanquished Champion )"
+          ],
+          "entities": [
+            {
+              "id": 30129,
+              "name": "Crystalforge Breastplate",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate"
+            },
+            {
+              "id": 30236,
+              "name": "Chestguard of the Vanquished Champion",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30236/chestguard-of-the-vanquished-champion"
+            }
+          ],
+          "entity_id": 30129,
+          "entity_name": "Crystalforge Breastplate",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate",
+          "item_id": 30129,
+          "item_name": "Crystalforge Breastplate",
+          "item_url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
+              "text": "Kael'thas Sunstrider"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=30236/chestguard-of-the-vanquished-champion",
+              "text": "Chestguard of the Vanquished Champion"
+            }
+          ],
+          "source_text": "Drop: Kael'thas Sunstrider (Tempest Keep) (via Chestguard of the Vanquished Champion )"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30102,
+                "name": "Krakken-Heart Breastplate",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30102/krakken-heart-breastplate"
               }
             ],
             []
           ],
           "cells": [
             "Optional",
-            "Bloodsea Brigand's Vest",
-            "Drop: Fathom-Lord Karathress (Serpentshrine Cavern)"
+            "Krakken-Heart Breastplate",
+            "Drop: Lady Vashj (Serpentshrine Cavern)"
           ],
           "entities": [
             {
-              "id": 30101,
-              "name": "Bloodsea Brigand's Vest",
+              "id": 30102,
+              "name": "Krakken-Heart Breastplate",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30101/bloodsea-brigands-vest"
+              "url": "https://www.wowhead.com/tbc/item=30102/krakken-heart-breastplate"
             }
           ],
-          "entity_id": 30101,
-          "entity_name": "Bloodsea Brigand's Vest",
+          "entity_id": 30102,
+          "entity_name": "Krakken-Heart Breastplate",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30101/bloodsea-brigands-vest",
-          "item_id": 30101,
-          "item_name": "Bloodsea Brigand's Vest",
-          "item_url": "https://www.wowhead.com/tbc/item=30101/bloodsea-brigands-vest",
+          "entity_url": "https://www.wowhead.com/tbc/item=30102/krakken-heart-breastplate",
+          "item_id": 30102,
+          "item_name": "Krakken-Heart Breastplate",
+          "item_url": "https://www.wowhead.com/tbc/item=30102/krakken-heart-breastplate",
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=21214/fathom-lord-karathress",
-              "text": "Fathom-Lord Karathress"
+              "href": "https://www.wowhead.com/tbc/npc=21212/lady-vashj",
+              "text": "Lady Vashj"
             }
           ],
-          "source_text": "Drop: Fathom-Lord Karathress (Serpentshrine Cavern)"
+          "source_text": "Drop: Lady Vashj (Serpentshrine Cavern)"
         },
         {
           "cell_entities": [
@@ -977,9 +1126,9 @@
             []
           ],
           "cells": [
-            "Optional-PVP",
+            "Optional",
             "Vengeful Gladiator's Scaled Chestpiece",
-            "- Arena Points"
+            "PvP: 1875x Arena Points"
           ],
           "entities": [
             {
@@ -996,98 +1145,14 @@
           "item_id": 33749,
           "item_name": "Vengeful Gladiator's Scaled Chestpiece",
           "item_url": "https://www.wowhead.com/tbc/item=33749/vengeful-gladiators-scaled-chestpiece",
-          "rank_label": "Optional-PVP",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Points"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29071,
-                "name": "Justicar Breastplate",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29071/justicar-breastplate"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Older Tier",
-            "Justicar Breastplate",
-            "Drop: Chestguard of the Fallen Champion - Magtheridon (Magtheridon's Lair)"
-          ],
-          "entities": [
-            {
-              "id": 29071,
-              "name": "Justicar Breastplate",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29071/justicar-breastplate"
-            }
-          ],
-          "entity_id": 29071,
-          "entity_name": "Justicar Breastplate",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29071/justicar-breastplate",
-          "item_id": 29071,
-          "item_name": "Justicar Breastplate",
-          "item_url": "https://www.wowhead.com/tbc/item=29071/justicar-breastplate",
-          "rank_label": "Older Tier",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17257/magtheridon",
-              "text": "Magtheridon"
-            }
-          ],
-          "source_text": "Drop: Chestguard of the Fallen Champion - Magtheridon (Magtheridon's Lair)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30730,
-                "name": "Terrorweave Tunic",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30730/terrorweave-tunic"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "WORLD BOSS",
-            "Terrorweave Tunic",
-            "Drop: Doom Lord Kazzak (World Boss in Hellfire Peninsula)"
-          ],
-          "entities": [
-            {
-              "id": 30730,
-              "name": "Terrorweave Tunic",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30730/terrorweave-tunic"
-            }
-          ],
-          "entity_id": 30730,
-          "entity_name": "Terrorweave Tunic",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30730/terrorweave-tunic",
-          "item_id": 30730,
-          "item_name": "Terrorweave Tunic",
-          "item_url": "https://www.wowhead.com/tbc/item=30730/terrorweave-tunic",
-          "rank_label": "WORLD BOSS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18728/doom-lord-kazzak",
-              "text": "Doom Lord Kazzak"
-            }
-          ],
-          "source_text": "Drop: Doom Lord Kazzak (World Boss in Hellfire Peninsula)"
+          "source_text": "PvP: 1875x Arena Points"
         }
       ],
       "slot": "Chest"
@@ -1107,12 +1172,19 @@
                 "url": "https://www.wowhead.com/tbc/item=32574/bindings-of-lightning-reflexes"
               }
             ],
-            []
+            [
+              {
+                "id": 41161,
+                "name": "Leatherworking",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=41161/bindings-of-lightning-reflexes"
+              }
+            ]
           ],
           "cells": [
             "Best",
             "Bindings of Lightning Reflexes",
-            "Profession: Leatherworking"
+            "Crafted: Leatherworking (Bind on Equip)"
           ],
           "entities": [
             {
@@ -1120,6 +1192,12 @@
               "name": "Bindings of Lightning Reflexes",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32574/bindings-of-lightning-reflexes"
+            },
+            {
+              "id": 41161,
+              "name": "Leatherworking",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=41161/bindings-of-lightning-reflexes"
             }
           ],
           "entity_id": 32574,
@@ -1129,19 +1207,17 @@
           "item_id": 32574,
           "item_name": "Bindings of Lightning Reflexes",
           "item_url": "https://www.wowhead.com/tbc/item=32574/bindings-of-lightning-reflexes",
-          "normalized_requirements": [
+          "rank_label": "Best",
+          "source_links": [
             {
-              "confidence": "parsed_source_text",
-              "profession": "Leatherworking",
-              "raw_text": "Profession: Leatherworking",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
+              "href": "https://www.wowhead.com/tbc/spell=41161/bindings-of-lightning-reflexes",
+              "text": "Leatherworking"
             }
           ],
-          "rank_label": "Best",
-          "source_links": [],
-          "source_text": "Profession: Leatherworking"
+          "source_text": "Crafted: Leatherworking (Bind on Equip)",
+          "spell_id": 41161,
+          "spell_name": "Leatherworking",
+          "spell_url": "https://www.wowhead.com/tbc/spell=41161/bindings-of-lightning-reflexes"
         },
         {
           "cell_entities": [
@@ -1154,12 +1230,19 @@
                 "url": "https://www.wowhead.com/tbc/item=32568/swiftsteel-bracers"
               }
             ],
-            []
+            [
+              {
+                "id": 41132,
+                "name": "Blacksmithing",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=41132/swiftsteel-bracers"
+              }
+            ]
           ],
           "cells": [
-            "Optional",
+            "Very Good",
             "Swiftsteel Bracers",
-            "Profession: Blacksmithing"
+            "Crafted: Blacksmithing (Bind on Equip)"
           ],
           "entities": [
             {
@@ -1167,6 +1250,12 @@
               "name": "Swiftsteel Bracers",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32568/swiftsteel-bracers"
+            },
+            {
+              "id": 41132,
+              "name": "Blacksmithing",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=41132/swiftsteel-bracers"
             }
           ],
           "entity_id": 32568,
@@ -1176,61 +1265,66 @@
           "item_id": 32568,
           "item_name": "Swiftsteel Bracers",
           "item_url": "https://www.wowhead.com/tbc/item=32568/swiftsteel-bracers",
-          "normalized_requirements": [
+          "rank_label": "Very Good",
+          "source_links": [
             {
-              "confidence": "parsed_source_text",
-              "profession": "Blacksmithing",
-              "raw_text": "Profession: Blacksmithing",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
+              "href": "https://www.wowhead.com/tbc/spell=41132/swiftsteel-bracers",
+              "text": "Blacksmithing"
             }
           ],
-          "rank_label": "Optional",
-          "source_links": [],
-          "source_text": "Profession: Blacksmithing"
-        },
+          "source_text": "Crafted: Blacksmithing (Bind on Equip)",
+          "spell_id": 41132,
+          "spell_name": "Blacksmithing",
+          "spell_url": "https://www.wowhead.com/tbc/spell=41132/swiftsteel-bracers"
+        }
+      ],
+      "slot": "Wrist"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Wrist Armor for Retribution Paladin in TBC Classic Phase 3",
+      "rows": [
         {
           "cell_entities": [
             [],
             [
               {
-                "id": 30057,
-                "name": "Bracers of Eradication",
+                "id": 30861,
+                "name": "Furious Shackles",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication"
+                "url": "https://www.wowhead.com/tbc/item=30861/furious-shackles"
               }
             ],
             []
           ],
           "cells": [
-            "Option - Hit",
-            "Bracers of Eradication",
-            "Drop: The Lurker Below (Serpentshrine Cavern)"
+            "Optional",
+            "Furious Shackles",
+            "Drop: Rage Winterchill (Hyjal Summit)"
           ],
           "entities": [
             {
-              "id": 30057,
-              "name": "Bracers of Eradication",
+              "id": 30861,
+              "name": "Furious Shackles",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication"
+              "url": "https://www.wowhead.com/tbc/item=30861/furious-shackles"
             }
           ],
-          "entity_id": 30057,
-          "entity_name": "Bracers of Eradication",
+          "entity_id": 30861,
+          "entity_name": "Furious Shackles",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication",
-          "item_id": 30057,
-          "item_name": "Bracers of Eradication",
-          "item_url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication",
-          "rank_label": "Option - Hit",
+          "entity_url": "https://www.wowhead.com/tbc/item=30861/furious-shackles",
+          "item_id": 30861,
+          "item_name": "Furious Shackles",
+          "item_url": "https://www.wowhead.com/tbc/item=30861/furious-shackles",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=21217/the-lurker-below",
-              "text": "The Lurker Below"
+              "href": "https://www.wowhead.com/tbc/npc=17767/rage-winterchill",
+              "text": "Rage Winterchill"
             }
           ],
-          "source_text": "Drop: The Lurker Below (Serpentshrine Cavern)"
+          "source_text": "Drop: Rage Winterchill (Hyjal Summit)"
         },
         {
           "cell_entities": [
@@ -1246,7 +1340,7 @@
             []
           ],
           "cells": [
-            "Option - Non Hit",
+            "Optional",
             "Bladespire Warbands",
             "Drop: High King Maulgar (Gruul's Lair)"
           ],
@@ -1265,7 +1359,7 @@
           "item_id": 28795,
           "item_name": "Bladespire Warbands",
           "item_url": "https://www.wowhead.com/tbc/item=28795/bladespire-warbands",
-          "rank_label": "Option - Non Hit",
+          "rank_label": "Optional",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=18831/high-king-maulgar",
@@ -1273,102 +1367,48 @@
             }
           ],
           "source_text": "Drop: High King Maulgar (Gruul's Lair)"
-        }
-      ],
-      "slot": "Wrist"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Wrist Armor for Retribution Paladin in TBC Classic Phase 3",
-      "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 33910,
-                "name": "Vindicator's Scaled Bracers",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=33910/vindicators-scaled-bracers"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional-PVP",
-            "Vindicator's Scaled Bracers",
-            "- Arena Points"
-          ],
-          "entities": [
-            {
-              "id": 33910,
-              "name": "Vindicator's Scaled Bracers",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=33910/vindicators-scaled-bracers"
-            }
-          ],
-          "entity_id": 33910,
-          "entity_name": "Vindicator's Scaled Bracers",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=33910/vindicators-scaled-bracers",
-          "item_id": 33910,
-          "item_name": "Vindicator's Scaled Bracers",
-          "item_url": "https://www.wowhead.com/tbc/item=33910/vindicators-scaled-bracers",
-          "rank_label": "Optional-PVP",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
-            }
-          ],
-          "source_text": "- Arena Points"
         },
         {
           "cell_entities": [
             [],
             [
               {
-                "id": 23537,
-                "name": "Black Felsteel Bracers",
+                "id": 30057,
+                "name": "Bracers of Eradication",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=23537/black-felsteel-bracers"
+                "url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication"
               }
             ],
             []
           ],
           "cells": [
-            "Optional-Crafted",
-            "Black Felsteel Bracers",
-            "Profession: Blacksmithing"
+            "Optional",
+            "Bracers of Eradication",
+            "Drop: The Lurker Below (Serpentshrine Cavern)"
           ],
           "entities": [
             {
-              "id": 23537,
-              "name": "Black Felsteel Bracers",
+              "id": 30057,
+              "name": "Bracers of Eradication",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=23537/black-felsteel-bracers"
+              "url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication"
             }
           ],
-          "entity_id": 23537,
-          "entity_name": "Black Felsteel Bracers",
+          "entity_id": 30057,
+          "entity_name": "Bracers of Eradication",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=23537/black-felsteel-bracers",
-          "item_id": 23537,
-          "item_name": "Black Felsteel Bracers",
-          "item_url": "https://www.wowhead.com/tbc/item=23537/black-felsteel-bracers",
-          "normalized_requirements": [
+          "entity_url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication",
+          "item_id": 30057,
+          "item_name": "Bracers of Eradication",
+          "item_url": "https://www.wowhead.com/tbc/item=30057/bracers-of-eradication",
+          "rank_label": "Optional",
+          "source_links": [
             {
-              "confidence": "parsed_source_text",
-              "profession": "Blacksmithing",
-              "raw_text": "Profession: Blacksmithing",
-              "scope": "self_craft",
-              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "profession"
+              "href": "https://www.wowhead.com/tbc/npc=21217/the-lurker-below",
+              "text": "The Lurker Below"
             }
           ],
-          "rank_label": "Optional-Crafted",
-          "source_links": [],
-          "source_text": "Profession: Blacksmithing"
+          "source_text": "Drop: The Lurker Below (Serpentshrine Cavern)"
         }
       ],
       "slot": "Wrist"
@@ -1424,48 +1464,6 @@
             [],
             [
               {
-                "id": 32347,
-                "name": "Grips of Damnation",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best",
-            "Grips of Damnation",
-            "Zone Drop - Karazhan Trash Mobs"
-          ],
-          "entities": [
-            {
-              "id": 32347,
-              "name": "Grips of Damnation",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation"
-            }
-          ],
-          "entity_id": 32347,
-          "entity_name": "Grips of Damnation",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation",
-          "item_id": 32347,
-          "item_name": "Grips of Damnation",
-          "item_url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation",
-          "rank_label": "Best",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/zone=3457/karazhan",
-              "text": "Karazhan"
-            }
-          ],
-          "source_text": "Zone Drop - Karazhan Trash Mobs"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 30644,
                 "name": "Grips of Deftness",
                 "type": "item",
@@ -1475,9 +1473,9 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Near Best",
             "Grips of Deftness",
-            "Drop: Black Temple Trash Mobs"
+            "Drop: Trash Mobs (Karazhan)"
           ],
           "entities": [
             {
@@ -1494,14 +1492,93 @@
           "item_id": 30644,
           "item_name": "Grips of Deftness",
           "item_url": "https://www.wowhead.com/tbc/item=30644/grips-of-deftness",
-          "rank_label": "Optional",
-          "source_links": [
+          "rank_label": "Near Best",
+          "source_links": [],
+          "source_text": "Drop: Trash Mobs (Karazhan)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32347,
+                "name": "Grips of Damnation",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Near Best",
+            "Grips of Damnation",
+            "Drop: Reliquary of Souls (Black Temple)"
+          ],
+          "entities": [
             {
-              "href": "https://www.wowhead.com/tbc/zone=3959/black-temple",
-              "text": "Black Temple"
+              "id": 32347,
+              "name": "Grips of Damnation",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation"
             }
           ],
-          "source_text": "Drop: Black Temple Trash Mobs"
+          "entity_id": 32347,
+          "entity_name": "Grips of Damnation",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation",
+          "item_id": 32347,
+          "item_name": "Grips of Damnation",
+          "item_url": "https://www.wowhead.com/tbc/item=32347/grips-of-damnation",
+          "rank_label": "Near Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23420/essence-of-anger",
+              "text": "Reliquary of Souls"
+            }
+          ],
+          "source_text": "Drop: Reliquary of Souls (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32234,
+                "name": "Fists of Mukoa",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32234/fists-of-mukoa"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Near Best",
+            "Fists of Mukoa",
+            "Drop: High Warlord Naj'entus (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32234,
+              "name": "Fists of Mukoa",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32234/fists-of-mukoa"
+            }
+          ],
+          "entity_id": 32234,
+          "entity_name": "Fists of Mukoa",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32234/fists-of-mukoa",
+          "item_id": 32234,
+          "item_name": "Fists of Mukoa",
+          "item_url": "https://www.wowhead.com/tbc/item=32234/fists-of-mukoa",
+          "rank_label": "Near Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22887/high-warlord-najentus",
+              "text": "High Warlord Naj'entus"
+            }
+          ],
+          "source_text": "Drop: High Warlord Naj'entus (Black Temple)"
         },
         {
           "cell_entities": [
@@ -1517,7 +1594,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Near Best",
             "Flesh Handler's Gauntlets",
             "Quest: The Flesh Lies..."
           ],
@@ -1536,7 +1613,7 @@
           "item_id": 30341,
           "item_name": "Flesh Handler's Gauntlets",
           "item_url": "https://www.wowhead.com/tbc/item=30341/flesh-handlers-gauntlets",
-          "rank_label": "Option",
+          "rank_label": "Near Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10345/the-flesh-lies",
@@ -1557,50 +1634,84 @@
             [],
             [
               {
-                "id": 18823,
-                "name": "Aged Core Leather Gloves",
+                "id": 33750,
+                "name": "Vengeful Gladiator's Scaled Gauntlets",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=18823/aged-core-leather-gloves"
+                "url": "https://www.wowhead.com/tbc/item=33750/vengeful-gladiators-scaled-gauntlets"
               }
             ],
             []
           ],
           "cells": [
-            "Option",
-            "Aged Core Leather Gloves",
-            "Drop: Golemagg the Incinerator , Magmadar , or Garr (Molten Core)"
+            "Optional",
+            "Vengeful Gladiator's Scaled Gauntlets",
+            "PvP: 1250x Arena Points"
           ],
           "entities": [
             {
-              "id": 18823,
-              "name": "Aged Core Leather Gloves",
+              "id": 33750,
+              "name": "Vengeful Gladiator's Scaled Gauntlets",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=18823/aged-core-leather-gloves"
+              "url": "https://www.wowhead.com/tbc/item=33750/vengeful-gladiators-scaled-gauntlets"
             }
           ],
-          "entity_id": 18823,
-          "entity_name": "Aged Core Leather Gloves",
+          "entity_id": 33750,
+          "entity_name": "Vengeful Gladiator's Scaled Gauntlets",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=18823/aged-core-leather-gloves",
-          "item_id": 18823,
-          "item_name": "Aged Core Leather Gloves",
-          "item_url": "https://www.wowhead.com/tbc/item=18823/aged-core-leather-gloves",
-          "rank_label": "Option",
+          "entity_url": "https://www.wowhead.com/tbc/item=33750/vengeful-gladiators-scaled-gauntlets",
+          "item_id": 33750,
+          "item_name": "Vengeful Gladiator's Scaled Gauntlets",
+          "item_url": "https://www.wowhead.com/tbc/item=33750/vengeful-gladiators-scaled-gauntlets",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=11988/golemagg-the-incinerator",
-              "text": "Golemagg the Incinerator"
-            },
-            {
-              "href": "https://www.wowhead.com/tbc/npc=11982/magmadar",
-              "text": "Magmadar"
-            },
-            {
-              "href": "https://www.wowhead.com/tbc/npc=12057/garr",
-              "text": "Garr"
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "Drop: Golemagg the Incinerator , Magmadar , or Garr (Molten Core)"
+          "source_text": "PvP: 1250x Arena Points"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32278,
+                "name": "Grips of Silent Justice",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32278/grips-of-silent-justice"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Grips of Silent Justice",
+            "Drop: Shade of Akama (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32278,
+              "name": "Grips of Silent Justice",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32278/grips-of-silent-justice"
+            }
+          ],
+          "entity_id": 32278,
+          "entity_name": "Grips of Silent Justice",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32278/grips-of-silent-justice",
+          "item_id": 32278,
+          "item_name": "Grips of Silent Justice",
+          "item_url": "https://www.wowhead.com/tbc/item=32278/grips-of-silent-justice",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22841/shade-of-akama",
+              "text": "Shade of Akama"
+            }
+          ],
+          "source_text": "Drop: Shade of Akama (Black Temple)"
         }
       ],
       "slot": "Hands"
@@ -1650,132 +1761,6 @@
             }
           ],
           "source_text": "Drop: Lady Vashj (Serpentshrine Cavern)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28779,
-                "name": "Girdle of the Endless Pit",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Girdle of the Endless Pit",
-            "Drop: Magtheridon (Maghteridon's Lair)"
-          ],
-          "entities": [
-            {
-              "id": 28779,
-              "name": "Girdle of the Endless Pit",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit"
-            }
-          ],
-          "entity_id": 28779,
-          "entity_name": "Girdle of the Endless Pit",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit",
-          "item_id": 28779,
-          "item_name": "Girdle of the Endless Pit",
-          "item_url": "https://www.wowhead.com/tbc/item=28779/girdle-of-the-endless-pit",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17257/magtheridon",
-              "text": "Magtheridon"
-            }
-          ],
-          "source_text": "Drop: Magtheridon (Maghteridon's Lair)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28828,
-                "name": "Gronn-Stitched Girdle",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28828/gronn-stitched-girdle"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gronn-Stitched Girdle",
-            "Drop: Gruul the Dragonkiller (Gruul's Lair)"
-          ],
-          "entities": [
-            {
-              "id": 28828,
-              "name": "Gronn-Stitched Girdle",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28828/gronn-stitched-girdle"
-            }
-          ],
-          "entity_id": 28828,
-          "entity_name": "Gronn-Stitched Girdle",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28828/gronn-stitched-girdle",
-          "item_id": 28828,
-          "item_name": "Gronn-Stitched Girdle",
-          "item_url": "https://www.wowhead.com/tbc/item=28828/gronn-stitched-girdle",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=19044/gruul-the-dragonkiller",
-              "text": "Gruul the Dragonkiller"
-            }
-          ],
-          "source_text": "Drop: Gruul the Dragonkiller (Gruul's Lair)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29247,
-                "name": "Girdle of the Deathdealer",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29247/girdle-of-the-deathdealer"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional-Hit",
-            "Girdle of the Deathdealer",
-            "Drop: Aeonus (Heroic Black Morass)"
-          ],
-          "entities": [
-            {
-              "id": 29247,
-              "name": "Girdle of the Deathdealer",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29247/girdle-of-the-deathdealer"
-            }
-          ],
-          "entity_id": 29247,
-          "entity_name": "Girdle of the Deathdealer",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29247/girdle-of-the-deathdealer",
-          "item_id": 29247,
-          "item_name": "Girdle of the Deathdealer",
-          "item_url": "https://www.wowhead.com/tbc/item=29247/girdle-of-the-deathdealer",
-          "rank_label": "Optional-Hit",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17881/aeonus",
-              "text": "Aeonus"
-            }
-          ],
-          "source_text": "Drop: Aeonus (Heroic Black Morass)"
         }
       ],
       "slot": "Waist"
@@ -1789,42 +1774,184 @@
             [],
             [
               {
-                "id": 28750,
-                "name": "Girdle of Treachery",
+                "id": 30879,
+                "name": "Don Alejandro's Money Belt",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28750/girdle-of-treachery"
+                "url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt"
               }
             ],
             []
           ],
           "cells": [
-            "Option",
-            "Girdle of Treachery",
-            "Drop: Chess Event - Karazhan"
+            "Optional",
+            "Don Alejandro's Money Belt",
+            "Drop: Anetheron (Hyjal Summit)"
           ],
           "entities": [
             {
-              "id": 28750,
-              "name": "Girdle of Treachery",
+              "id": 30879,
+              "name": "Don Alejandro's Money Belt",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28750/girdle-of-treachery"
+              "url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt"
             }
           ],
-          "entity_id": 28750,
-          "entity_name": "Girdle of Treachery",
+          "entity_id": 30879,
+          "entity_name": "Don Alejandro's Money Belt",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28750/girdle-of-treachery",
-          "item_id": 28750,
-          "item_name": "Girdle of Treachery",
-          "item_url": "https://www.wowhead.com/tbc/item=28750/girdle-of-treachery",
-          "rank_label": "Option",
+          "entity_url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt",
+          "item_id": 30879,
+          "item_name": "Don Alejandro's Money Belt",
+          "item_url": "https://www.wowhead.com/tbc/item=30879/don-alejandros-money-belt",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/zone=3457/karazhan",
-              "text": "Karazhan"
+              "href": "https://www.wowhead.com/tbc/npc=17808/anetheron",
+              "text": "Anetheron"
             }
           ],
-          "source_text": "Drop: Chess Event - Karazhan"
+          "source_text": "Drop: Anetheron (Hyjal Summit)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32265,
+                "name": "Shadow-walker's Cord",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Shadow-walker's Cord",
+            "Drop: Shade of Akama (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32265,
+              "name": "Shadow-walker's Cord",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord"
+            }
+          ],
+          "entity_id": 32265,
+          "entity_name": "Shadow-walker's Cord",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
+          "item_id": 32265,
+          "item_name": "Shadow-walker's Cord",
+          "item_url": "https://www.wowhead.com/tbc/item=32265/shadow-walkers-cord",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22841/shade-of-akama",
+              "text": "Shade of Akama"
+            }
+          ],
+          "source_text": "Drop: Shade of Akama (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30919,
+                "name": "Valestalker Girdle",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Valestalker Girdle",
+            "Drop: Kaz'rogal (Hyjal Summit)"
+          ],
+          "entities": [
+            {
+              "id": 30919,
+              "name": "Valestalker Girdle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle"
+            }
+          ],
+          "entity_id": 30919,
+          "entity_name": "Valestalker Girdle",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle",
+          "item_id": 30919,
+          "item_name": "Valestalker Girdle",
+          "item_url": "https://www.wowhead.com/tbc/item=30919/valestalker-girdle",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17888/kazrogal",
+              "text": "Kaz'rogal"
+            }
+          ],
+          "source_text": "Drop: Kaz'rogal (Hyjal Summit)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30032,
+                "name": "Red Belt of Battle",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle"
+              }
+            ],
+            [
+              {
+                "id": 36390,
+                "name": "Blacksmithing",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=36390/red-belt-of-battle"
+              }
+            ]
+          ],
+          "cells": [
+            "Optional",
+            "Red Belt of Battle",
+            "Crafted: Blacksmithing (Bind on Equip)"
+          ],
+          "entities": [
+            {
+              "id": 30032,
+              "name": "Red Belt of Battle",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle"
+            },
+            {
+              "id": 36390,
+              "name": "Blacksmithing",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=36390/red-belt-of-battle"
+            }
+          ],
+          "entity_id": 30032,
+          "entity_name": "Red Belt of Battle",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle",
+          "item_id": 30032,
+          "item_name": "Red Belt of Battle",
+          "item_url": "https://www.wowhead.com/tbc/item=30032/red-belt-of-battle",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=36390/red-belt-of-battle",
+              "text": "Blacksmithing"
+            }
+          ],
+          "source_text": "Crafted: Blacksmithing (Bind on Equip)",
+          "spell_id": 36390,
+          "spell_name": "Blacksmithing",
+          "spell_url": "https://www.wowhead.com/tbc/spell=36390/red-belt-of-battle"
         }
       ],
       "slot": "Waist"
@@ -1839,7 +1966,7 @@
             [
               {
                 "id": 30900,
-                "name": "Bow-Stitched Leggings",
+                "name": "Bow-stitched Leggings",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
               }
@@ -1848,23 +1975,23 @@
           ],
           "cells": [
             "Best",
-            "Bow-Stitched Leggings",
+            "Bow-stitched Leggings",
             "Drop: Azgalor (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30900,
-              "name": "Bow-Stitched Leggings",
+              "name": "Bow-stitched Leggings",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
             }
           ],
           "entity_id": 30900,
-          "entity_name": "Bow-Stitched Leggings",
+          "entity_name": "Bow-stitched Leggings",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "item_id": 30900,
-          "item_name": "Bow-Stitched Leggings",
+          "item_name": "Bow-stitched Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "rank_label": "Best",
           "source_links": [
@@ -1880,18 +2007,67 @@
             [],
             [
               {
+                "id": 32341,
+                "name": "Leggings of Divine Retribution",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32341/leggings-of-divine-retribution"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Near Best",
+            "Leggings of Divine Retribution",
+            "Drop: Gurtogg Bloodboil (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32341,
+              "name": "Leggings of Divine Retribution",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32341/leggings-of-divine-retribution"
+            }
+          ],
+          "entity_id": 32341,
+          "entity_name": "Leggings of Divine Retribution",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32341/leggings-of-divine-retribution",
+          "item_id": 32341,
+          "item_name": "Leggings of Divine Retribution",
+          "item_url": "https://www.wowhead.com/tbc/item=32341/leggings-of-divine-retribution",
+          "rank_label": "Near Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22948/gurtogg-bloodboil",
+              "text": "Gurtogg Bloodboil"
+            }
+          ],
+          "source_text": "Drop: Gurtogg Bloodboil (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 30993,
                 "name": "Lightbringer Greaves",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30993/lightbringer-greaves"
               }
             ],
-            []
+            [
+              {
+                "id": 31098,
+                "name": "Leggings of the Forgotten Conqueror",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31098/leggings-of-the-forgotten-conqueror"
+              }
+            ]
           ],
           "cells": [
-            "Optional - Tier",
+            "Very Good",
             "Lightbringer Greaves",
-            "Drop: Leggings of the Forgotten Conqueror - Gathios the Shatterer (Black Temple)"
+            "Drop: Illidari Council (Black Temple) (via Leggings of the Forgotten Conqueror )"
           ],
           "entities": [
             {
@@ -1899,6 +2075,12 @@
               "name": "Lightbringer Greaves",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30993/lightbringer-greaves"
+            },
+            {
+              "id": 31098,
+              "name": "Leggings of the Forgotten Conqueror",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31098/leggings-of-the-forgotten-conqueror"
             }
           ],
           "entity_id": 30993,
@@ -1908,14 +2090,18 @@
           "item_id": 30993,
           "item_name": "Lightbringer Greaves",
           "item_url": "https://www.wowhead.com/tbc/item=30993/lightbringer-greaves",
-          "rank_label": "Optional - Tier",
+          "rank_label": "Very Good",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=22949/gathios-the-shatterer",
-              "text": "Gathios the Shatterer"
+              "href": "https://www.wowhead.com/tbc/npc=23426/the-illidari-council",
+              "text": "Illidari Council"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=31098/leggings-of-the-forgotten-conqueror",
+              "text": "Leggings of the Forgotten Conqueror"
             }
           ],
-          "source_text": "Drop: Leggings of the Forgotten Conqueror - Gathios the Shatterer (Black Temple)"
+          "source_text": "Drop: Illidari Council (Black Temple) (via Leggings of the Forgotten Conqueror )"
         },
         {
           "cell_entities": [
@@ -1931,7 +2117,7 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Very Good",
             "Shattrath Leggings",
             "Quest: Special Delivery to Shattrath City"
           ],
@@ -1950,7 +2136,7 @@
           "item_id": 30257,
           "item_name": "Shattrath Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=30257/shattrath-leggings",
-          "rank_label": "Optional",
+          "rank_label": "Very Good",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=10280/special-delivery-to-shattrath-city",
@@ -1964,42 +2150,46 @@
             [],
             [
               {
-                "id": 29950,
-                "name": "Greaves of the Bloodwarder",
+                "id": 31544,
+                "name": "Clefthoof Hide Leggings",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29950/greaves-of-the-bloodwarder"
+                "url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings"
               }
             ],
             []
           ],
           "cells": [
-            "Optional - Human",
-            "Greaves of the Bloodwarder",
-            "Drop: High Astromancer Solarian (Tempest Keep)"
+            "Very Good: Hit",
+            "Clefthoof Hide Leggings",
+            "Quest: Showdown Quest: Showdown"
           ],
           "entities": [
             {
-              "id": 29950,
-              "name": "Greaves of the Bloodwarder",
+              "id": 31544,
+              "name": "Clefthoof Hide Leggings",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29950/greaves-of-the-bloodwarder"
+              "url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings"
             }
           ],
-          "entity_id": 29950,
-          "entity_name": "Greaves of the Bloodwarder",
+          "entity_id": 31544,
+          "entity_name": "Clefthoof Hide Leggings",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29950/greaves-of-the-bloodwarder",
-          "item_id": 29950,
-          "item_name": "Greaves of the Bloodwarder",
-          "item_url": "https://www.wowhead.com/tbc/item=29950/greaves-of-the-bloodwarder",
-          "rank_label": "Optional - Human",
+          "entity_url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings",
+          "item_id": 31544,
+          "item_name": "Clefthoof Hide Leggings",
+          "item_url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings",
+          "rank_label": "Very Good: Hit",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=18805/high-astromancer-solarian",
-              "text": "High Astromancer Solarian"
+              "href": "https://www.wowhead.com/tbc/quest=10806/showdown",
+              "text": "Showdown"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/quest=10742/showdown",
+              "text": "Showdown"
             }
           ],
-          "source_text": "Drop: High Astromancer Solarian (Tempest Keep)"
+          "source_text": "Quest: Showdown Quest: Showdown"
         }
       ],
       "slot": "Legs"
@@ -2044,7 +2234,7 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23054/kaelthas-sunstrider",
+              "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
               "text": "Kael'thas Sunstrider"
             }
           ],
@@ -2055,46 +2245,101 @@
             [],
             [
               {
-                "id": 31544,
-                "name": "Clefthoof Hide Leggings",
+                "id": 30132,
+                "name": "Crystalforge Greaves",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings"
+                "url": "https://www.wowhead.com/tbc/item=30132/crystalforge-greaves"
+              }
+            ],
+            [
+              {
+                "id": 30245,
+                "name": "Leggings of the Vanquished Champion",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30245/leggings-of-the-vanquished-champion"
+              }
+            ]
+          ],
+          "cells": [
+            "Optional",
+            "Crystalforge Greaves",
+            "Drop: Fathom-Lord Karathress (Serpentshrine Cavern) (via Leggings of the Vanquished Champion )"
+          ],
+          "entities": [
+            {
+              "id": 30132,
+              "name": "Crystalforge Greaves",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30132/crystalforge-greaves"
+            },
+            {
+              "id": 30245,
+              "name": "Leggings of the Vanquished Champion",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30245/leggings-of-the-vanquished-champion"
+            }
+          ],
+          "entity_id": 30132,
+          "entity_name": "Crystalforge Greaves",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30132/crystalforge-greaves",
+          "item_id": 30132,
+          "item_name": "Crystalforge Greaves",
+          "item_url": "https://www.wowhead.com/tbc/item=30132/crystalforge-greaves",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=21214/fathom-lord-karathress",
+              "text": "Fathom-Lord Karathress"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=30245/leggings-of-the-vanquished-champion",
+              "text": "Leggings of the Vanquished Champion"
+            }
+          ],
+          "source_text": "Drop: Fathom-Lord Karathress (Serpentshrine Cavern) (via Leggings of the Vanquished Champion )"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29950,
+                "name": "Greaves of the Bloodwarder",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29950/greaves-of-the-bloodwarder"
               }
             ],
             []
           ],
           "cells": [
             "Optional",
-            "Clefthoof Hide Leggings",
-            "Quest: Showdown / Showdown"
+            "Greaves of the Bloodwarder",
+            "Drop: High Astromancer Solarian (Tempest Keep)"
           ],
           "entities": [
             {
-              "id": 31544,
-              "name": "Clefthoof Hide Leggings",
+              "id": 29950,
+              "name": "Greaves of the Bloodwarder",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings"
+              "url": "https://www.wowhead.com/tbc/item=29950/greaves-of-the-bloodwarder"
             }
           ],
-          "entity_id": 31544,
-          "entity_name": "Clefthoof Hide Leggings",
+          "entity_id": 29950,
+          "entity_name": "Greaves of the Bloodwarder",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings",
-          "item_id": 31544,
-          "item_name": "Clefthoof Hide Leggings",
-          "item_url": "https://www.wowhead.com/tbc/item=31544/clefthoof-hide-leggings",
+          "entity_url": "https://www.wowhead.com/tbc/item=29950/greaves-of-the-bloodwarder",
+          "item_id": 29950,
+          "item_name": "Greaves of the Bloodwarder",
+          "item_url": "https://www.wowhead.com/tbc/item=29950/greaves-of-the-bloodwarder",
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/quest=10806/showdown",
-              "text": "Showdown"
-            },
-            {
-              "href": "https://www.wowhead.com/tbc/quest=10742/showdown",
-              "text": "Showdown"
+              "href": "https://www.wowhead.com/tbc/npc=18805/high-astromancer-solarian",
+              "text": "High Astromancer Solarian"
             }
           ],
-          "source_text": "Quest: Showdown / Showdown"
+          "source_text": "Drop: High Astromancer Solarian (Tempest Keep)"
         }
       ],
       "slot": "Legs"
@@ -2159,9 +2404,9 @@
             []
           ],
           "cells": [
-            "Optional - Hit",
+            "Best: Hit",
             "Dreadboots of the Legion",
-            "Essence of Anger (Black Temple)"
+            "Drop: Reliquary of Souls (Black Temple)"
           ],
           "entities": [
             {
@@ -2178,14 +2423,147 @@
           "item_id": 32345,
           "item_name": "Dreadboots of the Legion",
           "item_url": "https://www.wowhead.com/tbc/item=32345/dreadboots-of-the-legion",
-          "rank_label": "Optional - Hit",
+          "rank_label": "Best: Hit",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=23420/essence-of-anger",
-              "text": "Essence of Anger"
+              "text": "Reliquary of Souls"
             }
           ],
-          "source_text": "Essence of Anger (Black Temple)"
+          "source_text": "Drop: Reliquary of Souls (Black Temple)"
+        }
+      ],
+      "slot": "Feet"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Feet Armor for Retribution Paladin in TBC Classic Phase 3",
+      "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32510,
+                "name": "Softstep Boots of Tracking",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32510/softstep-boots-of-tracking"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Softstep Boots of Tracking",
+            "Drop: Teron Gorefiend (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32510,
+              "name": "Softstep Boots of Tracking",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32510/softstep-boots-of-tracking"
+            }
+          ],
+          "entity_id": 32510,
+          "entity_name": "Softstep Boots of Tracking",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32510/softstep-boots-of-tracking",
+          "item_id": 32510,
+          "item_name": "Softstep Boots of Tracking",
+          "item_url": "https://www.wowhead.com/tbc/item=32510/softstep-boots-of-tracking",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
+              "text": "Teron Gorefiend"
+            }
+          ],
+          "source_text": "Drop: Teron Gorefiend (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30104,
+                "name": "Cobra-Lash Boots",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30104/cobra-lash-boots"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Cobra-Lash Boots",
+            "Drop: Lady Vashj (Serpentshrine Cavern)"
+          ],
+          "entities": [
+            {
+              "id": 30104,
+              "name": "Cobra-Lash Boots",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30104/cobra-lash-boots"
+            }
+          ],
+          "entity_id": 30104,
+          "entity_name": "Cobra-Lash Boots",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30104/cobra-lash-boots",
+          "item_id": 30104,
+          "item_name": "Cobra-Lash Boots",
+          "item_url": "https://www.wowhead.com/tbc/item=30104/cobra-lash-boots",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=21212/lady-vashj",
+              "text": "Lady Vashj"
+            }
+          ],
+          "source_text": "Drop: Lady Vashj (Serpentshrine Cavern)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29951,
+                "name": "Star-Strider Boots",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29951/star-strider-boots"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Star-Strider Boots",
+            "Drop: High Astromancer Solarian (Tempest Keep)"
+          ],
+          "entities": [
+            {
+              "id": 29951,
+              "name": "Star-Strider Boots",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29951/star-strider-boots"
+            }
+          ],
+          "entity_id": 29951,
+          "entity_name": "Star-Strider Boots",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=29951/star-strider-boots",
+          "item_id": 29951,
+          "item_name": "Star-Strider Boots",
+          "item_url": "https://www.wowhead.com/tbc/item=29951/star-strider-boots",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=18805/high-astromancer-solarian",
+              "text": "High Astromancer Solarian"
+            }
+          ],
+          "source_text": "Drop: High Astromancer Solarian (Tempest Keep)"
         },
         {
           "cell_entities": [
@@ -2270,14 +2648,7 @@
             }
           ],
           "source_text": "Drop: Nightbane (Karazhan)"
-        }
-      ],
-      "slot": "Feet"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Feet Armor for Retribution Paladin in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2292,7 +2663,7 @@
             []
           ],
           "cells": [
-            "Optional-Hit",
+            "Optional",
             "Edgewalker Longboots",
             "Drop: Moroes (Karazhan)"
           ],
@@ -2311,7 +2682,7 @@
           "item_id": 28545,
           "item_name": "Edgewalker Longboots",
           "item_url": "https://www.wowhead.com/tbc/item=28545/edgewalker-longboots",
-          "rank_label": "Optional-Hit",
+          "rank_label": "Optional",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=15687/moroes",
@@ -2332,48 +2703,6 @@
             [],
             [
               {
-                "id": 30022,
-                "name": "Pendant of the Perilous",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30022/pendant-of-the-perilous"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best",
-            "Pendant of the Perilous",
-            "Drop: Serpentshrine Cavern Trash Mobs"
-          ],
-          "entities": [
-            {
-              "id": 30022,
-              "name": "Pendant of the Perilous",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30022/pendant-of-the-perilous"
-            }
-          ],
-          "entity_id": 30022,
-          "entity_name": "Pendant of the Perilous",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30022/pendant-of-the-perilous",
-          "item_id": 30022,
-          "item_name": "Pendant of the Perilous",
-          "item_url": "https://www.wowhead.com/tbc/item=30022/pendant-of-the-perilous",
-          "rank_label": "Best",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/zone=3607/serpentshrine-cavern",
-              "text": "Serpentshrine Cavern"
-            }
-          ],
-          "source_text": "Drop: Serpentshrine Cavern Trash Mobs"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 32260,
                 "name": "Choker of Endless Nightmares",
                 "type": "item",
@@ -2383,7 +2712,7 @@
             []
           ],
           "cells": [
-            "Best - Hit",
+            "Best: Hit",
             "Choker of Endless Nightmares",
             "Drop: Supremus (Black Temple)"
           ],
@@ -2402,7 +2731,7 @@
           "item_id": 32260,
           "item_name": "Choker of Endless Nightmares",
           "item_url": "https://www.wowhead.com/tbc/item=32260/choker-of-endless-nightmares",
-          "rank_label": "Best - Hit",
+          "rank_label": "Best: Hit",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22898/supremus",
@@ -2416,18 +2745,165 @@
             [],
             [
               {
+                "id": 30022,
+                "name": "Pendant of the Perilous",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30022/pendant-of-the-perilous"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best",
+            "Pendant of the Perilous",
+            "Drop: Trash Mobs (Serpentshrine Cavern)"
+          ],
+          "entities": [
+            {
+              "id": 30022,
+              "name": "Pendant of the Perilous",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30022/pendant-of-the-perilous"
+            }
+          ],
+          "entity_id": 30022,
+          "entity_name": "Pendant of the Perilous",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30022/pendant-of-the-perilous",
+          "item_id": 30022,
+          "item_name": "Pendant of the Perilous",
+          "item_url": "https://www.wowhead.com/tbc/item=30022/pendant-of-the-perilous",
+          "rank_label": "Best",
+          "source_links": [],
+          "source_text": "Drop: Trash Mobs (Serpentshrine Cavern)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30017,
+                "name": "Telonicus's Pendant of Mayhem",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
+              }
+            ],
+            [
+              {
+                "id": 32405,
+                "name": "Verdant Sphere",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere"
+              }
+            ]
+          ],
+          "cells": [
+            "Best",
+            "Telonicus's Pendant of Mayhem",
+            "Drop: Kael'thas Sunstrider (Tempest Keep) (via Verdant Sphere )"
+          ],
+          "entities": [
+            {
+              "id": 30017,
+              "name": "Telonicus's Pendant of Mayhem",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
+            },
+            {
+              "id": 32405,
+              "name": "Verdant Sphere",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32405/verdant-sphere"
+            }
+          ],
+          "entity_id": 30017,
+          "entity_name": "Telonicus's Pendant of Mayhem",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
+          "item_id": 30017,
+          "item_name": "Telonicus's Pendant of Mayhem",
+          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
+          "rank_label": "Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
+              "text": "Kael'thas Sunstrider"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=32405/verdant-sphere",
+              "text": "Verdant Sphere"
+            }
+          ],
+          "source_text": "Drop: Kael'thas Sunstrider (Tempest Keep) (via Verdant Sphere )"
+        }
+      ],
+      "slot": "Neck"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Neck Jewelry for Retribution Paladin in TBC Classic Phase 3",
+      "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32591,
+                "name": "Choker of Serrated Blades",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Choker of Serrated Blades",
+            "Drop: Trash Mobs (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32591,
+              "name": "Choker of Serrated Blades",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades"
+            }
+          ],
+          "entity_id": 32591,
+          "entity_name": "Choker of Serrated Blades",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades",
+          "item_id": 32591,
+          "item_name": "Choker of Serrated Blades",
+          "item_url": "https://www.wowhead.com/tbc/item=32591/choker-of-serrated-blades",
+          "rank_label": "Optional",
+          "source_links": [],
+          "source_text": "Drop: Trash Mobs (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
                 "id": 29381,
                 "name": "Choker of Vile Intent",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=29381/choker-of-vile-intent"
               }
             ],
-            []
+            [
+              {
+                "id": 29434,
+                "name": "Badge of Justice",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice"
+              }
+            ]
           ],
           "cells": [
-            "Optional - Hit",
+            "Optional",
             "Choker of Vile Intent",
-            "Vendor: G'eras (25 Badges of Justice)"
+            "25x Badge of Justice"
           ],
           "entities": [
             {
@@ -2435,6 +2911,12 @@
               "name": "Choker of Vile Intent",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=29381/choker-of-vile-intent"
+            },
+            {
+              "id": 29434,
+              "name": "Badge of Justice",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice"
             }
           ],
           "entity_id": 29381,
@@ -2444,14 +2926,14 @@
           "item_id": 29381,
           "item_name": "Choker of Vile Intent",
           "item_url": "https://www.wowhead.com/tbc/item=29381/choker-of-vile-intent",
-          "rank_label": "Optional - Hit",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=18525/geras",
-              "text": "G'eras"
+              "href": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
+              "text": "Badge of Justice"
             }
           ],
-          "source_text": "Vendor: G'eras (25 Badges of Justice)"
+          "source_text": "25x Badge of Justice"
         },
         {
           "cell_entities": [
@@ -2467,7 +2949,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Optional",
             "Worgen Claw Necklace",
             "Drop: Attumen the Huntsman (Karazhan)"
           ],
@@ -2486,7 +2968,7 @@
           "item_id": 28509,
           "item_name": "Worgen Claw Necklace",
           "item_url": "https://www.wowhead.com/tbc/item=28509/worgen-claw-necklace",
-          "rank_label": "Option",
+          "rank_label": "Optional",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=16152/attumen-the-huntsman",
@@ -2494,14 +2976,7 @@
             }
           ],
           "source_text": "Drop: Attumen the Huntsman (Karazhan)"
-        }
-      ],
-      "slot": "Neck"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Neck Jewelry for Retribution Paladin in TBC Classic Phase 3",
-      "rows": [
+        },
         {
           "cell_entities": [
             [],
@@ -2516,9 +2991,9 @@
             []
           ],
           "cells": [
-            "Option",
+            "Optional",
             "Mithril Chain of Heroism",
-            "Drop: Chess Event - Karazhan"
+            "Drop: Chess Event (Karazhan)"
           ],
           "entities": [
             {
@@ -2535,14 +3010,14 @@
           "item_id": 28745,
           "item_name": "Mithril Chain of Heroism",
           "item_url": "https://www.wowhead.com/tbc/item=28745/mithril-chain-of-heroism",
-          "rank_label": "Option",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/zone=3457/karazhan",
-              "text": "Karazhan"
+              "href": "https://www.wowhead.com/tbc/object=185119/dust-covered-chest",
+              "text": "Chess Event"
             }
           ],
-          "source_text": "Drop: Chess Event - Karazhan"
+          "source_text": "Drop: Chess Event (Karazhan)"
         },
         {
           "cell_entities": [
@@ -2558,9 +3033,9 @@
             []
           ],
           "cells": [
-            "Option",
+            "Optional",
             "Haramad's Bargain",
-            "Vendor: Paulsta'ats - Requires Exalted with The Consortium"
+            "Vendor: Exalted with The Consortium"
           ],
           "entities": [
             {
@@ -2580,7 +3055,7 @@
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium",
+              "raw_text": "Vendor: Exalted with The Consortium",
               "reputation": "The Consortium",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
@@ -2589,51 +3064,14 @@
               "type": "reputation"
             }
           ],
-          "rank_label": "Option",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23007/paulstaats",
-              "text": "Paulsta'ats"
+              "href": "https://www.wowhead.com/tbc/faction=933/the-consortium",
+              "text": "The Consortium"
             }
           ],
-          "source_text": "Vendor: Paulsta'ats - Requires Exalted with The Consortium"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31275,
-                "name": "Necklace of Trophies",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31275/necklace-of-trophies"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BOE",
-            "Necklace of Trophies",
-            "World Drop -The Outland"
-          ],
-          "entities": [
-            {
-              "id": 31275,
-              "name": "Necklace of Trophies",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31275/necklace-of-trophies"
-            }
-          ],
-          "entity_id": 31275,
-          "entity_name": "Necklace of Trophies",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31275/necklace-of-trophies",
-          "item_id": 31275,
-          "item_name": "Necklace of Trophies",
-          "item_url": "https://www.wowhead.com/tbc/item=31275/necklace-of-trophies",
-          "rank_label": "BOE",
-          "source_links": [],
-          "source_text": "World Drop -The Outland"
+          "source_text": "Vendor: Exalted with The Consortium"
         }
       ],
       "slot": "Neck"
@@ -2658,7 +3096,7 @@
           "cells": [
             "Best",
             "Shapeshifter's Signet",
-            "Vendor: Nakodu - Requires Exalted with Lower City"
+            "Vendor: Exalted with Lower City"
           ],
           "entities": [
             {
@@ -2678,7 +3116,7 @@
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Nakodu - Requires Exalted with Lower City",
+              "raw_text": "Vendor: Exalted with Lower City",
               "reputation": "Lower City",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
@@ -2690,11 +3128,11 @@
           "rank_label": "Best",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=21655/nakodu",
-              "text": "Nakodu"
+              "href": "https://www.wowhead.com/tbc/faction=1011/lower-city",
+              "text": "Lower City"
             }
           ],
-          "source_text": "Vendor: Nakodu - Requires Exalted with Lower City"
+          "source_text": "Vendor: Exalted with Lower City"
         },
         {
           "cell_entities": [
@@ -2712,7 +3150,7 @@
           "cells": [
             "Best",
             "Band of Devastation",
-            "Drop: Black Temple Trash Mobs"
+            "Drop: Trash Mobs (Black Temple)"
           ],
           "entities": [
             {
@@ -2730,55 +3168,8 @@
           "item_name": "Band of Devastation",
           "item_url": "https://www.wowhead.com/tbc/item=32526/band-of-devastation",
           "rank_label": "Best",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/zone=3959/black-temple",
-              "text": "Black Temple"
-            }
-          ],
-          "source_text": "Drop: Black Temple Trash Mobs"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 29997,
-                "name": "Band of the Ranger-General",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best - Hit",
-            "Band of the Ranger-General",
-            "Drop: Kael'thas Sunstrider (Tempest Keep)"
-          ],
-          "entities": [
-            {
-              "id": 29997,
-              "name": "Band of the Ranger-General",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general"
-            }
-          ],
-          "entity_id": 29997,
-          "entity_name": "Band of the Ranger-General",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general",
-          "item_id": 29997,
-          "item_name": "Band of the Ranger-General",
-          "item_url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general",
-          "rank_label": "Best - Hit",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
-              "text": "Kael'thas Sunstrider"
-            }
-          ],
-          "source_text": "Drop: Kael'thas Sunstrider (Tempest Keep)"
+          "source_links": [],
+          "source_text": "Drop: Trash Mobs (Black Temple)"
         },
         {
           "cell_entities": [
@@ -2794,9 +3185,9 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Best",
             "Unstoppable Aggressor's Ring",
-            "Drop: Gurtogg Bloodboil Trash Mobs"
+            "Drop: Gurtogg Bloodboil (Black Temple)"
           ],
           "entities": [
             {
@@ -2813,14 +3204,110 @@
           "item_id": 32335,
           "item_name": "Unstoppable Aggressor's Ring",
           "item_url": "https://www.wowhead.com/tbc/item=32335/unstoppable-aggressors-ring",
-          "rank_label": "Optional",
+          "rank_label": "Best",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=22948/gurtogg-bloodboil",
               "text": "Gurtogg Bloodboil"
             }
           ],
-          "source_text": "Drop: Gurtogg Bloodboil Trash Mobs"
+          "source_text": "Drop: Gurtogg Bloodboil (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32497,
+                "name": "Stormrage Signet Ring",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32497/stormrage-signet-ring"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best: Hit",
+            "Stormrage Signet Ring",
+            "Drop: Illidan Stormrage (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32497,
+              "name": "Stormrage Signet Ring",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32497/stormrage-signet-ring"
+            }
+          ],
+          "entity_id": 32497,
+          "entity_name": "Stormrage Signet Ring",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32497/stormrage-signet-ring",
+          "item_id": 32497,
+          "item_name": "Stormrage Signet Ring",
+          "item_url": "https://www.wowhead.com/tbc/item=32497/stormrage-signet-ring",
+          "rank_label": "Best: Hit",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22917/illidan-stormrage",
+              "text": "Illidan Stormrage"
+            }
+          ],
+          "source_text": "Drop: Illidan Stormrage (Black Temple)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29301,
+                "name": "Band of the Eternal Champion",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Near Best",
+            "Band of the Eternal Champion",
+            "Vendor: Exalted with The Scale of the Sands"
+          ],
+          "entities": [
+            {
+              "id": 29301,
+              "name": "Band of the Eternal Champion",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion"
+            }
+          ],
+          "entity_id": 29301,
+          "entity_name": "Band of the Eternal Champion",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "item_id": 29301,
+          "item_name": "Band of the Eternal Champion",
+          "item_url": "https://www.wowhead.com/tbc/item=29301/band-of-the-eternal-champion",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Exalted with The Scale of the Sands",
+              "reputation": "The Scale of the Sands",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
+          "rank_label": "Near Best",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/faction=990/the-scale-of-the-sands",
+              "text": "The Scale of the Sands"
+            }
+          ],
+          "source_text": "Vendor: Exalted with The Scale of the Sands"
         }
       ],
       "slot": "Ring"
@@ -2876,42 +3363,84 @@
             [],
             [
               {
-                "id": 30738,
-                "name": "Ring of Reciprocity",
+                "id": 29997,
+                "name": "Band of the Ranger-General",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30738/ring-of-reciprocity"
+                "url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general"
               }
             ],
             []
           ],
           "cells": [
-            "World Boss",
-            "Ring of Reciprocity",
-            "Drop: Doom Lord Kazzak (World Boss in Hellfire Peninsula)"
+            "Optional",
+            "Band of the Ranger-General",
+            "Drop: Kael'thas Sunstrider (Tempest Keep)"
           ],
           "entities": [
             {
-              "id": 30738,
-              "name": "Ring of Reciprocity",
+              "id": 29997,
+              "name": "Band of the Ranger-General",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30738/ring-of-reciprocity"
+              "url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general"
             }
           ],
-          "entity_id": 30738,
-          "entity_name": "Ring of Reciprocity",
+          "entity_id": 29997,
+          "entity_name": "Band of the Ranger-General",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30738/ring-of-reciprocity",
-          "item_id": 30738,
-          "item_name": "Ring of Reciprocity",
-          "item_url": "https://www.wowhead.com/tbc/item=30738/ring-of-reciprocity",
-          "rank_label": "World Boss",
+          "entity_url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general",
+          "item_id": 29997,
+          "item_name": "Band of the Ranger-General",
+          "item_url": "https://www.wowhead.com/tbc/item=29997/band-of-the-ranger-general",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=18728/doom-lord-kazzak",
-              "text": "Doom Lord Kazzak"
+              "href": "https://www.wowhead.com/tbc/npc=19622/kaelthas-sunstrider",
+              "text": "Kael'thas Sunstrider"
             }
           ],
-          "source_text": "Drop: Doom Lord Kazzak (World Boss in Hellfire Peninsula)"
+          "source_text": "Drop: Kael'thas Sunstrider (Tempest Keep)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30052,
+                "name": "Ring of Lethality",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30052/ring-of-lethality"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Ring of Lethality",
+            "Drop: Hydross the Unstable (Serpentshrine Cavern)"
+          ],
+          "entities": [
+            {
+              "id": 30052,
+              "name": "Ring of Lethality",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30052/ring-of-lethality"
+            }
+          ],
+          "entity_id": 30052,
+          "entity_name": "Ring of Lethality",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30052/ring-of-lethality",
+          "item_id": 30052,
+          "item_name": "Ring of Lethality",
+          "item_url": "https://www.wowhead.com/tbc/item=30052/ring-of-lethality",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=21216/hydross-the-unstable",
+              "text": "Hydross the Unstable"
+            }
+          ],
+          "source_text": "Drop: Hydross the Unstable (Serpentshrine Cavern)"
         },
         {
           "cell_entities": [
@@ -2927,7 +3456,7 @@
             []
           ],
           "cells": [
-            "Optional-Hit",
+            "Optional",
             "Ring of a Thousand Marks",
             "Drop: Prince Malchezaar (Karazhan)"
           ],
@@ -2946,7 +3475,7 @@
           "item_id": 28757,
           "item_name": "Ring of a Thousand Marks",
           "item_url": "https://www.wowhead.com/tbc/item=28757/ring-of-a-thousand-marks",
-          "rank_label": "Optional-Hit",
+          "rank_label": "Optional",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=15690/prince-malchezaar",
@@ -3009,48 +3538,6 @@
             [],
             [
               {
-                "id": 29383,
-                "name": "Bloodlust Brooch",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Best",
-            "Bloodlust Brooch",
-            "Vendor: G'eras (41 Badges of Justice)"
-          ],
-          "entities": [
-            {
-              "id": 29383,
-              "name": "Bloodlust Brooch",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch"
-            }
-          ],
-          "entity_id": 29383,
-          "entity_name": "Bloodlust Brooch",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch",
-          "item_id": 29383,
-          "item_name": "Bloodlust Brooch",
-          "item_url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch",
-          "rank_label": "Best",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=18525/geras",
-              "text": "G'eras"
-            }
-          ],
-          "source_text": "Vendor: G'eras (41 Badges of Justice)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 28830,
                 "name": "Dragonspine Trophy",
                 "type": "item",
@@ -3060,7 +3547,7 @@
             []
           ],
           "cells": [
-            "Best",
+            "Best: Passive",
             "Dragonspine Trophy",
             "Drop: Gruul the Dragonkiller (Gruul's Lair)"
           ],
@@ -3079,7 +3566,7 @@
           "item_id": 28830,
           "item_name": "Dragonspine Trophy",
           "item_url": "https://www.wowhead.com/tbc/item=28830/dragonspine-trophy",
-          "rank_label": "Best",
+          "rank_label": "Best: Passive",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=19044/gruul-the-dragonkiller",
@@ -3087,6 +3574,211 @@
             }
           ],
           "source_text": "Drop: Gruul the Dragonkiller (Gruul's Lair)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 29383,
+                "name": "Bloodlust Brooch",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch"
+              }
+            ],
+            [
+              {
+                "id": 29434,
+                "name": "Badge of Justice",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice"
+              }
+            ]
+          ],
+          "cells": [
+            "Best: Active",
+            "Bloodlust Brooch",
+            "41x Badge of Justice"
+          ],
+          "entities": [
+            {
+              "id": 29383,
+              "name": "Bloodlust Brooch",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch"
+            },
+            {
+              "id": 29434,
+              "name": "Badge of Justice",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=29434/badge-of-justice"
+            }
+          ],
+          "entity_id": 29383,
+          "entity_name": "Bloodlust Brooch",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch",
+          "item_id": 29383,
+          "item_name": "Bloodlust Brooch",
+          "item_url": "https://www.wowhead.com/tbc/item=29383/bloodlust-brooch",
+          "rank_label": "Best: Active",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/item=29434/badge-of-justice",
+              "text": "Badge of Justice"
+            }
+          ],
+          "source_text": "41x Badge of Justice"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 28288,
+                "name": "Abacus of Violent Odds",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best: Active",
+            "Abacus of Violent Odds",
+            "Drop: Pathaleon the Calculator (The Mechanar)"
+          ],
+          "entities": [
+            {
+              "id": 28288,
+              "name": "Abacus of Violent Odds",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds"
+            }
+          ],
+          "entity_id": 28288,
+          "entity_name": "Abacus of Violent Odds",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds",
+          "item_id": 28288,
+          "item_name": "Abacus of Violent Odds",
+          "item_url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds",
+          "rank_label": "Best: Active",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=19220/pathaleon-the-calculator",
+              "text": "Pathaleon the Calculator"
+            }
+          ],
+          "source_text": "Drop: Pathaleon the Calculator (The Mechanar)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 19343,
+                "name": "Scrolls of Blinding Light",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Best: Active",
+            "Scrolls of Blinding Light",
+            "Drop: Firemaw (Blackwing Lair)"
+          ],
+          "entities": [
+            {
+              "id": 19343,
+              "name": "Scrolls of Blinding Light",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light"
+            }
+          ],
+          "entity_id": 19343,
+          "entity_name": "Scrolls of Blinding Light",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light",
+          "item_id": 19343,
+          "item_name": "Scrolls of Blinding Light",
+          "item_url": "https://www.wowhead.com/tbc/item=19343/scrolls-of-blinding-light",
+          "rank_label": "Best: Active",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=11983/firemaw",
+              "text": "Firemaw"
+            }
+          ],
+          "source_text": "Drop: Firemaw (Blackwing Lair)"
+        }
+      ],
+      "slot": "Trinket"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Trinkets for Retribution Paladin in TBC Classic Phase 3",
+      "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31856,
+                "name": "Darkmoon Card: Crusade",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31856/darkmoon-card-crusade"
+              }
+            ],
+            [
+              {
+                "id": 31890,
+                "name": "Blessings Deck",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31890/blessings-deck"
+              }
+            ]
+          ],
+          "cells": [
+            "Optional",
+            "Darkmoon Card: Crusade",
+            "Quest: Darkmoon Blessings Deck (Bind on Equip) (via Blessings Deck )"
+          ],
+          "entities": [
+            {
+              "id": 31856,
+              "name": "Darkmoon Card: Crusade",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31856/darkmoon-card-crusade"
+            },
+            {
+              "id": 31890,
+              "name": "Blessings Deck",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31890/blessings-deck"
+            }
+          ],
+          "entity_id": 31856,
+          "entity_name": "Darkmoon Card: Crusade",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=31856/darkmoon-card-crusade",
+          "item_id": 31856,
+          "item_name": "Darkmoon Card: Crusade",
+          "item_url": "https://www.wowhead.com/tbc/item=31856/darkmoon-card-crusade",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/quest=10938/darkmoon-blessings-deck",
+              "text": "Darkmoon Blessings Deck"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/item=31890/blessings-deck",
+              "text": "Blessings Deck"
+            }
+          ],
+          "source_text": "Quest: Darkmoon Blessings Deck (Bind on Equip) (via Blessings Deck )"
         },
         {
           "cell_entities": [
@@ -3109,9 +3801,9 @@
             ]
           ],
           "cells": [
-            "Undead Only & Demons",
+            "Optional: Undead/Demon",
             "Mark of the Champion",
-            "Quest: The Fall of Kel'Thuzad - Kel'Thuzad from The Phylactery of Kel'Thuzad (Naxxramas)"
+            "Quest: The Fall of Kel'Thuzad - Kel'Thuzad (Naxxramas) (via The Phylactery of Kel'Thuzad )"
           ],
           "entities": [
             {
@@ -3134,7 +3826,7 @@
           "item_id": 23206,
           "item_name": "Mark of the Champion",
           "item_url": "https://www.wowhead.com/tbc/item=23206/mark-of-the-champion",
-          "rank_label": "Undead Only & Demons",
+          "rank_label": "Optional: Undead/Demon",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/quest=9120/the-fall-of-kelthuzad",
@@ -3149,98 +3841,7 @@
               "text": "The Phylactery of Kel'Thuzad"
             }
           ],
-          "source_text": "Quest: The Fall of Kel'Thuzad - Kel'Thuzad from The Phylactery of Kel'Thuzad (Naxxramas)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28288,
-                "name": "Abacus of Violent Odds",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Abacus of Violent Odds",
-            "Drop: Pathaleon the Calculator (The Mechanar)"
-          ],
-          "entities": [
-            {
-              "id": 28288,
-              "name": "Abacus of Violent Odds",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds"
-            }
-          ],
-          "entity_id": 28288,
-          "entity_name": "Abacus of Violent Odds",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds",
-          "item_id": 28288,
-          "item_name": "Abacus of Violent Odds",
-          "item_url": "https://www.wowhead.com/tbc/item=28288/abacus-of-violent-odds",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=19220/pathaleon-the-calculator",
-              "text": "Pathaleon the Calculator"
-            }
-          ],
-          "source_text": "Drop: Pathaleon the Calculator (The Mechanar)"
-        }
-      ],
-      "slot": "Trinket"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Trinkets for Retribution Paladin in TBC Classic Phase 3",
-      "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 38287,
-                "name": "Empty Mug of Direbrew",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional - Seasonal",
-            "Empty Mug of Direbrew",
-            "Drop: Coren Direbrew (Blackrock Depths)"
-          ],
-          "entities": [
-            {
-              "id": 38287,
-              "name": "Empty Mug of Direbrew",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew"
-            }
-          ],
-          "entity_id": 38287,
-          "entity_name": "Empty Mug of Direbrew",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew",
-          "item_id": 38287,
-          "item_name": "Empty Mug of Direbrew",
-          "item_url": "https://www.wowhead.com/tbc/item=38287/empty-mug-of-direbrew",
-          "rank_label": "Optional - Seasonal",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
-              "text": "Coren Direbrew"
-            }
-          ],
-          "source_text": "Drop: Coren Direbrew (Blackrock Depths)"
+          "source_text": "Quest: The Fall of Kel'Thuzad - Kel'Thuzad (Naxxramas) (via The Phylactery of Kel'Thuzad )"
         },
         {
           "cell_entities": [
@@ -3289,48 +3890,6 @@
             [],
             [
               {
-                "id": 32505,
-                "name": "Madness of the Betrayer",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=32505/madness-of-the-betrayer"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Optional",
-            "Madness of the Betrayer",
-            "Drop: High Nethermancer Zerevor (Black Temple"
-          ],
-          "entities": [
-            {
-              "id": 32505,
-              "name": "Madness of the Betrayer",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=32505/madness-of-the-betrayer"
-            }
-          ],
-          "entity_id": 32505,
-          "entity_name": "Madness of the Betrayer",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=32505/madness-of-the-betrayer",
-          "item_id": 32505,
-          "item_name": "Madness of the Betrayer",
-          "item_url": "https://www.wowhead.com/tbc/item=32505/madness-of-the-betrayer",
-          "rank_label": "Optional",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=22950/high-nethermancer-zerevor",
-              "text": "High Nethermancer Zerevor"
-            }
-          ],
-          "source_text": "Drop: High Nethermancer Zerevor (Black Temple"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 28034,
                 "name": "Hourglass of the Unraveller",
                 "type": "item",
@@ -3367,132 +3926,6 @@
             }
           ],
           "source_text": "Drop: Temporus (The Black Morass)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 22954,
-                "name": "Kiss of the Spider",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=22954/kiss-of-the-spider"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Old Trinkets",
-            "Kiss of the Spider",
-            "Drop: Maexxna (Naxxramas)"
-          ],
-          "entities": [
-            {
-              "id": 22954,
-              "name": "Kiss of the Spider",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=22954/kiss-of-the-spider"
-            }
-          ],
-          "entity_id": 22954,
-          "entity_name": "Kiss of the Spider",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=22954/kiss-of-the-spider",
-          "item_id": 22954,
-          "item_name": "Kiss of the Spider",
-          "item_url": "https://www.wowhead.com/tbc/item=22954/kiss-of-the-spider",
-          "rank_label": "Old Trinkets",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=15952/maexxna",
-              "text": "Maexxna"
-            }
-          ],
-          "source_text": "Drop: Maexxna (Naxxramas)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 23041,
-                "name": "Slayer's Crest",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=23041/slayers-crest"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Old Trinkets",
-            "Slayer's Crest",
-            "Drop: Sapphiron (Naxxramas)"
-          ],
-          "entities": [
-            {
-              "id": 23041,
-              "name": "Slayer's Crest",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=23041/slayers-crest"
-            }
-          ],
-          "entity_id": 23041,
-          "entity_name": "Slayer's Crest",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=23041/slayers-crest",
-          "item_id": 23041,
-          "item_name": "Slayer's Crest",
-          "item_url": "https://www.wowhead.com/tbc/item=23041/slayers-crest",
-          "rank_label": "Old Trinkets",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=15989/sapphiron",
-              "text": "Sapphiron"
-            }
-          ],
-          "source_text": "Drop: Sapphiron (Naxxramas)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 19406,
-                "name": "Drake Fang Talisman",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=19406/drake-fang-talisman"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Old Trinkets",
-            "Drake Fang Talisman",
-            "Drop: Ebonroc (Blackwing Lair)"
-          ],
-          "entities": [
-            {
-              "id": 19406,
-              "name": "Drake Fang Talisman",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=19406/drake-fang-talisman"
-            }
-          ],
-          "entity_id": 19406,
-          "entity_name": "Drake Fang Talisman",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=19406/drake-fang-talisman",
-          "item_id": 19406,
-          "item_name": "Drake Fang Talisman",
-          "item_url": "https://www.wowhead.com/tbc/item=19406/drake-fang-talisman",
-          "rank_label": "Old Trinkets",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=14601/ebonroc",
-              "text": "Ebonroc"
-            }
-          ],
-          "source_text": "Drop: Ebonroc (Blackwing Lair)"
         }
       ],
       "slot": "Trinket"
@@ -3517,7 +3950,7 @@
           "cells": [
             "Best",
             "Torch of the Damned",
-            "Drop: Essence of Anger (Black Temple)"
+            "Drop: Reliquary of Souls (Black Temple)"
           ],
           "entities": [
             {
@@ -3538,10 +3971,10 @@
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=23420/essence-of-anger",
-              "text": "Essence of Anger"
+              "text": "Reliquary of Souls"
             }
           ],
-          "source_text": "Drop: Essence of Anger (Black Temple)"
+          "source_text": "Drop: Reliquary of Souls (Black Temple)"
         },
         {
           "cell_entities": [
@@ -3557,7 +3990,7 @@
             []
           ],
           "cells": [
-            "Optional",
+            "Very Good",
             "Cataclysm's Edge",
             "Drop: Archimonde (Hyjal Summit)"
           ],
@@ -3576,7 +4009,7 @@
           "item_id": 30902,
           "item_name": "Cataclysm's Edge",
           "item_url": "https://www.wowhead.com/tbc/item=30902/cataclysms-edge",
-          "rank_label": "Optional",
+          "rank_label": "Very Good",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17968/archimonde",
@@ -3584,7 +4017,14 @@
             }
           ],
           "source_text": "Drop: Archimonde (Hyjal Summit)"
-        },
+        }
+      ],
+      "slot": "Weapon"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Weapons for Retribution Paladin in TBC Classic Phase 3",
+      "rows": [
         {
           "cell_entities": [
             [],
@@ -3599,9 +4039,9 @@
             []
           ],
           "cells": [
-            "PVP Option",
+            "Optional",
             "Vengeful Gladiator's Greatsword",
-            "- Arena Vendor"
+            "PvP: 3175x Arena Points"
           ],
           "entities": [
             {
@@ -3618,14 +4058,56 @@
           "item_id": 33688,
           "item_name": "Vengeful Gladiator's Greatsword",
           "item_url": "https://www.wowhead.com/tbc/item=33688/vengeful-gladiators-greatsword",
-          "rank_label": "PVP Option",
+          "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "PvP: 3175x Arena Points"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 32348,
+                "name": "Soul Cleaver",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Optional",
+            "Soul Cleaver",
+            "Drop: Teron Gorefiend (Black Temple)"
+          ],
+          "entities": [
+            {
+              "id": 32348,
+              "name": "Soul Cleaver",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver"
+            }
+          ],
+          "entity_id": 32348,
+          "entity_name": "Soul Cleaver",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver",
+          "item_id": 32348,
+          "item_name": "Soul Cleaver",
+          "item_url": "https://www.wowhead.com/tbc/item=32348/soul-cleaver",
+          "rank_label": "Optional",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=22871/teron-gorefiend",
+              "text": "Teron Gorefiend"
+            }
+          ],
+          "source_text": "Drop: Teron Gorefiend (Black Temple)"
         },
         {
           "cell_entities": [
@@ -3638,12 +4120,19 @@
                 "url": "https://www.wowhead.com/tbc/item=28430/lionheart-executioner"
               }
             ],
-            []
+            [
+              {
+                "id": 36259,
+                "name": "Blacksmithing",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=36259/lionheart-executioner"
+              }
+            ]
           ],
           "cells": [
             "Optional",
             "Lionheart Executioner",
-            "Profession: Master Swordsmith Blacksmithing (BoP)"
+            "Crafting: Blacksmithing (Bind on Pickup) (requires Master Swordsmithing)"
           ],
           "entities": [
             {
@@ -3651,6 +4140,12 @@
               "name": "Lionheart Executioner",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=28430/lionheart-executioner"
+            },
+            {
+              "id": 36259,
+              "name": "Blacksmithing",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=36259/lionheart-executioner"
             }
           ],
           "entity_id": 28430,
@@ -3663,23 +4158,26 @@
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
-              "raw_text": "Profession: Master Swordsmith Blacksmithing (BoP)",
+              "profession": "Blacksmithing",
+              "raw_text": "Crafting: Blacksmithing (Bind on Pickup) (requires Master Swordsmithing)",
               "scope": "equip_or_use",
               "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "type": "unknown_text"
+              "specialization": "Master Swordsmithing",
+              "type": "profession_specialization"
             }
           ],
           "rank_label": "Optional",
-          "source_links": [],
-          "source_text": "Profession: Master Swordsmith Blacksmithing (BoP)"
-        }
-      ],
-      "slot": "Weapon"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Weapons for Retribution Paladin in TBC Classic Phase 3",
-      "rows": [
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/spell=36259/lionheart-executioner",
+              "text": "Blacksmithing"
+            }
+          ],
+          "source_text": "Crafting: Blacksmithing (Bind on Pickup) (requires Master Swordsmithing)",
+          "spell_id": 36259,
+          "spell_name": "Blacksmithing",
+          "spell_url": "https://www.wowhead.com/tbc/spell=36259/lionheart-executioner"
+        },
         {
           "cell_entities": [
             [],
@@ -3733,12 +4231,19 @@
                 "url": "https://www.wowhead.com/tbc/item=28442/stormherald"
               }
             ],
-            []
+            [
+              {
+                "id": 36263,
+                "name": "Blacksmithing",
+                "type": "spell",
+                "url": "https://www.wowhead.com/tbc/spell=36263/stormherald"
+              }
+            ]
           ],
           "cells": [
             "Optional",
             "Stormherald",
-            "Profession: Master Hammersmith Blacksmithing (BoP)"
+            "Crafting: Blacksmithing (Bind on Pickup) (requires Master Hammersmithing)"
           ],
           "entities": [
             {
@@ -3746,6 +4251,12 @@
               "name": "Stormherald",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=28442/stormherald"
+            },
+            {
+              "id": 36263,
+              "name": "Blacksmithing",
+              "type": "spell",
+              "url": "https://www.wowhead.com/tbc/spell=36263/stormherald"
             }
           ],
           "entity_id": 28442,
@@ -3758,143 +4269,23 @@
           "normalized_requirements": [
             {
               "confidence": "parsed_source_text",
-              "profession": "Blacksmithing",
-              "raw_text": "Profession: Master Hammersmith Blacksmithing (BoP)",
+              "raw_text": "Crafting: Blacksmithing (Bind on Pickup) (requires Master Hammersmithing)",
               "scope": "equip_or_use",
               "source_url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
-              "specialization": "Master Hammersmith",
-              "type": "profession_specialization"
+              "type": "unknown_text"
             }
           ],
           "rank_label": "Optional",
-          "source_links": [],
-          "source_text": "Profession: Master Hammersmith Blacksmithing (BoP)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 31984,
-                "name": "Merciless Gladiator's Greatsword",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=31984/merciless-gladiators-greatsword"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "PVP Season 2",
-            "Merciless Gladiator's Greatsword",
-            "- Arena Vendor"
-          ],
-          "entities": [
-            {
-              "id": 31984,
-              "name": "Merciless Gladiator's Greatsword",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=31984/merciless-gladiators-greatsword"
-            }
-          ],
-          "entity_id": 31984,
-          "entity_name": "Merciless Gladiator's Greatsword",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=31984/merciless-gladiators-greatsword",
-          "item_id": 31984,
-          "item_name": "Merciless Gladiator's Greatsword",
-          "item_url": "https://www.wowhead.com/tbc/item=31984/merciless-gladiators-greatsword",
-          "rank_label": "PVP Season 2",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/spell=36263/stormherald",
+              "text": "Blacksmithing"
             }
           ],
-          "source_text": "- Arena Vendor"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 30090,
-                "name": "World Breaker",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30090/world-breaker"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "World Breaker",
-            "Drop: Fathom-Lord Karathress (Serpentshrine Cavern)"
-          ],
-          "entities": [
-            {
-              "id": 30090,
-              "name": "World Breaker",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30090/world-breaker"
-            }
-          ],
-          "entity_id": 30090,
-          "entity_name": "World Breaker",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30090/world-breaker",
-          "item_id": 30090,
-          "item_name": "World Breaker",
-          "item_url": "https://www.wowhead.com/tbc/item=30090/world-breaker",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=21214/fathom-lord-karathress",
-              "text": "Fathom-Lord Karathress"
-            }
-          ],
-          "source_text": "Drop: Fathom-Lord Karathress (Serpentshrine Cavern)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
-                "id": 28773,
-                "name": "Gorehowl",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28773/gorehowl"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Gorehowl",
-            "Drop: Prince Malchezaar (Karazhan)"
-          ],
-          "entities": [
-            {
-              "id": 28773,
-              "name": "Gorehowl",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28773/gorehowl"
-            }
-          ],
-          "entity_id": 28773,
-          "entity_name": "Gorehowl",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28773/gorehowl",
-          "item_id": 28773,
-          "item_name": "Gorehowl",
-          "item_url": "https://www.wowhead.com/tbc/item=28773/gorehowl",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=15690/prince-malchezaar",
-              "text": "Prince Malchezaar"
-            }
-          ],
-          "source_text": "Drop: Prince Malchezaar (Karazhan)"
+          "source_text": "Crafting: Blacksmithing (Bind on Pickup) (requires Master Hammersmithing)",
+          "spell_id": 36263,
+          "spell_name": "Blacksmithing",
+          "spell_url": "https://www.wowhead.com/tbc/spell=36263/stormherald"
         }
       ],
       "slot": "Weapon"
@@ -3919,7 +4310,7 @@
           "cells": [
             "Best",
             "Libram of Avengement",
-            "Drop: The Maker (Heroic The Blood Furnace)"
+            "Drop: The Maker (Blood Furnace - Heroic)"
           ],
           "entities": [
             {
@@ -3943,7 +4334,53 @@
               "text": "The Maker"
             }
           ],
-          "source_text": "Drop: The Maker (Heroic The Blood Furnace)"
+          "source_text": "Drop: The Maker (Blood Furnace - Heroic)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 31033,
+                "name": "Libram of Righteous Power",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=31033/libram-of-righteous-power"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Good",
+            "Libram of Righteous Power",
+            "Quest: News of Victory Quest: News of Victory"
+          ],
+          "entities": [
+            {
+              "id": 31033,
+              "name": "Libram of Righteous Power",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=31033/libram-of-righteous-power"
+            }
+          ],
+          "entity_id": 31033,
+          "entity_name": "Libram of Righteous Power",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=31033/libram-of-righteous-power",
+          "item_id": 31033,
+          "item_name": "Libram of Righteous Power",
+          "item_url": "https://www.wowhead.com/tbc/item=31033/libram-of-righteous-power",
+          "rank_label": "Good",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/quest=10744/news-of-victory",
+              "text": "News of Victory"
+            },
+            {
+              "href": "https://www.wowhead.com/tbc/quest=10745/news-of-victory",
+              "text": "News of Victory"
+            }
+          ],
+          "source_text": "Quest: News of Victory Quest: News of Victory"
         },
         {
           "cell_entities": [
@@ -3959,7 +4396,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "Optional",
             "Libram of Hope",
             "Drop: Isalien (Dire Maul East)"
           ],
@@ -3978,7 +4415,7 @@
           "item_id": 22401,
           "item_name": "Libram of Hope",
           "item_url": "https://www.wowhead.com/tbc/item=22401/libram-of-hope",
-          "rank_label": "Option",
+          "rank_label": "Optional",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=16097/isalien",
@@ -4001,7 +4438,7 @@
             []
           ],
           "cells": [
-            "Optional Easy to Obtain",
+            "Optional",
             "Libram of Fervor",
             "World Drop - Azeroth"
           ],
@@ -4020,7 +4457,7 @@
           "item_id": 23203,
           "item_name": "Libram of Fervor",
           "item_url": "https://www.wowhead.com/tbc/item=23203/libram-of-fervor",
-          "rank_label": "Optional Easy to Obtain",
+          "rank_label": "Optional",
           "source_links": [],
           "source_text": "World Drop - Azeroth"
         }
@@ -4028,6 +4465,6 @@
       "slot": "Libram"
     }
   ],
-  "title": "Burning Crusade Classic Retribution Paladin DPS Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Retribution Paladin DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/retribution-paladin-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Icon of Unyielding Courage Phase 1 Item Level 115 Binds when picked up Unique-Equipped Trinket Requires Level 70 Equip: Improves hit rating by 30. Use: Your attacks ignore 600 of your enemies' armor for 20 sec. (2 Min Cooldown) Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:54+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28121,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 30.",
+        "stats": {
+          "hit_rating": 30.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Use: Your attacks ignore 600 of your enemies' armor for 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 30."
+    ],
+    "id": 28121,
+    "item_level": 115,
+    "name": "Icon of Unyielding Courage",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 30.0
+    },
+    "use_effects": [
+      "Use: Your attacks ignore 600 of your enemies' armor for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28121/icon-of-unyielding-courage"
+  },
+  "name": "Icon of Unyielding Courage",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28121/icon-of-unyielding-courage"
+}

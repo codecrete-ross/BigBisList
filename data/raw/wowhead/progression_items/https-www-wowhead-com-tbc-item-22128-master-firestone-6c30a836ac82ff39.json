@@ -1,0 +1,107 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This white armor of item level 66 goes in the \"Relic\" slot. In the Miscellaneous Armor category. Added in World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-09-04T23:50:48+00:00",
+  "inventory_slot": "Relic",
+  "item_id": 22128,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Enchants the main hand weapon with fire, granting each attack a chance to deal 116 to 174 additional fire damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Enchants the main hand weapon with fire, granting each attack a chance to deal 116 to 174 additional fire damage."
+    ],
+    "id": 22128,
+    "item_level": 66,
+    "name": "Master Firestone",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 27250,
+      "entity_name": "Create Firestone",
+      "source_url": "https://www.wowhead.com/tbc/item=22128/master-firestone",
+      "spell_id": 27250,
+      "type": "crafted"
+    },
+    "quality": "common",
+    "slot": "Relic",
+    "source_summary": "Crafted: Create Firestone",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 27250,
+        "entity_name": "Create Firestone",
+        "source_url": "https://www.wowhead.com/tbc/item=22128/master-firestone",
+        "spell_id": 27250,
+        "type": "crafted"
+      }
+    ],
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22128/master-firestone"
+  },
+  "name": "Master Firestone",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 27250,
+      "entity_name": "Create Firestone",
+      "source_url": "https://www.wowhead.com/tbc/item=22128/master-firestone",
+      "spell_id": 27250,
+      "type": "crafted"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [
+      {
+        "cat": 7,
+        "chrclass": 256,
+        "creates": [
+          22128,
+          1,
+          1
+        ],
+        "id": 27250,
+        "level": 66,
+        "name": "Create Firestone",
+        "nskillup": 1,
+        "popularity": 4,
+        "quality": 1,
+        "rank": "Rank 5",
+        "reagents": [
+          [
+            6265,
+            1
+          ]
+        ],
+        "reqclass": 256,
+        "schools": 4,
+        "skill": [
+          354
+        ],
+        "trainingcost": 51000
+      }
+    ],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22128/master-firestone"
+}

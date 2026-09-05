@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gauntlets of the Ancient Shadowmoon Phase 5 Item Level 154 Binds when picked up Hands Mail 672 Armor +30 Stamina +32 Intellect Red Socket Blue Socket Socket Bonus: +2 Spell Critical Strike Rating Durability 50 / 50 Requires Level 70 Equip: Improves spell critical strike rating by 28. Equip: Improves spell haste rating by 24. Equip: Increases damage and healing done by magical spells and effects by up to 43. Sell Price: 4 53 16",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:40+00:00",
+  "inventory_slot": null,
+  "item_id": 34350,
+  "item_stats": {
+    "armor": 672,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 28.",
+        "stats": {
+          "spell_crit_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 43.",
+        "stats": {
+          "spell_power": 43.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 28.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 43."
+    ],
+    "id": 34350,
+    "item_level": 154,
+    "name": "Gauntlets of the Ancient Shadowmoon",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "spell_critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 32.0,
+      "spell_crit_rating": 28.0,
+      "spell_power": 43.0,
+      "stamina": 30.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34350"
+  },
+  "name": "Gauntlets of the Ancient Shadowmoon",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34350"
+}

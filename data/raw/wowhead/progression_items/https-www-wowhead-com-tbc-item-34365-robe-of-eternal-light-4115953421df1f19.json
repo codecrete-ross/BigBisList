@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Robe of Eternal Light Phase 5 Item Level 159 Binds when picked up Chest Cloth 266 Armor +36 Stamina +34 Intellect Blue Socket Blue Socket Blue Socket Socket Bonus: 2 mana per 5 sec. Durability 100 / 100 Requires Level 70 Requires Tailoring (350) Equip: Improves spell haste rating by 40. Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects. Equip: Restores 16 mana per 5 sec. Sell Price: 6 10 77",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:44+00:00",
+  "inventory_slot": null,
+  "item_id": 34365,
+  "item_stats": {
+    "armor": 266,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 134.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 16 mana per 5 sec.",
+        "stats": {
+          "mp5": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects.",
+      "Equip: Restores 16 mana per 5 sec."
+    ],
+    "id": 34365,
+    "item_level": 159,
+    "name": "Robe of Eternal Light",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "blue",
+      "blue",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 134.0,
+      "intellect": 34.0,
+      "mp5": 16.0,
+      "stamina": 36.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34365/robe-of-eternal-light"
+  },
+  "name": "Robe of Eternal Light",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Robe of Eternal Light Phase 5 Item Level 159 Binds when picked up Chest Cloth 266 Armor +36 Stamina +34 Intellect Blue Socket Blue Socket Blue Socket Socket Bonus: 2 mana per 5 sec. Durability 100 / 100 Requires Level 70 Requires Tailoring (350) Equip: Improves spell haste rating by 40. Equip: Increases healing done by up to 134 and damage done by up to 45 for all magical spells and effects. Equip: Restores 16 mana per 5 sec. Sell Price: 6 10 77",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=34365/robe-of-eternal-light",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34365/robe-of-eternal-light"
+}

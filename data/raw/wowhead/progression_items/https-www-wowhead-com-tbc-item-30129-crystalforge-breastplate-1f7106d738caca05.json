@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crystalforge Breastplate Phase 2 Item Level 133 Binds when picked up Chest Plate 1668 Armor +56 Strength +40 Stamina +20 Intellect Red Socket Yellow Socket Yellow Socket Socket Bonus: +4 Strength Durability 165 / 165 Classes: Paladin Requires Level 70 Equip: Improves hit rating by 23. Equip: Improves critical strike rating by 21. Crystalforge Battlegear (0/5) Crystalforge Breastplate Crystalforge Gauntlets Crystalforge Greaves Crystalforge Shoulderbraces Crystalforge War-Helm (2) Set : Reduces the cost of your Judgements by 35. (4) Set : Each time you cast a Judgement, there is a chance it will heal all nearby party members for 244 to 256. (Proc chance: 6%)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:43+00:00",
+  "inventory_slot": null,
+  "item_id": 30129,
+  "item_stats": {
+    "armor": 1668,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 23.",
+        "stats": {
+          "hit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 21.",
+        "stats": {
+          "crit_rating": 21.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 23.",
+      "Equip: Improves critical strike rating by 21."
+    ],
+    "id": 30129,
+    "item_level": 133,
+    "name": "Crystalforge Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "socket_bonus": {
+      "strength": 4.0
+    },
+    "sockets": [
+      "red",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 21.0,
+      "hit_rating": 23.0,
+      "intellect": 20.0,
+      "stamina": 40.0,
+      "strength": 56.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate"
+  },
+  "name": "Crystalforge Breastplate",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30129/crystalforge-breastplate"
+}

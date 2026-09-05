@@ -1,0 +1,51 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Frostfire Shoulderpads Phase 1 Item Level 86 Binds when picked up Shoulder Cloth 111 Armor +17 Stamina +18 Intellect +9 Spirit Durability 60 / 60 Requires Level 60 Equip: Increases damage and healing done by magical spells and effects by up to 36. Frostfire Regalia (0/9) Frostfire Belt Frostfire Bindings Frostfire Circlet Frostfire Gloves Frostfire Leggings Frostfire Robe Frostfire Sandals Frostfire Shoulderpads Frostfire Ring (2) Set : Reduces cooldown on your Evocation by 1 minute. (4) Set : Gives your Mage Armor a chance when struck by a harmful spell to increase resistance against that school of magic by 35 for 30 sec. (Proc chance: 20%) (6) Set : Your damage spells have a chance to cause your target to take up to 200 increased damage from subsequent spells. (Proc chance: 20%) (8) Set : Your damage spells have a chance to displace you, causing the next spell cast to generate no threat. (Proc chance: 15%) Sell Price: 2 59 46",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:50:57+00:00",
+  "inventory_slot": null,
+  "item_id": 22499,
+  "item_stats": {
+    "armor": 111,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 36.",
+        "stats": {
+          "spell_power": 36.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 36."
+    ],
+    "id": 22499,
+    "item_level": 86,
+    "name": "Frostfire Shoulderpads",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 60,
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_power": 36.0,
+      "spirit": 9.0,
+      "stamina": 17.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22499/frostfire-shoulderpads"
+  },
+  "name": "Frostfire Shoulderpads",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22499/frostfire-shoulderpads"
+}

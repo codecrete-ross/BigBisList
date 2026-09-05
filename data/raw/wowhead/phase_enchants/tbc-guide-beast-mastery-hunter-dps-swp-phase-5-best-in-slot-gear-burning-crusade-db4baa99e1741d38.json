@@ -1,0 +1,267 @@
+{
+  "bindings": [
+    {
+      "class": "Hunter",
+      "phase": "SWP",
+      "spec": "Beast mastery"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 34333,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "entity": {
+            "id": 23548,
+            "name": "Might of the Scourge",
+            "type": "item"
+          },
+          "equipment_item_id": 31006,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 29483
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 34397,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29535,
+            "name": "Nethercobra Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 34188,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35490
+        },
+        {
+          "entity": {
+            "id": 27951,
+            "name": "Enchant Boots - Dexterity",
+            "type": "spell"
+          },
+          "equipment_item_id": 34570,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27951
+        },
+        {
+          "entity": {
+            "id": 34002,
+            "name": "Enchant Bracer - Assault",
+            "type": "spell"
+          },
+          "equipment_item_id": 34443,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 34002
+        },
+        {
+          "entity": {
+            "id": 25080,
+            "name": "Enchant Gloves - Superior Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34370,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25080
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34241,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "equipment_item_id": 34331,
+          "slot": "Main Hand",
+          "spell_id": 42620
+        },
+        {
+          "equipment_item_id": 34329,
+          "slot": "Off Hand",
+          "spell_id": 42620
+        },
+        {
+          "entity": {
+            "id": 23766,
+            "name": "Stabilized Eternium Scope",
+            "type": "item"
+          },
+          "equipment_item_id": 34334,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ranged",
+          "spell_id": 30260
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Beast Mastery Hunter DPS in Phase 5",
+      "planner": "hunter/orc/A0YRUSACAFJQEiQxBR8FBSASBf8AAIU5gUCGHYp8AIFrIH6ZAgCFgYNAeR5zKwB9zSB91IVghl1tOAB91CCBd0B9wgYghvUAfcKHYIWMiqIAfcIgfcJAfcKIIIcKbS8AfdyJIIaLhNIAfcKKQIZCYfgAfcIgfcILAIWNDACGOQ0AhCcOAIZ7jyCFwYTUAH3ckECGG6Z8AH3NIH3NkSCGGaZ8AH3CkgCGHnY0"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29192,
+            "name": "Glyph of Ferocity",
+            "type": "item"
+          },
+          "equipment_item_id": 34333,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35452
+        },
+        {
+          "entity": {
+            "id": 23548,
+            "name": "Might of the Scourge",
+            "type": "item"
+          },
+          "equipment_item_id": 31006,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 29483
+        },
+        {
+          "entity": {
+            "id": 27960,
+            "name": "Exceptional Stats",
+            "type": "spell"
+          },
+          "equipment_item_id": 34397,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 27960
+        },
+        {
+          "entity": {
+            "id": 29535,
+            "name": "Nethercobra Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 34188,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35490
+        },
+        {
+          "entity": {
+            "id": 27951,
+            "name": "Enchant Boots - Dexterity",
+            "type": "spell"
+          },
+          "equipment_item_id": 34570,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 27951
+        },
+        {
+          "entity": {
+            "id": 34002,
+            "name": "Enchant Bracer - Assault",
+            "type": "spell"
+          },
+          "equipment_item_id": 34443,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Wrist",
+          "spell_id": 34002
+        },
+        {
+          "entity": {
+            "id": 25080,
+            "name": "Enchant Gloves - Superior Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34370,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 25080
+        },
+        {
+          "entity": {
+            "id": 34004,
+            "name": "Enchant Cloak - Greater Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34241,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 34004
+        },
+        {
+          "entity": {
+            "id": 27977,
+            "name": "Enchant 2H Weapon - Major Agility",
+            "type": "spell"
+          },
+          "equipment_item_id": 34183,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Two Hand",
+          "spell_id": 27977
+        },
+        {
+          "entity": {
+            "id": 23766,
+            "name": "Stabilized Eternium Scope",
+            "type": "item"
+          },
+          "equipment_item_id": 34196,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ranged",
+          "spell_id": 30260
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Beast Mastery Hunter DPS in Phase 5",
+      "planner": "hunter/orc/A0YRUSACAFJQEiQxBR8FBSASBf8AAIU5gUCGHYp8AIFrIH6ZAiCGNgB9zYNAeR5zKwB9zSB91IVghl1tOAB91CCBd0B9wgYghvUAfcKHYIWMiqIAfcIgfcJAfcKIIIcKbS8AfdyJIIaLhNIAfcKKQIZCYfgAfcIgfcILAIWNDACGOQ0AcJ4OAIZ7jyCFwYTUAH3ckCCFh21JAH3NkgCFlHY0"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Best In Slot Gear for Beast Mastery Hunter DPS in Phase 5",
+      "text": "Aldor vs. Scryer for Hunter DPS in Phase 5\r\nIn Phase 5,  is still the best faction choice for Hunters; choosing  is not the end of the world, as the difference is very minor. There are no new key items that we benefit from in Phase 5. The only relevant item is still the shoulder enchant  or ."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:48:50+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Burning Crusade Classic Beast Mastery Hunter DPS Best in Slot (BiS) Phase 5 Gear Guide - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/beast-mastery-hunter-dps-swp-phase-5-best-in-slot-gear-burning-crusade"
+}

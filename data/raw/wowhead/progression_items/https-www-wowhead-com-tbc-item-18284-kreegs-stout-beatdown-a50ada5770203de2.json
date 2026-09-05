@@ -1,0 +1,152 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "It is a quest reward and sold by NPCs. In the Consumables category. An item from Classic World of Warcraft. Always up to date with the latest patch.",
+  "fetched_at": "2026-09-04T23:50:23+00:00",
+  "inventory_slot": null,
+  "item_id": 18284,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases Spirit by 25, but decreases Intelligence by 5 for 15 min. Smoooooth. Max Stack: 10",
+        "type": "use"
+      }
+    ],
+    "id": 18284,
+    "item_level": 1,
+    "name": "Kreeg's Stout Beatdown",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 5528,
+      "entity_name": "The Gordok Taste Test",
+      "quest_id": 5528,
+      "source_url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown",
+      "type": "quest",
+      "zone": "Dire Maul"
+    },
+    "quality": "unknown",
+    "source_summary": "Quest: The Gordok Taste Test +1",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 5528,
+        "entity_name": "The Gordok Taste Test",
+        "quest_id": 5528,
+        "source_url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown",
+        "type": "quest",
+        "zone": "Dire Maul"
+      },
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 14322,
+        "entity_name": "Stomper Kreeg",
+        "location_area": "Dire Maul",
+        "price_copper": 1500,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown",
+        "type": "vendor",
+        "vendor_id": 14322,
+        "zone": "Dire Maul"
+      }
+    ],
+    "use_effects": [
+      "Use: Increases Spirit by 25, but decreases Intelligence by 5 for 15 min. Smoooooth. Max Stack: 10"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown"
+  },
+  "name": "Kreeg's Stout Beatdown",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 5528,
+      "entity_name": "The Gordok Taste Test",
+      "quest_id": 5528,
+      "source_url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown",
+      "type": "quest",
+      "zone": "Dire Maul"
+    },
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 14322,
+      "entity_name": "Stomper Kreeg",
+      "location_area": "Dire Maul",
+      "price_copper": 1500,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown",
+      "type": "vendor",
+      "vendor_id": 14322,
+      "zone": "Dire Maul"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 2557,
+        "category2": 2,
+        "id": 5528,
+        "itemrewards": [
+          [
+            18269,
+            5
+          ],
+          [
+            18284,
+            5
+          ]
+        ],
+        "level": 60,
+        "name": "The Gordok Taste Test",
+        "popularity": 4,
+        "reqlevel": 56,
+        "side": 3,
+        "type": 81,
+        "wflags": 16
+      }
+    ],
+    "sold-by": [
+      {
+        "boss": 1,
+        "classification": 1,
+        "cost": [
+          [
+            1500
+          ]
+        ],
+        "id": 14322,
+        "location": [
+          2557
+        ],
+        "maxlevel": 59,
+        "minlevel": 59,
+        "name": "Stomper Kreeg",
+        "popularity": 11,
+        "react": [
+          1,
+          1
+        ],
+        "stack": 1,
+        "stock": -1,
+        "tag": "The Drunk",
+        "type": 7
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=18284/kreegs-stout-beatdown"
+}

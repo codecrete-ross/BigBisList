@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:57+00:00",
+  "fetched_at": "2026-09-04T23:49:29+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -667,33 +667,33 @@
             [
               {
                 "id": 28171,
-                "name": "Spymistress' Wristguards",
+                "name": "Spymistress's Wristguards",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards"
+                "url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Spymistress' Wristguards",
+            "Spymistress's Wristguards",
             "The Soul Devices"
           ],
           "entities": [
             {
               "id": 28171,
-              "name": "Spymistress' Wristguards",
+              "name": "Spymistress's Wristguards",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards"
+              "url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards"
             }
           ],
           "entity_id": 28171,
-          "entity_name": "Spymistress' Wristguards",
+          "entity_name": "Spymistress's Wristguards",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards",
+          "entity_url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards",
           "item_id": 28171,
-          "item_name": "Spymistress' Wristguards",
-          "item_url": "https://www.wowhead.com/tbc/item=28171/spymistress-wristguards",
+          "item_name": "Spymistress's Wristguards",
+          "item_url": "https://www.wowhead.com/tbc/item=28171/spymistresss-wristguards",
           "rank_label": "Option",
           "source_links": [
             {
@@ -1585,9 +1585,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Exalted with The Violet Eye",
+              "reputation": "The Violet Eye",
               "scope": "source_access",
               "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Option",
@@ -2470,7 +2473,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Logistics Officer Ulrike / Quartermaster Urgronn ( Honor Hold / Thrallmar Exalted)",
-              "reputation": "Honor Hold / Thrallmar",
+              "reputation": "Honor Hold",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Logistics Officer Ulrike / Quartermaster Urgronn ( Honor Hold / Thrallmar Exalted)",
+              "reputation": "Thrallmar",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/rogue-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
               "standing": "Exalted",

@@ -1,0 +1,34 @@
+{
+  "bindings": [
+    {
+      "class": "Priest",
+      "phase": "T4",
+      "spec": "Holy"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28887,
+            "name": "Greater Inscription of Faith",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35404
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Priest Healer Choose Aldor or Scryer for BiS in TBC Classic Phase 1?",
+      "text": "Although the  enchant is moderately better than , the choice between  and  is fairly unimportant for healers.  It's worth mentioning that , which is a solid pre-bis option, is only available to Aldor players."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:25+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Priest Healing Phase 1 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/priest-healer-karazhan-best-in-slot-gear-burning-crusade-classic-wow"
+}

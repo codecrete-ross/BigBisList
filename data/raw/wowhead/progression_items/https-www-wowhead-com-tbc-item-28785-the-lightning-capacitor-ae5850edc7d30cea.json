@@ -1,0 +1,42 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "The Lightning Capacitor Phase 1 Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Equip: You gain an Electrical Charge each time you cause a damaging spell critical strike. When you reach 3 Electrical Charges, they will release, firing a Lightning Bolt for 694 to 806 damage. Electrical Charge cannot be gained more often than once every 2.5 sec. (2.5s cooldown) Sell Price: 9 11 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:57+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28785,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: You gain an Electrical Charge each time you cause a damaging spell critical strike. When you reach 3 Electrical Charges, they will release, firing a Lightning Bolt for 694 to 806 damage. Electrical Charge cannot be gained more often than once every 2.5 sec. (2.5s cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: You gain an Electrical Charge each time you cause a damaging spell critical strike. When you reach 3 Electrical Charges, they will release, firing a Lightning Bolt for 694 to 806 damage. Electrical Charge cannot be gained more often than once every 2.5 sec. (2.5s cooldown)"
+    ],
+    "id": 28785,
+    "item_level": 115,
+    "name": "The Lightning Capacitor",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28785/the-lightning-capacitor"
+  },
+  "name": "The Lightning Capacitor",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28785/the-lightning-capacitor"
+}

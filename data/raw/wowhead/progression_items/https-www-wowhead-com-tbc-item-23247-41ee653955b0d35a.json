@@ -1,0 +1,40 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Burning Blossom Item Level 1 Binds when picked up Duration: 14 days (real time) Use: Right Click near a Fire Festival Bonfire to receive the Fire Festival Fury buff, or to reignite an extinguished bonfire. These are also used as currency at Midsummer Suppliers and Merchants. Max Stack: 250",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:20+00:00",
+  "inventory_slot": null,
+  "item_id": 23247,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Right Click near a Fire Festival Bonfire to receive the Fire Festival Fury buff, or to reignite an extinguished bonfire. These are also used as currency at Midsummer Suppliers and Merchants. Max Stack: 250",
+        "type": "use"
+      }
+    ],
+    "id": 23247,
+    "item_level": 1,
+    "name": "Burning Blossom",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Right Click near a Fire Festival Bonfire to receive the Fire Festival Fury buff, or to reignite an extinguished bonfire. These are also used as currency at Midsummer Suppliers and Merchants. Max Stack: 250"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23247"
+  },
+  "name": "Burning Blossom",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23247"
+}

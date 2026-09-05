@@ -1,0 +1,70 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Royal Shadowsong Amethyst Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Revered Use: Teaches you how to cut a Royal Shadowsong Amethyst. Sell Price: 1 50 Royal Shadowsong Amethyst Item Level 100 +11 Healing +4 Spell Damage and +2 Mana every 5 seconds \"Matches a Red or Blue Socket.\" Sell Price: 6 Requires Shadowsong Amethyst",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:13:25+00:00",
+  "inventory_slot": null,
+  "item_id": 32302,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Royal Shadowsong Amethyst.",
+        "type": "use"
+      }
+    ],
+    "id": 32302,
+    "item_level": 75,
+    "name": "Design: Royal Shadowsong Amethyst",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Royal Shadowsong Amethyst."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32302"
+  },
+  "name": "Design: Royal Shadowsong Amethyst",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Design: Royal Shadowsong Amethyst Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Revered",
+      "reputation": "The Scale of the Sands",
+      "scope": "learn_recipe",
+      "source_url": "https://www.wowhead.com/tbc/item=32302",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Royal Shadowsong Amethyst Phase 3 Item Level 75 Binds when picked up Requires Jewelcrafting (375) Requires The Scale of the Sands - Revered",
+      "scope": "learn_recipe",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=32302",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "reagent_item_ids": [
+    32230
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 32216,
+  "teaches_spell_ids": [
+    7679,
+    21623,
+    39732
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/32302",
+  "url": "https://www.wowhead.com/tbc/item=32302"
+}

@@ -1,0 +1,84 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Pattern: Hurricane Boots Phase 2 Item Level 75 Requires Leatherworking (375) Use: Teaches you how to make Hurricane Boots. Sell Price: 6 Hurricane Boots Item Level 128 Binds when picked up Feet Mail 619 Armor +25 Stamina +26 Intellect Durability 70 / 70 Requires Level 70 Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 39. Equip: Restores 6 mana per 5 sec. Sell Price: 5 75 19 Requires Primal Nether (2), Heavy Knothide Leather (4), Primal Water (10), Wind Scales (6), Rune Thread (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:07+00:00",
+  "inventory_slot": null,
+  "item_id": 30308,
+  "item_stats": {
+    "armor": 619,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make Hurricane Boots.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 26.",
+        "stats": {
+          "spell_crit_rating": 26.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+        "stats": {
+          "spell_power": 39.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 26.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+      "Equip: Restores 6 mana per 5 sec."
+    ],
+    "id": 30308,
+    "item_level": 75,
+    "name": "Pattern: Hurricane Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 26.0,
+      "mp5": 6.0,
+      "spell_crit_rating": 26.0,
+      "spell_power": 39.0,
+      "stamina": 25.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make Hurricane Boots."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30308"
+  },
+  "name": "Pattern: Hurricane Boots",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Hurricane Boots Phase 2 Item Level 75 Requires Leatherworking (375) Use: Teaches you how to make Hurricane Boots. Sell Price: 6 Hurricane Boots Item Level 128 Binds when picked up Feet Mail 619 Armor +25 Stamina +26 Intellect Durability 70 / 70 Requires Level 70 Equip: Improves spell critical strike rating by 26. Equip: Increases damage and healing done by magical spells and effects by up to 39. Equip: Restores 6 mana per 5 sec. Sell Price: 5 75 19 Requires Primal Nether (2), Heavy Knothide Leather (4), Primal Water (10), Wind Scales (6), Rune Thread (2)",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=30308",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30308"
+}

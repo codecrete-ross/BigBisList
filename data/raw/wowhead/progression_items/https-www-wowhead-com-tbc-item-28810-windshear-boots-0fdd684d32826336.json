@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Windshear Boots Phase 1 Item Level 125 Binds when picked up Feet Mail 605 Armor +37 Stamina +32 Intellect Durability 70 / 70 Requires Level 70 Equip: Improves spell hit rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 39. Sell Price: 5 83 88",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:00+00:00",
+  "inventory_slot": null,
+  "item_id": 28810,
+  "item_stats": {
+    "armor": 605,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 18.",
+        "stats": {
+          "spell_hit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 39.",
+        "stats": {
+          "spell_power": 39.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 18.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 39."
+    ],
+    "id": 28810,
+    "item_level": 125,
+    "name": "Windshear Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 32.0,
+      "spell_hit_rating": 18.0,
+      "spell_power": 39.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28810/windshear-boots"
+  },
+  "name": "Windshear Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28810/windshear-boots"
+}

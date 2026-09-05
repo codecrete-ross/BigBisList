@@ -1,0 +1,69 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Fel Edged Battleaxe Phase 1 Item Level 105 Binds when equipped One-Hand Axe 128 - 239 Damage Speed 2.20 (83.41 damage per second) Red Socket Socket Bonus: +3 Stamina Durability 105 / 105 Requires Level 70 Equip: Improves hit rating by 14. Equip: Improves critical strike rating by 21. Sell Price: 10 85 62",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:24+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 23542,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 83.41,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 14.",
+        "stats": {
+          "hit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 21.",
+        "stats": {
+          "crit_rating": 21.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 14.",
+      "Equip: Improves critical strike rating by 21."
+    ],
+    "id": 23542,
+    "item_level": 105,
+    "name": "Fel Edged Battleaxe",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "socket_bonus": {
+      "stamina": 3.0
+    },
+    "sockets": [
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 21.0,
+      "hit_rating": 14.0
+    },
+    "weapon_max_damage": 239,
+    "weapon_min_damage": 128,
+    "weapon_speed": 2.2,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23542/fel-edged-battleaxe"
+  },
+  "name": "Fel Edged Battleaxe",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23542/fel-edged-battleaxe"
+}

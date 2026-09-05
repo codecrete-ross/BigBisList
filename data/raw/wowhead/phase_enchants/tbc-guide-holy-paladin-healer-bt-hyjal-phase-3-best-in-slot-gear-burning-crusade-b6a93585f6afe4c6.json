@@ -1,0 +1,167 @@
+{
+  "bindings": [
+    {
+      "class": "Paladin",
+      "phase": "T6",
+      "spec": "Holy"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29190,
+            "name": "Arcanum of Renewal",
+            "type": "item"
+          },
+          "equipment_item_id": 30988,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35445
+        },
+        {
+          "entity": {
+            "id": 28887,
+            "name": "Greater Inscription of Faith",
+            "type": "item"
+          },
+          "equipment_item_id": 30996,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35404
+        },
+        {
+          "entity": {
+            "id": 33991,
+            "name": "Versatility Prime",
+            "type": "spell"
+          },
+          "equipment_item_id": 30992,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Chest",
+          "spell_id": 33991
+        },
+        {
+          "entity": {
+            "id": 24276,
+            "name": "Golden Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30994,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31370
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 32243,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "equipment_item_id": 30862,
+          "slot": "Wrist",
+          "spell_id": 27911
+        },
+        {
+          "entity": {
+            "id": 33999,
+            "name": "Enchant Gloves - Major Healing",
+            "type": "spell"
+          },
+          "equipment_item_id": 30112,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33999
+        },
+        {
+          "entity": {
+            "id": 27926,
+            "name": "Enchant Ring - Healing Power",
+            "type": "spell"
+          },
+          "equipment_item_id": 32238,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27926
+        },
+        {
+          "entity": {
+            "id": 27926,
+            "name": "Enchant Ring - Healing Power",
+            "type": "spell"
+          },
+          "equipment_item_id": 29309,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27926
+        },
+        {
+          "entity": {
+            "id": 27962,
+            "name": "Enchant Cloak - Major Resistance",
+            "type": "spell"
+          },
+          "equipment_item_id": 34012,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Back",
+          "spell_id": 27962
+        },
+        {
+          "entity": {
+            "id": 34010,
+            "name": "Major Healing",
+            "type": "spell"
+          },
+          "equipment_item_id": 32500,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 34010
+        },
+        {
+          "entity": {
+            "id": 27945,
+            "name": "Enchant Shield - Intellect",
+            "type": "spell"
+          },
+          "equipment_item_id": 32255,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Off Hand",
+          "spell_id": 27945
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Holy Paladin Healing in Phase 3",
+      "planner": "paladin/human/A0YPBVAxIVIBMlMQUfUAIx9fgUB5DIp1AH3DIGUtAgB-coNAeRSKTAB9wyB9w4VgeRCExwB92CB920B92wZAeLEAfcMgfcOHIHkSeooAfdiIAH3zhNiJIHiObQcAfcOKQHWghM8AfcMgfcOLAH3ubRaMAHJ9bRYNAHLADgB-8I8AhNxtOpAAfvSE2pEAff9tKRIAb7A"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28887,
+            "name": "Greater Inscription of Faith",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35404
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Should Holy Paladin Healing Choose Aldor or Scryer for BiS in TBC Classic Phase 3?",
+      "text": "The Aldor shoulder enchant is  compared to the Scryers getting . The difference here is 11 healing power gained while losing 2 MP5. While the Aldor enchant is superior, it's not a large enough margin to definitively say they are better and worth changing from the Scryers if you have already gone that route."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:20+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Holy Paladin Healing Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/holy-paladin-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

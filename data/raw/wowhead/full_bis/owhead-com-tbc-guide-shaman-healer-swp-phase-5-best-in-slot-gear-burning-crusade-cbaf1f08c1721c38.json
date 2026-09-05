@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:59+00:00",
+  "fetched_at": "2026-09-04T23:49:31+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -1690,7 +1690,7 @@
           "cells": [
             "Option",
             "Hauberk of the Empire's Champion",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -1710,11 +1710,11 @@
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [
@@ -3712,7 +3712,7 @@
             [
               {
                 "id": 30893,
-                "name": "Sun-Touched Chain Leggings",
+                "name": "Sun-touched Chain Leggings",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30893/sun-touched-chain-leggings"
               }
@@ -3721,23 +3721,23 @@
           ],
           "cells": [
             "Option",
-            "Sun-Touched Chain Leggings",
+            "Sun-touched Chain Leggings",
             "Drop: Kaz'rogal (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30893,
-              "name": "Sun-Touched Chain Leggings",
+              "name": "Sun-touched Chain Leggings",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30893/sun-touched-chain-leggings"
             }
           ],
           "entity_id": 30893,
-          "entity_name": "Sun-Touched Chain Leggings",
+          "entity_name": "Sun-touched Chain Leggings",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30893/sun-touched-chain-leggings",
           "item_id": 30893,
-          "item_name": "Sun-Touched Chain Leggings",
+          "item_name": "Sun-touched Chain Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=30893/sun-touched-chain-leggings",
           "rank_label": "Option",
           "source_links": [
@@ -4097,7 +4097,7 @@
             [
               {
                 "id": 33471,
-                "name": "Two-Toed Sandals",
+                "name": "Two-toed Sandals",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=33471/two-toed-sandals"
               }
@@ -4106,32 +4106,32 @@
           ],
           "cells": [
             "Option",
-            "Two-Toed Sandals",
-            "Drop: Daakara (Zul'Aman)"
+            "Two-toed Sandals",
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
               "id": 33471,
-              "name": "Two-Toed Sandals",
+              "name": "Two-toed Sandals",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=33471/two-toed-sandals"
             }
           ],
           "entity_id": 33471,
-          "entity_name": "Two-Toed Sandals",
+          "entity_name": "Two-toed Sandals",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=33471/two-toed-sandals",
           "item_id": 33471,
-          "item_name": "Two-Toed Sandals",
+          "item_name": "Two-toed Sandals",
           "item_url": "https://www.wowhead.com/tbc/item=33471/two-toed-sandals",
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [
@@ -5547,7 +5547,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
-              "reputation": "Thrallmar / Honor Hold",
+              "reputation": "Thrallmar",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/shaman-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Quartermaster Urgronn / Logistics Officer Ulrike (Thrallmar / Honor Hold Revered)",
+              "reputation": "Honor Hold",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/shaman-healer-swp-phase-5-best-in-slot-gear-burning-crusade",
               "standing": "Revered",
@@ -6555,7 +6565,7 @@
           "cells": [
             "Option",
             "Dark Blessing",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -6575,11 +6585,11 @@
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [

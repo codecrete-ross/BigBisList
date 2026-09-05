@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Balebrew Charm Item Level 128 Binds when picked up Unique Trinket +45 Stamina Requires Level 70 Use: Right Click to summon the Black Brewmaiden, who will smite your foes with your empty tankards. Wave at her for Brewfest Brew! (10 Min Cooldown)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:01:02+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 37128,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Right Click to summon the Black Brewmaiden, who will smite your foes with your empty tankards. Wave at her for Brewfest Brew! (10 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 37128,
+    "item_level": 128,
+    "name": "Balebrew Charm",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "stamina": 45.0
+    },
+    "use_effects": [
+      "Use: Right Click to summon the Black Brewmaiden, who will smite your foes with your empty tankards. Wave at her for Brewfest Brew! (10 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=37128/balebrew-charm"
+  },
+  "name": "Balebrew Charm",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=37128/balebrew-charm"
+}

@@ -1,0 +1,147 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "This alchemy recipe is used for the Alchemy profession. It is looted from Blackrock Slayer. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+  "fetched_at": "2026-09-04T23:50:19+00:00",
+  "inventory_slot": null,
+  "item_id": 13476,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Mighty Rage Potion.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Increases Rage by 45 to 75 and increases Strength by 60 for 20 sec. (2 Min Cooldown) Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 13476,
+    "item_level": 51,
+    "name": "Recipe: Mighty Rage Potion",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1167,
+      "drop_percent": 3.78,
+      "entity_id": 7027,
+      "entity_name": "Blackrock Slayer",
+      "out_of": 30874,
+      "source_url": "https://www.wowhead.com/tbc/item=13476",
+      "type": "drop"
+    },
+    "quality": "unknown",
+    "required_level": 46,
+    "restrictions": {
+      "classes": [
+        "Warrior"
+      ]
+    },
+    "source_summary": "Drop: Blackrock Slayer 3.8%",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "content_type": "other",
+        "count": 1167,
+        "drop_percent": 3.78,
+        "entity_id": 7027,
+        "entity_name": "Blackrock Slayer",
+        "out_of": 30874,
+        "source_url": "https://www.wowhead.com/tbc/item=13476",
+        "type": "drop"
+      }
+    ],
+    "use_effects": [
+      "Use: Teaches you how to make a Mighty Rage Potion.",
+      "Use: Increases Rage by 45 to 75 and increases Strength by 60 for 20 sec. (2 Min Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=13476"
+  },
+  "name": "Recipe: Mighty Rage Potion",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Mighty Rage Potion Item Level 51 Requires Alchemy (255) Use: Teaches you how to make a Mighty Rage Potion. Sell Price: 30 Dropped by: Blackrock Slayer Drop Chance: 3.78% Mighty Rage Potion Item Level 51 Classes: Warrior Requires Level 46 Use: Increases Rage by 45 to 75 and increases Strength by 60 for 20 sec. (2 Min Cooldown) Max Stack: 5 Sell Price: 5 Requires Gromsblood (3), Crystal Vial This alchemy recipe is used for the Alchemy profession. It is looted from Blackrock Slayer. In the Alchemy Recipes category. An item from Classic World of Warcraft.",
+      "scope": "equip_or_use",
+      "skill": 255,
+      "source_url": "https://www.wowhead.com/tbc/item=13476",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "content_type": "other",
+      "count": 1167,
+      "drop_percent": 3.78,
+      "entity_id": 7027,
+      "entity_name": "Blackrock Slayer",
+      "out_of": 30874,
+      "source_url": "https://www.wowhead.com/tbc/item=13476",
+      "type": "drop"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [
+      {
+        "classification": 0,
+        "count": 1167,
+        "id": 7027,
+        "itemSeasonPhaseData": {
+          "0": {
+            "0": {
+              "0": {
+                "count": 1167,
+                "outof": 30874
+              }
+            }
+          }
+        },
+        "location": [
+          46
+        ],
+        "maxlevel": 57,
+        "minlevel": 56,
+        "modes": {
+          "0": {
+            "count": 1167,
+            "outof": 30874
+          },
+          "mode": [
+            0
+          ]
+        },
+        "name": "Blackrock Slayer",
+        "outof": 30874,
+        "pctstack": null,
+        "personal_loot": 0,
+        "react": [
+          -1,
+          -1
+        ],
+        "type": 7
+      }
+    ],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    17552,
+    17528
+  ],
+  "url": "https://www.wowhead.com/tbc/item=13476"
+}

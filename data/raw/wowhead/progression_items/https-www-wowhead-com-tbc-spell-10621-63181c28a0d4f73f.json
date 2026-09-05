@@ -1,0 +1,101 @@
+{
+  "description": "In the Profession Spells category. Added in Classic World of Warcraft. Always up to date with the latest patch (2.5.6).",
+  "fetched_at": "2026-09-05T00:08:23+00:00",
+  "name": "Wolfshead Helm",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "profession": "Leatherworking",
+      "raw_text": "Leatherworking",
+      "scope": "learn_recipe",
+      "skill": 225,
+      "source_url": "https://www.wowhead.com/tbc/spell=10621",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell_recipe",
+      "entity_id": "profession_trainer",
+      "entity_name": "Leatherworking Trainer",
+      "profession": "Leatherworking",
+      "required_skill": 225,
+      "requirements": [
+        {
+          "confidence": "wowhead_spell_recipe",
+          "profession": "Leatherworking",
+          "raw_text": "Leatherworking",
+          "scope": "learn_recipe",
+          "skill": 225,
+          "source_url": "https://www.wowhead.com/tbc/spell=10621",
+          "type": "profession"
+        }
+      ],
+      "source_url": "https://www.wowhead.com/tbc/spell=10621",
+      "type": "trainer"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 11,
+        "colors": [
+          225,
+          245,
+          255,
+          265
+        ],
+        "creates": [
+          8345,
+          1,
+          1
+        ],
+        "id": 10621,
+        "learnedat": 225,
+        "level": 0,
+        "name": "Wolfshead Helm",
+        "nskillup": 1,
+        "quality": 3,
+        "reagents": [
+          [
+            4304,
+            18
+          ],
+          [
+            8368,
+            2
+          ],
+          [
+            8146,
+            8
+          ],
+          [
+            8343,
+            4
+          ],
+          [
+            8172,
+            2
+          ]
+        ],
+        "schools": 1,
+        "skill": [
+          165
+        ],
+        "specialization": 10660,
+        "trainingcost": 10000
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 10621,
+  "url": "https://www.wowhead.com/tbc/spell=10621"
+}

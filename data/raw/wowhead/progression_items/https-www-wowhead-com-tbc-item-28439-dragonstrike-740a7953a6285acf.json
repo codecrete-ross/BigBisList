@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Dragonstrike Phase 1 Item Level 136 Binds when picked up Main Hand Mace 184 - 343 Damage Speed 2.70 (97.59 damage per second) +19 Stamina Durability 105 / 105 Requires Level 70 Requires Master Hammersmith Chance on hit: Increases your haste rating by 212 for 10 sec. Sell Price: 12 99 41",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:24+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 28439,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 97.59,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Increases your haste rating by 212 for 10 sec.",
+        "stats": {
+          "haste_rating": 212.0
+        },
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Increases your haste rating by 212 for 10 sec."
+    ],
+    "id": 28439,
+    "item_level": 136,
+    "name": "Dragonstrike",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "stamina": 19.0
+    },
+    "weapon_max_damage": 343,
+    "weapon_min_damage": 184,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28439/dragonstrike"
+  },
+  "name": "Dragonstrike",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Dragonstrike Phase 1 Item Level 136 Binds when picked up Main Hand Mace 184 - 343 Damage Speed 2.70 (97.59 damage per second) +19 Stamina Durability 105 / 105 Requires Level 70 Requires Master Hammersmith Chance on hit: Increases your haste rating by 212 for 10 sec. Sell Price: 12 99 41",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28439/dragonstrike",
+      "specialization": "Master Hammersmith",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28439/dragonstrike"
+}

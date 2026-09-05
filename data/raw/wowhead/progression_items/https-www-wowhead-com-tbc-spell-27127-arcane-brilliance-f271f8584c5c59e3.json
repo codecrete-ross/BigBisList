@@ -1,0 +1,71 @@
+{
+  "description": "Infuses the target's party with brilliance, increasing their Intellect by 40 for 1 hour. In the Arcane Abilities category. Requires Mage. A spell.",
+  "fetched_at": "2026-09-05T00:09:21+00:00",
+  "name": "Arcane Brilliance",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_spell",
+      "entity_id": 22153,
+      "entity_name": "Tome of Arcane Brilliance 2",
+      "item_id": 22153,
+      "source_url": "https://www.wowhead.com/tbc/spell=27127/arcane-brilliance",
+      "type": "taught_by_item"
+    }
+  ],
+  "page_type": "spell",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "related_tables": {
+    "created-by": [],
+    "recipes": [
+      {
+        "cat": 7,
+        "chrclass": 128,
+        "id": 27127,
+        "level": 70,
+        "name": "Arcane Brilliance",
+        "nskillup": 1,
+        "rank": "Rank 2",
+        "reagents": [
+          [
+            17020,
+            1
+          ]
+        ],
+        "reqclass": 128,
+        "schools": 64,
+        "skill": [
+          237
+        ],
+        "source": [
+          2
+        ]
+      }
+    ],
+    "reward-from-q": [],
+    "sold-by": [],
+    "taught-by-item": [
+      {
+        "classs": 9,
+        "commondrop": true,
+        "flags2": 24580,
+        "id": 22153,
+        "level": 70,
+        "name": "Tome of Arcane Brilliance 2",
+        "quality": 3,
+        "reqclass": 128,
+        "reqlevel": 70,
+        "slot": 0,
+        "source": [
+          2
+        ],
+        "subclass": 0
+      }
+    ],
+    "taught-by-npc": [],
+    "taught-by-spell": [],
+    "trained-by": []
+  },
+  "spell_id": 27127,
+  "url": "https://www.wowhead.com/tbc/spell=27127/arcane-brilliance"
+}

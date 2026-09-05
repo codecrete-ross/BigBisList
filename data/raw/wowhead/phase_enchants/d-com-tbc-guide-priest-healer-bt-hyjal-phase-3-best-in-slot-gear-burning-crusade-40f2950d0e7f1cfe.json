@@ -1,0 +1,254 @@
+{
+  "bindings": [
+    {
+      "class": "Priest",
+      "phase": "T6",
+      "spec": "Holy"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29190,
+            "name": "Arcanum of Renewal",
+            "type": "item"
+          },
+          "equipment_item_id": 30152,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35445
+        },
+        {
+          "entity": {
+            "id": 28887,
+            "name": "Greater Inscription of Faith",
+            "type": "item"
+          },
+          "equipment_item_id": 30154,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35404
+        },
+        {
+          "equipment_item_id": 30150,
+          "slot": "Chest",
+          "spell_id": 33990
+        },
+        {
+          "entity": {
+            "id": 24276,
+            "name": "Golden Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30912,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31370
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 32609,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "equipment_item_id": 32584,
+          "slot": "Wrist",
+          "spell_id": 27911
+        },
+        {
+          "entity": {
+            "id": 33999,
+            "name": "Enchant Gloves - Major Healing",
+            "type": "spell"
+          },
+          "equipment_item_id": 30151,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33999
+        },
+        {
+          "entity": {
+            "id": 27926,
+            "name": "Enchant Ring - Healing Power",
+            "type": "spell"
+          },
+          "equipment_item_id": 32528,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27926
+        },
+        {
+          "entity": {
+            "id": 27926,
+            "name": "Enchant Ring - Healing Power",
+            "type": "spell"
+          },
+          "equipment_item_id": 32528,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27926
+        },
+        {
+          "equipment_item_id": 32524,
+          "slot": "Back",
+          "spell_id": 34006
+        },
+        {
+          "entity": {
+            "id": 34010,
+            "name": "Major Healing",
+            "type": "spell"
+          },
+          "equipment_item_id": 32500,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 34010
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Holy Priest - Phase 3 Best In Slot (T5 4P)",
+      "planner": "priest/dwarf/A0YSUBIwATBfIyBQAyMBFQUwBR_wgUB1yIp1AGUtIH3bAgB-coNAdcqKTAB9wyB9w4VgdcaExgB92CB9w0B9wwYAeK-HYHjAeooAfcMgfcNAfcOIQH9hhNgAfdsgfdiJAH9IbQeKAHXHhM-LAH8QbRaMAH8QbRYNAHLADgBwl48AfwyE1pAAfvSE2hEAeL8SAH5r"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29190,
+            "name": "Arcanum of Renewal",
+            "type": "item"
+          },
+          "equipment_item_id": 31063,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35445
+        },
+        {
+          "entity": {
+            "id": 28887,
+            "name": "Greater Inscription of Faith",
+            "type": "item"
+          },
+          "equipment_item_id": 31069,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35404
+        },
+        {
+          "equipment_item_id": 31066,
+          "slot": "Chest",
+          "spell_id": 33990
+        },
+        {
+          "entity": {
+            "id": 24276,
+            "name": "Golden Spellthread",
+            "type": "item"
+          },
+          "equipment_item_id": 30912,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 31370
+        },
+        {
+          "entity": {
+            "id": 34008,
+            "name": "Enchant Boots - Boar's Speed",
+            "type": "spell"
+          },
+          "equipment_item_id": 32609,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Feet",
+          "spell_id": 34008
+        },
+        {
+          "equipment_item_id": 32584,
+          "slot": "Wrist",
+          "spell_id": 27911
+        },
+        {
+          "entity": {
+            "id": 33999,
+            "name": "Enchant Gloves - Major Healing",
+            "type": "spell"
+          },
+          "equipment_item_id": 31060,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Hands",
+          "spell_id": 33999
+        },
+        {
+          "entity": {
+            "id": 27926,
+            "name": "Enchant Ring - Healing Power",
+            "type": "spell"
+          },
+          "equipment_item_id": 32528,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27926
+        },
+        {
+          "entity": {
+            "id": 27926,
+            "name": "Enchant Ring - Healing Power",
+            "type": "spell"
+          },
+          "equipment_item_id": 32528,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Ring",
+          "spell_id": 27926
+        },
+        {
+          "equipment_item_id": 32524,
+          "slot": "Back",
+          "spell_id": 34006
+        },
+        {
+          "entity": {
+            "id": 34010,
+            "name": "Major Healing",
+            "type": "spell"
+          },
+          "equipment_item_id": 32500,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 34010
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Holy Priest - Phase 3 Best In Slot (T6 4P)",
+      "planner": "priest/dwarf/A0YSUBIwATBfIyBQAyMBFQUwBR_wgUB5V4p1AGUtIH3YAgB-coNAeV2KTAB9wyB9w4VgeVqExgB9wyB920B9wwYAeK-HYHjAeooAfcMgfcNAfcOIQH9hhNgAfdsgfdiJAH9IbQeKIHlUhM8AfcOLAH8QbRaMAH8QbRYNAHLADgBwl48AfwyE1pAAfvSE2hEAeL8SAH5r"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28887,
+            "name": "Greater Inscription of Faith",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35404
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Holy Priest - Phase 3 Best In Slot (T6 4P)",
+      "text": "Should Priest Healing Choose Aldor or Scryer for BiS in TBC Classic Phase 3?\r\nAlthough the  enchant is moderately better than , the choice between  and  is fairly unimportant for healers, as both  and  are virtually identical to the Aldor enchant in terms of value."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:25+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Priest Healing Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/priest-healer-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

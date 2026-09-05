@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sergeant's Heavy Cloak Phase 1 Item Level 123 Binds when picked up Back 104 Armor +27 Stamina Requires Level 70 Equip: Improves critical strike rating by 19. Equip: Improves your resilience rating by 19. Equip: Increases attack power by 38.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:18+00:00",
+  "inventory_slot": null,
+  "item_id": 28377,
+  "item_stats": {
+    "armor": 104,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 19.",
+        "stats": {
+          "crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 19.",
+        "stats": {
+          "resilience_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 38.",
+        "stats": {
+          "attack_power": 38.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 19.",
+      "Equip: Improves your resilience rating by 19.",
+      "Equip: Increases attack power by 38."
+    ],
+    "id": 28377,
+    "item_level": 123,
+    "name": "Sergeant's Heavy Cloak",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "attack_power": 38.0,
+      "crit_rating": 19.0,
+      "resilience_rating": 19.0,
+      "stamina": 27.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28377/sergeants-heavy-cloak"
+  },
+  "name": "Sergeant's Heavy Cloak",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28377/sergeants-heavy-cloak"
+}

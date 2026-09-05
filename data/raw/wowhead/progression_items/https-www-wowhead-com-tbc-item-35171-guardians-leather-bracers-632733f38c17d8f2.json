@@ -1,0 +1,80 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Guardian's Leather Bracers Phase 5 Item Level 154 Binds when picked up Wrist Leather 211 Armor +28 Agility +37 Stamina Yellow Socket Socket Bonus: +2 Resilience Rating Durability 40 / 40 Classes: Rogue , Druid Requires Level 70 Equip: Improves critical strike rating by 15. Equip: Improves your resilience rating by 15. Equip: Increases attack power by 32.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:34+00:00",
+  "inventory_slot": null,
+  "item_id": 35171,
+  "item_stats": {
+    "armor": 211,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 15.",
+        "stats": {
+          "crit_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 15.",
+        "stats": {
+          "resilience_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 32.",
+        "stats": {
+          "attack_power": 32.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 15.",
+      "Equip: Improves your resilience rating by 15.",
+      "Equip: Increases attack power by 32."
+    ],
+    "id": 35171,
+    "item_level": 154,
+    "name": "Guardian's Leather Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Rogue",
+        "Druid"
+      ]
+    },
+    "socket_bonus": {
+      "resilience_rating": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 28.0,
+      "attack_power": 32.0,
+      "crit_rating": 15.0,
+      "resilience_rating": 15.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35171/guardians-leather-bracers"
+  },
+  "name": "Guardian's Leather Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35171/guardians-leather-bracers"
+}

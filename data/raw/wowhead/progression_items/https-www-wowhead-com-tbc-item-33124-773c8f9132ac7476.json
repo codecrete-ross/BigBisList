@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Cloak of Darkness Item Level 70 Binds when picked up Requires Leatherworking (360) Requires The Violet Eye - Exalted Use: Teaches you how to craft a Cloak of Darkness. Sell Price: 1 25 Cloak of Darkness Item Level 120 Binds when equipped Back 101 Armor +23 Strength +25 Stamina Blue Socket Socket Bonus: +2 Critical Strike Rating Requires Level 70 Equip: Improves melee critical strike rating by 24. Sell Price: 3 80 29 Requires Heavy Knothide Leather (8), Bolt of Soulcloth (12), Primal Shadow (12), Primal Nether (4)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:33+00:00",
+  "inventory_slot": null,
+  "item_id": 33124,
+  "item_stats": {
+    "armor": 101,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Cloak of Darkness.",
+        "type": "use"
+      }
+    ],
+    "id": 33124,
+    "item_level": 70,
+    "name": "Pattern: Cloak of Darkness",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 2.0
+    },
+    "sockets": [
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "stamina": 25.0,
+      "strength": 23.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft a Cloak of Darkness."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33124"
+  },
+  "name": "Pattern: Cloak of Darkness",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Pattern: Cloak of Darkness Item Level 70 Binds when picked up Requires Leatherworking (360) Requires The Violet Eye - Exalted Use: Teaches you how to craft a Cloak of Darkness. Sell Price: 1 25 Cloak of Darkness Item Level 120 Binds when equipped Back 101 Armor +23 Strength +25 Stamina Blue Socket Socket Bonus: +2 Critical Strike Rating Requires Level 70 Equip: Improves melee critical strike rating by 24. Sell Price: 3 80 29 Requires Heavy Knothide Leather (8), Bolt of Soulcloth (12), Primal Shadow (12), Primal Nether (4)",
+      "reputation": "The Violet Eye",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=33124",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Cloak of Darkness Item Level 70 Binds when picked up Requires Leatherworking (360) Requires The Violet Eye - Exalted Use: Teaches you how to craft a Cloak of Darkness. Sell Price: 1 25 Cloak of Darkness Item Level 120 Binds when equipped Back 101 Armor +23 Strength +25 Stamina Blue Socket Socket Bonus: +2 Critical Strike Rating Requires Level 70 Equip: Improves melee critical strike rating by 24. Sell Price: 3 80 29 Requires Heavy Knothide Leather (8), Bolt of Soulcloth (12), Primal Shadow (12), Primal Nether (4)",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=33124",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=33124"
+}

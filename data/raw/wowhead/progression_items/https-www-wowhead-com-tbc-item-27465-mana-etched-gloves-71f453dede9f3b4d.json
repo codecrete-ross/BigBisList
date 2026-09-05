@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mana-Etched Gloves Phase 1 Item Level 115 Binds when picked up Hands Cloth 97 Armor +25 Stamina +17 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 30 / 30 Requires Level 70 Equip: Improves spell critical strike rating by 16. Equip: Increases damage and healing done by magical spells and effects by up to 20. Mana-Etched Regalia (0/5) Mana-Etched Crown Mana-Etched Gloves Mana-Etched Pantaloons Mana-Etched Vestments Mana-Etched Spaulders (2) Set : Increases your spell hit rating by 35. (4) Set : Your harmful spells have a chance to grant you up to 110 spell damage and healing for 15 sec. (Proc chance: 2%) Sell Price: 1 69 7",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:17+00:00",
+  "inventory_slot": null,
+  "item_id": 27465,
+  "item_stats": {
+    "armor": 97,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 16.",
+        "stats": {
+          "spell_crit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 20.",
+        "stats": {
+          "spell_power": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 16.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 20."
+    ],
+    "id": 27465,
+    "item_level": 115,
+    "name": "Mana-Etched Gloves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 17.0,
+      "spell_crit_rating": 16.0,
+      "spell_power": 20.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=27465/mana-etched-gloves"
+  },
+  "name": "Mana-Etched Gloves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=27465/mana-etched-gloves"
+}

@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Warp-Spring Coil Phase 2 Item Level 128 Binds when picked up Unique Trinket Classes: Rogue Requires Level 70 Equip: Improves hit rating by 21. Equip: Your special attacks have a chance to give you 1000 armor penetration for 15 sec. (Proc chance: 25%, 30s cooldown) Sell Price: 7 20 39",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:13+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 30450,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 21.",
+        "stats": {
+          "hit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your special attacks have a chance to give you 1000 armor penetration for 15 sec. (Proc chance: 25%, 30s cooldown)",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 21.",
+      "Equip: Your special attacks have a chance to give you 1000 armor penetration for 15 sec. (Proc chance: 25%, 30s cooldown)"
+    ],
+    "id": 30450,
+    "item_level": 128,
+    "name": "Warp-Spring Coil",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Rogue"
+      ]
+    },
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30450/warp-spring-coil"
+  },
+  "name": "Warp-Spring Coil",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30450/warp-spring-coil"
+}

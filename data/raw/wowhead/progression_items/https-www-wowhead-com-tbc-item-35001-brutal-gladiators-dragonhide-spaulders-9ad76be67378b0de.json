@@ -1,0 +1,73 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brutal Gladiator's Dragonhide Spaulders Phase 5 Item Level 159 Binds when picked up Shoulder Leather 430 Armor +34 Strength +34 Agility +47 Stamina +20 Intellect Red Socket Yellow Socket Socket Bonus: +3 Resilience Rating Durability 70 / 70 Classes: Druid Requires Level 70 Equip: Improves critical strike rating by 21. Equip: Improves your resilience rating by 21. Gladiator's Sanctuary (0/5) Gladiator's Dragonhide Gloves Gladiator's Dragonhide Helm Gladiator's Dragonhide Legguards Gladiator's Dragonhide Spaulders Gladiator's Dragonhide Tunic (2) Set : +35 Resilience Rating. (4) Set : Increases your movement speed by 15% while in Bear Form, Cat Form, or Travel Form. Only active outdoors.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:29+00:00",
+  "inventory_slot": null,
+  "item_id": 35001,
+  "item_stats": {
+    "armor": 430,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 21.",
+        "stats": {
+          "crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 21.",
+        "stats": {
+          "resilience_rating": 21.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 21.",
+      "Equip: Improves your resilience rating by 21."
+    ],
+    "id": 35001,
+    "item_level": 159,
+    "name": "Brutal Gladiator's Dragonhide Spaulders",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Druid"
+      ]
+    },
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 34.0,
+      "crit_rating": 21.0,
+      "intellect": 20.0,
+      "resilience_rating": 21.0,
+      "stamina": 47.0,
+      "strength": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35001/brutal-gladiators-dragonhide-spaulders"
+  },
+  "name": "Brutal Gladiator's Dragonhide Spaulders",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35001/brutal-gladiators-dragonhide-spaulders"
+}

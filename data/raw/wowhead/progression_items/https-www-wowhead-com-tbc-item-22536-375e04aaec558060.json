@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Formula: Enchant Ring - Spellpower Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Requires Keepers of Time - Honored Use: Teaches you how to permanently enchant a ring to increase spell damage and healing by up to 12. Permanently enchant a ring to increase spell damage and healing by up to 12. Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Sell Price: 2 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:00+00:00",
+  "inventory_slot": null,
+  "item_id": 22536,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant a ring to increase spell damage and healing by up to 12. Permanently enchant a ring to increase spell damage and healing by up to 12. Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound.",
+        "type": "use"
+      }
+    ],
+    "id": 22536,
+    "item_level": 72,
+    "name": "Formula: Enchant Ring - Spellpower",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant a ring to increase spell damage and healing by up to 12. Permanently enchant a ring to increase spell damage and healing by up to 12. Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=22536"
+  },
+  "name": "Formula: Enchant Ring - Spellpower",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Formula: Enchant Ring - Spellpower Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Requires Keepers of Time - Honored Use: Teaches you how to permanently enchant a ring to increase spell damage and healing by up to 12. Permanently enchant a ring to increase spell damage and healing by up to 12. Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Sell Price: 2 50",
+      "reputation": "Keepers of Time",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=22536",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Ring - Spellpower Phase 1 Item Level 72 Binds when picked up Requires Enchanting (360) Requires Keepers of Time - Honored Use: Teaches you how to permanently enchant a ring to increase spell damage and healing by up to 12. Permanently enchant a ring to increase spell damage and healing by up to 12. Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Sell Price: 2 50",
+      "scope": "equip_or_use",
+      "skill": 360,
+      "source_url": "https://www.wowhead.com/tbc/item=22536",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=22536"
+}

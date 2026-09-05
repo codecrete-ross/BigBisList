@@ -16,6 +16,7 @@ from tools.manifest_coverage import GLOBAL_FAMILIES, MATRIX_FAMILIES, STATIC_DAT
 from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES, canonical_json
 from tools.reputations import CANONICAL_REPUTATIONS, infer_source_side
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
+from tools.progression import validate_pre_raid_paths, validate_schedules
 
 
 REQUIREMENT_TYPES = {
@@ -113,6 +114,7 @@ def iter_source_tree(sources: object, label: str = "sources"):
         yield source_label, source
         if not isinstance(source, dict):
             continue
+
         for child_key in SOURCE_CHILD_KEYS:
             child_sources = source.get(child_key)
             if isinstance(child_sources, list):
@@ -130,6 +132,16 @@ def validate_source_detail_fields(label: str, sources: object, errors: list[str]
         _require(isinstance(source, dict), errors, f"{source_label} must be an object")
         if not isinstance(source, dict):
             continue
+
+        for field in ("available_from_phase", "available_until_phase"):
+            if field in source:
+                _require(source[field] in PHASE_KEYS, errors, f"{source_label} invalid {field}")
+        start = source.get("available_from_phase", "PR")
+        end = source.get("available_until_phase")
+        if start in PHASE_KEYS and end in PHASE_KEYS:
+            _require(PHASE_KEYS.index(start) < PHASE_KEYS.index(end), errors, f"{source_label} empty availability window")
+        if "tradeable" in source:
+            _require(isinstance(source["tradeable"], bool), errors, f"{source_label} tradeable must be boolean")
 
         for field_name in ("location_area", "location_note"):
             if field_name in source:
@@ -324,8 +336,13 @@ def validate() -> ValidationResult:
 
     phase_keys = [phase.get("key") for phase in phases_doc.get("phases", [])]
     _require(phase_keys == PHASE_KEYS, errors, f"Expected phases {PHASE_KEYS}, found {phase_keys}")
+    schedules = phases_doc.get("schedules", {})
+    errors.extend(validate_schedules(phases_doc))
+    if schedules:
+        _require(phases_doc.get("active_schedule") in schedules, errors, "Unknown active content schedule")
+    schedule = schedules.get(phases_doc.get("active_schedule"), {})
     previous_phase_start_epoch: int | None = None
-    for phase in phases_doc.get("phases", []):
+    for phase in schedule.get("phase_starts", phases_doc.get("phases", [])):
         key = phase.get("key")
         starts_at = phase.get("starts_at")
         starts_at_epoch = phase.get("starts_at_epoch")
@@ -425,6 +442,9 @@ def validate() -> ValidationResult:
                     _require(isinstance(cost.get("amount"), int) and cost.get("amount") >= 0, errors, f"Item {item_id} source cost needs a non-negative amount")
                     _require(bool(cost.get("name")), errors, f"Item {item_id} source cost needs a name")
 
+    errors.extend(validate_pre_raid_paths(
+        bis_doc.get("lists", []), {item["id"]: item for item in items_doc.get("items", [])},
+        [(class_name, spec) for class_name, specs in specs_by_class.items() for spec in specs]))
     seen_bis_entries: set[tuple[str, str, str, str, int, str, str]] = set()
     for list_row in bis_doc.get("lists", []):
         class_name = list_row.get("class")
@@ -452,6 +472,7 @@ def validate() -> ValidationResult:
                 str(class_name),
                 str(spec_name),
                 str(phase),
+                str(list_row.get("content_phase", "")),
                 str(slot),
                 int(item_id) if isinstance(item_id, int) else 0,
                 str(entry.get("context")),

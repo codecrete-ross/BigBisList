@@ -1,0 +1,45 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Ironstriders of Urgency Phase 1 Item Level 115 Binds when picked up Feet Plate 997 Armor +33 Strength +20 Agility +28 Stamina Red Socket Yellow Socket Socket Bonus: +3 Strength Durability 75 / 75 Requires Level 70 Sell Price: 6 36 23",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:39+00:00",
+  "inventory_slot": null,
+  "item_id": 28608,
+  "item_stats": {
+    "armor": 997,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 28608,
+    "item_level": 115,
+    "name": "Ironstriders of Urgency",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "strength": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 20.0,
+      "stamina": 28.0,
+      "strength": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28608/ironstriders-of-urgency"
+  },
+  "name": "Ironstriders of Urgency",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28608/ironstriders-of-urgency"
+}

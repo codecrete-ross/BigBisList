@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Mask of the Fury Hunter Phase 5 Item Level 159 Binds when picked up Head Leather 643 Armor +50 Strength +50 Agility +58 Stamina +20 Intellect Red Socket Meta Socket Socket Bonus: +6 Stamina Durability 70 / 70 Requires Level 70 Equip: Improves critical strike rating by 30.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:52+00:00",
+  "inventory_slot": null,
+  "item_id": 34404,
+  "item_stats": {
+    "armor": 643,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 30.",
+        "stats": {
+          "crit_rating": 30.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 30."
+    ],
+    "id": 34404,
+    "item_level": 159,
+    "name": "Mask of the Fury Hunter",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 6.0
+    },
+    "sockets": [
+      "red",
+      "meta"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 50.0,
+      "crit_rating": 30.0,
+      "intellect": 20.0,
+      "stamina": 58.0,
+      "strength": 50.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34404/mask-of-the-fury-hunter"
+  },
+  "name": "Mask of the Fury Hunter",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34404/mask-of-the-fury-hunter"
+}

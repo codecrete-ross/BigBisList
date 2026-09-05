@@ -208,7 +208,7 @@ def classify_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [classify_source(source) for source in sources]
 
 
-def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
+def _infer_source_acquisition_phase(source: dict[str, Any]) -> str:
     source_type = source.get("type")
     zone, _ = normalize_source_zone(source.get("zone"))
 
@@ -232,7 +232,7 @@ def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
             return RAID_QUEST_PHASE_BY_ID.get(quest_id, "PR")
         return "PR"
 
-    if source_type == "crafted":
+    if source_type in {"crafted", "taught_by_item"}:
         recipe_sources = [recipe_source for recipe_source in source.get("recipe_sources", []) if isinstance(recipe_source, dict)]
         if recipe_sources:
             return derive_acquisition_phase(recipe_sources)
@@ -245,6 +245,65 @@ def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
         return "T6"
 
     return "PR"
+
+
+def derive_source_acquisition_phase(source: dict[str, Any]) -> str:
+    # A token/recipe can exist before its seller or recipe becomes accessible.
+    inferred = _infer_source_acquisition_phase(source)
+    zone, _ = normalize_source_zone(source.get("zone"))
+    zone_phase = ZONE_PHASE.get(str(zone or ""), "PR") if source.get("type") != "quest" else "PR"
+    return max((inferred, zone_phase,
+                source.get("available_from_phase", "PR")), key=phase_rank)
+
+
+def source_is_phase_available(source: dict[str, Any], phase: str) -> bool:
+    if phase_rank(derive_source_acquisition_phase(source)) > phase_rank(phase):
+        return False
+    until = source.get("available_until_phase")
+    if until and phase_rank(phase) >= phase_rank(until):
+        return False
+    for child_key in ("token_sources", "quest_starter_sources", "recipe_sources"):
+        children = source.get(child_key)
+        if children and not any(source_is_phase_available(child, phase) for child in children):
+            return False
+    return True
+
+
+RAID_REPUTATIONS = {"The Scale of the Sands", "Ashtongue Deathsworn", "The Violet Eye"}
+
+
+def source_requires_raid(source: dict[str, Any], phase: str | None = None) -> bool:
+    if source.get("tradeable") is True:
+        return False
+    inferred_craft_zone = source.get("type") == "crafted" and source.get("recipe_sources")
+    if (source.get("type") != "quest" and not inferred_craft_zone and source.get("zone") in RAID_ZONES) or (
+        source.get("type") not in {"quest", "token_turnin"} and source_content_type(source) == "raid"
+    ):
+        return True
+    if source.get("quest_id") in RAID_QUEST_PHASE_BY_ID:
+        return True
+    if any(req.get("reputation") in RAID_REPUTATIONS for req in source.get("requirements", [])):
+        return True
+    # A crafted item can be bought or made using tradeable materials; learning a
+    # raid-only recipe personally is represented by its recipe-source gates.
+    for key in ("token_sources", "quest_starter_sources", "recipe_sources"):
+        children = [child for child in source.get(key, [])
+                    if phase is None or source_is_phase_available(child, phase)]
+        if children and all(source_requires_raid(child, phase) for child in children):
+            return True
+    return False
+
+
+def item_has_pre_raid_route(item: dict[str, Any], phase: str) -> bool:
+    sources = item.get("sources", [])
+    available = [source for source in sources if source_is_phase_available(source, phase)]
+    if not available:
+        return False
+    if item.get("tradeable") is True or item.get("boe") is True or item.get("binding") == "bind_on_equip":
+        return True
+    if any(req.get("reputation") in RAID_REPUTATIONS for req in item.get("requirements", [])):
+        return False
+    return any(source.get("type") != "unknown" and not source_requires_raid(source, phase) for source in available)
 
 
 def _is_concrete_raid_drop(source: dict[str, Any]) -> bool:
@@ -311,6 +370,9 @@ def _purchase_source_quality_rank(source: dict[str, Any]) -> int:
 def _source_sort_key(source: dict[str, Any]) -> tuple:
     drop_percent = source.get("drop_percent")
     drop_rank = -float(drop_percent) if isinstance(drop_percent, (int, float)) else 0.0
+    raw_id = source.get("quest_id") or source.get("vendor_id") or source.get("entity_id") or 0
+    # Trainer groups use stable symbolic identities, whereas NPCs use numbers.
+    identity = (0, int(raw_id)) if isinstance(raw_id, int) or str(raw_id).isdigit() else (1, str(raw_id))
     return (
         _source_data_quality_rank(source),
         _purchase_source_quality_rank(source),
@@ -319,7 +381,7 @@ def _source_sort_key(source: dict[str, Any]) -> tuple:
         drop_rank,
         str(source.get("entity_name") or ""),
         str(source.get("zone") or ""),
-        int(source.get("quest_id") or source.get("vendor_id") or source.get("entity_id") or 0),
+        identity,
     )
 
 

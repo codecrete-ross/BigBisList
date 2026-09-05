@@ -1,0 +1,78 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Lightbringer Chestpiece Phase 3 Item Level 146 Binds when picked up Chest Plate 1825 Armor +42 Stamina +33 Intellect Blue Socket Yellow Socket Yellow Socket Socket Bonus: +9 Healing and +3 Spell Damage Durability 165 / 165 Classes: Paladin Requires Level 70 Equip: Improves spell critical strike rating by 28. Equip: Increases healing done by up to 117 and damage done by up to 39 for all magical spells and effects. Equip: Restores 11 mana per 5 sec. Lightbringer Raiment (0/8) Lightbringer Chestpiece Lightbringer Gloves Lightbringer Greathelm Lightbringer Leggings Lightbringer Pauldrons Lightbringer Bracers Lightbringer Belt Lightbringer Treads (2) Set : Increases the critical strike chance of your Holy Light ability by 5%. (4) Set : Increases the healing from your Flash of Light ability by 5%.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:45+00:00",
+  "inventory_slot": null,
+  "item_id": 30992,
+  "item_stats": {
+    "armor": 1825,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 28.",
+        "stats": {
+          "spell_crit_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 117 and damage done by up to 39 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 117.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 11 mana per 5 sec.",
+        "stats": {
+          "mp5": 11.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 28.",
+      "Equip: Increases healing done by up to 117 and damage done by up to 39 for all magical spells and effects.",
+      "Equip: Restores 11 mana per 5 sec."
+    ],
+    "id": 30992,
+    "item_level": 146,
+    "name": "Lightbringer Chestpiece",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Paladin"
+      ]
+    },
+    "sockets": [
+      "blue",
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 117.0,
+      "intellect": 33.0,
+      "mp5": 11.0,
+      "spell_crit_rating": 28.0,
+      "stamina": 42.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30992/lightbringer-chestpiece"
+  },
+  "name": "Lightbringer Chestpiece",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30992/lightbringer-chestpiece"
+}

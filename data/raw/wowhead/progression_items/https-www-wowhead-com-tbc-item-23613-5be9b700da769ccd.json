@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Plans: Ragesteel Breastplate Item Level 74 Binds when picked up Requires Blacksmithing (370) Use: Teaches you how to make a Ragesteel Breastplate. Sell Price: 2 50 Ragesteel Breastplate Item Level 115 Binds when equipped Chest Plate 1164 Armor +50 Strength Durability 135 / 135 Requires Level 70 Equip: Improves critical strike rating by 29. Burning Rage (0/4) Requires Blacksmithing (350) Ragesteel Breastplate Ragesteel Helm Ragesteel Gloves Ragesteel Shoulders Sell Price: 6 18 91 Requires Fel Iron Bar (12), Primal Fire (10), Khorium Bar (6), Elixir of Major Strength (4)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:26+00:00",
+  "inventory_slot": null,
+  "item_id": 23613,
+  "item_stats": {
+    "armor": 1164,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Ragesteel Breastplate.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 29.",
+        "stats": {
+          "crit_rating": 29.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 29."
+    ],
+    "id": 23613,
+    "item_level": 74,
+    "name": "Plans: Ragesteel Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 29.0,
+      "strength": 50.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Ragesteel Breastplate."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23613"
+  },
+  "name": "Plans: Ragesteel Breastplate",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Ragesteel Breastplate Item Level 74 Binds when picked up Requires Blacksmithing (370) Use: Teaches you how to make a Ragesteel Breastplate. Sell Price: 2 50 Ragesteel Breastplate Item Level 115 Binds when equipped Chest Plate 1164 Armor +50 Strength Durability 135 / 135 Requires Level 70 Equip: Improves critical strike rating by 29. Burning Rage (0/4) Requires Blacksmithing (350) Ragesteel Breastplate Ragesteel Helm Ragesteel Gloves Ragesteel Shoulders Sell Price: 6 18 91 Requires Fel Iron Bar (12), Primal Fire (10), Khorium Bar (6), Elixir of Major Strength (4)",
+      "scope": "equip_or_use",
+      "skill": 370,
+      "source_url": "https://www.wowhead.com/tbc/item=23613",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Ragesteel Breastplate Item Level 74 Binds when picked up Requires Blacksmithing (370) Use: Teaches you how to make a Ragesteel Breastplate. Sell Price: 2 50 Ragesteel Breastplate Item Level 115 Binds when equipped Chest Plate 1164 Armor +50 Strength Durability 135 / 135 Requires Level 70 Equip: Improves critical strike rating by 29. Burning Rage (0/4) Requires Blacksmithing (350) Ragesteel Breastplate Ragesteel Helm Ragesteel Gloves Ragesteel Shoulders Sell Price: 6 18 91 Requires Fel Iron Bar (12), Primal Fire (10), Khorium Bar (6), Elixir of Major Strength (4)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=23613",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23613"
+}

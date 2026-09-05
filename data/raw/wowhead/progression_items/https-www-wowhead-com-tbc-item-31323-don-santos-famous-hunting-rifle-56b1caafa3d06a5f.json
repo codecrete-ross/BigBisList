@@ -1,0 +1,48 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Don Santos' Famous Hunting Rifle Phase 1 Item Level 100 Binds when equipped Ranged Gun 139 - 259 Damage Speed 2.70 (73.70 damage per second) Durability 90 / 90 Requires Level 70 Equip: Your ranged attacks have a chance to increase your attack power by 250 for 10 sec. Sell Price: 7 54 16",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:16+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 31323,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 73.7,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Your ranged attacks have a chance to increase your attack power by 250 for 10 sec.",
+        "type": "temporary"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Your ranged attacks have a chance to increase your attack power by 250 for 10 sec."
+    ],
+    "id": 31323,
+    "item_level": 100,
+    "name": "Don Santos' Famous Hunting Rifle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "weapon_max_damage": 259,
+    "weapon_min_damage": 139,
+    "weapon_speed": 2.7,
+    "weapon_subtype": "Gun",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31323/don-santos-famous-hunting-rifle"
+  },
+  "name": "Don Santos' Famous Hunting Rifle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31323/don-santos-famous-hunting-rifle"
+}

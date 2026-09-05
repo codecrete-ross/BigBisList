@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gloves of Tyri's Power Phase 5 Item Level 164 Binds when picked up Hands Cloth 171 Armor +33 Stamina +32 Intellect +27 Spirit Red Socket Yellow Socket Socket Bonus: +4 Spell Damage and Healing Durability 35 / 35 Requires Level 70 Equip: Improves spell haste rating by 36. Equip: Increases damage and healing done by magical spells and effects by up to 47.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:53+00:00",
+  "inventory_slot": null,
+  "item_id": 34406,
+  "item_stats": {
+    "armor": 171,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 47.",
+        "stats": {
+          "spell_power": 47.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases damage and healing done by magical spells and effects by up to 47."
+    ],
+    "id": 34406,
+    "item_level": 164,
+    "name": "Gloves of Tyri's Power",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 32.0,
+      "spell_power": 47.0,
+      "spirit": 27.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34406/gloves-of-tyris-power"
+  },
+  "name": "Gloves of Tyri's Power",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34406/gloves-of-tyris-power"
+}

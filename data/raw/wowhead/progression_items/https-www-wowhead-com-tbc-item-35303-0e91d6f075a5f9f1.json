@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Gloves of the Living Touch Item Level 73 Binds when picked up Requires Leatherworking (365) Use: Teaches you how to make Gloves of the Living Touch. Sell Price: 6 Dropped by: Kael'thas Sunstrider Drop Chance: 32.26% Gloves of the Living Touch Item Level 105 Binds when equipped Hands Leather 208 Armor +16 Stamina +18 Intellect +22 Spirit Durability 40 / 40 Requires Level 70 Equip: Increases healing done by up to 77 and damage done by up to 26 for all magical spells and effects. Sell Price: 2 73 61 Requires Heavy Knothide Leather (4), Primal Life (16), Primal Earth (12), Primal Nether",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:46+00:00",
+  "inventory_slot": null,
+  "item_id": 35303,
+  "item_stats": {
+    "armor": 208,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make Gloves of the Living Touch.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 77 and damage done by up to 26 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 77.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 77 and damage done by up to 26 for all magical spells and effects."
+    ],
+    "id": 35303,
+    "item_level": 73,
+    "name": "Pattern: Gloves of the Living Touch",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "healing_power": 77.0,
+      "intellect": 18.0,
+      "spirit": 22.0,
+      "stamina": 16.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make Gloves of the Living Touch."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35303"
+  },
+  "name": "Pattern: Gloves of the Living Touch",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Pattern: Gloves of the Living Touch Item Level 73 Binds when picked up Requires Leatherworking (365) Use: Teaches you how to make Gloves of the Living Touch. Sell Price: 6 Dropped by: Kael'thas Sunstrider Drop Chance: 32.26% Gloves of the Living Touch Item Level 105 Binds when equipped Hands Leather 208 Armor +16 Stamina +18 Intellect +22 Spirit Durability 40 / 40 Requires Level 70 Equip: Increases healing done by up to 77 and damage done by up to 26 for all magical spells and effects. Sell Price: 2 73 61 Requires Heavy Knothide Leather (4), Primal Life (16), Primal Earth (12), Primal Nether",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35303",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35303"
+}

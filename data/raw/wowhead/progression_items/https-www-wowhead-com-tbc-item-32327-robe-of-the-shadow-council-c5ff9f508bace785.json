@@ -1,0 +1,60 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Robe of the Shadow Council Phase 3 Item Level 141 Binds when picked up Chest Cloth 236 Armor +37 Stamina +36 Intellect +26 Spirit Durability 100 / 100 Requires Level 70 Equip: Improves spell critical strike rating by 28. Equip: Increases damage and healing done by magical spells and effects by up to 73. Sell Price: 5 79 68",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:53+00:00",
+  "inventory_slot": null,
+  "item_id": 32327,
+  "item_stats": {
+    "armor": 236,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 28.",
+        "stats": {
+          "spell_crit_rating": 28.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 73.",
+        "stats": {
+          "spell_power": 73.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 28.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 73."
+    ],
+    "id": 32327,
+    "item_level": 141,
+    "name": "Robe of the Shadow Council",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "intellect": 36.0,
+      "spell_crit_rating": 28.0,
+      "spell_power": 73.0,
+      "spirit": 26.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32327/robe-of-the-shadow-council"
+  },
+  "name": "Robe of the Shadow Council",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32327/robe-of-the-shadow-council"
+}

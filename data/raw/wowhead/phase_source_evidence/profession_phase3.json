@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-04",
+  "content_phase": "T6",
+  "source_url": "https://www.wowhead.com/tbc/news/every-new-profession-recipe-in-phase-3-of-tbc-anniversary-382681",
+  "source_published_at": "2026-08-31",
+  "hunter_guide_url": "https://www.wowhead.com/tbc/guide/marksmanship-hunter-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade",
+  "hunter_guide_updated_at": "2026-08-21",
+  "review_basis": "The current Anniversary article identifies newly unlocked old-faction recipes and Black Temple/Hyjal crafting patterns by name. Item and spell pages establish IDs, requirements, and binding. The current named Black Temple/Hyjal hunter guide explicitly confirms the two ammunition bags and four ammunition types become available with this content. Generic Phase 1 tooltip labels do not override this named content evidence.",
+  "recipes": [
+    {"item_id": 22538, "name": "Formula: Enchant Ring - Stats", "spell_id": 27927, "profession": "Enchanting", "skill": 375, "reputation": "Lower City", "standing": "Honored", "standing_rank": 6, "binding": "bind_on_pickup", "vendor_id": 21655, "vendor_name": "Nakodu", "vendor_zone": "Shattrath City"},
+    {"item_id": 186683, "name": "Formula: Enchant Ring - Stats", "spell_id": 27927, "profession": "Enchanting", "skill": 375, "reputation": "The Scale of the Sands", "standing": "Revered", "standing_rank": 7, "binding": "bind_on_pickup", "vendor_id": 19932, "vendor_name": "Andormu", "vendor_zone": "Caverns of Time", "review_basis": "Alternate formula retained from the item page and committed vendor snapshot; its raid reputation unlock is T6."},
+    {"item_id": 33165, "name": "Formula: Enchant Weapon - Greater Agility", "spell_id": 42620, "profession": "Enchanting", "skill": 350, "reputation": "The Violet Eye", "standing": "Exalted", "standing_rank": 8, "binding": "bind_on_pickup", "vendor_id": 18255, "vendor_name": "Apprentice Darius", "vendor_zone": "Deadwind Pass"},
+    {"item_id": 22552, "name": "Formula: Enchant Weapon - Major Striking", "spell_id": 27967, "profession": "Enchanting", "skill": 340, "reputation": "The Consortium", "standing": "Honored", "standing_rank": 6, "binding": "bind_on_pickup"},
+    {"item_id": 33209, "name": "Recipe: Flask of Chromatic Wonder", "spell_id": 42736, "product_id": 33208, "profession": "Alchemy", "skill": 375, "reputation": "The Violet Eye", "standing": "Honored", "standing_rank": 6, "binding": "unbound", "vendor_id": 18255, "vendor_name": "Apprentice Darius", "vendor_zone": "Deadwind Pass"},
+    {"item_id": 34200, "name": "Pattern: Quiver of a Thousand Feathers", "spell_id": 44359, "product_id": 34105, "profession": "Leatherworking", "skill": 350, "reputation": "Lower City", "standing": "Revered", "standing_rank": 7, "binding": "bind_on_pickup", "vendor_id": 21655, "vendor_name": "Nakodu", "vendor_zone": "Shattrath City", "phase_evidence": "hunter_guide"},
+    {"item_id": 34201, "name": "Pattern: Netherscale Ammo Pouch", "spell_id": 44768, "product_id": 34106, "profession": "Leatherworking", "skill": 350, "reputation": "Thrallmar", "standing": "Revered", "standing_rank": 7, "binding": "bind_on_pickup", "phase_evidence": "hunter_guide"},
+    {"item_id": 34218, "name": "Pattern: Netherscale Ammo Pouch", "spell_id": 44768, "product_id": 34106, "profession": "Leatherworking", "skill": 350, "reputation": "Honor Hold", "standing": "Revered", "standing_rank": 7, "binding": "bind_on_pickup", "phase_evidence": "hunter_guide", "snapshot_path": "data/raw/wowhead/progression_items/https-www-wowhead-com-tbc-item-34218-14dae5ac312b1b0e.json", "review_basis": "The recipe tooltip requires Honor Hold Revered. Its binding is the first tooltip binding; the embedded crafted-product tooltip is BoE and must not redefine the recipe."},
+    {"item_id": 32752, "name": "Pattern: Swiftheal Wraps", "product_id": 32584, "profession": "Tailoring", "skill": 375, "binding": "bind_on_pickup", "product_binding": "bind_on_equip", "raid_pattern": true},
+    {"item_id": 32754, "name": "Pattern: Bracers of Nimble Thought", "product_id": 32586, "profession": "Tailoring", "skill": 375, "binding": "bind_on_pickup", "product_binding": "bind_on_equip", "raid_pattern": true},
+    {"item_id": 32753, "name": "Pattern: Swiftheal Mantle", "product_id": 32585, "profession": "Tailoring", "skill": 375, "binding": "unbound", "product_binding": "bind_on_pickup", "raid_pattern": true},
+    {"item_id": 32755, "name": "Pattern: Mantle of Nimble Thought", "product_id": 32587, "profession": "Tailoring", "skill": 375, "binding": "unbound", "product_binding": "bind_on_pickup", "raid_pattern": true},
+    {"item_id": 32748, "name": "Pattern: Bindings of Lightning Reflexes", "product_id": 32574, "profession": "Leatherworking", "skill": 375, "binding": "bind_on_pickup", "product_binding": "bind_on_equip", "raid_pattern": true},
+    {"item_id": 32746, "name": "Pattern: Swiftstrike Bracers", "product_id": 32580, "profession": "Leatherworking", "skill": 375, "binding": "bind_on_pickup", "product_binding": "bind_on_equip", "raid_pattern": true},
+    {"item_id": 32744, "name": "Pattern: Bracers of Renewed Life", "product_id": 32582, "profession": "Leatherworking", "skill": 375, "binding": "bind_on_pickup", "product_binding": "bind_on_equip", "raid_pattern": true},
+    {"item_id": 32750, "name": "Pattern: Living Earth Bindings", "product_id": 32577, "profession": "Leatherworking", "skill": 375, "binding": "bind_on_pickup", "product_binding": "bind_on_equip", "raid_pattern": true},
+    {"item_id": 32749, "name": "Pattern: Shoulders of Lightning Reflexes", "product_id": 32575, "profession": "Leatherworking", "skill": 375, "binding": "unbound", "product_binding": "bind_on_pickup", "raid_pattern": true},
+    {"item_id": 32747, "name": "Pattern: Swiftstrike Shoulders", "product_id": 32581, "profession": "Leatherworking", "skill": 375, "binding": "unbound", "product_binding": "bind_on_pickup", "raid_pattern": true},
+    {"item_id": 32745, "name": "Pattern: Shoulderpads of Renewed Life", "product_id": 32583, "profession": "Leatherworking", "skill": 375, "binding": "unbound", "product_binding": "bind_on_pickup", "raid_pattern": true},
+    {"item_id": 32751, "name": "Pattern: Living Earth Shoulders", "product_id": 32579, "profession": "Leatherworking", "skill": 375, "binding": "unbound", "product_binding": "bind_on_pickup", "raid_pattern": true},
+    {"item_id": 32738, "name": "Plans: Dawnsteel Bracers", "product_id": 32571, "profession": "Blacksmithing", "skill": 375, "binding": "bind_on_pickup", "product_binding": "bind_on_equip", "raid_pattern": true},
+    {"item_id": 32736, "name": "Plans: Swiftsteel Bracers", "product_id": 32568, "profession": "Blacksmithing", "skill": 375, "binding": "bind_on_pickup", "product_binding": "bind_on_equip", "raid_pattern": true},
+    {"item_id": 32737, "name": "Plans: Swiftsteel Shoulders", "product_id": 32570, "profession": "Blacksmithing", "skill": 375, "binding": "unbound", "product_binding": "bind_on_pickup", "raid_pattern": true},
+    {"item_id": 32739, "name": "Plans: Dawnsteel Shoulders", "product_id": 32573, "profession": "Blacksmithing", "skill": 375, "binding": "unbound", "product_binding": "bind_on_pickup", "raid_pattern": true}
+  ],
+  "ammunition": [
+    {"item_id": 31737, "name": "Timeless Arrow", "reputation": "The Scale of the Sands", "standing": "Honored", "standing_rank": 6, "binding": "bind_on_pickup"},
+    {"item_id": 31735, "name": "Timeless Shell", "reputation": "The Scale of the Sands", "standing": "Honored", "standing_rank": 6, "binding": "bind_on_pickup"},
+    {"item_id": 34581, "name": "Mysterious Arrow", "reputation": "The Violet Eye", "standing": "Revered", "standing_rank": 7, "binding": "bind_on_pickup"},
+    {"item_id": 34582, "name": "Mysterious Shell", "reputation": "The Violet Eye", "standing": "Revered", "standing_rank": 7, "binding": "bind_on_pickup"}
+  ],
+  "limitations": [
+    "No recipe price or discount is inferred from the news article's blank price columns.",
+    "The sixteen bracer/shoulder recipe identities are reviewed individually. Bind-on-pickup shoulders are eligible for personal crafting with a purchased unbound recipe; no shoulder product itself is marked tradeable.",
+    "The article's Ashtongue shadow-resistance recipes are identified as T6 content but are outside these exact-ID corrections until their acquisition identities are separately normalized.",
+    "Alternate recipe identities not listed here retain their own source evidence and availability; no unverified alternative is backdated from a matching recipe name."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Plans: Hard Khorium Battleplate Item Level 70 Requires Blacksmithing (365) Use: Teaches you how to make a Hard Khorium Battleplate. Sell Price: 2 Hard Khorium Battleplate Item Level 159 Binds when picked up Chest Plate 1983 Armor +61 Strength +55 Stamina Red Socket Red Socket Red Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Blacksmithing (350) Equip: Improves critical strike rating by 41. Equip: Your attacks ignore 280 of your opponent's armor. Sell Price: 11 17 65 Requires Khorium Bar (20), Hardened Adamantite Bar (4), Primal Fire (10), Primal Shadow (10), Primal Nether (6)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:59+00:00",
+  "inventory_slot": null,
+  "item_id": 35554,
+  "item_stats": {
+    "armor": 1983,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Hard Khorium Battleplate.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 41.",
+        "stats": {
+          "crit_rating": 41.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 280 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 41.",
+      "Equip: Your attacks ignore 280 of your opponent's armor."
+    ],
+    "id": 35554,
+    "item_level": 70,
+    "name": "Plans: Hard Khorium Battleplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "critical_strike_rating": 4.0
+    },
+    "sockets": [
+      "red",
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "crit_rating": 41.0,
+      "stamina": 55.0,
+      "strength": 61.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Hard Khorium Battleplate."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35554"
+  },
+  "name": "Plans: Hard Khorium Battleplate",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Hard Khorium Battleplate Item Level 70 Requires Blacksmithing (365) Use: Teaches you how to make a Hard Khorium Battleplate. Sell Price: 2 Hard Khorium Battleplate Item Level 159 Binds when picked up Chest Plate 1983 Armor +61 Strength +55 Stamina Red Socket Red Socket Red Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Blacksmithing (350) Equip: Improves critical strike rating by 41. Equip: Your attacks ignore 280 of your opponent's armor. Sell Price: 11 17 65 Requires Khorium Bar (20), Hardened Adamantite Bar (4), Primal Fire (10), Primal Shadow (10), Primal Nether (6)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35554",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Hard Khorium Battleplate Item Level 70 Requires Blacksmithing (365) Use: Teaches you how to make a Hard Khorium Battleplate. Sell Price: 2 Hard Khorium Battleplate Item Level 159 Binds when picked up Chest Plate 1983 Armor +61 Strength +55 Stamina Red Socket Red Socket Red Socket Socket Bonus: +4 Critical Strike Rating Durability 165 / 165 Requires Level 70 Requires Blacksmithing (350) Equip: Improves critical strike rating by 41. Equip: Your attacks ignore 280 of your opponent's armor. Sell Price: 11 17 65 Requires Khorium Bar (20), Hardened Adamantite Bar (4), Primal Fire (10), Primal Shadow (10), Primal Nether (6)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35554",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35554"
+}

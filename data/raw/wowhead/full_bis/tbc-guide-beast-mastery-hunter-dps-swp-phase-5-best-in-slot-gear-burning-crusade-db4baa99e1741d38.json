@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:35+00:00",
+  "fetched_at": "2026-09-04T23:48:50+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -150,7 +150,7 @@
           "cells": [
             "Optional",
             "Vengeful Gladiator's Chain Helm",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -170,11 +170,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         }
       ],
       "slot": "Head"
@@ -2091,7 +2091,7 @@
             [
               {
                 "id": 30900,
-                "name": "Bow-Stitched Leggings",
+                "name": "Bow-stitched Leggings",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
               }
@@ -2100,23 +2100,23 @@
           ],
           "cells": [
             "Optional",
-            "Bow-Stitched Leggings",
+            "Bow-stitched Leggings",
             "Azgalor (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30900,
-              "name": "Bow-Stitched Leggings",
+              "name": "Bow-stitched Leggings",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings"
             }
           ],
           "entity_id": 30900,
-          "entity_name": "Bow-Stitched Leggings",
+          "entity_name": "Bow-stitched Leggings",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "item_id": 30900,
-          "item_name": "Bow-Stitched Leggings",
+          "item_name": "Bow-stitched Leggings",
           "item_url": "https://www.wowhead.com/tbc/item=30900/bow-stitched-leggings",
           "rank_label": "Optional",
           "source_links": [
@@ -2548,9 +2548,9 @@
             [
               {
                 "id": 30017,
-                "name": "Telonicus' Pendant of Mayhem",
+                "name": "Telonicus's Pendant of Mayhem",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+                "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
               }
             ],
             [
@@ -2564,15 +2564,15 @@
           ],
           "cells": [
             "Optional",
-            "Telonicus' Pendant of Mayhem",
+            "Telonicus's Pendant of Mayhem",
             "Drop: Quest Reward from Verdant Sphere - Kael'thas Sunstrider (Tempest Keep)"
           ],
           "entities": [
             {
               "id": 30017,
-              "name": "Telonicus' Pendant of Mayhem",
+              "name": "Telonicus's Pendant of Mayhem",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem"
+              "url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem"
             },
             {
               "id": 32405,
@@ -2582,12 +2582,12 @@
             }
           ],
           "entity_id": 30017,
-          "entity_name": "Telonicus' Pendant of Mayhem",
+          "entity_name": "Telonicus's Pendant of Mayhem",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "entity_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "item_id": 30017,
-          "item_name": "Telonicus' Pendant of Mayhem",
-          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicus-pendant-of-mayhem",
+          "item_name": "Telonicus's Pendant of Mayhem",
+          "item_url": "https://www.wowhead.com/tbc/item=30017/telonicuss-pendant-of-mayhem",
           "rank_label": "Optional",
           "source_links": [
             {
@@ -3075,7 +3075,7 @@
           "cells": [
             "Best With Thori'dal",
             "Berserker's Call",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -3095,11 +3095,11 @@
           "rank_label": "Best With Thori'dal",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [
@@ -3343,33 +3343,33 @@
             [
               {
                 "id": 34893,
-                "name": "Vanir's Fist of Brutality",
+                "name": "Vanir's Right Fist of Brutality",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=34893/vanirs-fist-of-brutality"
+                "url": "https://www.wowhead.com/tbc/item=34893/vanirs-right-fist-of-brutality"
               }
             ],
             []
           ],
           "cells": [
             "Good Alternative",
-            "Vanir's Fist of Brutality",
+            "Vanir's Right Fist of Brutality",
             "Vendor: Smith Hauthaa (105 Badges of Justice)"
           ],
           "entities": [
             {
               "id": 34893,
-              "name": "Vanir's Fist of Brutality",
+              "name": "Vanir's Right Fist of Brutality",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=34893/vanirs-fist-of-brutality"
+              "url": "https://www.wowhead.com/tbc/item=34893/vanirs-right-fist-of-brutality"
             }
           ],
           "entity_id": 34893,
-          "entity_name": "Vanir's Fist of Brutality",
+          "entity_name": "Vanir's Right Fist of Brutality",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=34893/vanirs-fist-of-brutality",
+          "entity_url": "https://www.wowhead.com/tbc/item=34893/vanirs-right-fist-of-brutality",
           "item_id": 34893,
-          "item_name": "Vanir's Fist of Brutality",
-          "item_url": "https://www.wowhead.com/tbc/item=34893/vanirs-fist-of-brutality",
+          "item_name": "Vanir's Right Fist of Brutality",
+          "item_url": "https://www.wowhead.com/tbc/item=34893/vanirs-right-fist-of-brutality",
           "rank_label": "Good Alternative",
           "source_links": [
             {
@@ -3434,33 +3434,33 @@
             [
               {
                 "id": 34951,
-                "name": "Vanir's Fist of Carnage",
+                "name": "Vanir's Left Fist of Brutality",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=34951/vanirs-fist-of-carnage"
+                "url": "https://www.wowhead.com/tbc/item=34951/vanirs-left-fist-of-brutality"
               }
             ],
             []
           ],
           "cells": [
             "Good 9% Alternative",
-            "Vanir's Fist of Carnage",
+            "Vanir's Left Fist of Brutality",
             "Vendor: Anwehu (45 Badges of Justice)"
           ],
           "entities": [
             {
               "id": 34951,
-              "name": "Vanir's Fist of Carnage",
+              "name": "Vanir's Left Fist of Brutality",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=34951/vanirs-fist-of-carnage"
+              "url": "https://www.wowhead.com/tbc/item=34951/vanirs-left-fist-of-brutality"
             }
           ],
           "entity_id": 34951,
-          "entity_name": "Vanir's Fist of Carnage",
+          "entity_name": "Vanir's Left Fist of Brutality",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=34951/vanirs-fist-of-carnage",
+          "entity_url": "https://www.wowhead.com/tbc/item=34951/vanirs-left-fist-of-brutality",
           "item_id": 34951,
-          "item_name": "Vanir's Fist of Carnage",
-          "item_url": "https://www.wowhead.com/tbc/item=34951/vanirs-fist-of-carnage",
+          "item_name": "Vanir's Left Fist of Brutality",
+          "item_url": "https://www.wowhead.com/tbc/item=34951/vanirs-left-fist-of-brutality",
           "rank_label": "Good 9% Alternative",
           "source_links": [
             {
@@ -3518,41 +3518,41 @@
             [
               {
                 "id": 33737,
-                "name": "Vengeful Gladiator's Ripper",
+                "name": "Vengeful Gladiator's Right Ripper",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=33737/vengeful-gladiators-ripper"
+                "url": "https://www.wowhead.com/tbc/item=33737/vengeful-gladiators-right-ripper"
               }
             ],
             []
           ],
           "cells": [
             "Great MH",
-            "Vengeful Gladiator's Ripper",
-            "- Arena Vendor"
+            "Vengeful Gladiator's Right Ripper",
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
               "id": 33737,
-              "name": "Vengeful Gladiator's Ripper",
+              "name": "Vengeful Gladiator's Right Ripper",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=33737/vengeful-gladiators-ripper"
+              "url": "https://www.wowhead.com/tbc/item=33737/vengeful-gladiators-right-ripper"
             }
           ],
           "entity_id": 33737,
-          "entity_name": "Vengeful Gladiator's Ripper",
+          "entity_name": "Vengeful Gladiator's Right Ripper",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=33737/vengeful-gladiators-ripper",
+          "entity_url": "https://www.wowhead.com/tbc/item=33737/vengeful-gladiators-right-ripper",
           "item_id": 33737,
-          "item_name": "Vengeful Gladiator's Ripper",
-          "item_url": "https://www.wowhead.com/tbc/item=33737/vengeful-gladiators-ripper",
+          "item_name": "Vengeful Gladiator's Right Ripper",
+          "item_url": "https://www.wowhead.com/tbc/item=33737/vengeful-gladiators-right-ripper",
           "rank_label": "Great MH",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -3560,41 +3560,41 @@
             [
               {
                 "id": 33705,
-                "name": "Vengeful Gladiator's Fleshslicer",
+                "name": "Vengeful Gladiator's Left Ripper",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=33705/vengeful-gladiators-fleshslicer"
+                "url": "https://www.wowhead.com/tbc/item=33705/vengeful-gladiators-left-ripper"
               }
             ],
             []
           ],
           "cells": [
             "Great OH",
-            "Vengeful Gladiator's Fleshslicer",
-            "- Arena Vendor"
+            "Vengeful Gladiator's Left Ripper",
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
               "id": 33705,
-              "name": "Vengeful Gladiator's Fleshslicer",
+              "name": "Vengeful Gladiator's Left Ripper",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=33705/vengeful-gladiators-fleshslicer"
+              "url": "https://www.wowhead.com/tbc/item=33705/vengeful-gladiators-left-ripper"
             }
           ],
           "entity_id": 33705,
-          "entity_name": "Vengeful Gladiator's Fleshslicer",
+          "entity_name": "Vengeful Gladiator's Left Ripper",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=33705/vengeful-gladiators-fleshslicer",
+          "entity_url": "https://www.wowhead.com/tbc/item=33705/vengeful-gladiators-left-ripper",
           "item_id": 33705,
-          "item_name": "Vengeful Gladiator's Fleshslicer",
-          "item_url": "https://www.wowhead.com/tbc/item=33705/vengeful-gladiators-fleshslicer",
+          "item_name": "Vengeful Gladiator's Left Ripper",
+          "item_url": "https://www.wowhead.com/tbc/item=33705/vengeful-gladiators-left-ripper",
           "rank_label": "Great OH",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         },
         {
           "cell_entities": [
@@ -4137,7 +4137,7 @@
           "cells": [
             "Optional",
             "Vengeful Gladiator's Rifle",
-            "- Arena Vendor"
+            "Arena Points - Arena Vendor"
           ],
           "entities": [
             {
@@ -4157,11 +4157,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1900",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1900/arena-points",
+              "text": "Arena Points"
             }
           ],
-          "source_text": "- Arena Vendor"
+          "source_text": "Arena Points - Arena Vendor"
         }
       ],
       "slot": "Ranged"
@@ -4421,7 +4421,7 @@
           "cells": [
             "Optional",
             "Harpy Hide Quiver",
-            "Vendor: Jorek Ironside Vendor: Thanthaldis Snowgleam"
+            "Vendor: Jekyll Flandring Vendor: Thanthaldis Snowgleam"
           ],
           "entities": [
             {
@@ -4441,15 +4441,15 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=13219/jorek-ironside",
-              "text": "Jorek Ironside"
+              "href": "https://www.wowhead.com/tbc/npc=13219/jekyll-flandring",
+              "text": "Jekyll Flandring"
             },
             {
               "href": "https://www.wowhead.com/tbc/npc=13217/thanthaldis-snowgleam",
               "text": "Thanthaldis Snowgleam"
             }
           ],
-          "source_text": "Vendor: Jorek Ironside Vendor: Thanthaldis Snowgleam"
+          "source_text": "Vendor: Jekyll Flandring Vendor: Thanthaldis Snowgleam"
         }
       ],
       "slot": "Quiver"
@@ -4575,7 +4575,7 @@
           "cells": [
             "Optional",
             "Gnoll Skin Bandolier",
-            "Vendor: Jorek Ironside Vendor: Thanthaldis Snowgleam"
+            "Vendor: Jekyll Flandring Vendor: Thanthaldis Snowgleam"
           ],
           "entities": [
             {
@@ -4595,15 +4595,15 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=13219/jorek-ironside",
-              "text": "Jorek Ironside"
+              "href": "https://www.wowhead.com/tbc/npc=13219/jekyll-flandring",
+              "text": "Jekyll Flandring"
             },
             {
               "href": "https://www.wowhead.com/tbc/npc=13217/thanthaldis-snowgleam",
               "text": "Thanthaldis Snowgleam"
             }
           ],
-          "source_text": "Vendor: Jorek Ironside Vendor: Thanthaldis Snowgleam"
+          "source_text": "Vendor: Jekyll Flandring Vendor: Thanthaldis Snowgleam"
         }
       ],
       "slot": "Quiver"
@@ -4876,7 +4876,7 @@
           "cells": [
             "Optional",
             "Blackflight Arrow",
-            "Various vendors in The Burning Crusade"
+            "Various vendors in Outland"
           ],
           "entities": [
             {
@@ -4896,11 +4896,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/faction=980/the-burning-crusade",
-              "text": "The Burning Crusade"
+              "href": "https://www.wowhead.com/tbc/faction=980/outland",
+              "text": "Outland"
             }
           ],
-          "source_text": "Various vendors in The Burning Crusade"
+          "source_text": "Various vendors in Outland"
         }
       ],
       "slot": "Ammo"
@@ -5195,7 +5195,7 @@
           "cells": [
             "Optional",
             "Ironbite Shell",
-            "Various vendors in The Burning Crusade"
+            "Various vendors in Outland"
           ],
           "entities": [
             {
@@ -5215,11 +5215,11 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/faction=980/the-burning-crusade",
-              "text": "The Burning Crusade"
+              "href": "https://www.wowhead.com/tbc/faction=980/outland",
+              "text": "Outland"
             }
           ],
-          "source_text": "Various vendors in The Burning Crusade"
+          "source_text": "Various vendors in Outland"
         }
       ],
       "slot": "Ammo"

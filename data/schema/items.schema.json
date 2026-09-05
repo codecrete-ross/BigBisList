@@ -2,33 +2,81 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Big BiS List items",
   "type": "object",
-  "required": ["items"],
+  "required": [
+    "items"
+  ],
   "properties": {
     "items": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "quality", "binding", "boe", "wowhead_url", "sources", "primary_source", "source_summary", "acquisition_phase"],
+        "required": [
+          "id",
+          "name",
+          "quality",
+          "binding",
+          "boe",
+          "wowhead_url",
+          "sources",
+          "primary_source",
+          "source_summary",
+          "acquisition_phase"
+        ],
         "properties": {
-          "id": { "type": "integer" },
-          "name": { "type": "string" },
-          "quality": { "type": "string" },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quality": {
+            "type": "string"
+          },
           "binding": {
             "type": "string",
-            "enum": ["bind_on_equip", "bind_on_pickup", "bind_on_use", "quest", "unknown"]
+            "enum": [
+              "bind_on_equip",
+              "bind_on_pickup",
+              "bind_on_use",
+              "quest",
+              "unknown"
+            ]
           },
-          "boe": { "type": ["boolean", "null"] },
-          "wowhead_url": { "type": "string" },
+          "boe": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "wowhead_url": {
+            "type": "string"
+          },
           "acquisition_phase": {
             "type": "string",
-            "enum": ["PR", "T4", "T5", "T6", "ZA", "SWP"]
+            "enum": [
+              "PR",
+              "T4",
+              "T5",
+              "T6",
+              "ZA",
+              "SWP"
+            ]
           },
-          "source_summary": { "type": "string" },
-          "primary_source": { "$ref": "#/$defs/source" },
+          "source_summary": {
+            "type": "string"
+          },
+          "primary_source": {
+            "$ref": "#/$defs/source"
+          },
           "sources": {
             "type": "array",
             "minItems": 1,
-            "items": { "$ref": "#/$defs/source" }
+            "items": {
+              "$ref": "#/$defs/source"
+            }
+          },
+          "tradeable": {
+            "type": "boolean"
           }
         }
       }
@@ -37,39 +85,93 @@
   "$defs": {
     "source": {
       "type": "object",
-      "required": ["type", "confidence"],
+      "required": [
+        "type",
+        "confidence"
+      ],
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["drop", "quest", "vendor", "crafted", "pvp", "token_turnin", "world_drop", "unknown"]
+          "enum": [
+            "drop",
+            "quest",
+            "vendor",
+            "crafted",
+            "pvp",
+            "token_turnin",
+            "world_drop",
+            "unknown"
+          ]
         },
-        "entity_id": { "type": "integer" },
-        "entity_name": { "type": "string" },
-        "zone": { "type": "string" },
-        "difficulty": { "type": "string" },
-        "drop_percent": { "type": "number" },
-        "count": { "type": "integer" },
-        "out_of": { "type": "integer" },
-        "quest_id": { "type": "integer" },
-        "vendor_id": { "type": "integer" },
-        "profession": { "type": "string" },
-        "side": { "type": "string" },
-        "source_url": { "type": "string" },
-        "confidence": { "type": "string" },
-        "world_drop": { "type": "boolean" },
+        "entity_id": {
+          "type": "integer"
+        },
+        "entity_name": {
+          "type": "string"
+        },
+        "zone": {
+          "type": "string"
+        },
+        "difficulty": {
+          "type": "string"
+        },
+        "drop_percent": {
+          "type": "number"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "out_of": {
+          "type": "integer"
+        },
+        "quest_id": {
+          "type": "integer"
+        },
+        "vendor_id": {
+          "type": "integer"
+        },
+        "profession": {
+          "type": "string"
+        },
+        "side": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "world_drop": {
+          "type": "boolean"
+        },
         "token_sources": {
           "type": "array",
           "items": {
             "allOf": [
-              { "$ref": "#/$defs/source" },
+              {
+                "$ref": "#/$defs/source"
+              },
               {
                 "type": "object",
-                "required": ["token_item_id", "token_name", "token_count"],
+                "required": [
+                  "token_item_id",
+                  "token_name",
+                  "token_count"
+                ],
                 "properties": {
-                  "token_item_id": { "type": "integer" },
-                  "token_name": { "type": "string" },
-                  "token_count": { "type": "integer" },
-                  "token_source_url": { "type": "string" }
+                  "token_item_id": {
+                    "type": "integer"
+                  },
+                  "token_name": {
+                    "type": "string"
+                  },
+                  "token_count": {
+                    "type": "integer"
+                  },
+                  "token_source_url": {
+                    "type": "string"
+                  }
                 }
               }
             ]
@@ -79,18 +181,34 @@
           "type": "array",
           "items": {
             "allOf": [
-              { "$ref": "#/$defs/source" },
+              {
+                "$ref": "#/$defs/source"
+              },
               {
                 "type": "object",
-                "required": ["quest_starter_item_id", "quest_starter_name", "quest_starter_relationship", "quest_starter_source_url"],
+                "required": [
+                  "quest_starter_item_id",
+                  "quest_starter_name",
+                  "quest_starter_relationship",
+                  "quest_starter_source_url"
+                ],
                 "properties": {
-                  "quest_starter_item_id": { "type": "integer" },
-                  "quest_starter_name": { "type": "string" },
+                  "quest_starter_item_id": {
+                    "type": "integer"
+                  },
+                  "quest_starter_name": {
+                    "type": "string"
+                  },
                   "quest_starter_relationship": {
                     "type": "string",
-                    "enum": ["direct_starter", "quest_chain_gate"]
+                    "enum": [
+                      "direct_starter",
+                      "quest_chain_gate"
+                    ]
                   },
-                  "quest_starter_source_url": { "type": "string" }
+                  "quest_starter_source_url": {
+                    "type": "string"
+                  }
                 }
               }
             ]
@@ -100,14 +218,50 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["amount", "name"],
+            "required": [
+              "amount",
+              "name"
+            ],
             "properties": {
-              "amount": { "type": "integer" },
-              "name": { "type": "string" },
-              "currency_id": { "type": "integer" },
-              "item_id": { "type": "integer" }
+              "amount": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "currency_id": {
+                "type": "integer"
+              },
+              "item_id": {
+                "type": "integer"
+              }
             }
           }
+        },
+        "available_from_phase": {
+          "type": "string",
+          "enum": [
+            "PR",
+            "T4",
+            "T5",
+            "T6",
+            "ZA",
+            "SWP"
+          ]
+        },
+        "available_until_phase": {
+          "type": "string",
+          "enum": [
+            "PR",
+            "T4",
+            "T5",
+            "T6",
+            "ZA",
+            "SWP"
+          ]
+        },
+        "tradeable": {
+          "type": "boolean"
         }
       }
     }

@@ -1,0 +1,108 @@
+{
+  "bindings": [
+    {
+      "class": "Druid",
+      "phase": "T6",
+      "spec": "Feral tank"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 29186,
+            "name": "Arcanum of the Defender",
+            "type": "item"
+          },
+          "equipment_item_id": 31039,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Head",
+          "spell_id": 35443
+        },
+        {
+          "equipment_item_id": 31048,
+          "slot": "Shoulder",
+          "spell_id": 35402
+        },
+        {
+          "equipment_item_id": 31042,
+          "slot": "Chest",
+          "spell_id": 27959
+        },
+        {
+          "entity": {
+            "id": 29536,
+            "name": "Nethercleft Leg Armor",
+            "type": "item"
+          },
+          "equipment_item_id": 31044,
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Legs",
+          "spell_id": 35495
+        },
+        {
+          "equipment_item_id": 32593,
+          "slot": "Feet",
+          "spell_id": 13889
+        },
+        {
+          "equipment_item_id": 33881,
+          "slot": "Wrist",
+          "spell_id": 27916
+        },
+        {
+          "equipment_item_id": 31034,
+          "slot": "Hands",
+          "spell_id": 25063
+        },
+        {
+          "equipment_item_id": 29279,
+          "slot": "Ring",
+          "spell_id": 29723
+        },
+        {
+          "equipment_item_id": 32266,
+          "slot": "Ring",
+          "spell_id": 29723
+        },
+        {
+          "equipment_item_id": 28660,
+          "slot": "Back",
+          "spell_id": 9102
+        },
+        {
+          "equipment_item_id": 30883,
+          "slot": "Two Hand",
+          "spell_id": 27976
+        }
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Feral Druid Tank in Phase 3",
+      "planner": "druid/night-elf/A0YQ9QMDITIyIQUwElHwVQMwH4FAeT-KcwB91CB-mQIAfmqDQHlIikoAfdwgfciFYHlCbTcAfdQgfdxAfcIGQHWaAH3CIH3UhyB5RIqnAH3UiAB_UTZBiSCEWW0MAH3CiiB5OmHnAH3UiwByX3QbjAB-CnQbDQB-9Q4Af5KPAG_0I46QAHijbUgSAH6D"
+    },
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 28888,
+            "name": "Greater Inscription of Vengeance",
+            "type": "item"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Shoulder",
+          "spell_id": 35417
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Aldor vs. Scryer for Feral Druid Tank in Phase 3",
+      "text": "Unlike most other specs in TBC, the choice of Aldor versus Scryer faction has almost zero impact on the long-term PvE performance of a Feral Druid. For bear tanks, the only permanently relevant items provided by these factions are the two shoulder enchants for threat and avoidance, respectively. The Aldor threat enchant is , and the Scryer version is , both of which require Exalted reputation with the Aldor and Scryer factions, respectively. Despite providing different distributions of Attack Power versus Critical Strike Rating, calculations show that both enchants provide nearly identical TPS value within current modeling accuracy."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:16+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "title": "Feral Druid Tank Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

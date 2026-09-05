@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:34+00:00",
+  "fetched_at": "2026-09-04T23:48:48+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -369,7 +369,7 @@
             [
               {
                 "id": 32338,
-                "name": "Blood-Cursed Shoulderpads",
+                "name": "Blood-cursed Shoulderpads",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=32338/blood-cursed-shoulderpads"
               }
@@ -378,23 +378,23 @@
           ],
           "cells": [
             "Option",
-            "Blood-Cursed Shoulderpads",
+            "Blood-cursed Shoulderpads",
             "Drop: Gurtogg Bloodboil (Black Temple)"
           ],
           "entities": [
             {
               "id": 32338,
-              "name": "Blood-Cursed Shoulderpads",
+              "name": "Blood-cursed Shoulderpads",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=32338/blood-cursed-shoulderpads"
             }
           ],
           "entity_id": 32338,
-          "entity_name": "Blood-Cursed Shoulderpads",
+          "entity_name": "Blood-cursed Shoulderpads",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=32338/blood-cursed-shoulderpads",
           "item_id": 32338,
-          "item_name": "Blood-Cursed Shoulderpads",
+          "item_name": "Blood-cursed Shoulderpads",
           "item_url": "https://www.wowhead.com/tbc/item=32338/blood-cursed-shoulderpads",
           "rank_label": "Option",
           "source_links": [
@@ -1676,48 +1676,6 @@
             [],
             [
               {
-                "id": 30888,
-                "name": "Anetheron's Noose",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30888/anetherons-noose"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "BiS",
-            "Anetheron's Noose",
-            "Drop: Anetheron (Hyjal Summit)"
-          ],
-          "entities": [
-            {
-              "id": 30888,
-              "name": "Anetheron's Noose",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30888/anetherons-noose"
-            }
-          ],
-          "entity_id": 30888,
-          "entity_name": "Anetheron's Noose",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30888/anetherons-noose",
-          "item_id": 30888,
-          "item_name": "Anetheron's Noose",
-          "item_url": "https://www.wowhead.com/tbc/item=30888/anetherons-noose",
-          "rank_label": "BiS",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=17808/anetheron",
-              "text": "Anetheron"
-            }
-          ],
-          "source_text": "Drop: Anetheron (Hyjal Summit)"
-        },
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 30914,
                 "name": "Belt of the Crescent Moon",
                 "type": "item",
@@ -1727,7 +1685,7 @@
             []
           ],
           "cells": [
-            "Option",
+            "BiS",
             "Belt of the Crescent Moon",
             "Drop: Kaz'rogal (Hyjal Summit)"
           ],
@@ -1746,7 +1704,7 @@
           "item_id": 30914,
           "item_name": "Belt of the Crescent Moon",
           "item_url": "https://www.wowhead.com/tbc/item=30914/belt-of-the-crescent-moon",
-          "rank_label": "Option",
+          "rank_label": "BiS",
           "source_links": [
             {
               "href": "https://www.wowhead.com/tbc/npc=17888/kazrogal",
@@ -1754,6 +1712,48 @@
             }
           ],
           "source_text": "Drop: Kaz'rogal (Hyjal Summit)"
+        },
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 30888,
+                "name": "Anetheron's Noose",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=30888/anetherons-noose"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Anetheron's Noose",
+            "Drop: Anetheron (Hyjal Summit)"
+          ],
+          "entities": [
+            {
+              "id": 30888,
+              "name": "Anetheron's Noose",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=30888/anetherons-noose"
+            }
+          ],
+          "entity_id": 30888,
+          "entity_name": "Anetheron's Noose",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=30888/anetherons-noose",
+          "item_id": 30888,
+          "item_name": "Anetheron's Noose",
+          "item_url": "https://www.wowhead.com/tbc/item=30888/anetherons-noose",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=17808/anetheron",
+              "text": "Anetheron"
+            }
+          ],
+          "source_text": "Drop: Anetheron (Hyjal Summit)"
         },
         {
           "cell_entities": [
@@ -3351,55 +3351,6 @@
             [],
             [
               {
-                "id": 38290,
-                "name": "Dark Iron Smoking Pipe",
-                "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe"
-              }
-            ],
-            []
-          ],
-          "cells": [
-            "Option",
-            "Dark Iron Smoking Pipe",
-            "Drop: Coren Direbrew (Brewfest Seasonal Event)"
-          ],
-          "entities": [
-            {
-              "id": 38290,
-              "name": "Dark Iron Smoking Pipe",
-              "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe"
-            }
-          ],
-          "entity_id": 38290,
-          "entity_name": "Dark Iron Smoking Pipe",
-          "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe",
-          "item_id": 38290,
-          "item_name": "Dark Iron Smoking Pipe",
-          "item_url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe",
-          "rank_label": "Option",
-          "source_links": [
-            {
-              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
-              "text": "Coren Direbrew"
-            }
-          ],
-          "source_text": "Drop: Coren Direbrew (Brewfest Seasonal Event)"
-        }
-      ],
-      "slot": "Trinket"
-    },
-    {
-      "data_family": "bis_lists",
-      "heading": "Best in Slot Trinkets for Balance Druid in TBC Classic Phase 3",
-      "rows": [
-        {
-          "cell_entities": [
-            [],
-            [
-              {
                 "id": 30626,
                 "name": "Sextant of Unstable Currents",
                 "type": "item",
@@ -3436,6 +3387,55 @@
             }
           ],
           "source_text": "Drop: Fathom-Lord Karathress (Serpentshrine Cavern)"
+        }
+      ],
+      "slot": "Trinket"
+    },
+    {
+      "data_family": "bis_lists",
+      "heading": "Best in Slot Trinkets for Balance Druid in TBC Classic Phase 3",
+      "rows": [
+        {
+          "cell_entities": [
+            [],
+            [
+              {
+                "id": 38290,
+                "name": "Dark Iron Smoking Pipe",
+                "type": "item",
+                "url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe"
+              }
+            ],
+            []
+          ],
+          "cells": [
+            "Option",
+            "Dark Iron Smoking Pipe",
+            "Drop: Coren Direbrew (Brewfest Seasonal Event)"
+          ],
+          "entities": [
+            {
+              "id": 38290,
+              "name": "Dark Iron Smoking Pipe",
+              "type": "item",
+              "url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe"
+            }
+          ],
+          "entity_id": 38290,
+          "entity_name": "Dark Iron Smoking Pipe",
+          "entity_type": "item",
+          "entity_url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe",
+          "item_id": 38290,
+          "item_name": "Dark Iron Smoking Pipe",
+          "item_url": "https://www.wowhead.com/tbc/item=38290/dark-iron-smoking-pipe",
+          "rank_label": "Option",
+          "source_links": [
+            {
+              "href": "https://www.wowhead.com/tbc/npc=23872/coren-direbrew",
+              "text": "Coren Direbrew"
+            }
+          ],
+          "source_text": "Drop: Coren Direbrew (Brewfest Seasonal Event)"
         },
         {
           "cell_entities": [
@@ -3763,33 +3763,33 @@
             [
               {
                 "id": 34009,
-                "name": "Hammer of Judgment",
+                "name": "Hammer of Judgement",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment"
+                "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
               }
             ],
             []
           ],
           "cells": [
             "BiS",
-            "Hammer of Judgment",
+            "Hammer of Judgement",
             "Drop: Trash Mobs (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 34009,
-              "name": "Hammer of Judgment",
+              "name": "Hammer of Judgement",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment"
+              "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
             }
           ],
           "entity_id": 34009,
-          "entity_name": "Hammer of Judgment",
+          "entity_name": "Hammer of Judgement",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment",
+          "entity_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement",
           "item_id": 34009,
-          "item_name": "Hammer of Judgment",
-          "item_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment",
+          "item_name": "Hammer of Judgement",
+          "item_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement",
           "rank_label": "BiS",
           "source_links": [],
           "source_text": "Drop: Trash Mobs (Hyjal Summit)"
@@ -4871,6 +4871,6 @@
       "slot": "Idol"
     }
   ],
-  "title": "Burning Crusade Classic Balance Druid DPS Best in Slot (BiS) Phase 3 Gear Guide - Wowhead",
+  "title": "Balance Druid DPS Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
   "url": "https://www.wowhead.com/tbc/guide/balance-druid-dps-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
 }

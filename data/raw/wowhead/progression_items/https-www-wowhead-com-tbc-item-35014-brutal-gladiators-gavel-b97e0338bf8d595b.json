@@ -1,0 +1,74 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Brutal Gladiator's Gavel Phase 5 Item Level 154 Binds when picked up Main Hand Mace 10 - 115 Damage Speed 1.60 (39.06 damage per second) +33 Stamina +21 Intellect Durability 105 / 105 Requires Level 70 Equip: Improves spell hit rating by 19. Equip: Improves your resilience rating by 18. Equip: Increases damage and healing done by magical spells and effects by up to 266.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:29+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 35014,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 39.06,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 19.",
+        "stats": {
+          "spell_hit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 18.",
+        "stats": {
+          "resilience_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 266.",
+        "stats": {
+          "spell_power": 266.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 19.",
+      "Equip: Improves your resilience rating by 18.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 266."
+    ],
+    "id": 35014,
+    "item_level": 154,
+    "name": "Brutal Gladiator's Gavel",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 21.0,
+      "resilience_rating": 18.0,
+      "spell_hit_rating": 19.0,
+      "spell_power": 266.0,
+      "stamina": 33.0
+    },
+    "weapon_max_damage": 115,
+    "weapon_min_damage": 10,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35014/brutal-gladiators-gavel"
+  },
+  "name": "Brutal Gladiator's Gavel",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35014/brutal-gladiators-gavel"
+}

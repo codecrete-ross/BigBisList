@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Ringmail Leggings Phase 1 Item Level 123 Binds when picked up Legs Mail 758 Armor +54 Stamina +26 Intellect Durability 105 / 105 Classes: Shaman Requires Level 70 Equip: Improves spell critical strike rating by 21. Equip: Improves your resilience rating by 29. Equip: Increases healing done by up to 79 and damage done by up to 27 for all magical spells and effects. Equip: Restores 6 mana per 5 sec. Gladiator's Wartide (0/5) Gladiator's Ringmail Armor Gladiator's Ringmail Gauntlets Gladiator's Ringmail Helm Gladiator's Ringmail Leggings Gladiator's Ringmail Spaulders (2) Set : +35 Resilience Rating. (4) Set : Reduces the cooldown of your Grounding Totem ability by 1.5 sec.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:22+00:00",
+  "inventory_slot": null,
+  "item_id": 31406,
+  "item_stats": {
+    "armor": 758,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 21.",
+        "stats": {
+          "spell_crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 29.",
+        "stats": {
+          "resilience_rating": 29.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 79 and damage done by up to 27 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 79.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 21.",
+      "Equip: Improves your resilience rating by 29.",
+      "Equip: Increases healing done by up to 79 and damage done by up to 27 for all magical spells and effects.",
+      "Equip: Restores 6 mana per 5 sec."
+    ],
+    "id": 31406,
+    "item_level": 123,
+    "name": "Gladiator's Ringmail Leggings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "healing_power": 79.0,
+      "intellect": 26.0,
+      "mp5": 6.0,
+      "resilience_rating": 29.0,
+      "spell_crit_rating": 21.0,
+      "stamina": 54.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31406/gladiators-ringmail-leggings"
+  },
+  "name": "Gladiator's Ringmail Leggings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31406/gladiators-ringmail-leggings"
+}

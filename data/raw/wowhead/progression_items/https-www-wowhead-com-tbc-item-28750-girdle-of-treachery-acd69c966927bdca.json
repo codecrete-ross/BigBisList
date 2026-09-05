@@ -1,0 +1,57 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Girdle of Treachery Phase 1 Item Level 115 Binds when picked up Waist Leather 205 Armor +18 Agility +37 Stamina Red Socket Red Socket Socket Bonus: +3 Agility Durability 40 / 40 Requires Level 70 Equip: Increases attack power by 58. Sell Price: 2 91 64",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:50+00:00",
+  "inventory_slot": null,
+  "item_id": 28750,
+  "item_stats": {
+    "armor": 205,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases attack power by 58.",
+        "stats": {
+          "attack_power": 58.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases attack power by 58."
+    ],
+    "id": 28750,
+    "item_level": 115,
+    "name": "Girdle of Treachery",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "agility": 3.0
+    },
+    "sockets": [
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 18.0,
+      "attack_power": 58.0,
+      "stamina": 37.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28750/girdle-of-treachery"
+  },
+  "name": "Girdle of Treachery",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28750/girdle-of-treachery"
+}

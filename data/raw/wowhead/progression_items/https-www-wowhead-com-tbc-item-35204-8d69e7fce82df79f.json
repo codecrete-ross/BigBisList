@@ -1,0 +1,80 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Pattern: Sunfire Handwraps Item Level 70 Binds when picked up Requires Tailoring (365) Use: Teaches you how to sew Sunfire Handwraps. Sell Price: 2 Sunfire Handwraps Item Level 159 Binds when equipped Hands Cloth 166 Armor +33 Stamina +30 Intellect Red Socket Red Socket Socket Bonus: +4 Spell Damage and Healing Durability 35 / 35 Requires Level 70 Equip: Improves spell critical strike rating by 37. Equip: Increases damage and healing done by magical spells and effects by up to 53. Sell Price: 3 6 55 Requires Spellcloth (10), Shadowcloth (10), Sunmote (6)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:40+00:00",
+  "inventory_slot": null,
+  "item_id": 35204,
+  "item_stats": {
+    "armor": 166,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to sew Sunfire Handwraps.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 37.",
+        "stats": {
+          "spell_crit_rating": 37.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 53.",
+        "stats": {
+          "spell_power": 53.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 37.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 53."
+    ],
+    "id": 35204,
+    "item_level": 70,
+    "name": "Pattern: Sunfire Handwraps",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "red"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 30.0,
+      "spell_crit_rating": 37.0,
+      "spell_power": 53.0,
+      "stamina": 33.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to sew Sunfire Handwraps."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35204"
+  },
+  "name": "Pattern: Sunfire Handwraps",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Tailoring",
+      "raw_text": "Pattern: Sunfire Handwraps Item Level 70 Binds when picked up Requires Tailoring (365) Use: Teaches you how to sew Sunfire Handwraps. Sell Price: 2 Sunfire Handwraps Item Level 159 Binds when equipped Hands Cloth 166 Armor +33 Stamina +30 Intellect Red Socket Red Socket Socket Bonus: +4 Spell Damage and Healing Durability 35 / 35 Requires Level 70 Equip: Improves spell critical strike rating by 37. Equip: Increases damage and healing done by magical spells and effects by up to 53. Sell Price: 3 6 55 Requires Spellcloth (10), Shadowcloth (10), Sunmote (6)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35204",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35204"
+}

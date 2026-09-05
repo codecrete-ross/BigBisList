@@ -1,0 +1,42 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Stabilized Eternium Scope Item Level 75 Requires Level 60 Use: Attaches a permanent scope to a bow or gun that increases its critical strike rating by 28. Max Stack: 5 Sell Price: 2",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:29+00:00",
+  "inventory_slot": null,
+  "item_id": 23766,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Attaches a permanent scope to a bow or gun that increases its critical strike rating by 28. Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 23766,
+    "item_level": 75,
+    "name": "Stabilized Eternium Scope",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Attaches a permanent scope to a bow or gun that increases its critical strike rating by 28. Max Stack: 5"
+    ],
+    "weapon_subtype": "Bow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=23766/stabilized-eternium-scope"
+  },
+  "name": "Stabilized Eternium Scope",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=23766/stabilized-eternium-scope"
+}

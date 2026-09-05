@@ -1,0 +1,55 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Illidari-Bane Mageblade Phase 1 Item Level 115 Binds when picked up Main Hand Dagger 32 - 101 Damage Speed 1.60 (41.56 damage per second) +12 Stamina +11 Intellect Durability 65 / 65 Equip: Improves spell critical strike rating by 20. Equip: Increases damage done to Demons by magical spells and effects by up to 185. Sell Price: 9 7 91",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:56:27+00:00",
+  "inventory_slot": "Main Hand",
+  "item_id": 30787,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 41.56,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 20.",
+        "stats": {
+          "spell_crit_rating": 20.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 20."
+    ],
+    "id": 30787,
+    "item_level": 115,
+    "name": "Illidari-Bane Mageblade",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "slot": "Main Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 11.0,
+      "spell_crit_rating": 20.0,
+      "stamina": 12.0
+    },
+    "weapon_max_damage": 101,
+    "weapon_min_damage": 32,
+    "weapon_speed": 1.6,
+    "weapon_subtype": "Dagger",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30787/illidari-bane-mageblade"
+  },
+  "name": "Illidari-Bane Mageblade",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30787/illidari-bane-mageblade"
+}

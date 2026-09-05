@@ -1,0 +1,59 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Destroyers' Mantle Phase 1 Item Level 91 Binds when picked up Shoulder Cloth 94 Armor +12 Stamina +12 Intellect +8 Spirit Durability 50 / 50 Equip: Improves spell critical strike rating by 9. Equip: Increases damage and healing done by magical spells and effects by up to 35. Sell Price: 2 15 5",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:53+00:00",
+  "inventory_slot": null,
+  "item_id": 28075,
+  "item_stats": {
+    "armor": 94,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 9.",
+        "stats": {
+          "spell_crit_rating": 9.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 35.",
+        "stats": {
+          "spell_power": 35.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 9.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 35."
+    ],
+    "id": 28075,
+    "item_level": 91,
+    "name": "Destroyers' Mantle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "stats": {
+      "intellect": 12.0,
+      "spell_crit_rating": 9.0,
+      "spell_power": 35.0,
+      "spirit": 8.0,
+      "stamina": 12.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28075/destroyers-mantle"
+  },
+  "name": "Destroyers' Mantle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28075/destroyers-mantle"
+}

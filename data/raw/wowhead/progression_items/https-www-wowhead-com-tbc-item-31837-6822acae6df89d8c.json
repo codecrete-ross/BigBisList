@@ -1,0 +1,45 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Codex: Prayer of Shadow Protection II Item Level 70 Classes: Priest Requires Level 70 Use: Teaches Prayer of Shadow Protection (Rank 2). Power infuses the target's party, increasing their Shadow resistance by 70 for 20 min. Sell Price: 1 47 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:29+00:00",
+  "inventory_slot": null,
+  "item_id": 31837,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches Prayer of Shadow Protection (Rank 2). Power infuses the target's party, increasing their Shadow resistance by 70 for 20 min.",
+        "type": "use"
+      }
+    ],
+    "id": 31837,
+    "item_level": 70,
+    "name": "Codex: Prayer of Shadow Protection II",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Priest"
+      ]
+    },
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches Prayer of Shadow Protection (Rank 2). Power infuses the target's party, increasing their Shadow resistance by 70 for 20 min."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31837"
+  },
+  "name": "Codex: Prayer of Shadow Protection II",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31837"
+}

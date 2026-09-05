@@ -1,0 +1,49 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Design: Luminous Noble Topaz Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Luminous Noble Topaz. Sell Price: 3 Luminous Noble Topaz Item Level 70 +9 Healing +3 Spell Damage and +4 Intellect \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:51:42+00:00",
+  "inventory_slot": null,
+  "item_id": 24215,
+  "item_stats": {
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Luminous Noble Topaz.",
+        "type": "use"
+      }
+    ],
+    "id": 24215,
+    "item_level": 70,
+    "name": "Design: Luminous Noble Topaz",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Luminous Noble Topaz."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=24215"
+  },
+  "name": "Design: Luminous Noble Topaz",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Luminous Noble Topaz Item Level 70 Requires Jewelcrafting (350) Use: Teaches you how to cut a Luminous Noble Topaz. Sell Price: 3 Luminous Noble Topaz Item Level 70 +9 Healing +3 Spell Damage and +4 Intellect \"Matches a Red or Yellow Socket.\" Sell Price: 3 Requires Noble Topaz",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=24215",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=24215"
+}

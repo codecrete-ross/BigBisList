@@ -1,0 +1,133 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This epic amulet of item level 88 goes in the \"Neck\" slot. It is a quest reward from The Savior of Kalimdor. In the Amulets category. Always up to date.",
+  "fetched_at": "2026-09-04T23:50:41+00:00",
+  "inventory_slot": "Neck",
+  "item_id": 21712,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Increases healing done by up to 57 and damage done by up to 19 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 57.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 6 mana per 5 sec.",
+        "stats": {
+          "mp5": 6.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Increases healing done by up to 57 and damage done by up to 19 for all magical spells and effects.",
+      "Equip: Restores 6 mana per 5 sec."
+    ],
+    "id": 21712,
+    "item_level": 88,
+    "name": "Amulet of the Fallen God",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 8802,
+      "entity_name": "The Savior of Kalimdor",
+      "quest_id": 8802,
+      "source_url": "https://www.wowhead.com/tbc/item=21712/amulet-of-the-fallen-god",
+      "type": "quest",
+      "zone": "Ahn'Qiraj"
+    },
+    "quality": "epic",
+    "required_level": 60,
+    "slot": "Neck",
+    "source_summary": "Quest: The Savior of Kalimdor",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 8802,
+        "entity_name": "The Savior of Kalimdor",
+        "quest_id": 8802,
+        "source_url": "https://www.wowhead.com/tbc/item=21712/amulet-of-the-fallen-god",
+        "type": "quest",
+        "zone": "Ahn'Qiraj"
+      }
+    ],
+    "stats": {
+      "healing_power": 57.0,
+      "mp5": 6.0,
+      "stamina": 11.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=21712/amulet-of-the-fallen-god"
+  },
+  "name": "Amulet of the Fallen God",
+  "normalized_requirements": [],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 8802,
+      "entity_name": "The Savior of Kalimdor",
+      "quest_id": 8802,
+      "source_url": "https://www.wowhead.com/tbc/item=21712/amulet-of-the-fallen-god",
+      "type": "quest",
+      "zone": "Ahn'Qiraj"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [
+      {
+        "category": 3428,
+        "category2": 3,
+        "id": 8802,
+        "itemchoices": [
+          [
+            21712,
+            1
+          ],
+          [
+            21710,
+            1
+          ],
+          [
+            21709,
+            1
+          ]
+        ],
+        "level": 60,
+        "name": "The Savior of Kalimdor",
+        "popularity": 8,
+        "reprewards": [
+          [
+            609,
+            500
+          ],
+          [
+            910,
+            1000
+          ]
+        ],
+        "reqlevel": 60,
+        "side": 3,
+        "xp": 14300
+      }
+    ],
+    "sold-by": [],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=21712/amulet-of-the-fallen-god"
+}

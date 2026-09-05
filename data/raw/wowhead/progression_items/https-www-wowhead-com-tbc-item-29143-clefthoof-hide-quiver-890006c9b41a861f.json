@@ -1,0 +1,52 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Clefthoof Hide Quiver Item Level 109 Binds when picked up Unique 18 Slot Quiver Classes: Hunter Requires Level 68 Requires The Mag'har - Honored Equip: Increases ranged attack speed by 15%. Sell Price: 2 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:28+00:00",
+  "inventory_slot": "Quiver",
+  "item_id": 29143,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "equip_effects": [
+      "Equip:"
+    ],
+    "id": 29143,
+    "item_level": 109,
+    "name": "Clefthoof Hide Quiver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 68,
+    "restrictions": {
+      "classes": [
+        "Hunter"
+      ]
+    },
+    "slot": "Quiver",
+    "source_summary": "",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29143/clefthoof-hide-quiver"
+  },
+  "name": "Clefthoof Hide Quiver",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Clefthoof Hide Quiver Item Level 109 Binds when picked up Unique 18 Slot Quiver Classes: Hunter Requires Level 68 Requires The Mag'har - Honored Equip: Increases ranged attack speed by 15%. Sell Price: 2 50",
+      "reputation": "The Mag'har",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29143/clefthoof-hide-quiver",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29143/clefthoof-hide-quiver"
+}

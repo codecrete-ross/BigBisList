@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "The Hammer of Destiny Phase 1 Item Level 100 Binds when equipped Two-Hand Mace 304 - 457 Damage Speed 3.60 (105.69 damage per second) +32 Strength +30 Stamina +29 Intellect Durability 120 / 120 Requires Level 70 Chance on hit: Restores 170 to 230 mana. Sell Price: 12 52 28",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:15+00:00",
+  "inventory_slot": "Two Hand",
+  "item_id": 31322,
+  "item_stats": {
+    "binding": "bind_on_equip",
+    "boe": true,
+    "dps": 105.69,
+    "effect_stats": [
+      {
+        "raw_text": "Chance on hit: Restores 170 to 230 mana.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Chance on hit: Restores 170 to 230 mana."
+    ],
+    "id": 31322,
+    "item_level": 100,
+    "name": "The Hammer of Destiny",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Two Hand",
+    "source_summary": "",
+    "stats": {
+      "intellect": 29.0,
+      "stamina": 30.0,
+      "strength": 32.0
+    },
+    "weapon_max_damage": 457,
+    "weapon_min_damage": 304,
+    "weapon_speed": 3.6,
+    "weapon_subtype": "Mace",
+    "weapon_type": "Two Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31322/the-hammer-of-destiny"
+  },
+  "name": "The Hammer of Destiny",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31322/the-hammer-of-destiny"
+}

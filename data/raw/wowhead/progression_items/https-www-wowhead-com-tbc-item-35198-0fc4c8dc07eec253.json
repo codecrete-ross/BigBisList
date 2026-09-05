@@ -1,0 +1,76 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Loop of Forged Power Item Level 70 Binds when picked up Requires Jewelcrafting (365) Use: Teaches you how to craft a Loop of Forged Power. Sell Price: 3 50 Loop of Forged Power Item Level 159 Binds when equipped Unique-Equipped Finger +27 Stamina +28 Intellect Requires Level 70 Equip: Improves spell hit rating by 19. Equip: Improves spell haste rating by 30. Equip: Increases damage and healing done by magical spells and effects by up to 34. Sell Price: 6 2 56 Requires Hardened Khorium (4), Primal Might (4), Mercurial Adamantite (12), Sunmote (5)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:39+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 35198,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to craft a Loop of Forged Power.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves spell hit rating by 19.",
+        "stats": {
+          "spell_hit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 34.",
+        "stats": {
+          "spell_power": 34.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 19.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 34."
+    ],
+    "id": 35198,
+    "item_level": 70,
+    "name": "Design: Loop of Forged Power",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "spell_hit_rating": 19.0,
+      "spell_power": 34.0,
+      "stamina": 27.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to craft a Loop of Forged Power."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35198"
+  },
+  "name": "Design: Loop of Forged Power",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Loop of Forged Power Item Level 70 Binds when picked up Requires Jewelcrafting (365) Use: Teaches you how to craft a Loop of Forged Power. Sell Price: 3 50 Loop of Forged Power Item Level 159 Binds when equipped Unique-Equipped Finger +27 Stamina +28 Intellect Requires Level 70 Equip: Improves spell hit rating by 19. Equip: Improves spell haste rating by 30. Equip: Increases damage and healing done by magical spells and effects by up to 34. Sell Price: 6 2 56 Requires Hardened Khorium (4), Primal Might (4), Mercurial Adamantite (12), Sunmote (5)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35198",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35198"
+}

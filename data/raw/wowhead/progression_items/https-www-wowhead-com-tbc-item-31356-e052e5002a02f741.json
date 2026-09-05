@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Recipe: Flask of Distilled Wisdom Phase 1 Item Level 60 Binds when picked up Requires Alchemy (300) Requires Cenarion Expedition - Exalted Use: Teaches you how to make a Flask of Distilled Wisdom. Sell Price: 1 Flask of Distilled Wisdom Item Level 60 Requires Level 50 Use: Increases Intellect by 65 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreamfoil (7), Icecap (3), Black Lotus , Crystal Vial",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:19+00:00",
+  "inventory_slot": null,
+  "item_id": 31356,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Flask of Distilled Wisdom.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Increases Intellect by 65 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5",
+        "type": "use"
+      }
+    ],
+    "id": 31356,
+    "item_level": 60,
+    "name": "Recipe: Flask of Distilled Wisdom",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "uncommon",
+    "required_level": 50,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make a Flask of Distilled Wisdom.",
+      "Use: Increases Intellect by 65 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=31356"
+  },
+  "name": "Recipe: Flask of Distilled Wisdom",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Recipe: Flask of Distilled Wisdom Phase 1 Item Level 60 Binds when picked up Requires Alchemy (300) Requires Cenarion Expedition - Exalted Use: Teaches you how to make a Flask of Distilled Wisdom. Sell Price: 1 Flask of Distilled Wisdom Item Level 60 Requires Level 50 Use: Increases Intellect by 65 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreamfoil (7), Icecap (3), Black Lotus , Crystal Vial",
+      "reputation": "Cenarion Expedition",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=31356",
+      "standing": "Exalted",
+      "standing_rank": 8,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Alchemy",
+      "raw_text": "Recipe: Flask of Distilled Wisdom Phase 1 Item Level 60 Binds when picked up Requires Alchemy (300) Requires Cenarion Expedition - Exalted Use: Teaches you how to make a Flask of Distilled Wisdom. Sell Price: 1 Flask of Distilled Wisdom Item Level 60 Requires Level 50 Use: Increases Intellect by 65 for 2 hrs. Counts as both a Battle and Guardian elixir. This effect persists through death. (3 Sec Cooldown) Max Stack: 5 Sell Price: 50 Requires Dreamfoil (7), Icecap (3), Black Lotus , Crystal Vial",
+      "scope": "equip_or_use",
+      "skill": 300,
+      "source_url": "https://www.wowhead.com/tbc/item=31356",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "uncommon",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=31356"
+}

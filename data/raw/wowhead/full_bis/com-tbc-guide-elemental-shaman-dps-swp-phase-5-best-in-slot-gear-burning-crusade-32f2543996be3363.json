@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:48+00:00",
+  "fetched_at": "2026-09-04T23:49:13+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -1001,7 +1001,7 @@
             [
               {
                 "id": 30925,
-                "name": "Spaulders of the Torn-Heart",
+                "name": "Spaulders of the Torn-heart",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
               }
@@ -1010,23 +1010,23 @@
           ],
           "cells": [
             "Option",
-            "Spaulders of the Torn-Heart",
+            "Spaulders of the Torn-heart",
             "Quest: The Cipher of Damnation - The Third Fragment Recovered"
           ],
           "entities": [
             {
               "id": 30925,
-              "name": "Spaulders of the Torn-Heart",
+              "name": "Spaulders of the Torn-heart",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
             }
           ],
           "entity_id": 30925,
-          "entity_name": "Spaulders of the Torn-Heart",
+          "entity_name": "Spaulders of the Torn-heart",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "item_id": 30925,
-          "item_name": "Spaulders of the Torn-Heart",
+          "item_name": "Spaulders of the Torn-heart",
           "item_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "rank_label": "Option",
           "source_links": [
@@ -1521,33 +1521,33 @@
             [
               {
                 "id": 34232,
-                "name": "Fel Conqueror Raiments",
+                "name": "Fel Conquerer Raiments",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=34232/fel-conqueror-raiments"
+                "url": "https://www.wowhead.com/tbc/item=34232/fel-conquerer-raiments"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Fel Conqueror Raiments",
+            "Fel Conquerer Raiments",
             "Drop: M'uru (Sunwell Plateau)"
           ],
           "entities": [
             {
               "id": 34232,
-              "name": "Fel Conqueror Raiments",
+              "name": "Fel Conquerer Raiments",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=34232/fel-conqueror-raiments"
+              "url": "https://www.wowhead.com/tbc/item=34232/fel-conquerer-raiments"
             }
           ],
           "entity_id": 34232,
-          "entity_name": "Fel Conqueror Raiments",
+          "entity_name": "Fel Conquerer Raiments",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=34232/fel-conqueror-raiments",
+          "entity_url": "https://www.wowhead.com/tbc/item=34232/fel-conquerer-raiments",
           "item_id": 34232,
-          "item_name": "Fel Conqueror Raiments",
-          "item_url": "https://www.wowhead.com/tbc/item=34232/fel-conqueror-raiments",
+          "item_name": "Fel Conquerer Raiments",
+          "item_url": "https://www.wowhead.com/tbc/item=34232/fel-conquerer-raiments",
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Drop: M'uru (Sunwell Plateau)"
@@ -4122,7 +4122,17 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
-              "reputation": "The Mag'har / Kurenai",
+              "reputation": "The Mag'har",
+              "scope": "vendor_purchase",
+              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            },
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Vendor: Provisioner Nasela / Trader Narasu (The Mag'har / Kurenai Revered)",
+              "reputation": "Kurenai",
               "scope": "vendor_purchase",
               "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
               "standing": "Revered",
@@ -4868,7 +4878,7 @@
           "cells": [
             "Option",
             "Loop of Cursed Bones",
-            "Drop: Daakara (Zul'Aman)"
+            "Drop: Zul'jin (Zul'Aman)"
           ],
           "entities": [
             {
@@ -4888,11 +4898,11 @@
           "rank_label": "Option",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/npc=23863/daakara",
-              "text": "Daakara"
+              "href": "https://www.wowhead.com/tbc/npc=23863/zuljin",
+              "text": "Zul'jin"
             }
           ],
-          "source_text": "Drop: Daakara (Zul'Aman)"
+          "source_text": "Drop: Zul'jin (Zul'Aman)"
         },
         {
           "cell_entities": [
@@ -5708,16 +5718,6 @@
               "standing": "Exalted",
               "standing_rank": 8,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Exalted)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -6386,16 +6386,6 @@
               "standing": "Revered",
               "standing_rank": 7,
               "type": "reputation"
-            },
-            {
-              "choices": [
-                "The Scryers"
-              ],
-              "confidence": "parsed_source_text",
-              "raw_text": "Vendor: Quartermaster Enuril (The Scryers Revered)",
-              "scope": "vendor_purchase",
-              "source_url": "https://www.wowhead.com/tbc/guide/elemental-shaman-dps-swp-phase-5-best-in-slot-gear-burning-crusade",
-              "type": "faction_choice"
             }
           ],
           "rank_label": "Option",
@@ -6837,33 +6827,33 @@
             [
               {
                 "id": 34009,
-                "name": "Hammer of Judgment",
+                "name": "Hammer of Judgement",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment"
+                "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Hammer of Judgment",
+            "Hammer of Judgement",
             "Drop: Trash Mobs (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 34009,
-              "name": "Hammer of Judgment",
+              "name": "Hammer of Judgement",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment"
+              "url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement"
             }
           ],
           "entity_id": 34009,
-          "entity_name": "Hammer of Judgment",
+          "entity_name": "Hammer of Judgement",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment",
+          "entity_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement",
           "item_id": 34009,
-          "item_name": "Hammer of Judgment",
-          "item_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgment",
+          "item_name": "Hammer of Judgement",
+          "item_url": "https://www.wowhead.com/tbc/item=34009/hammer-of-judgement",
           "rank_label": "Option",
           "source_links": [],
           "source_text": "Drop: Trash Mobs (Hyjal Summit)"
@@ -7224,33 +7214,33 @@
             [
               {
                 "id": 30909,
-                "name": "Antonidas' Aegis of Rapt Concentration",
+                "name": "Antonidas's Aegis of Rapt Concentration",
                 "type": "item",
-                "url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration"
+                "url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration"
               }
             ],
             []
           ],
           "cells": [
             "Option",
-            "Antonidas' Aegis of Rapt Concentration",
+            "Antonidas's Aegis of Rapt Concentration",
             "Drop: Archimonde (Hyjal Summit)"
           ],
           "entities": [
             {
               "id": 30909,
-              "name": "Antonidas' Aegis of Rapt Concentration",
+              "name": "Antonidas's Aegis of Rapt Concentration",
               "type": "item",
-              "url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration"
+              "url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration"
             }
           ],
           "entity_id": 30909,
-          "entity_name": "Antonidas' Aegis of Rapt Concentration",
+          "entity_name": "Antonidas's Aegis of Rapt Concentration",
           "entity_type": "item",
-          "entity_url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration",
+          "entity_url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration",
           "item_id": 30909,
-          "item_name": "Antonidas' Aegis of Rapt Concentration",
-          "item_url": "https://www.wowhead.com/tbc/item=30909/antonidas-aegis-of-rapt-concentration",
+          "item_name": "Antonidas's Aegis of Rapt Concentration",
+          "item_url": "https://www.wowhead.com/tbc/item=30909/antonidass-aegis-of-rapt-concentration",
           "rank_label": "Option",
           "source_links": [
             {

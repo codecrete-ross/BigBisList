@@ -1,0 +1,67 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Guardian's Dragonhide Boots Phase 5 Item Level 159 Binds when picked up Feet Leather 385 Armor +34 Strength +33 Agility +46 Stamina +24 Intellect Durability 60 / 60 Classes: Rogue , Druid Requires Level 70 Equip: Improves critical strike rating by 25. Equip: Improves your resilience rating by 26.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:33+00:00",
+  "inventory_slot": null,
+  "item_id": 35137,
+  "item_stats": {
+    "armor": 385,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 25.",
+        "stats": {
+          "crit_rating": 25.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 26.",
+        "stats": {
+          "resilience_rating": 26.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 25.",
+      "Equip: Improves your resilience rating by 26."
+    ],
+    "id": 35137,
+    "item_level": 159,
+    "name": "Guardian's Dragonhide Boots",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Rogue",
+        "Druid"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "agility": 33.0,
+      "crit_rating": 25.0,
+      "intellect": 24.0,
+      "resilience_rating": 26.0,
+      "stamina": 46.0,
+      "strength": 34.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35137/guardians-dragonhide-boots"
+  },
+  "name": "Guardian's Dragonhide Boots",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35137/guardians-dragonhide-boots"
+}

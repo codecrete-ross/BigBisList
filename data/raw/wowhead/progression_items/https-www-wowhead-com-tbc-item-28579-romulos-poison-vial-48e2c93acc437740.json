@@ -1,0 +1,53 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Romulo's Poison Vial Phase 1 Item Level 115 Binds when picked up Unique Trinket Requires Level 70 Equip: Improves hit rating by 35. Equip: Your melee and ranged attacks have a chance to inject poison into your target dealing 222 to 332 Nature damage. Sell Price: 9 11 60",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:35+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 28579,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 35.",
+        "stats": {
+          "hit_rating": 35.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your melee and ranged attacks have a chance to inject poison into your target dealing 222 to 332 Nature damage.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 35.",
+      "Equip: Your melee and ranged attacks have a chance to inject poison into your target dealing 222 to 332 Nature damage."
+    ],
+    "id": 28579,
+    "item_level": 115,
+    "name": "Romulo's Poison Vial",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 35.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial"
+  },
+  "name": "Romulo's Poison Vial",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28579/romulos-poison-vial"
+}

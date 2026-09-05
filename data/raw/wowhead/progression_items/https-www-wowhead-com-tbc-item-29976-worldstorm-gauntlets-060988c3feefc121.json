@@ -1,0 +1,75 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Worldstorm Gauntlets Phase 2 Item Level 128 Binds when picked up Hands Mail 562 Armor +21 Stamina +22 Intellect Blue Socket Yellow Socket Socket Bonus: +4 Stamina Durability 50 / 50 Requires Level 70 Equip: Improves spell critical strike rating by 15. Equip: Increases healing done by up to 73 and damage done by up to 25 for all magical spells and effects. Equip: Restores 9 mana per 5 sec. Sell Price: 4 50",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:18+00:00",
+  "inventory_slot": null,
+  "item_id": 29976,
+  "item_stats": {
+    "armor": 562,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 15.",
+        "stats": {
+          "spell_crit_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 73 and damage done by up to 25 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 73.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 9 mana per 5 sec.",
+        "stats": {
+          "mp5": 9.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 15.",
+      "Equip: Increases healing done by up to 73 and damage done by up to 25 for all magical spells and effects.",
+      "Equip: Restores 9 mana per 5 sec."
+    ],
+    "id": 29976,
+    "item_level": 128,
+    "name": "Worldstorm Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "stamina": 4.0
+    },
+    "sockets": [
+      "blue",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 73.0,
+      "intellect": 22.0,
+      "mp5": 9.0,
+      "spell_crit_rating": 15.0,
+      "stamina": 21.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29976/worldstorm-gauntlets"
+  },
+  "name": "Worldstorm Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29976/worldstorm-gauntlets"
+}

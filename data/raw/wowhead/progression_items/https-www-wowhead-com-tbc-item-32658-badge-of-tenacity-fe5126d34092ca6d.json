@@ -1,0 +1,43 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Badge of Tenacity Phase 2 Item Level 115 Binds when equipped Unique-Equipped Trinket 308 Armor Requires Level 70 Use: Increases agility by 150 for 20 sec. (2 Min Cooldown) Sell Price: 1",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:19+00:00",
+  "inventory_slot": "Trinket",
+  "item_id": 32658,
+  "item_stats": {
+    "armor": 308,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Increases agility by 150 for 20 sec. (2 Min Cooldown)",
+        "type": "use"
+      }
+    ],
+    "id": 32658,
+    "item_level": 115,
+    "name": "Badge of Tenacity",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "slot": "Trinket",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Increases agility by 150 for 20 sec. (2 Min Cooldown)"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32658/badge-of-tenacity"
+  },
+  "name": "Badge of Tenacity",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32658/badge-of-tenacity"
+}

@@ -1,0 +1,56 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Torc of the Sethekk Prophet Phase 1 Item Level 115 Binds when picked up Neck +18 Intellect Equip: Improves spell critical strike rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 19. Sell Price: 4 19 53",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:54:49+00:00",
+  "inventory_slot": null,
+  "item_id": 29333,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 21.",
+        "stats": {
+          "spell_crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 19.",
+        "stats": {
+          "spell_power": 19.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 19."
+    ],
+    "id": 29333,
+    "item_level": 115,
+    "name": "Torc of the Sethekk Prophet",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "stats": {
+      "intellect": 18.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 19.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29333/torc-of-the-sethekk-prophet"
+  },
+  "name": "Torc of the Sethekk Prophet",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29333/torc-of-the-sethekk-prophet"
+}

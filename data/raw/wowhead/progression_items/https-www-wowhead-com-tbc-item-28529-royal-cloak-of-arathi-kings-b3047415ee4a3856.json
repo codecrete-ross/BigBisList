@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Royal Cloak of Arathi Kings Phase 1 Item Level 115 Binds when picked up Back 97 Armor +26 Strength +31 Stamina Requires Level 70 Equip: Improves hit rating by 16. Sell Price: 3 56 40",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:31+00:00",
+  "inventory_slot": null,
+  "item_id": 28529,
+  "item_stats": {
+    "armor": 97,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 16.",
+        "stats": {
+          "hit_rating": 16.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 16."
+    ],
+    "id": 28529,
+    "item_level": 115,
+    "name": "Royal Cloak of Arathi Kings",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "hit_rating": 16.0,
+      "stamina": 31.0,
+      "strength": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings"
+  },
+  "name": "Royal Cloak of Arathi Kings",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28529/royal-cloak-of-arathi-kings"
+}

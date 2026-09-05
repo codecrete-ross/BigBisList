@@ -1,0 +1,85 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Windhawk Bracers Phase 1 Item Level 115 Binds when picked up Wrist Leather 159 Armor +22 Stamina +17 Intellect +7 Spirit Yellow Socket Socket Bonus: +2 Intellect Durability 40 / 40 Requires Level 70 Requires Tribal Leatherworking Equip: Improves spell critical strike rating by 16. Equip: Increases damage and healing done by magical spells and effects by up to 16. Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects. Windhawk Armor (0/3) Windhawk Bracers Windhawk Belt Windhawk Hauberk (3) Set : Restores 8 mana per 5 sec. Sell Price: 2 93 81",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:02+00:00",
+  "inventory_slot": null,
+  "item_id": 29523,
+  "item_stats": {
+    "armor": 159,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 16.",
+        "stats": {
+          "spell_crit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+        "stats": {
+          "spell_power": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 31.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 16.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 16.",
+      "Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects."
+    ],
+    "id": 29523,
+    "item_level": 115,
+    "name": "Windhawk Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "intellect": 2.0
+    },
+    "sockets": [
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 31.0,
+      "intellect": 17.0,
+      "spell_crit_rating": 16.0,
+      "spell_power": 16.0,
+      "spirit": 7.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers"
+  },
+  "name": "Windhawk Bracers",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Leatherworking",
+      "raw_text": "Windhawk Bracers Phase 1 Item Level 115 Binds when picked up Wrist Leather 159 Armor +22 Stamina +17 Intellect +7 Spirit Yellow Socket Socket Bonus: +2 Intellect Durability 40 / 40 Requires Level 70 Requires Tribal Leatherworking Equip: Improves spell critical strike rating by 16. Equip: Increases damage and healing done by magical spells and effects by up to 16. Equip: Increases healing done by up to 31 and damage done by up to 11 for all magical spells and effects. Windhawk Armor (0/3) Windhawk Bracers Windhawk Belt Windhawk Hauberk (3) Set : Restores 8 mana per 5 sec. Sell Price: 2 93 81",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers",
+      "specialization": "Tribal Leatherworking",
+      "type": "profession_specialization"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=29523/windhawk-bracers"
+}

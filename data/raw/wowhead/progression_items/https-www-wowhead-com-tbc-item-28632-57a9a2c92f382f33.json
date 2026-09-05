@@ -1,0 +1,66 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Plans: Adamantite Weightstone Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make an Adamantite Weightstone. Sell Price: 1 50 Adamantite Weightstone Item Level 70 Requires Level 60 Use: Increase blunt weapon damage by 12 and add 14 critical hit rating for 1 hour. Max Stack: 20 Sell Price: 10 Requires Adamantite Bar , Netherweave Cloth (2)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:40+00:00",
+  "inventory_slot": null,
+  "item_id": 28632,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make an Adamantite Weightstone.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Use: Increase blunt weapon damage by 12 and add 14 critical hit rating for 1 hour. Max Stack: 20",
+        "type": "use"
+      }
+    ],
+    "id": 28632,
+    "item_level": 70,
+    "name": "Plans: Adamantite Weightstone",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "common",
+    "required_level": 60,
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to make an Adamantite Weightstone.",
+      "Use: Increase blunt weapon damage by 12 and add 14 critical hit rating for 1 hour. Max Stack: 20"
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28632"
+  },
+  "name": "Plans: Adamantite Weightstone",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Plans: Adamantite Weightstone Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make an Adamantite Weightstone. Sell Price: 1 50 Adamantite Weightstone Item Level 70 Requires Level 60 Use: Increase blunt weapon damage by 12 and add 14 critical hit rating for 1 hour. Max Stack: 20 Sell Price: 10 Requires Adamantite Bar , Netherweave Cloth (2)",
+      "reputation": "Cenarion Expedition",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=28632",
+      "standing": "Honored",
+      "standing_rank": 6,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Adamantite Weightstone Phase 1 Item Level 70 Binds when picked up Requires Blacksmithing (350) Requires Cenarion Expedition - Honored Use: Teaches you how to make an Adamantite Weightstone. Sell Price: 1 50 Adamantite Weightstone Item Level 70 Requires Level 60 Use: Increase blunt weapon damage by 12 and add 14 critical hit rating for 1 hour. Max Stack: 20 Sell Price: 10 Requires Adamantite Bar , Netherweave Cloth (2)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=28632",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "common",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28632"
+}

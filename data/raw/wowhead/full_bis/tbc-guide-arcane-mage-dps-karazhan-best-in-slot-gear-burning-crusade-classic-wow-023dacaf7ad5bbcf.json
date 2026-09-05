@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-05-24T04:24:33+00:00",
+  "fetched_at": "2026-09-04T23:48:46+00:00",
   "page_type": "guide",
-  "parser_version": "wowhead-scraper-0.7.0",
+  "parser_version": "wowhead-scraper-0.10.0",
   "sections": [],
   "tables": [
     {
@@ -374,7 +374,7 @@
           "cells": [
             "Optional",
             "High Warlord's Silk Amice",
-            "Lady Palanseer - 10475 10 Arathi Basin Mark of Honor"
+            "Lady Palanseer - 10475 Honor Points 10 Arathi Basin Mark of Honor"
           ],
           "entities": [
             {
@@ -404,15 +404,15 @@
               "text": "Lady Palanseer"
             },
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20559/arathi-basin-mark-of-honor",
               "text": "Arathi Basin Mark of Honor"
             }
           ],
-          "source_text": "Lady Palanseer - 10475 10 Arathi Basin Mark of Honor"
+          "source_text": "Lady Palanseer - 10475 Honor Points 10 Arathi Basin Mark of Honor"
         }
       ],
       "slot": "Shoulder"
@@ -427,7 +427,7 @@
             [
               {
                 "id": 30925,
-                "name": "Spaulders of the Torn-Heart",
+                "name": "Spaulders of the Torn-heart",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
               }
@@ -436,23 +436,23 @@
           ],
           "cells": [
             "Optional",
-            "Spaulders of the Torn-Heart",
+            "Spaulders of the Torn-heart",
             "The Cipher of Damnation - The Third Fragment Recovered - Shadowmoon Valley"
           ],
           "entities": [
             {
               "id": 30925,
-              "name": "Spaulders of the Torn-Heart",
+              "name": "Spaulders of the Torn-heart",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart"
             }
           ],
           "entity_id": 30925,
-          "entity_name": "Spaulders of the Torn-Heart",
+          "entity_name": "Spaulders of the Torn-heart",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "item_id": 30925,
-          "item_name": "Spaulders of the Torn-Heart",
+          "item_name": "Spaulders of the Torn-heart",
           "item_url": "https://www.wowhead.com/tbc/item=30925/spaulders-of-the-torn-heart",
           "rank_label": "Optional",
           "source_links": [
@@ -1074,9 +1074,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Quartermaster Endarin - The Aldor Honored",
+              "reputation": "The Aldor",
               "scope": "source_access",
               "source_url": "https://www.wowhead.com/tbc/guide/arcane-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Honored",
+              "standing_rank": 6,
+              "type": "reputation"
             }
           ],
           "rank_label": "Easy to Obtain",
@@ -1173,7 +1176,7 @@
             [
               {
                 "id": 28342,
-                "name": "Warp-Infused Drape",
+                "name": "Warp Infused Drape",
                 "type": "item",
                 "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
               }
@@ -1182,23 +1185,23 @@
           ],
           "cells": [
             "Optional",
-            "Warp-Infused Drape",
+            "Warp Infused Drape",
             "Warp Splinter - The Botanica"
           ],
           "entities": [
             {
               "id": 28342,
-              "name": "Warp-Infused Drape",
+              "name": "Warp Infused Drape",
               "type": "item",
               "url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape"
             }
           ],
           "entity_id": 28342,
-          "entity_name": "Warp-Infused Drape",
+          "entity_name": "Warp Infused Drape",
           "entity_type": "item",
           "entity_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape",
           "item_id": 28342,
-          "item_name": "Warp-Infused Drape",
+          "item_name": "Warp Infused Drape",
           "item_url": "https://www.wowhead.com/tbc/item=28342/warp-infused-drape",
           "rank_label": "Optional",
           "source_links": [
@@ -1327,7 +1330,7 @@
           "cells": [
             "BiS",
             "General's Silk Cuffs",
-            "11794 20 Warsong Gulch Mark of Honor PvP Vendor"
+            "11794 Honor Points 20 Warsong Gulch Mark of Honor PvP Vendor"
           ],
           "entities": [
             {
@@ -1353,15 +1356,15 @@
           "rank_label": "BiS",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=20558/warsong-gulch-mark-of-honor",
               "text": "Warsong Gulch Mark of Honor"
             }
           ],
-          "source_text": "11794 20 Warsong Gulch Mark of Honor PvP Vendor"
+          "source_text": "11794 Honor Points 20 Warsong Gulch Mark of Honor PvP Vendor"
         },
         {
           "cell_entities": [
@@ -2781,7 +2784,7 @@
           "cells": [
             "Optional",
             "General's Silk Footguards",
-            "17850 40 Eye of the Storm Mark of Honor"
+            "17850 Honor Points 40 Eye of the Storm Mark of Honor"
           ],
           "entities": [
             {
@@ -2807,15 +2810,15 @@
           "rank_label": "Optional",
           "source_links": [
             {
-              "href": "https://www.wowhead.com/tbc/currency=1901",
-              "text": ""
+              "href": "https://www.wowhead.com/tbc/currency=1901/honor-points",
+              "text": "Honor Points"
             },
             {
               "href": "https://www.wowhead.com/tbc/item=29024/eye-of-the-storm-mark-of-honor",
               "text": "Eye of the Storm Mark of Honor"
             }
           ],
-          "source_text": "17850 40 Eye of the Storm Mark of Honor"
+          "source_text": "17850 Honor Points 40 Eye of the Storm Mark of Honor"
         },
         {
           "cell_entities": [
@@ -3488,6 +3491,18 @@
           "item_id": 29287,
           "item_name": "Violet Signet of the Archmage",
           "item_url": "https://www.wowhead.com/tbc/item=29287/violet-signet-of-the-archmage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Path of the Violet Mage - The Violet Eye Exalted, Deadwind Pass",
+              "reputation": "The Violet Eye",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/arcane-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "BiS",
           "source_links": [
             {
@@ -3572,6 +3587,18 @@
           "item_id": 29172,
           "item_name": "Ashyen's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29172/ashyens-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Cenarion Expedition Exalted",
+              "reputation": "Cenarion Expedition",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/arcane-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -4298,6 +4325,18 @@
           "item_id": 29179,
           "item_name": "Xi'ri's Gift",
           "item_url": "https://www.wowhead.com/tbc/item=29179/xiris-gift",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Almaador - The Sha'tar Revered, Shattrath City",
+              "reputation": "The Sha'tar",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/arcane-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Revered",
+              "standing_rank": 7,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -4390,9 +4429,12 @@
             {
               "confidence": "parsed_source_text",
               "raw_text": "Quartermaster Enuril - The Scryers Exalted, Shattrath City",
+              "reputation": "The Scryers",
               "scope": "source_access",
               "source_url": "https://www.wowhead.com/tbc/guide/arcane-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
-              "type": "unknown_text"
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
             }
           ],
           "rank_label": "Easy to Obtain",
@@ -4624,6 +4666,18 @@
           "item_id": 29153,
           "item_name": "Blade of the Archmage",
           "item_url": "https://www.wowhead.com/tbc/item=29153/blade-of-the-archmage",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Logistics Officer Ulrike - Honor Hold Exalted, Hellfire Peninsula",
+              "reputation": "Honor Hold",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/arcane-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {
@@ -4666,6 +4720,18 @@
           "item_id": 29155,
           "item_name": "Stormcaller",
           "item_url": "https://www.wowhead.com/tbc/item=29155/stormcaller",
+          "normalized_requirements": [
+            {
+              "confidence": "parsed_source_text",
+              "raw_text": "Quartermaster Urgronn - Thrallmar Exalted, Hellfire Peninsula",
+              "reputation": "Thrallmar",
+              "scope": "source_access",
+              "source_url": "https://www.wowhead.com/tbc/guide/arcane-mage-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow",
+              "standing": "Exalted",
+              "standing_rank": 8,
+              "type": "reputation"
+            }
+          ],
           "rank_label": "Optional",
           "source_links": [
             {

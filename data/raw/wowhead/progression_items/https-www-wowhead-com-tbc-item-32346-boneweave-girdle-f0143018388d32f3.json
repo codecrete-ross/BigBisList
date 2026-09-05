@@ -1,0 +1,68 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Boneweave Girdle Phase 3 Item Level 141 Binds when picked up Waist Mail 556 Armor +38 Agility +26 Intellect Durability 50 / 50 Requires Level 70 Equip: Improves hit rating by 17. Equip: Improves critical strike rating by 24. Equip: Increases attack power by 76. Sell Price: 4 33 15",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:57:57+00:00",
+  "inventory_slot": null,
+  "item_id": 32346,
+  "item_stats": {
+    "armor": 556,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 17.",
+        "stats": {
+          "hit_rating": 17.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 24.",
+        "stats": {
+          "crit_rating": 24.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 76.",
+        "stats": {
+          "attack_power": 76.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 17.",
+      "Equip: Improves critical strike rating by 24.",
+      "Equip: Increases attack power by 76."
+    ],
+    "id": 32346,
+    "item_level": 141,
+    "name": "Boneweave Girdle",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "agility": 38.0,
+      "attack_power": 76.0,
+      "crit_rating": 24.0,
+      "hit_rating": 17.0,
+      "intellect": 26.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32346/boneweave-girdle"
+  },
+  "name": "Boneweave Girdle",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32346/boneweave-girdle"
+}

@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Fletcher's Gloves of the Phoenix Phase 5 Item Level 159 Binds when equipped Hands Mail 694 Armor +30 Agility +33 Stamina +25 Intellect Yellow Socket Yellow Socket Socket Bonus: +6 Attack Power Durability 50 / 50 Requires Level 70 Equip: Improves haste rating by 34. Equip: Increases attack power by 76. Sell Price: 4 73 77",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:46+00:00",
+  "inventory_slot": null,
+  "item_id": 34374,
+  "item_stats": {
+    "armor": 694,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves haste rating by 34.",
+        "stats": {
+          "haste_rating": 34.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 76.",
+        "stats": {
+          "attack_power": 76.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 34.",
+      "Equip: Increases attack power by 76."
+    ],
+    "id": 34374,
+    "item_level": 159,
+    "name": "Fletcher's Gloves of the Phoenix",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "yellow",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 30.0,
+      "attack_power": 76.0,
+      "haste_rating": 34.0,
+      "intellect": 25.0,
+      "stamina": 33.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34374/fletchers-gloves-of-the-phoenix"
+  },
+  "name": "Fletcher's Gloves of the Phoenix",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34374/fletchers-gloves-of-the-phoenix"
+}

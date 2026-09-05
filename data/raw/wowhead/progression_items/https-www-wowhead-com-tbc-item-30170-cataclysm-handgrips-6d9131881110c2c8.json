@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Cataclysm Handgrips Phase 2 Item Level 133 Binds when picked up Hands Mail 583 Armor +25 Stamina +27 Intellect Durability 50 / 50 Classes: Shaman Requires Level 70 Equip: Improves spell hit rating by 19. Equip: Improves spell critical strike rating by 19. Equip: Increases damage and healing done by magical spells and effects by up to 41. Equip: Restores 7 mana per 5 sec. Cataclysm Regalia (0/5) Cataclysm Chestpiece Cataclysm Handgrips Cataclysm Headpiece Cataclysm Leggings Cataclysm Shoulderpads (2) Set : Each time you cast an offensive spell, there is a chance your next Lesser Healing Wave will cost 380 less mana. (Proc chance: 7%) (4) Set : Your Lightning Bolt critical strikes have a chance to grant you 120 mana. (Proc chance: 25%)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:55:51+00:00",
+  "inventory_slot": null,
+  "item_id": 30170,
+  "item_stats": {
+    "armor": 583,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 19.",
+        "stats": {
+          "spell_hit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 19.",
+        "stats": {
+          "spell_crit_rating": 19.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 41.",
+        "stats": {
+          "spell_power": 41.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 7 mana per 5 sec.",
+        "stats": {
+          "mp5": 7.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 19.",
+      "Equip: Improves spell critical strike rating by 19.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 41.",
+      "Equip: Restores 7 mana per 5 sec."
+    ],
+    "id": 30170,
+    "item_level": 133,
+    "name": "Cataclysm Handgrips",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "restrictions": {
+      "classes": [
+        "Shaman"
+      ]
+    },
+    "source_summary": "",
+    "stats": {
+      "intellect": 27.0,
+      "mp5": 7.0,
+      "spell_crit_rating": 19.0,
+      "spell_hit_rating": 19.0,
+      "spell_power": 41.0,
+      "stamina": 25.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=30170/cataclysm-handgrips"
+  },
+  "name": "Cataclysm Handgrips",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=30170/cataclysm-handgrips"
+}

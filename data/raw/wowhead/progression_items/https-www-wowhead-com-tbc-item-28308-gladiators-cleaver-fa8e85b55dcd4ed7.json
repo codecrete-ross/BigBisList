@@ -1,0 +1,82 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Gladiator's Cleaver Phase 1 Item Level 123 Binds when picked up One-Hand Axe 189 - 285 Damage Speed 2.60 (91.15 damage per second) +21 Stamina Durability 105 / 105 Requires Level 70 Equip: Improves hit rating by 9. Equip: Improves critical strike rating by 15. Equip: Improves your resilience rating by 10. Equip: Increases attack power by 28.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:12+00:00",
+  "inventory_slot": "One Hand",
+  "item_id": 28308,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 91.15,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 9.",
+        "stats": {
+          "hit_rating": 9.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 15.",
+        "stats": {
+          "crit_rating": 15.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves your resilience rating by 10.",
+        "stats": {
+          "resilience_rating": 10.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 28.",
+        "stats": {
+          "attack_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 9.",
+      "Equip: Improves critical strike rating by 15.",
+      "Equip: Improves your resilience rating by 10.",
+      "Equip: Increases attack power by 28."
+    ],
+    "id": 28308,
+    "item_level": 123,
+    "name": "Gladiator's Cleaver",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "One Hand",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 28.0,
+      "crit_rating": 15.0,
+      "hit_rating": 9.0,
+      "resilience_rating": 10.0,
+      "stamina": 21.0
+    },
+    "weapon_max_damage": 285,
+    "weapon_min_damage": 189,
+    "weapon_speed": 2.6,
+    "weapon_subtype": "Axe",
+    "weapon_type": "One Hand",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28308/gladiators-cleaver"
+  },
+  "name": "Gladiator's Cleaver",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28308/gladiators-cleaver"
+}

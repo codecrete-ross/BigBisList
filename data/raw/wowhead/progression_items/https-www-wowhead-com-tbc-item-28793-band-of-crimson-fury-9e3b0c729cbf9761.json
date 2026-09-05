@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Band of Crimson Fury Phase 1 Item Level 125 Binds when picked up Unique Finger +22 Stamina +22 Intellect Equip: Improves spell hit rating by 16. Equip: Increases damage and healing done by magical spells and effects by up to 28. Sell Price: 6 2 56",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:58+00:00",
+  "inventory_slot": "Ring",
+  "item_id": 28793,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell hit rating by 16.",
+        "stats": {
+          "spell_hit_rating": 16.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 28.",
+        "stats": {
+          "spell_power": 28.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell hit rating by 16.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 28."
+    ],
+    "id": 28793,
+    "item_level": 125,
+    "name": "Band of Crimson Fury",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "slot": "Ring",
+    "source_summary": "",
+    "stats": {
+      "intellect": 22.0,
+      "spell_hit_rating": 16.0,
+      "spell_power": 28.0,
+      "stamina": 22.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28793/band-of-crimson-fury"
+  },
+  "name": "Band of Crimson Fury",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28793/band-of-crimson-fury"
+}

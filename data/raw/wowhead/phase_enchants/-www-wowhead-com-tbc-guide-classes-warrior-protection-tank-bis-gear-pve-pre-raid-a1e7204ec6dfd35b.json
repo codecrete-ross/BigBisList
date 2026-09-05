@@ -1,0 +1,35 @@
+{
+  "bindings": [
+    {
+      "class": "Warrior",
+      "phase": "T6",
+      "spec": "Protection"
+    }
+  ],
+  "enchant_guidance": [
+    {
+      "applications": [
+        {
+          "entity": {
+            "id": 27984,
+            "name": "Mongoose",
+            "type": "spell"
+          },
+          "mapping_source": "data/canonical/enchant_effects.json",
+          "slot": "Main Hand",
+          "spell_id": 27984
+        }
+      ],
+      "kind": "linked_prose",
+      "label": "Pre-Raid Best in Slot Weapons for Protection Warrior in TBC Classic Phase 1",
+      "text": "On paper, an ideal combo of weapons for Phase 1 would be the slow Blacksmithing craft Dragonmaw for its very high damage and amazing haste proc, which doubles as the best weapon for Fury Warrior, should you be asked to DPS at any point. Paired with a faster weapon such as The Sun Eater, Terokk's Nightmace or Latro's Shifting Sword for the occasional hard-hitting boss that will fill your rage bar constantly.\r\nThat being said, if you can't be bothered to change weapons based on the situation, let alone enchant multiple weapons with the expensive , then Dragonmaw is the best all-rounder for Phase 1 due to underwhelming boss damage and low incoming rage in nerfed Karazhan."
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:09+00:00",
+  "page_type": "phase_enchant_guide",
+  "parser_version": "phase-enchants-1",
+  "planner_format_source": "https://wow.zamimg.com/js/WH/Wow/GearPlannerTbc.js",
+  "recommendation_status": "unverified_phase",
+  "title": "Protection Warrior Tank Pre-Raid Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-bis-gear-pve-pre-raid"
+}

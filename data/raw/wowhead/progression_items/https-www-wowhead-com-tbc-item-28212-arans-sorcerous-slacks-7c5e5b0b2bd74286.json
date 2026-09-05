@@ -1,0 +1,64 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Aran's Sorcerous Slacks Phase 1 Item Level 115 Binds when picked up Legs Cloth 136 Armor +29 Stamina +28 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: +5 Spell Damage and Healing Durability 65 / 65 Requires Level 70 Equip: Improves spell critical strike rating by 21. Equip: Increases damage and healing done by magical spells and effects by up to 23. Sell Price: 3 68 30",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:53:02+00:00",
+  "inventory_slot": null,
+  "item_id": 28212,
+  "item_stats": {
+    "armor": 136,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 21.",
+        "stats": {
+          "spell_crit_rating": 21.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases damage and healing done by magical spells and effects by up to 23.",
+        "stats": {
+          "spell_power": 23.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 21.",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 23."
+    ],
+    "id": 28212,
+    "item_level": 115,
+    "name": "Aran's Sorcerous Slacks",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "intellect": 28.0,
+      "spell_crit_rating": 21.0,
+      "spell_power": 23.0,
+      "stamina": 29.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28212/arans-sorcerous-slacks"
+  },
+  "name": "Aran's Sorcerous Slacks",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28212/arans-sorcerous-slacks"
+}

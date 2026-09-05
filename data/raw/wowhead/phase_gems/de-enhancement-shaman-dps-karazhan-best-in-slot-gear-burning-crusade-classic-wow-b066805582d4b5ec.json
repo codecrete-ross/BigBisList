@@ -1,0 +1,230 @@
+{
+  "bindings": [
+    {
+      "class": "Shaman",
+      "phase": "T4",
+      "spec": "Enhancement"
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:14+00:00",
+  "gem_guidance": [
+    {
+      "decoded": {
+        "class_slug": "shaman",
+        "level": 70,
+        "race_slug": "orc",
+        "slots": [
+          {
+            "enchant_id": 35452,
+            "gems": [
+              {
+                "item_id": 32409,
+                "position": 0
+              },
+              {
+                "item_id": 24027,
+                "position": 1
+              }
+            ],
+            "item_id": 29040,
+            "slot": 1
+          },
+          {
+            "item_id": 29381,
+            "slot": 2
+          },
+          {
+            "enchant_id": 35417,
+            "gems": [
+              {
+                "item_id": 24027,
+                "position": 0
+              },
+              {
+                "item_id": 24058,
+                "position": 1
+              }
+            ],
+            "item_id": 29043,
+            "slot": 3
+          },
+          {
+            "enchant_id": 27960,
+            "gems": [
+              {
+                "item_id": 24027,
+                "position": 0
+              },
+              {
+                "item_id": 24027,
+                "position": 1
+              },
+              {
+                "item_id": 24027,
+                "position": 2
+              }
+            ],
+            "item_id": 29515,
+            "slot": 5
+          },
+          {
+            "gems": [
+              {
+                "item_id": 24027,
+                "position": 0
+              },
+              {
+                "item_id": 24027,
+                "position": 1
+              }
+            ],
+            "item_id": 29516,
+            "slot": 6
+          },
+          {
+            "enchant_id": 35490,
+            "gems": [
+              {
+                "item_id": 24027,
+                "position": 0
+              },
+              {
+                "item_id": 24027,
+                "position": 1
+              },
+              {
+                "item_id": 24027,
+                "position": 2
+              }
+            ],
+            "item_id": 28741,
+            "slot": 7
+          },
+          {
+            "enchant_id": 34007,
+            "gems": [
+              {
+                "item_id": 24030,
+                "position": 0
+              },
+              {
+                "item_id": 24058,
+                "position": 1
+              }
+            ],
+            "item_id": 28545,
+            "slot": 8
+          },
+          {
+            "enchant_id": 27899,
+            "gems": [
+              {
+                "item_id": 24058,
+                "position": 0
+              }
+            ],
+            "item_id": 29517,
+            "slot": 9
+          },
+          {
+            "enchant_id": 33995,
+            "gems": [
+              {
+                "item_id": 24054,
+                "position": 0
+              },
+              {
+                "item_id": 24054,
+                "position": 1
+              }
+            ],
+            "item_id": 28776,
+            "slot": 10
+          },
+          {
+            "item_id": 28757,
+            "slot": 11
+          },
+          {
+            "item_id": 28649,
+            "slot": 12
+          },
+          {
+            "item_id": 28830,
+            "slot": 13
+          },
+          {
+            "item_id": 29383,
+            "slot": 14
+          },
+          {
+            "enchant_id": 34004,
+            "gems": [
+              {
+                "item_id": 24027,
+                "position": 0
+              }
+            ],
+            "item_id": 24259,
+            "slot": 15
+          },
+          {
+            "enchant_id": 27984,
+            "item_id": 28308,
+            "slot": 16
+          },
+          {
+            "enchant_id": 27984,
+            "item_id": 28308,
+            "slot": 17
+          },
+          {
+            "item_id": 27815,
+            "slot": 18
+          }
+        ],
+        "version": 3
+      },
+      "gem_ids": [
+        24027,
+        24030,
+        24054,
+        24058,
+        32409
+      ],
+      "kind": "gear_planner",
+      "label": "Should Enhancement Shaman DPS Choose Aldor or Scryer for BiS in TBC Classic Phase 1?",
+      "planner": "shaman/orc/A0YRJQAxUB9QBSAhBQETNTEVH_CBQHFwinwAfpkgXdsCAHLFg0Bxc4pZAF3bIF36hWBzS204AF3bIF3bQF3bBkBzTABd2yBd24dgcEWKogBd2yBd20Bd24hAb4GE1wBd3iBd-okgc01s-wBd-opAcGiEywBd9iBd9gsAcFUMAG_pDQBwng4AcsePIF7DhNQAXduQAG6UbVCRAG6UbVASAGyn"
+    },
+    {
+      "gem_ids": [
+        32409
+      ],
+      "gems": [
+        {
+          "item_id": 32409,
+          "name": "Relentless Earthstorm Diamond"
+        }
+      ],
+      "kind": "linked_prose",
+      "text": "For gems, Meta sockets are unique to head slot pieces and accept meta gems (instead of regular gems). Only a single meta socket may exist in any given piece, and many pieces come without a meta socket at all. Relentless Earthstorm Diamond is the best meta gem, and scales well with the rest of your gear, as it acts as a multiplier on your damage output."
+    },
+    {
+      "gem_ids": [
+        32409
+      ],
+      "gems": [
+        {
+          "item_id": 32409,
+          "name": "Relentless Earthstorm Diamond"
+        }
+      ],
+      "kind": "linked_prose",
+      "text": "Cyclone Helm is the best Phase 1 helmet, sporting great stats and a meta socket allowing you to use Relentless Earthstorm Diamond . Should you want to opt out of your Tier, you can also grab Mask of the Deceiver"
+    }
+  ],
+  "page_type": "phase_gem_guide",
+  "parser_version": "phase-gems-1",
+  "title": "Enhancement Shaman DPS Phase 1 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/enhancement-shaman-dps-karazhan-best-in-slot-gear-burning-crusade-classic-wow"
+}

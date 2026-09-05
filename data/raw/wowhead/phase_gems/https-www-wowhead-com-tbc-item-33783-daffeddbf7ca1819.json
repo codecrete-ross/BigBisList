@@ -1,0 +1,58 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Design: Steady Talasite Item Level 70 Binds when picked up Requires Jewelcrafting (350) Use: Teaches you how to cut a Steady Talasite. Steady Talasite Item Level 70 +4 Resilience Rating and +6 Stamina \"Matches a Yellow or Blue Socket.\" Sell Price: 3 Requires Talasite",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:23:04+00:00",
+  "inventory_slot": null,
+  "item_id": 33783,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to cut a Steady Talasite. Steady Talasite Item Level 70 +4 Resilience Rating and +6 Stamina \"Matches a Yellow or Blue Socket.\"",
+        "type": "use"
+      }
+    ],
+    "id": 33783,
+    "item_level": 70,
+    "name": "Design: Steady Talasite",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "source_summary": "",
+    "use_effects": [
+      "Use: Teaches you how to cut a Steady Talasite. Steady Talasite Item Level 70 +4 Resilience Rating and +6 Stamina \"Matches a Yellow or Blue Socket.\""
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=33783"
+  },
+  "name": "Design: Steady Talasite",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Jewelcrafting",
+      "raw_text": "Design: Steady Talasite Item Level 70 Binds when picked up Requires Jewelcrafting (350)",
+      "scope": "learn_recipe",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=33783",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "reagent_item_ids": [
+    23437
+  ],
+  "recipe_requirements_evidence": "Outer recipe tooltip before Use:; taught-cut use restrictions are retained on the cut item.",
+  "related_tables": {},
+  "taught_by_items": [],
+  "taught_gem_item_id": 33782,
+  "teaches_spell_ids": [
+    43493
+  ],
+  "tooltip_source_url": "https://nether.wowhead.com/tbc/tooltip/item/33783",
+  "url": "https://www.wowhead.com/tbc/item=33783"
+}

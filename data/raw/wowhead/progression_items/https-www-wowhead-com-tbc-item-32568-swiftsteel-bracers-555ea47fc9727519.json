@@ -1,0 +1,50 @@
+{
+  "binding": "bind_on_equip",
+  "boe": true,
+  "description": "Swiftsteel Bracers Phase 3 Item Level 141 Binds when equipped Wrist Plate 772 Armor +35 Strength +32 Stamina Durability 55 / 55 Requires Level 70 Equip: Improves haste rating by 27. Sell Price: 5 91",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:58:12+00:00",
+  "inventory_slot": null,
+  "item_id": 32568,
+  "item_stats": {
+    "armor": 772,
+    "binding": "bind_on_equip",
+    "boe": true,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves haste rating by 27.",
+        "stats": {
+          "haste_rating": 27.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves haste rating by 27."
+    ],
+    "id": 32568,
+    "item_level": 141,
+    "name": "Swiftsteel Bracers",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "source_summary": "",
+    "stats": {
+      "haste_rating": 27.0,
+      "stamina": 32.0,
+      "strength": 35.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=32568/swiftsteel-bracers"
+  },
+  "name": "Swiftsteel Bracers",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=32568/swiftsteel-bracers"
+}

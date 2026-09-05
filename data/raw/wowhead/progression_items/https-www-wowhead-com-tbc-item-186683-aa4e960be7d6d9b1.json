@@ -1,0 +1,134 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "This enchanting formula is used for the Enchanting profession. It is sold by Andormu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+  "fetched_at": "2026-09-04T23:50:24+00:00",
+  "inventory_slot": null,
+  "item_id": 186683,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to permanently enchant a ring to increase all stats by 4. Permanently enchant a ring to increase all stats by 4. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item.",
+        "type": "use"
+      }
+    ],
+    "id": 186683,
+    "item_level": 75,
+    "name": "Formula: Enchant Ring - Stats",
+    "parse_confidence": "tooltip",
+    "phase": "PR",
+    "primary_source": {
+      "confidence": "wowhead_item",
+      "entity_id": 19932,
+      "entity_name": "Andormu",
+      "location_area": "Caverns of Time",
+      "price_copper": 170000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=186683",
+      "type": "vendor",
+      "vendor_id": 19932,
+      "zone": "Caverns of Time"
+    },
+    "quality": "unknown",
+    "source_summary": "Vendor: Andormu (Caverns of Time)",
+    "sources": [
+      {
+        "confidence": "wowhead_item",
+        "entity_id": 19932,
+        "entity_name": "Andormu",
+        "location_area": "Caverns of Time",
+        "price_copper": 170000,
+        "purchase_quantity": 1,
+        "source_url": "https://www.wowhead.com/tbc/item=186683",
+        "type": "vendor",
+        "vendor_id": 19932,
+        "zone": "Caverns of Time"
+      }
+    ],
+    "use_effects": [
+      "Use: Teaches you how to permanently enchant a ring to increase all stats by 4. Permanently enchant a ring to increase all stats by 4. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=186683"
+  },
+  "name": "Formula: Enchant Ring - Stats",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "raw_text": "Formula: Enchant Ring - Stats Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Requires The Scale of the Sands - Revered Use: Teaches you how to permanently enchant a ring to increase all stats by 4. Permanently enchant a ring to increase all stats by 4. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item. Sell Price: 5 This enchanting formula is used for the Enchanting profession. It is sold by Andormu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+      "reputation": "The Scale of the Sands",
+      "scope": "equip_or_use",
+      "source_url": "https://www.wowhead.com/tbc/item=186683",
+      "standing": "Revered",
+      "standing_rank": 7,
+      "type": "reputation"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Enchanting",
+      "raw_text": "Formula: Enchant Ring - Stats Phase 1 Item Level 75 Binds when picked up Requires Enchanting (375) Requires The Scale of the Sands - Revered Use: Teaches you how to permanently enchant a ring to increase all stats by 4. Permanently enchant a ring to increase all stats by 4. Only the enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound. Requires a level 35 or higher item. Sell Price: 5 This enchanting formula is used for the Enchanting profession. It is sold by Andormu. In the Enchanting Formulae category. An item from World of Warcraft: The Burning Crusade.",
+      "scope": "equip_or_use",
+      "skill": 375,
+      "source_url": "https://www.wowhead.com/tbc/item=186683",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [
+    {
+      "confidence": "wowhead_item",
+      "entity_id": 19932,
+      "entity_name": "Andormu",
+      "location_area": "Caverns of Time",
+      "price_copper": 170000,
+      "purchase_quantity": 1,
+      "source_url": "https://www.wowhead.com/tbc/item=186683",
+      "type": "vendor",
+      "vendor_id": 19932,
+      "zone": "Caverns of Time"
+    }
+  ],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "unknown",
+  "related_tables": {
+    "contained-in-item": [],
+    "contained-in-object": [],
+    "created-by": [],
+    "created-by-spell": [],
+    "dropped-by": [],
+    "gathered-from-object": [],
+    "reward-from-q": [],
+    "sold-by": [
+      {
+        "classification": 1,
+        "cost": [
+          [
+            170000
+          ]
+        ],
+        "id": 19932,
+        "location": [
+          440
+        ],
+        "maxlevel": 70,
+        "minlevel": 70,
+        "name": "Andormu",
+        "popularity": 3,
+        "react": [
+          1,
+          1
+        ],
+        "stock": -1,
+        "tag": "Keepers of Time",
+        "type": 2
+      }
+    ],
+    "taught-by-item": []
+  },
+  "taught_by_items": [],
+  "teaches_spell_ids": [
+    27927
+  ],
+  "url": "https://www.wowhead.com/tbc/item=186683"
+}

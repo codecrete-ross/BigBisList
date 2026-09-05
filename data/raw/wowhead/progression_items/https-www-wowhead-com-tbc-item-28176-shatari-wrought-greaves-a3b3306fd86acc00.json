@@ -1,0 +1,44 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Sha'tari Wrought Greaves Phase 1 Item Level 115 Binds when picked up Feet Plate 800 Armor +24 Strength +21 Agility +22 Stamina Red Socket Blue Socket Socket Bonus: +3 Resilience Rating Durability 65 / 65 Sell Price: 4 43 20",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:52:57+00:00",
+  "inventory_slot": null,
+  "item_id": 28176,
+  "item_stats": {
+    "armor": 800,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "id": 28176,
+    "item_level": 115,
+    "name": "Sha'tari Wrought Greaves",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "rare",
+    "socket_bonus": {
+      "resilience_rating": 3.0
+    },
+    "sockets": [
+      "red",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 21.0,
+      "stamina": 22.0,
+      "strength": 24.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=28176/shatari-wrought-greaves"
+  },
+  "name": "Sha'tari Wrought Greaves",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "rare",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=28176/shatari-wrought-greaves"
+}

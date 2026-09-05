@@ -1,0 +1,98 @@
+{
+  "binding": "unknown",
+  "boe": null,
+  "description": "Plans: Sunblessed Breastplate Item Level 70 Requires Blacksmithing (365) Use: Teaches you how to make a Sunblessed Breastplate. Sell Price: 2 Sunblessed Breastplate Item Level 159 Binds when picked up Chest Plate 1983 Armor +40 Stamina +51 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: 2 mana per 5 sec. Durability 165 / 165 Requires Level 70 Requires Blacksmithing (350) Equip: Improves spell critical strike rating by 34. Equip: Increases healing done by up to 114 and damage done by up to 38 for all magical spells and effects. Equip: Restores 14 mana per 5 sec. Sell Price: 11 25 84 Requires Khorium Bar (20), Hardened Adamantite Bar (4), Primal Life (15), Primal Water (15), Primal Nether (6)",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:41+00:00",
+  "inventory_slot": null,
+  "item_id": 35210,
+  "item_stats": {
+    "armor": 1983,
+    "binding": "unknown",
+    "effect_stats": [
+      {
+        "raw_text": "Use: Teaches you how to make a Sunblessed Breastplate.",
+        "type": "use"
+      },
+      {
+        "raw_text": "Equip: Improves spell critical strike rating by 34.",
+        "stats": {
+          "spell_crit_rating": 34.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases healing done by up to 114 and damage done by up to 38 for all magical spells and effects.",
+        "stats": {
+          "healing_power": 114.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Restores 14 mana per 5 sec.",
+        "stats": {
+          "mp5": 14.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves spell critical strike rating by 34.",
+      "Equip: Increases healing done by up to 114 and damage done by up to 38 for all magical spells and effects.",
+      "Equip: Restores 14 mana per 5 sec."
+    ],
+    "id": 35210,
+    "item_level": 70,
+    "name": "Plans: Sunblessed Breastplate",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "sockets": [
+      "red",
+      "yellow",
+      "blue"
+    ],
+    "source_summary": "",
+    "stats": {
+      "healing_power": 114.0,
+      "intellect": 51.0,
+      "mp5": 14.0,
+      "spell_crit_rating": 34.0,
+      "stamina": 40.0
+    },
+    "use_effects": [
+      "Use: Teaches you how to make a Sunblessed Breastplate."
+    ],
+    "wowhead_url": "https://www.wowhead.com/tbc/item=35210"
+  },
+  "name": "Plans: Sunblessed Breastplate",
+  "normalized_requirements": [
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Sunblessed Breastplate Item Level 70 Requires Blacksmithing (365) Use: Teaches you how to make a Sunblessed Breastplate. Sell Price: 2 Sunblessed Breastplate Item Level 159 Binds when picked up Chest Plate 1983 Armor +40 Stamina +51 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: 2 mana per 5 sec. Durability 165 / 165 Requires Level 70 Requires Blacksmithing (350) Equip: Improves spell critical strike rating by 34. Equip: Increases healing done by up to 114 and damage done by up to 38 for all magical spells and effects. Equip: Restores 14 mana per 5 sec. Sell Price: 11 25 84 Requires Khorium Bar (20), Hardened Adamantite Bar (4), Primal Life (15), Primal Water (15), Primal Nether (6)",
+      "scope": "equip_or_use",
+      "skill": 365,
+      "source_url": "https://www.wowhead.com/tbc/item=35210",
+      "type": "profession"
+    },
+    {
+      "confidence": "wowhead_item",
+      "profession": "Blacksmithing",
+      "raw_text": "Plans: Sunblessed Breastplate Item Level 70 Requires Blacksmithing (365) Use: Teaches you how to make a Sunblessed Breastplate. Sell Price: 2 Sunblessed Breastplate Item Level 159 Binds when picked up Chest Plate 1983 Armor +40 Stamina +51 Intellect Red Socket Yellow Socket Blue Socket Socket Bonus: 2 mana per 5 sec. Durability 165 / 165 Requires Level 70 Requires Blacksmithing (350) Equip: Improves spell critical strike rating by 34. Equip: Increases healing done by up to 114 and damage done by up to 38 for all magical spells and effects. Equip: Restores 14 mana per 5 sec. Sell Price: 11 25 84 Requires Khorium Bar (20), Hardened Adamantite Bar (4), Primal Life (15), Primal Water (15), Primal Nether (6)",
+      "scope": "equip_or_use",
+      "skill": 350,
+      "source_url": "https://www.wowhead.com/tbc/item=35210",
+      "type": "profession"
+    }
+  ],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=35210"
+}

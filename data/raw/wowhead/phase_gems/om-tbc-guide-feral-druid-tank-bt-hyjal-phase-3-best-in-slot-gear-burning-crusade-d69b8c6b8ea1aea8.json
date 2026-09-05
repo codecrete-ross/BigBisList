@@ -1,0 +1,214 @@
+{
+  "bindings": [
+    {
+      "class": "Druid",
+      "phase": "T6",
+      "spec": "Feral tank"
+    }
+  ],
+  "fetched_at": "2026-09-04T23:49:16+00:00",
+  "gem_guidance": [
+    {
+      "decoded": {
+        "class_slug": "druid",
+        "level": 70,
+        "race_slug": "night-elf",
+        "slots": [
+          {
+            "enchant_id": 35443,
+            "gems": [
+              {
+                "item_id": 32212,
+                "position": 0
+              },
+              {
+                "item_id": 32409,
+                "position": 1
+              }
+            ],
+            "item_id": 31039,
+            "slot": 1
+          },
+          {
+            "item_id": 32362,
+            "slot": 2
+          },
+          {
+            "enchant_id": 35402,
+            "gems": [
+              {
+                "item_id": 32220,
+                "position": 0
+              },
+              {
+                "item_id": 32200,
+                "position": 1
+              }
+            ],
+            "item_id": 31048,
+            "slot": 3
+          },
+          {
+            "enchant_id": 27959,
+            "gems": [
+              {
+                "item_id": 32212,
+                "position": 0
+              },
+              {
+                "item_id": 32220,
+                "position": 1
+              },
+              {
+                "item_id": 32194,
+                "position": 2
+              }
+            ],
+            "item_id": 31042,
+            "slot": 5
+          },
+          {
+            "gems": [
+              {
+                "item_id": 32194,
+                "position": 0
+              },
+              {
+                "item_id": 32212,
+                "position": 1
+              }
+            ],
+            "item_id": 30106,
+            "slot": 6
+          },
+          {
+            "enchant_id": 35495,
+            "gems": [
+              {
+                "item_id": 32212,
+                "position": 0
+              }
+            ],
+            "item_id": 31044,
+            "slot": 7
+          },
+          {
+            "enchant_id": 13889,
+            "item_id": 32593,
+            "slot": 8
+          },
+          {
+            "enchant_id": 27916,
+            "gems": [
+              {
+                "item_id": 32194,
+                "position": 0
+              }
+            ],
+            "item_id": 33881,
+            "slot": 9
+          },
+          {
+            "enchant_id": 25063,
+            "gems": [
+              {
+                "item_id": 32212,
+                "position": 0
+              }
+            ],
+            "item_id": 31034,
+            "slot": 10
+          },
+          {
+            "enchant_id": 29723,
+            "item_id": 29279,
+            "slot": 11
+          },
+          {
+            "enchant_id": 29723,
+            "item_id": 32266,
+            "slot": 12
+          },
+          {
+            "item_id": 32501,
+            "slot": 13
+          },
+          {
+            "item_id": 32658,
+            "slot": 14
+          },
+          {
+            "enchant_id": 9102,
+            "item_id": 28660,
+            "slot": 15
+          },
+          {
+            "enchant_id": 27976,
+            "item_id": 30883,
+            "slot": 16
+          },
+          {
+            "item_id": 32387,
+            "slot": 18
+          }
+        ],
+        "version": 3
+      },
+      "gem_ids": [
+        32194,
+        32200,
+        32212,
+        32220,
+        32409
+      ],
+      "kind": "gear_planner",
+      "label": "Best In Slot Gear for Feral Druid Tank in Phase 3",
+      "planner": "druid/night-elf/A0YQ9QMDITIyIQUwElHwVQMwH4FAeT-KcwB91CB-mQIAfmqDQHlIikoAfdwgfciFYHlCbTcAfdQgfdxAfcIGQHWaAH3CIH3UhyB5RIqnAH3UiAB_UTZBiSCEWW0MAH3CiiB5OmHnAH3UiwByX3QbjAB-CnQbDQB-9Q4Af5KPAG_0I46QAHijbUgSAH6D"
+    },
+    {
+      "gem_ids": [
+        32194,
+        32212,
+        32220,
+        32409
+      ],
+      "gems": [
+        {
+          "item_id": 32409,
+          "name": "Relentless Earthstorm Diamond"
+        },
+        {
+          "item_id": 32194,
+          "name": "Delicate Crimson Spinel"
+        },
+        {
+          "item_id": 32212,
+          "name": "Shifting Shadowsong Amethyst"
+        },
+        {
+          "item_id": 32220,
+          "name": "Glinting Pyrestone"
+        }
+      ],
+      "kind": "linked_prose",
+      "text": "Note on gemming: In our Phase 1 and Phase 2 BiS guides, Stamina gems have generally been recommended as the default option in all slots except when gearing for beneficial socket bonuses or to meet the color requirements of the Relentless Earthstorm Diamond meta gem. In Phase 3, however, the overall avoidance levels on Feral gear get high enough that Agility gems come out on top as the most efficient default choice due to the increasing returns of avoidance towards survivability. Nevertheless, all of the available Epic quality tanking gems in Phase 3 are close enough in value that it is almost always worth gemming for socket bonuses using a mixture of Delicate Crimson Spinel , Shifting Shadowsong Amethyst , and Glinting Pyrestone gems."
+    },
+    {
+      "gem_ids": [
+        32409
+      ],
+      "gems": [
+        {
+          "item_id": 32409,
+          "name": "Relentless Earthstorm Diamond"
+        }
+      ],
+      "kind": "linked_prose",
+      "text": "Similar to the other Tier pieces, Thunderheart Chestguard is a direct stat upgrade from Nordrassil Chestplate . Note that the chest slot is a great place to fill in the missing color requirements for the Relentless Earthstorm Diamond meta gem due to the strong socket bonus, and a variety of gem choices can be appropriate depending on how often you tank vs. DPS in raids."
+    }
+  ],
+  "page_type": "phase_gem_guide",
+  "parser_version": "phase-gems-1",
+  "title": "Feral Druid Tank Phase 3 Best in Slot (BiS) - TBC Classic - Wowhead",
+  "url": "https://www.wowhead.com/tbc/guide/feral-druid-tank-bt-hyjal-phase-3-best-in-slot-gear-burning-crusade"
+}

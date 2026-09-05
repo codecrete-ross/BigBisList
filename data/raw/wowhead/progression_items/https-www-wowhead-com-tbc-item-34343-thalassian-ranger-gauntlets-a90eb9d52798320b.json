@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Thalassian Ranger Gauntlets Phase 5 Item Level 164 Binds when picked up Hands Mail 715 Armor +40 Agility +43 Stamina +27 Intellect Red Socket Yellow Socket Socket Bonus: +3 Agility Durability 50 / 50 Requires Level 70 Equip: Improves critical strike rating by 23. Equip: Increases attack power by 80. Equip: Your attacks ignore 182 of your opponent's armor. Sell Price: 5 3 92",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-04T23:59:39+00:00",
+  "inventory_slot": null,
+  "item_id": 34343,
+  "item_stats": {
+    "armor": 715,
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves critical strike rating by 23.",
+        "stats": {
+          "crit_rating": 23.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 80.",
+        "stats": {
+          "attack_power": 80.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Your attacks ignore 182 of your opponent's armor.",
+        "type": "proc"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves critical strike rating by 23.",
+      "Equip: Increases attack power by 80.",
+      "Equip: Your attacks ignore 182 of your opponent's armor."
+    ],
+    "id": 34343,
+    "item_level": 164,
+    "name": "Thalassian Ranger Gauntlets",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "socket_bonus": {
+      "agility": 3.0
+    },
+    "sockets": [
+      "red",
+      "yellow"
+    ],
+    "source_summary": "",
+    "stats": {
+      "agility": 40.0,
+      "attack_power": 80.0,
+      "crit_rating": 23.0,
+      "intellect": 27.0,
+      "stamina": 43.0
+    },
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34343/thalassian-ranger-gauntlets"
+  },
+  "name": "Thalassian Ranger Gauntlets",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34343/thalassian-ranger-gauntlets"
+}

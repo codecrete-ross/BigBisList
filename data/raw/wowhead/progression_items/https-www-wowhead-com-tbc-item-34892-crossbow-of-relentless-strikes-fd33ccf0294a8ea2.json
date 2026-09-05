@@ -1,0 +1,72 @@
+{
+  "binding": "bind_on_pickup",
+  "boe": false,
+  "description": "Crossbow of Relentless Strikes Phase 5 Item Level 146 Binds when picked up Ranged Crossbow 182 - 339 Damage Speed 2.80 (93.04 damage per second) Durability 90 / 90 Requires Level 70 Equip: Improves hit rating by 14. Equip: Improves critical strike rating by 18. Equip: Increases attack power by 32.",
+  "fetch_method": "tooltip_endpoint",
+  "fetched_at": "2026-09-05T00:00:20+00:00",
+  "inventory_slot": "Ranged",
+  "item_id": 34892,
+  "item_stats": {
+    "binding": "bind_on_pickup",
+    "boe": false,
+    "dps": 93.04,
+    "effect_stats": [
+      {
+        "raw_text": "Equip: Improves hit rating by 14.",
+        "stats": {
+          "hit_rating": 14.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Improves critical strike rating by 18.",
+        "stats": {
+          "crit_rating": 18.0
+        },
+        "type": "passive"
+      },
+      {
+        "raw_text": "Equip: Increases attack power by 32.",
+        "stats": {
+          "attack_power": 32.0
+        },
+        "type": "passive"
+      }
+    ],
+    "equip_effects": [
+      "Equip: Improves hit rating by 14.",
+      "Equip: Improves critical strike rating by 18.",
+      "Equip: Increases attack power by 32."
+    ],
+    "id": 34892,
+    "item_level": 146,
+    "name": "Crossbow of Relentless Strikes",
+    "parse_confidence": "tooltip_endpoint",
+    "phase": "PR",
+    "quality": "epic",
+    "required_level": 70,
+    "slot": "Ranged",
+    "source_summary": "",
+    "stats": {
+      "attack_power": 32.0,
+      "crit_rating": 18.0,
+      "hit_rating": 14.0
+    },
+    "weapon_max_damage": 339,
+    "weapon_min_damage": 182,
+    "weapon_speed": 2.8,
+    "weapon_subtype": "Crossbow",
+    "weapon_type": "Ranged",
+    "wowhead_url": "https://www.wowhead.com/tbc/item=34892/crossbow-of-relentless-strikes"
+  },
+  "name": "Crossbow of Relentless Strikes",
+  "normalized_requirements": [],
+  "normalized_sources": [],
+  "page_type": "item",
+  "parser_version": "wowhead-scraper-0.10.0",
+  "quality": "epic",
+  "related_tables": {},
+  "taught_by_items": [],
+  "teaches_spell_ids": [],
+  "url": "https://www.wowhead.com/tbc/item=34892/crossbow-of-relentless-strikes"
+}

@@ -37,15 +37,15 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertIn("Big BiS List", self.read_lua("Tooltip.lua"))
         self.assertIn("BigBiSList.displayName", self.read_lua("Minimap.lua"))
 
-    def test_phase_display_labels_are_phase_based(self):
+    def test_phase_display_labels_use_stable_content_names(self):
         data_index = self.read_lua("DataIndex.lua")
         expected = {
             "PR": "Pre-Raid",
-            "T4": "Phase 1",
-            "T5": "Phase 2",
-            "T6": "Phase 3",
-            "ZA": "Phase 4",
-            "SWP": "Phase 5",
+            "T4": "Tier 4",
+            "T5": "Tier 5",
+            "T6": "Tier 6",
+            "ZA": "Zul'Aman",
+            "SWP": "Sunwell Plateau",
         }
         for key, label in expected.items():
             self.assertRegex(data_index, rf"{key}\s*=\s*\"{re.escape(label)}\"")
@@ -131,7 +131,7 @@ class AddonUIStaticTests(unittest.TestCase):
         self.assertNotIn("local selectedClass = db.char and db.char.selection and db.char.selection.class", config)
         self.assertNotIn("firstInitialization and className == selectedClass or false", config)
 
-    def test_current_phase_detection_defaults_stale_selections(self):
+    def test_current_phase_detection_preserves_valid_selections(self):
         data_index = self.read_lua("DataIndex.lua")
         ui = self.read_lua("UI.lua")
 
@@ -149,11 +149,12 @@ class AddonUIStaticTests(unittest.TestCase):
         validate_body = ui.split("function UI:ValidateSelection", 1)[1].split("function UI:BuildOwnedItems", 1)[0]
         for token in [
             "local detectedPhase = BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey() or nil",
-            "phaseKey == char.lastDetectedPhase",
+            "not phaseExists(phaseKey)",
             "phaseKey = detectedPhase",
             "char.lastDetectedPhase = detectedPhase",
         ]:
             self.assertIn(token, validate_body)
+        self.assertNotIn("phaseKey == char.lastDetectedPhase", validate_body)
 
     def test_player_selection_detection_is_load_time_context(self):
         config = self.read_lua("Config.lua")
@@ -952,7 +953,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "gemDetailLabel",
             "enchantDetailLabel",
             "enchantRecommendationSummary",
-            'recommendation_summary = "Socket this gem"',
+            'gem.context == "budget" and "Budget alternative" or "Socket this gem"',
             "recommendation_summary = enchantRecommendationSummary(enchant)",
             "recommendation_summary = consumableRecommendationSummary",
             'ownership_state = "service"',
@@ -1045,7 +1046,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "GetTooltipUses",
             'sourceType == "quest"',
             "starterSource in ipairs(source.quest_starter_sources or {})",
-            "local uses = self:GetTooltipUses(itemId)",
+            "local uses = self:GetTooltipUses(itemId, selectedPhase)",
         ]:
             self.assertIn(token, data_index)
         self.assertLess(data_index.index("tooltipUseRefsByItemId"), data_index.index("function BigBiSList:GetTooltipMatches"))
@@ -1066,9 +1067,9 @@ class AddonUIStaticTests(unittest.TestCase):
     def test_phase_rows_filter_future_acquisition_phases(self):
         data_index = self.read_lua("DataIndex.lua")
         body = data_index.split("function BigBiSList:GetPhaseRows", 1)[1].split("function BigBiSList:GetPlannerRows", 1)[0]
-        self.assertIn("local selectedIndex = phaseIndex(phaseKey)", body)
+        self.assertIn("local selectedIndex = self:GetAvailabilityPhaseIndex(phaseKey)", body)
         self.assertIn("use.acquisitionPhaseIndex <= selectedIndex", body)
-        self.assertLess(body.index("local selectedIndex = phaseIndex(phaseKey)"), body.index("use.acquisitionPhaseIndex <= selectedIndex"))
+        self.assertLess(body.index("local selectedIndex = self:GetAvailabilityPhaseIndex(phaseKey)"), body.index("use.acquisitionPhaseIndex <= selectedIndex"))
 
     def test_source_aware_access_status_prefers_ready_options(self):
         ui = self.read_lua("UI.lua")
@@ -1381,7 +1382,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "acquisition_phase = acquisitionPhase",
             "includeByFilter(use, filters, selectedIndex)",
             "includeByFilter(group, filters, selectedIndex)",
-            "local selectedIndex = phaseIndex(phaseKey)",
+            "local selectedIndex = self:GetAvailabilityPhaseIndex(phaseKey)",
         ]:
             self.assertIn(token, data_index)
         self.assertLess(data_index.index("deriveSourceAcquisitionPhase"), data_index.index("function BigBiSList:GetPhaseRows"))
@@ -1677,7 +1678,7 @@ class AddonUIStaticTests(unittest.TestCase):
             "isReportedOnlyAccessOption",
             'local missing = "Unavailable in committed source data"',
             "function UI:GetRowSellerDisplayGroups(data, selectedOption)",
-            "BigBiSList:GetRowSellerGroups(data, selectedOption)",
+            "BigBiSList:GetRowSellerGroups(data, selectedOption, phaseKey)",
             "dedupeSellerOptions",
             "function UI:ShowAcquisitionTooltip(owner, data)",
             "UI:ShowAcquisitionTooltip(selfBadge, selfBadge.boundData)",
