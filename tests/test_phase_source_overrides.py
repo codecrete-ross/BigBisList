@@ -4,7 +4,9 @@ from copy import deepcopy
 import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
@@ -62,6 +64,61 @@ class PhaseSourceOverrideTests(unittest.TestCase):
             "token_sources": [{"type": "drop", "entity_name": "Archimonde", "zone": "Hyjal Summit"}],
         })
         return {"id": 33672, "binding": "bind_on_pickup", "boe": False, "acquisition_phase": "PR", "sources": sources}
+
+    def test_reviewed_mark_dependency_satisfies_snapshot_audit_without_a_raid_token(self):
+        from tools.scrape_wowhead import item_acquisition_errors, source_audit_errors
+        for item_id in (22838, 22839):
+            reviewed = apply_source_rule_overrides({"id": item_id, "sources": []}, self.records)
+            sources = reviewed["sources"]
+            snapshot = {"item_id": item_id, "page_type": "item", "normalized_sources": sources}
+            with patch("tools.scrape_wowhead.reviewed_overrides", return_value=[]):
+                self.assertEqual(item_acquisition_errors("Consumable", item_id, snapshot, set(), {}), [])
+            self.assertEqual(source_audit_errors(item_id, sources, set()), [])
+            self.assertTrue(all(source["type"] == "vendor" and not source.get("token_sources") for source in sources))
+            self.assertFalse(item_has_pre_raid_route(reviewed, "T5"))
+            self.assertTrue(item_has_pre_raid_route(reviewed, "T6"))
+
+    def test_mark_dependency_exception_rejects_changed_or_unreviewed_purchases(self):
+        from tools.scrape_wowhead import item_acquisition_errors, source_audit_errors
+        original = apply_source_rule_overrides({"id": 22838, "sources": []}, self.records)["sources"][0]
+        mutations = {
+            "bound raid token": {"costs": [{"item_id": 31096, "name": "Helm of the Forgotten Vanquisher", "amount": 1}]},
+            "wrong cost amount": {"costs": [{"item_id": 32897, "name": "Mark of the Illidari", "amount": 2}]},
+            "wrong quantity": {"purchase_quantity": 1},
+            "unreviewed": {"reviewed_override_id": None},
+            "wrong confidence": {"confidence": "wowhead_item"},
+            "wrong vendor": {"entity_id": 123, "vendor_id": 123},
+            "missing window": {"available_from_phase": None},
+            "earlier window": {"available_from_phase": "T5"},
+            "future window": {"available_from_phase": "SWP"},
+            "empty window": {"available_until_phase": "T6"},
+            "missing reputations": {"requirements": []},
+        }
+        for label, changes in mutations.items():
+            with self.subTest(label=label):
+                source = {**deepcopy(original), **changes}
+                snapshot = {"page_type": "item", "item_id": 22838, "normalized_sources": [source]}
+                with patch("tools.scrape_wowhead.reviewed_overrides", return_value=[]):
+                    errors = item_acquisition_errors("Consumable", 22838, snapshot, set(), {})
+                self.assertEqual(errors, ["Consumable item 22838 has unresolved item-cost vendor source"])
+                self.assertEqual(source_audit_errors(22838, [source], set()), ["BiS item 22838 has unresolved item-cost vendor source"])
+
+    def test_mark_exception_requires_committed_unbound_currency_and_acquisition_evidence(self):
+        from tools.scrape_wowhead import has_reviewed_mark_purchase_dependency
+        source = apply_source_rule_overrides({"id": 22838, "sources": []}, self.records)["sources"][0]
+        evidence = json.loads((EVIDENCE_DIR / "mark_of_the_illidari.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = Path(temporary)
+            path = raw / "phase_source_evidence/mark_of_the_illidari.json"
+            path.parent.mkdir()
+            with patch("tools.scrape_wowhead.RAW_WOWHEAD_DIR", raw):
+                self.assertFalse(has_reviewed_mark_purchase_dependency(22838, source))
+                for change in ({"mark_binding": "bind_on_pickup"}, {"mark_sources": []},
+                               {"supporting_urls": []}, {"reviewer": None}):
+                    path.write_text(json.dumps({**evidence, **change}), encoding="utf-8")
+                    self.assertFalse(has_reviewed_mark_purchase_dependency(22838, source), change)
+                path.write_text(json.dumps(evidence), encoding="utf-8")
+                self.assertTrue(has_reviewed_mark_purchase_dependency(22838, source))
 
     def test_season3_pvp_requires_t6_and_undated_discounts_do_not_leak(self):
         original = self._vengeful_helm()

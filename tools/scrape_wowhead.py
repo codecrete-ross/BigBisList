@@ -6274,6 +6274,45 @@ def reviewed_unknown_source_item_ids() -> set[int]:
     return item_ids
 
 
+def has_reviewed_mark_purchase_dependency(item_id: int, source: dict[str, Any]) -> bool:
+    """Resolve only the reviewed, tradeable Mark exchange without a token wrapper.
+
+    This currency has committed acquisition/binding evidence rather than a
+    standalone item snapshot. Ordinary unresolved item-cost vendors still fail.
+    """
+    if source.get("reviewed_override_id") != f"anniversary-phase3-mark-potions-{item_id}":
+        return False
+    evidence_path = RAW_WOWHEAD_DIR / "phase_source_evidence/mark_of_the_illidari.json"
+    if not evidence_path.is_file():
+        return False
+    evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+    phase = evidence.get("content_phase")
+    if (not evidence.get("reviewer") or not evidence.get("reviewed_at")
+            or evidence.get("mark_binding") != "unbound" or phase not in PHASE_KEYS
+            or item_id not in evidence.get("potion_item_ids", [])
+            or source.get("available_from_phase") != phase):
+        return False
+    end = source.get("available_until_phase")
+    if end is not None and (end not in PHASE_KEYS or PHASE_KEYS.index(end) <= PHASE_KEYS.index(phase)):
+        return False
+    cost_id = evidence.get("cost_item_id")
+    if not isinstance(cost_id, int) or not any(
+            item_id_from_href(url) == cost_id for url in evidence.get("supporting_urls", [])):
+        return False
+    if not any(origin.get("source_type") == "raid_trash" and origin.get("zone")
+               and origin.get("available_from_phase") in PHASE_KEYS
+               and PHASE_KEYS.index(origin["available_from_phase"]) <= PHASE_KEYS.index(phase)
+               for origin in evidence.get("mark_sources", [])):
+        return False
+    # Compare the complete reviewed purchase, including vendor, cost, quantity,
+    # reputation requirements and provenance. A review ID alone is insufficient.
+    from tools.phase_source_overrides import potion_purchase_overrides
+    return any(override["id"] == source["reviewed_override_id"]
+               and any(all(source.get(key) == value for key, value in expected.items())
+                       for expected in override.get("data", {}).get("append_sources", []))
+               for override in potion_purchase_overrides())
+
+
 def source_audit_errors(item_id: int, sources: list[dict[str, Any]], reviewed_unknown_item_ids: set[int]) -> list[str]:
     errors: list[str] = []
     if not sources:
@@ -6284,7 +6323,7 @@ def source_audit_errors(item_id: int, sources: list[dict[str, Any]], reviewed_un
             errors.append(f"BiS item {item_id} has unreviewed unknown acquisition source")
         if source_type == "token_turnin" and not source.get("token_sources"):
             errors.append(f"BiS item {item_id} has unresolved token_turnin source")
-        if source_type == "vendor" and source_has_item_cost(source):
+        if source_type == "vendor" and source_has_item_cost(source) and not has_reviewed_mark_purchase_dependency(item_id, source):
             errors.append(f"BiS item {item_id} has unresolved item-cost vendor source")
         for token_source in source.get("token_sources", []):
             if token_source.get("type") == "unknown" and item_id not in reviewed_unknown_item_ids:
@@ -6580,7 +6619,7 @@ def item_acquisition_errors(
                 for cost in source.get("costs", [])
                 if isinstance(cost.get("item_id"), int) and (not item_snapshots or cost["item_id"] not in item_snapshots)
             ]
-            if missing_cost_ids:
+            if missing_cost_ids and not has_reviewed_mark_purchase_dependency(item_id, source):
                 errors.append(f"{label} item {item_id} has unresolved item-cost vendor source")
     return errors
 
