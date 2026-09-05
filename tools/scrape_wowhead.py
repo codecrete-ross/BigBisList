@@ -5605,6 +5605,9 @@ def enrich_source_cost_names(sources: list[dict[str, Any]], item_names: dict[int
 
 
 def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
+    from tools.phase_source_overrides import apply_source_rule_overrides
+
+    overrides = reviewed_overrides()
     rows: dict[int, dict[str, Any]] = {}
     item_candidates: dict[int, list[dict[str, Any]]] = {}
     list_snapshots = sorted(
@@ -5678,6 +5681,9 @@ def import_item_stats_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[st
             row["requirements"] = requirements
         else:
             row.pop("requirements", None)
+        row = apply_source_rule_overrides(row, overrides)
+        if row.get("sources"):
+            row["phase"] = derive_acquisition_phase(row["sources"])
         rows[item_id] = {key: value for key, value in row.items() if value_is_populated(value)}
     return {"item_stats": [rows[item_id] for item_id in sorted(rows)]}
 
@@ -6065,6 +6071,15 @@ def load_import_snapshots(input_dir: Path, family: str | None) -> list[dict[str,
 
 def command_import(args: argparse.Namespace) -> int:
     snapshots = load_import_snapshots(args.input_dir, args.family)
+    if args.family == "item_stats":
+        document = import_item_stats_from_snapshots(snapshots)
+        if args.dry_run:
+            print(json.dumps({"family": "item_stats", "item_stats": len(document["item_stats"])}, indent=2, sort_keys=True))
+            return 0
+        path = CANONICAL_DIR / "item_stats.json"
+        write_text(path, json.dumps(document, indent=2, sort_keys=True) + "\n")
+        print(f"Wrote {path}")
+        return 0
     imported_items = import_items_from_snapshots(snapshots)
     if args.family == "items":
         if args.dry_run:

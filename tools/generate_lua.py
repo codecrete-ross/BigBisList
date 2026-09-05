@@ -474,6 +474,10 @@ def build_data() -> dict:
         "phase_schedules": canonical_json("phases").get("schedules", {}),
         "items": compact_list(items, "item"),
         "item_fallbacks": compact_list(item_fallbacks, "item_fallback"),
+        "item_class_restrictions": {
+            item["id"]: sorted(set(item["restrictions"]["classes"]))
+            for item in item_stats if item.get("restrictions", {}).get("classes")
+        },
         "uses": build_uses(bis_lists),
         "gems": compact_list(gems, "gem"),
         "gem_sources": compact_list(gem_sources, "source_record"),

@@ -10,3 +10,4 @@ Addon behavior changes in the 0.13.x releases, newest first. Each section descri
 - Refreshed gearing and enhancement recommendations, including Phase 3 epic gems with rare budget alternatives and recipe requirements.
 - Corrected phase availability for Season 3 gear, vendors, recipes, and token exchanges across gearing views, tooltips, and Wishlist.
 - Added the Phase 3 Mark of the Illidari purchases for bundles of ten Haste or Destruction Potions, including their reputation requirements.
+- Existing leveling recommendations now respect verified item class restrictions.

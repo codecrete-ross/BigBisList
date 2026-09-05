@@ -2803,9 +2803,15 @@ local function levelingValueText(row)
     return "Recommended for " .. specName .. " at level " .. tostring(levelMin)
 end
 
+function LEVELING_HELPERS.itemAllowsClass(index, entry)
+    local restrictions = (index.dataSource or {}).item_class_restrictions or {}
+    local classes = restrictions[entry.item_id] or restrictions[tostring(entry.item_id)]
+    return type(classes) ~= "table" or #classes == 0 or slotListContains(classes, entry.class)
+end
+
 local function buildLevelingGearRow(index, levelingGearRef)
     local entry = inflateCompactRecord(index, "leveling_gear", levelingGearRef)
-    if not entry then
+    if not entry or not LEVELING_HELPERS.itemAllowsClass(index, entry) then
         return nil
     end
 
@@ -2875,7 +2881,7 @@ end
 
 local function buildLevelingRecommendationRow(index, recommendationRef)
     local entry = inflateCompactRecord(index, "leveling_recommendation", recommendationRef)
-    if not entry then
+    if not entry or not LEVELING_HELPERS.itemAllowsClass(index, entry) then
         return nil
     end
 

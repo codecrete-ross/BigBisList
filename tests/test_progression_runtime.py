@@ -111,6 +111,69 @@ expect(legacyTrade and legacyTrade.is_inferred_trade_option, "existing crafted m
 expect(not BigBiSList:IsPreRaidAccessOption(legacyTrade, 4), "market hint alone is not personal raid exemption")
 ''', data)
 
+    def test_refreshed_class_facts_filter_archived_leveling_rows_without_reranking(self):
+        item_ids = (22589, 22630, 22632, 27922, 27924)
+        restrictions = {}
+        for item_id in item_ids:
+            path = next((ADDON_DIR / "data/raw/wowhead/progression_items").glob(f"*item-{item_id}-*json"))
+            evidence = json.loads(path.read_text(encoding="utf-8"))
+            restrictions[item_id] = evidence["item_stats"]["restrictions"]["classes"]
+        recommendations = [row for row in canonical_json("leveling_recommendations")["leveling_recommendations"]
+                           if row["item_id"] in item_ids]
+        allowed = [row for row in recommendations if row["class"] in restrictions[row["item_id"]]]
+        self.assertEqual(len(recommendations) - len(allowed), 25, "committed archived rows made ineligible by refreshed facts")
+        expected = {item_id: [row for row in allowed if row["item_id"] == item_id] for item_id in item_ids}
+        # Both ingestion paths need the same fact check. These two guide rows
+        # isolate that path while the computed rows remain exact committed data.
+        guide_rows = [{"class": class_name, "spec": spec_name, "item_id": 22589,
+                       "level_min": 60, "level_max": 69, "slot": "Two Hand", "rank": 3}
+                      for class_name, spec_name in (("Mage", "Arcane"), ("Druid", "Balance"))]
+        for compact in (True, False):
+            data = {"classes": canonical_json("classes")["classes"],
+                    "items": [deepcopy(self.items[item_id]) for item_id in item_ids],
+                    "item_class_restrictions": restrictions,
+                    "leveling_recommendations": deepcopy(recommendations), "leveling_gear": deepcopy(guide_rows)}
+            if compact:
+                data.update(format=2, schemas=SCHEMAS)
+                for field, schema in (("items", "item"), ("leveling_recommendations", "leveling_recommendation"),
+                                      ("leveling_gear", "leveling_gear")):
+                    data[field] = [compact_record(row, schema) for row in data[field]]
+            with self.subTest(compact=compact):
+                self.run_lua('local expected = ' + lua_value(expected) + r'''
+dofile("DataIndex.lua")
+local originalCount = #BigBiSListData.leveling_recommendations
+for itemId, archived in pairs(expected) do
+    local uses = BigBiSList:GetItemLevelingRecommendationUses(itemId)
+    equal(#uses, #archived, "eligible archived rows for item " .. itemId)
+    for _, use in ipairs(uses) do
+        expect(contains(BigBiSListData.item_class_restrictions[itemId], use.class), "class can equip item")
+        local exact
+        for _, row in ipairs(archived) do
+            if row.class == use.class and row.spec == use.spec and row.race == use.race
+                and row.level_min == use.level_min and row.level_max == use.level_max
+                and row.rank == use.rank and row.score == use.score and row.context == use.context then exact = true end
+        end
+        expect(exact, "eligible ranks and scores remain unchanged")
+    end
+end
+equal(#BigBiSList:GetItemLevelingUses(22589), #expected["22589"] + 1, "guide and computed paths apply the same restriction")
+equal(BigBiSList:GetItemBestLevelingUseForSpec(22589, "Druid", "Balance", 60), nil, "wrong-class item cannot be an owned baseline")
+equal(BigBiSList:GetItemNextLevelingUseForSpec(22589, "Druid", "Balance", 59), nil, "wrong-class item cannot be a future upgrade")
+expect(BigBiSList:GetItemBestLevelingUseForSpec(22589, "Mage", "Arcane", 60), "Mage keeps its Atiesh recommendation")
+for _, use in ipairs(BigBiSList:GetLevelingTooltipMatches(22589, "Druid", "Balance", 60)) do
+    equal(use.class, "Mage", "tooltip only reports an eligible class")
+end
+for _, group in ipairs(BigBiSList:GetLevelingRows("Druid", "Balance", 62, {})) do
+    for _, row in ipairs(group.items) do
+        expect(contains(BigBiSListData.item_class_restrictions[tostring(row.item_id)], "Druid"), "leveling list rejects wrong-class item")
+    end
+end
+equal(#BigBiSListData.leveling_recommendations, originalCount, "archived ranking records are untouched")
+BigBiSListData.item_class_restrictions = nil
+BigBiSList.dataIndex = nil
+expect(#BigBiSList:GetItemLevelingRecommendationUses(22589) > #expected["22589"], "older generated data without restrictions stays compatible")
+''', data)
+
     def fixture(self, compact=True):
         phases = canonical_json("phases")
         data = {
