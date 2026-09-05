@@ -80,6 +80,8 @@ end
 local function clearTooltipRenderGuard(tooltip)
     if tooltip then
         tooltip.__bigBisListRenderKey = nil
+        tooltip.__bigBisListItemId = nil
+        tooltip.__bigBisListExpanded = nil
     end
 end
 
@@ -130,7 +132,6 @@ local function familiarTooltipText(value)
     text = string.gsub(text, "No match", "Not ranked")
     text = string.gsub(text, "Hard Farm", "Hard")
     text = string.gsub(text, "Nice%-to%-have", "Optional")
-    text = string.gsub(text, "%f[%a]BiS%f[%A]", "Best in slot")
     text = string.gsub(text, "%f[%a]Alt%f[%A]", "Alternative")
     return (string.gsub(string.gsub(text, "^%s+", ""), "%s+$", ""))
 end
@@ -157,6 +158,43 @@ local function lineForTooltipMatch(match)
     return left, right
 end
 
+-- Rebuild through the tooltip's native source; never clear or copy native lines.
+-- The normal item hooks reattach our section after that rebuild.
+local function refreshTooltipForModifier(tooltip)
+    if not shouldAnnotateTooltip(tooltip) or tooltip.__bigBisListRefreshing then return end
+    if tooltip.IsShown and not tooltip:IsShown() then return end
+    local itemId = itemIdFromTooltip(tooltip)
+    if not itemId or not tooltip.__bigBisListRenderKey then return end
+    local settings = BigBiSListDB and BigBiSListDB.profile and BigBiSListDB.profile.tooltips
+    if not settings or settings.enabled == false or not settings.showAllOnAlt then return end
+    local expanded = not not (IsAltKeyDown and IsAltKeyDown())
+    if tooltip.__bigBisListExpanded == expanded then return end
+
+    tooltip.__bigBisListRefreshing = true
+    local refreshed = false
+    if tooltip.RefreshData then
+        refreshed = pcall(tooltip.RefreshData, tooltip)
+    elseif tooltip.GetOwner then
+        local ok, owner = pcall(tooltip.GetOwner, tooltip)
+        if ok and owner and type(owner.UpdateTooltip) == "function" then
+            refreshed = pcall(owner.UpdateTooltip, owner)
+        end
+    end
+    -- Classic tooltips do not always expose RefreshData/UpdateTooltip. The exact
+    -- hyperlink retains enchant/gem/instance information when that fallback runs.
+    if not refreshed and tooltip.GetItem and tooltip.SetHyperlink then
+        local ok, _, link = pcall(tooltip.GetItem, tooltip)
+        if ok and link and itemIdFromLink(link) == itemId then
+            refreshed = pcall(tooltip.SetHyperlink, tooltip, link)
+        end
+    end
+    if refreshed then
+        addTooltipInfoSafely(tooltip)
+        if tooltip.Show then tooltip:Show() end
+    end
+    tooltip.__bigBisListRefreshing = nil
+end
+
 function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if not shouldAnnotateTooltip(tooltip) then
         return
@@ -181,6 +219,7 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     local selectedSpecFirst = settings.selectedSpecFirst ~= false
     local specFilters = settings.specFilters
     local priorityContext = getTooltipPriorityContext()
+    priorityContext = priorityContext or {}
     priorityContext.selectedPhase = effectivePhaseKey
     local rawMatches = levelingMode
         and self:GetLevelingTooltipMatches(itemId, selection.class, selection.spec, selectedLevel, selectedSpecFirst, specFilters, priorityContext)
@@ -214,26 +253,32 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
     if tooltip.__bigBisListRenderKey == renderKey then
         return
     end
+    if tooltip.__bigBisListRenderKey then
+        refreshTooltipForModifier(tooltip)
+        return
+    end
     tooltip.__bigBisListRenderKey = renderKey
+    tooltip.__bigBisListItemId = itemId
+    tooltip.__bigBisListExpanded = not not showExpanded
 
     tooltip:AddLine(" ")
-    tooltip:AddLine("Big BiS List", 0.2, 1.0, 0.65)
+    tooltip:AddLine("Big BiS List", 1.0, 0.82, 0.28)
 
     for index = 1, math.min(#matches, maxRows) do
         local match = matches[index]
         local left, right = lineForTooltipMatch(match)
         local selected = match.class == selection.class and match.spec == selection.spec
         if selected then
-            tooltip:AddDoubleLine(left, right, 0.25, 1.0, 0.45, 0.25, 1.0, 0.45)
+            tooltip:AddDoubleLine(left, right, 1.0, 0.9, 0.62, 1.0, 0.9, 0.62)
         else
-            tooltip:AddDoubleLine(left, right, 1.0, 0.82, 0.28, 1.0, 0.82, 0.28)
+            tooltip:AddDoubleLine(left, right, 0.76, 0.8, 0.86, 0.76, 0.8, 0.86)
         end
     end
 
     local rawDiffersFromGrouped = #rawMatches ~= #groupedMatches
     local hasHiddenRows = #matches > maxRows
     if not showExpanded and settings.showAllOnAlt and (rawDiffersFromGrouped or hasHiddenRows) then
-        tooltip:AddLine("Hold ALT to show all rankings", 0.62, 0.62, 0.66)
+        tooltip:AddLine("Hold Alt for all rankings", 0.62, 0.66, 0.72)
     end
 end
 
@@ -253,7 +298,7 @@ function BigBiSList:InitTooltip()
         return
     end
 
-    if TooltipDataProcessor and Enum and Enum.TooltipDataType and Enum.TooltipDataType.Item then
+    if TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall and Enum and Enum.TooltipDataType and Enum.TooltipDataType.Item then
         TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip, tooltipData)
             addTooltipInfoSafely(tooltip, tooltipData)
         end)
@@ -261,6 +306,18 @@ function BigBiSList:InitTooltip()
 
     hookTooltip(GameTooltip)
     hookTooltip(ItemRefTooltip)
+
+    if CreateFrame then
+        local modifierFrame = CreateFrame("Frame")
+        modifierFrame:RegisterEvent("MODIFIER_STATE_CHANGED")
+        modifierFrame:SetScript("OnEvent", function(_, _, key)
+            if key == "LALT" or key == "RALT" or key == "ALT" then
+                refreshTooltipForModifier(GameTooltip)
+                refreshTooltipForModifier(ItemRefTooltip)
+            end
+        end)
+        self.tooltipModifierFrame = modifierFrame
+    end
 
     self.tooltipInitialized = true
 end

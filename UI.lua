@@ -8,8 +8,8 @@ BigBiSList.UI = UI
 
 local LEVELING_PHASE_KEY = BigBiSList.levelingPhaseKey or "LEVELING"
 local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel or 69
-local ENDGAME_TAB_NAMES = { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist", "Settings" }
-local LEVELING_TAB_NAMES = { "Gear Guide", "Equipped", "Wishlist", "Settings" }
+local ENDGAME_TAB_NAMES = { "Upgrades", "By Slot", "Equipped", "Enhance", "Wishlist" }
+local LEVELING_TAB_NAMES = { "Gear Guide", "Equipped", "Wishlist" }
 local TAB_NAMES = { "Upgrades", "By Slot", "Gear Guide", "Equipped", "Enhance", "Wishlist", "Settings" }
 local TAB_NAME_ALIASES = {
     Phase = "By Slot",
@@ -29,11 +29,11 @@ local MIN_WIDTH = 1020
 local MIN_HEIGHT = 560
 local DEFAULT_WIDTH = 1160
 local DEFAULT_HEIGHT = 660
-local DETAILS_WIDTH = 270
+local DETAILS_WIDTH = 320
 local CONTEXT_BAR_HEIGHT = 34
 local TOOLBAR_HEIGHT = 34
 local FILTER_DRAWER_HEIGHT = 104
-local ROW_HEIGHT = 58
+local ROW_HEIGHT = 56
 local RESIZE_SCREEN_MARGIN = 0
 local COLUMN_HEADER_HEIGHT = 22
 local COLUMN_GAP = 8
@@ -42,14 +42,14 @@ local HAVE_COLUMN_WIDTH = 96
 local GET_COLUMN_WIDTH = 122
 local ROW_HORIZONTAL_PADDING = 8
 local ROW_VERTICAL_PADDING = 8
-local ROW_ICON_SIZE = 30
-local LIST_ROW_HEIGHT = 74
-local LIST_ROW_GAP = 4
+local ROW_ICON_SIZE = 32
+local LIST_ROW_HEIGHT = 56
+local LIST_ROW_GAP = 0
 local LIST_SECTION_GAP = 6
 local LIST_OVERSCAN_PIXELS = 120
 local SEARCH_DEBOUNCE_SECONDS = 0.12
 local LAYOUT_WIDTH_EPSILON = 0.5
-local TABLE_WIDE_BREAKPOINT = 1040
+local TABLE_WIDE_BREAKPOINT = 960
 
 local OWNERSHIP_LABELS = {
     equipped = "Equipped",
@@ -612,113 +612,27 @@ local function fixedColumn(key, label, width, options)
     return columnDefinition(key, label, width, width, width, 0, options)
 end
 
-local TABLE_COLUMN_CONFIG = {
-    planner = {
+local TABLE_COLUMN_CONFIG = {}
+for _, mode in ipairs({ "planner", "phase", "leveling", "enhance", "wishlist", "gear" }) do
+    local valueKey = mode == "phase" and "rank" or (mode == "wishlist" and "expansion" or (mode == "gear" and "currentRank" or "value"))
+    local valueLabel = ({ phase = "Rank", wishlist = "Usefulness", gear = "Current rank", leveling = "Level / benefit" })[mode] or "Benefit"
+    TABLE_COLUMN_CONFIG[mode] = {
         wide = {
-            columnDefinition("item", "Item", 170, 260, 420, 8),
-            columnDefinition("slot", "Slot", 72, 88, 112, 2),
-            columnDefinition("value", "Value", 126, 170, 240, 4),
-            columnDefinition("source", "Source", 108, 128, 168, 2),
-            columnDefinition("location", "Location", 150, 210, 300, 6),
-            fixedColumn("owned", "Owned", 86, { align = "CENTER" }),
-            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
+            columnDefinition("item", mode == "enhance" and "Enhancement" or "Item", 220, 300, 480, 8),
+            columnDefinition(valueKey, valueLabel, 115, 160, 220, 3),
+            columnDefinition("acquisition", "Source", 240, 350, 520, 7),
+            fixedColumn("owned", mode == "enhance" and "Applied / owned" or "Owned", mode == "enhance" and 112 or 88),
+            fixedColumn("action", "", 28),
         },
         compact = {
-            columnDefinition("item", "Item", 140, 220, 340, 8),
-            columnDefinition("slot", "Slot", 64, 82, 100, 2),
-            columnDefinition("value", "Value", 96, 145, 210, 4),
-            columnDefinition("acquisition", "Acquisition", 145, 230, 330, 6),
-            fixedColumn("owned", "Owned", 80, { align = "CENTER" }),
-            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
+            columnDefinition("item", mode == "enhance" and "Enhancement" or "Item", 195, 280, 440, 8),
+            columnDefinition(valueKey, valueLabel, 96, 136, 190, 3),
+            columnDefinition("acquisition", "Source", 152, 220, 320, 5),
+            fixedColumn("owned", mode == "enhance" and "Applied / owned" or "Owned", mode == "enhance" and 112 or 88),
+            fixedColumn("action", "", 28),
         },
-    },
-    phase = {
-        wide = {
-            columnDefinition("rank", "Rank", 92, 104, 128, 2),
-            columnDefinition("item", "Item", 190, 300, 460, 8),
-            columnDefinition("source", "Source", 108, 128, 168, 2),
-            columnDefinition("location", "Location", 150, 220, 320, 6),
-            fixedColumn("owned", "Owned", 86, { align = "CENTER" }),
-            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
-        },
-        compact = {
-            columnDefinition("rank", "Rank", 76, 94, 116, 2),
-            columnDefinition("item", "Item", 145, 250, 400, 8),
-            columnDefinition("acquisition", "Acquisition", 145, 250, 360, 6),
-            fixedColumn("owned", "Owned", 80, { align = "CENTER" }),
-            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
-        },
-    },
-    leveling = {
-        wide = {
-            columnDefinition("item", "Item", 170, 260, 420, 8),
-            columnDefinition("slot", "Slot", 72, 88, 112, 2),
-            columnDefinition("value", "Level / Value", 128, 176, 250, 4),
-            columnDefinition("source", "Source", 108, 128, 168, 2),
-            columnDefinition("location", "Location", 140, 210, 300, 6),
-            fixedColumn("owned", "Owned", 86, { align = "CENTER" }),
-            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
-        },
-        compact = {
-            columnDefinition("item", "Item", 140, 220, 340, 8),
-            columnDefinition("slot", "Slot", 64, 82, 100, 2),
-            columnDefinition("value", "Level / Value", 104, 155, 220, 4),
-            columnDefinition("acquisition", "Acquisition", 145, 230, 330, 6),
-            fixedColumn("owned", "Owned", 80, { align = "CENTER" }),
-            fixedColumn("action", "Wishlist", 58, { align = "CENTER" }),
-        },
-    },
-    enhance = {
-        wide = {
-            columnDefinition("item", "Enhancement", 180, 260, 420, 8),
-            columnDefinition("slot", "For", 96, 116, 144, 2),
-            columnDefinition("value", "Recommendation", 140, 190, 270, 5),
-            fixedColumn("owned", "Applied / Owned", 104, { align = "CENTER" }),
-            columnDefinition("source", "Source", 108, 128, 168, 2),
-            columnDefinition("access", "Access", 116, 140, 176, 3, { align = "CENTER" }),
-        },
-        compact = {
-            columnDefinition("item", "Enhancement", 145, 230, 360, 8),
-            columnDefinition("slot", "For", 72, 102, 130, 2),
-            columnDefinition("value", "Recommendation", 108, 170, 240, 5),
-            fixedColumn("owned", "Applied / Owned", 104, { align = "CENTER" }),
-            columnDefinition("acquisition", "Source / Access", 150, 240, 340, 6),
-        },
-    },
-    wishlist = {
-        wide = {
-            columnDefinition("item", "Item", 140, 220, 340, 6),
-            columnDefinition("slot", "Slots", 68, 90, 120, 2),
-            columnDefinition("expansion", "Expansion Ranking", 260, 340, 500, 10),
-            columnDefinition("source", "Source", 96, 116, 156, 2),
-            columnDefinition("location", "Location", 112, 180, 280, 6),
-            fixedColumn("owned", "Owned", 80, { align = "CENTER" }),
-            fixedColumn("action", "Remove", 58, { align = "CENTER" }),
-        },
-        compact = {
-            columnDefinition("item", "Item", 105, 180, 280, 6, { ownershipInline = true }),
-            columnDefinition("slot", "Slots", 56, 80, 105, 2),
-            columnDefinition("expansion", "Expansion Ranking", 230, 330, 480, 10),
-            columnDefinition("acquisition", "Acquisition", 115, 190, 290, 6),
-            fixedColumn("action", "Remove", 58, { align = "CENTER" }),
-        },
-    },
-    gear = {
-        wide = {
-            columnDefinition("slot", "Slot", 106, 120, 150, 2),
-            columnDefinition("item", "Equipped Item", 260, 420, 620, 8),
-            columnDefinition("currentRank", "Current Rank", 170, 220, 300, 4),
-            columnDefinition("usefulThrough", "Useful Through", 150, 180, 220, 3),
-        },
-        compact = {
-            columnDefinition("slot", "Slot", 72, 100, 126, 2),
-            columnDefinition("item", "Equipped Item", 165, 300, 480, 8),
-            columnDefinition("currentRank", "Current Rank", 105, 180, 260, 4),
-            columnDefinition("usefulThrough", "Useful Through", 96, 145, 190, 3),
-        },
-    },
-}
-
+    }
+end
 function UI:GetViewColumnDefinitions(mode, compact)
     local config = TABLE_COLUMN_CONFIG[mode] or TABLE_COLUMN_CONFIG.phase
     return compact and config.compact or config.wide
@@ -1330,8 +1244,24 @@ function UI:GetSelection()
     return BigBiSList:GetCharacterDB().selection
 end
 
-function UI:GetFilters()
-    return BigBiSList:GetCharacterDB().filters
+local function copyStateValues(values)
+    local result = {}
+    for key, value in pairs(values or {}) do
+        result[key] = type(value) == "table" and copyStateValues(value) or value
+    end
+    return result
+end
+
+function UI:GetFilters(viewName)
+    if self:GetViewKey(viewName) == "settings" then
+        viewName = self.settingsReturnTab or self.lastWorkspaceTab or (self:IsLevelingMode() and "Gear Guide" or "Upgrades")
+    end
+    local state = self:GetViewState(viewName)
+    if type(state.filters) ~= "table" then
+        local defaults = BigBiSList.defaults and BigBiSList.defaults.char and BigBiSList.defaults.char.filters
+        state.filters = copyStateValues(defaults or BigBiSList:GetCharacterDB().filters)
+    end
+    return state.filters
 end
 
 local function sortedKeys(values)
@@ -2623,12 +2553,9 @@ function UI:BuildFilterPayload()
         wishlistItems = char.wishlist,
         endgamePhase = (self:GetSelection() or {}).phase,
     }
-    local upgradeState = self:GetViewState("Upgrades")
     local enhancementState = self:GetViewState("Enhance")
     local gearGuideState = self:GetViewState("Gear Guide")
     local wishlistState = self:GetViewState("Wishlist")
-    self.currentFilterPayload.upgradeMode = upgradeState.upgradeMode or self.currentFilterPayload.upgradeMode
-    self.currentFilterPayload.longevity = upgradeState.usefulness or self.currentFilterPayload.longevity
     self.currentFilterPayload.enhancementType = enhancementState.type or "all"
     self.currentFilterPayload.appliedState = enhancementState.appliedState or "all"
     self.currentFilterPayload.recommendationCategory = gearGuideState.recommendationCategory or "all"
@@ -3031,32 +2958,68 @@ function UI:GetSortDropdownItems()
             checked = selected == value,
         })
     end
+    local state = self:GetViewState()
+    table.insert(items, { text = state.sortDirection == "asc" and "Ascending" or "Descending", value = "__direction", notCheckable = true })
     return items
 end
 
 function UI:GetSortDropdownText()
     local state = self:GetViewState()
     local sortKey = state.sort or self:GetSortOptions()[1]
-    return "Sort: " .. (SORT_LABELS[sortKey] or sortKey) .. (state.sortDirection == "desc" and " v" or " ^")
+    return SORT_LABELS[sortKey] or sortKey
+end
+
+function UI:GetDefaultSortDirection(sortKey)
+    local view = self:GetViewKey()
+    if sortKey == "priority" and (view == "gearGuide" or view == "wishlist") then return "asc" end
+    return (sortKey == "item" or sortKey == "slot" or sortKey == "source" or sortKey == "location"
+        or sortKey == "rank" or sortKey == "recommendation") and "asc" or "desc"
 end
 
 function UI:SelectSort(sortKey)
     local state = self:GetViewState()
+    if sortKey == "__direction" then
+        state.sortDirection = state.sortDirection == "asc" and "desc" or "asc"
+        self:Invalidate("presentation", "sort"); self:ScheduleRefresh(nil, "sort"); return
+    end
     if state.sort ~= sortKey then
         state.sort = sortKey
-        state.sortDirection = (sortKey == "item" or sortKey == "slot" or sortKey == "source" or sortKey == "location" or sortKey == "rank" or sortKey == "recommendation") and "asc" or "desc"
+        state.sortDirection = self:GetDefaultSortDirection(sortKey)
     end
     self:Invalidate("presentation", "sort")
     self:ScheduleRefresh(nil, "sort")
 end
 
 function UI:GetGroupingDropdownItems()
-    local state = self:GetViewState("Gear Guide")
-    return filterDropdownItems(
-        { "slot", "source", "none" },
-        { slot = "By slot", source = "By source", none = "Ungrouped" },
-        state.groupBy or "slot"
-    )
+    local tab = self:GetSelection().tab
+    local state = self:GetViewState()
+    local values = (tab == "Upgrades") and { "priority", "activity", "none" }
+        or ((tab == "Wishlist") and { "activity", "none" } or { "slot", "activity", "none" })
+    local items = filterDropdownItems(values, { priority = "By priority", activity = "By activity", slot = "By slot", none = "Ungrouped" }, state.groupBy or (tab == "Upgrades" and "priority" or (tab == "Wishlist" and "none" or "slot")))
+    items[#items+1] = { text = "Expand all sections", value = "expand", notCheckable = true }
+    items[#items+1] = { text = "Collapse all sections", value = "collapse", notCheckable = true }
+    for _, entry in ipairs(self.renderModel and self.renderModel.entries or {}) do
+        if entry.kind == "section" then items[#items+1] = { text = "Jump to " .. entry.title, value = "jump:" .. entry.sectionKey, notCheckable = true } end
+    end
+    return items
+end
+
+function UI:SelectGrouping(value)
+    if value == "expand" or value == "collapse" then
+        local state = self:GetViewState()
+        state.collapsedGroups = {}
+        if value == "collapse" then
+            for _, entry in ipairs(self.renderModel and self.renderModel.entries or {}) do
+                if entry.kind == "section" then state.collapsedGroups[entry.sectionKey] = true end
+            end
+        end
+        self:Invalidate("presentation", "group-collapse"); self:ScheduleRefresh(nil, "group-collapse")
+    elseif string.sub(value, 1, 5) == "jump:" then
+        local key = string.sub(value, 6)
+        for _, entry in ipairs(self.renderModel and self.renderModel.entries or {}) do
+            if entry.sectionKey == key then self.contentScroll:SetVerticalScroll(entry.top); break end
+        end
+    else self:SetViewStateValue(nil, "groupBy", value) end
 end
 
 function UI:GetEnhancementTypeDropdownItems()
@@ -3087,13 +3050,114 @@ function UI:GetWishlistRelevanceDropdownItems()
     )
 end
 
+function UI:GetRowKey(data, mode)
+    if not data then return nil end
+    local entityType = data.entity_type or (data.spell_id and "spell") or "item"
+    local entityId = data.entity_id or data.spell_id or data.item_id
+    if not entityId then return nil end
+    return table.concat({ entityType, tostring(entityId), tostring(data.slot or data.slot_key or ""), tostring(data.variant_id or data.variant_label or data.rank_label or "") }, "\031")
+end
+
+function UI:GetNavigationContextKey()
+    local selection = self:GetSelection() or {}
+    local progression = self:IsLevelingMode()
+        and (BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL)
+        or selection.phase
+    return table.concat({ self:GetViewKey(), tostring(selection.mode), tostring(selection.class), tostring(selection.spec), tostring(progression) }, "\031")
+end
+
+function UI:ClearSelectedRow()
+    self.pendingDetailsRequest = nil
+    self.selectedItemId = nil
+    self.selectedItemData = nil
+    self.selectedItemMode = nil
+    self.selectedEntityType = nil
+    self.selectedRowKey = nil
+    if self.detailsScroll and self.detailsScroll.SetVerticalScroll then self.detailsScroll:SetVerticalScroll(0) end
+end
+
+function UI:CaptureNavigationState()
+    local scroll = self.contentScroll
+    local state = {
+        scroll = scroll and scroll.GetVerticalScroll and scroll:GetVerticalScroll() or 0,
+        selectedRowKey = self.selectedRowKey,
+        detailsScroll = self.detailsScroll and self.detailsScroll.GetVerticalScroll and self.detailsScroll:GetVerticalScroll() or 0,
+    }
+    for _, entry in ipairs((self.renderModel and self.renderModel.entries) or {}) do
+        if entry.kind == "row" and entry.bottom > state.scroll then
+            state.anchorKey = self:GetRowKey(entry.data, entry.mode)
+            state.anchorOffset = state.scroll - entry.top
+            break
+        end
+    end
+    self.navigationStates = self.navigationStates or {}
+    self.navigationStates[self.renderedContextKey or self:GetNavigationContextKey()] = state
+    return state
+end
+
+function UI:BeginNavigationChange(reason)
+    if not self.pendingNavigation then self:CaptureNavigationState() end
+    local restore = reason == "tab" or reason == "content-mode"
+    self.pendingNavigation = { restore = restore, reset = not restore }
+    if reason ~= "filter" then self:ClearSelectedRow() end
+end
+
+function UI:ApplyNavigationState(model, state)
+    local scroll = self.contentScroll
+    if not scroll or not scroll.SetVerticalScroll then return end
+    local offset = state and state.scroll or 0
+    if state and state.anchorKey then
+        for _, entry in ipairs(model and model.entries or {}) do
+            if entry.kind == "row" and self:GetRowKey(entry.data, entry.mode) == state.anchorKey then
+                offset = entry.top + (state.anchorOffset or 0)
+                break
+            end
+        end
+    end
+    local viewport = scroll.GetHeight and scroll:GetHeight() or 0
+    local height = self.contentChild and self.contentChild.GetHeight and self.contentChild:GetHeight() or ((model and model.cursor or 0) + 62)
+    scroll:SetVerticalScroll(clamp(offset, 0, math.max(0, height - viewport)))
+end
+
+function UI:ApplySettingsNavigation()
+    if self.pendingNavigation or self.renderedContextKey ~= self:GetNavigationContextKey() then
+        self:ApplyNavigationState(nil, { scroll = 0 })
+        self.renderedContextKey = self:GetNavigationContextKey()
+        self.pendingNavigation = nil
+    end
+end
+
+function UI:ApplyEmptyNavigation()
+    self:ClearSelectedRow()
+    self:ApplyNavigationState(nil, { scroll = 0 })
+    self.renderedContextKey = self:GetNavigationContextKey()
+    self.pendingNavigation = nil
+end
+
+function UI:OpenSettings(section)
+    local selection = self:GetSelection()
+    if normalizeTabName(selection.tab) ~= "Settings" then self.settingsReturnTab = selection.tab end
+    self.settingsSection = lower(section or self.settingsSection or "appearance")
+    self:SetTab("Settings")
+end
+
+function UI:ReturnFromSettings()
+    self:SetTab(self.settingsReturnTab or (self:IsLevelingMode() and "Gear Guide" or "Upgrades"))
+end
+
 function UI:SetViewStateValue(viewName, key, value)
-    self:GetViewState(viewName)[key] = value
+    if key ~= "groupBy" then self:BeginNavigationChange("filter") end
+    if key == "upgradeMode" or key == "usefulness" then
+        self:GetFilters(viewName)[key == "usefulness" and "longevity" or key] = value
+    else
+        self:GetViewState(viewName)[key] = value
+    end
     self:Invalidate(key == "groupBy" and "presentation" or "query", "view-state")
     self:ScheduleRefresh(nil, "view-state")
 end
 
 function UI:SetContentMode(mode)
+    self:BeginNavigationChange("content-mode")
     if BigBiSList.SetContentMode then
         BigBiSList:SetContentMode(mode)
     else
@@ -3107,12 +3171,14 @@ function UI:SetContentMode(mode)
 end
 
 function UI:UseMyCharacter()
+    self:BeginNavigationChange("character-context")
     if BigBiSList.ResetClassSpecAutoSelection then
         BigBiSList:ResetClassSpecAutoSelection()
     end
     if BigBiSList.ApplyDetectedPlayerSelection then
         BigBiSList:ApplyDetectedPlayerSelection()
     end
+    if BigBiSList.ResetLevelAutoSelection then BigBiSList:ResetLevelAutoSelection() end
     self:SetStatusMessage("Now viewing your current character")
     self:Invalidate("query", "character-context")
     self:ScheduleRefresh(nil, "character-context")
@@ -3128,6 +3194,8 @@ function UI:SetInspectorVisible(visible)
     if not visible and self.dirtyDomains then
         self.dirtyDomains.details = nil
     end
+    -- Bind cached item presentation only after the inspector is actually visible.
+    self:ApplyBodyLayout()
     self:ScheduleLayoutRefresh("inspector")
     if visible and self.selectedItemId then
         self:RefreshDetails(self.selectedItemId, self.selectedItemData, self.selectedItemMode)
@@ -3148,10 +3216,16 @@ function UI:ShowInspectorFor(entityId, data, mode)
     if not self:ViewSupportsInspector() then
         return
     end
+    local rowKey = self:GetRowKey(data or { item_id = entityId }, mode)
+    if rowKey ~= self.selectedRowKey and self.detailsScroll and self.detailsScroll.SetVerticalScroll then
+        self.detailsScroll:SetVerticalScroll(0)
+    end
+    self.selectedRowKey = rowKey
     self.selectedItemId = entityId
     self.selectedItemData = data
     self.selectedItemMode = mode
     self.selectedEntityType = data and (data.entity_type or (data.spell_id and "spell")) or "item"
+    if self.UpdateVirtualList then self:UpdateVirtualList(true) end
     if not self:IsInspectorVisible() then
         self:SetInspectorVisible(true)
     else
@@ -3160,6 +3234,7 @@ function UI:ShowInspectorFor(entityId, data, mode)
 end
 
 function UI:SetClass(className)
+    self:BeginNavigationChange("class")
     BigBiSList:MarkClassSpecSelectionManual()
     local index = BigBiSList:GetDataIndex()
     local specs = index.specsByClass[className] or {}
@@ -3169,6 +3244,7 @@ function UI:SetClass(className)
 end
 
 function UI:SetSpec(specName)
+    self:BeginNavigationChange("spec")
     BigBiSList:MarkClassSpecSelectionManual()
     BigBiSList:SetSelection(nil, specName, nil, nil)
     self:Invalidate("query", "spec")
@@ -3176,12 +3252,14 @@ function UI:SetSpec(specName)
 end
 
 function UI:SetPhase(phaseKey)
+    self:BeginNavigationChange("phase")
     BigBiSList:SetSelection(nil, nil, phaseKey, nil)
     self:Invalidate("query", "phase")
     self:ScheduleRefresh(nil, "phase")
 end
 
 function UI:SetLevelingLevel(level)
+    self:BeginNavigationChange("level")
     if BigBiSList.SetSelectedLevelingLevel then
         BigBiSList:SetSelectedLevelingLevel(level, true)
     end
@@ -3190,6 +3268,12 @@ function UI:SetLevelingLevel(level)
 end
 
 function UI:SetTab(tabName)
+    if normalizeTabName(tabName) == normalizeTabName(self:GetSelection().tab) then return end
+    if normalizeTabName(self:GetSelection().tab) ~= "Settings" then
+        self.lastWorkspaceTab = self:GetSelection().tab
+        if normalizeTabName(tabName) == "Settings" then self.settingsReturnTab = self.lastWorkspaceTab end
+    end
+    self:BeginNavigationChange("tab")
     BigBiSList:SetSelection(nil, nil, nil, normalizeTabName(tabName))
     if BigBiSList.Widgets.CloseDropdownMenus then
         BigBiSList.Widgets:CloseDropdownMenus()
@@ -3199,6 +3283,7 @@ function UI:SetTab(tabName)
 end
 
 function UI:SetFilter(key, value)
+    self:BeginNavigationChange("filter")
     local filters = self:GetFilters()
     filters[key] = value
     self:Invalidate("query", "filter")
@@ -3213,6 +3298,7 @@ function UI:ToggleFacetFilter(tableKey, value, scalarKey)
         return
     end
 
+    self:BeginNavigationChange("filter")
     local filters = self:GetFilters()
     filters[tableKey] = type(filters[tableKey]) == "table" and filters[tableKey] or {}
     filters[tableKey][value] = not filters[tableKey][value] or nil
@@ -3224,6 +3310,7 @@ function UI:ToggleFacetFilter(tableKey, value, scalarKey)
 end
 
 function UI:ClearFacetFilter(tableKey, scalarKey)
+    self:BeginNavigationChange("filter")
     local filters = self:GetFilters()
     filters[tableKey] = {}
     if scalarKey then
@@ -3234,6 +3321,7 @@ function UI:ClearFacetFilter(tableKey, scalarKey)
 end
 
 function UI:ClearFacetValue(tableKey, value, scalarKey)
+    self:BeginNavigationChange("filter")
     local filters = self:GetFilters()
     if type(filters[tableKey]) == "table" then
         filters[tableKey][value] = nil
@@ -3246,6 +3334,7 @@ function UI:ClearFacetValue(tableKey, value, scalarKey)
 end
 
 function UI:ToggleSlot(slotName)
+    self:BeginNavigationChange("filter")
     local filters = self:GetFilters()
     filters.slots = filters.slots or {}
     filters.slots[slotName] = not filters.slots[slotName] or nil
@@ -3254,6 +3343,7 @@ function UI:ToggleSlot(slotName)
 end
 
 function UI:ClearFilters()
+    self:BeginNavigationChange("filter")
     local filters = self:GetFilters()
     filters.search = ""
     filters.sourceType = "all"
@@ -3277,11 +3367,7 @@ function UI:ClearFilters()
     filters.slots = {}
 
     local tabName = normalizeTabName((self:GetSelection() or {}).tab)
-    if tabName == "Upgrades" then
-        local state = self:GetViewState("Upgrades")
-        state.upgradeMode = "actual"
-        state.usefulness = "all"
-    elseif tabName == "Gear Guide" then
+    if tabName == "Gear Guide" then
         self:GetViewState("Gear Guide").recommendationCategory = "all"
     elseif tabName == "Enhance" then
         local state = self:GetViewState("Enhance")
@@ -3300,40 +3386,63 @@ function UI:ClearFilters()
     self:ScheduleRefresh(nil, "clear-filters")
 end
 
-function UI:AddWishlist(itemId)
-    BigBiSList:GetCharacterDB().wishlist[tostring(itemId)] = true
-    self:SetStatusMessage("Added to Wishlist")
-    self:Invalidate("query", "wishlist-add")
-    if self:IsInspectorVisible() and self.selectedItemId == itemId then
-        self:RefreshDetails(itemId, self.selectedItemData, self.selectedItemMode)
+function UI:SetItemCollectionState(collectionName, itemId, value, message, reason)
+    if not itemId then return end
+    local char = BigBiSList:GetCharacterDB()
+    local key = tostring(itemId)
+    local previous = char[collectionName][key]
+    if previous == value then return end
+    local item = BigBiSList.GetItemData and BigBiSList:GetItemData(itemId)
+    local name = item and item.name or ("Item " .. key)
+    char[collectionName][key] = value
+    self:SetStatusMessage(message .. name, {
+        label = "Undo: " .. message .. name,
+        callback = function() char[collectionName][key] = previous end,
+    })
+    self:Invalidate("query", reason)
+    self:ScheduleRefresh(nil, reason)
+end
+
+function UI:UndoLastAction()
+    local action = self.undoAction
+    if not action then return false end
+    if GetTime and GetTime() >= action.expiresAt then
+        self.undoAction = nil
+        if self.undoButton then self.undoButton:Hide() end
+        return false
     end
-    self:ScheduleRefresh(nil, "wishlist-add")
+    self.undoAction = nil
+    action.callback()
+    self:SetStatusMessage("Undone: " .. (action.message or "last action"))
+    self:Invalidate("query", "undo")
+    self:ScheduleRefresh(nil, "undo")
+    return true
+end
+
+function UI:AddWishlist(itemId)
+    self:SetItemCollectionState("wishlist", itemId, true, "Saved to Wishlist: ", "wishlist-add")
 end
 
 function UI:RemoveWishlist(itemId)
-    BigBiSList:GetCharacterDB().wishlist[tostring(itemId)] = nil
-    self:SetStatusMessage("Removed from Wishlist")
-    self:Invalidate("query", "wishlist-remove")
-    self:ScheduleRefresh(nil, "wishlist-remove")
+    self:SetItemCollectionState("wishlist", itemId, nil, "Removed from Wishlist: ", "wishlist-remove")
 end
 
 function UI:IgnoreItem(itemId)
-    BigBiSList:GetCharacterDB().ignoredItems[tostring(itemId)] = true
-    self:SetStatusMessage("Item hidden. Restore it from Settings > Hidden Items.")
-    self:Invalidate("query", "hide-item")
-    self:ScheduleRefresh(nil, "hide-item")
+    self:SetItemCollectionState("ignoredItems", itemId, true, "Hidden: ", "hide-item")
 end
 
 function UI:UnignoreItem(itemId)
-    BigBiSList:GetCharacterDB().ignoredItems[tostring(itemId)] = nil
-    self:SetStatusMessage("Hidden item restored")
-    self:Invalidate("query", "restore-item")
-    self:ScheduleRefresh(nil, "restore-item")
+    self:SetItemCollectionState("ignoredItems", itemId, nil, "Restored: ", "restore-item")
 end
 
 function UI:RestoreAllHiddenItems()
-    BigBiSList:GetCharacterDB().ignoredItems = {}
-    self:SetStatusMessage("All hidden items restored")
+    local char = BigBiSList:GetCharacterDB()
+    local previous = copyStateValues(char.ignoredItems)
+    char.ignoredItems = {}
+    self:SetStatusMessage("All hidden items restored", {
+        label = "Undo restoring hidden items",
+        callback = function() char.ignoredItems = previous end,
+    })
     self:Invalidate("query", "restore-items")
     self:ScheduleRefresh(nil, "restore-items")
 end
@@ -3351,7 +3460,8 @@ local function applyItemPresentation(button, itemId, bindToken, presentation)
         button.icon:SetTexture(presentation.texture)
     end
     if presentation.name and button.boundNameText then
-        button.boundNameText:SetText(presentation.name)
+        local label = button.boundNameText
+        BigBiSList.Widgets:SetCellText(label, presentation.name, label.maxLines or 1, label.lineHeight or 14, label:GetWidth())
     end
     if presentation.link then
         button.itemLink = presentation.link
@@ -3367,7 +3477,7 @@ local function ensureEntityButtonScripts(button)
         return
     end
     button.__bigBisEntityScripts = true
-    button:SetScript("OnEnter", function(selfButton)
+    BigBiSList.Widgets:BindTooltip(button, function(selfButton)
         GameTooltip:SetOwner(selfButton, "ANCHOR_RIGHT", 4, 0)
         if selfButton.entityType == "spell" then
             if selfButton.spellLink then
@@ -3384,25 +3494,8 @@ local function ensureEntityButtonScripts(button)
         end
         GameTooltip:Show()
     end)
-    button:SetScript("OnLeave", function() GameTooltip:Hide() end)
     button:SetScript("OnClick", function(selfButton, buttonName)
-        if buttonName == "RightButton" then
-            if selfButton.entityId then
-                UI:ShowInspectorFor(selfButton.entityId, selfButton.detailData, selfButton.detailMode)
-            end
-            return
-        end
-        local link = selfButton.entityType == "spell" and selfButton.spellLink or selfButton.itemLink
-        if not link then
-            return
-        end
-        if IsShiftKeyDown and IsShiftKeyDown() and ChatEdit_InsertLink then
-            ChatEdit_InsertLink(link)
-        elseif selfButton.entityType == "item" and IsControlKeyDown and IsControlKeyDown() and DressUpItemLink then
-            DressUpItemLink(link)
-        elseif SetItemRef then
-            SetItemRef(link, link, "LeftButton")
-        end
+        UI:HandleEntityGesture(selfButton.detailData, selfButton.detailMode, buttonName, selfButton)
     end)
 end
 
@@ -3421,6 +3514,7 @@ function UI:ResetEntityButton(button, nameText, fallbackName)
     button.icon:SetDesaturated(true)
     button.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
     safeSetText(nameText, button.boundFallbackName)
+    if nameText then nameText.fullText = button.boundFallbackName end
 end
 
 function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQuality, detailData, detailMode)
@@ -3440,6 +3534,7 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
     button.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
 
     safeSetText(nameText, button.boundFallbackName)
+    if nameText then nameText.fullText = button.boundFallbackName end
     if nameText then
         local r, g, b = itemQualityColor({ quality = fallbackQuality })
         nameText:SetTextColor(r, g, b, 1)
@@ -3518,6 +3613,7 @@ function UI:SetSpellButton(button, spellId, nameText, fallbackName, detailData, 
     button.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
 
     safeSetText(nameText, button.boundFallbackName)
+    if nameText then nameText.fullText = button.boundFallbackName end
     if nameText then
         nameText:SetTextColor(1, 0.82, 0.28, 1)
     end
@@ -3532,6 +3628,7 @@ function UI:SetSpellButton(button, spellId, nameText, fallbackName, detailData, 
         end
         if spellName and nameText then
             nameText:SetText(spellName)
+            nameText.fullText = spellName
         end
         if spellLink then
             button.spellLink = spellLink
@@ -3715,7 +3812,7 @@ function UI:GetEnhancementAppliedSummary(data)
         end
         local summary = {
             state = "missing",
-            label = ownershipStateLabel("missing"),
+            label = "Not applied",
             title = "Applied",
             detail = detail,
         }
@@ -3915,7 +4012,7 @@ function UI:SetViewSort(sortKey)
         state.sortDirection = state.sortDirection == "desc" and "asc" or "desc"
     else
         state.sort = sortKey
-        state.sortDirection = (sortKey == "item" or sortKey == "slot" or sortKey == "source" or sortKey == "location" or sortKey == "rank" or sortKey == "recommendation") and "asc" or "desc"
+        state.sortDirection = self:GetDefaultSortDirection(sortKey)
     end
     self:Invalidate("presentation", "sort")
     self:ScheduleRefresh(nil, "sort")
@@ -3989,39 +4086,16 @@ end
 
 function UI:GetWishlistExpansionText(data)
     local rankings = data and (data.relevant_spec_rankings or data.spec_rankings) or {}
-    if #rankings == 0 then
-        return (data and data.not_ranked_label) or ("Not ranked for " .. tostring((self:GetSelection() or {}).class or "this class"))
-    end
-
-    local phaseKeys = { "PR", "T4", "T5", "T6", "ZA", "SWP" }
-    local phaseLabels = { PR = "PR", T4 = "P1", T5 = "P2", T6 = "P3", ZA = "P4", SWP = "P5" }
-    local selectedPhase = data and data.selected_phase or (self:GetSelection() or {}).phase
-    local livePhase = data and data.live_phase or (BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey())
-    local lines = {}
-    for _, ranking in ipairs(rankings) do
-        local matrix = ranking.phases or ranking.phase_rankings or ranking.ranks_by_phase or {}
-        local cells = {}
-        for _, phaseKey in ipairs(phaseKeys) do
-            local phaseValue = matrix[phaseKey]
-            local label
-            if type(phaseValue) == "table" then
-                label = phaseValue.short_label or phaseValue.display_rank_label or phaseValue.label or phaseValue.rank_label
-            elseif phaseValue then
-                label = tostring(phaseValue)
-            end
-            local phaseLabel = phaseLabels[phaseKey]
-            if phaseKey == selectedPhase then
-                phaseLabel = "[" .. phaseLabel .. "]"
-            end
-            if phaseKey == livePhase then
-                phaseLabel = phaseLabel .. "*"
-            end
-            table.insert(cells, phaseLabel .. " " .. (label or "—"))
-        end
-        local prefix = ranking.selected and "> " or ""
-        table.insert(lines, prefix .. tostring(ranking.spec or ranking.spec_name or "Spec") .. ": " .. table.concat(cells, "  "))
-    end
-    return table.concat(lines, "\n")
+    local selected
+    for _, ranking in ipairs(rankings) do if ranking.selected then selected = ranking; break end end
+    if not selected then return data and data.not_ranked_label or "Not ranked for selected spec" end
+    local matrix = selected.phases or selected.phase_rankings or selected.ranks_by_phase or {}
+    local phase = data.selected_phase or self:GetSelection().phase
+    local current = matrix[phase]
+    local label = type(current) == "table" and (current.display_rank_label or current.short_label or current.label or current.rank_label) or current
+    local last
+    for _, key in ipairs(BigBiSList:GetPhaseOrder()) do if matrix[key] then last = key end end
+    return (label or "Not listed in selected phase") .. (last and ("\nListed through " .. BigBiSList:GetPhaseDisplayName(last)) or "")
 end
 
 local function createGridText(parent, column, text, color, template, label)
@@ -4039,7 +4113,7 @@ end
 
 function UI:CreateListColumnHeader(parent, yOffset, mode, header)
     local width = self:GetTableViewportWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 760)
-    local layout = self:GetTableColumnLayout(width, mode, self:IsInspectorVisible())
+    local layout = self:GetTableColumnLayout(width, mode)
     if not header then
         header = CreateFrame("Frame", nil, parent)
         header.columnButtons = {}
@@ -4065,9 +4139,13 @@ function UI:CreateListColumnHeader(parent, yOffset, mode, header)
         if not button then
             button = CreateFrame("Button", nil, header)
             local label = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-            label:SetAllPoints()
+            label:SetPoint("TOPLEFT", button, "TOPLEFT", 0, 0)
+            label:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -16, 0)
             label:SetWordWrap(false)
             button.label = label
+            button.sortIcon = button:CreateTexture(nil, "ARTWORK")
+            button.sortIcon:SetSize(12,12)
+            button.sortIcon:SetPoint("RIGHT", button, "RIGHT", -1, 0)
             button:SetScript("OnClick", function(selfButton)
                 if selfButton.sortable and selfButton.columnKey then
                     UI:SetViewSort(selfButton.columnKey)
@@ -4091,277 +4169,242 @@ function UI:CreateListColumnHeader(parent, yOffset, mode, header)
         local label = button.label
         label:SetJustifyH(column.align or "LEFT")
         label:SetTextColor(0.68, 0.68, 0.72, 1)
-        local sortable = column.key ~= "action" and column.key ~= "access" and column.key ~= "acquisition"
-            and not (mode == "wishlist" and column.key == "expansion")
-        button.sortable = sortable
-        button.columnKey = column.key
-        local text = column.label
-        if sortable and viewState.sort == column.key then
-            text = text .. (viewState.sortDirection == "asc" and " ^" or " v")
+        local sortKey = ({item="item", rank="rank", source="source", acquisition="source", location="location", owned="owned",
+            expansion="priority"})[column.key]
+        if column.key == "value" then sortKey = mode == "planner" and "priority" or (mode == "enhance" and "recommendation" or nil) end
+        button.sortable = sortKey ~= nil
+        button.columnKey = sortKey
+        button.sortIcon:SetShown(sortKey ~= nil and viewState.sort == sortKey)
+        if sortKey and viewState.sort == sortKey then
+            BigBiSList.Widgets:SetIcon(button.sortIcon, viewState.sortDirection == "asc" and "sortAscending" or "sortDescending")
         end
-        label:SetText(text)
+        label:SetText(column.label)
     end
 
     return header, COLUMN_HEADER_HEIGHT
 end
 
+function UI:GetDensityMetrics()
+    local compact = BigBiSListDB and BigBiSListDB.profile.window.density == "compact"
+    return compact and 40 or 56, compact and 24 or 32, compact and 1 or 2
+end
+
+function UI:HandleEntityGesture(data, mode, buttonName, owner)
+    if not data then return end
+    local id = data.entity_id or data.spell_id or data.item_id
+    local link
+    if data.item_id and GetItemInfo then local _, itemLink = GetItemInfo(data.item_id); link = itemLink end
+    if data.spell_id and GetSpellLink then link = GetSpellLink(data.spell_id) end
+    if buttonName == "RightButton" then self:ShowItemActionMenu(data, mode, owner); return end
+    if buttonName ~= "LeftButton" then return end
+    if IsShiftKeyDown and IsShiftKeyDown() and link and ChatEdit_InsertLink then ChatEdit_InsertLink(link)
+    elseif IsControlKeyDown and IsControlKeyDown() and data.item_id and link and DressUpItemLink then DressUpItemLink(link)
+    elseif id then self:ShowInspectorFor(id, data, mode) end
+end
+
+function UI:ShowItemActionMenu(data, mode, owner)
+    if not data or not UIDropDownMenu_Initialize or not ToggleDropDownMenu then return end
+    self.itemActionMenu = self.itemActionMenu or CreateFrame("Frame", "BigBiSListItemActionMenu", UIParent, "UIDropDownMenuTemplate")
+    local itemId = data.item_id
+    local items = {}
+    local function add(text, callback) items[#items+1] = { text = text, callback = callback } end
+    add("Open item reference", function()
+        local link
+        if data.spell_id and GetSpellLink then link = GetSpellLink(data.spell_id)
+        elseif itemId then link = "item:" .. tostring(itemId) end
+        if link and SetItemRef then SetItemRef(link, link, "LeftButton") end
+    end)
+    if itemId then
+        local char = BigBiSList:GetCharacterDB()
+        local saved = char.wishlist[tostring(itemId)]
+        add(saved and "Remove from Wishlist" or "Add to Wishlist", function()
+            if saved then self:RemoveWishlist(itemId) else self:AddWishlist(itemId) end
+        end)
+        local hidden = char.ignoredItems[tostring(itemId)]
+        add(hidden and "Restore item" or "Hide item", function()
+            if hidden then self:UnignoreItem(itemId) else self:IgnoreItem(itemId) end
+        end)
+    end
+    UIDropDownMenu_Initialize(self.itemActionMenu, function()
+        for _, entry in ipairs(items) do
+            local info = UIDropDownMenu_CreateInfo()
+            info.text = entry.text; info.notCheckable = true
+            info.func = function() entry.callback(); BigBiSList.Widgets:CloseDropdownMenus() end
+            UIDropDownMenu_AddButton(info)
+        end
+    end, "MENU")
+    ToggleDropDownMenu(1, nil, self.itemActionMenu, owner or "cursor", 0, 0)
+end
+
 function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
     local widgets = BigBiSList.Widgets
+    local densityHeight, iconSize, maxLines = self:GetDensityMetrics()
+    local rowHeight = fixedHeight or densityHeight
     local entityType = data.entity_type or (data.spell_id and "spell") or "item"
     local entityId = data.entity_id or data.spell_id or data.item_id
     local width = self:GetTableViewportWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 760)
-    local layout = self:GetTableColumnLayout(width, mode, self:IsInspectorVisible())
+    local layout = self:GetTableColumnLayout(width, mode)
     if not row then
-        row = widgets:CreateItemRow(parent, fixedHeight or ROW_HEIGHT)
-        row.cells = {}
-        row.iconButton = widgets:CreateIconButton(row, ROW_ICON_SIZE)
+        row = widgets:CreateItemRow(parent, rowHeight)
+        row.cells = {}; row.cellHovers = {}
+        row.iconButton = widgets:CreateIconButton(row, iconSize)
         row.nameText = widgets:CreateWrappedLabel(row, "", "GameFontNormal")
-        row.nameText:SetJustifyH("LEFT")
-        row.inlineOwnership = widgets:CreateLabel(row, "", "GameFontNormalSmall")
-        row.inlineOwnership:SetTextColor(0.62, 0.62, 0.66, 1)
-        row.inlineOwnership:Hide()
-        row.actionButton = widgets:CreateTextButton(row, "", 58, 22, function(selfButton)
-            local boundRow = selfButton.boundRow
-            local boundData = boundRow and boundRow.boundData
-            if not boundData or not boundData.item_id then
-                return
+        row.subText = widgets:CreateLabel(row, "", "GameFontNormalSmall")
+        row.subText:SetTextColor(0.62, 0.62, 0.67)
+        row.actionButton = widgets:CreateUtilityButton(row, "starOutline", 28, function(button)
+            local bound = button.boundRow
+            if bound and bound.boundData.item_id then
+                local id = bound.boundData.item_id
+                if BigBiSList:GetCharacterDB().wishlist[tostring(id)] then UI:RemoveWishlist(id) else UI:AddWishlist(id) end
             end
-            if boundRow.boundWishlistSaved then
-                UI:RemoveWishlist(boundData.item_id)
-            else
-                UI:AddWishlist(boundData.item_id)
-            end
+        end, function(button, tooltip)
+            local bound = button.boundRow
+            local saved = bound and bound.boundData.item_id and BigBiSList:GetCharacterDB().wishlist[tostring(bound.boundData.item_id)]
+            tooltip:AddLine(saved and "Remove from Wishlist" or "Add to Wishlist")
         end)
         row.actionButton.boundRow = row
-        row.actionButton:SetScript("OnEnter", function(selfButton)
-            local boundRow = selfButton.boundRow
-            GameTooltip:SetOwner(selfButton, "ANCHOR_RIGHT")
-            GameTooltip:AddLine(boundRow and boundRow.boundWishlistSaved and "Remove from Wishlist" or "Add to Wishlist", 1, 0.82, 0.28)
-            GameTooltip:Show()
-        end)
-        row.actionButton:SetScript("OnLeave", function() GameTooltip:Hide() end)
-        row.actionButton:Hide()
-        row.sourceHover = CreateFrame("Frame", nil, row)
-        row.sourceHover:EnableMouse(true)
-        row.sourceHover.boundRow = row
-        row.sourceHover:SetScript("OnEnter", function(selfHover)
-            local boundRow = selfHover.boundRow
-            if boundRow and boundRow.highlight then
-                boundRow.highlight:Show()
-            end
-            UI:ShowAcquisitionTooltip(selfHover, selfHover.boundData)
-        end)
-        row.sourceHover:SetScript("OnLeave", function(selfHover)
-            local boundRow = selfHover.boundRow
-            if boundRow and boundRow.highlight then
-                boundRow.highlight:Hide()
-            end
-            GameTooltip:Hide()
-        end)
-        row.sourceHover:SetScript("OnMouseUp", function(selfHover, buttonName)
-            local boundRow = selfHover.boundRow
-            local handler = boundRow and boundRow:GetScript("OnMouseUp")
-            if handler then
-                handler(boundRow, buttonName)
-            end
-        end)
-        row.sourceHover:Hide()
-        row:SetScript("OnMouseUp", function(selfRow, buttonName)
-            local boundData = selfRow.boundData
-            local boundEntityId = selfRow.boundEntityId
-            if buttonName == "LeftButton" and boundEntityId then
-                UI:ShowInspectorFor(boundEntityId, boundData, selfRow.boundMode)
-            elseif buttonName == "RightButton" then
-                if not boundData or not boundData.item_id then
-                    UI:ShowInspectorFor(boundEntityId, boundData, selfRow.boundMode)
-                elseif selfRow.boundWishlistSaved then
-                    UI:RemoveWishlist(boundData.item_id)
-                else
-                    UI:AddWishlist(boundData.item_id)
-                end
-            end
-        end)
+        row.iconButton:HookScript("OnEnter", function() row:SetHovered(true) end)
+        row.iconButton:HookScript("OnLeave", function() row:SetHovered(false) end)
+        row.actionButton:HookScript("OnEnter", function() row:SetHovered(true) end)
+        row.actionButton:HookScript("OnLeave", function() row:SetHovered(false) end)
+        row.statusIcon = row:CreateTexture(nil, "ARTWORK")
+        row.statusIcon:SetSize(12,12)
+        row:SetScript("OnMouseUp", function(bound, button) UI:HandleEntityGesture(bound.boundData, bound.boundMode, button, bound) end)
         row.__bigBisManaged = true
-        self:CountPerformance("widgetsCreated", 6)
+        self:CountPerformance("widgetsCreated", 5)
     end
-    if row:GetParent() ~= parent then
-        row:SetParent(parent)
-    end
-    row:Show()
-    row:ClearAllPoints()
-    row:EnableMouse(true)
+    row:SetParent(parent); row:Show(); row:ClearAllPoints()
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     row:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
-    row.bindToken = (row.bindToken or 0) + 1
-    row.itemId = data.item_id
-    row.entityType = entityType
-    row.entityId = entityId
-    row.detailData = data
-    row.detailMode = mode
-    row.boundData = data
-    row.boundEntityId = entityId
-    row.boundMode = mode
-    row.columnLayout = layout
-
-    for _, cell in pairs(row.cells) do
-        cell:Hide()
-    end
-    row.inlineOwnership:Hide()
-    row.actionButton:Hide()
-    if row.rankBadge then row.rankBadge:Hide() end
-    if row.ownershipBadge then row.ownershipBadge:Hide() end
-    if row.accessBadge then row.accessBadge:Hide() end
-    row.sourceHover:Hide()
-
-    local itemColumn = layout.item
-    local iconButton = row.iconButton
-    iconButton:ClearAllPoints()
-    iconButton:SetPoint("TOPLEFT", row, "TOPLEFT", itemColumn.x, -ROW_VERTICAL_PADDING)
-    iconButton.entityId = entityId
-    iconButton.detailData = data
-    iconButton.detailMode = mode
-    local nameText = row.nameText
-    nameText:ClearAllPoints()
-    nameText:SetPoint("TOPLEFT", iconButton, "TOPRIGHT", 8, -2)
-    nameText:SetWidth(math.max(48, itemColumn.width - ROW_ICON_SIZE - 8))
-    local item = data.item or (data.item_id and BigBiSList:GetItemData(data.item_id))
-    if not entityId then
-        self:ResetEntityButton(iconButton, nameText, data.disabledReason or data.name or "Empty")
-        nameText:SetTextColor(0.62, 0.62, 0.66, 1)
-    elseif entityType == "spell" then
-        self:SetSpellButton(iconButton, data.spell_id or entityId, nameText, data.name, data, mode)
-    else
-        self:SetItemButton(iconButton, data.item_id, nameText, data.name, data.quality or (item and item.quality), data, mode)
-    end
-    if itemColumn.ownershipInline then
-        local inline = row.inlineOwnership
-        inline:ClearAllPoints()
-        inline:SetPoint("TOPLEFT", nameText, "BOTTOMLEFT", 0, -4)
-        inline:SetWidth(math.max(48, itemColumn.width - ROW_ICON_SIZE - 8))
-        inline:SetText(ownershipStateLabel(self:GetRowOwnershipState(data)))
-        inline:Show()
-    end
-
-    local sourceText, locationText, accessState = self:GetRowAcquisitionDisplay(data)
-    local function bindCell(key, column, text, color)
-        local label = row.cells[key]
-        label = createGridText(row, column, text, color, "GameFontNormalSmall", label)
-        row.cells[key] = label
-        return label
-    end
-    if layout.rank then
-        local rankLabel, rankKind = displayRankInfo(data, mode)
-        local badge = self:CreateRankBadge(row, rankLabel, rankKind, data, mode, row.rankBadge)
-        row.rankBadge = badge
-        badge:Show()
-        badge:ClearAllPoints()
-        badge:SetWidth(layout.rank.width)
-        badge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.rank.x, -ROW_VERTICAL_PADDING)
-    end
-    if layout.slot then
-        bindCell("slot", layout.slot, self:GetRowSlotDisplay(data), { 0.78, 0.78, 0.82 })
-    end
-    if layout.value then
-        bindCell("value", layout.value, self:GetRowRecommendationText(data, mode), { 0.78, 0.82, 0.88 })
-    end
-    if layout.expansion then
-        bindCell("expansion", layout.expansion, self:GetWishlistExpansionText(data), { 0.78, 0.82, 0.88 })
-    end
-    if layout.currentRank then
-        bindCell("currentRank", layout.currentRank, data.recommendation_summary or data.overlay or "Not ranked", { 0.78, 0.82, 0.88 })
-    end
-    if layout.usefulThrough then
-        bindCell("usefulThrough", layout.usefulThrough, self:GetGearUsefulThrough(data), { 0.68, 0.78, 0.92 })
-    end
-    if layout.source then
-        bindCell("source", layout.source, sourceText, { 0.66, 0.80, 0.94 })
-    end
-    if layout.location then
-        bindCell("location", layout.location, locationText, { 0.70, 0.70, 0.74 })
-    end
-    if layout.acquisition then
-        bindCell("acquisition", layout.acquisition, sourceText .. "\n" .. locationText, { 0.68, 0.76, 0.86 })
-    end
-    if layout.owned then
-        local ownershipState = self:GetRowOwnershipState(data)
-        if ownershipState then
-            local badge = self:CreateOwnershipBadge(row, ownershipState, data, row.ownershipBadge)
-            row.ownershipBadge = badge
-            badge:Show()
-            badge:ClearAllPoints()
-            badge:SetWidth(layout.owned.width)
-            badge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.owned.x, -ROW_VERTICAL_PADDING)
-        end
-    end
-    if layout.access then
-        local badge = self:CreateAccessBadge(row, accessState, data, row.accessBadge)
-        row.accessBadge = badge
-        badge:Show()
-        badge:ClearAllPoints()
-        badge:SetWidth(layout.access.width)
-        badge:SetPoint("TOPLEFT", row, "TOPLEFT", layout.access.x, -ROW_VERTICAL_PADDING)
-    end
-    if layout.action and data.item_id then
-        local char = self.currentCharacterDB or BigBiSList:GetCharacterDB()
-        local wishlist = char.wishlist or {}
-        local saved = wishlist[tostring(data.item_id)] == true
-        row.boundWishlistSaved = saved
-        local actionText = mode == "wishlist" and "Remove" or (saved and "Saved" or "Star")
-        local action = row.actionButton
-        action.label:SetText(actionText)
-        action:SetWidth(layout.action.width)
-        action:ClearAllPoints()
-        action:Show()
-        action:SetPoint("TOPLEFT", row, "TOPLEFT", layout.action.x, -ROW_VERTICAL_PADDING + 1)
-    else
-        row.boundWishlistSaved = false
-    end
-
-    local rowHeight = fixedHeight or ROW_HEIGHT
-    local sourceColumn = layout.acquisition or layout.source
-    if sourceColumn then
-        local lastSourceColumn = layout.location or sourceColumn
-        local sourceHover = row.sourceHover
-        sourceHover.boundData = data
-        sourceHover:ClearAllPoints()
-        sourceHover:SetPoint("TOPLEFT", row, "TOPLEFT", sourceColumn.x, -2)
-        sourceHover:SetWidth((lastSourceColumn.x + lastSourceColumn.width) - sourceColumn.x)
-        sourceHover:SetHeight(math.max(18, rowHeight - 4))
-        sourceHover:SetFrameLevel(row:GetFrameLevel() + 2)
-        sourceHover:Show()
-    end
     row:SetHeight(rowHeight)
-
+    row.bindToken = (row.bindToken or 0) + 1
+    row.boundData = data; row.boundMode = mode; row.boundEntityId = entityId
+    row.itemId = data.item_id; row.entityType = entityType; row.entityId = entityId
+    row.detailData = data; row.detailMode = mode; row.columnLayout = layout
+    row:SetHovered(false)
+    row:SetSelected(self.selectedRowKey ~= nil and self.selectedRowKey == self:GetRowKey(data, mode))
+    for _, cell in pairs(row.cells) do cell:Hide() end
+    for _, hover in pairs(row.cellHovers) do hover:Hide() end
+    row.actionButton:Hide()
+    row.statusIcon:Hide()
+    local icon = row.iconButton
+    icon:SetSize(iconSize, iconSize); icon:ClearAllPoints()
+    icon:SetPoint("LEFT", row, "LEFT", layout.item.x, 0)
+    local name = row.nameText
+    name:ClearAllPoints()
+    local nameWidth = math.max(60, layout.item.width - iconSize - 8)
+    row.subText:ClearAllPoints()
+    row.subText:SetPoint("TOPLEFT", name, "BOTTOMLEFT", 0, -2)
+    row.subText:SetWidth(nameWidth)
+    local slot = (mode == "phase" and (self:GetViewState().groupBy or "slot") == "slot") and "" or self:GetRowSlotDisplay(data)
+    -- The secondary slot line has a reserved budget; item names never overlap it.
+    local nameLines = slot ~= "" and 1 or maxLines
+    local identityHeight = nameLines * 14 + (slot ~= "" and 14 or 0)
+    name:SetPoint("TOPLEFT", row, "LEFT", layout.item.x + iconSize + 8, identityHeight / 2)
+    name:SetWidth(nameWidth); name.maxLines = nameLines; name.lineHeight = 14
+    if not entityId then
+        self:ResetEntityButton(icon, name, data.disabledReason or data.name or "Empty")
+    elseif entityType == "spell" then
+        self:SetSpellButton(icon, data.spell_id or entityId, name, data.name, data, mode)
+    else
+        self:SetItemButton(icon, data.item_id, name, data.name, data.quality or (data.item and data.item.quality), data, mode)
+    end
+    widgets:SetCellText(name, name.fullText or data.name or "", nameLines, 14, nameWidth)
+    widgets:SetCellText(row.subText, slot, 1, 12, nameWidth)
+    row.subText:SetShown(slot ~= "")
+    local source, location = self:GetRowAcquisitionDisplay(data)
+    local function bindCell(key, text, color)
+        local column = layout[key]
+        if not column then return end
+        local label = row.cells[key] or widgets:CreateWrappedLabel(row, "", "GameFontNormalSmall")
+        row.cells[key] = label; label:Show(); label:ClearAllPoints()
+        label:SetPoint("LEFT", row, "LEFT", column.x, 0)
+        label:SetJustifyH(column.align or "LEFT")
+        label:SetTextColor(unpack(color or {0.78, 0.79, 0.82}))
+        widgets:SetCellText(label, text or "", maxLines, 13, column.width)
+        local hover = row.cellHovers[key]
+        if not hover then
+            hover = CreateFrame("Frame", nil, row); hover:EnableMouse(true)
+            hover:SetScript("OnMouseUp", function(_, button) UI:HandleEntityGesture(row.boundData, row.boundMode, button, row) end)
+            hover:SetScript("OnEnter", function() row:SetHovered(true) end)
+            hover:SetScript("OnLeave", function() row:SetHovered(false) end)
+            widgets:BindTooltip(hover, function(frame, tooltip)
+                if frame.cellKey == "source" or frame.cellKey == "location" or frame.cellKey == "acquisition" then
+                    tooltip:AddLine(frame.label.fullText or "", 0.88, 0.88, 0.90, true)
+                    UI:AddSelectedRouteTooltipLines(tooltip, row.boundData, UI:GetAccessEvaluation(row.boundData))
+                elseif frame.cellKey == "rank" then
+                    tooltip:AddLine(rankMeaning(row.boundData, row.boundMode), 0.88,0.88,0.90,true)
+                elseif frame.cellKey == "owned" then
+                    tooltip:AddLine(frame.label.fullText or "", 0.88,0.88,0.90,true)
+                    tooltip:AddLine(UI:GetBankStatusText(), 0.66,0.68,0.72,true)
+                    for _, line in ipairs(row.boundData.ownership_lines or {}) do tooltip:AddLine(line, 0.82,0.84,0.88,true) end
+                else
+                    tooltip:AddLine(frame.label.fullText or "", 0.88, 0.88, 0.9, true)
+                end
+            end)
+            row.cellHovers[key] = hover
+        end
+        hover.label = label; hover.cellKey = key
+        hover:ClearAllPoints(); hover:SetPoint("TOPLEFT", row, "TOPLEFT", column.x, 0)
+        hover:SetSize(column.width, rowHeight); hover:Show()
+    end
+    bindCell("rank", (displayRankInfo(data, mode)))
+    bindCell("value", self:GetRowRecommendationText(data, mode))
+    bindCell("currentRank", data.recommendation_summary or data.overlay or "Not ranked")
+    bindCell("expansion", self:GetWishlistExpansionText(data))
+    bindCell("source", source, {0.70,0.77,0.84})
+    bindCell("location", location, {0.65,0.67,0.72})
+    bindCell("acquisition", source .. (location ~= "" and ((maxLines == 1 and " · " or "\n") .. location) or ""), {0.70,0.77,0.84})
+    local state = self:GetRowOwnershipState(data)
+    local statusLabel = data.ownership_label or ownershipStateLabel(state)
+    bindCell("owned", statusLabel, state == "missing" and {0.58,0.60,0.64} or {0.66,0.79,0.70})
+    if layout.owned then
+        widgets:SetIcon(row.statusIcon, ({equipped="equipped", bag="bag", bank="bank", applied="check", service="info"})[state] or "minus")
+        row.statusIcon:ClearAllPoints()
+        row.statusIcon:SetPoint("LEFT", row, "LEFT", layout.owned.x, 0)
+        row.statusIcon:SetVertexColor(0.64,0.70,0.68); row.statusIcon:Show()
+        local label = row.cells.owned
+        label:ClearAllPoints(); label:SetPoint("LEFT", row, "LEFT", layout.owned.x+17, 0)
+        widgets:SetCellText(label, statusLabel, maxLines, 13, layout.owned.width-17)
+    end
+    if data.item_id and layout.action then
+        row.actionButton:ClearAllPoints(); row.actionButton:SetPoint("LEFT", row, "LEFT", layout.action.x, 0)
+        local saved = BigBiSList:GetCharacterDB().wishlist[tostring(data.item_id)] == true
+        row.boundWishlistSaved = saved
+        row.actionButton:SetIcon(saved and "starFilled" or "starOutline")
+        row.actionButton:SetSelected(saved); row.actionButton:Show()
+    end
     return row, rowHeight
 end
 
-function UI:CreateVirtualSectionHeader(parent, yOffset, text, header)
+function UI:CreateVirtualSectionHeader(parent, yOffset, text, header, entry)
+    local widgets = BigBiSList.Widgets
     if not header then
-        header = CreateFrame("Frame", nil, parent)
-        local line = header:CreateTexture(nil, "ARTWORK")
-        line:SetColorTexture(0.55, 0.55, 0.58, 0.45)
-        line:SetHeight(1)
-        line:SetPoint("BOTTOMLEFT", header, "BOTTOMLEFT", 0, 6)
-        line:SetPoint("BOTTOMRIGHT", header, "BOTTOMRIGHT", 0, 6)
-        header.line = line
-
-        local label = header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-        label:SetPoint("TOPLEFT", header, "TOPLEFT", 8, -2)
-        label:SetTextColor(1, 0.82, 0.28, 1)
-        header.label = label
+        header = CreateFrame("Button", nil, parent)
+        header:SetHeight(28)
+        header.chevron = header:CreateTexture(nil, "ARTWORK")
+        header.chevron:SetSize(12, 12); header.chevron:SetPoint("LEFT", header, "LEFT", 8, 0)
+        header.label = widgets:CreateLabel(header, "", "GameFontNormalSmall")
+        header.label:SetPoint("LEFT", header, "LEFT", 28, 0)
+        header.label:SetPoint("RIGHT", header, "RIGHT", -8, 0)
+        header:SetScript("OnClick", function(button)
+            if not UI:IsCurrentRenderFrame(button) then return end
+            local state = UI:GetViewState()
+            state.collapsedGroups = state.collapsedGroups or {}
+            state.collapsedGroups[button.sectionKey] = not state.collapsedGroups[button.sectionKey]
+            UI:Invalidate("presentation", "section-toggle"); UI:ScheduleRefresh(nil, "section-toggle")
+        end)
         header.__bigBisManaged = true
         self:CountPerformance("widgetsCreated")
     end
-    header:SetParent(parent)
-    header:Show()
-    header:ClearAllPoints()
-    header:SetHeight(34)
+    header:SetParent(parent); header:Show(); header:ClearAllPoints()
     header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
-
-    header.label:SetText(text)
-
-    return header, 34
+    header.sectionKey = entry and entry.sectionKey or text
+    header.__bigBisListRenderKind = "section"
+    header.label:SetText(text .. "  (" .. tostring(entry and entry.count or 0) .. ")")
+    widgets:SetIcon(header.chevron, entry and entry.collapsed and "chevronRight" or "chevronDown")
+    return header, 28
 end
 
 function UI:GetRenderPool(kind)
@@ -4370,9 +4413,45 @@ function UI:GetRenderPool(kind)
     return self.renderPools[kind]
 end
 
+function UI:RunRenderTransaction(callback, deferUpdate)
+    self.renderTransactionDepth = (self.renderTransactionDepth or 0) + 1
+    local ok, result = xpcall(callback, function(message) return tostring(message) end)
+    self.renderTransactionDepth = self.renderTransactionDepth - 1
+    if not ok then
+        self.virtualListUpdatePending = nil
+        self.virtualListForcePending = nil
+        error(result, 0)
+    end
+    if not deferUpdate and self.renderTransactionDepth == 0 and self.virtualListUpdatePending then
+        -- Native scroll callbacks can run while a frame is being hidden or anchored.
+        -- Drain once against the completed model, never against partially bound rows.
+        local force = self.virtualListForcePending
+        self.virtualListUpdatePending = nil
+        self.virtualListForcePending = nil
+        self:UpdateVirtualList(force)
+    end
+    return result
+end
+
+function UI:PoolRenderFrame(kind, frame)
+    self.renderPoolMembership = self.renderPoolMembership or {}
+    if self.renderPoolMembership[frame] then return end
+    frame.__bigBisBoundRenderModel = nil
+    frame.__bigBisBoundRenderEntry = nil
+    frame.__bigBisBoundRenderSerial = nil
+    frame.__bigBisListRenderKind = kind
+    self.renderPoolMembership[frame] = kind
+    table.insert(self:GetRenderPool(kind), frame)
+end
+
 function UI:AcquireRenderFrame(kind)
     local pool = self:GetRenderPool(kind)
-    return table.remove(pool)
+    local frame = table.remove(pool)
+    while frame and self.renderActiveMembership and self.renderActiveMembership[frame] do
+        frame = table.remove(pool)
+    end
+    if frame and self.renderPoolMembership then self.renderPoolMembership[frame] = nil end
+    return frame
 end
 
 function UI:TrackRenderFrame(kind, frame)
@@ -4380,18 +4459,39 @@ function UI:TrackRenderFrame(kind, frame)
         return
     end
     self.activeRenderFrames = self.activeRenderFrames or {}
+    self.renderActiveMembership = self.renderActiveMembership or {}
+    if self.renderActiveMembership[frame] then return end
+    self.renderActiveMembership[frame] = true
     frame.__bigBisListRenderKind = kind
+    frame.__bigBisBoundRenderModel = nil
+    frame.__bigBisBoundRenderEntry = nil
+    frame.__bigBisBoundRenderSerial = nil
     table.insert(self.activeRenderFrames, frame)
 end
 
+function UI:IsCurrentRenderFrame(frame)
+    local model = self.renderModel
+    return model and self.renderActiveMembership and self.renderActiveMembership[frame]
+        and frame.__bigBisBoundRenderModel == model
+        and frame.__bigBisBoundRenderSerial == self.renderModelSerial
+        and (not model.contextKey or model.contextKey == self:GetNavigationContextKey())
+end
+
 function UI:ReleaseRenderFrames()
-    for _, frame in ipairs(self.activeRenderFrames or {}) do
-        frame:Hide()
-        frame:ClearAllPoints()
-        table.insert(self:GetRenderPool(frame.__bigBisListRenderKind or "row"), frame)
-    end
-    self.activeRenderFrames = {}
-    self.renderRangeKey = nil
+    self:RunRenderTransaction(function()
+        local releasing = self.activeRenderFrames or {}
+        self.activeRenderFrames = {}
+        self.renderActiveMembership = {}
+        self.renderRangeKey = nil
+        for _, frame in ipairs(releasing) do
+            frame.__bigBisBoundRenderModel = nil
+            frame.__bigBisBoundRenderEntry = nil
+            frame.__bigBisBoundRenderSerial = nil
+            frame:Hide()
+            frame:ClearAllPoints()
+            self:PoolRenderFrame(frame.__bigBisListRenderKind or "row", frame)
+        end
+    end, true)
 end
 
 selectedFacetKeys = function(values, labels)
@@ -4448,13 +4548,11 @@ function UI:GetActiveFilterChips()
         table.insert(chips, {
             label = "Search: " .. filters.search,
             clear = function()
-                filters.search = ""
+                self:SetFilter("search", "")
                 if self.searchBox then
                     self.searchBox:SetText("")
                     self.searchBox:ClearFocus()
                 end
-                self:Invalidate("query", "search-chip")
-                self:ScheduleRefresh(nil, "search-chip")
             end,
         })
     end
@@ -4523,28 +4621,18 @@ function UI:GetActiveFilterChips()
 end
 
 function UI:GetActiveFilterChipLayout(parent, chips)
-    local layout = { height = 0, rows = 0, positions = {} }
-    if #(chips or {}) == 0 then
-        return layout
-    end
-
+    local layout = { height = 0, rows = 0, positions = {}, hidden = 0 }
+    if #(chips or {}) == 0 then return layout end
     local width = contentWidth(parent, self.contentScroll and self.contentScroll:GetWidth() or 560)
-    local lineWidth = math.max(160, width - 100)
-    local rows = 1
-    local xOffset = 8
-    local y = -26
+    local x, limit = 4, math.max(80, width - 190)
     for index, chip in ipairs(chips) do
-        local chipWidth = estimatedChipWidth(chip.label) + 12
-        if xOffset > 8 and xOffset + chipWidth > lineWidth then
-            rows = rows + 1
-            xOffset = 8
-            y = y - 24
-        end
-        layout.positions[index] = { x = xOffset, y = y, width = chipWidth, row = rows }
-        xOffset = xOffset + chipWidth + 6
+        local chipWidth = estimatedChipWidth(chip.label) + 28
+        if x + chipWidth <= limit then
+            layout.positions[index] = { x = x, y = 0, width = chipWidth, row = 1 }
+            x = x + chipWidth + 6
+        else layout.hidden = layout.hidden + 1 end
     end
-    layout.rows = rows
-    layout.height = 30 + (rows * 24)
+    layout.rows = 1; layout.height = 28; layout.overflowX = x
     return layout
 end
 
@@ -4570,28 +4658,55 @@ end
 
 function UI:AddListSection(model, title, mode)
     model.columnMode = model.columnMode or mode
-    self:AddListRenderEntry(model, {
-        kind = "section",
-        title = title,
-        height = 34,
-    })
+    local key = mode .. ":" .. title
+    local collapsed = self:GetViewState().collapsedGroups or {}
+    local entry = { kind = "section", title = title, sectionKey = key, count = 0, height = 28, collapsed = collapsed[key] == true }
+    model.activeSection = entry
+    self:AddListRenderEntry(model, entry)
 end
 
 function UI:AddListRow(model, data, mode)
-    local rowHeight = LIST_ROW_HEIGHT
-    if mode == "wishlist" then
-        rowHeight = math.max(LIST_ROW_HEIGHT, 34 + (math.max(1, #(data and data.relevant_spec_rankings or {})) * 16))
-    elseif mode == "gear" then
-        rowHeight = 58
-    end
-    self:AddListRenderEntry(model, {
-        kind = "row",
-        data = data,
-        mode = mode,
-        height = rowHeight + LIST_ROW_GAP,
-        rowHeight = rowHeight,
-    })
+    local rowHeight = self:GetDensityMetrics()
     model.rowCount = (model.rowCount or 0) + 1
+    if model.activeSection then
+        model.activeSection.count = model.activeSection.count + 1
+        if model.activeSection.collapsed then return end
+    end
+    model.columnMode = model.columnMode or mode
+    self:AddListRenderEntry(model, {
+        kind = "row", data = data, mode = mode, height = rowHeight,
+        rowHeight = rowHeight, sectionKey = model.activeSection and model.activeSection.sectionKey,
+    })
+end
+
+function UI:RenderGroupedRows(rows, mode, groupBy, defaultTitle)
+    local model = self:NewListRenderModel()
+    if groupBy == "none" then
+        for _, row in ipairs(self:SortDisplayRows(rows, mode)) do self:AddListRow(model, row, mode) end
+    else
+        local groups, order = {}, {}
+        for _, row in ipairs(rows) do
+            local title = defaultTitle
+            if groupBy == "activity" or groupBy == "source" then
+                title = BigBiSList:GetActivityGroup(row)
+            elseif groupBy == "slot" then title = self:GetRowSlotDisplay(row)
+            elseif groupBy == "priority" then
+                for _, tier in ipairs(PLANNER_TIER_SECTIONS) do
+                    if tier.key == (row.recommendation_tier or "only_if_easy") then title = tier.title; break end
+                end
+            end
+            title = title or defaultTitle or "Items"
+            if not groups[title] then groups[title] = {}; order[#order+1] = title end
+            groups[title][#groups[title]+1] = row
+        end
+        if groupBy == "activity" or groupBy == "source" then table.sort(order) end
+        for _, title in ipairs(order) do
+            self:AddListSection(model, title, mode)
+            for _, row in ipairs(self:SortDisplayRows(groups[title], mode)) do self:AddListRow(model, row, mode) end
+            self:AddListGap(model)
+        end
+    end
+    self:RenderListModel(model)
 end
 
 function UI:AddListGap(model, height)
@@ -4604,59 +4719,43 @@ end
 function UI:CreateActiveFilterBar(parent, yOffset, chips, height, frame)
     local widgets = BigBiSList.Widgets
     if not frame then
-        frame = CreateFrame("Frame", nil, parent)
-        frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        frame.title:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -2)
-        frame.title:SetTextColor(0.72, 0.72, 0.76, 1)
-        frame.title:SetText("Active filters")
-        frame.clearButton = widgets:CreateTextButton(frame, "Clear all", 76, 20, function()
-            UI:ClearFilters()
+        frame = CreateFrame("Frame", nil, parent); frame.chipButtons = {}
+        frame.clearButton = widgets:CreateTextButton(frame, "Clear all", 76, 28, function() UI:ClearFilters() end)
+        frame.clearButton:SetPoint("RIGHT", frame, "RIGHT", -4, 0)
+        frame.overflow = widgets:CreateTextButton(frame, "", 104, 28, function() UI:SetFilterDrawerOpen(true) end)
+        widgets:BindTooltip(frame.overflow, function(_, tooltip)
+            for _, chip in ipairs(UI:GetActiveFilterChips()) do tooltip:AddLine(chip.label, 0.86, 0.86, 0.90, true) end
         end)
-        frame.clearButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, 0)
-        frame.chipButtons = {}
         frame.__bigBisManaged = true
-        self:CountPerformance("widgetsCreated", 2)
     end
-    frame:SetParent(parent)
-    frame:Show()
-    local chipLayout = self:GetActiveFilterChipLayout(parent, chips)
-    frame:SetHeight(height or chipLayout.height or 54)
-    if yOffset ~= nil then
-        frame:ClearAllPoints()
-        frame:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
-        frame:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
+    frame:SetParent(parent); frame:Show(); frame:SetHeight(28)
+    if yOffset then
+        frame:ClearAllPoints(); frame:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset); frame:SetPoint("RIGHT", parent, "RIGHT", 0, 0)
     end
-
-    for _, button in ipairs(frame.chipButtons) do
-        button:Hide()
-    end
-    for index, chip in ipairs(chips or {}) do
-        local position = chipLayout.positions[index]
-        local chipWidth = position.width
-        local button = frame.chipButtons[index]
-        if not button then
-            button = widgets:CreateTextButton(frame, "", chipWidth, 20, function(selfButton)
-                local boundChip = selfButton.boundChip
-                if boundChip and boundChip.clear then
-                    boundChip.clear()
-                end
-            end)
-            frame.chipButtons[index] = button
-            self:CountPerformance("widgetsCreated")
+    local layout = self:GetActiveFilterChipLayout(parent, chips)
+    for _, chipFrame in ipairs(frame.chipButtons) do chipFrame:Hide() end
+    for index, chip in ipairs(chips) do
+        local position = layout.positions[index]
+        if position then
+            local chipFrame = frame.chipButtons[index]
+            if not chipFrame then
+                chipFrame = widgets:CreatePanel(nil, frame)
+                chipFrame.label = widgets:CreateLabel(chipFrame, "")
+                chipFrame.label:SetPoint("LEFT", chipFrame, "LEFT", 6, 0)
+                chipFrame.clear = widgets:CreateUtilityButton(chipFrame, "clear", 28, function(button)
+                    if button.chip and button.chip.clear then button.chip.clear() end
+                end, "Remove filter")
+                chipFrame.clear:SetPoint("RIGHT", chipFrame, "RIGHT", 0, 0)
+                frame.chipButtons[index] = chipFrame
+            end
+            chipFrame:Show(); chipFrame:ClearAllPoints()
+            chipFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", position.x, 0); chipFrame:SetSize(position.width, 28)
+            widgets:SetCellText(chipFrame.label, chip.label, 1, 13, position.width - 38)
+            chipFrame.clear.chip = chip
         end
-        button.boundChip = chip
-        button.label:SetText(chip.label .. "  x")
-        button:SetWidth(chipWidth)
-        button:ClearAllPoints()
-        button:Show()
-        if chip.clear then
-            button:SetAlpha(1)
-        else
-            button:SetAlpha(0.6)
-        end
-        button:SetPoint("TOPLEFT", frame, "TOPLEFT", position.x, position.y)
     end
-
+    frame.overflow:ClearAllPoints(); frame.overflow:SetPoint("LEFT", frame, "LEFT", layout.overflowX or 4, 0)
+    frame.overflow.label:SetText("+" .. layout.hidden .. " filters"); frame.overflow:SetShown(layout.hidden > 0)
     return frame
 end
 
@@ -4695,55 +4794,79 @@ function UI:RefreshFixedActiveFilterBar()
 end
 
 function UI:RebindSelectedRowFromModel(model)
-    if not self.selectedItemId then
+    if not self.selectedRowKey and self.selectedItemData then
+        self.selectedRowKey = self:GetRowKey(self.selectedItemData, self.selectedItemMode)
+    end
+    if not self.selectedRowKey then
+        if self.selectedItemId then self:ClearSelectedRow() end
         return
     end
-    local wantedSlot = self.selectedItemData and self.selectedItemData.slot
-    local fallbackData
-    local fallbackMode
     for _, entry in ipairs((model and model.entries) or {}) do
         local data = entry.kind == "row" and entry.data or nil
-        local entityId = data and (data.entity_id or data.spell_id or data.item_id)
-        local entityType = data and (data.entity_type or (data.spell_id and "spell") or "item")
-        if entityId == self.selectedItemId
-            and (not self.selectedEntityType or entityType == self.selectedEntityType) then
-            fallbackData = fallbackData or data
-            fallbackMode = fallbackMode or entry.mode
-            if not wantedSlot or data.slot == wantedSlot then
-                self.selectedItemData = data
-                self.selectedItemMode = entry.mode
-                self.selectedEntityType = data.entity_type or (data.spell_id and "spell") or "item"
-                return
-            end
+        if data and self:GetRowKey(data, entry.mode) == self.selectedRowKey then
+            self.selectedItemId = data.entity_id or data.spell_id or data.item_id
+            self.selectedItemData = data
+            self.selectedItemMode = entry.mode
+            self.selectedEntityType = data.entity_type or (data.spell_id and "spell") or "item"
+            return
         end
     end
-    self.selectedItemData = fallbackData
-    self.selectedItemMode = fallbackMode or self.selectedItemMode
-    if fallbackData then
-        self.selectedEntityType = fallbackData.entity_type or (fallbackData.spell_id and "spell") or "item"
-    end
+    self:ClearSelectedRow()
 end
 
 function UI:RenderListModel(model)
-    self:ReleaseRenderFrames()
-    self.renderModel = model
-    self.hasRenderedContent = true
-    self:RebindSelectedRowFromModel(model)
-    self.renderModelSerial = (self.renderModelSerial or 0) + 1
-    if self.contentStaticLayer then self.contentStaticLayer:Hide() end
-    if self.emptyLabel then self.emptyLabel:Hide() end
-    if self.contentListLayer then self.contentListLayer:Show() end
-    if self.resultCountText then
-        local count = model.rowCount or 0
-        self.resultCountText:SetText(tostring(count) .. (count == 1 and " result" or " results"))
-    end
-    self:CountPerformance("modelRows", model.rowCount or 0)
-    self:SetContentHeight(-(model.cursor + 30))
-    self:SetStickyHeaderMode(model.columnMode)
-    self:UpdateVirtualList(true)
+    self:RunRenderTransaction(function()
+        for _, button in ipairs(self.emptyActions or {}) do button:Hide() end
+        local contextKey = self:GetNavigationContextKey()
+        local pending = self.pendingNavigation
+        local navigation
+        if pending then
+            navigation = pending.restore and self.navigationStates and self.navigationStates[contextKey] or { scroll = 0 }
+            if pending.restore then
+                self:ClearSelectedRow()
+                self.selectedRowKey = navigation and navigation.selectedRowKey
+            end
+        elseif not self.renderedContextKey or self.renderedContextKey == contextKey then
+            navigation = self:CaptureNavigationState()
+        else
+            navigation = { scroll = 0 }
+            self:ClearSelectedRow()
+        end
+        self.pendingNavigation = nil
+        self.renderedContextKey = contextKey
+        self:ReleaseRenderFrames()
+        self.renderModel = model
+        model.contextKey = contextKey
+        self.hasRenderedContent = true
+        self:RebindSelectedRowFromModel(model)
+        self.renderModelSerial = (self.renderModelSerial or 0) + 1
+        if self.contentStaticLayer then self.contentStaticLayer:Hide() end
+        if self.emptyLabel then self.emptyLabel:Hide() end
+        if self.contentListLayer then self.contentListLayer:Show() end
+        if self.resultCountText then
+            local count = model.rowCount or 0
+            self.resultCountText:SetText(tostring(count) .. (count == 1 and " result" or " results"))
+        end
+        self:CountPerformance("modelRows", model.rowCount or 0)
+        self:SetContentHeight(-(model.cursor + 30))
+        self:SetStickyHeaderMode(model.columnMode)
+        self:ApplyNavigationState(model, navigation)
+        if pending and pending.restore and self.selectedRowKey and self.detailsScroll and self.detailsScroll.SetVerticalScroll then
+            self.detailsScroll:SetVerticalScroll(navigation and navigation.detailsScroll or 0)
+        end
+        self:UpdateVirtualList(true)
+    end)
 end
 
 function UI:UpdateVirtualList(force)
+    if (self.renderTransactionDepth or 0) > 0 then
+        self.virtualListUpdatePending = true
+        self.virtualListForcePending = self.virtualListForcePending or force
+        return
+    end
+    force = force or self.virtualListForcePending
+    self.virtualListUpdatePending = nil
+    self.virtualListForcePending = nil
     local model = self.renderModel
     local scroll = self.contentScroll
     local child = self.contentListLayer or self.contentChild
@@ -4756,7 +4879,7 @@ function UI:UpdateVirtualList(force)
     local minTop = math.max(0, scrollTop - LIST_OVERSCAN_PIXELS)
     local maxBottom = scrollTop + viewportHeight + LIST_OVERSCAN_PIXELS
     local width = self:GetTableViewportWidth(child, scroll:GetWidth() or 760)
-    local columnLayout = self:GetTableColumnLayout(width, self.stickyHeaderMode or "phase", self:IsInspectorVisible())
+    local columnLayout = self:GetTableColumnLayout(width, self.stickyHeaderMode or "phase")
     local compact = columnLayout.compact
     local rangeKey = table.concat({
         tostring(self.renderModelSerial or 0),
@@ -4768,73 +4891,91 @@ function UI:UpdateVirtualList(force)
         return
     end
 
-    self:ReleaseRenderFrames()
-    self.renderRangeKey = rangeKey
-    local realized = 0
-    local childrenBefore = {}
-    if child.GetChildren then
-        for _, existingChild in ipairs({ child:GetChildren() }) do
-            childrenBefore[existingChild] = true
-        end
-    end
-    local bindingPoolKind
-    local ok, bindError = xpcall(function()
-        for _, entry in ipairs(model.entries or {}) do
-            if entry.top > maxBottom then
-                break
+    self:RunRenderTransaction(function()
+        self:ReleaseRenderFrames()
+        self.renderRangeKey = rangeKey
+        local realized = 0
+        local childrenBefore = {}
+        if child.GetChildren then
+            for _, existingChild in ipairs({ child:GetChildren() }) do
+                childrenBefore[existingChild] = true
             end
-            if entry.kind ~= "gap" and entry.bottom >= minTop and entry.top <= maxBottom then
-                local poolKind = entry.kind
-                if entry.kind == "row" then
-                    poolKind = entry.kind .. ":" .. tostring(entry.mode or "phase") .. ":" .. (compact and "compact" or "wide")
+        end
+        local bindingPoolKind
+        local ok, bindError = xpcall(function()
+            for _, entry in ipairs(model.entries or {}) do
+                if entry.top > maxBottom then
+                    break
                 end
-                bindingPoolKind = poolKind
-                local frame = self:AcquireRenderFrame(poolKind)
-                local alreadyTracked = frame ~= nil
-                if alreadyTracked then
-                    self:TrackRenderFrame(poolKind, frame)
-                end
-                if entry.kind == "row" then
-                    frame = self:CreateDataRow(child, -entry.top, entry.data, entry.mode, frame, entry.rowHeight)
-                elseif entry.kind == "section" then
-                    frame = self:CreateVirtualSectionHeader(child, -entry.top, entry.title, frame)
-                elseif entry.kind == "note" then
-                    frame = self:CreateVirtualNote(child, -entry.top, entry.text, frame)
-                end
-                if frame then
-                    if not alreadyTracked then
+                if entry.kind ~= "gap" and entry.bottom >= minTop and entry.top <= maxBottom then
+                    local poolKind = entry.kind
+                    if entry.kind == "row" then
+                        poolKind = entry.kind .. ":" .. tostring(entry.mode or "phase") .. ":" .. (compact and "compact" or "wide")
+                    end
+                    bindingPoolKind = poolKind
+                    local frame = self:AcquireRenderFrame(poolKind)
+                    local alreadyTracked = frame ~= nil
+                    if alreadyTracked then
                         self:TrackRenderFrame(poolKind, frame)
                     end
-                    realized = realized + 1
+                    if entry.kind == "row" then
+                        if entry.columnIndex then
+                            frame = self:CreateGearCard(child, -entry.top, entry.data, frame, entry.rowHeight, entry.columnIndex)
+                        else
+                            frame = self:CreateDataRow(child, -entry.top, entry.data, entry.mode, frame, entry.rowHeight)
+                        end
+                    elseif entry.kind == "section" then
+                        frame = self:CreateVirtualSectionHeader(child, -entry.top, entry.title, frame, entry)
+                    elseif entry.kind == "note" then
+                        frame = self:CreateVirtualNote(child, -entry.top, entry.text, frame)
+                    end
+                    if frame then
+                        if not alreadyTracked then
+                            self:TrackRenderFrame(poolKind, frame)
+                        end
+                        frame.__bigBisBoundRenderModel = model
+                        frame.__bigBisBoundRenderEntry = entry
+                        frame.__bigBisBoundRenderSerial = self.renderModelSerial
+                        realized = realized + 1
+                    end
+                    bindingPoolKind = nil
                 end
-                bindingPoolKind = nil
             end
-        end
-    end, function(message)
-        return tostring(message)
-    end)
-    if not ok then
-        self.renderRangeKey = nil
-        local active = {}
-        for _, frame in ipairs(self.activeRenderFrames or {}) do
-            active[frame] = true
-        end
-        if child.GetChildren then
-            for _, newChild in ipairs({ child:GetChildren() }) do
-                if not childrenBefore[newChild] and not active[newChild] then
-                    if newChild.Hide then newChild:Hide() end
-                    if newChild.ClearAllPoints then newChild:ClearAllPoints() end
-                    if newChild.__bigBisManaged then
-                        newChild.__bigBisListRenderKind = bindingPoolKind or newChild.__bigBisListRenderKind or "row"
-                        table.insert(self:GetRenderPool(newChild.__bigBisListRenderKind), newChild)
+        end, function(message)
+            return tostring(message)
+        end)
+        if not ok then
+            self.renderRangeKey = nil
+            local active = {}
+            for _, frame in ipairs(self.activeRenderFrames or {}) do
+                active[frame] = true
+            end
+            if child.GetChildren then
+                for _, newChild in ipairs({ child:GetChildren() }) do
+                    if not childrenBefore[newChild] and not active[newChild] then
+                        if newChild.Hide then newChild:Hide() end
+                        if newChild.ClearAllPoints then newChild:ClearAllPoints() end
+                        if newChild.__bigBisManaged then
+                            self:PoolRenderFrame(bindingPoolKind or newChild.__bigBisListRenderKind or "row", newChild)
+                        end
                     end
                 end
             end
+            self:ReleaseRenderFrames()
+            error(bindError, 0)
         end
-        self:ReleaseRenderFrames()
-        error(bindError, 0)
-    end
-    self:CountPerformance("realizedEntries", realized)
+        -- Recover any previously stranded managed child while preserving unrelated UI.
+        if child.GetChildren then
+            for _, frame in ipairs({ child:GetChildren() }) do
+                if frame.__bigBisManaged and not (self.renderActiveMembership and self.renderActiveMembership[frame]) then
+                    frame:Hide()
+                    frame:ClearAllPoints()
+                    self:PoolRenderFrame(frame.__bigBisListRenderKind or "row", frame)
+                end
+            end
+        end
+        self:CountPerformance("realizedEntries", realized)
+    end)
 end
 
 function UI:RenderEmpty(message)
@@ -4850,6 +4991,28 @@ function UI:RenderEmpty(message)
         self.emptyLabel:Show()
     end
     self:SetContentHeight(-48)
+    self:ApplyEmptyNavigation()
+    self.emptyActions = self.emptyActions or {}
+    for _, button in ipairs(self.emptyActions) do button:Hide() end
+    local actions = {}
+    if #self:GetActiveFilterChips() > 0 then actions[#actions+1] = { "Clear filters", function() self:ClearFilters() end } end
+    local tab = self:GetSelection().tab
+    if tab == "Wishlist" then actions[#actions+1] = { "Browse items", function() self:SetTab(self:IsLevelingMode() and "Gear Guide" or "By Slot") end } end
+    if tab == "Upgrades" and self:GetFilters().upgradeMode ~= "all" then
+        actions[#actions+1] = { "Show all candidates", function() self:SetFilter("upgradeMode", "all") end }
+    end
+    if tableCount(BigBiSList:GetCharacterDB().ignoredItems or {}) > 0 then
+        actions[#actions+1] = { "Hidden items", function() self.settingsSection = "hidden"; self:OpenSettings() end }
+    end
+    for index, action in ipairs(actions) do
+        local button = self.emptyActions[index]
+        if not button then
+            button = BigBiSList.Widgets:CreateTextButton(self.contentChild, "", 156, 28, function(owner) owner.callback() end)
+            self.emptyActions[index] = button
+        end
+        button.callback = action[2]; button.label:SetText(action[1]); button:ClearAllPoints()
+        button:SetPoint("TOPLEFT", self.emptyLabel, "BOTTOMLEFT", (index-1)*164, -14); button:Show()
+    end
     if self.resultCountText then
         self.resultCountText:SetText("0 results")
     end
@@ -4900,9 +5063,14 @@ function UI:GetDisplaySortValue(row, sortKey, mode)
     elseif sortKey == "item" then
         return lower(row.name)
     elseif sortKey == "slot" then
-        return lower(self:GetRowSlotDisplay(row))
+        for index, slot in ipairs(BigBiSList:GetEquipmentSlotDefinitions()) do
+            if row.slotKey == slot.key or row.slot == slot.label then return index end
+            for _, name in ipairs(slot.slots or {}) do if name == row.slot then return index end end
+        end
+        return 999
     elseif sortKey == "value" or sortKey == "recommendation" then
-        return lower(self:GetRowRecommendationText(row, mode))
+        local order = row.default_sort or {}
+        return tonumber(row.recommendation_order) or tonumber(order.rank) or tonumber(row.rank) or (row.context == "budget" and 2 or 1)
     elseif sortKey == "source" then
         local source = self:GetRowAcquisitionDisplay(row)
         return lower(source)
@@ -4930,10 +5098,19 @@ function UI:SortDisplayRows(rows, mode)
     end
     local state = self:GetViewState()
     local sortKey = state.sort
-    if not sortKey or sortKey == "priority" then
+    if not sortKey then
         return sortedRows
     end
     local direction = state.sortDirection or "asc"
+    if sortKey == "priority" and (mode == "leveling" or mode == "wishlist") then
+        if direction == "desc" then
+            for index = 1, math.floor(#sortedRows/2) do
+                local other = #sortedRows-index+1
+                sortedRows[index], sortedRows[other] = sortedRows[other], sortedRows[index]
+            end
+        end
+        return sortedRows
+    end
     table.sort(sortedRows, function(a, b)
         local aValue = self:GetDisplaySortValue(a, sortKey, mode)
         local bValue = self:GetDisplaySortValue(b, sortKey, mode)
@@ -4955,147 +5132,110 @@ function UI:RenderLevelingTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
-    local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or filters.level or MAX_LEVELING_LEVEL
-
-    local groups = self:GetCachedViewQuery("leveling", function()
-        return BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters)
-    end)
-    if #groups == 0 then
-        self:RenderEmpty("No guide-backed leveling picks for this level. Change the level or clear filters.")
-        return
-    end
-
-    local model = self:NewListRenderModel()
-    local groupBy = self:GetViewState("Gear Guide").groupBy or "slot"
-    if groupBy == "slot" then
-        for _, group in ipairs(groups) do
-            local sortedItems = self:SortDisplayRows(group.items, "leveling")
-            self:AddListSection(model, group.slot, "leveling")
-            for _, item in ipairs(sortedItems) do
-                self:AddListRow(model, item, "leveling")
-            end
-            self:AddListGap(model)
-        end
-    else
-        local allRows = {}
-        for _, group in ipairs(groups) do
-            for _, item in ipairs(group.items or {}) do
-                table.insert(allRows, item)
-            end
-        end
-        allRows = self:SortDisplayRows(allRows, "leveling")
-        if groupBy == "source" then
-            local bySource = {}
-            for _, item in ipairs(allRows) do
-                local source = self:GetRowAcquisitionDisplay(item)
-                bySource[source] = bySource[source] or {}
-                table.insert(bySource[source], item)
-            end
-            for _, source in ipairs(sortedKeys(bySource)) do
-                self:AddListSection(model, source, "leveling")
-                for _, item in ipairs(bySource[source]) do
-                    self:AddListRow(model, item, "leveling")
-                end
-                self:AddListGap(model)
-            end
-        else
-            self:AddListSection(model, "Recommendations for level " .. tostring(level), "leveling")
-            for _, item in ipairs(allRows) do
-                self:AddListRow(model, item, "leveling")
-            end
-        end
-    end
-
-    self:RenderListModel(model)
+    local level = BigBiSList:GetSelectedLevelingLevel()
+    local groups = self:GetCachedViewQuery("leveling", function() return BigBiSList:GetLevelingRows(selection.class, selection.spec, level, filters) end)
+    local rows = {}
+    for _, group in ipairs(groups) do for _, row in ipairs(group.items) do rows[#rows+1] = row end end
+    if #rows == 0 then self:RenderEmpty("No leveling picks match this level and filters."); return end
+    self:RenderGroupedRows(rows, "leveling", self:GetViewState().groupBy or "slot", "Level " .. level)
 end
 
 function UI:RenderPhaseTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
-
-    local groups = self:GetCachedViewQuery("phase", function()
-        return BigBiSList:GetPhaseRows(selection.class, selection.spec, selection.phase, filters)
-    end)
-    if #groups == 0 then
-        self:RenderEmpty("No matching slot rows. Clear filters or choose another phase.")
-        return
-    end
-
-    local model = self:NewListRenderModel()
-    for _, group in ipairs(groups) do
-        local sortedItems = self:SortDisplayRows(group.items, "phase")
-        self:AddListSection(model, group.slot, "phase")
-        for _, item in ipairs(sortedItems) do
-            self:AddListRow(model, item, "phase")
-        end
-        self:AddListGap(model)
-    end
-
-    self:RenderListModel(model)
+    local groups = self:GetCachedViewQuery("phase", function() return BigBiSList:GetPhaseRows(selection.class, selection.spec, selection.phase, filters) end)
+    local rows = {}
+    for _, group in ipairs(groups) do for _, row in ipairs(group.items) do rows[#rows+1] = row end end
+    if #rows == 0 then self:RenderEmpty("No recommendations match this phase and filters."); return end
+    self:RenderGroupedRows(rows, "phase", self:GetViewState().groupBy or "slot", "BiS List")
 end
 
 function UI:RenderPlannerTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
+    local rows = self:GetCachedViewQuery("planner", function() return BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, filters) end)
+    if #rows == 0 then self:RenderEmpty("No upgrade candidates match your gear and filters."); return end
+    self:RenderGroupedRows(rows, "planner", self:GetViewState().groupBy or "priority", "Upgrades")
+end
 
-    local rows = self:GetCachedViewQuery("planner", function()
-        return BigBiSList:GetPlannerRows(selection.class, selection.spec, selection.phase, filters)
-    end)
-    if #rows == 0 then
-        self:RenderEmpty("No upgrade rows match the current filters.")
-        return
+function UI:CreateGearCard(parent, y, data, row, height, column)
+    local widgets = BigBiSList.Widgets
+    if not row then
+        row = widgets:CreateItemRow(parent, height)
+        row.iconButton = widgets:CreateIconButton(row, 32)
+        row.nameText = widgets:CreateWrappedLabel(row, "", "GameFontNormal")
+        row.slotText = widgets:CreateLabel(row, "")
+        row.rankText = widgets:CreateLabel(row, "")
+        row.findButton = widgets:CreateTextButton(row, "Find upgrades", 100, 28, function(button)
+            local data = button.row.boundData
+            local target = UI:IsLevelingMode() and "Gear Guide" or "Upgrades"
+            UI:SetTab(target); UI:ClearFilters()
+            local filters = UI:GetFilters()
+            for _, slot in ipairs(data.dataSlots or {}) do filters.slots[slot] = true end
+            UI:Invalidate("query", "equipment-upgrades"); UI:ScheduleRefresh(nil, "equipment-upgrades")
+        end)
+        row.findButton.row = row
+        row.iconButton:HookScript("OnEnter", function() row:SetHovered(true) end)
+        row.iconButton:HookScript("OnLeave", function() row:SetHovered(false) end)
+        row.findButton:HookScript("OnEnter", function() row:SetHovered(true) end)
+        row.findButton:HookScript("OnLeave", function() row:SetHovered(false) end)
+        row:SetScript("OnMouseUp", function(button, mouse) UI:HandleEntityGesture(button.boundData, "gear", mouse, button) end)
+        row.__bigBisManaged = true
     end
-
-    local rowsByTier = {}
-    for _, section in ipairs(PLANNER_TIER_SECTIONS) do
-        rowsByTier[section.key] = {}
-    end
-    for _, rowData in ipairs(rows) do
-        local tier = rowData.recommendation_tier or "only_if_easy"
-        rowsByTier[tier] = rowsByTier[tier] or {}
-        table.insert(rowsByTier[tier], rowData)
-    end
-
-    local model = self:NewListRenderModel()
-    for _, section in ipairs(PLANNER_TIER_SECTIONS) do
-        local sectionRows = rowsByTier[section.key] or {}
-        if #sectionRows > 0 then
-            sectionRows = self:SortDisplayRows(sectionRows, "planner")
-            self:AddListSection(model, section.title, "planner")
-            for _, rowData in ipairs(sectionRows) do
-                self:AddListRow(model, rowData, "planner")
-            end
-            self:AddListGap(model)
-        end
-    end
-
-    self:RenderListModel(model)
+    local width = math.floor((self:GetTableViewportWidth(parent, 720) - 12)/2)
+    row:SetParent(parent); row:Show(); row:ClearAllPoints()
+    row:SetPoint("TOPLEFT", parent, "TOPLEFT", (column-1)*(width+12), y); row:SetSize(width, height)
+    row.boundData = data; row.boundMode = "gear"; row.detailData = data
+    row:SetSelected(self.selectedRowKey ~= nil and self.selectedRowKey == self:GetRowKey(data, "gear")); row:SetHovered(false)
+    local _, iconSize = self:GetDensityMetrics()
+    local textX = 8 + iconSize + 8
+    local textWidth = math.max(60, width - textX - 112)
+    row.iconButton:SetSize(iconSize, iconSize)
+    row.iconButton:ClearAllPoints(); row.iconButton:SetPoint("LEFT", row, "LEFT", 8, 0)
+    row.slotText:ClearAllPoints(); row.slotText:SetPoint("TOPLEFT", row, "LEFT", textX, 21.5)
+    widgets:SetCellText(row.slotText, data.slot, 1, 12, textWidth)
+    row.slotText:SetTextColor(0.60,0.61,0.66)
+    row.nameText:ClearAllPoints(); row.nameText:SetPoint("TOPLEFT", row.slotText, "BOTTOMLEFT", 0, -2)
+    row.nameText:SetWidth(textWidth); row.nameText.maxLines = 1; row.nameText.lineHeight = 14
+    if data.item_id then self:SetItemButton(row.iconButton, data.item_id, row.nameText, data.name, data.item and data.item.quality, data, "gear")
+    else self:ResetEntityButton(row.iconButton, row.nameText, data.disabledReason or "Empty slot") end
+    widgets:SetCellText(row.nameText, row.nameText.fullText or data.name or "", 1, 14, textWidth)
+    row.rankText:ClearAllPoints(); row.rankText:SetPoint("TOPLEFT", row.nameText, "BOTTOMLEFT", 0, -2)
+    widgets:SetCellText(row.rankText, data.recommendation_summary or "Not ranked", 1, 13, textWidth)
+    row.rankText:SetTextColor(0.68,0.72,0.76)
+    row.findButton:ClearAllPoints(); row.findButton:SetPoint("RIGHT", row, "RIGHT", -4, 0)
+    row.findButton:SetEnabled(not data.disabledReason)
+    return row, height
 end
 
 function UI:RenderGearTab()
     local selection = self:GetSelection()
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
-
     local rows = self:GetCachedViewQuery("gear", function()
         return BigBiSList:GetEquippedGearRows(selection.class, selection.spec, self:GetEffectivePhaseKey(), self.currentOwned, filters.level)
     end)
-    rows = self:SortDisplayRows(rows, "gear")
-    local model = self:NewListRenderModel()
-    self:AddListSection(model, "Current Gear", "gear")
-    for _, rowData in ipairs(rows) do
-        self:AddListRow(model, rowData, "gear")
+    local columns = { {}, {} }
+    for _, row in ipairs(rows) do
+        local column = row.column == "right" and 2 or 1
+        columns[column][#columns[column]+1] = row
     end
-    local bankText = self.currentOwned.bankScanned
-        and ("Bank cache: " .. (self.currentOwned.bankUpdatedAt ~= "" and self.currentOwned.bankUpdatedAt or "scanned"))
-        or "Bank cache: open your bank once to include banked items."
-    self:AddListRenderEntry(model, {
-        kind = "note",
-        text = bankText,
-        height = 28,
-    })
+    local model = self:NewListRenderModel()
+    local height = self:GetDensityMetrics() == 40 and 64 or 76
+    for index = 1, math.max(#columns[1], #columns[2]) do
+        local top = model.cursor
+        for column = 1, 2 do
+            local data = columns[column][index]
+            if data then
+                model.cursor = top
+                self:AddListRenderEntry(model, {kind="row", data=data, mode="gear", height=height, rowHeight=height, columnIndex=column})
+                model.rowCount = model.rowCount + 1
+            end
+        end
+        model.cursor = top + height
+    end
     self:RenderListModel(model)
 end
 
@@ -5139,29 +5279,12 @@ function UI:RenderWishlistTab()
     local wishlist = BigBiSList:GetCharacterDB().wishlist or {}
     local filters = self.currentFilterPayload or self:BuildFilterPayload()
     self.currentOwned = filters.ownedItems
-
-    if tableCount(wishlist) == 0 then
-        self:RenderEmpty("No wishlist items yet. Use the visible star on any recommendation to save it here.")
-        return
-    end
-
+    if tableCount(wishlist) == 0 then self:RenderEmpty("No saved items yet. Select a star beside an item to save it here."); return end
     local rows = self:GetCachedViewQuery("wishlist", function()
         return BigBiSList:GetWishlistRows(wishlist, selection.class, selection.spec, selection.phase, filters)
     end)
-    if #rows == 0 then
-        self:RenderEmpty("No saved items match the current filters.")
-        return
-    end
-
-    local model = self:NewListRenderModel()
-    self:AddListSection(model, "Wishlist", "wishlist")
-    rows = self:SortDisplayRows(rows, "wishlist")
-
-    for _, data in ipairs(rows) do
-        self:AddListRow(model, data, "wishlist")
-    end
-
-    self:RenderListModel(model)
+    if #rows == 0 then self:RenderEmpty("No saved items match the current filters."); return end
+    self:RenderGroupedRows(rows, "wishlist", self:GetViewState().groupBy or "none", "Wishlist")
 end
 
 function UI:BeginSettingsRender()
@@ -5243,35 +5366,27 @@ function UI:CreateSettingToggle(parent, yOffset, labelText, getValue, setValue, 
     local widgets = BigBiSList.Widgets
     local row = self:AcquireSettingsWidget("toggle", parent, function(widgetParent)
         local created = widgets:CreateItemRow(widgetParent, 34)
-        local label = created:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-        label:SetPoint("LEFT", created, "LEFT", 10, 0)
-        label:SetPoint("RIGHT", created, "RIGHT", -120, 0)
-        label:SetJustifyH("LEFT")
-        label:SetWordWrap(false)
-        local button = widgets:CreateTextButton(created, "", 72, 22, function(selfButton)
-            local settingRow = selfButton.settingRow
-            if settingRow and settingRow.getValue and settingRow.setValue then
-                settingRow.setValue(not settingRow.getValue())
-                local enabled = settingRow.getValue() and true or false
-                selfButton.label:SetText(enabled and "On" or "Off")
-                selfButton:SetSelected(enabled)
-            end
+        local check = CreateFrame("CheckButton", nil, created, "UICheckButtonTemplate")
+        check:SetSize(28, 28); check:SetPoint("LEFT", created, "LEFT", 8, 0)
+        check:SetScript("OnClick", function(button)
+            local owner = button.settingRow
+            owner.setValue(button:GetChecked() == true or button:GetChecked() == 1)
+            button:SetChecked(owner.getValue())
         end)
-        button:SetPoint("RIGHT", created, "RIGHT", -10, 0)
-        button.settingRow = created
-        created.label = label
-        created.button = button
+        check.settingRow = created
+        created.label = widgets:CreateLabel(created, "", "GameFontNormal")
+        created.label:SetPoint("LEFT", check, "RIGHT", 6, 0)
+        created.label:SetPoint("RIGHT", created, "RIGHT", -12, 0)
+        created:SetScript("OnMouseUp", function(owner, button)
+            if button == "LeftButton" then owner.setValue(not owner.getValue()); owner.button:SetChecked(owner.getValue()) end
+        end)
+        created.button = check
         return created
     end)
     row:SetPoint("TOPLEFT", parent, "TOPLEFT", leftInset or 0, yOffset)
     row:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
-    row.label:SetText(labelText)
-    row.getValue = getValue
-    row.setValue = setValue
-    local enabled = getValue() and true or false
-    row.button.label:SetText(enabled and "On" or "Off")
-    row.button:SetSelected(enabled)
-
+    row.label:SetText(labelText); row.getValue = getValue; row.setValue = setValue
+    row.button:SetChecked(getValue())
     return row, 34
 end
 
@@ -5437,7 +5552,7 @@ function UI:CreateSettingsClassHeader(parent, yOffset, className)
     local profile = BigBiSListDB.profile.tooltips
     profile.collapsedClasses = profile.collapsedClasses or {}
     local collapsed = profile.collapsedClasses[className] ~= false
-    local header, height = self:CreateSettingsActionHeader(parent, yOffset, (collapsed and "+ " or "- ") .. className, tostring(selected) .. "/" .. tostring(total), function()
+    local header, height = self:CreateSettingsActionHeader(parent, yOffset, className, tostring(selected) .. "/" .. tostring(total), function()
         self:SetTooltipClassSpecFilters(className, true)
         self:Invalidate("presentation", "tooltip-specs")
         self:ScheduleRefresh(nil, "tooltip-specs")
@@ -5463,6 +5578,11 @@ function UI:CreateSettingsClassHeader(parent, yOffset, className)
     end
     header.className = className
     header.classCollapsed = collapsed
+    header.disclosure = header.disclosure or header:CreateTexture(nil, "OVERLAY")
+    header.disclosure:SetSize(12,12)
+    header.disclosure:SetPoint("LEFT", header, "LEFT", 0, 0)
+    BigBiSList.Widgets:SetIcon(header.disclosure, collapsed and "chevronRight" or "chevronDown")
+    header.label:SetPoint("LEFT", header, "LEFT", 20, 0)
     return header, height, collapsed
 end
 
@@ -5480,164 +5600,101 @@ function UI:CreateTooltipSpecsHeader(parent, yOffset)
 end
 
 function UI:RenderSettingsTab()
-    self:ReleaseRenderFrames()
-    self.renderModel = nil
-    self.hasRenderedContent = true
+    self:ReleaseRenderFrames(); self.renderModel = nil; self.hasRenderedContent = true
     self:SetStickyHeaderMode(nil)
     if self.contentListLayer then self.contentListLayer:Hide() end
     if self.emptyLabel then self.emptyLabel:Hide() end
+    for _, button in ipairs(self.emptyActions or {}) do button:Hide() end
     local parent = self.contentStaticLayer or self.contentChild
-    parent:Show()
-    self:BeginSettingsRender()
-    local yOffset = -2
-    local _, headerHeight = self:CreateSettingsSectionHeader(parent, "Settings", yOffset)
-    yOffset = yOffset - headerHeight
-
-    local profile = BigBiSListDB.profile
-    BigBiSList:EnsureTooltipSpecFilters()
-    local generalSettings = {
-        {
-            label = "Show minimap button",
-            get = function() return not profile.minimap.hide end,
-            set = function(value)
-                profile.minimap.hide = not value
-                if BigBiSList.RefreshMinimapButton then
-                    BigBiSList:RefreshMinimapButton()
-                end
-            end,
-        },
-    }
-    local windowSettings = {
-        {
-            label = "Lock window position",
-            get = function() return profile.window.locked end,
-            set = function(value) profile.window.locked = value end,
-        },
-    }
-    local tooltipSettings = {
-        {
-            label = "Show Big BiS List info in item tooltips",
-            get = function() return profile.tooltips.enabled end,
-            set = function(value) profile.tooltips.enabled = value end,
-        },
-        {
-            label = "Compact tooltip rows by default",
-            get = function() return profile.tooltips.compact end,
-            set = function(value) profile.tooltips.compact = value end,
-        },
-        {
-            label = "Show selected spec first in tooltips",
-            get = function() return profile.tooltips.selectedSpecFirst end,
-            set = function(value) profile.tooltips.selectedSpecFirst = value end,
-        },
-        {
-            label = "ALT expands tooltip matches",
-            get = function() return profile.tooltips.showAllOnAlt end,
-            set = function(value) profile.tooltips.showAllOnAlt = value end,
-        },
-    }
-
-    local _, generalHeaderHeight = self:CreateSettingsSectionHeader(parent, "General", yOffset)
-    yOffset = yOffset - generalHeaderHeight
-    for _, setting in ipairs(generalSettings) do
-        local row, rowHeight = self:CreateSettingToggle(parent, yOffset, setting.label, setting.get, setting.set)
-        yOffset = yOffset - rowHeight - 4
-    end
-
-    yOffset = yOffset - 8
-    local _, windowHeaderHeight = self:CreateSettingsSectionHeader(parent, "Window", yOffset)
-    yOffset = yOffset - windowHeaderHeight
-    for _, setting in ipairs(windowSettings) do
-        local row, rowHeight = self:CreateSettingToggle(parent, yOffset, setting.label, setting.get, setting.set)
-        yOffset = yOffset - rowHeight - 4
-    end
-    local _, resetHeight = self:CreateSettingAction(parent, yOffset, "Restore the default size, position, scale, and details drawer", "Reset layout", function()
-        self:ResetWindowLayout()
+    parent:Show(); self:BeginSettingsRender()
+    self.settingsSection = self.settingsSection or "appearance"
+    local nav = self:AcquireSettingsWidget("navigation", parent, function(host)
+        local frame = CreateFrame("Frame", nil, host); frame.buttons = {}
+        for index, option in ipairs({{"appearance","Appearance"},{"tooltips","Tooltips"},{"hidden","Hidden Items"}}) do
+            local key = option[1]
+            local button = BigBiSList.Widgets:CreateTextButton(frame, option[2], 128, 28, function()
+                self.settingsSection = key
+                self.contentScroll:SetVerticalScroll(0)
+                self:Invalidate("presentation", "settings-section"); self:ScheduleRefresh(nil, "settings-section")
+            end)
+            button:SetPoint("LEFT", frame, "LEFT", (index-1)*134, 0)
+            frame.buttons[key] = button
+        end
+        return frame
     end)
-    yOffset = yOffset - resetHeight - 4
-
-    yOffset = yOffset - 8
-    local _, tooltipHeaderHeight = self:CreateSettingsSectionHeader(parent, "Item Tooltips", yOffset)
-    yOffset = yOffset - tooltipHeaderHeight
-    for _, setting in ipairs(tooltipSettings) do
-        local row, rowHeight = self:CreateSettingToggle(parent, yOffset, setting.label, setting.get, setting.set)
-        yOffset = yOffset - rowHeight - 4
+    nav:SetPoint("TOPLEFT", parent, "TOPLEFT", 8, -4); nav:SetPoint("RIGHT", parent, "RIGHT", -8, 0); nav:SetHeight(32)
+    for key, button in pairs(nav.buttons) do button:SetSelected(key == self.settingsSection) end
+    local y = -48
+    local profile = BigBiSListDB.profile
+    local function toggle(label, getter, setter, inset)
+        local _, height = self:CreateSettingToggle(parent, y, label, getter, setter, inset)
+        y = y - height - 4
     end
-
-    local _, tooltipSpecsHeaderHeight = self:CreateTooltipSpecsHeader(parent, yOffset)
-    yOffset = yOffset - tooltipSpecsHeaderHeight
-
-    local specFilters = profile.tooltips.specFilters or {}
-    for _, classData in ipairs(BigBiSList:GetClassSpecIndex().classes or {}) do
-        local className = classData.name
-        if className then
-            local currentClassName = className
-            local _, classHeaderHeight, collapsed = self:CreateSettingsClassHeader(parent, yOffset, currentClassName)
-            yOffset = yOffset - classHeaderHeight
-
+    local function action(label, text, callback)
+        local _, height = self:CreateSettingAction(parent, y, label, text, callback)
+        y = y - height - 4
+    end
+    if self.settingsSection == "appearance" then
+        toggle("Show minimap button", function() return not profile.minimap.hide end, function(value)
+            profile.minimap.hide = not value; if BigBiSList.RefreshMinimapButton then BigBiSList:RefreshMinimapButton() end
+        end)
+        toggle("Lock window position", function() return profile.window.locked end, function(value) profile.window.locked = value end)
+        action("List density", profile.window.density == "compact" and "Compact" or "Comfortable", function()
+            profile.window.density = profile.window.density == "compact" and "comfortable" or "compact"
+            self:Invalidate("presentation", "density"); self:ScheduleRefresh(nil, "density")
+        end)
+        action("Restore default window size, position, scale, and details", "Reset layout", function() self:ResetWindowLayout() end)
+    elseif self.settingsSection == "tooltips" then
+        BigBiSList:EnsureTooltipSpecFilters()
+        local tooltipSettings = {
+            {"Show Big BiS List info in item tooltips", "enabled"},
+            {"Compact tooltip rows by default", "compact"},
+            {"Show selected spec first in tooltips", "selectedSpecFirst"},
+            {"ALT expands tooltip matches", "showAllOnAlt"},
+        }
+        for _, option in ipairs(tooltipSettings) do
+            local key = option[2]
+            toggle(option[1], function() return profile.tooltips[key] end, function(value) profile.tooltips[key] = value end)
+        end
+        local _, height = self:CreateTooltipSpecsHeader(parent, y); y = y - height - 8
+        for _, classData in ipairs(BigBiSList:GetClassSpecIndex().classes or {}) do
+            local className = classData.name
+            local _, h, collapsed = self:CreateSettingsClassHeader(parent, y, className); y = y - h
             if not collapsed then
-                for _, specData in ipairs(classData.specs or {}) do
-                    local specName = specData.name
-                    if specName then
-                        local currentSpecName = specName
-                        local row, rowHeight = self:CreateSettingToggle(parent, yOffset, currentSpecName, function()
-                            return type(specFilters[currentClassName]) == "table" and specFilters[currentClassName][currentSpecName] == true
-                        end, function(value)
-                            self:SetTooltipSpecFilter(currentClassName, currentSpecName, value)
-                        end, 14)
-                        yOffset = yOffset - rowHeight - 4
-                    end
+                for _, spec in ipairs(classData.specs or {}) do
+                    local specName = spec.name
+                    toggle(specName, function() return profile.tooltips.specFilters[className][specName] end,
+                        function(value) self:SetTooltipSpecFilter(className, specName, value) end, 16)
                 end
             end
-            yOffset = yOffset - 4
         end
-    end
-
-    yOffset = yOffset - 8
-    local hiddenItems = {}
-    for key, hidden in pairs(BigBiSList:GetCharacterDB().ignoredItems or {}) do
-        if hidden then
-            local itemId = tonumber(key)
-            local item = itemId and BigBiSList:GetItemData(itemId) or nil
-            table.insert(hiddenItems, {
-                item_id = itemId,
-                name = item and item.name or ("Item " .. tostring(key)),
-            })
-        end
-    end
-    table.sort(hiddenItems, function(a, b) return lower(a.name) < lower(b.name) end)
-
-    local _, hiddenHeaderHeight = self:CreateSettingsSectionHeader(parent, "Hidden Items", yOffset)
-    yOffset = yOffset - hiddenHeaderHeight
-    if #hiddenItems == 0 then
-        local empty = self:AcquireSettingsWidget("empty", parent, function(widgetParent)
-            local created = CreateFrame("Frame", nil, widgetParent)
-            local label = created:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-            label:SetPoint("TOPLEFT", created, "TOPLEFT", 0, 0)
-            label:SetTextColor(0.68, 0.68, 0.72, 1)
-            created.label = label
-            return created
-        end)
-        empty:SetPoint("TOPLEFT", parent, "TOPLEFT", 10, yOffset - 6)
-        empty:SetPoint("RIGHT", parent, "RIGHT", -10, 0)
-        empty:SetHeight(20)
-        empty.label:SetText("No hidden items.")
-        yOffset = yOffset - 30
     else
-        local _, restoreAllHeight = self:CreateSettingAction(parent, yOffset, tostring(#hiddenItems) .. " hidden items", "Restore All", function()
-            self:RestoreAllHiddenItems()
-        end)
-        yOffset = yOffset - restoreAllHeight - 4
-        for _, hiddenItem in ipairs(hiddenItems) do
-            local itemId = hiddenItem.item_id
-            local _, rowHeight = self:CreateSettingAction(parent, yOffset, hiddenItem.name, "Restore", function()
-                self:UnignoreItem(itemId)
-            end, 14)
-            yOffset = yOffset - rowHeight - 4
+        local hidden = {}
+        for key, value in pairs(BigBiSList:GetCharacterDB().ignoredItems or {}) do
+            if value then
+                local id = tonumber(key)
+                local item = id and BigBiSList:GetItemData(id)
+                hidden[#hidden+1] = {id=id, name=item and item.name or ("Item " .. key)}
+            end
+        end
+        table.sort(hidden, function(a,b) return lower(a.name) < lower(b.name) end)
+        if #hidden == 0 then
+            local note = self:AcquireSettingsWidget("hidden-empty", parent, function(host)
+                local frame = CreateFrame("Frame", nil, host)
+                frame.label = BigBiSList.Widgets:CreateLabel(frame, "No hidden items.")
+                frame.label:SetAllPoints(); return frame
+            end)
+            note:SetPoint("TOPLEFT", parent, "TOPLEFT", 12, y); note:SetSize(300, 28); y = y - 36
+        else
+            action(tostring(#hidden) .. " hidden items", "Restore All", function() self:RestoreAllHiddenItems() end)
+            for _, item in ipairs(hidden) do
+                local id = item.id
+                action(item.name, "Restore", function() self:UnignoreItem(id) end)
+            end
         end
     end
-
-    self:SetContentHeight(yOffset)
+    self:SetContentHeight(y)
+    self:ApplySettingsNavigation()
 end
 
 function UI:FindPlannerContext(itemId, detailData)
@@ -5759,12 +5816,19 @@ function UI:CreateDetailsText(parent, anchor, titleText, bodyText, bodyR, bodyG,
     return block
 end
 
+function UI:IsDetailsSectionExpanded(sectionKey)
+    return not self.expandedSellerSections or self.expandedSellerSections[sectionKey] ~= false
+end
+
 function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, bodyText, entryCount)
     local block = self:AcquireDetailsWidget("collapsible", parent, function(widgetParent)
         local created = CreateFrame("Button", nil, widgetParent)
         created:EnableMouse(true)
+        local disclosure = created:CreateTexture(nil, "ARTWORK")
+        disclosure:SetSize(12, 12)
+        disclosure:SetPoint("TOPLEFT", created, "TOPLEFT", 0, 0)
         local title = created:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        title:SetPoint("TOPLEFT", created, "TOPLEFT", 0, 0)
+        title:SetPoint("TOPLEFT", created, "TOPLEFT", 18, 0)
         title:SetJustifyH("LEFT")
         title:SetWordWrap(false)
         title:SetTextColor(1, 0.82, 0.28, 1)
@@ -5775,6 +5839,7 @@ function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, 
         body:SetTextColor(0.76, 0.76, 0.80, 1)
         created.title = title
         created.body = body
+        created.disclosure = disclosure
         created:SetScript("OnEnter", function(selfBlock)
             selfBlock.title:SetTextColor(1, 0.9, 0.48, 1)
         end)
@@ -5786,7 +5851,7 @@ function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, 
                 return
             end
             UI.expandedSellerSections = UI.expandedSellerSections or {}
-            UI.expandedSellerSections[selfBlock.sectionKey] = not UI.expandedSellerSections[selfBlock.sectionKey]
+            UI.expandedSellerSections[selfBlock.sectionKey] = not UI:IsDetailsSectionExpanded(selfBlock.sectionKey)
             UI.detailsRenderSignature = nil
             UI:RefreshDetails(UI.selectedItemId, UI.selectedItemData, UI.selectedItemMode)
         end)
@@ -5797,11 +5862,15 @@ function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, 
 
     local width = math.max(120, (parent:GetWidth() or DETAILS_WIDTH) - 16)
     local count = tonumber(entryCount) or 0
-    local expanded = self.expandedSellerSections and self.expandedSellerSections[sectionKey] == true
+    for _, label in ipairs(block.matrixLabels or {}) do label:Hide() end
+    for _, mark in pairs(block.matrixMarks or {}) do mark:Hide() end
+    for _, target in pairs(block.matrixTargets or {}) do target:Hide() end
+    local expanded = self:IsDetailsSectionExpanded(sectionKey)
     block.sectionKey = sectionKey
-    block.title:SetWidth(width)
-    block.title:SetText((expanded and "- " or "+ ") .. titleText .. " (" .. tostring(count) .. ")")
-    block.body:SetWidth(width)
+    block.title:SetWidth(width - 18)
+    block.title:SetText(titleText .. (count > 0 and (" (" .. tostring(count) .. ")") or ""))
+    BigBiSList.Widgets:SetIcon(block.disclosure, expanded and "chevronDown" or "chevronRight")
+    block.body:SetWidth(width - 18)
     block.body:SetText(bodyText or "")
 
     local titleHeight = math.max(13, block.title:GetStringHeight() or 13)
@@ -5815,6 +5884,234 @@ function UI:CreateDetailsCollapsibleText(parent, anchor, sectionKey, titleText, 
     end
     block.contentHeight = block:GetHeight() + 12
     return block
+end
+
+function UI:RefreshDetailsHeader(entityId, entityType, itemId, data, mode, titleText, r, g, b)
+    if not self.detailsHeader then return end
+    local widgets = BigBiSList.Widgets
+    local header = self:AcquireDetailsWidget("identity", self.detailsHeader, function(parent)
+        local created = CreateFrame("Frame", nil, parent)
+        local iconButton = CreateFrame("Button", nil, created)
+        iconButton:SetSize(40, 40)
+        iconButton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+        iconButton:SetPoint("LEFT", created, "LEFT", 0, 0)
+        iconButton.icon = iconButton:CreateTexture(nil, "ARTWORK")
+        iconButton.icon:SetAllPoints()
+        iconButton.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+        local name = created:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+        name:SetJustifyH("LEFT")
+        name:SetJustifyV("TOP")
+        name:SetWordWrap(true)
+        name.maxLines = 2
+        name.lineHeight = 14
+        local meta = created:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        meta:SetPoint("TOPLEFT", name, "BOTTOMLEFT", 0, -2)
+        meta:SetJustifyH("LEFT")
+        meta:SetWordWrap(false)
+        meta:SetTextColor(0.68, 0.72, 0.78, 1)
+        local menu = widgets:CreateUtilityButton(created, "menu", 28, function(button)
+            if button.itemId then UI:ShowItemActionMenu(button.data, button.mode, button) end
+        end, "Item actions")
+        menu:SetPoint("RIGHT", created, "RIGHT", -30, 0)
+        local star = widgets:CreateUtilityButton(created, "starOutline", 28, function(button)
+            if not button.itemId then return end
+            local character = BigBiSList:GetCharacterDB()
+            if character.wishlist[tostring(button.itemId)] then
+                UI:RemoveWishlist(button.itemId)
+            else
+                UI:AddWishlist(button.itemId)
+            end
+        end, "Add to wishlist")
+        star:SetPoint("RIGHT", menu, "LEFT", -2, 0)
+        created.iconButton, created.name, created.meta = iconButton, name, meta
+        created.star, created.menu = star, menu
+        return created
+    end)
+    header:SetPoint("TOPLEFT", self.detailsHeader, "TOPLEFT", 8, -8)
+    header:SetPoint("BOTTOMRIGHT", self.detailsHeader, "BOTTOMRIGHT", -8, 8)
+    local width = math.max(160, (self.detailsHeader:GetWidth() or DETAILS_WIDTH) - 16)
+    local metadata = trim(data and self:GetRowSlotDisplay(data))
+    if metadata == "—" then metadata = "" end
+    local hasMetadata = metadata ~= ""
+    local textWidth = math.max(1, width - 48 - (itemId and 88 or 30) - 8)
+    header.name:ClearAllPoints()
+    header.name:SetPoint("TOPLEFT", header, "LEFT", 48, hasMetadata and 21 or 14)
+    header.name:SetWidth(textWidth)
+    header.name:SetHeight(28)
+    header.name:SetTextColor(r or 0.9, g or 0.9, b or 0.9, 1)
+    header.name:SetText(titleText or "Details")
+    widgets:SetCellText(header.meta, metadata, 1, 12, textWidth)
+    header.meta:SetShown(hasMetadata)
+    if entityType == "spell" then
+        self:SetSpellButton(header.iconButton, entityId, header.name, titleText, data, mode)
+    elseif itemId then
+        self:SetItemButton(header.iconButton, itemId, header.name, titleText, data and data.quality, data, mode)
+    end
+    widgets:SetCellText(header.name, header.name.fullText or titleText or "Details", 2, 14, textWidth)
+    for _, button in ipairs({ header.star, header.menu }) do
+        button.itemId, button.data, button.mode = itemId, data or { item_id = itemId }, mode
+        if itemId then button:Show() else button:Hide() end
+    end
+    if itemId then
+        local wishlisted = not not BigBiSList:GetCharacterDB().wishlist[tostring(itemId)]
+        widgets:SetIcon(header.star.icon, wishlisted and "starFilled" or "starOutline")
+        if header.star.SetSelected then header.star:SetSelected(wishlisted) end
+        widgets:BindTooltip(header.star, wishlisted and "Remove from wishlist" or "Add to wishlist")
+    end
+    self.detailsIdentity = header
+end
+
+function UI:CreateDetailsFields(parent, anchor, titleText, fields)
+    local block = self:AcquireDetailsWidget("fields", parent, function(widgetParent)
+        local created = CreateFrame("Frame", nil, widgetParent)
+        created.title = created:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        created.title:SetPoint("TOPLEFT", created, "TOPLEFT", 0, 0)
+        created.title:SetTextColor(1, 0.82, 0.28, 1)
+        created.fields = {}
+        return created
+    end)
+    block:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -12)
+    block:SetPoint("RIGHT", parent, "RIGHT", -8, 0)
+    block.title:SetText(titleText)
+    local width = math.max(120, (parent:GetWidth() or DETAILS_WIDTH) - 16)
+    local labelWidth = math.min(82, width * 0.3)
+    local y = 23
+    for _, pair in ipairs(block.fields) do pair.label:Hide(); pair.value:Hide() end
+    for index, field in ipairs(fields or {}) do
+        local pair = block.fields[index]
+        if not pair then
+            pair = { label = block:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"), value = block:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall") }
+            block.fields[index] = pair
+        end
+        for _, label in ipairs({ pair.label, pair.value }) do
+            label:ClearAllPoints()
+            label:SetJustifyH("LEFT")
+            label:SetWordWrap(true)
+            label:Show()
+        end
+        pair.label:SetPoint("TOPLEFT", block, "TOPLEFT", 0, -y)
+        pair.label:SetWidth(labelWidth)
+        pair.label:SetTextColor(0.62, 0.66, 0.72, 1)
+        pair.label:SetText(field.label)
+        pair.value:SetPoint("TOPLEFT", block, "TOPLEFT", labelWidth + 8, -y)
+        pair.value:SetWidth(width - labelWidth - 8)
+        pair.value:SetTextColor(0.82, 0.85, 0.9, 1)
+        pair.value:SetText(field.value)
+        y = y + math.max(14, pair.label:GetStringHeight() or 14, pair.value:GetStringHeight() or 14) + 7
+    end
+    block:SetHeight(y)
+    block.contentHeight = y + 12
+    return block
+end
+
+function UI:GetDetailsPhaseRankings(itemId, data)
+    local selection = self:GetSelection()
+    local summary = BigBiSList.GetWishlistExpansionSummary
+        and BigBiSList:GetWishlistExpansionSummary(itemId, selection.class, selection.spec, selection.phase)
+    return (summary and summary.relevant_spec_rankings) or (data and (data.relevant_spec_rankings or data.spec_rankings)) or {}
+end
+
+function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
+    local rankings = self:GetDetailsPhaseRankings(itemId, data)
+    if #rankings == 0 then return nil end
+    local sectionKey = "item:" .. tostring(itemId) .. ":phase-matrix"
+    local block = self:CreateDetailsCollapsibleText(parent, anchor, sectionKey, "Phase rankings", "", #rankings)
+    block.matrixLabels = block.matrixLabels or {}
+    block.matrixMarks = block.matrixMarks or {}
+    block.matrixTargets = block.matrixTargets or {}
+    for _, label in ipairs(block.matrixLabels) do label:Hide() end
+    for _, mark in pairs(block.matrixMarks) do mark:Hide() end
+    if not self:IsDetailsSectionExpanded(sectionKey) then return block end
+    block.body:Hide()
+    local selection = self:GetSelection()
+    local livePhase = BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey()
+    local phases = BigBiSList:GetPhaseOrder()
+    local allUses = BigBiSList.GetItemUses and BigBiSList:GetItemUses(itemId, selection.phase) or {}
+    local width = math.max(180, (parent:GetWidth() or DETAILS_WIDTH) - 16)
+    local specWidth = math.min(92, width * 0.3)
+    local cellWidth = (width - specWidth) / math.max(1, #phases)
+    local labelIndex = 0
+    local function cell(text, x, y, cellSize, selected, tooltipText)
+        labelIndex = labelIndex + 1
+        local label = block.matrixLabels[labelIndex]
+        if not label then label = block:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall"); block.matrixLabels[labelIndex] = label end
+        label:ClearAllPoints()
+        label:SetPoint("TOPLEFT", block, "TOPLEFT", x, -y)
+        label:SetWidth(cellSize)
+        label:SetJustifyH(x == 0 and "LEFT" or "CENTER")
+        label:SetWordWrap(false)
+        label:SetTextColor(selected and 1 or 0.76, selected and 0.84 or 0.8, selected and 0.4 or 0.88, 1)
+        label:SetText(text)
+        label:Show()
+        if tooltipText and tooltipText ~= "" then
+            local target = block.matrixTargets[labelIndex]
+            if not target then target = CreateFrame("Button", nil, block); block.matrixTargets[labelIndex] = target end
+            target:ClearAllPoints()
+            target:SetPoint("TOPLEFT", block, "TOPLEFT", x, -y + 2)
+            target:SetSize(cellSize, 20)
+            BigBiSList.Widgets:BindTooltip(target, tooltipText)
+            target:Show()
+        end
+    end
+    local phaseLabels = { PR = "Pre", T4 = "P1", T5 = "P2", T6 = "P3", ZA = "P4", SWP = "P5" }
+    local matrixHeight = 25 + (#rankings + 1) * 22
+    cell("Spec", 0, 25, specWidth, false)
+    for index, phase in ipairs(phases) do
+        local x = specWidth + (index - 1) * cellWidth
+        cell(phaseLabels[phase] or phase, x, 25, cellWidth, phase == selection.phase)
+        if phase == selection.phase or phase == livePhase then
+            local mark = block.matrixMarks[index]
+            if not mark then mark = block:CreateTexture(nil, "BACKGROUND"); block.matrixMarks[index] = mark end
+            mark:ClearAllPoints()
+            mark:SetPoint("TOPLEFT", block, "TOPLEFT", x + 1, -22)
+            mark:SetSize(cellWidth - 2, phase == selection.phase and (matrixHeight - 22) or 2)
+            mark:SetColorTexture(phase == selection.phase and 1 or 0.3, phase == selection.phase and 0.72 or 0.75, phase == selection.phase and 0.22 or 1, phase == selection.phase and 0.12 or 0.9)
+            mark:Show()
+        end
+        if phase == livePhase and phase == selection.phase then
+            local mark = block.matrixMarks[#phases + 1]
+            if not mark then mark = block:CreateTexture(nil, "BACKGROUND"); block.matrixMarks[#phases + 1] = mark end
+            mark:ClearAllPoints(); mark:SetPoint("TOPLEFT", block, "TOPLEFT", x + 1, -22)
+            mark:SetSize(cellWidth - 2, 2); mark:SetColorTexture(0.3, 0.75, 1, 0.9); mark:Show()
+        end
+    end
+    for rowIndex, ranking in ipairs(rankings) do
+        cell(ranking.spec or ranking.spec_name or "Spec", 0, 25 + rowIndex * 22, specWidth, ranking.spec == selection.spec, ranking.spec or ranking.spec_name)
+        for phaseIndex, phase in ipairs(phases) do
+            local phaseCell = (ranking.phases or ranking.phase_rankings or {})[phase]
+            local label = type(phaseCell) == "table" and (phaseCell.short_label or phaseCell.label) or phaseCell
+            local shortLabels = { ["Best in slot"] = "BiS", Alternative = "Alt", Optional = "Opt", ["Best (Alt)"] = "Alt" }
+            local useLines, seen = {}, {}
+            for _, use in ipairs(allUses) do
+                if use.class == selection.class and use.spec == ranking.spec and use.phase == phase then
+                    local useLabel = displayRankInfo(use)
+                    local line = useLabel .. (use.slot and (" · " .. use.slot) or "")
+                    if trim(use.context) ~= "" then line = line .. "\n" .. use.context end
+                    if trim(use.source_note) ~= "" then line = line .. "\n" .. use.source_note end
+                    if not seen[line] then table.insert(useLines, line); seen[line] = true end
+                end
+            end
+            local tooltipText = (ranking.spec or "Spec") .. " · " .. BigBiSList:GetPhaseDisplayName(phase)
+                .. "\n" .. (#useLines > 0 and table.concat(useLines, "\n\n") or (label or "Not ranked"))
+            cell(shortLabels[label] or label or "—", specWidth + (phaseIndex - 1) * cellWidth, 25 + rowIndex * 22, cellWidth, false, tooltipText)
+        end
+    end
+    cell("Gold: selected phase  ·  Blue line: live phase", 0, matrixHeight + 5, width, false)
+    cell("BiS: best in slot  ·  Alt: alternative  ·  Opt: optional", 0, matrixHeight + 21, width, false)
+    block:SetHeight(matrixHeight + 38)
+    block.contentHeight = block:GetHeight() + 12
+    return block
+end
+
+function UI:FormatDetailsRoutes(options)
+    local blocks = {}
+    for _, option in ipairs(options or {}) do
+        local lines = self:GetSellerDetailLines(option) or {}
+        if #lines == 0 then appendText(lines, self:GetAccessOptionDisplayText(option)) end
+        if #(option.requirements or {}) > 0 then appendText(lines, self:FormatRequirements(option)) end
+        if #lines > 0 then table.insert(blocks, table.concat(lines, "\n")) end
+    end
+    return table.concat(blocks, "\n\n")
 end
 
 function UI:BuildPhaseUseText(itemId)
@@ -5845,15 +6142,42 @@ function UI:BuildPhaseUseText(itemId)
     return table.concat(parts, "\n")
 end
 
+function UI:ApplyDetailsScrollGeometry(contentHeight, viewportHeight)
+    local scroll = self.detailsScroll
+    local height = math.max(contentHeight or 0, viewportHeight)
+    self.detailsContent:SetHeight(height)
+    if scroll.UpdateScrollChildRect then scroll:UpdateScrollChildRect() end
+    if scroll.GetVerticalScroll and scroll.SetVerticalScroll then
+        local offset = tonumber((scroll:GetVerticalScroll())) or 0
+        local clamped = math.max(0, math.min(offset, height - viewportHeight))
+        if offset ~= clamped then scroll:SetVerticalScroll(clamped) end
+    end
+end
+
+function UI:RefreshDetailsLayout()
+    local request = self.pendingDetailsRequest
+    if request then
+        return self:RefreshDetails(request.itemId, request.data, request.mode)
+    end
+    return self:RefreshDetails(self.selectedItemId, self.selectedItemData, self.selectedItemMode)
+end
+
 function UI:RefreshDetails(itemId, detailData, detailMode)
     if not self:IsInspectorVisible() or not self.detailsContent then
         return
     end
 
-    local widgets = BigBiSList.Widgets
     local content = self.detailsContent
+    self.pendingDetailsRequest = { itemId = itemId, data = detailData, mode = detailMode }
+    local detailsWidth = self.detailsScroll and self.detailsScroll:GetWidth() or 0
+    local detailsHeight = self.detailsScroll and self.detailsScroll:GetHeight() or 0
+    -- Native frame geometry can settle after Show(), before its size event arrives.
+    -- Keep the request pending rather than measuring and caching a zero-size body.
+    if not detailsWidth or detailsWidth <= 0 or not detailsHeight or detailsHeight <= 0 then
+        return
+    end
+    content:SetWidth(detailsWidth)
     local versions = self.domainVersions or {}
-    local detailsWidth = self.detailsScroll and self.detailsScroll.GetWidth and self.detailsScroll:GetWidth() or 0
     local signature = table.concat({
         tostring(itemId or "none"),
         tostring(detailMode or ""),
@@ -5862,14 +6186,25 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         tostring(math.floor((detailsWidth or 0) + 0.5)),
     }, ":")
     if self.detailsRenderSignature == signature then
+        self:ApplyDetailsScrollGeometry(self.detailsContentHeight, detailsHeight)
+        self.pendingDetailsRequest = nil
         return
     end
-    self.detailsRenderSignature = signature
+    -- Only completed renders may be reused. A failure after the fixed header has
+    -- been bound must leave the next layout pass free to rebuild the body.
+    self.detailsRenderSignature = nil
     self:CountPerformance("detailsBuilds")
     if self.dirtyDomains then
-        self.dirtyDomains.details = nil
+        self.dirtyDomains.details = true
     end
     self:BeginDetailsRender()
+    local function finish(contentHeight)
+        self:ApplyDetailsScrollGeometry(contentHeight, detailsHeight)
+        self.detailsContentHeight = contentHeight
+        self.detailsRenderSignature = signature
+        self.pendingDetailsRequest = nil
+        if self.dirtyDomains then self.dirtyDomains.details = nil end
+    end
 
     if not itemId then
         local emptyFrame = self:AcquireDetailsWidget("empty", content, function(widgetParent)
@@ -5888,14 +6223,13 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         emptyFrame:SetHeight(72)
         local label = emptyFrame.label
         label:SetText("Select an item to see sources, phase usefulness, and wishlist actions.")
-        local minimum = self.detailsScroll and self.detailsScroll:GetHeight() or 1
-        content:SetHeight(math.max(80, minimum + 1))
+        finish(80)
         return
     end
 
     local entityType = detailData and (detailData.entity_type or (detailData.spell_id and "spell")) or self.selectedEntityType or "item"
     local entityId = detailData and (detailData.entity_id or detailData.spell_id or detailData.item_id) or itemId
-    local detailItemId = detailData and detailData.item_id or (entityType == "item" and entityId or nil)
+    local detailItemId = entityType == "item" and ((detailData and detailData.item_id) or entityId) or nil
 
     self.selectedItemId = entityId
     self.selectedItemData = detailData
@@ -5911,8 +6245,11 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         r, g, b = 1, 0.82, 0.28
     end
     local titleText = (detailData and detailData.name) or (item and item.name) or ((entityType == "spell" and "Spell " or "Item ") .. tostring(entityId))
-    local anchor = self:CreateDetailsTitle(content, titleText, r, g, b)
-    local contentHeight = anchor.contentHeight or 32
+    self:RefreshDetailsHeader(entityId, entityType, detailItemId, detailData or item, detailMode, titleText, r, g, b)
+    local anchor = self:AcquireDetailsWidget("start", content, function(parent) return CreateFrame("Frame", nil, parent) end)
+    anchor:SetPoint("TOPLEFT", content, "TOPLEFT", 8, 4)
+    anchor:SetSize(1, 1)
+    local contentHeight = 5
 
     local recommendationLines = {}
     appendText(recommendationLines, self:GetRowRecommendationText(detailData or plannerContext, detailMode))
@@ -5940,13 +6277,13 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         elseif ownershipState == "missing" and self.currentOwned and not self.currentOwned.bankScanned then
             ownershipText = ownershipText .. " - open your bank once to include banked items"
         end
-        appendText(recommendationLines, "Owned: " .. ownershipText)
+        appendText(recommendationLines, ownershipText)
     elseif detailData and detailData.ownership_state then
         ownershipText = detailData.ownership_label or ownershipStateLabel(detailData.ownership_state)
         if detailData.ownership_detail and detailData.ownership_detail ~= "" then
             ownershipText = ownershipText .. " - " .. detailData.ownership_detail
         end
-        appendText(recommendationLines, "Owned: " .. ownershipText)
+        appendText(recommendationLines, ownershipText)
     end
     appendText(recommendationLines, upgradeComparisonText(detailData or plannerContext))
 
@@ -5958,31 +6295,46 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         appendText(recommendationLines, detailData.level_value_text)
         appendText(recommendationLines, detailData.section)
     end
-    anchor = self:CreateDetailsText(content, anchor, "At a glance", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
+    anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
     contentHeight = contentHeight + anchor.contentHeight
 
     local optionEvaluation = accessEvaluation.optionEvaluation
     local option = optionEvaluation and optionEvaluation.option
     local sellerGroups = self:GetRowSellerDisplayGroups(accessData, option)
     local displayOption = sellerGroups.selected or option
-    local bestPathText
-    local sellerLines = self:GetSellerDetailLines(displayOption)
-    if sellerLines then
-        bestPathText = table.concat(sellerLines, "\n")
-    elseif displayOption then
-        bestPathText = "Source: " .. (self:GetAccessOptionDisplayText(displayOption) or displayOption.label or "Source")
-    elseif accessData and accessData.ready_access_detail and accessEvaluation.status == "ready" then
-        bestPathText = accessData.ready_access_detail
-    else
-        bestPathText = "No source details are recorded."
+    local routeFields = {}
+    local fields = BigBiSList.GetAccessOptionDetailFields and BigBiSList:GetAccessOptionDetailFields(displayOption) or {}
+    for _, field in ipairs(fields or {}) do
+        local value = trim(field.value)
+        if value ~= "" then
+            local note = trim(field.note)
+            if note ~= "" and lower(note) ~= lower(value) then value = value .. "\n" .. note end
+            table.insert(routeFields, { label = field.label or field.key or "Source", value = value })
+        end
+    end
+    if #routeFields == 0 and displayOption then
+        table.insert(routeFields, { label = "Source", value = self:GetAccessOptionDisplayText(displayOption) or displayOption.label or "Source" })
+        if trim(displayOption.zone) ~= "" then table.insert(routeFields, { label = "Location", value = displayOption.zone }) end
+        if trim(displayOption.cost_summary) ~= "" then table.insert(routeFields, { label = "Cost", value = displayOption.cost_summary }) end
+    elseif #routeFields == 0 then
+        table.insert(routeFields, { label = "Source", value = accessData.source_summary or "Source details are not recorded." })
     end
     if optionEvaluation and optionEvaluation.status == "ready" and accessData.ready_access_detail and accessData.ready_access_detail ~= "" then
-        bestPathText = bestPathText .. "\n" .. self:GetAccessHelpText(optionEvaluation, accessData)
+        table.insert(routeFields, { label = "Route note", value = self:GetAccessHelpText(optionEvaluation, accessData) })
     end
     if accessEvaluation.future and accessData.acquisition_display and accessData.acquisition_display.acquisition_phase then
-        bestPathText = bestPathText .. "\nAvailable in " .. BigBiSList:GetPhaseDisplayName(accessData.acquisition_display.acquisition_phase)
+        table.insert(routeFields, { label = "Available", value = BigBiSList:GetPhaseDisplayName(accessData.acquisition_display.acquisition_phase) })
     end
-    anchor = self:CreateDetailsText(content, anchor, "Selected route", bestPathText, 0.76, 0.76, 0.80)
+    local prerequisitesText
+    if optionEvaluation and optionEvaluation.option and #(optionEvaluation.option.requirements or {}) > 0 then
+        prerequisitesText = self:FormatAccessOptionRequirements(optionEvaluation)
+    elseif not option and requirementData and #(requirementData.requirements or {}) > 0 then
+        prerequisitesText = self:FormatRequirements(requirementData)
+    end
+    if prerequisitesText and prerequisitesText ~= "" then
+        table.insert(routeFields, { label = "Requires", value = prerequisitesText })
+    end
+    anchor = self:CreateDetailsFields(content, anchor, "Selected route", routeFields)
     contentHeight = contentHeight + anchor.contentHeight
 
     local sellerSectionPrefix = tostring(entityType) .. ":" .. tostring(entityId) .. ":"
@@ -5992,7 +6344,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             anchor,
             sellerSectionPrefix .. "other-sellers",
             "Other sellers",
-            self:FormatSellerOptions(sellerGroups.alternatives),
+            self:FormatDetailsRoutes(sellerGroups.alternatives),
             #sellerGroups.alternatives
         )
         contentHeight = contentHeight + anchor.contentHeight
@@ -6003,24 +6355,29 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             anchor,
             sellerSectionPrefix .. "reported-sellers",
             "Additional reported sellers",
-            self:FormatSellerOptions(sellerGroups.reported),
+            self:FormatDetailsRoutes(sellerGroups.reported),
             #sellerGroups.reported
         )
         contentHeight = contentHeight + anchor.contentHeight
     end
 
-    local prerequisitesText
-    if optionEvaluation then
-        prerequisitesText = self:FormatAccessOptionRequirements(optionEvaluation)
-    elseif accessEvaluation.options and #accessEvaluation.options > 0 then
-        prerequisitesText = self:FormatAccessOptions(accessEvaluation)
-    elseif requirementData and requirementData.requirements and #requirementData.requirements > 0 then
-        prerequisitesText = self:FormatRequirements(requirementData)
-    else
-        prerequisitesText = "No known character requirements."
+    local alternativeLines = {}
+    for _, alternative in ipairs(accessEvaluation.options or {}) do
+        if alternative.option ~= option and not isSellerAccessOption(alternative.option) then
+            local lines = self:GetSellerDetailLines(alternative.option)
+            local route = lines and table.concat(lines, "\n") or self:GetAccessOptionDisplayText(alternative.option)
+            if route and route ~= "" then
+                if #(alternative.option.requirements or {}) > 0 then
+                    route = route .. "\n" .. self:FormatAccessOptionRequirements(alternative)
+                end
+                table.insert(alternativeLines, route)
+            end
+        end
     end
-    anchor = self:CreateDetailsText(content, anchor, "Requirements", prerequisitesText, 0.76, 0.76, 0.80)
-    contentHeight = contentHeight + anchor.contentHeight
+    if #alternativeLines > 0 then
+        anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "other-routes", "Other routes", table.concat(alternativeLines, "\n\n"), #alternativeLines)
+        contentHeight = contentHeight + anchor.contentHeight
+    end
 
     local timelineLines = {}
     if plannerContext and plannerContext.priority then
@@ -6041,179 +6398,107 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
             appendText(timelineLines, "Available in " .. BigBiSList:GetPhaseDisplayName(availabilityPhase))
         end
 
-        if detailItemId then
-            appendText(timelineLines, self:BuildPhaseUseText(detailItemId))
-        end
     end
-    anchor = self:CreateDetailsText(content, anchor, "Expansion value", #timelineLines > 0 and table.concat(timelineLines, "\n") or "No expansion ranking available.", 0.64, 0.78, 0.94)
-    contentHeight = contentHeight + anchor.contentHeight
+    if #timelineLines > 0 then
+        anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "expansion-value", "Expansion value", table.concat(timelineLines, "\n"))
+        contentHeight = contentHeight + anchor.contentHeight
+    end
+    if detailItemId and detailMode ~= "leveling" then
+        local matrix = self:CreateDetailsPhaseMatrix(content, anchor, detailItemId, detailData)
+        if matrix then anchor = matrix; contentHeight = contentHeight + matrix.contentHeight end
+    end
 
     local noteLines = {}
     appendText(noteLines, detailData and detailData.source_note)
     appendText(noteLines, detailData and (detailData.notes or detailData.note))
     appendText(noteLines, item and (item.notes or item.note))
-    anchor = self:CreateDetailsText(content, anchor, "Notes & provenance", #noteLines > 0 and table.concat(noteLines, "\n") or "No additional notes.", 0.76, 0.76, 0.80)
-    contentHeight = contentHeight + anchor.contentHeight
-
-    if not detailItemId then
-        contentHeight = contentHeight + 16
-        local minimum = self.detailsScroll and self.detailsScroll:GetHeight() or 1
-        content:SetHeight(math.max(contentHeight, minimum + 1))
-        return
+    appendText(noteLines, detailData and detailData.source_url)
+    if displayOption and displayOption.source_url ~= (detailData and detailData.source_url) then
+        appendText(noteLines, displayOption.source_url)
+    end
+    if #noteLines > 0 then
+        anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "provenance", "Notes & provenance", table.concat(noteLines, "\n"))
+        contentHeight = contentHeight + anchor.contentHeight
     end
 
-    local wishlistKey = tostring(detailItemId)
-    local char = BigBiSList:GetCharacterDB()
-    local isWishlisted = char.wishlist[wishlistKey]
-    local actionRow = self:AcquireDetailsWidget("actions", content, function(widgetParent)
-        local created = CreateFrame("Frame", nil, widgetParent)
-        local wishlistButton = widgets:CreateTextButton(created, "", 132, 24, function(selfButton)
-            local row = selfButton.actionRow
-            local character = row and row.character
-            local id = row and row.itemId
-            if character and id then
-                if character.wishlist[tostring(id)] then
-                    UI:RemoveWishlist(id)
-                else
-                    UI:AddWishlist(id)
-                end
-            end
-        end)
-        wishlistButton:SetPoint("LEFT", created, "LEFT", 0, 0)
-        wishlistButton.actionRow = created
-        local ignoreButton = widgets:CreateTextButton(created, "", 96, 24, function(selfButton)
-            local row = selfButton.actionRow
-            local character = row and row.character
-            local id = row and row.itemId
-            if character and id then
-                if character.ignoredItems[tostring(id)] then
-                    UI:UnignoreItem(id)
-                else
-                    UI:IgnoreItem(id)
-                end
-            end
-        end)
-        ignoreButton:SetPoint("LEFT", wishlistButton, "RIGHT", 8, 0)
-        ignoreButton.actionRow = created
-        created.wishlistButton = wishlistButton
-        created.ignoreButton = ignoreButton
-        return created
-    end)
-    actionRow:SetHeight(24)
-    actionRow:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -14)
-    actionRow:SetPoint("RIGHT", content, "RIGHT", -8, 0)
-    actionRow.character = char
-    actionRow.itemId = detailItemId
-    actionRow.wishlistButton.label:SetText(isWishlisted and "Remove wishlist" or "Add wishlist")
-    local ignored = char.ignoredItems[wishlistKey]
-    actionRow.ignoreButton.label:SetText(ignored and "Restore item" or "Hide item")
-
-    contentHeight = contentHeight + 14 + 24 + 16
-    local minimum = self.detailsScroll and self.detailsScroll:GetHeight() or 1
-    content:SetHeight(math.max(contentHeight, minimum + 1))
+    contentHeight = contentHeight + 16
+    finish(contentHeight)
 end
 
 function UI:RefreshControls()
     local selection = self:GetSelection()
     local filters = self:GetFilters()
-    local levelingMode = self:IsLevelingMode()
-
-    for _, control in ipairs({ self.classDropdown, self.specDropdown, self.sortDropdown }) do
-        if control and control.Refresh then
-            control:Refresh()
-        end
+    local leveling = self:IsLevelingMode()
+    local settings = selection.tab == "Settings"
+    for _, control in ipairs({ self.classDropdown, self.specDropdown, self.phaseDropdown, self.sortDropdown, self.groupDropdown }) do
+        if control and control.Refresh then control:Refresh() end
     end
-    if self.searchBox and self.searchBox:GetText() ~= (filters.search or "") then
-        self.searchBox:SetText(filters.search or "")
+    if self.searchBox and self.searchBox:GetText() ~= (filters.search or "") then self.searchBox:SetText(filters.search or "") end
+    if self.searchPlaceholder then
+        self.searchPlaceholder:SetText(selection.tab == "Enhance" and "Search enhancements" or "Search items or sources")
+        self.searchPlaceholder:SetShown((filters.search or "") == "")
+        self.searchClearButton:SetShown((filters.search or "") ~= "")
     end
-
     local r, g, b = classColor(selection.class)
-    if self.accentBar then
-        self.accentBar:SetColorTexture(r, g, b, 0.92)
+    if self.accentBar then self.accentBar:SetColorTexture(r, g, b, 0.8) end
+    self.summaryText:SetText(settings and "Settings" or "")
+    self.settingsBackButton:SetShown(settings)
+    self.settingsButton:SetSelected(settings)
+    self.contextBar:SetShown(not settings)
+    self:LayoutContextControls()
+    if settings then self.contextBar:SetHeight(1) end
+    self.tabBar:SetShown(not settings)
+    self.tabBar:SetHeight(settings and 1 or 30)
+    self.endgameModeButton:SetSelected(not leveling)
+    self.levelingModeButton:SetSelected(leveling)
+    self.phaseDropdown:SetShown(not leveling)
+    self.levelControlContainer:SetShown(leveling)
+    local character = BigBiSList:GetCharacterDB()
+    local manualLevel = character.leveling and character.leveling.manualLevel
+    if leveling then
+        local level = BigBiSList:GetSelectedLevelingLevel()
+        self.levelControlLabel:SetText(manualLevel and "Preview" or "Level")
+        if not self.levelInput:HasFocus() then self.levelInput:SetText(tostring(level)) end
+        self.levelDownButton:SetEnabled(level > 1)
+        self.levelUpButton:SetEnabled(level < MAX_LEVELING_LEVEL)
+        self.levelCurrentButton:SetShown(manualLevel == true)
     end
-
-    self.endgameModeButton:SetSelected(not levelingMode)
-    self.levelingModeButton:SetSelected(levelingMode)
-
-    local currentPhase = BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey() or nil
-    safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - " .. BigBiSList:GetPhaseDisplayName(selection.phase))
-    if not self.transientStatusMessage then
-        safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / " .. BigBiSList:GetPhaseDisplayName(selection.phase))
-    end
-    if levelingMode then
-        local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
-        safeSetText(self.summaryText, selection.class .. " " .. selection.spec .. " - Leveling " .. tostring(level))
-        if not self.transientStatusMessage then
-            safeSetText(self.statusText, selection.class .. " / " .. selection.spec .. " / Level " .. tostring(level))
-        end
-        if self.levelControlContainer then
-            self.levelControlContainer:Show()
-        end
-        if self.livePhaseLegend then self.livePhaseLegend:Hide() end
-        safeSetText(self.levelControlLabel, "Level " .. tostring(level))
-        if self.levelInput and (not self.levelInput.HasFocus or not self.levelInput:HasFocus()) then
-            self.levelInput:SetText(tostring(level))
-        end
-    else
-        if self.levelControlContainer then
-            self.levelControlContainer:Hide()
-        end
-        if self.livePhaseLegend then self.livePhaseLegend:Show() end
-    end
-
-    for phaseKey, button in pairs(self.phaseButtons or {}) do
-        if levelingMode then
-            button:Hide()
-        else
-            button:Show()
-        end
-        button:SetSelected(phaseKey == selection.phase)
-        if button.label then
-            button.label:SetText((button.phaseBaseLabel or BigBiSList:GetPhaseDisplayName(phaseKey)) .. (phaseKey == currentPhase and " *" or ""))
-        end
-    end
-
-    local selectedTab = normalizeTabName(selection.tab)
-    local activeTabs = self:GetActiveTabNames()
+    local detected = BigBiSList:GetDetectedPlayerSelection()
+    local differs = detected and (detected.class ~= selection.class or detected.spec ~= selection.spec)
+    self.useCharacterButton:Show()
+    self.useCharacterButton:SetEnabled(BigBiSList.classSpecAutoSelectionActive == false or differs == true or (leveling and manualLevel == true))
     local previous
-    for tabName, button in pairs(self.tabButtons or {}) do
-        button:Hide()
-        button:SetSelected(tabName == selectedTab)
-    end
-    for _, tabName in ipairs(activeTabs) do
-        local button = self.tabButtons[tabName]
+    for _, button in pairs(self.tabButtons) do button:Hide() end
+    for _, name in ipairs(self:GetActiveTabNames()) do
+        local button = self.tabButtons[name]
         if button then
-            button:Show()
-            button:ClearAllPoints()
-            if previous then
-                button:SetPoint("LEFT", previous, "RIGHT", 6, 0)
-            else
-                button:SetPoint("LEFT", self.tabBar, "LEFT", 0, 0)
-            end
+            button:Show(); button:ClearAllPoints()
+            button:SetPoint("LEFT", previous or self.tabBar, previous and "RIGHT" or "LEFT", previous and 6 or 0, 0)
+            button:SetSelected(name == selection.tab)
+            button.tabUnderline:SetShown(name == selection.tab)
             previous = button
         end
     end
-
-    if self.useCharacterButton then
-        local detected = BigBiSList.GetDetectedPlayerSelection and BigBiSList:GetDetectedPlayerSelection() or nil
-        local differs = detected and (detected.class ~= selection.class or (detected.spec and detected.spec ~= selection.spec))
-        if BigBiSList.classSpecAutoSelectionActive == false or differs then
-            self.useCharacterButton:Show()
-        else
-            self.useCharacterButton:Hide()
-        end
-    end
-
     if self.filterToggleButton then
         local count = self:GetActiveFilterCount()
-        self.filterToggleButton.label:SetText(count > 0 and ("Filters (" .. tostring(count) .. ")") or "Filters")
+        self.filterToggleButton.label:SetText(count > 0 and ("Filters (" .. count .. ")") or "Filters")
         self.filterToggleButton:SetSelected(self.filterDrawerOpen)
     end
+    if not self.transientStatusMessage and self.statusText then self.statusText:SetText(self:GetBankStatusText()) end
+    if self.undoButton then self.undoButton:SetShown(self.undoAction ~= nil) end
     self:ApplyBodyLayout()
 end
 
-function UI:SetStatusMessage(message)
+function UI:SetStatusMessage(message, undoAction)
     self.transientStatusMessage = message
+    self.undoAction = undoAction
+    if undoAction then
+        undoAction.expiresAt = (GetTime and GetTime() or 0) + 8
+        undoAction.message = message
+    end
+    if self.undoButton then
+        if undoAction then self.undoButton:Show() else self.undoButton:Hide() end
+    end
     if self.statusText then
         self.statusText:SetText(message or "")
         self.statusText:SetTextColor(0.72, 0.88, 0.76, 1)
@@ -6221,18 +6506,14 @@ function UI:SetStatusMessage(message)
     self.statusMessageSerial = (self.statusMessageSerial or 0) + 1
     local serial = self.statusMessageSerial
     if C_Timer and C_Timer.After then
-        C_Timer.After(3, function()
+        C_Timer.After(undoAction and 8 or 3, function()
             if self.statusMessageSerial == serial then
                 self.transientStatusMessage = nil
+                self.undoAction = nil
+                if self.undoButton then self.undoButton:Hide() end
                 if self.statusText then
                     self.statusText:SetTextColor(0.62, 0.62, 0.66, 1)
-                    local selection = self:GetSelection()
-                    if self:IsLevelingMode() then
-                        local level = BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
-                        self.statusText:SetText(selection.class .. " / " .. selection.spec .. " / Level " .. tostring(level))
-                    else
-                        self.statusText:SetText(selection.class .. " / " .. selection.spec .. " / " .. BigBiSList:GetPhaseDisplayName(selection.phase))
-                    end
+                    self.statusText:SetText(self.GetBankStatusText and self:GetBankStatusText() or "")
                 end
             end
         end)
@@ -6318,10 +6599,12 @@ function UI:RefreshLayout(reason)
     end
     self:CountPerformance("layoutPasses", 1, reason or "layout")
     self:ApplyBodyLayout()
+    self:LayoutContextControls()
     if self.renderModel then
         self:SetStickyHeaderMode(self.stickyHeaderMode)
         self:UpdateVirtualList(true)
     end
+    self:RefreshDetailsLayout()
     if self.dirtyDomains then
         self.dirtyDomains.layout = nil
     end
@@ -6467,46 +6750,32 @@ end
 
 function UI:CreateHeader(frame)
     local widgets = BigBiSList.Widgets
-
     self.accentBar = frame:CreateTexture(nil, "ARTWORK")
     self.accentBar:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -1)
     self.accentBar:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -1)
-    self.accentBar:SetHeight(3)
-
-    local titleBar = CreateFrame("Frame", nil, frame)
-    titleBar:SetHeight(38)
-    titleBar:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, -3)
-    titleBar:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, -3)
-    titleBar:EnableMouse(true)
-    titleBar:RegisterForDrag("LeftButton")
-    titleBar:SetScript("OnDragStart", function()
-        if not BigBiSListDB.profile.window.locked then
-            frame:StartMoving()
-        end
+    self.accentBar:SetHeight(2)
+    local bar = CreateFrame("Frame", nil, frame)
+    bar:SetHeight(32)
+    bar:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, -2)
+    bar:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, -2)
+    bar:EnableMouse(true)
+    bar:RegisterForDrag("LeftButton")
+    bar:SetScript("OnDragStart", function()
+        if not BigBiSListDB.profile.window.locked then frame:StartMoving() end
     end)
-    titleBar:SetScript("OnDragStop", function()
-        frame:StopMovingOrSizing()
-        self:SaveWindow()
-    end)
-
-    local title = titleBar:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    title:SetPoint("LEFT", titleBar, "LEFT", 14, 0)
-    title:SetText(BigBiSList.displayName)
-
-    self.summaryText = titleBar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    self.summaryText:SetPoint("LEFT", title, "RIGHT", 16, -1)
-    self.summaryText:SetPoint("RIGHT", titleBar, "RIGHT", -80, 0)
-    self.summaryText:SetJustifyH("LEFT")
-    self.summaryText:SetWordWrap(false)
-    self.summaryText:SetTextColor(0.68, 0.68, 0.72, 1)
-
-    local closeButton = CreateFrame("Button", nil, titleBar, "UIPanelCloseButton")
-    closeButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -2, -2)
-    closeButton:SetScript("OnClick", function()
-        BigBiSList:CloseMainFrame()
-    end)
-
-    self.titleBar = titleBar
+    bar:SetScript("OnDragStop", function() frame:StopMovingOrSizing(); self:SaveWindow() end)
+    local title = widgets:CreateLabel(bar, BigBiSList.displayName, "GameFontNormal")
+    title:SetPoint("LEFT", bar, "LEFT", 14, 0)
+    self.summaryText = widgets:CreateLabel(bar, "", "GameFontNormalSmall")
+    self.summaryText:SetPoint("LEFT", title, "RIGHT", 18, 0)
+    self.settingsButton = widgets:CreateUtilityButton(bar, "settings", 28, function() self:OpenSettings() end, "Settings")
+    self.settingsButton:SetPoint("RIGHT", bar, "RIGHT", -36, 0)
+    self.settingsBackButton = widgets:CreateTextButton(bar, "Back to gear", 110, 28, function() self:ReturnFromSettings() end)
+    self.settingsBackButton:SetPoint("RIGHT", self.settingsButton, "LEFT", -8, 0)
+    self.settingsBackButton:Hide()
+    local close = widgets:CreateUtilityButton(bar, "clear", 28, function() BigBiSList:CloseMainFrame() end, "Close")
+    close:SetPoint("RIGHT", bar, "RIGHT", -5, 0)
+    self.titleBar = bar
 end
 
 function UI:CreateContextBar(frame)
@@ -6515,184 +6784,123 @@ function UI:CreateContextBar(frame)
     bar:SetHeight(CONTEXT_BAR_HEIGHT)
     bar:SetPoint("TOPLEFT", self.titleBar, "BOTTOMLEFT", 12, -2)
     bar:SetPoint("TOPRIGHT", self.titleBar, "BOTTOMRIGHT", -12, -2)
-
-    local modeLabel = bar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    modeLabel:SetPoint("LEFT", bar, "LEFT", 0, 0)
-    modeLabel:SetTextColor(0.68, 0.68, 0.72, 1)
-    modeLabel:SetText("Mode")
-
-    self.endgameModeButton = widgets:CreateTextButton(bar, "Endgame", 78, 24, function()
-        self:SetContentMode("endgame")
-    end)
-    self.endgameModeButton:SetPoint("LEFT", modeLabel, "RIGHT", 8, 0)
-
-    self.levelingModeButton = widgets:CreateTextButton(bar, "Leveling", 78, 24, function()
-        self:SetContentMode("leveling")
-    end)
-    self.levelingModeButton:SetPoint("LEFT", self.endgameModeButton, "RIGHT", 5, 0)
-
-    local viewingLabel = bar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    viewingLabel:SetPoint("LEFT", self.levelingModeButton, "RIGHT", 18, 0)
-    viewingLabel:SetTextColor(0.68, 0.68, 0.72, 1)
-    viewingLabel:SetText("Viewing")
-
-    self.classDropdown = widgets:CreateDropdown("BigBiSListClassDropdown", bar, 118,
+    self.classDropdown = widgets:CreateDropdown("BigBiSListClassDropdown", bar, 112,
         function() return self:GetSelection().class or "Class" end,
-        function() return self:GetClassDropdownItems() end,
-        function(value) self:SetClass(value) end)
-    self.classDropdown:SetPoint("LEFT", viewingLabel, "RIGHT", -12, -2)
-
-    self.specDropdown = widgets:CreateDropdown("BigBiSListSpecDropdown", bar, 132,
+        function() return self:GetClassDropdownItems() end, function(value) self:SetClass(value) end)
+    self.classDropdown:SetPoint("LEFT", bar, "LEFT", -16, -2)
+    self.specDropdown = widgets:CreateDropdown("BigBiSListSpecDropdown", bar, 130,
         function() return self:GetSelection().spec or "Spec" end,
-        function() return self:GetSpecDropdownItems() end,
-        function(value) self:SetSpec(value) end)
+        function() return self:GetSpecDropdownItems() end, function(value) self:SetSpec(value) end)
     self.specDropdown:SetPoint("LEFT", self.classDropdown, "RIGHT", -22, 0)
-
-    self.useCharacterButton = widgets:CreateTextButton(bar, "Use My Character", 126, 24, function()
-        self:UseMyCharacter()
-    end)
-    self.useCharacterButton:SetPoint("LEFT", self.specDropdown, "RIGHT", -10, 2)
-
+    self.endgameModeButton = widgets:CreateTextButton(bar, "Endgame", 78, 28, function() self:SetContentMode("endgame") end)
+    self.endgameModeButton:SetPoint("LEFT", self.specDropdown, "RIGHT", 0, 2)
+    self.levelingModeButton = widgets:CreateTextButton(bar, "Leveling", 78, 28, function() self:SetContentMode("leveling") end)
+    self.levelingModeButton:SetPoint("LEFT", self.endgameModeButton, "RIGHT", 0, 0)
+    self.useCharacterButton = widgets:CreateTextButton(bar, "Current Spec", 108, 28, function() self:UseMyCharacter() end)
+    widgets:BindTooltip(self.useCharacterButton, "Return to your character's current class, specialization, and level.")
     self.contextBar = bar
 end
 
 function UI:CreatePhaseBar(frame)
     local widgets = BigBiSList.Widgets
-    local phaseBar = CreateFrame("Frame", nil, frame)
-    phaseBar:SetHeight(34)
-    phaseBar:SetPoint("TOPLEFT", self.contextBar, "BOTTOMLEFT", 0, -2)
-    phaseBar:SetPoint("TOPRIGHT", self.contextBar, "BOTTOMRIGHT", 0, -2)
-
+    local host = CreateFrame("Frame", nil, self.contextBar)
+    host:SetPoint("LEFT", self.levelingModeButton, "RIGHT", 10, 0)
+    host:SetSize(280, 32)
+    self.phaseBar = host
     self.phaseButtons = {}
-    local previous
-    for _, phaseKey in ipairs(BigBiSList:GetPhaseOrder()) do
-        local phaseLabel = BigBiSList:GetPhaseDisplayName(phaseKey)
-        local button = widgets:CreateTextButton(phaseBar, phaseLabel, 96, 24, function()
-            self:SetPhase(phaseKey)
-        end)
-        if button.label and button.label.GetStringWidth then
-            button:SetWidth(math.max(96, math.ceil(button.label:GetStringWidth()) + 24))
-        end
-        button.phaseBaseLabel = phaseLabel
-        if previous then
-            button:SetPoint("LEFT", previous, "RIGHT", 6, 0)
-        else
-            button:SetPoint("LEFT", phaseBar, "LEFT", 0, 0)
-        end
-        self.phaseButtons[phaseKey] = button
-        previous = button
-    end
-
-    local levelControl = CreateFrame("Frame", nil, phaseBar)
-    levelControl:SetSize(210, 28)
-    levelControl:SetPoint("LEFT", phaseBar, "LEFT", 0, 0)
-
-    local levelLabel = levelControl:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    levelLabel:SetPoint("LEFT", levelControl, "LEFT", 0, 0)
-    levelLabel:SetWidth(52)
-    levelLabel:SetJustifyH("LEFT")
-    levelLabel:SetTextColor(0.68, 0.68, 0.72, 1)
-
-    local function currentLevel()
-        return BigBiSList.GetSelectedLevelingLevel and BigBiSList:GetSelectedLevelingLevel() or MAX_LEVELING_LEVEL
-    end
-
-    local function setClampedLevel(level)
-        self:SetLevelingLevel(clamp(math.floor((tonumber(level) or currentLevel()) + 0.5), 1, MAX_LEVELING_LEVEL))
-    end
-
-    local function commitLevelInput(editBox)
-        local value = tonumber(editBox:GetText())
-        local selectedLevel = currentLevel()
-        if value then
-            local level = clamp(math.floor(value + 0.5), 1, MAX_LEVELING_LEVEL)
-            if level ~= selectedLevel then
-                self:SetLevelingLevel(level)
-            else
-                editBox:SetText(tostring(level))
+    self.phaseDropdown = widgets:CreateDropdown("BigBiSListPhaseDropdown", host, 206,
+        function()
+            local phase = self:GetSelection().phase
+            return BigBiSList:GetPhaseDisplayName(phase)
+                .. (phase == BigBiSList:GetCurrentPhaseKey() and " · Live" or "")
+        end,
+        function()
+            local items = {}
+            for _, phase in ipairs(BigBiSList:GetPhaseOrder()) do
+                items[#items + 1] = { value = phase, checked = phase == self:GetSelection().phase,
+                    text = BigBiSList:GetPhaseDisplayName(phase) .. (phase == BigBiSList:GetCurrentPhaseKey() and " — Live" or "") }
             end
-        else
-            editBox:SetText(tostring(selectedLevel))
-        end
+            return items
+        end, function(value) self:SetPhase(value) end)
+    self.phaseDropdown:SetPoint("LEFT", host, "LEFT", -16, -2)
+    local level = CreateFrame("Frame", nil, host)
+    level:SetAllPoints()
+    self.levelControlContainer = level
+    self.levelControlLabel = widgets:CreateLabel(level, "Level", "GameFontNormalSmall")
+    self.levelControlLabel:SetPoint("LEFT", level, "LEFT", 0, 0)
+    self.levelDownButton = widgets:CreateUtilityButton(level, "chevronLeft", 28, function()
+        self:SetLevelingLevel(BigBiSList:GetSelectedLevelingLevel() - 1)
+    end, "Previous level")
+    self.levelDownButton:SetPoint("LEFT", self.levelControlLabel, "RIGHT", 8, 0)
+    self.levelInput = CreateFrame("EditBox", nil, level, "InputBoxTemplate")
+    self.levelInput:SetSize(32, 24)
+    self.levelInput:SetPoint("LEFT", self.levelDownButton, "RIGHT", 8, 0)
+    self.levelInput:SetAutoFocus(false)
+    self.levelInput:SetNumeric(true)
+    self.levelInput:SetMaxLetters(2)
+    self.levelInput:SetScript("OnEnterPressed", function(input)
+        self:SetLevelingLevel(tonumber(input:GetText()) or BigBiSList:GetSelectedLevelingLevel())
+        input:ClearFocus()
+    end)
+    self.levelInput:SetScript("OnEscapePressed", function(input)
+        input:SetText(tostring(BigBiSList:GetSelectedLevelingLevel())); input:ClearFocus()
+    end)
+    self.levelInput:SetScript("OnEditFocusLost", function(input)
+        local value = tonumber(input:GetText())
+        if value and value ~= BigBiSList:GetSelectedLevelingLevel() then self:SetLevelingLevel(value) end
+    end)
+    self.levelUpButton = widgets:CreateUtilityButton(level, "chevronRight", 28, function()
+        self:SetLevelingLevel(BigBiSList:GetSelectedLevelingLevel() + 1)
+    end, "Next level")
+    self.levelUpButton:SetPoint("LEFT", self.levelInput, "RIGHT", 6, 0)
+    self.levelCurrentButton = widgets:CreateTextButton(level, "Current Level", 100, 28, function() self:UseMyCharacter() end)
+    self.levelCurrentButton:SetPoint("LEFT", self.levelUpButton, "RIGHT", 6, 0)
+end
+
+function UI:LayoutContextControls()
+    if not self.contextBar or not self.phaseBar then return end
+    local bar = self.contextBar
+    local controls = { self.classDropdown, self.specDropdown, self.useCharacterButton }
+    local x = 0
+    for _, control in ipairs(controls) do
+        control:ClearAllPoints()
+        control:SetPoint("TOPLEFT", bar, "TOPLEFT", x, -(CONTEXT_BAR_HEIGHT - control:GetHeight()) / 2)
+        x = x + control:GetWidth() + 8
     end
-
-    local levelDown = widgets:CreateTextButton(levelControl, "<", 20, 22, function()
-        setClampedLevel(currentLevel() - 1)
-    end)
-    levelDown:SetPoint("LEFT", levelLabel, "RIGHT", 2, 0)
-
-    local levelInputFrame = widgets:CreatePanel(nil, levelControl, { 0.030, 0.040, 0.040, 0.95 }, { 0.42, 0.42, 0.48, 1 })
-    levelInputFrame:SetSize(34, 22)
-    levelInputFrame:SetPoint("LEFT", levelDown, "RIGHT", 3, 0)
-
-    local levelInput = CreateFrame("EditBox", "BigBiSListLevelInput", levelInputFrame)
-    levelInput:SetPoint("LEFT", levelInputFrame, "LEFT", 4, 0)
-    levelInput:SetPoint("RIGHT", levelInputFrame, "RIGHT", -4, 0)
-    levelInput:SetHeight(18)
-    levelInput:SetAutoFocus(false)
-    levelInput:SetMaxLetters(2)
-    if levelInput.SetNumeric then
-        levelInput:SetNumeric(true)
-    end
-    levelInput:SetJustifyH("CENTER")
-    levelInput:SetFontObject("GameFontHighlightSmall")
-    levelInput:SetScript("OnEditFocusGained", function(editBox)
-        editBox:HighlightText()
-    end)
-    levelInput:SetScript("OnEditFocusLost", function(editBox)
-        editBox:HighlightText(0, 0)
-        commitLevelInput(editBox)
-    end)
-    levelInput:SetScript("OnEnterPressed", function(editBox)
-        commitLevelInput(editBox)
-        editBox:ClearFocus()
-    end)
-    levelInput:SetScript("OnEscapePressed", function(editBox)
-        editBox:SetText(tostring(currentLevel()))
-        editBox:ClearFocus()
-    end)
-
-    local levelUp = widgets:CreateTextButton(levelControl, ">", 20, 22, function()
-        setClampedLevel(currentLevel() + 1)
-    end)
-    levelUp:SetPoint("LEFT", levelInputFrame, "RIGHT", 3, 0)
-
-    self.levelControlContainer = levelControl
-    self.levelControlLabel = levelLabel
-    self.levelInput = levelInput
-
-    local liveLegend = phaseBar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    liveLegend:SetPoint("RIGHT", phaseBar, "RIGHT", -2, 0)
-    liveLegend:SetTextColor(0.62, 0.78, 0.94, 1)
-    liveLegend:SetText("* Live phase")
-    self.livePhaseLegend = liveLegend
-
-    self.phaseBar = phaseBar
+    local remainingWidth = self.endgameModeButton:GetWidth() + self.levelingModeButton:GetWidth() + 10 + self.phaseBar:GetWidth()
+    local wrapped = x + 4 + remainingWidth > (bar:GetWidth() or MIN_WIDTH - 24)
+    local rowTop = wrapped and CONTEXT_BAR_HEIGHT + 2 or 0
+    local modeX = wrapped and 0 or x + 4
+    self.endgameModeButton:ClearAllPoints()
+    self.endgameModeButton:SetPoint("TOPLEFT", bar, "TOPLEFT", modeX, -rowTop - 3)
+    self.levelingModeButton:ClearAllPoints()
+    self.levelingModeButton:SetPoint("LEFT", self.endgameModeButton, "RIGHT", 0, 0)
+    self.phaseBar:ClearAllPoints()
+    self.phaseBar:SetPoint("LEFT", self.levelingModeButton, "RIGHT", 10, 0)
+    bar:SetHeight(self:GetSelection().tab == "Settings" and 1 or (wrapped and CONTEXT_BAR_HEIGHT * 2 + 2 or CONTEXT_BAR_HEIGHT))
 end
 
 function UI:CreateTabBar(frame)
     local widgets = BigBiSList.Widgets
-    local tabBar = CreateFrame("Frame", nil, frame)
-    tabBar:SetHeight(30)
-    tabBar:SetPoint("TOPLEFT", self.phaseBar, "BOTTOMLEFT", 0, -2)
-    tabBar:SetPoint("TOPRIGHT", self.phaseBar, "BOTTOMRIGHT", 0, -2)
-
+    local bar = CreateFrame("Frame", nil, frame)
+    bar:SetPoint("TOPLEFT", self.contextBar, "BOTTOMLEFT", 0, -4)
+    bar:SetPoint("TOPRIGHT", self.contextBar, "BOTTOMRIGHT", 0, -4)
+    bar:SetHeight(30)
+    self.tabBar = bar
     self.tabButtons = {}
-    local previous
     for _, tabName in ipairs(TAB_NAMES) do
-        local button = widgets:CreateTextButton(tabBar, TAB_DISPLAY_LABELS[tabName] or tabName, 100, 24, function()
-            self:SetTab(tabName)
-        end)
-        if previous then
-            button:SetPoint("LEFT", previous, "RIGHT", 6, 0)
-        else
-            button:SetPoint("LEFT", tabBar, "LEFT", 0, 0)
+        if tabName ~= "Settings" then
+            local name = tabName
+            local button = widgets:CreateTextButton(bar, TAB_DISPLAY_LABELS[name] or name, name == "Enhance" and 124 or 104, 28,
+                function() self:SetTab(name) end)
+            button.tabUnderline = button:CreateTexture(nil, "OVERLAY")
+            button.tabUnderline:SetColorTexture(0.88, 0.72, 0.24, 1)
+            button.tabUnderline:SetPoint("BOTTOMLEFT", button, "BOTTOMLEFT", 8, 0)
+            button.tabUnderline:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -8, 0)
+            button.tabUnderline:SetHeight(2)
+            self.tabButtons[name] = button
         end
-        self.tabButtons[tabName] = button
-        previous = button
     end
-
-    self.tabBar = tabBar
 end
 
 function UI:SetFilterDrawerOpen(open)
@@ -6711,81 +6919,141 @@ end
 
 function UI:CreateListToolbar(parent)
     local widgets = BigBiSList.Widgets
-    local toolbar = widgets:CreatePanel(nil, parent, { 0.050, 0.050, 0.058, 0.96 }, { 0.18, 0.18, 0.20, 1 })
-    toolbar:SetFrameLevel((parent:GetFrameLevel() or 0) + 3)
+    local toolbar = CreateFrame("Frame", nil, parent)
     toolbar:SetHeight(TOOLBAR_HEIGHT)
     toolbar:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, 0)
     toolbar:SetPoint("TOPRIGHT", parent, "TOPRIGHT", 0, 0)
-
-    local searchFrame = widgets:CreatePanel(nil, toolbar, { 0.030, 0.040, 0.040, 0.95 }, { 0.42, 0.42, 0.48, 1 })
-    searchFrame:SetSize(214, 24)
-    searchFrame:SetPoint("LEFT", toolbar, "LEFT", 8, 0)
-
-    local searchIcon = searchFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    searchIcon:SetPoint("LEFT", searchFrame, "LEFT", 7, 0)
-    searchIcon:SetTextColor(0.62, 0.62, 0.66, 1)
-    searchIcon:SetText("Search")
-
-    self.searchBox = CreateFrame("EditBox", "BigBiSListSearchBox", searchFrame)
-    self.searchBox:SetPoint("LEFT", searchIcon, "RIGHT", 8, 0)
-    self.searchBox:SetPoint("RIGHT", searchFrame, "RIGHT", -6, 0)
-    self.searchBox:SetHeight(20)
-    self.searchBox:SetAutoFocus(false)
-    self.searchBox:SetMaxLetters(48)
-    self.searchBox:SetFontObject("GameFontHighlightSmall")
-    self.searchBox:SetScript("OnTextChanged", function(editBox, isUserInput)
-        if isUserInput then
-            self:GetFilters().search = trim(editBox:GetText())
-            self:Invalidate("query", "search")
-            self:ScheduleRefresh(SEARCH_DEBOUNCE_SECONDS, "search")
+    local search = widgets:CreatePanel(nil, toolbar)
+    search:SetSize(172, 28)
+    search:SetPoint("LEFT", toolbar, "LEFT", 4, 0)
+    self.searchFrame = search
+    local icon = search:CreateTexture(nil, "ARTWORK")
+    icon:SetSize(14, 14); icon:SetPoint("LEFT", search, "LEFT", 8, 0)
+    widgets:SetIcon(icon, "search")
+    local input = CreateFrame("EditBox", "BigBiSListSearchBox", search)
+    input:SetPoint("LEFT", search, "LEFT", 30, 0)
+    input:SetPoint("RIGHT", search, "RIGHT", -30, 0)
+    input:SetHeight(24); input:SetAutoFocus(false); input:SetMaxLetters(96)
+    input:SetFontObject("GameFontHighlightSmall")
+    self.searchBox = input
+    self.searchPlaceholder = widgets:CreateLabel(search, "Search items or sources")
+    self.searchPlaceholder:SetPoint("LEFT", input, "LEFT", 0, 0)
+    self.searchPlaceholder:SetTextColor(0.56, 0.56, 0.60)
+    self.searchPlaceholder:SetWidth(135)
+    local function clearSearch()
+        self:BeginNavigationChange("filter")
+        self:GetFilters().search = ""
+        input:SetText(""); input:ClearFocus()
+        self:Invalidate("query", "search-clear"); self:ScheduleRefresh(nil, "search-clear")
+    end
+    self.searchClearButton = widgets:CreateUtilityButton(search, "clear", 28, clearSearch, "Clear search")
+    self.searchClearButton:SetPoint("RIGHT", search, "RIGHT", 0, 0)
+    input:SetScript("OnTextChanged", function(edit, user)
+        self.searchPlaceholder:SetShown(edit:GetText() == "")
+        self.searchClearButton:SetShown(edit:GetText() ~= "")
+        if user then
+            self:BeginNavigationChange("filter")
+            self:GetFilters().search = trim(edit:GetText())
+            self:Invalidate("query", "search"); self:ScheduleRefresh(SEARCH_DEBOUNCE_SECONDS, "search")
         end
     end)
-    self.searchBox:SetScript("OnEscapePressed", function(editBox)
-        if editBox:GetText() ~= "" then
-            editBox:SetText("")
-            self:GetFilters().search = ""
-            self.refreshDebounceSerial = (self.refreshDebounceSerial or 0) + 1
-            self:Invalidate("query", "search-clear")
-            self:ScheduleRefresh(nil, "search-clear")
-        end
-        editBox:ClearFocus()
-    end)
-    self.searchBox:SetScript("OnEnterPressed", function(editBox) editBox:ClearFocus() end)
-
-    self.filterToggleButton = widgets:CreateTextButton(toolbar, "Filters", 92, 24, function()
-        self:SetFilterDrawerOpen(not self.filterDrawerOpen)
-    end)
-    self.filterToggleButton:SetPoint("LEFT", searchFrame, "RIGHT", 8, 0)
-
-    self.sortDropdown = widgets:CreateDropdown("BigBiSListSortDropdown", toolbar, 132,
-        function() return self:GetSortDropdownText() end,
-        function() return self:GetSortDropdownItems() end,
+    input:SetScript("OnEscapePressed", clearSearch)
+    input:SetScript("OnEnterPressed", function(edit) edit:ClearFocus() end)
+    self.filterToggleButton = widgets:CreateTextButton(toolbar, "Filters", 86, 28, function() self:SetFilterDrawerOpen(not self.filterDrawerOpen) end)
+    self.filterToggleButton:SetPoint("LEFT", search, "RIGHT", 6, 0)
+    self.sortDropdown = widgets:CreateDropdown("BigBiSListSortDropdown", toolbar, 104,
+        function() return self:GetSortDropdownText() end, function() return self:GetSortDropdownItems() end,
         function(value) self:SelectSort(value) end)
-    self.sortDropdown:SetPoint("LEFT", self.filterToggleButton, "RIGHT", -14, -2)
-
-    self.resultCountText = toolbar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    self.resultCountText:SetPoint("LEFT", self.sortDropdown, "RIGHT", -4, 2)
-    self.resultCountText:SetWidth(92)
-    self.resultCountText:SetJustifyH("LEFT")
-    self.resultCountText:SetTextColor(0.62, 0.62, 0.66, 1)
-    self.resultCountText:SetText("0 results")
-
-    self.inspectorToggleButton = widgets:CreateTextButton(toolbar, "Details", 82, 24, function()
-        self:SetInspectorVisible(not self:IsInspectorVisible())
-    end)
-    self.inspectorToggleButton:SetPoint("RIGHT", toolbar, "RIGHT", -8, 0)
-
+    self.sortDropdown:SetPoint("LEFT", self.filterToggleButton, "RIGHT", -12, -2)
+    self.inspectorToggleButton = widgets:CreateUtilityButton(toolbar, "details", 28,
+        function() self:SetInspectorVisible(not self:IsInspectorVisible()) end, "Show or hide item details")
+    self.inspectorToggleButton:SetPoint("RIGHT", toolbar, "RIGHT", -4, 0)
+    self.resultCountText = widgets:CreateLabel(toolbar, "0 results")
+    self.resultCountText:SetPoint("RIGHT", self.inspectorToggleButton, "LEFT", -8, 0)
+    self.resultCountText:SetWidth(72)
     self.listToolbar = toolbar
+end
+
+function UI:LayoutPrimaryControls()
+    if not self.listToolbar or not self.groupDropdown then return end
+    local tab = self:GetSelection().tab
+    local controls = { self.upgradeModeDropdown, self.groupDropdown, self.wishlistRelevanceDropdown }
+    for _, control in ipairs(controls) do control:Hide() end
+    for _, button in ipairs(self.enhancementSwitchButtons or {}) do button:Hide() end
+    local groupVisible = tab == "Upgrades" or tab == "By Slot" or tab == "Wishlist" or tab == "Gear Guide"
+    local primary = tab == "Upgrades" and self.upgradeModeDropdown or (tab == "Wishlist" and self.wishlistRelevanceDropdown)
+    local rowHeight, rowGap, gap = TOOLBAR_HEIGHT, 2, 8
+    local width = self.contentRegion:GetWidth() or 720
+    local function place(control, x, row)
+        control:ClearAllPoints()
+        control:SetPoint("TOPLEFT", self.listToolbar, "TOPLEFT", x, -(row or 0) * (rowHeight + rowGap) - (rowHeight - control:GetHeight()) / 2)
+    end
+    local x = 4
+    for _, control in ipairs({ self.searchFrame, self.filterToggleButton, self.sortDropdown }) do
+        place(control, x, 0)
+        x = x + control:GetWidth() + gap
+    end
+    place(self.inspectorToggleButton, width - 32, 0)
+    local optional = {}
+    if groupVisible then
+        self.groupDropdown:SetParent(self.listToolbar)
+        self.groupDropdown:Show(); self.groupDropdown:Refresh()
+        optional[#optional + 1] = self.groupDropdown
+    end
+    if primary then
+        primary:SetParent(self.listToolbar)
+        primary:Show(); primary:Refresh()
+        optional[#optional + 1] = primary
+    end
+    if tab == "Enhance" then
+        self.enhancementSwitchButtons = self.enhancementSwitchButtons or {}
+        local options = { {"all", "All", 34}, {"gem", "Gems", 45}, {"enchant", "Enchants", 65}, {"consumable", "Consumables", 88} }
+        for index, option in ipairs(options) do
+            local button = self.enhancementSwitchButtons[index]
+            if not button then
+                local key = option[1]
+                button = BigBiSList.Widgets:CreateTextButton(self.listToolbar, option[2], option[3], 28,
+                    function() self:SetViewStateValue("Enhance", "type", key) end)
+                self.enhancementSwitchButtons[index] = button
+            end
+            button:SetSelected(self:GetViewState("Enhance").type == option[1]); button:Show()
+            optional[#optional + 1] = button
+        end
+    end
+    local optionalWidth = 0
+    for _, control in ipairs(optional) do optionalWidth = optionalWidth + control:GetWidth() + gap end
+    local wrapped = #optional > 0 and x + optionalWidth > width - 32
+    local optionalX = wrapped and 4 or x
+    for _, control in ipairs(optional) do
+        place(control, optionalX, wrapped and 1 or 0)
+        optionalX = optionalX + control:GetWidth() + gap
+    end
+    self.listToolbar:SetHeight(wrapped and rowHeight * 2 + rowGap or rowHeight)
+    local firstRowEnd = wrapped and x or optionalX
+    self.resultCountText:SetShown(width >= 900 and firstRowEnd + 80 <= width - 32)
 end
 
 function UI:CreateFilterDrawer(parent)
     local widgets = BigBiSList.Widgets
-    local drawer = widgets:CreatePanel(nil, parent, { 0.045, 0.045, 0.052, 0.98 }, { 0.20, 0.20, 0.23, 1 })
-    drawer:SetFrameLevel((parent:GetFrameLevel() or 0) + 3)
-    drawer:EnableMouse(true)
-    drawer:SetPoint("TOPLEFT", self.listToolbar, "BOTTOMLEFT", 0, -4)
-    drawer:SetPoint("TOPRIGHT", self.listToolbar, "BOTTOMRIGHT", 0, -4)
-    drawer:SetHeight(FILTER_DRAWER_HEIGHT)
+    local overlay = widgets:CreatePanel(nil, parent, { 0.045, 0.045, 0.052, 1 }, { 0.30, 0.30, 0.34, 1 })
+    overlay:SetFrameLevel((parent:GetFrameLevel() or 0) + 45)
+    overlay:EnableMouse(true)
+    overlay:SetPoint("TOPRIGHT", self.listToolbar, "BOTTOMRIGHT", -4, -4)
+    overlay:SetSize(354, 300)
+    local close = widgets:CreateUtilityButton(overlay, "clear", 28, function() self:SetFilterDrawerOpen(false) end, "Close filters")
+    close:SetPoint("TOPRIGHT", overlay, "TOPRIGHT", -4, -4)
+    local scroll, drawer = widgets:CreateScrollFrame("BigBiSListFilterScroll", overlay)
+    scroll:SetPoint("TOPLEFT", overlay, "TOPLEFT", 6, -38)
+    scroll:SetPoint("BOTTOMRIGHT", overlay, "BOTTOMRIGHT", -28, 8)
+    self.filterDrawer = overlay
+    self.filterDrawerContent = drawer
+    self.filterDrawerScroll = scroll
+    local function updateOverflow()
+        widgets:UpdateScrollOverflow(scroll)
+    end
+    scroll:HookScript("OnSizeChanged", updateOverflow)
+    scroll:HookScript("OnScrollRangeChanged", updateOverflow)
+    scroll:HookScript("OnVerticalScroll", updateOverflow)
 
     self.filterItemHeader = drawer:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     self.filterItemHeader:SetTextColor(1, 0.82, 0.28, 1)
@@ -6799,10 +7067,9 @@ function UI:CreateFilterDrawer(parent)
     end
 
     self.upgradeModeDropdown = dropdown("BigBiSListUpgradeModeDropdown",
-        function() return "Show: " .. upgradeModeLabel(self:GetViewState("Upgrades").upgradeMode or self:GetFilters().upgradeMode) end,
+        function() return upgradeModeLabel(self:GetFilters("Upgrades").upgradeMode) end,
         function() return self:GetUpgradeModeDropdownItems() end,
         function(value)
-            self:GetViewState("Upgrades").upgradeMode = value
             self:SetFilter("upgradeMode", value)
         end)
     self.ownedDropdown = dropdown("BigBiSListOwnedDropdown",
@@ -6817,7 +7084,6 @@ function UI:CreateFilterDrawer(parent)
         function() return "When useful: " .. longevityFilterLabel(self:GetFilters().longevity) end,
         function() return self:GetLongevityDropdownItems() end,
         function(value)
-            self:GetViewState("Upgrades").usefulness = value
             self:SetFilter("longevity", value)
         end)
     self.boeDropdown = dropdown("BigBiSListBoeDropdown",
@@ -6852,11 +7118,12 @@ function UI:CreateFilterDrawer(parent)
 
     self.groupDropdown = dropdown("BigBiSListGroupDropdown",
         function()
-            local value = self:GetViewState("Gear Guide").groupBy or "slot"
-            return "Group: " .. ({ slot = "Slot", source = "Source", none = "None" })[value]
+            local tab = self:GetSelection().tab
+            local value = self:GetViewState().groupBy or (tab == "Upgrades" and "priority" or (tab == "Wishlist" and "none" or "slot"))
+            return ({ slot = "By slot", source = "By activity", activity = "By activity", priority = "By priority", none = "Ungrouped" })[value]
         end,
         function() return self:GetGroupingDropdownItems() end,
-        function(value) self:SetViewStateValue("Gear Guide", "groupBy", value) end)
+        function(value) self:SelectGrouping(value) end)
     self.recommendationCategoryDropdown = dropdown("BigBiSListRecommendationCategoryDropdown",
         function() return self:GetRecommendationCategoryDropdownText() end,
         function() return self:GetRecommendationCategoryDropdownItems() end,
@@ -6871,7 +7138,7 @@ function UI:CreateFilterDrawer(parent)
     self.enhancementAppliedDropdown = dropdown("BigBiSListEnhancementAppliedDropdown",
         function()
             local value = self:GetViewState("Enhance").appliedState or "all"
-            return ({ all = "All applied states", missing = "Missing", applied = "Applied / owned" })[value]
+            return ({ all = "All applied states", missing = "Not applied", applied = "Applied / owned" })[value]
         end,
         function() return self:GetEnhancementAppliedDropdownItems() end,
         function(value) self:SetViewStateValue("Enhance", "appliedState", value) end)
@@ -6902,10 +7169,10 @@ function UI:CreateFilterDrawer(parent)
         wishlistRelevance = self.wishlistRelevanceDropdown,
     }
 
-    self.clearFiltersButton = widgets:CreateTextButton(drawer, "Clear filters", 104, 22, function()
+    self.clearFiltersButton = widgets:CreateTextButton(overlay, "Clear filters", 104, 28, function()
         self:ClearFilters()
     end)
-    self.filterDrawer = drawer
+    self.clearFiltersButton:SetPoint("TOPLEFT", overlay, "TOPLEFT", 8, -4)
 end
 
 function UI:GetVisibleFilterControlKeys()
@@ -6925,71 +7192,49 @@ function UI:GetVisibleFilterControlKeys()
 end
 
 function UI:RefreshFilterDrawer(forceLayout)
-    if not self.filterDrawer then
-        return
-    end
+    if not self.filterDrawer then return end
     local keys = self:GetVisibleFilterControlKeys()
     local desired = {}
-    for _, key in ipairs(keys) do
-        desired[key] = true
-    end
+    for _, key in ipairs(keys) do desired[key] = true end
+    local primary = { upgrade = true, group = true, wishlistRelevance = true, enhancementType = true }
     local removedControl = false
     for key, control in pairs(self.filterDrawerControls or {}) do
-        if not desired[key] and (not control.IsShown or control:IsShown()) then
-            control:Hide()
-            removedControl = true
+        if not desired[key] and not primary[key] and control:IsShown() then
+            control:Hide(); removedControl = true
         end
     end
-    if removedControl and BigBiSList.Widgets.CloseDropdownMenus then
-        BigBiSList.Widgets:CloseDropdownMenus()
-    end
+    if removedControl then BigBiSList.Widgets:CloseDropdownMenus() end
+    self.enhancementTypeDropdown:Hide()
     self.visibleFilterControlKeys = desired
-
+    local host = self.filterDrawerContent
     local acquisitionKeys = { source = true, cost = true, vendor = true, zone = true, reputation = true }
-    local itemKeys = {}
-    local acquisition = {}
+    local itemKeys, acquisition = {}, {}
     for _, key in ipairs(keys) do
-        table.insert(acquisitionKeys[key] and acquisition or itemKeys, key)
+        if not primary[key] then table.insert(acquisitionKeys[key] and acquisition or itemKeys, key) end
     end
-    local availableWidth = math.max(320, self.filterDrawer:GetWidth() or 760)
-    local controlWidth = 150
-    local columns = math.max(2, math.floor((availableWidth - 22) / controlWidth))
-    local yOffset = 8
-    local function layoutGroup(groupKeys, header)
-        header:ClearAllPoints()
-        header:SetPoint("TOPLEFT", self.filterDrawer, "TOPLEFT", 8, -yOffset)
-        if #groupKeys > 0 then
-            header:Show()
-        else
-            header:Hide()
-        end
-        if #groupKeys == 0 then
-            return
-        end
-        yOffset = yOffset + 20
-        for index, key in ipairs(groupKeys) do
+    local y = 8
+    local function layoutGroup(group, header)
+        header:SetParent(host); header:ClearAllPoints()
+        header:SetPoint("TOPLEFT", host, "TOPLEFT", 10, -y)
+        header:SetShown(#group > 0)
+        if #group == 0 then return end
+        y = y + 24
+        for index, key in ipairs(group) do
             local control = self.filterDrawerControls[key]
-            if control then
-                if not control.IsShown or not control:IsShown() then
-                    control:Show()
-                end
-                control:ClearAllPoints()
-                local col = (index - 1) % columns
-                local row = math.floor((index - 1) / columns)
-                control:SetPoint("TOPLEFT", self.filterDrawer, "TOPLEFT", 2 + (col * controlWidth), -yOffset - (row * 34))
-                if control.Refresh then
-                    control:Refresh()
-                end
-            end
+            control:SetParent(host); control:ClearAllPoints()
+            control:SetPoint("TOPLEFT", host, "TOPLEFT", -6, -y - (index-1)*36)
+            if UIDropDownMenu_SetWidth then UIDropDownMenu_SetWidth(control, 270) end
+            control:Show(); control:Refresh()
         end
-        yOffset = yOffset + (math.max(1, math.ceil(#groupKeys / columns)) * 34) + 4
+        y = y + #group*36 + 12
     end
     layoutGroup(itemKeys, self.filterItemHeader)
     layoutGroup(acquisition, self.filterAcquisitionHeader)
-    local height = yOffset + 30
-    self.filterDrawer:SetHeight(height)
-    self.clearFiltersButton:ClearAllPoints()
-    self.clearFiltersButton:SetPoint("BOTTOMRIGHT", self.filterDrawer, "BOTTOMRIGHT", -8, 6)
+    host:SetHeight(y + 8)
+    self:LayoutPrimaryControls()
+    -- The scroll viewport consumes 38px above and 8px below its content.
+    self.filterDrawer:SetHeight(math.min(host:GetHeight() + 46, math.max(160, (self.body:GetHeight() or 400) - (self.listToolbar:GetHeight() or TOOLBAR_HEIGHT) - 8)))
+    BigBiSList.Widgets:UpdateScrollOverflow(self.filterDrawerScroll)
 end
 
 function UI:CreateBody(frame)
@@ -6997,6 +7242,9 @@ function UI:CreateBody(frame)
     local body = CreateFrame("Frame", nil, frame)
     body:SetPoint("TOPLEFT", self.tabBar, "BOTTOMLEFT", 0, -4)
     body:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -12, 34)
+    body:SetScript("OnSizeChanged", function()
+        if self.frame and self.frame:IsShown() then self:ScheduleLayoutRefresh("body-size") end
+    end)
 
     local details = widgets:CreatePanel(nil, body, { 0.055, 0.055, 0.065, 0.94 }, { 0.18, 0.18, 0.20, 1 })
     details:SetWidth(DETAILS_WIDTH)
@@ -7007,17 +7255,31 @@ function UI:CreateBody(frame)
     detailsTitle:SetPoint("TOPLEFT", details, "TOPLEFT", 10, -10)
     detailsTitle:SetText("Details")
 
-    local closeDetails = widgets:CreateTextButton(details, "<", 24, 20, function()
+    self.detailsHeader = CreateFrame("Frame", nil, details)
+    self.detailsHeader:SetPoint("TOPLEFT", details, "TOPLEFT", 0, 0)
+    self.detailsHeader:SetPoint("TOPRIGHT", details, "TOPRIGHT", 0, 0)
+    self.detailsHeader:SetHeight(76)
+    detailsTitle:Hide()
+    local closeDetails = widgets:CreateUtilityButton(details, "clear", 28, function()
+        self:SetInspectorVisible(false)
+    end, "Close details")
+    closeDetails:SetPoint("RIGHT", self.detailsHeader, "RIGHT", -6, 0)
+    self.detailsCloseButton = closeDetails
+    self.detailsBackButton = widgets:CreateTextButton(details, "Back to list", 110, 28, function()
         self:SetInspectorVisible(false)
     end)
-    closeDetails:SetPoint("TOPRIGHT", details, "TOPRIGHT", -6, -6)
+    self.detailsBackButton:SetPoint("TOPLEFT", details, "TOPLEFT", 8, -4)
+    self.detailsBackButton:Hide()
 
     local detailsScroll, detailsContent = widgets:CreateScrollFrame("BigBiSListDetailsScroll", details)
-    detailsScroll:SetPoint("TOPLEFT", detailsTitle, "BOTTOMLEFT", -2, -8)
+    detailsScroll:SetPoint("TOPLEFT", self.detailsHeader, "BOTTOMLEFT", 8, -4)
     detailsScroll:SetPoint("BOTTOMRIGHT", details, "BOTTOMRIGHT", -28, 8)
     self.details = details
     self.detailsScroll = detailsScroll
     self.detailsContent = detailsContent
+    detailsScroll:HookScript("OnSizeChanged", function()
+        if self.frame and self.frame:IsShown() then self:RefreshDetailsLayout() end
+    end)
 
     local contentRegion = CreateFrame("Frame", nil, body)
     contentRegion:SetPoint("TOPLEFT", body, "TOPLEFT", 0, 0)
@@ -7092,77 +7354,62 @@ function UI:CreateBody(frame)
     self:SetStickyHeaderMode(nil)
 end
 
+function UI:GetBodyGeometry(width, inspectorVisible, chipHeight, supportsFilters)
+    local docked = inspectorVisible and width >= MIN_WIDTH - 24
+    local exclusive = inspectorVisible and not docked
+    return { docked = docked, exclusive = exclusive, detailsWidth = exclusive and width or DETAILS_WIDTH,
+        listWidth = width - (docked and DETAILS_WIDTH + 8 or 0),
+        top = (supportsFilters and TOOLBAR_HEIGHT + 4 or 0) + (chipHeight > 0 and chipHeight + 4 or 0) }
+end
+
 function UI:ApplyBodyLayout()
-    if not self.body or not self.contentRegion or not self.contentPanel then
-        return
-    end
+    if not self.body or not self.contentRegion or not self.contentPanel then return end
     local supportsFilters = self:ViewSupportsFilters()
     local showInspector = self:IsInspectorVisible()
-    local showDrawer = supportsFilters and self.filterDrawerOpen
-    if showDrawer then
-        self:RefreshFilterDrawer()
+    local geometry = self:GetBodyGeometry(self.body:GetWidth() or DEFAULT_WIDTH - 24, showInspector, 0, supportsFilters)
+    self.inspectorDocked = geometry.docked
+    self.inspectorExclusive = geometry.exclusive
+    self.details:SetShown(showInspector)
+    self.details:SetWidth(geometry.detailsWidth)
+    self.details:SetFrameLevel((self.body:GetFrameLevel() or 0) + 4)
+    self.details:EnableMouse(true)
+    self.detailsBackButton:SetShown(geometry.exclusive)
+    self.contentRegion:SetShown(not geometry.exclusive)
+    local signature = tostring(geometry.docked) .. ":" .. tostring(geometry.exclusive) .. ":" .. tostring(showInspector) .. ":" .. tostring(supportsFilters)
+    if self.bodyLayoutSignature ~= signature then
+        self.bodyLayoutSignature = signature
+        self.detailsHeader:ClearAllPoints()
+        self.detailsHeader:SetPoint("TOPLEFT", self.details, "TOPLEFT", 0, geometry.exclusive and -36 or 0)
+        self.detailsHeader:SetPoint("TOPRIGHT", self.details, "TOPRIGHT", 0, geometry.exclusive and -36 or 0)
+        self.contentRegion:ClearAllPoints()
+        self.contentRegion:SetPoint("TOPLEFT", self.body, "TOPLEFT", 0, 0)
+        self.contentRegion:SetPoint("BOTTOMLEFT", self.body, "BOTTOMLEFT", 0, 0)
+        self.contentRegion:SetPoint("RIGHT", geometry.docked and self.details or self.body, geometry.docked and "LEFT" or "RIGHT", geometry.docked and -8 or 0, 0)
     end
-    local drawerHeight = showDrawer and math.floor((self.filterDrawer:GetHeight() or 0) + 0.5) or 0
-    local activeFilterHeight = supportsFilters and self:RefreshFixedActiveFilterBar() or 0
-    local showActiveFilters = activeFilterHeight > 0
-    local signature = table.concat({
-        supportsFilters and "1" or "0",
-        showInspector and "1" or "0",
-        showDrawer and "1" or "0",
-        tostring(drawerHeight),
-        tostring(activeFilterHeight),
-    }, ":")
-
-    if self.bodyLayoutSignature == signature then
-        if self.inspectorToggleButton then
-            self.inspectorToggleButton.label:SetText(showInspector and "Hide Details" or "Details")
-        end
-        return
-    end
-    self.bodyLayoutSignature = signature
-
-    if showInspector then self.details:Show() else self.details:Hide() end
-    self.contentRegion:ClearAllPoints()
-    self.contentRegion:SetPoint("TOPLEFT", self.body, "TOPLEFT", 0, 0)
-    self.contentRegion:SetPoint("BOTTOMLEFT", self.body, "BOTTOMLEFT", 0, 0)
-    if showInspector then
-        self.contentRegion:SetPoint("RIGHT", self.details, "LEFT", -8, 0)
-    else
-        self.contentRegion:SetPoint("RIGHT", self.body, "RIGHT", 0, 0)
-    end
-
-    if supportsFilters then self.listToolbar:Show() else self.listToolbar:Hide() end
-    if showDrawer then self.filterDrawer:Show() else self.filterDrawer:Hide() end
+    self.listToolbar:SetShown(supportsFilters)
+    self.filterDrawer:SetShown(supportsFilters and self.filterDrawerOpen == true)
+    self:RefreshFilterDrawer()
+    local activeHeight = supportsFilters and self:RefreshFixedActiveFilterBar() or 0
     if self.fixedActiveFilterBar then
-        if showActiveFilters then
-            self.fixedActiveFilterBar:Show()
-            self.fixedActiveFilterBar:ClearAllPoints()
-            if showDrawer then
-                self.fixedActiveFilterBar:SetPoint("TOPLEFT", self.filterDrawer, "BOTTOMLEFT", 0, -4)
-                self.fixedActiveFilterBar:SetPoint("TOPRIGHT", self.filterDrawer, "BOTTOMRIGHT", 0, -4)
-            else
-                self.fixedActiveFilterBar:SetPoint("TOPLEFT", self.listToolbar, "BOTTOMLEFT", 0, -4)
-                self.fixedActiveFilterBar:SetPoint("TOPRIGHT", self.listToolbar, "BOTTOMRIGHT", 0, -4)
-            end
-        else
-            self.fixedActiveFilterBar:Hide()
-        end
+        self.fixedActiveFilterBar:SetShown(activeHeight > 0)
+        self.fixedActiveFilterBar:ClearAllPoints()
+        self.fixedActiveFilterBar:SetPoint("TOPLEFT", self.listToolbar, "BOTTOMLEFT", 0, -2)
+        self.fixedActiveFilterBar:SetPoint("TOPRIGHT", self.listToolbar, "BOTTOMRIGHT", 0, -2)
     end
-    self.contentPanel:ClearAllPoints()
-    if showActiveFilters then
-        self.contentPanel:SetPoint("TOPLEFT", self.fixedActiveFilterBar, "BOTTOMLEFT", 0, -4)
-    elseif showDrawer then
-        self.contentPanel:SetPoint("TOPLEFT", self.filterDrawer, "BOTTOMLEFT", 0, -4)
-    elseif supportsFilters then
-        self.contentPanel:SetPoint("TOPLEFT", self.listToolbar, "BOTTOMLEFT", 0, -4)
-    else
-        self.contentPanel:SetPoint("TOPLEFT", self.contentRegion, "TOPLEFT", 0, 0)
+    local top = supportsFilters and (activeHeight > 0 and self.fixedActiveFilterBar or self.listToolbar) or self.contentRegion
+    if self.contentTopAnchor ~= top then
+        self.contentTopAnchor = top
+        self.contentPanel:ClearAllPoints()
+        self.contentPanel:SetPoint("TOPLEFT", top, supportsFilters and "BOTTOMLEFT" or "TOPLEFT", 0, supportsFilters and -4 or 0)
+        self.contentPanel:SetPoint("BOTTOMRIGHT", self.contentRegion, "BOTTOMRIGHT", 0, 0)
     end
-    self.contentPanel:SetPoint("BOTTOMRIGHT", self.contentRegion, "BOTTOMRIGHT", 0, 0)
+    self.inspectorToggleButton:SetSelected(showInspector)
+end
 
-    if self.inspectorToggleButton then
-        self.inspectorToggleButton.label:SetText(showInspector and "Hide Details" or "Details")
-    end
+function UI:GetBankStatusText()
+    local owned = self.currentOwned
+    if not owned or not owned.bankScanned then return "Bank not checked · Open your bank to include stored gear" end
+    return "Bank cache · " .. ((owned.bankUpdatedAt and owned.bankUpdatedAt ~= "") and owned.bankUpdatedAt or "Scanned")
 end
 
 function UI:CreateStatusBar(frame)
@@ -7177,6 +7424,11 @@ function UI:CreateStatusBar(frame)
     self.statusText:SetPoint("RIGHT", status, "RIGHT", -34, 0)
     self.statusText:SetJustifyH("LEFT")
     self.statusText:SetTextColor(0.62, 0.62, 0.66, 1)
+
+    self.undoButton = widgets:CreateTextButton(status, "Undo", 60, 24, function() self:UndoLastAction() end)
+    self.undoButton:SetPoint("RIGHT", status, "RIGHT", -32, 0)
+    self.undoButton:Hide()
+    self.statusText:SetPoint("RIGHT", status, "RIGHT", -104, 0)
 
     local resize = CreateFrame("Button", nil, status)
     resize:SetSize(16, 16)

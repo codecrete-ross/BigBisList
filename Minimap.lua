@@ -7,8 +7,8 @@ local BROKER_NAME = "BigBiSList"
 local DEFAULT_ICON = "Interface\\AddOns\\BigBiSList\\assets\\icon.tga"
 
 local function showSettings()
-    BigBiSList:SetSelection(nil, nil, nil, "Settings")
     BigBiSList:OpenMainFrame()
+    if BigBiSList.UI then BigBiSList.UI:OpenSettings() end
 end
 
 local function createBrokerObject(LDB)

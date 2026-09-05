@@ -6,6 +6,86 @@ BigBiSList.addonName = addonName or BigBiSList.addonName or "BigBiSList"
 local Widgets = {}
 BigBiSList.Widgets = Widgets
 
+Widgets.Theme = {
+    surface = { 0.055, 0.055, 0.065, 0.96 },
+    control = { 0.09, 0.09, 0.105, 0.96 },
+    hover = { 0.15, 0.15, 0.17, 0.98 },
+    pressed = { 0.065, 0.065, 0.075, 1 },
+    selected = { 0.18, 0.15, 0.075, 0.98 },
+    border = { 0.26, 0.26, 0.29, 1 },
+    accent = { 0.92, 0.76, 0.32, 1 },
+    text = { 0.90, 0.90, 0.92, 1 },
+    muted = { 0.68, 0.68, 0.72, 1 },
+    disabled = { 0.42, 0.42, 0.46, 1 },
+}
+
+-- This order is shared with tools/generate_ui_icons.py. Each glyph occupies a
+-- padded 32px cell in the addon-owned 256px atlas; no client atlas API is needed.
+local ICON_KEYS = {
+    "search", "clear", "starOutline", "starFilled", "sortAscending", "sortDescending",
+    "chevronLeft", "chevronRight", "chevronDown", "chevronUp", "settings", "filter",
+    "details", "check", "bag", "bank", "equipped", "clock", "warning", "info",
+    "plus", "minus", "restore", "hide", "menu",
+}
+local ICON_INDEX = {}
+for index, key in ipairs(ICON_KEYS) do ICON_INDEX[key] = index - 1 end
+
+function Widgets:SetIcon(texture, key)
+    if not texture then return false end
+    local known = ICON_INDEX[key] ~= nil
+    local index = ICON_INDEX[key] or ICON_INDEX.info
+    local column, row = index % 8, math.floor(index / 8)
+    texture:SetTexture("Interface\\AddOns\\BigBiSList\\assets\\ui-icons.tga")
+    texture:SetTexCoord(column / 8, (column + 1) / 8, row / 8, (row + 1) / 8)
+    texture.iconKey = known and key or "info"
+    return known
+end
+
+local function appendScript(frame, event, callback)
+    if frame.HookScript then
+        frame:HookScript(event, callback)
+    else
+        local previous = frame.GetScript and frame:GetScript(event)
+        frame:SetScript(event, function(self, ...)
+            if previous then previous(self, ...) end
+            callback(self, ...)
+        end)
+    end
+end
+
+local function hideOwnedTooltip(frame)
+    if GameTooltip and (not GameTooltip.IsOwned or GameTooltip:IsOwned(frame)) then
+        GameTooltip:Hide()
+    end
+end
+
+function Widgets:BindTooltip(frame, callback)
+    frame.__bigBisTooltip = callback
+    if frame.__bigBisTooltipBound then return end
+    frame.__bigBisTooltipBound = true
+    appendScript(frame, "OnEnter", function(self)
+        if self.SetHovered then self:SetHovered(true) end
+        local content = self.__bigBisTooltip
+        if not content or not GameTooltip then return end
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        if type(content) == "function" then
+            local text = content(self, GameTooltip)
+            if type(text) == "string" then GameTooltip:AddLine(text, 0.90, 0.90, 0.92, true) end
+        else
+            GameTooltip:AddLine(tostring(content), 0.90, 0.90, 0.92, true)
+        end
+        GameTooltip:Show()
+    end)
+    appendScript(frame, "OnLeave", function(self)
+        if self.SetHovered then self:SetHovered(false) end
+        hideOwnedTooltip(self)
+    end)
+    appendScript(frame, "OnHide", function(self)
+        if self.SetHovered then self:SetHovered(false) end
+        hideOwnedTooltip(self)
+    end)
+end
+
 local dropdownCounter = 0
 local DROPDOWN_LIST_BASE_LEVEL = 1000
 
@@ -151,8 +231,8 @@ local function setBackdrop(frame, bg, border)
 
     bg = bg or { 0.04, 0.04, 0.05, 0.94 }
     border = border or { 0.22, 0.22, 0.24, 1 }
-    frame:SetBackdropColor(bg[1], bg[2], bg[3], bg[4])
-    frame:SetBackdropBorderColor(border[1], border[2], border[3], border[4])
+    frame:SetBackdropColor(bg[1], bg[2], bg[3], frame.__bigBisStatusBadge and math.min(bg[4] or 1, 0.20) or bg[4])
+    frame:SetBackdropBorderColor(border[1], border[2], border[3], frame.__bigBisStatusBadge and 0 or border[4])
 end
 
 function Widgets:CreatePanel(name, parent, bg, border)
@@ -190,8 +270,72 @@ function Widgets:MeasureTextHeight(label, minimum)
     return height
 end
 
+local function textTokens(text)
+    local tokens, position = {}, 1
+    while position <= #text do
+        local rest = string.sub(text, position)
+        local token = string.match(rest, "^|c%x%x%x%x%x%x%x%x")
+            or string.match(rest, "^|H.-|h.-|h")
+            or string.match(rest, "^|T.-|t")
+            or string.match(rest, "^|r")
+            or string.match(rest, "^||")
+        if not token then
+            local byte = string.byte(text, position)
+            local length = byte >= 240 and 4 or (byte >= 224 and 3 or (byte >= 192 and 2 or 1))
+            token = string.sub(text, position, position + length - 1)
+        end
+        tokens[#tokens + 1] = token
+        position = position + #token
+    end
+    return tokens
+end
+
+function Widgets:SetCellText(label, text, maxLines, lineHeight, width)
+    text = tostring(text or "")
+    maxLines = math.max(1, math.floor(tonumber(maxLines) or 2))
+    lineHeight = math.max(1, tonumber(lineHeight) or 14)
+    if width then label:SetWidth(math.max(1, width)) end
+    label:SetWordWrap(true)
+    if label.SetJustifyV then label:SetJustifyV("MIDDLE") end
+    if label.SetNonSpaceWrap then label:SetNonSpaceWrap(true) end
+    label:SetHeight(0)
+    local availableHeight = maxLines * lineHeight
+    local function fits(value)
+        label:SetText(value)
+        return not label.GetStringHeight or (label:GetStringHeight() or 0) <= availableHeight + 0.1
+    end
+    local displayed, truncated = text, not fits(text)
+    if truncated then
+        local tokens = textTokens(text)
+        local low, high, best = 0, #tokens, "..."
+        local resetColor = string.find(text, "|c", 1, true) and "|r" or ""
+        while low <= high do
+            local middle = math.floor((low + high) / 2)
+            local prefix = string.gsub(table.concat(tokens, "", 1, middle), "%s+$", "")
+            local candidate = prefix .. "..." .. resetColor
+            if fits(candidate) then
+                best = candidate
+                low = middle + 1
+            else
+                high = middle - 1
+            end
+        end
+        displayed = best
+    end
+    label:SetText(displayed)
+    label:SetHeight(availableHeight)
+    label.fullText = text
+    label.displayedText = displayed
+    label.isTruncated = truncated
+    label.maxLines = maxLines
+    label.lineHeight = lineHeight
+    return displayed, truncated
+end
+
 function Widgets:CreateStatusBadge(parent, text, width, height, bg, border)
     local badge = self:CreatePanel(nil, parent, bg, border)
+    badge.__bigBisStatusBadge = true
+    setBackdrop(badge, bg, border)
     badge:SetSize(width or 78, height or 18)
 
     local label = badge:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
@@ -202,13 +346,58 @@ function Widgets:CreateStatusBadge(parent, text, width, height, bg, border)
     label:SetText(text or "")
     badge.label = label
 
+    function badge:SetIcon(key)
+        if not self.icon then
+            self.icon = self:CreateTexture(nil, "ARTWORK")
+            self.icon:SetSize(14, 14)
+            self.icon:SetPoint("LEFT", self, "LEFT", 3, 0)
+        end
+        label:ClearAllPoints()
+        label:SetPoint("LEFT", self, "LEFT", key and 21 or 4, 0)
+        label:SetPoint("RIGHT", self, "RIGHT", -4, 0)
+        if key then
+            Widgets:SetIcon(self.icon, key)
+            self.icon:Show()
+            label:SetJustifyH("LEFT")
+        else
+            self.icon:Hide()
+            label:SetJustifyH("CENTER")
+        end
+    end
+    function badge:SetTone(background, foreground)
+        setBackdrop(self, background, foreground)
+        if foreground then
+            self.label:SetTextColor(foreground[1], foreground[2], foreground[3], 1)
+            if self.icon then self.icon:SetVertexColor(foreground[1], foreground[2], foreground[3], 1) end
+        end
+    end
+
     return badge
 end
 
+local function paintButton(button)
+    local theme = Widgets.Theme
+    local disabled = button.disabled
+    local background = disabled and theme.surface or (button.pressed and theme.pressed
+        or (button.selected and theme.selected or (button.hovered and theme.hover or theme.control)))
+    local border = (button.selected or button.focused) and theme.accent or theme.border
+    if button.hovered and not button.selected and not button.focused then border = theme.muted end
+    if disabled then border = theme.border end
+    setBackdrop(button, background, border)
+    local foreground = disabled and theme.disabled or (button.selected and theme.accent or theme.text)
+    if button.label then button.label:SetTextColor(foreground[1], foreground[2], foreground[3], foreground[4]) end
+    if button.icon then button.icon:SetVertexColor(foreground[1], foreground[2], foreground[3], foreground[4]) end
+    if button.focusRing then
+        if button.focused and not disabled then button.focusRing:Show() else button.focusRing:Hide() end
+    end
+end
+
 function Widgets:CreateTextButton(parent, text, width, height, onClick)
-    local button = self:CreatePanel(nil, parent, { 0.10, 0.10, 0.12, 0.95 }, { 0.26, 0.26, 0.30, 1 })
+    local template = BackdropTemplateMixin and "BackdropTemplate" or nil
+    local button = CreateFrame("Button", nil, parent, template)
     button:SetSize(width or 80, height or 24)
     button:EnableMouse(true)
+    button:RegisterForClicks("LeftButtonUp")
 
     local label = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     label:SetPoint("LEFT", button, "LEFT", 6, 0)
@@ -217,34 +406,79 @@ function Widgets:CreateTextButton(parent, text, width, height, onClick)
     label:SetWordWrap(false)
     label:SetText(text or "")
     button.label = label
+    button.focusRing = button:CreateTexture(nil, "OVERLAY")
+    button.focusRing:SetColorTexture(0.96, 0.90, 0.68, 1)
+    button.focusRing:SetHeight(2)
+    button.focusRing:SetPoint("BOTTOMLEFT", button, "BOTTOMLEFT", 3, 3)
+    button.focusRing:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -3, 3)
+    button.focusRing:Hide()
 
-    button:SetScript("OnEnter", function(self)
-        setBackdrop(self, { 0.15, 0.15, 0.18, 0.98 }, { 0.40, 0.40, 0.46, 1 })
-    end)
-    button:SetScript("OnLeave", function(self)
-        if self.selected then
-            setBackdrop(self, { 0.16, 0.14, 0.07, 0.98 }, { 0.88, 0.72, 0.24, 1 })
-        else
-            setBackdrop(self, { 0.10, 0.10, 0.12, 0.95 }, { 0.26, 0.26, 0.30, 1 })
-        end
-    end)
-    button:SetScript("OnMouseUp", function(self, buttonName)
-        if buttonName == "LeftButton" and onClick then
-            onClick(self)
-        end
-    end)
-
+    local nativeSetEnabled = button.SetEnabled
+    function button:SetEnabled(enabled)
+        self.disabled = not enabled
+        if self.disabled then self.pressed = false end
+        if nativeSetEnabled then nativeSetEnabled(self, not self.disabled) end
+        paintButton(self)
+    end
     function button:SetSelected(selected)
         self.selected = selected and true or false
-        if self.selected then
-            setBackdrop(self, { 0.16, 0.14, 0.07, 0.98 }, { 0.88, 0.72, 0.24, 1 })
-            self.label:SetTextColor(1, 0.86, 0.36, 1)
-        else
-            setBackdrop(self, { 0.10, 0.10, 0.12, 0.95 }, { 0.26, 0.26, 0.30, 1 })
-            self.label:SetTextColor(0.88, 0.88, 0.88, 1)
-        end
+        paintButton(self)
     end
+    function button:SetHovered(hovered)
+        self.hovered = hovered and true or false
+        if not self.hovered then self.pressed = false end
+        paintButton(self)
+    end
+    function button:SetFocused(focused)
+        self.focused = focused and true or false
+        paintButton(self)
+    end
+    button:SetScript("OnEnter", function(self)
+        self:SetHovered(true)
+    end)
+    button:SetScript("OnLeave", function(self)
+        self:SetHovered(false)
+    end)
+    button:SetScript("OnMouseDown", function(self, buttonName)
+        self.pressed = buttonName == "LeftButton" and not self.disabled
+        paintButton(self)
+    end)
+    button:SetScript("OnMouseUp", function(self)
+        self.pressed = false
+        paintButton(self)
+    end)
+    button:SetScript("OnClick", function(self, buttonName)
+        if not self.disabled and buttonName == "LeftButton" and onClick then onClick(self, buttonName) end
+    end)
+    button:SetScript("OnDisable", function(self)
+        self.disabled, self.pressed = true, false
+        paintButton(self)
+    end)
+    button:SetScript("OnEnable", function(self)
+        self.disabled = false
+        paintButton(self)
+    end)
+    button:SetScript("OnHide", function(self)
+        self.hovered, self.pressed, self.focused = false, false, false
+        paintButton(self)
+    end)
+    paintButton(button)
+    return button
+end
 
+function Widgets:CreateUtilityButton(parent, iconKey, size, onClick, tooltip)
+    size = math.max(28, tonumber(size) or 28)
+    local button = self:CreateTextButton(parent, "", size, size, onClick)
+    button.label:Hide()
+    button.icon = button:CreateTexture(nil, "ARTWORK")
+    button.icon:SetSize(20, 20)
+    button.icon:SetPoint("CENTER", button, "CENTER", 0, 0)
+    function button:SetIcon(key)
+        Widgets:SetIcon(self.icon, key)
+        paintButton(self)
+    end
+    button:SetIcon(iconKey)
+    self:BindTooltip(button, tooltip)
     return button
 end
 
@@ -268,12 +502,23 @@ function Widgets:CreateIconButton(parent, size, onClick)
     border:Hide()
     button.border = border
 
+    function button:SetHovered(hovered)
+        self.hovered = hovered and true or false
+        if self.hovered then self.border:Show() else self.border:Hide() end
+    end
     button:SetScript("OnEnter", function(self)
-        self.border:Show()
+        self:SetHovered(true)
     end)
     button:SetScript("OnLeave", function(self)
-        self.border:Hide()
-        GameTooltip:Hide()
+        self:SetHovered(false)
+        hideOwnedTooltip(self)
+    end)
+    button:SetScript("OnHide", function(self)
+        self:SetHovered(false)
+        hideOwnedTooltip(self)
+    end)
+    button:SetScript("OnSizeChanged", function(self, width, height)
+        self.border:SetSize((width or 28) * 1.8, (height or width or 28) * 1.8)
     end)
     button:SetScript("OnClick", function(self, buttonName)
         if onClick then
@@ -369,6 +614,49 @@ function Widgets:CreateScrollFrame(name, parent)
     return scroll, child
 end
 
+-- Opt-in for overlays whose chrome should disappear when all content fits.
+-- Main list scroll frames keep their normal native scrollbar behavior.
+function Widgets:UpdateScrollOverflow(scroll, contentHeight, viewportHeight)
+    if not scroll then return false, 0 end
+    local child = scroll.child or (scroll.GetScrollChild and scroll:GetScrollChild())
+    contentHeight = tonumber(contentHeight) or (child and child.GetHeight and child:GetHeight()) or 0
+    viewportHeight = tonumber(viewportHeight) or (scroll.GetHeight and scroll:GetHeight()) or 0
+    local maximum = math.max(0, contentHeight - viewportHeight)
+    local overflowing = maximum > 0
+    local current = tonumber(scroll.GetVerticalScroll and scroll:GetVerticalScroll()) or 0
+    local offset = math.min(maximum, math.max(0, current))
+    if offset ~= current and scroll.SetVerticalScroll then scroll:SetVerticalScroll(offset) end
+
+    local name = scroll.GetName and scroll:GetName()
+    local bar = scroll.ScrollBar or scroll.scrollBar or (name and _G and _G[name .. "ScrollBar"])
+    local function setEnabled(frame, enabled)
+        if not frame then return end
+        if frame.SetEnabled then frame:SetEnabled(enabled)
+        elseif enabled and frame.Enable then frame:Enable()
+        elseif not enabled and frame.Disable then frame:Disable() end
+    end
+    if bar then
+        if bar.SetMinMaxValues then bar:SetMinMaxValues(0, maximum) end
+        if bar.SetValue and (not bar.GetValue or bar:GetValue() ~= offset) then bar:SetValue(offset) end
+        setEnabled(bar, overflowing)
+        if overflowing then
+            if bar.Show then bar:Show() end
+        elseif bar.Hide then
+            bar:Hide()
+        end
+        local barName = bar.GetName and bar:GetName()
+        local up = bar.ScrollUpButton or scroll.ScrollUpButton
+            or (barName and _G and _G[barName .. "ScrollUpButton"])
+            or (name and _G and _G[name .. "ScrollUpButton"])
+        local down = bar.ScrollDownButton or scroll.ScrollDownButton
+            or (barName and _G and _G[barName .. "ScrollDownButton"])
+            or (name and _G and _G[name .. "ScrollDownButton"])
+        setEnabled(up, overflowing and offset > 0)
+        setEnabled(down, overflowing and offset < maximum)
+    end
+    return overflowing, maximum
+end
+
 function Widgets:ClearChildren(parent)
     if not parent then
         return
@@ -409,21 +697,59 @@ function Widgets:CreateSectionHeader(parent, text, yOffset)
 end
 
 function Widgets:CreateItemRow(parent, height)
-    local row = self:CreatePanel(nil, parent, { 0.075, 0.075, 0.085, 0.90 }, { 0.18, 0.18, 0.20, 0.85 })
+    local row = self:CreatePanel(nil, parent, Widgets.Theme.surface, { 0, 0, 0, 0 })
     row:SetHeight(height or 38)
     row:EnableMouse(true)
 
-    local highlight = row:CreateTexture(nil, "BACKGROUND")
+    local selection = row:CreateTexture(nil, "ARTWORK")
+    selection:SetAllPoints()
+    selection:SetColorTexture(0.88, 0.69, 0.22, 0.11)
+    selection:Hide()
+    row.selection = selection
+    local accent = row:CreateTexture(nil, "OVERLAY")
+    accent:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+    accent:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 0, 0)
+    accent:SetWidth(2)
+    accent:SetColorTexture(0.92, 0.76, 0.32, 1)
+    accent:Hide()
+    row.selectionAccent = accent
+
+    local separator = row:CreateTexture(nil, "ARTWORK")
+    separator:SetHeight(1)
+    separator:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 0, 0)
+    separator:SetPoint("BOTTOMRIGHT", row, "BOTTOMRIGHT", 0, 0)
+    separator:SetColorTexture(0.25, 0.25, 0.29, 0.55)
+    row.separator = separator
+
+    local highlight = row:CreateTexture(nil, "ARTWORK")
     highlight:SetAllPoints()
     highlight:SetColorTexture(1, 1, 1, 0.055)
     highlight:Hide()
     row.highlight = highlight
 
+    function row:SetSelected(selected)
+        self.selected = selected and true or false
+        if self.selected then
+            self.selection:Show()
+            self.selectionAccent:Show()
+        else
+            self.selection:Hide()
+            self.selectionAccent:Hide()
+        end
+    end
+    function row:SetHovered(hovered)
+        self.hovered = hovered and true or false
+        if self.hovered then self.highlight:Show() else self.highlight:Hide() end
+    end
     row:SetScript("OnEnter", function(self)
-        self.highlight:Show()
+        self:SetHovered(true)
     end)
     row:SetScript("OnLeave", function(self)
-        self.highlight:Hide()
+        self:SetHovered(false)
+    end)
+    row:SetScript("OnHide", function(self)
+        self:SetHovered(false)
+        self:SetSelected(false)
     end)
 
     return row

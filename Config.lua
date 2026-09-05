@@ -17,11 +17,11 @@ end
 
 local version = addonMetadata("Version")
 if version == nil or version == "" or version == "@project-version@" then
-    version = "0.13.0"
+    version = "0.14.0"
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 16
+local DEFAULTS_VERSION = 17
 local DEFAULT_SELECTED_CLASS = "Druid"
 local DEFAULT_SELECTED_SPEC = "Feral dps"
 local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel
@@ -227,8 +227,6 @@ BigBiSList.defaults = {
             upgrades = {
                 sort = "priority",
                 sortDirection = "desc",
-                upgradeMode = "actual",
-                usefulness = "all",
             },
             bisList = {
                 sort = "rank",
@@ -372,6 +370,46 @@ local function migrateViewState(char, previousVersion)
     end
     if filters.longevity ~= nil then
         upgrades.usefulness = filters.longevity
+    end
+end
+
+local function copyFilterValues(values)
+    local result = {}
+    for key, value in pairs(values or {}) do
+        result[key] = type(value) == "table" and copyFilterValues(value) or value
+    end
+    return result
+end
+
+local function migrateWorkspaceFilters(char, previousVersion)
+    for viewKey, state in pairs(char.viewState or {}) do
+        if type(state) == "table" then
+            if type(state.filters) ~= "table" then
+                state.filters = copyFilterValues(char.filters or BigBiSList.defaults.char.filters)
+            end
+            applyDefaults(state.filters, BigBiSList.defaults.char.filters)
+            if viewKey == "upgrades" then
+                if previousVersion == nil or previousVersion < 17 then
+                    state.filters.upgradeMode = state.upgradeMode or state.filters.upgradeMode
+                    state.filters.longevity = state.usefulness or state.filters.longevity
+                end
+                state.upgradeMode = nil
+                state.usefulness = nil
+            else
+                state.filters.upgradeMode = "all"
+                state.filters.longevity = "all"
+            end
+            if viewKey == "enhancements" or viewKey == "gearGuide" then
+                state.filters.rankGroup = "all"
+                state.filters.rankGroups = {}
+            end
+            if viewKey == "enhancements" or viewKey == "myGear" then
+                state.filters.ownedState = "all"
+                state.filters.binding = "all"
+                state.filters.boe = "all"
+                state.filters.slots = {}
+            end
+        end
     end
 end
 
@@ -751,6 +789,12 @@ function BigBiSList:SetSelectedLevelingLevel(level, manual)
     end
 end
 
+function BigBiSList:ResetLevelAutoSelection()
+    self:EnsureDatabase()
+    BigBiSListCharDB.leveling.manualLevel = false
+    return self:ApplyDetectedPlayerLevel()
+end
+
 local function syncSelectionAliases(char)
     char.selectedClass = char.selection.class
     char.selectedSpec = char.selection.spec
@@ -1041,6 +1085,7 @@ function BigBiSList:EnsureDatabase()
     migrateTooltipSpecFilterDefaults(BigBiSListDB, profilePreviousVersion)
     migrateSplitDropSourceFilter(BigBiSListCharDB, charPreviousVersion)
     migrateFacetedFilters(BigBiSListCharDB, charPreviousVersion)
+    migrateWorkspaceFilters(BigBiSListCharDB, charPreviousVersion)
     migrateLevelingLevel(BigBiSListCharDB)
     BigBiSListCharDB.manualClassSpecSelection = nil
     ensureTooltipSpecFilters(BigBiSListDB)

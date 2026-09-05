@@ -5,8 +5,8 @@ Warcraft. It shows phase-based BiS lists, acquisition details, gem/enchant and
 consumable recommendations, item tooltip matches, ownership state, and a simple
 priority planner.
 
-This repository is prepared for the `0.13.0` release. This addon targets TBC
-Anniversary only. The `0.13.0` package uses WoW interface `20506`, matching the
+This repository is prepared for the `0.14.0` release. This addon targets TBC
+Anniversary only. The `0.14.0` package uses WoW interface `20506`, matching the
 local `wow_anniversary` 2.5.6 client, and is not intended for Retail, Classic
 Era, Cataclysm Classic, Mists Classic, or other WoW releases.
 
@@ -47,7 +47,7 @@ test.
 
 ## Data Scope
 
-The `0.13.0` release ships with generated data from audited local Wowhead TBC
+The `0.14.0` release ships with generated data from audited local Wowhead TBC
 snapshots plus curated overrides where source data needed correction.
 
 Current generated data includes:
@@ -77,7 +77,7 @@ release.
 - Planner priority is heuristic; it is not a simulator and does not replace
   class-specific stat weights.
 - Bank ownership only includes banked items after the character opens the bank.
-- No profile import/export is included in `0.13.0`.
+- No profile import/export is included in `0.14.0`.
 
 ## Release Checks
 
@@ -86,7 +86,7 @@ The authoritative release checklist is
 single release gate from the repository root before tagging or releasing:
 
 ```powershell
-.\scripts\check-release.ps1 -Version 0.13.0 -FullData
+.\scripts\check-release.ps1 -Version 0.14.0 -FullData
 ```
 
 `CHANGELOG.md` preserves the complete history of player-observable addon

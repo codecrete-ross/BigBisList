@@ -515,9 +515,13 @@ equal(itemRows[1].name, "Alpha", "item sort applies to presentation copy")
 equal(cachedRows[1].name, "Zulu", "cached query order remains immutable")
 
 state.sort = "priority"
+state.sortDirection = "desc"
 local priorityRows = UI:SortDisplayRows(cachedRows, "planner")
-equal(priorityRows[1].name, "Zulu", "default sort restores DataIndex order")
+equal(priorityRows[1].name, "Zulu", "priority sort puts higher benefit first")
 expect(priorityRows ~= cachedRows, "default ordering also uses a presentation copy")
+state.sortDirection = "asc"
+equal(UI:SortDisplayRows(cachedRows, "planner")[1].name, "Alpha", "priority direction is actionable")
+equal(cachedRows[1].name, "Zulu", "both priority directions preserve cached query order")
 ''')
 
     def test_access_evaluation_uses_the_rows_matching_future_acquisition_path(self):
@@ -624,102 +628,25 @@ dofile("UI.lua")
 
 local UI = BigBiSList.UI
 local modes = { "planner", "phase", "leveling", "enhance", "wishlist", "gear" }
-local expectedColumns = {
-    planner = {
-        wide = {
-            { "item", "Item", 170, 260, 420, 8 }, { "slot", "Slot", 72, 88, 112, 2 },
-            { "value", "Value", 126, 170, 240, 4 }, { "source", "Source", 108, 128, 168, 2 },
-            { "location", "Location", 150, 210, 300, 6 }, { "owned", "Owned", 86, 86, 86, 0 },
-            { "action", "Wishlist", 58, 58, 58, 0 },
-        },
-        compact = {
-            { "item", "Item", 140, 220, 340, 8 }, { "slot", "Slot", 64, 82, 100, 2 },
-            { "value", "Value", 96, 145, 210, 4 }, { "acquisition", "Acquisition", 145, 230, 330, 6 },
-            { "owned", "Owned", 80, 80, 80, 0 }, { "action", "Wishlist", 58, 58, 58, 0 },
-        },
-    },
-    phase = {
-        wide = {
-            { "rank", "Rank", 92, 104, 128, 2 }, { "item", "Item", 190, 300, 460, 8 },
-            { "source", "Source", 108, 128, 168, 2 }, { "location", "Location", 150, 220, 320, 6 },
-            { "owned", "Owned", 86, 86, 86, 0 }, { "action", "Wishlist", 58, 58, 58, 0 },
-        },
-        compact = {
-            { "rank", "Rank", 76, 94, 116, 2 }, { "item", "Item", 145, 250, 400, 8 },
-            { "acquisition", "Acquisition", 145, 250, 360, 6 }, { "owned", "Owned", 80, 80, 80, 0 },
-            { "action", "Wishlist", 58, 58, 58, 0 },
-        },
-    },
-    leveling = {
-        wide = {
-            { "item", "Item", 170, 260, 420, 8 }, { "slot", "Slot", 72, 88, 112, 2 },
-            { "value", "Level / Value", 128, 176, 250, 4 }, { "source", "Source", 108, 128, 168, 2 },
-            { "location", "Location", 140, 210, 300, 6 }, { "owned", "Owned", 86, 86, 86, 0 },
-            { "action", "Wishlist", 58, 58, 58, 0 },
-        },
-        compact = {
-            { "item", "Item", 140, 220, 340, 8 }, { "slot", "Slot", 64, 82, 100, 2 },
-            { "value", "Level / Value", 104, 155, 220, 4 }, { "acquisition", "Acquisition", 145, 230, 330, 6 },
-            { "owned", "Owned", 80, 80, 80, 0 }, { "action", "Wishlist", 58, 58, 58, 0 },
-        },
-    },
-    enhance = {
-        wide = {
-            { "item", "Enhancement", 180, 260, 420, 8 }, { "slot", "For", 96, 116, 144, 2 },
-            { "value", "Recommendation", 140, 190, 270, 5 }, { "owned", "Applied / Owned", 104, 104, 104, 0 },
-            { "source", "Source", 108, 128, 168, 2 }, { "access", "Access", 116, 140, 176, 3 },
-        },
-        compact = {
-            { "item", "Enhancement", 145, 230, 360, 8 }, { "slot", "For", 72, 102, 130, 2 },
-            { "value", "Recommendation", 108, 170, 240, 5 }, { "owned", "Applied / Owned", 104, 104, 104, 0 },
-            { "acquisition", "Source / Access", 150, 240, 340, 6 },
-        },
-    },
-    wishlist = {
-        wide = {
-            { "item", "Item", 140, 220, 340, 6 }, { "slot", "Slots", 68, 90, 120, 2 },
-            { "expansion", "Expansion Ranking", 260, 340, 500, 10 }, { "source", "Source", 96, 116, 156, 2 },
-            { "location", "Location", 112, 180, 280, 6 }, { "owned", "Owned", 80, 80, 80, 0 },
-            { "action", "Remove", 58, 58, 58, 0 },
-        },
-        compact = {
-            { "item", "Item", 105, 180, 280, 6 }, { "slot", "Slots", 56, 80, 105, 2 },
-            { "expansion", "Expansion Ranking", 230, 330, 480, 10 },
-            { "acquisition", "Acquisition", 115, 190, 290, 6 }, { "action", "Remove", 58, 58, 58, 0 },
-        },
-    },
-    gear = {
-        wide = {
-            { "slot", "Slot", 106, 120, 150, 2 }, { "item", "Equipped Item", 260, 420, 620, 8 },
-            { "currentRank", "Current Rank", 170, 220, 300, 4 },
-            { "usefulThrough", "Useful Through", 150, 180, 220, 3 },
-        },
-        compact = {
-            { "slot", "Slot", 72, 100, 126, 2 }, { "item", "Equipped Item", 165, 300, 480, 8 },
-            { "currentRank", "Current Rank", 105, 180, 260, 4 },
-            { "usefulThrough", "Useful Through", 96, 145, 190, 3 },
-        },
-    },
-}
-
+local expectedValueKeys = { planner = "value", phase = "rank", leveling = "value", enhance = "value", wishlist = "expansion", gear = "currentRank" }
 for _, mode in ipairs(modes) do
-    for _, shape in ipairs({ "wide", "compact" }) do
-        local definitions = UI:GetViewColumnDefinitions(mode, shape == "compact")
-        local expected = expectedColumns[mode][shape]
-        equal(#definitions, #expected, mode .. " " .. shape .. " configured column count")
-        for index, values in ipairs(expected) do
-            local definition = definitions[index]
-            equal(definition.key, values[1], mode .. " " .. shape .. " key " .. tostring(index))
-            equal(definition.label, values[2], mode .. " " .. shape .. " label " .. tostring(index))
-            equal(definition.minWidth, values[3], mode .. " " .. shape .. " minimum " .. definition.key)
-            equal(definition.preferredWidth, values[4], mode .. " " .. shape .. " preferred " .. definition.key)
-            equal(definition.maxWidth, values[5], mode .. " " .. shape .. " maximum " .. definition.key)
-            equal(definition.growWeight, values[6], mode .. " " .. shape .. " weight " .. definition.key)
+    for _, compact in ipairs({ false, true }) do
+        local definitions = UI:GetViewColumnDefinitions(mode, compact)
+        local expectedKeys = { "item", expectedValueKeys[mode], "acquisition", "owned", "action" }
+        equal(#definitions, #expectedKeys, mode .. " configured semantic column count")
+        for index, key in ipairs(expectedKeys) do
+            equal(definitions[index].key, key, mode .. " semantic column order " .. tostring(index))
         end
+        equal(definitions[3].label, "Source", mode .. " source and location share one acquisition column")
+        if compact then
+            local minimums = { 195, 96, 152, mode == "enhance" and 112 or 88, 28 }
+            for index, minimum in ipairs(minimums) do
+                equal(definitions[index].minWidth, minimum, mode .. " compact minimum " .. expectedKeys[index])
+            end
+        end
+        equal(definitions[#definitions].minWidth, 28, "wishlist utility preserves its full click target")
     end
 end
-expect(UI:GetViewColumnDefinitions("wishlist", true)[1].ownershipInline,
-    "compact Wishlist keeps ownership in the Item column")
 
 local fractionalLayout = UI:GetTableColumnLayout(1016.75, "planner", true)
 equal(fractionalLayout.usableWidth, 1000, "fractional viewport widths round down")
@@ -934,7 +861,7 @@ equal(UI.renderModel.entries[1].top, 1, "column layout keeps model row top")
 equal(UI.renderModel.entries[1].bottom, 2, "column layout keeps model row bottom")
 ''')
 
-    def test_header_rows_badges_actions_and_hover_share_resolved_geometry(self):
+    def test_header_rows_cells_actions_and_hover_share_resolved_geometry(self):
         self.run_lua(r'''
 BigBiSList = {}
 dofile("UI.lua")
@@ -955,6 +882,10 @@ local function frame(parent, width, height)
     function value:Show() self.shown = true end
     function value:Hide() self.shown = false end
     function value:IsShown() return self.shown end
+    function value:SetShown(shown) self.shown = shown end
+    function value:SetSelected(selected) self.selected = selected end
+    function value:SetHovered(hovered) self.hovered = hovered end
+    function value:SetIcon(icon) self.iconKey = icon end
     function value:ClearAllPoints() self.points = {} end
     function value:SetPoint(...) table.insert(self.points, { ... }) end
     function value:SetAllPoints(...) self.allPoints = { ... } end
@@ -967,14 +898,24 @@ local function frame(parent, width, height)
     function value:SetFrameLevel(newLevel) self.frameLevel = newLevel end
     function value:EnableMouse(enabled) self.mouseEnabled = enabled end
     function value:SetScript(event, callback) self.scripts[event] = callback end
+    function value:HookScript(event, callback)
+        local previous = self.scripts[event]
+        self.scripts[event] = function(...)
+            if previous then previous(...) end
+            callback(...)
+        end
+    end
     function value:GetScript(event) return self.scripts[event] end
     function value:SetWordWrap(enabled) self.wordWrap = enabled end
     function value:SetJustifyH(justify) self.justify = justify end
     function value:SetTextColor(...) self.textColor = { ... } end
     function value:SetText(text) self.text = text end
+    function value:GetText() return self.text end
     function value:CreateFontString()
         return frame(self)
     end
+    function value:CreateTexture() return frame(self) end
+    function value:SetVertexColor(...) self.vertexColor = {...} end
     return value
 end
 
@@ -1005,6 +946,19 @@ BigBiSList.Widgets = {
         button:SetScript("OnClick", callback)
         return button
     end,
+    CreateUtilityButton = function(_, parent, icon, size, callback)
+        local button = frame(parent, size, size)
+        button:SetIcon(icon)
+        button:SetScript("OnClick", callback)
+        return button
+    end,
+    SetCellText = function(_, label, text, lines, lineHeight, width)
+        label.fullText = text
+        label:SetText(text)
+        label:SetSize(width, lines * lineHeight)
+    end,
+    BindTooltip = function(_, owner, render) owner.tooltipRenderer = render end,
+    SetIcon = function(_, texture, key) texture.iconKey = key end,
 }
 
 local inspectorVisible = false
@@ -1031,23 +985,40 @@ equal(UI:GetTableViewportWidth(narrowParent, 400), 1092, "canonical width comes 
 narrowParent.width = 1800
 equal(UI:GetTableViewportWidth(narrowParent, 400), 1092, "header and row parent widths cannot diverge the table")
 
-local function pointX(widget)
+local function getAnchor(widget, anchor, label)
     for _, point in ipairs(widget.points or {}) do
-        if point[1] == "TOPLEFT" then
-            return point[4]
+        if point[1] == anchor then
+            return point
         end
+    end
+    error(label .. " is missing its " .. anchor .. " anchor")
+end
+
+local function expectGeometry(widget, column, label, anchor, relative)
+    expect(widget, label .. " exists")
+    local point = getAnchor(widget, anchor or "TOPLEFT", label)
+    equal(point[4], column.x, label .. " x")
+    equal(widget.width, column.width, label .. " width")
+    if relative then
+        equal(point[2], relative, label .. " relative frame")
+        equal(point[3], anchor, label .. " relative anchor")
+        equal(point[5], 0, label .. " vertical offset")
     end
 end
 
-local function expectGeometry(widget, column, label)
-    expect(widget, label .. " exists")
-    equal(pointX(widget), column.x, label .. " x")
-    equal(widget.width, column.width, label .. " width")
+local function expectCentered(widget, row, x, label)
+    local point = getAnchor(widget, "LEFT", label)
+    equal(point[2], row, label .. " anchors to its row")
+    equal(point[3], "LEFT", label .. " shares the row's vertical center")
+    equal(point[4], x, label .. " x")
+    equal(point[5], 0, label .. " has no vertical offset")
+    expect(widget.height <= row.height, label .. " fits within the row height")
 end
 
 local modes = { "planner", "phase", "leveling", "enhance", "wishlist", "gear" }
 for _, compact in ipairs({ false, true }) do
     inspectorVisible = compact
+    UI.contentScroll.width = compact and 760 or 1096
     for _, mode in ipairs(modes) do
         local parent = frame(nil, compact and 430 or 1600, 500)
         local header = UI:CreateListColumnHeader(parent, 0, mode)
@@ -1059,33 +1030,45 @@ for _, compact in ipairs({ false, true }) do
             item = {},
         }, mode, nil, 74)
         local layout = header.columnLayout
+        equal(layout.compact, compact, mode .. " shape follows the usable viewport")
         equal(row.columnLayout, layout, mode .. " " .. tostring(compact) .. " header and row share cached layout")
 
         for index, column in ipairs(layout.columns) do
             expectGeometry(header.columnButtons[index], column, mode .. " header " .. column.key)
             if column.key == "item" then
-                equal(pointX(row.iconButton), column.x, mode .. " item icon x")
-            elseif column.key == "rank" then
-                expectGeometry(row.rankBadge, column, mode .. " rank badge")
-            elseif column.key == "owned" then
-                expectGeometry(row.ownershipBadge, column, mode .. " ownership badge")
-            elseif column.key == "access" then
-                expectGeometry(row.accessBadge, column, mode .. " access badge")
+                expectCentered(row.iconButton, row, column.x, mode .. " item icon")
+                local identity = getAnchor(row.nameText, "TOPLEFT", mode .. " item name")
+                local identityHeight = row.nameText.height + (row.subText.shown and row.subText.height + 2 or 0)
+                equal(identity[2], row, mode .. " identity anchors to its row")
+                equal(identity[3], "LEFT", mode .. " identity uses the row's vertical center")
+                equal(identity[4], column.x + row.iconButton.width + 8, mode .. " identity clears the icon")
+                equal(identity[5], identityHeight / 2, mode .. " full identity group is vertically centered")
+                expect(identityHeight <= row.height, mode .. " identity group fits the row height")
+                equal(identity[4] + row.nameText.width, column.x + column.width, mode .. " name stays within item column")
             elseif column.key == "action" then
-                expectGeometry(row.actionButton, column, mode .. " action")
+                expectGeometry(row.actionButton, column, mode .. " action", "LEFT", row)
+                expectCentered(row.actionButton, row, column.x, mode .. " action")
+            elseif column.key == "owned" then
+                expectCentered(row.statusIcon, row, column.x, mode .. " status icon")
+                local label = row.cells.owned
+                local labelX = getAnchor(label, "LEFT", mode .. " ownership text")[4]
+                expectCentered(label, row, column.x + 17, mode .. " ownership text")
+                expect(labelX >= column.x + row.statusIcon.width,
+                    mode .. " ownership text clears its status icon")
+                equal(labelX + label.width, column.x + column.width, mode .. " ownership text stays within column")
             else
-                expectGeometry(row.cells[column.key], column, mode .. " cell " .. column.key)
+                expectGeometry(row.cells[column.key], column, mode .. " cell " .. column.key, "LEFT", row)
+                expectCentered(row.cells[column.key], row, column.x, mode .. " cell " .. column.key)
             end
         end
 
-        local sourceColumn = layout.acquisition or layout.source
-        if sourceColumn then
-            local lastSourceColumn = layout.location or sourceColumn
-            equal(pointX(row.sourceHover), sourceColumn.x, mode .. " acquisition hover x")
-            equal(row.sourceHover.width,
-                (lastSourceColumn.x + lastSourceColumn.width) - sourceColumn.x,
-                mode .. " acquisition hover spans resolved source columns")
-        end
+        equal(layout.source, nil, mode .. " source has no separate column")
+        equal(layout.location, nil, mode .. " location has no separate column")
+        equal(row.cells.acquisition.fullText, "Raid\nLong Boss Name", mode .. " acquisition keeps source and location")
+        local hover = row.cellHovers.acquisition
+        expectGeometry(hover, layout.acquisition, mode .. " acquisition hover", "TOPLEFT", row)
+        equal(hover.height, row.height, mode .. " acquisition hover spans the row height")
+        expect(hover.tooltipRenderer, mode .. " acquisition hover has a tooltip renderer")
     end
 end
 ''')
@@ -1142,7 +1125,7 @@ UI.IsInspectorVisible = function() return inspectorVisible end
 UI.ApplyBodyLayout = function() end
 UI.SetStickyHeaderMode = function(self, mode)
     self.stickyHeaderMode = mode
-    self.lastHeaderLayout = self:GetTableColumnLayout(self:GetTableViewportWidth(self.contentListLayer, scrollWidth), mode, inspectorVisible)
+    self.lastHeaderLayout = self:GetTableColumnLayout(self:GetTableViewportWidth(self.contentListLayer, scrollWidth), mode)
 end
 UI.CountPerformance = function(_, key, amount)
     performance[key] = (performance[key] or 0) + (amount or 1)
@@ -1175,13 +1158,15 @@ equal(created, 3, "wide resize reuses the warmed wide row pool")
 equal(bound, 6, "wide resize rebinds visible rows")
 
 inspectorVisible = true
+scrollWidth = 760
 UI:Invalidate("layout", "inspector-open")
 UI:RefreshLayout("inspector-open")
 equal(created, 6, "first compact shape creates one compact widget set")
 equal(bound, 9, "inspector transition rebinds compact rows")
-expect(UI.lastHeaderLayout.compact, "inspector forces the compact header shape")
+expect(UI.lastHeaderLayout.compact, "narrower usable viewport selects compact header shape")
 
 inspectorVisible = false
+scrollWidth = 1200
 UI:Invalidate("layout", "inspector-close")
 UI:RefreshLayout("inspector-close")
 equal(created, 6, "returning to wide shape reuses the warmed pool")
@@ -1219,9 +1204,15 @@ local function fakeFrame(height)
     }
     function frame:ClearAllPoints() self.clearCount = self.clearCount + 1 end
     function frame:SetPoint(...) self.pointCount = self.pointCount + 1 end
-    function frame:Show() self.showCount = self.showCount + 1 end
-    function frame:Hide() self.hideCount = self.hideCount + 1 end
+    function frame:Show() self.shown = true; self.showCount = self.showCount + 1 end
+    function frame:Hide() self.shown = false; self.hideCount = self.hideCount + 1 end
     function frame:GetHeight() return self.height end
+    function frame:SetWidth(width) self.width = width end
+    function frame:GetWidth() return self.width or 1200 end
+    function frame:GetFrameLevel() return 1 end
+    function frame:SetFrameLevel() end
+    function frame:EnableMouse() end
+    function frame:SetShown(shown) if shown then self:Show() else self:Hide() end end
     return frame
 end
 
@@ -1244,15 +1235,17 @@ equal(UI.contentScroll.clearCount, stickyClears + 1, "same collapsed mode remain
 local inspectorVisible = false
 UI.body = fakeFrame()
 UI.details = fakeFrame()
+UI.detailsHeader = fakeFrame()
+UI.detailsBackButton = fakeFrame()
 UI.contentRegion = fakeFrame()
 UI.contentPanel = fakeFrame()
 UI.listToolbar = fakeFrame()
 UI.filterDrawer = fakeFrame(140)
 UI.filterDrawerOpen = false
-UI.inspectorToggleButton = { label = { SetText = function() end } }
+UI.inspectorToggleButton = { SetSelected = function() end }
 UI.ViewSupportsFilters = function() return true end
 UI.IsInspectorVisible = function() return inspectorVisible end
-UI.RefreshFilterDrawer = function() error("closed drawer should not be rebuilt") end
+UI.RefreshFilterDrawer = function() end
 UI.GetActiveFilterChips = function() return {} end
 
 UI:ApplyBodyLayout()
@@ -1265,10 +1258,25 @@ equal(UI.contentPanel.clearCount, panelClears, "same body state does not re-anch
 inspectorVisible = true
 UI:ApplyBodyLayout()
 equal(UI.contentRegion.clearCount, regionClears + 1, "inspector transition updates region once")
-equal(UI.contentPanel.clearCount, panelClears + 1, "inspector transition updates panel once")
+equal(UI.contentPanel.clearCount, panelClears, "inspector transition keeps the same panel top anchor")
 UI:ApplyBodyLayout()
 equal(UI.contentRegion.clearCount, regionClears + 1, "stable inspector state stays idempotent")
-equal(UI.contentPanel.clearCount, panelClears + 1, "stable inspector panel stays idempotent")
+equal(UI.contentPanel.clearCount, panelClears, "stable inspector panel stays idempotent")
+expect(UI.inspectorDocked and not UI.inspectorExclusive, "normal width keeps details beside the list")
+expect(UI.contentRegion.shown and not UI.detailsBackButton.shown, "docked details preserve the visible list")
+
+UI.body:SetWidth(996)
+UI:ApplyBodyLayout()
+expect(UI.inspectorDocked, "1020px supported window keeps details docked")
+equal(UI.contentRegion.clearCount, regionClears + 1, "same docked shape needs no re-anchoring at minimum width")
+UI.body:SetWidth(995)
+UI:ApplyBodyLayout()
+expect(UI.inspectorExclusive and not UI.inspectorDocked, "below supported minimum opens details as a full view")
+equal(UI.details.width, 995, "exclusive details fill the body width")
+expect(not UI.contentRegion.shown and UI.detailsBackButton.shown, "exclusive details replace the list and expose return navigation")
+equal(UI.contentRegion.clearCount, regionClears + 2, "exclusive transition updates geometry once")
+UI:ApplyBodyLayout()
+equal(UI.contentRegion.clearCount, regionClears + 2, "stable exclusive details remain idempotent")
 ''')
 
     def test_column_header_and_active_filters_are_fixed_outside_the_scroll_model(self):
@@ -1278,6 +1286,7 @@ dofile("UI.lua")
 
 local UI = BigBiSList.UI
 local model = UI:NewListRenderModel()
+UI.GetViewState = function() return {} end
 UI:AddListSection(model, "First", "phase")
 UI:AddListRow(model, { item_id = 1 }, "phase")
 UI:AddListSection(model, "Second", "phase")
@@ -1299,10 +1308,16 @@ UI.contentChild = { GetWidth = function() return 220 end }
 UI.contentScroll = { GetWidth = function() return 220 end }
 local boundaryChips = { { label = "abcdefghij" }, { label = "abcdefghij" } }
 local chipLayout = UI:GetActiveFilterChipLayout(UI.contentRegion, boundaryChips)
-equal(chipLayout.rows, 1, "fixed bar wrapping uses the fixed container width")
-equal(chipLayout.height, 54, "one rendered chip row has one-row height")
+equal(chipLayout.rows, 1, "fixed bar stays on one row")
+equal(chipLayout.height, 28, "one rendered chip row has one-row height")
 equal(UI:ActiveFilterBarHeight(boundaryChips), chipLayout.height, "measured and rendered chip layouts share one calculation")
-equal(chipLayout.positions[1].y, chipLayout.positions[2].y, "boundary chips render on the measured row")
+expect(chipLayout.positions[1], "fixed-container width fits the first chip")
+equal(chipLayout.positions[2], nil, "extra chip moves into overflow")
+equal(chipLayout.hidden, 1, "overflow count includes every omitted chip")
+UI.contentRegion.GetWidth = function() return 700 end
+local wideChips = UI:GetActiveFilterChipLayout(UI.contentRegion, boundaryChips)
+equal(wideChips.hidden, 0, "wider container reveals both chips")
+equal(wideChips.height, chipLayout.height, "overflow never takes result height")
 
 local function frame()
     local value = { points = {}, shown = false }
@@ -1310,21 +1325,30 @@ local function frame()
     function value:SetPoint(...) table.insert(self.points, { ... }) end
     function value:Show() self.shown = true end
     function value:Hide() self.shown = false end
+    function value:SetShown(shown) self.shown = shown end
+    function value:SetWidth(width) self.width = width end
+    function value:GetWidth() return self.width or 1200 end
+    function value:GetFrameLevel() return 1 end
+    function value:SetFrameLevel() end
+    function value:EnableMouse() end
     return value
 end
 
 UI.body = frame()
 UI.details = frame()
+UI.detailsHeader = frame()
+UI.detailsBackButton = frame()
 UI.contentRegion = frame()
 UI.contentPanel = frame()
 UI.listToolbar = frame()
 UI.filterDrawer = frame()
 UI.fixedActiveFilterBar = frame()
-UI.inspectorToggleButton = { label = { SetText = function() end } }
+UI.inspectorToggleButton = { SetSelected = function() end }
 UI.filterDrawerOpen = false
 UI.ViewSupportsFilters = function() return true end
 UI.IsInspectorVisible = function() return false end
-UI.RefreshFixedActiveFilterBar = function() return 54 end
+UI.RefreshFixedActiveFilterBar = function() return 28 end
+UI.RefreshFilterDrawer = function() end
 
 UI:ApplyBodyLayout()
 expect(UI.fixedActiveFilterBar.shown, "active-filter bar is fixed and visible")
@@ -1578,8 +1602,10 @@ dofile("UI.lua")
 
 local UI = BigBiSList.UI
 local closedMenus = 0
+local overflowUpdates = {}
 BigBiSList.Widgets = {
     CloseDropdownMenus = function() closedMenus = closedMenus + 1 end,
+    UpdateScrollOverflow = function(_, scroll) overflowUpdates[#overflowUpdates + 1] = scroll end,
 }
 
 local function layoutObject(shown, width)
@@ -1595,6 +1621,8 @@ local function layoutObject(shown, width)
     function object:Hide() self.shown = false; self.hideCount = self.hideCount + 1 end
     function object:ClearAllPoints() end
     function object:SetPoint(...) end
+    function object:SetParent(parent) self.parent = parent end
+    function object:SetShown(shown) if shown then self:Show() else self:Hide() end end
     function object:SetHeight(value) self.height = value end
     function object:GetHeight() return self.height or 0 end
     function object:GetWidth() return self.width end
@@ -1605,22 +1633,34 @@ end
 local source = layoutObject(true)
 local obsolete = layoutObject(true)
 UI.filterDrawer = layoutObject(true, 760)
+UI.filterDrawerContent = layoutObject(true, 336)
+UI.filterDrawerScroll = layoutObject(true, 310)
+UI.listToolbar = layoutObject(true, 760)
+UI.listToolbar:SetHeight(34)
+UI.body = layoutObject(true, 1200)
+UI.body:SetHeight(400)
+UI.enhancementTypeDropdown = layoutObject(false)
 UI.filterDrawerControls = { source = source, obsolete = obsolete }
 UI.filterItemHeader = layoutObject(false)
 UI.filterAcquisitionHeader = layoutObject(false)
 UI.clearFiltersButton = layoutObject(true)
 UI.GetVisibleFilterControlKeys = function() return { "source" } end
+UI.LayoutPrimaryControls = function() end
 
 UI:RefreshFilterDrawer()
 equal(source.hideCount, 0, "applicable dropdown is never hidden during layout")
 equal(source.refreshCount, 1, "applicable dropdown is refreshed")
 equal(obsolete.hideCount, 1, "newly inapplicable dropdown is hidden once")
 equal(closedMenus, 1, "open menu is closed only when a control is removed")
+equal(UI.filterDrawer.height, UI.filterDrawerContent.height + 46, "drawer reserves exactly its content and scroll chrome")
+equal(overflowUpdates[1], UI.filterDrawerScroll, "drawer updates the dedicated overflow control")
 
 UI:RefreshFilterDrawer()
 equal(source.hideCount, 0, "no-op drawer refresh preserves dropdown owner visibility")
 equal(obsolete.hideCount, 1, "already hidden control is not hidden again")
 equal(closedMenus, 1, "no-op drawer refresh does not close menus")
+equal(#overflowUpdates, 2, "drawer refresh resynchronizes overflow after layout")
+equal(UI.filterDrawerContent.width, 336, "overflow synchronization preserves content width")
 ''')
 
     def test_item_loads_are_shared_and_stale_row_bindings_are_ignored(self):
@@ -1630,6 +1670,15 @@ dofile("UI.lua")
 
 local UI = BigBiSList.UI
 local loaded = {}
+BigBiSList.Widgets = {
+    BindTooltip = function(_, owner, render) owner.tooltipRenderer = render end,
+    SetCellText = function(_, label, text, maxLines, lineHeight, width)
+        label.fullText = text
+        label.cellMaxLines = maxLines
+        label.width = width
+        label:SetText(text)
+    end,
+}
 local callbacks = {}
 local createCounts = {}
 
@@ -1660,6 +1709,7 @@ local function fakeButton()
 end
 local function fakeText()
     local label = {}
+    function label:GetWidth() return self.width or 200 end
     function label:SetText(value) self.text = value end
     function label:SetTextColor(...) self.color = { ... } end
     return label
@@ -1707,7 +1757,7 @@ firstButton.scripts.OnClick(firstButton, "RightButton")
 equal(inspectorCalls, 0, "empty pooled icon cannot open the previous inspector")
 ''')
 
-    def test_v16_defaults_expose_mode_view_and_inspector_state(self):
+    def test_v17_defaults_expose_mode_view_and_inspector_state(self):
         self.run_lua(r'''
 BigBiSList = {}
 dofile("Config.lua")
@@ -1715,8 +1765,8 @@ BigBiSListDB = nil
 BigBiSListCharDB = nil
 BigBiSList:EnsureDatabase()
 
-equal(BigBiSListDB.profile.defaultsVersion, 16, "profile defaults version")
-equal(BigBiSListCharDB.defaultsVersion, 16, "character defaults version")
+equal(BigBiSListDB.profile.defaultsVersion, 17, "profile defaults version")
+equal(BigBiSListCharDB.defaultsVersion, 17, "character defaults version")
 equal(BigBiSList:GetContentMode(), "endgame", "default content mode")
 equal(BigBiSList:GetSelection().phase, "PR", "stored endgame phase")
 equal(BigBiSList:GetEffectivePhaseKey(), "PR", "effective endgame phase")
@@ -1783,8 +1833,8 @@ equal(BigBiSListCharDB.filters.search, "badge", "search survives")
 expect(BigBiSListCharDB.filters.sourceTypes.vendor, "faceted filter survives")
 expect(BigBiSListCharDB.wishlist["29121"], "wishlist membership survives")
 expect(BigBiSListCharDB.ignoredItems["31332"], "hidden membership survives")
-equal(BigBiSList:GetViewState("Upgrades").upgradeMode, "all", "upgrade mode migrates")
-equal(BigBiSList:GetViewState("Upgrades").usefulness, "long", "usefulness migrates")
+equal(BigBiSList:GetViewState("Upgrades").filters.upgradeMode, "all", "upgrade mode migrates")
+equal(BigBiSList:GetViewState("Upgrades").filters.longevity, "long", "usefulness migrates")
 expect(not BigBiSList:IsInspectorVisible(), "inspector preference survives")
 
 BigBiSList:SetContentMode("endgame")

@@ -3970,6 +3970,8 @@ local function scorePlannerGroup(group, selectedPhaseKey)
     local firstFutureBis
     local futureBisCount = 0
     local futureOptionCount = 0
+    local futureBisPhases = {}
+    local futureOptionPhases = {}
     local lastUsefulIndex = 0
     local reasons = {}
     local reasonSeen = {}
@@ -3987,34 +3989,41 @@ local function scorePlannerGroup(group, selectedPhaseKey)
         elseif use.phaseIndex > selectedIndex then
             if use.rank_group == "bis" then
                 futureBisCount = futureBisCount + 1
+                futureBisPhases[use.phaseIndex] = true
                 if not firstFutureBis or use.phaseIndex < firstFutureBis then
                     firstFutureBis = use.phaseIndex
                 end
             else
                 futureOptionCount = futureOptionCount + 1
+                futureOptionPhases[use.phaseIndex] = true
             end
         end
     end
 
     if hasCurrentBis then
         score = score + 60
-        addPlannerReason(reasons, reasonSeen, "BiS Now")
+        addPlannerReason(reasons, reasonSeen, "Best in slot this phase")
     elseif hasCurrent then
         score = score + 30
-        addPlannerReason(reasons, reasonSeen, "Alt now")
+        addPlannerReason(reasons, reasonSeen, "Alternative this phase")
     elseif firstFutureBis then
         score = score + 35
-        addPlannerReason(reasons, reasonSeen, "Future BiS " .. (PHASE_DISPLAY[PHASE_ORDER[firstFutureBis]] or "future phase"))
+        addPlannerReason(reasons, reasonSeen, "Best in slot in " .. (PHASE_DISPLAY[PHASE_ORDER[firstFutureBis]] or "a later phase"))
     end
 
     score = score + (futureBisCount * 8)
     score = score + (futureOptionCount * 4)
 
-    if futureBisCount > 0 then
-        addPlannerReason(reasons, reasonSeen, tostring(futureBisCount) .. " future BiS")
-    end
-    if futureOptionCount > 0 then
-        addPlannerReason(reasons, reasonSeen, tostring(futureOptionCount) .. " future alts")
+    -- Recommendation variants still contribute to the score independently;
+    -- presentation deduplicates phase recommendations instead of exposing use counts.
+    for index, phase in ipairs(PHASE_ORDER) do
+        local phaseLabel = PHASE_DISPLAY[phase] or phase
+        if futureBisPhases[index] then
+            addPlannerReason(reasons, reasonSeen, "Best in slot in " .. phaseLabel)
+        end
+        if futureOptionPhases[index] then
+            addPlannerReason(reasons, reasonSeen, "Alternative in " .. phaseLabel)
+        end
     end
 
     if lastUsefulIndex > selectedIndex then
@@ -5285,6 +5294,26 @@ local function plannerGroupMatchesUpgradeMode(group, filters)
         return true
     end
     return false
+end
+
+-- Alternative routes do not multiply targets or activity counts.
+function BigBiSList:GetActivityGroup(row)
+    local display = row and row.acquisition_display or {}
+    local option = display.option or (row and row.matched_access_option) or {}
+    local kind = option.source_filter_key or option.source_type or (row and row.source_type) or "unknown"
+    local zone = option.zone or (option.zones and option.zones[1])
+    if type(zone) == "table" then zone = zone.name or zone.zone end
+    if kind == "raid" or kind == "raid_drop" or kind == "dungeon" or kind == "dungeon_drop"
+        or kind == "heroic_dungeon_drop" or kind == "drop" or kind == "quest" then
+        return zone or display.source_label or "Other activities"
+    end
+    if option.is_trade_option then return "Trade / Auction House" end
+    if option.reputations and #option.reputations > 0 then return "Reputation · " .. option.reputations[1] end
+    for _, requirement in ipairs(option.requirements or {}) do
+        if requirement.type == "profession" and requirement.profession then return "Crafting · " .. requirement.profession end
+    end
+    if option.vendor_label then return "Vendor · " .. option.vendor_label end
+    return display.source_label or option.source_filter_label or "Other activities"
 end
 
 function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItems, level)

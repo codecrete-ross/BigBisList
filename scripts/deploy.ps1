@@ -77,6 +77,17 @@ if ($iconTexture) {
     }
 }
 
+# Runtime textures can be referenced from Lua without appearing in the TOC.
+$assetsRoot = Join-Path $repoRoot "assets"
+if (Test-Path -LiteralPath $assetsRoot -PathType Container) {
+    foreach ($asset in Get-ChildItem -LiteralPath $assetsRoot -File -Recurse) {
+        $entry = $asset.FullName.Substring($repoRoot.Path.Length + 1)
+        if (-not $deployEntries.Contains($entry)) {
+            [void]$deployEntries.Add($entry)
+        }
+    }
+}
+
 $luac = Get-Command luac -ErrorAction SilentlyContinue
 if ($luac) {
     $luaFiles = [System.Collections.Generic.List[string]]::new()
