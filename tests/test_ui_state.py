@@ -76,9 +76,9 @@ BigBiSListCharDB = {
     wishlist = { ["10"] = true }, ignoredItems = { ["20"] = true },
 }
 BigBiSList:EnsureDatabase()
-equal(BigBiSListCharDB.defaultsVersion, 17, "new schema")
+equal(BigBiSListCharDB.defaultsVersion, 18, "new schema")
 local upgrades, bis = UI:GetFilters("Upgrades"), UI:GetFilters("By Slot")
-equal(upgrades.upgradeMode, "actual", "effective upgrade mode")
+equal(upgrades.upgradeMode, "candidates", "effective upgrade mode")
 equal(upgrades.longevity, "long", "effective usefulness")
 equal(upgrades.search, "badge", "search survives")
 equal(UI:GetViewState("Upgrades").upgradeMode, nil, "duplicate state removed")
@@ -103,7 +103,7 @@ equal(#chips, 2, "nondefault chips")
 for _, chip in ipairs(chips) do chip.clear() end
 equal(#UI:GetActiveFilterChips(), 0, "removed chips")
 local payload = UI:BuildFilterPayload()
-equal(payload.upgradeMode, "actual", "upgrade filter really resets")
+equal(payload.upgradeMode, "candidates", "upgrade filter really resets")
 equal(payload.longevity, "all", "usefulness filter really resets")
 UI:SetFilter("search", "helm")
 UI:SetTab("Wishlist")
@@ -111,6 +111,48 @@ equal(UI:GetFilters().search, "", "search does not leak")
 UI:SetFilter("search", "ring")
 UI:ClearFilters()
 equal(UI:GetFilters("Upgrades").search, "helm", "reset is local")
+''')
+
+    def test_catchup_defaults_migrate_without_overwriting_saved_workspace_preferences(self):
+        self.run_lua(r'''
+BigBiSListDB = { profile = { defaultsVersion = 17 } }
+BigBiSListCharDB = { defaultsVersion = 17, viewState = {
+    upgrades = { filters = { upgradeMode = "all", search = "Karazhan", longevity = "future" } },
+    bisList = { filters = { zones = { Karazhan = true } } },
+} }
+BigBiSList:EnsureDatabase()
+local upgrades, bis = UI:GetFilters("Upgrades"), UI:GetFilters("By Slot")
+equal(upgrades.upgradeMode, "all", "explicit all mode survives")
+equal(upgrades.includeEarlier, true, "catch-up default")
+equal(bis.includeEarlier, false, "BiS keeps selected-tier default")
+equal(upgrades.search, "Karazhan", "search survives")
+equal(upgrades.longevity, "future", "future scope survives")
+assert(bis.zones.Karazhan, "source filter survives")
+upgrades.includeEarlier, bis.includeEarlier = false, true
+dofile("Config.lua"); BigBiSList:EnsureDatabase()
+equal(UI:GetFilters("Upgrades").includeEarlier, false, "explicit exclusion persists")
+equal(UI:GetFilters("By Slot").includeEarlier, true, "explicit inclusion persists")
+''')
+
+    def test_earlier_chips_reset_the_effective_scope_for_each_workspace(self):
+        self.run_lua(r'''
+BigBiSList:EnsureDatabase()
+UI:SetTab("Upgrades")
+equal(UI:GetFilters().includeEarlier, true, "default includes history")
+UI:SetFilter("includeEarlier", false)
+equal(UI:BuildFilterPayload().includeEarlier, false, "query excludes history")
+local chips = UI:GetActiveFilterChips()
+equal(#chips, 1, "one restrictive scope")
+chips[1].clear()
+equal(UI:BuildFilterPayload().includeEarlier, true, "chip resets Upgrades scope")
+UI:SetTab("By Slot")
+UI:SetFilter("includeEarlier", true)
+equal(UI:BuildFilterPayload().includeEarlier, true, "BiS query includes history")
+chips = UI:GetActiveFilterChips()
+equal(#chips, 1, "one expanded scope")
+chips[1].clear()
+equal(UI:BuildFilterPayload().includeEarlier, false, "chip resets BiS scope")
+equal(UI:GetFilters("Upgrades").includeEarlier, true, "workspace scope independent")
 ''')
 
     def test_tab_return_and_passive_refresh_restore_row_anchors(self):

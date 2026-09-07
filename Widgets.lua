@@ -254,6 +254,26 @@ function Widgets:CreateLabel(parent, text, template)
     return label
 end
 
+function Widgets:CreateCheckbox(parent, text, width, onChange)
+    local button = CreateFrame("CheckButton", nil, parent, "UICheckButtonTemplate")
+    button:SetSize(width or 220, 28)
+    for _, getter in ipairs({ "GetNormalTexture", "GetPushedTexture", "GetHighlightTexture", "GetCheckedTexture" }) do
+        local texture = button[getter] and button[getter](button)
+        if texture then
+            texture:ClearAllPoints()
+            texture:SetPoint("LEFT", button, "LEFT", 0, 0)
+            texture:SetSize(28, 28)
+        end
+    end
+    button.label = self:CreateLabel(button, text)
+    button.label:SetPoint("LEFT", button, "LEFT", 30, 0)
+    button.label:SetPoint("RIGHT", button, "RIGHT", -2, 0)
+    button:SetScript("OnClick", function(control)
+        if onChange then onChange(control:GetChecked() == true or control:GetChecked() == 1) end
+    end)
+    return button
+end
+
 function Widgets:CreateWrappedLabel(parent, text, template)
     local label = parent:CreateFontString(nil, "OVERLAY", template or "GameFontNormalSmall")
     label:SetText(text or "")
@@ -383,7 +403,17 @@ local function paintButton(button)
     local border = (button.selected or button.focused) and theme.accent or theme.border
     if button.hovered and not button.selected and not button.focused then border = theme.muted end
     if disabled then border = theme.border end
-    setBackdrop(button, background, border)
+    if button.segmentEdges then
+        setBackdrop(button, background, { 0, 0, 0, 0 })
+        for side, edge in pairs(button.segmentEdges) do
+            edge:SetColorTexture(border[1], border[2], border[3], border[4])
+            edge:SetShown(button.selected or button.focused or side == "top" or side == "bottom"
+                or (side == "left" and button.segmentFirst) or (side == "right" and button.segmentLast))
+        end
+        if button.segmentDivider then button.segmentDivider:SetShown(not button.selected and not button.focused) end
+    else
+        setBackdrop(button, background, border)
+    end
     local foreground = disabled and theme.disabled or (button.selected and theme.accent or theme.text)
     if button.label then button.label:SetTextColor(foreground[1], foreground[2], foreground[3], foreground[4]) end
     if button.icon then button.icon:SetVertexColor(foreground[1], foreground[2], foreground[3], foreground[4]) end
@@ -464,6 +494,92 @@ function Widgets:CreateTextButton(parent, text, width, height, onClick)
     end)
     paintButton(button)
     return button
+end
+
+function Widgets:CreateSegmentedControl(parent, options, onSelect)
+    local control = CreateFrame("Frame", nil, parent)
+    control:SetHeight(40) -- 28px target, 2px gap, and a reserved 10px caption.
+    local measurement = control:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    measurement:Hide()
+    control.buttons = {}
+    control.buttonsByValue = {}
+    for index, option in ipairs(options or {}) do
+        local value = option.value
+        local button = self:CreateTextButton(control, option.text, option.width, 28, function()
+            if onSelect then onSelect(value) end
+        end)
+        button.value, button.minimumWidth = value, option.width or 28
+        button.segmentFirst, button.segmentLast = index == 1, index == #options
+        button.label:ClearAllPoints()
+        button.label:SetPoint("TOPLEFT", button, "TOPLEFT", 8, 0)
+        button.label:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -8, 0)
+        button.label:SetJustifyV("MIDDLE")
+        button.segmentEdges = {}
+        for _, side in ipairs({ "top", "bottom", "left", "right" }) do
+            local edge = button:CreateTexture(nil, "OVERLAY")
+            if side == "top" or side == "bottom" then
+                local point = side == "top" and "TOP" or "BOTTOM"
+                edge:SetPoint(point .. "LEFT", button, point .. "LEFT", 0, 0)
+                edge:SetPoint(point .. "RIGHT", button, point .. "RIGHT", 0, 0)
+                edge:SetHeight(1)
+            else
+                local point = side == "left" and "LEFT" or "RIGHT"
+                edge:SetPoint("TOP" .. point, button, "TOP" .. point, 0, 0)
+                edge:SetPoint("BOTTOM" .. point, button, "BOTTOM" .. point, 0, 0)
+                edge:SetWidth(1)
+            end
+            button.segmentEdges[side] = edge
+        end
+        if index > 1 then
+            button.segmentDivider = button:CreateTexture(nil, "ARTWORK")
+            button.segmentDivider:SetPoint("LEFT", button, "LEFT", 0, 0)
+            button.segmentDivider:SetSize(1, 16)
+            button.segmentDivider:SetColorTexture(unpack(self.Theme.border))
+        end
+        local caption = control:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        local font, _, flags = caption:GetFont()
+        if font then caption:SetFont(font, 10, flags) end
+        caption:SetPoint("TOPLEFT", button, "BOTTOMLEFT", 0, -2)
+        caption:SetPoint("TOPRIGHT", button, "BOTTOMRIGHT", 0, -2)
+        caption:SetHeight(10)
+        caption:SetJustifyH("CENTER")
+        caption:SetJustifyV("MIDDLE")
+        caption:SetWordWrap(false)
+        caption:SetTextColor(0.48, 0.70, 0.96, 1)
+        caption:Hide()
+        button.caption = caption
+        if option.tooltip then self:BindTooltip(button, option.tooltip) end
+        control.buttons[index], control.buttonsByValue[value] = button, button
+        paintButton(button)
+    end
+    function control:Layout()
+        local x = 0
+        for _, button in ipairs(self.buttons) do
+            local font, size, flags = button.label:GetFont()
+            if font then measurement:SetFont(font, size, flags) end
+            measurement:SetText(button.label:GetText() or "")
+            local textWidth = measurement:GetStringWidth() or 0
+            local width = math.max(28, button.minimumWidth, math.ceil(textWidth) + 16)
+            if button:GetWidth() ~= width then button:SetWidth(width) end
+            button:ClearAllPoints()
+            button:SetPoint("TOPLEFT", self, "TOPLEFT", x, 0)
+            x = x + width
+        end
+        if self:GetWidth() ~= x then self:SetWidth(x) end
+        return x
+    end
+    function control:SetSelectedValue(value)
+        for _, button in ipairs(self.buttons) do button:SetSelected(button.value == value) end
+    end
+    function control:SetCaption(value, text)
+        local button = self.buttonsByValue[value]
+        if button then
+            button.caption:SetText(text or "")
+            button.caption:SetShown(text ~= nil and text ~= "")
+        end
+    end
+    control:Layout()
+    return control
 end
 
 function Widgets:CreateUtilityButton(parent, iconKey, size, onClick, tooltip)

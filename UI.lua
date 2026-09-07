@@ -294,17 +294,19 @@ local BOE_FILTER_ORDER = { "all", "boe", "not_boe" }
 
 local LONGEVITY_FILTER_LABELS = {
     all = "All usefulness",
-    current = "Current",
-    future = "Future value",
-    long = "Long-term",
+    current = "Selected tier",
+    future = "Later recommendations",
+    long = "Beyond the next tier",
 }
 local LONGEVITY_FILTER_ORDER = { "all", "current", "future", "long" }
 
 local UPGRADE_MODE_LABELS = {
-    actual = "Upgrades only",
+    actual = "Upgrade candidates",
+    candidates = "Upgrade candidates",
+    higher_rated = "Higher guide rating",
     all = "All recommendations",
 }
-local UPGRADE_MODE_ORDER = { "actual", "all" }
+local UPGRADE_MODE_ORDER = { "candidates", "higher_rated", "all" }
 
 local COST_FILTER_LABELS = {
     badge_justice = "Badge of Justice",
@@ -615,7 +617,7 @@ end
 local TABLE_COLUMN_CONFIG = {}
 for _, mode in ipairs({ "planner", "phase", "leveling", "enhance", "wishlist", "gear" }) do
     local valueKey = mode == "phase" and "rank" or (mode == "wishlist" and "expansion" or (mode == "gear" and "currentRank" or "value"))
-    local valueLabel = ({ phase = "Rank", wishlist = "Usefulness", gear = "Current rank", leveling = "Level / benefit" })[mode] or "Benefit"
+    local valueLabel = ({ phase = "Recommendation", planner = "Recommendation", wishlist = "Recommendation", gear = "Current rating", leveling = "Level / benefit" })[mode] or "Benefit"
     TABLE_COLUMN_CONFIG[mode] = {
         wide = {
             columnDefinition("item", mode == "enhance" and "Enhancement" or "Item", 220, 300, 480, 8),
@@ -922,10 +924,13 @@ local function longevityFilterLabel(longevity)
 end
 
 local function upgradeModeLabel(upgradeMode)
-    return UPGRADE_MODE_LABELS[upgradeMode or "actual"] or tostring(upgradeMode or "Upgrades only")
+    return UPGRADE_MODE_LABELS[upgradeMode or "candidates"] or tostring(upgradeMode or "Upgrade candidates")
 end
 
 local function upgradeComparisonText(data)
+    if data and data.comparison and data.comparison.explanation then
+        return data.comparison.explanation
+    end
     if not data or not data.upgrade_state or data.upgrade_state == "not_upgrade" then
         return nil
     end
@@ -1260,7 +1265,9 @@ function UI:GetFilters(viewName)
     if type(state.filters) ~= "table" then
         local defaults = BigBiSList.defaults and BigBiSList.defaults.char and BigBiSList.defaults.char.filters
         state.filters = copyStateValues(defaults or BigBiSList:GetCharacterDB().filters)
+        state.filters.includeEarlier = self:GetViewKey(viewName) == "upgrades"
     end
+    if state.filters.includeEarlier == nil then state.filters.includeEarlier = self:GetViewKey(viewName) == "upgrades" end
     return state.filters
 end
 
@@ -1372,7 +1379,7 @@ function UI:ValidateSelection()
     end
 
     local activeTabs = (selection.mode == "leveling") and LEVELING_TAB_NAMES or ENDGAME_TAB_NAMES
-    if not listContains(activeTabs, tabName) then
+    if tabName ~= "Settings" and not listContains(activeTabs, tabName) then
         tabName = (selection.mode == "leveling") and "Gear Guide" or "Upgrades"
     end
 
@@ -2541,6 +2548,7 @@ function UI:BuildFilterPayload()
         rankGroups = filters.rankGroups,
         ownedState = filters.ownedState,
         upgradeMode = filters.upgradeMode,
+        includeEarlier = filters.includeEarlier,
         binding = filters.binding,
         boe = filters.boe,
         faction = self.currentAccess and self.currentAccess.playerSide or "all",
@@ -2892,7 +2900,7 @@ end
 
 function UI:GetUpgradeModeDropdownItems()
     local filters = self:GetFilters()
-    return filterDropdownItems(UPGRADE_MODE_ORDER, UPGRADE_MODE_LABELS, filters.upgradeMode or "actual")
+    return filterDropdownItems(UPGRADE_MODE_ORDER, UPGRADE_MODE_LABELS, filters.upgradeMode == "actual" and "candidates" or (filters.upgradeMode or "candidates"))
 end
 
 function UI:GetBoeDropdownItems()
@@ -2920,8 +2928,8 @@ function UI:GetSlotDropdownText()
 end
 
 local SORT_LABELS = {
-    priority = "Relevance",
-    rank = "Rank",
+    priority = "Pursuit priority",
+    rank = "Guide rating",
     item = "Item name",
     slot = "Slot",
     value = "Value",
@@ -3096,6 +3104,7 @@ function UI:CaptureNavigationState()
 end
 
 function UI:BeginNavigationChange(reason)
+    if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then self:CloseSlotComparison() end
     if not self.pendingNavigation then self:CaptureNavigationState() end
     local restore = reason == "tab" or reason == "content-mode"
     self.pendingNavigation = { restore = restore, reset = not restore }
@@ -3185,6 +3194,10 @@ function UI:UseMyCharacter()
 end
 
 function UI:SetInspectorVisible(visible)
+    if not visible and self.slotComparison and self.slotComparison.detailsOpen then
+        self:BackToSlotComparison()
+        return
+    end
     if BigBiSList.SetInspectorVisible then
         BigBiSList:SetInspectorVisible(visible)
     elseif BigBiSListDB and BigBiSListDB.profile and BigBiSListDB.profile.window then
@@ -3203,6 +3216,9 @@ function UI:SetInspectorVisible(visible)
 end
 
 function UI:IsInspectorVisible()
+    if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then
+        return self.slotComparison and self.slotComparison.detailsOpen == true
+    end
     if not self:ViewSupportsInspector() then
         return false
     elseif BigBiSList.IsInspectorVisible then
@@ -3213,6 +3229,10 @@ function UI:IsInspectorVisible()
 end
 
 function UI:ShowInspectorFor(entityId, data, mode)
+    if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() and not self.slotComparison.detailsOpen then
+        self:ShowComparisonDetails(data)
+        return
+    end
     if not self:ViewSupportsInspector() then
         return
     end
@@ -3252,6 +3272,7 @@ function UI:SetSpec(specName)
 end
 
 function UI:SetPhase(phaseKey)
+    if phaseKey == self:GetSelection().phase then return end
     self:BeginNavigationChange("phase")
     BigBiSList:SetSelection(nil, nil, phaseKey, nil)
     self:Invalidate("query", "phase")
@@ -3359,7 +3380,8 @@ function UI:ClearFilters()
     filters.rankGroup = "all"
     filters.rankGroups = {}
     filters.ownedState = "all"
-    filters.upgradeMode = "actual"
+    filters.upgradeMode = "candidates"
+    filters.includeEarlier = self:GetViewKey() == "upgrades"
     filters.binding = "all"
     filters.boe = "all"
     filters.faction = "all"
@@ -3986,7 +4008,26 @@ function UI:CreateRankBadge(parent, labelText, kind, data, mode, badge)
     return badge
 end
 
+function UI:GetRowRecommendationHistory(data)
+    if not data or not data.item_id or data.leveling or self:IsLevelingMode() or not BigBiSList.GetRecommendationHistory then return nil end
+    local selection = self:GetSelection()
+    return BigBiSList:GetRecommendationHistory(data.item_id, selection.class, selection.spec, selection.phase, data.slot)
+end
+
+function UI:GetHistoryRecommendationText(data)
+    local history = self:GetRowRecommendationHistory(data)
+    if not history then return data and data.rank_label or "No guide data" end
+    local cell = history.selected and history.selected.matched and history.selected or history.latest_earlier
+    local label = cell and ((cell.phase_label or BigBiSList:GetPhaseDisplayName(cell.phase)) .. ": " .. cell.label)
+        or (history.selected and history.selected.label) or "No guide data"
+    local future = history.future_summary
+    return label .. (future and future.has_future and ("\n" .. future.text) or "")
+end
+
 function UI:GetRowRecommendationText(data, mode)
+    if data and data.item_id and not data.leveling and not self:IsLevelingMode() and mode ~= "leveling" and mode ~= "enhance" and BigBiSList.GetRecommendationHistory then
+        return self:GetHistoryRecommendationText(data)
+    end
     if data and data.recommendation_summary and data.recommendation_summary ~= "" then
         return data.recommendation_summary
     end
@@ -4085,6 +4126,9 @@ function UI:GetGearUsefulThrough(data)
 end
 
 function UI:GetWishlistExpansionText(data)
+    if data and data.item_id and BigBiSList.GetRecommendationHistory and not self:IsLevelingMode() then
+        return self:GetHistoryRecommendationText(data)
+    end
     local rankings = data and (data.relevant_spec_rankings or data.spec_rankings) or {}
     local selected
     for _, ranking in ipairs(rankings) do if ranking.selected then selected = ranking; break end end
@@ -4093,9 +4137,7 @@ function UI:GetWishlistExpansionText(data)
     local phase = data.selected_phase or self:GetSelection().phase
     local current = matrix[phase]
     local label = type(current) == "table" and (current.display_rank_label or current.short_label or current.label or current.rank_label) or current
-    local last
-    for _, key in ipairs(BigBiSList:GetPhaseOrder()) do if matrix[key] then last = key end end
-    return (label or "Not listed in selected phase") .. (last and ("\nListed through " .. BigBiSList:GetPhaseDisplayName(last)) or "")
+    return label or "Not listed in selected tier"
 end
 
 local function createGridText(parent, column, text, color, template, label)
@@ -4215,6 +4257,12 @@ function UI:ShowItemActionMenu(data, mode, owner)
         if link and SetItemRef then SetItemRef(link, link, "LeftButton") end
     end)
     if itemId then
+        if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then
+            add("Use as reference", function() self:SetComparisonReference(itemId) end)
+        end
+        if self.OpenSlotComparison and data.slot and mode ~= "leveling" and mode ~= "enhance" then
+            add("Compare slot", function() self:OpenSlotComparison(data, mode) end)
+        end
         local char = BigBiSList:GetCharacterDB()
         local saved = char.wishlist[tostring(itemId)]
         add(saved and "Remove from Wishlist" or "Add to Wishlist", function()
@@ -4333,7 +4381,8 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
                     tooltip:AddLine(frame.label.fullText or "", 0.88, 0.88, 0.90, true)
                     UI:AddSelectedRouteTooltipLines(tooltip, row.boundData, UI:GetAccessEvaluation(row.boundData))
                 elseif frame.cellKey == "rank" then
-                    tooltip:AddLine(rankMeaning(row.boundData, row.boundMode), 0.88,0.88,0.90,true)
+                    tooltip:AddLine(frame.label.fullText or "", 0.88,0.88,0.90,true)
+                    tooltip:AddLine("Guide ratings describe their named tier and setup. Compare slot shows the supporting evidence.", 0.66,0.68,0.72,true)
                 elseif frame.cellKey == "owned" then
                     tooltip:AddLine(frame.label.fullText or "", 0.88,0.88,0.90,true)
                     tooltip:AddLine(UI:GetBankStatusText(), 0.66,0.68,0.72,true)
@@ -4348,7 +4397,7 @@ function UI:CreateDataRow(parent, yOffset, data, mode, row, fixedHeight)
         hover:ClearAllPoints(); hover:SetPoint("TOPLEFT", row, "TOPLEFT", column.x, 0)
         hover:SetSize(column.width, rowHeight); hover:Show()
     end
-    bindCell("rank", (displayRankInfo(data, mode)))
+    bindCell("rank", self:GetRowRecommendationText(data, mode))
     bindCell("value", self:GetRowRecommendationText(data, mode))
     bindCell("currentRank", data.recommendation_summary or data.overlay or "Not ranked")
     bindCell("expansion", self:GetWishlistExpansionText(data))
@@ -4394,6 +4443,13 @@ function UI:CreateVirtualSectionHeader(parent, yOffset, text, header, entry)
             state.collapsedGroups[button.sectionKey] = not state.collapsedGroups[button.sectionKey]
             UI:Invalidate("presentation", "section-toggle"); UI:ScheduleRefresh(nil, "section-toggle")
         end)
+        header.compareButton = widgets:CreateTextButton(header, "Compare slot", 98, 28, function(button)
+            local owner = button:GetParent()
+            if UI:IsCurrentRenderFrame(owner) and owner.compareSlot and UI.OpenSlotComparison then
+                UI:OpenSlotComparison({ slot = owner.compareSlot }, "phase")
+            end
+        end)
+        header.compareButton:SetPoint("RIGHT", header, "RIGHT", -4, 0)
         header.__bigBisManaged = true
         self:CountPerformance("widgetsCreated")
     end
@@ -4401,6 +4457,11 @@ function UI:CreateVirtualSectionHeader(parent, yOffset, text, header, entry)
     header:SetPoint("TOPLEFT", parent, "TOPLEFT", 0, yOffset)
     header:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
     header.sectionKey = entry and entry.sectionKey or text
+    header.compareSlot = entry and entry.compareSlot
+    header.compareButton:SetShown(header.compareSlot ~= nil and self.OpenSlotComparison ~= nil)
+    header.label:ClearAllPoints()
+    header.label:SetPoint("LEFT", header, "LEFT", 28, 0)
+    header.label:SetPoint("RIGHT", header, "RIGHT", header.compareSlot and -110 or -8, 0)
     header.__bigBisListRenderKind = "section"
     header.label:SetText(text .. "  (" .. tostring(entry and entry.count or 0) .. ")")
     widgets:SetIcon(header.chevron, entry and entry.collapsed and "chevronRight" or "chevronDown")
@@ -4565,8 +4626,11 @@ function UI:GetActiveFilterChips()
     if supportsOwned and filters.ownedState and filters.ownedState ~= "all" then
         table.insert(chips, { label = "Owned: " .. ownedFilterLabel(filters.ownedState), clear = function() self:SetFilter("ownedState", "all") end })
     end
-    if tabName == "Upgrades" and filters.upgradeMode and filters.upgradeMode ~= "actual" then
-        table.insert(chips, { label = "Targets: " .. upgradeModeLabel(filters.upgradeMode), clear = function() self:SetFilter("upgradeMode", "actual") end })
+    if tabName == "Upgrades" and filters.upgradeMode and filters.upgradeMode ~= "actual" and filters.upgradeMode ~= "candidates" then
+        table.insert(chips, { label = "Targets: " .. upgradeModeLabel(filters.upgradeMode), clear = function() self:SetFilter("upgradeMode", "candidates") end })
+    end
+    if (tabName == "Upgrades" or tabName == "By Slot") and filters.includeEarlier ~= (tabName == "Upgrades") then
+        table.insert(chips, { label = filters.includeEarlier and "Include earlier recommendations" or "Selected tier recommendations", clear = function() self:SetFilter("includeEarlier", tabName == "Upgrades") end })
     end
     if (supportsItems or tabName == "Gear Guide") and filters.boe and filters.boe ~= "all" then
         table.insert(chips, { label = "BoE: " .. boeFilterLabel(filters.boe), clear = function() self:SetFilter("boe", "all") end })
@@ -4702,6 +4766,9 @@ function UI:RenderGroupedRows(rows, mode, groupBy, defaultTitle)
         if groupBy == "activity" or groupBy == "source" then table.sort(order) end
         for _, title in ipairs(order) do
             self:AddListSection(model, title, mode)
+            if groupBy == "slot" and mode ~= "leveling" then
+                model.activeSection.compareSlot = groups[title][1] and groups[title][1].slot
+            end
             for _, row in ipairs(self:SortDisplayRows(groups[title], mode)) do self:AddListRow(model, row, mode) end
             self:AddListGap(model)
         end
@@ -5058,8 +5125,17 @@ function UI:GetDisplaySortValue(row, sortKey, mode)
         local defaultSort = row.default_sort or {}
         return row.priority or (defaultSort.relevance and (1000000 - (defaultSort.relevance * 100000 + (defaultSort.rank or 0)))) or 0
     elseif sortKey == "rank" then
-        local rankOrder = { bis = 1, ranked = 2, situational = 3, pvp = 4, unrealistic = 5, option = 6 }
-        return ((rankOrder[row.rank_group] or 50) * 1000) + (tonumber(row.rank) or 999)
+        local history = self:GetRowRecommendationHistory(row)
+        local cell = history and (history.selected.matched and history.selected or history.latest_earlier)
+        local evidence = cell and (cell.rating_evidence or cell.evidence) or row.guide_evidence or {}
+        local basis, grade
+        for _, entry in ipairs(evidence) do
+            if not entry.grade or #(entry.conditions or {}) > 0 or (basis and basis ~= entry.table_id) then
+                return "~unresolved"
+            end
+            basis, grade = entry.table_id, entry.grade
+        end
+        return basis and (tostring(cell and cell.phase or row.phase or "") .. ":" .. basis .. ":" .. tostring(grade)) or "~unresolved"
     elseif sortKey == "item" then
         return lower(row.name)
     elseif sortKey == "slot" then
@@ -5112,6 +5188,9 @@ function UI:SortDisplayRows(rows, mode)
         return sortedRows
     end
     table.sort(sortedRows, function(a, b)
+        if mode == "phase" and (a.historical_only == true) ~= (b.historical_only == true) then
+            return b.historical_only == true
+        end
         local aValue = self:GetDisplaySortValue(a, sortKey, mode)
         local bValue = self:GetDisplaySortValue(b, sortKey, mode)
         if aValue ~= bValue then
@@ -6011,6 +6090,75 @@ function UI:GetDetailsPhaseRankings(itemId, data)
     return (summary and summary.relevant_spec_rankings) or (data and (data.relevant_spec_rankings or data.spec_rankings)) or {}
 end
 
+function UI:GetDetailsEquipmentComparison(data)
+    if not data or not data.item_id or not data.slot or data.leveling or self:IsLevelingMode() or not BigBiSList.GetEquipmentComparisonContexts then return {} end
+    local selection = self:GetSelection()
+    local lines = {}
+    if self.slotComparison and data.comparison then
+        appendText(lines, "Compared with " .. self:GetComparisonReferenceLabel(self.slotComparison.reference))
+        appendText(lines, data.comparison.explanation)
+        for _, pair in ipairs(data.comparison.evidence or {}) do
+            local candidate, reference = pair.candidate or {}, pair.reference or {}
+            appendText(lines, (candidate.original_rating or "Unrated") .. " / " .. (reference.original_rating or "Unrated"))
+            appendText(lines, type(candidate.conditions) == "table" and table.concat(candidate.conditions, ", ") or candidate.conditions)
+            appendText(lines, candidate.source_url)
+        end
+        return lines
+    end
+    local contexts = BigBiSList:GetEquipmentComparisonContexts(selection.class, selection.spec, selection.phase, self.currentOwned, data.slot)
+    for _, context in ipairs(contexts) do
+        local position = context.slot or data.slot
+        if context.occupancy == "blocked" then
+            appendText(lines, position .. ": occupied by a two-handed weapon; compare the full weapon setup.")
+        elseif context.occupancy == "empty" then
+            appendText(lines, position .. ": Empty")
+        elseif context.item_id then
+            local comparison = BigBiSList:CompareRecommendationItems(data.item_id, context.item_id, selection.class, selection.spec, selection.phase, data.slot)
+            appendText(lines, position .. ": " .. (context.name or ("Item " .. context.item_id)))
+            appendText(lines, comparison.explanation)
+        else
+            appendText(lines, position .. ": equipment information is not available.")
+        end
+    end
+    for _, alternative in ipairs(data.owned_alternatives or {}) do
+        local item = BigBiSList.GetItemData and BigBiSList:GetItemData(alternative.item_id)
+        local name = (GetItemInfo and GetItemInfo(alternative.item_id)) or (item and item.name) or ("Item " .. alternative.item_id)
+        appendText(lines, "Already owned: " .. name .. " (" .. ownershipStateLabel(alternative.state) .. ")")
+        appendText(lines, alternative.comparison and alternative.comparison.explanation)
+    end
+    return lines
+end
+
+function UI:CreateDetailsHistory(parent, anchor, data, mode)
+    local history = self:GetRowRecommendationHistory(data)
+    if not history then return nil end
+    local selection = self:GetSelection()
+    local live = BigBiSList:GetCurrentPhaseKey()
+    local lines = {}
+    for _, cell in ipairs(history.phase_cells or {}) do
+        local prefix = cell.phase_label or BigBiSList:GetPhaseDisplayName(cell.phase)
+        if cell.phase == selection.phase then prefix = prefix .. " (Target)" end
+        if cell.phase == live then prefix = prefix .. " (Live)" end
+        appendText(lines, prefix .. ": " .. cell.label)
+    end
+    appendText(lines, "Not listed means no recommendation is recorded; it does not mean the item becomes obsolete.")
+    local key = "item:" .. data.item_id .. ":history:" .. selection.class .. ":" .. selection.spec .. ":" .. tostring(data.slot or "")
+    return self:CreateDetailsCollapsibleText(parent, anchor, key, selection.spec .. " recommendations", table.concat(lines, "\n"))
+end
+
+function UI:CreateDetailsCompareAction(parent, anchor, data, mode)
+    if not self.OpenSlotComparison or not data or not data.slot or self:IsLevelingMode() then return nil end
+    local button = self:AcquireDetailsWidget("compare-action", parent, function(widgetParent)
+        return BigBiSList.Widgets:CreateTextButton(widgetParent, "Compare slot", 112, 28, function(owner)
+            self:OpenSlotComparison(owner.boundData, owner.boundMode)
+        end)
+    end)
+    button.boundData, button.boundMode = data, mode
+    button:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -8)
+    button.contentHeight = 36
+    return button
+end
+
 function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
     local rankings = self:GetDetailsPhaseRankings(itemId, data)
     if #rankings == 0 then return nil end
@@ -6042,6 +6190,7 @@ function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
         label:SetWordWrap(false)
         label:SetTextColor(selected and 1 or 0.76, selected and 0.84 or 0.8, selected and 0.4 or 0.88, 1)
         label:SetText(text)
+        BigBiSList.Widgets:SetCellText(label, text, 1, 13, cellSize)
         label:Show()
         if tooltipText and tooltipText ~= "" then
             local target = block.matrixTargets[labelIndex]
@@ -6053,7 +6202,7 @@ function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
             target:Show()
         end
     end
-    local phaseLabels = { PR = "Pre", T4 = "P1", T5 = "P2", T6 = "P3", ZA = "P4", SWP = "P5" }
+    local phaseLabels = { PR = "Pre", T4 = "T4", T5 = "T5", T6 = "T6", ZA = "ZA", SWP = "SWP" }
     local matrixHeight = 25 + (#rankings + 1) * 22
     cell("Spec", 0, 25, specWidth, false)
     for index, phase in ipairs(phases) do
@@ -6077,9 +6226,11 @@ function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
     end
     for rowIndex, ranking in ipairs(rankings) do
         cell(ranking.spec or ranking.spec_name or "Spec", 0, 25 + rowIndex * 22, specWidth, ranking.spec == selection.spec, ranking.spec or ranking.spec_name)
+        local history = BigBiSList.GetRecommendationHistory and BigBiSList:GetRecommendationHistory(itemId, selection.class, ranking.spec, selection.phase, data and data.slot)
         for phaseIndex, phase in ipairs(phases) do
             local phaseCell = (ranking.phases or ranking.phase_rankings or {})[phase]
             local label = type(phaseCell) == "table" and (phaseCell.short_label or phaseCell.label) or phaseCell
+            if history then label = history.phases[phase].label end
             local shortLabels = { ["Best in slot"] = "BiS", Alternative = "Alt", Optional = "Opt", ["Best (Alt)"] = "Alt" }
             local useLines, seen = {}, {}
             for _, use in ipairs(allUses) do
@@ -6097,7 +6248,7 @@ function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
         end
     end
     cell("Gold: selected phase  ·  Blue line: live phase", 0, matrixHeight + 5, width, false)
-    cell("BiS: best in slot  ·  Alt: alternative  ·  Opt: optional", 0, matrixHeight + 21, width, false)
+    cell("Guide ratings depend on their tier and setup.", 0, matrixHeight + 21, width, false)
     block:SetHeight(matrixHeight + 38)
     block.contentHeight = block:GetHeight() + 12
     return block
@@ -6286,6 +6437,9 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         appendText(recommendationLines, ownershipText)
     end
     appendText(recommendationLines, upgradeComparisonText(detailData or plannerContext))
+    if detailItemId and detailMode ~= "leveling" and detailMode ~= "enhance" then
+        for _, line in ipairs(self:GetDetailsEquipmentComparison(detailData)) do appendText(recommendationLines, line) end
+    end
 
     local accessData = detailData or item or {}
     local requirementData = (accessData and accessData.requirements and #accessData.requirements > 0) and accessData or item
@@ -6297,6 +6451,12 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
     anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
     contentHeight = contentHeight + anchor.contentHeight
+    if detailItemId and detailMode ~= "leveling" and detailMode ~= "enhance" then
+        local compare = self:CreateDetailsCompareAction(content, anchor, detailData, detailMode)
+        if compare then anchor = compare; contentHeight = contentHeight + compare.contentHeight end
+        local history = self:CreateDetailsHistory(content, anchor, detailData, detailMode)
+        if history then anchor = history; contentHeight = contentHeight + history.contentHeight end
+    end
 
     local optionEvaluation = accessEvaluation.optionEvaluation
     local option = optionEvaluation and optionEvaluation.option
@@ -6382,12 +6542,8 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local timelineLines = {}
     if plannerContext and plannerContext.priority then
         local score = tostring(plannerContext.priority or 0) .. "/100"
-        local tier = plannerContext.priorityTier or "Priority"
-        appendText(timelineLines, tier .. " - " .. score)
+        appendText(timelineLines, "Pursuit priority: " .. score .. " (not item strength)")
         appendText(timelineLines, plannerContext.reasons and table.concat(plannerContext.reasons, "\n") or "No planner explanation available.")
-        if plannerContext.lastUsefulLabel then
-            appendText(timelineLines, "Listed through " .. plannerContext.lastUsefulLabel)
-        end
     end
 
     if detailMode ~= "leveling" then
@@ -6430,7 +6586,7 @@ function UI:RefreshControls()
     local filters = self:GetFilters()
     local leveling = self:IsLevelingMode()
     local settings = selection.tab == "Settings"
-    for _, control in ipairs({ self.classDropdown, self.specDropdown, self.phaseDropdown, self.sortDropdown, self.groupDropdown }) do
+    for _, control in ipairs({ self.classDropdown, self.specDropdown, self.phaseSelector, self.sortDropdown, self.groupDropdown }) do
         if control and control.Refresh then control:Refresh() end
     end
     if self.searchBox and self.searchBox:GetText() ~= (filters.search or "") then self.searchBox:SetText(filters.search or "") end
@@ -6451,7 +6607,8 @@ function UI:RefreshControls()
     self.tabBar:SetHeight(settings and 1 or 30)
     self.endgameModeButton:SetSelected(not leveling)
     self.levelingModeButton:SetSelected(leveling)
-    self.phaseDropdown:SetShown(not leveling)
+    self.phaseSelector:SetShown(not leveling)
+    if self.targetTierLabel then self.targetTierLabel:SetShown(not leveling) end
     self.levelControlContainer:SetShown(leveling)
     local character = BigBiSList:GetCharacterDB()
     local manualLevel = character.leveling and character.leveling.manualLevel
@@ -6600,7 +6757,9 @@ function UI:RefreshLayout(reason)
     self:CountPerformance("layoutPasses", 1, reason or "layout")
     self:ApplyBodyLayout()
     self:LayoutContextControls()
-    if self.renderModel then
+    if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then
+        self:RenderSlotComparison()
+    elseif self.renderModel then
         self:SetStickyHeaderMode(self.stickyHeaderMode)
         self:UpdateVirtualList(true)
     end
@@ -6631,7 +6790,9 @@ function UI:Refresh(reason)
         end
         self:RefreshControls()
 
-        if tabName == "Equipped" then
+        if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then
+            self:RenderSlotComparison()
+        elseif tabName == "Equipped" then
             self:RenderGearTab()
         elseif tabName == "Upgrades" then
             self:RenderPlannerTab()
@@ -6805,24 +6966,44 @@ function UI:CreatePhaseBar(frame)
     local widgets = BigBiSList.Widgets
     local host = CreateFrame("Frame", nil, self.contextBar)
     host:SetPoint("LEFT", self.levelingModeButton, "RIGHT", 10, 0)
-    host:SetSize(280, 32)
+    host:SetSize(280, 28)
     self.phaseBar = host
     self.phaseButtons = {}
-    self.phaseDropdown = widgets:CreateDropdown("BigBiSListPhaseDropdown", host, 206,
-        function()
-            local phase = self:GetSelection().phase
-            return BigBiSList:GetPhaseDisplayName(phase)
-                .. (phase == BigBiSList:GetCurrentPhaseKey() and " · Live" or "")
-        end,
-        function()
-            local items = {}
-            for _, phase in ipairs(BigBiSList:GetPhaseOrder()) do
-                items[#items + 1] = { value = phase, checked = phase == self:GetSelection().phase,
-                    text = BigBiSList:GetPhaseDisplayName(phase) .. (phase == BigBiSList:GetCurrentPhaseKey() and " — Live" or "") }
-            end
-            return items
-        end, function(value) self:SetPhase(value) end)
-    self.phaseDropdown:SetPoint("LEFT", host, "LEFT", -16, -2)
+    local widths = { PR = 68, T4 = 54, T5 = 54, T6 = 54, ZA = 68, SWP = 60 }
+    local options = {}
+    for _, phaseKey in ipairs(BigBiSList:GetPhaseOrder()) do
+        local phase = phaseKey
+        options[#options + 1] = {
+            value = phase,
+            text = phase == "SWP" and "Sunwell" or BigBiSList:GetPhaseDisplayName(phase),
+            width = widths[phase] or 68,
+            tooltip = function()
+                local lines = { BigBiSList:GetPhaseDisplayName(phase) }
+                if phase == "PR" then lines[#lines + 1] = "Pre-Raid recommendations follow live content." end
+                if phase == self:GetSelection().phase then lines[#lines + 1] = "Selected for browsing." end
+                if phase == BigBiSList:GetCurrentPhaseKey() then lines[#lines + 1] = "Live content." end
+                return table.concat(lines, "\n")
+            end,
+        }
+    end
+    self.phaseSelector = widgets:CreateSegmentedControl(host, options, function(value) self:SetPhase(value) end)
+    self.phaseSelector:SetPoint("TOPLEFT", host, "TOPLEFT", 0, 0)
+    self.targetTierLabel = widgets:CreateLabel(host, "Target tier", "GameFontNormalSmall")
+    self.targetTierLabel:SetPoint("TOPRIGHT", self.phaseSelector, "BOTTOMLEFT", -8, 12)
+    self.targetTierLabel:SetTextColor(0.62, 0.62, 0.66)
+    for _, button in ipairs(self.phaseSelector.buttons) do
+        button.liveCaption = button.caption
+        self.phaseButtons[button.value] = button
+    end
+    self.phaseSelector.Refresh = function(control)
+        control = control or self.phaseSelector
+        control:SetSelectedValue(self:GetSelection().phase)
+        local livePhase = BigBiSList:GetCurrentPhaseKey()
+        for _, button in ipairs(control.buttons) do
+            control:SetCaption(button.value, button.value == livePhase and "Live" or nil)
+        end
+    end
+    self.phaseSelector:Refresh()
     local level = CreateFrame("Frame", nil, host)
     level:SetAllPoints()
     self.levelControlContainer = level
@@ -6860,6 +7041,9 @@ end
 function UI:LayoutContextControls()
     if not self.contextBar or not self.phaseBar then return end
     local bar = self.contextBar
+    local leveling = self:IsLevelingMode()
+    local phaseWidth = self.phaseSelector:Layout()
+    self.phaseBar:SetSize(leveling and 280 or phaseWidth, leveling and 28 or 40)
     local controls = { self.classDropdown, self.specDropdown, self.useCharacterButton }
     local x = 0
     for _, control in ipairs(controls) do
@@ -6876,8 +7060,9 @@ function UI:LayoutContextControls()
     self.levelingModeButton:ClearAllPoints()
     self.levelingModeButton:SetPoint("LEFT", self.endgameModeButton, "RIGHT", 0, 0)
     self.phaseBar:ClearAllPoints()
-    self.phaseBar:SetPoint("LEFT", self.levelingModeButton, "RIGHT", 10, 0)
-    bar:SetHeight(self:GetSelection().tab == "Settings" and 1 or (wrapped and CONTEXT_BAR_HEIGHT * 2 + 2 or CONTEXT_BAR_HEIGHT))
+    self.phaseBar:SetPoint("TOPLEFT", self.levelingModeButton, "TOPRIGHT", 10, 0)
+    local height = wrapped and CONTEXT_BAR_HEIGHT * 2 + 2 or CONTEXT_BAR_HEIGHT
+    bar:SetHeight(self:GetSelection().tab == "Settings" and 1 or height + (leveling and 0 or 12))
 end
 
 function UI:CreateTabBar(frame)
@@ -6972,6 +7157,11 @@ function UI:CreateListToolbar(parent)
     self.resultCountText:SetPoint("RIGHT", self.inspectorToggleButton, "LEFT", -8, 0)
     self.resultCountText:SetWidth(72)
     self.listToolbar = toolbar
+    self.earlierCheckbox = widgets:CreateCheckbox(toolbar, "Include earlier recommendations", 224, function(value)
+        self:SetFilter("includeEarlier", value)
+    end)
+    widgets:BindTooltip(self.earlierCheckbox, "Include recommendations from earlier guides that are obtainable through the target tier. Their ratings always identify the guide tier.")
+    self.earlierCheckbox:Hide()
 end
 
 function UI:LayoutPrimaryControls()
@@ -6979,6 +7169,7 @@ function UI:LayoutPrimaryControls()
     local tab = self:GetSelection().tab
     local controls = { self.upgradeModeDropdown, self.groupDropdown, self.wishlistRelevanceDropdown }
     for _, control in ipairs(controls) do control:Hide() end
+    if self.earlierCheckbox then self.earlierCheckbox:Hide() end
     for _, button in ipairs(self.enhancementSwitchButtons or {}) do button:Hide() end
     local groupVisible = tab == "Upgrades" or tab == "By Slot" or tab == "Wishlist" or tab == "Gear Guide"
     local primary = tab == "Upgrades" and self.upgradeModeDropdown or (tab == "Wishlist" and self.wishlistRelevanceDropdown)
@@ -7005,6 +7196,11 @@ function UI:LayoutPrimaryControls()
         primary:Show(); primary:Refresh()
         optional[#optional + 1] = primary
     end
+    if self.earlierCheckbox and (tab == "Upgrades" or tab == "By Slot") then
+        self.earlierCheckbox:SetChecked(self:GetFilters().includeEarlier == true)
+        self.earlierCheckbox:Show()
+        optional[#optional + 1] = self.earlierCheckbox
+    end
     if tab == "Enhance" then
         self.enhancementSwitchButtons = self.enhancementSwitchButtons or {}
         local options = { {"all", "All", 34}, {"gem", "Gems", 45}, {"enchant", "Enchants", 65}, {"consumable", "Consumables", 88} }
@@ -7024,11 +7220,16 @@ function UI:LayoutPrimaryControls()
     for _, control in ipairs(optional) do optionalWidth = optionalWidth + control:GetWidth() + gap end
     local wrapped = #optional > 0 and x + optionalWidth > width - 32
     local optionalX = wrapped and 4 or x
+    local optionalRow = wrapped and 1 or 0
     for _, control in ipairs(optional) do
-        place(control, optionalX, wrapped and 1 or 0)
+        if optionalX > 4 and optionalX + control:GetWidth() > width - (optionalRow == 0 and 32 or 4) then
+            optionalX = 4
+            optionalRow = optionalRow + 1
+        end
+        place(control, optionalX, optionalRow)
         optionalX = optionalX + control:GetWidth() + gap
     end
-    self.listToolbar:SetHeight(wrapped and rowHeight * 2 + rowGap or rowHeight)
+    self.listToolbar:SetHeight(rowHeight * (optionalRow + 1) + rowGap * optionalRow)
     local firstRowEnd = wrapped and x or optionalX
     self.resultCountText:SetShown(width >= 900 and firstRowEnd + 80 <= width - 32)
 end
@@ -7364,6 +7565,7 @@ end
 
 function UI:ApplyBodyLayout()
     if not self.body or not self.contentRegion or not self.contentPanel then return end
+    if self.ApplySlotComparisonLayout and self:ApplySlotComparisonLayout() then return end
     local supportsFilters = self:ViewSupportsFilters()
     local showInspector = self:IsInspectorVisible()
     local geometry = self:GetBodyGeometry(self.body:GetWidth() or DEFAULT_WIDTH - 24, showInspector, 0, supportsFilters)

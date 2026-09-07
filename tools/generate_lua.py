@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -139,6 +140,12 @@ USE_SCHEMA = [
     "note",
     "requirements",
     "content_phase",
+    "guide_evidence",
+]
+
+GUIDE_EVIDENCE_SCHEMA = [
+    "table_id", "guide_phase", "rating_phase", "original_rating", "grade",
+    "conditions", "source_url", "content_phase", "table_heading",
 ]
 
 GEM_SCHEMA = [
@@ -253,6 +260,7 @@ ENCHANT_EFFECT_SCHEMA = [
 
 
 SCHEMAS = {
+    "guide_evidence": GUIDE_EVIDENCE_SCHEMA,
     "item": ITEM_SCHEMA,
     "item_fallback": ITEM_FALLBACK_SCHEMA,
     "source": SOURCE_SCHEMA,
@@ -286,6 +294,10 @@ def compact_requirements(requirements: list[dict] | None) -> list[list] | None:
 
 
 def compact_value(schema_name: str, key: str, value):
+    if schema_name == "use" and key == "guide_evidence":
+        if value and isinstance(value[0], int):
+            return value
+        return compact_list(value, "guide_evidence") if value else None
     if schema_name in {"item", "item_fallback", "source_record"}:
         if key == "primary_source":
             return compact_source(value)
@@ -385,8 +397,9 @@ def build_runtime_lookups(items: list[dict]) -> dict:
     }
 
 
-def build_uses(bis_lists: list[dict]) -> list[list]:
+def build_uses(bis_lists: list[dict], evidence_pool: list[list] | None = None) -> list[list]:
     uses = []
+    evidence_ids = {}
     for row in bis_lists:
         for item in row["items"]:
             use = {
@@ -398,6 +411,15 @@ def build_uses(bis_lists: list[dict]) -> list[list]:
                 "content_phase": row.get("content_phase"),
                 **item,
             }
+            if evidence_pool is not None and item.get("guide_evidence"):
+                references = []
+                for evidence in compact_list(item["guide_evidence"], "guide_evidence"):
+                    key = json.dumps(evidence, ensure_ascii=False, separators=(",", ":"))
+                    if key not in evidence_ids:
+                        evidence_pool.append(evidence)
+                        evidence_ids[key] = len(evidence_pool)
+                    references.append(evidence_ids[key])
+                use["guide_evidence"] = references
             uses.append(compact_record(use, "use"))
     return uses
 
@@ -449,6 +471,8 @@ def build_data() -> dict:
     manifest = canonical_json("scrape_manifest")
     lookups = build_runtime_lookups(items)
     item_fallbacks = build_item_fallbacks(items, item_stats, leveling_recommendations)
+    guide_evidence = []
+    uses = build_uses(bis_lists, guide_evidence)
 
     return {
         "format": 2,
@@ -478,7 +502,8 @@ def build_data() -> dict:
             item["id"]: sorted(set(item["restrictions"]["classes"]))
             for item in item_stats if item.get("restrictions", {}).get("classes")
         },
-        "uses": build_uses(bis_lists),
+        "uses": uses,
+        "guide_evidence": guide_evidence,
         "gems": compact_list(gems, "gem"),
         "gem_sources": compact_list(gem_sources, "source_record"),
         "enchants": compact_list(enchants, "enchant"),

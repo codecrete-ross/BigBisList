@@ -152,6 +152,8 @@ function methods:SetHighlightTexture(texture) self.highlightTexture = make("Text
 function methods:GetHighlightTexture() return self.highlightTexture end
 function methods:SetPushedTexture(texture) self.pushedTexture = make("Texture", nil, self); self.pushedTexture:SetTexture(texture) end
 function methods:GetPushedTexture() return self.pushedTexture end
+function methods:SetCheckedTexture(texture) self.checkedTexture = make("Texture", nil, self); self.checkedTexture:SetTexture(texture) end
+function methods:GetCheckedTexture() return self.checkedTexture end
 function methods:SetClampedToScreen(value) self.clamped = value end
 function methods:IsClampedToScreen() return self.clamped end
 for _, name in ipairs({ "EnableMouse", "EnableMouseWheel", "RegisterForClicks", "RegisterEvent", "SetToplevel", "SetMovable", "SetResizable", "SetResizeBounds", "SetMinResize", "SetMaxResize", "RegisterForDrag", "StartMoving", "StartSizing", "StopMovingOrSizing", "SetBackdrop", "SetBackdropColor", "SetBackdropBorderColor", "SetTexCoord", "SetColorTexture", "SetVertexColor", "SetTextColor", "SetJustifyH", "SetJustifyV", "SetAlpha", "SetBlendMode", "SetDesaturated", "SetDrawLayer", "SetAutoFocus", "SetNumeric", "SetMaxLetters", "SetTextInsets", "SetMultiLine", "SetCursorPosition", "HighlightText", "SetValueStep", "SetObeyStepOnDrag", "SetOrientation", "SetThumbTexture", "SetHitRectInsets", "SetClipsChildren", "SetPropagateKeyboardInput", "EnableKeyboard", "SetFontObject", "SetDisabledFontObject", "SetNormalFontObject", "SetHighlightFontObject", "SetDisabledTexture", "SetButtonState", "SetAllPointsToParent", "SetMaxLines", "SetIndentedWordWrap" }) do
@@ -159,6 +161,12 @@ for _, name in ipairs({ "EnableMouse", "EnableMouseWheel", "RegisterForClicks", 
 end
 CreateFrame = function(kind, name, parent, template)
     local node = make(kind, name, parent)
+    if template and template:find("UICheckButtonTemplate", 1, true) then
+        node:SetNormalTexture("Check-Normal")
+        node:SetPushedTexture("Check-Pressed")
+        node:SetHighlightTexture("Check-Highlight")
+        node:SetCheckedTexture("Check-Checked")
+    end
     if template and template:find("UIDropDownMenuTemplate", 1, true) then
         node:SetSize(160, 32)
         node.Button = make("Button", name and name .. "Button", node)
@@ -257,7 +265,7 @@ function H.settle()
     error("UI geometry or refresh timers did not settle after 30 passes")
 end
 function H.load()
-    for _, file in ipairs({ "Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
+    for _, file in ipairs({ "Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "ComparisonUI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
     BigBiSList:EnsureDatabase()
     BigBiSList:InitTooltip()
     return BigBiSList.UI

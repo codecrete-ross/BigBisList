@@ -26,6 +26,7 @@ from tools.manifest_coverage import build_manifest_coverage
 from tools.project import CANONICAL_DIR, PHASE_KEYS, RAW_WOWHEAD_DIR, SLOT_NAMES, canonical_json, write_text
 from tools.recommend_leveling import build_recommendation_documents
 from tools.progression import expand_pre_raid_paths, resolve_source_content
+from tools.guide_evidence import apply_recommendation_context, table_evidence
 from tools.phase_source_overrides import apply_source_rule_overrides
 from tools.reputations import infer_source_side, normalize_reputation_names, requirement_side
 from tools.sources import (
@@ -3280,6 +3281,11 @@ def merge_bis_item_entries(preferred: dict[str, Any], discarded: dict[str, Any])
     merged = dict(preferred)
     if "requirements" not in merged and discarded.get("requirements"):
         merged["requirements"] = discarded["requirements"]
+    if preferred.get("rank_label") == discarded.get("rank_label"):
+        evidence = {json.dumps(value, sort_keys=True): value
+                    for value in preferred.get("guide_evidence", []) + discarded.get("guide_evidence", [])}
+        if evidence:
+            merged["guide_evidence"] = [evidence[key] for key in sorted(evidence)]
     return merged
 
 
@@ -3293,10 +3299,12 @@ def copy_imported_bis_ranks(replacement: dict[str, Any], imported: dict[str, Any
             imported_by_id.setdefault(item["item_id"], []).append(item)
 
     for item in replacement.get("items", []):
-        if item.get("rank") is not None:
-            continue
         candidates = imported_by_id.get(item.get("item_id"), [])
         imported_item = next((candidate for candidate in candidates if candidate.get("rank_label") == item.get("rank_label")), None)
+        if imported_item and imported_item.get("guide_evidence"):
+            item["guide_evidence"] = deepcopy(imported_item["guide_evidence"])
+        if item.get("rank") is not None:
+            continue
         imported_item = imported_item or (candidates[0] if candidates else None)
         if imported_item and imported_item.get("rank") is not None:
             item["rank"] = imported_item["rank"]
@@ -3306,6 +3314,7 @@ def copy_imported_bis_ranks(replacement: dict[str, Any], imported: dict[str, Any
 def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
     item_snapshots = item_snapshots_by_id(snapshots)
+    phase_definitions = None
 
     for snapshot in select_pre_raid_snapshots(snapshots):
         if snapshot.get("page_type") != "guide":
@@ -3318,7 +3327,7 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
             if not class_name or not spec_name:
                 continue
 
-            for table in snapshot.get("tables", []):
+            for table_index, table in enumerate(snapshot.get("tables", []), start=1):
                 if table.get("data_family") not in (None, "bis_lists", "unknown"):
                     continue
                 items_by_phase_slot: dict[tuple[str, str], dict[int, dict[str, Any]]] = {}
@@ -3333,12 +3342,18 @@ def import_bis_lists_from_snapshots(snapshots: list[dict[str, Any]]) -> dict[str
                     rank_label = row.get("rank_label") or "Option"
                     context = context_from_rank_label(rank_label)
                     phase_slot = (phase, slot)
+                    if phase_definitions is None:
+                        phase_definitions = canonical_json("phases")
                     item_entry = {
                         "item_id": item_id,
                         "rank": rank_index,
                         "rank_label": rank_label,
                         "rank_group": rank_group_from_label(rank_label),
                         "context": context,
+                        "guide_evidence": [table_evidence(
+                            snapshot, table, table_index, row, phase, slot,
+                            definitions=phase_definitions,
+                            terminology=source_meta.get("content_terminology", "wowhead_classic"))],
                     }
                     requirements = row_requirements(row, snapshot["url"])
                     item_snapshot = item_snapshots.get(int(item_id))
@@ -5241,6 +5256,9 @@ def apply_bis_overrides(imported_bis_lists: dict[str, Any]) -> dict[str, Any]:
     for row in rows:
         for item in row.get("items", []):
             item["rank_group"] = normalize_rank_group_value(item.get("rank_group"), item.get("rank_label"))
+            if item.get("guide_evidence"):
+                item["guide_evidence"] = [apply_recommendation_context(evidence, item)
+                                          for evidence in item["guide_evidence"]]
 
     return {"coverage": imported_bis_lists.get("coverage", "scraped_snapshot"), "lists": rows}
 

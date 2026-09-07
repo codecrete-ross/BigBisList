@@ -69,7 +69,7 @@ class AddonUIStaticTests(unittest.TestCase):
         config = self.read_lua("Config.lua")
         for token in [
             "BigBiSList.maxLevelingLevel = 69",
-            "local DEFAULTS_VERSION = 17",
+            "local DEFAULTS_VERSION = 18",
             "local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel",
             "window = {",
             "width = 1160",
@@ -104,7 +104,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'reputation = "all"',
             "reputations = {}",
             "rankGroups = {}",
-            'upgradeMode = "actual"',
+            'upgradeMode = "candidates"',
             "bankCache = {",
             "links = {}",
             "wishlist = {}",
@@ -246,17 +246,16 @@ class AddonUIStaticTests(unittest.TestCase):
             'widgets:CreateTextButton(bar, "Leveling"',
             "BigBiSListClassDropdown",
             "BigBiSListSpecDropdown",
-            "BigBiSListPhaseDropdown",
+            "self.phaseSelector",
             'widgets:CreateTextButton(bar, "Current Spec"',
             "function UI:UseMyCharacter()",
             "BigBiSList:ResetClassSpecAutoSelection()",
             "BigBiSList:ApplyDetectedPlayerSelection()",
-            "phase == BigBiSList:GetCurrentPhaseKey()",
         ]:
             self.assertIn(token, ui)
         phase_bar = self.ui_function("CreatePhaseBar")
-        self.require_tokens(phase_bar, ["Live", "BigBiSList:GetPhaseOrder()", "self:SetPhase(value)"])
-        self.assertNotIn('CreateTextButton(phaseBar, phaseLabel', phase_bar)
+        self.require_tokens(phase_bar, ["BigBiSList:GetPhaseOrder()", "CreateSegmentedControl", "self:SetPhase("])
+        self.assertNotIn("BigBiSListPhaseDropdown", ui)
         context_layout = self.ui_function("LayoutContextControls")
         self.assertIn("{ self.classDropdown, self.specDropdown, self.useCharacterButton }", context_layout)
         header = self.ui_function("CreateHeader")
@@ -468,7 +467,7 @@ class AddonUIStaticTests(unittest.TestCase):
         self.require_tokens(self.ui_function("RenderGearTab"), ['row.column == "right"', 'columnIndex=column', 'mode="gear"'])
         self.require_tokens(ui, [
             'mode == "gear" and "currentRank"',
-            'gear = "Current rank"',
+            'gear = "Current rating"',
             'self:GetRowSlotDisplay(data)',
             'data.recommendation_summary or data.overlay or "Not ranked"',
             'self:CreateDetailsPhaseMatrix(',
@@ -1131,7 +1130,7 @@ class AddonUIStaticTests(unittest.TestCase):
         config_body = ui.split("local TABLE_COLUMN_CONFIG =", 1)[1].split("function UI:GetViewColumnDefinitions", 1)[0]
         self.require_tokens(config_body, [
             'mode == "gear" and "currentRank"',
-            'gear = "Current rank"',
+            'gear = "Current rating"',
             'columnDefinition("item",',
             'columnDefinition(valueKey, valueLabel,',
         ])
@@ -1476,7 +1475,7 @@ class AddonUIStaticTests(unittest.TestCase):
             'self:GetViewState("Gear Guide")',
             'self:GetViewState("Enhance")',
             'self:GetViewState("Wishlist")',
-            'filters.upgradeMode = "actual"',
+            'filters.upgradeMode = "candidates"',
             'filters.longevity = "all"',
             'recommendationCategory = "all"',
             'type = "all"',
@@ -1594,7 +1593,7 @@ class AddonUIStaticTests(unittest.TestCase):
             '"Reputation required"',
             '"Profession required"',
             '"Recipe required"',
-            '"Upgrades only"',
+            '"Upgrade candidates"',
             '"All recommendations"',
             '"Hide item"',
         ]:
@@ -1810,56 +1809,19 @@ class AddonUIStaticTests(unittest.TestCase):
         ]:
             self.assertIn(snippet, data_index)
 
-    def test_upgrades_tab_defaults_to_actual_upgrade_filtering(self):
+    def test_upgrades_tab_uses_evidence_based_candidate_filters(self):
         config = self.read_lua("Config.lua")
         ui = self.read_lua("UI.lua")
         data_index = self.read_lua("DataIndex.lua")
-
-        for token in [
-            'upgradeMode = "actual"',
-            "BigBiSListUpgradeModeDropdown",
-            "GetUpgradeModeDropdownItems",
-            'return upgradeModeLabel(self:GetFilters("Upgrades").upgradeMode)',
-            "upgradeMode = filters.upgradeMode",
-            'filters.upgradeMode = "actual"',
-            "upgradeComparisonText",
-            "GameTooltip:AddLine(upgradeText",
-        ]:
-            self.assertIn(token, config + ui)
-
-        for token in [
-            "includeOwnedUpgrades",
-            "BigBiSListOwnedUpgradeDropdown",
-            "GetOwnedUpgradeDropdownItems",
-            "ownedUpgradeLabel",
-        ]:
-            self.assertNotIn(token, config + ui)
-
-        for token in [
-            "local function isStrictUpgradeUse",
-            "candidate.item_id == current.item_id",
-            "local function upgradeSlotCapacity",
-            'slotName == "Ring" or slotName == "Trinket"',
-            "ownedBySlot = {}",
-            "equippedBySlot = {}",
-            "buildUpgradeBaselines(self, className, specName, selectedPhaseKey, filters.ownedItems)",
-            "group.upgrade_state = state",
-            '"missing_upgrade"',
-            '"owned_upgrade"',
-            '"not_upgrade"',
-            'ownedState == "equipped"',
-            'ownedState == "bag" or ownedState == "bank"',
-            "upgradeComparisonContext(baselines.equippedBySlot, candidateUse)",
-            "upgradeComparisonContext(baselines.ownedBySlot, candidateUse)",
-            "group.upgrade_state == \"owned_upgrade\"",
-            "plannerGroupMatchesUpgradeMode(group, filters)",
-        ]:
-            self.assertIn(token, data_index)
-
-        planner_body = data_index.split("function BigBiSList:GetPlannerRows", 1)[1].split("local function cloneFiltersForZoneOptions", 1)[0]
-        self.assertLess(planner_body.index("annotatePlannerUpgradeGroup"), planner_body.index("plannerGroupMatchesUpgradeMode"))
-        self.assertIn('filters and filters.upgradeMode == "actual"', planner_body)
-        self.assertIn("and plannerGroupMatchesUpgradeMode(group, filters)", planner_body)
+        self.require_tokens(config + ui, [
+            'upgradeMode = "candidates"', 'includeEarlier',
+            '"Upgrade candidates"', '"Higher guide rating"', '"All recommendations"',
+            'GetUpgradeModeDropdownItems', 'upgradeMode = filters.upgradeMode',
+        ])
+        self.require_tokens(data_index, [
+            'GetEquipmentComparisonContexts', 'CompareRecommendationItems',
+            'GetRecommendationHistory', 'GetSlotComparisonRows',
+        ])
 
     def test_esc_closable_frame_is_registered(self):
         ui = self.read_lua("UI.lua")

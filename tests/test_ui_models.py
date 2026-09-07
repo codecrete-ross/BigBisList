@@ -92,8 +92,8 @@ local raid = {source_filter_key="raid_drop",zone="Karazhan"}
 local dungeon = {source_filter_key="dungeon_drop",zone="The Slave Pens"}
 local rows = {
     {item_id=1,name="Zulu",rank_group="ranked",rank=2,acquisition_display={option=dungeon}},
-    {item_id=2,name="Beta",rank_group="ranked",rank=2,acquisition_display={option=raid}},
-    {item_id=3,name="Gamma",rank_group="bis",rank=1,acquisition_display={option=raid}},
+    {item_id=2,name="Beta",rank_group="ranked",rank=1,guide_evidence={{table_id="shared",grade=2}},acquisition_display={option=raid}},
+    {item_id=3,name="Gamma",rank_group="bis",rank=2,guide_evidence={{table_id="shared",grade=1}},acquisition_display={option=raid}},
 }
 function UI:RenderListModel(model) self.lastModel=model end
 UI:RenderGroupedRows(rows, "phase", "activity", "Items")

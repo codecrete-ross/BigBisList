@@ -17,11 +17,11 @@ end
 
 local version = addonMetadata("Version")
 if version == nil or version == "" or version == "@project-version@" then
-    version = "0.14.0"
+    version = "0.15.0"
 end
 BigBiSList.version = version
 
-local DEFAULTS_VERSION = 17
+local DEFAULTS_VERSION = 18
 local DEFAULT_SELECTED_CLASS = "Druid"
 local DEFAULT_SELECTED_SPEC = "Feral dps"
 local MAX_LEVELING_LEVEL = BigBiSList.maxLevelingLevel
@@ -216,7 +216,8 @@ BigBiSList.defaults = {
             rankGroup = "all",
             rankGroups = {},
             ownedState = "all",
-            upgradeMode = "actual",
+            upgradeMode = "candidates",
+            includeEarlier = false,
             binding = "all",
             boe = "all",
             faction = "all",
@@ -384,10 +385,15 @@ end
 local function migrateWorkspaceFilters(char, previousVersion)
     for viewKey, state in pairs(char.viewState or {}) do
         if type(state) == "table" then
+            local includeEarlier
+            if type(state.filters) == "table" then includeEarlier = state.filters.includeEarlier end
             if type(state.filters) ~= "table" then
                 state.filters = copyFilterValues(char.filters or BigBiSList.defaults.char.filters)
             end
             applyDefaults(state.filters, BigBiSList.defaults.char.filters)
+            if includeEarlier == nil or type(includeEarlier) ~= "boolean" then
+                state.filters.includeEarlier = viewKey == "upgrades"
+            end
             if viewKey == "upgrades" then
                 if previousVersion == nil or previousVersion < 17 then
                     state.filters.upgradeMode = state.upgradeMode or state.filters.upgradeMode
@@ -395,6 +401,9 @@ local function migrateWorkspaceFilters(char, previousVersion)
                 end
                 state.upgradeMode = nil
                 state.usefulness = nil
+                if state.filters.upgradeMode == "actual" then
+                    state.filters.upgradeMode = "candidates"
+                end
             else
                 state.filters.upgradeMode = "all"
                 state.filters.longevity = "all"

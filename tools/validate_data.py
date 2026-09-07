@@ -17,6 +17,7 @@ from tools.project import CANONICAL_DIR, CANONICAL_FILES, PHASE_KEYS, SLOT_NAMES
 from tools.reputations import CANONICAL_REPUTATIONS, infer_source_side
 from tools.sources import derive_acquisition_phase, derive_primary_source, summarize_sources
 from tools.progression import validate_pre_raid_paths, validate_schedules
+from tools.guide_evidence import validate_evidence
 
 
 REQUIREMENT_TYPES = {
@@ -464,6 +465,10 @@ def validate() -> ValidationResult:
             _require(bool(entry.get("rank_label")), errors, f"Item {item_id} is missing rank_label")
             _require(bool(entry.get("rank_group")), errors, f"Item {item_id} is missing rank_group")
             _require(bool(entry.get("context")), errors, f"Item {item_id} is missing context")
+            if "guide_evidence" in entry:
+                errors.extend(f"BiS item {item_id}: {message}" for message in validate_evidence(
+                    entry["guide_evidence"], entry.get("rank_label", ""), list_row.get("source_url", ""),
+                    entry.get("context", "standard")))
             validate_requirements(f"BiS list item {item_id}", entry.get("requirements"), errors)
             item_context = (item_id, str(entry.get("context")))
             _require(item_context not in seen_item_contexts, errors, f"Duplicate BiS item/context in {class_name}/{spec_name}/{phase}/{slot}: {item_id}/{entry.get('context')}")

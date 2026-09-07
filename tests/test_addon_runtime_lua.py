@@ -1757,7 +1757,7 @@ firstButton.scripts.OnClick(firstButton, "RightButton")
 equal(inspectorCalls, 0, "empty pooled icon cannot open the previous inspector")
 ''')
 
-    def test_v17_defaults_expose_mode_view_and_inspector_state(self):
+    def test_v18_defaults_expose_mode_view_and_inspector_state(self):
         self.run_lua(r'''
 BigBiSList = {}
 dofile("Config.lua")
@@ -1765,8 +1765,8 @@ BigBiSListDB = nil
 BigBiSListCharDB = nil
 BigBiSList:EnsureDatabase()
 
-equal(BigBiSListDB.profile.defaultsVersion, 17, "profile defaults version")
-equal(BigBiSListCharDB.defaultsVersion, 17, "character defaults version")
+equal(BigBiSListDB.profile.defaultsVersion, 18, "profile defaults version")
+equal(BigBiSListCharDB.defaultsVersion, 18, "character defaults version")
 equal(BigBiSList:GetContentMode(), "endgame", "default content mode")
 equal(BigBiSList:GetSelection().phase, "PR", "stored endgame phase")
 equal(BigBiSList:GetEffectivePhaseKey(), "PR", "effective endgame phase")
@@ -2193,8 +2193,9 @@ equal(hunter.not_ranked_label, nil, "relevant item has no fallback label")
 
 local blinkstrike = BigBiSList:GetWishlistExpansionSummary(31332, "Warrior", "Fury")
 local phaseOne = blinkstrike.selected_spec_ranking.phases.T4
-equal(phaseOne.short_label, "BiS", "strongest same-phase rank wins")
-equal(phaseOne.rank_group, "bis", "strongest rank group")
+equal(phaseOne.short_label, "Depends on setup", "conditional source ratings are not collapsed into BiS")
+equal(phaseOne.status, "conditional", "conditional rating status")
+expect(#phaseOne.evidence > 0, "source evidence remains available")
 
 local foreign = BigBiSList:GetWishlistExpansionSummary(29021, "Mage", "Arcane")
 equal(#foreign.relevant_spec_rankings, 0, "foreign class has no relevant specs")

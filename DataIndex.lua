@@ -143,6 +143,9 @@ local FILTER_FACETS = {
     },
 }
 
+-- Evidence and physical occupancy are independent from list presentation order.
+local RECOMMENDATION = {}
+
 local SOURCE_FILTER_BY_CONTENT_TYPE = {
     raid = "raid_drop",
     heroic_dungeon = "heroic_dungeon_drop",
@@ -337,6 +340,22 @@ local function inflateCompactField(index, schemaName, key, value)
         elseif key == "costs" then
             return inflateCompactList(index, "cost", value)
         end
+    elseif schemaName == "use" and key == "guide_evidence" then
+        local result = {}
+        index.guideEvidenceCache = index.guideEvidenceCache or {}
+        for _, reference in ipairs(value or {}) do
+            if type(reference) == "number" then
+                local evidence = index.guideEvidenceCache[reference]
+                if not evidence then
+                    evidence = inflateCompactRecord(index, "guide_evidence", (index.dataSource.guide_evidence or {})[reference])
+                    index.guideEvidenceCache[reference] = evidence
+                end
+                if evidence then result[#result + 1] = evidence end
+            elseif type(reference) == "table" then
+                result[#result + 1] = reference.table_id and reference or inflateCompactRecord(index, "guide_evidence", reference)
+            end
+        end
+        return result
     elseif (schemaName == "use" or schemaName == "gem" or schemaName == "enchant" or schemaName == "consumable" or schemaName == "leveling_gear" or schemaName == "leveling_recommendation") and key == "requirements" then
         return inflateCompactList(index, "requirement", value)
     end
@@ -2122,50 +2141,6 @@ local function isBetterGearUse(candidate, current, preferredPhaseKey)
     return sortUses(candidate, current)
 end
 
-local function isStrictUpgradeUse(candidate, current, preferredPhaseKey)
-    if not candidate then
-        return false
-    elseif not current then
-        return true
-    elseif candidate.item_id and current.item_id and candidate.item_id == current.item_id then
-        return false
-    end
-
-    local candidatePreferred = candidate.phase == preferredPhaseKey
-    local currentPreferred = current.phase == preferredPhaseKey
-    if candidatePreferred ~= currentPreferred then
-        return candidatePreferred
-    end
-
-    local candidateRank = RANK_GROUP_ORDER[candidate.rank_group] or 50
-    local currentRank = RANK_GROUP_ORDER[current.rank_group] or 50
-    if candidateRank ~= currentRank then
-        return candidateRank < currentRank
-    end
-
-    local candidateNumericRank = tonumber(candidate.rank) or 999
-    local currentNumericRank = tonumber(current.rank) or 999
-    if candidateNumericRank ~= currentNumericRank then
-        return candidateNumericRank < currentNumericRank
-    end
-
-    local preferredIndex = BigBiSList:GetAvailabilityPhaseIndex(preferredPhaseKey)
-    local candidateFuture = candidate.phaseIndex >= preferredIndex
-    local currentFuture = current.phaseIndex >= preferredIndex
-    if candidateFuture ~= currentFuture then
-        return candidateFuture
-    end
-
-    if candidate.phaseIndex ~= current.phaseIndex then
-        if candidateFuture then
-            return candidate.phaseIndex < current.phaseIndex
-        end
-        return candidate.phaseIndex > current.phaseIndex
-    end
-
-    return false
-end
-
 local function ensurePath(root, key)
     root[key] = root[key] or {}
     return root[key]
@@ -2760,6 +2735,7 @@ local function buildUse(index, className, specName, phaseKey, slotEntry, itemEnt
         context = (useEntry and useEntry.context) or "standard",
         note = useEntry and useEntry.note,
         source_url = sourceUrl,
+        guide_evidence = useEntry and useEntry.guide_evidence or {},
         source_summary = meta.source_summary or "",
         source_type = meta.source_type or "unknown",
         source_type_label = meta.source_type_label or SOURCE_TYPE_LABELS.unknown,
@@ -3962,6 +3938,26 @@ local function plannerRecommendationTier(score)
     return "only_if_easy"
 end
 
+function RECOMMENDATION.facts(use)
+    local facts = {}
+    for _, evidence in ipairs(use and use.guide_evidence or {}) do
+        local ratingPhase = evidence.rating_phase or evidence.guide_phase or use.phase
+        if PHASE_DISPLAY[ratingPhase] then
+            facts[#facts + 1] = { phase = ratingPhase, phaseIndex = phaseIndex(ratingPhase == "PR" and (evidence.content_phase or use.content_phase or "PR") or ratingPhase),
+                rank_group = evidence.grade == 1 and #(evidence.conditions or {}) == 0 and "bis" or "ranked", evidence = evidence }
+        end
+    end
+    if #facts == 0 and use then
+        local label = use.rank_label or ""
+        local exactBest = label == "Best" or label == "BiS" or label == "Best in slot" or label == "Best-in-slot"
+        facts[1] = { phase = use.phase, phaseIndex = use.phaseIndex or phaseIndex(use.phase),
+            rank_group = exactBest and "bis" or "ranked",
+            evidence = { guide_phase = use.phase, rating_phase = use.phase, original_rating = label ~= "" and label or "Recommended",
+                conditions = {}, source_url = use.source_url, content_phase = use.content_phase } }
+    end
+    return facts
+end
+
 local function scorePlannerGroup(group, selectedPhaseKey)
     local selectedIndex = BigBiSList:GetAvailabilityPhaseIndex(selectedPhaseKey)
     local score = 0
@@ -3975,8 +3971,19 @@ local function scorePlannerGroup(group, selectedPhaseKey)
     local lastUsefulIndex = 0
     local reasons = {}
     local reasonSeen = {}
+    local directPhases = {}
+    for _, originalUse in ipairs(group.uses) do
+        for _, fact in ipairs(RECOMMENDATION.facts(originalUse)) do
+            if fact.evidence.guide_phase == fact.phase then directPhases[fact.phase] = true end
+        end
+    end
 
-    for _, use in ipairs(group.uses) do
+    for _, originalUse in ipairs(group.uses) do
+      local scoreSeen = {}
+      for _, use in ipairs(RECOMMENDATION.facts(originalUse)) do
+        local factKey = tostring(use.phase) .. ":" .. use.rank_group
+        if not scoreSeen[factKey] and (not directPhases[use.phase] or use.evidence.guide_phase == use.phase) then
+        scoreSeen[factKey] = true
         if use.phaseIndex > lastUsefulIndex and use.phaseIndex < 999 then
             lastUsefulIndex = use.phaseIndex
         end
@@ -3998,6 +4005,8 @@ local function scorePlannerGroup(group, selectedPhaseKey)
                 futureOptionPhases[use.phaseIndex] = true
             end
         end
+        end
+      end
     end
 
     if hasCurrentBis then
@@ -4032,7 +4041,7 @@ local function scorePlannerGroup(group, selectedPhaseKey)
         else
             score = score + 5
         end
-        addPlannerReason(reasons, reasonSeen, "Listed through " .. (PHASE_DISPLAY[PHASE_ORDER[lastUsefulIndex]] or "future phase"))
+        addPlannerReason(reasons, reasonSeen, "Also recommended in " .. (PHASE_DISPLAY[PHASE_ORDER[lastUsefulIndex]] or "a later phase"))
     end
 
     if score > 100 then
@@ -4209,7 +4218,7 @@ FILTER_FACETS.SHARED_PROGRESSION_INDEX_FIELDS = {
     "itemMetaCache", "itemMetaCacheOrder", "rowAccessCache", "rowAccessCacheOrder",
     "levelingGearRefsByItemId", "levelingGearRefsByClassSpec", "levelingGearCache",
     "levelingRecommendationRefsByItemId", "levelingRecommendationRefsByClassSpec",
-    "levelingRecommendationCache", "enhancement",
+    "levelingRecommendationCache", "enhancement", "guideEvidenceCache",
 }
 
 function BigBiSList:GetDataIndex(selectedPhaseKey)
@@ -4249,6 +4258,7 @@ function BigBiSList:GetDataIndex(selectedPhaseKey)
         rowAccessCache = {},
         rowAccessCacheOrder = {},
         itemUseCache = {},
+        guideEvidenceCache = {},
         wishlistSummaryCache = {},
         levelingGearCache = {},
         levelingRecommendationCache = {},
@@ -4734,6 +4744,165 @@ function FILTER_FACETS.useMatchesProgressionContext(use, selectedPhaseKey)
         or phaseIndex(use.content_phase) <= BigBiSList:GetAvailabilityPhaseIndex(selectedPhaseKey)
 end
 
+function RECOMMENDATION.coverage(index, className, specName)
+    index.recommendationCoverage = index.recommendationCoverage or {}
+    local key = tostring(className) .. "\031" .. tostring(specName)
+    if index.recommendationCoverage[key] then return index.recommendationCoverage[key] end
+    local coverage = {}
+    for _, ref in ipairs(index.useRefsByClassSpec[className] and index.useRefsByClassSpec[className][specName] or {}) do
+        local phase = compactField(index, "use", ref, "phase")
+        local slot = compactField(index, "use", ref, "slot")
+        coverage[phase] = coverage[phase] or {}
+        coverage[phase][slot] = true
+    end
+    index.recommendationCoverage[key] = coverage
+    return coverage
+end
+
+function RECOMMENDATION.slots(slotName)
+    if not slotName then return nil end
+    for _, definition in ipairs(EQUIPMENT_SLOTS) do
+        if definition.key == slotName or definition.label == slotName then return definition.slots end
+    end
+    return DISPLAY_SLOT_FILTER_MAP[slotName] or { slotName }
+end
+
+function RECOMMENDATION.useFitsContext(addon, use, targetPhase)
+    return FILTER_FACETS.useMatchesProgressionContext(use, targetPhase)
+        and (use.phase ~= "PR" or includeByFilter(use, { _pre_raid = true },
+            use.content_phase and phaseIndex(use.content_phase) or addon:GetAvailabilityPhaseIndex(targetPhase)))
+end
+
+function BigBiSList:GetRecommendationHistory(itemId, className, specName, targetPhase, slot)
+    itemId = tonumber(itemId)
+    targetPhase = targetPhase or self:GetCurrentPhaseKey()
+    local index = self:GetDataIndex(targetPhase)
+    index.recommendationHistoryCache = index.recommendationHistoryCache or {}
+    index.recommendationHistoryOrder = index.recommendationHistoryOrder or {}
+    local key = table.concat({ tostring(itemId), tostring(className), tostring(specName), targetPhase, tostring(slot or "") }, "\031")
+    if index.recommendationHistoryCache[key] then return index.recommendationHistoryCache[key] end
+    local history = { item_id = itemId, class = className, spec = specName, slot = slot, target_phase = targetPhase, phase_cells = {}, phases = {} }
+    local coverage = RECOMMENDATION.coverage(index, className, specName)
+    for _, phase in ipairs(PHASE_ORDER) do
+        local covered = coverage[phase] and not slot
+        for _, candidateSlot in ipairs(RECOMMENDATION.slots(slot) or {}) do
+            if coverage[phase] and coverage[phase][candidateSlot] then covered = true end
+        end
+        local cell = { phase = phase, phase_label = PHASE_DISPLAY[phase], phase_short_label = PHASE_SHORT_DISPLAY[phase],
+            phase_index = phaseIndex(phase), status = covered and "not_listed" or "no_guide", matched = false, uses = {}, evidence = {}, direct_evidence = {} }
+        history.phases[phase] = cell
+        history.phase_cells[#history.phase_cells + 1] = cell
+    end
+    for _, use in ipairs(self:GetItemUses(itemId, targetPhase)) do
+        if use.class == className and use.spec == specName and (not slot or slotListContains(RECOMMENDATION.slots(slot), use.slot))
+            and RECOMMENDATION.useFitsContext(self, use, targetPhase) then
+            for _, fact in ipairs(RECOMMENDATION.facts(use)) do
+                local cell = history.phases[fact.phase]
+                if cell then
+                    cell.matched = true
+                    cell.uses[#cell.uses + 1] = use
+                    cell.evidence[#cell.evidence + 1] = fact.evidence
+                    cell.use = cell.use or use
+                    if fact.evidence.guide_phase == fact.phase then
+                        cell.direct_evidence[#cell.direct_evidence + 1] = fact.evidence
+                        cell.direct_use = cell.direct_use or use
+                    end
+                    cell.rank_group = fact.rank_group
+                end
+            end
+        end
+    end
+    local targetIndex = phaseIndex(targetPhase)
+    local future = { text = "No later recommendation listed", phases = {}, has_future = false }
+    for _, cell in ipairs(history.phase_cells) do
+        cell.rating_evidence = #cell.direct_evidence > 0 and cell.direct_evidence or cell.evidence
+        cell.use = cell.direct_use or cell.use
+        local labels, seen, conditional, grades = {}, {}, false, {}
+        for _, evidence in ipairs(cell.rating_evidence) do
+            local label = evidence.original_rating or "Recommended"
+            if not seen[label] then labels[#labels + 1] = label; seen[label] = true end
+            if #(evidence.conditions or {}) > 0 or not evidence.grade then conditional = true end
+            if evidence.grade then grades[evidence.grade] = true end
+        end
+        if cell.matched then
+            local gradeCount = 0
+            for _ in pairs(grades) do gradeCount = gradeCount + 1 end
+            local conflicting = gradeCount > 1 or (#labels > 1 and conditional)
+            cell.status = (conditional or conflicting) and "conditional" or "rated"
+            cell.rank_group = cell.status == "rated" and grades[1] and gradeCount == 1 and "bis" or "ranked"
+            cell.labels = labels
+            cell.label = conflicting and "Depends on setup" or table.concat(labels, " / ")
+            if cell.phase_index < targetIndex then history.latest_earlier = cell end
+            if cell.phase_index > self:GetAvailabilityPhaseIndex(targetPhase) then
+                future.phases[#future.phases + 1] = cell.phase
+                future.furthest_phase = cell.phase
+                future.has_future = true
+            end
+        else
+            cell.label = cell.status == "no_guide" and "No guide data" or "Not listed"
+        end
+        cell.short_label = cell.label
+    end
+    if future.has_future then
+        local names = {}
+        for _, phase in ipairs(future.phases) do names[#names + 1] = (PHASE_DISPLAY[phase] or phase) .. ": " .. history.phases[phase].label end
+        future.text = "Also recommended in " .. table.concat(names, "; ")
+    end
+    history.selected = history.phases[targetPhase]
+    history.best_use = history.selected and history.selected.use or history.latest_earlier and history.latest_earlier.use
+    history.future_summary = future
+    return putBoundedCache(index.recommendationHistoryCache, index.recommendationHistoryOrder, key, history, ITEM_META_CACHE_LIMIT)
+end
+
+function BigBiSList:CompareRecommendationItems(candidateId, referenceId, className, specName, targetPhase, slot)
+    candidateId, referenceId = tonumber(candidateId), tonumber(referenceId)
+    targetPhase = targetPhase or self:GetCurrentPhaseKey()
+    local result = { candidate_id = candidateId, reference_id = referenceId, relation = "unranked", historical = false,
+        evidence = {}, explanation = "No shared guide rating is available for this comparison." }
+    if not candidateId or not referenceId then
+        result.explanation = referenceId and "No candidate selected." or "No equipped reference item."
+        return result
+    elseif candidateId == referenceId then
+        result.relation, result.explanation = "same_rating", "Same item."
+        return result
+    end
+    local candidate = self:GetRecommendationHistory(candidateId, className, specName, targetPhase, slot)
+    local reference = self:GetRecommendationHistory(referenceId, className, specName, targetPhase, slot)
+    for phaseOrder = phaseIndex(targetPhase), 1, -1 do
+        local phase = PHASE_ORDER[phaseOrder]
+        local candidateCell, referenceCell = candidate.phases[phase], reference.phases[phase]
+        local evidencePairs, directions, conditional, basis = {}, {}, false, nil
+        for _, a in ipairs(candidateCell and candidateCell.rating_evidence or {}) do
+            for _, b in ipairs(referenceCell and referenceCell.rating_evidence or {}) do
+                if a.table_id and a.table_id == b.table_id and a.rating_phase == b.rating_phase
+                    and a.guide_phase == b.guide_phase and a.content_phase == b.content_phase then
+                    evidencePairs[#evidencePairs + 1] = { candidate = a, reference = b }
+                    local pairBasis = a.table_id .. ":" .. tostring(a.rating_phase)
+                    if basis and basis ~= pairBasis then conditional = true end
+                    basis = basis or pairBasis
+                    if a.grade and b.grade and #(a.conditions or {}) == 0 and #(b.conditions or {}) == 0 then
+                        directions[a.grade < b.grade and "higher" or (a.grade > b.grade and "lower" or "same_rating")] = true
+                    else conditional = true end
+                end
+            end
+        end
+        if #evidencePairs > 0 then
+            local relation, count
+            count = 0
+            for value in pairs(directions) do relation = value; count = count + 1 end
+            result.relation = (conditional or count ~= 1) and "conditional" or relation
+            result.phase, result.historical, result.evidence = phase, phase ~= targetPhase, evidencePairs
+            result.basis_key = not conditional and count == 1 and basis or nil
+            local scope = (result.historical and "Historical " or "") .. (PHASE_DISPLAY[phase] or phase) .. " guide: "
+            local meanings = { higher = "rated higher in the same source table.", lower = "rated lower in the same source table.",
+                same_rating = "same guide rating; this does not mean equal performance.", conditional = "comparison depends on setup or conflicting source conditions." }
+            result.explanation = scope .. meanings[result.relation]
+            return result
+        end
+    end
+    return result
+end
+
 function BigBiSList:GetWishlistExpansionSummary(itemId, className, selectedSpec, selectedPhaseKey)
     itemId = tonumber(itemId)
     if not itemId then
@@ -4788,6 +4957,9 @@ function BigBiSList:GetWishlistExpansionSummary(itemId, className, selectedSpec,
         end
 
         local ranking = FILTER_FACETS.buildWishlistSpecRanking(specName, selectedSpec, usesBySpecPhase[specName], classOrderIndex)
+        local history = self:GetRecommendationHistory(itemId, className, specName, selectedPhaseKey)
+        ranking.history, ranking.future_summary = history, history.future_summary
+        ranking.phases, ranking.phase_cells = history.phases, history.phase_cells
         ranking.display_order_index = displayIndex
         table.insert(specRankings, ranking)
         if ranking.relevant then
@@ -4835,6 +5007,8 @@ function BigBiSList:GetWishlistExpansionSummary(itemId, className, selectedSpec,
         earliest_phase_index = earliestPhaseIndex,
         relevance_sort = selectedRelevant and 0 or (classRelevant and 1 or 2),
         not_ranked_label = not classRelevant and ("Not ranked for " .. tostring(className or "this class")) or nil,
+        recommendation_history = selectedSpecRanking and selectedSpecRanking.history,
+        future_summary = selectedSpecRanking and selectedSpecRanking.future_summary,
     }
 
     local searchParts = { tostring(className or "") }
@@ -4974,6 +5148,8 @@ function BigBiSList:GetWishlistRows(wishlistItems, className, selectedSpec, sele
             ranking_search_text = summary and summary.ranking_search_text or "",
             not_ranked_label = summary and summary.not_ranked_label or nil,
             expansion_summary = summary,
+            recommendation_history = summary and summary.recommendation_history,
+            future_summary = summary and summary.future_summary,
             bestUse = bestUse,
             rank = bestUse and bestUse.rank or nil,
             rank_label = bestUse and bestUse.rank_label or nil,
@@ -5145,13 +5321,6 @@ function BigBiSList:GetItemNextLevelingUseForSpec(itemId, className, specName, l
     return matches[1]
 end
 
-local function upgradeSlotCapacity(slotName)
-    if slotName == "Ring" or slotName == "Trinket" then
-        return 2
-    end
-    return 1
-end
-
 local function addOwnedUseContext(contextsBySlot, use, state)
     if not use or not use.slot then
         return
@@ -5202,6 +5371,8 @@ local function buildUpgradeBaselines(addon, className, specName, preferredPhaseK
     local baselines = {
         ownedBySlot = {},
         equippedBySlot = {},
+        contexts = addon:GetEquipmentComparisonContexts(className, specName, preferredPhaseKey, ownedItems),
+        ownedItems = ownedItems or {}, class = className, spec = specName,
     }
 
     for itemId, state in pairs(ownedItems or {}) do
@@ -5216,29 +5387,6 @@ local function buildUpgradeBaselines(addon, className, specName, preferredPhaseK
     sortUpgradeBaseline(baselines.ownedBySlot, preferredPhaseKey)
     sortUpgradeBaseline(baselines.equippedBySlot, preferredPhaseKey)
     return baselines
-end
-
-local function bestPlannerUseForUpgrade(group, preferredPhaseKey)
-    local bestUse
-    for _, use in ipairs(group and group.uses or {}) do
-        if isBetterGearUse(use, bestUse, preferredPhaseKey) then
-            bestUse = use
-        end
-    end
-    return bestUse or (group and group.bestUse)
-end
-
-local function upgradeComparisonContext(contextsBySlot, use)
-    if not use then
-        return nil
-    end
-
-    local contexts = contextsBySlot and contextsBySlot[use.slot] or nil
-    local capacity = upgradeSlotCapacity(use.slot)
-    if not contexts or #contexts < capacity then
-        return nil
-    end
-    return contexts[capacity]
 end
 
 local function applyPlannerUpgradeMetadata(group, state, candidateUse, comparedContext)
@@ -5256,44 +5404,124 @@ local function applyPlannerUpgradeMetadata(group, state, candidateUse, comparedC
 end
 
 local function annotatePlannerUpgradeGroup(group, filters, baselines, selectedPhaseKey)
-    local candidateUse = bestPlannerUseForUpgrade(group, selectedPhaseKey)
-    local ownedState = filters and filters.ownedItems and filters.ownedItems[group.item_id]
-    local comparedContext
-
-    if not candidateUse or ownedState == "equipped" then
-        applyPlannerUpgradeMetadata(group, "not_upgrade", candidateUse, nil)
-        return
-    elseif ownedState == "bag" or ownedState == "bank" then
-        comparedContext = upgradeComparisonContext(baselines.equippedBySlot, candidateUse)
-        if isStrictUpgradeUse(candidateUse, comparedContext and comparedContext.use, selectedPhaseKey) then
-            applyPlannerUpgradeMetadata(group, "owned_upgrade", candidateUse, comparedContext)
-            return
+    local candidateUse = group.bestUse
+    local ownedState = FILTER_FACETS.tableValueById(baselines.ownedItems, group.item_id)
+    local contexts = {}
+    for _, context in ipairs(baselines.contexts) do
+        if slotListContains(context.dataSlots, group.slot) then contexts[#contexts + 1] = context end
+    end
+    group.equipment_contexts, group.comparisons = contexts, {}
+    local reference, chosen, unresolved, empty = contexts[1], nil, false, false
+    for _, context in ipairs(contexts) do
+        if context.occupancy == "empty" then empty = true
+        elseif context.occupancy == "occupied" then
+            local comparison = BigBiSList:CompareRecommendationItems(group.item_id, context.item_id, baselines.class, baselines.spec, selectedPhaseKey, group.slot)
+            comparison.reference_context = context
+            group.comparisons[#group.comparisons + 1] = comparison
+            if not chosen or comparison.relation == "higher" then chosen, reference = comparison, context end
+            if comparison.relation == "unranked" or comparison.relation == "conditional" or comparison.historical then unresolved = true end
         end
-        applyPlannerUpgradeMetadata(group, "not_upgrade", candidateUse, comparedContext)
-        return
-    elseif ownedState then
-        applyPlannerUpgradeMetadata(group, "not_upgrade", candidateUse, nil)
-        return
     end
-
-    comparedContext = upgradeComparisonContext(baselines.ownedBySlot, candidateUse)
-    if isStrictUpgradeUse(candidateUse, comparedContext and comparedContext.use, selectedPhaseKey) then
-        applyPlannerUpgradeMetadata(group, "missing_upgrade", candidateUse, comparedContext)
-        return
+    if #contexts == 0 then unresolved = true end
+    local blocked = #contexts > 0
+    for _, context in ipairs(contexts) do if context.occupancy ~= "blocked" then blocked = false end end
+    local higher = chosen and chosen.relation == "higher" or false
+    local history = group.recommendation_history
+    local future = history and history.future_summary.has_future or false
+    local candidate = not blocked and ownedState ~= "equipped" and (higher or unresolved or empty or future)
+    group.comparison = chosen or { relation = "unranked", historical = false, evidence = {},
+        explanation = blocked and "A two-handed weapon occupies this equipment position." or (empty and "This equipment position is empty." or "No equipped comparison is available.") }
+    group.higher_rated, group.upgrade_candidate = higher and ownedState ~= "equipped", candidate
+    group.owned_alternatives = {}
+    for _, ownedContext in ipairs(baselines.ownedBySlot[group.slot] or {}) do
+        local itemId, state = ownedContext.item_id, ownedContext.state
+        if (state == "bag" or state == "bank") and itemId ~= group.item_id then
+            local comparison = BigBiSList:CompareRecommendationItems(itemId, group.item_id, baselines.class, baselines.spec, selectedPhaseKey, group.slot)
+            if comparison.relation == "higher" then
+                group.owned_alternatives[#group.owned_alternatives + 1] = { item_id = itemId, state = state, comparison = comparison }
+            end
+        end
     end
-
-    applyPlannerUpgradeMetadata(group, "not_upgrade", candidateUse, comparedContext)
+    table.sort(group.owned_alternatives, function(a, b) return a.item_id < b.item_id end)
+    local state = candidate and ((ownedState == "bag" or ownedState == "bank") and "owned_upgrade" or "missing_upgrade") or "not_upgrade"
+    applyPlannerUpgradeMetadata(group, state, candidateUse, reference)
+    group.upgrade_compared_empty = reference and reference.occupancy == "empty" or false
 end
 
 local function plannerGroupMatchesUpgradeMode(group, filters)
-    if not filters or filters.upgradeMode ~= "actual" then
-        return true
-    elseif group.upgrade_state == "missing_upgrade" then
-        return true
-    elseif group.upgrade_state == "owned_upgrade" then
-        return true
+    local mode = filters and filters.upgradeMode or "candidates"
+    if mode == "all" then return true end
+    if mode == "higher_rated" then return group.higher_rated == true end
+    return group.upgrade_candidate == true
+end
+
+function BigBiSList:GetEquipmentComparisonContexts(className, specName, targetPhase, ownedItems, slotName)
+    local contexts = {}
+    local equipped = ownedItems and ownedItems.equippedSlots or {}
+    local physicalKey
+    for _, definition in ipairs(EQUIPMENT_SLOTS) do
+        if slotName == definition.key or slotName == definition.label then physicalKey = definition.key; break end
     end
-    return false
+    for _, definition in ipairs(EQUIPMENT_SLOTS) do
+        local matches = not slotName or physicalKey == definition.key
+        if not physicalKey then
+            for _, accepted in ipairs(RECOMMENDATION.slots(slotName) or {}) do
+                if slotListContains(definition.slots, accepted) then matches = true end
+            end
+        end
+        if matches then
+            local entry = equipped[definition.key]
+            local itemId = entry and tonumber(entry.item_id)
+            local item = itemId and self:GetItemData(itemId)
+            local blocked = not itemId and definition.key == "OffHand" and ownedItems and ownedItems.equippedTwoHand
+            local use = itemId and self:GetItemBestUseForSpec(itemId, className, specName, targetPhase, definition.slots)
+            contexts[#contexts + 1] = { slotKey = definition.key, slot = definition.label, dataSlots = definition.slots,
+                inventorySlotId = definition.inventorySlotId, item_id = itemId, item_link = entry and entry.item_link,
+                name = itemId and getItemName(itemId, item) or (blocked and "Two-handed weapon equipped" or "Empty " .. definition.label),
+                occupancy = itemId and "occupied" or (blocked and "blocked" or "empty"), blocked_by = blocked and "MainHand" or nil,
+                state = itemId and "equipped" or nil, use = use, bestUse = use,
+                rank_label = use and use.rank_label, rank_group = use and use.rank_group }
+        end
+    end
+    return contexts
+end
+
+function BigBiSList:GetSlotComparisonRows(className, specName, targetPhase, slotName, ownedItems, reference)
+    local contexts = self:GetEquipmentComparisonContexts(className, specName, targetPhase, ownedItems, slotName)
+    if type(reference) ~= "table" then
+        local referenceId = tonumber(reference)
+        reference = referenceId and { item_id = referenceId, occupancy = "occupied" } or contexts[1]
+    end
+    local rows, seen = {}, {}
+    rows.contexts, rows.reference, rows.target_phase, rows.slot = contexts, reference, targetPhase, slotName
+    local index = self:GetDataIndex(targetPhase)
+    local selectedIndex = self:GetAvailabilityPhaseIndex(targetPhase)
+    local function add(itemId, use, isReference)
+        if seen[itemId] then if isReference then seen[itemId].is_reference = true end; return end
+        local item = self:GetItemData(itemId)
+        local row = { item_id = itemId, name = getItemName(itemId, item), item = item, slot = use and use.slot or slotName,
+            class = className, spec = specName, bestUse = use, is_reference = isReference == true,
+            owned_state = FILTER_FACETS.tableValueById(ownedItems, itemId) }
+        row.history = self:GetRecommendationHistory(itemId, className, specName, targetPhase, use and use.slot or slotName)
+        row.recommendation_history = row.history
+        row.comparison = self:CompareRecommendationItems(itemId, reference and reference.item_id, className, specName, targetPhase, use and use.slot or slotName)
+        row.acquisition_display = self:GetRowAcquisitionDisplay(use or row, {}, targetPhase)
+        rows[#rows + 1], seen[itemId] = row, row
+    end
+    for _, ref in ipairs(index.useRefsByClassSpec[className] and index.useRefsByClassSpec[className][specName] or {}) do
+        local use = buildUse(index, ref)
+        local matches = slotListContains(RECOMMENDATION.slots(slotName), use.slot)
+        if matches and RECOMMENDATION.useFitsContext(self, use, targetPhase) and includeByFilter(use, FILTER_FACETS.progressionFilters({}, targetPhase), selectedIndex) then
+            add(use.item_id, use, reference and reference.item_id == use.item_id)
+        end
+    end
+    for _, context in ipairs(contexts) do if context.item_id then add(context.item_id, context.use, reference and context.item_id == reference.item_id) end end
+    if reference and reference.item_id then add(reference.item_id, nil, true) end
+    table.sort(rows, function(a, b)
+        if lower(a.name) ~= lower(b.name) then return lower(a.name) < lower(b.name) end
+        return a.item_id < b.item_id
+    end)
+    return rows
 end
 
 -- Alternative routes do not multiply targets or activity counts.
@@ -5329,6 +5557,23 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
         local bestUse = itemId and (levelingMode
             and self:GetItemBestLevelingUseForSpec(itemId, className, specName, selectedLevel, slot.slots)
             or self:GetItemBestUseForSpec(itemId, className, specName, phaseKey, slot.slots)) or nil
+        local history = itemId and not levelingMode and self:GetRecommendationHistory(itemId, className, specName, phaseKey, slot.key)
+        local ratingCell = history and (history.selected and history.selected.matched and history.selected or history.latest_earlier)
+        local historical = ratingCell and ratingCell.phase ~= phaseKey or false
+        if not levelingMode then
+            bestUse = ratingCell and ratingCell.use or nil
+            if bestUse then
+                local original = bestUse
+                bestUse = {}
+                for key, value in pairs(original) do bestUse[key] = value end
+                bestUse.guide_phase, bestUse.phase = original.phase, ratingCell.phase
+                bestUse.rank_label = ratingCell.label
+                bestUse.rank_group = not historical and ratingCell.rank_group or "ranked"
+                bestUse.display_rank_label = historical and ((PHASE_SHORT_DISPLAY[ratingCell.phase] or ratingCell.phase) .. " " .. ratingCell.label) or ratingCell.label
+                bestUse.display_rank_kind = historical and "backup" or (ratingCell.rank_group == "bis" and "best" or "ranked")
+                bestUse.recommendation_summary = (PHASE_DISPLAY[ratingCell.phase] or ratingCell.phase) .. ": " .. ratingCell.label
+            end
+        end
         local overlay = "Empty"
         local overlayKind = "empty"
         local disabledReason
@@ -5337,8 +5582,8 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
             overlay = (bestUse.category_label and bestUse.category_label ~= "Recommended") and bestUse.category_label or "Leveling pick"
             overlayKind = "leveling"
         elseif itemId and bestUse then
-            overlay = bestUse.rank_group == "bis" and "Best in slot" or "Alternative"
-            overlayKind = bestUse.rank_group or "option"
+            overlay = historical and "Earlier recommendation" or (bestUse.rank_group == "bis" and "Best in slot" or ratingCell.label)
+            overlayKind = historical and "option" or bestUse.rank_group or "option"
         elseif itemId then
             overlay = "Not ranked"
             overlayKind = "missing"
@@ -5353,7 +5598,7 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
         if itemId and bestUse and levelingMode then
             recommendation = bestUse.level_label or bestUse.level_value_text or "Leveling recommendation"
         elseif itemId and bestUse then
-            recommendation = bestUse.rank_group == "bis" and "Best in slot" or "Alternative"
+            recommendation = (PHASE_DISPLAY[ratingCell.phase] or ratingCell.phase) .. ": " .. ratingCell.label
         elseif itemId then
             recommendation = "Not ranked"
         elseif disabledReason then
@@ -5369,6 +5614,10 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
             name = item and item.name or (itemId and ("Item " .. tostring(itemId)) or "Empty"),
             source_summary = item and item.source_summary or "",
             bestUse = bestUse,
+            recommendation_history = history,
+            history = history,
+            future_summary = history and history.future_summary,
+            historical_only = historical,
             leveling = bestUse and bestUse.leveling or nil,
             level_min = bestUse and bestUse.level_min or nil,
             level_max = bestUse and bestUse.level_max or nil,
@@ -5401,27 +5650,30 @@ function BigBiSList:GetEquippedGearRows(className, specName, phaseKey, ownedItem
 end
 
 function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
-    filters = FILTER_FACETS.progressionFilters(filters, phaseKey)
+    filters = FILTER_FACETS.progressionFilters(filters, phaseKey) or {}
     local index = self:GetDataIndex(phaseKey)
     local useRefs = index.useRefsByClassSpecPhase[className]
         and index.useRefsByClassSpecPhase[className][specName]
         and index.useRefsByClassSpecPhase[className][specName][phaseKey]
     local grouped = {}
     local seenBySlot = {}
+    local selectedItems = {}
     local selectedIndex = self:GetAvailabilityPhaseIndex(phaseKey)
 
-    if not useRefs then
-        return {}
-    end
-
-    for _, useRef in ipairs(useRefs) do
+    for _, useRef in ipairs(useRefs or {}) do
         local use = buildUse(index, useRef)
         local slotName = use.slot
         grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
         seenBySlot[slotName] = seenBySlot[slotName] or {}
-
+        selectedItems[slotName] = selectedItems[slotName] or {}
+        local history = self:GetRecommendationHistory(use.item_id, className, specName, phaseKey, slotName)
+        local matchesPhase = false
+        for _, fact in ipairs(RECOMMENDATION.facts(use)) do if fact.phase == phaseKey then matchesPhase = true end end
+        if matchesPhase then selectedItems[slotName][use.item_id] = true end
         local key = tostring(use.item_id) .. ":" .. tostring(use.rank_group) .. ":" .. tostring(use.context)
-        if use.acquisitionPhaseIndex <= selectedIndex and not seenBySlot[slotName][key] and includeByFilter(use, filters, selectedIndex) then
+        if matchesPhase and use.acquisitionPhaseIndex <= selectedIndex and not seenBySlot[slotName][key] and includeByFilter(use, filters, selectedIndex) then
+            use.recommendation_history, use.history, use.future_summary = history, history, history.future_summary
+            use.recommendation_phase = phaseKey
             use.acquisition_display = self:GetRowAcquisitionDisplay(use, filters, phaseKey)
             use.matched_access_option = use.acquisition_display.option
             seenBySlot[slotName][key] = true
@@ -5429,17 +5681,53 @@ function BigBiSList:GetPhaseRows(className, specName, phaseKey, filters)
         end
     end
 
+    if filters.includeEarlier and phaseKey ~= "PR" then
+        local seen = {}
+        for _, ref in ipairs(index.useRefsByClassSpec[className] and index.useRefsByClassSpec[className][specName] or {}) do
+            local candidate = buildUse(index, ref)
+            local slotName, itemId = candidate.slot, candidate.item_id
+            local itemKey = tostring(itemId) .. "\031" .. slotName
+            if not seen[itemKey] and not (selectedItems[slotName] and selectedItems[slotName][itemId]) then
+                seen[itemKey] = true
+                local history = self:GetRecommendationHistory(itemId, className, specName, phaseKey, slotName)
+                local cell = history.latest_earlier
+                if cell and cell.use then
+                    local use = {}
+                    for key, value in pairs(cell.use) do use[key] = value end
+                    if includeByFilter(use, filters, selectedIndex) then
+                        use.earlier_recommendation, use.historical_only, use.recommendation_phase = true, true, cell.phase
+                        use.recommendation_history, use.history, use.future_summary = history, history, history.future_summary
+                        use.acquisition_display = self:GetRowAcquisitionDisplay(use, filters, phaseKey)
+                        use.matched_access_option = use.acquisition_display.option
+                        grouped[slotName] = grouped[slotName] or { slot = slotName, items = {} }
+                        grouped[slotName].items[#grouped[slotName].items + 1] = use
+                    end
+                end
+            end
+        end
+    end
+
+    local function sortPhaseRows(a, b)
+        if (a.earlier_recommendation == true) ~= (b.earlier_recommendation == true) then return not a.earlier_recommendation end
+        if a.earlier_recommendation then
+            if a.recommendation_phase ~= b.recommendation_phase then return phaseIndex(a.recommendation_phase) > phaseIndex(b.recommendation_phase) end
+            if lower(a.name) ~= lower(b.name) then return lower(a.name) < lower(b.name) end
+            return a.item_id < b.item_id
+        end
+        return sortUses(a, b)
+    end
+
     local rows = {}
     for _, slotName in ipairs(SLOT_ORDER) do
         if grouped[slotName] and #grouped[slotName].items > 0 then
-            table.sort(grouped[slotName].items, sortUses)
+            table.sort(grouped[slotName].items, sortPhaseRows)
             table.insert(rows, grouped[slotName])
         end
     end
 
     for _, slotName in ipairs(sortedKeys(grouped)) do
         if slotIndex(slotName) == 999 and #grouped[slotName].items > 0 then
-            table.sort(grouped[slotName].items, sortUses)
+            table.sort(grouped[slotName].items, sortPhaseRows)
             table.insert(rows, grouped[slotName])
         end
     end
@@ -5529,20 +5817,18 @@ function BigBiSList:GetLevelingRows(className, specName, level, filters)
 end
 
 function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filters)
-    filters = FILTER_FACETS.progressionFilters(filters, selectedPhaseKey)
+    filters = FILTER_FACETS.progressionFilters(filters, selectedPhaseKey) or {}
     local index = self:GetDataIndex(selectedPhaseKey)
     local groups = {}
     local selectedIndex = self:GetAvailabilityPhaseIndex(selectedPhaseKey)
-    local upgradeBaselines = filters and filters.upgradeMode == "actual"
-        and buildUpgradeBaselines(self, className, specName, selectedPhaseKey, filters.ownedItems)
-        or nil
+    local upgradeBaselines = buildUpgradeBaselines(self, className, specName, selectedPhaseKey, filters and filters.ownedItems)
     local useRefs = index.useRefsByClassSpec[className]
         and index.useRefsByClassSpec[className][specName]
         or {}
 
     for _, useRef in ipairs(useRefs) do
         local use = buildUse(index, useRef)
-        if FILTER_FACETS.useMatchesProgressionContext(use, selectedPhaseKey) then
+        if RECOMMENDATION.useFitsContext(self, use, selectedPhaseKey) then
             local itemId = use.item_id
             local groupKey = tostring(itemId) .. ":" .. use.slot
             local group = groups[groupKey]
@@ -5594,8 +5880,15 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
             return sortUses(a, b)
         end)
 
+        local history = self:GetRecommendationHistory(group.item_id, className, specName, selectedPhaseKey, group.slot)
+        group.recommendation_history, group.history, group.future_summary = history, history, history.future_summary
+        group.bestUse = history.best_use or group.bestUse
+        group.historical_only = not (history.selected and history.selected.matched) and not history.future_summary.has_future and history.latest_earlier ~= nil
+        group.earlier_recommendation = group.historical_only
+        group.recommendation_phase = history.selected and history.selected.matched and selectedPhaseKey or history.latest_earlier and history.latest_earlier.phase
         scorePlannerGroup(group, selectedPhaseKey)
-        group.rank_group = group.bestUse and group.bestUse.rank_group or "option"
+        local ratingCell = history.selected and history.selected.matched and history.selected or history.latest_earlier
+        group.rank_group = ratingCell and ratingCell.rank_group or "option"
         group.rank_label = group.bestUse and group.bestUse.rank_label or "Option"
         group.display_rank_label = group.priorityTier or "Priority"
         group.display_rank_kind = group.recommendation_tier or "only_if_easy"
@@ -5607,7 +5900,8 @@ function BigBiSList:GetPlannerRows(className, specName, selectedPhaseKey, filter
             annotatePlannerUpgradeGroup(group, filters, upgradeBaselines, selectedPhaseKey)
         end
 
-        if group.priority > 0 and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters, selectedIndex) and plannerGroupMatchesUpgradeMode(group, filters) then
+        local eligibleHistory = group.historical_only and filters.includeEarlier ~= false
+        if (group.priority > 0 or eligibleHistory) and group.acquisitionPhaseIndex <= selectedIndex and includeByFilter(group, filters, selectedIndex) and plannerGroupMatchesUpgradeMode(group, filters) then
             if filters and filters.longevity == "current" and not group.hasCurrent then
                 -- excluded below
             elseif filters and filters.longevity == "future" and phaseIndex(group.lastUsefulPhase) <= selectedIndex then
@@ -6561,8 +6855,14 @@ function FILTER_FACETS.buildTooltipGroupSummary(group, expanded)
     end
 
     local parts = {}
-    for _, segment in ipairs(FILTER_FACETS.buildTooltipPhaseSegments(group)) do
-        table.insert(parts, FILTER_FACETS.tooltipPhaseRangeSummary(segment))
+    if group and group.recommendation_history then
+        for _, cell in ipairs(group.recommendation_history.phase_cells) do
+            if cell.matched then parts[#parts + 1] = (PHASE_SHORT_DISPLAY[cell.phase] or cell.phase_label) .. " " .. cell.label end
+        end
+    else
+        for _, segment in ipairs(FILTER_FACETS.buildTooltipPhaseSegments(group)) do
+            table.insert(parts, FILTER_FACETS.tooltipPhaseRangeSummary(segment))
+        end
     end
 
     if not expanded and #parts > TOOLTIP_SUMMARY_CHUNK_LIMIT then
@@ -6767,6 +7067,11 @@ function BigBiSList:GetGroupedTooltipMatches(itemId, selectedClass, selectedSpec
 
     for _, group in ipairs(groupedMatches) do
         group.slot = buildTooltipGroupSlotLabel(group)
+        local historyItem = group.uses[1] and group.uses[1].item_id or itemId
+        group.recommendation_history = self:GetRecommendationHistory(historyItem, group.class, group.spec,
+            type(priorityContext) == "table" and priorityContext.selectedPhase or self:GetCurrentPhaseKey(),
+            #group.slots == 1 and group.slots[1] or nil)
+        group.future_summary = group.recommendation_history.future_summary
         group.phase_summary = FILTER_FACETS.buildTooltipGroupSummary(group, expanded)
         group.slot_seen = nil
     end
