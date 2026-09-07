@@ -56,6 +56,57 @@ near(ui.contentScroll:GetVerticalScroll(),offset,"origin scroll")
 assert(ui.details:IsVisible(),"origin Details state lost")
 ''')
 
+    def test_native_immediate_dropdown_initialization_cannot_expose_partial_view(self):
+        self.run_lua(r'''
+ui:SetTab("By Slot"); H.settle()
+local selected=firstData(); assert(selected,"details item fixture")
+ui:ShowInspectorFor(selected.item_id,selected,"phase"); H.settle()
+local compareButton=ui.detailsWidgetPools["compare-action"][1]
+assert(compareButton:IsVisible(),"Details Compare slot action is unavailable")
+local calls=0
+UIDropDownMenu_Initialize=function(frame,callback)
+    frame.initialize=callback
+    if frame:GetName()=="BigBiSListComparisonReference" then
+        calls=calls+1
+        assert(ui.slotComparison.contexts and ui.slotComparison.pinned,"constructor state is incomplete")
+        assert(not ui.comparisonFrameReady and not ui.comparisonFrame,"partial frame was published")
+        assert(ui:ApplySlotComparisonLayout()==false,"partial comparison took ownership of content")
+        ui:ApplyBodyLayout(); ui:LayoutSlotComparison(); ui:UpdateComparisonVirtualList(); ui:RenderSlotComparison()
+        assert(ui.contentRegion:IsVisible(),"synchronous callback hid results before comparison was ready")
+        assert(not ui.comparisonLayoutActive and not ui.comparisonRenderActive,"synchronous callback poisoned layout guards")
+    end
+    callback(frame,1)
+end
+compareButton:Click(); H.settle()
+assert(ui:IsSlotComparisonOpen(),"Details Compare slot click did not open comparison")
+assert(calls==1 and ui.comparisonFrameReady,"native initialization was not exercised")
+assert(ui.comparisonFrame:IsVisible() and ui.comparisonScroll:IsVisible(),"completed comparison is blank")
+assert(ui.comparisonBackButton:IsVisible() and #ui.slotComparison.rows>0,"comparison did not finish constructing")
+''')
+
+    def test_failed_constructor_restores_results_and_allows_clean_retry(self):
+        self.run_lua(r'''
+ui:SetTab("By Slot"); ui:SetInspectorVisible(false); H.settle()
+ui.contentScroll:SetVerticalScroll(140); H.settle()
+local offset, model=ui.contentScroll:GetVerticalScroll(),ui.renderModel
+UIDropDownMenu_Initialize=function(frame,callback)
+    frame.initialize=callback
+    if frame:GetName()=="BigBiSListComparisonReference" then error("fixture native initializer failure") end
+    callback(frame,1)
+end
+local ok,err=pcall(function() ui:OpenSlotComparison({slot="Head"}) end)
+assert(not ok and tostring(err):find("fixture native initializer failure",1,true),"failure fixture did not run")
+assert(not ui:IsSlotComparisonOpen() and not ui.comparisonFrame and not ui.comparisonFrameReady,"failed comparison was cached as usable")
+assert(not ui.comparisonConstructing and not ui.comparisonLayoutActive and not ui.comparisonRenderActive,"failure left poisoned guards")
+assert(ui.contentRegion:IsVisible() and ui.renderModel==model,"failed opening hid or replaced results")
+near(ui.contentScroll:GetVerticalScroll(),offset,"failed opening origin scroll")
+UIDropDownMenu_Initialize=function(frame,callback) frame.initialize=callback; callback(frame,1) end
+assert(ui:OpenSlotComparison({slot="Head"})); H.settle()
+assert(ui.comparisonFrameReady and ui.comparisonScroll:IsVisible(),"retry reused a partially built frame")
+ui:CloseSlotComparison(); H.settle()
+assert(ui.contentRegion:IsVisible(),"retry cannot return to results")
+''')
+
     def test_physical_equipped_references_keep_duplicates_unknowns_and_empty_first(self):
         self.run_lua(r'''
 ui.currentOwned = {equippedSlots={Finger0={item_id=999001},Finger1={item_id=999001}}}

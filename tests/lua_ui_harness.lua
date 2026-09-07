@@ -184,7 +184,11 @@ UISpecialFrames = {}
 UIDROPDOWNMENU_MAXLEVELS = 2
 UIDropDownMenu_SetWidth = function(frame, width) frame:SetWidth(width + 40) end
 UIDropDownMenu_SetText = function(frame, text) frame.dropdownText = text end
-UIDropDownMenu_Initialize = function(frame, callback) frame.initialize = callback end
+UIDropDownMenu_Initialize = function(frame, callback, displayMode, level, menuList)
+    frame.initialize, frame.displayMode, frame.menuList = callback, displayMode, menuList
+    -- The client populates a dropdown during initialization, before it opens.
+    if callback then callback(frame, level, menuList) end
+end
 UIDropDownMenu_CreateInfo = function() return {} end
 UIDropDownMenu_AddButton = function() end
 ToggleDropDownMenu = function(_, _, frame) if frame and frame.initialize then frame.initialize(frame, 1) end end

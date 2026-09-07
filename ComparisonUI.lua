@@ -105,10 +105,25 @@ function UI:OpenSlotComparison(data, mode)
         inspectorVisible = self:IsInspectorVisible(), mode = mode }
     for _, key in ipairs(SELECTION_FIELDS) do origin[key] = self[key] end
     self.slotComparison = { slot = slot, class = selection.class, spec = selection.spec, phase = selection.phase,
-        origin = origin, rows = {}, entries = {}, page = 1, scroll = 0, generation = 0 }
-    self:CreateSlotComparisonFrame()
-    widgets:CloseDropdownMenus()
-    self:RenderSlotComparison(true)
+        origin = origin, rows = {}, entries = {}, contexts = {}, pinned = {}, contentHeight = 1,
+        page = 1, scroll = 0, generation = 0 }
+    local ok, openError = xpcall(function()
+        self:CreateSlotComparisonFrame()
+        widgets:CloseDropdownMenus()
+        self:RenderSlotComparison(true)
+    end, function(message) return tostring(message) end)
+    if not ok then
+        self.comparisonConstructing, self.comparisonLayoutActive = nil, nil
+        self.comparisonRenderActive, self.comparisonRenderPending = nil, nil
+        if self.comparisonBuildingFrame then
+            self.comparisonBuildingFrame:Hide()
+            self.comparisonBuildingFrame:ClearAllPoints()
+            self.comparisonBuildingFrame:SetParent(nil)
+            self.comparisonBuildingFrame, self.comparisonFrame, self.comparisonFrameReady = nil, nil, nil
+        end
+        self:CloseSlotComparison()
+        error(openError, 0)
+    end
     return true
 end
 
@@ -436,10 +451,12 @@ function UI:BindComparisonRow(row, entry, pinned)
 end
 
 function UI:CreateSlotComparisonFrame()
-    if self.comparisonFrame then return end
+    if self.comparisonFrameReady or self.comparisonConstructing then return end
+    self.comparisonConstructing = true
     local frame = widgets:CreatePanel(nil, self.body)
+    frame:Hide()
+    self.comparisonBuildingFrame = frame
     frame:SetAllPoints(self.body); frame:SetFrameLevel(self.body:GetFrameLevel() + 4)
-    self.comparisonFrame = frame
     self.comparisonBackButton = widgets:CreateTextButton(frame, "Back to results", 120, 28, function() self:CloseSlotComparison() end)
     self.comparisonBackButton:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -6)
     self.comparisonTitle = label(frame); self.comparisonTitle:SetPoint("LEFT", self.comparisonBackButton, "RIGHT", 12, 0)
@@ -449,8 +466,8 @@ function UI:CreateSlotComparisonFrame()
         function()
             local state, items = self.slotComparison, {}
             if not state then return items end
-            for _, context in ipairs(state.contexts) do items[#items + 1] = { value = context, text = self:GetComparisonReferenceLabel(context), checked = state.reference == context } end
-            for _, row in ipairs(state.rows) do
+            for _, context in ipairs(state.contexts or {}) do items[#items + 1] = { value = context, text = self:GetComparisonReferenceLabel(context), checked = state.reference == context } end
+            for _, row in ipairs(state.rows or {}) do
                 if not addon:GetCharacterDB().ignoredItems[tostring(row.item_id)] then
                     items[#items + 1] = { value = row.item_id, text = itemName(row), checked = state.reference == row.item_id }
                 end
@@ -476,6 +493,8 @@ function UI:CreateSlotComparisonFrame()
     self.comparisonScroll:HookScript("OnVerticalScroll", function() self:UpdateComparisonVirtualList() end)
     self.comparisonScroll:HookScript("OnSizeChanged", function() if self.slotComparison then self:LayoutSlotComparison() end end)
     self.comparisonActiveRows = {}
+    self.comparisonFrame, self.comparisonFrameReady = frame, true
+    self.comparisonBuildingFrame, self.comparisonConstructing = nil, nil
 end
 
 function UI:ChangeComparisonPhasePage(delta)
@@ -487,7 +506,7 @@ end
 
 function UI:LayoutSlotComparison()
     local state = self.slotComparison
-    if not state or not self.comparisonFrame or self.comparisonLayoutActive then return end
+    if not state or not self.comparisonFrameReady or self.comparisonLayoutActive then return end
     self.comparisonLayoutActive = true
     if state.rowHeight ~= self:GetDensityMetrics() then self:RebuildComparisonEntries() end
     local width = math.max(320, self.comparisonFrame:GetWidth() - 36)
@@ -539,7 +558,7 @@ end
 
 function UI:UpdateComparisonVirtualList()
     local state = self.slotComparison
-    if not state or not self.comparisonScroll or not self.comparisonColumns then return end
+    if not state or not self.comparisonFrameReady or not self.comparisonScroll or not self.comparisonColumns then return end
     if self.comparisonRenderActive then self.comparisonRenderPending = true; return end
     self.comparisonRenderActive = true
     repeat
@@ -567,7 +586,7 @@ end
 
 function UI:ApplySlotComparisonLayout()
     local state = self.slotComparison
-    if not state then return false end
+    if not state or not self.comparisonFrameReady then return false end
     self.contentRegion:Hide(); self.filterDrawer:Hide()
     if self.fixedActiveFilterBar then self.fixedActiveFilterBar:Hide() end
     self.comparisonFrame:SetShown(not state.detailsOpen)
@@ -587,7 +606,7 @@ function UI:ApplySlotComparisonLayout()
 end
 
 function UI:RenderSlotComparison(force)
-    if not self.slotComparison then return end
+    if not self.slotComparison or self.comparisonConstructing then return end
     self:CreateSlotComparisonFrame()
     self:RefreshComparisonPool(force)
     local state, hiddenKeys = self.slotComparison, {}
