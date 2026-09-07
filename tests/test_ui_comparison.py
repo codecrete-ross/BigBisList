@@ -61,7 +61,7 @@ assert(ui.details:IsVisible(),"origin Details state lost")
 ui:SetTab("By Slot"); H.settle()
 local selected=firstData(); assert(selected,"details item fixture")
 ui:ShowInspectorFor(selected.item_id,selected,"phase"); H.settle()
-local compareButton=ui.detailsWidgetPools["compare-action"][1]
+local compareButton=ui.detailsCompareButton
 assert(compareButton:IsVisible(),"Details Compare slot action is unavailable")
 local calls=0
 UIDropDownMenu_Initialize=function(frame,callback)

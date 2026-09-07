@@ -816,8 +816,12 @@ end
 
 local function getItemEquipLocation(itemId)
     if GetItemInfoInstant and itemId then
-        local _, _, _, equipLocation = GetItemInfoInstant(itemId)
-        return equipLocation
+        local ok, _, _, _, equipLocation = pcall(GetItemInfoInstant, itemId)
+        if ok and equipLocation ~= nil then return equipLocation end
+    end
+    if GetItemInfo and itemId then
+        local ok, _, _, _, _, _, _, _, _, equipLocation = pcall(GetItemInfo, itemId)
+        if ok then return equipLocation end
     end
     return nil
 end
@@ -1249,6 +1253,16 @@ function UI:GetSelection()
     return BigBiSList:GetCharacterDB().selection
 end
 
+-- Item presentation can browse a different role without changing character navigation.
+function UI:GetItemContext()
+    return self.slotComparison or self:GetSelection()
+end
+
+function UI:GetItemContextFilters()
+    if self.slotComparison then return {} end
+    return self:GetFilters()
+end
+
 local function copyStateValues(values)
     local result = {}
     for key, value in pairs(values or {}) do
@@ -1386,6 +1400,39 @@ function UI:ValidateSelection()
     BigBiSList:SetSelection(className, specName, phaseKey, tabName)
 end
 
+function UI:AddOwnedInventoryItem(owned, itemId, itemLink, location, slotDefinition)
+    itemId = tonumber(itemId) or (itemLink and tonumber(itemLink:match("item:(%d+)")))
+    if not itemId then return end
+    local item = BigBiSList.GetItemData and BigBiSList:GetItemData(itemId)
+    local entry = owned.inventoryItems[itemId] or { item_id = itemId, locations = {} }
+    owned.inventoryItems[itemId] = entry
+    local cachedName, cachedLink
+    if GetItemInfo then
+        local ok, name, link = pcall(GetItemInfo, itemId)
+        if ok then cachedName, cachedLink = name, link end
+    end
+    local presentation = self.itemPresentationCache and self.itemPresentationCache[itemId]
+    entry.item_link = entry.item_link or itemLink or cachedLink or (presentation and presentation.link)
+    entry.name = entry.name or itemNameFromLink(itemLink) or cachedName or (presentation and presentation.name) or (item and item.name)
+    entry.equip_location = getItemEquipLocation(itemId)
+    entry.inventory_slot = item and item.inventory_slot or entry.inventory_slot
+    entry.locations[location] = true
+    if slotDefinition then
+        entry.slots = entry.slots or {}
+        for _, slot in ipairs(slotDefinition.slots or {}) do
+            if not listContains(entry.slots, slot) then table.insert(entry.slots, slot) end
+        end
+    end
+    if ((entry.equip_location == nil and not entry.inventory_slot) or not entry.name or not entry.item_link)
+        and not (self.ownedItemMetadataResolved and self.ownedItemMetadataResolved[itemId]) then
+        self.pendingItemLoads = self.pendingItemLoads or {}
+        local pending = self.pendingItemLoads[itemId] or { subscribers = {} }
+        self.pendingItemLoads[itemId] = pending
+        pending.ownedMetadata = true
+        self:RequestItemPresentation(itemId)
+    end
+end
+
 function UI:BuildOwnedItems()
     self:CountPerformance("ownershipBuilds")
     local char = BigBiSList:GetCharacterDB()
@@ -1393,6 +1440,7 @@ function UI:BuildOwnedItems()
     local owned = {
         equippedSlots = {},
         enhancementItems = {},
+        inventoryItems = {},
         bankScanned = char.bankCache and char.bankCache.scanned or false,
         bankUpdatedAt = char.bankCache and char.bankCache.updatedAt or "",
         bankLinkCount = char.bankCache and char.bankCache.links and #char.bankCache.links or 0,
@@ -1433,6 +1481,7 @@ function UI:BuildOwnedItems()
                     slotId = slotId,
                     slot = slotDefinition.label,
                 }
+                self:AddOwnedInventoryItem(owned, itemId, itemLink, "equipped", slotDefinition)
                 addEnhancedItem(itemLink, "equipped", "Equipped", slotDefinition)
 
                 if slotDefinition.key == "MainHand" and getItemEquipLocation(itemId) == "INVTYPE_2HWEAPON" then
@@ -1451,6 +1500,7 @@ function UI:BuildOwnedItems()
             if itemId and not owned[itemId] then
                 owned[itemId] = "bag"
             end
+            self:AddOwnedInventoryItem(owned, itemId, itemLink, "bags")
             addEnhancedItem(itemLink, "bag", "Bags")
         end
     end
@@ -1462,10 +1512,13 @@ function UI:BuildOwnedItems()
             if itemId and not owned[itemId] then
                 owned[itemId] = "bank"
             end
+            self:AddOwnedInventoryItem(owned, itemId, nil, "bank")
         end
     end
     if bankCache and bankCache.links then
         for _, itemLink in ipairs(bankCache.links) do
+            local parsed = parseItemLinkEnhancements(itemLink)
+            self:AddOwnedInventoryItem(owned, parsed and parsed.item_id, itemLink, "bank")
             addEnhancedItem(itemLink, "bank", "Bank")
         end
     end
@@ -1757,7 +1810,7 @@ local function optionIsPhaseAvailable(option, selectedPhaseIndex)
     return option and (option.acquisitionPhaseIndex or phaseIndex(option.acquisition_phase or "PR")) <= selectedPhaseIndex
 end
 
-local function optionMatchesActiveSourceContext(option, filters, selectedPhaseIndex)
+local function optionMatchesActiveSourceContext(option, filters, selectedPhaseIndex, phaseKey)
     if not filters or isReportedOnlyAccessOption(option) then
         return false
     end
@@ -1774,6 +1827,11 @@ local function optionMatchesActiveSourceContext(option, filters, selectedPhaseIn
         or tableHasAnyEnabled(filters.reputations)
     if not hasSourceFilter and not hasZoneFilter and not hasCostFilter and not hasVendorFilter and not hasReputationFilter then
         return false
+    end
+
+    if BigBiSList.GetAccessOptionFilterMatch then
+        local phase = phaseKey or (BigBiSList:GetPhaseOrder() or {})[selectedPhaseIndex]
+        return BigBiSList:GetAccessOptionFilterMatch(option, filters, phase) ~= nil
     end
 
     return optionIsPhaseAvailable(option, selectedPhaseIndex)
@@ -1796,10 +1854,12 @@ function UI:EvaluateAccessOption(option, accessState)
 end
 
 function UI:GetAccessEvaluation(data)
-    local phaseKey = data and data.expansion_summary and data.content_phase or self:GetEffectivePhaseKey()
+    local phaseKey = self.slotComparison and self.slotComparison.phase
+        or (data and data.expansion_summary and data.content_phase) or self:GetEffectivePhaseKey()
     local selectedPhaseIndex = BigBiSList.GetAvailabilityPhaseIndex
         and BigBiSList:GetAvailabilityPhaseIndex(phaseKey) or phaseIndex(phaseKey)
     local progressionKey = tostring((BigBiSListData or {}).active_schedule) .. ":" .. tostring(phaseKey) .. ":" .. tostring(selectedPhaseIndex)
+        .. ":" .. (self.slotComparison and "comparison" or "workspace")
     if self.currentAccessEvaluationContext ~= progressionKey then
         self.currentAccessEvaluationCache = {}
         self.currentAccessEvaluationContext = progressionKey
@@ -1810,7 +1870,7 @@ function UI:GetAccessEvaluation(data)
     end
     self.currentAccess = self.currentAccess or self:BuildAccessState()
     local accessState = self.currentAccess
-    local filters = self:GetFilters()
+    local filters = self:GetItemContextFilters()
     local options = data and BigBiSList:GetRowAccessOptions(data)
     local preferredOption = data and (data.matched_access_option or (data.acquisition_display and data.acquisition_display.option))
 
@@ -1853,7 +1913,7 @@ function UI:GetAccessEvaluation(data)
                     if preferredOption and option == preferredOption then
                         preferredEvaluation = evaluation
                     end
-                    if optionMatchesActiveSourceContext(option, filters, selectedPhaseIndex) then
+                    if optionMatchesActiveSourceContext(option, filters, selectedPhaseIndex, phaseKey) then
                         if not contextEvaluation
                             or (evaluation.status == "ready" and contextEvaluation.status ~= "ready") then
                             contextEvaluation = evaluation
@@ -1975,7 +2035,7 @@ local function sellerDetailKey(option)
     return lower(vendor) .. "\031" .. lower(area) .. "\031" .. lower(cost)
 end
 
-function UI:GetSellerDetailLines(option)
+function UI:GetSellerDetailLines(option, omitSourceItems)
     if BigBiSList.GetAccessOptionDetailFields then
         local fields = BigBiSList:GetAccessOptionDetailFields(option)
         if type(fields) == "table" and #fields > 0 then
@@ -1986,7 +2046,9 @@ function UI:GetSellerDetailLines(option)
                 if note ~= "" and lower(note) ~= lower(value) then
                     value = value .. " - " .. note
                 end
-                table.insert(lines, tostring(field.label or field.key or "Detail") .. ": " .. value)
+                if not omitSourceItems or (field.key ~= "token_source" and field.key ~= "quest_starter_source") then
+                    table.insert(lines, tostring(field.label or field.key or "Detail") .. ": " .. value)
+                end
             end
             return lines, option.vendor_details_status
         end
@@ -3590,6 +3652,12 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
         self.pendingItemLoads[itemId] = pending
     end
     pending.subscribers[button] = bindToken
+    self:RequestItemPresentation(itemId)
+end
+
+function UI:RequestItemPresentation(itemId)
+    local pending = self.pendingItemLoads and self.pendingItemLoads[itemId]
+    if not pending then return end
     if pending.requested or not (Item and Item.CreateFromItemID) then
         return
     end
@@ -3602,19 +3670,30 @@ function UI:SetItemButton(button, itemId, nameText, fallbackName, fallbackQualit
         local loadedName = itemObject.GetItemName and itemObject:GetItemName()
         local loadedLink = itemObject.GetItemLink and itemObject:GetItemLink()
         local loadedIcon = itemObject.GetItemIcon and itemObject:GetItemIcon()
-        local _, _, loadedQuality = GetItemInfo and GetItemInfo(itemId)
+        local loadedQuality
+        if GetItemInfo then
+            local _, _, quality = GetItemInfo(itemId)
+            loadedQuality = quality
+        end
         local presentation = {
-            name = loadedName or itemName,
-            link = loadedLink or itemLink,
-            quality = loadedQuality or itemQuality,
-            texture = loadedIcon or itemTexture,
+            name = loadedName,
+            link = loadedLink,
+            quality = loadedQuality,
+            texture = loadedIcon,
             loaded = true,
         }
+        UI.itemPresentationCache = UI.itemPresentationCache or {}
         UI.itemPresentationCache[itemId] = presentation
         local completed = UI.pendingItemLoads[itemId]
         UI.pendingItemLoads[itemId] = nil
         for subscriber, token in pairs(completed and completed.subscribers or {}) do
             applyItemPresentation(subscriber, itemId, token, presentation)
+        end
+        if completed and completed.ownedMetadata then
+            UI.ownedItemMetadataResolved = UI.ownedItemMetadataResolved or {}
+            UI.ownedItemMetadataResolved[itemId] = true
+            UI:Invalidate("ownership", "owned-item-info")
+            UI:ScheduleRefresh(nil, "owned-item-info")
         end
     end)
 end
@@ -4010,7 +4089,7 @@ end
 
 function UI:GetRowRecommendationHistory(data)
     if not data or not data.item_id or data.leveling or self:IsLevelingMode() or not BigBiSList.GetRecommendationHistory then return nil end
-    local selection = self:GetSelection()
+    local selection = self:GetItemContext()
     return BigBiSList:GetRecommendationHistory(data.item_id, selection.class, selection.spec, selection.phase, data.slot)
 end
 
@@ -4260,7 +4339,7 @@ function UI:ShowItemActionMenu(data, mode, owner)
         if self.IsSlotComparisonOpen and self:IsSlotComparisonOpen() then
             add("Use as reference", function() self:SetComparisonReference(itemId) end)
         end
-        if self.OpenSlotComparison and data.slot and mode ~= "leveling" and mode ~= "enhance" then
+        if not self.slotComparison and self.OpenSlotComparison and data.slot and mode ~= "leveling" and mode ~= "enhance" then
             add("Compare slot", function() self:OpenSlotComparison(data, mode) end)
         end
         local char = BigBiSList:GetCharacterDB()
@@ -6084,7 +6163,7 @@ function UI:CreateDetailsFields(parent, anchor, titleText, fields)
 end
 
 function UI:GetDetailsPhaseRankings(itemId, data)
-    local selection = self:GetSelection()
+    local selection = self:GetItemContext()
     local summary = BigBiSList.GetWishlistExpansionSummary
         and BigBiSList:GetWishlistExpansionSummary(itemId, selection.class, selection.spec, selection.phase)
     return (summary and summary.relevant_spec_rankings) or (data and (data.relevant_spec_rankings or data.spec_rankings)) or {}
@@ -6092,7 +6171,7 @@ end
 
 function UI:GetDetailsEquipmentComparison(data)
     if not data or not data.item_id or not data.slot or data.leveling or self:IsLevelingMode() or not BigBiSList.GetEquipmentComparisonContexts then return {} end
-    local selection = self:GetSelection()
+    local selection = self:GetItemContext()
     local lines = {}
     if self.slotComparison and data.comparison then
         appendText(lines, "Compared with " .. self:GetComparisonReferenceLabel(self.slotComparison.reference))
@@ -6132,7 +6211,7 @@ end
 function UI:CreateDetailsHistory(parent, anchor, data, mode)
     local history = self:GetRowRecommendationHistory(data)
     if not history then return nil end
-    local selection = self:GetSelection()
+    local selection = self:GetItemContext()
     local live = BigBiSList:GetCurrentPhaseKey()
     local lines = {}
     for _, cell in ipairs(history.phase_cells or {}) do
@@ -6146,17 +6225,22 @@ function UI:CreateDetailsHistory(parent, anchor, data, mode)
     return self:CreateDetailsCollapsibleText(parent, anchor, key, selection.spec .. " recommendations", table.concat(lines, "\n"))
 end
 
-function UI:CreateDetailsCompareAction(parent, anchor, data, mode)
-    if not self.OpenSlotComparison or not data or not data.slot or self:IsLevelingMode() then return nil end
-    local button = self:AcquireDetailsWidget("compare-action", parent, function(widgetParent)
-        return BigBiSList.Widgets:CreateTextButton(widgetParent, "Compare slot", 112, 28, function(owner)
-            self:OpenSlotComparison(owner.boundData, owner.boundMode)
-        end)
-    end)
-    button.boundData, button.boundMode = data, mode
-    button:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -8)
-    button.contentHeight = 36
-    return button
+function UI:RefreshDetailsActions(data, mode)
+    if not self.detailsActionStrip then return end
+    local visible = not self.slotComparison and self.OpenSlotComparison and data and data.item_id and data.slot
+        and not data.spell_id and not self:IsLevelingMode() and mode ~= "leveling" and mode ~= "enhance"
+        and not data.enhancement_kind
+    visible = visible and true or false
+    local button = self.detailsCompareButton
+    button.boundData, button.boundMode = visible and data or nil, visible and mode or nil
+    self.detailsActionStrip:SetShown(visible)
+    if self.detailsActionsVisible ~= visible then
+        self.detailsActionsVisible = visible
+        self.detailsScroll:ClearAllPoints()
+        self.detailsScroll:SetPoint("TOPLEFT", visible and self.detailsActionStrip or self.detailsHeader, "BOTTOMLEFT", 8, -4)
+        self.detailsScroll:SetPoint("BOTTOMRIGHT", self.details, "BOTTOMRIGHT", -28, 8)
+        self.detailsRenderSignature = nil
+    end
 end
 
 function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
@@ -6171,7 +6255,7 @@ function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
     for _, mark in pairs(block.matrixMarks) do mark:Hide() end
     if not self:IsDetailsSectionExpanded(sectionKey) then return block end
     block.body:Hide()
-    local selection = self:GetSelection()
+    local selection = self:GetItemContext()
     local livePhase = BigBiSList.GetCurrentPhaseKey and BigBiSList:GetCurrentPhaseKey()
     local phases = BigBiSList:GetPhaseOrder()
     local allUses = BigBiSList.GetItemUses and BigBiSList:GetItemUses(itemId, selection.phase) or {}
@@ -6254,10 +6338,11 @@ function UI:CreateDetailsPhaseMatrix(parent, anchor, itemId, data)
     return block
 end
 
-function UI:FormatDetailsRoutes(options)
+function UI:FormatDetailsRoutes(options, context)
     local blocks = {}
     for _, option in ipairs(options or {}) do
-        local lines = self:GetSellerDetailLines(option) or {}
+        local hasCards = context and self.GetDetailsSourceItems and #self:GetDetailsSourceItems(option, context) > 0
+        local lines = self:GetSellerDetailLines(option, hasCards) or {}
         if #lines == 0 then appendText(lines, self:GetAccessOptionDisplayText(option)) end
         if #(option.requirements or {}) > 0 then appendText(lines, self:FormatRequirements(option)) end
         if #lines > 0 then table.insert(blocks, table.concat(lines, "\n")) end
@@ -6317,6 +6402,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     if not self:IsInspectorVisible() or not self.detailsContent then
         return
     end
+    self:RefreshDetailsActions(detailData, detailMode)
 
     local content = self.detailsContent
     self.pendingDetailsRequest = { itemId = itemId, data = detailData, mode = detailMode }
@@ -6333,6 +6419,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
         tostring(itemId or "none"),
         tostring(detailMode or ""),
         tostring(detailData or ""),
+        tostring(self:GetItemContext().class), tostring(self:GetItemContext().spec), tostring(self:GetItemContext().phase),
         tostring(versions.details or 0),
         tostring(math.floor((detailsWidth or 0) + 0.5)),
     }, ":")
@@ -6388,7 +6475,8 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     self.selectedEntityType = entityType
     local index = BigBiSList:GetDataIndex()
     local item = detailItemId and index.itemsById[detailItemId] or nil
-    local plannerContext = detailItemId and (detailData and detailData.priority and detailData or self:FindPlannerContext(detailItemId, detailData)) or nil
+    local plannerContext = not self.slotComparison and detailItemId
+        and (detailData and detailData.priority and detailData or self:FindPlannerContext(detailItemId, detailData)) or nil
 
     local titleQualityItem = item or (detailData and detailData.quality and { quality = detailData.quality }) or nil
     local r, g, b = itemQualityColor(titleQualityItem)
@@ -6406,7 +6494,7 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     appendText(recommendationLines, self:GetRowRecommendationText(detailData or plannerContext, detailMode))
     if detailData and detailData.slot then
         local detailPhase = detailData.phase or (detailData.bestUse and detailData.bestUse.phase)
-        local selectedPhase = detailPhase and BigBiSList:GetPhaseDisplayName(detailPhase) or BigBiSList:GetPhaseDisplayName(self:GetSelection().phase)
+        local selectedPhase = detailPhase and BigBiSList:GetPhaseDisplayName(detailPhase) or BigBiSList:GetPhaseDisplayName(self:GetItemContext().phase)
         appendText(recommendationLines, selectedPhase .. " - " .. detailData.slot)
     end
 
@@ -6452,8 +6540,6 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     anchor = self:CreateDetailsText(content, anchor, "Recommendation", table.concat(recommendationLines, "\n"), 0.82, 0.86, 0.92)
     contentHeight = contentHeight + anchor.contentHeight
     if detailItemId and detailMode ~= "leveling" and detailMode ~= "enhance" then
-        local compare = self:CreateDetailsCompareAction(content, anchor, detailData, detailMode)
-        if compare then anchor = compare; contentHeight = contentHeight + compare.contentHeight end
         local history = self:CreateDetailsHistory(content, anchor, detailData, detailMode)
         if history then anchor = history; contentHeight = contentHeight + history.contentHeight end
     end
@@ -6462,11 +6548,14 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     local option = optionEvaluation and optionEvaluation.option
     local sellerGroups = self:GetRowSellerDisplayGroups(accessData, option)
     local displayOption = sellerGroups.selected or option
+    local sourceContext = { phase = self.slotComparison and self.slotComparison.phase or self:GetEffectivePhaseKey(), filters = self:GetItemContextFilters() }
+    local sourceItems = self.CreateDetailsSourceItems and BigBiSList.GetAccessOptionSourceItems
+        and BigBiSList:GetAccessOptionSourceItems(displayOption, sourceContext) or {}
     local routeFields = {}
     local fields = BigBiSList.GetAccessOptionDetailFields and BigBiSList:GetAccessOptionDetailFields(displayOption) or {}
     for _, field in ipairs(fields or {}) do
         local value = trim(field.value)
-        if value ~= "" then
+        if value ~= "" and not (#sourceItems > 0 and (field.key == "token_source" or field.key == "quest_starter_source")) then
             local note = trim(field.note)
             if note ~= "" and lower(note) ~= lower(value) then value = value .. "\n" .. note end
             table.insert(routeFields, { label = field.label or field.key or "Source", value = value })
@@ -6496,46 +6585,62 @@ function UI:RefreshDetails(itemId, detailData, detailMode)
     end
     anchor = self:CreateDetailsFields(content, anchor, "Selected route", routeFields)
     contentHeight = contentHeight + anchor.contentHeight
+    if self.CreateDetailsSourceItems then
+        local cards = self:CreateDetailsSourceItems(content, anchor, displayOption,
+            tostring(entityType) .. ":" .. tostring(entityId) .. ":selected-source", sourceContext)
+        if cards then anchor = cards; contentHeight = contentHeight + cards.contentHeight end
+    end
 
     local sellerSectionPrefix = tostring(entityType) .. ":" .. tostring(entityId) .. ":"
     if #sellerGroups.alternatives > 0 then
-        anchor = self:CreateDetailsCollapsibleText(
-            content,
-            anchor,
-            sellerSectionPrefix .. "other-sellers",
-            "Other sellers",
-            self:FormatDetailsRoutes(sellerGroups.alternatives),
-            #sellerGroups.alternatives
-        )
+        if self.CreateDetailsSourceRoutes then
+            local routes = {}
+            for _, seller in ipairs(sellerGroups.alternatives) do
+                routes[#routes + 1] = { option = seller, text = self:FormatDetailsRoutes({ seller }, sourceContext) }
+            end
+            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "other-sellers", "Other sellers", routes, sourceContext)
+        else
+            anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "other-sellers", "Other sellers",
+                self:FormatDetailsRoutes(sellerGroups.alternatives), #sellerGroups.alternatives)
+        end
         contentHeight = contentHeight + anchor.contentHeight
     end
     if #sellerGroups.reported > 0 then
-        anchor = self:CreateDetailsCollapsibleText(
-            content,
-            anchor,
-            sellerSectionPrefix .. "reported-sellers",
-            "Additional reported sellers",
-            self:FormatDetailsRoutes(sellerGroups.reported),
-            #sellerGroups.reported
-        )
+        if self.CreateDetailsSourceRoutes then
+            local routes = {}
+            for _, seller in ipairs(sellerGroups.reported) do
+                routes[#routes + 1] = { option = seller, text = self:FormatDetailsRoutes({ seller }, sourceContext) }
+            end
+            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "reported-sellers", "Additional reported sellers", routes, sourceContext)
+        else
+            anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "reported-sellers", "Additional reported sellers",
+                self:FormatDetailsRoutes(sellerGroups.reported), #sellerGroups.reported)
+        end
         contentHeight = contentHeight + anchor.contentHeight
     end
 
     local alternativeLines = {}
+    local alternativeEntries = {}
     for _, alternative in ipairs(accessEvaluation.options or {}) do
         if alternative.option ~= option and not isSellerAccessOption(alternative.option) then
-            local lines = self:GetSellerDetailLines(alternative.option)
+            local hasCards = self.GetDetailsSourceItems and #self:GetDetailsSourceItems(alternative.option, sourceContext) > 0
+            local lines = self:GetSellerDetailLines(alternative.option, hasCards)
             local route = lines and table.concat(lines, "\n") or self:GetAccessOptionDisplayText(alternative.option)
             if route and route ~= "" then
                 if #(alternative.option.requirements or {}) > 0 then
                     route = route .. "\n" .. self:FormatAccessOptionRequirements(alternative)
                 end
                 table.insert(alternativeLines, route)
+                table.insert(alternativeEntries, { option = alternative.option, text = route })
             end
         end
     end
     if #alternativeLines > 0 then
-        anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "other-routes", "Other routes", table.concat(alternativeLines, "\n\n"), #alternativeLines)
+        if self.CreateDetailsSourceRoutes then
+            anchor = self:CreateDetailsSourceRoutes(content, anchor, sellerSectionPrefix .. "other-routes", "Other routes", alternativeEntries, sourceContext)
+        else
+            anchor = self:CreateDetailsCollapsibleText(content, anchor, sellerSectionPrefix .. "other-routes", "Other routes", table.concat(alternativeLines, "\n\n"), #alternativeLines)
+        end
         contentHeight = contentHeight + anchor.contentHeight
     end
 
@@ -6989,7 +7094,8 @@ function UI:CreatePhaseBar(frame)
     self.phaseSelector = widgets:CreateSegmentedControl(host, options, function(value) self:SetPhase(value) end)
     self.phaseSelector:SetPoint("TOPLEFT", host, "TOPLEFT", 0, 0)
     self.targetTierLabel = widgets:CreateLabel(host, "Target tier", "GameFontNormalSmall")
-    self.targetTierLabel:SetPoint("TOPRIGHT", self.phaseSelector, "BOTTOMLEFT", -8, 12)
+    self.targetTierLabel:SetPoint("BOTTOMLEFT", self.phaseSelector, "TOPLEFT", 0, 2)
+    self.targetTierLabel:SetHeight(12)
     self.targetTierLabel:SetTextColor(0.62, 0.62, 0.66)
     for _, button in ipairs(self.phaseSelector.buttons) do
         button.liveCaption = button.caption
@@ -7053,7 +7159,16 @@ function UI:LayoutContextControls()
     end
     local remainingWidth = self.endgameModeButton:GetWidth() + self.levelingModeButton:GetWidth() + 10 + self.phaseBar:GetWidth()
     local wrapped = x + 4 + remainingWidth > (bar:GetWidth() or MIN_WIDTH - 24)
-    local rowTop = wrapped and CONTEXT_BAR_HEIGHT + 2 or 0
+    local headingHeight = leveling and 0 or 14
+    if not wrapped and headingHeight > 0 then
+        x = 0
+        for _, control in ipairs(controls) do
+            control:ClearAllPoints()
+            control:SetPoint("TOPLEFT", bar, "TOPLEFT", x, -headingHeight - (CONTEXT_BAR_HEIGHT - control:GetHeight()) / 2)
+            x = x + control:GetWidth() + 8
+        end
+    end
+    local rowTop = (wrapped and CONTEXT_BAR_HEIGHT + 2 or 0) + headingHeight
     local modeX = wrapped and 0 or x + 4
     self.endgameModeButton:ClearAllPoints()
     self.endgameModeButton:SetPoint("TOPLEFT", bar, "TOPLEFT", modeX, -rowTop - 3)
@@ -7062,7 +7177,7 @@ function UI:LayoutContextControls()
     self.phaseBar:ClearAllPoints()
     self.phaseBar:SetPoint("TOPLEFT", self.levelingModeButton, "TOPRIGHT", 10, 0)
     local height = wrapped and CONTEXT_BAR_HEIGHT * 2 + 2 or CONTEXT_BAR_HEIGHT
-    bar:SetHeight(self:GetSelection().tab == "Settings" and 1 or height + (leveling and 0 or 12))
+    bar:SetHeight(self:GetSelection().tab == "Settings" and 1 or height + (leveling and 0 or 12) + headingHeight)
 end
 
 function UI:CreateTabBar(frame)
@@ -7478,6 +7593,15 @@ function UI:CreateBody(frame)
     self.details = details
     self.detailsScroll = detailsScroll
     self.detailsContent = detailsContent
+    self.detailsActionStrip = CreateFrame("Frame", nil, details)
+    self.detailsActionStrip:SetPoint("TOPLEFT", self.detailsHeader, "BOTTOMLEFT", 0, 0)
+    self.detailsActionStrip:SetPoint("TOPRIGHT", self.detailsHeader, "BOTTOMRIGHT", 0, 0)
+    self.detailsActionStrip:SetHeight(36)
+    self.detailsCompareButton = widgets:CreateTextButton(self.detailsActionStrip, "Compare slot", 112, 28, function(button)
+        if button.boundData then self:OpenSlotComparison(button.boundData, button.boundMode) end
+    end)
+    self.detailsCompareButton:SetPoint("TOPLEFT", self.detailsActionStrip, "TOPLEFT", 8, -4)
+    self.detailsActionStrip:Hide()
     detailsScroll:HookScript("OnSizeChanged", function()
         if self.frame and self.frame:IsShown() then self:RefreshDetailsLayout() end
     end)

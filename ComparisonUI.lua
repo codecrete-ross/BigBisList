@@ -9,6 +9,9 @@ local RELATION_LABELS = {
     conditional = "Depends on setup", unranked = "Not directly comparable",
 }
 local SELECTION_FIELDS = { "selectedRowKey", "selectedItemId", "selectedItemData", "selectedItemMode", "selectedEntityType" }
+local SPEC_LABELS = { ["Feral dps"] = "Cat DPS", ["Feral tank"] = "Bear Tank" }
+local SORT_LABELS = { recommendation = "Recommendations", item = "Item", source = "Source", owned = "Owned", comparison = "Compared with reference" }
+local OWNED_ORDER = { equipped = 1, bag = 2, bags = 2, bank = 3 }
 
 local function supportedCandidateGrade(comparison)
     if not comparison or not comparison.basis_key then return nil end
@@ -106,7 +109,7 @@ function UI:OpenSlotComparison(data, mode)
     for _, key in ipairs(SELECTION_FIELDS) do origin[key] = self[key] end
     self.slotComparison = { slot = slot, class = selection.class, spec = selection.spec, phase = selection.phase,
         origin = origin, rows = {}, entries = {}, contexts = {}, pinned = {}, contentHeight = 1,
-        page = 1, scroll = 0, generation = 0 }
+        page = 1, scroll = 0, generation = 0, ownership = "all", sort = "recommendation", sortDirection = "asc" }
     local ok, openError = xpcall(function()
         self:CreateSlotComparisonFrame()
         widgets:CloseDropdownMenus()
@@ -200,6 +203,55 @@ function UI:SetComparisonReference(reference)
     self:LayoutSlotComparison()
 end
 
+function UI:GetComparisonSpecLabel(spec)
+    return SPEC_LABELS[spec] or spec or "Specialization"
+end
+
+function UI:GetComparisonSortLabel()
+    local state = self.slotComparison or {}
+    local phase = state.sort and string.match(state.sort, "^phase:(.+)$")
+    return phase and (addon:GetPhaseDisplayName(phase) .. " rating") or SORT_LABELS[state.sort] or SORT_LABELS.recommendation
+end
+
+function UI:SetComparisonSpec(spec)
+    local state = self.slotComparison
+    if not state or state.spec == spec then return false end
+    local allowed = false
+    for _, candidate in ipairs(addon:GetClassSpecIndex().specsByClass[state.class] or {}) do
+        if (type(candidate) == "table" and candidate.name or candidate) == spec then allowed = true end
+    end
+    if not allowed then return false end
+    state.spec, state.detailsOpen, state.selectedItemId, state.scroll = spec, false, nil, 0
+    self:ClearSelectedRow()
+    self.comparisonScroll:SetVerticalScroll(0)
+    self:RefreshComparisonPool(true)
+    self:ApplySlotComparisonLayout()
+    return true
+end
+
+function UI:SetComparisonOwnership(scope)
+    local state = self.slotComparison
+    if not state or (scope ~= "all" and scope ~= "owned") or state.ownership == scope then return false end
+    state.ownership = scope
+    self:RebuildComparisonEntries()
+    state.scroll = 0
+    self.comparisonScroll:SetVerticalScroll(0)
+    self:LayoutSlotComparison()
+    return true
+end
+
+function UI:SetComparisonSort(key)
+    local state = self.slotComparison
+    if not state or (not SORT_LABELS[key] and not (key and string.match(key, "^phase:"))) then return false end
+    if state.sort == key then state.sortDirection = state.sortDirection == "asc" and "desc" or "asc"
+    else state.sort, state.sortDirection = key, "asc" end
+    self:RebuildComparisonEntries()
+    state.scroll = 0
+    self.comparisonScroll:SetVerticalScroll(0)
+    self:LayoutSlotComparison()
+    return true
+end
+
 function UI:RefreshComparisonPool(force)
     local state = self.slotComparison
     if not state then return end
@@ -209,18 +261,85 @@ function UI:RefreshComparisonPool(force)
     local rows = addon:GetSlotComparisonRows(state.class, state.spec, state.phase, state.slot, self.currentOwned, state.reference)
     if state.poolSignature then state.originNeedsRefresh = true end
     state.rows, state.contexts, state.poolSignature = rows, rows.contexts or {}, signature
-    if state.reference == nil then state.reference = state.contexts[1] or rows.reference end
-    if type(state.reference) == "table" then
-        for _, context in ipairs(state.contexts) do if context.slotKey == state.reference.slotKey then state.reference = context; break end end
-    end
+    if type(state.reference) == "table" and state.reference.slotKey or state.reference == nil then state.reference = rows.reference
+    else state.reference = rows.reference and (rows.reference.slotKey and rows.reference or rows.reference.item_id) end
     state.pinned = {}
     for _, context in ipairs(state.contexts) do
-        local pinned = { item_id = context.item_id, name = context.name, slot = state.slot, context = context,
+        local pinned = { item_id = context.item_id, name = context.name, slot = state.slot, context = context, class = state.class, spec = state.spec, phase = state.phase,
             owned_state = "equipped", occupancy = context.occupancy, reference_context = context }
         if context.item_id then pinned.history = addon:GetRecommendationHistory(context.item_id, state.class, state.spec, state.phase, state.slot) end
         state.pinned[#state.pinned + 1] = pinned
     end
+    if state.selectedItemId then
+        local selected
+        for _, row in ipairs(rows) do if row.item_id == state.selectedItemId then selected = row; break end end
+        if selected then
+            self.selectedItemData = selected
+            self.detailsRenderSignature = nil
+        else
+            state.selectedItemId, state.detailsOpen = nil, false
+            self:ClearSelectedRow()
+        end
+    end
     self:RebuildComparisonEntries()
+end
+
+local function ratingBasis(cell)
+    if not cell or not cell.matched then return nil end
+    local evidence = cell.rating_evidence or cell.evidence or {}
+    local ordered = {}
+    for _, value in ipairs(evidence) do ordered[#ordered + 1] = value end
+    table.sort(ordered, function(a,b) return tostring(a.table_id or "") < tostring(b.table_id or "") end)
+    if cell.status ~= "rated" then return nil end
+    local first = ordered[1]
+    if not first or not first.table_id or not tonumber(first.grade) then return nil end
+    local grade = tonumber(first.grade)
+    if grade < 1 or grade > 4 then return nil end
+    for _, value in ipairs(ordered) do
+        if type(value.conditions) == "table" and #value.conditions > 0
+            or type(value.conditions) == "string" and value.conditions ~= ""
+            or value.table_id == first.table_id and tonumber(value.grade) ~= grade then return nil end
+    end
+    return { key = tostring(first.table_id) .. ":" .. tostring(cell.phase), phase = cell.phase, grade = grade,
+        source_url = first.source_url, heading = first.table_heading }
+end
+
+local function comparisonRowGroup(row, state)
+    local comparison = row.comparison or {}
+    if state.sort == "comparison" or not row.history then
+        local first = comparison.evidence and comparison.evidence[1]
+        local source = first and first.candidate or {}
+        local basis = comparison.basis_key
+        return { key = basis or (comparison.relation == "conditional" and "conditional" or "unranked"),
+            priority = basis and (comparison.historical and 1 or 0) or 4, basis = basis, phase = comparison.phase,
+            grade = supportedCandidateGrade(comparison), source_url = source.source_url,
+            title = basis and ((comparison.historical and "Earlier evidence: " or "Shared guide: ") .. addon:GetPhaseDisplayName(comparison.phase)
+                .. (source.table_heading and (" · " .. source.table_heading) or ""))
+                or (comparison.relation == "conditional" and "Depends on setup" or "No shared rating") }
+    end
+    local history = row.history
+    local requestedPhase = string.match(state.sort or "", "^phase:(.+)$")
+    local cell, priority = requestedPhase and history.phases and history.phases[requestedPhase] or history.selected, 0
+    if not requestedPhase and (not cell or not cell.matched) then
+        cell, priority = history.latest_earlier, 1
+        if not cell then
+            priority = 2
+            for _, future in ipairs(history.phase_cells or {}) do
+                if future.matched and phaseIndex(future.phase) > phaseIndex(state.phase) then cell = future; break end
+            end
+        end
+    end
+    local basis = ratingBasis(cell)
+    local prefix = requestedPhase and "" or priority == 1 and "Earlier recommendations: " or priority == 2 and "Future recommendations: " or "Recommendations: "
+    if basis then
+        return { key = prefix .. basis.key, basis = basis.key, phase = basis.phase, grade = basis.grade, priority = priority, future = not requestedPhase and priority == 2,
+            title = prefix .. addon:GetPhaseDisplayName(basis.phase) .. (basis.heading and (" · " .. basis.heading) or ""), source_url = basis.source_url }
+    end
+    if cell and cell.matched then
+        return { key = "conditional:" .. tostring(cell.phase), phase = cell.phase, priority = priority, conditional = true, future = not requestedPhase and priority == 2,
+            title = prefix .. addon:GetPhaseDisplayName(cell.phase) .. " · Conditional recommendations" }
+    end
+    return { key = "unranked", priority = 4, title = requestedPhase and (addon:GetPhaseDisplayName(requestedPhase) .. " · No recorded rating") or "No recorded recommendation" }
 end
 
 function UI:RebuildComparisonEntries()
@@ -228,52 +347,65 @@ function UI:RebuildComparisonEntries()
     if not state then return end
     local groups, ordered = {}, {}
     local ignored = addon:GetCharacterDB().ignoredItems
+    local textSort = state.sort == "item" or state.sort == "source" or state.sort == "owned"
+    local referenceKey = tostring(referenceId(state.reference)) .. ":" .. state.class .. ":" .. state.spec .. ":" .. state.phase .. ":" .. tostring(addon.CompareRecommendationItems)
     for _, row in ipairs(state.rows) do
-        if not ignored[tostring(row.item_id)] then
-        row.comparison = addon:CompareRecommendationItems(row.item_id, referenceId(state.reference), state.class, state.spec, state.phase, state.slot)
+        if not ignored[tostring(row.item_id)] and (state.ownership ~= "owned" or row.owned or row.owned_state and row.owned_state ~= "missing") then
+        if row.comparisonReferenceKey ~= referenceKey then
+            row.comparison = addon:CompareRecommendationItems(row.item_id, referenceId(state.reference), state.class, state.spec, state.phase, state.slot)
+            row.comparisonReferenceKey = referenceKey
+        end
         row.is_reference = row.item_id == referenceId(state.reference)
-        local comparison = row.comparison or {}
-        row.comparisonGrade = supportedCandidateGrade(comparison)
-        local basis = comparison.basis_key
-        local key = basis or (comparison.relation == "conditional" and "conditional" or "unranked")
+        local group = textSort and { key = "all", priority = 0 } or comparisonRowGroup(row, state)
+        row.comparisonGrade = group.grade
+        local key = group.key
         if not groups[key] then
-            local pair = comparison.evidence and comparison.evidence[1]
-            local source = pair and pair.candidate or {}
-            local title = basis and ((comparison.historical and "Earlier evidence: " or "Shared guide: ") .. addon:GetPhaseDisplayName(comparison.phase)
-                .. (source.table_heading and (" · " .. source.table_heading) or ""))
-                or (key == "conditional" and "Depends on setup" or "No shared rating")
-            groups[key] = { key = key, title = title, phase = comparison.phase, basis = basis, source_url = source.source_url, rows = {} }
-            ordered[#ordered + 1] = groups[key]
+            group.rows = {}; groups[key] = group; ordered[#ordered + 1] = group
         end
         groups[key].rows[#groups[key].rows + 1] = row
         end
     end
     table.sort(ordered, function(a, b)
-        if (a.basis ~= nil) ~= (b.basis ~= nil) then return a.basis ~= nil end
-        if phaseIndex(a.phase) ~= phaseIndex(b.phase) then return phaseIndex(a.phase) > phaseIndex(b.phase) end
+        if a.priority ~= b.priority then return a.priority < b.priority end
+        if phaseIndex(a.phase) ~= phaseIndex(b.phase) then
+            if a.future and b.future then return phaseIndex(a.phase) < phaseIndex(b.phase) end
+            return phaseIndex(a.phase) > phaseIndex(b.phase)
+        end
+        if (a.conditional == true) ~= (b.conditional == true) then return a.conditional ~= true end
         return a.key < b.key
     end)
     local entries, y = {}, 0
     local rowHeight = self:GetDensityMetrics()
     for _, group in ipairs(ordered) do
         table.sort(group.rows, function(a, b)
+            local av, bv
+            if state.sort == "item" then av,bv = string.lower(itemName(a)), string.lower(itemName(b))
+            elseif state.sort == "owned" then av,bv = OWNED_ORDER[a.owned_state] or 4, OWNED_ORDER[b.owned_state] or 4
+            elseif state.sort == "source" then
+                local ad,bd = a.acquisition_display or {}, b.acquisition_display or {}
+                av,bv = string.lower(ad.location_label or ad.source_summary or ad.source_label or ""), string.lower(bd.location_label or bd.source_summary or bd.source_label or "")
+            end
+            if av ~= nil and av ~= bv then return state.sortDirection == "desc" and av > bv or state.sortDirection ~= "desc" and av < bv end
             if group.basis then
                 local ar, br = a.comparisonGrade, b.comparisonGrade
                 if (ar ~= nil) ~= (br ~= nil) then return ar ~= nil end
-                if ar and br and ar ~= br then return ar < br end
+                if ar and br and ar ~= br then return state.sortDirection == "desc" and ar > br or state.sortDirection ~= "desc" and ar < br end
             end
             if string.lower(itemName(a)) ~= string.lower(itemName(b)) then return string.lower(itemName(a)) < string.lower(itemName(b)) end
             return (a.item_id or 0) < (b.item_id or 0)
         end)
-        entries[#entries + 1] = { kind = "section", title = group.title .. " (" .. #group.rows .. ")", basis = group.basis, source_url = group.source_url, top = y, height = 28 }
-        y = y + 28
+        if not textSort then
+            entries[#entries + 1] = { kind = "section", title = group.title .. " (" .. #group.rows .. ")", basis = group.basis, source_url = group.source_url, top = y, height = 28 }
+            y = y + 28
+        end
         for _, row in ipairs(group.rows) do
             entries[#entries + 1] = { kind = "row", data = row, top = y, height = rowHeight }
             y = y + rowHeight
         end
     end
     if #entries == 0 then
-        entries[1] = { kind = "empty", title = "No recorded recommendations for this specialization and slot.", top = 0, height = 56 }
+        entries[1] = { kind = "empty", title = state.ownership == "owned" and "No owned gear is recorded for this slot. Choose All candidates to browse recommendations."
+            or "No recorded recommendations or owned gear for this specialization and slot.", top = 0, height = 56 }
         y = 56
     end
     state.entries, state.contentHeight = entries, math.max(1, y)
@@ -475,6 +607,38 @@ function UI:CreateSlotComparisonFrame()
             return items
         end, function(value) self:SetComparisonReference(value) end)
     self.comparisonReference:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -58)
+    self.comparisonSpec = widgets:CreateDropdown("BigBiSListComparisonSpec", frame, 160,
+        function() return "Compare as: " .. self:GetComparisonSpecLabel(self.slotComparison and self.slotComparison.spec) end,
+        function()
+            local state, items = self.slotComparison, {}
+            if state then
+                for _, spec in ipairs(addon:GetClassSpecIndex().specsByClass[state.class] or {}) do
+                    spec = type(spec) == "table" and spec.name or spec
+                    items[#items + 1] = { value = spec, text = self:GetComparisonSpecLabel(spec), checked = spec == state.spec }
+                end
+            end
+            return items
+        end, function(value) self:SetComparisonSpec(value) end)
+    self.comparisonOwnership = widgets:CreateDropdown("BigBiSListComparisonOwnership", frame, 124,
+        function() return self.slotComparison and self.slotComparison.ownership == "owned" and "Owned gear" or "All candidates" end,
+        function() return {
+            { value = "all", text = "All candidates", checked = self.slotComparison and self.slotComparison.ownership == "all" },
+            { value = "owned", text = "Owned gear", checked = self.slotComparison and self.slotComparison.ownership == "owned" },
+        } end, function(value) self:SetComparisonOwnership(value) end)
+    self.comparisonSort = widgets:CreateDropdown("BigBiSListComparisonSort", frame, 176,
+        function() return "Sort: " .. self:GetComparisonSortLabel() end,
+        function()
+            local items, state = {}, self.slotComparison or {}
+            for _, key in ipairs({ "recommendation", "item", "comparison", "source", "owned" }) do
+                items[#items + 1] = { value = key, text = SORT_LABELS[key], checked = state.sort == key }
+            end
+            for _, phase in ipairs(addon:GetPhaseOrder()) do
+                items[#items + 1] = { value = "phase:" .. phase, text = addon:GetPhaseDisplayName(phase) .. " rating", checked = state.sort == "phase:" .. phase }
+            end
+            return items
+        end, function(value) self:SetComparisonSort(value) end)
+    widgets:BindTooltip(self.comparisonSpec, "Compare recommendations for this specialization. Your character selection stays unchanged.")
+    widgets:BindTooltip(self.comparisonOwnership, "Owned gear includes equipment, bags, and the last recorded bank contents.")
     self.comparisonPrev = widgets:CreateUtilityButton(frame, "chevronLeft", 28, function() self:ChangeComparisonPhasePage(-1) end, "Earlier phase columns")
     self.comparisonNext = widgets:CreateUtilityButton(frame, "chevronRight", 28, function() self:ChangeComparisonPhasePage(1) end, "Later phase columns")
     self.comparisonNext:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -10, -58)
@@ -482,7 +646,7 @@ function UI:CreateSlotComparisonFrame()
     self.comparisonPageLabel = label(frame); self.comparisonPageLabel:SetPoint("RIGHT", self.comparisonPrev, "LEFT", -8, 0)
     self.comparisonHeader = CreateFrame("Frame", nil, frame); self.comparisonHeader:SetHeight(32)
     self.comparisonHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -96); self.comparisonHeader:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -28, -96)
-    self.comparisonHeader.cells = {}
+    self.comparisonHeader.cells, self.comparisonHeader.buttons = {}, {}
     self.comparisonPinned = CreateFrame("Frame", nil, frame)
     self.comparisonPinned:SetPoint("TOPLEFT", self.comparisonHeader, "BOTTOMLEFT", 0, 0)
     self.comparisonPinned:SetPoint("TOPRIGHT", self.comparisonHeader, "BOTTOMRIGHT", 0, 0)
@@ -510,34 +674,67 @@ function UI:LayoutSlotComparison()
     self.comparisonLayoutActive = true
     if state.rowHeight ~= self:GetDensityMetrics() then self:RebuildComparisonEntries() end
     local width = math.max(320, self.comparisonFrame:GetWidth() - 36)
-    local stackedPager = self.comparisonFrame:GetWidth() < 760
+    local controls = { self.comparisonReference, self.comparisonSpec, self.comparisonOwnership, self.comparisonSort }
+    local x, toolbarY = 8, 58
+    for _, control in ipairs(controls) do
+        if x > 8 and x + control:GetWidth() > width + 8 then x, toolbarY = 8, toolbarY + 36 end
+        control:ClearAllPoints(); control:SetPoint("TOPLEFT", self.comparisonFrame, "TOPLEFT", x, -toolbarY)
+        x = x + control:GetWidth() + 8
+        control:Refresh()
+    end
     self.comparisonNext:ClearAllPoints()
-    self.comparisonNext:SetPoint("TOPRIGHT", self.comparisonFrame, "TOPRIGHT", -10, stackedPager and -94 or -58)
+    self.comparisonNext:SetPoint("TOPRIGHT", self.comparisonFrame, "TOPRIGHT", -10, -6)
     self.comparisonHeader:ClearAllPoints()
-    self.comparisonHeader:SetPoint("TOPLEFT", self.comparisonFrame, "TOPLEFT", 8, stackedPager and -132 or -96)
-    self.comparisonHeader:SetPoint("TOPRIGHT", self.comparisonFrame, "TOPRIGHT", -28, stackedPager and -132 or -96)
+    self.comparisonHeader:SetPoint("TOPLEFT", self.comparisonFrame, "TOPLEFT", 8, -toolbarY - 38)
+    self.comparisonHeader:SetPoint("TOPRIGHT", self.comparisonFrame, "TOPRIGHT", -28, -toolbarY - 38)
     self.comparisonColumns = self:GetComparisonColumns(width)
     local columns, header = self.comparisonColumns, self.comparisonHeader
-    local headings = { { text = "Item", column = columns.item }, { text = "Compared with reference", column = columns.evidence } }
+    local headings = { { text = "Item", column = columns.item, key = "item" }, { text = "Compared with reference", column = columns.evidence, key = "comparison" } }
     local live = addon:GetCurrentPhaseKey()
-    for _, column in ipairs(columns.phases) do headings[#headings + 1] = { text = (PHASE_LABELS[column.phase] or column.phase) .. (column.phase == live and "\nLive" or ""), column = column, phase = column.phase } end
-    headings[#headings + 1] = { text = "Source", column = columns.source }
-    headings[#headings + 1] = { text = "Owned", column = columns.owned }
+    for _, column in ipairs(columns.phases) do headings[#headings + 1] = { text = (PHASE_LABELS[column.phase] or column.phase) .. (column.phase == live and "\nLive" or ""), column = column, phase = column.phase, key = "phase:" .. column.phase } end
+    headings[#headings + 1] = { text = "Source", column = columns.source, key = "source" }
+    headings[#headings + 1] = { text = "Owned", column = columns.owned, key = "owned" }
     for _, text in ipairs(header.cells) do text:Hide() end
+    for _, button in pairs(header.buttons) do button:Hide() end
     for index, heading in ipairs(headings) do
         local text = header.cells[index] or label(header); header.cells[index] = text
-        setCell(text, heading.text, heading.column.x, heading.column.width, 32, 2)
+        local sorting = state.sort == heading.key
+        setCell(text, heading.text, heading.column.x, heading.column.width - (sorting and 14 or 0), 32, 2)
         text:SetJustifyH(heading.phase and "CENTER" or "LEFT")
         local selected = heading.phase == state.phase
         text:SetTextColor(selected and .92 or .72, selected and .76 or .75, selected and .32 or .8, 1)
+        local button = header.buttons[heading.key]
+        if not button then
+            button = CreateFrame("Button", nil, header); header.buttons[heading.key] = button
+            button.sortIcon = button:CreateTexture(nil, "ARTWORK"); button.sortIcon:SetSize(12,12)
+            button.sortIcon:SetPoint("RIGHT", button, "RIGHT", -1, 0)
+            button:SetScript("OnClick", function(selfButton) UI:SetComparisonSort(selfButton.sortKey) end)
+            button:SetScript("OnEnter", function(selfButton) if selfButton.text then selfButton.text:SetTextColor(.92,.76,.32,1) end end)
+            button:SetScript("OnLeave", function(selfButton)
+                if selfButton.text and selfButton.textColor then selfButton.text:SetTextColor(unpack(selfButton.textColor)) end
+            end)
+        end
+        button.sortKey, button.text = heading.key, text
+        button.textColor = { selected and .92 or .72, selected and .76 or .75, selected and .32 or .8, 1 }
+        button:ClearAllPoints(); button:SetPoint("LEFT", header, "LEFT", heading.column.x, 0); button:SetSize(heading.column.width,32)
+        widgets:SetIcon(button.sortIcon, state.sortDirection == "desc" and "sortDescending" or "sortAscending")
+        button.sortIcon:SetShown(sorting); button:Show()
+        widgets:BindTooltip(button, "Sort by " .. (heading.phase and (addon:GetPhaseDisplayName(heading.phase) .. " rating") or heading.text)
+            .. ((heading.phase or heading.key == "comparison") and ". Ratings are ordered only within a shared guide table; unresolved entries follow." or ". Click again to reverse."))
     end
     self.comparisonTitle:SetText("Compare " .. state.slot)
-    widgets:SetCellText(self.comparisonScope, "All sources for " .. state.spec .. " · " .. state.slot .. " · Available through " .. addon:GetPhaseDisplayName(state.phase), 1, 12, width)
+    self.comparisonTitle:SetWidth(math.max(60,width - 132 - (columns.pages > 1 and 116 or 290)))
+    widgets:SetCellText(self.comparisonScope, "All sources · " .. self:GetComparisonSpecLabel(state.spec) .. " · " .. state.slot .. " · Available through " .. addon:GetPhaseDisplayName(state.phase)
+        .. " · " .. (state.ownership == "owned" and "Owned gear" or "All candidates"), 1, 12, width)
     self.comparisonScope:Show()
     self.comparisonReference:Refresh()
     self.comparisonPrev:SetShown(columns.pages > 1); self.comparisonNext:SetShown(columns.pages > 1)
     self.comparisonPrev:SetEnabled(state.page > 1); self.comparisonNext:SetEnabled(state.page < columns.pages)
-    self.comparisonPageLabel:SetText(columns.pages > 1 and (state.page .. " / " .. columns.pages .. " · selected tier stays visible") or "Gold: selected tier · Blue: live · Muted: future")
+    self.comparisonPageLabel:ClearAllPoints()
+    if columns.pages > 1 then self.comparisonPageLabel:SetPoint("RIGHT", self.comparisonPrev, "LEFT", -8, 0)
+    else self.comparisonPageLabel:SetPoint("TOPRIGHT", self.comparisonFrame, "TOPRIGHT", -10, -14) end
+    self.comparisonPageLabel:SetText(columns.pages > 1 and (state.page .. " / " .. columns.pages) or "Gold: selected tier · Blue: live · Muted: future")
+    widgets:BindTooltip(self.comparisonSort, self:GetComparisonSortLabel() .. (state.sortDirection == "desc" and " · Descending" or " · Ascending"))
     local rowHeight = self:GetDensityMetrics()
     self.comparisonPinned:SetHeight(#state.pinned * rowHeight)
     for _, row in ipairs(self.comparisonPinnedRows) do
@@ -633,4 +830,7 @@ function UI:RenderSlotComparison(force)
         self:RebuildComparisonEntries()
     end
     self:ApplySlotComparisonLayout()
+    if state.detailsOpen and state.selectedItemId then
+        self:RefreshDetails(state.selectedItemId, self.selectedItemData, "comparison")
+    end
 end

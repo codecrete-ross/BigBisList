@@ -794,6 +794,15 @@ local function sourceIdentity(source)
 
     local sourceType = tostring(source.type or "unknown")
     local window = "|" .. tostring(source.available_from_phase or "") .. ":" .. tostring(source.available_until_phase or "")
+    -- A boss can supply several different prerequisites, or have different
+    -- normal/heroic observations. Those records must never enrich one another.
+    window = window .. "|" .. table.concat({
+        tostring(source.token_item_id or ""), tostring(source.token_count or ""),
+        tostring(source.quest_starter_item_id or ""), tostring(source.quest_starter_relationship or ""),
+        tostring(source.item_id or ""), tostring(source.difficulty or ""),
+        tostring(source.type == "drop" and (source.location_area or source.zone) or ""),
+        tostring(source.type == "drop" and source.content_type or ""),
+    }, ":")
     if FILTER_FACETS.VENDOR_PURCHASE_SOURCE_TYPES[sourceType] then
         local vendorId = source.vendor_id or source.entity_id
         if vendorId then
@@ -1028,11 +1037,22 @@ local function sourceLabel(source, fallbackLabel)
 end
 
 local function formatDropPercent(source)
-    local percent = tonumber(source and source.drop_percent)
-    if not percent then
-        return nil
+    if type(source) ~= "table" then return nil end
+    local percent = tonumber(source.drop_percent)
+    if source.drop_percent == nil then
+        local count, total = tonumber(source.count), tonumber(source.out_of)
+        if count and total and count == count and total == total
+            and count >= 0 and total > 0 and total < math.huge and count <= total then
+            percent = count / total * 100
+        end
     end
+    if not percent or percent ~= percent or percent < 0 or percent > 100 then return nil end
+    if percent > 0 and percent < 0.1 then return "<0.1%" end
     return string.format("%.1f%%", percent)
+end
+
+function BigBiSList:FormatSourceRate(source)
+    return formatDropPercent(source)
 end
 
 local function sourceDropSummary(source)
@@ -1283,7 +1303,14 @@ function FILTER_FACETS.sourceCacheSignature(source)
         tostring(source.purchase_quantity or ""),
         FILTER_FACETS.formatSourceCosts(source),
         tostring(source.tradeable or false),
+        tostring(source.drop_percent or ""), tostring(source.count or ""), tostring(source.out_of or ""),
+        tostring(source.entity_name or ""), tostring(source.token_name or ""),
+        tostring(source.quest_starter_name or ""), tostring(source.source_url or ""),
+        table.concat(source.activity_zones or {}, "\031"),
     }
+    for _, requirement in ipairs(source.requirements or {}) do
+        table.insert(parts, requirementKey(requirement))
+    end
     for _, key in ipairs({ "token_sources", "quest_starter_sources", "recipe_sources" }) do
         for _, child in ipairs(source[key] or {}) do
             table.insert(parts, key .. ":" .. FILTER_FACETS.sourceCacheSignature(child))
@@ -1483,6 +1510,7 @@ local function sourceOptionZones(source)
     end
 
     addSourceZone(zones, seen, FILTER_FACETS.sourceLocationArea(source))
+    for _, zone in ipairs(source.activity_zones or {}) do addSourceZone(zones, seen, zone) end
     if source.type == "token_turnin" then
         for _, tokenSource in ipairs(source.token_sources or {}) do
             addSourceZone(zones, seen, FILTER_FACETS.sourceLocationArea(tokenSource))
@@ -1682,6 +1710,7 @@ local function buildAccessOptions(item, sourceRecords, rowRequirements, options)
             purchase_quantity = tonumber(source.purchase_quantity),
             zone = locationArea,
             zones = sourceOptionZones(source),
+            activity_zones = source.activity_zones,
             source_url = source.source_url or (item and item.wowhead_url),
             source_identity = sourceIdentity(source),
             source = source,
@@ -1767,6 +1796,7 @@ local function accessOptionsCacheKey(row, item, sourceRecords, rowRequirements, 
     options = options or {}
     return table.concat({
         tostring((row and row.item_id) or (item and (item.id or item.item_id)) or ""),
+        sourceRecordsCacheKey(item and { item }),
         sourceRecordsCacheKey(sourceRecords),
         requirementsCacheKey(rowRequirements),
         tostring(options.entityType or "item"),
@@ -2215,7 +2245,14 @@ end
 
 local function addSourceFilterKey(sourceFilterKeys, seen, source, selectedPhaseIndex)
     if type(source) == "table" and sourceIsPhaseAvailable(source, selectedPhaseIndex) then
-        addUnique(sourceFilterKeys, seen, sourceFilterKey(source))
+        local hasDependencies = false
+        for _, key in ipairs({ "token_sources", "quest_starter_sources" }) do
+            for _, child in ipairs(source[key] or {}) do
+                hasDependencies = true
+                addSourceFilterKey(sourceFilterKeys, seen, child, selectedPhaseIndex)
+            end
+        end
+        if not hasDependencies then addUnique(sourceFilterKeys, seen, sourceFilterKey(source)) end
     end
 end
 
@@ -2263,6 +2300,7 @@ local function addZonesFromSource(zones, seen, source, includeDropZone, selected
 
     if source.type ~= "drop" or includeDropZone then
         addSourceZone(zones, seen, FILTER_FACETS.sourceLocationArea(source), selectedPhaseIndex)
+        for _, zone in ipairs(source.activity_zones or {}) do addSourceZone(zones, seen, zone, selectedPhaseIndex) end
     end
 
     if source.type == "token_turnin" then
@@ -2301,6 +2339,9 @@ local function sourceHasZone(source, zone, includeDropZone, selectedPhaseIndex)
         and FILTER_FACETS.sourceLocationArea(source) == zone
         and sourceZoneIsPhaseAvailable(zone, selectedPhaseIndex) then
         return true
+    end
+    for _, activityZone in ipairs(source.activity_zones or {}) do
+        if activityZone == zone and sourceZoneIsPhaseAvailable(zone, selectedPhaseIndex) then return true end
     end
 
     if source.type == "token_turnin" then
@@ -3377,20 +3418,113 @@ function FILTER_FACETS.optionMatchesFaction(option, faction)
     return not hasSide
 end
 
+function FILTER_FACETS.optionSourcePaths(option)
+    if option._source_paths then return option._source_paths end
+    local paths = {}
+    local function visit(source, nodes, dependency)
+        local path = {}
+        for _, node in ipairs(nodes) do path[#path + 1] = node end
+        path[#path + 1] = source
+        local hasChildren = false
+        for _, key in ipairs({ "token_sources", "quest_starter_sources" }) do
+            for _, child in ipairs(source[key] or {}) do
+                hasChildren = true
+                visit(child, path, dependency or child)
+            end
+        end
+        if not hasChildren then paths[#paths + 1] = { nodes = path, source = source, dependency = dependency } end
+    end
+    if option.source then visit(option.source, {}, nil) end
+    option._source_paths = paths
+    return paths
+end
+
+function FILTER_FACETS.optionPathContext(option, selectedPhaseIndex)
+    local cached = option._path_context
+    if cached and cached.phase == selectedPhaseIndex then return cached end
+    local context = {phase = selectedPhaseIndex, paths = {}, unfiltered = {}}
+    local paths = FILTER_FACETS.optionSourcePaths(option)
+    if #paths == 0 then paths = {{ nodes = {}, source = nil }} end
+    for _, path in ipairs(paths) do
+        local candidate = {}
+        for key, value in pairs(option) do
+            if string.sub(key, 1, 1) ~= "_" then candidate[key] = value end
+        end
+        local zones, zoneSeen, activities, activitySeen = {}, {}, {}, {}
+        local requirements, available = option.requirements or {}, true
+        for _, node in ipairs(path.nodes) do
+            if not sourceIsPhaseAvailable(node, selectedPhaseIndex) then available = false end
+            addSourceZone(zones, zoneSeen, FILTER_FACETS.sourceLocationArea(node), selectedPhaseIndex)
+            for _, zone in ipairs(node.activity_zones or {}) do
+                addSourceZone(zones, zoneSeen, zone, selectedPhaseIndex)
+                addSourceZone(activities, activitySeen, zone, selectedPhaseIndex)
+            end
+            if node.requirements and #node.requirements > 0 then requirements = mergedRequirements(requirements, node.requirements) end
+        end
+        if #path.nodes > 0 then
+            candidate.source, candidate.zone, candidate.zones = path.source, nil, zones
+            candidate.source_filter_key = sourceFilterKey(path.source)
+            candidate.requirements, candidate.reputations = requirements, reputationsFromRequirements(requirements)
+        else
+            zones = option.zones or (option.zone and { option.zone }) or {}
+            activities = option.activity_zones or {}
+        end
+        local match = { option = option, source = path.source or option.source,
+            dependency = path.dependency, activity_zones = activities,
+            zones = zones, source_filter_key = candidate.source_filter_key }
+        context.paths[#context.paths + 1] = {candidate = candidate, path = path, available = available, match = match}
+        if available then context.unfiltered[#context.unfiltered + 1] = match end
+    end
+    -- Keep only the latest progression context; presentation refreshes reuse
+    -- these paths without an unbounded cache of filter combinations.
+    option._path_context = context
+    return context
+end
+
+function FILTER_FACETS.accessOptionFilterMatches(option, filters, selectedPhaseIndex)
+    if not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then return {} end
+    filters = filters or {}
+    local context = FILTER_FACETS.optionPathContext(option, selectedPhaseIndex)
+    if not filters._pre_raid and not FILTER_FACETS.hasActiveOptionContextFilter(filters) then return context.unfiltered end
+    local matches = {}
+    for _, prepared in ipairs(context.paths) do
+        local candidate, path = prepared.candidate, prepared.path
+        local zones, activities = prepared.match.zones, prepared.match.activity_zones
+        local function sourceMatches(value)
+            if not value or value == "all" then return true end
+            if FILTER_FACETS.optionIsReportedOnly(option) then return false end
+            return value == option.source_type or value == candidate.source_filter_key
+                or (path.source and value == path.source.type)
+        end
+        local sourceTypesMatch = not tableHasAnyEnabled(filters.sourceTypes)
+        for key, selected in pairs(filters.sourceTypes or {}) do
+            if selected and sourceMatches(key) then sourceTypesMatch = true; break end
+        end
+        if prepared.available and sourceMatches(filters.sourceType) and sourceTypesMatch
+            and (not filters._pre_raid or FILTER_FACETS.optionIsPreRaid(candidate, selectedPhaseIndex))
+            and FILTER_FACETS.optionMatchesFaction(candidate, filters.faction)
+            and optionMatchesZoneFilter(candidate, filters.zone, selectedPhaseIndex)
+            and optionMatchesAnySelectedZone(candidate, filters.zones, selectedPhaseIndex)
+            and FILTER_FACETS.optionMatchesCostFilter(candidate, filters.cost, selectedPhaseIndex)
+            and FILTER_FACETS.optionMatchesAnySelectedCost(candidate, filters.costs, selectedPhaseIndex)
+            and FILTER_FACETS.optionMatchesVendorFilter(candidate, filters.vendor, selectedPhaseIndex)
+            and FILTER_FACETS.optionMatchesAnySelectedVendor(candidate, filters.vendors, selectedPhaseIndex)
+            and FILTER_FACETS.optionMatchesReputationFilter(candidate, filters.reputation, selectedPhaseIndex)
+            and FILTER_FACETS.optionMatchesAnySelectedReputation(candidate, filters.reputations, selectedPhaseIndex) then
+            local matchedZone
+            for _, zone in ipairs(zones) do
+                if zone == filters.zone or (filters.zones and filters.zones[zone]) then matchedZone = zone; break end
+            end
+            matches[#matches + 1] = { option = option, source = path.source or option.source,
+                dependency = path.dependency, activity_zone = matchedZone, activity_zones = activities,
+                zones = zones, source_filter_key = candidate.source_filter_key }
+        end
+    end
+    return matches
+end
+
 local function optionMatchesSourceContext(option, filters, selectedPhaseIndex)
-    return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
-        and (not (filters and filters._pre_raid) or FILTER_FACETS.optionIsPreRaid(option, selectedPhaseIndex))
-        and FILTER_FACETS.optionMatchesFaction(option, filters and filters.faction)
-        and optionMatchesSourceFilter(option, filters and filters.sourceType, selectedPhaseIndex)
-        and optionMatchesAnySelectedSourceType(option, filters and filters.sourceTypes, selectedPhaseIndex)
-        and optionMatchesZoneFilter(option, filters and filters.zone, selectedPhaseIndex)
-        and optionMatchesAnySelectedZone(option, filters and filters.zones, selectedPhaseIndex)
-        and FILTER_FACETS.optionMatchesCostFilter(option, filters and filters.cost, selectedPhaseIndex)
-        and FILTER_FACETS.optionMatchesAnySelectedCost(option, filters and filters.costs, selectedPhaseIndex)
-        and FILTER_FACETS.optionMatchesVendorFilter(option, filters and filters.vendor, selectedPhaseIndex)
-        and FILTER_FACETS.optionMatchesAnySelectedVendor(option, filters and filters.vendors, selectedPhaseIndex)
-        and FILTER_FACETS.optionMatchesReputationFilter(option, filters and filters.reputation, selectedPhaseIndex)
-        and FILTER_FACETS.optionMatchesAnySelectedReputation(option, filters and filters.reputations, selectedPhaseIndex)
+    return FILTER_FACETS.accessOptionFilterMatches(option, filters, selectedPhaseIndex)[1] ~= nil
 end
 
 local function rowHasAccessOptionMatchingFilterContext(row, filters, selectedPhaseIndex)
@@ -3630,17 +3764,20 @@ local function includeByFilter(row, filters, selectedPhaseIndex)
         return false
     end
 
-    if not rowMatchesSourceFilter(row, filters.sourceType, selectedPhaseIndex) then
-        return false
-    end
-    if not rowMatchesAnySelectedSourceType(row, filters.sourceTypes, selectedPhaseIndex) then
-        return false
-    end
-    if not rowMatchesZoneFilter(row, filters.zone, selectedPhaseIndex) then
-        return false
-    end
-    if not rowMatchesAnySelectedZone(row, filters.zones, selectedPhaseIndex) then
-        return false
+    local structuredOptions = buildRowAccessOptions(BigBiSList:GetDataIndex(), row)
+    if not structuredOptions or #structuredOptions == 0 then
+        if not rowMatchesSourceFilter(row, filters.sourceType, selectedPhaseIndex) then
+            return false
+        end
+        if not rowMatchesAnySelectedSourceType(row, filters.sourceTypes, selectedPhaseIndex) then
+            return false
+        end
+        if not rowMatchesZoneFilter(row, filters.zone, selectedPhaseIndex) then
+            return false
+        end
+        if not rowMatchesAnySelectedZone(row, filters.zones, selectedPhaseIndex) then
+            return false
+        end
     end
     if not FILTER_FACETS.rowMatchesCostFilter(row, filters.cost, selectedPhaseIndex) then
         return false
@@ -3880,9 +4017,15 @@ function BigBiSList:GetRowAcquisitionDisplay(row, filters, phaseKey, includeFutu
     local nextPhaseIndex = option and FILTER_FACETS.nextAvailableOptionPhase(option, selectedPhaseIndex) or nil
     local future = nextPhaseIndex ~= nil and selectedPhaseIndex ~= nil and nextPhaseIndex > selectedPhaseIndex
     if future then acquisitionPhase = PHASE_ORDER[nextPhaseIndex] end
+    local sourceMatch = option and FILTER_FACETS.accessOptionFilterMatches(option,
+        FILTER_FACETS.progressionFilters(filters, phaseKey), future and nextPhaseIndex or selectedPhaseIndex)[1]
 
     return {
         option = option,
+        source_match = sourceMatch,
+        matched_dependency = sourceMatch and sourceMatch.dependency,
+        activity_zone = sourceMatch and sourceMatch.activity_zone,
+        activity_zones = sourceMatch and sourceMatch.activity_zones,
         source_label = option and (option.source_filter_label or SOURCE_TYPE_LABELS[option.source_type])
             or (row and (row.source_filter_label or row.source_type_label))
             or SOURCE_TYPE_LABELS.unknown,
@@ -4161,6 +4304,11 @@ end
 
 function BigBiSList:IsAccessOptionPhaseAvailable(option, selectedPhaseIndex)
     return accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
+end
+
+function BigBiSList:GetAccessOptionFilterMatch(option, filters, phaseKey)
+    local selectedIndex = phaseKey and self:GetAvailabilityPhaseIndex(phaseKey) or nil
+    return FILTER_FACETS.accessOptionFilterMatches(option, FILTER_FACETS.progressionFilters(filters, phaseKey), selectedIndex)[1]
 end
 
 function BigBiSList:GetAccessOptionNextAvailablePhase(option, selectedPhaseIndex)
@@ -4518,6 +4666,87 @@ end
 
 function BigBiSList:GetAccessOptionDetailFields(option)
     return FILTER_FACETS.accessOptionDetailFields(option)
+end
+
+-- Required items are identities; their independently observed origins are
+-- routes. Sharing a boss does not make two tokens the same required item.
+function BigBiSList:GetAccessOptionSourceItems(option, context)
+    if type(option) ~= "table" or type(option.source) ~= "table" then return {} end
+    if type(context) == "string" then context = {phase = context} end
+    context = context or {}
+    local phaseKey, filters = context.phase, context.filters or {}
+    local selectedIndex = phaseKey and self:GetAvailabilityPhaseIndex(phaseKey) or nil
+    local matches = FILTER_FACETS.accessOptionFilterMatches(option,
+        FILTER_FACETS.progressionFilters(filters, phaseKey), selectedIndex)
+    local matchedSources = {}
+    for _, match in ipairs(matches) do
+        if match.source then matchedSources[match.source] = true end
+        if match.dependency then matchedSources[match.dependency] = true end
+    end
+    local results, groups = {}, {}
+    local function visit(parent)
+        for _, family in ipairs({
+            {key = "token_sources", kind = "token", id = "token_item_id", name = "token_name"},
+            {key = "quest_starter_sources", kind = "quest_starter", id = "quest_starter_item_id", name = "quest_starter_name"},
+            {key = "recipe_sources", kind = "recipe", id = "item_id", name = "recipe_name"},
+        }) do
+            for _, source in ipairs(parent[family.key] or {}) do
+                local itemId = tonumber(source[family.id])
+                if itemId and itemId > 0 then
+                    local relationship = source.quest_starter_relationship
+                    local key = family.kind .. ":" .. itemId .. ":" .. tostring(relationship or "")
+                    local group = groups[key]
+                    local count = family.kind == "token" and (tonumber(source.token_count) or 1) or 1
+                    if not group then
+                        local item = self:GetItemData(itemId)
+                        group = {key = key, kind = family.kind, item_id = itemId, item = item,
+                            name = item and item.name or source[family.name] or ("Item " .. itemId),
+                            count = count, relationship = relationship, routes = {},
+                            source_url = source.token_source_url or source.quest_starter_source_url or source.source_url,
+                            _route_keys = {}}
+                        groups[key], results[#results + 1] = group, group
+                    elseif group.count ~= count then group.count = nil end
+                    local routeKey = FILTER_FACETS.sourceCacheSignature(source)
+                    if not group._route_keys[routeKey] then
+                        group._route_keys[routeKey] = true
+                        local acquisitionPhase = deriveSourceAcquisitionPhase(source)
+                        local available = accessOptionIsPhaseAvailable(option, selectedIndex)
+                            and sourceIsPhaseAvailable(source, selectedIndex)
+                            and (phaseKey ~= "PR" or not FILTER_FACETS.sourceRequiresRaid(source, selectedIndex))
+                        local availabilityLabel
+                        if not available then
+                            if selectedIndex and phaseIndex(acquisitionPhase) > selectedIndex then
+                                availabilityLabel = "Available in " .. self:GetPhaseDisplayName(acquisitionPhase)
+                            elseif source.available_until_phase and selectedIndex
+                                and selectedIndex >= phaseIndex(source.available_until_phase) then
+                                availabilityLabel = "No longer available"
+                            else availabilityLabel = "Unavailable in selected tier" end
+                        end
+                        group.routes[#group.routes + 1] = {key = routeKey, source = source,
+                            entity_name = source.entity_name, zone = FILTER_FACETS.sourceLocationArea(source),
+                            activity_zones = source.activity_zones, source_type = source.type,
+                            difficulty = source.difficulty, rate_text = formatDropPercent(source),
+                            available = available, availability_label = availabilityLabel,
+                            acquisition_phase = acquisitionPhase, requirements = source.requirements or {},
+                            count = count, matched = available and (matchedSources[source] == true
+                                or (family.kind == "recipe" and #matches > 0)),
+                            source_url = source.source_url, note = source.location_note or source.raw_source_text}
+                    end
+                end
+                visit(source)
+            end
+        end
+    end
+    visit(option.source)
+    for _, group in ipairs(results) do
+        group._route_keys = nil
+        table.sort(group.routes, function(a, b)
+            if a.matched ~= b.matched then return a.matched end
+            if a.available ~= b.available then return a.available end
+            return a.key < b.key
+        end)
+    end
+    return results
 end
 
 function FILTER_FACETS.sameAccessOption(a, b)
@@ -5473,11 +5702,12 @@ function BigBiSList:GetEquipmentComparisonContexts(className, specName, targetPh
             local entry = equipped[definition.key]
             local itemId = entry and tonumber(entry.item_id)
             local item = itemId and self:GetItemData(itemId)
+            local metadata = itemId and FILTER_FACETS.tableValueById(ownedItems and ownedItems.inventoryItems, itemId)
             local blocked = not itemId and definition.key == "OffHand" and ownedItems and ownedItems.equippedTwoHand
             local use = itemId and self:GetItemBestUseForSpec(itemId, className, specName, targetPhase, definition.slots)
             contexts[#contexts + 1] = { slotKey = definition.key, slot = definition.label, dataSlots = definition.slots,
                 inventorySlotId = definition.inventorySlotId, item_id = itemId, item_link = entry and entry.item_link,
-                name = itemId and getItemName(itemId, item) or (blocked and "Two-handed weapon equipped" or "Empty " .. definition.label),
+                name = itemId and (metadata and metadata.name or getItemName(itemId, item)) or (blocked and "Two-handed weapon equipped" or "Empty " .. definition.label),
                 occupancy = itemId and "occupied" or (blocked and "blocked" or "empty"), blocked_by = blocked and "MainHand" or nil,
                 state = itemId and "equipped" or nil, use = use, bestUse = use,
                 rank_label = use and use.rank_label, rank_group = use and use.rank_group }
@@ -5486,25 +5716,73 @@ function BigBiSList:GetEquipmentComparisonContexts(className, specName, targetPh
     return contexts
 end
 
+-- Inventory metadata is transient: it describes physical compatibility, never
+-- an inferred recommendation or performance rating for the selected spec.
+RECOMMENDATION.inventorySlots = {
+    INVTYPE_HEAD = "Head", INVTYPE_NECK = "Neck", INVTYPE_SHOULDER = "Shoulder",
+    INVTYPE_CLOAK = "Back", INVTYPE_CHEST = "Chest", INVTYPE_ROBE = "Chest",
+    INVTYPE_WRIST = "Wrist", INVTYPE_HAND = "Hands", INVTYPE_WAIST = "Waist",
+    INVTYPE_LEGS = "Legs", INVTYPE_FEET = "Feet", INVTYPE_FINGER = "Ring",
+    INVTYPE_TRINKET = "Trinket", INVTYPE_WEAPONMAINHAND = "Main Hand",
+    INVTYPE_WEAPONOFFHAND = "Off Hand", INVTYPE_SHIELD = "Off Hand",
+    INVTYPE_HOLDABLE = "Off Hand", INVTYPE_2HWEAPON = "Two Hand",
+    INVTYPE_WEAPON = "One Hand", INVTYPE_RANGED = "Ranged", INVTYPE_RANGEDRIGHT = "Ranged",
+    INVTYPE_THROWN = "Ranged", INVTYPE_RELIC = "Relic", INVTYPE_AMMO = "Ammo",
+    INVTYPE_QUIVER = "Quiver",
+}
+
+function RECOMMENDATION.ownedInventoryState(ownedItems, itemId, metadata)
+    local state = FILTER_FACETS.tableValueById(ownedItems, itemId)
+    if state and state ~= "missing" then return state == "bags" and "bag" or state end
+    local locations = metadata and metadata.locations or {}
+    return locations.equipped and "equipped" or locations.bags and "bag" or locations.bank and "bank" or nil
+end
+
+function RECOMMENDATION.inventoryFitsSlot(metadata, item, slotName, className)
+    local inventorySlot = metadata and RECOMMENDATION.inventorySlots[metadata.equip_location]
+        or (metadata and metadata.inventory_slot) or (item and item.inventory_slot)
+    if not inventorySlot then return false end
+    local slots = { inventorySlot }
+    if inventorySlot == "One Hand" then
+        slots = { "Main Hand" }
+        if className == "Warrior" or className == "Rogue" or className == "Hunter" or className == "Shaman" then
+            slots[#slots + 1] = "Off Hand"
+        end
+    elseif inventorySlot == "Relic" then
+        slots = { "Relic", className == "Druid" and "Idol" or className == "Shaman" and "Totem" or className == "Paladin" and "Libram" or "Relic" }
+    end
+    for _, accepted in ipairs(RECOMMENDATION.slots(slotName) or {}) do
+        if slotListContains(slots, accepted) then return true end
+    end
+    return false
+end
+
 function BigBiSList:GetSlotComparisonRows(className, specName, targetPhase, slotName, ownedItems, reference)
     local contexts = self:GetEquipmentComparisonContexts(className, specName, targetPhase, ownedItems, slotName)
-    if type(reference) ~= "table" then
-        local referenceId = tonumber(reference)
-        reference = referenceId and { item_id = referenceId, occupancy = "occupied" } or contexts[1]
+    local requestedId = type(reference) == "table" and reference.item_id or tonumber(reference)
+    local physicalReference
+    if type(reference) == "table" and reference.slotKey then
+        for _, context in ipairs(contexts) do if context.slotKey == reference.slotKey then physicalReference = context; break end end
     end
     local rows, seen = {}, {}
-    rows.contexts, rows.reference, rows.target_phase, rows.slot = contexts, reference, targetPhase, slotName
+    rows.contexts, rows.target_phase, rows.slot = contexts, targetPhase, slotName
     local index = self:GetDataIndex(targetPhase)
     local selectedIndex = self:GetAvailabilityPhaseIndex(targetPhase)
-    local function add(itemId, use, isReference)
-        if seen[itemId] then if isReference then seen[itemId].is_reference = true end; return end
+    local inventory = ownedItems and ownedItems.inventoryItems or {}
+    local function add(itemId, use, physical)
+        if seen[itemId] then
+            if physical then seen[itemId].owned_state = "equipped"; seen[itemId].owned = true end
+            return
+        end
         local item = self:GetItemData(itemId)
-        local row = { item_id = itemId, name = getItemName(itemId, item), item = item, slot = use and use.slot or slotName,
-            class = className, spec = specName, bestUse = use, is_reference = isReference == true,
-            owned_state = FILTER_FACETS.tableValueById(ownedItems, itemId) }
+        local metadata = FILTER_FACETS.tableValueById(inventory, itemId)
+        local ownedState = physical and "equipped" or RECOMMENDATION.ownedInventoryState(ownedItems, itemId, metadata)
+        local row = { item_id = itemId, name = metadata and metadata.name or getItemName(itemId, item), item = item,
+            item_link = metadata and metadata.item_link, slot = use and use.slot or slotName,
+            class = className, spec = specName, phase = targetPhase, bestUse = use, owned = ownedState ~= nil,
+            owned_state = ownedState, inventory_item = metadata, owned_locations = metadata and metadata.locations }
         row.history = self:GetRecommendationHistory(itemId, className, specName, targetPhase, use and use.slot or slotName)
         row.recommendation_history = row.history
-        row.comparison = self:CompareRecommendationItems(itemId, reference and reference.item_id, className, specName, targetPhase, use and use.slot or slotName)
         row.acquisition_display = self:GetRowAcquisitionDisplay(use or row, {}, targetPhase)
         rows[#rows + 1], seen[itemId] = row, row
     end
@@ -5512,11 +5790,47 @@ function BigBiSList:GetSlotComparisonRows(className, specName, targetPhase, slot
         local use = buildUse(index, ref)
         local matches = slotListContains(RECOMMENDATION.slots(slotName), use.slot)
         if matches and RECOMMENDATION.useFitsContext(self, use, targetPhase) and includeByFilter(use, FILTER_FACETS.progressionFilters({}, targetPhase), selectedIndex) then
-            add(use.item_id, use, reference and reference.item_id == use.item_id)
+            add(use.item_id, use)
         end
     end
-    for _, context in ipairs(contexts) do if context.item_id then add(context.item_id, context.use, reference and context.item_id == reference.item_id) end end
-    if reference and reference.item_id then add(reference.item_id, nil, true) end
+    for _, context in ipairs(contexts) do if context.item_id then add(context.item_id, context.use, true) end end
+    local ownedIds = {}
+    for key, state in pairs(ownedItems or {}) do
+        local itemId = tonumber(key)
+        if itemId and state and state ~= "missing" then ownedIds[itemId] = true end
+    end
+    for key, metadata in pairs(inventory) do
+        local itemId = tonumber(key)
+        if itemId and RECOMMENDATION.ownedInventoryState(ownedItems, itemId, metadata) then ownedIds[itemId] = true end
+    end
+    for itemId in pairs(ownedIds) do
+        if not seen[itemId] then
+            local metadata, item = FILTER_FACETS.tableValueById(inventory, itemId), self:GetItemData(itemId)
+            if RECOMMENDATION.inventoryFitsSlot(metadata, item, slotName, className) then
+                add(itemId, self:GetItemBestUseForSpec(itemId, className, specName, targetPhase, RECOMMENDATION.slots(slotName)))
+            end
+        end
+    end
+    -- A reference chosen under another local role remains useful as a reference.
+    -- It needs recorded, available evidence for this class and slot; a removed
+    -- unranked inventory item cannot reappear merely because its ID was selected.
+    if requestedId and not seen[requestedId] then
+        for _, ref in ipairs(index.useRefsByItemId[requestedId] or {}) do
+            local use = buildUse(index, ref)
+            if use.class == className and slotListContains(RECOMMENDATION.slots(slotName), use.slot)
+                and RECOMMENDATION.useFitsContext(self, use, targetPhase)
+                and includeByFilter(use, FILTER_FACETS.progressionFilters({}, targetPhase), selectedIndex) then
+                add(requestedId, nil)
+                break
+            end
+        end
+    end
+    reference = physicalReference or (requestedId and seen[requestedId] and { item_id = requestedId, occupancy = "occupied" }) or contexts[1]
+    rows.reference = reference
+    for _, row in ipairs(rows) do
+        row.is_reference = reference and row.item_id == reference.item_id or false
+        row.comparison = self:CompareRecommendationItems(row.item_id, reference and reference.item_id, className, specName, targetPhase, row.slot)
+    end
     table.sort(rows, function(a, b)
         if lower(a.name) ~= lower(b.name) then return lower(a.name) < lower(b.name) end
         return a.item_id < b.item_id
@@ -5528,8 +5842,13 @@ end
 function BigBiSList:GetActivityGroup(row)
     local display = row and row.acquisition_display or {}
     local option = display.option or (row and row.matched_access_option) or {}
+    if display.activity_zone then return display.activity_zone end
+    local activities = display.activity_zones or option.activity_zones
+    if activities and #activities > 0 then return table.concat(activities, " + ") end
     local kind = option.source_filter_key or option.source_type or (row and row.source_type) or "unknown"
-    local zone = option.zone or (option.zones and option.zones[1])
+    local matchedSource = display.source_match and display.source_match.source
+    local zone = matchedSource and FILTER_FACETS.sourceLocationArea(matchedSource)
+        or option.zone or (option.zones and option.zones[1])
     if type(zone) == "table" then zone = zone.name or zone.zone end
     if kind == "raid" or kind == "raid_drop" or kind == "dungeon" or kind == "dungeon_drop"
         or kind == "heroic_dungeon_drop" or kind == "drop" or kind == "quest" then
@@ -5979,13 +6298,13 @@ function FILTER_FACETS.cloneFiltersForVendorOptions(filters)
     return scopedFilters
 end
 
-function FILTER_FACETS.addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
+function FILTER_FACETS.addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex, match)
     if FILTER_FACETS.optionIsReportedOnly(option)
         or not accessOptionIsPhaseAvailable(option, selectedPhaseIndex) then
         return
     end
 
-    addUnique(sourceTypes, seen, option.source_filter_key or option.source_type)
+    addUnique(sourceTypes, seen, match and match.source_filter_key or option.source_filter_key or option.source_type)
 end
 
 function FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, callback)
@@ -5996,8 +6315,8 @@ function FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseInde
     local options = buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}
     local matched = false
     for _, option in ipairs(options) do
-        if optionMatchesSourceContext(option, filters, selectedPhaseIndex) then
-            callback(option)
+        for _, match in ipairs(FILTER_FACETS.accessOptionFilterMatches(option, filters, selectedPhaseIndex)) do
+            callback(option, match)
             matched = true
         end
     end
@@ -6008,7 +6327,7 @@ function FILTER_FACETS.rowHasCompleteOptionForSourceType(row, sourceType, select
     for _, option in ipairs(buildRowAccessOptions(BigBiSList:GetDataIndex(), row) or {}) do
         if not FILTER_FACETS.optionIsReportedOnly(option)
             and accessOptionIsPhaseAvailable(option, selectedPhaseIndex)
-            and (option.source_filter_key == sourceType or option.source_type == sourceType) then
+            and optionMatchesSourceContext(option, {sourceType = sourceType}, selectedPhaseIndex) then
             return true
         end
     end
@@ -6021,8 +6340,8 @@ local function addSourceTypeFromRow(sourceTypes, seen, row, filters, selectedPha
     end
 
     if FILTER_FACETS.hasActiveOptionContextFilter(filters) then
-        local matched, hasOptions = FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option)
-            FILTER_FACETS.addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex)
+        local matched, hasOptions = FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option, match)
+            FILTER_FACETS.addSourceTypeFromOption(sourceTypes, seen, option, selectedPhaseIndex, match)
         end)
         if matched or hasOptions or hasActiveSourceContextFilter(filters) then
             return
@@ -6063,8 +6382,10 @@ local function addZonesFromRow(zones, seen, row, filters, selectedPhaseIndex)
     end
 
     if FILTER_FACETS.hasActiveOptionContextFilter(filters) then
-        local matched, hasOptions = FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option)
-            addZonesFromOption(zones, seen, option, selectedPhaseIndex)
+        local matched, hasOptions = FILTER_FACETS.addMatchingOptionsFromRow(row, filters, selectedPhaseIndex, function(option, match)
+            if match then
+                for _, zone in ipairs(match.zones) do addSourceZone(zones, seen, zone, selectedPhaseIndex) end
+            else addZonesFromOption(zones, seen, option, selectedPhaseIndex) end
         end)
         if matched or hasOptions or hasActiveSourceContextFilter(filters) then
             return

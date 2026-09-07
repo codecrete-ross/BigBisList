@@ -72,7 +72,7 @@ button.label:SetFont(font, 24, flags)
 ui:LayoutContextControls(); H.settle()
 assert(button:GetWidth() >= button.label:GetStringWidth()+16-.5, "large font lost measured padding")
 assert(ui.phaseSelector:GetWidth() > oldWidth, "long label did not grow selector")
-near(ui.contextBar:GetHeight(), 82, "larger labels wrap context")
+near(ui.contextBar:GetHeight(), 96, "larger labels wrap context")
 H.expectBounded(ui.phaseSelector, ui.contextBar, "grown selector")
 for _, segment in ipairs(ui.phaseSelector.buttons) do
     H.expectBounded(segment, ui.phaseSelector, "grown segment")
@@ -82,7 +82,7 @@ button.label:SetText("Sunwell")
 button.label:SetFont(font, fontSize, flags)
 ui:LayoutContextControls(); H.settle()
 near(ui.phaseSelector:GetWidth(), oldWidth, "normal font restores selector width")
-near(ui.contextBar:GetHeight(), 46, "normal font restores context line")
+near(ui.contextBar:GetHeight(), 60, "normal font restores context line")
 assert(ui:GetPerformanceStats().queryBuilds == builds, "measuring and reflowing rebuilt query")
 ''')
 
@@ -230,7 +230,7 @@ for _, size in ipairs({ {1020,560}, {1160,660}, {900,660} }) do
                 ui:SetFilterDrawerOpen(filters); H.settle()
                 local label = size[1] .. "/" .. density .. "/" .. tostring(details) .. "/" .. tostring(filters)
                 near(ui.contentScroll:GetHeight(), viewport, label .. " filter viewport")
-                near(ui.contextBar:GetHeight(), size[1] == 900 and 82 or 46, label .. " context height")
+                near(ui.contextBar:GetHeight(), size[1] == 900 and 96 or 60, label .. " context height")
                 local controls = { ui.classDropdown, ui.specDropdown, ui.useCharacterButton, ui.endgameModeButton, ui.levelingModeButton }
                 for _, button in ipairs(ui.phaseSelector.buttons) do controls[#controls+1] = button end
                 for index, control in ipairs(controls) do

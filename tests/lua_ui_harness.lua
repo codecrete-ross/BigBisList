@@ -269,7 +269,7 @@ function H.settle()
     error("UI geometry or refresh timers did not settle after 30 passes")
 end
 function H.load()
-    for _, file in ipairs({ "Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "ComparisonUI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
+    for _, file in ipairs({ "Data.lua", "Config.lua", "DataIndex.lua", "Widgets.lua", "UI.lua", "DetailsSources.lua", "ComparisonUI.lua", "Tooltip.lua" }) do assert(loadfile(file))("BigBiSList") end
     BigBiSList:EnsureDatabase()
     BigBiSList:InitTooltip()
     return BigBiSList.UI

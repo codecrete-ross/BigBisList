@@ -112,6 +112,12 @@
         "zone": {
           "type": "string"
         },
+        "activity_zones": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
         "difficulty": {
           "type": "string"
         },

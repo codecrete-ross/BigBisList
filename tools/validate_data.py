@@ -143,6 +143,13 @@ def validate_source_detail_fields(label: str, sources: object, errors: list[str]
             _require(PHASE_KEYS.index(start) < PHASE_KEYS.index(end), errors, f"{source_label} empty availability window")
         if "tradeable" in source:
             _require(isinstance(source["tradeable"], bool), errors, f"{source_label} tradeable must be boolean")
+        if "activity_zones" in source:
+            activities = source["activity_zones"]
+            valid = isinstance(activities, list) and bool(activities) and all(
+                isinstance(zone, str) and bool(zone.strip()) for zone in activities)
+            _require(valid, errors, f"{source_label} activity_zones must be a non-empty array of locations")
+            if valid:
+                _require(len(activities) == len(set(activities)), errors, f"{source_label} activity_zones must be unique")
 
         for field_name in ("location_area", "location_note"):
             if field_name in source:

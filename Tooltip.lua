@@ -158,6 +158,21 @@ local function lineForTooltipMatch(match)
     return left, right
 end
 
+local function comparisonTooltipContext(tooltip)
+    local ui = BigBiSList.UI
+    local state = ui and ui.slotComparison
+    if not state or tooltip ~= GameTooltip or not tooltip.GetOwner then return nil end
+    local ok, owner = pcall(tooltip.GetOwner, tooltip)
+    if not ok then return nil end
+    -- Only addon-owned comparison surfaces inherit the local role. Native bag,
+    -- equipment and item-reference tooltips continue using character settings.
+    while owner do
+        if owner == ui.comparisonFrame or (state.detailsOpen and owner == ui.details) then return state end
+        owner = owner.GetParent and owner:GetParent()
+    end
+    return nil
+end
+
 -- Rebuild through the tooltip's native source; never clear or copy native lines.
 -- The normal item hooks reattach our section after that rebuild.
 local function refreshTooltipForModifier(tooltip)
@@ -212,14 +227,17 @@ function BigBiSList:AddTooltipInfo(tooltip, tooltipData)
         return
     end
 
-    local selection = self:GetCharacterDB().selection or {}
-    local effectivePhaseKey = self.GetEffectivePhaseKey and self:GetEffectivePhaseKey(selection) or selection.phase
+    local comparisonContext = comparisonTooltipContext(tooltip)
+    local selection = comparisonContext or self:GetCharacterDB().selection or {}
+    local effectivePhaseKey = comparisonContext and comparisonContext.phase
+        or (self.GetEffectivePhaseKey and self:GetEffectivePhaseKey(selection) or selection.phase)
     local levelingMode = effectivePhaseKey == LEVELING_PHASE_KEY
     local selectedLevel = levelingMode and self.GetSelectedLevelingLevel and self:GetSelectedLevelingLevel() or nil
-    local selectedSpecFirst = settings.selectedSpecFirst ~= false
+    local selectedSpecFirst = comparisonContext ~= nil or settings.selectedSpecFirst ~= false
     local specFilters = settings.specFilters
     local priorityContext = getTooltipPriorityContext()
     priorityContext = priorityContext or {}
+    if comparisonContext then priorityContext.playerClass, priorityContext.playerSpec = selection.class, selection.spec end
     priorityContext.selectedPhase = effectivePhaseKey
     local rawMatches = levelingMode
         and self:GetLevelingTooltipMatches(itemId, selection.class, selection.spec, selectedLevel, selectedSpecFirst, specFilters, priorityContext)

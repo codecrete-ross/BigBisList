@@ -1213,7 +1213,8 @@ class AddonUIStaticTests(unittest.TestCase):
             "settings.showAllOnAlt and IsAltKeyDown",
             "local specFilters = settings.specFilters",
             "local priorityContext = getTooltipPriorityContext()",
-            "local effectivePhaseKey = self.GetEffectivePhaseKey and self:GetEffectivePhaseKey(selection) or selection.phase",
+            "local effectivePhaseKey = comparisonContext and comparisonContext.phase",
+            "self:GetEffectivePhaseKey(selection) or selection.phase",
             "local levelingMode = effectivePhaseKey == LEVELING_PHASE_KEY",
             "self:GetLevelingTooltipMatches",
             "self:GetGroupedLevelingTooltipMatches",
@@ -1695,7 +1696,7 @@ class AddonUIStaticTests(unittest.TestCase):
         tooltip = self.read_lua("Tooltip.lua")
 
         for token in [
-            "function UI:GetSellerDetailLines(option)",
+            "function UI:GetSellerDetailLines(option, omitSourceItems)",
             "BigBiSList:GetAccessOptionDetailFields(option)",
             "option.is_vendor_purchase == true",
             '"Vendor: "',

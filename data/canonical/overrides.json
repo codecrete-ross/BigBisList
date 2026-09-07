@@ -10229,6 +10229,37 @@
         "spell_id": 46504
       },
       "type": "spell_alias"
+    },
+    {
+      "data": {
+        "evidence_path": "data/raw/wowhead/full_leveling/https-www-wowhead-com-tbc-guide-classes-rogue-combat-leveling-tips-10795788c02ce35d.json",
+        "rules": [
+          {
+            "match": {
+              "quest_id": 10704,
+              "type": "quest"
+            },
+            "remove_fields": [
+              "zone",
+              "location_area"
+            ],
+            "set": {
+              "activity_zones": [
+                "The Botanica",
+                "The Mechanar"
+              ],
+              "location_note": "Requires The Botanica and The Mechanar"
+            }
+          }
+        ]
+      },
+      "id": "quest-10704-required-dungeon-activities",
+      "reason": "Quest journal category Tempest Keep is not the raid acquisition location. The committed Rogue leveling guide explicitly requires The Botanica and The Mechanar for quest 10704; retain one quest reward route.",
+      "reviewed_at": "2026-09-06",
+      "reviewer": "codex-source-review",
+      "source_url": "https://www.wowhead.com/tbc/guide/classes/rogue/combat/leveling-tips",
+      "target": {},
+      "type": "source_rules"
     }
   ]
 }

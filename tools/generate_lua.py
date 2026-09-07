@@ -105,6 +105,7 @@ SOURCE_SCHEMA = [
     "available_from_phase",
     "available_until_phase",
     "tradeable",
+    "activity_zones",
 ]
 
 REQUIREMENT_SCHEMA = [
@@ -353,6 +354,8 @@ def add_zones_from_source(zones: set[str], source: dict | None, include_drop_zon
         return
     if source.get("type") != "drop" or include_drop_zone:
         add_zone(zones, source.get("zone"))
+        for zone in source.get("activity_zones", []):
+            add_zone(zones, zone)
     if source.get("type") == "token_turnin":
         for token_source in source.get("token_sources") or []:
             add_zone(zones, token_source.get("zone"))
